@@ -70,6 +70,7 @@ VScenePoint::VScenePoint(const QColor &lineColor, QGraphicsItem *parent)
     , m_pointColor(QColor(correctColor(this,lineColor)))
     , m_onlyPoint(false)
     , m_isHovered(false)
+    , m_isHighlighted(false)
     , m_showPointName(true)
 {
     m_pointLeader->setDefaultWidth(widthHairLine);
@@ -141,6 +142,22 @@ void VScenePoint::refreshPointGeometry(const VPointF &point)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VScenePoint::setHighlighted(bool highlighted)
+{
+    if (m_isHighlighted != highlighted)
+    {
+        m_isHighlighted = highlighted;
+        update();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VScenePoint::isHighlighted() const
+{
+    return m_isHighlighted;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VScenePoint::setOnlyPoint(bool value)
 {
     m_onlyPoint = value;
@@ -206,7 +223,7 @@ void VScenePoint::refreshLeader()
 //---------------------------------------------------------------------------------------------------------------------
 void VScenePoint::setPointPen(qreal scale)
 {
-    const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, scale);
+    const qreal width = scaleWidth((m_isHovered || m_isHighlighted) ? widthMainLine : widthHairLine, scale);
 
     if (qApp->Settings()->getUseToolColor() || isOnlyPoint())
     {
@@ -240,5 +257,22 @@ void VScenePoint::setPointPen(qreal scale)
            setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::NoBrush));
         }
 
+    }
+
+    // When the point is selected (e.g. picked in the Canvas Editor tree) draw it in a
+    // distinct highlight colour so it clearly stands out on the canvas.
+    if (m_isHighlighted)
+    {
+        const QColor highlight(Qt::red);
+        const qreal selectedWidth = scaleWidth(widthMainLine * 2.0, scale);
+        setPen(QPen(highlight, selectedWidth));
+        if (!qApp->Settings()->isWireframe() && !m_onlyPoint)
+        {
+            setBrush(QBrush(highlight, Qt::SolidPattern));
+        }
+        else
+        {
+            setBrush(QBrush(highlight, Qt::NoBrush));
+        }
     }
 }

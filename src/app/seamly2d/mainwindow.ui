@@ -118,7 +118,6 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="shortcuts_Action"/>
-    <addaction name="checkForUpdates_Action"/>
     <addaction name="wiki_Action"/>
     <addaction name="forum_Action"/>
     <addaction name="reportBug_Action"/>
@@ -136,6 +135,13 @@
     <addaction name="loadMultisize_Action"/>
     <addaction name="table_Action"/>
     <addaction name="exportVariablesToCSV_Action"/>
+   </widget>
+   <widget class="QMenu" name="fabric_Menu">
+    <property name="title">
+     <string>Fabric</string>
+    </property>
+    <addaction name="editFabric_Action"/>
+    <addaction name="addFabric_Action"/>
    </widget>
    <widget class="QMenu" name="history_Menu">
     <property name="title">
@@ -348,6 +354,7 @@
    <addaction name="view_Menu"/>
    <addaction name="tools_Menu"/>
    <addaction name="measurements_Menu"/>
+   <addaction name="fabric_Menu"/>
    <addaction name="history_Menu"/>
    <addaction name="menuUtiliries"/>
    <addaction name="help_Menu"/>
@@ -445,6 +452,9 @@
    </attribute>
   </widget>
   <widget class="QDockWidget" name="toolProperties_DockWidget">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="minimumSize">
     <size>
      <width>220</width>
@@ -478,6 +488,9 @@
    <widget class="QWidget" name="piecePropertiesDockContents"/>
   </widget>
   <widget class="QDockWidget" name="layoutPages_DockWidget">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="minimumSize">
     <size>
      <width>220</width>
@@ -564,7 +577,7 @@
   </widget>
   <widget class="QDockWidget" name="groups_DockWidget">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="minimumSize">
     <size>
@@ -2394,8 +2407,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2528,8 +2541,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>54</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -2643,6 +2656,21 @@
    <addaction name="toggleSeamAllowances_Action"/>
    <addaction name="toggleGrainLines_Action"/>
    <addaction name="toggleLabels_Action"/>
+  </widget>
+  <widget class="QDockWidget" name="pieces_DockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>82</width>
+     <height>46</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Canvas Editor</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -3040,7 +3068,7 @@
     <string>Elliptical</string>
    </property>
    <property name="iconText">
-    <string>Arc -Elliptical</string>
+    <string>Arc - Elliptical</string>
    </property>
    <property name="toolTip">
     <string>Arc - Elliptical (Alt+E)</string>
@@ -4835,9 +4863,20 @@
     <string notr="true">Ctrl+PgDown</string>
    </property>
   </action>
-  <action name="checkForUpdates_Action">
+  <action name="addFabric_Action">
    <property name="text">
-    <string>Check for updates...</string>
+    <string>Add Fabric...</string>
+   </property>
+   <property name="toolTip">
+    <string>Load an additional fabric (shown as a separate area below)</string>
+   </property>
+  </action>
+  <action name="editFabric_Action">
+   <property name="text">
+    <string>Edit Fabric...</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit fabric properties for the current pattern</string>
    </property>
   </action>
  </widget>

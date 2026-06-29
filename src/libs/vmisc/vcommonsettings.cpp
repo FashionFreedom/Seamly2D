@@ -181,6 +181,8 @@ const QString settingSeamlineNotch                       = QStringLiteral("patte
 const QString settingSeamAllowanceNotch                  = QStringLiteral("pattern/showSeamAllowanceNotch");
 
 const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
+const QString settingPatternDefaultNotchType             = QStringLiteral("pattern/defaultNotchType");
+const QString settingPatternDefaultNotchSubType          = QStringLiteral("pattern/defaultNotchSubType");
 const QString settingDefaultSeamColor                    = QStringLiteral("pattern/defaultSeamColor");
 const QString settingDefaultSeamLinetype                 = QStringLiteral("pattern/defaultSeamLinetype");
 const QString settingDefaultSeamLineweight               = QStringLiteral("pattern/defaultSeamLineweight");
@@ -1868,6 +1870,30 @@ double VCommonSettings::GetDefaultSeamAllowance()
     }
 
     return val;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::SetDefaultNotchType(int value)
+{
+    setValue(settingPatternDefaultNotchType, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::GetDefaultNotchType()
+{
+    return value(settingPatternDefaultNotchType, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::SetDefaultNotchSubType(int value)
+{
+    setValue(settingPatternDefaultNotchSubType, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::GetDefaultNotchSubType()
+{
+    return value(settingPatternDefaultNotchSubType, 0).toInt();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

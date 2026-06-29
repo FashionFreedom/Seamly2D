@@ -400,6 +400,11 @@ public:
     void                 SetDefaultSeamAllowance(double value);
     double               GetDefaultSeamAllowance();
 
+    void                 SetDefaultNotchType(int value);
+    int                  GetDefaultNotchType();
+    void                 SetDefaultNotchSubType(int value);
+    int                  GetDefaultNotchSubType();
+
     QString              getDefaultSeamColor() const;
     void                 setDefaultSeamColor(const QString &value);
 

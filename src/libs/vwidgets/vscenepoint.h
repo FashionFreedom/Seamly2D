@@ -75,6 +75,9 @@ public:
 
     void                     refreshLeader();
 
+    void                     setHighlighted(bool highlighted);
+    bool                     isHighlighted() const;
+
 protected:
 
     VGraphicsSimpleTextItem *m_pointName;  /** @brief namePoint point text. */
@@ -82,6 +85,7 @@ protected:
     QColor                   m_pointColor; /** @brief m_pointColor color of point. */
     bool                     m_onlyPoint;
     bool                     m_isHovered;
+    bool                     m_isHighlighted;
     bool                     m_showPointName;
 
     virtual void             hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;

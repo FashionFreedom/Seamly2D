@@ -59,6 +59,9 @@
 #include "core/application_2d.h"
 #include "core/vpieceoptionspropertybrowser.h"
 #include "core/vtooloptionspropertybrowser.h"
+#include "dialogs/fabric_dialog.h"
+#include "../vformat/fabricdoc.h"
+#include "../vpatterndb/variables/vfabricvariable.h"
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
@@ -645,6 +648,8 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
         pattern->ClearVariables(VarType::Measurement);
         m_measurements->readMeasurements();
+
+        loadFabricFromPattern();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -2236,6 +2241,131 @@ void MainWindow::editMeasurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void MainWindow::editFabric()
+{
+    if (m_fabricDoc.isNull())
+    {
+        m_fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
+
+        const QString existingPath = doc->FabricPath();
+        if (!existingPath.isEmpty() && QFile::exists(existingPath))
+        {
+            m_fabricDoc->setXMLContent(existingPath);
+        }
+        else
+        {
+            m_fabricDoc->createEmptyFabricFile(QString());
+        }
+    }
+
+    FabricDialog dialog(m_fabricDoc, this);
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        m_fabricDoc->readFabricProperties();
+
+        if (!dialog.loadedFilePath().isEmpty())
+        {
+            doc->SetFabricPath(dialog.loadedFilePath());
+        }
+
+        VFabricSettings settings = doc->GetFabricSettings();
+        settings.fabricWidth      = m_fabricDoc->GetWidth();
+        settings.selvedge         = m_fabricDoc->GetSelvedge();
+        settings.heightRepeat     = m_fabricDoc->GetHeightRepeat();
+        settings.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
+        settings.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
+        settings.stretchPercent   = m_fabricDoc->GetStretchPercent();
+        doc->SetFabricSettings(settings);
+
+        // Register fabric SA as variable for PatternPieceDialog override
+        if (!qFuzzyIsNull(settings.defaultSAWidth))
+        {
+            auto saVar = QSharedPointer<VFabricVariable>::create(
+                QStringLiteral("fabric_default_sa"), settings.defaultSAWidth, tr("Default SA from fabric"));
+            pattern->AddVariable(QStringLiteral("fabric_default_sa"), saVar);
+        }
+
+        VFabricSettings fabricDefaults;
+        fabricDefaults.fabricWidth      = m_fabricDoc->GetWidth();
+        fabricDefaults.selvedge         = m_fabricDoc->GetSelvedge();
+        fabricDefaults.heightRepeat     = m_fabricDoc->GetHeightRepeat();
+        fabricDefaults.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
+        fabricDefaults.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
+        fabricDefaults.stretchPercent   = m_fabricDoc->GetStretchPercent();
+        m_pieceProperties->setFabricDefaults(fabricDefaults);
+
+        // SA default stored per-document only, not synced to app settings
+
+        updateFabricWidthLines();
+        emit doc->patternChanged(false);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::addFabric()
+{
+    const QString fileName = QFileDialog::getOpenFileName(this, tr("Add Fabric"),
+        QString(), tr("Seamly Fabric Files (*.sfab);;All Files (*)"));
+
+    if (fileName.isEmpty())
+    {
+        return;
+    }
+
+    auto fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
+    fabricDoc->setXMLContent(fileName);
+    fabricDoc->readFabricProperties();
+    m_additionalFabrics.append(fabricDoc);
+
+    if (piecesWidget != nullptr)
+    {
+        piecesWidget->addFabric(fabricDoc);
+    }
+
+    updateFabricWidthLines();
+    emit doc->patternChanged(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::loadFabricFromPattern()
+{
+    const QString fabricPath = doc->FabricPath();
+    if (fabricPath.isEmpty())
+    {
+        return;
+    }
+
+    const QString absolutePath = QFileInfo(fabricPath).isAbsolute()
+        ? fabricPath
+        : QFileInfo(qApp->getFilePath()).absoluteDir().filePath(fabricPath);
+
+    if (!QFile::exists(absolutePath))
+    {
+        return;
+    }
+
+    if (m_fabricDoc.isNull())
+    {
+        m_fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
+    }
+
+    m_fabricDoc->setXMLContent(absolutePath);
+    m_fabricDoc->readFabricProperties();
+
+    if (m_pieceProperties != nullptr)
+    {
+        VFabricSettings fabricDefaults;
+        fabricDefaults.fabricWidth      = m_fabricDoc->GetWidth();
+        fabricDefaults.selvedge         = m_fabricDoc->GetSelvedge();
+        fabricDefaults.heightRepeat     = m_fabricDoc->GetHeightRepeat();
+        fabricDefaults.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
+        fabricDefaults.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
+        fabricDefaults.stretchPercent   = m_fabricDoc->GetStretchPercent();
+        m_pieceProperties->setFabricDefaults(fabricDefaults);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::measurementsChanged(const QString &path)
 {
     m_changes = false;
@@ -2776,7 +2906,7 @@ void MainWindow::updateFabricWidthLines()
     }
 
     // --- Selvedge lines ---
-    const qreal selvedge = m_fabricDoc.isNull() ? 0 : ToPixel(m_fabricDoc->GetSelvedge(), unit);
+    const qreal selvedge = ToPixel(settings.selvedge, unit);
     if (selvedge > 0.5 && width > selvedge * 2)
     {
         QPen selvedgePen(QColor(Qt::darkYellow), 1.5, Qt::DashLine);
@@ -2842,6 +2972,44 @@ void MainWindow::updateFabricWidthLines()
             QGraphicsLineItem *lineNeg = pieceScene->addLine(-x, yMin, -x, yMax, rapportPen);
             lineNeg->setZValue(-0.5);
             m_rapportLines.append(lineNeg);
+        }
+    }
+
+    // --- Additional fabrics (stacked below) ---
+    for (QGraphicsItem *item : m_additionalFabricItems)
+    {
+        pieceScene->removeItem(item);
+        delete item;
+    }
+    m_additionalFabricItems.clear();
+
+    qreal yOffset = width > 1.0 ? width + ToPixel(5.0, unit) : 0;
+    QPen additionalFabricPen(QColor(Qt::darkMagenta), 2.0, Qt::DashDotLine);
+
+    for (int i = 0; i < m_additionalFabrics.size(); ++i)
+    {
+        const auto &fab = m_additionalFabrics.at(i);
+        const qreal fabWidth = ToPixel(fab->GetWidth(), unit);
+        if (fabWidth > 1.0)
+        {
+            QGraphicsLineItem *topLine = pieceScene->addLine(
+                -lineLength / 2.0, yOffset, lineLength / 2.0, yOffset, additionalFabricPen);
+            topLine->setZValue(-0.5);
+            m_additionalFabricItems.append(topLine);
+
+            QGraphicsLineItem *bottomLine = pieceScene->addLine(
+                -lineLength / 2.0, yOffset + fabWidth, lineLength / 2.0, yOffset + fabWidth, additionalFabricPen);
+            bottomLine->setZValue(-0.5);
+            m_additionalFabricItems.append(bottomLine);
+
+            // Label
+            auto *label = new QGraphicsSimpleTextItem(fab->GetName());
+            label->setPos(-lineLength / 4.0, yOffset + 5);
+            label->setBrush(QColor(Qt::darkMagenta));
+            pieceScene->addItem(label);
+            m_additionalFabricItems.append(label);
+
+            yOffset += fabWidth + ToPixel(5.0, unit);
         }
     }
 
@@ -5926,6 +6094,25 @@ void MainWindow::initializeDocksContain()
     connect(doc, &VPattern::UpdateInLayoutList, piecesWidget, &PiecesWidget::togglePiece);
     connect(doc, &VPattern::showPiece, piecesWidget, &PiecesWidget::selectPiece);
     connect(piecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
+    connect(piecesWidget, &PiecesWidget::pieceSelected, this, [this](quint32 id)
+    {
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(id));
+        if (tool && m_pieceProperties)
+        {
+            m_pieceProperties->itemClicked(tool);
+        }
+    });
+    connect(piecesWidget, &PiecesWidget::addFabricRequested, this, &MainWindow::addFabric);
+    connect(piecesWidget, &PiecesWidget::fabricClicked, this, [this](int index)
+    {
+        if (index >= 0 && index < piecesWidget->fabrics().size())
+        {
+            FabricDialog dialog(piecesWidget->fabrics().at(index), this);
+            dialog.exec();
+        }
+    });
+    // Clear a Canvas Editor node highlight when the user clicks anywhere on the canvas.
+    connect(ui->view, &VMainGraphicsView::itemClicked, piecesWidget, &PiecesWidget::clearNodeHighlight);
 
     //disable dock widget actions until pattern loaded.
     ui->groups_DockWidget->setEnabled(false);
@@ -6452,6 +6639,8 @@ void MainWindow::createActions()
     });
 
     connect(ui->editCurrent_Action, &QAction::triggered, this, &MainWindow::editMeasurements);
+    connect(ui->editFabric_Action, &QAction::triggered, this, &MainWindow::editFabric);
+    connect(ui->addFabric_Action, &QAction::triggered, this, &MainWindow::addFabric);
     connect(ui->unloadMeasurements_Action, &QAction::triggered, this, &MainWindow::UnloadMeasurements);
     connect(ui->loadIndividual_Action, &QAction::triggered, this, &MainWindow::LoadIndividual);
     connect(ui->loadMultisize_Action, &QAction::triggered, this, &MainWindow::LoadMultisize);

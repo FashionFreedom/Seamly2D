@@ -1,76 +1,177 @@
-/***************************************************************************
- **  @file   pieces_widget.cpp
- **  @author Douglas S Caskey
- **  @date   Nov 22, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   pieces_widget.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vwidgetdetails.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   25 6, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   vwidgetdetails.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   Jun 25, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #include "pieces_widget.h"
 #include "ui_pieces_widget.h"
+#include "../vformat/fabricdoc.h"
 #include "../ifc/xml/vabstractpattern.h"
+#include "../ifc/exception/vexceptionbadid.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/vpiecepath.h"
+#include "../vgeometry/vpointf.h"
+#include "../vgeometry/vabstractcurve.h"
+#include "../vwidgets/global.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vtools/tools/pattern_piece_tool.h"
+#include "../vtools/tools/nodeDetails/vnodepoint.h"
 #include "../vtools/undocommands/togglepieceinlayout.h"
 #include "../vtools/undocommands/toggle_piecelock.h"
 #include "../vtools/undocommands/set_piece_color.h"
-#include "../vwidgets/piece_tablewidgetitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
+
+#include "../vtools/undocommands/savepieceoptions.h"
 
 #include <QColorDialog>
 #include <QList>
+#include <QSet>
 #include <QMenu>
 #include <QPainter>
+#include <QPen>
+#include <QPainterPath>
+#include <QGraphicsPathItem>
 #include <QPixmap>
 #include <QRegularExpression>
-#include <QTableWidget>
+#include <QTreeWidget>
 #include <QUndoStack>
+#include <QLineF>
+
+#include <algorithm>
+
+namespace
+{
+    // Data key marking a temporary curve-highlight overlay item in the scene.
+    const int NODE_HIGHLIGHT_KEY = 1000;
+
+    // Tool-type icon for a piece node, depending only on the node's tool type.
+    QString toolTypeIconPath(Tool toolType)
+    {
+        switch (toolType)
+        {
+            case Tool::NodePoint:
+                return QStringLiteral("://icon/16x16/toolsectionpoint.png");
+            case Tool::NodeArc:
+                return QStringLiteral("://icon/16x16/toolsectionarc.png");
+            case Tool::NodeElArc:
+                return QStringLiteral("://icon/16x16/toolsectionelarc.png");
+            case Tool::NodeSpline:
+            case Tool::NodeSplinePath:
+            default:
+                return QStringLiteral("://icon/16x16/toolsectioncurve.png");
+        }
+    }
+
+    // Icon matching the specific notch type of a node.
+    QString notchIconPath(NotchType notchType)
+    {
+        switch (notchType)
+        {
+            case NotchType::TNotch:
+                return QStringLiteral("://icon/24x24/t_notch.png");
+            case NotchType::VInternal:
+                return QStringLiteral("://icon/24x24/internal_v_notch.png");
+            case NotchType::VExternal:
+                return QStringLiteral("://icon/24x24/external_v_notch.png");
+            case NotchType::UNotch:
+                return QStringLiteral("://icon/24x24/u_notch.png");
+            case NotchType::Castle:
+                return QStringLiteral("://icon/24x24/castle_notch.png");
+            case NotchType::Diamond:
+                return QStringLiteral("://icon/24x24/diamond_notch.png");
+            case NotchType::Slit:
+            default:
+                return QStringLiteral("://icon/24x24/slit_notch.png");
+        }
+    }
+
+    // Direction arrow for a curve, computed from an (optionally reversed) point list.
+    // Mirrors VAbstractCurve::DirectionArrows so a reversed node shows a reversed arrow.
+    QVector<DirectionArrow> directionArrowsForPoints(const QVector<QPointF> &points, qreal length)
+    {
+        QVector<DirectionArrow> arrows;
+        if (points.count() < 2)
+        {
+            return arrows;
+        }
+
+        const qreal seek_length = qAbs(length) / 2.0;
+        qreal found_length = 0;
+        QLineF arrow;
+        for (qint32 i = 1; i <= points.size() - 1; ++i)
+        {
+            arrow = QLineF(points.at(i - 1), points.at(i));
+            found_length += arrow.length();
+            if (seek_length <= found_length)
+            {
+                arrow.setLength(arrow.length() - (found_length - seek_length));
+                break;
+            }
+        }
+
+        arrow = QLineF(arrow.p2(), arrow.p1());
+        const qreal angle = arrow.angle();
+        arrow.setLength(VAbstractCurve::lengthCurveDirectionArrow);
+
+        DirectionArrow dArrow;
+        arrow.setAngle(angle - 35);
+        dArrow.first = arrow;
+        arrow.setAngle(angle + 35);
+        dArrow.second = arrow;
+        arrows.append(dArrow);
+
+        return arrows;
+    }
+}
 
 #define BASE_10 10
 #define MAX_LENGTH 3
@@ -82,14 +183,33 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     , m_doc(doc)
     , m_data(data)
     , m_allPieces()
+    , m_fabrics()
+    , m_highlightedNodeId(NULL_ID)
 {
     ui->setupUi(this);
 
-    ui->tableWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    ui->treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    ui->treeWidget->setDragDropMode(QAbstractItemView::InternalMove);
+    ui->treeWidget->setDefaultDropAction(Qt::MoveAction);
+    ui->treeWidget->setSelectionMode(QAbstractItemView::SingleSelection);
+    ui->treeWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->treeWidget->setHeaderLabels({makeHeaderName(tr("Included")),
+                                     makeHeaderName(tr("Locked")),
+                                     makeHeaderName(tr("Color")),
+                                     makeHeaderName(tr("Piece")),
+                                     tr("Name")});
+    ui->treeWidget->header()->setSectionResizeMode(0, QHeaderView::Fixed);
+    ui->treeWidget->header()->setSectionResizeMode(1, QHeaderView::Fixed);
+    ui->treeWidget->header()->setSectionResizeMode(2, QHeaderView::Fixed);
+    ui->treeWidget->header()->setSectionResizeMode(3, QHeaderView::ResizeToContents);
+    ui->treeWidget->header()->setSectionResizeMode(4, QHeaderView::Stretch);
+    ui->treeWidget->setColumnWidth(0, 48);
+    ui->treeWidget->setColumnWidth(1, 26);
+    ui->treeWidget->setColumnWidth(2, 26);
+    ui->treeWidget->setTextElideMode(Qt::ElideRight);
+    ui->treeWidget->setIndentation(12);
 
-    fillTable(m_data->DataPieces());
-    QSettings settings;
-    ui->tableWidget->sortItems(settings.value("pieceSort", 4).toInt(), Qt::AscendingOrder);
+    fillTree(m_data->DataPieces());
 
     connect(ui->includeAllPieces_ToolButton,     &QToolButton::clicked, this,  &PiecesWidget::includeAllPieces);
     connect(ui->invertIncludedPieces_ToolButton, &QToolButton::clicked, this,  [this]()
@@ -110,16 +230,19 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
 
     connect(ui->editColor_ToolButton, &QToolButton::clicked, this,  [this]()
     {
-        QList<QTableWidgetItem *> selected = ui->tableWidget->selectedItems();
+        QList<QTreeWidgetItem *> selected = ui->treeWidget->selectedItems();
         if (selected.isEmpty())
         {
             QApplication::beep();
             return;
         }
-        QTableWidgetItem *item = ui->tableWidget->item(selected.first()->row(), 0);
-        if (!item) return;
+        QTreeWidgetItem *item = selected.first();
+        if (item->data(0, IsFabricRole).toBool())
+        {
+            return;
+        }
 
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
         const bool locked = allPieces->value(id).isLocked();
 
@@ -129,22 +252,25 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
             return;
         }
         editPieceColor(id);
-        ui->tableWidget->clearSelection();
+        ui->treeWidget->clearSelection();
         emit Highlight(NULL);
     });
 
     connect(ui->editPiece_ToolButton, &QToolButton::clicked, this,  [this]()
     {
-        QList<QTableWidgetItem *> selected = ui->tableWidget->selectedItems();
+        QList<QTreeWidgetItem *> selected = ui->treeWidget->selectedItems();
         if (selected.isEmpty())
         {
             QApplication::beep();
             return;
         }
-        QTableWidgetItem *item = ui->tableWidget->item(selected.first()->row(), 0);
-        if (!item) return;
+        QTreeWidgetItem *item = selected.first();
+        if (item->data(0, IsFabricRole).toBool())
+        {
+            return;
+        }
 
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
         const bool locked = allPieces->value(id).isLocked();
 
@@ -154,14 +280,16 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
             return;
         }
         editPieceProperties(id);
-        ui->tableWidget->clearSelection();
+        ui->treeWidget->clearSelection();
         emit Highlight(NULL);
     });
 
-    connect(ui->tableWidget, &QTableWidget::cellClicked,                       this, &PiecesWidget::cellClicked);
-    connect(ui->tableWidget, &QTableWidget::cellDoubleClicked,                 this, &PiecesWidget::cellDoubleClicked);
-    connect(ui->tableWidget, &QTableWidget::customContextMenuRequested,        this, &PiecesWidget::showContextMenu);
-    connect(ui->tableWidget->horizontalHeader(), &QHeaderView::sectionClicked, this, &PiecesWidget::headerClicked);
+    connect(ui->treeWidget, &QTreeWidget::itemClicked,                    this, &PiecesWidget::itemClicked);
+    connect(ui->treeWidget, &QTreeWidget::itemDoubleClicked,              this, &PiecesWidget::itemDoubleClicked);
+    connect(ui->treeWidget, &QTreeWidget::itemChanged,                    this, &PiecesWidget::itemChanged);
+    connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested,     this, &PiecesWidget::showContextMenu);
+
+    connect(ui->treeWidget->model(), &QAbstractItemModel::rowsInserted, this, &PiecesWidget::onDropCompleted);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -178,111 +306,159 @@ void PiecesWidget::changeEvent(QEvent *event)
         ui->retranslateUi(this);
     }
 
-    // remember to call base class implementation
     QWidget::changeEvent(event);
 }
+
 //---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::togglePiece(quint32 id)
 {
-    ui->tableWidget->setSortingEnabled(false);
-    ui->tableWidget->clearSelection();
-
-    int selectedRow = 0;
     const QHash<quint32, VPiece> *pieces = m_data->DataPieces();
-
-    if (pieces->contains(id))
+    if (!pieces->contains(id))
     {
-        for (int row = 0; row < ui->tableWidget->rowCount(); ++row)
-        {
-            QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-            SCASSERT(item != nullptr)
-
-            if (item && item->data(Qt::UserRole).toUInt() == id)
-            {
-                    selectedRow = row;
-                    VPiece piece = pieces->value(id);
-                    const bool inLayout = piece.isInLayout();
-                    inLayout ? item->setIcon(QIcon("://icon/32x32/visible_on.png"))
-                             : item->setIcon(QIcon("://icon/32x32/visible_off.png"));
-                    {
-                        QTableWidgetItem *item = ui->tableWidget->item(row, 1);
-                        const bool locked = piece.isLocked();
-                        locked ? item->setIcon(QIcon("://icon/32x32/lock_on.png"))
-                               : item->setIcon(QIcon("://icon/32x32/lock_off.png"));
-                    }
-
-                    {
-                        QTableWidgetItem *item = ui->tableWidget->item(row, 2);
-                        QPixmap pixmap(20, 20);
-                        pixmap.fill(QColor(piece.getColor()));
-                        item->setIcon(QIcon(pixmap));
-                        item->setData(Qt::UserRole, piece.getColor());
-                    }
-
-                    {
-                        QTableWidgetItem *item = ui->tableWidget->item(row, 3);
-                        item->setText(formatLetterString(piece));
-                    }
-
-                    {
-                        QTableWidgetItem *item = ui->tableWidget->item(row, 4);
-                        item->setText(piece.GetName());
-                    }
-            }
-        }
+        return;
     }
 
-    ui->tableWidget->selectRow(selectedRow);
-    ui->tableWidget->setSortingEnabled(true);
-}
+    const VPiece piece = pieces->value(id);
+    QList<QTreeWidgetItem *> items = allPieceItems();
 
-//---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::updateList()
-{
-    fillTable(m_data->DataPieces());
-}
-
-
-//---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::selectPiece(quint32 id)
-{
-    const int rowCount = ui->tableWidget->rowCount();
-    for (int row = 0; row < rowCount; ++row)
+    for (QTreeWidgetItem *item : items)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-
-        if (item->data(Qt::UserRole).toUInt() == id)
+        if (item->data(0, PieceIdRole).toUInt() == id)
         {
-            ui->tableWidget->setCurrentItem(item);
+            PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
+            const bool visible = tool ? tool->isVisible() : true;
+            item->setIcon(0, visible ? QIcon("://icon/32x32/visible_on.png")
+                                     : QIcon("://icon/32x32/visible_off.png"));
+            item->setIcon(1, piece.isLocked() ? QIcon("://icon/32x32/lock_on.png")
+                                              : QIcon("://icon/32x32/lock_off.png"));
+
+            QPixmap pixmap(20, 20);
+            pixmap.fill(QColor(piece.getColor()));
+            item->setIcon(2, QIcon(pixmap));
+
+            item->setText(3, formatLetterString(piece));
+            item->setText(4, piece.GetName());
+
+            ui->treeWidget->setCurrentItem(item);
             return;
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::cellClicked(int row, int column)
+void PiecesWidget::updateList()
 {
-    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-    if (!item) return;
+    fillTree(m_data->DataPieces());
+}
 
-    const quint32 id = item->data(Qt::UserRole).toUInt();
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::selectPiece(quint32 id)
+{
+    QList<QTreeWidgetItem *> items = allPieceItems();
+    for (QTreeWidgetItem *item : items)
+    {
+        if (item->data(0, PieceIdRole).toUInt() == id)
+        {
+            ui->treeWidget->setCurrentItem(item);
+            return;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::clear()
+{
+    ui->treeWidget->clear();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::itemClicked(QTreeWidgetItem *item, int column)
+{
+    if (!item)
+    {
+        return;
+    }
+
+    if (item->data(0, IsNodeRole).toBool())
+    {
+        const quint32 nodeId = item->data(0, NodeIdRole).toUInt();
+        clearNodeHighlight();
+        if (nodeId == NULL_ID)
+        {
+            return;
+        }
+
+        // In Piece (Stück) mode the current scene is the piece scene, where the
+        // VNodePoint items live as children of the PatternPieceTool. NodeIdRole holds
+        // the VNode tool id, so getTool() returns the node tool directly.
+        // getTool() throws VExceptionBadId for an unknown id.
+        VNodePoint *nodePoint = nullptr;
+        try
+        {
+            nodePoint = qobject_cast<VNodePoint *>(VAbstractPattern::getTool(nodeId));
+        }
+        catch (const VExceptionBadId &)
+        {
+            return;
+        }
+
+        if (nodePoint != nullptr)
+        {
+            // Point node: it has its own scene item, highlight it directly.
+            if (nodePoint->isVisible())
+            {
+                nodePoint->setHighlighted(true);
+                nodePoint->ensureVisible();
+                m_highlightedNodeId = nodeId;
+            }
+        }
+        else
+        {
+            // Curve node (spline/arc/...): no own scene item, it is drawn by the piece
+            // path. Draw a temporary red overlay along the curve geometry instead.
+            highlightCurveNode(nodeId, item->parent());
+        }
+        return;
+    }
+
+    clearNodeHighlight();
+
+    if (item->data(0, IsFabricRole).toBool())
+    {
+        const int fabricIdx = item->data(0, FabricIdRole).toInt();
+        if (fabricIdx == -1)
+        {
+            emit addFabricRequested();
+        }
+        else
+        {
+            emit fabricClicked(fabricIdx);
+        }
+        return;
+    }
+
+    const quint32 id = item->data(0, PieceIdRole).toUInt();
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
     const bool locked = allPieces->value(id).isLocked();
 
     if (column == 0)
     {
-        if (locked == false)
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
+        if (tool)
         {
-            const bool inLayout = !allPieces->value(id).isInLayout();
+            const bool nowVisible = !tool->isVisible();
+            tool->setVisible(nowVisible);
 
-            TogglePieceInLayout *command = new TogglePieceInLayout(id, inLayout, m_data, m_doc);
+            TogglePieceInLayout *command = new TogglePieceInLayout(id, nowVisible, m_data, m_doc);
             connect(command, &TogglePieceInLayout::updateList, this, &PiecesWidget::togglePiece);
             qApp->getUndoStack()->push(command);
+
+            ui->treeWidget->blockSignals(true);
+            item->setIcon(0, nowVisible ? QIcon("://icon/32x32/visible_on.png")
+                                        : QIcon("://icon/32x32/visible_off.png"));
+            ui->treeWidget->blockSignals(false);
         }
-        else
-        {
-            QApplication::beep();
-        }
+        return;
     }
     else if (column == 1)
     {
@@ -294,38 +470,52 @@ void PiecesWidget::cellClicked(int row, int column)
         SCASSERT(scene != nullptr)
         emit scene->pieceLockedChanged(id, locked);
     }
-    if (column == 2)
+    else if (column == 2 || column == 3 || column == 4)
     {
         if (locked == true)
         {
             QApplication::beep();
         }
-    }
-    else if (column == 3 || column == 4)
-    {
-        if (locked == true)
-        {
-            QApplication::beep();
-        }
-
     }
     emit Highlight(id);
+    emit pieceSelected(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::cellDoubleClicked(int row, int column)
+void PiecesWidget::itemDoubleClicked(QTreeWidgetItem *item, int column)
 {
-    QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-    if (!item) return;
+    if (!item)
+    {
+        return;
+    }
 
-    const quint32 id = item->data(Qt::UserRole).toUInt();
+    if (item->data(0, IsNodeRole).toBool())
+    {
+        return;
+    }
+
+    if (item->data(0, IsFabricRole).toBool())
+    {
+        const int fabricIdx = item->data(0, FabricIdRole).toInt();
+        if (fabricIdx == -1)
+        {
+            emit addFabricRequested();
+        }
+        else
+        {
+            emit fabricClicked(fabricIdx);
+        }
+        return;
+    }
+
+    const quint32 id = item->data(0, PieceIdRole).toUInt();
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
     const bool locked = allPieces->value(id).isLocked();
 
     if (locked == true)
     {
         QApplication::beep();
-        ui->tableWidget->clearSelection();
+        ui->treeWidget->clearSelection();
         emit Highlight(NULL);
         return;
     }
@@ -333,98 +523,322 @@ void PiecesWidget::cellDoubleClicked(int row, int column)
     if (column == 2)
     {
         editPieceColor(id);
+        ui->treeWidget->clearSelection();
+        emit Highlight(NULL);
     }
-    else if (column == 3 || column == 4)
+    else if (column == 3)
     {
         editPieceProperties(id);
+        ui->treeWidget->clearSelection();
+        emit Highlight(NULL);
     }
-    ui->tableWidget->clearSelection();
-    emit Highlight(NULL);
+    else if (column == 4)
+    {
+        item->setFlags(item->flags() | Qt::ItemIsEditable);
+        ui->treeWidget->editItem(item, 4);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
+QTreeWidgetItem *PiecesWidget::createFabricNode(int fabricIndex)
 {
-    ui->tableWidget->blockSignals(true);
-    ui->tableWidget->clearContents();
-    ui->tableWidget->setColumnCount(5);
-    ui->tableWidget->setRowCount(pieces->size());
-    ui->tableWidget->setSortingEnabled(false);
+    QTreeWidgetItem *node = new QTreeWidgetItem();
 
-    qint32 currentRow = -1;
-    auto i = pieces->constBegin();
-    while (i != pieces->constEnd())
+    if (fabricIndex >= 0 && fabricIndex < m_fabrics.size())
     {
-        ++currentRow;
-        const VPiece piece = i.value();
-
-        // Add in layout item
-        PieceTableWidgetItem *item = new PieceTableWidgetItem(m_data);
-        item->setTextAlignment(Qt::AlignHCenter);
-        item->setSizeHint(QSize(20, 20));
-        item->setIcon(piece.isInLayout() ? QIcon("://icon/32x32/visible_on.png") : QIcon("://icon/32x32/visible_off.png"));
-        item->setData(Qt::UserRole, i.key());
-        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable)); // set the item non-editable (view only), and non-selectable
-        item->setToolTip(tr("Toggle inclusion of pattern piece in layout"));
-        ui->tableWidget->setItem(currentRow, 0, item);
-
-        // Add locked item
-        item = new PieceTableWidgetItem(m_data);
-        item->setTextAlignment(Qt::AlignHCenter);
-        item->setSizeHint(QSize(20, 20));
-        item->setIcon(piece.isLocked() ? QIcon("://icon/32x32/lock_on.png") : QIcon("://icon/32x32/lock_off.png"));
-        item->setData(Qt::UserRole, i.key());
-        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
-        item->setToolTip(tr("Toggle lock on pattern piece"));
-        ui->tableWidget->setItem(currentRow, 1, item);
-
-        // Add color item
-        item = new PieceTableWidgetItem(m_data);
-        item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        item->setSizeHint(QSize(20, 20));
-        QPixmap pixmap(20, 20);
-        pixmap.fill(QColor(piece.getColor()));
-        item->setIcon(QIcon(pixmap));
-        item->setData(Qt::UserRole, piece.getColor());
-        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
-        item->setToolTip(tr("Double click opens color selector"));
-        ui->tableWidget->setItem(currentRow, 2, item);
-
-        { // Add letter item
-            QTableWidgetItem *item = new QTableWidgetItem(formatLetterString(piece));
-            item->setTextAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-            item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
-            item->setToolTip(tr("Double click opens pattern piece properties dialog"));
-            ui->tableWidget->setItem(currentRow, 3, item);
-        }
-
-        { // Add name item
-            QTableWidgetItem *item = new QTableWidgetItem(piece.GetName());
-            item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-            item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
-            item->setToolTip(tr("Double click opens pattern piece properties dialog"));
-            ui->tableWidget->setItem(currentRow, 4, item);
-        }
-
-        ++i;
+        const auto &fab = m_fabrics.at(fabricIndex);
+        const QString label = QStringLiteral("%1 (%2 cm, %3)")
+            .arg(fab->GetName())
+            .arg(QString::number(fab->GetWidth(), 'f', 0))
+            .arg(fab->GetColor());
+        node->setIcon(0, QIcon(QStringLiteral("://icon/32x32/visible_on.png")));
+        node->setText(4, label);
+    }
+    else if (fabricIndex == -1)
+    {
+        node->setIcon(0, QIcon(QStringLiteral("://icon/24x24/plus.png")));
+        node->setText(4, tr("Add Fabric..."));
+    }
+    else
+    {
+        node->setIcon(0, QIcon(QStringLiteral("://icon/32x32/visible_on.png")));
+        node->setText(4, tr("No fabric assigned"));
     }
 
-    ui->tableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem(makeHeaderName(tr("Included"))));
-    ui->tableWidget->horizontalHeaderItem(0)->setToolTip(tr("Pattern piece is included in layout"));
-    ui->tableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem(makeHeaderName(tr("Locked"))));
-    ui->tableWidget->horizontalHeaderItem(1)->setToolTip(tr("Pattern piece is locked"));
-    ui->tableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem(makeHeaderName(tr("Color"))));
-    ui->tableWidget->horizontalHeaderItem(2)->setToolTip(tr("Pattern piece color"));
-    ui->tableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem(makeHeaderName(tr("Piece"))));
-    ui->tableWidget->horizontalHeaderItem(3)->setToolTip(tr("Pattern piece letter"));
-    ui->tableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem(tr("Name")));
-    ui->tableWidget->horizontalHeaderItem(4)->setToolTip(tr("Pattern piece name"));
-    ui->tableWidget->horizontalHeaderItem(4)->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
-    ui->tableWidget->resizeColumnsToContents();
-    ui->tableWidget->resizeRowsToContents();
-    ui->tableWidget->setSortingEnabled(true);
-    ui->tableWidget->blockSignals(false);
+    QFont boldFont = node->font(4);
+    boldFont.setBold(true);
+    node->setFont(4, boldFont);
+
+    node->setData(0, IsFabricRole, true);
+    node->setData(0, FabricIdRole, fabricIndex);
+    if (fabricIndex == -1)
+    {
+        node->setFlags(Qt::ItemIsEnabled);
+    }
+    else
+    {
+        node->setFlags(Qt::ItemIsEnabled | Qt::ItemIsDropEnabled);
+    }
+
+    return node;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QTreeWidgetItem *PiecesWidget::createPieceItem(quint32 id, const VPiece &piece)
+{
+    QTreeWidgetItem *item = new QTreeWidgetItem();
+
+    PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
+    const bool visible = tool ? tool->isVisible() : true;
+    item->setIcon(0, visible ? QIcon("://icon/32x32/visible_on.png")
+                             : QIcon("://icon/32x32/visible_off.png"));
+    item->setToolTip(0, tr("Toggle visibility of pattern piece on canvas"));
+
+    item->setIcon(1, piece.isLocked() ? QIcon("://icon/32x32/lock_on.png")
+                                      : QIcon("://icon/32x32/lock_off.png"));
+    item->setToolTip(1, tr("Toggle lock on pattern piece"));
+
+    QPixmap pixmap(20, 20);
+    pixmap.fill(QColor(piece.getColor()));
+    item->setIcon(2, QIcon(pixmap));
+    item->setToolTip(2, tr("Double click opens color selector"));
+
+    item->setText(3, formatLetterString(piece));
+    item->setToolTip(3, tr("Double click opens pattern piece properties dialog"));
+
+    item->setText(4, piece.GetName());
+    item->setToolTip(4, tr("Click to rename"));
+
+    item->setData(0, PieceIdRole, id);
+    item->setData(0, IsFabricRole, false);
+    item->setData(0, IsNodeRole, false);
+    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
+
+    const QVector<VPieceNode> nodes = piece.GetPath().getNodes();
+    for (const VPieceNode &node : nodes)
+    {
+        QTreeWidgetItem *nodeItem = createNodeItem(node);
+        if (nodeItem)
+        {
+            item->addChild(nodeItem);
+        }
+    }
+
+    return item;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QTreeWidgetItem *PiecesWidget::createNodeItem(const VPieceNode &node)
+{
+    QTreeWidgetItem *item = new QTreeWidgetItem();
+
+    const bool isPoint = (node.GetTypeTool() == Tool::NodePoint);
+
+    QString name;
+    try
+    {
+        if (isPoint)
+        {
+            name = m_data->GeometricObject<VPointF>(node.GetId())->name();
+        }
+        else
+        {
+            name = m_data->GeometricObject<VAbstractCurve>(node.GetId())->name();
+        }
+    }
+    catch (...)
+    {
+        return nullptr;
+    }
+
+    // Column 2: modifier icon — notch-type icon for points, reverse icon for curves.
+    // (A node is either a point or a curve, so the column serves both cases.)
+    if (isPoint && node.isNotch())
+    {
+        item->setIcon(2, QIcon(notchIconPath(node.getNotchType())));
+        item->setToolTip(2, tr("Notch"));
+    }
+    else if (!isPoint && node.GetReverse())
+    {
+        item->setIcon(2, QIcon(QStringLiteral("://icon/24x24/reverse.png")));
+        item->setToolTip(2, tr("Reversed"));
+    }
+
+    // Column 3: tool-type icon — depends only on the node's tool type.
+    item->setIcon(3, QIcon(toolTypeIconPath(node.GetTypeTool())));
+
+    item->setText(4, name);
+    item->setToolTip(4, tr("Double click to edit node"));
+
+    if (node.isExcluded())
+    {
+        QFont strikeFont = item->font(4);
+        strikeFont.setStrikeOut(true);
+        item->setFont(4, strikeFont);
+        item->setForeground(4, QColor(Qt::gray));
+    }
+
+    item->setData(0, IsNodeRole, true);
+    item->setData(0, NodeIdRole, node.GetId());
+    item->setData(0, IsFabricRole, false);
+    item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+
+    return item;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::fillTree(const QHash<quint32, VPiece> *pieces)
+{
+    QSet<quint32> expandedPieces;
+    QList<QTreeWidgetItem *> oldItems = allPieceItems();
+    for (QTreeWidgetItem *old : oldItems)
+    {
+        if (old->isExpanded())
+        {
+            expandedPieces.insert(old->data(0, PieceIdRole).toUInt());
+        }
+    }
+
+    ui->treeWidget->blockSignals(true);
+    ui->treeWidget->clear();
+
+    QTreeWidgetItem *unassignedNode = createFabricNode(-2);
+
+    QMap<int, QTreeWidgetItem *> fabricNodes;
+    for (int i = 0; i < m_fabrics.size(); ++i)
+    {
+        QTreeWidgetItem *node = createFabricNode(i);
+        fabricNodes[i] = node;
+        ui->treeWidget->addTopLevelItem(node);
+    }
+
+    auto it = pieces->constBegin();
+    while (it != pieces->constEnd())
+    {
+        const quint32 id = it.key();
+        const VPiece &piece = it.value();
+        QTreeWidgetItem *item = createPieceItem(id, piece);
+
+        int fabIdx = fabricIndexForPiece(id);
+        if (fabIdx >= 0 && fabricNodes.contains(fabIdx))
+        {
+            fabricNodes[fabIdx]->addChild(item);
+        }
+        else
+        {
+            unassignedNode->addChild(item);
+        }
+        ++it;
+    }
+
+    if (unassignedNode->childCount() > 0)
+    {
+        ui->treeWidget->insertTopLevelItem(0, unassignedNode);
+    }
+    else
+    {
+        delete unassignedNode;
+    }
+
+    QTreeWidgetItem *addNode = createFabricNode(-1);
+    ui->treeWidget->addTopLevelItem(addNode);
+
+    for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
+    {
+        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
+        top->setExpanded(true);
+        for (int j = 0; j < top->childCount(); ++j)
+        {
+            QTreeWidgetItem *pieceItem = top->child(j);
+            const quint32 pid = pieceItem->data(0, PieceIdRole).toUInt();
+            pieceItem->setExpanded(expandedPieces.contains(pid));
+        }
+    }
+    ui->treeWidget->blockSignals(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int PiecesWidget::fabricIndexForPiece(quint32 id) const
+{
+    return m_pieceFabricMap.value(id, -1);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QTreeWidgetItem *> PiecesWidget::allPieceItems() const
+{
+    QList<QTreeWidgetItem *> result;
+    for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
+    {
+        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
+        for (int j = 0; j < top->childCount(); ++j)
+        {
+            result.append(top->child(j));
+        }
+    }
+    return result;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::onDropCompleted()
+{
+    for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
+    {
+        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
+        if (!top->data(0, IsFabricRole).toBool())
+        {
+            continue;
+        }
+        const int fabricIdx = top->data(0, FabricIdRole).toInt();
+        for (int j = 0; j < top->childCount(); ++j)
+        {
+            QTreeWidgetItem *child = top->child(j);
+            if (!child->data(0, IsFabricRole).toBool())
+            {
+                const quint32 pieceId = child->data(0, PieceIdRole).toUInt();
+                if (fabricIdx >= 0)
+                {
+                    m_pieceFabricMap[pieceId] = fabricIdx;
+                }
+                else
+                {
+                    m_pieceFabricMap.remove(pieceId);
+                }
+                emit pieceFabricChanged(pieceId, fabricIdx);
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::itemChanged(QTreeWidgetItem *item, int column)
+{
+    if (!item || column != 4 || item->data(0, IsFabricRole).toBool())
+    {
+        return;
+    }
+
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+
+    const quint32 id = item->data(0, PieceIdRole).toUInt();
+    const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
+    if (!allPieces->contains(id))
+    {
+        return;
+    }
+
+    const QString newName = item->text(4).trimmed();
+    VPiece oldPiece = allPieces->value(id);
+    if (newName.isEmpty() || newName == oldPiece.GetName())
+    {
+        return;
+    }
+
+    VPiece newPiece = oldPiece;
+    newPiece.SetName(newName);
+
+    SavePieceOptions *command = new SavePieceOptions(oldPiece, newPiece, m_doc, id);
+    qApp->getUndoStack()->push(command);
+    updateList();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -436,10 +850,10 @@ void PiecesWidget::toggleInLayoutPieces(bool inLayout)
         return;
     }
 
-    for (int row = 0; row<ui->tableWidget->rowCount(); ++row)
+    QList<QTreeWidgetItem *> items = allPieceItems();
+    for (QTreeWidgetItem *item : items)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         if (allPieces->contains(id))
         {
             if (!(inLayout == allPieces->value(id).isInLayout()))
@@ -455,18 +869,17 @@ void PiecesWidget::toggleInLayoutPieces(bool inLayout)
 //---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::toggleLockedPieces(bool lock)
 {
-    ui->tableWidget->blockSignals(true);
-    ui->tableWidget->horizontalHeader()->setSortIndicator(-1, Qt::AscendingOrder);
+    ui->treeWidget->blockSignals(true);
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
     if (allPieces->count() == 0)
     {
         return;
     }
 
-    for (int row = 0; row<ui->tableWidget->rowCount(); ++row)
+    QList<QTreeWidgetItem *> items = allPieceItems();
+    for (QTreeWidgetItem *item : items)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(row, 1);
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         if (allPieces->contains(id))
         {
             if (!(lock == allPieces->value(id).isLocked()))
@@ -481,22 +894,10 @@ void PiecesWidget::toggleLockedPieces(bool lock)
             }
         }
     }
-    ui->tableWidget->blockSignals(false);
-}
-/**
- * @brief headerClicked Sort state whenever header section clicked.
- * @param index
- */
-void PiecesWidget::headerClicked(int index)
-{
-    QSettings settings;
-    settings.setValue("pieceSort", index);
+    ui->treeWidget->blockSignals(false);
 }
 
-/**
- * @brief formatLetterString makes name to include piece letter and piece name
- * @param piece pattern piece
- */
+//---------------------------------------------------------------------------------------------------------------------
 QString PiecesWidget::formatLetterString(const VPiece piece)
 {
     QRegularExpression regExp("^\\d+$");
@@ -513,15 +914,20 @@ QString PiecesWidget::formatLetterString(const VPiece piece)
     }
     return letter;
 }
+
 //---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::showContextMenu(const QPoint &pos)
 {
-    ui->tableWidget->horizontalHeader()->setSortIndicator(-1, Qt::AscendingOrder);
-    ui->tableWidget->setSortingEnabled(false);
-    ui->tableWidget->blockSignals(true);
+    QTreeWidgetItem *clickedItem = ui->treeWidget->itemAt(pos);
+    if (clickedItem && clickedItem->data(0, IsNodeRole).toBool())
+    {
+        showNodeContextMenu(clickedItem, ui->treeWidget->viewport()->mapToGlobal(pos));
+        return;
+    }
 
-    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
-    QScopedPointer<QMenu> menu(new QMenu(ui->tableWidget));
+    ui->treeWidget->blockSignals(true);
+
+    QScopedPointer<QMenu> menu(new QMenu(ui->treeWidget));
     QAction *selectAll = menu->addAction(tr("Include all pieces"));
     QAction *selectNone = menu->addAction(tr("Exclude all pieces"));
     QAction *invertSelection = menu->addAction(tr("Invert included pieces"));
@@ -575,7 +981,7 @@ void PiecesWidget::showContextMenu(const QPoint &pos)
         lockAll->setDisabled(true);
     }
 
-    QAction *selectedAction = menu->exec(ui->tableWidget->viewport()->mapToGlobal(pos));
+    QAction *selectedAction = menu->exec(ui->treeWidget->viewport()->mapToGlobal(pos));
 
     if (selectedAction == selectAll)
     {
@@ -589,7 +995,6 @@ void PiecesWidget::showContextMenu(const QPoint &pos)
     {
         invertIncludedPieces();
     }
-
     else if (selectedAction == lockAll)
     {
         lockAllPieces();
@@ -602,10 +1007,10 @@ void PiecesWidget::showContextMenu(const QPoint &pos)
     {
         invertLockedPieces();
     }
-    ui->tableWidget->setSortingEnabled(true);
-    ui->tableWidget->blockSignals(false);
+    ui->treeWidget->blockSignals(false);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::includeAllPieces()
 {
     qApp->getUndoStack()->beginMacro(tr("Include all pieces"));
@@ -613,6 +1018,7 @@ void PiecesWidget::includeAllPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::invertIncludedPieces()
 {
     if (m_allPieces->isEmpty())
@@ -621,10 +1027,10 @@ void PiecesWidget::invertIncludedPieces()
     }
     qApp->getUndoStack()->beginMacro(tr("Invert included pieces"));
 
-    for (int row = 0; row < ui->tableWidget->rowCount(); ++row)
+    QList<QTreeWidgetItem *> items = allPieceItems();
+    for (QTreeWidgetItem *item : items)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(row, 0);
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         if (m_allPieces->contains(id))
         {
             const bool inLayout = !m_allPieces->value(id).isInLayout();
@@ -638,6 +1044,7 @@ void PiecesWidget::invertIncludedPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::excludeAllPieces()
 {
     qApp->getUndoStack()->beginMacro(tr("Exclude all pieces"));
@@ -645,6 +1052,7 @@ void PiecesWidget::excludeAllPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::lockAllPieces()
 {
     qApp->getUndoStack()->beginMacro(tr("Lock all pieces"));
@@ -652,6 +1060,7 @@ void PiecesWidget::lockAllPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::invertLockedPieces()
 {
     if (m_allPieces->isEmpty())
@@ -660,10 +1069,10 @@ void PiecesWidget::invertLockedPieces()
     }
     qApp->getUndoStack()->beginMacro(tr("Invert locked pieces"));
 
-    for (int row = 0; row < ui->tableWidget->rowCount(); ++row)
+    QList<QTreeWidgetItem *> items = allPieceItems();
+    for (QTreeWidgetItem *item : items)
     {
-        QTableWidgetItem *item = ui->tableWidget->item(row, 1);
-        const quint32 id = item->data(Qt::UserRole).toUInt();
+        const quint32 id = item->data(0, PieceIdRole).toUInt();
         if (m_allPieces->contains(id))
         {
             const bool lock = !m_allPieces->value(id).isLocked();
@@ -681,6 +1090,7 @@ void PiecesWidget::invertLockedPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::unlockAllPieces()
 {
     qApp->getUndoStack()->beginMacro(tr("Unlock all pieces"));
@@ -688,9 +1098,10 @@ void PiecesWidget::unlockAllPieces()
     qApp->getUndoStack()->endMacro();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::editPieceColor(quint32 id)
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), QColorDialog::DontUseNativeDialog);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), COLORDIALOG_OPTIONS);
     if (color.isValid())
     {
         SetPieceColor *command = new SetPieceColor(id, color.name(), m_data, m_doc);
@@ -700,9 +1111,261 @@ void PiecesWidget::editPieceColor(quint32 id)
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::editPieceProperties(quint32 id)
 {
     PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
     SCASSERT(tool != nullptr);
     tool->editPieceProperties();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::addFabric(QSharedPointer<FabricDoc> fabric)
+{
+    m_fabrics.append(fabric);
+    fillTree(m_data->DataPieces());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::clearNodeHighlight()
+{
+    // Clear a highlighted point node.
+    if (m_highlightedNodeId != NULL_ID)
+    {
+        try
+        {
+            VNodePoint *nodePoint = qobject_cast<VNodePoint *>(VAbstractPattern::getTool(m_highlightedNodeId));
+            if (nodePoint != nullptr)
+            {
+                nodePoint->setHighlighted(false);
+            }
+        }
+        catch (const VExceptionBadId &)
+        {
+            // tool no longer exists (e.g. piece deleted) — nothing to clear
+        }
+        m_highlightedNodeId = NULL_ID;
+    }
+
+    // Remove any temporary curve-highlight overlay. Query the live scene so we never
+    // dereference an item the scene may already have deleted (e.g. on file reload).
+    QGraphicsScene *scene = qApp->getCurrentScene();
+    if (scene != nullptr)
+    {
+        const QList<QGraphicsItem *> items = scene->items();
+        for (QGraphicsItem *gItem : items)
+        {
+            if (gItem->data(NODE_HIGHLIGHT_KEY).toBool())
+            {
+                scene->removeItem(gItem);
+                delete gItem;
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::highlightCurveNode(quint32 nodeId, QTreeWidgetItem *pieceItem)
+{
+    QGraphicsScene *scene = qApp->getCurrentScene();
+    if (scene == nullptr)
+    {
+        return;
+    }
+
+    // Find whether this node is reversed within its owning piece.
+    bool reversed = false;
+    if (pieceItem != nullptr)
+    {
+        const quint32 pieceId = pieceItem->data(0, PieceIdRole).toUInt();
+        const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
+        if (allPieces->contains(pieceId))
+        {
+            const QVector<VPieceNode> nodes = allPieces->value(pieceId).GetPath().getNodes();
+            for (const VPieceNode &n : nodes)
+            {
+                if (n.GetId() == nodeId)
+                {
+                    reversed = n.GetReverse();
+                    break;
+                }
+            }
+        }
+    }
+
+    QPainterPath path;
+    try
+    {
+        const QSharedPointer<VAbstractCurve> curve = m_data->GeometricObject<VAbstractCurve>(nodeId);
+        path = curve->GetPath();
+
+        // Append the direction arrow, mirroring how curves show direction in draft mode.
+        // Reverse the point order for reversed nodes so the arrow points the right way.
+        QVector<QPointF> points = curve->getPoints();
+        if (reversed)
+        {
+            std::reverse(points.begin(), points.end());
+        }
+        const QPainterPath arrows = VAbstractCurve::ShowDirection(
+            directionArrowsForPoints(points, curve->GetLength()),
+            scaleWidth(VAbstractCurve::lengthCurveDirectionArrow, sceneScale(scene)));
+        if (arrows != QPainterPath())
+        {
+            path.addPath(arrows);
+        }
+    }
+    catch (...)
+    {
+        return;
+    }
+
+    if (path == QPainterPath())
+    {
+        return;
+    }
+
+    QGraphicsPathItem *overlay = new QGraphicsPathItem(path);
+    QPen pen(Qt::red);
+    pen.setWidth(3);
+    pen.setCosmetic(true);   // constant width regardless of zoom
+    overlay->setPen(pen);
+    overlay->setBrush(Qt::NoBrush);
+    overlay->setZValue(1000);
+    overlay->setData(NODE_HIGHLIGHT_KEY, true);
+
+    // Parent the overlay to the PatternPieceTool so it follows the piece's transform;
+    // the curve geometry is in the same local coordinate system as the piece nodes.
+    PatternPieceTool *pieceTool = nullptr;
+    if (pieceItem != nullptr)
+    {
+        const quint32 pieceId = pieceItem->data(0, PieceIdRole).toUInt();
+        if (pieceId != NULL_ID)
+        {
+            try
+            {
+                pieceTool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(pieceId));
+            }
+            catch (const VExceptionBadId &)
+            {
+                pieceTool = nullptr;
+            }
+        }
+    }
+
+    if (pieceTool != nullptr)
+    {
+        overlay->setParentItem(pieceTool);
+    }
+    else
+    {
+        scene->addItem(overlay);
+    }
+
+    overlay->ensureVisible();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PiecesWidget::showNodeContextMenu(QTreeWidgetItem *item, const QPoint &globalPos)
+{
+    if (!item || !item->parent())
+    {
+        return;
+    }
+
+    const quint32 nodeId = item->data(0, NodeIdRole).toUInt();
+    const quint32 pieceId = item->parent()->data(0, PieceIdRole).toUInt();
+
+    const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
+    if (!allPieces->contains(pieceId))
+    {
+        return;
+    }
+
+    VPiece piece = allPieces->value(pieceId);
+    QVector<VPieceNode> nodes = piece.GetPath().getNodes();
+
+    int nodeIndex = -1;
+    for (int i = 0; i < nodes.size(); ++i)
+    {
+        if (nodes.at(i).GetId() == nodeId)
+        {
+            nodeIndex = i;
+            break;
+        }
+    }
+    if (nodeIndex < 0)
+    {
+        return;
+    }
+
+    const VPieceNode &node = nodes.at(nodeIndex);
+    const bool isPoint = (node.GetTypeTool() == Tool::NodePoint);
+    const bool excluded = node.isExcluded();
+
+    QScopedPointer<QMenu> menu(new QMenu(ui->treeWidget));
+
+    QAction *toggleExclude = menu->addAction(excluded ? tr("Include object")
+                                                      : tr("Exclude object"));
+
+    QAction *toggleReverse = nullptr;
+    if (!isPoint)
+    {
+        toggleReverse = menu->addAction(tr("Reverse direction"));
+    }
+
+    QAction *addDefaultNotch = nullptr;
+    QAction *toggleNotch = nullptr;
+    if (isPoint)
+    {
+        if (!node.isNotch())
+        {
+            addDefaultNotch = menu->addAction(tr("Add standard notch"));
+            toggleNotch = menu->addAction(tr("Add notch"));
+        }
+        else
+        {
+            toggleNotch = menu->addAction(tr("Remove notch"));
+        }
+    }
+
+    QAction *selectedAction = menu->exec(globalPos);
+    if (!selectedAction)
+    {
+        return;
+    }
+
+    if (selectedAction == toggleExclude)
+    {
+        nodes[nodeIndex].SetExcluded(!excluded);
+    }
+    else if (selectedAction == toggleReverse && toggleReverse)
+    {
+        nodes[nodeIndex].SetReverse(!node.GetReverse());
+    }
+    else if (selectedAction == addDefaultNotch && addDefaultNotch)
+    {
+        nodes[nodeIndex].setNotch(true);
+        nodes[nodeIndex].setNotchType(
+            static_cast<NotchType>(qApp->Settings()->GetDefaultNotchType()));
+        nodes[nodeIndex].setNotchSubType(
+            static_cast<NotchSubType>(qApp->Settings()->GetDefaultNotchSubType()));
+    }
+    else if (selectedAction == toggleNotch && toggleNotch)
+    {
+        nodes[nodeIndex].setNotch(!node.isNotch());
+    }
+    else
+    {
+        return;
+    }
+
+    VPiece newPiece = piece;
+    newPiece.GetPath().setNodes(nodes);
+
+    SavePieceOptions *command = new SavePieceOptions(piece, newPiece, m_doc, pieceId);
+    qApp->getUndoStack()->push(command);
+    // Rebuild after the command (and its lite parse) has fully applied, so the tree
+    // reflects the new node state. Doing it here (not via NeedLiteParsing) avoids reading
+    // stale container data before the parse completes.
+    updateList();
 }
