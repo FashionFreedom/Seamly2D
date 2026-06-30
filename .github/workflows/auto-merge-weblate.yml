@@ -17,7 +17,7 @@ jobs:
     name: Auto-merge trusted Weblate translation PR
     runs-on: ubuntu-latest
 
-    if: github.event.pull_request.user.login == 'weblate'
+    if: github.event.pull_request.user.login == 'weblate' && github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
 
     steps:
       - name: Check changed files are translations only
