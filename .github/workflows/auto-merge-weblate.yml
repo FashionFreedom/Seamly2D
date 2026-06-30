@@ -35,14 +35,14 @@ jobs:
               }
             );
 
-            const allowed = files.every(file =>
-              file.filename.endsWith('.ts') || file.filename.endsWith('.pro')
-            );
+            const allowed = files.every(file => {
+              const inTranslationsDir = file.filename.startsWith('share/translations/');
+              const allowedExt = file.filename.endsWith('.ts') || file.filename.endsWith('.pro');
+              return inTranslationsDir && allowedExt;
+            });
 
             if (!allowed) {
-              core.setFailed(
-                'This PR changes files outside approved *.ts/*.pro translation files.'
-              );
+              core.setFailed('This PR changes files outside share/translations/*.ts or share/translations/*.pro.');
             }
 
       - name: Approve pull request
