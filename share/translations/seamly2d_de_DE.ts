@@ -912,7 +912,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>No</source>
-        <translation>Nien</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2797,7 +2797,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>No</source>
-        <translation>Nien</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -13817,7 +13817,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>No</source>
-        <translation>Nien</translation>
+        <translation>Nein</translation>
     </message>
     <message>
         <source>Yes</source>
