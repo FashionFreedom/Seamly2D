@@ -185,6 +185,7 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     , m_allPieces()
     , m_fabrics()
     , m_highlightedNodeId(NULL_ID)
+    , m_fillTreeInProgress(false)
 {
     ui->setupUi(this);
 
@@ -689,6 +690,9 @@ QTreeWidgetItem *PiecesWidget::createNodeItem(const VPieceNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::fillTree(const QHash<quint32, VPiece> *pieces)
 {
+    if (m_fillTreeInProgress) { return; }
+    m_fillTreeInProgress = true;
+
     QSet<quint32> expandedPieces;
     QList<QTreeWidgetItem *> oldItems = allPieceItems();
     for (QTreeWidgetItem *old : oldItems)
@@ -755,6 +759,7 @@ void PiecesWidget::fillTree(const QHash<quint32, VPiece> *pieces)
         }
     }
     ui->treeWidget->blockSignals(false);
+    m_fillTreeInProgress = false;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

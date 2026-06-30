@@ -112,6 +112,7 @@ private:
     QVector<QSharedPointer<FabricDoc>> m_fabrics;
     QHash<quint32, int>              m_pieceFabricMap;
     quint32                          m_highlightedNodeId;
+    bool                             m_fillTreeInProgress;
 
     enum ItemRole
     {
