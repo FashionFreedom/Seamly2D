@@ -8,6 +8,10 @@ permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: auto-merge-weblate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   auto-merge-weblate:
     name: Auto-merge trusted Weblate translation PR
