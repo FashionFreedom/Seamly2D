@@ -963,7 +963,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Käyrän kaaren pituuden kaava (käytetään, jos kenttä on täytetty)</translation>
+        <translation>Käyrän kaaren pituuden laskelma (käytetään, jos kenttä on täytetty)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
@@ -2844,7 +2844,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Käyrän kaaren pituuden kaava (käytetään, jos kenttä on täytetty)</translation>
+        <translation>Käyrän kaaren pituuden laskelma (käytetään, jos kenttä on täytetty)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
