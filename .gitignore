@@ -1,5 +1,7 @@
 *~
 
+.gitignore
+
 # Seamly2D lock files
 *.locked
 
@@ -27,6 +29,8 @@
 ._.DS_Store
 
 # Ignore these directories.
+.claude/
+.github/
 html/
 latex/
 bin/

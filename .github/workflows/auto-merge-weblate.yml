@@ -1,0 +1,56 @@
+name: Auto-merge Weblate PRs
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge-weblate:
+    name: Auto-merge trusted Weblate translation PR
+    runs-on: ubuntu-latest
+
+    if: github.event.pull_request.user.login == 'weblate'
+
+    steps:
+      - name: Check changed files are translations only
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+
+            const files = await github.paginate(
+              github.rest.pulls.listFiles,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number
+              }
+            );
+
+            const allowed = files.every(file =>
+              file.filename.endsWith('.ts') || file.filename.endsWith('.pro')
+            );
+
+            if (!allowed) {
+              core.setFailed(
+                'This PR changes files outside approved *.ts/*.pro translation files.'
+              );
+            }
+
+      - name: Approve pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          gh pr review "$PR_URL" --approve -b "Auto-approved: trusted Weblate translation update (*.ts/*.pro only)."
+
+      - name: Enable auto-merge and delete source branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          gh pr merge "$PR_URL" --squash --auto --delete-branch
