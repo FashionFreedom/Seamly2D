@@ -36,8 +36,8 @@ def get_country_map():
 def get_country_from_lang_code(lang_code):
     """Extract country code and name from lang_code (e.g., pt_BR -> (BR, Brazil))."""
     parts = lang_code.split('_')
-    if len(parts) == 2:
-        code = parts[1].upper()
+    if len(parts) >= 2:
+        code = parts[-1].upper()
         country_map = get_country_map()
         country = country_map.get(code)
         return code, country
@@ -110,8 +110,8 @@ def main():
     lang_code = sys.argv[1]
     code, country = get_country_from_lang_code(lang_code)
     if not code or not country:
-        print(f"Could not determine country for lang_code: {lang_code}")
-        sys.exit(1)
+        print(f"Could not determine country for lang_code: {lang_code}. Skipping flag.")
+        return
     if flag_exists(country):
         print(f"Flag for {country} ({code}) already exists.")
         return

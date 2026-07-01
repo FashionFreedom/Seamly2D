@@ -58,7 +58,7 @@ def add_lang_to_pro_file(filepath, lang_code):
             continue
         # Add the new language after tr_TR for consistency
         if line.strip().endswith('tr_TR') and not added:
-            new_lines.append(line.rstrip() + ' \\n    ' + lang_code + '\n')
+            new_lines.append(line.rstrip() + ' \\\n    ' + lang_code + '\n')
             added = True
         else:
             new_lines.append(line)
@@ -90,10 +90,10 @@ def add_lang_to_translations_pri(filepath, lang_code):
         if line.strip().startswith('LANGUAGES +='):
             # Find last language in the block
             j = i
-            while j+1 < len(lines) and lines[j+1].strip().startswith('') and '\\' in lines[j]:
+            while j+1 < len(lines) and '\\' in lines[j]:
                 j += 1
             # Insert after last LANGUAGES line
-            lines[j] = lines[j].rstrip() + ' \\n    ' + lang_code + '\n'
+            lines[j] = lines[j].rstrip() + ' \\\n    ' + lang_code + '\n'
             added = True
             break
     if not added:
@@ -128,7 +128,10 @@ def add_locale_to_def_cpp(filepath, lang_code):
                 j += 1
             # Insert before return if not already present
             if not any(lang_code in l for l in lines[i:j+1]):
-                lines[j] = lines[j].rstrip() + f"\n                                              << QStringLiteral(\"{lang_code}\");\n"
+                last_entry = lines[j].rstrip()
+                if last_entry.endswith(';'):
+                    last_entry = last_entry[:-1]
+                lines[j] = last_entry + f"\n                                              << QStringLiteral(\"{lang_code}\");\n"
                 added = True
             break
     try:

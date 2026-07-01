@@ -35,6 +35,7 @@ def translate_ts_file(ts_path, dest_lang):
     root = tree.getroot()
     translator = Translator()
     changed = False
+    failures = 0
 
     for context in root.findall('context'):
         for message in context.findall('message'):
@@ -46,6 +47,7 @@ def translate_ts_file(ts_path, dest_lang):
                 except Exception as e:
                     print(f"[ERROR] Failed to translate '{source.text}' to '{dest_lang}': {e}")
                     translated = source.text  # fallback to original
+                    failures += 1
                 translation.text = translated
                 changed = True
 
@@ -55,10 +57,16 @@ def translate_ts_file(ts_path, dest_lang):
     else:
         print(f"No changes: {ts_path}")
 
+    return failures
+
 if __name__ == '__main__':
     if len(sys.argv) < 3:
         print("Usage: python auto_translate_ts.py <lang_code> <file1.ts> [<file2.ts> ...]")
         sys.exit(1)
     lang_code = sys.argv[1]
+    total_failures = 0
     for ts_file in sys.argv[2:]:
-        translate_ts_file(ts_file, lang_code)
+        total_failures += translate_ts_file(ts_file, lang_code)
+    if total_failures:
+        print(f"[ERROR] {total_failures} string(s) fell back to untranslated source text.")
+        sys.exit(1)

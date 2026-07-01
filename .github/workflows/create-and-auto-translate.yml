@@ -6,7 +6,6 @@ on:
       lang_code:
         description: 'language code parameter (e.g., pl_PL for Polish)'
         required: true
-        default: 'pl_PL'
   push:
     branches:
       - 'test-translate'
@@ -22,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -45,10 +44,10 @@ jobs:
           fi
 
       - name: Ensure flag icon for language
-        run: python -u scripts/add_flag.py ${{ env.LANG_CODE }}
+        run: python -u scripts/translations/add_flag.py ${{ env.LANG_CODE }}
 
       - name: Create new .ts files for language (on virtual server, not in code branch)
-        run: python scripts/create_new_ts.py ${{ env.LANG_CODE }}
+        run: python scripts/translations/create_new_ts.py ${{ env.LANG_CODE }}
 
       - name: Auto-translate new .ts files (on virtual server, not in code branch)
         run: |
@@ -61,7 +60,7 @@ jobs:
           echo "Checking seamly2d_${LANG_CODE}.ts:"
           cat share/translations/seamly2d_${LANG_CODE}.ts || echo "File not found!"
           echo "About to run auto_translate_ts.py..."
-          python -u scripts/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${LANG_CODE}.ts share/translations/seamly2d_${LANG_CODE}.ts
+          python -u scripts/translations/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${LANG_CODE}.ts share/translations/seamly2d_${LANG_CODE}.ts
 
       - name: Install Qt with QT Multimedia module
         uses: jurplel/install-qt-action@v4.3.1
@@ -99,15 +98,17 @@ jobs:
         # after testing change line to 'git checkout -b develop'
         run: |
           git checkout test-translate
-          BRANCH=auto/translation-${{ github.event.inputs.lang_code }}
+          BRANCH=auto/translation-${{ env.LANG_CODE }}
           git checkout -b $BRANCH
-          git add share/translations/measurements_${{ github.event.inputs.lang_code }}.ts
-          git add share/translations/seamly2d_${{ github.event.inputs.lang_code }}.ts
+          git add share/translations/measurements_${{ env.LANG_CODE }}.ts
+          git add share/translations/seamly2d_${{ env.LANG_CODE }}.ts
           git add share/translations/measurements.pro
           git add share/translations/translations.pro
           git add src/app/translations.pri
           git add src/libs/vmisc/def.cpp
-          git commit -m "Add and auto-translate ${{ github.event.inputs.lang_code }} translation files"
+          git add src/libs/vmisc/share/resources/flags.qrc
+          git add -A src/libs/vmisc/share/resources/flags/
+          git commit -m "Add and auto-translate ${{ env.LANG_CODE }} translation files"
           git push --set-upstream origin $BRANCH
 
       - name: Create Pull Request to merge translation branch into develop-copy branch
@@ -115,8 +116,8 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: auto/translation-${{ github.event.inputs.lang_code }}
+          branch: auto/translation-${{ env.LANG_CODE }}
           base: test-translate
-          title: "Add and auto-translate ${{ github.event.inputs.lang_code }} translation files"
-          body: "This PR was created automatically to add and auto-translate ${{ github.event.inputs.lang_code }} translation files."
+          title: "Add and auto-translate ${{ env.LANG_CODE }} translation files"
+          body: "This PR was created automatically to add and auto-translate ${{ env.LANG_CODE }} translation files."
           draft: true

@@ -39,6 +39,10 @@ man/
 build/
 .vscode/*
 
+# Python bytecode cache
+__pycache__/
+*.pyc
+
 # Ignore Coverity Scan Build Tool
 cov-int/
 
