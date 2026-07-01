@@ -8,6 +8,11 @@ LANG_CODE=""
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --lang-code)
+      if [[ $# -lt 2 ]]; then
+        echo "Missing value for parameter: --lang-code"
+        echo "Usage: $0 --lang-code <lang_code>"
+        exit 1
+      fi
       LANG_CODE="$2"
       shift 2
       ;;
