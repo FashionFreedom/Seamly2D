@@ -19,8 +19,12 @@ except ImportError:
     print("pycountry is required. Install with: pip install pycountry")
     sys.exit(1)
 
-FLAGS_QRC = os.path.join(os.path.dirname(__file__), '../src/libs/vmisc/share/resources/flags.qrc')
-FLAGS_DIR = os.path.join(os.path.dirname(__file__), '../src/libs/vmisc/share/resources/flags')
+FLAGS_QRC = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '../../src/libs/vmisc/share/resources/flags.qrc')
+)
+FLAGS_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '../../src/libs/vmisc/share/resources/flags')
+)
 
 def get_country_map():
     """Return a dict mapping ISO 3166-1 alpha-2 codes to country names, with XK for Kosovo."""
