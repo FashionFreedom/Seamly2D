@@ -67,6 +67,7 @@ jobs:
           xvfb-run -a make check
 
   linux:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-latest
     container:
@@ -129,6 +130,7 @@ jobs:
  
 
   macos:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'macOS: Build'
     runs-on: macos-15  # pin to macos-15 due to https://qt-project.atlassian.net/browse/QTBUG-137687
     needs: version
@@ -194,6 +196,7 @@ jobs:
           if-no-files-found: error
 
   windows:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Windows Build'
     runs-on: windows-2022
     needs: version
