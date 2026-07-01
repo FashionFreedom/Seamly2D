@@ -33,6 +33,24 @@ jobs:
         run: |
           echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
 
+  changes:
+    # used to skip the heavy build jobs below for PRs that only touch .github/ (workflow/template tweaks
+    # can't affect the buildable app, so a full Linux/macOS/Windows build+package isn't needed to verify them)
+    if: github.event_name == 'pull_request'
+    name: 'Detect changed paths'
+    runs-on: ubuntu-latest
+    outputs:
+      outside_github: ${{ steps.filter.outputs.outside_github }}
+
+    steps:
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            outside_github:
+              - '**'
+              - '!.github/**'
+
   linux-test:
     if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
@@ -67,13 +85,14 @@ jobs:
           xvfb-run -a make check
 
   linux:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    # skip for Weblate PRs and for PRs whose changes are entirely under .github/ (see "changes" job above)
+    if: github.event_name != 'pull_request' || (github.event.pull_request.user.login != 'weblate' && needs.changes.outputs.outside_github == 'true')
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-latest
     container:
       image: debian/eol:bullseye  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
       options: --device /dev/fuse --privileged
-    needs: version
+    needs: [version, changes]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -130,10 +149,11 @@ jobs:
 
 
   macos:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    # same skip conditions as the "linux" job above
+    if: github.event_name != 'pull_request' || (github.event.pull_request.user.login != 'weblate' && needs.changes.outputs.outside_github == 'true')
     name: 'macOS: Build'
     runs-on: macos-15  # pin to macos-15 due to https://qt-project.atlassian.net/browse/QTBUG-137687
-    needs: version
+    needs: [version, changes]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -196,10 +216,11 @@ jobs:
           if-no-files-found: error
 
   windows:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    # same skip conditions as the "linux" job above
+    if: github.event_name != 'pull_request' || (github.event.pull_request.user.login != 'weblate' && needs.changes.outputs.outside_github == 'true')
     name: 'Windows Build'
     runs-on: windows-2022
-    needs: version
+    needs: [version, changes]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
     strategy:
