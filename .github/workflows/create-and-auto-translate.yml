@@ -111,7 +111,7 @@ jobs:
           git push --set-upstream origin $BRANCH
 
       - name: Create Pull Request to merge translation branch into develop branch
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: auto/translation-${{ env.LANG_CODE }}
