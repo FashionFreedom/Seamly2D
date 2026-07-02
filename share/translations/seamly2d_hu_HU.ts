@@ -1,389 +1,389 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl_PL">
+<TS version="2.1" language="hu_HU">
 <context>
     <name>About2DAppDialog</name>
     <message>
         <source>About Seamly2D</source>
-        <translation>O Seamly2D</translation>
+        <translation>A Seamly2D-ről</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O</translation>
+        <translation>Rólunk</translation>
     </message>
     <message>
         <source>Copy build data to clipboard</source>
-        <translation>Kopiuj dane kompilacji do schowka</translation>
+        <translation>Build adatok másolása a vágólapra</translation>
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>Seamly 2D</translation>
+        <translation>Varratmentes 2D</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Wersja:</translation>
+        <translation>Verzió:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation>Strona internetowa:</translation>
+        <translation>Weboldal:</translation>
     </message>
     <message>
         <source>Build date:</source>
-        <translation>Data kompilacji:</translation>
+        <translation>Formálás dátuma:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation>Wersja Qt:</translation>
+        <translation>Qt verzió:</translation>
     </message>
     <message>
         <source>Compiler:</source>
-        <translation>Kompilator:</translation>
+        <translation>Fordítóprogram:</translation>
     </message>
     <message>
         <source>System</source>
-        <translation>System</translation>
+        <translation>Rendszer</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Wersja</translation>
+        <translation>Verzió</translation>
     </message>
     <message>
         <source>Revision:</source>
-        <translation>Rewizja:</translation>
+        <translation>Verzió:</translation>
     </message>
     <message>
         <source>Architecture</source>
-        <translation>Architektura</translation>
+        <translation>Építészet</translation>
     </message>
     <message>
         <source>OS Version:</source>
-        <translation>Wersja systemu operacyjnego:</translation>
+        <translation>Operációs rendszer verziója:</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Ustawienia regionalne</translation>
+        <translation>Helyszín</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Kraj:</translation>
+        <translation>Ország:</translation>
     </message>
     <message>
         <source>Decimal point:</source>
-        <translation>Przecinek dziesiętny:</translation>
+        <translation>Tizedesvessző:</translation>
     </message>
     <message>
         <source>Script name:</source>
-        <translation>Nazwa skryptu:</translation>
+        <translation>Szkript neve:</translation>
     </message>
     <message>
         <source>System codec:</source>
-        <translation>Kodek systemowy:</translation>
+        <translation>Rendszerkodek:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Język:</translation>
+        <translation>Nyelv:</translation>
     </message>
     <message>
         <source>Text direction:</source>
-        <translation>Kierunek tekstu:</translation>
+        <translation>Szövegirány:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Positive sign:</source>
-        <translation>Znak dodatni:</translation>
+        <translation>Pozitív előjel:</translation>
     </message>
     <message>
         <source>Negative sign:</source>
-        <translation>Znak ujemny:</translation>
+        <translation>Negatív előjel:</translation>
     </message>
     <message>
         <source>Application</source>
-        <translation>Aplikacja</translation>
+        <translation>Alkalmazás</translation>
     </message>
     <message>
         <source>Arguments:</source>
-        <translation>Argumenty:</translation>
+        <translation>Argumentumok:</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Współpracownicy</translation>
+        <translation>Közreműködők</translation>
     </message>
     <message>
         <source>Check For Updates</source>
-        <translation>Sprawdź dostępność aktualizacji</translation>
+        <translation>Frissítések keresése</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>Pobieranie instalatora %p% ukończone</translation>
+        <translation>A telepítő (%p%) letöltése befejeződött</translation>
     </message>
     <message>
         <source>unknown</source>
-        <translation>nieznany</translation>
+        <translation>ismeretlen</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Zbudowano na %1 o %2</translation>
+        <translation>%1-re építve, %2-kor</translation>
     </message>
     <message>
         <source>Left to right</source>
-        <translation>Od lewej do prawej</translation>
+        <translation>Balról jobbra</translation>
     </message>
     <message>
         <source>Right to left</source>
-        <translation>Od prawej do lewej</translation>
+        <translation>Jobbról balra</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatyczny</translation>
+        <translation>Automatikus</translation>
     </message>
 </context>
 <context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>dodaj blok roboczy %1</translation>
+        <translation>%1. vázlatblokk hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>AddGroup</name>
     <message>
         <source>add group</source>
-        <translation>dodaj grupę</translation>
+        <translation>csoport hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation>Dodaj element do grupy</translation>
+        <translation>Elem hozzáadása a csoporthoz</translation>
     </message>
 </context>
 <context>
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation>dodaj obraz</translation>
+        <translation>kép hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation>dodaj element</translation>
+        <translation>darab hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>AddToCalc</name>
     <message>
         <source>add object</source>
-        <translation>dodaj obiekt</translation>
+        <translation>objektum hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>AddToGroupDialog</name>
     <message>
         <source>Add to Group</source>
-        <translation>Dodaj do grupy</translation>
+        <translation>Hozzáadás a csoporthoz</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
     <message>
         <source>Anchor Point</source>
-        <translation>Punkt kotwiczenia</translation>
+        <translation>Horgonypont</translation>
     </message>
     <message>
         <source>Anchor Point tool</source>
-        <translation>Narzędzie Punkt kontrolny</translation>
+        <translation>Horgonypont eszköz</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Punkt:</translation>
+        <translation>Pont:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Element:</translation>
+        <translation>Darab:</translation>
     </message>
 </context>
 <context>
     <name>AnchorPointTool</name>
     <message>
         <source>add anchor point</source>
-        <translation>dodaj punkt kotwiczenia</translation>
+        <translation>horgonypont hozzáadása</translation>
     </message>
 </context>
 <context>
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Błąd analizy pliku. Program zostanie zakończony.</translation>
+        <translation>Hiba a fájl elemzése közben. A program leáll.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Błąd: błędny identyfikator. Program zostanie zakończony.</translation>
+        <translation>Hiba: rossz azonosító. A program leáll.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Błąd: nie można przekonwertować wartości. Program zostanie zakończony.</translation>
+        <translation>Hiba történt az érték konvertálása során. A program leáll.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Błąd: pusty parametr. Program zostanie zakończony.</translation>
+        <translation>Hiba üres paraméterrel. A program leáll.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Błąd: błędny identyfikator. Program zostanie zakończony.</translation>
+        <translation>Hiba: rossz azonosító. A program leáll.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Coś jest nie tak!!</translation>
+        <translation>Valami nincs rendben!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Błąd parsera: %1. Program zostanie zakończony.</translation>
+        <translation>Elemzőhiba: %1. A program leáll.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Wystąpił wyjątek: %1. Program zostanie zakończony.</translation>
+        <translation>Kivétel történt: %1. A program leáll.</translation>
     </message>
 </context>
 <context>
     <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Błąd analizy pliku. Program zostanie zakończony.</translation>
+        <translation>Hiba a fájl elemzése közben. A program leáll.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Błąd: błędny identyfikator. Program zostanie zakończony.</translation>
+        <translation>Hiba: rossz azonosító. A program leáll.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Błąd: nie można przekonwertować wartości. Program zostanie zakończony.</translation>
+        <translation>Hiba történt az érték konvertálása során. A program leáll.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Błąd: pusty parametr. Program zostanie zakończony.</translation>
+        <translation>Hiba üres paraméterrel. A program leáll.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Błąd: błędny identyfikator. Program zostanie zakończony.</translation>
+        <translation>Hiba: rossz azonosító. A program leáll.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Coś jest nie tak!!</translation>
+        <translation>Valami nincs rendben!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Błąd parsera: %1. Program zostanie zakończony.</translation>
+        <translation>Elemzőhiba: %1. A program leáll.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Wystąpił wyjątek: %1. Program zostanie zakończony.</translation>
+        <translation>Kivétel történt: %1. A program leáll.</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s measurements editor.</source>
-        <translation>Edytor pomiarów Seamly2D.</translation>
+        <translation>A Seamly2D mérési szerkesztője.</translation>
     </message>
     <message>
         <source>The measurement file.</source>
-        <translation>Plik pomiarowy.</translation>
+        <translation>A mérési fájl.</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Otwórz z wysokością bazową. Prawidłowe wartości: %1cm.</translation>
+        <translation>Megnyitás az alapmagassággal. Érvényes értékek: %1cm.</translation>
     </message>
     <message>
         <source>The base height</source>
-        <translation>Wysokość bazowa</translation>
+        <translation>Az alap magassága</translation>
     </message>
     <message>
         <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Otwórz z rozmiarem bazowym. Prawidłowe wartości: %1cm.</translation>
+        <translation>Megnyitás az alap mérettel. Érvényes értékek: %1cm.</translation>
     </message>
     <message>
         <source>The base size</source>
-        <translation>Rozmiar podstawowy</translation>
+        <translation>Az alapméret</translation>
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Ustaw jednostkę pliku wzoru: cm, mm, cale.</translation>
+        <translation>Mintafájl mértékegységének beállítása: cm, mm, hüvelyk.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
-        <translation>Jednostka wzorca</translation>
+        <translation>A minta egysége</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Użyj do testów jednostkowych. Uruchom program i otwórz plik bez wyświetlania okna głównego.</translation>
+        <translation>Egységteszteléshez használandó. Futtassa a programot és nyisson meg egy fájlt a főablak megjelenítése nélkül.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Wyłącz skalowanie w wysokiej rozdzielczości. Wybierz tę opcję, jeśli występują problemy ze skalowaniem (domyślnie skalowanie jest włączone). Alternatywnie możesz użyć zmiennej środowiskowej %1.</translation>
+        <translation>Tiltsa le a nagy dpi-s méretezést. Hívja meg ezt az opciót, ha probléma van a méretezéssel (alapértelmezés szerint a méretezés engedélyezve van). Alternatív megoldásként használhatja a %1 környezeti változót.</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Nieprawidłowy argument wysokości bazowej. Musi wynosić %1cm.</translation>
+        <translation>Érvénytelen alapmagasság argumentum. %1cm-nek kell lennie.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Nieprawidłowy argument rozmiaru bazy. Musi wynosić %1cm.</translation>
+        <translation>Érvénytelen alapméret argumentum. %1cm-nek kell lennie.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation>Nieprawidłowy argument rozmiaru bazy. Musi to być cm, mm lub cal.</translation>
+        <translation>Érvénytelen alapméret argumentum. cm-nek, mm-nek vagy hüvelyknek kell lennie.</translation>
     </message>
     <message>
         <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Nie można rozpocząć nasłuchiwania połączeń przychodzących o nazwie&quot;%1&quot;</translation>
+        <translation>Nem tudom elkezdeni a bejövő kapcsolatok figyelését a(z) &apos;%1&apos; néven</translation>
     </message>
     <message>
         <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>Tryb testowy nie obsługuje otwierania wielu plików.</translation>
+        <translation>A teszt mód nem támogatja több fájl megnyitását.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Proszę podać jeden plik wejściowy.</translation>
+        <translation>Kérlek, adj meg egy bemeneti fájlt.</translation>
     </message>
 </context>
 <context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
-        <translation>Kalkulator</translation>
+        <translation>Számológép</translation>
     </message>
 </context>
 <context>
     <name>CalculatorUtil</name>
     <message>
         <source>Backspace</source>
-        <translation>Backspace</translation>
+        <translation>Visszatörlés</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Wyczyść</translation>
+        <translation>Tiszta</translation>
     </message>
     <message>
         <source>Clear All</source>
-        <translation>Wyczyść wszystko</translation>
+        <translation>Összes törlése</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Kalkulator</translation>
+        <translation>Számológép</translation>
     </message>
 </context>
 <context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation>Tabela dziesiętna</translation>
+        <translation>Tizedszámtáblázat</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -391,11 +391,11 @@
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.0//EN&quot;&quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot;content=&quot;1&quot;/&gt;&lt;style type=&quot;text/css&quot;&gt;
-, np, li { odstępy między wierszami: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;rozmiar czcionki: 8,25 pt; waga czcionki: 400; styl czcionki: normal;&quot;&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-górny: 12 px; margines-dolny: 12 px; margines-lewy: 0 px; margines-prawy: 0 px; -qt-block-wcięcie: 0; text-indent:0px;&quot;&gt;&lt;span style=&quot;font-size:12pt;&quot;&gt;1/8 = 0,125&lt;br /&gt;2/8 = 0,250&lt;br /&gt;3/8 = 0,375&lt;br /&gt;4/8 = 0,500&lt;br /&gt;5/8 = 0,625&lt;br /&gt;6/8 = 0,750&lt;br /&gt;7/8 = 0,875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; }   Ez utóbbi szöveg valószínűleg hibásan értelmezendő. text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = 0,125&lt;br /&gt;2/8 = 0,250&lt;br /&gt;3/8 = 0,375&lt;br /&gt;4/8 = 0,500&lt;br /&gt;5/8 = 0,625&lt;br /&gt;6/8 = 0,750&lt;br /&gt;7/8 = 0,875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -410,128 +410,128 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC&quot;-//W3C//DTD HTML 4.0//EN&quot;&quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot;content=&quot;1&quot;/&gt;&lt;style type=&quot;text/css&quot;&gt;
-, np, li { odstępy między wierszami: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;rozmiar czcionki: 8,25 pt; waga czcionki: 400; styl czcionki: normal;&quot;&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-górny: 0px; margines-dolny: 0px; margines-lewy: 0px; margines-prawy: 0px; -qt-block-indent: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt; 1/16 = 0,0625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt; 3/16 = 0,1875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-top: 0px; margines-bottom: 0px; margines-left: 0px; margines-right: 0px; -qt-block-indent: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt; 5/16 = 0,3125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-górny: 0px; margines-dolny: 0px; margines-lewy: 0px; margines-prawy: 0px; -qt-block-wcięcie: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt; 7/16 = 0,4375&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-górny: 0px; margines-dolny: 0px; margines-lewy: 0px; margines-prawy: 0px; -qt-block-wcięcie: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt; 9/16 = 0,5625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;rozmiar czcionki: 12pt;&quot;&gt;11/16 = 0,6875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margines-top: 0px; margines-bottom: 0px; margines-left: 0px; margines-right: 0px; -qt-block-indent: 0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;font-size:12pt;&quot;&gt;13/16 = 0,8125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot;style=&quot;margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; wcięcie tekstu: 0px;&quot;&gt;&lt;span style=&quot;font-size:12pt;&quot;&gt;15/16 = 0,9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; }   Megjegyzés: Ez a kódrészlet valószínűleg egy külső könyvtárból származik, és a benne szereplő elemek (pl. könyvtár, könyvtár, művek) általában nem fordítandók. text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = 0,0625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = 0,1875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = 0,3125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 7/16 = 0,4375&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 9/16 = 0,5625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; }] text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = 0,6875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = 0,8125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = 0,9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>DelGroup</name>
     <message>
         <source>delete group</source>
-        <translation>usuń grupę</translation>
+        <translation>csoport törlése</translation>
     </message>
 </context>
 <context>
     <name>DelTool</name>
     <message>
         <source>delete tool</source>
-        <translation>narzędzie do usuwania</translation>
+        <translation>törlő eszköz</translation>
     </message>
 </context>
 <context>
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>usuń blok roboczy %1</translation>
+        <translation>%1. vázlatblokk törlése</translation>
     </message>
 </context>
 <context>
     <name>DeletePiece</name>
     <message>
         <source>delete tool</source>
-        <translation>narzędzie do usuwania</translation>
+        <translation>törlő eszköz</translation>
     </message>
 </context>
 <context>
     <name>DialogAboutSeamlyMe</name>
     <message>
         <source>About SeamlyMe</source>
-        <translation>O SeamlyMe</translation>
+        <translation>A SeamlyMe-ről</translation>
     </message>
     <message>
         <source>SeamlyMe version</source>
-        <translation>Wersja SeamlyMe</translation>
+        <translation>SeamlyMe verzió</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
-        <translation>Ten program jest częścią projektu Seamly2D.</translation>
+        <translation>Ez a program a Seamly2D projekt része.</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>Pobieranie instalatora %p% ukończone</translation>
+        <translation>A telepítő (%p%) letöltése befejeződött</translation>
     </message>
     <message>
         <source>Check For Updates</source>
-        <translation>Sprawdź dostępność aktualizacji</translation>
+        <translation>Frissítések keresése</translation>
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Nie można otworzyć domyślnej przeglądarki</translation>
+        <translation>Nem tudom megnyitni az alapértelmezett böngészőt</translation>
     </message>
     <message>
         <source>unknown</source>
-        <translation>nieznany</translation>
+        <translation>ismeretlen</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Wersja kompilacji: %1</translation>
+        <translation>Formálási verzió: %1</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Zbudowano na %1 o %2</translation>
+        <translation>%1-re építve, %2-kor</translation>
     </message>
     <message>
         <source>Web site : %1</source>
-        <translation>Witryna internetowa: %1</translation>
+        <translation>Weboldal: %1</translation>
     </message>
 </context>
 <context>
     <name>DialogAlongLine</name>
     <message>
         <source>Point - On Line</source>
-        <translation>Punkt – Na linii</translation>
+        <translation>Pont - Vonalban</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>First point of the line</source>
-        <translation>Pierwszy punkt linii</translation>
+        <translation>A vonal első pontja</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Second point of the line</source>
-        <translation>Drugi punkt linii</translation>
+        <translation>A vonal második pontja</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -539,70 +539,70 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogArc</name>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Łuk – promień i kąty</translation>
+        <translation>Ív - Sugár és szögek</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Center point:</source>
-        <translation>Punkt środkowy:</translation>
+        <translation>Középpont:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
-        <translation>Wybierz punkt środkowy łuku</translation>
+        <translation>Válassza ki az ív középpontját</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -610,90 +610,90 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>First angle:</source>
-        <translation>Pierwszy kąt:</translation>
+        <translation>Első szög:</translation>
     </message>
     <message>
         <source>Second angle:</source>
-        <translation>Drugi kąt:</translation>
+        <translation>Második szög:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Edytuj promień</translation>
+        <translation>Sugár szerkesztése</translation>
     </message>
     <message>
         <source>Edit first angle</source>
-        <translation>Edytuj pierwszy kąt</translation>
+        <translation>Első szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit second angle</source>
-        <translation>Edytuj drugi kąt</translation>
+        <translation>Második szög szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Promień nie może być ujemny</translation>
+        <translation>A sugár nem lehet negatív</translation>
     </message>
     <message>
         <source>Angles equal</source>
-        <translation>Kąty równe</translation>
+        <translation>Egyenlő szögek</translation>
     </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Łuk – promień i długość</translation>
+        <translation>Ív - Sugár és Hossz</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Center point:</source>
-        <translation>Punkt środkowy:</translation>
+        <translation>Középpont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -701,106 +701,106 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>First angle:</source>
-        <translation>Pierwszy kąt:</translation>
+        <translation>Első szög:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Edytuj promień</translation>
+        <translation>Sugár szerkesztése</translation>
     </message>
     <message>
         <source>Edit the first angle</source>
-        <translation>Edytuj pierwszy kąt</translation>
+        <translation>Az első szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit the arc length</source>
-        <translation>Edytuj długość łuku</translation>
+        <translation>Ívhossz szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Promień nie może być ujemny</translation>
+        <translation>A sugár nem lehet negatív</translation>
     </message>
     <message>
         <source>Length can&apos;t be equal 0</source>
-        <translation>Długość nie może być równa 0</translation>
+        <translation>A hossz nem lehet egyenlő 0-val</translation>
     </message>
 </context>
 <context>
     <name>DialogBisector</name>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punkt – na dwusiecznej</translation>
+        <translation>Pont - Felezőmezőn</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Trzeci punkt:</translation>
+        <translation>Harmadik pont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -808,252 +808,252 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
-        <translation>Wybierz drugi punkt kąta</translation>
+        <translation>Válassza ki a szög második pontját</translation>
     </message>
     <message>
         <source>Select third point of angle</source>
-        <translation>Wybierz trzeci punkt kąta</translation>
+        <translation>Válassza ki a szög harmadik pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogCubicBezier</name>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Krzywa – stała</translation>
+        <translation>Ív - Rögzített</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Trzeci punkt:</translation>
+        <translation>Harmadik pont:</translation>
     </message>
     <message>
         <source>Fourth point:</source>
-        <translation>Czwarty punkt:</translation>
+        <translation>Negyedik pont:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Select the second point of curve</source>
-        <translation>Wybierz drugi punkt krzywej</translation>
+        <translation>Válassza ki a görbe második pontját</translation>
     </message>
     <message>
         <source>Select the third point of curve</source>
-        <translation>Wybierz trzeci punkt krzywej</translation>
+        <translation>Válassza ki a görbe harmadik pontját</translation>
     </message>
     <message>
         <source>Select the fourth point of curve</source>
-        <translation>Wybierz czwarty punkt krzywej</translation>
+        <translation>Válassza ki a görbe negyedik pontját</translation>
     </message>
     <message>
         <source>Invalid spline</source>
-        <translation>Nieprawidłowa linia krzywa</translation>
+        <translation>Érvénytelen spline</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Smooth curve:</source>
-        <translation>Gładka krzywa:</translation>
+        <translation>Simított görbe:</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Nie</translation>
+        <translation>Nem</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Tak</translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <source>Adjust length:</source>
-        <translation>Dostosuj długość:</translation>
+        <translation>Hossz igazítása:</translation>
     </message>
     <message>
         <source>Off</source>
-        <translation>Wyłączone</translation>
+        <translation>Kikapcsolva</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Początek</translation>
+        <translation>Kezdet</translation>
     </message>
     <message>
         <source>End</source>
-        <translation>Koniec</translation>
+        <translation>Vég</translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Oba</translation>
+        <translation>Mindkettő</translation>
     </message>
     <message>
         <source>Curve length:</source>
-        <translation>Długość krzywej:</translation>
+        <translation>Görbe hossza:</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Wzór na długość łuku krzywej (stosowany, jeśli pole jest wypełnione)</translation>
+        <translation> Görbeív hosszának képlete (akkor érvényes, ha a mező ki van töltve)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
-        <translation>Edytuj długość krzywej</translation>
+        <translation>Görbe hosszának szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>Długość nie może być ujemna</translation>
+        <translation>A hossz nem lehet negatív</translation>
     </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline – Naprawiono</translation>
+        <translation>Spline - Rögzített</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Punkt:</translation>
+        <translation>Pont:</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Ścieżka:</translation>
+        <translation>Útvonal:</translation>
     </message>
     <message>
         <source>List of points</source>
-        <translation>Lista punktów</translation>
+        <translation>Pontok listája</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
-        <translation>Nieprawidłowa ścieżka splajnu</translation>
+        <translation>Érvénytelen spline-útvonal</translation>
     </message>
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>Przecięcie – krzywa i oś</translation>
+        <translation>Metszéspont - Ív és Tengely</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Punkt osi:</translation>
+        <translation>Tengelypont:</translation>
     </message>
     <message>
         <source>Curve:</source>
-        <translation>Krzywa:</translation>
+        <translation>Görbe:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1061,74 +1061,74 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Wybierz punkt osi</translation>
+        <translation>Tengelypont kiválasztása</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogCutArc</name>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punkt – Łuk</translation>
+        <translation>Pont - Ív mentén</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Arc:</source>
-        <translation>Łuk:</translation>
+        <translation>Ív:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Kierunek:</translation>
+        <translation>Irány:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1136,74 +1136,74 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Do przodu (od punktu początkowego)</translation>
+        <translation>Előre (a kiindulási ponttól)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Do tyłu (od punktu końcowego)</translation>
+        <translation>Visszafelé (a végponttól)</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
     <message>
         <source>Point - On Curve</source>
-        <translation>Punkt – na krzywej</translation>
+        <translation>Pont - Ívben</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Curve:</source>
-        <translation>Krzywa:</translation>
+        <translation>Görbe:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Kierunek:</translation>
+        <translation>Irány:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1211,74 +1211,74 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Do przodu (od punktu początkowego)</translation>
+        <translation>Előre (a kiindulási ponttól)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Do tyłu (od punktu końcowego)</translation>
+        <translation>Visszafelé (a végponttól)</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
     <message>
         <source>Point - On Spline</source>
-        <translation>Punkt – na krzywej</translation>
+        <translation>Pont - Spline-on</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Curve:</source>
-        <translation>Krzywa:</translation>
+        <translation>Görbe:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Kierunek:</translation>
+        <translation>Irány:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1286,101 +1286,101 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Do przodu (od punktu początkowego)</translation>
+        <translation>Előre (a kiindulási ponttól)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Do tyłu (od punktu końcowego)</translation>
+        <translation>Visszafelé (a végponttól)</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogDateTimeFormats</name>
     <message>
         <source>Label date time editor</source>
-        <translation>Edytor daty i godziny etykiety</translation>
+        <translation>Címke dátum/idő szerkesztő</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Format:</translation>
+        <translation>Formátum:</translation>
     </message>
     <message>
         <source>Insert a format</source>
-        <translation>Wstaw format</translation>
+        <translation>Formátum beszúrása</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation>&lt;pusty&gt;</translation>
+        <translation>&lt;üres&gt;</translation>
     </message>
 </context>
 <context>
     <name>DialogEllipticalArc</name>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Łuk - Eliptyczny</translation>
+        <translation>Ív - Ellipszis</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Center point:</source>
-        <translation>Punkt środkowy:</translation>
+        <translation>Középpont:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
-        <translation>Wybierz punkt środkowy łuku</translation>
+        <translation>Válassza ki az ív középpontját</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1388,98 +1388,98 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Radius1:</source>
-        <translation>Promień 1:</translation>
+        <translation>1. sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calulation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Radius2:</source>
-        <translation>Promień 2:</translation>
+        <translation>Radius2:</translation>
     </message>
     <message>
         <source>First angle:</source>
-        <translation>Pierwszy kąt:</translation>
+        <translation>Első szög:</translation>
     </message>
     <message>
         <source>Second angle:</source>
-        <translation>Drugi kąt:</translation>
+        <translation>Második szög:</translation>
     </message>
     <message>
         <source>Rotation angle:</source>
-        <translation>Kąt obrotu:</translation>
+        <translation>Forgásszög:</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Promień nie może być ujemny</translation>
+        <translation>A sugár nem lehet negatív</translation>
     </message>
     <message>
         <source>Angles equal</source>
-        <translation>Kąty równe</translation>
+        <translation>Egyenlő szögek</translation>
     </message>
     <message>
         <source>Edit radius1</source>
-        <translation>Edytuj promień 1</translation>
+        <translation>Radius1 szerkesztése</translation>
     </message>
     <message>
         <source>Edit radius2</source>
-        <translation>Edytuj promień 2</translation>
+        <translation>Radius2 szerkesztése</translation>
     </message>
     <message>
         <source>Edit first angle</source>
-        <translation>Edytuj pierwszy kąt</translation>
+        <translation>Első szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit second angle</source>
-        <translation>Edytuj drugi kąt</translation>
+        <translation>Második szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit rotation angle</source>
-        <translation>Edytuj kąt obrotu</translation>
+        <translation>Forgatási szög szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogEndLine</name>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Punkt – długość i kąt</translation>
+        <translation>Pont - Hosszúság és Szög</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Punkt bazowy:</translation>
+        <translation>Alappont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1487,66 +1487,66 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogExportToCSV</name>
     <message>
         <source>Export options</source>
-        <translation>Opcje eksportu</translation>
+        <translation>Exportálási beállítások</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation>Exportálás</translation>
     </message>
     <message>
         <source>With header</source>
-        <translation>Z nagłówkiem</translation>
+        <translation>Fejléccel</translation>
     </message>
     <message>
         <source>Codec:</source>
@@ -1554,250 +1554,250 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Separator</source>
-        <translation>Separator</translation>
+        <translation>Elválasztó</translation>
     </message>
     <message>
         <source>Tab</source>
-        <translation>Zakładka</translation>
+        <translation>Fül</translation>
     </message>
     <message>
         <source>Comma</source>
-        <translation>Przecinek</translation>
+        <translation>Vessző</translation>
     </message>
     <message>
         <source>Semicolon</source>
-        <translation>Średnik</translation>
+        <translation>Pontosvessző</translation>
     </message>
     <message>
         <source>Space</source>
-        <translation>Kosmos</translation>
+        <translation>Űr</translation>
     </message>
 </context>
 <context>
     <name>DialogHeight</name>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punkt – linia przecięcia i prostopadła</translation>
+        <translation>Pont - Egyenes és merőleges metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Punkt bazowy:</translation>
+        <translation>Alappont:</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Select first point of line</source>
-        <translation>Wybierz pierwszy punkt linii</translation>
+        <translation>Vonal első pontjának kiválasztása</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogLayoutProgress</name>
     <message>
         <source>Create a Layout</source>
-        <translation>Utwórz układ</translation>
+        <translation>Elrendezés létrehozása</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for workpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Znajdowanie najlepszej pozycji dla elementów obrabianych. Proszę czekać.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A munkadarabok legjobb pozíciójának keresése folyamatban van. Kérjük, várjon.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
-        <translation>Uporządkowane elementy obrabiane: %1 z %2</translation>
+        <translation>Elrendezett munkadarabok: %1 - %2</translation>
     </message>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>Nie można przygotować danych do układu tworzenia</translation>
+        <translation>Nem sikerült előkészíteni az adatokat a létrehozási elrendezéshez</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Jeden lub więcej elementów wzoru jest większych niż wybrany format papieru. Proszę wybrać większy format papieru.</translation>
+        <translation>Egy vagy több mintadarab nagyobb, mint a kiválasztott papírformátum. Kérjük, válasszon nagyobb papírformátumot.</translation>
     </message>
 </context>
 <context>
     <name>DialogLine</name>
     <message>
         <source>Line - Between Points</source>
-        <translation>Linia – między punktami</translation>
+        <translation>Vonal - Pontok között</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation>Linia_</translation>
+        <translation>Sor_</translation>
     </message>
     <message>
         <source>Select second point</source>
-        <translation>Wybierz drugi punkt</translation>
+        <translation>Válassza ki a második pontot</translation>
     </message>
 </context>
 <context>
     <name>DialogLineIntersect</name>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Punkt – Przecięcie linii</translation>
+        <translation>Pont - Metszővonalak</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First line</source>
-        <translation>Pierwszy wiersz</translation>
+        <translation>Első sor</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Second line</source>
-        <translation>Druga linia</translation>
+        <translation>Második sor</translation>
     </message>
     <message>
         <source>Select second point of first line</source>
-        <translation>Wybierz drugi punkt pierwszej linii</translation>
+        <translation>Válassza ki az első vonal második pontját</translation>
     </message>
     <message>
         <source>Select first point of second line</source>
-        <translation>Wybierz pierwszy punkt drugiej linii</translation>
+        <translation>Válassza ki a második vonal első pontját</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
-        <translation>Wybierz drugi punkt drugiej linii</translation>
+        <translation>Válassza ki a második vonal második pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
         <source>Intersect - Line and Axis</source>
-        <translation>Przecięcie – linia i oś</translation>
+        <translation>Metszéspont - Egyenes és Tengely</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Punkt osi:</translation>
+        <translation>Tengelypont:</translation>
     </message>
     <message>
         <source>Axis Point</source>
-        <translation>Punkt osi</translation>
+        <translation>Tengelypont</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>First point of line</source>
-        <translation>Pierwszy punkt linii</translation>
+        <translation>Vonal első pontja</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Second point of line</source>
-        <translation>Drugi punkt linii</translation>
+        <translation>A vonal második pontja</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1805,163 +1805,163 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Wybierz punkt osi</translation>
+        <translation>Tengelypont kiválasztása</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogMDataBase</name>
     <message>
         <source>ME Database - Add known measurement</source>
-        <translation>Baza danych ME – Dodaj znany pomiar</translation>
+        <translation>ME adatbázis - Ismert mértékegység hozzáadása</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>Znajdź:</translation>
+        <translation>Keresés:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Szukaj</translation>
+        <translation>Keresés</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Pomiary</translation>
+        <translation>Mérések</translation>
     </message>
 </context>
 <context>
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Lustro według osi</translation>
+        <translation>Tükör tengely mentén</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Punkt osi:</translation>
+        <translation>Tengelypont:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Sufiks:</translation>
+        <translation>Utótag:</translation>
     </message>
     <message>
         <source>Axis type:</source>
-        <translation>Typ osi:</translation>
+        <translation>Tengelytípus:</translation>
     </message>
     <message>
         <source>Select axis rotation point</source>
-        <translation>Wybierz punkt obrotu osi</translation>
+        <translation>Tengelyforgási pont kiválasztása</translation>
     </message>
     <message>
         <source>Select axis rotation point that is not part of the list of objects</source>
-        <translation>Wybierz punkt obrotu osi, który nie znajduje się na liście obiektów</translation>
+        <translation>Válasszon olyan tengelyforgási pontot, amely nem része az objektumok listájának</translation>
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation>Oś pionowa</translation>
+        <translation>Függőleges tengely</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Oś pozioma</translation>
+        <translation>Vízszintes tengely</translation>
     </message>
 </context>
 <context>
     <name>DialogMirrorByLine</name>
     <message>
         <source>Mirror by Line</source>
-        <translation>Lustro według linii</translation>
+        <translation>Tükörvonalonként</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>First line point:</source>
-        <translation>Pierwszy punkt linii:</translation>
+        <translation>Első sori pont:</translation>
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Drugi punkt linii:</translation>
+        <translation>Második vonali pont:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Sufiks:</translation>
+        <translation>Utótag:</translation>
     </message>
     <message>
         <source>Select first mirror line point</source>
-        <translation>Wybierz pierwszy punkt linii odbicia lustrzanego</translation>
+        <translation>Első tükrözési vonalpont kiválasztása</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
-        <translation>Wybierz pierwszy punkt linii odbicia lustrzanego, który nie znajduje się na liście obiektów</translation>
+        <translation>Válassza ki az első tükrözési vonalpontot, amely nem része az objektumok listájának</translation>
     </message>
     <message>
         <source>Select second mirror line point</source>
-        <translation>Wybierz drugi punkt linii lustrzanej</translation>
+        <translation>Válassza ki a második tükrözési vonal pontját</translation>
     </message>
     <message>
         <source>Select second mirror line point that is not part of the list of objects</source>
-        <translation>Wybierz drugi punkt linii odbicia lustrzanego, który nie znajduje się na liście obiektów</translation>
+        <translation>Válasszon ki egy második tükrözési vonalpontot, amely nem része az objektumok listájának</translation>
     </message>
 </context>
 <context>
     <name>DialogMove</name>
     <message>
         <source>Move</source>
-        <translation>Przenieś</translation>
+        <translation>Áthelyezés</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Sufiks:</translation>
+        <translation>Utótag:</translation>
     </message>
     <message>
         <source>Origin Point:</source>
-        <translation>Punkt początkowy:</translation>
+        <translation>Kiindulási pont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1969,109 +1969,109 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>Obrót:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>Center point</source>
-        <translation>Punkt środkowy</translation>
+        <translation>Középpont</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Edit rotation</source>
-        <translation>Edytuj obrót</translation>
+        <translation>Forgatás szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogNewPattern</name>
     <message>
         <source>New pattern</source>
-        <translation>Nowy wzór</translation>
+        <translation>Új minta</translation>
     </message>
     <message>
         <source>Draft block name:</source>
-        <translation>Projekt nazwy bloku:</translation>
+        <translation>Vázlatblokk neve:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Unikalna nazwa wzoru</translation>
+        <translation>Egyedi mintadarab neve</translation>
     </message>
     <message>
         <source>Choose unique pattern piece name.</source>
-        <translation>Wybierz unikalną nazwę elementu wzoru.</translation>
+        <translation>Válassz egyedi mintadarab-nevet.</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jednostki:</translation>
+        <translation>Egységek:</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
 </context>
 <context>
     <name>DialogNormal</name>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punkt – prostopadły</translation>
+        <translation>Pont - Merőlegesen</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2079,292 +2079,292 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>Obrót:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogPatternProperties</name>
     <message>
         <source>Pattern preferences</source>
-        <translation>Preferencje dotyczące wzoru</translation>
+        <translation>Mintabeállítások</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation>Wzór</translation>
+        <translation>Minta</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Ścieżka:</translation>
+        <translation>Útvonal:</translation>
     </message>
     <message>
         <source>Show in Explorer</source>
-        <translation>Pokaż w Eksploratorze</translation>
+        <translation>Megjelenítés az Intézőben</translation>
     </message>
     <message>
         <source>Pattern description</source>
-        <translation>Opis wzoru</translation>
+        <translation>Minta leírása</translation>
     </message>
     <message>
         <source>Call context menu for edit</source>
-        <translation>Wywołaj menu kontekstowe w celu edycji</translation>
+        <translation>A szerkesztéshez hívja meg a helyi menüt</translation>
     </message>
     <message>
         <source>No image</source>
-        <translation>Brak obrazu</translation>
+        <translation>Nincs kép</translation>
     </message>
     <message>
         <source>For technical notes</source>
-        <translation>Do celów technicznych</translation>
+        <translation>Technikai megjegyzésekhez</translation>
     </message>
     <message>
         <source>Heights and Sizes</source>
-        <translation>Wzrosty i rozmiary</translation>
+        <translation>Magasságok és méretek</translation>
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Domyślna wysokość i rozmiar</translation>
+        <translation>Alapértelmezett magasság és méret</translation>
     </message>
     <message>
         <source>From multisize measurements</source>
-        <translation>Z pomiarów wielokrotnych</translation>
+        <translation>Többszörös mérésekből</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Niestandardowy</translation>
+        <translation>Egyéni</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation>Méret:</translation>
     </message>
     <message>
         <source>All heights (cm)</source>
-        <translation>Wszystkie wysokości (cm)</translation>
+        <translation>Minden magasság (cm)</translation>
     </message>
     <message>
         <source>All sizes (cm)</source>
-        <translation>Wszystkie rozmiary (cm)</translation>
+        <translation>Minden méret (cm)</translation>
     </message>
     <message>
         <source>Security</source>
-        <translation>Bezpieczeństwo</translation>
+        <translation>Biztonság</translation>
     </message>
     <message>
         <source>Open only for read</source>
-        <translation>Otwórz tylko do odczytu</translation>
+        <translation>Csak olvasásra megnyitva</translation>
     </message>
     <message>
         <source>Label data</source>
-        <translation>Dane etykiety</translation>
+        <translation>Címkeadatok</translation>
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Szablon etykiety:</translation>
+        <translation>Címke sablon:</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Edytuj etykietę wzoru</translation>
+        <translation>Mintacímke szerkesztése</translation>
     </message>
     <message>
         <source>Edit template</source>
-        <translation>Edytuj szablon</translation>
+        <translation>Sablon szerkesztése</translation>
     </message>
     <message>
         <source>Pattern name:</source>
-        <translation>Nazwa wzoru:</translation>
+        <translation>Minta neve:</translation>
     </message>
     <message>
         <source>Pattern number:</source>
-        <translation>Numer wzoru:</translation>
+        <translation>Mintaszám:</translation>
     </message>
     <message>
         <source>Company/Designer name:</source>
-        <translation>Nazwa firmy/projektanta:</translation>
+        <translation>Cég/Tervező neve:</translation>
     </message>
     <message>
         <source>Customer name:</source>
-        <translation>Nazwa klienta:</translation>
+        <translation>Ügyfél neve:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation>Format daty:</translation>
+        <translation>Dátumformátum:</translation>
     </message>
     <message>
         <source>Time format:</source>
-        <translation>Format czasu:</translation>
+        <translation>Időformátum:</translation>
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
-        <translation>&lt;Pusty&gt;</translation>
+        <translation>&lt;Üres&gt;</translation>
     </message>
     <message>
         <source>File was not saved yet.</source>
-        <translation>Plik nie został jeszcze zapisany.</translation>
+        <translation>A fájl még nincs mentve.</translation>
     </message>
     <message>
         <source>Show in Finder</source>
-        <translation>Pokaż w Finderze</translation>
+        <translation>Megjelenítés a keresőben</translation>
     </message>
     <message>
         <source>Delete image</source>
-        <translation>Usuń obraz</translation>
+        <translation>Kép törlése</translation>
     </message>
     <message>
         <source>Change image</source>
-        <translation>Zmień obraz</translation>
+        <translation>Kép módosítása</translation>
     </message>
     <message>
         <source>Save image to file</source>
-        <translation>Zapisz obraz do pliku</translation>
+        <translation>Kép mentése fájlba</translation>
     </message>
     <message>
         <source>Show image</source>
-        <translation>Pokaż obraz</translation>
+        <translation>Kép megjelenítése</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation>Obrazy</translation>
+        <translation>Képek</translation>
     </message>
     <message>
         <source>Image for pattern</source>
-        <translation>Obraz dla wzoru</translation>
+        <translation>Minta képe</translation>
     </message>
     <message>
         <source>Save File</source>
-        <translation>Zapisz plik</translation>
+        <translation>Fájl mentése</translation>
     </message>
     <message>
         <source>untitled</source>
-        <translation>bez tytułu</translation>
+        <translation>cím nélküli</translation>
     </message>
     <message>
         <source>Save label data.</source>
-        <translation>Zapisz dane etykiety.</translation>
+        <translation>Címkeadatok mentése.</translation>
     </message>
     <message>
         <source>Label data were changed. Do you want to save them before editing label template?</source>
-        <translation>Dane etykiety zostały zmienione. Czy chcesz je zapisać przed edycją szablonu etykiety?</translation>
+        <translation>A címkeadatok megváltoztak. Szeretnéd menteni őket a címkesablon szerkesztése előtt?</translation>
     </message>
 </context>
 <context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt – Przecięcie łuku i stycznej</translation>
+        <translation>Pont - Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Tangent point:</source>
-        <translation>Punkt styczności:</translation>
+        <translation>Érintőpont:</translation>
     </message>
     <message>
         <source>Arc:</source>
-        <translation>Łuk:</translation>
+        <translation>Ív:</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Weź:</translation>
+        <translation>Vedd el:</translation>
     </message>
     <message>
         <source>Select an arc</source>
-        <translation>Wybierz łuk</translation>
+        <translation>Ív kiválasztása</translation>
     </message>
 </context>
 <context>
     <name>DialogPointOfContact</name>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt – Przecięcie łuku i linii</translation>
+        <translation>Pont - Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Center of arc:</source>
-        <translation>Środek łuku:</translation>
+        <translation>Ív középpontja:</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>Pierwszy punkt linii:</translation>
+        <translation>1. sor pontja:</translation>
     </message>
     <message>
         <source>2nd line point</source>
-        <translation>2. punkt linii</translation>
+        <translation>2. vonalpont</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2372,136 +2372,136 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Edytuj promień</translation>
+        <translation>Sugár szerkesztése</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
-        <translation>Wybierz punkt środka łuku</translation>
+        <translation>Ívközéppont kiválasztása</translation>
     </message>
 </context>
 <context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punkt – Przecięcie łuków</translation>
+        <translation>Pont - Ívek metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First arc:</source>
-        <translation>Pierwszy łuk:</translation>
+        <translation>Első ív:</translation>
     </message>
     <message>
         <source>Second arc:</source>
-        <translation>Drugi łuk:</translation>
+        <translation>Második ív:</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Weź:</translation>
+        <translation>Vedd el:</translation>
     </message>
     <message>
         <source>Select second an arc</source>
-        <translation>Wybierz drugi łuk</translation>
+        <translation>Válasszon egy második ívet</translation>
     </message>
 </context>
 <context>
     <name>DialogPointOfIntersectionCurves</name>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punkt – Przecięcie krzywych</translation>
+        <translation>Pont - Metsző görbék</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First curve:</source>
-        <translation>Pierwsza krzywa:</translation>
+        <translation>Első görbe:</translation>
     </message>
     <message>
         <source>Second curve:</source>
-        <translation>Druga krzywa:</translation>
+        <translation>Második görbe:</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>Ujęcie pionowe:</translation>
+        <translation>Függőleges felvétel:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>Ujęcie poziome:</translation>
+        <translation>Vízszintes felvétel:</translation>
     </message>
     <message>
         <source>Select second curve</source>
-        <translation>Wybierz drugą krzywą</translation>
+        <translation>Válassza ki a második görbét</translation>
     </message>
 </context>
 <context>
     <name>DialogPreferences</name>
     <message>
         <source>Application Preferences</source>
-        <translation>Preferencje aplikacji</translation>
+        <translation>Alkalmazásbeállítások</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Ogólne</translation>
+        <translation>Általános</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation>Wzór</translation>
+        <translation>Minta</translation>
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Ścieżki plików</translation>
+        <translation>Fájl elérési utak</translation>
     </message>
     <message>
         <source>Graphics</source>
@@ -2512,19 +2512,19 @@ p, li { white-space: pre-wrap; }
     <name>DialogRotation</name>
     <message>
         <source>Rotation</source>
-        <translation>Obrót</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Rotation pt:</source>
-        <translation>Punkt obrotu:</translation>
+        <translation>Forgatási pont:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Sufiks:</translation>
+        <translation>Utótag:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2532,77 +2532,77 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Select rotation point</source>
-        <translation>Wybierz punkt obrotu</translation>
+        <translation>Forgáspont kiválasztása</translation>
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
-        <translation>Wybierz punkt obrotu, który nie znajduje się na liście obiektów</translation>
+        <translation>Válasszon olyan forgatási pontot, amely nem része az objektumok listájának</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferencje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Configuration</source>
-        <translation>Konfiguracja</translation>
+        <translation>Konfiguráció</translation>
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Ścieżki plików</translation>
+        <translation>Fájl elérési utak</translation>
     </message>
 </context>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Punkt – Długość do linii</translation>
+        <translation>Pont - Hossz a vonalig</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Trzeci punkt:</translation>
+        <translation>Harmadik pont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2610,129 +2610,129 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Select first point of line</source>
-        <translation>Wybierz pierwszy punkt linii</translation>
+        <translation>Vonal első pontjának kiválasztása</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
+        <translation>Válassza ki a vonal második pontját</translation>
     </message>
 </context>
 <context>
     <name>DialogSinglePoint</name>
     <message>
         <source>Base Point</source>
-        <translation>Punkt bazowy</translation>
+        <translation>Alappont</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Coordinates on the sheet</source>
-        <translation>Współrzędne na arkuszu</translation>
+        <translation>Koordináták a lapon</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Współrzędne</translation>
+        <translation>Koordináták</translation>
     </message>
     <message>
         <source>X coordinate:</source>
-        <translation>Współrzędna X:</translation>
+        <translation>X koordináta:</translation>
     </message>
     <message>
         <source>Y coordinate:</source>
-        <translation>Współrzędna Y:</translation>
+        <translation>Y koordináta:</translation>
     </message>
 </context>
 <context>
     <name>DialogSpline</name>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Krzywa – interaktywna</translation>
+        <translation>Görbe - Interaktív</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2740,158 +2740,158 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First point</source>
-        <translation>Pierwszy punkt</translation>
+        <translation>Első pont</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation>Drugi punkt</translation>
+        <translation>Második pont</translation>
     </message>
     <message>
         <source>Select last point of curve</source>
-        <translation>Wybierz ostatni punkt krzywej</translation>
+        <translation>Válassza ki a görbe utolsó pontját</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
-        <translation>Edytuj kąt pierwszego punktu kontrolnego</translation>
+        <translation>Első vezérlőpont szögének szerkesztése</translation>
     </message>
     <message>
         <source>Edit second control point angle</source>
-        <translation>Edytuj kąt drugiego punktu kontrolnego</translation>
+        <translation>Második vezérlőpont szögének szerkesztése</translation>
     </message>
     <message>
         <source>Edit first control point length</source>
-        <translation>Edytuj długość pierwszego punktu kontrolnego</translation>
+        <translation>Első kontrollpont hosszának szerkesztése</translation>
     </message>
     <message>
         <source>Edit second control point length</source>
-        <translation>Edytuj długość drugiego punktu kontrolnego</translation>
+        <translation>A második kontrollpont hosszának szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>Długość nie może być ujemna</translation>
+        <translation>A hossz nem lehet negatív</translation>
     </message>
     <message>
         <source>Invalid spline</source>
-        <translation>Nieprawidłowa linia krzywa</translation>
+        <translation>Érvénytelen spline</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Smooth curve:</source>
-        <translation>Gładka krzywa:</translation>
+        <translation>Simított görbe:</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Nie</translation>
+        <translation>Nem</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Tak</translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <source>Adjust length:</source>
-        <translation>Dostosuj długość:</translation>
+        <translation>Hossz igazítása:</translation>
     </message>
     <message>
         <source>Off</source>
-        <translation>Wyłączone</translation>
+        <translation>Kikapcsolva</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Początek</translation>
+        <translation>Kezdet</translation>
     </message>
     <message>
         <source>End</source>
-        <translation>Koniec</translation>
+        <translation>Vég</translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Oba</translation>
+        <translation>Mindkettő</translation>
     </message>
     <message>
         <source>Curve length:</source>
-        <translation>Długość krzywej:</translation>
+        <translation>Görbe hossza:</translation>
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Wzór na długość łuku krzywej (stosowany, jeśli pole jest wypełnione)</translation>
+        <translation>Görbeív hosszának képlete (akkor érvényes, ha a mező ki van töltve)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
-        <translation>Edytuj długość krzywej</translation>
+        <translation>Görbe hosszának szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline – interaktywny</translation>
+        <translation>Spline - Interaktív</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Punkt:</translation>
+        <translation>Pont:</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Ścieżka:</translation>
+        <translation>Útvonal:</translation>
     </message>
     <message>
         <source>List of points</source>
-        <translation>Lista punktów</translation>
+        <translation>Pontok listája</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2899,1363 +2899,1362 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>First control point</source>
-        <translation>Pierwszy punkt kontrolny</translation>
+        <translation>Első ellenőrzőpont</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Second control point</source>
-        <translation>Drugi punkt kontrolny</translation>
+        <translation>Második ellenőrzőpont</translation>
     </message>
     <message>
         <source>Select point of curve path</source>
-        <translation>Wybierz punkt ścieżki krzywej</translation>
+        <translation>Görbe útvonal pontjának kiválasztása</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
-        <translation>Edytuj kąt pierwszego punktu kontrolnego</translation>
+        <translation>Első vezérlőpont szögének szerkesztése</translation>
     </message>
     <message>
         <source>Edit second control point angle</source>
-        <translation>Edytuj kąt drugiego punktu kontrolnego</translation>
+        <translation>Második vezérlőpont szögének szerkesztése</translation>
     </message>
     <message>
         <source>Edit first control point length</source>
-        <translation>Edytuj długość pierwszego punktu kontrolnego</translation>
+        <translation>Első kontrollpont hosszának szerkesztése</translation>
     </message>
     <message>
         <source>Edit second control point length</source>
-        <translation>Edytuj długość drugiego punktu kontrolnego</translation>
+        <translation>A második kontrollpont hosszának szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>Długość nie może być ujemna</translation>
+        <translation>A hossz nem lehet negatív</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
-        <translation>Nieprawidłowa ścieżka splajnu</translation>
+        <translation>Érvénytelen spline-útvonal</translation>
     </message>
     <message>
         <source>Not used</source>
-        <translation>Nieużywane</translation>
+        <translation>Nincs használatban</translation>
     </message>
     <message>
         <source>Result value</source>
-        <translation>Wartość wyniku</translation>
+        <translation>Eredmény értéke</translation>
     </message>
 </context>
 <context>
     <name>DialogTool</name>
     <message>
         <source>First point</source>
-        <translation>Pierwszy punkt</translation>
+        <translation>Első pont</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation>Drugi punkt</translation>
+        <translation>Második pont</translation>
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Najwyższy punkt</translation>
+        <translation>Legmagasabb pont</translation>
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Najniższy punkt</translation>
+        <translation>Legalacsonyabb pont</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Punkt najbardziej wysunięty na lewo</translation>
+        <translation>A legbaloldalibb pont</translation>
     </message>
     <message>
         <source>Rightmost point</source>
-        <translation>Punkt najbardziej wysunięty na prawo</translation>
+        <translation>Jobboldali legszélső pont</translation>
     </message>
     <message>
         <source>by length</source>
-        <translation>według długości</translation>
+        <translation>hossz szerint</translation>
     </message>
     <message>
         <source>by intersection</source>
-        <translation>przez skrzyżowanie</translation>
+        <translation>kereszteződésnél</translation>
     </message>
     <message>
         <source>by first edge symmetry</source>
-        <translation>według pierwszej symetrii krawędzi</translation>
+        <translation>első élszimmetria szerint</translation>
     </message>
     <message>
         <source>by second edge symmetry</source>
-        <translation>przez drugą symetrię krawędzi</translation>
+        <translation>második élszimmetria alapján</translation>
     </message>
     <message>
         <source>by first edge right angle</source>
-        <translation>pod kątem prostym do pierwszej krawędzi</translation>
+        <translation>az első él derékszöge szerint</translation>
     </message>
     <message>
         <source>by second edge right angle</source>
-        <translation>pod kątem prostym do drugiej krawędzi</translation>
+        <translation>a második él derékszöge szerint</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Empty field</source>
-        <translation>Puste pole</translation>
+        <translation>Üres mező</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Nieprawidłowy wynik. Wartość jest nieskończona lub NaN. Proszę sprawdzić obliczenia.</translation>
+        <translation>Érvénytelen eredmény. Az érték végtelen vagy NaN. Kérjük, ellenőrizze a számításokat.</translation>
     </message>
     <message>
         <source>Value can&apos;t be 0</source>
-        <translation>Wartość nie może być równa 0</translation>
+        <translation>Az érték nem lehet 0</translation>
     </message>
     <message>
         <source>Value can&apos;t be less than 0</source>
-        <translation>Wartość nie może być mniejsza niż 0</translation>
+        <translation>Az érték nem lehet kisebb, mint 0</translation>
     </message>
     <message>
         <source>Result Value</source>
-        <translation>Wartość wyniku</translation>
+        <translation>Eredmény értéke</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>Błąd parsera: %1</translation>
+        <translation>Elemző hiba: %1</translation>
     </message>
     <message>
         <source>Angle Calculation</source>
-        <translation>Obliczanie kątów</translation>
+        <translation>Szögszámítás</translation>
     </message>
     <message>
         <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
-        <translation>Kąty są podawane w stopniach, np. pełne koło to 360 stopni. Wartości dodatnie oznaczają kąt przeciwny do ruchu wskazówek zegara, a ujemne – kąt zgodny z ruchem wskazówek zegara. Zero stopni znajduje się na godzinie 3.</translation>
+        <translation>A szögeket fokban adjuk meg, azaz egy teljes kör 360 foknak felel meg. A szög pozitív értékei az óramutató járásával ellentétes, míg a negatív érték az óramutató járásával megegyező irányt jelentenek. A nulla fok a 3 órás pozícióban van.</translation>
     </message>
 </context>
 <context>
     <name>DialogTriangle</name>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punkt – Przecięcie osi i trójkąta</translation>
+        <translation>Pont - Tengely és Háromszög metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>1. punkt osi:</translation>
+        <translation>1. tengelypont:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>2. punkt osi:</translation>
+        <translation>2. tengelypont:</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Select second point of axis</source>
-        <translation>Wybierz drugi punkt osi</translation>
+        <translation>Válassza ki a tengely második pontját</translation>
     </message>
     <message>
         <source>Select first point</source>
-        <translation>Wybierz pierwszy punkt</translation>
+        <translation>Első pont kiválasztása</translation>
     </message>
     <message>
         <source>Select second point</source>
-        <translation>Wybierz drugi punkt</translation>
+        <translation>Válassza ki a második pontot</translation>
     </message>
 </context>
 <context>
     <name>DialogTrueDarts</name>
     <message>
         <source>True Darts</source>
-        <translation>Prawdziwe lotki</translation>
+        <translation>Igazi darts</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Point name 1:</source>
-        <translation>Nazwa punktu 1:</translation>
+        <translation>1. pont neve:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Point name 2:</source>
-        <translation>Nazwa punktu 2:</translation>
+        <translation>2. pont neve:</translation>
     </message>
     <message>
         <source>1st base point:</source>
-        <translation>1. punkt bazowy:</translation>
+        <translation>1. alappont:</translation>
     </message>
     <message>
         <source>2nd base point:</source>
-        <translation>2. punkt bazowy:</translation>
+        <translation>2. alappont:</translation>
     </message>
     <message>
         <source>1st dart point:</source>
-        <translation>Pierwszy punkt rzutki:</translation>
+        <translation>1. darts pont:</translation>
     </message>
     <message>
         <source>2nd dart point:</source>
-        <translation>2. punkt rzutki:</translation>
+        <translation>2. nyílvessző:</translation>
     </message>
     <message>
         <source>3rd dart point:</source>
-        <translation>3. punkt rzutki:</translation>
+        <translation>3. nyílvessző pont:</translation>
     </message>
     <message>
         <source>Select the second base point</source>
-        <translation>Wybierz drugi punkt bazowy</translation>
+        <translation>Válassza ki a második alappontot</translation>
     </message>
     <message>
         <source>Select the first dart point</source>
-        <translation>Wybierz pierwszy punkt rzutki</translation>
+        <translation>Válassza ki az első dartspontot</translation>
     </message>
     <message>
         <source>Select the second dart point</source>
-        <translation>Wybierz drugi punkt rzutki</translation>
+        <translation>Válassza ki a második dartspontot</translation>
     </message>
     <message>
         <source>Select the third dart point</source>
-        <translation>Wybierz trzeci punkt rzutki</translation>
+        <translation>Válassza ki a harmadik dartspontot</translation>
     </message>
 </context>
 <context>
     <name>DialogUndo</name>
     <message>
         <source>Broken formula</source>
-        <translation>Złamana formuła</translation>
+        <translation>Hibás képlet</translation>
     </message>
     <message>
         <source>Seamly2D encountered an error while computing a formula.
 Please try to undo the latest operation or fix the broken formula.</source>
-        <translation>Seamly2D napotkał błąd podczas obliczania formuły.
-Spróbuj cofnąć ostatnią operację lub naprawić uszkodzoną formułę.</translation>
+        <translation>A Seamly2D hibát észlelt egy képlet kiszámítása közben.
+Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a hibás képletet.</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Cofnij</translation>
+        <translation>&amp;Visszavonás</translation>
     </message>
     <message>
         <source>&amp;Fix formula</source>
-        <translation>&amp;Napraw formułę</translation>
+        <translation>&amp;Képletjavítás</translation>
     </message>
 </context>
 <context>
     <name>DialogVariables</name>
     <message>
         <source>Variables</source>
-        <translation>Zmienne</translation>
+        <translation>Változók</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Filtr:</translation>
+        <translation>Szűrő:</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Filtruj listę według słowa kluczowego</translation>
+        <translation>Lista szűrése kulcsszó szerint</translation>
     </message>
     <message>
         <source>Custom variables</source>
-        <translation>Zmienne niestandardowe</translation>
+        <translation>Egyéni változók</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula</source>
-        <translation>Formuła</translation>
+        <translation>Képlet</translation>
     </message>
     <message>
         <source>Move measurement up</source>
-        <translation>Przesuń pomiar w górę</translation>
+        <translation>Mérés mozgatása felfelé</translation>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation>Przesuń pomiar w dół</translation>
+        <translation>Mérés lejjebb mozgatása</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Add custom variable</source>
-        <translation>Dodaj zmienną niestandardową</translation>
+        <translation>Egyéni változó hozzáadása</translation>
     </message>
     <message>
         <source>Remove custom variable</source>
-        <translation>Usuń zmienną niestandardową</translation>
+        <translation>Egyéni változó eltávolítása</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique variable name</source>
-        <translation>Unikalna nazwa zmiennej</translation>
+        <translation>Egyedi változónév</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Wartość:</translation>
+        <translation>Érték:</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Formuła:</translation>
+        <translation>Képlet:</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Opis:</translation>
+        <translation>Leírás:</translation>
     </message>
     <message>
         <source>Refresh a pattern with all changes you made</source>
-        <translation>Odśwież wzór ze wszystkimi wprowadzonymi zmianami</translation>
+        <translation>Minta frissítése az összes elvégzett módosítással</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Odśwież</translation>
+        <translation>Frissítés</translation>
     </message>
     <message>
         <source>Line lengths</source>
-        <translation>Długości linii</translation>
+        <translation>Vonalak hossza</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Linia</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Line angles</source>
-        <translation>Kąty linii</translation>
+        <translation>Vonalszögek</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Curve lengths</source>
-        <translation>Długości krzywych</translation>
+        <translation>Ívhosszak</translation>
     </message>
     <message>
         <source>Curve</source>
-        <translation>Krzywa</translation>
+        <translation>Görbe</translation>
     </message>
     <message>
         <source>Curve angles</source>
-        <translation>Kąty krzywizny</translation>
+        <translation>Ívszögek</translation>
     </message>
     <message>
         <source>Control point lengths</source>
-        <translation>Długości punktów kontrolnych</translation>
+        <translation>Ellenőrzőpontok hossza</translation>
     </message>
     <message>
         <source>Arc radiuses</source>
-        <translation>Promienie łuku</translation>
+        <translation>Ívsugarak</translation>
     </message>
     <message>
         <source>Arc</source>
-        <translation>Łuk</translation>
+        <translation>Ív</translation>
     </message>
     <message>
         <source>Radius</source>
-        <translation>Promień</translation>
+        <translation>Sugár</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Empty field.</source>
-        <translation>Puste pole.</translation>
+        <translation>Üres mező.</translation>
     </message>
     <message>
         <source>Empty field</source>
-        <translation>Puste pole</translation>
+        <translation>Üres mező</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Nieprawidłowy wynik. Wartość jest nieskończona lub NaN. Proszę sprawdzić obliczenia.</translation>
+        <translation>Érvénytelen eredmény. Az érték végtelen vagy NaN. Kérjük, ellenőrizze a számításokat.</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>Błąd parsera: %1</translation>
+        <translation>Elemző hiba: %1</translation>
     </message>
     <message>
         <source>Edit variable</source>
-        <translation>Edytuj zmienną</translation>
+        <translation>Változó szerkesztése</translation>
     </message>
 </context>
 <context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Tool</source>
-        <translation>Narzędzie</translation>
+        <translation>Eszköz</translation>
     </message>
 </context>
 <context>
     <name>EditFormulaDialog</name>
     <message>
         <source>Edit formula</source>
-        <translation>Edytuj formułę</translation>
+        <translation>Képlet szerkesztése</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Pomiary</translation>
+        <translation>Mérések</translation>
     </message>
     <message>
         <source>Custom Variables</source>
-        <translation>Zmienne niestandardowe</translation>
+        <translation>Egyéni változók</translation>
     </message>
     <message>
         <source>Line Lengths</source>
-        <translation>Długości linii</translation>
+        <translation>Vonalak hossza</translation>
     </message>
     <message>
         <source>Line Angles</source>
-        <translation>Kąty linii</translation>
+        <translation>Vonalszögek</translation>
     </message>
     <message>
         <source>Curve Lengths</source>
-        <translation>Długości krzywych</translation>
+        <translation>Ívhosszak</translation>
     </message>
     <message>
         <source>Curve Angles</source>
-        <translation>Kąty krzywizny</translation>
+        <translation>Ívszögek</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Długości punktów kontrolnych</translation>
+        <translation> Ellenőrzőpontok hossza</translation>
     </message>
     <message>
         <source>Arc Radii</source>
-        <translation>Promienie łuku</translation>
+        <translation>Ívsugarak</translation>
     </message>
     <message>
         <source>Functions</source>
-        <translation>Funkcje</translation>
+        <translation>Függvények</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Formuła:</translation>
+        <translation>Képlet:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Przejrzysta formuła</translation>
+        <translation>Tiszta képlet</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Przywróć oryginalną formułę</translation>
+        <translation>Visszaállítás az eredeti képletre</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Wstaw zmienną do formuły</translation>
+        <translation>Változó beszúrása a képletbe</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Liczba</translation>
+        <translation>Szám</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Pełne imię i nazwisko</translation>
+        <translation>Teljes név</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
-        <translation>Ukrywa zmienne pomiarowe, które nie mają wartości</translation>
+        <translation>Elrejti az értékkel nem rendelkező mérési változókat</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
-        <translation>Ukryj puste pomiary</translation>
+        <translation>Üres mértékegységek elrejtése</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
-        <translation>Filtruj listę zmiennych według słowa kluczowego</translation>
+        <translation>Változólista szűrése kulcsszó szerint</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Filtruj listę według słowa kluczowego</translation>
+        <translation>Lista szűrése kulcsszó szerint</translation>
     </message>
     <message>
         <source>Measurement</source>
-        <translation>Pomiar</translation>
+        <translation>Mérés</translation>
     </message>
     <message>
         <source>Custom Variable</source>
-        <translation>Zmienna niestandardowa</translation>
+        <translation>Egyéni változó</translation>
     </message>
     <message>
         <source>Line length</source>
-        <translation>Długość linii</translation>
+        <translation>Sorhossz</translation>
     </message>
     <message>
         <source>Curve length</source>
-        <translation>Długość krzywej</translation>
+        <translation>Ívhossz</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation>Kąt linii</translation>
+        <translation>Vonalszög</translation>
     </message>
     <message>
         <source>Arc radius</source>
-        <translation>Promień łuku</translation>
+        <translation>Ív sugara</translation>
     </message>
     <message>
         <source>Curve angle</source>
-        <translation>Kąt krzywizny</translation>
+        <translation>Ívszög</translation>
     </message>
     <message>
         <source>Full Name:</source>
-        <translation>Imię i nazwisko:</translation>
+        <translation>Teljes név:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Opis:</translation>
+        <translation>Leírás:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Niestandardowy</translation>
+        <translation>Egyéni</translation>
     </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
     <message>
         <source>Add Group</source>
-        <translation>Dodaj grupę</translation>
+        <translation>Csoport hozzáadása</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Unikalna nazwa wzoru</translation>
+        <translation>Egyedi mintadarab neve</translation>
     </message>
     <message>
         <source>Unique group name</source>
-        <translation>Unikalna nazwa grupy</translation>
+        <translation>Egyedi csoportnév</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
 </context>
 <context>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
-        <translation>Edytuj szablon etykiety</translation>
+        <translation>Címkesablon szerkesztése</translation>
     </message>
     <message>
         <source>Clear current and begin new label</source>
-        <translation>Wyczyść bieżącą i rozpocznij nową etykietę</translation>
+        <translation>A jelenlegi címke törlése és új címke kezdése</translation>
     </message>
     <message>
         <source>Import from label template</source>
-        <translation>Importuj z szablonu etykiety</translation>
+        <translation>Importálás címkesablonból</translation>
     </message>
     <message>
         <source>Export label as template</source>
-        <translation>Eksportuj etykietę jako szablon</translation>
+        <translation>Címke exportálása sablonként</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Bold</source>
         <comment>Font formatting</comment>
-        <translation>Pogrubiony</translation>
+        <translation>Félkövér</translation>
     </message>
     <message>
         <source>Italic</source>
         <comment>Font formatting</comment>
-        <translation>Kursywa</translation>
+        <translation>Dőlt</translation>
     </message>
     <message>
         <source>Aligns with the left edge</source>
-        <translation>Dopasowuje się do lewej krawędzi</translation>
+        <translation>A bal szélhez igazodik</translation>
     </message>
     <message>
         <source>Centers horizontally in the available space</source>
-        <translation>Centruje się poziomo w dostępnej przestrzeni</translation>
+        <translation>Vízszintesen középre igazítja a rendelkezésre álló helyet</translation>
     </message>
     <message>
         <source>Aligns with the right edge</source>
-        <translation>Dopasowuje się do prawej krawędzi</translation>
+        <translation>A jobb szélhez igazodik</translation>
     </message>
     <message>
         <source>Additional font size. Use to make a line bigger.</source>
-        <translation>Dodatkowy rozmiar czcionki. Użyj, aby powiększyć linię.</translation>
+        <translation>További betűméret. Sorméret növeléséhez használd.</translation>
     </message>
     <message>
         <source>Text:</source>
-        <translation>Tekst:</translation>
+        <translation>Szöveg:</translation>
     </message>
     <message>
         <source>Line of text</source>
-        <translation>Wiersz tekstu</translation>
+        <translation>Szövegsor</translation>
     </message>
     <message>
         <source>Insert placeholders</source>
-        <translation>Wstaw symbole zastępcze</translation>
+        <translation>Helyőrzők beszúrása</translation>
     </message>
     <message>
         <source>Insert...</source>
-        <translation>Wstaw...</translation>
+        <translation>Beszúrás...</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Podgląd</translation>
+        <translation>Előnézet</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation>&lt;pusty&gt;</translation>
+        <translation>&lt;üres&gt;</translation>
     </message>
     <message>
         <source>Create new template</source>
-        <translation>Utwórz nowy szablon</translation>
+        <translation>Új sablon létrehozása</translation>
     </message>
     <message>
         <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation>Utworzenie nowego szablonu spowoduje nadpisanie obecnego. Czy chcesz kontynuować?</translation>
+        <translation>Új sablon létrehozása felülírja a jelenlegit, folytatja?</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Szablon etykiety</translation>
+        <translation>Címke sablon</translation>
     </message>
     <message>
         <source>Export label template</source>
-        <translation>Eksportuj szablon etykiety</translation>
+        <translation>Címkesablon exportálása</translation>
     </message>
     <message>
         <source>template</source>
-        <translation>szablon</translation>
+        <translation>sablon</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nie można zapisać pliku</translation>
+        <translation>Nem sikerült menteni a fájlt</translation>
     </message>
     <message>
         <source>Import template</source>
-        <translation>Importuj szablon</translation>
+        <translation>Sablon importálása</translation>
     </message>
     <message>
         <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation>Import szablonu nadpisze obecny, czy chcesz kontynuować?</translation>
+        <translation>Az import sablon felülírja a jelenlegit, folytatni szeretnéd?</translation>
     </message>
     <message>
         <source>File error.</source>
-        <translation>Błąd pliku.</translation>
+        <translation>Fájlhiba.</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>Data</translation>
+        <translation>Dátum</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Czas</translation>
+        <translation>Idő</translation>
     </message>
     <message>
         <source>Pattern name</source>
-        <translation>Nazwa wzoru</translation>
+        <translation>Minta neve</translation>
     </message>
     <message>
         <source>Pattern number</source>
-        <translation>Numer wzoru</translation>
+        <translation>Mintaszám</translation>
     </message>
     <message>
         <source>Company name or designer name</source>
-        <translation>Nazwa firmy lub projektanta</translation>
+        <translation>Cégnév vagy tervező neve</translation>
     </message>
     <message>
         <source>Customer name</source>
-        <translation>Nazwa klienta</translation>
+        <translation>Ügyfél neve</translation>
     </message>
     <message>
         <source>Pattern file name</source>
-        <translation>Nazwa pliku wzoru</translation>
+        <translation>Mintafájl neve</translation>
     </message>
     <message>
         <source>Pattern file extension</source>
-        <translation>Rozszerzenie pliku wzoru</translation>
+        <translation>Mintafájl-kiterjesztés</translation>
     </message>
     <message>
         <source>Measurements file name</source>
-        <translation>Nazwa pliku pomiarów</translation>
+        <translation>Mérésfájl neve</translation>
     </message>
     <message>
         <source>Measurements file extension</source>
-        <translation>Rozszerzenie pliku pomiarów</translation>
+        <translation>Mérésfájl-kiterjesztés</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Rozmiar</translation>
+        <translation>Méret</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Wysokość</translation>
+        <translation>Magasság</translation>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>List w kawałkach</translation>
+        <translation>Darablevél</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>Adnotacja do utworu</translation>
+        <translation>Darab megjegyzése</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>Orientacja elementu</translation>
+        <translation>Darab tájolása</translation>
     </message>
     <message>
         <source>Piece rotation</source>
-        <translation>Obrót elementu</translation>
+        <translation>Darabforgatás</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>Pochylenie elementu</translation>
+        <translation>Darab dőlése</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>Pozycja składania elementów</translation>
+        <translation>Darab hajtási pozíciója</translation>
     </message>
     <message>
         <source>Piece name</source>
-        <translation>Nazwa elementu</translation>
+        <translation>Darab neve</translation>
     </message>
     <message>
         <source>Quantity</source>
-        <translation>Ilość</translation>
+        <translation>Mennyiség</translation>
     </message>
     <message>
         <source>Material: Fabric</source>
-        <translation>Materiał: Tkanina</translation>
+        <translation>Anyag: Szövet</translation>
     </message>
     <message>
         <source>Fabric</source>
-        <translation>Tkanina</translation>
+        <translation>Anyag</translation>
     </message>
     <message>
         <source>Material: Lining</source>
-        <translation>Materiał: Podszewka</translation>
+        <translation>Anyag: Bélés</translation>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Podszewka</translation>
+        <translation>Bélés</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>Materiał: Wkład</translation>
+        <translation>Anyag: Köztes réteg</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Interfejs</translation>
+        <translation>Interfészek</translation>
     </message>
     <message>
         <source>Material: Interlining</source>
-        <translation>Materiał: Wkład flizelinowy</translation>
+        <translation>Anyag: Közbélés</translation>
     </message>
     <message>
         <source>Interlining</source>
-        <translation>Wkład podszewkowy</translation>
+        <translation>Bélelés</translation>
     </message>
     <message>
         <source>Word: Cut</source>
-        <translation>Słowo: Cięcie</translation>
+        <translation>Szó: Vágás</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Wytnij</translation>
+        <translation>Vágás</translation>
     </message>
     <message>
         <source>Word: on fold</source>
-        <translation>Słowo: na zgięciu</translation>
+        <translation>Szó: hajtogatáson</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>na zagięciu</translation>
+        <translation>hajtogatáskor</translation>
     </message>
 </context>
 <context>
     <name>ExportFormatCombobox</name>
     <message>
         <source>(flat) files</source>
-        <translation>(płaskie) pliki</translation>
+        <translation>(lapos) fájlok</translation>
     </message>
     <message>
         <source>files</source>
-        <translation>pliki</translation>
+        <translation>fájlok</translation>
     </message>
 </context>
 <context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translation>Eksportuj układ</translation>
+        <translation>Elrendezés exportálása</translation>
     </message>
     <message>
         <source>Binary form</source>
-        <translation>Forma binarna</translation>
+        <translation>Bináris forma</translation>
     </message>
     <message>
         <source>Text as paths</source>
-        <translation>Tekst jako ścieżki</translation>
+        <translation>Szöveg elérési utakként</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Ścieżka:</translation>
+        <translation>Útvonal:</translation>
     </message>
     <message>
         <source>Destination folder</source>
-        <translation>Folder docelowy</translation>
+        <translation>Célmappa</translation>
     </message>
     <message>
         <source>Path to destination folder</source>
-        <translation>Ścieżka do folderu docelowego</translation>
+        <translation>A célmappa elérési útja</translation>
     </message>
     <message>
         <source>Select path to destination folder</source>
-        <translation>Wybierz ścieżkę do folderu docelowego</translation>
+        <translation>Válassza ki a célmappa elérési útját</translation>
     </message>
     <message>
         <source>Browse...</source>
-        <translation>Przeglądaj...</translation>
+        <translation>Böngészés...</translation>
     </message>
     <message>
         <source>File format:</source>
-        <translation>Format pliku:</translation>
+        <translation>Fájlformátum:</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nazwa pliku:</translation>
+        <translation>Fájlnév:</translation>
     </message>
     <message>
         <source>File base name</source>
-        <translation>Nazwa bazy pliku</translation>
+        <translation>Fájl alapneve</translation>
     </message>
     <message>
         <source>Quality (0-100):</source>
-        <translation>Jakość (0-100):</translation>
+        <translation>Minőség (0-100):</translation>
     </message>
     <message>
         <source>Export files:</source>
-        <translation>Eksportuj pliki:</translation>
+        <translation>Fájlok exportálása:</translation>
     </message>
     <message>
         <source>Export Selected Sizes</source>
-        <translation>Eksportuj wybrane rozmiary</translation>
+        <translation>Kijelölt méretek exportálása</translation>
     </message>
     <message>
         <source>Select All</source>
-        <translation>Zaznacz wszystko</translation>
+        <translation>Összes kijelölése</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation>Marginesy (tylko w formacie PDF kafelkowym)</translation>
+        <translation>Margók (csak csempézett PDF esetén)</translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Po prawej:</translation>
+        <translation>Jobban:</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation>Lewy:</translation>
+        <translation>Balra:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Góra:</translation>
+        <translation>Felső:</translation>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Dół:</translation>
+        <translation>Alul:</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation>Format papieru (tylko kafelkowy PDF)</translation>
+        <translation>Papír formátum (csak csempézett PDF esetén)</translation>
     </message>
     <message>
         <source>Templates: </source>
-        <translation>Szablony: </translation>
+        <translation>Sablonok: </translation>
     </message>
     <message>
         <source>Orientation: </source>
-        <translation>Orientacja: </translation>
+        <translation>Tájolás: </translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation>Exportálás</translation>
     </message>
     <message>
         <source>The base filename does not match a regular expression.</source>
-        <translation>Podstawowa nazwa pliku nie pasuje do wyrażenia regularnego.</translation>
+        <translation>Az alap fájlnév nem egyezik meg egyetlen reguláris kifejezéssel sem.</translation>
     </message>
     <message>
         <source>Select folder</source>
-        <translation>Wybierz folder</translation>
+        <translation>Mappa kiválasztása</translation>
     </message>
     <message>
         <source>Tried to use out of range format number.</source>
-        <translation>Próbowano użyć formatu liczby spoza zakresu.</translation>
+        <translation>Tartományon kívüli formátumú számot próbáltam használni.</translation>
     </message>
     <message>
         <source>Selected not present format.</source>
-        <translation>Wybrano format niedostępny.</translation>
+        <translation>A kiválasztott formátum nem megfelelő.</translation>
     </message>
     <message>
         <source>The destination directory doesn&apos;t exist or is not readable.</source>
-        <translation>Katalog docelowy nie istnieje lub nie można go odczytać.</translation>
+        <translation>A célkönyvtár nem létezik, vagy nem olvasható.</translation>
     </message>
     <message>
         <source>%1 already exists.</source>
-        <translation>%1 już istnieje.</translation>
+        <translation>%1 már létezik.</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
-        <translation>Istnieje już %1 plików o nazwie bazowej %2.</translation>
+        <translation>%1 fájl már létezik %2 alapnévvel.</translation>
     </message>
     <message>
         <source>Do you want to replace them?</source>
-        <translation>Czy chcesz je zastąpić?</translation>
+        <translation>Le akarod cserélni őket?</translation>
     </message>
     <message>
         <source>Confirm Export</source>
-        <translation>Potwierdź eksport</translation>
+        <translation>Exportálás megerősítése</translation>
     </message>
 </context>
 <context>
     <name>ExportProgressDialog</name>
     <message>
         <source>Exporting files...</source>
-        <translation>Eksportowanie plików...</translation>
+        <translation>Fájlok exportálása...</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Állapot</translation>
     </message>
     <message>
         <source>Pending</source>
-        <translation>Oczekujące</translation>
+        <translation>Függőben</translation>
     </message>
     <message>
         <source>Completed</source>
-        <translation>Zakończono</translation>
+        <translation>Befejezve</translation>
     </message>
     <message>
         <source>Failed</source>
-        <translation>Nie powiodło się</translation>
+        <translation>Sikertelen</translation>
     </message>
 </context>
 <context>
     <name>FvUpdater</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Feed download failed: %1.</source>
-        <translation>Nie udało się pobrać kanału: %1.</translation>
+        <translation>A hírcsatorna letöltése sikertelen: %1.</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacje</translation>
+        <translation>Információ</translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>Brak nowych wydań.</translation>
+        <translation>Nincsenek új kiadások.</translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation>Dostępna jest nowa wersja %1.
-Czy chcesz ją pobrać?</translation>
+        <translation>Elérhető egy új kiadás, %1.
+Le szeretnéd tölteni?</translation>
     </message>
     <message>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Nie można uzyskać wyłącznego dostępu do pliku
-%1
-Prawdopodobnie plik jest już pobierany.</translation>
+        <translation>Nem sikerült kizárólagos hozzáférést szerezni a(z)
+%1 fájlhoz. Lehetséges, hogy a fájl letöltése már folyamatban van.</translation>
     </message>
     <message>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Nie można otworzyć pliku
+        <translation>Nem sikerült megnyitni a(z)
 %1
-do zapisu</translation>
+fájlt írásra</translation>
     </message>
     <message>
         <source>File download failed: %1.</source>
-        <translation>Pobieranie pliku nie powiodło się: %1.</translation>
+        <translation>A fájl letöltése sikertelen: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Pobieranie rozpoczęte, instalator otworzy się po zakończeniu pobierania</translation>
+        <translation>A letöltés elindult, a telepítő a letöltés befejezése után nyílik meg</translation>
     </message>
 </context>
 <context>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation>Menedżer grupy</translation>
+        <translation>Csoportkezelő</translation>
     </message>
     <message>
         <source>Show All Groups</source>
-        <translation>Pokaż wszystkie grupy</translation>
+        <translation>Összes csoport megjelenítése</translation>
     </message>
     <message>
         <source>Hide all groups</source>
-        <translation>Ukryj wszystkie grupy</translation>
+        <translation>Összes csoport elrejtése</translation>
     </message>
     <message>
         <source>Lock all groups</source>
-        <translation>Zablokuj wszystkie grupy</translation>
+        <translation>Összes csoport zárolása</translation>
     </message>
     <message>
         <source>Unlock all groups</source>
-        <translation>Odblokuj wszystkie grupy</translation>
+        <translation>Összes csoport feloldása</translation>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Dodaj nową grupę do listy</translation>
+        <translation>Új csoport hozzáadása a listához</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
-        <translation>Usuń aktywną grupę z listy</translation>
+        <translation>Aktív csoport törlése a listából</translation>
     </message>
     <message>
         <source>Edit group properties</source>
-        <translation>Edytuj właściwości grupy</translation>
+        <translation>Csoporttulajdonságok szerkesztése</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Grupy</translation>
+        <translation>Csoportok</translation>
     </message>
     <message>
         <source>Group list</source>
-        <translation>Lista grup</translation>
+        <translation>Csoportlista</translation>
     </message>
     <message>
         <source>Group object list</source>
-        <translation>Lista obiektów grupy</translation>
+        <translation>Csoportobjektumok listája</translation>
     </message>
     <message>
         <source>Objects</source>
-        <translation>Obiekty</translation>
+        <translation>Tárgyak</translation>
     </message>
     <message>
         <source>Double clicking zooms to object.</source>
-        <translation>Podwójne kliknięcie powiększa obiekt.</translation>
+        <translation>A dupla kattintás ráközelít az objektumra.</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Nazwa istnieje</translation>
+        <translation>A név létezik</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>Nie można ukończyć akcji, ponieważ nazwa grupy już istnieje.</translation>
+        <translation>A művelet nem hajtható végre, mert a csoportnév már létezik.</translation>
     </message>
     <message>
         <source>Edit Group</source>
-        <translation>Edytuj grupę</translation>
+        <translation>Csoport szerkesztése</translation>
     </message>
     <message>
         <source>Group color</source>
-        <translation>Kolor grupy</translation>
+        <translation>Csoportszín</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Show which groups in the list are visible</source>
-        <translation>Pokaż, które grupy na liście są widoczne</translation>
+        <translation>A listában látható csoportok megjelenítése</translation>
     </message>
     <message>
         <source>Show which groups in the list are locked</source>
-        <translation>Pokaż, które grupy na liście są zablokowane</translation>
+        <translation>A listában szereplő zárolt csoportok megjelenítése</translation>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation>Pokaż, które grupy zawierają obiekty</translation>
+        <translation>Mutasd meg, mely csoportok tartalmaznak objektumokat</translation>
     </message>
     <message>
         <source>Group name</source>
-        <translation>Nazwa grupy</translation>
+        <translation>Csoport neve</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Widoczny</translation>
+        <translation>Látható</translation>
     </message>
     <message>
         <source>Group is visible</source>
-        <translation>Grupa jest widoczna</translation>
+        <translation>A csoport látható</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Zablokowany</translation>
+        <translation>Zárolva</translation>
     </message>
     <message>
         <source>Group is locked</source>
-        <translation>Grupa jest zablokowana</translation>
+        <translation>A csoport zárolva van</translation>
     </message>
     <message>
         <source>Group has objects</source>
-        <translation>Grupa ma obiekty</translation>
+        <translation>A csoport objektumokkal rendelkezik</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolor</translation>
+        <translation>Szín</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Unknown Object</source>
-        <translation>Nieznany obiekt</translation>
+        <translation>Ismeretlen objektum</translation>
     </message>
     <message>
         <source>%1 - Base point</source>
-        <translation>%1 - Punkt bazowy</translation>
+        <translation>%1 - Alappont</translation>
     </message>
     <message>
         <source>%1 - Point Length and Angle</source>
-        <translation>%1 - Długość i kąt punktu</translation>
+        <translation>%1 - Ponthossz és szög</translation>
     </message>
     <message>
         <source>Line %1_%2</source>
-        <translation>Wiersz %1_%2</translation>
+        <translation>%1_%2. sor</translation>
     </message>
     <message>
         <source>%1 - Point On Line</source>
-        <translation>%1 - Punkt na linii</translation>
+        <translation>%1 - Pont a vonalon</translation>
     </message>
     <message>
         <source>%1 - Point Length to Line</source>
-        <translation>%1 - Długość punktu do linii</translation>
+        <translation>%1 - Ponthossz a vonalig</translation>
     </message>
     <message>
         <source>%1 - Point On Perpendicular</source>
-        <translation>%1 - Punkt prostopadły</translation>
+        <translation>%1 - Pont a merőlegesen</translation>
     </message>
     <message>
         <source>%1 - Point On Bisector</source>
-        <translation>%1 - Punkt na dwusiecznej</translation>
+        <translation>%1 - Pont a felezőn</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Punkty przecinają linie</translation>
+        <translation>%1 - Pont metszéspont vonalak</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
-        <translation>%1 - Krzywa interaktywna</translation>
+        <translation>%1 - Görbe interaktív</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation>Spl_</translation>
+        <translation>Kiegészítő_</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
-        <translation>%1 - Krzywa naprawiona</translation>
+        <translation>%1 - Görbe rögzítve</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
-        <translation>%1 - Promień łuku i kąty</translation>
+        <translation>%1 - Ív sugara és szögei</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Łuk_</translation>
+        <translation>Ív_</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Length</source>
-        <translation>%1 - Promień i długość łuku</translation>
+        <translation>%1 - Ív sugara és hossza</translation>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
-        <translation>%1 - Interaktywny Spline</translation>
+        <translation>%1 - Spline Interactive</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Ścieżka Spl_</translation>
+        <translation>Elérési_útvonal</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
-        <translation>%1 - Naprawiono splajn</translation>
+        <translation>%1 - Spline Rögzített</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
-        <translation>%1 - Punkt przecina łuk i linię</translation>
+        <translation>%1 - Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Punkt przecięcia linii i prostopadłej</translation>
+        <translation>%1 - Pont metszi az egyenest és a merőlegest</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
-        <translation>%1 - Punkt przecięcia osi i trójkąta</translation>
+        <translation>%1 - Tengely és Háromszög metszéspontja</translation>
     </message>
     <message>
         <source>%1 - Point Intersect XY</source>
-        <translation>%1 - Punkt przecięcia XY</translation>
+        <translation>%1 - XY metszéspont</translation>
     </message>
     <message>
         <source>%1 - Point On Arc</source>
-        <translation>%1 - Punkt na łuku</translation>
+        <translation>%1 - Pont az íven</translation>
     </message>
     <message>
         <source>%1 - Point On Curve</source>
-        <translation>%1 - Punkt na krzywej</translation>
+        <translation>%1 - Pont a görbén</translation>
     </message>
     <message>
         <source>%1 - Point On Spline</source>
-        <translation>%1 - Punkt na krzywej</translation>
+        <translation>%1 - Pont a spline-on</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Punkt przecięcia linii i osi</translation>
+        <translation>%1 - Pont metszi a vonalat és a tengelyt</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
-        <translation>%1 - Punkt przecięcia krzywej i osi</translation>
+        <translation>%1 - Pont metszéspont görbe és tengely</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arcs</source>
-        <translation>%1 - Punkt przecina łuki</translation>
+        <translation>%1 - Pont metszéspont ívek</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punkt przecina okręgi</translation>
+        <translation>%1 - Köröket metsző pont</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Punkt przecięcia krzywych</translation>
+        <translation>%1 - Pontmetszés görbék</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Punkt przecina okrąg i styczną</translation>
+        <translation>%1 - Kör és érintő metszéspontja</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Punkt przecina łuk i styczną</translation>
+        <translation>%1 - Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Prawdziwy Dart %2_%3_%4</translation>
+        <translation>%1 - Igaz Dart %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
-        <translation>%1 - Łuk eliptyczny</translation>
+        <translation>%1 - Ellipszis görbe</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -4263,214 +4262,214 @@ do zapisu</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
-        <translation>%1 - Obrót</translation>
+        <translation>%1 - Forgatás</translation>
     </message>
     <message>
         <source>%1 - Move</source>
-        <translation>%1 - Przenieś</translation>
+        <translation>%1 - Áthelyezés</translation>
     </message>
     <message>
         <source>%1 - Mirror by Line</source>
-        <translation>%1 - Lustro według linii</translation>
+        <translation>%1 - Soronként tükrözés</translation>
     </message>
     <message>
         <source>%1 - Mirror by Axis</source>
-        <translation>%1 - Lustro według osi</translation>
+        <translation>%1 - Tengely szerinti tükrözés</translation>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Przenieś obiekt grupy</translation>
+        <translation>Csoportobjektum áthelyezése</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Usuń obiekt grupy</translation>
+        <translation>Csoportobjektum eltávolítása</translation>
     </message>
 </context>
 <context>
     <name>HistoryDialog</name>
     <message>
         <source>History</source>
-        <translation>Historia</translation>
+        <translation>Történelem</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>Znajdź:</translation>
+        <translation>Keresés:</translation>
     </message>
     <message>
         <source>Search text</source>
-        <translation>Szukaj tekstu</translation>
+        <translation>Keresési szöveg</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Znajdź poprzednie</translation>
+        <translation>Előző keresése</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Znajdź następny</translation>
+        <translation>Következő keresése</translation>
     </message>
     <message>
         <source>Seach by regular expression</source>
-        <translation>Szukaj według wyrażenia regularnego</translation>
+        <translation>Keresés reguláris kifejezéssel</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Rozróżniaj wielkość liter</translation>
+        <translation>Kis- és nagybetűérzékeny</translation>
     </message>
     <message>
         <source>Search by full word</source>
-        <translation>Szukaj według pełnego słowa</translation>
+        <translation>Keresés teljes szó alapján</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Projekt bloku:</translation>
+        <translation>Vázlatblokk:</translation>
     </message>
     <message>
         <source>block</source>
-        <translation>blok</translation>
+        <translation>blokk</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Identyfikator</translation>
+        <translation>Azonosító</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Opis</translation>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Radius / Length</source>
-        <translation>Promień / Długość</translation>
+        <translation>Sugár / Hosszúság</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation>Nie można utworzyć rekordu.</translation>
+        <translation>Nem sikerült létrehozni a rekordot.</translation>
     </message>
     <message>
         <source>Base Point</source>
-        <translation>Punkt bazowy</translation>
+        <translation>Alappont</translation>
     </message>
     <message>
         <source>Point Length and Angle from point %1</source>
-        <translation>Długość punktu i kąt od punktu %1</translation>
+        <translation>Ponthossz és szög a %1 ponttól</translation>
     </message>
     <message>
         <source>Line_%1_%2</source>
-        <translation>Linia_%1_%2</translation>
+        <translation>%1_%2. sor</translation>
     </message>
     <message>
         <source>Line from %1 to %2</source>
-        <translation>Wiersz od %1 do %2</translation>
+        <translation>Sor %1-től %2-ig</translation>
     </message>
     <message>
         <source>Point On Line %1_%2</source>
-        <translation>Punkt na linii %1_%2</translation>
+        <translation>Pont a %1_%2 vonalon</translation>
     </message>
     <message>
         <source>Point Length to Line</source>
-        <translation>Długość punktu do linii</translation>
+        <translation>Pontok hossza vonalhoz viszonyítva</translation>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
-        <translation>Punkt prostopadły %1_%2</translation>
+        <translation>Pont a %1_%2 merőlegesen</translation>
     </message>
     <message>
         <source>Point On Bisector %1_%2_%3</source>
-        <translation>Punkt na dwusiecznej %1_%2_%3</translation>
+        <translation>Pont a %1_%2_%3 felezőmezőn</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Punkt przecina linie %1_%2 i %3_%4</translation>
+        <translation>A pont metszi a következő vonalakat: %1_%2 és %3_%4</translation>
     </message>
     <message>
         <source>Curve Interactive</source>
-        <translation>Krzywa interaktywna</translation>
+        <translation>Interaktív görbe</translation>
     </message>
     <message>
         <source>Curve Fixed</source>
-        <translation>Krzywa stała</translation>
+        <translation>Ív Rögzített</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
-        <translation>Promień łuku i kąty</translation>
+        <translation>Ív sugara és szögei</translation>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Łuk z promieniem, długością i kątem</translation>
+        <translation>Ív sugárral, hosszúsággal és szöggel</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
-        <translation>Interaktywny Spline</translation>
+        <translation>Spline interaktív</translation>
     </message>
     <message>
         <source>Spline Fixed</source>
-        <translation>Naprawiono splajn</translation>
+        <translation>Spline Rögzített</translation>
     </message>
     <message>
         <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
-        <translation>Punkt przecina łuk ze środkiem %1 i linią %2_%3</translation>
+        <translation>A pont metszi az ívet, amelynek középpontja %1, és a vonala %2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
-        <translation>Punkt przecina linię %1_%2 i prostopadłą %3</translation>
+        <translation>A pont metszi a %1_%2 egyenest és a %3 merőlegest</translation>
     </message>
     <message>
         <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Punkt przecięcia osi %1_%2 i punktów trójkąta %3 i %4</translation>
+        <translation>A tengely %1_%2 és a háromszög pontjainak %3 és %4 metszéspontja</translation>
     </message>
     <message>
         <source>Point Intersect XY of points %1 and %2</source>
-        <translation>Punkt przecięcia XY punktów %1 i %2</translation>
+        <translation>%1 és %2 pontok XY metszéspontja</translation>
     </message>
     <message>
         <source>Point On Arc</source>
-        <translation>Punkt na łuku</translation>
+        <translation>Pont az íven</translation>
     </message>
     <message>
         <source>Point On Curve</source>
-        <translation>Punkt na krzywej</translation>
+        <translation>Pont a görbén</translation>
     </message>
     <message>
         <source>Point On Spline</source>
-        <translation>Punkt na krzywej</translation>
+        <translation>Pont a spline-on</translation>
     </message>
     <message>
         <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>%Point przecina linię i %1_%2, a oś przechodzi przez punkt %3</translation>
+        <translation>%Point metszi a vonalat és a %1_%2-t, valamint a %3 ponton áthaladó tengelyt</translation>
     </message>
     <message>
         <source>Point Intersect Curve &amp; Axis through point %1</source>
-        <translation>Punkt przecina krzywą i oś przez punkt %1</translation>
+        <translation>Görbe és tengely metszéspontja %1 ponton keresztül</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punkt przecina łuki</translation>
+        <translation>Ívek metszéspontja</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punkt przecina okręgi</translation>
+        <translation>%1 - Köröket metsző pont</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punkt przecięcia krzywych</translation>
+        <translation>Pontok metszéspontjainak görbéi</translation>
     </message>
     <message>
         <source>Point Intersect Circle &amp; Tangent</source>
-        <translation>Punkt przecina okrąg i styczną</translation>
+        <translation>Kör és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Punkt przecina łuk i styczną</translation>
+        <translation>Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>True Dart %1_%2_%3</source>
-        <translation>Prawdziwy Dart %1_%2_%3</translation>
+        <translation>Igazi nyíl %1_%2_%3</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -4478,54 +4477,54 @@ do zapisu</translation>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
-        <translation>Łuk eliptyczny o długości %1</translation>
+        <translation>Ellipszisív, hossza %1</translation>
     </message>
     <message>
         <source>Rotation around point %1. Suffix %2</source>
-        <translation>Obrót wokół punktu %1. Sufiks %2</translation>
+        <translation>Forgatás %1 pont körül. Utótag %2</translation>
     </message>
     <message>
         <source>Mirror by Line %1_%2. Suffix %3</source>
-        <translation>Odbicie lustrzane według wiersza %1_%2. Sufiks %3</translation>
+        <translation>Tükrözés a következő sorral: %1_%2. Utótag: %3</translation>
     </message>
     <message>
         <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>Lustro według osi przechodzącej przez punkt %1. Sufiks %2</translation>
+        <translation>Tükrözés tengely mentén %1 ponton keresztül. Utótag %2</translation>
     </message>
     <message>
         <source>Center point</source>
-        <translation>Punkt środkowy</translation>
+        <translation>Középpont</translation>
     </message>
     <message>
         <source>Move - rotate around point %1. Suffix %2</source>
-        <translation>Przesuń - obróć wokół punktu %1. Sufiks %2</translation>
+        <translation>Mozgatás - forgatás %1 pont körül. Utótag %2</translation>
     </message>
 </context>
 <context>
     <name>ImageDialog</name>
     <message>
         <source>Image Properties</source>
-        <translation>Właściwości obrazu</translation>
+        <translation>Kép tulajdonságai</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Id:</source>
-        <translation>Identyfikator :</translation>
+        <translation>Azonosító :</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Identyfikator</translation>
+        <translation>Azonosító</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Lock Image:</source>
-        <translation>Zablokuj obraz:</translation>
+        <translation>Kép zárolása:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -4533,427 +4532,427 @@ do zapisu</translation>
     </message>
     <message>
         <source>Switch between px and pattern units</source>
-        <translation>Przełączanie między jednostkami px i wzorca</translation>
+        <translation>Váltás px és mintaegységek között</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Jednostka:</translation>
+        <translation>Egység:</translation>
     </message>
     <message>
         <source>X Position:</source>
-        <translation>Pozycja X:</translation>
+        <translation>X pozíció:</translation>
     </message>
     <message>
         <source>Y Position:</source>
-        <translation>Pozycja Y:</translation>
+        <translation>Y pozíció:</translation>
     </message>
     <message>
         <source>Lock aspect ratio</source>
-        <translation>Zablokuj współczynnik proporcji</translation>
+        <translation>Képarány rögzítése</translation>
     </message>
     <message>
         <source>Lock Aspect:</source>
-        <translation>Aspekt blokady:</translation>
+        <translation>Zárolási szempont:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>X Scale:</source>
-        <translation>Skala X:</translation>
+        <translation>X skála:</translation>
     </message>
     <message>
         <source>Y Scale:</source>
-        <translation>Skala Y:</translation>
+        <translation>Y skála:</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>Obrót:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Opacity:</source>
-        <translation>Krycie:</translation>
+        <translation>Átlátszóság:</translation>
     </message>
 </context>
 <context>
     <name>ImageItem</name>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Tulajdonságok</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Blokada</translation>
+        <translation>Zár</translation>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation>Przesuń początek</translation>
+        <translation>Eredeti áthelyezése</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Zamówienie</translation>
+        <translation>Rendelés</translation>
     </message>
     <message>
         <source>Bring to top</source>
-        <translation>Przenieś na górę</translation>
+        <translation>Hozzáad a csúcsra</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Przesuń się w górę</translation>
+        <translation>Felfelé mozgatás</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Przesuń w dół</translation>
+        <translation>Lejjebb mozgatás</translation>
     </message>
     <message>
         <source>Send to bottom</source>
-        <translation>Wyślij na dół</translation>
+        <translation>Küldés az aljára</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation>&lt;b&gt;Obraz (%7)&lt;/b&gt;: Rozmiar (%2%1, %3%1); Pozycja (%4%1, %5%1); Obrót (%6°)%8</translation>
+        <translation>&lt;b&gt;Kép (%7)&lt;/b&gt;: Méret(%2%1, %3%1); Poz(%4%1, %5%1); Elforgatás(%6°)%8</translation>
     </message>
     <message>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation> - &lt;b&gt;Proporcje obrazu zablokowane&lt;/b&gt;</translation>
+        <translation> - &lt;b&gt;Képarány rögzítve&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>ImageTool</name>
     <message>
         <source>Import Image</source>
-        <translation>Importuj obraz</translation>
+        <translation>Kép importálása</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Nie można załadować obrazu.</translation>
+        <translation>Nem sikerült betölteni a képet.</translation>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>Nie znaleziono obrazu &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;. Czy chcesz zaktualizować lokalizację pliku?</translation>
+        <translation>A kép (&lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;) nem található. Szeretné frissíteni a fájl helyét?</translation>
     </message>
     <message>
         <source>Loading image</source>
-        <translation>Ładowanie obrazu</translation>
+        <translation>Kép betöltése</translation>
     </message>
     <message>
         <source>No image was selected...</source>
-        <translation>Nie wybrano żadnego obrazu...</translation>
+        <translation>Nincs kiválasztott kép...</translation>
     </message>
     <message>
         <source>Could not read the image.</source>
-        <translation>Nie można odczytać obrazu.</translation>
+        <translation>Nem sikerült beolvasni a képet.</translation>
     </message>
     <message>
         <source>File may be corrupted...</source>
-        <translation>Plik może być uszkodzony...</translation>
+        <translation>Lehet, hogy a fájl sérült...</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
-        <translation>Potwierdź usunięcie</translation>
+        <translation>Törlés megerősítése</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Czy na pewno chcesz usunąć?</translation>
+        <translation>Biztosan törölni szeretnéd?</translation>
     </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Insert Nodes</source>
-        <translation>Wstaw węzły</translation>
+        <translation>Csomódok beszúrása</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Element:</translation>
+        <translation>Darab:</translation>
     </message>
     <message>
         <source>Nodes:</source>
-        <translation>Węzły:</translation>
+        <translation>Csomódok:</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Status:</translation>
+        <translation>Állapot:</translation>
     </message>
     <message>
         <source>msg</source>
-        <translation>wiadomość</translation>
+        <translation>üzenet</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Odwróć</translation>
+        <translation>Fordított</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation>Wycięcie</translation>
+        <translation>Bevágás</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Szczelina</translation>
+        <translation>Rés</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Wycięcie T</translation>
+        <translation>TNotch</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>Felbontás</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VInternal</translation>
+        <translation>V belső</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>VExternal</translation>
+        <translation>Külső</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Zamek</translation>
+        <translation>Vár</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Diament</translation>
+        <translation>Gyémánt</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>No nodes selected. Press Cancel to continue</source>
-        <translation>Nie wybrano żadnych węzłów. Naciśnij Anuluj, aby kontynuować</translation>
+        <translation>Nincsenek kiválasztott csomópontok. A folytatáshoz kattintson a Mégsem gombra</translation>
     </message>
     <message>
         <source> was auto reversed.</source>
-        <translation> został automatycznie cofnięty.</translation>
+        <translation> automatikusan tolatott.</translation>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation> może być konieczne ręczne odwrócenie operacji.</translation>
+        <translation> manuálisan kell megfordítani.</translation>
     </message>
 </context>
 <context>
     <name>InternalPathDialog</name>
     <message>
         <source>Internal Path Tool</source>
-        <translation>Narzędzie ścieżki wewnętrznej</translation>
+        <translation>Belső útvonal eszköz</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation>Ścieżka</translation>
+        <translation>Útvonal</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unnamed path</source>
-        <translation>Nienazwana ścieżka</translation>
+        <translation>Névtelen elérési út</translation>
     </message>
     <message>
         <source>Create name for your path</source>
-        <translation>Utwórz nazwę dla swojej ścieżki</translation>
+        <translation>Nevet adsz az elérési útnak</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>Típus:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Element:</translation>
+        <translation>Darab:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Przenieś wiersz na górę listy</translation>
+        <translation>Sor áthelyezése a lista tetejére</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Przesuń wiersz o jeden wiersz w górę</translation>
+        <translation>Sorral feljebb mozgatása egy sorral</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Przesuń wiersz w dół o jeden wiersz</translation>
+        <translation>Sor áthelyezése egy sorral lejjebb</translation>
     </message>
     <message>
         <source>Move row to bottom of list</source>
-        <translation>Przenieś wiersz na dół listy</translation>
+        <translation>Sor áthelyezése a lista aljára</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>The path is a cut contour</source>
-        <translation>Ścieżka jest konturem cięcia</translation>
+        <translation>Az útvonal egy bevágott kontúr</translation>
     </message>
     <message>
         <source>Cut on fabric</source>
-        <translation>Cięcie na materiale</translation>
+        <translation>Szövetre szabva</translation>
     </message>
     <message>
         <source>Extend end point</source>
-        <translation>Rozszerz punkt końcowy</translation>
+        <translation>Végpont kiterjesztése</translation>
     </message>
     <message>
         <source>Extend start point</source>
-        <translation>Rozszerz punkt początkowy</translation>
+        <translation>Kezdőpont meghosszabbítása</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Status:</translation>
+        <translation>Állapot:</translation>
     </message>
     <message>
         <source>Ready!</source>
-        <translation>Gotowy!</translation>
+        <translation>Kész!</translation>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation>Dodatek na szwy</translation>
+        <translation>Varráhagyás</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Nodes</source>
-        <translation>Węzły</translation>
+        <translation>Csomópontok</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation>Węzeł:</translation>
+        <translation>Csomód:</translation>
     </message>
     <message>
         <source>Before:</source>
-        <translation>Przed:</translation>
+        <translation>Előtte:</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation>Powrót do domyślnej szerokości</translation>
+        <translation>Vissza az alapértelmezett szélességhez</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>After:</source>
-        <translation>Po:</translation>
+        <translation>Miután:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Notches</source>
-        <translation>Nacięcia</translation>
+        <translation>Bevágások</translation>
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Wycięcie:</translation>
+        <translation>Bevágás:</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Típus</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Szczelina</translation>
+        <translation>Rés</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Wycięcie w kształcie litery T</translation>
+        <translation>T-bevágás</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Wycięcie w kształcie litery U</translation>
+        <translation>U-bevágás</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>V Wewnętrzny</translation>
+        <translation>V belső</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V Zewnętrzny</translation>
+        <translation>V Külső</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Zamek</translation>
+        <translation>Vár</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Diament</translation>
+        <translation>Gyémánt</translation>
     </message>
     <message>
         <source>Sub Type</source>
-        <translation>Podtyp</translation>
+        <translation>Altípus</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Prosty</translation>
+        <translation>Egyszerű</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Dwusieczna</translation>
+        <translation>Felező</translation>
     </message>
     <message>
         <source>Select to designate the corner point as a notch</source>
-        <translation>Wybierz, aby oznaczyć punkt narożny jako wycięcie</translation>
+        <translation>Válassza ki, hogy a sarokpontot bevágásként jelölje ki</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Skrzyżowanie</translation>
+        <translation>Kereszteződés</translation>
     </message>
     <message>
         <source>Geomtery</source>
@@ -4961,95 +4960,95 @@ do zapisu</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Przywróć kąt nacięcia do wartości domyślnej.</translation>
+        <translation>Bevágási szög visszaállítása az alapértelmezettre.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Liczba:</translation>
+        <translation>Db:</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Przywróć wcięcie do wartości domyślnych.</translation>
+        <translation>A bevágás visszaállítása az alapértelmezett értékre.</translation>
     </message>
     <message>
         <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Ta opcja działa tylko wtedy, gdy w preferencjach globalnych włączona jest opcja drugiego wcięcia na linii szwu. Opcja ta pomaga wyłączyć drugie wcięcie tylko dla tego wcięcia.</translation>
+        <translation>Ez a beállítás csak akkor érvényes, ha a varratvonalon lévő második bevágás engedélyezve van a globális beállításokban. A beállítás segít letiltani a második bevágást csak ehhez a bevágáshoz.</translation>
     </message>
     <message>
         <source>Show second notch on seam line</source>
-        <translation>Pokaż drugie nacięcie na linii szwu</translation>
+        <translation>A második bevágás megjelenítése a varrásvonalon</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Przywróć długość nacięcia do wartości domyślnej.</translation>
+        <translation>A bevágás hosszának visszaállítása az alapértelmezettre.</translation>
     </message>
     <message>
         <source> Width:</source>
-        <translation> Szerokość:</translation>
+        <translation> Szélesség:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Wybierz główne obiekty ścieżki, użyj &lt;b&gt;SHIFT&lt;/b&gt;, aby odwrócić kierunek krzywej, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie ścieżki </translation>
+        <translation>Válassza ki a fő útvonalobjektumokat, Nyomja meg a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a görbe irányának megfordításához, Nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt az útvonal létrehozásának befejezéséhez </translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Odwróć</translation>
+        <translation>Fordított</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>Aktualny dodatek na szew</translation>
+        <translation>Jelenlegi varrásráhagyás</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Edytuj szerokość dodatku na szew</translation>
+        <translation>Varratráhagyás szélességének szerkesztése</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Edytuj szerokość dodatku na szew przed</translation>
+        <translation>Varratszél szélességének szerkesztése előtte</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Edytuj szerokość dodatku na szew po</translation>
+        <translation>Varratráhagyás szélességének szerkesztése után</translation>
     </message>
     <message>
         <source>Internal path</source>
-        <translation>Ścieżka wewnętrzna</translation>
+        <translation>Belső elérési út</translation>
     </message>
     <message>
         <source>Custom seam allowance</source>
-        <translation>Niestandardowy dodatek na szew</translation>
+        <translation>Egyedi varrásráhagyás</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation>Potrzebujesz więcej punktów!</translation>
+        <translation>Több pontra van szükséged!</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Pierwszy punkt &lt;b&gt;niestandardowego dodatku na szew&lt;/b&gt; nie może być równy ostatniemu punktowi!</translation>
+        <translation>Az &lt;b&gt;egyedi varrásráhagyás&lt;/b&gt; első pontja nem lehet egyenlő az utolsó ponttal!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Masz podwójne punkty!</translation>
+        <translation>Dupla pontod van!</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Każdy punkt na ścieżce &lt;b&gt;niestandardowego dodatku na szew&lt;/b&gt; musi być unikalny!</translation>
+        <translation>Az &lt;b&gt;egyedi varrásráhagyás&lt;/b&gt; útvonal minden pontjának egyedinek kell lennie!</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>Lista elementów jest pusta!</translation>
+        <translation>A darabok listája üres!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
-        <translation>Proszę wybrać element, do którego ma zostać wstawiony!</translation>
+        <translation>Kérlek, válassz ki egy darabot, amibe beszúrsz!</translation>
     </message>
 </context>
 <context>
@@ -5066,48 +5065,48 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D to aplikacja do komputerowego wspomagania projektowania wykrojów odzieży.
+        <translation>A Seamly2D egy számítógéppel segített ruhadarab-szabásminta-tervezésre szolgáló alkalmazás.
 
-Seamly2D to darmowe (open source) oprogramowanie.
+A Seamly2D egy ingyenes (nyílt forráskódú) szoftver.
 
-Wszystkie nazwy marek lub produktów są znakami towarowymi lub zastrzeżonymi znakami towarowymi ich odpowiednich właścicieli.
+Minden márka- vagy terméknév a megfelelő tulajdonosok védjegye vagy bejegyzett védjegye.
 
 © 2017-2026 Seamly2D Project.
 
-Fragmenty tego oprogramowania © 2008-2026 The Qt Company Ltd.
+A szoftver egyes részei © 2008-2026 The Qt Company Ltd.
 
-Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, W TYM GWARANCJI PROJEKTU, PRZYDATNOŚCI HANDLOWEJ I PRZYDATNOŚCI DO OKREŚLONEGO CELU.</translation>
+A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL, BELEÉRTVE A TERVEZÉSRE, AZ ELADHATÓSÁGRA ÉS EGY ADOTT CÉLRA VALÓ ALKALMASSÁGRA VONATKOZÓ GARANCIÁT.</translation>
     </message>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Program jest udostępniany w stanie, w jakim się znajduje, bez żadnej gwarancji, w tym gwarancji projektu, przydatności handlowej i przydatności do określonego celu.</translation>
+        <translation>A programot A JELENLEGI ÁLLAPOTBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL, BELEÉRTVE A TERVEZÉSRE, AZ ELADHATÓSÁGRA ÉS EGY ADOTT CÉLRA VALÓ ALKALMASSÁGRA VONATKOZÓ GARANCIÁT.</translation>
     </message>
 </context>
 <context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt – Przecięcie okręgu i stycznej</translation>
+        <translation>Pont - Kör és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Weź:</translation>
+        <translation>Vedd el:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -5115,81 +5114,81 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>Center point:</source>
-        <translation>Punkt środkowy:</translation>
+        <translation>Középpont:</translation>
     </message>
     <message>
         <source>Tangent point:</source>
-        <translation>Punkt styczności:</translation>
+        <translation>Érintőpont:</translation>
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Select a circle center</source>
-        <translation>Wybierz środek okręgu</translation>
+        <translation>Válasszon ki egy körközéppontot</translation>
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Edytuj promień</translation>
+        <translation>Sugár szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Promień nie może być ujemny</translation>
+        <translation>A sugár nem lehet negatív</translation>
     </message>
 </context>
 <context>
     <name>IntersectCircleTangentTool</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Circle and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 okręgu i stycznej&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Nem található a(z) %1 metszéspontja a&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;Kör és érintő&lt;/b&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>Przecięcie okręgu i stycznej</translation>
+        <translation>Kör metszéspontja és érintője</translation>
     </message>
 </context>
 <context>
     <name>IntersectCirclesDialog</name>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punkt – Przecięcie okręgów</translation>
+        <translation>Pont - Körök metszéspontja</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Weź:</translation>
+        <translation>Vedd el:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -5197,197 +5196,197 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>Circle 1</source>
-        <translation>Okrąg 1</translation>
+        <translation>1. kör</translation>
     </message>
     <message>
         <source>Center:</source>
-        <translation>Środek:</translation>
+        <translation>Közép:</translation>
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Circle 2</source>
-        <translation>Krąg 2</translation>
+        <translation>2. kör</translation>
     </message>
     <message>
         <source>Select second circle center</source>
-        <translation>Wybierz środek drugiego okręgu</translation>
+        <translation>Válassza ki a második kör középpontját</translation>
     </message>
     <message>
         <source>Edit first circle radius</source>
-        <translation>Edytuj promień pierwszego okręgu</translation>
+        <translation>Az első kör sugarának szerkesztése</translation>
     </message>
     <message>
         <source>Edit second circle radius</source>
-        <translation>Edytuj promień drugiego okręgu</translation>
+        <translation>A második kör sugarának szerkesztése</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Promień nie może być ujemny</translation>
+        <translation>A sugár nem lehet negatív</translation>
     </message>
 </context>
 <context>
     <name>IntersectCirclesTool</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Circles&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 okręgów&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;A körök %1. metszéspontja nem található&lt;/big&gt;&lt;/b&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Point Intersect Circles</source>
-        <translation>Punkt przecina okręgi</translation>
+        <translation>Köröket metsző pont</translation>
     </message>
 </context>
 <context>
     <name>LayoutSettingsDialog</name>
     <message>
         <source>Layout print settings</source>
-        <translation>Ustawienia układu wydruku</translation>
+        <translation>Elrendezés nyomtatási beállításai</translation>
     </message>
     <message>
         <source>Paper format</source>
-        <translation>Format papieru</translation>
+        <translation>Papír formátum</translation>
     </message>
     <message>
         <source>Templates:</source>
-        <translation>Szablony:</translation>
+        <translation>Sablonok:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Printer:</source>
-        <translation>Drukarka:</translation>
+        <translation>Nyomtató:</translation>
     </message>
     <message>
         <source>Margins</source>
-        <translation>Marginesy</translation>
+        <translation>Margók</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation>Lewy:</translation>
+        <translation>Balra:</translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Po prawej:</translation>
+        <translation>Jobban:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Góra:</translation>
+        <translation>Felső:</translation>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Dół:</translation>
+        <translation>Alul:</translation>
     </message>
     <message>
         <source>Ignore margins</source>
-        <translation>Ignoruj marginesy</translation>
+        <translation>Margók figyelmen kívül hagyása</translation>
     </message>
     <message>
         <source>Text</source>
-        <translation>Tekst</translation>
+        <translation>Szöveg</translation>
     </message>
     <message>
         <source>Text will be converted to paths</source>
-        <translation>Tekst zostanie przekonwertowany na ścieżki</translation>
+        <translation>A szöveg útvonalakká lesz konvertálva</translation>
     </message>
     <message>
         <source>Export text as paths</source>
-        <translation>Eksportuj tekst jako ścieżki</translation>
+        <translation>Szöveg exportálása elérési útként</translation>
     </message>
     <message>
         <source>Layout options</source>
-        <translation>Opcje układu</translation>
+        <translation>Elrendezési beállítások</translation>
     </message>
     <message>
         <source>Gap width:</source>
-        <translation>Szerokość szczeliny:</translation>
+        <translation>Rés szélessége:</translation>
     </message>
     <message>
         <source>Shift/Offset length:</source>
-        <translation>Długość przesunięcia/przesunięcia:</translation>
+        <translation>Eltolás/eltolás hossza:</translation>
     </message>
     <message>
         <source>Save length of the sheet</source>
-        <translation>Zapisz długość arkusza</translation>
+        <translation>A lap hosszának mentése</translation>
     </message>
     <message>
         <source>Rotate workpiece</source>
-        <translation>Obróć przedmiot obrabiany</translation>
+        <translation>Munkadarab forgatása</translation>
     </message>
     <message>
         <source>Rotate by</source>
-        <translation>Obróć o</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>degree</source>
-        <translation>stopień</translation>
+        <translation>fokozat</translation>
     </message>
     <message>
         <source>Rule for choosing the next workpiece</source>
-        <translation>Zasada wyboru następnego przedmiotu obrabianego</translation>
+        <translation>Szabály a következő munkadarab kiválasztására</translation>
     </message>
     <message>
         <source>Three groups: big, middle, small</source>
-        <translation>Trzy grupy: duża, średnia, mała</translation>
+        <translation>Három csoport: nagy, közepes, kicsi</translation>
     </message>
     <message>
         <source>Two groups: big, small</source>
-        <translation>Dwie grupy: duża, mała</translation>
+        <translation>Két csoport: nagy, kicsi</translation>
     </message>
     <message>
         <source>Descending area</source>
-        <translation>Obszar zstępujący</translation>
+        <translation>Csökkenő terület</translation>
     </message>
     <message>
         <source>Auto crop unused length</source>
-        <translation>Automatyczne przycinanie nieużywanej długości</translation>
+        <translation>A fel nem használt hossz automatikus levágása</translation>
     </message>
     <message>
         <source>Unite pages (if possible)</source>
-        <translation>Połącz strony (jeśli to możliwe)</translation>
+        <translation>Oldalak egyesítése (ha lehetséges)</translation>
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation>Włączenie tej opcji dla arkuszy o dużej wysokości przyspieszy tworzenie.</translation>
+        <translation>A nagy magasságú munkalapok engedélyezése felgyorsítja a létrehozást.</translation>
     </message>
     <message>
         <source>Divide into strips</source>
-        <translation>Podziel na paski</translation>
+        <translation>Csíkokra osztás</translation>
     </message>
     <message>
         <source>Multiplier</source>
-        <translation>Mnożnik</translation>
+        <translation>Szorzó</translation>
     </message>
     <message>
         <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation>Ustaw mnożnik dla długości największego przedmiotu obrabianego w układzie.</translation>
+        <translation>Állítsa be a szorzót a tervrajzban szereplő legnagyobb munkadarab hosszához.</translation>
     </message>
     <message>
         <source>
@@ -5395,65 +5394,65 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-	Trzy grupy: duża, średnia, mała = 0;
-	Dwie grupy: duża, mała = 1;
-	Obszar malejący = 2</translation>
+	Három csoport: nagy, közepes, kicsi = 0;
+	Két csoport: nagy, kicsi = 1;
+	Csökkenő terület = 2</translation>
     </message>
     <message>
         <source>Wrong fields.</source>
-        <translation>Błędne pola.</translation>
+        <translation>Hibás mezők.</translation>
     </message>
     <message>
         <source>Margins go beyond printing. Apply settings anyway?</source>
-        <translation>Marginesy wykraczają poza zakres drukowania. Czy mimo to zastosować ustawienia?</translation>
+        <translation>A margók túlmutatnak a nyomtatáson. Ennek ellenére alkalmazza a beállításokat?</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
     <message>
         <source>Pixels</source>
-        <translation>Piksele</translation>
+        <translation>Pixelek</translation>
     </message>
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
 </context>
 <context>
     <name>LineTypeComboBox</name>
     <message>
         <source>No Pen</source>
-        <translation>Bez długopisu</translation>
+        <translation>Nincs toll</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Linia ciągła</translation>
+        <translation>Tömör vonal</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Dash</translation>
+        <translation>Szemét</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Kropka</translation>
+        <translation>Pont</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Kropka kreskowa</translation>
+        <translation>Vonalpont</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Kreska, kropka, kropka</translation>
+        <translation>Vonalzatpont</translation>
     </message>
 </context>
 <context>
@@ -5464,583 +5463,583 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Plik</translation>
+        <translation>&amp;Fájl</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Drukuj</translation>
+        <translation>Nyomtatás</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Podgląd</translation>
+        <translation>Előnézet</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Pomoc</translation>
+        <translation>&amp;Súgó</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Pomiary</translation>
+        <translation>Mérések</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Historia</translation>
+        <translation>Történelem</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Widok</translation>
+        <translation>Nézet</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Nazwy punktów</translation>
+        <translation>Pontok nevei</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Narzędzia</translation>
+        <translation>&amp;Eszközök</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Operacje</translation>
+        <translation>&amp;Műveletek</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Punkt</translation>
+        <translation>Pont</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Linia</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <source>Curve</source>
-        <translation>Krzywa</translation>
+        <translation>Görbe</translation>
     </message>
     <message>
         <source>Arc</source>
-        <translation>Łuk</translation>
+        <translation>Ív</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Kawałek</translation>
+        <translation>Darab</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Układ</translation>
+        <translation>Elrendezés</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation>Obrazy</translation>
+        <translation>Képek</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Narzędzia</translation>
+        <translation>Közművek</translation>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation>Pasek narzędzi plików</translation>
+        <translation>Fájl eszköztár</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
-        <translation>Pasek narzędzi trybu</translation>
+        <translation>Mód eszköztár</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation>Pasek narzędzi wzorców</translation>
+        <translation>Minta eszköztár</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation>Edytuj pasek narzędzi</translation>
+        <translation>Eszköztár szerkesztése</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Edytor właściwości</translation>
+        <translation>Tulajdonságszerkesztő</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Strony układu</translation>
+        <translation>Elrendezési oldalak</translation>
     </message>
     <message>
         <source>Group Manager</source>
-        <translation>Menedżer grupy</translation>
+        <translation>Csoportkezelő</translation>
     </message>
     <message>
         <source>Zoom ToolBar</source>
-        <translation>Pasek narzędzi powiększania</translation>
+        <translation>Nagyítás eszköztár</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Pasek narzędzi skrzynki narzędziowej</translation>
+        <translation>Eszköztár Eszköztár</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
-        <translation>Pasek narzędzi punktów</translation>
+        <translation>Pontok eszköztár</translation>
     </message>
     <message>
         <source>Lines ToolBar</source>
-        <translation>Pasek narzędzi linii</translation>
+        <translation>Vonalak eszköztár</translation>
     </message>
     <message>
         <source>Curves ToolBar</source>
-        <translation>Pasek narzędzi krzywych</translation>
+        <translation>Görbék eszköztár</translation>
     </message>
     <message>
         <source>Arcs ToolBar</source>
-        <translation>Pasek narzędzi Arcs</translation>
+        <translation>Ív eszköztár</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Pasek narzędzi operacyjnych</translation>
+        <translation>Műveleti eszköztár</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>Pasek narzędzi elementów</translation>
+        <translation>Darab eszköztár</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Pasek narzędzi szczegółów</translation>
+        <translation>Részletek eszköztár</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>Pasek narzędzi układu</translation>
+        <translation>Elrendezés eszköztár</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
-        <translation>Pasek narzędzi nazw punktów</translation>
+        <translation>Pontonév eszköztár</translation>
     </message>
     <message>
         <source>Toolbox</source>
-        <translation>Skrzynka z narzędziami</translation>
+        <translation>Szerszámosláda</translation>
     </message>
     <message>
         <source>Tool pointer</source>
-        <translation>Wskaźnik narzędzia</translation>
+        <translation>Eszközmutató</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
-        <translation>Narzędzia do tworzenia punktów.</translation>
+        <translation>Eszközök pontok létrehozásához.</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
-        <translation>Punkt - na dwusiecznej (O, B)</translation>
+        <translation>Pont - A felezőmezőn (O, B)</translation>
     </message>
     <message>
         <source>Point - Length to Line (P, S)</source>
-        <translation>Punkt – Długość do linii (P, S)</translation>
+        <translation>Pont - Hossz a vonalig (P, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line (A, L)</source>
-        <translation>Punkt – Przecięcie łuku i linii (A, L)</translation>
+        <translation>Pont - Ív és egyenes metszéspontja (A, L)</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
-        <translation>Punkt – oś przecięcia i trójkąt (X, T)</translation>
+        <translation>Pont - Tengely és Háromszög metszéspontja (X, T)</translation>
     </message>
     <message>
         <source>Point - Intersect XY (X, Y)</source>
-        <translation>Punkt – Przecięcie XY (X, Y)</translation>
+        <translation>Pont - Metszéspont XY (X, Y)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
-        <translation>Punkt – linia przecięcia i prostopadła (L, P)</translation>
+        <translation>Pont - Egyenes és merőleges metszéspontja (L, P)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
-        <translation>Punkt – przecięcie linii i osi (L, X)</translation>
+        <translation>Pont - Egyenes és tengely metszéspontja (L, X)</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
-        <translation>Punkt – prostopadły (O, P)</translation>
+        <translation>Pont - Merőlegesen (O, P)</translation>
     </message>
     <message>
         <source>Point - Length and Angle (L, A)</source>
-        <translation>Punkt – długość i kąt (L, A)</translation>
+        <translation>Pont - Hosszúság és Szög (L, A)</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
-        <translation>Punkt – Na linii (O, L)</translation>
+        <translation>Pont - Vonalban (O, B)</translation>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punkt – środek linii (Shift+O, Shift+L)</translation>
+        <translation>Pont - Felezőpont az egyenesen (Shift+O, Shift+L)</translation>
     </message>
     <message>
         <source>Tools for creating lines.</source>
-        <translation>Narzędzia do tworzenia linii.</translation>
+        <translation>Eszközök vonalak létrehozásához.</translation>
     </message>
     <message>
         <source>Line between 2 Points (Alt+L)</source>
-        <translation>Linia między 2 punktami (Alt+L)</translation>
+        <translation>Két pont közötti egyenes (Alt+L)</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
-        <translation>Punkt – Linie przecięcia (I, L)</translation>
+        <translation>Pont - Metszővonalak (I, L)</translation>
     </message>
     <message>
         <source>Tools for creating curves.</source>
-        <translation>Narzędzia do tworzenia krzywych.</translation>
+        <translation>Eszközök görbék létrehozásához.</translation>
     </message>
     <message>
         <source>Curve - Interactive (Alt+C)</source>
-        <translation>Krzywa – interaktywna (Alt+C)</translation>
+        <translation>Görbe - Interaktív (Alt+C)</translation>
     </message>
     <message>
         <source>Spline - Interactive (Alt+S)</source>
-        <translation>Splajn – interaktywny (Alt+S)</translation>
+        <translation>Spline - Interaktív (Alt+S)</translation>
     </message>
     <message>
         <source>Curve - Fixed (Alt+Shift+C)</source>
-        <translation>Krzywa – naprawiona (Alt+Shift+C)</translation>
+        <translation>Ív - Rögzített (Alt+Shift+C)</translation>
     </message>
     <message>
         <source>Spline - Fixed (Alt+Shift+S)</source>
-        <translation>Splajn – naprawiony (Alt+Shift+S)</translation>
+        <translation>Spline - Rögzített (Alt+Shift+S)</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
-        <translation>Punkt – na krzywej splajnowej (O, S)</translation>
+        <translation>Pont - Spline-on (O, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Curves (I, C)</source>
-        <translation>Punkt – Przecięcie krzywych (I, C)</translation>
+        <translation>Pont - Metsző görbék (I, C)</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis (C, X)</source>
-        <translation>Punkt – przecięcie krzywej i osi (C, X)</translation>
+        <translation>Pont - Görbe és tengely metszéspontja (C, X)</translation>
     </message>
     <message>
         <source>Point - On Curve (O, C)</source>
-        <translation>Punkt – na krzywej (O, C)</translation>
+        <translation>Pont - Ívben (O, C)</translation>
     </message>
     <message>
         <source>Tools for creating arcs.</source>
-        <translation>Narzędzia do tworzenia łuków.</translation>
+        <translation>Ívek létrehozására szolgáló eszközök.</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles (Alt+A)</source>
-        <translation>Łuk – promień i kąty (Alt+A)</translation>
+        <translation>Ív - Sugár és szögek (Alt+A)</translation>
     </message>
     <message>
         <source>Point - On Arc (O, A)</source>
-        <translation>Punkt – na łuku (O, A)</translation>
+        <translation>Pont - Ív mentén (O, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis (A, X)</source>
-        <translation>Punkt – Przecięcie łuku i osi (A, X)</translation>
+        <translation>Pont - Ív és tengely metszéspontja (A, X)</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs (I, A)</source>
-        <translation>Punkt – Łuki przecięcia (I, A)</translation>
+        <translation>Pont - Ívek metszéspontja (I, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Punkt – Przecięcie okręgów (Shift+I, Shift+C)</translation>
+        <translation>Pont - Körök metszéspontja (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
-        <translation>Punkt – Przecięcie okręgu i stycznej (C, T)</translation>
+        <translation>Pont - Kör és érintő metszéspontja (C, T)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent (A, T)</source>
-        <translation>Punkt – Łuk przecięcia i styczna (A, T)</translation>
+        <translation>Pont - Ív és érintő metszéspontja (A, T)</translation>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Łuk – promień i długość (Alt+Shift+A)</translation>
+        <translation>Ív - Sugár és Hossz (Alt+Shift+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
-        <translation>Łuk – Eliptyczny (Alt+E)</translation>
+        <translation>Ív - Ellipszis (Alt+E)</translation>
     </message>
     <message>
         <source>Tools for performing operations on objects</source>
-        <translation>Narzędzia do wykonywania operacji na obiektach</translation>
+        <translation>Eszközök objektumokon végzett műveletekhez</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operacje</translation>
+        <translation>Műveletek</translation>
     </message>
     <message>
         <source>Add Objects to Group (G)</source>
-        <translation>Dodaj obiekty do grupy (G)</translation>
+        <translation>Objektumok hozzáadása csoporthoz (G)</translation>
     </message>
     <message>
         <source>Rotate Selected Objects (R)</source>
-        <translation>Obróć zaznaczone obiekty (R)</translation>
+        <translation>Kijelölt objektumok forgatása (R)</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Odbicie lustrzane obiektów linią (M, L)</translation>
+        <translation>Tükrözd az objektumokat vonalanként (K, V)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Obiekty lustrzane według osi (M, A)</translation>
+        <translation>Tükrözött tárgyak tengelyek (M, A) szerint</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
-        <translation>Przesuń obiekty (Alt+M)</translation>
+        <translation>Objektumok mozgatása (Alt+M)</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
-        <translation>Prawdziwe lotki (T, D)</translation>
+        <translation>Igazi darts (T, D)</translation>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Eksportuj bloki robocze (E, D)</translation>
+        <translation>Vázlatblokkok exportálása (E, D)</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
-        <translation>Narzędzia do dodawania elementów wzoru.</translation>
+        <translation>Eszközök mintadarabok hozzáadásához.</translation>
     </message>
     <message>
         <source>Add Details</source>
-        <translation>Dodaj szczegóły</translation>
+        <translation>Részletek hozzáadása</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
-        <translation>Dodaj nowy element wzoru (N, P)</translation>
+        <translation>Új mintadarab hozzáadása (N, P)</translation>
     </message>
     <message>
         <source>Add Anchor Point (A, P)</source>
-        <translation>Dodaj punkt kotwiczenia (A, P)</translation>
+        <translation>Horgonypont hozzáadása (A, P)</translation>
     </message>
     <message>
         <source>Insert Nodes (I, N)</source>
-        <translation>Wstaw węzły (I, N)</translation>
+        <translation>Csomópontok beszúrása (I, N)</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
-        <translation>Dodaj ścieżkę wewnętrzną (I, P)</translation>
+        <translation>Belső elérési út hozzáadása (I, P)</translation>
     </message>
     <message>
         <source>Tools for inserting or modifying images.</source>
-        <translation>Narzędzia do wstawiania i modyfikowania obrazów.</translation>
+        <translation>Eszközök képek beszúrásához vagy módosításához.</translation>
     </message>
     <message>
         <source>Import Image (Alt + I)</source>
-        <translation>Importuj obraz (Alt + I)</translation>
+        <translation>Kép importálása (Alt + I)</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>Narzędzia do dodawania szczegółów do elementów wzoru</translation>
+        <translation>Eszközök részletek hozzáadásához a szabásmintákhoz</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation>Połącz 2 części (U)</translation>
+        <translation>Egyesíts 2 darabot (U)</translation>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
-        <translation>Eksportuj elementy (E, P)</translation>
+        <translation>Darabok exportálása (E, P)</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>Nowy układ wydruku (N, L)</translation>
+        <translation>Új nyomtatási elrendezés (N, L)</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Ustawienia</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>Eksportuj układ (E, L)</translation>
+        <translation>Elrendezés exportálása (E, L)</translation>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>Pasek narzędzi widoku</translation>
+        <translation>Eszköztár megtekintése</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Elementy wzoru</translation>
+        <translation>Mintadarabok</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Nowy</translation>
+        <translation>Új</translation>
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Nowy</translation>
+        <translation>&amp;Új</translation>
     </message>
     <message>
         <source>Create a new pattern</source>
-        <translation>Utwórz nowy wzór</translation>
+        <translation>Új minta létrehozása</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otwórz</translation>
+        <translation>Nyitva</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>&amp;Otwórz</translation>
+        <translation>&amp;Megnyitás</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
-        <translation>Otwórz plik ze wzorcem</translation>
+        <translation>Fájl megnyitása mintával</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Mentés</translation>
     </message>
     <message>
         <source>Save pattern</source>
-        <translation>Zapisz wzór</translation>
+        <translation>Minta mentése</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation>Zapisz jako...</translation>
+        <translation>Mentés másként...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
-        <translation>Zapisz jeszcze niezapisany wzór</translation>
+        <translation>Még nem mentett minta mentése</translation>
     </message>
     <message>
         <source>Draft</source>
-        <translation>Wersja robocza</translation>
+        <translation>Vázlat</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tryb pracy z blokami roboczymi. Te bloki robocze stanowią podstawę do przejścia do następnego etapu –&quot;trybu elementów.&quot; Zanim będzie można włączyć&quot;tryb elementów&quot;, należy utworzyć co najmniej jeden element wzoru.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vázlatblokkokkal való munkavégzés módja. Ezek a vázlatblokkok képezik az alapot a következő szakaszba, a &quot;Darab módba&quot; való lépéshez. Mielőtt engedélyezhetné a &quot;Darab módot&quot;, létre kell hoznia legalább egy mintadarabot.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tryb pracy z elementami wzoru. Zanim będzie można włączyć tryb&quot;Części&quot;, należy utworzyć co najmniej jeden element wzoru na scenie w trybie&quot;Szkic.&quot; Elementy wzoru utworzone na tej scenie zostaną wykorzystane do utworzenia układu. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mintadarabokkal való munkavégzés módja. Mielőtt engedélyezhetné a „Darab módot”, létre kell hoznia legalább egy mintadarabot a „Vázlat mód” színpadon. Az ezen a színpadon létrehozott mintadarabokat fogja használni az elrendezés létrehozásához. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Pointer tools</source>
-        <translation>Narzędzia wskaźnikowe</translation>
+        <translation>Mutatóeszközök</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Nowy blok roboczy</translation>
+        <translation>Új vázlatblokk</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>Dodaj nowy blok roboczy (Ctrl+Shift+N)</translation>
+        <translation>Új vázlatblokk hozzáadása (Ctrl+Shift+N)</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Zmień nazwę bloku roboczego</translation>
+        <translation>Vázlatblokk átnevezése</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
-        <translation>Zmień nazwę bloku roboczego</translation>
+        <translation>A vázlatblokk nevének módosítása</translation>
     </message>
     <message>
         <source>Variables table</source>
-        <translation>Tabela zmiennych</translation>
+        <translation>Változók táblázata</translation>
     </message>
     <message>
         <source>Contains information about custom and internal variables</source>
-        <translation>Zawiera informacje o zmiennych niestandardowych i wewnętrznych</translation>
+        <translation>Egyéni és belső változókról tartalmaz információkat</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tryb tworzenia układu elementów wzoru. Ten tryb jest dostępny, jeśli co najmniej jeden element wzoru został utworzony w trybie&quot;Części.&quot; Układ można wyeksportować do preferowanego formatu pliku i zapisać.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mód szabásmintadarabok elrendezésének létrehozására. Ez a mód akkor érhető el, ha legalább egy szabásmintadarabot létrehoztak „Darab módban&quot;. Az elrendezés exportálható a kívánt fájlformátumba, és menthető.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Dodaj obiekty do grupy</translation>
+        <translation>Objektumok hozzáadása a csoporthoz</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>Obrót</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Lustro według linii</translation>
+        <translation>Tükörvonalonként</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Lustro według osi</translation>
+        <translation>Tükör tengely mentén</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Przenieś</translation>
+        <translation>Áthelyezés</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Prawdziwe lotki</translation>
+        <translation>Igazi darts</translation>
     </message>
     <message>
         <source>Elliptical</source>
-        <translation>Eliptyczny</translation>
+        <translation>Ellipszis tréner</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Łuk - Eliptyczny</translation>
+        <translation>Ív - Ellipszis</translation>
     </message>
     <message>
         <source>Midpoint on Line</source>
-        <translation>Punkt środkowy linii</translation>
+        <translation>Felezőpont az egyenesen</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>W sieci</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Długość i kąt</translation>
+        <translation>Hossz és szög</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Na prostopadłym</translation>
+        <translation>Merőlegesen</translation>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>O dwusiecznej</translation>
+        <translation>A felezővonalon</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Długość do linii</translation>
+        <translation>Vonalhossz</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
-        <translation>Przecięcie łuku i linii</translation>
+        <translation>Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Przecięcie osi i trójkąta</translation>
+        <translation>Tengely és háromszög metszéspontja</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>Przecięcie XY</translation>
+        <translation>XY metszéspont</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Przecięcie linii i prostopadłej</translation>
+        <translation>Egyenes és merőleges metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Przecięcie linii i osi</translation>
+        <translation>Vonal és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
-        <translation>Przecinające się linie</translation>
+        <translation>Metszőleges vonalak</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Krzywa – interaktywna</translation>
+        <translation>Görbe - Interaktív</translation>
     </message>
     <message>
         <source>Point on Curve</source>
-        <translation>Punkt na krzywej</translation>
+        <translation>Pont a görbén</translation>
     </message>
     <message>
         <source>Point on Curve (O, C)</source>
-        <translation>Punkt na krzywej (O, C)</translation>
+        <translation>Pont az (O, C) görbén</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Krzywa – stała</translation>
+        <translation>Ív - Rögzített</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline – interaktywny</translation>
+        <translation>Spline - Interaktív</translation>
     </message>
     <message>
         <source>Alt+S</source>
@@ -6048,167 +6047,167 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>Point on Spline</source>
-        <translation>Punkt na krzywej</translation>
+        <translation>Pont a spline-on</translation>
     </message>
     <message>
         <source>Point on Spline (O, S)</source>
-        <translation>Punkt na krzywej (O, S)</translation>
+        <translation>Spline-on lévő pont (O, S)</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline – Naprawiono</translation>
+        <translation>Spline - Rögzített</translation>
     </message>
     <message>
         <source>Intersect Curves</source>
-        <translation>Przecięcie krzywych</translation>
+        <translation>Metszőleges görbék</translation>
     </message>
     <message>
         <source>Intersect Curve and Axis</source>
-        <translation>Przecięcie krzywej i osi</translation>
+        <translation>Görbe és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Radius and Angles</source>
-        <translation>Promień i kąty</translation>
+        <translation>Sugár és szögek</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Łuk – promień i kąty</translation>
+        <translation>Ív - Sugár és szögek</translation>
     </message>
     <message>
         <source>Point on Arc</source>
-        <translation>Punkt na łuku</translation>
+        <translation>Pont az íven</translation>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
-        <translation>Punkt na łuku (O, A)</translation>
+        <translation>Pont az íven (O, A)</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis</source>
-        <translation>Przecięcie łuku i osi</translation>
+        <translation>Ív és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis (A, X)</source>
-        <translation>Przecięcie łuku i osi (A, X)</translation>
+        <translation>Ív és tengely metszéspontja (A, X)</translation>
     </message>
     <message>
         <source>Intersect Arcs</source>
-        <translation>Łuki przecięcia</translation>
+        <translation>Metszőleges ívek</translation>
     </message>
     <message>
         <source>Intersect Arcs (I, A)</source>
-        <translation>Łuki przecięcia (I, A)</translation>
+        <translation>Metszőleges ívek (I, A)</translation>
     </message>
     <message>
         <source>Intersect Circles</source>
-        <translation>Przecinające się okręgi</translation>
+        <translation>Körök metszése</translation>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Przecinające się okręgi (Shift+I, Shift+C)</translation>
+        <translation>Körök metszése (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>Przecięcie okręgu i stycznej</translation>
+        <translation>Kör metszéspontja és érintője</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent (C, T)</source>
-        <translation>Przecięcie okręgu i stycznej (C, T)</translation>
+        <translation>Kör és érintő metszéspontja (C, T)</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Przecięcie łuku i stycznej</translation>
+        <translation>Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent (A, T)</source>
-        <translation>Łuk przecięcia i styczna (A, T)</translation>
+        <translation>Ív és érintő metszéspontja (A, T)</translation>
     </message>
     <message>
         <source>Radius and Length</source>
-        <translation>Promień i długość</translation>
+        <translation>Sugár és hossz</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Łuk – promień i długość</translation>
+        <translation>Ív - Sugár és Hossz</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>A &amp;Qt-ről</translation>
     </message>
     <message>
         <source>About Seamly2D</source>
-        <translation>O Seamly2D</translation>
+        <translation>A Seamly2D-ről</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Wyjdź</translation>
+        <translation>K&amp;ilépés</translation>
     </message>
     <message>
         <source>Exit the Application</source>
-        <translation>Wyjdź z aplikacji</translation>
+        <translation>Kilépés az alkalmazásból</translation>
     </message>
     <message>
         <source>Application Preferences...</source>
-        <translation>Preferencje aplikacji...</translation>
+        <translation>Alkalmazásbeállítások...</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Preferencje dotyczące wzoru...</translation>
+        <translation>Mintabeállítások...</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation>Powiększ</translation>
+        <translation>Nagyítás</translation>
     </message>
     <message>
         <source>In</source>
-        <translation>W</translation>
+        <translation>Be</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
-        <translation>Powiększ (Ctrl++)</translation>
+        <translation>Nagyítás (Ctrl++)</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Oddal</translation>
+        <translation>Kicsinyítés</translation>
     </message>
     <message>
         <source>Out</source>
-        <translation>Na zewnątrz</translation>
+        <translation>Kifelé</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
-        <translation>Pomniejsz (Ctrl+-)</translation>
+        <translation>Kicsinyítés (Ctrl+-)</translation>
     </message>
     <message>
         <source>Original zoom</source>
-        <translation>Oryginalny zoom</translation>
+        <translation>Eredeti zoom</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Pasuje do wszystkich</translation>
+        <translation>Mindenki belefér</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation>Dopasuj</translation>
+        <translation>Illik</translation>
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Powiększ, aby dopasować do wszystkich (Ctrl+9)</translation>
+        <translation>Nagyítás mindenre (Ctrl+9)</translation>
     </message>
     <message>
         <source>Report bug...</source>
-        <translation>Zgłoś błąd...</translation>
+        <translation>Jelentés a hibáról...</translation>
     </message>
     <message>
         <source>Report bug</source>
-        <translation>Zgłoś błąd</translation>
+        <translation>Hiba jelentése</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknij</translation>
+        <translation>Bezárás</translation>
     </message>
     <message>
         <source>Close pattern</source>
-        <translation>Zamknij wzór</translation>
+        <translation>Bezárási minta</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -6216,171 +6215,171 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>Show online help</source>
-        <translation>Pokaż pomoc online</translation>
+        <translation>Online súgó megjelenítése</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Skróty</translation>
+        <translation>Gyorsbillentyűk</translation>
     </message>
     <message>
         <source>Last tool</source>
-        <translation>Ostatnie narzędzie</translation>
+        <translation>Utolsó szerszám</translation>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
-        <translation>Aktywuj ostatnio używane narzędzie (Ctrl+Shift+L)</translation>
+        <translation>Utoljára használt eszköz aktiválása (Ctrl+Shift+L)</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Punkty kontrolne krzywej</translation>
+        <translation>Görbe vezérlőpontok</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Przełącz punkty kontrolne i kierunek krzywej (V, C)</translation>
+        <translation>Vezérlőpontok és görbe irányának be- és kikapcsolása (V, C)</translation>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>Drukuj oryginalny układ</translation>
+        <translation>Eredeti elrendezés nyomtatása</translation>
     </message>
     <message>
         <source>Print tiled PDF</source>
-        <translation>Drukuj kafelkowy PDF</translation>
+        <translation>Csempézett PDF nyomtatása</translation>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Podziel i wydrukuj układ na mniejsze strony (dla standardowych drukarek)</translation>
+        <translation>Elrendezés felosztása és nyomtatása kisebb oldalakra (hagyományos nyomtatókhoz)</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Podgląd wydruku</translation>
+        <translation>Nyomtatási előnézet</translation>
     </message>
     <message>
         <source>Print preview original layout</source>
-        <translation>Podgląd wydruku oryginalnego układu</translation>
+        <translation>Nyomtatási előnézet eredeti elrendezésben</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
-        <translation>Podgląd kafelkowego pliku PDF</translation>
+        <translation>Csempézett PDF előnézete</translation>
     </message>
     <message>
         <source>Print preview tiled layout</source>
-        <translation>Podgląd wydruku w układzie kafelkowym</translation>
+        <translation>Nyomtatási előnézet csempézett elrendezésben</translation>
     </message>
     <message>
         <source>Export Layout As...</source>
-        <translation>Eksportuj układ jako...</translation>
+        <translation>Elrendezés exportálása másként...</translation>
     </message>
     <message>
         <source>Load Individual</source>
-        <translation>Załaduj indywidualnie</translation>
+        <translation>Egyéni betöltés</translation>
     </message>
     <message>
         <source>Load Individual measurements file</source>
-        <translation>Załaduj plik pojedynczych pomiarów</translation>
+        <translation>Egyedi mérési fájl betöltése</translation>
     </message>
     <message>
         <source>Load Multisize</source>
-        <translation>Załaduj wiele rozmiarów</translation>
+        <translation>Többszörös méret betöltése</translation>
     </message>
     <message>
         <source>Load multisize</source>
-        <translation>Załaduj wiele rozmiarów</translation>
+        <translation>Többszörös méret betöltése</translation>
     </message>
     <message>
         <source>Load multisize measurements file</source>
-        <translation>Załaduj plik pomiarów wielorozmiarowych</translation>
+        <translation>Többméretű mérési fájl betöltése</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
-        <translation>Otwórz SeamlyMe</translation>
+        <translation>Nyissa meg a SeamlyMe-t</translation>
     </message>
     <message>
         <source>Open SeamlyMe measurements app (Ctrl+M)</source>
-        <translation>Otwórz aplikację pomiarową SeamlyMe (Ctrl+M)</translation>
+        <translation>Nyissa meg a SeamlyMe mérési alkalmazást (Ctrl+M)</translation>
     </message>
     <message>
         <source>Edit Current</source>
-        <translation>Edytuj bieżący</translation>
+        <translation>Jelenlegi szerkesztés</translation>
     </message>
     <message>
         <source>Edit linked to the pattern measurements</source>
-        <translation>Edycja powiązana z pomiarami wzoru</translation>
+        <translation>A szerkesztés a minta méretéhez kapcsolódik</translation>
     </message>
     <message>
         <source>Sync</source>
-        <translation>Synchronizacja</translation>
+        <translation>Szinkronizálás</translation>
     </message>
     <message>
         <source>Synchronize linked to the pattern measurements after change</source>
-        <translation>Synchronizuj powiązane pomiary wzorcowe po zmianie</translation>
+        <translation>A minta méréseihez kapcsolódó szinkronizálás a módosítás után</translation>
     </message>
     <message>
         <source>Unload Current</source>
-        <translation>Rozładuj prąd</translation>
+        <translation>Áram tehermentesítése</translation>
     </message>
     <message>
         <source>Unload measurements if they were not used in a pattern file</source>
-        <translation>Rozładuj pomiary, jeśli nie zostały użyte w pliku wzorcowym</translation>
+        <translation>Mérések eltávolítása, ha nem szerepeltek a mintafájlban</translation>
     </message>
     <message>
         <source>Forum</source>
-        <translation>Forum</translation>
+        <translation>Fórum</translation>
     </message>
     <message>
         <source>Export Variables to CSV</source>
-        <translation>Eksportuj zmienne do pliku CSV</translation>
+        <translation>Változók exportálása CSV-be</translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation>Wybrano</translation>
+        <translation>Kijelölt</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
-        <translation>Powiększ zaznaczone (Ctrl+Prawy)</translation>
+        <translation>Kijelöltre nagyítás (Ctrl+Jobbra)</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Edytor szablonów etykiet...</translation>
+        <translation>Címkesablon-szerkesztő...</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation>Poprzedni</translation>
+        <translation>Előző</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation>Powiększ do poprzedniego (Ctrl+Lewo)</translation>
+        <translation>Előzőre nagyítás (Ctrl+Balra)</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Obszar</translation>
+        <translation>Terület</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Powiększ wybrany obszar (Ctrl+A)</translation>
+        <translation>Kijelölt területre nagyítás (Ctrl+A)</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Patelnia</translation>
+        <translation>Serpenyő</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
-        <translation>Obszar roboczy patelni (Z, P)</translation>
+        <translation>Esztergálási munkaterület (Z, P)</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Powiększ 100%</translation>
+        <translation>Nagyítás 100%-ra</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation>Powiększ do 100 procent (Ctrl+0)</translation>
+        <translation>Nagyítás 100 százalékra (Ctrl+0)</translation>
     </message>
     <message>
         <source>Point Tools</source>
-        <translation>Narzędzia punktowe</translation>
+        <translation>Poncélú eszközök</translation>
     </message>
     <message>
         <source>Line Tools</source>
-        <translation>Narzędzia liniowe</translation>
+        <translation>Vonaleszközök</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -6388,513 +6387,513 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
     <message>
         <source>Curve Tools</source>
-        <translation>Narzędzia krzywych</translation>
+        <translation>Íveszközök</translation>
     </message>
     <message>
         <source>Arc Tools</source>
-        <translation>Narzędzia łukowe</translation>
+        <translation>Ívszerszámok</translation>
     </message>
     <message>
         <source>Operations Tools</source>
-        <translation>Narzędzia operacyjne</translation>
+        <translation>Műveleti eszközök</translation>
     </message>
     <message>
         <source>Layout Tools</source>
-        <translation>Narzędzia układu</translation>
+        <translation>Elrendezési eszközök</translation>
     </message>
     <message>
         <source>Piece tools</source>
-        <translation>Narzędzia warsztatowe</translation>
+        <translation>Darabszerszámok</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nowy element wzoru</translation>
+        <translation>Új mintadarab</translation>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>Nowy układ wydruku</translation>
+        <translation>Új nyomtatási elrendezés</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>Utwórz nowy układ wydruku (N, L)</translation>
+        <translation>Új nyomtatási elrendezés létrehozása (N, L)</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Eksportuj układ</translation>
+        <translation>Elrendezés exportálása</translation>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation>Punkt kotwiczenia</translation>
+        <translation>Horgonypont</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Ścieżka wewnętrzna</translation>
+        <translation>Belső útvonal</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Wstaw węzły</translation>
+        <translation>Csomódok beszúrása</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Połącz części</translation>
+        <translation>Darabok egyesítése</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Eksportuj elementy</translation>
+        <translation>Darabok exportálása</translation>
     </message>
     <message>
         <source>Detail tools</source>
-        <translation>Narzędzia szczegółowe</translation>
+        <translation>Részletmegmunkáló eszközök</translation>
     </message>
     <message>
         <source>Point Name Text</source>
-        <translation>Tekst nazwy punktu</translation>
+        <translation>Pontnév szövege</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation>Przełącz tekst nazwy punktu (V, P)</translation>
+        <translation>Kapcsolópont nevének szövege (V, P)</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
-        <translation>Zwiększ rozmiar tekstu</translation>
+        <translation>Betűméret növelése</translation>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
-        <translation>Zwiększ rozmiar tekstu (Ctrl+])</translation>
+        <translation>Betűméret növelése (Ctrl+])</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Zmniejsz rozmiar tekstu</translation>
+        <translation>Csökkentse a betűméretet</translation>
     </message>
     <message>
         <source>Decrease Text Size (Ctrl+[)</source>
-        <translation>Zmniejsz rozmiar tekstu (Ctrl+[)</translation>
+        <translation>Betűméret csökkentése (Ctrl+[)</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Użyj koloru narzędzia</translation>
+        <translation>Eszközszín használata</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation>Użyj koloru narzędzia (T)</translation>
+        <translation>Eszközszín (T) használata</translation>
     </message>
     <message>
         <source>Axis Origin </source>
-        <translation>Początek osi </translation>
+        <translation>Tengely eredete </translation>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
-        <translation>Przełącz początek osi (V, A)</translation>
+        <translation>Tengelyek origójának átkapcsolása (V, A)</translation>
     </message>
     <message>
         <source>Wireframe Mode</source>
-        <translation>Tryb szkieletowy</translation>
+        <translation>Drótvázas mód</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation>Przełącz tryb szkieletowy (V, W)</translation>
+        <translation>Drótvázas mód (V, W) átkapcsolása</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linie ziarna</translation>
+        <translation>Szemcsék</translation>
     </message>
     <message>
         <source>Toggle Grainlines (V, G)</source>
-        <translation>Przełącz linie ziarnistości (V, G)</translation>
+        <translation>Szemcsés vonalak (V, G) váltása</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etykiety</translation>
+        <translation>Címkék</translation>
     </message>
     <message>
         <source>Toggle Labels (V, L)</source>
-        <translation>Przełącz etykiety (V, L)</translation>
+        <translation>Címkék ki-/bekapcsolása (V, L)</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Kalkulator</translation>
+        <translation>Számológép</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Tabela dziesiętna</translation>
+        <translation>Tizedszámtáblázat</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Eksportuj bloki robocze</translation>
+        <translation>Vázlatblokkok exportálása</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation>Exportálás</translation>
     </message>
     <message>
         <source>Images tools</source>
-        <translation>Narzędzia do obrazów</translation>
+        <translation>Képeszközök</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Align</source>
-        <translation>Wyrównaj</translation>
+        <translation>Igazítás</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Blokada</translation>
+        <translation>Zár</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Dodatek na szwy</translation>
+        <translation>Varratráhagyás</translation>
     </message>
     <message>
         <source>Document Info...</source>
-        <translation>Informacje o dokumencie...</translation>
+        <translation>Dokumentuminformáció...</translation>
     </message>
     <message>
         <source>Document Info</source>
-        <translation>Informacje o dokumencie</translation>
+        <translation>Dokumentuminformáció</translation>
     </message>
     <message>
         <source>Display document Info</source>
-        <translation>Wyświetl informacje o dokumencie</translation>
+        <translation>Dokumentuminformációk megjelenítése</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Powiększ do punktu (Ctrl + Alt + P)</translation>
+        <translation>Nagyítás egy pontra (Ctrl + Alt + P)</translation>
     </message>
     <message>
         <source>Import Image</source>
-        <translation>Importuj obraz</translation>
+        <translation>Kép importálása</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Poprzedni blok roboczy</translation>
+        <translation>Előző draft blokk</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Następny blok roboczy</translation>
+        <translation>Következő vázlatblokk</translation>
     </message>
     <message>
         <source>New pattern</source>
-        <translation>Nowy wzór</translation>
+        <translation>Új minta</translation>
     </message>
     <message>
         <source>Open pattern</source>
-        <translation>Otwórz wzór</translation>
+        <translation>Nyitott minta</translation>
     </message>
     <message>
         <source>Create/Edit measurements</source>
-        <translation>Utwórz/edytuj pomiary</translation>
+        <translation>Mérések létrehozása/szerkesztése</translation>
     </message>
     <message>
         <source>Preferences</source>
-        <translation>Preferencje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Measurement file has unknown format.</source>
-        <translation>Plik pomiarowy ma nieznany format.</translation>
+        <translation>A mérési fájl formátuma ismeretlen.</translation>
     </message>
     <message>
         <source>Measurement file contains invalid known measurement(s).</source>
-        <translation>Plik pomiarowy zawiera nieprawidłowe znane pomiary.</translation>
+        <translation>A mérési fájl érvénytelen ismert mérés(eke)t tartalmaz.</translation>
     </message>
     <message>
         <source>Wrong units.</source>
-        <translation>Niewłaściwe jednostki.</translation>
+        <translation>Rossz mértékegységek.</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
-        <translation>Aplikacja nie obsługuje tabel o wielu rozmiarach i wymiarach podanych w calach.</translation>
+        <translation>Az alkalmazás nem támogatja a hüvelykben megadott többméretű táblázatokat.</translation>
     </message>
     <message>
         <source>File exception.</source>
-        <translation>Wyjątek pliku.</translation>
+        <translation>Fájl kivétel.</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
-        <translation>Gradacja nie obsługuje cali</translation>
+        <translation>A színátmenetek nem támogatják a hüvelykeket</translation>
     </message>
     <message>
         <source>Measurement files types have not match.</source>
-        <translation>Typy plików pomiarowych nie są zgodne.</translation>
+        <translation>A mérési fájltípusok nem egyeznek.</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
-        <translation>Plik pomiarowy nie zawiera wszystkich wymaganych pomiarów.</translation>
+        <translation>A mérési fájl nem tartalmazza az összes szükséges mérést.</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
-        <translation>Podaj dodatkowe wymiary: %1</translation>
+        <translation>Kérjük, adjon meg további méreteket: %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Punkt środkowy na linii&lt;/b&gt;: Wybierz pierwszy punkt</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Egyenes középpont&lt;/b&gt;: Első pont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Długość i kąt&lt;/b&gt;: Wybierz punkt</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Hossz és szög&lt;/b&gt;: Pont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na linii:&lt;/b&gt; Wybierz pierwszy punkt</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Vonalon:&lt;/b&gt; Első pont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na prostopadłej:&lt;/b&gt; Wybierz pierwszy punkt linii</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Merőlegesen:&lt;/b&gt; Válassza ki a vonal első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na dwusiecznej:&lt;/b&gt; Wybierz pierwszy punkt kąta</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Szögfelezőn:&lt;/b&gt; Válassza ki a szög első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Długość do linii:&lt;/b&gt; Wybierz punkt</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Vonalhossz:&lt;/b&gt; Válasszon pontot</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie łuku i linii:&lt;/b&gt; Wybierz pierwszy punkt linii</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Ív és egyenes metszéspontja:&lt;/b&gt; Válassza ki az egyenes első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie osi i trójkąta:&lt;/b&gt; Wybierz pierwszy punkt osi</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Tengely és háromszög metszéspontja:&lt;/b&gt; Válassza ki a tengely első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie XY&lt;/b&gt; Wybierz punkt dla wartości X (pionowo)</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - XY metszéspont&lt;/b&gt; Válasszon pontot az X értékhez (függőleges)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii i prostopadłe:&lt;/b&gt; Wybierz punkt bazowy</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Egyenes és merőleges metszéspontja:&lt;/b&gt; Válasszon ki bázispontot</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii i osi:&lt;/b&gt; Wybierz pierwszy punkt linii</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Egyenes és tengely metszéspontja:&lt;/b&gt; Válassza ki a vonal első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Narzędzie::Linia:&lt;/b&gt;:Wybierz pierwszy punkt</translation>
+        <translation>&lt;b&gt;Eszköz::Vonal:&lt;/b&gt;:Első pont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii:&lt;/b&gt; Wybierz pierwszy punkt pierwszej linii</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Metszővonalak:&lt;/b&gt; Az első vonal első pontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt;Narzędzie::Krzywa - Interaktywne:&lt;/b&gt; Wybierz punkt początkowy krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Görbe - Interaktív:&lt;/b&gt; Görbe kezdőpontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Narzędzie::Spline - Interaktywne:&lt;/b&gt; Wybierz punkt początkowy krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Spline - Interaktív:&lt;/b&gt; Spline kezdőpontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Narzędzie::Krzywa - Naprawiono:&lt;/b&gt; Wybierz pierwszy punkt krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Görbe - Rögzített:&lt;/b&gt; Görbe első pontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Tool::Spline - Naprawiono:&lt;/b&gt; Wybierz pierwszy punkt krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Spline - Rögzített:&lt;/b&gt; Spline első pontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na krzywej:&lt;/b&gt; Wybierz pierwszy punkt krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Görbén:&lt;/b&gt; Válassza ki a görbe első pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na krzywej:&lt;/b&gt; Wybierz krzywą</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Spline-on:&lt;/b&gt; Válasszon spline-t</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie krzywych:&lt;/b&gt; Wybierz pierwszą krzywą</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Metszőgörbék:&lt;/b&gt; Első görbe kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie krzywej i osi:&lt;/b&gt; Wybierz krzywą</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Görbe és tengely metszéspontja:&lt;/b&gt; Görbe kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt;Narzędzie::Łuk - Promień i kąty:&lt;/b&gt; Wybierz punkt środka łuku</translation>
+        <translation>&lt;b&gt;Eszköz::Ív - Sugár és szögek:&lt;/b&gt; Ívközéppont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na łuku:&lt;/b&gt; Wybierz łuk</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Íven:&lt;/b&gt; Ív kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie łuku i osi:&lt;/b&gt; Wybierz łuk</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Ív és tengely metszéspontja:&lt;/b&gt; Ív kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Łuki przecięcia:&lt;/b&gt; Najpierw wybierz łuk</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Metsző ívek:&lt;/b&gt; Először válasszon ki egy ívet</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie okręgów:&lt;/b&gt; Wybierz środek pierwszego okręgu</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Körök metszéspontja:&lt;/b&gt; Első kör középpontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie okręgu i stycznej:&lt;/b&gt; Wybierz punkt na stycznej</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Kör és érintő metszéspontja:&lt;/b&gt; Válasszon pontot az érintőn</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie łuku i stycznej:&lt;/b&gt; Wybierz punkt na stycznej</translation>
+        <translation>&lt;b&gt;Eszköz::Pont - Ív és érintő metszéspontja:&lt;/b&gt; Válasszon pontot az érintőn</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;Narzędzie::Łuk - Promień i długość:&lt;/b&gt; Wybierz punkt środka łuku</translation>
+        <translation>&lt;b&gt;Eszköz::Ív - Sugár és Hossz:&lt;/b&gt; Válassza ki az ív középpontjának pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;Narzędzie::Łuk - Eliptyczny:&lt;/b&gt; Wybierz punkt środka łuku eliptycznego</translation>
+        <translation>&lt;b&gt;Eszköz::Ív - Ellipszis:&lt;/b&gt; Ellipszis ív középpontjának kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Narzędzie::Operacje - Utwórz grupę:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby dokonać wielokrotnego wyboru, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie grupy </translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Csoport létrehozása:&lt;/b&gt; Jelöljön ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a csoport létrehozásának befejezéséhez </translation>
     </message>
     <message>
         <source>Add Group Objects</source>
-        <translation>Dodaj obiekty grupy</translation>
+        <translation>Csoportobjektumok hozzáadása</translation>
     </message>
     <message>
         <source>Group is Locked. Unlock to add objects</source>
-        <translation>Grupa jest zablokowana. Odblokuj, aby dodać obiekty</translation>
+        <translation>A csoport zárolva van. Objektumok hozzáadásához oldja fel a zárolást</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Narzędzie::Operacje - Obrót:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby dokonać wielokrotnego wyboru, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według linii:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według osi:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Tengely szerinti tükrözés:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Narzędzie::Operacje - Przesuń:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
-        <translation>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Wybierz pierwszy punkt linii bazowej</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - TrueDarts:&lt;/b&gt; Válassza ki az első alapvonal pontját</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Tool::Piece - Dodaj nowy element wzoru:&lt;/b&gt; Wybierz główną ścieżkę obiektów zgodnie z ruchem wskazówek zegara.</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Új minta hozzáadásaDarab:&lt;/b&gt; Jelölje ki az objektumok fő útvonalát az óramutató járásával megegyezően.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation>&lt;b&gt;Tool::Pieces - Dodaj punkt zakotwiczenia:&lt;/b&gt; Wybierz punkt zakotwiczenia</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Horgonypont hozzáadása:&lt;/b&gt; Horgonypont kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt;Tool::Pieces - Ścieżka wewnętrzna:&lt;/b&gt; Wybierz obiekty ścieżki, użyj &lt;b&gt;SHIFT&lt;/b&gt;, aby odwrócić kierunek krzywej</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Belső útvonal:&lt;/b&gt; Jelöljön ki útvonalobjektumokat, a &lt;b&gt;SHIFT&lt;/b&gt; billentyűvel megfordíthatja a görbe irányát</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Pieces - Wstaw węzły:&lt;/b&gt; Wybierz jeden lub więcej obiektów - Przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby dokonać wielokrotnego wyboru, Naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Csomópontok beszúrása:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Nie można załadować obrazu.</translation>
+        <translation>Nem sikerült betölteni a képet.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;Narzędzie::Szczegóły - Unia:&lt;/b&gt; Wybierz element wzoru</translation>
+        <translation>&lt;b&gt;Eszköz::Részletek - Egység:&lt;/b&gt; Mintadarab kiválasztása</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
-        <translation>&amp;Cofnij</translation>
+        <translation>&amp;Visszavonás</translation>
     </message>
     <message>
         <source>&amp;Redo</source>
-        <translation>&amp;Ponów</translation>
+        <translation>&amp;Újra</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Projekt bloku:</translation>
+        <translation>Vázlatblokk:</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>The calculated value</source>
-        <translation>Obliczona wartość</translation>
+        <translation>A kiszámított érték</translation>
     </message>
     <message>
         <source>Formula</source>
-        <translation>Formuła</translation>
+        <translation>Képlet</translation>
     </message>
     <message>
         <source>untitled</source>
-        <translation>bez tytułu</translation>
+        <translation>cím nélküli</translation>
     </message>
     <message>
         <source>Individual measurements</source>
-        <translation>Pomiary indywidualne</translation>
+        <translation>Egyedi mérések</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Otwórz plik</translation>
+        <translation>Fájl megnyitása</translation>
     </message>
     <message>
         <source>Measurements loaded</source>
-        <translation>Załadowano pomiary</translation>
+        <translation>Mérések betöltve</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation>Pomiary wielowymiarowe</translation>
+        <translation>Többméretű mérések</translation>
     </message>
     <message>
         <source>Measurements unloaded</source>
-        <translation>Pomiary bez obciążenia</translation>
+        <translation>Mérések kiürítve</translation>
     </message>
     <message>
         <source>Couldn&apos;t unload measurements. Some of them are used in the pattern.</source>
-        <translation>Nie udało się rozładować pomiarów. Niektóre z nich są używane we wzorcu.</translation>
+        <translation>Nem sikerült a méréseket betölteni. Néhányat már felhasználtak a mintában.</translation>
     </message>
     <message>
         <source>Measurements have been synced</source>
-        <translation>Pomiary zostały zsynchronizowane</translation>
+        <translation>A mérések szinkronizálva lettek</translation>
     </message>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
-        <translation>Nie udało się zsynchronizować pomiarów.</translation>
+        <translation>Nem sikerült szinkronizálni a méréseket.</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation>Méret:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
-        <translation>Nazwa bazowa używana dla nowych punktów.
-Naciśnij Enter, aby tymczasowo dodać ją do listy.</translation>
+        <translation>Az új pontokhoz használt alapnév.
+Nyomja meg az Enter billentyűt, hogy ideiglenesen hozzáadja a listához.</translation>
     </message>
     <message>
         <source>Pen Toolbar</source>
-        <translation>Pasek narzędzi pióra</translation>
+        <translation>Toll eszköztár</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Powiększ do punktu</translation>
+        <translation>Zoomolás egy pontra</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Punkt:</translation>
+        <translation>Pont:</translation>
     </message>
     <message>
         <source>Midpoint</source>
-        <translation>Punkt środkowy</translation>
+        <translation>Felezőpont</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -6902,7 +6901,7 @@ Naciśnij Enter, aby tymczasowo dodać ją do listy.</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>Przecięcie łuku i linii</translation>
+        <translation>Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -6934,11 +6933,11 @@ Naciśnij Enter, aby tymczasowo dodać ją do listy.</translation>
     </message>
     <message>
         <source>Intersect Curve &amp; Axis</source>
-        <translation>Przecięcie krzywej i osi</translation>
+        <translation>Ív és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Rotate</source>
-        <translation>Obróć</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6946,391 +6945,391 @@ Naciśnij Enter, aby tymczasowo dodać ją do listy.</translation>
     </message>
     <message>
         <source>Add AnchorPoint</source>
-        <translation>Dodaj punkt kontrolny</translation>
+        <translation>Horgonypont hozzáadása</translation>
     </message>
     <message>
         <source>Create Internal Path</source>
-        <translation>Utwórz ścieżkę wewnętrzną</translation>
+        <translation>Belső elérési út létrehozása</translation>
     </message>
     <message>
         <source>Insert Nodes in Path</source>
-        <translation>Wstaw węzły na ścieżce</translation>
+        <translation>Csomódok beszúrása az elérési útba</translation>
     </message>
     <message>
         <source>Union Tool</source>
-        <translation>Narzędzie związkowe</translation>
+        <translation>Szövetkezeti eszköz</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Eksportuj elementy wzoru</translation>
+        <translation>Mintadarabok exportálása</translation>
     </message>
     <message>
         <source>Piece mode</source>
-        <translation>Tryb części</translation>
+        <translation>Darab mód</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>Nie możesz jeszcze używać trybu części. Utwórz co najmniej jeden element wzoru.</translation>
+        <translation>Még nem használhatod a Darab módot. Kérlek, hozz létre legalább egy mintadarabot.</translation>
     </message>
     <message>
         <source>Layout mode</source>
-        <translation>Tryb układu</translation>
+        <translation>Elrendezési mód</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Nie możesz jeszcze używać trybu układu. Utwórz co najmniej jeden element wzoru.</translation>
+        <translation>Még nem használhatod az Elrendezés módot. Kérlek, hozz létre legalább egy mintadarabot.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Nie możesz jeszcze używać trybu układu. Proszę uwzględnić w układzie co najmniej jeden element wzoru.</translation>
+        <translation>Még nem használhatod az Elrendezés módot. Kérlek, legalább egy mintadarabot adj meg az elrendezésben.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet.</source>
-        <translation>Nie można jeszcze używać trybu układu.</translation>
+        <translation>Még nem használhatod az Elrendezés módot.</translation>
     </message>
     <message>
         <source>Can not save file.</source>
-        <translation>Nie można zapisać pliku.</translation>
+        <translation>Nem sikerült menteni a fájlt.</translation>
     </message>
     <message>
         <source>Pattern is read only.</source>
-        <translation>Wzór jest tylko do odczytu.</translation>
+        <translation>A minta csak olvasható.</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation>Pliki wzorów</translation>
+        <translation>Mintafájlok</translation>
     </message>
     <message>
         <source>pattern</source>
-        <translation>wzór</translation>
+        <translation>minta</translation>
     </message>
     <message>
         <source>Save as</source>
-        <translation>Zapisz jako</translation>
+        <translation>Mentés másként</translation>
     </message>
     <message>
         <source>Failed to lock. File with this name is opened in another window.</source>
-        <translation>Nie udało się zablokować. Plik o tej nazwie jest otwarty w innym oknie.</translation>
+        <translation>Nem sikerült zárolni. Az ilyen nevű fájl egy másik ablakban van megnyitva.</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nie można zapisać pliku</translation>
+        <translation>Nem sikerült menteni a fájlt</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Nie udało się zablokować. Ten plik został już otwarty w innym oknie. Należy spodziewać się kolizji podczas uruchamiania dwóch kopii programu.</translation>
+        <translation>Nem sikerült zárolni. Ez a fájl már meg van nyitva egy másik ablakban. Két példány futtatásakor ütközésekre lehet számítani.</translation>
     </message>
     <message>
         <source>The document has no write permissions.</source>
-        <translation>Dokument nie ma uprawnień do zapisu.</translation>
+        <translation>A dokumentumnak nincs írási jogosultsága.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Nie można ustawić uprawnień dla %1 na zapisywalne.</translation>
+        <translation>A(z) %1 jogosultságait nem lehet írhatóra állítani.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation>Nie udało się zapisać pliku.</translation>
+        <translation>Nem sikerült menteni a fájlt.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation>Nie można zapisać pliku</translation>
+        <translation>Nem sikerült menteni a fájlt</translation>
     </message>
     <message>
         <source>Error parsing file.</source>
-        <translation>Błąd podczas analizowania pliku.</translation>
+        <translation>Hiba a fájl elemzésekor.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value.</source>
-        <translation>Błąd: nie można przekonwertować wartości.</translation>
+        <translation>Hiba történt, nem lehet konvertálni az értéket.</translation>
     </message>
     <message>
         <source>Error empty parameter.</source>
-        <translation>Błąd: pusty parametr.</translation>
+        <translation>Hiba az üres paraméterrel.</translation>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation>Błąd, błędny identyfikator.</translation>
+        <translation>Hiba: rossz azonosító.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
-        <translation>Błąd podczas analizowania pliku (std::bad_alloc).</translation>
+        <translation>Hiba a fájl elemzésekor (std::bad_alloc).</translation>
     </message>
     <message>
         <source>Bad id.</source>
-        <translation>Błędny identyfikator.</translation>
+        <translation>Hibás azonosító.</translation>
     </message>
     <message>
         <source>Draft block %1</source>
-        <translation>Projekt bloku %1</translation>
+        <translation>Vázlatblokk %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
-        <translation>Nie udało się zaktualizować pomiarów.</translation>
+        <translation>Nem sikerült frissíteni a méréseket.</translation>
     </message>
     <message>
         <source>File saved</source>
-        <translation>Plik zapisany</translation>
+        <translation>Fájl mentése</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Niezapisane zmiany</translation>
+        <translation>Nem mentett változtatások</translation>
     </message>
     <message>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
-        <translation>Wzór został zmodyfikowany.
-Czy chcesz zapisać zmiany?</translation>
+        <translation>A minta módosult.
+Menti a módosításokat?</translation>
     </message>
     <message>
         <source>Save...</source>
-        <translation>Zapisz...</translation>
+        <translation>Mentés...</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nie zapisuj</translation>
+        <translation>Ne mentsd</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Paski narzędzi</translation>
+        <translation>Eszköztárak</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Projekt bloku %1</translation>
+        <translation>Vázlatblokk %1</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation>A Qt-ről</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Draft block.</source>
-        <translation>Projekt bloku.</translation>
+        <translation>Vázlatblokk.</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Nazwa istnieje</translation>
+        <translation>A név létezik</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>Nie można ukończyć akcji, ponieważ nazwa bloku roboczego już istnieje.</translation>
+        <translation>A művelet nem hajtható végre, mert a Vázlatblokk neve már létezik.</translation>
     </message>
     <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
-        <translation>Nie znaleziono pliku pomiarów &apos;%1&apos;.</translation>
+        <translation>A(z) &apos;%1&apos; mérési fájl nem található.</translation>
     </message>
     <message>
         <source>File loaded</source>
-        <translation>Plik załadowany</translation>
+        <translation>Fájl betöltve</translation>
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
-        <translation>Błąd podczas tworzenia kopii zapasowej: %1.</translation>
+        <translation>Hiba történt a biztonsági másolat létrehozásakor: %1.</translation>
     </message>
     <message>
         <source>Exporting...</source>
-        <translation>Eksportowanie...</translation>
+        <translation>Exportálás...</translation>
     </message>
     <message>
         <source>Export exception.</source>
-        <translation>Wyjątek eksportu.</translation>
+        <translation>Exportálási kivétel.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>Nie masz żadnych elementów do wyeksportowania. Proszę uwzględnić co najmniej jeden element w układzie.</translation>
+        <translation>Nincsenek exportálható elemeid. Kérlek, legalább egy elemet adj meg az elrendezésben.</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>Eksportuj części</translation>
+        <translation>Darabok exportálása</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Nie można eksportować części.</translation>
+        <translation>Darabok exportálása sikertelen.</translation>
     </message>
     <message>
         <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Seamly2D nie zamknął się poprawnie. Czy chcesz ponownie otworzyć pliki (%1), które były otwarte?</translation>
+        <translation>A Seamly2D nem állt le megfelelően. Szeretné újra megnyitni a megnyitott fájlokat (%1)?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
-        <translation>Otwórz ponownie pliki.</translation>
+        <translation>Fájlok újranyitása.</translation>
     </message>
     <message>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>Nie znaleziono pliku pomiarów &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;. Czy chcesz zaktualizować lokalizację pliku?</translation>
+        <translation>A mérési fájl (&lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;) nem található. Szeretné frissíteni a fájl helyét?</translation>
     </message>
     <message>
         <source>Loading measurements file</source>
-        <translation>Ładowanie pliku pomiarów</translation>
+        <translation>Mérésfájl betöltése</translation>
     </message>
     <message>
         <source>You can&apos;t export empty scene.</source>
-        <translation>Nie można eksportować pustej sceny.</translation>
+        <translation>Nem exportálhatsz üres jelenetet.</translation>
     </message>
     <message>
         <source>Not supported size value &apos;%1&apos; for this pattern file.</source>
-        <translation>Nieobsługiwana wartość rozmiaru &apos;%1&apos; dla tego pliku wzorca.</translation>
+        <translation>A(z) „%1” méretérték nem támogatott ehhez a mintafájlhoz.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
-        <translation>Nie można ustawić rozmiaru. Potrzebny jest plik z wymiarami wielorozmiarowymi.</translation>
+        <translation>Nem sikerült beállítani a méretet. Többszörös mértékegységeket tartalmazó fájlra van szükség.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. File wasn&apos;t opened.</source>
-        <translation>Nie można ustawić rozmiaru. Plik nie został otwarty.</translation>
+        <translation>Nem sikerült beállítani a méretet. A fájl nem lett megnyitva.</translation>
     </message>
     <message>
         <source>The method %1 does nothing in GUI mode</source>
-        <translation>Metoda %1 nic nie robi w trybie GUI</translation>
+        <translation>A(z) %1 metódus semmit sem csinál grafikus módban</translation>
     </message>
     <message>
         <source>Not supported height value &apos;%1&apos; for this pattern file.</source>
-        <translation>Wartość wysokości &apos;%1&apos; nie jest obsługiwana dla tego pliku wzorca.</translation>
+        <translation>A(z) „%1” magasságérték nem támogatott ehhez a mintafájlhoz.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. Need a file with multisize measurements.</source>
-        <translation>Nie udało się ustawić wysokości. Potrzebny jest plik z wymiarami wielorozmiarowymi.</translation>
+        <translation>Nem sikerült beállítani a magasságot. Több méretű mértékegységet tartalmazó fájlra van szükség.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
-        <translation>Nie można ustawić wysokości. Plik nie został otwarty.</translation>
+        <translation>Nem sikerült beállítani a magasságot. A fájl nem lett megnyitva.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Proszę podać jeden plik wejściowy.</translation>
+        <translation>Kérlek, adj meg egy bemeneti fájlt.</translation>
     </message>
     <message>
         <source>untitled.sm2d</source>
-        <translation>bez tytułu.sm2d</translation>
+        <translation>névtelen.sm2d</translation>
     </message>
     <message>
         <source>read only</source>
-        <translation>tylko do odczytu</translation>
+        <translation>csak olvasható</translation>
     </message>
     <message>
         <source>Locking file</source>
-        <translation>Blokowanie pliku</translation>
+        <translation>Fájl zárolása</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ten plik został już otwarty w innym oknie. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>Ez a fájl már megnyílt egy másik ablakban. Ha folytatni szeretné, hagyja figyelmen kívül (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Nie można utworzyć pliku blokady z powodu braku uprawnień. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>A zárfájl nem hozható létre jogosultságok hiánya miatt. Ha folytatni szeretné, hagyja figyelmen kívül (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását. Hagyja figyelmen kívül, ha folytatni szeretné (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Ten plik został już otwarty w innym oknie.</translation>
+        <translation>Ez a fájl már megnyílt egy másik ablakban.</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>Nie można utworzyć pliku blokady z powodu braku uprawnień.</translation>
+        <translation>A zárfájl nem hozható létre jogosultságok hiánya miatt.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady.</translation>
+        <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását.</translation>
     </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>Nie można przygotować danych do układu tworzenia</translation>
+        <translation>Nem sikerült előkészíteni az adatokat a létrehozási elrendezéshez</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Jeden lub więcej elementów wzoru jest większych niż wybrany format papieru. Proszę wybrać większy format papieru.</translation>
+        <translation>Egy vagy több mintadarab nagyobb, mint a kiválasztott papírformátum. Kérjük, válasszon nagyobb papírformátumot.</translation>
     </message>
     <message>
         <source>Can&apos;t create a path</source>
-        <translation>Nie można utworzyć ścieżki</translation>
+        <translation>Nem lehet elérési utat létrehozni</translation>
     </message>
     <message>
         <source>For previewing multipage document all sheet should have the same size.</source>
-        <translation>Aby wyświetlić podgląd dokumentu wielostronicowego, wszystkie arkusze powinny mieć ten sam rozmiar.</translation>
+        <translation>Többoldalas dokumentum előnézetéhez minden munkalapnak azonos méretűnek kell lennie.</translation>
     </message>
     <message>
         <source>For printing multipages document all sheet should have the same size.</source>
-        <translation>W przypadku drukowania dokumentu wielostronicowego wszystkie arkusze powinny mieć ten sam rozmiar.</translation>
+        <translation>Többoldalas dokumentum nyomtatásához minden lapnak azonos méretűnek kell lennie.</translation>
     </message>
     <message>
         <source>Cannot set printer margins</source>
-        <translation>Nie można ustawić marginesów drukarki</translation>
+        <translation>Nem lehet beállítani a nyomtató margóit</translation>
     </message>
     <message>
         <source>Can&apos;t open printer %1</source>
-        <translation>Nie można otworzyć drukarki %1</translation>
+        <translation>Nem tudom megnyitni a(z) %1 nyomtatót</translation>
     </message>
     <message>
         <source>Pages will be cropped because they do not fit printer paper size.</source>
-        <translation>Strony zostaną przycięte, ponieważ nie pasują do rozmiaru papieru drukarki.</translation>
+        <translation>Az oldalak le lesznek vágva, mert nem illenek a nyomtató papírméretéhez.</translation>
     </message>
     <message>
         <source>Creating file &apos;%1&apos; failed! %2</source>
-        <translation>Tworzenie pliku &apos;%1&apos; nie powiodło się! %2</translation>
+        <translation>A(z) &apos;%1&apos; fájl létrehozása sikertelen! %2</translation>
     </message>
     <message>
         <source>Critical error!</source>
-        <translation>Błąd krytyczny!</translation>
+        <translation>Kritikus hiba!</translation>
     </message>
     <message>
         <source>Print error</source>
-        <translation>Błąd drukowania</translation>
+        <translation>Nyomtatási hiba</translation>
     </message>
     <message>
         <source>Cannot proceed because there are no available printers in your system.</source>
-        <translation>Nie można kontynuować, ponieważ w systemie nie ma dostępnych drukarek.</translation>
+        <translation>Nem folytatható, mert nincsenek elérhető nyomtatók a rendszerben.</translation>
     </message>
     <message>
         <source>unnamed</source>
-        <translation>nienazwany</translation>
+        <translation>névtelen</translation>
     </message>
     <message>
         <source>The layout is stale.</source>
-        <translation>Układ jest nieaktualny.</translation>
+        <translation>Az elrendezés elavult.</translation>
     </message>
     <message>
         <source>The layout was not updated since last pattern modification. Do you want to continue?</source>
-        <translation>Układ nie został zaktualizowany od ostatniej modyfikacji wzoru. Czy chcesz kontynuować?</translation>
+        <translation>Az elrendezés nem frissült a legutóbbi mintamódosítás óta. Folytatja?</translation>
     </message>
 </context>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
         <source>SeamlyMe Shortcuts</source>
-        <translation>Skróty SeamlyMe</translation>
+        <translation>SeamlyMe gyorsbillentyűk</translation>
     </message>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Kopiuj skróty do schowka</translation>
+        <translation>Parancsikonok másolása a vágólapra</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Eksportuj skróty jako plik PDF</translation>
+        <translation>Parancsok exportálása PDF formátumban</translation>
     </message>
     <message>
         <source>Send shortcuts to the printer</source>
-        <translation>Wyślij skróty do drukarki</translation>
+        <translation>Parancsikonok küldése a nyomtatóra</translation>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
-        <translation>Skróty klawiaturowe</translation>
+        <translation>Billentyűparancsok</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Nowy</translation>
+        <translation>Új</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -7338,7 +7337,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open Individual</source>
-        <translation>Otwarty Indywidualny</translation>
+        <translation>Nyílt egyéni</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -7346,7 +7345,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open Multisize</source>
-        <translation>Otwórz Multisize</translation>
+        <translation>Többméretes megnyitása</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -7354,7 +7353,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Drukuj</translation>
+        <translation>Nyomtatás</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -7362,7 +7361,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Mentés</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -7370,7 +7369,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save as</source>
-        <translation>Zapisz jako</translation>
+        <translation>Mentés másként</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
@@ -7378,7 +7377,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Eksportuj do pliku CSV</translation>
+        <translation>Exportálás CSV-be</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -7386,7 +7385,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Wyjście</translation>
+        <translation>Kilépés</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -7394,11 +7393,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Znajdź poprzednie</translation>
+        <translation>Előző keresése</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -7406,7 +7405,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Znajdź następny</translation>
+        <translation>Következő keresése</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -7414,129 +7413,129 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Eksportuj PDF</translation>
+        <translation>PDF exportálása</translation>
     </message>
 </context>
 <context>
     <name>MeasurementDatabaseDialog</name>
     <message>
         <source>Collapse All</source>
-        <translation>Zwiń wszystko</translation>
+        <translation>Összes összecsukása</translation>
     </message>
     <message>
         <source>Expand All</source>
-        <translation>Rozwiń wszystko</translation>
+        <translation>Összes kibontása</translation>
     </message>
     <message>
         <source>Check all</source>
-        <translation>Zaznacz wszystko</translation>
+        <translation>Összes kijelölése</translation>
     </message>
     <message>
         <source>Uncheck all</source>
-        <translation>Odznacz wszystko</translation>
+        <translation>Összes kijelölésének törlése</translation>
     </message>
     <message>
         <source>Direct Height</source>
         <comment>Measurement section</comment>
-        <translation>Wysokość bezpośrednia</translation>
+        <translation>Közvetlen magasság</translation>
     </message>
     <message>
         <source>Direct Width</source>
         <comment>Measurement section</comment>
-        <translation>Szerokość bezpośrednia</translation>
+        <translation>Közvetlen szélesség</translation>
     </message>
     <message>
         <source>Indentation</source>
         <comment>Measurement section</comment>
-        <translation>Wcięcie</translation>
+        <translation>Behúzás</translation>
     </message>
     <message>
         <source>Hand</source>
         <comment>Measurement section</comment>
-        <translation>Ręka</translation>
+        <translation>Kéz</translation>
     </message>
     <message>
         <source>Foot</source>
         <comment>Measurement section</comment>
-        <translation>Stopa</translation>
+        <translation>Láb</translation>
     </message>
     <message>
         <source>Head</source>
         <comment>Measurement section</comment>
-        <translation>Głowa</translation>
+        <translation>Fej</translation>
     </message>
     <message>
         <source>Circumference and Arc</source>
         <comment>Measurement section</comment>
-        <translation>Obwód i łuk</translation>
+        <translation>Kerület és ív</translation>
     </message>
     <message>
         <source>Vertical</source>
         <comment>Measurement section</comment>
-        <translation>Pionowo</translation>
+        <translation>Függőleges</translation>
     </message>
     <message>
         <source>Horizontal</source>
         <comment>Measurement section</comment>
-        <translation>Poziomy</translation>
+        <translation>Vízszintes</translation>
     </message>
     <message>
         <source>Bust</source>
         <comment>Measurement section</comment>
-        <translation>Popiersie</translation>
+        <translation>Mellszobor</translation>
     </message>
     <message>
         <source>Balance</source>
         <comment>Measurement section</comment>
-        <translation>Równowaga</translation>
+        <translation>Egyenleg</translation>
     </message>
     <message>
         <source>Arm</source>
         <comment>Measurement section</comment>
-        <translation>Ramię</translation>
+        <translation>Élesítés</translation>
     </message>
     <message>
         <source>Leg</source>
         <comment>Measurement section</comment>
-        <translation>Noga</translation>
+        <translation>Láb</translation>
     </message>
     <message>
         <source>Crotch and Rise</source>
         <comment>Measurement section</comment>
-        <translation>Krok i podniesienie</translation>
+        <translation>Ágyék és derék</translation>
     </message>
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Mężczyźni i krawiectwo</translation>
+        <translation>Férfi és szabászat</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
         <comment>Measurement section</comment>
-        <translation>Historyczne i specjalistyczne</translation>
+        <translation>Történelmi és szakterületi</translation>
     </message>
     <message>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
-        <translation>Pomiary modelarskie</translation>
+        <translation>Szabályozási méretek</translation>
     </message>
 </context>
 <context>
     <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Nie można znaleźć pomiaru &apos;%1&apos;</translation>
+        <translation>Nem található a(z) &apos;%1&apos; mérés</translation>
     </message>
     <message>
         <source>The measurement name is empty!</source>
-        <translation>Nazwa pomiaru jest pusta!</translation>
+        <translation>A mérés neve üres!</translation>
     </message>
 </context>
 <context>
     <name>MouseCoordinates</name>
     <message>
         <source>Form</source>
-        <translation>Formularz</translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <source> XPos:</source>
@@ -7544,11 +7543,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>xpos</source>
-        <translation>xpos</translation>
+        <translation>képtelenség</translation>
     </message>
     <message>
         <source>YPos:</source>
-        <translation>Pozycja Y:</translation>
+        <translation>YPos:</translation>
     </message>
     <message>
         <source>ypos</source>
@@ -7556,122 +7555,122 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jednostki:</translation>
+        <translation>Egységek:</translation>
     </message>
     <message>
         <source>units</source>
-        <translation>jednostki</translation>
+        <translation>egységek</translation>
     </message>
 </context>
 <context>
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
-        <translation>przesuń pierwszą etykietę rzutki</translation>
+        <translation>mozgasd át az első dart címkét</translation>
     </message>
     <message>
         <source>move the second dart label</source>
-        <translation>przesuń drugą etykietę rzutki</translation>
+        <translation>mozgasd át a második dart címkét</translation>
     </message>
 </context>
 <context>
     <name>MoveGroupItem</name>
     <message>
         <source>Move group item</source>
-        <translation>Przenieś element grupy</translation>
+        <translation>Csoportelem áthelyezése</translation>
     </message>
 </context>
 <context>
     <name>MoveLabel</name>
     <message>
         <source>move point label</source>
-        <translation>przesuń etykietę punktu</translation>
+        <translation>pontcímke mozgatása</translation>
     </message>
 </context>
 <context>
     <name>MoveOperationLabel</name>
     <message>
         <source>move point label</source>
-        <translation>przesuń etykietę punktu</translation>
+        <translation>pontcímke mozgatása</translation>
     </message>
 </context>
 <context>
     <name>MoveSPoint</name>
     <message>
         <source>move single point</source>
-        <translation>przesuń pojedynczy punkt</translation>
+        <translation>egyetlen pont mozgatása</translation>
     </message>
 </context>
 <context>
     <name>MoveSpline</name>
     <message>
         <source>move spline</source>
-        <translation>przesuń krzywą</translation>
+        <translation>spline mozgatása</translation>
     </message>
 </context>
 <context>
     <name>MoveSplinePath</name>
     <message>
         <source>move spline path</source>
-        <translation>przesuń ścieżkę krzywej</translation>
+        <translation>spline útvonal mozgatása</translation>
     </message>
 </context>
 <context>
     <name>NewMeasurementsDialog</name>
     <message>
         <source>New measurement file</source>
-        <translation>Nowy plik pomiarowy</translation>
+        <translation>Új mérési fájl</translation>
     </message>
     <message>
         <source>Measurement type:</source>
-        <translation>Rodzaj pomiaru:</translation>
+        <translation>Mérés típusa:</translation>
     </message>
     <message>
         <source>Unit:</source>
-        <translation>Jednostka:</translation>
+        <translation>Egység:</translation>
     </message>
     <message>
         <source>Base size:</source>
-        <translation>Rozmiar podstawowy:</translation>
+        <translation>Alap méret:</translation>
     </message>
     <message>
         <source>Base height:</source>
-        <translation>Wysokość bazowa:</translation>
+        <translation>Alapmagasság:</translation>
     </message>
     <message>
         <source>Individual</source>
-        <translation>Indywidualny</translation>
+        <translation>Egyéni</translation>
     </message>
     <message>
         <source>Multisize</source>
-        <translation>Wielorozmiarowy</translation>
+        <translation>Többméretű</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
 </context>
 <context>
     <name>PageFormatCombobox</name>
     <message>
         <source>Letter</source>
-        <translation>List</translation>
+        <translation>Levél</translation>
     </message>
     <message>
         <source>Legal</source>
-        <translation>Prawne</translation>
+        <translation>Jogi</translation>
     </message>
     <message>
         <source>Tabloid</source>
-        <translation>Tabloid</translation>
+        <translation>Bulvárlap</translation>
     </message>
     <message>
         <source>ANSI C</source>
@@ -7687,362 +7686,362 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Roll 24in</source>
-        <translation>Rolka 24 cale</translation>
+        <translation>24 hüvelykes tekercs</translation>
     </message>
     <message>
         <source>Roll 30in</source>
-        <translation>Rzuć 30 cali</translation>
+        <translation>Tekercs 30 hüvelyk</translation>
     </message>
     <message>
         <source>Roll 36in</source>
-        <translation>Rolka 36 cali</translation>
+        <translation>36 hüvelykes tekercs</translation>
     </message>
     <message>
         <source>Roll 42in</source>
-        <translation>Rolka 42 cale</translation>
+        <translation>42 hüvelykes tekercs</translation>
     </message>
     <message>
         <source>Roll 44in</source>
-        <translation>Rolka 44 cale</translation>
+        <translation>44 hüvelykes tekercs</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Niestandardowy</translation>
+        <translation>Egyéni</translation>
     </message>
 </context>
 <context>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Narzędzie do tworzenia wzorów</translation>
+        <translation>Mintadarab eszköz</translation>
     </message>
     <message>
         <source>Properties </source>
-        <translation>Właściwości </translation>
+        <translation>Tulajdonságok </translation>
     </message>
     <message>
         <source>Paths </source>
-        <translation>Ścieżki </translation>
+        <translation>Útvonalak </translation>
     </message>
     <message>
         <source>Seam Allowance </source>
-        <translation>Dodatek na szwy </translation>
+        <translation>Varratráhagyás </translation>
     </message>
     <message>
         <source>Labels </source>
-        <translation>Etykiety </translation>
+        <translation>Címkék </translation>
     </message>
     <message>
         <source>Anchors </source>
-        <translation>Kotwice </translation>
+        <translation>Horgonyok </translation>
     </message>
     <message>
         <source>Grainline </source>
-        <translation>Linia ziarna </translation>
+        <translation>Személyvonal </translation>
     </message>
     <message>
         <source>Notches </source>
-        <translation>Nacięcia </translation>
+        <translation>Bevágások </translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Tulajdonságok</translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Nazwa elementu:</translation>
+        <translation>Darab neve:</translation>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>Element wzoru</translation>
+        <translation>Mintadarab</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
-        <translation>Nazwa nie może być pusta</translation>
+        <translation>A név mező nem lehet üres</translation>
     </message>
     <message>
         <source>Letter:</source>
-        <translation>List:</translation>
+        <translation>Levél:</translation>
     </message>
     <message>
         <source>Letter of pattern piece</source>
-        <translation>Część wzoru litery</translation>
+        <translation>A mintadarab betűje</translation>
     </message>
     <message>
         <source>Quantity:</source>
-        <translation>Ilość:</translation>
+        <translation>Mennyiség:</translation>
     </message>
     <message>
         <source>Placement:</source>
-        <translation>Umiejscowienie:</translation>
+        <translation>Elhelyezés:</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>na zagięciu</translation>
+        <translation>hajtogatáskor</translation>
     </message>
     <message>
         <source>Fold position:</source>
-        <translation>Pozycja składania:</translation>
+        <translation>Hajtási pozíció:</translation>
     </message>
     <message>
         <source>Undefined</source>
-        <translation>Niezdefiniowane</translation>
+        <translation>Nincs meghatározva</translation>
     </message>
     <message>
         <source>Up/Down</source>
-        <translation>Góra/Dół</translation>
+        <translation>Fel/Le</translation>
     </message>
     <message>
         <source>Left/Right</source>
-        <translation>Lewo/Prawo</translation>
+        <translation>Bal/Jobb</translation>
     </message>
     <message>
         <source>Orientation:</source>
-        <translation>Orientacja:</translation>
+        <translation>Tájolás:</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Lewy</translation>
+        <translation>Balra</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>W porządku</translation>
+        <translation>Jobban</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>Obrót:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <source>1-Way</source>
-        <translation>Jednokierunkowa</translation>
+        <translation>1 irányú</translation>
     </message>
     <message>
         <source>2-Way</source>
-        <translation>2-drożny</translation>
+        <translation>Kétirányú</translation>
     </message>
     <message>
         <source>4-Way</source>
-        <translation>4-drożny</translation>
+        <translation>4-utas</translation>
     </message>
     <message>
         <source>Any</source>
-        <translation>Dowolny</translation>
+        <translation>Bármely</translation>
     </message>
     <message>
         <source>Tilt:</source>
-        <translation>Pochylenie:</translation>
+        <translation>Dőlésszög:</translation>
     </message>
     <message>
         <source>Annotation:</source>
-        <translation>Adnotacja:</translation>
+        <translation>Megjegyzés:</translation>
     </message>
     <message>
         <source>A text field to add comments</source>
-        <translation>Pole tekstowe do dodawania komentarzy</translation>
+        <translation>Egy szövegmező megjegyzések hozzáadásához</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Flipping:</source>
-        <translation>Odwracanie:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>Zabroń odbicia lustrzanego elementów w układzie.</translation>
+        <translation>Egy elem tükrözése tilos az elrendezésben.</translation>
     </message>
     <message>
         <source>Forbid</source>
-        <translation>Zabroń</translation>
+        <translation>Tiltott</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>hex Value</source>
-        <translation>wartość szesnastkowa</translation>
+        <translation>hexadecimális érték</translation>
     </message>
     <message>
         <source>Fill:</source>
-        <translation>Wypełnij:</translation>
+        <translation>Kitöltés:</translation>
     </message>
     <message>
         <source>Main path</source>
-        <translation>Ścieżka główna</translation>
+        <translation>Fő útvonal</translation>
     </message>
     <message>
         <source>All objects in path should follow in clockwise direction.</source>
-        <translation>Wszystkie obiekty na ścieżce powinny następować zgodnie z ruchem wskazówek zegara.</translation>
+        <translation>Az útvonalon lévő összes objektumnak az óramutató járásával megegyező irányban kell haladnia.</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Przenieś wiersz na górę listy</translation>
+        <translation>Sor áthelyezése a lista tetejére</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Przesuń wiersz o jeden wiersz w górę</translation>
+        <translation>Sorral feljebb mozgatása egy sorral</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Przesuń wiersz w dół o jeden wiersz</translation>
+        <translation>Sor áthelyezése egy sorral lejjebb</translation>
     </message>
     <message>
         <source>Molve row to botton of list</source>
-        <translation>Przenieś wiersz na dół listy</translation>
+        <translation>Sor áthelyezése a lista aljára</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Status:</translation>
+        <translation>Állapot:</translation>
     </message>
     <message>
         <source>Ready!</source>
-        <translation>Gotowy!</translation>
+        <translation>Kész!</translation>
     </message>
     <message>
         <source>Internal paths</source>
-        <translation>Ścieżki wewnętrzne</translation>
+        <translation>Belső útvonalak</translation>
     </message>
     <message>
         <source>The seam allowance is part of main path</source>
-        <translation>Dodatek na szwy jest częścią ścieżki głównej</translation>
+        <translation>A varrásráhagyás a fő útvonal része</translation>
     </message>
     <message>
         <source>Built in</source>
-        <translation>Wbudowany</translation>
+        <translation>Beépített</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
-        <translation>Pokaż linię cięcia</translation>
+        <translation>Vágási vonal megjelenítése</translation>
     </message>
     <message>
         <source>Hide the main path if the seam allowance is enabled</source>
-        <translation>Ukryj ścieżkę główną, jeśli włączono dodatek na szwy</translation>
+        <translation>A fő útvonal elrejtése, ha a varrásráhagyás engedélyezve van</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Ukryj linię szwu</translation>
+        <translation>Varrat elrejtése</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automatyczny</translation>
+        <translation>Automatikus</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
+        <translation>Képletvarázsló</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Obliczanie</translation>
+        <translation>Számítás</translation>
     </message>
     <message>
         <source>Nodes</source>
-        <translation>Węzły</translation>
+        <translation>Csomópontok</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation>Węzeł:</translation>
+        <translation>Csomód:</translation>
     </message>
     <message>
         <source>Before:</source>
-        <translation>Przed:</translation>
+        <translation>Előtte:</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation>Powrót do domyślnej szerokości</translation>
+        <translation>Vissza az alapértelmezett szélességhez</translation>
     </message>
     <message>
         <source>Use Default</source>
-        <translation>Użyj domyślnych</translation>
+        <translation>Alapértelmezett használata</translation>
     </message>
     <message>
         <source>After:</source>
-        <translation>Po:</translation>
+        <translation>Miután:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Niestandardowy</translation>
+        <translation>Egyéni</translation>
     </message>
     <message>
         <source>Start point:</source>
-        <translation>Punkt początkowy:</translation>
+        <translation>Kezdőpont:</translation>
     </message>
     <message>
         <source>End point:</source>
-        <translation>Punkt końcowy:</translation>
+        <translation>Végpont:</translation>
     </message>
     <message>
         <source>Include as:</source>
-        <translation>Dołącz jako:</translation>
+        <translation>Beillesztés helye:</translation>
     </message>
     <message>
         <source>Piece label</source>
-        <translation>Etykieta sztuki</translation>
+        <translation>Darabcímke</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Edytuj etykietę wzoru</translation>
+        <translation>Mintacímke szerkesztése</translation>
     </message>
     <message>
         <source>Edit template</source>
-        <translation>Edytuj szablon</translation>
+        <translation>Sablon szerkesztése</translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Pokaż etykietę elementu</translation>
+        <translation>Darabcímke megjelenítése</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Anchor points</source>
-        <translation>Punkty kotwiczenia</translation>
+        <translation>Horgonypontok</translation>
     </message>
     <message>
         <source>Center:</source>
-        <translation>Środek:</translation>
+        <translation>Közép:</translation>
     </message>
     <message>
         <source>Top left:</source>
-        <translation>Lewy górny róg:</translation>
+        <translation>Bal felső sarok:</translation>
     </message>
     <message>
         <source>Bottom right:</source>
-        <translation>Prawy dolny róg:</translation>
+        <translation>Jobb alsó sarokban:</translation>
     </message>
     <message>
         <source>Pattern label</source>
-        <translation>Etykieta wzoru</translation>
+        <translation>Mintacímke</translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Pokaż etykietę wzoru</translation>
+        <translation>Mintacímke megjelenítése</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Pokaż linię ziarnistą</translation>
+        <translation>Show grainline</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -8050,749 +8049,749 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Góra:</translation>
+        <translation>Felső:</translation>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Dół:</translation>
+        <translation>Alul:</translation>
     </message>
     <message>
         <source>Arrows</source>
-        <translation>Strzały</translation>
+        <translation>Nyilak</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>Típus:</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Wycięcie:</translation>
+        <translation>Bevágás:</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Típus</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Szczelina</translation>
+        <translation>Rés</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Wycięcie w kształcie litery T</translation>
+        <translation>T-bevágás</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Wycięcie w kształcie litery U</translation>
+        <translation>U-bevágás</translation>
     </message>
     <message>
         <source>V Internal </source>
-        <translation>V Wewnętrzny </translation>
+        <translation>V Belső </translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V Zewnętrzny</translation>
+        <translation>V Külső</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Zamek</translation>
+        <translation>Vár</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Diament</translation>
+        <translation>Gyémánt</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation>Podtyp</translation>
+        <translation>Altípus</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Prosty</translation>
+        <translation>Egyszerű</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Dwusieczna</translation>
+        <translation>Felező</translation>
     </message>
     <message>
         <source>Select to designate a corner point as a notch</source>
-        <translation>Wybierz, aby oznaczyć punkt narożny jako wycięcie</translation>
+        <translation>Válassza ki, ha sarokpontot szeretne bevágásként kijelölni</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Skrzyżowanie</translation>
+        <translation>Kereszteződés</translation>
     </message>
     <message>
         <source>Show notch on the cut line.</source>
-        <translation>Pokaż nacięcie na linii cięcia.</translation>
+        <translation>Mutasd a bevágást a vágási vonalon.</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Pokaż wycięcie na linii cięcia</translation>
+        <translation>Bevágás megjelenítése a vágási vonalon</translation>
     </message>
     <message>
         <source>Show notch on the seam line.</source>
-        <translation>Pokaż nacięcie na linii szwu.</translation>
+        <translation>Bevágás megjelenítése a varrásvonalon.</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Pokaż nacięcie na linii szwu</translation>
+        <translation>Bevágás megjelenítése a varratvonalon</translation>
     </message>
     <message>
         <source> Width:</source>
-        <translation> Szerokość:</translation>
+        <translation> Szélesség:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Przywróć długość nacięcia do wartości domyślnej.</translation>
+        <translation>A bevágás hosszának visszaállítása az alapértelmezettre.</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Przywróć wcięcie do wartości domyślnych.</translation>
+        <translation>A bevágás visszaállítása az alapértelmezett értékre.</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Przywróć kąt nacięcia do wartości domyślnej.</translation>
+        <translation>Bevágási szög visszaállítása az alapértelmezettre.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Liczba:</translation>
+        <translation>Db:</translation>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Wybierz główne obiekty ścieżki zgodnie z ruchem wskazówek zegara. Użyj &lt;b&gt;SHIFT&lt;/b&gt;, aby odwrócić kierunek krzywej lub &lt;b&gt;CTRL&lt;/b&gt;, aby zachować kierunek krzywej.</translation>
+        <translation>A fő útvonal objektumait az óramutató járásával megegyező irányban jelölje ki. A &lt;b&gt;SHIFT&lt;/b&gt; billentyűkombinációval megfordíthatja a görbe irányát, a &lt;b&gt;CTRL&lt;/b&gt; billentyűkombinációval pedig megtarthatja az irányát.</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
-        <translation>Naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie elementu.</translation>
+        <translation>Nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a darab létrehozásának befejezéséhez.</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Dodatek na szwy</translation>
+        <translation>Varratráhagyás</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
-        <translation>Naciśnij OK, aby utworzyć element wzoru</translation>
+        <translation>Nyomja meg az OK gombot a minta létrehozásához</translation>
     </message>
     <message>
         <source>Paths</source>
-        <translation>Ścieżki</translation>
+        <translation>Útvonalak</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation>Wybierz kolor</translation>
+        <translation>Szín kiválasztása</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Odwróć</translation>
+        <translation>Fordított</translation>
     </message>
     <message>
         <source>Duplicate</source>
-        <translation>Duplikat</translation>
+        <translation>Másodpéldány</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation>Wycięcie</translation>
+        <translation>Bevágás</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Wycięcie T</translation>
+        <translation>TNotch</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>Felbontás</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VInternal</translation>
+        <translation>V belső</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>VExternal</translation>
+        <translation>Külső</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation>Liczba</translation>
+        <translation>Gróf</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation>Wykluczone</translation>
+        <translation>Kizárva</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
-        <translation>Błąd. Nie można zapisać ścieżki dostępu do elementu.</translation>
+        <translation>Hiba. Nem sikerült menteni a darab útvonalát.</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
-        <translation>Nieskończony/niezdefiniowany wynik</translation>
+        <translation>Végtelen/meghatározatlan eredmény</translation>
     </message>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
-        <translation>Długość nie może być mniejsza niż długość 2 strzał</translation>
+        <translation>A hossz nem lehet kisebb, mint 2 nyíl hossza</translation>
     </message>
     <message>
         <source>Length should be positive</source>
-        <translation>Długość powinna być dodatnia</translation>
+        <translation>A hossznak pozitívnak kell lennie</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>Błąd parsera: %1</translation>
+        <translation>Elemző hiba: %1</translation>
     </message>
     <message>
         <source>Grainline</source>
-        <translation>Linia ziarna</translation>
+        <translation>Személyvonal</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etykiety</translation>
+        <translation>Címkék</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Edycja długości</translation>
+        <translation>Hossz szerkesztése</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Edytuj kąt</translation>
+        <translation>Szög szerkesztése</translation>
     </message>
     <message>
         <source>Edit height</source>
-        <translation>Edytuj wysokość</translation>
+        <translation>Magasság szerkesztése</translation>
     </message>
     <message>
         <source>Edit width</source>
-        <translation>Edytuj szerokość</translation>
+        <translation>Szélesség szerkesztése</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>Aktualny dodatek na szew</translation>
+        <translation>Jelenlegi varrásráhagyás</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Edytuj szerokość dodatku na szew</translation>
+        <translation>Varratráhagyás szélességének szerkesztése</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Edytuj szerokość dodatku na szew przed</translation>
+        <translation>Varratszél szélességének szerkesztése előtte</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Edytuj szerokość dodatku na szew po</translation>
+        <translation>Varratráhagyás szélességének szerkesztése után</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation>Potrzebujesz więcej punktów!</translation>
+        <translation>Több pontra van szükséged!</translation>
     </message>
     <message>
         <source>You must choose points in a clockwise direction!</source>
-        <translation>Musisz wybierać punkty zgodnie z ruchem wskazówek zegara!</translation>
+        <translation>Az óramutató járásával megegyező irányban kell pontokat választani!</translation>
     </message>
     <message>
         <source>First point cannot be same as last point!</source>
-        <translation>Pierwszy punkt nie może być taki sam jak ostatni!</translation>
+        <translation>Az első pont nem lehet azonos az utolsó ponttal!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Masz podwójne punkty!</translation>
+        <translation>Dupla pontod van!</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Każdy punkt na ścieżce musi być unikalny!</translation>
+        <translation>Az útvonal minden pontjának egyedinek kell lennie!</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Pusty</translation>
+        <translation>Üres</translation>
     </message>
     <message>
         <source>main path</source>
-        <translation>ścieżka główna</translation>
+        <translation>fő útvonal</translation>
     </message>
     <message>
         <source>custom seam allowance</source>
-        <translation>niestandardowy dodatek na szwy</translation>
+        <translation>egyedi varrásráhagyás</translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Oba</translation>
+        <translation>Mindkettő</translation>
     </message>
     <message>
         <source>Just front</source>
-        <translation>Tylko z przodu</translation>
+        <translation>Csak elöl</translation>
     </message>
     <message>
         <source>Just rear</source>
-        <translation>Tuż z tyłu</translation>
+        <translation>Csak hátul</translation>
     </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
     <message>
         <source>Current seam allowance</source>
-        <translation>Aktualny dodatek na szew</translation>
+        <translation>Jelenlegi varrásráhagyás</translation>
     </message>
     <message>
         <source>move pattern piece label</source>
-        <translation>przesuń etykietę elementu wzoru</translation>
+        <translation>mintadarab címkéjének áthelyezése</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>Zmień rozmiar etykiety elementu wzoru</translation>
+        <translation>mintadarab címkéjének átméretezése</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>obróć etykietę elementu wzoru</translation>
+        <translation>mintadarab címkéjének elforgatása</translation>
     </message>
     <message>
         <source>move pattern info label</source>
-        <translation>przesuń etykietę informacyjną o wzorze</translation>
+        <translation>minta információs címke áthelyezése</translation>
     </message>
     <message>
         <source>resize pattern info label</source>
-        <translation>Zmień rozmiar etykiety informacyjnej wzoru</translation>
+        <translation>mintainformációs címke átméretezése</translation>
     </message>
     <message>
         <source>rotate pattern info label</source>
-        <translation>obróć etykietę informacyjną wzoru</translation>
+        <translation>minta információs címke elforgatása</translation>
     </message>
     <message>
         <source>move grainline</source>
-        <translation>przesuń linię ziaren</translation>
+        <translation>move grainline</translation>
     </message>
     <message>
         <source>resize grainline</source>
-        <translation>Zmień rozmiar linii ziarna</translation>
+        <translation>szálkereszt átméretezése</translation>
     </message>
     <message>
         <source>rotate grainline</source>
-        <translation>obróć linię słoja</translation>
+        <translation>szálkereszt elforgatása</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Tulajdonságok</translation>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Element wzoru zamka</translation>
+        <translation>Zárminta darab</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Dołącz do układu</translation>
+        <translation>Elrendezésbe beillesztés</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Zabroń przewracania</translation>
+        <translation>Forgatás tiltása</translation>
     </message>
     <message>
         <source>Raise to top</source>
-        <translation>Podnieś do góry</translation>
+        <translation>Emelje fel a tetejére</translation>
     </message>
     <message>
         <source>Lower to bottom</source>
-        <translation>Od dołu do dołu</translation>
+        <translation>Alulról lefelé</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Ukryj linię szwu</translation>
+        <translation>Varrat elrejtése</translation>
     </message>
     <message>
         <source>Show Seam Allowance</source>
-        <translation>Pokaż naddatek na szwy</translation>
+        <translation>Varratráhagyás megjelenítése</translation>
     </message>
     <message>
         <source>Show Grainline</source>
-        <translation>Pokaż linię słoja</translation>
+        <translation>Szegélyvonal megjelenítése</translation>
     </message>
     <message>
         <source>Show Pattern Label</source>
-        <translation>Pokaż etykietę wzoru</translation>
+        <translation>Mintacímke megjelenítése</translation>
     </message>
     <message>
         <source>Show Piece Label</source>
-        <translation>Pokaż etykietę elementu</translation>
+        <translation>Darabcímke megjelenítése</translation>
     </message>
     <message>
         <source>Rename...</source>
-        <translation>Zmień nazwę...</translation>
+        <translation>Átnevezés...</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation>Aktualizuj kąt węzła</translation>
+        <translation>Csomópont szögének frissítése</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation>Aktualizuj Notch</translation>
+        <translation>Frissítési bevágás</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation>Wyklucz węzeł</translation>
+        <translation>Csomód kizárása</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation>Usuń węzeł</translation>
+        <translation>Csomód törlése</translation>
     </message>
     <message>
         <source>Forbid Flipping changed: </source>
-        <translation>Zmieniono zakaz odwracania: </translation>
+        <translation>A lapozgatás tiltása megváltozott: </translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Włączone</translation>
+        <translation>Engedélyezve</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Wyłączone</translation>
+        <translation>Fogyatékkal élő</translation>
     </message>
     <message>
         <source>Seam line visibility changed: </source>
-        <translation>Zmieniono widoczność linii szwu: </translation>
+        <translation>A varratvonal láthatósága megváltozott: </translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Ukryj</translation>
+        <translation>Elrejtés</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Pokaż</translation>
+        <translation>Mutasd</translation>
     </message>
     <message>
         <source>Show seam allowance</source>
-        <translation>Pokaż dodatek na szwy</translation>
+        <translation>Varratráhagyás megjelenítése</translation>
     </message>
     <message>
         <source>Seam allowance visibility changed: </source>
-        <translation>Zmieniono widoczność zapasu na szwy: </translation>
+        <translation>A varrásráhagyás láthatósága megváltozott: </translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Pokaż linię ziarnistą</translation>
+        <translation>Show grainline</translation>
     </message>
     <message>
         <source>Grainline visibility changed: </source>
-        <translation>Zmieniono widoczność linii ziarna: </translation>
+        <translation>A gabonavonal láthatósága megváltozott: </translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Pokaż etykietę wzoru</translation>
+        <translation>Mintacímke megjelenítése</translation>
     </message>
     <message>
         <source>Pattern label visibility changed: </source>
-        <translation>Zmieniono widoczność etykiety wzoru: </translation>
+        <translation>A minta feliratának láthatósága megváltozott: </translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Pokaż etykietę elementu</translation>
+        <translation>Darabcímke megjelenítése</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>Zmieniono widoczność etykiety elementu: </translation>
+        <translation>A darabcímke láthatósága megváltozott: </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Nazwa elementu:</translation>
+        <translation>Darab neve:</translation>
     </message>
     <message>
         <source>Rename Pattern Piece</source>
-        <translation>Zmień nazwę elementu wzoru</translation>
+        <translation>Mintadarab átnevezése</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>Zmień nazwę elementu wzoru</translation>
+        <translation>Mintadarab átnevezése</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
-        <translation>Zmieniono nazwę elementu na: </translation>
+        <translation>A darab átnevezve erre: </translation>
     </message>
 </context>
 <context>
     <name>PenToolBar</name>
     <message>
         <source>Current line color</source>
-        <translation>Aktualny kolor linii</translation>
+        <translation>Aktuális sor színe</translation>
     </message>
     <message>
         <source>Current line type</source>
-        <translation>Bieżący typ linii</translation>
+        <translation>Aktuális vonaltípus</translation>
     </message>
     <message>
         <source>Current line weight</source>
-        <translation>Aktualna grubość linii</translation>
+        <translation>Jelenlegi vonalvastagság</translation>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Zresetuj bieżące pióro do ustawień domyślnych</translation>
+        <translation>A jelenlegi toll visszaállítása az alapértelmezett értékekre</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation>Zapisz aktualne ustawienie pióra</translation>
+        <translation>Aktuális tollbeállítás mentése</translation>
     </message>
 </context>
 <context>
     <name>PieceFillComboBox</name>
     <message>
         <source>No Fill</source>
-        <translation>Brak wypełnienia</translation>
+        <translation>Nincs kitöltés</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation>Solidny</translation>
+        <translation>Szilárd</translation>
     </message>
     <message>
         <source>Density 1</source>
-        <translation>Gęstość 1</translation>
+        <translation>1. sűrűség</translation>
     </message>
     <message>
         <source>Density 2</source>
-        <translation>Gęstość 2</translation>
+        <translation>2. sűrűség</translation>
     </message>
     <message>
         <source>Density 3</source>
-        <translation>Gęstość 3</translation>
+        <translation>3-as sűrűség</translation>
     </message>
     <message>
         <source>Density 4</source>
-        <translation>Gęstość 4</translation>
+        <translation>4-es sűrűség</translation>
     </message>
     <message>
         <source>Density 5</source>
-        <translation>Gęstość 5</translation>
+        <translation>Sűrűség 5</translation>
     </message>
     <message>
         <source>Density 6</source>
-        <translation>Gęstość 6</translation>
+        <translation>6-os sűrűség</translation>
     </message>
     <message>
         <source>Density 7</source>
-        <translation>Gęstość 7</translation>
+        <translation>7-es sűrűség</translation>
     </message>
     <message>
         <source>Horizontal Line</source>
-        <translation>Linia pozioma</translation>
+        <translation>Vízszintes vonal</translation>
     </message>
     <message>
         <source>Vertical Line</source>
-        <translation>Linia pionowa</translation>
+        <translation>Függőleges vonal</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation>Krzyż</translation>
+        <translation>Kereszt</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation>Przekątna do tyłu</translation>
+        <translation>Hátrafelé átlós</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation>Przekątna do przodu</translation>
+        <translation>Első átló</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
-        <translation>Krzyż diagonalny</translation>
+        <translation>Átlós kereszt</translation>
     </message>
 </context>
 <context>
     <name>PiecesWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formularz</translation>
+        <translation>Űrlap</translation>
     </message>
     <message>
         <source>Include all pieces</source>
-        <translation>Dołącz wszystkie elementy</translation>
+        <translation>Minden darabot tartalmazzon</translation>
     </message>
     <message>
         <source>Invert included pieces</source>
-        <translation>Odwróć dołączone elementy</translation>
+        <translation>A benne foglalt darabok megfordítása</translation>
     </message>
     <message>
         <source>Exclude all pieces</source>
-        <translation>Wyklucz wszystkie elementy</translation>
+        <translation>Összes darab kizárása</translation>
     </message>
     <message>
         <source>Lock all pieces</source>
-        <translation>Zablokuj wszystkie elementy</translation>
+        <translation>Összes darab zárolása</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
-        <translation>Odwróć zablokowane elementy</translation>
+        <translation>Zárolt darabok megfordítása</translation>
     </message>
     <message>
         <source>Unlock all pieces</source>
-        <translation>Odblokuj wszystkie elementy</translation>
+        <translation>Oldd fel az összes darabot</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation>Wybierz kolor</translation>
+        <translation>Szín kiválasztása</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation>Edytuj właściwości wzoru</translation>
+        <translation>Mintadarab tulajdonságainak szerkesztése</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>Przełącz dodawanie elementu wzoru do układu</translation>
+        <translation>Mintadarab elrendezésbe való felvételének ki-/bekapcsolása</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation>Przełącz blokadę na elemencie wzoru</translation>
+        <translation>Mintadarab rögzítésének bekapcsolása</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
-        <translation>Podwójne kliknięcie otwiera selektor kolorów</translation>
+        <translation>Dupla kattintás megnyitja a színválasztót</translation>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation>Podwójne kliknięcie otwiera okno dialogowe właściwości wzoru</translation>
+        <translation>A dupla kattintás megnyitja a mintadarab tulajdonságai párbeszédpanelt</translation>
     </message>
     <message>
         <source>Included</source>
-        <translation>W zestawie</translation>
+        <translation>Tartalmazza</translation>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation>Element wzoru jest uwzględniony w układzie</translation>
+        <translation>A mintadarab szerepel az elrendezésben</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Zablokowany</translation>
+        <translation>Zárolva</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
-        <translation>Element wzoru jest zablokowany</translation>
+        <translation>A mintadarab zárolva van</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolor</translation>
+        <translation>Szín</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation>Kolor elementu wzoru</translation>
+        <translation>Mintadarab színe</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Kawałek</translation>
+        <translation>Darab</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation>Wzór litery</translation>
+        <translation>Mintadarab betű</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation>Nazwa elementu wzoru</translation>
+        <translation>Mintadarab neve</translation>
     </message>
 </context>
 <context>
     <name>PointIntersectXYDialog</name>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Punkt - Przecięcie XY</translation>
+        <translation>Pont - Metszéspont XY</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
+        <translation>Egyedi név</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
+        <translation>Válassz egyedi nevet.</translation>
     </message>
     <message>
         <source>1st point:</source>
-        <translation>Punkt 1:</translation>
+        <translation>1. pont:</translation>
     </message>
     <message>
         <source>2nd point:</source>
-        <translation>2. punkt:</translation>
+        <translation>2. pont:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Select point for Y value (horizontal)</source>
-        <translation>Wybierz punkt dla wartości Y (poziomo)</translation>
+        <translation>Y érték pontjának kiválasztása (vízszintes)</translation>
     </message>
 </context>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
         <source>Designer Info</source>
-        <translation>Informacje o projektancie</translation>
+        <translation>Tervezői információk</translation>
     </message>
     <message>
         <source>Company / Designer Info</source>
-        <translation>Informacje o firmie/projektancie</translation>
+        <translation>Cég / Tervező adatai</translation>
     </message>
     <message>
         <source>Company / Designer:</source>
-        <translation>Firma / Projektant:</translation>
+        <translation>Cég / Tervező:</translation>
     </message>
     <message>
         <source>Contact:</source>
-        <translation>Kontakt:</translation>
+        <translation>Kapcsolat:</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Adres:</translation>
+        <translation>Cím:</translation>
     </message>
     <message>
         <source>City:</source>
-        <translation>Miasto:</translation>
+        <translation>Város:</translation>
     </message>
     <message>
         <source>State:</source>
-        <translation>Stan:</translation>
+        <translation>Állam:</translation>
     </message>
     <message>
         <source>Zipcode:</source>
-        <translation>Kod pocztowy:</translation>
+        <translation>Irányítószám:</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Kraj:</translation>
+        <translation>Ország:</translation>
     </message>
     <message>
         <source>Telephone:</source>
@@ -8800,171 +8799,171 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Fax:</source>
-        <translation>Faks:</translation>
+        <translation>Fax:</translation>
     </message>
     <message>
         <source>Email:</source>
-        <translation>E-mail:</translation>
+        <translation>E-mail cím:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation>Strona internetowa:</translation>
+        <translation>Weboldal:</translation>
     </message>
     <message>
         <source>Editing</source>
-        <translation>Edycja</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Cofnij</translation>
+        <translation>Visszavonás</translation>
     </message>
     <message>
         <source>Count step:</source>
-        <translation>Licz kroki:</translation>
+        <translation>Számolási lépés:</translation>
     </message>
     <message>
         <source> (0 - no limit)</source>
-        <translation> (0 - bez ograniczeń)</translation>
+        <translation> (0 - nincs korlát)</translation>
     </message>
     <message>
         <source>Selection sound</source>
-        <translation>Dźwięk wyboru</translation>
+        <translation>Kijelölési hang</translation>
     </message>
     <message>
         <source>Sound:</source>
-        <translation>Dźwięk:</translation>
+        <translation>Hang:</translation>
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
-        <translation>Ostrzeżenia dotyczące edycji wzorców</translation>
+        <translation>Mintaszerkesztési figyelmeztetések</translation>
     </message>
     <message>
         <source>Confirm Item Delete</source>
-        <translation>Potwierdź usunięcie elementu</translation>
+        <translation>Elem törlésének megerősítése</translation>
     </message>
     <message>
         <source>Confirm Format Rewriting</source>
-        <translation>Potwierdź przepisanie formatu</translation>
+        <translation>Formátum átírásának megerősítése</translation>
     </message>
     <message>
         <source>Operations Default Suffix</source>
-        <translation>Domyślny sufiks operacji</translation>
+        <translation>Műveletek alapértelmezett utótagja</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Lustro według sufiksu osi:</translation>
+        <translation>Tükrözés tengelyenként utótag:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Odbicie lustrzane według sufiksu linii:</translation>
+        <translation>Soronkénti tükrözés utótag:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
-        <translation>Przenieś sufiks:</translation>
+        <translation>Áthelyezési utótag:</translation>
     </message>
     <message>
         <source>Rotate suffix:</source>
-        <translation>Obróć sufiks:</translation>
+        <translation>Forgatás utótag:</translation>
     </message>
     <message>
         <source>File Handling</source>
-        <translation>Obsługa plików</translation>
+        <translation>Fájlkezelés</translation>
     </message>
     <message>
         <source>Backups</source>
-        <translation>Kopie zapasowe</translation>
+        <translation>Biztonsági mentések</translation>
     </message>
     <message>
         <source>Create backup file when converting</source>
-        <translation>Utwórz plik kopii zapasowej podczas konwersji</translation>
+        <translation>Biztonsági másolatfájl létrehozása konvertáláskor</translation>
     </message>
     <message>
         <source>Max number of backups:</source>
-        <translation>Maksymalna liczba kopii zapasowych:</translation>
+        <translation>Biztonsági mentések maximális száma:</translation>
     </message>
     <message>
         <source> per file</source>
-        <translation> na plik</translation>
+        <translation> fájlonként</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
-        <translation>Włącz automatyczne zapisywanie</translation>
+        <translation>Automatikus mentés engedélyezése</translation>
     </message>
     <message>
         <source>Interval:</source>
-        <translation>Interwał:</translation>
+        <translation>Intervallum:</translation>
     </message>
     <message>
         <source> min</source>
-        <translation> min</translation>
+        <translation> perc</translation>
     </message>
     <message>
         <source>Every </source>
-        <translation>Każdy </translation>
+        <translation>Minden </translation>
     </message>
     <message>
         <source>Export Format</source>
-        <translation>Format eksportu</translation>
+        <translation>Exportálási formátum</translation>
     </message>
     <message>
         <source>Include mode type in filename</source>
-        <translation>Dołącz typ trybu do nazwy pliku</translation>
+        <translation>A fájlnévben szerepeljen a mód típusa</translation>
     </message>
     <message>
         <source>Save last used</source>
-        <translation>Zapisz ostatnio używane</translation>
+        <translation>Utolsó használt mentése</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation>Domyślne:</translation>
+        <translation>Alapértelmezett:</translation>
     </message>
     <message>
         <source>Startup</source>
-        <translation>Uruchomienie</translation>
+        <translation>Indítás</translation>
     </message>
     <message>
         <source>Welcome</source>
-        <translation>Witamy</translation>
+        <translation>Üdvözöljük</translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation>Nie pokazuj ekranu powitalnego</translation>
+        <translation>Ne jelenjen meg az üdvözlőképernyő</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Język</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Język GUI:</translation>
+        <translation>Felhasználói felület nyelve:</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Ustawienie regionalne separatora:</translation>
+        <translation>Elválasztó területi beállítása:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>System użytkownika</translation>
+        <translation>Felhasználói rendszer</translation>
     </message>
     <message>
         <source>Default unit:</source>
-        <translation>Jednostka domyślna:</translation>
+        <translation>Alapértelmezett mértékegység:</translation>
     </message>
     <message>
         <source>Point name text:</source>
-        <translation>Tekst nazwy punktu:</translation>
+        <translation>Pontnév szövege:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <source>_M</source>
-        <translation>_ M</translation>
+        <translation>_M</translation>
     </message>
     <message>
         <source>_MOV</source>
@@ -8972,7 +8971,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>_R</source>
-        <translation>_ R</translation>
+        <translation>_R</translation>
     </message>
     <message>
         <source>_ROT</source>
@@ -8996,258 +8995,258 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Email verification</source>
-        <translation>Weryfikacja adresu e-mail</translation>
+        <translation>E-mail cím ellenőrzése</translation>
     </message>
     <message>
         <source>Email format is not valid.</source>
-        <translation>Format adresu e-mail jest nieprawidłowy.</translation>
+        <translation>Az e-mail formátuma érvénytelen.</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
-        <translation>Jednostka domyślna została zaktualizowana i będzie używana jako domyślna dla następnego utworzonego przez Ciebie wzorca.</translation>
+        <translation>Az alapértelmezett egység frissült, és a következő létrehozott mintához ez lesz az alapértelmezett érték.</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Ustawienia regionalne</translation>
+        <translation>Helyszín</translation>
     </message>
     <message>
         <source>Country</source>
-        <translation>Kraj</translation>
+        <translation>Ország</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separator grup</translation>
+        <translation>Csoportelválasztó</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Przecinek dziesiętny</translation>
+        <translation>Tizedesvessző</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Znak ujemny</translation>
+        <translation>Negatív előjel</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Znak pozytywny</translation>
+        <translation>Pozitív előjel</translation>
     </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
     <message>
         <source>Appearance</source>
-        <translation>Wygląd</translation>
+        <translation>Megjelenés</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Paski narzędzi</translation>
+        <translation>Eszköztárak</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
-        <translation>Pod ikoną wyświetla się etykieta tekstowa (zalecane dla początkujących)</translation>
+        <translation>A szöveges címke megjelenik az ikon alatt (kezdőknek ajánlott)</translation>
     </message>
     <message>
         <source>Show tool toolbars</source>
-        <translation>Pokaż paski narzędzi</translation>
+        <translation>Eszköztárak megjelenítése</translation>
     </message>
     <message>
         <source>ToolBox</source>
-        <translation>Skrzynka z narzędziami</translation>
+        <translation>Szerszámosláda</translation>
     </message>
     <message>
         <source>Curve</source>
-        <translation>Krzywa</translation>
+        <translation>Görbe</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Kawałek</translation>
+        <translation>Darab</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Punkt</translation>
+        <translation>Pont</translation>
     </message>
     <message>
         <source>Arc</source>
-        <translation>Łuk</translation>
+        <translation>Ív</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Linia</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operacje</translation>
+        <translation>Műveletek</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Układ</translation>
+        <translation>Elrendezés</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation>Dialogi</translation>
+        <translation>Párbeszédablakok</translation>
     </message>
     <message>
         <source>Open on second monitor if available</source>
-        <translation>Otwórz na drugim monitorze, jeśli jest dostępny</translation>
+        <translation>Megnyitás a második monitoron, ha elérhető</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozycja</translation>
+        <translation>Pozíció</translation>
     </message>
     <message>
         <source>Top left</source>
-        <translation>Lewy górny róg</translation>
+        <translation>Bal felső sarok</translation>
     </message>
     <message>
         <source>Top right</source>
-        <translation>Prawy górny róg</translation>
+        <translation>Jobb felső sarok</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation>Centrum</translation>
+        <translation>Központ</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation>Lewy dolny róg</translation>
+        <translation>Bal alsó sarok</translation>
     </message>
     <message>
         <source>Bottom right</source>
-        <translation>Prawy dolny róg</translation>
+        <translation>Jobb alsó sarok</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation>Przesunięcie</translation>
+        <translation>Eltolás</translation>
     </message>
     <message>
         <source>X Offset:</source>
-        <translation>Przesunięcie X:</translation>
+        <translation>X eltolás:</translation>
     </message>
     <message>
         <source>Y Offset:</source>
-        <translation>Przesunięcie Y:</translation>
+        <translation>Y eltolás:</translation>
     </message>
     <message>
         <source>Graphical output</source>
-        <translation>Wyjście graficzne</translation>
+        <translation>Grafikus kimenet</translation>
     </message>
     <message>
         <source>Use anti-aliasing</source>
-        <translation>Użyj wygładzania krawędzi</translation>
+        <translation>Élsimítás használata</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation>Czcionki</translation>
+        <translation>Betűtípusok</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Etykieta</translation>
+        <translation>Címke</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Czcionka:</translation>
+        <translation>Betűtípus:</translation>
     </message>
     <message>
         <source>The quick brown fox jumps over the lazy dog</source>
-        <translation>Szybki brązowy lis przeskakuje nad leniwym psem</translation>
+        <translation>A fürge barna róka átugrik a lusta kutya felett</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Nazwy punktów</translation>
+        <translation>Pontok nevei</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation>Méret:</translation>
     </message>
     <message>
         <source>GUI</source>
-        <translation>Interfejs graficzny</translation>
+        <translation>Grafikus felhasználói felület</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Kolory</translation>
+        <translation>Színek</translation>
     </message>
     <message>
         <source>Workspace</source>
-        <translation>Obszar roboczy</translation>
+        <translation>Munkaterület</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation>Tło:</translation>
+        <translation>Háttér:</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
-        <translation>Gumka Zoom</translation>
+        <translation>Zoom gumiszalag</translation>
     </message>
     <message>
         <source>Positive:</source>
-        <translation>Pozytywny:</translation>
+        <translation>Pozitív:</translation>
     </message>
     <message>
         <source>Negative:</source>
-        <translation>Negatywny:</translation>
+        <translation>Negatív:</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation>Domyślne:</translation>
+        <translation>Alapértelmezett:</translation>
     </message>
     <message>
         <source>Hover</source>
-        <translation>Najedź kursorem</translation>
+        <translation>Lebegés</translation>
     </message>
     <message>
         <source>Drawing</source>
-        <translation>Rysunek</translation>
+        <translation>Rajzolás</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Początek osi</translation>
+        <translation>Tengely eredete</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Primary:</source>
-        <translation>Główny:</translation>
+        <translation>Elsődleges:</translation>
     </message>
     <message>
         <source>Secondary:</source>
-        <translation>Drugorzędny:</translation>
+        <translation>Másodlagos:</translation>
     </message>
     <message>
         <source>Tertiary:</source>
-        <translation>Trzecirzędny:</translation>
+        <translation>Harmadlagos:</translation>
     </message>
     <message>
         <source>Navigation</source>
-        <translation>Nawigacja</translation>
+        <translation>Navigáció</translation>
     </message>
     <message>
         <source>Scrollbars</source>
-        <translation>Paski przewijania</translation>
+        <translation>Görgetősávok</translation>
     </message>
     <message>
         <source>Show Scrollbars</source>
-        <translation>Pokaż paski przewijania</translation>
+        <translation>Görgetősávok megjelenítése</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source> px</source>
@@ -9255,11 +9254,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation>Czas trwania:</translation>
+        <translation>Időtartam:</translation>
     </message>
     <message>
         <source>Scrolling animation duration</source>
-        <translation>Czas trwania animacji przewijania</translation>
+        <translation>Görgetési animáció időtartama</translation>
     </message>
     <message>
         <source> ms</source>
@@ -9268,213 +9267,213 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Update interval:</source>
-        <translation>Interwał aktualizacji:</translation>
+        <translation>Frissítési intervallum:</translation>
     </message>
     <message>
         <source>Time in milliseconds between each animation update</source>
-        <translation>Czas w milisekundach między każdą aktualizacją animacji</translation>
+        <translation>Az animációfrissítések között eltelt idő milliszekundumban</translation>
     </message>
     <message>
         <source>Speed:</source>
-        <translation>Prędkość:</translation>
+        <translation>Sebesség:</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation>Powiększ</translation>
+        <translation>Nagyítás</translation>
     </message>
     <message>
         <source>Use CTRL modifier</source>
-        <translation>Użyj modyfikatora CTRL</translation>
+        <translation>Használja a CTRL módosítót</translation>
     </message>
     <message>
         <source>Behavior</source>
-        <translation>Zachowanie</translation>
+        <translation>Viselkedés</translation>
     </message>
     <message>
         <source>Constraints</source>
-        <translation>Ograniczenia</translation>
+        <translation>Korlátozások</translation>
     </message>
     <message>
         <source>Angle Step:</source>
-        <translation>Krok kątowy:</translation>
+        <translation>Szöglépcső:</translation>
     </message>
     <message>
         <source> deg</source>
-        <translation> stopień</translation>
+        <translation> fok</translation>
     </message>
     <message>
         <source>Zoom to selected with double click</source>
-        <translation>Powiększ zaznaczone za pomocą dwukrotnego kliknięcia</translation>
+        <translation>A kiválasztottra nagyítás dupla kattintással</translation>
     </message>
     <message>
         <source>Pan active while Space key is pressed</source>
-        <translation>Panorama aktywna, gdy naciśnięty jest klawisz spacji</translation>
+        <translation>Aktív pásztázás, miközben lenyomva van a szóköz billentyű</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Eksportuj</translation>
+        <translation>Exportálás</translation>
     </message>
     <message>
         <source>Quality:</source>
-        <translation>Jakość:</translation>
+        <translation>Minőség:</translation>
     </message>
     <message>
         <source>Pen</source>
-        <translation>Długopis</translation>
+        <translation>Toll</translation>
     </message>
     <message>
         <source>Always use current pen</source>
-        <translation>Zawsze używaj aktualnego pióra</translation>
+        <translation>Mindig az aktuális tollat használd</translation>
     </message>
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
-        <translation>Pokaż tylko grubości linii ISO w polach rozwijanych</translation>
+        <translation>Csak az ISO vonalvastagságok megjelenítése a legördülő menükben</translation>
     </message>
     <message>
         <source>Formula Editor</source>
-        <translation>Edytor formuł</translation>
+        <translation>Képletszerkesztő</translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Automatyczne czyszczenie formuły</translation>
+        <translation>Automatikusan törlődő képlet</translation>
     </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
     <message>
         <source>Paths that Seamly2D uses</source>
-        <translation>Ścieżki używane przez Seamly2D</translation>
+        <translation>A Seamly2D által használt elérési utak</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Típus</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation>Ścieżka</translation>
+        <translation>Útvonal</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Open Directory</source>
-        <translation>Otwórz katalog</translation>
+        <translation>Megnyitott könyvtár</translation>
     </message>
     <message>
         <source>My Patterns</source>
-        <translation>Moje wzory</translation>
+        <translation>Mintáim</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Moje szablony</translation>
+        <translation>Sablonok</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Moje indywidualne pomiary</translation>
+        <translation>Egyéni méreteim</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Moje wymiary wielorozmiarowe</translation>
+        <translation>Többszörös méreteim</translation>
     </message>
     <message>
         <source>My Layouts</source>
-        <translation>Moje układy</translation>
+        <translation>Elrendezéseim</translation>
     </message>
     <message>
         <source>My Label Templates</source>
-        <translation>Moje szablony etykiet</translation>
+        <translation>Címkesablonjaim</translation>
     </message>
     <message>
         <source>My Images</source>
-        <translation>Moje obrazy</translation>
+        <translation>Képeim</translation>
     </message>
     <message>
         <source>My Backups</source>
-        <translation>Moje kopie zapasowe</translation>
+        <translation>Biztonsági mentéseim</translation>
     </message>
 </context>
 <context>
     <name>PreferencesPatternPage</name>
     <message>
         <source>Pattern Piece</source>
-        <translation>Element wzoru</translation>
+        <translation>Mintadarab</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Tulajdonságok</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
-        <translation>Pokaż linię cięcia</translation>
+        <translation>Vágási vonal megjelenítése</translation>
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
-        <translation>Domyślnie ukryj ścieżkę główną, jeśli włączono dodatek na szwy</translation>
+        <translation>Alapértelmezés szerint a fő útvonal elrejtése, ha a varrásráhagyás engedélyezve volt</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Ukryj linię szwu</translation>
+        <translation>Varrat elrejtése</translation>
     </message>
     <message>
         <source>By default forbid flipping for all new created workpieces</source>
-        <translation>Domyślnie zabroń odwracania dla wszystkich nowo tworzonych elementów obrabianych</translation>
+        <translation>Alapértelmezés szerint tiltja az összes újonnan létrehozott munkadarab tükrözését</translation>
     </message>
     <message>
         <source>Forbid flipping</source>
-        <translation>Zabroń przewracania</translation>
+        <translation>Forgatás tilos</translation>
     </message>
     <message>
         <source>Notches</source>
-        <translation>Nacięcia</translation>
+        <translation>Bevágások</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Pokaż wycięcie na linii cięcia</translation>
+        <translation>Bevágás megjelenítése a vágási vonalon</translation>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Pokaż nacięcie zarówno na zapasie szwu, jak i na linii szwu.</translation>
+        <translation>A bevágás látható legyen mind a varrásráhagyáson, mind a varrásvonalon.</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Pokaż nacięcie na linii szwu</translation>
+        <translation>Bevágás megjelenítése a varratvonalon</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>Típus:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Szerokość:</translation>
+        <translation>Szélesség:</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linie ziarna</translation>
+        <translation>Szemcsék</translation>
     </message>
     <message>
         <source>Show grainlines</source>
-        <translation>Pokaż linie słojów</translation>
+        <translation>Szegélyvonalak megjelenítése</translation>
     </message>
     <message>
         <source>Arrow length:</source>
-        <translation>Długość strzałki:</translation>
+        <translation>Nyíl hossza:</translation>
     </message>
     <message>
         <source> px</source>
@@ -9482,7 +9481,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>x 3</source>
@@ -9490,229 +9489,229 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Paths</source>
-        <translation>Ścieżki</translation>
+        <translation>Útvonalak</translation>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation>Dodatek na szwy</translation>
+        <translation>Varráhagyás</translation>
     </message>
     <message>
         <source>Default value:</source>
-        <translation>Wartość domyślna:</translation>
+        <translation>Alapértelmezett érték:</translation>
     </message>
     <message>
         <source>Seam Line</source>
-        <translation>Linia szwu</translation>
+        <translation>Varratvonal</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight</source>
-        <translation>Szerokość linii</translation>
+        <translation>Vonalvastagság</translation>
     </message>
     <message>
         <source>Cut Line</source>
-        <translation>Linia cięcia</translation>
+        <translation>Vágásvonal</translation>
     </message>
     <message>
         <source>Internals</source>
-        <translation>Wnętrze</translation>
+        <translation>Belső részek</translation>
     </message>
     <message>
         <source>Cutouts</source>
-        <translation>Wycięcia</translation>
+        <translation>Kivágások</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etykiety</translation>
+        <translation>Címkék</translation>
     </message>
     <message>
         <source>Show pattern labels</source>
-        <translation>Pokaż etykiety wzorów</translation>
+        <translation>Mintacímkék megjelenítése</translation>
     </message>
     <message>
         <source>Show piece labels</source>
-        <translation>Pokaż etykiety elementów</translation>
+        <translation>Darabcímkék megjelenítése</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation>Szerokość</translation>
+        <translation>Szélesség</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Wysokość</translation>
+        <translation>Magasság</translation>
     </message>
     <message>
         <source>Label data (date/time format)</source>
-        <translation>Dane etykiety (format daty/godziny)</translation>
+        <translation>Címkeadatok (dátum/idő formátum)</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Data:</translation>
+        <translation>Dátum:</translation>
     </message>
     <message>
         <source>Edit formats</source>
-        <translation>Edytuj formaty</translation>
+        <translation>Formátumok szerkesztése</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>Czas:</translation>
+        <translation>Idő:</translation>
     </message>
     <message>
         <source>Templates</source>
-        <translation>Szablony</translation>
+        <translation>Sablonok</translation>
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation>Etykieta wzoru:</translation>
+        <translation>Mintacímke:</translation>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>Etykieta elementu:</translation>
+        <translation>Darabcímke:</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Szablon etykiety</translation>
+        <translation>Címke sablon</translation>
     </message>
     <message>
         <source>Import template</source>
-        <translation>Importuj szablon</translation>
+        <translation>Sablon importálása</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Szczelina</translation>
+        <translation>Rés</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Wycięcie w kształcie litery T</translation>
+        <translation>T-bevágás</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Wycięcie w kształcie litery U</translation>
+        <translation>U-bevágás</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>V Wewnętrzny</translation>
+        <translation>V belső</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V Zewnętrzny</translation>
+        <translation>V Külső</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Zamek</translation>
+        <translation>Vár</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Diament</translation>
+        <translation>Gyémánt</translation>
     </message>
 </context>
 <context>
     <name>QCoreApplication</name>
     <message>
         <source>Based on Qt %1 (%2, %3 bit)</source>
-        <translation>Na podstawie Qt %1 (%2, %3 bit)</translation>
+        <translation>A Qt %1 (%2, %3 bit) alapján</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create new pattern piece to start working.</source>
-        <translation>Utwórz nowy element wzoru, aby rozpocząć pracę.</translation>
+        <translation>Hozzon létre egy új mintadarabot a munka megkezdéséhez.</translation>
     </message>
     <message>
         <source>Changes applied.</source>
-        <translation>Zmiany zostały zastosowane.</translation>
+        <translation>Változtatások alkalmazva.</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Linia ciągła</translation>
+        <translation>Tömör vonal</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Dash</translation>
+        <translation>Szemét</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Kropka</translation>
+        <translation>Pont</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Kropka kreskowa</translation>
+        <translation>Vonalpont</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Kreska, kropka, kropka</translation>
+        <translation>Vonalzatpont</translation>
     </message>
     <message>
         <source>No Pen</source>
-        <translation>Bez długopisu</translation>
+        <translation>Nincs toll</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Do przodu (od punktu początkowego)</translation>
+        <translation>Előre (a kiindulási ponttól)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Do tyłu (od punktu końcowego)</translation>
+        <translation>Visszafelé (a végponttól)</translation>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Błędna nazwa tagu &apos;%1&apos;.</translation>
+        <translation>Hibás címkenév: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Can&apos;t convert toUInt parameter</source>
-        <translation>Nie można przekonwertować parametru toUInt</translation>
+        <translation>Nem lehet UInt paraméterré konvertálni</translation>
     </message>
     <message>
         <source>Can&apos;t convert toBool parameter</source>
-        <translation>Nie można przekonwertować parametru na wartość logiczną</translation>
+        <translation>Nem lehet Bool paraméterré konvertálni</translation>
     </message>
     <message>
         <source>Got empty parameter</source>
-        <translation>Otrzymano pusty parametr</translation>
+        <translation>Üres paramétert kaptam</translation>
     </message>
     <message>
         <source>Can&apos;t convert toDouble parameter</source>
-        <translation>Nie można przekonwertować parametru na Double</translation>
+        <translation>Nem lehet Double paraméterré konvertálni</translation>
     </message>
     <message>
         <source>Got wrong parameter id. Need only id &gt; 0.</source>
-        <translation>Podano błędny identyfikator parametru. Potrzebny jest tylko identyfikator &gt; 0.</translation>
+        <translation>Hibás paraméterazonosító. Csak 0-nál nagyobb azonosító szükséges.</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation>Obrazy</translation>
+        <translation>Képek</translation>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation>Otwórz plik obrazu</translation>
+        <translation>Képfájl megnyitása</translation>
     </message>
     <message>
         <source>Fabric</source>
-        <translation>Tkanina</translation>
+        <translation>Anyag</translation>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Podszewka</translation>
+        <translation>Bélés</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Interfejs</translation>
+        <translation>Interfészek</translation>
     </message>
     <message>
         <source>Interlining</source>
-        <translation>Wkład podszewkowy</translation>
+        <translation>Bélelés</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Wytnij</translation>
+        <translation>Vágás</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>na zagięciu</translation>
+        <translation>hajtogatáskor</translation>
     </message>
     <message>
         <source>%1</source>
@@ -9720,37 +9719,37 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>inch</source>
-        <translation>cal</translation>
+        <translation>hüvelyk</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
-        <translation>Nie można rozszerzyć ścieżki wewnętrznej o punkt początkowy &apos;%1&apos; do linii cięcia.</translation>
+        <translation>A(z) &apos;%1&apos; belső útvonal kezdőpontja nem hosszabbítható meg a vágási vonalig.</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
-        <translation>Nie można rozszerzyć punktu końcowego ścieżki wewnętrznej &apos;%1&apos; do linii cięcia.</translation>
+        <translation>A(z) &apos;%1&apos; belső útvonal végpontja nem hosszabbítható meg a vágási vonalig.</translation>
     </message>
     <message>
         <source>Property</source>
         <extracomment>The text that appears in the first column header</extracomment>
-        <translation>Własność</translation>
+        <translation>Ingatlan</translation>
     </message>
     <message>
         <source>Value</source>
         <extracomment>The text that appears in the second column header</extracomment>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Union piece</source>
-        <translation>Element związkowy</translation>
+        <translation>Szövetségi darab</translation>
     </message>
     <message>
         <source>add node</source>
-        <translation>dodaj węzeł</translation>
+        <translation>csomópont hozzáadása</translation>
     </message>
     <message>
         <source>move piece</source>
-        <translation>przesuń figurę</translation>
+        <translation>mozgasd a darabot</translation>
     </message>
 </context>
 <context>
@@ -9758,12 +9757,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>too few arguments for function sum.</source>
         <comment>parser error message</comment>
-        <translation>zbyt mało argumentów dla funkcji sum.</translation>
+        <translation>túl kevés argumentum van a sum függvényhez.</translation>
     </message>
     <message>
         <source>too few arguments for function min.</source>
         <comment>parser error message</comment>
-        <translation>zbyt mało argumentów dla funkcji min.</translation>
+        <translation>túl kevés argumentum a min függvényhez.</translation>
     </message>
 </context>
 <context>
@@ -9771,618 +9770,618 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Unexpected token &quot;$TOK$&quot; found at position $POS$.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Znaleziono nieoczekiwany token&quot;$TOK$&quot;na pozycji $POS$.</translation>
+        <translation>Váratlan token: „$TOK$” a $POS$ pozícióban.</translation>
     </message>
     <message>
         <source>Internal error</source>
         <comment>Math parser error messages.</comment>
-        <translation>Błąd wewnętrzny</translation>
+        <translation>Belső hiba</translation>
     </message>
     <message>
         <source>Invalid function-, variable- or constant name: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Nieprawidłowa nazwa funkcji, zmiennej lub stałej:&quot;$TOK$&quot;.</translation>
+        <translation>Érvénytelen függvény-, változó- vagy konstansnév: „$TOK$”.</translation>
     </message>
     <message>
         <source>Invalid binary operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Nieprawidłowy identyfikator operatora binarnego:&quot;$TOK$&quot;.</translation>
+        <translation>Érvénytelen bináris operátorazonosító: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid infix operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Nieprawidłowy identyfikator operatora infiksowego:&quot;$TOK$&quot;.</translation>
+        <translation>Érvénytelen infix operátorazonosító: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid postfix operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Nieprawidłowy identyfikator operatora postfiksowego:&quot;$TOK$&quot;.</translation>
+        <translation>Érvénytelen postfix operátor azonosító: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid pointer to callback function.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Nieprawidłowy wskaźnik do funkcji wywołania zwrotnego.</translation>
+        <translation>Érvénytelen mutató a visszahívó függvényre.</translation>
     </message>
     <message>
         <source>Expression is empty.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Wyrażenie jest puste.</translation>
+        <translation>A kifejezés üres.</translation>
     </message>
     <message>
         <source>Invalid pointer to variable.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Nieprawidłowy wskaźnik do zmiennej.</translation>
+        <translation>Érvénytelen mutató a változóra.</translation>
     </message>
     <message>
         <source>Unexpected operator &quot;$TOK$&quot; found at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Znaleziono nieoczekiwany operator&quot;$TOK$&quot;na pozycji $POS$</translation>
+        <translation>Váratlan operátor: „$TOK$” a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected end of expression at position $POS$</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Nieoczekiwany koniec wyrażenia na pozycji $POS$</translation>
+        <translation>A kifejezés váratlan vége a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected argument separator at position $POS$</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Nieoczekiwany separator argumentów na pozycji $POS$</translation>
+        <translation>Váratlan argumentum elválasztó a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected parenthesis &quot;$TOK$&quot; at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Nieoczekiwany nawias&quot;$TOK$&quot;na pozycji $POS$</translation>
+        <translation>Váratlan zárójel: „$TOK$” a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected function &quot;$TOK$&quot; at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Nieoczekiwana funkcja&quot;$TOK$&quot;na pozycji $POS$</translation>
+        <translation>Váratlan függvény: „$TOK$” a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected value &quot;$TOK$&quot; found at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Znaleziono nieoczekiwaną wartość&quot;$TOK$&quot;na pozycji $POS$</translation>
+        <translation>Váratlan érték: „$TOK$” a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Unexpected variable &quot;$TOK$&quot; found at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Znaleziono nieoczekiwaną zmienną&quot;$TOK$&quot;na pozycji $POS$</translation>
+        <translation>Váratlan változó: „$TOK$” a $POS$ pozícióban</translation>
     </message>
     <message>
         <source>Function arguments used without a function (position: $POS$)</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Argumenty funkcji używane bez funkcji (pozycja: $POS$)</translation>
+        <translation>Függvényargumentumok használata függvény nélkül (pozíció: $POS$)</translation>
     </message>
     <message>
         <source>Missing parenthesis</source>
         <comment>Math parser error messages.</comment>
-        <translation>Brak nawiasu</translation>
+        <translation>Hiányzó zárójel</translation>
     </message>
     <message>
         <source>Too many parameters for function &quot;$TOK$&quot; at expression position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Zbyt wiele parametrów dla funkcji&quot;$TOK$&quot;w pozycji wyrażenia $POS$</translation>
+        <translation>Túl sok paraméter a(z) „$TOK$” függvényhez a(z) $POS$ kifejezéspozícióban</translation>
     </message>
     <message>
         <source>Too few parameters for function &quot;$TOK$&quot; at expression position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Zbyt mało parametrów dla funkcji&quot;$TOK$&quot;na pozycji wyrażenia $POS$</translation>
+        <translation>Túl kevés paraméter van a(z) „$TOK$” függvényhez a(z) $POS$ kifejezéspozícióban</translation>
     </message>
     <message>
         <source>Divide by zero</source>
         <comment>Math parser error messages.</comment>
-        <translation>Podziel przez zero</translation>
+        <translation>Nullával osztás</translation>
     </message>
     <message>
         <source>Domain error</source>
         <comment>Math parser error messages.</comment>
-        <translation>Błąd domeny</translation>
+        <translation>Domain hiba</translation>
     </message>
     <message>
         <source>Name conflict</source>
         <comment>Math parser error messages.</comment>
-        <translation>Konflikt nazw</translation>
+        <translation>Névütközés</translation>
     </message>
     <message>
         <source>Invalid value for operator priority (must be greater or equal to zero).</source>
         <comment>Math parser error messages.</comment>
-        <translation>Nieprawidłowa wartość priorytetu operatora (musi być większa lub równa zeru).</translation>
+        <translation>Érvénytelen érték az operátor prioritásához (nagyobbnak vagy egyenlőnek kell lennie nullával).</translation>
     </message>
     <message>
         <source>user defined binary operator &quot;$TOK$&quot; conflicts with a built in operator.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>zdefiniowany przez użytkownika operator binarny&quot;$TOK$&quot;koliduje z operatorem wbudowanym.</translation>
+        <translation>A felhasználó által definiált „$TOK$” bináris operátor ütközik egy beépített operátorral.</translation>
     </message>
     <message>
         <source>Unexpected string token found at position $POS$.</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Znaleziono nieoczekiwany token ciągu na pozycji $POS$.</translation>
+        <translation>Váratlan karakterlánc token található a $POS$ pozícióban.</translation>
     </message>
     <message>
         <source>Unterminated string starting at position $POS$.</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Niezakończony ciąg zaczynający się na pozycji $POS$.</translation>
+        <translation>$POS$ pozíciótól kezdődő, le nem zárt karakterlánc.</translation>
     </message>
     <message>
         <source>String function called with a non string type of argument.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Funkcja łańcuchowa wywołana z argumentem niebędącym łańcuchem.</translation>
+        <translation>Sztringfüggvény meghívva nem karakterlánc típusú argumentummal.</translation>
     </message>
     <message>
         <source>String value used where a numerical argument is expected.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Wartość ciągu używana w miejscu, gdzie oczekiwano argumentu liczbowego.</translation>
+        <translation>Sztringérték, ahol numerikus argumentumot várunk.</translation>
     </message>
     <message>
         <source>No suitable overload for operator &quot;$TOK$&quot; at position $POS$.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Brak odpowiedniego przeciążenia dla operatora&quot;$TOK$&quot;w pozycji $POS$.</translation>
+        <translation>Nincs megfelelő túlterhelés a(z) „$TOK$” operátor számára a $POS$ pozícióban.</translation>
     </message>
     <message>
         <source>Function result is a string.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Wynikiem funkcji jest ciąg znaków.</translation>
+        <translation>A függvény eredménye egy karakterlánc.</translation>
     </message>
     <message>
         <source>Parser error.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Błąd parsera.</translation>
+        <translation>Elemző hiba.</translation>
     </message>
     <message>
         <source>Decimal separator is identic to function argument separator.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Separator dziesiętny jest taki sam, jak separator argumentów funkcji.</translation>
+        <translation>A tizedesjel megegyezik a függvény argumentum elválasztóval.</translation>
     </message>
     <message>
         <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Operator&quot;$TOK$&quot;musi być poprzedzony nawiasem zamykającym.</translation>
+        <translation>A „$TOK$” operátort egy záró szögletes zárójelnek kell megelőznie.</translation>
     </message>
     <message>
         <source>If-then-else operator is missing an else clause</source>
         <comment>Math parser error messages. Do not translate operator name.</comment>
-        <translation>W operatorze if-then-else brakuje klauzuli else</translation>
+        <translation>Az If-then-else operátorból hiányzik egy else záradék</translation>
     </message>
     <message>
         <source>Misplaced colon at position $POS$</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Nieprawidłowo umieszczony dwukropek w pozycji $POS$</translation>
+        <translation>Rossz helyre került a kettőspont a $POS$ pozícióban</translation>
     </message>
 </context>
 <context>
     <name>RemoveGroupItem</name>
     <message>
         <source>Delete group item</source>
-        <translation>Usuń element grupy</translation>
+        <translation>Csoportelem törlése</translation>
     </message>
 </context>
 <context>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
-        <translation>zmień nazwę elementu wzoru</translation>
+        <translation>mintadarab átnevezése</translation>
     </message>
 </context>
 <context>
     <name>ResizeHandlesItem</name>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation>Naciśnij &lt;b&gt;CTRL&lt;/b&gt;, aby skalować wokół środka – &lt;b&gt;Proporcje obrazu zablokowane&lt;/b&gt;</translation>
+        <translation>Nyomd meg a &lt;b&gt;CTRL&lt;/b&gt; billentyűt a középpont körüli méretezéshez - &lt;b&gt; Képarány rögzítve &lt;/b&gt;</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation>Naciśnij &lt;b&gt;CTRL&lt;/b&gt;, aby skalować wokół środka, lub &lt;b&gt;SHIFT&lt;/b&gt;, aby skalować równomiernie.</translation>
+        <translation>A &lt;b&gt;CTRL&lt;/b&gt; billentyűkombinációval a középpont körüli méretezést, az &lt;b&gt;SHIFT&lt;/b&gt; billentyűkombinációval pedig az egyenletes méretezést lehet végrehajtani.</translation>
     </message>
 </context>
 <context>
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation>zapisz opcje elementów</translation>
+        <translation>darab mentési opciók</translation>
     </message>
 </context>
 <context>
     <name>SavePiecePathOptions</name>
     <message>
         <source>save path options</source>
-        <translation>opcje zapisu ścieżki</translation>
+        <translation>elérési út mentési beállításai</translation>
     </message>
 </context>
 <context>
     <name>SaveToolOptions</name>
     <message>
         <source>save tool option</source>
-        <translation>opcja zapisywania narzędzia</translation>
+        <translation>eszköz mentése opció</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesConfigurationPage</name>
     <message>
         <source>Startup</source>
-        <translation>Uruchomienie</translation>
+        <translation>Indítás</translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation>Nie pokazuj ekranu powitalnego</translation>
+        <translation>Ne jelenjen meg az üdvözlőképernyő</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Język</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Język GUI:</translation>
+        <translation>Felhasználói felület nyelve:</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Ustawienie regionalne separatora:</translation>
+        <translation>Elválasztó területi beállítása:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>System użytkownika</translation>
+        <translation>Felhasználói rendszer</translation>
     </message>
     <message>
         <source>Pattern making system</source>
-        <translation>System tworzenia wzorów</translation>
+        <translation>Sablonkészítő rendszer</translation>
     </message>
     <message>
         <source>System:</source>
-        <translation>System:</translation>
+        <translation>Rendszer:</translation>
     </message>
     <message>
         <source>Author:</source>
-        <translation>Autor:</translation>
+        <translation>Szerző:</translation>
     </message>
     <message>
         <source>Book:</source>
-        <translation>Książka:</translation>
+        <translation>Könyv:</translation>
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Domyślna wysokość i rozmiar</translation>
+        <translation>Alapértelmezett magasság és méret</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation>Méret:</translation>
     </message>
     <message>
         <source>Measurements editing</source>
-        <translation>Edycja pomiarów</translation>
+        <translation>Mérések szerkesztése</translation>
     </message>
     <message>
         <source>Reset warnings</source>
-        <translation>Resetuj ostrzeżenia</translation>
+        <translation>Figyelmeztetések visszaállítása</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Pasek narzędzi</translation>
+        <translation>Eszköztár</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
-        <translation>Tekst pojawia się pod ikoną (zalecane dla początkujących).</translation>
+        <translation>A szöveg az ikon alatt jelenik meg (kezdőknek ajánlott).</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Ustawienia regionalne</translation>
+        <translation>Helyszín</translation>
     </message>
     <message>
         <source>Country</source>
-        <translation>Kraj</translation>
+        <translation>Ország</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separator grup</translation>
+        <translation>Csoportelválasztó</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Przecinek dziesiętny</translation>
+        <translation>Tizedesvessző</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Znak ujemny</translation>
+        <translation>Negatív előjel</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Znak pozytywny</translation>
+        <translation>Pozitív előjel</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
     <message>
         <source>Paths that SeamlyME uses</source>
-        <translation>Ścieżki używane przez SeamlyME</translation>
+        <translation>A SeamlyME által használt elérési utak</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Típus</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation>Ścieżka</translation>
+        <translation>Útvonal</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Open Directory</source>
-        <translation>Otwórz katalog</translation>
+        <translation>Megnyitott könyvtár</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Moje indywidualne pomiary</translation>
+        <translation>Egyéni méreteim</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Moje wymiary wielorozmiarowe</translation>
+        <translation>Többszörös méreteim</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Moje szablony</translation>
+        <translation>Sablonok</translation>
     </message>
     <message>
         <source>My Body Scans</source>
-        <translation>Moje skany ciała</translation>
+        <translation>A testem szkennelése</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMeWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation>Witamy</translation>
+        <translation>Üdvözöljük</translation>
     </message>
     <message>
         <source>Welcome to SeamlyME</source>
-        <translation>Witamy w SeamlyME</translation>
+        <translation>Üdvözöljük a SeamlyME-ben</translation>
     </message>
     <message>
         <source>3D Look users</source>
-        <translation>Użytkownicy 3D Look</translation>
+        <translation>3D megjelenésű felhasználók</translation>
     </message>
     <message>
         <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
-        <translation>Aby wykorzystać skan ciała 3D Look, plik musi zostać przekonwertowany do formatu SeamlyME. </translation>
+        <translation>A 3D-s testszkennelés használatához a fájlt SeamlyME formátumba kell konvertálni. </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
-        <translation>Dołącz plik 3DLook do wiadomości e-mail i wyślij na adres convert@seamly.io.</translation>
+        <translation>Csatold a 3DLook fájlodat egy e-mailhez, és küldd el a convert@seamly.io címre.</translation>
     </message>
     <message>
         <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
-        <translation>Otrzymasz e-mail z przekonwertowanym plikiem, który możesz następnie wczytać do SeamlyME jak zwykle.</translation>
+        <translation>Kapni fogsz egy e-mailt a konvertált fájllal, amelyet ezután a szokásos módon betölthetsz a SeamlyME-be.</translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Wybierz preferowane jednostki, separator dziesiętny i język. (Możesz je później zmienić.)</translation>
+        <translation>Kérjük, válassza ki a kívánt mértékegységeket, tizedesjelet és nyelvet. (Ezeket később módosíthatja.)</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jednostki:</translation>
+        <translation>Egységek:</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Ustawia domyślne jednostki dla nowego pliku pomiarów.</translation>
+        <translation>Beállítja az új mértékegységfájl alapértelmezett mértékegységeit.</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Ustawienie regionalne separatora:</translation>
+        <translation>Elválasztó területi beállítása:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>System użytkownika</translation>
+        <translation>Felhasználói rendszer</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Język GUI:</translation>
+        <translation>Felhasználói felület nyelve:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
-        <translation>Ustawia język używany w SeamlyMe.</translation>
+        <translation>Beállítja a SeamlyMe által használt nyelvet.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Po zaznaczeniu tej opcji okno powitalne nie będzie wyświetlane. Możesz zmienić to ustawienie w preferencjach SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bejelölése esetén az Üdvözlő ablak nem jelenik meg. Ezt a beállítást a SeamlyMe beállításaiban módosíthatja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation>Nie pokazuj ponownie</translation>
+        <translation>Ne mutasd meg újra</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Ustawienia regionalne</translation>
+        <translation>Helyszín</translation>
     </message>
     <message>
         <source>Country</source>
-        <translation>Kraj</translation>
+        <translation>Ország</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Język</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separator grup</translation>
+        <translation>Csoportelválasztó</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Przecinek dziesiętny</translation>
+        <translation>Tizedesvessző</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Znak ujemny</translation>
+        <translation>Negatív előjel</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Znak pozytywny</translation>
+        <translation>Pozitív előjel</translation>
     </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation>Witamy</translation>
+        <translation>Üdvözöljük</translation>
     </message>
     <message>
         <source>Welcome to Seamly2D</source>
-        <translation>Witamy w Seamly2D</translation>
+        <translation>Üdvözöljük a Seamly2D-ben</translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation>Wybierz preferowane jednostki, separator dziesiętny, język i dźwięk zaznaczenia. (Możesz je później zmienić.)</translation>
+        <translation>Kérjük, válassza ki a kívánt mértékegységeket, tizedesjelet, nyelvet és a kijelölési hangot. (Ezeket később módosíthatja.)</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation>Jednostki:</translation>
+        <translation>Egységek:</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Ustawia domyślne jednostki dla nowego pliku pomiarów.</translation>
+        <translation>Beállítja az új mértékegységfájl alapértelmezett mértékegységeit.</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Ustawienie regionalne separatora:</translation>
+        <translation>Elválasztó területi beállítása:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Domyślne</translation>
+        <translation>Alapértelmezett</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>System użytkownika</translation>
+        <translation>Felhasználói rendszer</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Język GUI:</translation>
+        <translation>Felhasználói felület nyelve:</translation>
     </message>
     <message>
         <source>Sets the language used for Seamly2D.</source>
-        <translation>Ustawia język używany w Seamly2D.</translation>
+        <translation>Beállítja a Seamly2D-hez használt nyelvet.</translation>
     </message>
     <message>
         <source>Sound:</source>
-        <translation>Dźwięk:</translation>
+        <translation>Hang:</translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
-        <translation>Ustawia dźwięk kliknięcia przy wyborze węzła.</translation>
+        <translation>Beállítja a csomópont kijelölésének kattanó hangját.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Po zaznaczeniu tej opcji okno powitalne nie będzie wyświetlane. Możesz zmienić to ustawienie w preferencjach Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bejelölése esetén az Üdvözlő ablak nem jelenik meg. Ezt a beállítást a Seamly2D beállításaiban módosíthatja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation>Nie pokazuj ponownie</translation>
+        <translation>Ne mutasd meg újra</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centymetry</translation>
+        <translation>Centiméter</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milimetry</translation>
+        <translation>Milliméter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Cale</translation>
+        <translation>Hüvelyk</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Ustawienia regionalne</translation>
+        <translation>Helyszín</translation>
     </message>
     <message>
         <source>Country</source>
-        <translation>Kraj</translation>
+        <translation>Ország</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Język</translation>
+        <translation>Nyelv</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separator grup</translation>
+        <translation>Csoportelválasztó</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Przecinek dziesiętny</translation>
+        <translation>Tizedesvessző</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Znak ujemny</translation>
+        <translation>Negatív előjel</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Znak pozytywny</translation>
+        <translation>Pozitív előjel</translation>
     </message>
 </context>
 <context>
     <name>SetPieceColor</name>
     <message>
         <source>Change piece color</source>
-        <translation>Zmień kolor elementu</translation>
+        <translation>A darab színének módosítása</translation>
     </message>
     <message>
         <source>Piece color changed: </source>
-        <translation>Zmieniono kolor elementu: </translation>
+        <translation>A darab színe megváltozott: </translation>
     </message>
 </context>
 <context>
     <name>ShortcutsDialog</name>
     <message>
         <source>Seamly2D Shortcuts</source>
-        <translation>Skróty Seamly2D</translation>
+        <translation>Seamly2D gyorsbillentyűk</translation>
     </message>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Kopiuj skróty do schowka</translation>
+        <translation>Parancsikonok másolása a vágólapra</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Eksportuj skróty jako plik PDF</translation>
+        <translation>Parancsok exportálása PDF formátumban</translation>
     </message>
     <message>
         <source>Send shortcuts to the Printer</source>
-        <translation>Wyślij skróty do drukarki</translation>
+        <translation>Parancsikonok küldése a nyomtatóra</translation>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
-        <translation>Skróty klawiaturowe</translation>
+        <translation>Billentyűparancsok</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Nowy</translation>
+        <translation>Új</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -10390,7 +10389,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Otwórz</translation>
+        <translation>Nyitva</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -10398,7 +10397,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zamknij</translation>
+        <translation>Bezárás</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -10406,7 +10405,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Mentés</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -10414,7 +10413,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save as</source>
-        <translation>Zapisz jako</translation>
+        <translation>Mentés másként</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
@@ -10422,7 +10421,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Drukuj</translation>
+        <translation>Nyomtatás</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -10430,15 +10429,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation>Preferencje dotyczące wzoru</translation>
+        <translation>Mintabeállítások</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
-        <translation>Ctrl+Shift+Przecinek</translation>
+        <translation>Ctrl+Shift+Vessző</translation>
     </message>
     <message>
         <source>Document Information</source>
-        <translation>Informacje o dokumencie</translation>
+        <translation>Dokumentuminformációk</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -10446,7 +10445,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Wyjście</translation>
+        <translation>Kilépés</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -10454,11 +10453,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Szerkesztés</translation>
     </message>
     <message>
         <source>Undo</source>
-        <translation>Cofnij</translation>
+        <translation>Visszavonás</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
@@ -10466,7 +10465,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation>Ponów</translation>
+        <translation>Újra</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -10474,7 +10473,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Poprzedni blok roboczy</translation>
+        <translation>Előző draft blokk</translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
@@ -10482,7 +10481,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Następny blok roboczy</translation>
+        <translation>Következő vázlatblokk</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
@@ -10490,11 +10489,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Widok</translation>
+        <translation>Nézet</translation>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation>Tryb roboczy</translation>
+        <translation>Vázlat mód</translation>
     </message>
     <message>
         <source>Shift+D</source>
@@ -10502,7 +10501,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation>Tryb części</translation>
+        <translation>Darab mód</translation>
     </message>
     <message>
         <source>Shift+P</source>
@@ -10510,7 +10509,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Layout Mode</source>
-        <translation>Tryb układu</translation>
+        <translation>Elrendezési mód</translation>
     </message>
     <message>
         <source>Shift+L</source>
@@ -10518,7 +10517,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation>Powiększ</translation>
+        <translation>Nagyítás</translation>
     </message>
     <message>
         <source>Ctrl++</source>
@@ -10526,7 +10525,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Oddal</translation>
+        <translation>Kicsinyítés</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -10534,7 +10533,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Powiększ 100%</translation>
+        <translation>Nagyítás 100%-ra</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
@@ -10542,7 +10541,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Powiększ do punktu</translation>
+        <translation>Zoomolás egy pontra</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -10550,7 +10549,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Pasuje do wszystkich</translation>
+        <translation>Mindenki belefér</translation>
     </message>
     <message>
         <source>Ctrl+9</source>
@@ -10558,23 +10557,23 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation>Poprzedni</translation>
+        <translation>Előző</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
-        <translation>Ctrl+Lewo</translation>
+        <translation>Ctrl+Balra</translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation>Wybrano</translation>
+        <translation>Kijelölt</translation>
     </message>
     <message>
         <source>Ctrl+Right</source>
-        <translation>Ctrl+Prawo</translation>
+        <translation>Ctrl+Jobbra</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Obszar</translation>
+        <translation>Terület</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -10582,15 +10581,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Patelnia</translation>
+        <translation>Serpenyő</translation>
     </message>
     <message>
         <source>Show Name Text</source>
-        <translation>Pokaż tekst nazwy</translation>
+        <translation>Név szövegének megjelenítése</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
-        <translation>Zwiększ rozmiar tekstu</translation>
+        <translation>Betűméret növelése</translation>
     </message>
     <message>
         <source>Ctrl+]</source>
@@ -10598,7 +10597,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Zmniejsz rozmiar tekstu</translation>
+        <translation>Csökkentse a betűméretet</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -10606,39 +10605,39 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Użyj koloru narzędzia</translation>
+        <translation>Eszközszín használata</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Model szkieletowy</translation>
+        <translation>Drótváz</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Punkty kontrolne krzywej</translation>
+        <translation>Görbe vezérlőpontok</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Początek osi</translation>
+        <translation>Tengely eredete</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Dodatek na szwy</translation>
+        <translation>Varratráhagyás</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linie ziarna</translation>
+        <translation>Szemcsék</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etykiety</translation>
+        <translation>Címkék</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Pomiary</translation>
+        <translation>Mérések</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
-        <translation>Otwórz SeamlyMe</translation>
+        <translation>Nyissa meg a SeamlyMe-t</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -10646,7 +10645,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Variables Table</source>
-        <translation>Tabela zmiennych</translation>
+        <translation>Változók táblázata</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -10654,7 +10653,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Export Variables Table  to CSV</source>
-        <translation>Eksportuj tabelę zmiennych do pliku CSV</translation>
+        <translation>Változók táblázatának exportálása CSV-be</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -10662,11 +10661,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation>Narzędzia</translation>
+        <translation>Eszközök</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Nowy blok roboczy</translation>
+        <translation>Új vázlatblokk</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
@@ -10674,55 +10673,55 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Zmień nazwę bloku roboczego</translation>
+        <translation>Vázlatblokk átnevezése</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Punkt</translation>
+        <translation>Pont</translation>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Długość i kąt</translation>
+        <translation>Hossz és szög</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>W sieci</translation>
+        <translation>Online</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Na prostopadłym</translation>
+        <translation>Merőlegesen</translation>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>O dwusiecznej</translation>
+        <translation>A felezővonalon</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Długość do linii</translation>
+        <translation>Vonalhossz</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>Przecięcie łuku i linii</translation>
+        <translation>Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Przecięcie osi i trójkąta</translation>
+        <translation>Tengely és háromszög metszéspontja</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>Przecięcie XY</translation>
+        <translation>XY metszéspont</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Przecięcie linii i prostopadłej</translation>
+        <translation>Egyenes és merőleges metszéspontja</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Przecięcie linii i osi</translation>
+        <translation>Vonal és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
-        <translation>Punkt środkowy na linii</translation>
+        <translation>Felezőpont a vonalon</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -10730,7 +10729,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Linia</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -10738,15 +10737,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Punkt – Przecięcie linii</translation>
+        <translation>Pont - Metszővonalak</translation>
     </message>
     <message>
         <source>Curves</source>
-        <translation>Krzywe</translation>
+        <translation>Görbék</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Krzywa – interaktywna</translation>
+        <translation>Görbe - Interaktív</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -10754,7 +10753,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline – interaktywny</translation>
+        <translation>Spline - Interaktív</translation>
     </message>
     <message>
         <source>Alt+S</source>
@@ -10762,7 +10761,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Krzywa – stała</translation>
+        <translation>Ív - Rögzített</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
@@ -10770,7 +10769,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline – Naprawiono</translation>
+        <translation>Spline - Rögzített</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
@@ -10778,23 +10777,23 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Punkt – na krzywej</translation>
+        <translation>Pont - Ívben</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
-        <translation>Punkt - Na krzywej splajnowe	</translation>
+        <translation>Pont - Spline-on	</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punkt – Przecięcie krzywych</translation>
+        <translation>Pont - Metsző görbék</translation>
     </message>
     <message>
         <source>Arcs</source>
-        <translation>Łuki</translation>
+        <translation>Ívek</translation>
     </message>
     <message>
         <source>Arc - Radius and Angle</source>
-        <translation>Łuk – promień i kąt</translation>
+        <translation>Ív - Sugár és Szög</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -10802,7 +10801,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Łuk – promień i długość</translation>
+        <translation>Ív - Sugár és Hossz</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -10810,19 +10809,19 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punkt – Łuk</translation>
+        <translation>Pont - Ív mentén</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis</source>
-        <translation>Punkt – Przecięcie łuku i osi</translation>
+        <translation>Pont - Ív és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punkt – Przecięcie łuków</translation>
+        <translation>Pont - Ívek metszéspontja</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punkt – Przecięcie okręgów</translation>
+        <translation>Pont - Körök metszéspontja</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -10830,15 +10829,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt – Przecięcie okręgu i stycznej</translation>
+        <translation>Pont - Kör és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt – Przecięcie łuku i stycznej</translation>
+        <translation>Pont - Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
-        <translation>Łuk eliptyczny</translation>
+        <translation>Ellipszisív</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -10846,27 +10845,27 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operacje</translation>
+        <translation>Műveletek</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Dodaj obiekty do grupy</translation>
+        <translation>Objektumok hozzáadása a csoporthoz</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>Obrót</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Lustro według linii</translation>
+        <translation>Tükörvonalonként</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Lustro według osi</translation>
+        <translation>Tükör tengely mentén</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Przenieś</translation>
+        <translation>Áthelyezés</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -10874,19 +10873,19 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Prawdziwe lotki</translation>
+        <translation>Igazi darts</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Eksportuj bloki robocze</translation>
+        <translation>Vázlatblokkok exportálása</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation>Obrazy</translation>
+        <translation>Képek</translation>
     </message>
     <message>
         <source>Import Image</source>
-        <translation>Importuj obraz</translation>
+        <translation>Kép importálása</translation>
     </message>
     <message>
         <source>Alt + I</source>
@@ -10894,31 +10893,31 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Element wzoru</translation>
+        <translation>Mintadarab</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nowy element wzoru</translation>
+        <translation>Új mintadarab</translation>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation>Punkt kotwiczenia</translation>
+        <translation>Horgonypont</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Ścieżka wewnętrzna</translation>
+        <translation>Belső útvonal</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Wstaw węzły</translation>
+        <translation>Csomódok beszúrása</translation>
     </message>
     <message>
         <source>Edit Properties</source>
-        <translation>Edytuj właściwości</translation>
+        <translation>Tulajdonságok szerkesztése</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation>Przełącz blokadę</translation>
+        <translation>Biztosan zárható</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10926,15 +10925,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Dołącz do układu</translation>
+        <translation>Elrendezésbe beillesztés</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Zabroń przewracania</translation>
+        <translation>Forgatás tiltása</translation>
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation>Podnieś do góry</translation>
+        <translation>Emeld a csúcsra</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
@@ -10942,7 +10941,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation>Od dołu do dołu</translation>
+        <translation>Alulról lefelé</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -10950,43 +10949,43 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation>Átnevezés</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Del</source>
-        <translation>Del</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Połącz części</translation>
+        <translation>Darabok egyesítése</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Eksportuj elementy</translation>
+        <translation>Darabok exportálása</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Układ</translation>
+        <translation>Elrendezés</translation>
     </message>
     <message>
         <source>New Layout</source>
-        <translation>Nowy układ</translation>
+        <translation>Új elrendezés</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Eksportuj układ</translation>
+        <translation>Elrendezés exportálása</translation>
     </message>
     <message>
         <source>Last Tool</source>
-        <translation>Ostatnie narzędzie</translation>
+        <translation>Utolsó szerszám</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
@@ -10994,7 +10993,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Historia</translation>
+        <translation>Történelem</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -11002,11 +11001,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Narzędzia</translation>
+        <translation>Közművek</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Kalkulator</translation>
+        <translation>Számológép</translation>
     </message>
     <message>
         <source>Ctrl+Shift+C</source>
@@ -11014,7 +11013,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Tabela dziesiętna</translation>
+        <translation>Tizedszámtáblázat</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -11022,53 +11021,53 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Eksportuj PDF</translation>
+        <translation>PDF exportálása</translation>
     </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
     <message>
         <source>toggle the first dart visibility</source>
-        <translation>przełącz widoczność pierwszej lotki</translation>
+        <translation>első dart láthatóságának váltása</translation>
     </message>
     <message>
         <source>toggle the second dart visibility</source>
-        <translation>przełącz widoczność drugiej lotki</translation>
+        <translation>a második nyíl láthatóságának ki-/bekapcsolása</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoDialog</name>
     <message>
         <source>Document Information</source>
-        <translation>Informacje o dokumencie</translation>
+        <translation>Dokumentuminformációk</translation>
     </message>
     <message>
         <source>Copy info to clipboard</source>
-        <translation>Kopiuj informacje do schowka</translation>
+        <translation>Információ másolása a vágólapra</translation>
     </message>
     <message>
         <source>Export info as PDF</source>
-        <translation>Eksportuj informacje jako PDF</translation>
+        <translation>Adatok exportálása PDF formátumban</translation>
     </message>
     <message>
         <source>Send info to the Printer</source>
-        <translation>Wyślij informacje do drukarki</translation>
+        <translation>Információ küldése a nyomtatóra</translation>
     </message>
     <message>
         <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Firma: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Klient: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Nazwa wzorca:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Numer wzorca: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Wersja: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Jednostki: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Wymiary:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Opis: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Uwagi: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Obraz: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Cég: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Ügyfél: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Minta neve:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Minta száma: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Verzió: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Egységek: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Méretek:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Leírás: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Megjegyzések: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Kép: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
         <source>Info files</source>
-        <translation>Pliki informacyjne</translation>
+        <translation>Információs fájlok</translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Eksportuj PDF</translation>
+        <translation>PDF exportálása</translation>
     </message>
     <message>
         <source>_info</source>
@@ -11079,41 +11078,41 @@ Czy chcesz zapisać zmiany?</translation>
     <name>ShowOperationPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>przełącz widoczność punktu</translation>
+        <translation>bekapcsolási pont láthatósága</translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>przełącz widoczność punktu</translation>
+        <translation>bekapcsolási pont láthatósága</translation>
     </message>
 </context>
 <context>
     <name>TMainWindow</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Select New for creation measurement file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:18pt;&quot;&gt;Wybierz Nowy, aby utworzyć plik pomiaru.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Válassza az Új lehetőséget a mérési fájl létrehozásához&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Pomiary</translation>
+        <translation>Mérések</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation>Kopiuj do schowka</translation>
+        <translation>Másolás a vágólapra</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>Znajdź:</translation>
+        <translation>Keresés:</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Szukaj</translation>
+        <translation>Keresés</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation>Znajdź poprzednie</translation>
+        <translation>Előző keresése</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -11121,7 +11120,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation>Znajdź następny</translation>
+        <translation>Következő keresése</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -11129,231 +11128,231 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Seach by regular expression</source>
-        <translation>Szukaj według wyrażenia regularnego</translation>
+        <translation>Keresés reguláris kifejezéssel</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Rozróżniaj wielkość liter</translation>
+        <translation>Kis- és nagybetűérzékeny</translation>
     </message>
     <message>
         <source>Search by full word</source>
-        <translation>Szukaj według pełnego słowa</translation>
+        <translation>Keresés teljes szó alapján</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Liczba</translation>
+        <translation>Szám</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Pełne imię i nazwisko</translation>
+        <translation>Teljes név</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Wartość</translation>
+        <translation>Érték</translation>
     </message>
     <message>
         <source>Formula</source>
-        <translation>Formuła</translation>
+        <translation>Képlet</translation>
     </message>
     <message>
         <source>Base value</source>
-        <translation>Wartość bazowa</translation>
+        <translation>Alapérték</translation>
     </message>
     <message>
         <source>In sizes</source>
-        <translation>W rozmiarach</translation>
+        <translation>Méretekben</translation>
     </message>
     <message>
         <source>In heights</source>
-        <translation>Na wysokościach</translation>
+        <translation>Magasságban</translation>
     </message>
     <message>
         <source>Move measurement top</source>
-        <translation>Przesuń pomiar w górę</translation>
+        <translation>Mérés mozgatása felülre</translation>
     </message>
     <message>
         <source>Move measurement up</source>
-        <translation>Przesuń pomiar w górę</translation>
+        <translation>Mérés mozgatása felfelé</translation>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation>Przesuń pomiar w dół</translation>
+        <translation>Mérés lejjebb mozgatása</translation>
     </message>
     <message>
         <source>Move measurement bottom</source>
-        <translation>Przesuń pomiar w dół</translation>
+        <translation>Mérés áthelyezése alulra</translation>
     </message>
     <message>
         <source>Delete measurement</source>
-        <translation>Usuń pomiar</translation>
+        <translation>Mérés törlése</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Szczegóły</translation>
+        <translation>Részletek</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula</source>
-        <translation>Nazwa pomiaru we wzorze</translation>
+        <translation>Mérés neve egy képletben</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula.</source>
-        <translation>Nazwa pomiaru we wzorze.</translation>
+        <translation>Mérés neve egy képletben.</translation>
     </message>
     <message>
         <source>Full name:</source>
-        <translation>Imię i nazwisko:</translation>
+        <translation>Teljes név:</translation>
     </message>
     <message>
         <source>Measurement&apos;s human-readable name.</source>
-        <translation>Czytelna dla człowieka nazwa pomiaru.</translation>
+        <translation>A mérés ember által olvasható neve.</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Wartość:</translation>
+        <translation>Érték:</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Formuła:</translation>
+        <translation>Képlet:</translation>
     </message>
     <message>
         <source>Function Wizard</source>
-        <translation>Kreator funkcji</translation>
+        <translation>Függvényvarázsló</translation>
     </message>
     <message>
         <source>Base value:</source>
-        <translation>Wartość bazowa:</translation>
+        <translation>Alapérték:</translation>
     </message>
     <message>
         <source>In sizes:</source>
-        <translation>W rozmiarach:</translation>
+        <translation>Méretekben:</translation>
     </message>
     <message>
         <source>In heights:</source>
-        <translation>W wysokościach:</translation>
+        <translation>Magasságban:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Opis:</translation>
+        <translation>Leírás:</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacje</translation>
+        <translation>Információ</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation>Típus:</translation>
     </message>
     <message>
         <source>Measurement type</source>
-        <translation>Typ pomiaru</translation>
+        <translation>Mérési típus</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Ścieżka:</translation>
+        <translation>Útvonal:</translation>
     </message>
     <message>
         <source>Show in Explorer</source>
-        <translation>Pokaż w Eksploratorze</translation>
+        <translation>Megjelenítés az Intézőben</translation>
     </message>
     <message>
         <source>PM system:</source>
-        <translation>System PM:</translation>
+        <translation>PM rendszer:</translation>
     </message>
     <message>
         <source>Base size:</source>
-        <translation>Rozmiar podstawowy:</translation>
+        <translation>Alap méret:</translation>
     </message>
     <message>
         <source>Base size value</source>
-        <translation>Wartość rozmiaru bazowego</translation>
+        <translation>Alap méretérték</translation>
     </message>
     <message>
         <source>Base height:</source>
-        <translation>Wysokość bazowa:</translation>
+        <translation>Alapmagasság:</translation>
     </message>
     <message>
         <source>Base height value</source>
-        <translation>Wartość wysokości bazowej</translation>
+        <translation>Alapmagasság értéke</translation>
     </message>
     <message>
         <source>Given name:</source>
-        <translation>Imię:</translation>
+        <translation>Keresztnév:</translation>
     </message>
     <message>
         <source>Customer&apos;s name</source>
-        <translation>Imię i nazwisko klienta</translation>
+        <translation>Ügyfél neve</translation>
     </message>
     <message>
         <source>Family name:</source>
-        <translation>Nazwisko:</translation>
+        <translation>Családnév:</translation>
     </message>
     <message>
         <source>Customer&apos;s family name</source>
-        <translation>Nazwisko klienta</translation>
+        <translation>Az ügyfél családneve</translation>
     </message>
     <message>
         <source>Birth date:</source>
-        <translation>Data urodzenia:</translation>
+        <translation>Születési dátum:</translation>
     </message>
     <message>
         <source>Gender:</source>
-        <translation>Płeć:</translation>
+        <translation>Nem:</translation>
     </message>
     <message>
         <source>Email:</source>
-        <translation>E-mail:</translation>
+        <translation>E-mail cím:</translation>
     </message>
     <message>
         <source>Customer&apos;s email address</source>
-        <translation>Adres e-mail klienta</translation>
+        <translation>Az ügyfél e-mail címe</translation>
     </message>
     <message>
         <source>Notes:</source>
-        <translation>Uwagi:</translation>
+        <translation>Megjegyzések:</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Plik</translation>
+        <translation>Fájl</translation>
     </message>
     <message>
         <source>Import body scan as</source>
-        <translation>Importuj skanowanie ciała jako</translation>
+        <translation>Testvizsgálat importálása másként</translation>
     </message>
     <message>
         <source>Window</source>
-        <translation>Okno</translation>
+        <translation>Ablak</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Pomoc</translation>
+        <translation>Súgó</translation>
     </message>
     <message>
         <source>Menu</source>
-        <translation>Menu</translation>
+        <translation>Menü</translation>
     </message>
     <message>
         <source>Gradation</source>
-        <translation>Gradacja</translation>
+        <translation>Átmenet</translation>
     </message>
     <message>
         <source>Measurement diagram</source>
-        <translation>Schemat pomiarowy</translation>
+        <translation>Mérési ábra</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Nieznany pomiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Ismeretlen mértékegység&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Otwórz indywidualnie ...</translation>
+        <translation>Nyílt egyéni ...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -11361,7 +11360,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Mentés</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -11369,7 +11368,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Save As ...</source>
-        <translation>Zapisz jako...</translation>
+        <translation>Mentés másként...</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
@@ -11377,7 +11376,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Wyjście</translation>
+        <translation>Kilépés</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -11385,15 +11384,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
-        <translation>O &amp;Qt</translation>
+        <translation>A &amp;Qt-ről</translation>
     </message>
     <message>
         <source>About SeamlyMe</source>
-        <translation>O SeamlyMe</translation>
+        <translation>A SeamlyMe-ről</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Nowy</translation>
+        <translation>Új</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -11401,19 +11400,19 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Add known</source>
-        <translation>Dodaj znane</translation>
+        <translation>Ismert hozzáadása</translation>
     </message>
     <message>
         <source>Add custom</source>
-        <translation>Dodaj niestandardowe</translation>
+        <translation>Egyéni hozzáadása</translation>
     </message>
     <message>
         <source>Read only</source>
-        <translation>Tylko do odczytu</translation>
+        <translation>Csak olvasható</translation>
     </message>
     <message>
         <source>Open multisize ...</source>
-        <translation>Otwórz wiele rozmiarów ...</translation>
+        <translation>Többméretű megnyitása ...</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -11421,7 +11420,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Open template ...</source>
-        <translation>Otwórz szablon...</translation>
+        <translation>Sablon megnyitása ...</translation>
     </message>
     <message>
         <source>Ctrl+Alt+O</source>
@@ -11429,15 +11428,15 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Database</source>
-        <translation>Baza danych</translation>
+        <translation>Adatbázis</translation>
     </message>
     <message>
         <source>Show information about all known measurement</source>
-        <translation>Pokaż informacje o wszystkich znanych pomiarach</translation>
+        <translation>Információk megjelenítése az összes ismert mérésről</translation>
     </message>
     <message>
         <source>Preferences</source>
-        <translation>Preferencje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Ctrl+,</source>
@@ -11445,19 +11444,19 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Import from a pattern</source>
-        <translation>Importuj ze wzorca</translation>
+        <translation>Importálás mintából</translation>
     </message>
     <message>
         <source>Create from existing ...</source>
-        <translation>Utwórz z istniejącego ...</translation>
+        <translation>Létrehozás meglévőből...</translation>
     </message>
     <message>
         <source>Create from existing file</source>
-        <translation>Utwórz z istniejącego pliku</translation>
+        <translation>Létrehozás meglévő fájlból</translation>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Eksportuj do pliku CSV</translation>
+        <translation>Exportálás CSV-be</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -11465,7 +11464,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Skróty</translation>
+        <translation>Gyorsbillentyűk</translation>
     </message>
     <message>
         <source>K</source>
@@ -11473,7 +11472,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Drukuj</translation>
+        <translation>Nyomtatás</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -11481,59 +11480,59 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation>Pomiar 3D</translation>
+        <translation>3D-s felmérés</translation>
     </message>
     <message>
         <source>3D Look</source>
-        <translation>Wygląd 3D</translation>
+        <translation>3D megjelenés</translation>
     </message>
     <message>
         <source>Show in Finder</source>
-        <translation>Pokaż w Finderze</translation>
+        <translation>Megjelenítés a keresőben</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; doesn&apos;t exist!</source>
-        <translation>Plik &apos;%1&apos; nie istnieje!</translation>
+        <translation>A(z) &apos;%1&apos; fájl nem létezik!</translation>
     </message>
     <message>
         <source>File has unknown format.</source>
-        <translation>Plik ma nieznany format.</translation>
+        <translation>A fájl formátuma ismeretlen.</translation>
     </message>
     <message>
         <source>File contains invalid known measurement(s).</source>
-        <translation>Plik zawiera nieprawidłowe znane pomiary.</translation>
+        <translation>A fájl érvénytelen ismert mértékegységeket tartalmaz.</translation>
     </message>
     <message>
         <source>File error.</source>
-        <translation>Błąd pliku.</translation>
+        <translation>Fájlhiba.</translation>
     </message>
     <message>
         <source>Individual measurements</source>
-        <translation>Pomiary indywidualne</translation>
+        <translation>Egyedi mérések</translation>
     </message>
     <message>
         <source>All files</source>
-        <translation>Wszystkie pliki</translation>
+        <translation>Összes fájl</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation>Pomiary wielowymiarowe</translation>
+        <translation>Többméretű mérések</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation>Wybierz plik</translation>
+        <translation>Fájl kiválasztása</translation>
     </message>
     <message>
         <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
 </source>
-        <translation>Aby wykorzystać skanowanie ciała 3DLook, plik musi zostać przekonwertowany do formatu SeamlyME.
+        <translation>A 3DLook testszkennelés használatához a fájlt SeamlyME formátumba kell konvertálni.
 </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
 </source>
-        <translation>Dołącz plik 3DLook do wiadomości e-mail i wyślij na adres convert@seamly.io.
+        <translation>Csatold a 3DLook fájlodat egy e-mailhez, és küldd el a convert@seamly.io címre.
 
 </translation>
     </message>
@@ -11542,628 +11541,628 @@ Czy chcesz zapisać zmiany?</translation>
 load in SeamlyME as usual.
 
 </source>
-        <translation>Otrzymasz wiadomość e-mail zawierającą przekonwertowany plik, który możesz następnie załadować do SeamlyME w zwykły sposób.
+        <translation>Kapni fogsz egy e-mailt a konvertált fájllal, amelyet ezután a szokásos módon betölthetsz a SeamlyME-be.
 
 </translation>
     </message>
     <message>
         <source>Convert 3DLook file:</source>
-        <translation>Konwertuj plik 3DLook:</translation>
+        <translation>3DLook fájl konvertálása:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Wysokość:</translation>
+        <translation>Magasság:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmiar:</translation>
+        <translation>Méret:</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
-        <translation>Jednostka wzoru:</translation>
+        <translation>Minta egység:</translation>
     </message>
     <message>
         <source>untitled</source>
-        <translation>bez tytułu</translation>
+        <translation>cím nélküli</translation>
     </message>
     <message>
         <source>The measurements document has no write permissions.</source>
-        <translation>Dokument pomiarów nie ma uprawnień do zapisu.</translation>
+        <translation>A mérési dokumentumnak nincs írási jogosultsága.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Nie można ustawić uprawnień dla %1 na zapisywalne.</translation>
+        <translation>A(z) %1 jogosultságait nem lehet írhatóra állítani.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation>Nie udało się zapisać pliku.</translation>
+        <translation>Nem sikerült menteni a fájlt.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation>Nie można zapisać pliku</translation>
+        <translation>Nem sikerült menteni a fájlt</translation>
     </message>
     <message>
         <source>Save as</source>
-        <translation>Zapisz jako</translation>
+        <translation>Mentés másként</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window.</source>
-        <translation>Nie udało się zablokować. Ten plik został już otwarty w innym oknie.</translation>
+        <translation>Nem sikerült zárolni. Ez a fájl már meg van nyitva egy másik ablakban.</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nie można zapisać pliku</translation>
+        <translation>Nem sikerült menteni a fájlt</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Nie udało się zablokować. Ten plik został już otwarty w innym oknie. Należy spodziewać się kolizji podczas uruchamiania dwóch kopii programu.</translation>
+        <translation>Nem sikerült zárolni. Ez a fájl már meg van nyitva egy másik ablakban. Két példány futtatásakor ütközésekre lehet számítani.</translation>
     </message>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;.</source>
-        <translation>Nie można znaleźć pomiaru &apos;%1&apos;.</translation>
+        <translation>A(z) &apos;%1&apos; mérés nem található.</translation>
     </message>
     <message>
         <source>Edit measurement</source>
-        <translation>Edytuj pomiar</translation>
+        <translation>Mérés szerkesztése</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation>Pliki wzorów</translation>
+        <translation>Mintafájlok</translation>
     </message>
     <message>
         <source>Locking file</source>
-        <translation>Blokowanie pliku</translation>
+        <translation>Fájl zárolása</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ten plik został już otwarty w innym oknie. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>Ez a fájl már megnyílt egy másik ablakban. Ha folytatni szeretné, hagyja figyelmen kívül (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Nieznany pomiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Ismeretlen mértékegység&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>The name of known measurement forbidden to change.</source>
-        <translation>Zabronione jest zmienianie nazwy znanego pomiaru.</translation>
+        <translation>Az ismert mértékegység nevét tilos megváltoztatni.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Empty field.</source>
-        <translation>Puste pole.</translation>
+        <translation>Üres mező.</translation>
     </message>
     <message>
         <source>The full name of known measurement forbidden to change.</source>
-        <translation>Pełna nazwa znanej miary jest zabroniona do zmiany.</translation>
+        <translation>Az ismert mértékegység teljes nevét tilos megváltoztatni.</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>O Qt</translation>
+        <translation>A Qt-ről</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Pusty</translation>
+        <translation>Üres</translation>
     </message>
     <message>
         <source>File was not saved yet.</source>
-        <translation>Plik nie został jeszcze zapisany.</translation>
+        <translation>A fájl még nincs mentve.</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Niezapisane zmiany</translation>
+        <translation>Nem mentett változtatások</translation>
     </message>
     <message>
         <source>Measurements have been modified.
 Do you want to save your changes?</source>
-        <translation>Pomiary zostały zmodyfikowane.
-Czy chcesz zapisać zmiany?</translation>
+        <translation>A mérések módosultak.
+Menti a módosításokat?</translation>
     </message>
     <message>
         <source>Save...</source>
-        <translation>Zapisz...</translation>
+        <translation>Mentés...</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nie zapisuj</translation>
+        <translation>Ne mentsd</translation>
     </message>
     <message>
         <source>untitled %1</source>
-        <translation>bez tytułu %1</translation>
+        <translation>címtelen %1</translation>
     </message>
     <message>
         <source>read only</source>
-        <translation>tylko do odczytu</translation>
+        <translation>csak olvasható</translation>
     </message>
     <message>
         <source>Empty field</source>
-        <translation>Puste pole</translation>
+        <translation>Üres mező</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Nieprawidłowy wynik. Wartość jest nieskończona lub NaN. Proszę sprawdzić obliczenia.</translation>
+        <translation>Érvénytelen eredmény. Az érték végtelen vagy NaN. Kérjük, ellenőrizze a számításokat.</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>Błąd parsera: %1</translation>
+        <translation>Elemző hiba: %1</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Otwórz plik</translation>
+        <translation>Fájl megnyitása</translation>
     </message>
     <message>
         <source>Export from multisize measurements is not supported.</source>
-        <translation>Eksport z pomiarów wielorozmiarowych nie jest obsługiwany.</translation>
+        <translation>A többméretű mérésekből történő exportálás nem támogatott.</translation>
     </message>
     <message>
         <source>&amp;New Window</source>
-        <translation>&amp;Nowe okno</translation>
+        <translation>&amp;Új ablak</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Nie można utworzyć pliku blokady z powodu braku uprawnień. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>A zárfájl nem hozható létre jogosultságok hiánya miatt. Ha folytatni szeretné, hagyja figyelmen kívül (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
+        <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását. Hagyja figyelmen kívül, ha folytatni szeretné (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Ten plik został już otwarty w innym oknie.</translation>
+        <translation>Ez a fájl már megnyílt egy másik ablakban.</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>Nie można utworzyć pliku blokady z powodu braku uprawnień.</translation>
+        <translation>A zárfájl nem hozható létre jogosultságok hiánya miatt.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady.</translation>
+        <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását.</translation>
     </message>
     <message>
         <source>unknown</source>
         <comment>gender</comment>
-        <translation>nieznany</translation>
+        <translation>ismeretlen</translation>
     </message>
     <message>
         <source>male</source>
         <comment>gender</comment>
-        <translation>mężczyzna</translation>
+        <translation>férfi</translation>
     </message>
     <message>
         <source>female</source>
         <comment>gender</comment>
-        <translation>kobieta</translation>
+        <translation>női</translation>
     </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Element na liście układów</translation>
+        <translation>Elem az elrendezéslistában</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Dołącz element do zmienionego układu: </translation>
+        <translation>A darab beillesztése az elrendezésbe megváltozott: </translation>
     </message>
     <message>
         <source>Include</source>
-        <translation>Dołącz</translation>
+        <translation>Belefoglalás</translation>
     </message>
     <message>
         <source>Exclude</source>
-        <translation>Wyklucz</translation>
+        <translation>Kizárás</translation>
     </message>
 </context>
 <context>
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>Blokada elementu wzorcowego</translation>
+        <translation>Mintadarab zárolása</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
-        <translation>Zmieniono blokadę elementu: </translation>
+        <translation>A darabzár megváltozott: </translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Zablokowany</translation>
+        <translation>Zárolva</translation>
     </message>
     <message>
         <source>Unlocked</source>
-        <translation>Odblokowano</translation>
+        <translation>Feloldva</translation>
     </message>
 </context>
 <context>
     <name>Tool</name>
     <message>
         <source>Line_</source>
-        <translation>Linia_</translation>
+        <translation>Sor_</translation>
     </message>
     <message>
         <source>First point</source>
-        <translation>Pierwszy punkt</translation>
+        <translation>Első pont</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation>Drugi punkt</translation>
+        <translation>Második pont</translation>
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Najwyższy punkt</translation>
+        <translation>Legmagasabb pont</translation>
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Najniższy punkt</translation>
+        <translation>Legalacsonyabb pont</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Punkt najbardziej wysunięty na lewo</translation>
+        <translation>A legbaloldalibb pont</translation>
     </message>
     <message>
         <source>Rightmost point</source>
-        <translation>Punkt najbardziej wysunięty na prawo</translation>
+        <translation>Jobboldali legszélső pont</translation>
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation>Oś pionowa</translation>
+        <translation>Függőleges tengely</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Oś pozioma</translation>
+        <translation>Vízszintes tengely</translation>
     </message>
 </context>
 <context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
-        <translation>Narzędzie Unii</translation>
+        <translation>Szövetségi eszköz</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Czy na pewno chcesz połączyć szczegóły?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tényleg egyesíteni szeretnéd a részleteket?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select the first point</source>
-        <translation>Wybierz pierwszy punkt</translation>
+        <translation>Válassza ki az első pontot</translation>
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
-        <translation>Element wzoru powinien mieć co najmniej dwa punkty i trzy obiekty</translation>
+        <translation>A mintadarabnak legalább két ponttal és három objektummal kell rendelkeznie</translation>
     </message>
     <message>
         <source>Select a second point</source>
-        <translation>Wybierz drugi punkt</translation>
+        <translation>Válasszon ki egy második pontot</translation>
     </message>
     <message>
         <source>Select a unique point</source>
-        <translation>Wybierz unikalny punkt</translation>
+        <translation>Válasszon ki egy egyedi pontot</translation>
     </message>
     <message>
         <source>Select a piece</source>
-        <translation>Wybierz utwór</translation>
+        <translation>Válassz egy darabot</translation>
     </message>
     <message>
         <source>Select a point on edge</source>
-        <translation>Wybierz punkt na krawędzi</translation>
+        <translation>Válasszon ki egy pontot az élen</translation>
     </message>
 </context>
 <context>
     <name>UnionTool</name>
     <message>
         <source>union pieces</source>
-        <translation>elementy łączące</translation>
+        <translation>egyesítő darabok</translation>
     </message>
 </context>
 <context>
     <name>Utils::CheckableMessageBox</name>
     <message>
         <source>Do not ask again</source>
-        <translation>Nie pytaj ponownie</translation>
+        <translation>Ne kérdezd meg újra</translation>
     </message>
     <message>
         <source>Do not &amp;ask again</source>
-        <translation>Nie pytaj ponownie</translation>
+        <translation>Ne kérdezd meg újra</translation>
     </message>
     <message>
         <source>Do not &amp;show again</source>
-        <translation>Nie pokazuj ponownie</translation>
+        <translation>Ne mutasd meg újra</translation>
     </message>
 </context>
 <context>
     <name>VAbstractConverter</name>
     <message>
         <source>Error Opening a temp file: %1.</source>
-        <translation>Błąd otwierania pliku tymczasowego: %1.</translation>
+        <translation>Hiba történt egy ideiglenes fájl megnyitásakor: %1.</translation>
     </message>
     <message>
         <source>Couldn&apos;t get version information.</source>
-        <translation>Nie udało się uzyskać informacji o wersji.</translation>
+        <translation>Nem sikerült lekérni a verzióinformációkat.</translation>
     </message>
     <message>
         <source>Too many tags &lt;%1&gt; in file.</source>
-        <translation>Zbyt wiele tagów &lt;%1&gt; w pliku.</translation>
+        <translation>Túl sok címke van a fájlban: &lt;%1&gt;.</translation>
     </message>
     <message>
         <source>Version &quot;%1&quot; invalid.</source>
-        <translation>Wersja&quot;%1&quot;jest nieprawidłowa.</translation>
+        <translation>A(z) „%1” verzió érvénytelen.</translation>
     </message>
     <message>
         <source>Version &quot;0.0.0&quot; invalid.</source>
-        <translation>Wersja&quot;0.0.0&quot;jest nieprawidłowa.</translation>
+        <translation>A(z) „0.0.0” verzió érvénytelen.</translation>
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
-        <translation>Błąd podczas tworzenia kopii zapasowej: %1.</translation>
+        <translation>Hiba történt a biztonsági másolat létrehozásakor: %1.</translation>
     </message>
     <message>
         <source>Invalid version. Minimum supported version is %1</source>
-        <translation>Nieprawidłowa wersja. Minimalna obsługiwana wersja to %1</translation>
+        <translation>Érvénytelen verzió. A minimálisan támogatott verzió %1</translation>
     </message>
     <message>
         <source>Invalid version. Maximum supported version is %1</source>
-        <translation>Nieprawidłowa wersja. Maksymalna obsługiwana wersja to %1</translation>
+        <translation>Érvénytelen verzió. A maximálisan támogatott verziószám %1</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
-        <translation>Nieoczekiwana wersja&quot;%1&quot;.</translation>
+        <translation>Váratlan verzió: „%1”.</translation>
     </message>
     <message>
         <source>Error no unique id.</source>
-        <translation>Błąd: brak unikalnego identyfikatora.</translation>
+        <translation>Hiba: nincs egyedi azonosító.</translation>
     </message>
     <message>
         <source>Could not change version.</source>
-        <translation>Nie można zmienić wersji.</translation>
+        <translation>Nem sikerült módosítani a verziót.</translation>
     </message>
 </context>
 <context>
     <name>VAbstractCubicBezierPath</name>
     <message>
         <source>Can&apos;t cut this spline</source>
-        <translation>Nie można przeciąć tego rowka</translation>
+        <translation>Ezt a spline-t nem lehet megvágni</translation>
     </message>
 </context>
 <context>
     <name>VAbstractMainWindow</name>
     <message>
         <source>Confirm format rewriting</source>
-        <translation>Potwierdź przepisanie formatu</translation>
+        <translation>Formátum átírásának megerősítése</translation>
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation>Ten plik używa poprzedniej wersji formatu v%1. Obecna wersja to v%2. Zapisanie pliku w tej wersji aplikacji spowoduje aktualizację wersji formatu dla tego pliku. Może to uniemożliwić otwarcie pliku w starszych wersjach aplikacji. Czy na pewno chcesz kontynuować?</translation>
+        <translation>Ez a fájl egy korábbi, v%1 formátumverziót használ. A jelenlegi v%2. A fájl mentése ezzel az alkalmazásverzióval frissíti a fájl formátumverzióját. Ez megakadályozhatja, hogy a fájlt régebbi alkalmazásverziókkal megnyissa. Biztosan folytatja?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
-        <translation>Wartości rozdzielone przecinkami</translation>
+        <translation>Vesszővel elválasztott értékek</translation>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Eksportuj do pliku CSV</translation>
+        <translation>Exportálás CSV-be</translation>
     </message>
 </context>
 <context>
     <name>VAbstractOperation</name>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
 </context>
 <context>
     <name>VAbstractPattern</name>
     <message>
         <source>Can&apos;t find tool in table.</source>
-        <translation>Nie można znaleźć narzędzia w tabeli.</translation>
+        <translation>Nem található a szerszám a táblázatban.</translation>
     </message>
     <message>
         <source>Error creating or updating group</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania grupy</translation>
+        <translation>Hiba a csoport létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>New group</source>
-        <translation>Nowa grupa</translation>
+        <translation>Új csoport</translation>
     </message>
     <message>
         <source>New group 2</source>
-        <translation>Nowa grupa 2</translation>
+        <translation>Új 2. csoport</translation>
     </message>
 </context>
 <context>
     <name>VAbstractPieceData</name>
     <message>
         <source>Piece</source>
-        <translation>Kawałek</translation>
+        <translation>Darab</translation>
     </message>
 </context>
 <context>
     <name>VAbstractSpline</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VAbstractTool</name>
     <message>
         <source>Edit wrong formula</source>
-        <translation>Edytuj błędną formułę</translation>
+        <translation>Hibás képlet szerkesztése</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
-        <translation>Potwierdź usunięcie</translation>
+        <translation>Törlés megerősítése</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Czy na pewno chcesz usunąć?</translation>
+        <translation>Biztosan törölni szeretnéd?</translation>
     </message>
     <message>
         <source>Green</source>
-        <translation>Zielony</translation>
+        <translation>Zöld</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation>Niebieski</translation>
+        <translation>Kék</translation>
     </message>
     <message>
         <source>Dark Red</source>
-        <translation>Ciemnoczerwony</translation>
+        <translation>Sötétvörös</translation>
     </message>
     <message>
         <source>Dark Green</source>
-        <translation>Ciemnozielony</translation>
+        <translation>Sötétzöld</translation>
     </message>
     <message>
         <source>Dark Blue</source>
-        <translation>Ciemnoniebieski</translation>
+        <translation>Sötétkék</translation>
     </message>
     <message>
         <source>Yellow</source>
-        <translation>Żółty</translation>
+        <translation>Sárga</translation>
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Jasny łosoś</translation>
+        <translation>Világos lazac</translation>
     </message>
     <message>
         <source>Goldenrod</source>
-        <translation>Nawłoć</translation>
+        <translation>Aranyvessző</translation>
     </message>
     <message>
         <source>Orange</source>
-        <translation>Pomarańczowy</translation>
+        <translation>Narancs</translation>
     </message>
     <message>
         <source>Deep Pink</source>
-        <translation>Głęboki róż</translation>
+        <translation>Mély rózsaszín</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation>Fioletowy</translation>
+        <translation>Ibolya</translation>
     </message>
     <message>
         <source>Dark Violet</source>
-        <translation>Ciemny fiolet</translation>
+        <translation>Sötétibolya</translation>
     </message>
     <message>
         <source>Medium Sea Green</source>
-        <translation>Średnia morska zieleń</translation>
+        <translation>Középtengerzöld</translation>
     </message>
     <message>
         <source>Lime</source>
-        <translation>Limonka</translation>
+        <translation>Lime</translation>
     </message>
     <message>
         <source>Deep Sky Blue</source>
-        <translation>Głęboki błękit nieba</translation>
+        <translation>Mélykék égbolt</translation>
     </message>
     <message>
         <source>Corn Flower Blue</source>
-        <translation>Kwiat kukurydzy niebieski</translation>
+        <translation>Kukoricavirág kék</translation>
     </message>
     <message>
         <source>Black</source>
-        <translation>Czarny</translation>
+        <translation>Fekete</translation>
     </message>
     <message>
         <source>Gold</source>
-        <translation>Złoto</translation>
+        <translation>Arany</translation>
     </message>
     <message>
         <source>Forest Green</source>
-        <translation>Zielony las</translation>
+        <translation>Erdőzöld</translation>
     </message>
     <message>
         <source>Lawn Green</source>
-        <translation>Zielony trawnik</translation>
+        <translation>Gyepzöld</translation>
     </message>
     <message>
         <source>Lime Green</source>
-        <translation>Limonkowozielony</translation>
+        <translation>Lime zöld</translation>
     </message>
     <message>
         <source>Green Yellow</source>
-        <translation>Zielony Żółty</translation>
+        <translation>Zöld Sárga</translation>
     </message>
     <message>
         <source>Sandy Brown</source>
-        <translation>Piaskowy brąz</translation>
+        <translation>Homokos Barna</translation>
     </message>
     <message>
         <source>Orange Red</source>
-        <translation>Pomarańczowo-czerwony</translation>
+        <translation>Narancsvörös</translation>
     </message>
     <message>
         <source>Maroon</source>
-        <translation>Kasztanowy</translation>
+        <translation>Barna</translation>
     </message>
     <message>
         <source>Pink</source>
-        <translation>Różowy</translation>
+        <translation>Rózsaszín</translation>
     </message>
     <message>
         <source>Hot Pink</source>
-        <translation>Gorący róż</translation>
+        <translation>Élénk rózsaszín</translation>
     </message>
     <message>
         <source>Blue Violet</source>
-        <translation>Niebieski fiolet</translation>
+        <translation>Kék ibolya</translation>
     </message>
     <message>
         <source>Medium Violet Red</source>
-        <translation>Średnia czerwień fioletowa</translation>
+        <translation>Középibolya vörös</translation>
     </message>
     <message>
         <source>Indigo</source>
-        <translation>Indygo</translation>
+        <translation>Indigó</translation>
     </message>
     <message>
         <source>Purple</source>
-        <translation>Fioletowy</translation>
+        <translation>Lila</translation>
     </message>
     <message>
         <source>Plum</source>
-        <translation>Śliwka</translation>
+        <translation>Szilva</translation>
     </message>
     <message>
         <source>Turquoise</source>
-        <translation>Turkusowy</translation>
+        <translation>Türkiz</translation>
     </message>
     <message>
         <source>Medium Turquoise</source>
-        <translation>Średni turkus</translation>
+        <translation>Közepes türkiz</translation>
     </message>
     <message>
         <source>Powder Blue</source>
-        <translation>Proszkowy błękit</translation>
+        <translation>Púderkék</translation>
     </message>
     <message>
         <source>Light Sky Blue</source>
-        <translation>Jasny błękit nieba</translation>
+        <translation>Világos égkék</translation>
     </message>
     <message>
         <source>Navy</source>
-        <translation>Marynarka Wojenna</translation>
+        <translation>Haditengerészet</translation>
     </message>
     <message>
         <source>Magenta</source>
-        <translation>Magenta</translation>
+        <translation>Bíborvörös</translation>
     </message>
     <message>
         <source>Dark Slate Grey</source>
-        <translation>Ciemny łupkowy szary</translation>
+        <translation>Sötét palaszürke</translation>
     </message>
     <message>
         <source>Grey</source>
-        <translation>Szary</translation>
+        <translation>Szürke</translation>
     </message>
     <message>
         <source>Gainsboro</source>
@@ -12171,507 +12170,507 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Dark Sea Green</source>
-        <translation>Ciemna morska zieleń</translation>
+        <translation>Sötét tengerzöld</translation>
     </message>
     <message>
         <source>Light Grey</source>
-        <translation>Jasnoszary</translation>
+        <translation>Világosszürke</translation>
     </message>
     <message>
         <source>Light Steel Blue</source>
-        <translation>Jasnostalowy niebieski</translation>
+        <translation>Világos acélkék</translation>
     </message>
     <message>
         <source>Beige</source>
-        <translation>Beżowy</translation>
+        <translation>Bézs</translation>
     </message>
     <message>
         <source>Thistle</source>
-        <translation>Oset</translation>
+        <translation>Bogáncs</translation>
     </message>
     <message>
         <source>Silver</source>
-        <translation>Srebro</translation>
+        <translation>Ezüst</translation>
     </message>
     <message>
         <source>White Smoke</source>
-        <translation>Biały dym</translation>
+        <translation>Fehér füst</translation>
     </message>
     <message>
         <source>White</source>
-        <translation>Biały</translation>
+        <translation>Fehér</translation>
     </message>
     <message>
         <source>Dark Grey</source>
-        <translation>Ciemnoszary</translation>
+        <translation>Sötétszürke</translation>
     </message>
     <message>
         <source>Cadet Blue</source>
-        <translation>Błękit kadetów</translation>
+        <translation>Kadetkék</translation>
     </message>
     <message>
         <source>Dark Khaki</source>
-        <translation>Ciemny khaki</translation>
+        <translation>Sötét khaki</translation>
     </message>
     <message>
         <source>Tan</source>
-        <translation>Opalenizna</translation>
+        <translation>Barna</translation>
     </message>
 </context>
 <context>
     <name>VCommandLine</name>
     <message>
         <source>Seamly2D open source patternmaking program.</source>
-        <translation>Seamly2D – program typu open source do tworzenia wzorów.</translation>
+        <translation>Seamly2D nyílt forráskódú mintakészítő program.</translation>
     </message>
     <message>
         <source>Seamly2D pattern file (.sm2d)</source>
-        <translation>Plik wzoru Seamly2D (.sm2d)</translation>
+        <translation>Seamly2D mintafájl (.sm2d)</translation>
     </message>
     <message>
         <source>The base filename of exported layout files. Use it to enable console export mode.</source>
-        <translation>Podstawowa nazwa pliku eksportowanych plików układu. Użyj jej, aby włączyć tryb eksportu konsoli.</translation>
+        <translation>Az exportált elrendezésfájlok alap fájlneve. Használd a konzol exportálási mód engedélyezéséhez.</translation>
     </message>
     <message>
         <source>The base filename of layout files</source>
-        <translation>Podstawowa nazwa pliku układu</translation>
+        <translation>Az elrendezésfájlok alap fájlneve</translation>
     </message>
     <message>
         <source>The path to output destination folder. By default the directory at which the application was started.</source>
-        <translation>Ścieżka do folderu docelowego. Domyślnie jest to katalog, w którym uruchomiono aplikację.</translation>
+        <translation>A kimeneti célmappa elérési útja. Alapértelmezés szerint az a könyvtár, amelyből az alkalmazás elindult.</translation>
     </message>
     <message>
         <source>The destination folder</source>
-        <translation>Folder docelowy</translation>
+        <translation>A célmappa</translation>
     </message>
     <message>
         <source>Path to custom measure file (export mode).</source>
-        <translation>Ścieżka do pliku miar niestandardowych (tryb eksportu).</translation>
+        <translation>Egyéni mértékfájl elérési útja (exportálási mód).</translation>
     </message>
     <message>
         <source>The measure file</source>
-        <translation>Plik pomiarowy</translation>
+        <translation>A mérési fájl</translation>
     </message>
     <message>
         <source>Number corresponding to output format (default = 0, export mode):</source>
-        <translation>Liczba odpowiadająca formatowi wyjściowemu (domyślnie = 0, tryb eksportu):</translation>
+        <translation>A kimeneti formátumnak megfelelő szám (alapértelmezett = 0, exportálási mód):</translation>
     </message>
     <message>
         <source>Format number</source>
-        <translation>Formatuj numer</translation>
+        <translation>Formátumszám</translation>
     </message>
     <message>
         <source>Export dxf in binary form.</source>
-        <translation>Eksportuj plik dxf w formie binarnej.</translation>
+        <translation>DXF exportálása bináris formátumban.</translation>
     </message>
     <message>
         <source>Export text as paths.</source>
-        <translation>Eksportuj tekst jako ścieżki.</translation>
+        <translation>Szöveg exportálása elérési útként.</translation>
     </message>
     <message>
         <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>Eksportuj tylko szczegóły. Eksportuj szczegóły w takiej kolejności, w jakiej są one umieszczone w trybie szczegółów. Wszelkie opcje związane z układem zostaną zignorowane.</translation>
+        <translation>Csak a részletek exportálása. A részletek exportálása a részletek módban elfoglalt pozíciójuk szerint történik. Az elrendezéssel kapcsolatos beállításokat a rendszer figyelmen kívül hagyja.</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Ustaw wartość rozmiaru dla pliku wzorca otwartego z pomiarami wielokrotnymi (tryb eksportu). Prawidłowe wartości: %1cm.</translation>
+        <translation>Méretértéket állítson be egy olyan mintafájlhoz, amelyet többméretű mérésekkel nyitott meg (exportálás mód). Érvényes értékek: %1cm.</translation>
     </message>
     <message>
         <source>The size value</source>
-        <translation>Wartość rozmiaru</translation>
+        <translation>A méret értéke</translation>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Ustaw wartość wysokości w pliku wzorcowym, który został otwarty z pomiarami wielokrotnymi (tryb eksportu). Prawidłowe wartości: %1cm.</translation>
+        <translation>Magasságértéket állít be egy olyan mintafájlhoz, amelyet többméretű mérésekkel nyitottak meg (exportálás mód). Érvényes értékek: %1cm.</translation>
     </message>
     <message>
         <source>The height value</source>
-        <translation>Wartość wysokości</translation>
+        <translation>A magasság értéke</translation>
     </message>
     <message>
         <source>Number corresponding to page template (default = 0, export mode):</source>
-        <translation>Numer odpowiadający szablonowi strony (domyślnie = 0, tryb eksportu):</translation>
+        <translation>Az oldalsablonnak megfelelő szám (alapértelmezett = 0, exportálási mód):</translation>
     </message>
     <message>
         <source>Template number</source>
-        <translation>Numer szablonu</translation>
+        <translation>Sablonszám</translation>
     </message>
     <message>
         <source>Page width in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Szerokość strony w bieżących jednostkach, takich jak 12,0 (nie można używać w trybie eksportu&quot;%1&quot;).</translation>
+        <translation>Oldalszélesség a jelenlegi mértékegységekben, például 12.0-ban (nem használható „%1” exportálási móddal).</translation>
     </message>
     <message>
         <source>The page width</source>
-        <translation>Szerokość strony</translation>
+        <translation>Az oldal szélessége</translation>
     </message>
     <message>
         <source>Page height in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Wysokość strony w bieżących jednostkach, takich jak 12,0 (nie można używać w trybie eksportu&quot;%1&quot;).</translation>
+        <translation>Oldalmagasság a jelenlegi mértékegységekben, például 12.0-ban (nem használható „%1” exportálási móddal).</translation>
     </message>
     <message>
         <source>The page height</source>
-        <translation>Wysokość strony</translation>
+        <translation>Az oldal magassága</translation>
     </message>
     <message>
         <source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
-        <translation>Jednostki miary wysokości/szerokości strony (nie można używać w trybie eksportu&quot;%1&quot;). Prawidłowe wartości: %2.</translation>
+        <translation>Oldalmagasság/oldalszélesség mértékegységei (nem használhatók „%1” exportálási móddal). Érvényes értékek: %2.</translation>
     </message>
     <message>
         <source>The measure unit</source>
-        <translation>Jednostka miary</translation>
+        <translation>A mértékegység</translation>
     </message>
     <message>
         <source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
-        <translation>Ignoruj drukowanie marginesów (tryb eksportu). Wyłącz klucze wartości:&quot;%1&quot;,&quot;%2&quot;,&quot;%3&quot;,&quot;%4.&quot; Ustaw wszystkie marginesy na 0.</translation>
+        <translation>Margók figyelmen kívül hagyása nyomtatásban (export mód). Értékkulcsok letiltása: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Minden margót állítsa 0-ra.</translation>
     </message>
     <message>
         <source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Lewy margines strony w bieżących jednostkach, takich jak 3,0 (tryb eksportu). Jeśli nie zostanie ustawiony, zostanie użyta wartość z domyślnej drukarki. Lub 0, jeśli nie znaleziono żadnej drukarki. Wartość zostanie zignorowana, jeśli użyto klucza&quot;%1&quot;.</translation>
+        <translation>Az oldal bal margója a jelenlegi mértékegységben, például 3.0-ban (exportálási mód). Ha nincs beállítva, az alapértelmezett nyomtató értéke lesz használatban. Vagy 0, ha nem található nyomtató. Az érték figyelmen kívül marad, ha a(z) &quot;%1&quot; kulcsot használjuk.</translation>
     </message>
     <message>
         <source>The left margin</source>
-        <translation>Lewy margines</translation>
+        <translation>A bal margó</translation>
     </message>
     <message>
         <source>Page right margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Prawy margines strony w bieżących jednostkach, takich jak 3,0 (tryb eksportu). Jeśli nie zostanie ustawiony, zostanie użyta wartość z domyślnej drukarki. Lub 0, jeśli nie znaleziono żadnej drukarki. Wartość zostanie zignorowana, jeśli użyto klucza&quot;%1&quot;.</translation>
+        <translation>Az oldal jobb margója a jelenlegi mértékegységben, például 3.0-ban (exportálási mód). Ha nincs beállítva, az alapértelmezett nyomtató értéke lesz használatban. Vagy 0, ha nem található nyomtató. Az érték figyelmen kívül marad, ha a(z) &quot;%1&quot; kulcsot használjuk.</translation>
     </message>
     <message>
         <source>The right margin</source>
-        <translation>Prawy margines</translation>
+        <translation>A jobb margó</translation>
     </message>
     <message>
         <source>Page top margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Górny margines strony w bieżących jednostkach, takich jak 3,0 (tryb eksportu). Jeśli nie zostanie ustawiony, zostanie użyta wartość z domyślnej drukarki. Lub 0, jeśli nie znaleziono żadnej drukarki. Wartość zostanie zignorowana, jeśli użyto klucza&quot;%1&quot;.</translation>
+        <translation>Az oldal felső margója a jelenlegi mértékegységben, például 3.0-ban (exportálási mód). Ha nincs beállítva, az alapértelmezett nyomtató értéke lesz használatban. Vagy 0, ha nem található nyomtató. Az érték figyelmen kívül marad, ha a(z) &quot;%1&quot; kulcsot használjuk.</translation>
     </message>
     <message>
         <source>The top margin</source>
-        <translation>Górny margines</translation>
+        <translation>A felső margó</translation>
     </message>
     <message>
         <source>Page bottom margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Dolny margines strony w bieżących jednostkach, takich jak 3,0 (tryb eksportu). Jeśli nie zostanie ustawiony, zostanie użyta wartość z domyślnej drukarki. Lub 0, jeśli nie znaleziono żadnej drukarki. Wartość zostanie zignorowana, jeśli użyto klucza&quot;%1&quot;.</translation>
+        <translation>Az oldal alsó margója a jelenlegi mértékegységben, például 3.0-ban (exportálási mód). Ha nincs beállítva, az alapértelmezett nyomtató értéke lesz használatban. Vagy 0, ha nem található nyomtató. Az érték figyelmen kívül marad, ha a(z) &quot;%1&quot; kulcsot használjuk.</translation>
     </message>
     <message>
         <source>The bottom margin</source>
-        <translation>Dolny margines</translation>
+        <translation>Az alsó margó</translation>
     </message>
     <message>
         <source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
-        <translation>Obrót w stopniach (jeden z predefiniowanych trybów eksportu). Wartość domyślna to 180. 0 oznacza brak obrotu. Prawidłowe wartości: %1. Każda wartość wskazuje, ile razy szczegóły zostaną obrócone. Na przykład 180 oznacza dwa obroty (360/180=2) o 180 stopni.</translation>
+        <translation>Elforgatás fokban (egy előre definiált, exportálási mód). Az alapértelmezett érték 180. A 0 a forgatás letiltását jelenti. Érvényes értékek: %1. Minden érték megmutatja, hogy a részletek hányszor lesznek elforgatva. Például a 180 kétszer (360/180=2) 180 fokkal.</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Auto crop unused length (export mode).</source>
-        <translation>Automatyczne przycinanie nieużywanej długości (tryb eksportu).</translation>
+        <translation>A fel nem használt hossz automatikus levágása (exportálás mód).</translation>
     </message>
     <message>
         <source>Unite pages if possible (export mode). Maximum value limited by QImage that supports only a maximum of 32768x32768 px images.</source>
-        <translation>Połącz strony, jeśli to możliwe (tryb eksportu). Maksymalna wartość jest ograniczona przez QImage, który obsługuje tylko obrazy o maksymalnej rozdzielczości 32768 x 32768 pikseli.</translation>
+        <translation>Egyesítse az oldalakat, ha lehetséges (exportálás mód). A maximális értéket a QImage korlátozza, amely csak maximum 32768x32768 px méretű képeket támogat.</translation>
     </message>
     <message>
         <source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
-        <translation>Zapisz długość arkusza, jeśli ustawiono (tryb eksportu). Ta opcja nakazuje programowi wykorzystanie jak największej szerokości arkusza. Jakość układu może być gorsza, gdy używana jest ta opcja.</translation>
+        <translation>Mentse el a lap hosszát, ha be van állítva (exportálási mód). Ez az opció azt jelzi a programnak, hogy a lehető legnagyobb lapszélességet használja. Az elrendezés minősége rosszabb lehet, ha ezt az opciót használja.</translation>
     </message>
     <message>
         <source>Layout units (as paper&apos;s one except px, export mode).</source>
-        <translation>Jednostki układu (jak na papierze, z wyjątkiem px, tryb eksportu).</translation>
+        <translation>Elrendezési egységek (mint a papíré, kivéve a px-t, exportálási mód).</translation>
     </message>
     <message>
         <source>The unit</source>
-        <translation>Jednostka</translation>
+        <translation>Az egység</translation>
     </message>
     <message>
         <source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
-        <translation>Długość układu przesunięcia/odsunięcia mierzona w jednostkach układu (tryb eksportu). Opcja pokazuje, ile punktów wzdłuż krawędzi zostanie użytych do utworzenia układu.</translation>
+        <translation>Eltolás/eltolás elrendezési hosszának mérése elrendezési egységekben (export mód). Ez az opció megmutatja, hogy az él mentén hány pontot fog használni az elrendezés létrehozásakor.</translation>
     </message>
     <message>
         <source>Shift/Offset length</source>
-        <translation>Długość przesunięcia/przesunięcia</translation>
+        <translation>Eltolás/eltolás hossza</translation>
     </message>
     <message>
         <source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
-        <translation>Szerokość odstępu między elementami układu x2, mierzona w jednostkach układu (tryb eksportu). Ustaw odległość między szczegółami a szczegółem i arkuszem.</translation>
+        <translation>Az elrendezési hézag szélessége x2, elrendezési egységekben mérve (export mód). Adja meg a részletek és egy részlet, valamint egy lap közötti távolságot.</translation>
     </message>
     <message>
         <source>The gap width</source>
-        <translation>Szerokość szczeliny</translation>
+        <translation>A rés szélessége</translation>
     </message>
     <message>
         <source>Sets layout groupping cases (export mode): %1.</source>
-        <translation>Ustawia przypadki grupowania układów (tryb eksportu): %1.</translation>
+        <translation>Elrendezési csoportosítási esetek beállítása (exportálási mód): %1.</translation>
     </message>
     <message>
         <source>Grouping type</source>
-        <translation>Typ grupowania</translation>
+        <translation>Csoportosítási típus</translation>
     </message>
     <message>
         <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
-        <translation>Uruchom program w trybie testowym. Program w tym trybie ładuje pojedynczy plik wzorcowy i zamyka się automatycznie, bez wyświetlania okna głównego. Klucz ma priorytet przed kluczem &apos;%1&apos;.</translation>
+        <translation>Futtassa a programot teszt módban. A program ebben a módban egyetlen mintafájlt tölt be, majd csendben kilép a főablak megjelenítése nélkül. A kulcs prioritást élvez a(z) &apos;%1&apos; kulcs előtt.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Wyłącz skalowanie w wysokiej rozdzielczości. Wybierz tę opcję, jeśli występują problemy ze skalowaniem (domyślnie skalowanie jest włączone). Alternatywnie możesz użyć zmiennej środowiskowej %1.</translation>
+        <translation>Tiltsa le a nagy dpi-s méretezést. Hívja meg ezt az opciót, ha probléma van a méretezéssel (alapértelmezés szerint a méretezés engedélyezve van). Alternatív megoldásként használhatja a %1 környezeti változót.</translation>
     </message>
     <message>
         <source>Cannot use pageformat and page explicit size/units together.</source>
-        <translation>Nie można jednocześnie używać formatu strony i rozmiaru/jednostek strony.</translation>
+        <translation>Nem használható együtt az oldalformátum és az oldalra vonatkozó explicit méret/egység.</translation>
     </message>
     <message>
         <source>Page height, width, units must be used all 3 at once.</source>
-        <translation>Wysokość strony, szerokość i jednostki muszą być użyte wszystkie 3 naraz.</translation>
+        <translation>Az oldal magasságát, szélességét és mértékegységeit egyszerre kell használni.</translation>
     </message>
     <message>
         <source>Shift/Offset length must be used together with shift units.</source>
-        <translation>Długość przesunięcia/przesunięcia musi być używana łącznie z jednostkami przesunięcia.</translation>
+        <translation>Az eltolás/eltoláshossz paramétert az eltolás mértékegységeivel együtt kell használni.</translation>
     </message>
     <message>
         <source>Gap width must be used together with shift units.</source>
-        <translation>Szerokość szczeliny musi być używana łącznie z jednostkami przesunięcia.</translation>
+        <translation>A rés szélességét az eltolás mértékegységeivel együtt kell használni.</translation>
     </message>
     <message>
         <source>Left margin must be used together with page units.</source>
-        <translation>Lewy margines musi być używany łącznie z jednostkami strony.</translation>
+        <translation>A bal margót az oldalegységekkel együtt kell használni.</translation>
     </message>
     <message>
         <source>Right margin must be used together with page units.</source>
-        <translation>Prawy margines musi być używany łącznie z jednostkami stronicowymi.</translation>
+        <translation>A jobb margót az oldalegységekkel együtt kell használni.</translation>
     </message>
     <message>
         <source>Top margin must be used together with page units.</source>
-        <translation>Górny margines musi być używany łącznie z jednostkami strony.</translation>
+        <translation>A felső margót az oldalegységekkel együtt kell használni.</translation>
     </message>
     <message>
         <source>Bottom margin must be used together with page units.</source>
-        <translation>Dolny margines musi być używany łącznie z jednostkami strony.</translation>
+        <translation>Az alsó margót az oldalegységekkel együtt kell használni.</translation>
     </message>
     <message>
         <source>Invalid rotation value. That must be one of predefined values.</source>
-        <translation>Nieprawidłowa wartość obrotu. Musi to być jedna z predefiniowanych wartości.</translation>
+        <translation>Érvénytelen forgatási érték. Ennek az előre definiált értékek egyikének kell lennie.</translation>
     </message>
     <message>
         <source>Unknown page templated selected.</source>
-        <translation>Wybrano nieznany szablon strony.</translation>
+        <translation>Ismeretlen oldalsablon lett kiválasztva.</translation>
     </message>
     <message>
         <source>Unsupported paper units.</source>
-        <translation>Nieobsługiwane jednostki papieru.</translation>
+        <translation>Nem támogatott papíregységek.</translation>
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Nieobsługiwane jednostki układu.</translation>
+        <translation>Nem támogatott elrendezési egységek.</translation>
     </message>
     <message>
         <source>Test option can be used with single input file only.</source>
-        <translation>Opcja testowa może być używana tylko z pojedynczym plikiem wejściowym.</translation>
+        <translation>A teszt opció csak egyetlen bemeneti fájllal használható.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
-        <translation>Opcje eksportu można stosować tylko w przypadku pojedynczego pliku wejściowego.</translation>
+        <translation>Az exportálási beállítások csak egyetlen bemeneti fájllal használhatók.</translation>
     </message>
     <message>
         <source>Invalid gradation size value.</source>
-        <translation>Nieprawidłowa wartość rozmiaru gradacji.</translation>
+        <translation>Érvénytelen gradációméret érték.</translation>
     </message>
     <message>
         <source>Invalid gradation height value.</source>
-        <translation>Nieprawidłowa wartość wysokości gradacji.</translation>
+        <translation>Érvénytelen gradációs magasságérték.</translation>
     </message>
 </context>
 <context>
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>pomiary</translation>
+        <translation>mérések</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>indywidualny</translation>
+        <translation>egyén</translation>
     </message>
     <message>
         <source>multisize</source>
-        <translation>wielorozmiarowy</translation>
+        <translation>többméretű</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>szablony</translation>
+        <translation>sablonok</translation>
     </message>
     <message>
         <source>bodyscans</source>
-        <translation>skanowanie ciała</translation>
+        <translation>testszkennelések</translation>
     </message>
     <message>
         <source>images</source>
-        <translation>obrazy</translation>
+        <translation>képek</translation>
     </message>
     <message>
         <source>label templates</source>
-        <translation>szablony etykiet</translation>
+        <translation>címkesablonok</translation>
     </message>
     <message>
         <source>backups</source>
-        <translation>kopie zapasowe</translation>
+        <translation>mentések</translation>
     </message>
 </context>
 <context>
     <name>VContainer</name>
     <message>
         <source>Can&apos;t find object: </source>
-        <translation>Nie można znaleźć obiektu: </translation>
+        <translation>Nem található az objektum: </translation>
     </message>
     <message>
         <source>Can&apos;t find piece: </source>
-        <translation>Nie można znaleźć elementu: </translation>
+        <translation>Nem található a darab: </translation>
     </message>
     <message>
         <source>Can&apos;t find path: </source>
-        <translation>Nie można znaleźć ścieżki: </translation>
+        <translation>Nem található az elérési út: </translation>
     </message>
     <message>
         <source>Number of free id exhausted.</source>
-        <translation>Wyczerpana liczba wolnych identyfikatorów.</translation>
+        <translation>Elfogyott a szabad azonosítók száma.</translation>
     </message>
     <message>
         <source>Can&apos;t create a curve with type &apos;%1&apos;</source>
-        <translation>Nie można utworzyć krzywej o typie &apos;%1&apos;</translation>
+        <translation>Nem hozható létre görbe &apos;%1&apos; típussal</translation>
     </message>
     <message>
         <source>Can&apos;t find object</source>
-        <translation>Nie można znaleźć obiektu</translation>
+        <translation>Nem található az objektum</translation>
     </message>
     <message>
         <source>Can&apos;t find object Id: </source>
-        <translation>Nie można znaleźć identyfikatora obiektu: </translation>
+        <translation>Nem található az objektumazonosító: </translation>
     </message>
     <message>
         <source>Can&apos;t cast object</source>
-        <translation>Nie można rzucić obiektu</translation>
+        <translation>Nem lehet objektumot másolni</translation>
     </message>
     <message>
         <source>Can&apos;t cast object.</source>
-        <translation>Nie można rzucić obiektu.</translation>
+        <translation>Nem lehet objektumot varázsolni.</translation>
     </message>
     <message>
         <source>Can&apos;t find object. Type mismatch.</source>
-        <translation>Nie można znaleźć obiektu. Niezgodność typu.</translation>
+        <translation>Nem található az objektum. Típuseltérés.</translation>
     </message>
 </context>
 <context>
     <name>VCubicBezierPath</name>
     <message>
         <source>Not enough points to create the spline.</source>
-        <translation>Za mało punktów, aby utworzyć linię krzywą.</translation>
+        <translation>Nincs elég pont a spline létrehozásához.</translation>
     </message>
     <message>
         <source>This spline does not exist.</source>
-        <translation>Ta linia krzywa nie istnieje.</translation>
+        <translation>Ez a spline nem létezik.</translation>
     </message>
 </context>
 <context>
     <name>VDomDocument</name>
     <message>
         <source>Fail to write Canonical XML.</source>
-        <translation>Nie udało się zapisać kanonicznego XML.</translation>
+        <translation>Nem sikerült a kanonikus XML-t írni.</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
-        <translation>To id nie jest unikalne.</translation>
+        <translation>Ez az azonosító nem egyedi.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
 %2.</source>
-        <translation>Nie można otworzyć pliku schematu %1:
-%2.</translation>
+        <translation>A(z) %1:
+%2 sémafájl nem nyitható meg.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load schema</source>
-        <translation>Nie można załadować schematu</translation>
+        <translation>Nem sikerült betölteni a sémát</translation>
     </message>
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation>Nie można otworzyć pliku wzorca %1:
-%2.</translation>
+        <translation>A(z) %1:
+%2 mintafájl nem nyitható meg.</translation>
     </message>
     <message>
         <source>Validation error file %1</source>
-        <translation>Błąd walidacji pliku %1</translation>
+        <translation>Érvényesítési hiba a(z) %1 fájlban</translation>
     </message>
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Nie można otworzyć pliku %1:
-%2.</translation>
+        <translation>A(z) %1:
+%2 fájl nem nyitható meg.</translation>
     </message>
     <message>
         <source>Parsing error file %3 in line %1 column %2</source>
-        <translation>Błąd analizy pliku %3 w wierszu %1 kolumnie %2</translation>
+        <translation>%3 fájl elemzési hibája a(z) %1. sorban, %2. oszlopban</translation>
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Nie można uzyskać węzła</translation>
+        <translation>Nem sikerült lekérni a csomópontot</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation>&lt;pusty&gt;</translation>
+        <translation>&lt;üres&gt;</translation>
     </message>
 </context>
 <context>
     <name>VDrawTool</name>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Tulajdonságok</translation>
     </message>
     <message>
         <source>Show Point Name</source>
-        <translation>Pokaż nazwę punktu</translation>
+        <translation>Pontonnév megjelenítése</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiuj</translation>
+        <translation>Másolat</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Przenieś obiekt grupy</translation>
+        <translation>Csoportobjektum áthelyezése</translation>
     </message>
     <message>
         <source>From </source>
-        <translation>Od </translation>
+        <translation>Tól </translation>
     </message>
     <message>
         <source> to </source>
-        <translation> do </translation>
+        <translation> -hoz </translation>
     </message>
     <message>
         <source>Add Group Object</source>
-        <translation>Dodaj obiekt grupy</translation>
+        <translation>Csoportobjektum hozzáadása</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Usuń obiekt grupy</translation>
+        <translation>Csoportobjektum eltávolítása</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation>Linia_</translation>
+        <translation>Sor_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Łuk_</translation>
+        <translation>Ív_</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -12679,773 +12678,773 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation>Spl_</translation>
+        <translation>Kiegészítő_</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Ścieżka Spl_</translation>
+        <translation>Elérési_útvonal</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation>Linia kąta_</translation>
+        <translation>SzögVonal_</translation>
     </message>
 </context>
 <context>
     <name>VException</name>
     <message>
         <source>Exception: %1</source>
-        <translation>Wyjątek: %1</translation>
+        <translation>Kivétel: %1</translation>
     </message>
 </context>
 <context>
     <name>VFormula</name>
     <message>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Hiba</translation>
     </message>
 </context>
 <context>
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Formuła:</translation>
+        <translation>Képlet:</translation>
     </message>
 </context>
 <context>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>Element %1 nie ma kształtu.</translation>
+        <translation>A(z) %1 darabnak nincs alakja.</translation>
     </message>
 </context>
 <context>
     <name>VNodePoint</name>
     <message>
         <source>Show Point Name</source>
-        <translation>Pokaż nazwę punktu</translation>
+        <translation>Pontonnév megjelenítése</translation>
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation>Kąt naddatku na szew</translation>
+        <translation>Varratráhagyás szöge</translation>
     </message>
     <message>
         <source>By length</source>
-        <translation>Według długości</translation>
+        <translation>Hossz szerint</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Skrzyżowanie</translation>
+        <translation>Kereszteződés</translation>
     </message>
     <message>
         <source>First edge symmetry</source>
-        <translation>Pierwsza symetria krawędzi</translation>
+        <translation>Első él szimmetriája</translation>
     </message>
     <message>
         <source>Second edge symmetry</source>
-        <translation>Druga symetria krawędzi</translation>
+        <translation>Második él szimmetriája</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation>Pierwsza krawędź pod kątem prostym</translation>
+        <translation>Az első él derékszöge</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation>Druga krawędź pod kątem prostym</translation>
+        <translation>A második él derékszöge</translation>
     </message>
     <message>
         <source>Notch</source>
-        <translation>Wycięcie</translation>
+        <translation>Bevágás</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Típus</translation>
     </message>
     <message>
         <source>None</source>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Szczelina</translation>
+        <translation>Rés</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Wycięcie T</translation>
+        <translation>TNotch</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>Felbontás</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>VInternal</translation>
+        <translation>V belső</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>VExternal</translation>
+        <translation>Külső</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Zamek</translation>
+        <translation>Vár</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Diament</translation>
+        <translation>Gyémánt</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation>Podtyp</translation>
+        <translation>Altípus</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Prosty</translation>
+        <translation>Egyszerű</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Dwusieczna</translation>
+        <translation>Felező</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation>Liczba</translation>
+        <translation>Gróf</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation>Wykluczone</translation>
+        <translation>Kizárva</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Törlés</translation>
     </message>
 </context>
 <context>
     <name>VPE::VBoolProperty</name>
     <message>
         <source>True</source>
-        <translation>Prawda</translation>
+        <translation>Igaz</translation>
     </message>
     <message>
         <source>False</source>
-        <translation>Fałsz</translation>
+        <translation>Hamis</translation>
     </message>
 </context>
 <context>
     <name>VPE::VFileEditWidget</name>
     <message>
         <source>Directory</source>
-        <translation>Katalog</translation>
+        <translation>Címtár</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Otwórz plik</translation>
+        <translation>Fájl megnyitása</translation>
     </message>
 </context>
 <context>
     <name>VPattern</name>
     <message>
         <source>Error not unique id.</source>
-        <translation>Błąd: nieunikalny identyfikator.</translation>
+        <translation>Hiba: nem egyedi azonosító.</translation>
     </message>
     <message>
         <source>Error parsing file.</source>
-        <translation>Błąd podczas analizowania pliku.</translation>
+        <translation>Hiba a fájl elemzésekor.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value.</source>
-        <translation>Błąd: nie można przekonwertować wartości.</translation>
+        <translation>Hiba történt, nem lehet konvertálni az értéket.</translation>
     </message>
     <message>
         <source>Error empty parameter.</source>
-        <translation>Błąd: pusty parametr.</translation>
+        <translation>Hiba az üres paraméterrel.</translation>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation>Błąd, błędny identyfikator.</translation>
+        <translation>Hiba: rossz azonosító.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
-        <translation>Błąd podczas analizowania pliku (std::bad_alloc).</translation>
+        <translation>Hiba a fájl elemzésekor (std::bad_alloc).</translation>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Błędna nazwa tagu &apos;%1&apos;.</translation>
+        <translation>Hibás címkenév: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Kawałek</translation>
+        <translation>Darab</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>biały</translation>
+        <translation>fehér</translation>
     </message>
     <message>
         <source>nobrush</source>
-        <translation>bezszczotkowy</translation>
+        <translation>nobrush</translation>
     </message>
     <message>
         <source>Error creating or updating piece</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania elementu</translation>
+        <translation>Hiba történt a darab létrehozása vagy frissítése során</translation>
     </message>
     <message>
         <source>Image_name</source>
-        <translation>Nazwa_obrazu</translation>
+        <translation>Kép_neve</translation>
     </message>
     <message>
         <source>Unknown point type &apos;%1&apos;.</source>
-        <translation>Nieznany typ punktu &apos;%1&apos;.</translation>
+        <translation>Ismeretlen ponttípus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating line</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania wiersza</translation>
+        <translation>Hiba a sor létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating single point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania pojedynczego punktu</translation>
+        <translation>Hiba az egyetlen pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of end line</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu końcowego linii</translation>
+        <translation>Hiba a végvonal létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point along line</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu wzdłuż linii</translation>
+        <translation>Hiba történt a vonal mentén lévő pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of shoulder</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu pobocza</translation>
+        <translation>Hiba a vállpont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of normal</source>
-        <translation>Błąd tworzenia lub aktualizacji punktu normalnego</translation>
+        <translation>Hiba a normálpont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of bisector</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu dwusiecznej</translation>
+        <translation>Hiba a felezőpont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of line intersection</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu przecięcia linii</translation>
+        <translation>Hiba történt a vonalmetszéspont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of contact</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu kontaktowego</translation>
+        <translation>Hiba történt a kapcsolattartási pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating modeling point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu modelowania</translation>
+        <translation>Hiba a modellezési pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating anchor point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu kotwiczenia</translation>
+        <translation>Hiba történt a horgonypont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating height</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania wysokości</translation>
+        <translation>Hiba a magasság létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating triangle</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania trójkąta</translation>
+        <translation>Hiba a háromszög létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating Intersect XY tool</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania narzędzia Intersect XY</translation>
+        <translation>Hiba történt az XY metszéspont eszköz létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating cut spline point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu cięcia</translation>
+        <translation>Hiba a vágóspline-pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating cut spline path point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu ścieżki cięcia</translation>
+        <translation>Hiba a vágóspline útvonalpont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating cut arc point</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu łuku cięcia</translation>
+        <translation>Hiba a vágási ívpont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection line and axis</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu przecięcia linii i osi</translation>
+        <translation>Hiba a metszéspont és a tengely létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection curve and axis</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktu przecięcia krzywej i osi</translation>
+        <translation>Hiba a metszéspont görbéjének és tengelyének létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktów przecięcia łuków</translation>
+        <translation>Hiba a metszéspontok íveinek létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection circles</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania punktów okręgów przecięcia</translation>
+        <translation>Hiba a metszéspont körök létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection curves</source>
-        <translation>Błąd podczas tworzenia lub aktualizacji krzywych punktu przecięcia</translation>
+        <translation>Hiba a metszéspont-görbék létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point from circle and tangent</source>
-        <translation>Błąd tworzenia lub aktualizacji punktu z okręgu i stycznej</translation>
+        <translation>Hiba történt a körből és érintőből származó pont létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating point from arc and tangent</source>
-        <translation>Błąd tworzenia lub aktualizacji punktu na podstawie łuku i stycznej</translation>
+        <translation>Hiba történt az ív és érintő pontjának létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating true darts</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prawdziwych rzutek</translation>
+        <translation>Hiba történt a true darts létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating simple curve</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prostej krzywej</translation>
+        <translation>Hiba az egyszerű görbe létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating simple interactive spline</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prostej interaktywnej linii krzywej</translation>
+        <translation>Hiba az egyszerű interaktív spline létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating cubic bezier curve</source>
-        <translation>Błąd podczas tworzenia lub aktualizacji krzywej Béziera sześciennego</translation>
+        <translation>Hiba történt a harmadfokú bezier-görbe létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating curve path</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania ścieżki krzywej</translation>
+        <translation>Hiba történt a görbe útvonal létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating interactive spline path</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania interaktywnej ścieżki krzywej</translation>
+        <translation>Hiba az interaktív spline-útvonal létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating cubic bezier path curve</source>
-        <translation>Błąd podczas tworzenia lub aktualizacji krzywej ścieżki Béziera sześciennego</translation>
+        <translation>Hiba történt a harmadfokú bezier-görbe létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating modeling simple curve</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prostej krzywej modelowania</translation>
+        <translation>Hiba történt az egyszerű görbe modellezése közben</translation>
     </message>
     <message>
         <source>Error creating or updating modeling curve path</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania ścieżki krzywej modelowania</translation>
+        <translation>Hiba történt a modellező görbe útvonalának létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating simple arc</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prostego łuku</translation>
+        <translation>Hiba az egyszerű ív létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating simple elliptical arc</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania prostego łuku eliptycznego</translation>
+        <translation>Hiba az egyszerű ellipszis ív létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating modeling elliptical arc</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania modelowanego łuku eliptycznego</translation>
+        <translation>Hiba történt az ellipszisív modellezésének létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating modeling arc</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania łuku modelowania</translation>
+        <translation>Hiba a modellező ív létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating operation of rotation</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania operacji obrotu</translation>
+        <translation>Hiba a forgatás műveletének létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by line</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania operacji lustra według wiersza</translation>
+        <translation>Hiba a soronkénti tükrözés létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by axis</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania operacji lustra według osi</translation>
+        <translation>Hiba a tengelyenkénti tükörművelet létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania operacji przenoszenia</translation>
+        <translation>Hiba történt az áthelyezési művelet létrehozása vagy frissítése során</translation>
     </message>
     <message>
         <source>Unknown spline type &apos;%1&apos;.</source>
-        <translation>Nieznany typ splajnu &apos;%1&apos;.</translation>
+        <translation>Ismeretlen spline típus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown arc type &apos;%1&apos;.</source>
-        <translation>Nieznany typ łuku &apos;%1&apos;.</translation>
+        <translation>Ismeretlen ívtípus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown elliptical arc type &apos;%1&apos;.</source>
-        <translation>Nieznany typ łuku eliptycznego &apos;%1&apos;.</translation>
+        <translation>Ismeretlen elliptikus ívtípus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania elementów łącznych</translation>
+        <translation>Hiba történt az egyesített darabok létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Nieznany typ narzędzia &apos;%1&apos;.</translation>
+        <translation>Ismeretlen eszköztípus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>Nieznany typ operacji &apos;%1&apos;.</translation>
+        <translation>Ismeretlen művelettípus: &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unnamed path</source>
-        <translation>Nienazwana ścieżka</translation>
+        <translation>Névtelen elérési út</translation>
     </message>
     <message>
         <source>Error creating or updating a piece path</source>
-        <translation>Błąd podczas tworzenia lub aktualizowania ścieżki fragmentu</translation>
+        <translation>Hiba történt egy darabútvonal létrehozásakor vagy frissítésekor</translation>
     </message>
     <message>
         <source>Piece path doesn&apos;t contain nodes</source>
-        <translation>Ścieżka elementu nie zawiera węzłów</translation>
+        <translation>A darabútvonal nem tartalmaz csomópontokat</translation>
     </message>
 </context>
 <context>
     <name>VPoster</name>
     <message>
         <source>Grid ( %1 , %2 )</source>
-        <translation>Siatka ( %1 , %2 )</translation>
+        <translation>Rács ( %1 , %2 )</translation>
     </message>
     <message>
         <source>Page %1 of %2</source>
-        <translation>Strona %1 z %2</translation>
+        <translation>%2 oldalból %1</translation>
     </message>
     <message>
         <source>Sheet %1 of %2</source>
-        <translation>Arkusz %1 z %2</translation>
+        <translation>%2 munkalapból %1</translation>
     </message>
 </context>
 <context>
     <name>VSettings</name>
     <message>
         <source>patterns</source>
-        <translation>wzorce</translation>
+        <translation>minták</translation>
     </message>
     <message>
         <source>layouts</source>
-        <translation>układy</translation>
+        <translation>elrendezések</translation>
     </message>
 </context>
 <context>
     <name>VSplinePath</name>
     <message>
         <source>Not enough points to create the spline.</source>
-        <translation>Za mało punktów, aby utworzyć linię krzywą.</translation>
+        <translation>Nincs elég pont a spline létrehozásához.</translation>
     </message>
     <message>
         <source>This spline does not exist.</source>
-        <translation>Ta linia krzywa nie istnieje.</translation>
+        <translation>Ez a spline nem létezik.</translation>
     </message>
 </context>
 <context>
     <name>VToolAlongLine</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolArc</name>
     <message>
         <source>     Length</source>
-        <translation>     Długość</translation>
+        <translation>     Hossz</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Promień</translation>
+        <translation>     Sugár</translation>
     </message>
     <message>
         <source>Start angle</source>
-        <translation>Kąt początkowy</translation>
+        <translation>Indítási szög</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Kąt końcowy</translation>
+        <translation>  Végszög</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etykieta</translation>
+        <translation>      Címke</translation>
     </message>
 </context>
 <context>
     <name>VToolArcWithLength</name>
     <message>
         <source>     Length</source>
-        <translation>     Długość</translation>
+        <translation>     Hossz</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Promień</translation>
+        <translation>     Sugár</translation>
     </message>
     <message>
         <source>Start angle</source>
-        <translation>Kąt początkowy</translation>
+        <translation>Indítási szög</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Kąt końcowy</translation>
+        <translation>  Végszög</translation>
     </message>
     <message>
         <source>      Name</source>
-        <translation>      Nazwa</translation>
+        <translation>      Név</translation>
     </message>
     <message>
         <source>      Tool</source>
-        <translation>      Narzędzie</translation>
+        <translation>      Szerszám</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Łuk – promień i długość</translation>
+        <translation>Ív - Sugár és Hossz</translation>
     </message>
 </context>
 <context>
     <name>VToolBasePoint</name>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można utworzyć punktu przecięcia %1 z punktem %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;z krzywą %3 z kątem osi %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego, dopóki wzór nie zostanie poprawiony.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Nem hozható létre a %1 metszéspont a %2 ponttól&lt;/b&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;a %3 görbéhez %4°-os tengelyszöggel&lt;/b&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Punkt przecięcia krzywej i osi</translation>
+        <translation>Ív és tengely metszéspontja</translation>
     </message>
 </context>
 <context>
     <name>VToolCutArc</name>
     <message>
         <source>Arc</source>
-        <translation>Łuk</translation>
+        <translation>Ív</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>długość</translation>
+        <translation>hosszúság</translation>
     </message>
     <message>
         <source>start angle</source>
-        <translation>kąt początkowy</translation>
+        <translation>kezdőszög</translation>
     </message>
     <message>
         <source>end angle</source>
-        <translation>kąt końcowy</translation>
+        <translation>végszög</translation>
     </message>
     <message>
         <source>radius</source>
-        <translation>promień</translation>
+        <translation>sugár</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>etykieta</translation>
+        <translation>címke</translation>
     </message>
 </context>
 <context>
     <name>VToolCutSpline</name>
     <message>
         <source>Curve</source>
-        <translation>Krzywa</translation>
+        <translation>Görbe</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>długość</translation>
+        <translation>hosszúság</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>etykieta</translation>
+        <translation>címke</translation>
     </message>
 </context>
 <context>
     <name>VToolCutSplinePath</name>
     <message>
         <source>Curve</source>
-        <translation>Krzywa</translation>
+        <translation>Görbe</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>długość</translation>
+        <translation>hosszúság</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>etykieta</translation>
+        <translation>címke</translation>
     </message>
 </context>
 <context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
     <message>
         <source>     Length</source>
-        <translation>     Długość</translation>
+        <translation>     Hossz</translation>
     </message>
     <message>
         <source>    Radius</source>
-        <translation>    Promień</translation>
+        <translation>    Sugár</translation>
     </message>
     <message>
         <source>Start angle</source>
-        <translation>Kąt początkowy</translation>
+        <translation>Indítási szög</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Kąt końcowy</translation>
+        <translation>  Végszög</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etykieta</translation>
+        <translation>      Címke</translation>
     </message>
 </context>
 <context>
     <name>VToolHeight</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolLine</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
 </context>
 <context>
     <name>VToolLineIntersect</name>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 linii i osi&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Nem található a(z) %1 metszéspont a következőhöz:&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;Vonal és tengely&lt;/b&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Przecięcie linii i osi</translation>
+        <translation>Vonal és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolLinePoint</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolMirrorByAxis</name>
     <message>
         <source>Origin point</source>
-        <translation>Punkt początkowy</translation>
+        <translation>Kiindulási pont</translation>
     </message>
 </context>
 <context>
     <name>VToolMirrorByLine</name>
     <message>
         <source>First line point</source>
-        <translation>Pierwszy punkt linii</translation>
+        <translation>Első sorpont</translation>
     </message>
     <message>
         <source>Second line point</source>
-        <translation>Drugi punkt linii</translation>
+        <translation>Második vonali pont</translation>
     </message>
 </context>
 <context>
     <name>VToolMove</name>
     <message>
         <source>Center point</source>
-        <translation>Punkt środkowy</translation>
+        <translation>Középpont</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Rotation point</source>
-        <translation>Punkt obrotu</translation>
+        <translation>Forgáspont</translation>
     </message>
     <message>
         <source>Rotation angle</source>
-        <translation>Kąt obrotu</translation>
+        <translation>Forgásszög</translation>
     </message>
 </context>
 <context>
     <name>VToolOptionsPropertyBrowser</name>
     <message>
         <source>Center point</source>
-        <translation>Punkt środkowy</translation>
+        <translation>Középpont</translation>
     </message>
     <message>
         <source>Base point</source>
-        <translation>Punkt bazowy</translation>
+        <translation>Alappont</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Wybór</translation>
+        <translation>Kiválasztás</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Imię:</translation>
+        <translation>Név:</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Współrzędne</translation>
+        <translation>Koordináták</translation>
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Punkt – długość i kąt</translation>
+        <translation>Pont - Hosszúság és Szög</translation>
     </message>
     <message>
         <source>Base point:</source>
-        <translation>Punkt bazowy:</translation>
+        <translation>Alappont:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -13453,485 +13452,485 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Hossz:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Kąt:</translation>
+        <translation>Szög:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Atrybuty</translation>
+        <translation>Attribútumok</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolor:</translation>
+        <translation>Szín:</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Rodzaj linii:</translation>
+        <translation>Vonaltípus:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Szerokość linii:</translation>
+        <translation>Vonalvastagság:</translation>
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Punkt – Na linii</translation>
+        <translation>Pont - Vonalban</translation>
     </message>
     <message>
         <source>First point:</source>
-        <translation>Pierwszy punkt:</translation>
+        <translation>Első pont:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation>Drugi punkt:</translation>
+        <translation>Második pont:</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Łuk – promień i kąty</translation>
+        <translation>Ív - Sugár és szögek</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Łuk_</translation>
+        <translation>Ív_</translation>
     </message>
     <message>
         <source>Center point:</source>
-        <translation>Punkt środkowy:</translation>
+        <translation>Középpont:</translation>
     </message>
     <message>
         <source>Radius:</source>
-        <translation>Promień:</translation>
+        <translation>Sugár:</translation>
     </message>
     <message>
         <source>First angle:</source>
-        <translation>Pierwszy kąt:</translation>
+        <translation>Első szög:</translation>
     </message>
     <message>
         <source>Second angle:</source>
-        <translation>Drugi kąt:</translation>
+        <translation>Második szög:</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Łuk – promień i długość</translation>
+        <translation>Ív - Sugár és Hossz</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punkt – na dwusiecznej</translation>
+        <translation>Pont - Felezőmezőn</translation>
     </message>
     <message>
         <source>Third point:</source>
-        <translation>Trzeci punkt:</translation>
+        <translation>Harmadik pont:</translation>
     </message>
     <message>
         <source>True darts</source>
-        <translation>Prawdziwe lotki</translation>
+        <translation>Igazi darts</translation>
     </message>
     <message>
         <source>Point 1 label:</source>
-        <translation>Etykieta punktu 1:</translation>
+        <translation>1. pont címkéje:</translation>
     </message>
     <message>
         <source>Point 2 label:</source>
-        <translation>Etykieta punktu 2:</translation>
+        <translation>2. pont címkéje:</translation>
     </message>
     <message>
         <source>First base point:</source>
-        <translation>Pierwszy punkt bazowy:</translation>
+        <translation>Első alappont:</translation>
     </message>
     <message>
         <source>Second base point:</source>
-        <translation>Drugi punkt bazowy:</translation>
+        <translation>Második alappont:</translation>
     </message>
     <message>
         <source>First dart point:</source>
-        <translation>Pierwszy punkt rzutki:</translation>
+        <translation>Első dartspont:</translation>
     </message>
     <message>
         <source>Second dart point:</source>
-        <translation>Drugi punkt rzutki:</translation>
+        <translation>Második nyílvessző:</translation>
     </message>
     <message>
         <source>Third dart point:</source>
-        <translation>Trzeci punkt rzutki:</translation>
+        <translation>Harmadik nyílvessző:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punkt – Łuk</translation>
+        <translation>Pont - Ív mentén</translation>
     </message>
     <message>
         <source>Arc:</source>
-        <translation>Łuk:</translation>
+        <translation>Ív:</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Kierunek:</translation>
+        <translation>Irány:</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Punkt – na krzywej</translation>
+        <translation>Pont - Ívben</translation>
     </message>
     <message>
         <source>Curve:</source>
-        <translation>Krzywa:</translation>
+        <translation>Görbe:</translation>
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Punkt – na krzywej</translation>
+        <translation>Pont - Spline-on</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punkt – linia przecięcia i prostopadła</translation>
+        <translation>Pont - Egyenes és merőleges metszéspontja</translation>
     </message>
     <message>
         <source>First line point:</source>
-        <translation>Pierwszy punkt linii:</translation>
+        <translation>Első sori pont:</translation>
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Drugi punkt linii:</translation>
+        <translation>Második vonali pont:</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Linia</translation>
+        <translation>Vonal</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Punkt – Przecięcie linii</translation>
+        <translation>Pont - Metszővonalak</translation>
     </message>
     <message>
         <source>First line</source>
-        <translation>Pierwszy wiersz</translation>
+        <translation>Első sor</translation>
     </message>
     <message>
         <source>Second line</source>
-        <translation>Druga linia</translation>
+        <translation>Második sor</translation>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punkt – prostopadły</translation>
+        <translation>Pont - Merőlegesen</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>Obrót:</translation>
+        <translation>Forgatás:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt – Przecięcie łuku i linii</translation>
+        <translation>Pont - Ív és egyenes metszéspontja</translation>
     </message>
     <message>
         <source>Center of arc:</source>
-        <translation>Środek łuku:</translation>
+        <translation>Ív középpontja:</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>Pierwszy punkt linii:</translation>
+        <translation>1. sor pontja:</translation>
     </message>
     <message>
         <source>2nd line point:</source>
-        <translation>2. punkt linii:</translation>
+        <translation>2. sori pont:</translation>
     </message>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Punkt - Przecięcie XY</translation>
+        <translation>Pont - Metszéspont XY</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punkt – Przecięcie łuków</translation>
+        <translation>Pont - Ívek metszéspontja</translation>
     </message>
     <message>
         <source>First arc:</source>
-        <translation>Pierwszy łuk:</translation>
+        <translation>Első ív:</translation>
     </message>
     <message>
         <source>Second arc:</source>
-        <translation>Drugi łuk:</translation>
+        <translation>Második ív:</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Weź:</translation>
+        <translation>Vedd el:</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punkt – Przecięcie okręgów</translation>
+        <translation>Pont - Körök metszéspontja</translation>
     </message>
     <message>
         <source>First circle:</source>
-        <translation>Pierwszy krąg:</translation>
+        <translation>Első kör:</translation>
     </message>
     <message>
         <source>Center:</source>
-        <translation>Środek:</translation>
+        <translation>Közép:</translation>
     </message>
     <message>
         <source>Second circle:</source>
-        <translation>Drugi krąg:</translation>
+        <translation>Második kör:</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punkt – Przecięcie krzywych</translation>
+        <translation>Pont - Metsző görbék</translation>
     </message>
     <message>
         <source>First curve:</source>
-        <translation>Pierwsza krzywa:</translation>
+        <translation>Első görbe:</translation>
     </message>
     <message>
         <source>Second curve:</source>
-        <translation>Druga krzywa:</translation>
+        <translation>Második görbe:</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>Ujęcie pionowe:</translation>
+        <translation>Függőleges felvétel:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>Ujęcie poziome:</translation>
+        <translation>Vízszintes felvétel:</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt – Przecięcie okręgu i stycznej</translation>
+        <translation>Pont - Kör és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Tangent point:</source>
-        <translation>Punkt styczności:</translation>
+        <translation>Érintőpont:</translation>
     </message>
     <message>
         <source>Circle radius:</source>
-        <translation>Promień okręgu:</translation>
+        <translation>Kör sugara:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt – Przecięcie łuku i stycznej</translation>
+        <translation>Pont - Ív és érintő metszéspontja</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Punkt – Długość do linii</translation>
+        <translation>Pont - Hossz a vonalig</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Krzywa – interaktywna</translation>
+        <translation>Görbe - Interaktív</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <translation>Spl_</translation>
+        <translation>Kiegészítő_</translation>
     </message>
     <message>
         <source>C1: length:</source>
-        <translation>C1: długość:</translation>
+        <translation>C1: hossz:</translation>
     </message>
     <message>
         <source>C1: angle:</source>
-        <translation>C1: kąt:</translation>
+        <translation>C1: szög:</translation>
     </message>
     <message>
         <source>C2: length:</source>
-        <translation>C2: długość:</translation>
+        <translation>C2: hossz:</translation>
     </message>
     <message>
         <source>C2: angle:</source>
-        <translation>C2: kąt:</translation>
+        <translation>C2: szög:</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Krzywa – stała</translation>
+        <translation>Ív - Rögzített</translation>
     </message>
     <message>
         <source>Fourth point:</source>
-        <translation>Czwarty punkt:</translation>
+        <translation>Negyedik pont:</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline – interaktywny</translation>
+        <translation>Spline - Interaktív</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Ścieżka Spl_</translation>
+        <translation>Elérési_útvonal</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline – Naprawiono</translation>
+        <translation>Spline - Rögzített</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punkt – Przecięcie osi i trójkąta</translation>
+        <translation>Pont - Tengely és Háromszög metszéspontja</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>1. punkt osi:</translation>
+        <translation>1. tengelypont:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>2. punkt osi:</translation>
+        <translation>2. tengelypont:</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis</source>
-        <translation>Punkt – przecięcie linii i osi</translation>
+        <translation>Pont - Egyenes és Tengely metszéspontja</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Punkt osi:</translation>
+        <translation>Tengelypont:</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Punkt – Przecięcie krzywej i osi</translation>
+        <translation>Pont - Görbe és tengely metszéspontja</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>Obrót</translation>
+        <translation>Forgatás</translation>
     </message>
     <message>
         <source>Rotation point:</source>
-        <translation>Punkt obrotu:</translation>
+        <translation>Forgáspont:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Sufiks:</translation>
+        <translation>Utótag:</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Przenieś</translation>
+        <translation>Áthelyezés</translation>
     </message>
     <message>
         <source>Origin point:</source>
-        <translation>Punkt początkowy:</translation>
+        <translation>Kiindulási pont:</translation>
     </message>
     <message>
         <source>Rotation angle:</source>
-        <translation>Kąt obrotu:</translation>
+        <translation>Forgásszög:</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Lustro według linii</translation>
+        <translation>Tükörvonalonként</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Lustro według osi</translation>
+        <translation>Tükör tengely mentén</translation>
     </message>
     <message>
         <source>Axis type:</source>
-        <translation>Typ osi:</translation>
+        <translation>Tengelytípus:</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Łuk - Eliptyczny</translation>
+        <translation>Ív - Ellipszis</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation>Linia_</translation>
+        <translation>Sor_</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Opcje</translation>
+        <translation>Beállítások</translation>
     </message>
     <message>
         <source>Smooth curve:</source>
-        <translation>Gładka krzywa:</translation>
+        <translation>Simított görbe:</translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Nie</translation>
+        <translation>Nem</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Tak</translation>
+        <translation>Igen</translation>
     </message>
     <message>
         <source>Adjust length:</source>
-        <translation>Dostosuj długość:</translation>
+        <translation>Hossz igazítása:</translation>
     </message>
     <message>
         <source>Off</source>
-        <translation>Wyłączone</translation>
+        <translation>Kikapcsolva</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Początek</translation>
+        <translation>Kezdet</translation>
     </message>
     <message>
         <source>End</source>
-        <translation>Koniec</translation>
+        <translation>Vég</translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Oba</translation>
+        <translation>Mindkettő</translation>
     </message>
     <message>
         <source>Curve length:</source>
-        <translation>Długość krzywej:</translation>
+        <translation>Görbe hossza:</translation>
     </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 z&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 i styczną&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Nem található a(z) %1 metszéspontja a&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;b&gt;&lt;b&gt;%2-nek és az érintőjének&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Przecięcie łuku i stycznej</translation>
+        <translation>Ív és érintő metszéspontja</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfContact</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionArcs</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 łuków&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Nem található az ívek %1. metszéspontja&lt;/big&gt;&lt;/b&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punkt przecina łuki</translation>
+        <translation>Ívek metszéspontja</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionCurves</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nie można znaleźć punktu przecięcia %1 krzywych&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Używam punktu początkowego jako symbolu zastępczego do momentu poprawienia wzoru.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;A görbék %1 metszéspontja nem található&lt;/big&gt;&lt;/b&gt;&lt;br&gt;A kezdőpontot helykitöltőként használja, amíg a minta kijavításra nem kerül.</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punkt przecięcia krzywych</translation>
+        <translation>Pontok metszéspontjainak görbéi</translation>
     </message>
 </context>
 <context>
     <name>VToolRotation</name>
     <message>
         <source>  Origin point</source>
-        <translation>  Punkt początkowy</translation>
+        <translation>  Kiindulópont</translation>
     </message>
     <message>
         <source>Rotation angle</source>
-        <translation>Kąt obrotu</translation>
+        <translation>Forgásszög</translation>
     </message>
 </context>
 <context>
     <name>VToolShoulderPoint</name>
     <message>
         <source>Length</source>
-        <translation>Długość</translation>
+        <translation>Hossz</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Kąt</translation>
+        <translation>Szög</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Imię</translation>
+        <translation>Név</translation>
     </message>
 </context>
 <context>
@@ -13944,42 +13943,42 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Bunka Fashion College</source>
         <comment>Author name</comment>
-        <translation>Bunka Fashion College</translation>
+        <translation>Bunka Divatművészeti Főiskola</translation>
     </message>
     <message>
         <source>Fundamentals of Garment Design</source>
         <comment>Book name</comment>
-        <translation>Podstawy projektowania odzieży</translation>
+        <translation>A ruhatervezés alapjai</translation>
     </message>
     <message>
         <source>Barnfield and Richard</source>
         <comment>System name</comment>
-        <translation>Barnfield i Richard</translation>
+        <translation>Barnfield és Richard</translation>
     </message>
     <message>
         <source>Jo Barnfield and Andrew Richards</source>
         <comment>Author name</comment>
-        <translation>Jo Barnfield i Andrew Richards</translation>
+        <translation>Jo Barnfield és Andrew Richards</translation>
     </message>
     <message>
         <source>Pattern Making Primer</source>
         <comment>Book name</comment>
-        <translation>Podstawy tworzenia wzorów</translation>
+        <translation>Mintakészítési útmutató</translation>
     </message>
     <message>
         <source>Friendship/Women</source>
         <comment>System name</comment>
-        <translation>Przyjaźń/Kobiety</translation>
+        <translation>Barátság/Nők</translation>
     </message>
     <message>
         <source>Elizabeth Friendship</source>
         <comment>Author name</comment>
-        <translation>Przyjaźń Elżbiety</translation>
+        <translation>Erzsébet barátság</translation>
     </message>
     <message>
         <source>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</source>
         <comment>Book name</comment>
-        <translation>Tworzenie historycznych strojów – krojenie wzorów od XVI do XIX wieku</translation>
+        <translation>Történelmi ruhák készítése - szabásminta a 16. és 19. század között</translation>
     </message>
     <message>
         <source>Morris, K.</source>
@@ -13994,7 +13993,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Sewing Lingerie that Fits</source>
         <comment>Book name</comment>
-        <translation>Szycie bielizny na miarę</translation>
+        <translation>Fehérnemű varrása, ami illik</translation>
     </message>
     <message>
         <source>Castro</source>
@@ -14004,27 +14003,27 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Lucia Mors de Castro</source>
         <comment>Author name</comment>
-        <translation>Łucja Mors de Castro</translation>
+        <translation>Lucia Mors de Castro</translation>
     </message>
     <message>
         <source>Patternmaking in Practic</source>
         <comment>Book name</comment>
-        <translation>Wzornictwo w praktyce</translation>
+        <translation>Mintakészítés a gyakorlatban</translation>
     </message>
     <message>
         <source>Kim &amp; Uh</source>
         <comment>System name</comment>
-        <translation>Kim i Uh</translation>
+        <translation>Kim és Uh</translation>
     </message>
     <message>
         <source>Injoo Kim and Mykyung Uh</source>
         <comment>Author name</comment>
-        <translation>Injoo Kim i Mykyung Uh</translation>
+        <translation>Injoo Kim és Mykyung Uh</translation>
     </message>
     <message>
         <source>Apparel Making in Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Tworzenie odzieży w projektowaniu mody</translation>
+        <translation>Ruházatkészítés a divattervezésben</translation>
     </message>
     <message>
         <source>Waugh</source>
@@ -14034,12 +14033,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Norah Waugh</source>
         <comment>Author name</comment>
-        <translation>Nora Waugh</translation>
+        <translation>Norah Waugh</translation>
     </message>
     <message>
         <source>Corsets and Crinolines</source>
         <comment>Book name</comment>
-        <translation>Gorsety i krynoliny</translation>
+        <translation>Fűzők és krinolinok</translation>
     </message>
     <message>
         <source>Grimble</source>
@@ -14054,37 +14053,37 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Fashions of the Gilded Age</source>
         <comment>Book name</comment>
-        <translation>Moda złotego wieku</translation>
+        <translation>Az aranyozott kor divatjai</translation>
     </message>
     <message>
         <source>Thornton&apos;s International System</source>
         <comment>System name</comment>
-        <translation>Międzynarodowy system Thorntona</translation>
+        <translation>Thornton nemzetközi rendszere</translation>
     </message>
     <message>
         <source>ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>red. RL Shep</translation>
+        <translation>szerk. RL Shep</translation>
     </message>
     <message>
         <source>The Great War: Styles and Patterns of the 1910s</source>
         <comment>Book name</comment>
-        <translation>Wielka Wojna: Style i wzory lat 1910s</translation>
+        <translation>A nagy háború: Az 1910-es évek stílusai és mintái</translation>
     </message>
     <message>
         <source>Hillhouse &amp; Mansfield</source>
         <comment>System name</comment>
-        <translation>Hillhouse i Mansfield</translation>
+        <translation>Hillhouse és Mansfield</translation>
     </message>
     <message>
         <source>Marion S. Hillhouse and Evelyn A. Mansfield</source>
         <comment>Author name</comment>
-        <translation>Marion S. Hillhouse i Evelyn A. Mansfield</translation>
+        <translation>Marion S. Hillhouse és Evelyn A. Mansfield</translation>
     </message>
     <message>
         <source>Dress Design: Draping and Flat Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Projektowanie sukienek: drapowanie i tworzenie płaskich wykrojów</translation>
+        <translation>Ruhatervezés: Drapéria és lapos szabásminta készítése</translation>
     </message>
     <message>
         <source>Pivnick</source>
@@ -14094,27 +14093,27 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Esther Kaplan Pivnick</source>
         <comment>Author name</comment>
-        <translation>Esther Kaplan Pivnick</translation>
+        <translation>Eszter Kaplan Pivnick</translation>
     </message>
     <message>
         <source>How to Design Beautiful Clothes: Designing and Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Jak projektować piękne ubrania: projektowanie i tworzenie wzorów</translation>
+        <translation>Hogyan tervezzünk gyönyörű ruhákat: Tervezés és szabásmintakészítés</translation>
     </message>
     <message>
         <source>Minister &amp; Son</source>
         <comment>System name</comment>
-        <translation>Minister i syn</translation>
+        <translation>Lelkész és fia</translation>
     </message>
     <message>
         <source>Edward Minister &amp; Son, ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>Edward Minister i syn, red. R.L. Shep</translation>
+        <translation>Edward Minister és fia, szerk. RL Shep</translation>
     </message>
     <message>
         <source>The Complete Guide to Practical Cutting (1853)</source>
         <comment>Book name</comment>
-        <translation>Kompletny przewodnik po praktycznym cięciu (1853)</translation>
+        <translation>A gyakorlati vágás teljes útmutatója (1853)</translation>
     </message>
     <message>
         <source>Strickland</source>
@@ -14124,32 +14123,32 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Gertrude Strickland</source>
         <comment>Author name</comment>
-        <translation>Gertruda Strickland</translation>
+        <translation>Gertrude Strickland</translation>
     </message>
     <message>
         <source>A Tailoring Manual</source>
         <comment>Book name</comment>
-        <translation>Podręcznik krawiectwa</translation>
+        <translation>Szabóságkészítési kézikönyv</translation>
     </message>
     <message>
         <source>Loh &amp; Lewis</source>
         <comment>System name</comment>
-        <translation>Loh i Lewis</translation>
+        <translation>Loh és Lewis</translation>
     </message>
     <message>
         <source>May Loh and Diehl Lewis</source>
         <comment>Author name</comment>
-        <translation>May Loh i Diehl Lewis</translation>
+        <translation>May Loh és Diehl Lewis</translation>
     </message>
     <message>
         <source>Patternless Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Projektowanie mody bez wzorów</translation>
+        <translation>Minta nélküli divattervezés</translation>
     </message>
     <message>
         <source>Morris, F. R.</source>
         <comment>System name</comment>
-        <translation>Morris, F.R.</translation>
+        <translation>Morris, F. R.</translation>
     </message>
     <message>
         <source>F. R. Morris</source>
@@ -14159,22 +14158,22 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Ladies Garment Cutting and Making</source>
         <comment>Book name</comment>
-        <translation>Krojenie i szycie odzieży damskiej</translation>
+        <translation>Női ruhadarabok szabása és készítése</translation>
     </message>
     <message>
         <source>Mason</source>
         <comment>System name</comment>
-        <translation>Mason</translation>
+        <translation>Kőműves</translation>
     </message>
     <message>
         <source>Gertrude Mason</source>
         <comment>Author name</comment>
-        <translation>Gertruda Mason</translation>
+        <translation>Gertrude Mason</translation>
     </message>
     <message>
         <source>Gertrude Mason&apos;s Patternmaking Book</source>
         <comment>Book name</comment>
-        <translation>Książka Gertrudy Mason o tworzeniu modeli</translation>
+        <translation>Gertrude Mason szabásminta-készítő könyve</translation>
     </message>
     <message>
         <source>Kimata</source>
@@ -14189,22 +14188,22 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>K.Kimata&apos;s Simplified Drafting Book for Dressmaking</source>
         <comment>Book name</comment>
-        <translation>Uproszczony podręcznik rysunku technicznego K. Kimaty do krawiectwa</translation>
+        <translation>K.Kimata egyszerűsített szabásminta-készítő kézikönyve</translation>
     </message>
     <message>
         <source>Master Designer</source>
         <comment>System name</comment>
-        <translation>Mistrzowski projektant</translation>
+        <translation>Mestertervező</translation>
     </message>
     <message>
         <source>The Master Designer (Chicago, IL)</source>
         <comment>Author name</comment>
-        <translation>Mistrzowski projektant (Chicago, IL)</translation>
+        <translation>A mestertervező (Chicago, IL)</translation>
     </message>
     <message>
         <source>Master Designer&apos;s System of Designing, Cutting and Grading</source>
         <comment>Book name</comment>
-        <translation>System projektowania, cięcia i stopniowania autorstwa Mistrza Projektowania</translation>
+        <translation>A mestertervező tervezési, szabási és osztályozási rendszere</translation>
     </message>
     <message>
         <source>Kopp</source>
@@ -14219,7 +14218,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>How to Draft Basic Patterns</source>
         <comment>Book name</comment>
-        <translation>Jak tworzyć podstawowe wzory</translation>
+        <translation>Hogyan rajzoljunk alapvető mintákat</translation>
     </message>
     <message>
         <source>Ekern</source>
@@ -14234,7 +14233,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Slacks Cut-to-Fit for Your Figure</source>
         <comment>Book name</comment>
-        <translation>Spodnie skrojone na miarę Twojej sylwetki</translation>
+        <translation>Alakra szabott szabású nadrág</translation>
     </message>
     <message>
         <source>Doyle</source>
@@ -14249,7 +14248,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Sarah&apos;s Key to Pattern Drafting</source>
         <comment>Book name</comment>
-        <translation>Klucz Sarah do tworzenia wzorów</translation>
+        <translation>Sarah kulcsa a szabásminta-rajzoláshoz</translation>
     </message>
     <message>
         <source>Shelton</source>
@@ -14264,37 +14263,37 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Design and Sew Jeans</source>
         <comment>Book name</comment>
-        <translation>Projektowanie i szycie jeansów</translation>
+        <translation>Farmerek tervezése és varrása</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>System name</comment>
-        <translation>Butik damski</translation>
+        <translation>Hölgyek butikja</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>Author name</comment>
-        <translation>Butik damski</translation>
+        <translation>Hölgyek butikja</translation>
     </message>
     <message>
         <source>Lady Boutique magazine (Japan)</source>
         <comment>Book name</comment>
-        <translation>Magazyn Lady Boutique (Japonia)</translation>
+        <translation>Lady Boutique magazin (Japán)</translation>
     </message>
     <message>
         <source>Rohr</source>
         <comment>System name</comment>
-        <translation>Rura</translation>
+        <translation>Rohr</translation>
     </message>
     <message>
         <source>M. Rohr</source>
         <comment>Author name</comment>
-        <translation>Pan Rohr</translation>
+        <translation>M. Rohr</translation>
     </message>
     <message>
         <source>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</source>
         <comment>Book name</comment>
-        <translation>Projektowanie i stopniowanie wzorów: projektowanie odzieży damskiej i dziewczęcej</translation>
+        <translation>Szabásminta rajzolása és osztályozása: Női és kisasszonyok ruhatervezése</translation>
     </message>
     <message>
         <source>Moore</source>
@@ -14309,12 +14308,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</source>
         <comment>Book name</comment>
-        <translation>Projektowanie wzorów i krawiectwo Dorothy Moore</translation>
+        <translation>Dorothy Moore szabásmintáinak rajzolása és szabása</translation>
     </message>
     <message>
         <source>Abling</source>
         <comment>System name</comment>
-        <translation>Umożliwianie</translation>
+        <translation>Abling</translation>
     </message>
     <message>
         <source>Bina Abling</source>
@@ -14324,7 +14323,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Integrating Draping, Drafting and Drawing</source>
         <comment>Book name</comment>
-        <translation>Integracja drapowania, szkicowania i rysowania</translation>
+        <translation>A drapéria, a vázlatkészítés és a rajzolás integrálása</translation>
     </message>
     <message>
         <source>Fukomoto</source>
@@ -14339,22 +14338,22 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</source>
         <comment>Book name</comment>
-        <translation>Naukowe projektowanie wzorów, nauczane w Szkole Kostiumografii, Krawiectwa i Kapelusznictwa Style Center</translation>
+        <translation>Tudományos szabásminta-rajzolás a Style Center Jelmeztervező, Ruhakészítő és Kalapkészítő Iskolában tanítva</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>System name</comment>
-        <translation>Międzynarodowe krawiectwo</translation>
+        <translation>Ruhakészítés Nemzetközi</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>Author name</comment>
-        <translation>Międzynarodowe krawiectwo</translation>
+        <translation>Ruhakészítés Nemzetközi</translation>
     </message>
     <message>
         <source>Dressmaking International magazine (Japan)</source>
         <comment>Book name</comment>
-        <translation>Czasopismo Dressmaking International (Japonia)</translation>
+        <translation>Dressmaking International magazin (Japán)</translation>
     </message>
     <message>
         <source>Erwin</source>
@@ -14369,7 +14368,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Practical Dress Design</source>
         <comment>Book name</comment>
-        <translation>Praktyczny projekt ubioru</translation>
+        <translation>Praktikus ruhatervezés</translation>
     </message>
     <message>
         <source>Gough</source>
@@ -14384,7 +14383,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Principles of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>Zasady krojenia odzieży</translation>
+        <translation>A ruhaszabás alapelvei</translation>
     </message>
     <message>
         <source>Allemong</source>
@@ -14399,7 +14398,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>Krój europejski</translation>
+        <translation>Európai változat</translation>
     </message>
     <message>
         <source>McCunn</source>
@@ -14414,7 +14413,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>How to Make Your Own Sewing Patterns</source>
         <comment>Book name</comment>
-        <translation>Jak stworzyć własne wykroje krawieckie</translation>
+        <translation>Hogyan készítsd el saját szabásmintáidat</translation>
     </message>
     <message>
         <source>Zarapkar</source>
@@ -14424,12 +14423,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</source>
         <comment>Author name</comment>
-        <translation>Panie KR Zarapkar i Pan Arvind K. Zarapkar</translation>
+        <translation>Shri KR Zarapkar és Shri Arvind K. Zarapkar</translation>
     </message>
     <message>
         <source>Zarapkar System of Cutting</source>
         <comment>Book name</comment>
-        <translation>System cięcia Zarapkar</translation>
+        <translation>Zarapkar vágási rendszer</translation>
     </message>
     <message>
         <source>Kunick</source>
@@ -14444,7 +14443,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</source>
         <comment>Book name</comment>
-        <translation>Rozmiary, konstrukcja wzorów i stopniowanie odzieży damskiej i dziecięcej</translation>
+        <translation>Női és gyermekruházat méretezése, szabásmintája és osztályozása</translation>
     </message>
     <message>
         <source>Handford</source>
@@ -14459,7 +14458,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</source>
         <comment>Book name</comment>
-        <translation>Profesjonalne modelowanie dla projektantów: odzież damska, odzież codzienna męska</translation>
+        <translation>Professzionális szabásmintakészítés tervezőknek: női ruházat, férfi hétköznapi viselet</translation>
     </message>
     <message>
         <source>Davis</source>
@@ -14474,7 +14473,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</source>
         <comment>Book name</comment>
-        <translation>Męski kostium z XVII i XVIII wieku, krój i moda</translation>
+        <translation>Férfi 17. és 18. századi jelmezek, szabásminták és divat</translation>
     </message>
     <message>
         <source>MacLochlainn</source>
@@ -14489,7 +14488,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>The Victorian Tailor: An Introduction to Period Tailoring</source>
         <comment>Book name</comment>
-        <translation>Krawiec epoki wiktoriańskiej: Wprowadzenie do krawiectwa epoki</translation>
+        <translation>A viktoriánus szabó: Bevezetés a korabeli szabászatba</translation>
     </message>
     <message>
         <source>Joseph-Armstrong</source>
@@ -14504,12 +14503,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Patternmaking for Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Tworzenie wzorów dla projektowania mody</translation>
+        <translation>Divatmintakészítés</translation>
     </message>
     <message>
         <source>Supreme System</source>
         <comment>System name</comment>
-        <translation>Najwyższy system</translation>
+        <translation>Legfelsőbb rendszer</translation>
     </message>
     <message>
         <source>Frederick T. Croonberg</source>
@@ -14519,42 +14518,42 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</source>
         <comment>Book name</comment>
-        <translation>Niebieska księga krawiectwa męskiego, wielkie wydanie Najwyższego systemu produkcji odzieży męskiej (1907)</translation>
+        <translation>A férfi szabászat kék könyve, a Férfi ruházat gyártásának legfelsőbb rendszere (1907) nagy kiadása</translation>
     </message>
     <message>
         <source>Sugino</source>
         <comment>System name</comment>
-        <translation>Sugino</translation>
+        <translation>Szugino</translation>
     </message>
     <message>
         <source>Dressmaking</source>
         <comment>Author name</comment>
-        <translation>Krawiectwo</translation>
+        <translation>Ruhakészítés</translation>
     </message>
     <message>
         <source>Pattern Drafting Vols. I, II, III (Japan)</source>
         <comment>Book name</comment>
-        <translation>Rysowanie wzorów, tomy I, II, III (Japonia)</translation>
+        <translation>Mintarajzolás I., II., III. kötet (Japán)</translation>
     </message>
     <message>
         <source>Centre Point System</source>
         <comment>System name</comment>
-        <translation>System punktów centralnych</translation>
+        <translation>Középpont-rendszer</translation>
     </message>
     <message>
         <source>Louis Devere</source>
         <comment>Author name</comment>
-        <translation>Louis Devere</translation>
+        <translation>Louis Devère</translation>
     </message>
     <message>
         <source>The Handbook of Practical Cutting on the Centre Point System</source>
         <comment>Book name</comment>
-        <translation>Podręcznik praktycznego cięcia w systemie punktów centralnych</translation>
+        <translation>A középpontos rendszerrel történő gyakorlati vágás kézikönyve</translation>
     </message>
     <message>
         <source>Aldrich/Men</source>
         <comment>System name</comment>
-        <translation>Aldrich/Mężczyźni</translation>
+        <translation>Aldrich/Férfiak</translation>
     </message>
     <message>
         <source>Winifred Aldrich</source>
@@ -14564,17 +14563,17 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Metric Pattern Cutting for Menswear</source>
         <comment>Book name</comment>
-        <translation>Krojenie wzorów metrycznych odzieży męskiej</translation>
+        <translation>Metrikus szabásminta férfi ruházathoz</translation>
     </message>
     <message>
         <source>Aldrich/Women</source>
         <comment>System name</comment>
-        <translation>Aldrich/Kobiety</translation>
+        <translation>Aldrich/Nők</translation>
     </message>
     <message>
         <source>Metric Pattern Cutting for Women&apos;s Wear</source>
         <comment>Book name</comment>
-        <translation>Krojenie wzorów metrycznych odzieży damskiej</translation>
+        <translation>Metrikus szabásminta női ruházathoz</translation>
     </message>
     <message>
         <source>Kershaw</source>
@@ -14589,7 +14588,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Patternmaking for Menswear</source>
         <comment>Book name</comment>
-        <translation>Projektowanie odzieży męskiej</translation>
+        <translation>Férfiruházati szabásmintakészítés</translation>
     </message>
     <message>
         <source>Gilewska</source>
@@ -14604,7 +14603,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Pattern-Drafting for Fashion: The Basics</source>
         <comment>Book name</comment>
-        <translation>Projektowanie wzorów dla mody: podstawy</translation>
+        <translation>Divatszabásminta-rajzolás: Az alapok</translation>
     </message>
     <message>
         <source>Lo</source>
@@ -14619,12 +14618,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Pattern Cutting</source>
         <comment>Book name</comment>
-        <translation>Cięcie wzorów</translation>
+        <translation>Mintaszabás</translation>
     </message>
     <message>
         <source>Bray</source>
         <comment>System name</comment>
-        <translation>Ryczenie</translation>
+        <translation>Bray</translation>
     </message>
     <message>
         <source>Natalie Bray</source>
@@ -14634,7 +14633,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Dress Pattern Designing: The Basic Principles of Cut and Fit</source>
         <comment>Book name</comment>
-        <translation>Projektowanie wykrojów sukienek: podstawowe zasady kroju i dopasowania</translation>
+        <translation>Ruhaszabásminta tervezése: A szabásminta és az illeszkedés alapelvei</translation>
     </message>
     <message>
         <source>Knowles/Men</source>
@@ -14649,22 +14648,22 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>The Practical Guide to Patternmaking for Fashion Designers: Menswear</source>
         <comment>Book name</comment>
-        <translation>Praktyczny przewodnik po tworzeniu wzorów dla projektantów mody: odzież męska</translation>
+        <translation>Gyakorlati útmutató a szabásmintakészítéshez divattervezőknek: Férfi divat</translation>
     </message>
     <message>
         <source>Friendship/Men</source>
         <comment>System name</comment>
-        <translation>Przyjaźń/Mężczyźni</translation>
+        <translation>Barátság/Férfiak</translation>
     </message>
     <message>
         <source>Pattern Cutting for Men&apos;s Costume</source>
         <comment>Book name</comment>
-        <translation>Krojenie wykrojów kostiumów męskich</translation>
+        <translation>Férfiruha szabása</translation>
     </message>
     <message>
         <source>Brown</source>
         <comment>System name</comment>
-        <translation>Brązowy</translation>
+        <translation>Barna</translation>
     </message>
     <message>
         <source>P. Clement Brown</source>
@@ -14674,7 +14673,7 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Art in Dress</source>
         <comment>Book name</comment>
-        <translation>Sztuka w ubiorze</translation>
+        <translation>Művészet az öltözködésben</translation>
     </message>
     <message>
         <source>Mitchell</source>
@@ -14684,12 +14683,12 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Jno. J. Mitchell</source>
         <comment>Author name</comment>
-        <translation>Jno. J. Mitchell</translation>
+        <translation>J. Mitchell úr</translation>
     </message>
     <message>
         <source>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>Standardowa praca na temat krojenia (odzieży męskiej) 1886: Sztuka i nauka krojenia odzieży</translation>
+        <translation>&quot;Standard&quot; szabásmód (férfiruhák) 1886: A ruhaszabás művészete és tudománya</translation>
     </message>
     <message>
         <source>GOST 17917-86</source>
@@ -14699,82 +14698,82 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Ministry of consumer industry of the USSR</source>
         <comment>Author name</comment>
-        <translation>Ministerstwo przemysłu konsumpcyjnego ZSRR</translation>
+        <translation>A Szovjetunió Fogyasztóipari Minisztériuma</translation>
     </message>
     <message>
         <source>Standard figure boys</source>
         <comment>Book name</comment>
-        <translation>Chłopcy o standardowej sylwetce</translation>
+        <translation>Normál alkatú fiúk</translation>
     </message>
     <message>
         <source>Eddy</source>
         <comment>System name</comment>
-        <translation>Eddy</translation>
+        <translation>Ördög</translation>
     </message>
     <message>
         <source>Josephine F. Eddy and Elizabeth C. B. Wiley</source>
         <comment>Author name</comment>
-        <translation>Josephine F. Eddy i Elizabeth CB Wiley</translation>
+        <translation>Josephine F. Eddy és Elizabeth CB Wiley</translation>
     </message>
     <message>
         <source>Pattern and Dress Design</source>
         <comment>Book name</comment>
-        <translation>Projektowanie wzorów i sukienek</translation>
+        <translation>Szabásminta és ruhatervezés</translation>
     </message>
     <message>
         <source>Knowles/Women</source>
         <comment>System name</comment>
-        <translation>Knowles/Kobiety</translation>
+        <translation>Knowles/Nők</translation>
     </message>
     <message>
         <source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
         <comment>Book name</comment>
-        <translation>Praktyczny przewodnik po tworzeniu modeli dla projektantów mody: juniorów, miss i kobiet</translation>
+        <translation>Gyakorlati útmutató a szabásmintakészítéshez divattervezőknek: junioroknak, kisasszonyoknak és nőknek</translation>
     </message>
     <message>
         <source>American Garment Cutter</source>
         <comment>System name</comment>
-        <translation>Amerykański krajalnica do odzieży</translation>
+        <translation>Amerikai Ruhavágó</translation>
     </message>
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>Brak</translation>
+        <translation>Nincs</translation>
     </message>
     <message>
         <source>Seamly2D team</source>
         <comment>Author name</comment>
-        <translation>Zespół Seamly2D</translation>
+        <translation>Seamly2D csapat</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
-        <translation>Wewnętrzny standard Seamly2D</translation>
+        <translation>A Seamly2D belső standardja</translation>
     </message>
     <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Lo_</translation>
+        <translation>M_</translation>
     </message>
     <message>
         <source>Variable_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Zmienna_</translation>
+        <translation>Változó_</translation>
     </message>
     <message>
         <source>Line_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Linia_</translation>
+        <translation>Sor_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>LiniaKąta_</translation>
+        <translation>SzögVonal_</translation>
     </message>
     <message>
         <source>Arc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Tuk_</translation>
+        <translation>Ív_</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -14784,67 +14783,67 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Spl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Spl_</translation>
+        <translation>Kiegészítő_</translation>
     </message>
     <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>SplPath</translation>
+        <translation>ElérésiÚt</translation>
     </message>
     <message>
         <source>RadiusArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>PromieńŁuku_</translation>
+        <translation>RadiusÍv_</translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Promień1ElArc_</translation>
+        <translation>Radius1ElArc_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Promień2ElArc_</translation>
+        <translation>Radius2ElArc_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt1Łuk_</translation>
+        <translation>Szög1Ív_</translation>
     </message>
     <message>
         <source>Angle2Arc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt2Łuk_</translation>
+        <translation>Szög2Ív_</translation>
     </message>
     <message>
         <source>Angle1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt1ElArc_</translation>
+        <translation>Szög1ElÍv_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt2ElArc_</translation>
+        <translation>Szög2ElÍv_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt1Spl_</translation>
+        <translation>Szög1Elosztó_</translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Kąt2Spl_</translation>
+        <translation>Szög2Elosztó_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>ŚcieżkaSplKąta1</translation>
+        <translation>Szög1ElhelyezkedésÚtvonal</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Ścieżkakąta2Spl</translation>
+        <translation>Szög2ElérésiÚtvonal</translation>
     </message>
     <message>
         <source>Seg_</source>
@@ -14854,32 +14853,27 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>CurrentLength</source>
         <comment>Do not add space between words</comment>
-        <translation>BieżącaDługość</translation>
+        <translation>AktuálisHossz</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
-        <translation>DopuszczalnyBieżącySzew</translation>
+        <translation>JelenlegiVarratráhagyás</translation>
     </message>
     <message>
         <source>C1LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C1LengthSpl_</translation>
+        <translation>C1Hosszúságkülönbség_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C2LengthSpl_</translation>
+        <translation>C2Hosszúságkülönbség_</translation>
     </message>
     <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C1LengthSplPath</translation>
-    </message>
-    <message>
-        <source>C2LengthSplPath</source>
-        <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>ŚcieżkaSplDługościC2</translation>
+        <translation>C1HosszElrendezésiÚtvonal</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14900,28 +14894,28 @@ Example: radTodeg(3.14159) = 180</comment>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians) → returns a number between -1 and 1
 Example: sin(90) = 0.893997</comment>
-        <translation>grzech</translation>
+        <translation>bűn</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
 Usage: cos(angle θ in radians) → returns a number between -1 and 1
 Example: cos(1) = 0.540302</comment>
-        <translation>bo</translation>
+        <translation>koszisz</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)
 Example: tan(1) = 1.55741</comment>
-        <translation>opalenizna</translation>
+        <translation>barna</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
 Usage: asin(x between -1 and 1) → returns an angle in radians
 Example: asin(-1) = -1.5708</comment>
-        <translation>asin</translation>
+        <translation>szamár</translation>
     </message>
     <message>
         <source>acos</source>
@@ -14935,7 +14929,7 @@ Example: acos(0.1) = 1.47063</comment>
         <comment>Inverse tangent function working with radians
 Usage: atan(x) → returns an angle in radians
 Example: atan(1) = 0.78538</comment>
-        <translation>atan</translation>
+        <translation>átán</translation>
     </message>
     <message>
         <source>sinh</source>
@@ -14949,7 +14943,7 @@ Example: sinh(1) = 1.1752</comment>
         <comment>Hyperbolic cosine
 Usage: cosh(θ) → returns a number greater than or equal to 1
 Example: cosh(0) = 1</comment>
-        <translation>pałka</translation>
+        <translation>pénz</translation>
     </message>
     <message>
         <source>tanh</source>
@@ -14984,7 +14978,7 @@ Example: atanh(0,99) = 2.64665</comment>
         <comment>Sine function working with degrees
 Usage: sinD(angle θ in degrees) → returns a number between -1 and 1
 Example: sinD(90) = 1</comment>
-        <translation>grzech</translation>
+        <translation>bűnD</translation>
     </message>
     <message>
         <source>cosD</source>
@@ -14998,7 +14992,7 @@ Example: cosD(180) = -1</comment>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)
 Example: tanD(45) = 1</comment>
-        <translation>tanD</translation>
+        <translation>barnaD</translation>
     </message>
     <message>
         <source>asinD</source>
@@ -15040,7 +15034,7 @@ Example: log10(10) = 1</comment>
         <comment>Logarithm to the base 10
 Usage: log(x greater than 0)
 Example: log(10) = 1</comment>
-        <translation>log</translation>
+        <translation>napló</translation>
     </message>
     <message>
         <source>ln</source>
@@ -15054,63 +15048,63 @@ Example: ln(10) = 2.30259</comment>
         <comment>e raised to the power of x where e = 2.718
 Usage: exp(x) → returns a positive number
 Example: exp(2) = 7.38906</comment>
-        <translation>wyraż</translation>
+        <translation>tapasztalat</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x greater than or equal to 0) → returns a positive number
 Example: sqrt(4) = 2</comment>
-        <translation>sqrt</translation>
+        <translation>négyzet</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x) → returns -1, 0 or 1
 Example: sign(-3) = -1</comment>
-        <translation>znak</translation>
+        <translation>jel</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(x) → returns an integer number
 Example: rint(2.3) = 2</comment>
-        <translation>rint</translation>
+        <translation>nyomtatás</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x) → returns a positive number
 Example: abs(-5) = 5</comment>
-        <translation>abs</translation>
+        <translation>hasizmok</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)
 Example: min(2;3;4) = 2</comment>
-        <translation>min</translation>
+        <translation>perc</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)
 Example: max(2;3;4) = 4</comment>
-        <translation>maks</translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)
 Example: sum(2;3;4) = 9</comment>
-        <translation>suma</translation>
+        <translation>összeg</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)
 Example: avg(2;3;4) = 3</comment>
-        <translation>średnia</translation>
+        <translation>átlag</translation>
     </message>
     <message>
         <source>fmod</source>
@@ -15132,87 +15126,87 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>in</source>
         <comment>inch</comment>
-        <translation>w</translation>
+        <translation>a &quot; részben</translation>
     </message>
     <message>
         <source>size</source>
         <comment>placeholder</comment>
-        <translation>rozmiar</translation>
+        <translation>méret</translation>
     </message>
     <message>
         <source>height</source>
         <comment>placeholder</comment>
-        <translation>wysokość</translation>
+        <translation>magasság</translation>
     </message>
     <message>
         <source>date</source>
         <comment>placeholder</comment>
-        <translation>data</translation>
+        <translation>dátum</translation>
     </message>
     <message>
         <source>time</source>
         <comment>placeholder</comment>
-        <translation>czas</translation>
+        <translation>idő</translation>
     </message>
     <message>
         <source>patternName</source>
         <comment>placeholder</comment>
-        <translation>nazwaWzoru</translation>
+        <translation>mintaNeve</translation>
     </message>
     <message>
         <source>patternNumber</source>
         <comment>placeholder</comment>
-        <translation>numerwzorca</translation>
+        <translation>mintaSzám</translation>
     </message>
     <message>
         <source>author</source>
         <comment>placeholder</comment>
-        <translation>autor</translation>
+        <translation>szerző</translation>
     </message>
     <message>
         <source>customer</source>
         <comment>placeholder</comment>
-        <translation>klient</translation>
+        <translation>vásárló</translation>
     </message>
     <message>
         <source>pExt</source>
         <comment>placeholder</comment>
-        <translation>pExt</translation>
+        <translation>pKiterjesztés</translation>
     </message>
     <message>
         <source>pFileName</source>
         <comment>placeholder</comment>
-        <translation>pFileName</translation>
+        <translation>pFájlNév</translation>
     </message>
     <message>
         <source>mFileName</source>
         <comment>placeholder</comment>
-        <translation>mNazwaPliku</translation>
+        <translation>mFájlNév</translation>
     </message>
     <message>
         <source>mExt</source>
         <comment>placeholder</comment>
-        <translation>mExt</translation>
+        <translation>mKülső</translation>
     </message>
     <message>
         <source>pLetter</source>
         <comment>placeholder</comment>
-        <translation>pLiter</translation>
+        <translation>pBetű</translation>
     </message>
     <message>
         <source>pAnnotation</source>
         <comment>placeholder</comment>
-        <translation>pAnnotation</translation>
+        <translation>pAnnotáció</translation>
     </message>
     <message>
         <source>pOrientation</source>
         <comment>placeholder</comment>
-        <translation>pOrientation</translation>
+        <translation>pTájolás</translation>
     </message>
     <message>
         <source>pRotation</source>
         <comment>placeholder</comment>
-        <translation>pRotacja</translation>
+        <translation>pRotáció</translation>
     </message>
     <message>
         <source>pTilt</source>
@@ -15227,12 +15221,12 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>pName</source>
         <comment>placeholder</comment>
-        <translation>pName</translation>
+        <translation>pNév</translation>
     </message>
     <message>
         <source>pQuantity</source>
         <comment>placeholder</comment>
-        <translation>pQuantity</translation>
+        <translation>pMennyiség</translation>
     </message>
     <message>
         <source>mFabric</source>
@@ -15247,176 +15241,181 @@ Example: fmod(3.3;2) = 1.3</comment>
     <message>
         <source>mInterfacing</source>
         <comment>placeholder</comment>
-        <translation>interfejs m</translation>
+        <translation>mInterfész</translation>
     </message>
     <message>
         <source>mInterlining</source>
         <comment>placeholder</comment>
-        <translation>mInterlining</translation>
+        <translation>közbélés</translation>
     </message>
     <message>
         <source>wCut</source>
         <comment>placeholder</comment>
-        <translation>wCut</translation>
+        <translation>wVágás</translation>
     </message>
     <message>
         <source>wOnFold</source>
         <comment>placeholder</comment>
-        <translation>wOnFold</translation>
+        <translation>wHajtogatáson</translation>
+    </message>
+    <message>
+        <source>C2LengthSplPath</source>
+        <comment>Do not add symbol _ to the end of the name</comment>
+        <translation>C2HosszElérésiÚt</translation>
     </message>
 </context>
 <context>
     <name>VisToolCubicBezierPath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points</source>
-        <translation>&lt;b&gt;Ścieżka zakrzywiona&lt;/b&gt;: wybierz siedem lub więcej punktów</translation>
+        <translation>&lt;b&gt;Íves útvonal&lt;/b&gt;: válasszon ki hét vagy több pontot</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Ścieżka zakrzywiona&lt;/b&gt;: wybierz siedem lub więcej punktów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie narzędzia</translation>
+        <translation>&lt;b&gt;Íves útvonal&lt;/b&gt;: válasszon ki hét vagy több pontot, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt az eszköz létrehozásának befejezéséhez</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select more points for complete segment</source>
-        <translation>&lt;b&gt;Ścieżka zakrzywiona&lt;/b&gt;: wybierz więcej punktów dla całego segmentu</translation>
+        <translation>&lt;b&gt;Íves útvonal&lt;/b&gt;: válasszon ki több pontot a teljes szakaszhoz</translation>
     </message>
 </context>
 <context>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;Krzywa przecięcia i oś&lt;/b&gt;: kąt = %1°, przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie narzędzia </translation>
+        <translation>&lt;b&gt;Metszésponti görbe és tengely&lt;/b&gt;: szög = %1°, Tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög korlátozásához, Nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt az eszköz létrehozásának befejezéséhez </translation>
     </message>
 </context>
 <context>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Długość i kąt punktu&lt;/b&gt;: kąt = %1°, długość = %2%3; przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie narzędzia</translation>
+        <translation>&lt;b&gt;Csúcshossz és szög&lt;/b&gt;: szög = %1°, hossz = %2%3; Tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög korlátozásához, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt az eszköz létrehozásának befejezéséhez</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Linia przecięcia i oś&lt;/b&gt;: kąt = %1°, przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie narzędzia</translation>
+        <translation>&lt;b&gt;Metszéspont vonala és tengelye&lt;/b&gt;: szög = %1°, Tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög rögzítéséhez, Nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a szerszám létrehozásának befejezéséhez</translation>
     </message>
 </context>
 <context>
     <name>VisToolMove</name>
     <message>
         <source>Length = %1%2, angle = %3°, &lt;b&gt;Shift&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish selecting a position</source>
-        <translation>Długość = %1%2, kąt = %3°, &lt;b&gt;Przesunięcie&lt;/b&gt; w celu ograniczenia kąta, &lt;b&gt;Kliknięcie myszą&lt;/b&gt; - zakończenie wybierania pozycji</translation>
+        <translation>Hossz = %1%2, szög = %3°, &lt;b&gt;Shift&lt;/b&gt; a szög rögzítéséhez, &lt;b&gt;Egérkattintás&lt;/b&gt; - pozíciókijelölés befejezése</translation>
     </message>
     <message>
         <source>Length = %1%2, angle = %3°, rotation angle = %4° Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle,&lt;b&gt;CTRL&lt;/b&gt; - change rotation origin point, &lt;b&gt;Mouse click&lt;/b&gt; - finish creating</source>
-        <translation>Długość = %1%2, kąt = %3°, kąt obrotu = %4° Przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt, &lt;b&gt;CTRL&lt;/b&gt; - zmień punkt początkowy obrotu, &lt;b&gt;Kliknięcie myszą&lt;/b&gt; - zakończ tworzenie</translation>
+        <translation>Hossz = %1%2, szög = %3°, elforgatási szög = %4° Tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög rögzítéséhez, &lt;b&gt;CTRL&lt;/b&gt; billentyűt a forgatás kezdőpontjának megváltoztatásához, &lt;b&gt;egérkattintás&lt;/b&gt; billentyűvel fejezze be a létrehozást</translation>
     </message>
 </context>
 <context>
     <name>VisToolRotation</name>
     <message>
         <source>Rotating angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish creation</source>
-        <translation>Kąt obrotu = %1°, przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt, &lt;b&gt;Kliknięcie myszką&lt;/b&gt; - zakończenie tworzenia</translation>
+        <translation>Elforgatási szög = %1°, Tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög rögzítéséhez, &lt;b&gt;egérkattintás&lt;/b&gt; - a létrehozás befejezése</translation>
     </message>
 </context>
 <context>
     <name>VisToolSpline</name>
     <message>
         <source>Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Przytrzymaj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt</translation>
+        <translation>A szög korlátozásához tartsa lenyomva a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt</translation>
     </message>
 </context>
 <context>
     <name>VisToolSplinePath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
-        <translation>&lt;b&gt;Ścieżka zakrzywiona&lt;/b&gt;: wybierz trzy lub więcej punktów</translation>
+        <translation>&lt;b&gt;Íves útvonal&lt;/b&gt;: válasszon ki három vagy több pontot</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Ścieżka zakrzywiona&lt;/b&gt;: wybierz trzy lub więcej punktów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby zakończyć tworzenie narzędzia</translation>
+        <translation>&lt;b&gt;Íves útvonal&lt;/b&gt;: válasszon ki három vagy több pontot, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt az eszköz létrehozásának befejezéséhez</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Użyj &lt;b&gt;SHIFT&lt;/b&gt;, aby ograniczyć kąt</translation>
+        <translation>Használd a &lt;b&gt;SHIFT&lt;/b&gt; billentyűt a szög korlátozásához</translation>
     </message>
 </context>
 <context>
     <name>mNoisyHandler</name>
     <message>
         <source>DEBUG:</source>
-        <translation>DEBUGOWANIE:</translation>
+        <translation>HIBAKERESÉS:</translation>
     </message>
     <message>
         <source>WARNING:</source>
-        <translation>OSTRZEŻENIE:</translation>
+        <translation>FIGYELMEZTETÉS:</translation>
     </message>
     <message>
         <source>CRITICAL:</source>
-        <translation>KRYTYCZNY:</translation>
+        <translation>KRITIKUS:</translation>
     </message>
     <message>
         <source>FATAL:</source>
-        <translation>FATALNY:</translation>
+        <translation>VÉGZETES:</translation>
     </message>
     <message>
         <source>INFO:</source>
-        <translation>INFORMACJE:</translation>
+        <translation>INFORMÁCIÓ:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation>Figyelmeztetés</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Błąd krytyczny</translation>
+        <translation>Kritikus hiba</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Błąd krytyczny</translation>
+        <translation>Végzetes hiba</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacje</translation>
+        <translation>Információ</translation>
     </message>
 </context>
 <context>
     <name>vNoisyHandler</name>
     <message>
         <source>DEBUG:</source>
-        <translation>DEBUGOWANIE:</translation>
+        <translation>HIBAKERESÉS:</translation>
     </message>
     <message>
         <source>WARNING:</source>
-        <translation>OSTRZEŻENIE:</translation>
+        <translation>FIGYELMEZTETÉS:</translation>
     </message>
     <message>
         <source>CRITICAL:</source>
-        <translation>KRYTYCZNY:</translation>
+        <translation>KRITIKUS:</translation>
     </message>
     <message>
         <source>FATAL:</source>
-        <translation>FATALNY:</translation>
+        <translation>VÉGZETES:</translation>
     </message>
     <message>
         <source>INFO:</source>
-        <translation>INFORMACJE:</translation>
+        <translation>INFORMÁCIÓ:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Ostrzeżenie</translation>
+        <translation>Figyelmeztetés</translation>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Błąd krytyczny</translation>
+        <translation>Kritikus hiba</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Błąd krytyczny</translation>
+        <translation>Végzetes hiba</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacje</translation>
+        <translation>Információ</translation>
     </message>
 </context>
 </TS>

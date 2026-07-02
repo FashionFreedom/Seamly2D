@@ -53,6 +53,9 @@
 #include <QPrinterInfo>
 #include <QProcess>
 #include <QRgb>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QStandardItem>
 #include <QString>
 #include <QtDebug>
 #include <QtMath>
@@ -385,7 +388,8 @@ QStringList SupportedLocales()
                                               << QStringLiteral("el_GR")
                                               << QStringLiteral("en_GB")
                                               << QStringLiteral("tr_TR")
-                                              << QStringLiteral("pl_PL");
+                                              << QStringLiteral("pl_PL")
+                                              << QStringLiteral("hu_HU");
     return locales;
 }
 
@@ -833,6 +837,11 @@ void InitLanguages(QComboBox *combobox)
 
         QLocale loc = QLocale(locale);
         QString lang = loc.nativeLanguageName();
+        if (!lang.isEmpty())
+        {
+            lang[0] = lang[0].toUpper();
+        }
+
         QString country = QLocale::countryToString(loc.country());
         if (country == QLatin1String("Czechia"))
         {
@@ -843,6 +852,31 @@ void InitLanguages(QComboBox *combobox)
         combobox->addItem(ico, lang, locale);
     }
 
+    // Sort items in the combobox
+    // Create a standard item model that can hold icons and data
+    QStandardItemModel *sourceModel = new QStandardItemModel(combobox);
+
+    // Transfer text, icons, and user data from the combobox to the new model
+    for (int i = 0; i < combobox->count(); ++i)
+    {
+        QStandardItem *item = new QStandardItem();
+
+        item->setText(combobox->itemText(i));
+        item->setIcon(combobox->itemIcon(i));
+        item->setData(combobox->itemData(i), Qt::UserRole); // Preserves locale data
+
+        sourceModel->appendRow(item);
+    }
+
+    // Set up and sort the proxy model
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(combobox);
+    proxyModel->setSourceModel(sourceModel);
+    proxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    proxyModel->sort(0, Qt::AscendingOrder);
+
+    // Assign the sorted proxy model to combobox
+    combobox->setModel(proxyModel);
+
     if (combobox->count() == 0 || !englishUS)
     {
         // English language is internal and doens't have own *.qm file.
@@ -851,7 +885,7 @@ void InitLanguages(QComboBox *combobox)
         combobox->addItem(ico, lang, en_US);
     }
 
-    // set default translators and language checked
+    // Set default translators and language checked
     qint32 index = combobox->findData(qApp->Settings()->getLocale());
     if (index != -1)
     {

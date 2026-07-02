@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>350</width>
-    <height>380</height>
+    <height>520</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -267,6 +267,271 @@
             <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="options_GroupBox">
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Options</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_opts">
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutAutoSmooth">
+        <item>
+         <widget class="QLabel" name="labelAutoSmooth">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Smooth curve:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBoxAutoSmooth">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>No</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Yes</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutLengthMode">
+        <item>
+         <widget class="QLabel" name="labelLengthMode">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Adjust length:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBoxLengthMode">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>Off</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Start</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>End</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Both</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutCurveLenLabel">
+        <item>
+         <widget class="QLabel" name="labelEditCurveLength">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Curve length:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelResultCurveLength">
+          <property name="minimumSize">
+           <size>
+            <width>85</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">_</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="hSpacerCurveLen">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>10</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QToolButton" name="toolButtonExprCurveLength">
+          <property name="toolTip">
+           <string>Formula wizard</string>
+          </property>
+          <property name="text">
+           <string notr="true">...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../vmisc/share/resources/icon.qrc">
+            <normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>24</width>
+            <height>24</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="hLayoutCurveLenEdit">
+        <item>
+         <widget class="QPushButton" name="pushButtonGrowCurveLength">
+          <property name="maximumSize">
+           <size>
+            <width>18</width>
+            <height>18</height>
+           </size>
+          </property>
+          <property name="text">
+           <string notr="true"/>
+          </property>
+          <property name="icon">
+           <iconset theme="go-down">
+            <normaloff>.</normaloff>.</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="plainTextEditCurveLength">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="tabChangesFocus">
+           <bool>true</bool>
+          </property>
+          <property name="toolTip">
+           <string>Curve arc length formula (applied if filled)</string>
           </property>
          </widget>
         </item>

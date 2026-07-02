@@ -66,6 +66,7 @@
 
 #include "../../tools/vabstracttool.h"
 #include "../../visualization/visualization.h"
+#include "../ifc/ifcdef.h"
 #include "../../visualization/path/vistoolspline.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../support/edit_formula_dialog.h"
@@ -97,10 +98,12 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     , timerAngle2(new QTimer(this))
     , timerLength1(new QTimer(this))
     , timerLength2(new QTimer(this))
+    , timerCurveLength(new QTimer(this))
     , flagAngle1(false)
     , flagAngle2(false)
     , flagLength1(false)
     , flagLength2(false)
+    , flagCurveLength(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -127,6 +130,7 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(timerAngle2, &QTimer::timeout, this, &DialogSpline::EvalAngle2);
     connect(timerLength1, &QTimer::timeout, this, &DialogSpline::EvalLength1);
     connect(timerLength2, &QTimer::timeout, this, &DialogSpline::EvalLength2);
+    connect(timerCurveLength, &QTimer::timeout, this, &DialogSpline::EvalCurveLength);
 
     initializeOkCancelApply(ui);
 
@@ -166,6 +170,7 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->toolButtonExprAngle2, &QPushButton::clicked, this, &DialogSpline::FXAngle2);
     connect(ui->toolButtonExprLength1, &QPushButton::clicked, this, &DialogSpline::FXLength1);
     connect(ui->toolButtonExprLength2, &QPushButton::clicked, this, &DialogSpline::FXLength2);
+    connect(ui->toolButtonExprCurveLength, &QPushButton::clicked, this, &DialogSpline::FXCurveLength);
 
     connect(ui->plainTextEditAngle1F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle1Changed);
     connect(ui->plainTextEditAngle2F, &QPlainTextEdit::textChanged, this, &DialogSpline::Angle2Changed);
@@ -176,6 +181,10 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->pushButtonGrowAngle2, &QPushButton::clicked, this, &DialogSpline::DeployAngle2TextEdit);
     connect(ui->pushButtonGrowLength1, &QPushButton::clicked, this, &DialogSpline::DeployLength1TextEdit);
     connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
+
+    connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogSpline::updateCurveLengthEnabled);
+    connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, &DialogSpline::CurveLengthChanged);
+    updateCurveLengthEnabled();
 
     vis = new VisToolSpline(data);
     auto path = qobject_cast<VisToolSpline *>(vis);
@@ -268,6 +277,7 @@ void DialogSpline::closeEvent(QCloseEvent *event)
     ui->plainTextEditAngle2F->blockSignals(true);
     ui->plainTextEditLength1F->blockSignals(true);
     ui->plainTextEditLength2F->blockSignals(true);
+    ui->plainTextEditCurveLength->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -417,6 +427,24 @@ void DialogSpline::FXLength2()
         }
         ui->plainTextEditLength2F->setPlainText(length2F);
         MoveCursorToEnd(ui->plainTextEditLength2F);
+    }
+    delete dialog;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::FXCurveLength()
+{
+    auto dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
+    dialog->setWindowTitle(tr("Edit curve length"));
+    QString lengthF = qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditCurveLength->toPlainText(),
+                                                         qApp->Settings()->getOsSeparator());
+    dialog->SetFormula(lengthF);
+    dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
+    if (dialog->exec() == QDialog::Accepted)
+    {
+        lengthF = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
+        ui->plainTextEditCurveLength->setPlainText(lengthF);
+        MoveCursorToEnd(ui->plainTextEditCurveLength);
     }
     delete dialog;
 }
@@ -601,7 +629,7 @@ void DialogSpline::ShowDialog(bool click)
 void DialogSpline::CheckState()
 {
     SCASSERT(ok_Button != nullptr)
-    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
+    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagCurveLength && flagError);
     // In case dialog does not have an apply button
     if (apply_Button != nullptr)
     {
@@ -619,6 +647,92 @@ void DialogSpline::ShowVisualization()
 VSpline DialogSpline::GetSpline() const
 {
     return spl;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool DialogSpline::GetAutoSmooth() const
+{
+    return ui->comboBoxAutoSmooth->currentIndex() == 1;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetAutoSmooth(bool value)
+{
+    ui->comboBoxAutoSmooth->setCurrentIndex(value ? 1 : 0);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int DialogSpline::GetLengthMode() const
+{
+    return ui->comboBoxLengthMode->currentIndex();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetLengthMode(int value)
+{
+    ui->comboBoxLengthMode->setCurrentIndex(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogSpline::GetTargetLength() const
+{
+    return ui->plainTextEditCurveLength->toPlainText().trimmed();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::SetTargetLength(const QString &formula)
+{
+    if (formula.isEmpty())
+    {
+        return;
+    }
+    const QString f = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(f);
+    ui->plainTextEditCurveLength->blockSignals(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::CurveLengthChanged()
+{
+    if (ui->comboBoxLengthMode->currentIndex() == 0)
+    {
+        ui->comboBoxLengthMode->setCurrentIndex(3);
+    }
+    labelEditFormula = ui->labelEditCurveLength;
+    labelResultCalculation = ui->labelResultCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    formulaValueChanged(flagCurveLength, ui->plainTextEditCurveLength, timerCurveLength, postfix);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::EvalCurveLength()
+{
+    labelEditFormula = ui->labelEditCurveLength;
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);
+    const qreal length = Eval(ui->plainTextEditCurveLength->toPlainText(), flagCurveLength,
+                              ui->labelResultCurveLength, postfix, false);
+
+    if (length < 0)
+    {
+        flagCurveLength = false;
+        ChangeColor(labelEditFormula, Qt::red);
+        ui->labelResultCurveLength->setText(tr("Error") + " (" + postfix + ")");
+        ui->labelResultCurveLength->setToolTip(tr("Length can't be negative"));
+
+        DialogSpline::CheckState();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSpline::updateCurveLengthEnabled()
+{
+    if (ui->comboBoxLengthMode->currentIndex() == 0
+        && ui->plainTextEditCurveLength->toPlainText().trimmed().isEmpty())
+    {
+        flagCurveLength = true;
+    }
+    CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -646,6 +760,13 @@ void DialogSpline::SetSpline(const VSpline &spline)
     ui->plainTextEditLength2F->setPlainText(length2F);
     ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
 
+    const QString curLen = QString::number(qApp->fromPixel(spl.GetLength()));
+    const QString unit = UnitsToStr(qApp->patternUnit(), true);
+    ui->plainTextEditCurveLength->blockSignals(true);
+    ui->plainTextEditCurveLength->setPlainText(curLen);
+    ui->plainTextEditCurveLength->blockSignals(false);
+    ui->labelResultCurveLength->setText(curLen + QLatin1Char(' ') + unit);
+
     auto path = qobject_cast<VisToolSpline *>(vis);
     SCASSERT(path != nullptr)
 
@@ -656,6 +777,11 @@ void DialogSpline::SetSpline(const VSpline &spline)
     path->SetKAsm1(spl.GetKasm1());
     path->SetKAsm2(spl.GetKasm2());
     path->SetKCurve(spl.GetKcurve());
+    path->setShowPoints(static_cast<QPointF>(spl.GetP1()),
+                        static_cast<QPointF>(spl.GetP2()),
+                        static_cast<QPointF>(spl.GetP3()),
+                        static_cast<QPointF>(spl.GetP4()));
+    path->SetMode(Mode::Show);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

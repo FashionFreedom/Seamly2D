@@ -924,6 +924,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Épaisseur de la ligne :</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Options</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Courbe lissée :</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oui</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajuster la longueur :</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Désactivé</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Début</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Les deux</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longueur de courbe :</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Assistant de formule</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule de longueur d&apos;arc de courbe (appliquée si le champ est rempli)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Modifier la longueur de la courbe</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Une longueur ne peut être négative</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2755,6 +2815,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Géométrie</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Options</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Courbe lissée :</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oui</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajuster la longueur :</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Désactivé</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Début</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Les deux</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longueur de courbe :</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule de longueur d&apos;arc de courbe (appliquée si le champ est rempli)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Modifier la longueur de la courbe</translation>
     </message>
 </context>
 <context>
@@ -13739,6 +13847,46 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Direction:</source>
         <translation>Direction :</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Options</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Courbe lissée :</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Non</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Oui</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajuster la longueur :</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Désactivé</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Début</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Les deux</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longueur de courbe :</translation>
     </message>
 </context>
 <context>

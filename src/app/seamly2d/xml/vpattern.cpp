@@ -2454,8 +2454,13 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
+        const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
+
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
-                                               lineWeight, scene, this, data, parse, Source::FromFile);
+                                               lineWeight, scene, this, data, parse, Source::FromFile,
+                                               autoSmooth, lengthMode, targetLength);
 
         if (spl != nullptr)
         {
@@ -2524,7 +2529,11 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
         spline->SetPenStyle(penStyle);
         spline->setLineWeight(lineWeight);
 
-        VToolCubicBezier::Create(id, spline, scene, this, data, parse, Source::FromFile);
+        const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
+
+        VToolCubicBezier::Create(id, spline, autoSmooth, lengthMode, targetLength, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {

@@ -83,6 +83,15 @@ public:
     VSpline       GetSpline() const;
     void          SetSpline(const VSpline &spline);
 
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
+    int           GetLengthMode() const;
+    void          SetLengthMode(int value);
+
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &formula);
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 
@@ -96,6 +105,7 @@ public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
     virtual void  PointNameChanged() override;
     virtual void  ShowDialog(bool click) override;
+    void          updateCurveLengthEnabled();
 
 protected:
     virtual void  CheckState() final;
@@ -121,6 +131,8 @@ private slots:
     void          FXAngle2();
     void          FXLength1();
     void          FXLength2();
+    void          FXCurveLength();
+    void          CurveLengthChanged();
 
 private:
     Q_DISABLE_COPY(DialogSpline)
@@ -140,12 +152,14 @@ private:
     QTimer           *timerAngle2;
     QTimer           *timerLength1;
     QTimer           *timerLength2;
+    QTimer           *timerCurveLength;
 
     /** @brief flagAngle1 true if value of first angle is correct */
     bool              flagAngle1;
     bool              flagAngle2;
     bool              flagLength1;
     bool              flagLength2;
+    bool              flagCurveLength;
 
     const QSharedPointer<VPointF> GetP1() const;
     const QSharedPointer<VPointF> GetP4() const;
@@ -154,6 +168,7 @@ private:
     void              EvalAngle2();
     void              EvalLength1();
     void              EvalLength2();
+    void              EvalCurveLength();
 
     VSpline           CurrentSpline() const;
 };

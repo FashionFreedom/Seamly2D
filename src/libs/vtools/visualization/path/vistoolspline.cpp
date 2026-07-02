@@ -61,6 +61,7 @@
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vgeometrydef.h"
 #include "../vgeometry/vpointf.h"
+#include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vspline.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vcontrolpointspline.h"
@@ -83,6 +84,11 @@ VisToolSpline::VisToolSpline(const VContainer *data, QGraphicsItem *parent)
       isLeftMousePressed(false),
       p2Selected(false),
       p3Selected(false),
+      m_showPointsSet(false),
+      m_showP1(),
+      m_showP2(),
+      m_showP3(),
+      m_showP4(),
       p2(),
       p3(),
       controlPoints()
@@ -108,6 +114,20 @@ VisToolSpline::~VisToolSpline()
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolSpline::RefreshGeometry()
 {
+    if (mode == Mode::Show && m_showPointsSet)
+    {
+        const VPointF sp1(m_showP1);
+        const VPointF sp2(m_showP2);
+        const VPointF sp3(m_showP3);
+        const VPointF sp4(m_showP4);
+        const VCubicBezier spline(sp1, sp2, sp3, sp4);
+        DrawPath(this, spline.GetPath(), spline.DirectionArrows(), mainColor, lineStyle,
+                 lineWeight, Qt::RoundCap);
+        DrawPoint(point1, m_showP1, supportColor);
+        DrawPoint(point4, m_showP4, supportColor);
+        return;
+    }
+
     //Radius of point circle, but little bigger. Need handle with hover sizes.
     const static qreal radius = defPointRadiusPixel*1.5;
 
@@ -262,4 +282,15 @@ void VisToolSpline::MouseLeftReleased()
         isLeftMousePressed = false;
         RefreshGeometry();
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolSpline::setShowPoints(const QPointF &p1, const QPointF &p2,
+                                  const QPointF &p3, const QPointF &p4)
+{
+    m_showP1 = p1;
+    m_showP2 = p2;
+    m_showP3 = p3;
+    m_showP4 = p4;
+    m_showPointsSet = true;
 }

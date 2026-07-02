@@ -77,11 +77,14 @@ public:
                                VContainer *data);
     static VToolSpline *Create(const quint32 _id, VSpline *spline,
                                VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
-                               const Document &parse, const Source &typeCreation);
+                               const Document &parse, const Source &typeCreation,
+                               bool autoSmooth = false);
     static VToolSpline *Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2, QString &l1,
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                               VContainer *data, const Document &parse, const Source &typeCreation);
+                               VContainer *data, const Document &parse, const Source &typeCreation,
+                               bool autoSmooth = false, int lengthMode = 0,
+                               const QString &targetLength = QString());
     static const QString ToolType;
     static const QString OldToolType;
     virtual int   type() const override {return Type;}
@@ -89,6 +92,15 @@ public:
 
     VSpline       getSpline()const;
     void          setSpline(const VSpline &spl);
+
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &value);
+
+    int           GetLengthMode() const;
+    void          SetLengthMode(int value);
 
     virtual void  ShowVisualization(bool show) override;
 
@@ -101,6 +113,7 @@ protected slots:
     virtual void  showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual void  ReadToolAttributes(const QDomElement &domElement) override;
     virtual void  RemoveReferens() override;
     virtual void  SaveDialog(QDomElement &domElement) override;
     virtual void  SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -115,9 +128,14 @@ protected:
 private:
     Q_DISABLE_COPY(VToolSpline)
     QPointF       oldPosition;
+    bool          m_autoSmooth;
+    int           m_lengthMode;
+    QString       m_targetLength;
 
                   VToolSpline (VAbstractPattern *doc, VContainer *data, quint32 id,
-                               const Source &typeCreation, QGraphicsItem * parent = nullptr );
+                               bool autoSmooth, int lengthMode,
+                               const QString &targetLength,
+                               const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool          IsMovable() const;
     void          SetSplineAttributes(QDomElement &domElement, const VSpline &spl);

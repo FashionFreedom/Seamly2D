@@ -1,0 +1,233 @@
+name: Feature Branch CI
+
+# Builds testable artifacts for feature branches without creating releases
+# Artifacts are available for download from the Actions tab for 14 days
+
+on:
+  push:
+    branches:
+      - 'feat-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  QT_VERSION: '6.5.3'
+
+jobs:
+
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version_number: ${{ steps.create-version.outputs.version_number }}
+
+    steps:
+      - name: create version number
+        id: create-version
+        run: |
+          echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
+
+  linux-test:
+    name: 'linux-test - run unit tests'
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: linux-test - checkout
+        uses: actions/checkout@v7
+
+      - name: linux-test - install Qt
+        uses: jurplel/install-qt-action@v4.3.1
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+          modules: qtmultimedia
+
+      - name: linux-test - install build dependencies
+        run: |
+          sudo apt update && sudo apt install -y libxerces-c-dev
+
+      - name: linux-test - build Seamly2D & SeamlyMe for tests
+        run: |
+          qmake Seamly2D.pro
+          make -j$(nproc)
+
+      - name: linux-test - install test dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y xvfb gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-0
+
+      - name: linux-test - run Seamly2D tests
+        run: |
+          xvfb-run -a make check
+
+  linux:
+    name: 'Appimage: Build'
+    runs-on: ubuntu-latest
+    container:
+      image: debian/eol:bullseye
+      options: --device /dev/fuse --privileged
+    needs: [version, linux-test]
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - name: appimage - checkout
+        uses: actions/checkout@v7
+
+      - name: appimage - install appimage dependencies
+        run: |
+          apt update && apt install -y libfuse2 fuse wget file
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
+          chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+
+      - name: appimage - install build dependencies
+        run: |
+          apt update
+          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev python3-pip libcups2 libxrandr2
+
+      - name: appimage - install Qt
+        uses: jurplel/install-qt-action@v4.3.1
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+          install-deps: nosudo
+          setup-python: false
+          modules: qtmultimedia
+
+      - name: appimage - update version
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: appimage - build Seamly2D appimage
+        env:
+          OUTPUT: Seamly2D-x86_64.AppImage
+        run: |
+          qmake -config release CONFIG+=noTests
+          make -j$(nproc)
+          make INSTALL_ROOT=`pwd`/AppDir install
+
+          cp /usr/bin/pdftops AppDir/usr/bin
+          mkdir -p AppDir/usr/share/X11/xkb
+          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
+          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
+
+      - name: appimage - upload a build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Seamly2D-x86_64.AppImage
+          path: Seamly2D-x86_64.AppImage
+          if-no-files-found: error
+          retention-days: 14
+
+  macos:
+    name: 'macOS: Build'
+    runs-on: macos-15  # pin to macos-15 due to https://qt-project.atlassian.net/browse/QTBUG-137687
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - name: macOS - checkout
+        uses: actions/checkout@v7
+
+      - name: macOS - install build dependencies
+        run: |
+          brew install xerces-c
+
+      - name: macOS - install Qt
+        uses: jurplel/install-qt-action@v4.3.1
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+          modules: qtmultimedia
+
+      - name: macOS - update version
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: macOS - build Seamly2D.app and SeamlyMe.app
+        run: |
+          echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
+          qmake Seamly2D.pro -config release CONFIG+=noTests
+          make -j$(sysctl -n hw.logicalcpu)
+
+      - name: macOS - create .dmg installer
+        uses: actions/upload-artifact@v7
+        with:
+          name: Seamly2D-macos.zip
+          path: out/Seamly2D-macos.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  windows:
+    name: 'Windows: Build'
+    runs-on: windows-2022
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+    strategy:
+      matrix:
+        include:
+          - msvc-arch: x64
+            qt-arch: win64_msvc2019_64
+            qmake-spec: win32-msvc
+            release-file: Seamly2D-windows.zip
+          - msvc-arch: amd64_arm64
+            qt-arch: win64_msvc2019_arm64
+            qmake-spec: win32-arm64-msvc
+            release-file: Seamly2D-win-arm64.zip
+
+    steps:
+      - name: windows - checkout
+        uses: actions/checkout@v7
+
+      - name: windows - install MSVC build tools, enable developer command prompt
+        uses: ilammy/msvc-dev-cmd@v1.13.0
+        with:
+          arch: ${{ matrix.msvc-arch }}
+
+      - name: windows - install Qt
+        uses: jurplel/install-qt-action@v4.3.1
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: ${{ matrix.qt-arch }}
+          cache: true
+          modules: qtmultimedia
+
+      - name: windows - update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: windows - build seamly2d.exe and seamlyme.exe
+        run: |
+          qmake Seamly2D.pro -spec ${{ matrix.qmake-spec }} -config release CONFIG+=noTests
+          nmake
+
+      - name: install NSIS
+        run: choco install nsis -y
+
+      - name: windows - create seamly2d-installer.exe
+        run: |
+          mkdir windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination windows-build
+          cd windows-build
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: windows - pack installer file into .zip
+        run: |
+          cd windows-build
+          C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
+
+      - name: windows - upload a build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ${{ matrix.release-file }}
+          path: windows-build/${{ matrix.release-file }}
+          if-no-files-found: error
+          retention-days: 14

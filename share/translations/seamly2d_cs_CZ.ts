@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.1" language="cs_CZ">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -916,6 +916,66 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Tloušťka čáry:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Průvodce vzorci</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Vzorec délky oblouku křivky (použije se při vyplnění pole)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Upravit délku křivky</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Délka nemůže být záporná</translation>
     </message>
 </context>
 <context>
@@ -2741,6 +2801,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Vzorec délky oblouku křivky (použije se při vyplnění pole)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Upravit délku křivky</translation>
     </message>
 </context>
 <context>
@@ -13709,6 +13817,46 @@ SeamlyME jako obvykle.
     <message>
         <source>Direction:</source>
         <translation>Směr:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
     </message>
 </context>
 <context>

@@ -85,6 +85,9 @@ public:
     QPointF      GetP2() const;
     QPointF      GetP3() const;
 
+    void         setShowPoints(const QPointF &p1, const QPointF &p2,
+                               const QPointF &p3, const QPointF &p4);
+
     virtual int  type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolSpline)};
 public slots:
@@ -105,6 +108,11 @@ protected:
     bool isLeftMousePressed;
     bool p2Selected;
     bool p3Selected;
+    bool m_showPointsSet;
+    QPointF m_showP1;
+    QPointF m_showP2;
+    QPointF m_showP3;
+    QPointF m_showP4;
 
     QPointF p2;
     QPointF p3;
