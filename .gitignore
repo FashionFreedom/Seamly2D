@@ -27,6 +27,7 @@
 ._.DS_Store
 
 # Ignore these directories.
+.claude/
 html/
 latex/
 bin/
@@ -37,6 +38,10 @@ rcc/
 man/
 build/
 .vscode/*
+
+# Python bytecode cache
+__pycache__/
+*.pyc
 
 # Ignore Coverity Scan Build Tool
 cov-int/
@@ -172,3 +177,6 @@ target_wrapper.sh
 .qtc_clangd/
 .vscode/
 .qmake.stash
+
+# Claude Code local config
+.claude/

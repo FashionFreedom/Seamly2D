@@ -640,6 +640,16 @@ void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyEnum(const QString &propertyName, const QStringList &options,
+                                                   int currentIndex, const QString &propertyAttribute)
+{
+    VPE::VEnumProperty *property = new VPE::VEnumProperty(propertyName);
+    property->setLiterals(options);
+    property->setValue(currentIndex);
+    addProperty(property, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
 void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
@@ -2002,6 +2012,38 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
         case 60: // AttrLineWeight
             tool->setLineWeight(value.toString());
             break;
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
+            break;
+        }
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2056,6 +2098,38 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             spline.SetP4(point);
             tool->setSpline(spline);
             break;
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
+            break;
+        }
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2859,6 +2933,18 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     angle2.setPostfix(degreeSymbol);
     addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -2879,6 +2965,18 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
     addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
     addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -3830,6 +3928,16 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
         const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
         idToProperty[AttrLineWeight]->setValue(index);
     }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3874,6 +3982,16 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
                                                                                spl.GetP4().name());
         idToProperty[AttrPoint4]->setValue(index);
+    }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
     }
 }
 
@@ -4223,6 +4341,8 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
-                                            << AttrDirection;                     /* 62 */
+                                            << AttrDirection                      /* 62 */
+                                            << AttrAutoSmooth                     /* 63 */
+                                            << AttrLengthMode;                    /* 64 */
     return attr;
 }

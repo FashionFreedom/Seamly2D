@@ -34,7 +34,7 @@ jobs:
 
     steps:
       - name: linux-test - checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7
 
       - name: linux-test - install Qt
         uses: jurplel/install-qt-action@v4.3.1
@@ -73,7 +73,7 @@ jobs:
 
     steps:
       - name: appimage - checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7
 
       - name: appimage - install appimage dependencies
         run: |
@@ -115,7 +115,7 @@ jobs:
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - name: appimage - upload a build artifact
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -131,7 +131,7 @@ jobs:
 
     steps:
       - name: macOS - checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7
 
       - name: macOS - install build dependencies
         run: |
@@ -155,7 +155,7 @@ jobs:
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: macOS - create .dmg installer
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
@@ -164,7 +164,7 @@ jobs:
 
   windows:
     name: 'Windows: Build'
-    runs-on: windows-latest
+    runs-on: windows-2022
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -182,7 +182,7 @@ jobs:
 
     steps:
       - name: windows - checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v7
 
       - name: windows - install MSVC build tools, enable developer command prompt
         uses: ilammy/msvc-dev-cmd@v1.13.0
@@ -225,7 +225,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
 
       - name: windows - upload a build artifact
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}

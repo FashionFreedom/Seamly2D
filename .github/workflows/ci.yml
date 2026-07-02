@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: jurplel/install-qt-action@v4
         with:
@@ -67,6 +67,7 @@ jobs:
           xvfb-run -a make check
 
   linux:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-latest
     container:
@@ -77,7 +78,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: install appimage dependencies
         run: |
@@ -121,7 +122,7 @@ jobs:
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -129,6 +130,7 @@ jobs:
  
 
   macos:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'macOS: Build'
     runs-on: macos-15  # pin to macos-15 due to https://qt-project.atlassian.net/browse/QTBUG-137687
     needs: version
@@ -136,7 +138,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: install build dependencies
         run: |
@@ -187,15 +189,16 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
           if-no-files-found: error
 
   windows:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Windows Build'
-    runs-on: windows-latest
+    runs-on: windows-2022
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -212,7 +215,7 @@ jobs:
             release-file: Seamly2D-win-arm64.zip
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -297,7 +300,7 @@ jobs:
           cd windows-build
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}
@@ -311,16 +314,16 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-windows.zip
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-win-arm64.zip
       - uses: softprops/action-gh-release@v3

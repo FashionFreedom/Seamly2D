@@ -81,6 +81,15 @@ public:
     VCubicBezier  GetSpline() const;
     void          SetSpline(const VCubicBezier &spline);
 
+    bool          GetAutoSmooth() const;
+    void          SetAutoSmooth(bool value);
+
+    int           GetLengthMode() const;
+    void          SetLengthMode(int value);
+
+    QString       GetTargetLength() const;
+    void          SetTargetLength(const QString &formula);
+
     QString       getPenStyle() const;
     void          setPenStyle(const QString &value);
 
@@ -93,13 +102,19 @@ public:
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
     virtual void  PointNameChanged() override;
+    void          updateCurveLengthEnabled();
 
 protected:
+    virtual void  CheckState() final;
     virtual void  ShowVisualization() override;
     /**
      * @brief SaveData Put dialog data in local variables
      */
     virtual void  SaveData() override;
+
+private slots:
+    void          FXCurveLength();
+    void          CurveLengthChanged();
 
 private:
     Q_DISABLE_COPY(DialogCubicBezier)
@@ -107,13 +122,20 @@ private:
 
     /** @brief spl spline */
     VCubicBezier  spl;
+    VCubicBezier  m_computedSpl;
+    bool          m_hasComputedSpl;
 
     qint32        newDuplicate;
+
+    QTimer       *timerCurveLength;
+    bool          flagCurveLength;
 
     const QSharedPointer<VPointF> GetP1() const;
     const QSharedPointer<VPointF> GetP2() const;
     const QSharedPointer<VPointF> GetP3() const;
     const QSharedPointer<VPointF> GetP4() const;
+
+    void          EvalCurveLength();
 };
 
 #endif // DIALOGCUBICBEZIER_H

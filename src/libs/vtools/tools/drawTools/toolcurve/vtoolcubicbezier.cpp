@@ -52,6 +52,7 @@
 #include "vtoolcubicbezier.h"
 
 #include <QDomElement>
+#include <QLineF>
 #include <QPen>
 #include <QSharedPointer>
 #include <QString>
@@ -78,10 +79,45 @@
 const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 
 //---------------------------------------------------------------------------------------------------------------------
+// Set the spline's control points from handle lengths (c1, c2) along the given
+// directions, preserving the original canvas point IDs.
+static void setHandlesFromLengths(VCubicBezier *spline, const QPointF &p1pt, const QPointF &p4pt,
+                                  qreal angle1, qreal angle2, qreal c1, qreal c2,
+                                  quint32 p2Id, quint32 p3Id)
+{
+    QLineF newH1(p1pt, p1pt + QPointF(c1, 0.0));
+    newH1.setAngle(angle1);
+    QLineF newH2(p4pt, p4pt + QPointF(c2, 0.0));
+    newH2.setAngle(angle2);
+
+    const VPointF oldP2 = spline->GetP2();
+    const VPointF oldP3 = spline->GetP3();
+    VPointF newP2(newH1.p2(), oldP2.name(), oldP2.mx(), oldP2.my(),
+                  oldP2.getIdObject(), oldP2.getMode());
+    newP2.setId(p2Id);
+    VPointF newP3(newH2.p2(), oldP3.name(), oldP3.mx(), oldP3.my(),
+                  oldP3.getIdObject(), oldP3.getMode());
+    newP3.setId(p3Id);
+
+    spline->SetP2(newP2);
+    spline->SetP3(newP3);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 VToolCubicBezier::VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
+                                   bool autoSmooth, int lengthMode,
+                                   const QString &targetLength,
                                    const Source &typeCreation, QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
+    , m_autoSmooth(autoSmooth)
+    , m_lengthMode(lengthMode)
+    , m_targetLength(targetLength)
+    , m_p2Id(0)
+    , m_p3Id(0)
 {
+    const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(id);
+    m_p2Id = spl->GetP2().id();
+    m_p3Id = spl->GetP3().id();
     m_sceneType = SceneObject::Spline;
 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
@@ -97,6 +133,9 @@ void VToolCubicBezier::setDialog()
     SCASSERT(dialogTool != nullptr)
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     dialogTool->SetSpline(*spl);
+    dialogTool->SetAutoSmooth(m_autoSmooth);
+    dialogTool->SetLengthMode(m_lengthMode);
+    dialogTool->SetTargetLength(m_targetLength);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setPenStyle(spl->GetPenStyle());
     dialogTool->setLineWeight(spl->getLineWeight());
@@ -114,8 +153,11 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
     spline->setLineColor(dialogTool->getLineColor());
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
+    const bool autoSmooth = dialogTool->GetAutoSmooth();
+    const int lengthMode = dialogTool->GetLengthMode();
+    const QString targetLength = dialogTool->GetTargetLength();
 
-    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
+    auto spl = Create(0, spline, autoSmooth, lengthMode, targetLength, scene, doc, data, Document::FullParse, Source::FromGui);
 
     if (spl != nullptr)
     {
@@ -125,10 +167,74 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spline, VMainGraphicsScene *scene,
-                                           VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                           const Source &typeCreation)
+VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spline,
+                                           bool autoSmooth, int lengthMode,
+                                           const QString &targetLength,
+                                           VMainGraphicsScene *scene,
+                                           VAbstractPattern *doc, VContainer *data,
+                                           const Document &parse, const Source &typeCreation)
 {
+    const quint32 origP2Id = spline->GetP2().id();
+    const quint32 origP3Id = spline->GetP3().id();
+
+    // Mutual-exclusive dispatch: the three handle-computation modes (Hobby,
+    // length-solver, combined tension-solver) each produce a DIFFERENT set of
+    // handle lengths from the SAME inputs. Running them sequentially (Hobby
+    // first, then solver on the result) would feed solver inputs that are
+    // already transformed, producing wrong geometry. The if/else-if ensures
+    // exactly one code-path modifies the handles per Create() call.
+    {
+        const QPointF p1pt = static_cast<QPointF>(spline->GetP1());
+        const QPointF p4pt = static_cast<QPointF>(spline->GetP4());
+        const QLineF h1(p1pt, static_cast<QPointF>(spline->GetP2()));
+        const QLineF h2(p4pt, static_cast<QPointF>(spline->GetP3()));
+        const qreal angle1 = h1.angle();
+        const qreal angle2 = h2.angle();
+
+        const bool hasTarget = (lengthMode > 0 && !targetLength.isEmpty());
+        qreal targetPx = 0.0;
+        if (hasTarget)
+        {
+            QString tl = targetLength;
+            targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+        }
+
+        qreal c1 = h1.length();
+        qreal c2 = h2.length();
+        bool modified = false;
+
+        if (autoSmooth && hasTarget && targetPx > 0.0)
+        {
+            // Combined: vary Hobby tension to hit the target length.
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHobbyTension(
+                p1pt, p4pt, angle1, angle2, targetPx, lengthMode);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
+        else if (autoSmooth)
+        {
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::HobbyHandleLengths(
+                p1pt, p4pt, angle1, angle2);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
+        else if (hasTarget && targetPx > 0.0)
+        {
+            const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHandleLengths(
+                p1pt, p4pt, angle1, angle2, h1.length(), h2.length(), targetPx, lengthMode);
+            c1 = s.first;
+            c2 = s.second;
+            modified = true;
+        }
+
+        if (modified)
+        {
+            setHandlesFromLengths(spline, p1pt, p4pt, angle1, angle2, c1, c2, origP2Id, origP3Id);
+        }
+    }
+
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -148,13 +254,13 @@ VToolCubicBezier *VToolCubicBezier::Create(const quint32 _id, VCubicBezier *spli
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CubicBezier, doc);
-        auto _spl = new VToolCubicBezier(doc, data, id, typeCreation);
+        auto _spl = new VToolCubicBezier(doc, data, id, autoSmooth, lengthMode, targetLength, typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
         doc->IncrementReferens(spline->GetP1().getIdTool());
-        doc->IncrementReferens(spline->GetP1().getIdTool());
-        doc->IncrementReferens(spline->GetP1().getIdTool());
+        doc->IncrementReferens(spline->GetP2().getIdTool());
+        doc->IncrementReferens(spline->GetP3().getIdTool());
         doc->IncrementReferens(spline->GetP4().getIdTool());
         return _spl;
     }
@@ -206,6 +312,53 @@ void VToolCubicBezier::setSpline(const VCubicBezier &spl)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VToolCubicBezier::GetAutoSmooth() const
+{
+    return m_autoSmooth;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetAutoSmooth(bool value)
+{
+    m_autoSmooth = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolCubicBezier::GetTargetLength() const
+{
+    if (m_targetLength.isEmpty())
+    {
+        const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+        return QString::number(qApp->fromPixel(spl->GetLength()));
+    }
+    return m_targetLength;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetTargetLength(const QString &value)
+{
+    m_targetLength = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VToolCubicBezier::GetLengthMode() const
+{
+    return m_lengthMode;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::SetLengthMode(int value)
+{
+    m_lengthMode = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolCubicBezier>(show);
@@ -228,6 +381,14 @@ void VToolCubicBezier::showContextMenu(QGraphicsSceneContextMenuEvent *event, qu
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VToolCubicBezier::ReadToolAttributes(const QDomElement &domElement)
+{
+    m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+    m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+    m_targetLength = domElement.attribute(AttrLength, QString());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolCubicBezier::RemoveReferens()
 {
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
@@ -245,6 +406,9 @@ void VToolCubicBezier::SaveDialog(QDomElement &domElement)
     SCASSERT(dialogTool != nullptr)
 
     const VCubicBezier spl = dialogTool->GetSpline();
+    m_autoSmooth = dialogTool->GetAutoSmooth();
+    m_lengthMode = dialogTool->GetLengthMode();
+    m_targetLength = dialogTool->GetTargetLength();
 
     SetSplineAttributes(domElement, spl);
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
@@ -271,12 +435,17 @@ void VToolCubicBezier::SetVisualization()
         SCASSERT(visual != nullptr)
 
         const QSharedPointer<VCubicBezier> spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
+
         visual->setObject1Id(spl->GetP1().id());
         visual->setObject2Id(spl->GetP2().id());
         visual->setObject3Id(spl->GetP3().id());
         visual->setObject4Id(spl->GetP4().id());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
         visual->setLineWeight(spl->getLineWeight());
+        visual->setShowPoints(static_cast<QPointF>(spl->GetP1()),
+                              static_cast<QPointF>(spl->GetP2()),
+                              static_cast<QPointF>(spl->GetP3()),
+                              static_cast<QPointF>(spl->GetP4()));
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }
@@ -298,8 +467,8 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
 
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
-    doc->SetAttribute(domElement, AttrPoint2,  spl.GetP2().id());
-    doc->SetAttribute(domElement, AttrPoint3,  spl.GetP3().id());
+    doc->SetAttribute(domElement, AttrPoint2,  m_p2Id);
+    doc->SetAttribute(domElement, AttrPoint3,  m_p3Id);
     doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
 
     if (spl.GetDuplicate() > 0)
@@ -312,5 +481,34 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
         {
             domElement.removeAttribute(AttrDuplicate);
         }
+    }
+
+    if (m_autoSmooth)
+    {
+        doc->SetAttribute(domElement, AttrAutoSmooth, QStringLiteral("true"));
+    }
+    else
+    {
+        domElement.removeAttribute(AttrAutoSmooth);
+    }
+
+    if (m_lengthMode > 0)
+    {
+        doc->SetAttribute(domElement, AttrLengthMode, m_lengthMode);
+    }
+    else
+    {
+        domElement.removeAttribute(AttrLengthMode);
+    }
+
+    // Persist the target length independently of the mode so toggling the mode
+    // Off and back On does not lose the user's entered value.
+    if (!m_targetLength.isEmpty())
+    {
+        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+    }
+    else
+    {
+        domElement.removeAttribute(AttrLength);
     }
 }

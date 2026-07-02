@@ -917,6 +917,66 @@ p, li { white-space: pre-wrap; }
         <source>Invalid spline</source>
         <translation>Nieprawidłowa linia krzywa</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opcje</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Gładka krzywa:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Dostosuj długość:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Wyłączone</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Początek</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Koniec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Oba</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Długość krzywej:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kreator formuł</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Wzór na długość łuku krzywej (stosowany, jeśli pole jest wypełnione)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Edytuj długość krzywej</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Błąd</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Długość nie może być ujemna</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -2741,6 +2801,54 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Invalid spline</source>
         <translation>Nieprawidłowa linia krzywa</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opcje</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Gładka krzywa:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Dostosuj długość:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Wyłączone</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Początek</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Koniec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Oba</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Długość krzywej:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Wzór na długość łuku krzywej (stosowany, jeśli pole jest wypełnione)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Edytuj długość krzywej</translation>
     </message>
 </context>
 <context>
@@ -13710,6 +13818,46 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Line_</source>
         <translation>Linia_</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Opcje</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Gładka krzywa:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nie</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Tak</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Dostosuj długość:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Wyłączone</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Początek</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Koniec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Oba</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Długość krzywej:</translation>
     </message>
 </context>
 <context>

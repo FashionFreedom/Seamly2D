@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -916,6 +916,66 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formül sihirbazı</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Eğri yay uzunluğu formülü (alan doldurulduğunda uygulanır)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Eğri uzunluğunu düzenle</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Uzunluk negatif olamaz</translation>
     </message>
 </context>
 <context>
@@ -2741,6 +2801,54 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Geometry</source>
         <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Eğri yay uzunluğu formülü (alan doldurulduğunda uygulanır)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Eğri uzunluğunu düzenle</translation>
     </message>
 </context>
 <context>
@@ -13710,6 +13818,46 @@ load in SeamlyME as usual.
     <message>
         <source>Direction:</source>
         <translation>Yön:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
     </message>
 </context>
 <context>

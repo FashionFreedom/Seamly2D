@@ -96,10 +96,15 @@ const QString VToolSpline::OldToolType = QStringLiteral("simple");
 // @param id object id in container.
 // @param typeCreation way we create this tool.
 // @param parent parent object.
-VToolSpline::VToolSpline(VAbstractPattern *doc, VContainer *data, quint32 id, const Source &typeCreation,
-                         QGraphicsItem *parent)
+VToolSpline::VToolSpline(VAbstractPattern *doc, VContainer *data, quint32 id,
+                         bool autoSmooth, int lengthMode,
+                         const QString &targetLength,
+                         const Source &typeCreation, QGraphicsItem *parent)
     : VAbstractSpline(doc, data, id, parent)
     , oldPosition()
+    , m_autoSmooth(autoSmooth)
+    , m_lengthMode(lengthMode)
+    , m_targetLength(targetLength)
 {
     m_sceneType = SceneObject::Spline;
 
@@ -145,6 +150,9 @@ void VToolSpline::setDialog()
     SCASSERT(!dialogTool.isNull())
     const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     dialogTool->SetSpline(*spl);
+    dialogTool->SetAutoSmooth(m_autoSmooth);
+    dialogTool->SetLengthMode(m_lengthMode);
+    dialogTool->SetTargetLength(m_targetLength);
     dialogTool->setLineColor(spl->getLineColor());
     dialogTool->setLineWeight(spl->getLineWeight());
     dialogTool->setPenStyle(spl->GetPenStyle());
@@ -167,8 +175,9 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     spline->setLineColor(dialogTool->getLineColor());
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
+    const bool autoSmooth = dialogTool->GetAutoSmooth();
 
-    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
+    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui, autoSmooth);
 
     if (spl != nullptr)
     {
@@ -187,7 +196,8 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 // @param typeCreation way we create this tool.
 // @return the created tool
 VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                 VContainer *data, const Document &parse, const Source &typeCreation)
+                                 VContainer *data, const Document &parse, const Source &typeCreation,
+                                 bool autoSmooth)
 {
     quint32 id = _id;
 
@@ -209,7 +219,7 @@ VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphi
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::Spline, doc);
-        auto _spl = new VToolSpline(doc, data, id, typeCreation);
+        auto _spl = new VToolSpline(doc, data, id, autoSmooth, 0, QString(), typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
@@ -225,7 +235,8 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
                                  QString &l1, QString &l2, quint32 duplicate, const QString &color,
                                  const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                 const Source &typeCreation)
+                                 const Source &typeCreation, bool autoSmooth,
+                                 int lengthMode, const QString &targetLength)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -236,7 +247,49 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     auto p1 = data->GeometricObject<VPointF>(point1);
     auto p4 = data->GeometricObject<VPointF>(point4);
 
-    auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, calcLength1, l1, calcLength2, l2);
+    qreal finalLength1 = calcLength1;
+    qreal finalLength2 = calcLength2;
+
+    // Mutual-exclusive dispatch: the three handle-computation modes (Hobby,
+    // length-solver, combined tension-solver) each produce a DIFFERENT set of
+    // handle lengths from the SAME inputs. Running them sequentially (Hobby
+    // first, then solver on the result) would feed solver inputs that are
+    // already transformed, producing wrong geometry. The if/else-if ensures
+    // exactly one code-path modifies the handles per Create() call.
+    const bool hasTarget = (lengthMode > 0 && !targetLength.isEmpty());
+    qreal targetPx = 0.0;
+    if (hasTarget)
+    {
+        QString tl = targetLength;
+        targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+    }
+
+    if (autoSmooth && hasTarget && targetPx > 0.0)
+    {
+        // Combined: vary Hobby tension to hit the target length.
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHobbyTension(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
+            calcAngle1, calcAngle2, targetPx, lengthMode);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
+    }
+    else if (autoSmooth)
+    {
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::HobbyHandleLengths(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4), calcAngle1, calcAngle2);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
+    }
+    else if (hasTarget && targetPx > 0.0)
+    {
+        const QPair<qreal, qreal> s = VAbstractCubicBezier::SolveHandleLengths(
+            static_cast<QPointF>(*p1), static_cast<QPointF>(*p4),
+            calcAngle1, calcAngle2, calcLength1, calcLength2, targetPx, lengthMode);
+        finalLength1 = s.first;
+        finalLength2 = s.second;
+    }
+
+    auto spline = new VSpline(*p1, *p4, calcAngle1, a1, calcAngle2, a2, finalLength1, l1, finalLength2, l2);
     if (duplicate > 0)
     {
         spline->SetDuplicate(duplicate);
@@ -246,7 +299,7 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     spline->SetPenStyle(penStyle);
     spline->setLineWeight(lineWeight);
 
-    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation);
+    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation, autoSmooth);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -262,6 +315,53 @@ void VToolSpline::setSpline(const VSpline &spl)
     QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     QSharedPointer<VSpline> spline = qSharedPointerDynamicCast<VSpline>(obj);
     *spline.data() = spl;
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VToolSpline::GetAutoSmooth() const
+{
+    return m_autoSmooth;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetAutoSmooth(bool value)
+{
+    m_autoSmooth = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolSpline::GetTargetLength() const
+{
+    if (m_targetLength.isEmpty())
+    {
+        const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
+        return QString::number(qApp->fromPixel(spl->GetLength()));
+    }
+    return m_targetLength;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetTargetLength(const QString &value)
+{
+    m_targetLength = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VToolSpline::GetLengthMode() const
+{
+    return m_lengthMode;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::SetLengthMode(int value)
+{
+    m_lengthMode = value;
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     SaveOption(obj);
 }
 
@@ -315,6 +415,14 @@ void VToolSpline::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void VToolSpline::ReadToolAttributes(const QDomElement &domElement)
+{
+    m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+    m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+    m_targetLength = domElement.attribute(AttrLength, QString());
+}
+
 // @brief RemoveReferens decrement value of reference.
 void VToolSpline::RemoveReferens()
 {
@@ -331,6 +439,9 @@ void VToolSpline::SaveDialog(QDomElement &domElement)
     SCASSERT(dialogTool != nullptr)
 
     const VSpline spl = dialogTool->GetSpline();
+    m_autoSmooth = dialogTool->GetAutoSmooth();
+    m_lengthMode = dialogTool->GetLengthMode();
+    m_targetLength = dialogTool->GetTargetLength();
 
     m_controlPoints[0]->blockSignals(true);
     m_controlPoints[1]->blockSignals(true);
@@ -533,6 +644,10 @@ void VToolSpline::SetVisualization()
         visual->SetKAsm2(spl->GetKasm2());
         visual->SetKCurve(spl->GetKcurve());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
+        visual->setShowPoints(static_cast<QPointF>(spl->GetP1()),
+                              static_cast<QPointF>(spl->GetP2()),
+                              static_cast<QPointF>(spl->GetP3()),
+                              static_cast<QPointF>(spl->GetP4()));
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }
@@ -630,5 +745,34 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     if (domElement.hasAttribute(AttrKAsm2))
     {
         domElement.removeAttribute(AttrKAsm2);
+    }
+
+    if (m_autoSmooth)
+    {
+        doc->SetAttribute(domElement, AttrAutoSmooth, QStringLiteral("true"));
+    }
+    else
+    {
+        domElement.removeAttribute(AttrAutoSmooth);
+    }
+
+    if (m_lengthMode > 0)
+    {
+        doc->SetAttribute(domElement, AttrLengthMode, m_lengthMode);
+    }
+    else
+    {
+        domElement.removeAttribute(AttrLengthMode);
+    }
+
+    // Persist the target length independently of the mode so toggling the mode
+    // Off and back On does not lose the user's entered value.
+    if (!m_targetLength.isEmpty())
+    {
+        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+    }
+    else
+    {
+        domElement.removeAttribute(AttrLength);
     }
 }
