@@ -8,7 +8,7 @@ on:
         required: true
   push:
     branches:
-      - 'test-translate'
+      - 'translation/**'
 
 env:
   QT_VERSION: '6.5.3' # quotes required or YAML parser will interpret as float
@@ -38,9 +38,9 @@ jobs:
           if [ -n "${{ github.event.inputs.lang_code }}" ]; then
             echo "LANG_CODE=${{ github.event.inputs.lang_code }}" >> $GITHUB_ENV
           else
-            BRANCH_NAME="${GITHUB_REF##*/}"
-            LANG_CODE="${BRANCH_NAME#auto/translation-}"
-            echo "LANG_CODE=$LANG_CODE" >> $GITHUB_ENV
+            # Branch name is 'translation/<lang_code>' (e.g. translation/pl_PL),
+            # so the last path segment is already the language code.
+            echo "LANG_CODE=${GITHUB_REF##*/}" >> $GITHUB_ENV
           fi
 
       - name: Ensure flag icon for language
@@ -94,10 +94,9 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Create new translation branch, commit new & updated files to new branch
-        # create translation branch from test-translate
-        # after testing change line to 'git checkout -b develop'
+        # create translation branch from develop
         run: |
-          git checkout test-translate
+          git checkout develop
           BRANCH=auto/translation-${{ env.LANG_CODE }}
           git checkout -b $BRANCH
           git add share/translations/measurements_${{ env.LANG_CODE }}.ts
@@ -111,13 +110,12 @@ jobs:
           git commit -m "Add and auto-translate ${{ env.LANG_CODE }} translation files"
           git push --set-upstream origin $BRANCH
 
-      - name: Create Pull Request to merge translation branch into develop-copy branch
-        # after testing change base to 'develop' instead of 'test-translate'
+      - name: Create Pull Request to merge translation branch into develop branch
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: auto/translation-${{ env.LANG_CODE }}
-          base: test-translate
+          base: develop
           title: "Add and auto-translate ${{ env.LANG_CODE }} translation files"
           body: "This PR was created automatically to add and auto-translate ${{ env.LANG_CODE }} translation files."
           draft: true
