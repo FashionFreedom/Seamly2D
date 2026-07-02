@@ -30,4 +30,4 @@ if [[ -z "$LANG_CODE" ]]; then
   exit 1
 fi
 
-gh workflow run .github/workflows/create-and-auto-translate.yml --ref test-translate  --field "lang_code=$LANG_CODE"
+gh workflow run .github/workflows/create-and-auto-translate.yml --ref translation  --field "lang_code=$LANG_CODE"
