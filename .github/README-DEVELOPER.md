@@ -76,8 +76,6 @@ Note: The default prefix for command `make install` is `/usr`.  To define anothe
 sudo make INSTALL_ROOT=/usr/local install
 ```
 
-* Copy *pdftops* to Seamly build directory if you need to create post script (.ps and .eps) pattern piece layouts.
-
 ### Note for distributions where `qmake` defaults is not Qt 6
 
 On some Linux distributions (e.g. Arch Linux), the `qmake` binary still points to Qt 5.
@@ -128,7 +126,6 @@ This applies when building with your distribution's packaged Qt. If you're using
 * Read about [Qt for Windows](https://doc.qt.io/qt-5/windows.html).
 * Add Qt and QtCreator directories to the Windows PATH environment variable through Control Panel:
 `[Control Panel | System And Security | System | Advanced Tab | Environment Variables button]`
-* Download [XpdfReader](http://www.xpdfreader.com/download.html) for Windows. Extract to `C:/Program Files`. Rename folder to `C:/Program Files/Xpdf`.
 
 ### Build
 
