@@ -1,30 +1,52 @@
- /************************************************************************
- **
- **  @file   vdxfengine.cpp
- **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
- **  @date   12 8, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vdxfengine.cpp
+//  @author Douglas S Caskey
+//  @date   8 Jul, 2026
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vdxfengine.cpp
+//  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
+//  @date   12 8, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentine project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2015 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vdxfengine.h"
 
@@ -693,7 +715,7 @@ void VDxfEngine::ExportAAMADraw(dx_ifaceBlock *detailBlock, const VLayoutPiece &
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::ExportAAMAIntcut(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
 {
-    QVector<QVector<QPointF>> drawIntCut = detail.InternalPathsForCut(false);
+    QVector<QVector<QPointF>> drawIntCut = detail.internalPathsForCut (false);
     for(int j = 0; j < drawIntCut.size(); ++j)
     {
         DRW_Entity *e = AAMAPolygon(drawIntCut.at(j), "8", false);
@@ -703,7 +725,7 @@ void VDxfEngine::ExportAAMAIntcut(dx_ifaceBlock *detailBlock, const VLayoutPiece
         }
     }
 
-    drawIntCut = detail.InternalPathsForCut(true);
+    drawIntCut = detail.internalPathsForCut (true);
     for(int j = 0; j < drawIntCut.size(); ++j)
     {
         DRW_Entity *e = AAMAPolygon(drawIntCut.at(j), "11", false);
@@ -746,10 +768,10 @@ void VDxfEngine::ExportAAMAGrainline(dx_ifaceBlock *detailBlock, const VLayoutPi
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VDxfEngine::ExportAAMAText(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
+void VDxfEngine::ExportAAMAText(dx_ifaceBlock *detailBlock, const VLayoutPiece &piece)
 {
-    const QStringList list = detail.GetPieceText();
-    const QPointF startPos = detail.GetPieceTextPosition();
+    const QStringList list = piece.getPieceText();
+    const QPointF startPos = piece.getPieceTextPosition();
 
     for (int i = 0; i < list.size(); ++i)
     {
@@ -763,7 +785,7 @@ void VDxfEngine::ExportAAMAGlobalText(const QSharedPointer<dx_iface> &input, con
 {
     for(int i = 0; i < details.size(); ++i)
     {
-        const QStringList strings = details.at(i).GetPatternText();
+        const QStringList strings = details.at(i).getPatternText();
         if (not strings.isEmpty())
         {
             for (int j = 0; j < strings.size(); ++j)
