@@ -4,7 +4,7 @@
 //  @date   Dec 27, 2022
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -107,21 +107,21 @@ public:
     QVector<QLineF>           getNotches() const;
     void                      setNotches(const QVector<QLineF> &notches);
 
-    QVector<QVector<QPointF>> InternalPathsForCut(bool cut) const;
+    QVector<QVector<QPointF>> internalPathsForCut (bool cut) const;
     QVector<VLayoutPiecePath> getInternalPaths() const;
     void                      setInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
 
     QVector<VLayoutPiecePath> getCutoutPaths() const;
     void                      setCutoutPaths(const QVector<VLayoutPiecePath> &cutoutPaths);
 
-    QPointF                   GetPieceTextPosition() const;
-    QStringList               GetPieceText() const;
-    void                      SetPieceText(const QString &qsName, const VPieceLabelData& data,
+    QPointF                   getPieceTextPosition() const;
+    QStringList               getPieceText() const;
+    void                      setPieceText(const QString &qsName, const VPieceLabelData& data,
                                            const QFont& font,  const VContainer *pattern);
 
-    QPointF                   GetPatternTextPosition() const;
-    QStringList               GetPatternText() const;
-    void                      SetPatternInfo(VAbstractPattern *pDoc, const VPatternLabelData& geom,
+    QPointF                   getPatternTextPosition() const;
+    QStringList               getPatternText() const;
+    void                      setPatternText(VAbstractPattern *pDoc, const VPatternLabelData& geom,
                                              const QFont& font, const VContainer *pattern);
 
     void                      setGrainline(const VGrainlineData& geom, const VContainer *pattern);
@@ -134,7 +134,7 @@ public:
     void                      setLayoutGap(const qreal &value);
 
     bool                      isMirror() const;
-    void                      SetMirror(bool value);
+    void                      setMirror (bool value);
 
     void                      Translate(qreal dx, qreal dy);
     void                      Rotate(const QPointF &originPoint, qreal degrees);
