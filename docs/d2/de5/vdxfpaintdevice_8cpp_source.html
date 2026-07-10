@@ -299,12 +299,16 @@ $(document).ready(function(){initNavTree('d2/de5/vdxfpaintdevice_8cpp_source.htm
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatio:</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioScaled:</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            qWarning(<span class="stringliteral">&quot;VDxfPaintDevice::metric(), unhandled metric %d\n&quot;</span>, <a class="code hl_function" href="../../d4/da6/classVDxfPaintDevice.html#a1df50044e1eb5d4bb4bf5c48252d7cbe">metric</a>);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioF_EncodedA:</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            <span class="keywordflow">return</span> QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedA, 1.0);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioF_EncodedB:</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">return</span> QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedB, 1.0);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            qWarning(<span class="stringliteral">&quot;VDxfPaintDevice::metric(), unhandled metric %d\n&quot;</span>, <a class="code hl_function" href="../../d4/da6/classVDxfPaintDevice.html#a1df50044e1eb5d4bb4bf5c48252d7cbe">metric</a>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
 <div class="ttc" id="aclassVDxfEngine_html"><div class="ttname"><a href="../../db/dd6/classVDxfEngine.html">VDxfEngine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d96/vdxfengine_8h_source.html#l00053">vdxfengine.h:54</a></div></div>
 <div class="ttc" id="aclassVDxfEngine_html_a09437439f2e6d15080a846d1d4c8c46e"><div class="ttname"><a href="../../db/dd6/classVDxfEngine.html#a09437439f2e6d15080a846d1d4c8c46e">VDxfEngine::setMeasurement</a></div><div class="ttdeci">void setMeasurement(const VarMeasurement &amp;var)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d66/vdxfengine_8cpp_source.html#l00558">vdxfengine.cpp:558</a></div></div>
 <div class="ttc" id="aclassVDxfEngine_html_a1ae5bfa36e82dcbeaac331e3b6ccb136"><div class="ttname"><a href="../../db/dd6/classVDxfEngine.html#a1ae5bfa36e82dcbeaac331e3b6ccb136">VDxfEngine::getResolution</a></div><div class="ttdeci">double getResolution() const</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d66/vdxfengine_8cpp_source.html#l00417">vdxfengine.cpp:417</a></div></div>

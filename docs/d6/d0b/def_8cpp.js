@@ -2,6 +2,7 @@ var def_8cpp =
 [
     [ "AbsoluteMPath", "d6/d0b/def_8cpp.html#a8d50451fd4a55abe67764f4301741a69", null ],
     [ "darkenPixmap", "d6/d0b/def_8cpp.html#a22a5db7a0dfa32ad14c6d35651c2c422", null ],
+    [ "darkPalette", "d6/d0b/def_8cpp.html#afb038b6cec2eacb97d0e4c0268cb375f", null ],
     [ "directionToString", "d6/d0b/def_8cpp.html#a2e4bae6ace9ea7638b5174f65c4bb4c2", null ],
     [ "fileDialog", "d6/d0b/def_8cpp.html#a8b10f7b4607dd5e75a41e8007586e9c1", null ],
     [ "FromPixel", "d6/d0b/def_8cpp.html#ace05d8de4ddacda154ba7dfca94c1542", null ],
@@ -10,6 +11,7 @@ var def_8cpp =
     [ "initHighDpiScaling", "d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e", null ],
     [ "InitLanguages", "d6/d0b/def_8cpp.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d6/d0b/def_8cpp.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
+    [ "lightPalette", "d6/d0b/def_8cpp.html#adf93bf1b48556aab0d9b953f14fbf169", null ],
     [ "makeHeaderName", "d6/d0b/def_8cpp.html#a0d388d3b034a1f7b4f3618163b213f73", null ],
     [ "normalize", "d6/d0b/def_8cpp.html#affcdee97a378cb969bf1ba715330ca32", null ],
     [ "notchSubTypeToString", "d6/d0b/def_8cpp.html#a45306c2fc908e7e89e2bd49fd6df23b0", null ],
@@ -25,6 +27,7 @@ var def_8cpp =
     [ "StrToUnits", "d6/d0b/def_8cpp.html#a066169b6c24aec89a790711c082e6432", null ],
     [ "SupportedLocales", "d6/d0b/def_8cpp.html#ac669e8d3212f58704fba447cdc7a096e", null ],
     [ "ToPixel", "d6/d0b/def_8cpp.html#a12779d274def02429c146c527d104027", null ],
+    [ "twilightPalette", "d6/d0b/def_8cpp.html#a97efea7a504d604c8447d669bf7df892", null ],
     [ "UnitConvertor", "d6/d0b/def_8cpp.html#ad3b56c0c3d1abd6ba1af2b24c33fd66d", null ],
     [ "UnitConvertor", "d6/d0b/def_8cpp.html#af51912b634cbe7051d52891a1fd3981d", null ],
     [ "UnitsToStr", "d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0", null ],

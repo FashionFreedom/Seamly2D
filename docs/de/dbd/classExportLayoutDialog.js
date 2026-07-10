@@ -31,8 +31,9 @@ var classExportLayoutDialog =
     [ "showExportFiles", "de/dbd/classExportLayoutDialog.html#a07800061e1ca0bcfa01a245e65cdccc5", null ],
     [ "writeSettings", "de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225", null ],
     [ "m_count", "de/dbd/classExportLayoutDialog.html#aac5130ef046671ad9da4c8ec77c6bd18", null ],
+    [ "m_foreGroundColor", "de/dbd/classExportLayoutDialog.html#a7b45ba2771b51e9e8dff4d19619be84d", null ],
     [ "m_isInitialized", "de/dbd/classExportLayoutDialog.html#a0ca1915821513f3252add92a83ed5ea3", null ],
     [ "m_mode", "de/dbd/classExportLayoutDialog.html#a2f5c242f89a886ab3d7bfe55ab6c3ad8", null ],
-    [ "m_SaveButton", "de/dbd/classExportLayoutDialog.html#a64e0413d7885756a85934da1f3704b68", null ],
+    [ "m_saveButton", "de/dbd/classExportLayoutDialog.html#a7943013f18afc02536e30bb3fa813794", null ],
     [ "ui", "de/dbd/classExportLayoutDialog.html#ac9c8759ec741bde4ea85640fc4a68047", null ]
 ];

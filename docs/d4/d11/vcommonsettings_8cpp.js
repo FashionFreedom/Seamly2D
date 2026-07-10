@@ -7,6 +7,7 @@ var vcommonsettings_8cpp =
     [ "pointNameSize", "d4/d11/vcommonsettings_8cpp.html#a7136b7a2ed9ead08f0f849054160457b", null ],
     [ "settingBackupPath", "d4/d11/vcommonsettings_8cpp.html#a33d50aa96456f560a5ac1845a77a682c", null ],
     [ "settingConfigurationAddress", "d4/d11/vcommonsettings_8cpp.html#a7308b7a66e0e6d69b9b7aab47d4253d3", null ],
+    [ "settingConfigurationAppTheme", "d4/d11/vcommonsettings_8cpp.html#acaad9fa4b240d692d418f29f99cb9ead", null ],
     [ "settingConfigurationAutosaveState", "d4/d11/vcommonsettings_8cpp.html#a7daef37ab258f5781330620fd1c881f0", null ],
     [ "settingConfigurationAutosaveTime", "d4/d11/vcommonsettings_8cpp.html#a3a9b2311b6fa39fad1eb5a4c529d641d", null ],
     [ "settingConfigurationCity", "d4/d11/vcommonsettings_8cpp.html#aad6035303a156424a369fa4f57eecc09", null ],

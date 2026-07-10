@@ -37,6 +37,7 @@ var namespaces_dup =
       [ "pointNameSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7136b7a2ed9ead08f0f849054160457b", null ],
       [ "settingBackupPath", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a33d50aa96456f560a5ac1845a77a682c", null ],
       [ "settingConfigurationAddress", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7308b7a66e0e6d69b9b7aab47d4253d3", null ],
+      [ "settingConfigurationAppTheme", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#acaad9fa4b240d692d418f29f99cb9ead", null ],
       [ "settingConfigurationAutosaveState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a7daef37ab258f5781330620fd1c881f0", null ],
       [ "settingConfigurationAutosaveTime", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a3a9b2311b6fa39fad1eb5a4c529d641d", null ],
       [ "settingConfigurationCity", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aad6035303a156424a369fa4f57eecc09", null ],
@@ -259,7 +260,7 @@ var namespaces_dup =
       [ "settingTiledPDFPaperWidth", "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#abeda08ed7a84bd924f68223ffba2e656", null ]
     ] ],
     [ "anonymous_namespace{vtextgraphicsitem.cpp}", "d4/d16/namespaceanonymous__namespace_02vtextgraphicsitem_8cpp_03.html", [
-      [ "GetBoundingRect", "d4/d16/namespaceanonymous__namespace_02vtextgraphicsitem_8cpp_03.html#aa45b98c164dcad8b951baf9d6bb2f745", null ]
+      [ "getBoundingRect", "d4/d16/namespaceanonymous__namespace_02vtextgraphicsitem_8cpp_03.html#ac6b26a0ea6e45c81110d6b48f997eee2", null ]
     ] ],
     [ "anonymous_namespace{vtextmanager.cpp}", "db/dc8/namespaceanonymous__namespace_02vtextmanager_8cpp_03.html", [
       [ "InitPiecePlaceholders", "db/dc8/namespaceanonymous__namespace_02vtextmanager_8cpp_03.html#a4ba47a191ccd57fb49539a3fd571206b", null ],

@@ -285,12 +285,16 @@ $(document).ready(function(){initNavTree('d8/d30/vobjpaintdevice_8cpp_source.htm
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatio:</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioScaled:</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            qWarning(<span class="stringliteral">&quot;VObjPaintDevice::metric(), unhandled metric %d\n&quot;</span>, <a class="code hl_function" href="../../dd/d3b/classVObjPaintDevice.html#a755affb847f16e49e0e71ba6b9a9571d">metric</a>);</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>}</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioF_EncodedA:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">return</span> QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedA, 1.0);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">case</span> QPaintDevice::PdmDevicePixelRatioF_EncodedB:</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="keywordflow">return</span> QPaintDevice::encodeMetricF(QPaintDevice::PdmDevicePixelRatioF_EncodedB, 1.0);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            qWarning(<span class="stringliteral">&quot;VObjPaintDevice::metric(), unhandled metric %d\n&quot;</span>, <a class="code hl_function" href="../../dd/d3b/classVObjPaintDevice.html#a755affb847f16e49e0e71ba6b9a9571d">metric</a>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
 <div class="ttc" id="aclassVObjEngine_html"><div class="ttname"><a href="../../d3/d1d/classVObjEngine.html">VObjEngine</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/db3/vobjengine_8h_source.html#l00070">vobjengine.h:71</a></div></div>
 <div class="ttc" id="aclassVObjPaintDevice_html_a0e41dfb47af84a29492c51d36f622a40"><div class="ttname"><a href="../../dd/d3b/classVObjPaintDevice.html#a0e41dfb47af84a29492c51d36f622a40">VObjPaintDevice::~VObjPaintDevice</a></div><div class="ttdeci">virtual ~VObjPaintDevice() override</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d30/vobjpaintdevice_8cpp_source.html#l00069">vobjpaintdevice.cpp:69</a></div></div>
 <div class="ttc" id="aclassVObjPaintDevice_html_a30921b664e17d29f409dca7f68dd290e"><div class="ttname"><a href="../../dd/d3b/classVObjPaintDevice.html#a30921b664e17d29f409dca7f68dd290e">VObjPaintDevice::VObjPaintDevice</a></div><div class="ttdeci">VObjPaintDevice()</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d30/vobjpaintdevice_8cpp_source.html#l00062">vobjpaintdevice.cpp:62</a></div></div>

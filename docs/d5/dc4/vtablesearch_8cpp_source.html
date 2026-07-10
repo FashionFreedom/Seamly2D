@@ -192,252 +192,261 @@ $(document).ready(function(){initNavTree('d5/dc4/vtablesearch_8cpp_source.html',
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFAC8&quot;</span>));</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = 0;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">VTableSearch::findPrevious</a>()</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">int</span> newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> - 1;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">if</span> (newIndex &lt; 0)</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size() - 1;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">showNext</a>(newIndex);</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>}</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">  118</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">VTableSearch::findNext</a>()</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>{</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">int</span> newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> + 1;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span> (newIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        newIndex = 0;</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">showNext</a>(newIndex);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">VTableSearch::removeRow</a>(<span class="keywordtype">int</span> row)</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>{</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (m_searchIndex &lt; 0 || m_searchIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> indexRow = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>)-&gt;row();</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = 0;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>            item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">  107</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">VTableSearch::findPrevious</a>()</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">int</span> newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> - 1;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">if</span> (newIndex &lt; 0)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size() - 1;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">showNext</a>(newIndex);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">  120</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">VTableSearch::findNext</a>()</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">int</span> newIndex = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> + 1;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordflow">if</span> (newIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        newIndex = 0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">showNext</a>(newIndex);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">  133</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">VTableSearch::removeRow</a>(<span class="keywordtype">int</span> row)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">if</span> (m_searchIndex &lt; 0 || m_searchIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">if</span> (row &lt;= indexRow)</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <span class="keywordflow">if</span> (item-&gt;row() == row)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>                --<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">  153</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">VTableSearch::addRow</a>(<span class="keywordtype">int</span> row)</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>{</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordflow">if</span> (m_searchIndex &lt; 0 || m_searchIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> indexRow = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>)-&gt;row();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> indexRow = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>)-&gt;row();</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> (row &lt;= indexRow)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">if</span> (item-&gt;row() == row)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                --<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">  155</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">VTableSearch::addRow</a>(<span class="keywordtype">int</span> row)</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordflow">if</span> (m_searchIndex &lt; 0 || m_searchIndex &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">if</span> (row &lt;= indexRow)</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    {</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> (item-&gt;row() == row)</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                ++<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            }</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        }</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">  175</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">VTableSearch::refreshList</a>(<span class="keyword">const</span> QString &amp;text)</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>{</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <a class="code hl_define" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (text.isEmpty())</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a> = <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">findItems</a>(text);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> indexRow = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>)-&gt;row();</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">if</span> (row &lt;= indexRow)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordflow">if</span> (item-&gt;row() == row)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                ++<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>}</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">  177</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">VTableSearch::refreshList</a>(<span class="keyword">const</span> QString &amp;text)</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>{</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <a class="code hl_define" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="keywordflow">if</span> (text.isEmpty())</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFAC8&quot;</span>));</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.isEmpty())</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    {</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> &lt; 0)</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        {</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>           <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size() - 1;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a> = <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">findItems</a>(text);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="comment">// highlight items that match search</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">for</span> (QTableWidgetItem *item : <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>)</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFAC8&quot;</span>));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.isEmpty())</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> &lt; 0)</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>           <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = 0;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>           <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size() - 1;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        }</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> &gt;= <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.size())</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>           <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = 0;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        }</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    {</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">  215</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">VTableSearch::setMatchRegEx</a>(<span class="keywordtype">bool</span> value)</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>{</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> = value;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">  222</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">VTableSearch::setMatchCase</a>(<span class="keywordtype">bool</span> value)</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>{</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a> = value;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        <span class="comment">// highlight selected item</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>}</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">  221</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">VTableSearch::setMatchRegEx</a>(<span class="keywordtype">bool</span> value)</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>{</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> = value;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>}</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">  228</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">VTableSearch::setMatchWord</a>(<span class="keywordtype">bool</span> value)</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">  228</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">VTableSearch::setMatchCase</a>(<span class="keywordtype">bool</span> value)</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>{</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> = value;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">  235</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">VTableSearch::clear</a>()</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>{</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_define" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;rowCount(); ++i)</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;columnCount(); ++j)</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        {</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <span class="keywordflow">if</span> (QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;item(i, j))</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordflow">if</span> (item-&gt;row() % 2 != 0 &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;alternatingRowColors())</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                    item-&gt;setBackground(QPalette().alternateBase());</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                }</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                {</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                    item-&gt;setBackground(QPalette().base());</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            }</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        }</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.clear();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = -1;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>}</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">  264</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">VTableSearch::showNext</a>(<span class="keywordtype">int</span> newIndex)</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>{</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.isEmpty())</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    {</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFAC8&quot;</span>));</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(newIndex);</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = newIndex;</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    }</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">clear</a>();</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>}</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">  283</a></span><a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;QTableWidgetItem *&gt;</a> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">VTableSearch::findItems</a>(<span class="keyword">const</span> QString &amp;text)</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>{</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> &amp;&amp; !<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a> = value;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">  234</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">VTableSearch::setMatchWord</a>(<span class="keywordtype">bool</span> value)</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>{</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> = value;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">  241</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">VTableSearch::clear</a>()</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>{</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_define" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;rowCount(); ++i)</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;columnCount(); ++j)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <span class="keywordflow">if</span> (QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;item(i, j))</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            {</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <span class="keywordflow">if</span> (item-&gt;row() % 2 != 0 &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;alternatingRowColors())</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    item-&gt;setBackground(QPalette().alternateBase());</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                    item-&gt;setBackground(QPalette().base());</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                item-&gt;setForeground(QPalette().text());</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            }            </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.clear();</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = -1;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    emit <a class="code hl_signal" href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">hasResult</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>}</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">  271</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">VTableSearch::showNext</a>(<span class="keywordtype">int</span> newIndex)</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>{</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.isEmpty())</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    {</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        QTableWidgetItem *item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a>);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFAC8&quot;</span>));</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        item = <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">m_searchList</a>.at(newIndex);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        item-&gt;setBackground(QColor(<span class="stringliteral">&quot;#FAFA5A&quot;</span>));</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        item-&gt;setForeground(QColor(Qt::black));</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;scrollToItem(item);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">m_searchIndex</a> = newIndex;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    {</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text,  Qt::MatchFixedString);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">clear</a>();</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    {</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text,  Qt::MatchFixedString | Qt::MatchCaseSensitive);</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    }</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> &amp;&amp; !<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        QRegularExpression regex(text, QRegularExpression::CaseInsensitiveOption);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">if</span> (regex.isValid())</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(regex.pattern(), Qt::MatchRegularExpression);</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    }</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    {</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        QRegularExpression regex(text);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <span class="keywordflow">if</span> (regex.isValid())</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        {</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(regex.pattern(), Qt::MatchRegularExpression);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        }</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    }</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text, Qt::MatchContains | Qt::MatchCaseSensitive);</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text, Qt::MatchContains);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>}</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">  292</a></span><a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;QTableWidgetItem *&gt;</a> <a class="code hl_function" href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">VTableSearch::findItems</a>(<span class="keyword">const</span> QString &amp;text)</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>{</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> &amp;&amp; !<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text,  Qt::MatchFixedString);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">m_matchWord</a> &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    {</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text,  Qt::MatchFixedString | Qt::MatchCaseSensitive);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> &amp;&amp; !<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    {</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        QRegularExpression regex(text, QRegularExpression::CaseInsensitiveOption);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keywordflow">if</span> (regex.isValid())</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(regex.pattern(), Qt::MatchRegularExpression);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">m_matchRegEx</a> &amp;&amp; <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        QRegularExpression regex(text);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordflow">if</span> (regex.isValid())</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(regex.pattern(), Qt::MatchRegularExpression);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">m_matchCase</a>)</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text, Qt::MatchContains | Qt::MatchCaseSensitive);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">m_table</a>-&gt;findItems(text, Qt::MatchContains);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>}</div>
 <div class="ttc" id="aclassQList_html"><div class="ttname"><a href="../../d1/d4a/classQList.html">QList</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d07/vlayoutpaper_8h_source.html#l00069">vlayoutpaper.h:69</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a09d423905809e8dddd09f55a71484adc"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">VTableSearch::findPrevious</a></div><div class="ttdeci">void findPrevious()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00105">vtablesearch.cpp:105</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a09d423905809e8dddd09f55a71484adc"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a09d423905809e8dddd09f55a71484adc">VTableSearch::findPrevious</a></div><div class="ttdeci">void findPrevious()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00107">vtablesearch.cpp:107</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_a0f17df910e8cf2443f436e6b46f94b8a"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a0f17df910e8cf2443f436e6b46f94b8a">VTableSearch::VTableSearch</a></div><div class="ttdeci">VTableSearch(QTableWidget *table, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00065">vtablesearch.cpp:65</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a1e7a1795006dbfa43cea1a64425c1ada"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">VTableSearch::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00235">vtablesearch.cpp:235</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a258e5bcb5db35edd341dc8bfb9caf6d8"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">VTableSearch::findItems</a></div><div class="ttdeci">QList&lt; QTableWidgetItem * &gt; findItems(const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00283">vtablesearch.cpp:283</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a1e7a1795006dbfa43cea1a64425c1ada"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a1e7a1795006dbfa43cea1a64425c1ada">VTableSearch::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00241">vtablesearch.cpp:241</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a258e5bcb5db35edd341dc8bfb9caf6d8"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a258e5bcb5db35edd341dc8bfb9caf6d8">VTableSearch::findItems</a></div><div class="ttdeci">QList&lt; QTableWidgetItem * &gt; findItems(const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00292">vtablesearch.cpp:292</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_a2d9741aaa07c546920b9dbc345fcf6f1"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a2d9741aaa07c546920b9dbc345fcf6f1">VTableSearch::m_searchIndex</a></div><div class="ttdeci">int m_searchIndex</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00086">vtablesearch.h:86</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a2ee4b7ada842f6193c8a33eb2e8b1539"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">VTableSearch::setMatchCase</a></div><div class="ttdeci">void setMatchCase(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00222">vtablesearch.cpp:222</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a2ee4b7ada842f6193c8a33eb2e8b1539"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a2ee4b7ada842f6193c8a33eb2e8b1539">VTableSearch::setMatchCase</a></div><div class="ttdeci">void setMatchCase(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00228">vtablesearch.cpp:228</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_a418475301d9b36e6162fc6c702b5a839"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a418475301d9b36e6162fc6c702b5a839">VTableSearch::find</a></div><div class="ttdeci">void find(const QString &amp;term)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00077">vtablesearch.cpp:77</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a59852166739cfaee8d9f78473184b778"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">VTableSearch::findNext</a></div><div class="ttdeci">void findNext()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00118">vtablesearch.cpp:118</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a66f7a1236ca62a1171e215baf24f49fe"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">VTableSearch::setMatchWord</a></div><div class="ttdeci">void setMatchWord(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00228">vtablesearch.cpp:228</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a59852166739cfaee8d9f78473184b778"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a59852166739cfaee8d9f78473184b778">VTableSearch::findNext</a></div><div class="ttdeci">void findNext()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00120">vtablesearch.cpp:120</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a66f7a1236ca62a1171e215baf24f49fe"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a66f7a1236ca62a1171e215baf24f49fe">VTableSearch::setMatchWord</a></div><div class="ttdeci">void setMatchWord(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00234">vtablesearch.cpp:234</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_a694a630321a4455336d2efa8405d2a86"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a694a630321a4455336d2efa8405d2a86">VTableSearch::m_matchCase</a></div><div class="ttdeci">bool m_matchCase</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00089">vtablesearch.h:89</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a85a0e6069e364a89d9016f3e9f3b9e15"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">VTableSearch::removeRow</a></div><div class="ttdeci">void removeRow(int row)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00131">vtablesearch.cpp:131</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a85a0e6069e364a89d9016f3e9f3b9e15"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a85a0e6069e364a89d9016f3e9f3b9e15">VTableSearch::removeRow</a></div><div class="ttdeci">void removeRow(int row)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00133">vtablesearch.cpp:133</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_a89742cceeaa5cd384f786a81ae8f0c33"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a89742cceeaa5cd384f786a81ae8f0c33">VTableSearch::m_matchWord</a></div><div class="ttdeci">bool m_matchWord</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00090">vtablesearch.h:90</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_a9ba8ebd780599210e26179fcd902dd1b"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">VTableSearch::addRow</a></div><div class="ttdeci">void addRow(int row)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00153">vtablesearch.cpp:153</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_aaa461cb924ecd90fbff4e5faff2a6121"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">VTableSearch::showNext</a></div><div class="ttdeci">void showNext(int newIndex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00264">vtablesearch.cpp:264</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_a9ba8ebd780599210e26179fcd902dd1b"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#a9ba8ebd780599210e26179fcd902dd1b">VTableSearch::addRow</a></div><div class="ttdeci">void addRow(int row)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00155">vtablesearch.cpp:155</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_aaa461cb924ecd90fbff4e5faff2a6121"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#aaa461cb924ecd90fbff4e5faff2a6121">VTableSearch::showNext</a></div><div class="ttdeci">void showNext(int newIndex)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00271">vtablesearch.cpp:271</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_acaa2fbc16272a58af3e5e128eb0ac1ad"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#acaa2fbc16272a58af3e5e128eb0ac1ad">VTableSearch::hasResult</a></div><div class="ttdeci">void hasResult(bool state)</div></div>
 <div class="ttc" id="aclassVTableSearch_html_acb42337546d8d2cfad63d248535b686c"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#acb42337546d8d2cfad63d248535b686c">VTableSearch::m_matchRegEx</a></div><div class="ttdeci">bool m_matchRegEx</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00088">vtablesearch.h:88</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_acec04e610eeef6938a439b607ef7d8f6"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">VTableSearch::refreshList</a></div><div class="ttdeci">void refreshList(const QString &amp;term)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00175">vtablesearch.cpp:175</a></div></div>
-<div class="ttc" id="aclassVTableSearch_html_ad1810d194de27daeabca925c2a103b73"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">VTableSearch::setMatchRegEx</a></div><div class="ttdeci">void setMatchRegEx(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00215">vtablesearch.cpp:215</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_acec04e610eeef6938a439b607ef7d8f6"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#acec04e610eeef6938a439b607ef7d8f6">VTableSearch::refreshList</a></div><div class="ttdeci">void refreshList(const QString &amp;term)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00177">vtablesearch.cpp:177</a></div></div>
+<div class="ttc" id="aclassVTableSearch_html_ad1810d194de27daeabca925c2a103b73"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#ad1810d194de27daeabca925c2a103b73">VTableSearch::setMatchRegEx</a></div><div class="ttdeci">void setMatchRegEx(bool value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dc4/vtablesearch_8cpp_source.html#l00221">vtablesearch.cpp:221</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_ad904ecdf35861b702052ba97a46989e6"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#ad904ecdf35861b702052ba97a46989e6">VTableSearch::m_searchList</a></div><div class="ttdeci">QList&lt; QTableWidgetItem * &gt; m_searchList</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00087">vtablesearch.h:87</a></div></div>
 <div class="ttc" id="aclassVTableSearch_html_aee45c6669076917ddc3df65883763dd6"><div class="ttname"><a href="../../d1/dd3/classVTableSearch.html#aee45c6669076917ddc3df65883763dd6">VTableSearch::m_table</a></div><div class="ttdeci">QTableWidget * m_table</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dcf/vtablesearch_8h_source.html#l00085">vtablesearch.h:85</a></div></div>
-<div class="ttc" id="adef_8h_html_a0f58c1b57bda3c300da3e175201e543c"><div class="ttname"><a href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a></div><div class="ttdeci">#define SCASSERT(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00437">def.h:437</a></div></div>
+<div class="ttc" id="adef_8h_html_a0f58c1b57bda3c300da3e175201e543c"><div class="ttname"><a href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a></div><div class="ttdeci">#define SCASSERT(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00448">def.h:448</a></div></div>
 <div class="ttc" id="avtablesearch_8h_html"><div class="ttname"><a href="../../db/dcf/vtablesearch_8h.html">vtablesearch.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

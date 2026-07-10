@@ -16,6 +16,14 @@ var def_8h =
     [ "SceneSize", "d4/da4/def_8h.html#a8084f95d171e33ef73bf44aed20a4378", null ],
     [ "V_FALLTHROUGH", "d4/da4/def_8h.html#a380cf399715eea06631207dd0f18de71", null ],
     [ "ToolVisHolderType", "d4/da4/def_8h.html#acb16ac88f43c4dcfdc9e43baf22da452", null ],
+    [ "AppTheme", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5", [
+      [ "LightFusion", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5add506a24f2c090db2079b9ce6513ea48", null ],
+      [ "DarkFusion", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5ac62ca14340d9168f8352c7e172b51ed6", null ],
+      [ "TwilightFusion", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5af2c99db1e3e2fbbdb08821f4befae896", null ],
+      [ "System", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5aa45da96d0bf6575970f2d27af22be28a", null ],
+      [ "classic", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5af3d64714d1f6e7f71558d4252e84ab58", null ],
+      [ "Windows11", "d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5a49228b5fa811010b7bf930d39d881909", null ]
+    ] ],
     [ "DialogSource", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418e", [
       [ "ToolDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418eada9dd8d76cc8af1d78de34d822cf26ab", null ],
       [ "VariableDialog", "d4/da4/def_8h.html#a2ace20f64b3456b610d7b2d85ea3418ea0d8f2a9b908c5c0f0e712bba782f2b03", null ],
@@ -364,6 +372,7 @@ var def_8h =
     [ "convertToSet", "d4/da4/def_8h.html#a3ecf6230eab9b9997515ace558e1ffac", null ],
     [ "convertToSet", "d4/da4/def_8h.html#a9b5dc664655cd45f745dfa6cb03dcb97", null ],
     [ "darkenPixmap", "d4/da4/def_8h.html#a3f58bf4b46e94f75893d1e8005582a80", null ],
+    [ "darkPalette", "d4/da4/def_8h.html#afb038b6cec2eacb97d0e4c0268cb375f", null ],
     [ "directionToString", "d4/da4/def_8h.html#a2e4bae6ace9ea7638b5174f65c4bb4c2", null ],
     [ "fileDialog", "d4/da4/def_8h.html#a58e50c3dcf5e9d809ad9f6f4a64f254c", null ],
     [ "FromPixel", "d4/da4/def_8h.html#ad344c39a9d756b7ae9a7c0fb7ab4767b", null ],
@@ -372,6 +381,7 @@ var def_8h =
     [ "initHighDpiScaling", "d4/da4/def_8h.html#a1bf2551180232a51cb3941a5394ed35e", null ],
     [ "InitLanguages", "d4/da4/def_8h.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d4/da4/def_8h.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
+    [ "lightPalette", "d4/da4/def_8h.html#adf93bf1b48556aab0d9b953f14fbf169", null ],
     [ "makeHeaderName", "d4/da4/def_8h.html#a0d388d3b034a1f7b4f3618163b213f73", null ],
     [ "normalize", "d4/da4/def_8h.html#affcdee97a378cb969bf1ba715330ca32", null ],
     [ "notchSubTypeToString", "d4/da4/def_8h.html#a45306c2fc908e7e89e2bd49fd6df23b0", null ],
@@ -389,6 +399,7 @@ var def_8h =
     [ "StrToUnits", "d4/da4/def_8h.html#a066169b6c24aec89a790711c082e6432", null ],
     [ "SupportedLocales", "d4/da4/def_8h.html#a7b4a736138c35f50e76e645cfb11ece1", null ],
     [ "ToPixel", "d4/da4/def_8h.html#ab9291bba925fda9caaab0b0861642f30", null ],
+    [ "twilightPalette", "d4/da4/def_8h.html#a97efea7a504d604c8447d669bf7df892", null ],
     [ "UnitConvertor", "d4/da4/def_8h.html#a715dcfeef57319913811763f8e9261a0", null ],
     [ "UnitConvertor", "d4/da4/def_8h.html#aca89a6dfa5cdcf627b6ba95df560932b", null ],
     [ "UnitsToStr", "d4/da4/def_8h.html#ae102c2c24c0d1bd2230dd9292169f6cf", null ],

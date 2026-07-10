@@ -27,44 +27,45 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="../../de/dbd/classExportLayoutDialog.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="0,-83 0,-415 145,-415 145,-83 0,-83"/>
-<text text-anchor="middle" x="72.5" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">ExportLayoutDialog</text>
-<polyline fill="none" stroke="#666666" points="0,-396 145,-396 "/>
-<text text-anchor="start" x="8" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="8" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_count</text>
-<text text-anchor="start" x="8" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
-<text text-anchor="start" x="8" y="-351" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mode</text>
-<text text-anchor="start" x="8" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_SaveButton</text>
-<polyline fill="none" stroke="#666666" points="0,-333 145,-333 "/>
-<text text-anchor="start" x="8" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">+ ExportLayoutDialog()</text>
-<text text-anchor="start" x="8" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ExportLayoutDialog()</text>
-<text text-anchor="start" x="8" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ path()</text>
-<text text-anchor="start" x="8" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ fileName()</text>
-<text text-anchor="start" x="8" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFileName()</text>
-<text text-anchor="start" x="8" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ modeString()</text>
-<text text-anchor="start" x="8" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ format()</text>
-<text text-anchor="start" x="8" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ formatText()</text>
-<text text-anchor="start" x="8" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ selectFormat()</text>
-<text text-anchor="start" x="8" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBinaryDXFFormat()</text>
-<text text-anchor="start" x="8" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
-<text text-anchor="start" x="8" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportFormatSuffix()</text>
-<text text-anchor="start" x="8" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
-<text text-anchor="start" x="8" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00"># initTemplates()</text>
-<text text-anchor="start" x="8" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeFormatFromList()</text>
-<text text-anchor="start" x="8" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; readSettings()</text>
-<text text-anchor="start" x="8" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; writeSettings()</text>
-<text text-anchor="start" x="8" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; save()</text>
-<text text-anchor="start" x="8" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pathChanged()</text>
-<text text-anchor="start" x="8" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showExportFiles()</text>
-<text text-anchor="start" x="8" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; selectAllSizes()</text>
-<text text-anchor="start" x="8" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; deselectAllSizes()</text>
+<polygon fill="white" stroke="#666666" points="0,-77.5 0,-420.5 145,-420.5 145,-77.5 0,-77.5"/>
+<text text-anchor="middle" x="72.5" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">ExportLayoutDialog</text>
+<polyline fill="none" stroke="#666666" points="0,-401.5 145,-401.5 "/>
+<text text-anchor="start" x="8" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="8" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_count</text>
+<text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
+<text text-anchor="start" x="8" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mode</text>
+<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_saveButton</text>
+<text text-anchor="start" x="8" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_foreGroundColor</text>
+<polyline fill="none" stroke="#666666" points="0,-327.5 145,-327.5 "/>
+<text text-anchor="start" x="8" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ExportLayoutDialog()</text>
+<text text-anchor="start" x="8" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ExportLayoutDialog()</text>
+<text text-anchor="start" x="8" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ path()</text>
+<text text-anchor="start" x="8" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ fileName()</text>
+<text text-anchor="start" x="8" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFileName()</text>
+<text text-anchor="start" x="8" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ modeString()</text>
+<text text-anchor="start" x="8" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ format()</text>
+<text text-anchor="start" x="8" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ formatText()</text>
+<text text-anchor="start" x="8" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ selectFormat()</text>
+<text text-anchor="start" x="8" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBinaryDXFFormat()</text>
+<text text-anchor="start" x="8" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
+<text text-anchor="start" x="8" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportFormatSuffix()</text>
+<text text-anchor="start" x="8" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
+<text text-anchor="start" x="8" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initTemplates()</text>
+<text text-anchor="start" x="8" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeFormatFromList()</text>
+<text text-anchor="start" x="8" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; readSettings()</text>
+<text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; writeSettings()</text>
+<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; save()</text>
+<text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pathChanged()</text>
+<text text-anchor="start" x="8" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showExportFiles()</text>
+<text text-anchor="start" x="8" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; selectAllSizes()</text>
+<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; deselectAllSizes()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M142.15,-524.34C134.65,-494.8 124.59,-455.17 114.45,-415.24"/>
+<path fill="none" stroke="#63b8ff" d="M142.16,-524.41C135.01,-496.22 125.52,-458.86 115.86,-420.8"/>
 <polygon fill="none" stroke="#63b8ff" points="138.84,-525.53 144.69,-534.36 145.62,-523.81 138.84,-525.53"/>
 </g>
 <!-- Node4 -->

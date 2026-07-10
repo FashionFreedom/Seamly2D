@@ -6,13 +6,14 @@ var searchData=
   ['w_5flowbounds_3',['W_LowBounds',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a9102ee2b5e956c7f869f8aea8d333e5b',1,'XMLErrs::W_LowBounds()'],['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a63faace886dd762237c9515079a59d4c',1,'XMLValid::W_LowBounds()'],['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdeaf4e32e8c0827c2eebacc165fa92834fd',1,'XMLDOMMsg::W_LowBounds()'],['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80ac6bbfeb4d4269c7bf81464672905de2d',1,'XMLExcepts::W_LowBounds()']]],
   ['whole_4',['Whole',['../d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050',1,'dialogtool.h']]],
   ['wildcard_5',['WILDCARD',['../dc/d80/classXSConstants.html#a60daf162650cd8e58f53b85d8b93b99aa62ba92d950fb1ac7f19b172d34c6a6a0',1,'XSConstants']]],
-  ['wordtypeignore_6',['wordTypeIgnore',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfab1c9f03ca2155f440ca46c1438698370',1,'RegularExpression']]],
-  ['wordtypeletter_7',['wordTypeLetter',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfac16352bab4599d2e936006a4315bab8b',1,'RegularExpression']]],
-  ['wordtypeother_8',['wordTypeOther',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfa6a0f7dec572185890bb3f7827ef49bc1',1,'RegularExpression']]],
-  ['writer_5fnestedcdata_9',['Writer_NestedCDATA',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea218072d258b96aa00464a76c4c32cd95',1,'XMLDOMMsg']]],
-  ['writer_5fnotrecognizedtype_10',['Writer_NotRecognizedType',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea7b88ff3cb051cf6b4145d97ecad6dfd4',1,'XMLDOMMsg']]],
-  ['writer_5fnotrepresentchar_11',['Writer_NotRepresentChar',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdeadf5fbbf45e596b3e398feab1ec3fefb3',1,'XMLDOMMsg']]],
-  ['wrong_5fdocument_5ferr_12',['WRONG_DOCUMENT_ERR',['../dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5aaf110c79d2b0f7b31ea553a92b2a61b5',1,'DOMException::WRONG_DOCUMENT_ERR()'],['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdeab84a02463e72bb5fad8e67d6174addd8',1,'XMLDOMMsg::WRONG_DOCUMENT_ERR()']]],
-  ['wrongtargetnamespace_13',['WrongTargetNamespace',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a06ce25a250ddfb7e6fa07daaa830061c',1,'XMLValid']]],
-  ['ws_5fcollapseexpected_14',['WS_CollapseExpected',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a1915b532e1330a207aed7df5c8933704',1,'XMLErrs']]]
+  ['windows11_6',['Windows11',['../d4/da4/def_8h.html#a774311948c6a7205e5b79c6d7978e5d5a49228b5fa811010b7bf930d39d881909',1,'def.h']]],
+  ['wordtypeignore_7',['wordTypeIgnore',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfab1c9f03ca2155f440ca46c1438698370',1,'RegularExpression']]],
+  ['wordtypeletter_8',['wordTypeLetter',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfac16352bab4599d2e936006a4315bab8b',1,'RegularExpression']]],
+  ['wordtypeother_9',['wordTypeOther',['../d2/d0d/classRegularExpression.html#ac3f70b1575e89adfea357235ace21dcfa6a0f7dec572185890bb3f7827ef49bc1',1,'RegularExpression']]],
+  ['writer_5fnestedcdata_10',['Writer_NestedCDATA',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea218072d258b96aa00464a76c4c32cd95',1,'XMLDOMMsg']]],
+  ['writer_5fnotrecognizedtype_11',['Writer_NotRecognizedType',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdea7b88ff3cb051cf6b4145d97ecad6dfd4',1,'XMLDOMMsg']]],
+  ['writer_5fnotrepresentchar_12',['Writer_NotRepresentChar',['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdeadf5fbbf45e596b3e398feab1ec3fefb3',1,'XMLDOMMsg']]],
+  ['wrong_5fdocument_5ferr_13',['WRONG_DOCUMENT_ERR',['../dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5aaf110c79d2b0f7b31ea553a92b2a61b5',1,'DOMException::WRONG_DOCUMENT_ERR()'],['../d9/dac/classXMLDOMMsg.html#a638402474bd1e57588abfdbfc8b5dcdeab84a02463e72bb5fad8e67d6174addd8',1,'XMLDOMMsg::WRONG_DOCUMENT_ERR()']]],
+  ['wrongtargetnamespace_14',['WrongTargetNamespace',['../d5/dc5/classXMLValid.html#ac30e7f5d9612c52f5f1208c83f090c86a06ce25a250ddfb7e6fa07daaa830061c',1,'XMLValid']]],
+  ['ws_5fcollapseexpected_15',['WS_CollapseExpected',['../d7/d8e/classXMLErrs.html#aefe9817ef5442905d86fd17cb0c35e47a1915b532e1330a207aed7df5c8933704',1,'XMLErrs']]]
 ];

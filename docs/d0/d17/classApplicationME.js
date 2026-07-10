@@ -19,6 +19,7 @@ var classApplicationME =
     [ "retranslateGroups", "d0/d17/classApplicationME.html#a0f147988e4e438fb51ad3a02c9f8bb9d", null ],
     [ "retranslateTables", "d0/d17/classApplicationME.html#a7667d0abd29b03c1f01e934e796ee648", null ],
     [ "seamlyMeSettings", "d0/d17/classApplicationME.html#a3d6672c5f065dad78c9fcb7796fa6d70", null ],
+    [ "setTheme", "d0/d17/classApplicationME.html#a0b63de6fa1a5e5cb021a68a1f8cf99df", null ],
     [ "showDataBase", "d0/d17/classApplicationME.html#a2b9d2597a05bb2a4f7d413bb1eb8e30c", null ],
     [ "translateVariables", "d0/d17/classApplicationME.html#a6827fc9c34a0a3b105d6f5cad4259bc0", null ],
     [ "m_dataBase", "d0/d17/classApplicationME.html#a9948301625587dd64e344f8a43be2e91", null ],

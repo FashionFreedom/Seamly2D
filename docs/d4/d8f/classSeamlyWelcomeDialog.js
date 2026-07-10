@@ -7,6 +7,7 @@ var classSeamlyWelcomeDialog =
     [ "languageChanged", "d4/d8f/classSeamlyWelcomeDialog.html#a61edbceb468e8825d4806c94181d4913", null ],
     [ "setLocaleTooltip", "d4/d8f/classSeamlyWelcomeDialog.html#aa78ebe12cbc16b725dcc58e37d236cdf", null ],
     [ "m_selectionSoundChanged", "d4/d8f/classSeamlyWelcomeDialog.html#a24c876958d5d802c26a5938a2439b436", null ],
+    [ "m_themeChanged", "d4/d8f/classSeamlyWelcomeDialog.html#a56fe7d7c17cdea81830d493e790e7288", null ],
     [ "settings", "d4/d8f/classSeamlyWelcomeDialog.html#a84636d68b98128b7416c50bc682cac57", null ],
     [ "ui", "d4/d8f/classSeamlyWelcomeDialog.html#a07466132f533460896bd82a84919ba69", null ]
 ];

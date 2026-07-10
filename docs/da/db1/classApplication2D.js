@@ -21,6 +21,7 @@ var classApplication2D =
     [ "Seamly2DSettings", "da/db1/classApplication2D.html#a978f62b6565ede1bc1b0d920370bfeb0", null ],
     [ "seamlyMeFilePath", "da/db1/classApplication2D.html#ab9a0e0ccc40693db35ca00669322cad8", null ],
     [ "setAutoSaveTimer", "da/db1/classApplication2D.html#a40f49fc9e5e7e0862e9f994985959644", null ],
+    [ "setTheme", "da/db1/classApplication2D.html#a81284062d0a0ef844a100898eee712c1", null ],
     [ "startLogging", "da/db1/classApplication2D.html#a32b56028ade0e6da3d73f46eaef04413", null ],
     [ "startNewSeamly2D", "da/db1/classApplication2D.html#a3f8e33403eaf80a94d62a68bfa84b718", null ],
     [ "translateVariables", "da/db1/classApplication2D.html#ae89d8953b22a4dcdbd1aadf272265f85", null ],
