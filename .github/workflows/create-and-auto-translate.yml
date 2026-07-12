@@ -38,9 +38,9 @@ jobs:
           if [ -n "${{ github.event.inputs.lang_code }}" ]; then
             echo "LANG_CODE=${{ github.event.inputs.lang_code }}" >> $GITHUB_ENV
           else
-            # Branch name is 'translation/<lang_code>' (e.g. translation/pl_PL),
-            # so the last path segment is already the language code.
-            echo "LANG_CODE=${GITHUB_REF##*/}" >> $GITHUB_ENV
+            # Branch format: translation/<lang_code>, and lang_code is always 5 chars (xx-YY)
+            BRANCH_NAME="${GITHUB_REF##*/}"
+            echo "LANG_CODE=${BRANCH_NAME: -5}" >> $GITHUB_ENV
           fi
 
       - name: Ensure flag icon for language
@@ -52,13 +52,14 @@ jobs:
       - name: Auto-translate new .ts files (on virtual server, not in code branch)
         run: |
           set -x
-          LANG_SHORT=$(echo "$LANG_CODE" | cut -d'_' -f1)
+          LANG_SHORT=$(echo "$LANG_CODE" | sed 's/[-_].*$//')
           echo "LANG_SHORT=$LANG_SHORT"
           ls -l share/translations/
           echo "Checking measurements_${LANG_CODE}.ts:"
           cat share/translations/measurements_${LANG_CODE}.ts || echo "File not found!"
           echo "Checking seamly2d_${LANG_CODE}.ts:"
           cat share/translations/seamly2d_${LANG_CODE}.ts || echo "File not found!"
+          echo "LANG_CODE=$LANG_CODE LANG_SHORT=$LANG_SHORT"
           echo "About to run auto_translate_ts.py..."
           python -u scripts/translations/auto_translate_ts.py $LANG_SHORT share/translations/measurements_${LANG_CODE}.ts share/translations/seamly2d_${LANG_CODE}.ts
 
