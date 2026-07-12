@@ -59,9 +59,6 @@
 #include "core/application_2d.h"
 #include "core/vpieceoptionspropertybrowser.h"
 #include "core/vtooloptionspropertybrowser.h"
-#include "dialogs/fabric_dialog.h"
-#include "../vformat/fabricdoc.h"
-#include "../vpatterndb/variables/vfabricvariable.h"
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
@@ -206,10 +203,6 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationSizesLabel(nullptr)
     , toolProperties(nullptr)
     , m_pieceProperties(nullptr)
-    , m_fabricTopLine(nullptr)
-    , m_fabricBottomLine(nullptr)
-    , m_selvedgeTopLine(nullptr)
-    , m_selvedgeBottomLine(nullptr)
     , groupsWidget(nullptr)
     , piecesWidget(nullptr)
     , m_lock(nullptr)
@@ -648,8 +641,6 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
         pattern->ClearVariables(VarType::Measurement);
         m_measurements->readMeasurements();
-
-        loadFabricFromPattern();
     }
 
     catch (VExceptionEmptyParameter &exception)
@@ -2241,131 +2232,6 @@ void MainWindow::editMeasurements()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::editFabric()
-{
-    if (m_fabricDoc.isNull())
-    {
-        m_fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
-
-        const QString existingPath = doc->FabricPath();
-        if (!existingPath.isEmpty() && QFile::exists(existingPath))
-        {
-            m_fabricDoc->setXMLContent(existingPath);
-        }
-        else
-        {
-            m_fabricDoc->createEmptyFabricFile(QString());
-        }
-    }
-
-    FabricDialog dialog(m_fabricDoc, this);
-    if (dialog.exec() == QDialog::Accepted)
-    {
-        m_fabricDoc->readFabricProperties();
-
-        if (!dialog.loadedFilePath().isEmpty())
-        {
-            doc->SetFabricPath(dialog.loadedFilePath());
-        }
-
-        VFabricSettings settings = doc->GetFabricSettings();
-        settings.fabricWidth      = m_fabricDoc->GetWidth();
-        settings.selvedge         = m_fabricDoc->GetSelvedge();
-        settings.heightRepeat     = m_fabricDoc->GetHeightRepeat();
-        settings.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
-        settings.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
-        settings.stretchPercent   = m_fabricDoc->GetStretchPercent();
-        doc->SetFabricSettings(settings);
-
-        // Register fabric SA as variable for PatternPieceDialog override
-        if (!qFuzzyIsNull(settings.defaultSAWidth))
-        {
-            auto saVar = QSharedPointer<VFabricVariable>::create(
-                QStringLiteral("fabric_default_sa"), settings.defaultSAWidth, tr("Default SA from fabric"));
-            pattern->AddVariable(QStringLiteral("fabric_default_sa"), saVar);
-        }
-
-        VFabricSettings fabricDefaults;
-        fabricDefaults.fabricWidth      = m_fabricDoc->GetWidth();
-        fabricDefaults.selvedge         = m_fabricDoc->GetSelvedge();
-        fabricDefaults.heightRepeat     = m_fabricDoc->GetHeightRepeat();
-        fabricDefaults.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
-        fabricDefaults.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
-        fabricDefaults.stretchPercent   = m_fabricDoc->GetStretchPercent();
-        m_pieceProperties->setFabricDefaults(fabricDefaults);
-
-        // SA default stored per-document only, not synced to app settings
-
-        updateFabricWidthLines();
-        emit doc->patternChanged(false);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::addFabric()
-{
-    const QString fileName = QFileDialog::getOpenFileName(this, tr("Add Fabric"),
-        QString(), tr("Seamly Fabric Files (*.sfab);;All Files (*)"));
-
-    if (fileName.isEmpty())
-    {
-        return;
-    }
-
-    auto fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
-    fabricDoc->setXMLContent(fileName);
-    fabricDoc->readFabricProperties();
-    m_additionalFabrics.append(fabricDoc);
-
-    if (piecesWidget != nullptr)
-    {
-        piecesWidget->addFabric(fabricDoc);
-    }
-
-    updateFabricWidthLines();
-    emit doc->patternChanged(false);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::loadFabricFromPattern()
-{
-    const QString fabricPath = doc->FabricPath();
-    if (fabricPath.isEmpty())
-    {
-        return;
-    }
-
-    const QString absolutePath = QFileInfo(fabricPath).isAbsolute()
-        ? fabricPath
-        : QFileInfo(qApp->getFilePath()).absoluteDir().filePath(fabricPath);
-
-    if (!QFile::exists(absolutePath))
-    {
-        return;
-    }
-
-    if (m_fabricDoc.isNull())
-    {
-        m_fabricDoc = QSharedPointer<FabricDoc>::create(qApp->patternUnit(), pattern);
-    }
-
-    m_fabricDoc->setXMLContent(absolutePath);
-    m_fabricDoc->readFabricProperties();
-
-    if (m_pieceProperties != nullptr)
-    {
-        VFabricSettings fabricDefaults;
-        fabricDefaults.fabricWidth      = m_fabricDoc->GetWidth();
-        fabricDefaults.selvedge         = m_fabricDoc->GetSelvedge();
-        fabricDefaults.heightRepeat     = m_fabricDoc->GetHeightRepeat();
-        fabricDefaults.lengthRepeat     = m_fabricDoc->GetLengthRepeat();
-        fabricDefaults.shrinkagePercent = m_fabricDoc->GetShrinkagePercent();
-        fabricDefaults.stretchPercent   = m_fabricDoc->GetStretchPercent();
-        m_pieceProperties->setFabricDefaults(fabricDefaults);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::measurementsChanged(const QString &path)
 {
     m_changes = false;
@@ -2845,187 +2711,6 @@ void MainWindow::initPiecePropertyEditor()
             m_pieceProperties, &VPieceOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile,
             m_pieceProperties, &VPieceOptionsPropertyBrowser::updateOptions);
-    connect(doc, &VAbstractPattern::patternChanged, this, &MainWindow::updateFabricWidthLines);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void MainWindow::updateFabricWidthLines()
-{
-    const VFabricSettings settings = doc->GetFabricSettings();
-    const Unit unit = qApp->patternUnit();
-    const qreal width = ToPixel(settings.fabricWidth, unit);
-    const qreal lineLength = 100000.0;
-
-    // --- Clear old rapport lines ---
-    for (QGraphicsLineItem *line : m_rapportLines)
-    {
-        pieceScene->removeItem(line);
-        delete line;
-    }
-    m_rapportLines.clear();
-
-    // --- Fabric width edges ---
-    if (qFuzzyIsNull(width))
-    {
-        if (m_fabricTopLine != nullptr)
-        {
-            m_fabricTopLine->setVisible(false);
-        }
-        if (m_fabricBottomLine != nullptr)
-        {
-            m_fabricBottomLine->setVisible(false);
-        }
-    }
-    else
-    {
-        QPen fabricPen(QColor(Qt::darkCyan), 2.0, Qt::DashDotLine);
-
-        if (m_fabricTopLine == nullptr)
-        {
-            m_fabricTopLine = pieceScene->addLine(-lineLength / 2.0, 0, lineLength / 2.0, 0, fabricPen);
-            m_fabricTopLine->setZValue(-0.5);
-        }
-        else
-        {
-            m_fabricTopLine->setPen(fabricPen);
-            m_fabricTopLine->setLine(-lineLength / 2.0, 0, lineLength / 2.0, 0);
-        }
-        m_fabricTopLine->setVisible(true);
-
-        if (m_fabricBottomLine == nullptr)
-        {
-            m_fabricBottomLine = pieceScene->addLine(-lineLength / 2.0, width, lineLength / 2.0, width, fabricPen);
-            m_fabricBottomLine->setZValue(-0.5);
-        }
-        else
-        {
-            m_fabricBottomLine->setPen(fabricPen);
-            m_fabricBottomLine->setLine(-lineLength / 2.0, width, lineLength / 2.0, width);
-        }
-        m_fabricBottomLine->setVisible(true);
-    }
-
-    // --- Selvedge lines ---
-    const qreal selvedge = ToPixel(settings.selvedge, unit);
-    if (selvedge > 0.5 && width > selvedge * 2)
-    {
-        QPen selvedgePen(QColor(Qt::darkYellow), 1.5, Qt::DashLine);
-
-        if (m_selvedgeTopLine == nullptr)
-        {
-            m_selvedgeTopLine = pieceScene->addLine(-lineLength / 2.0, selvedge, lineLength / 2.0, selvedge, selvedgePen);
-            m_selvedgeTopLine->setZValue(-0.5);
-        }
-        else
-        {
-            m_selvedgeTopLine->setPen(selvedgePen);
-            m_selvedgeTopLine->setLine(-lineLength / 2.0, selvedge, lineLength / 2.0, selvedge);
-        }
-        m_selvedgeTopLine->setVisible(true);
-
-        if (m_selvedgeBottomLine == nullptr)
-        {
-            m_selvedgeBottomLine = pieceScene->addLine(-lineLength / 2.0, width - selvedge, lineLength / 2.0, width - selvedge, selvedgePen);
-            m_selvedgeBottomLine->setZValue(-0.5);
-        }
-        else
-        {
-            m_selvedgeBottomLine->setPen(selvedgePen);
-            m_selvedgeBottomLine->setLine(-lineLength / 2.0, width - selvedge, lineLength / 2.0, width - selvedge);
-        }
-        m_selvedgeBottomLine->setVisible(true);
-    }
-    else
-    {
-        if (m_selvedgeTopLine != nullptr) { m_selvedgeTopLine->setVisible(false); }
-        if (m_selvedgeBottomLine != nullptr) { m_selvedgeBottomLine->setVisible(false); }
-    }
-
-    // --- Rapport grid lines ---
-    const qreal hRepeat = ToPixel(settings.heightRepeat, unit);
-    const qreal lRepeat = ToPixel(settings.lengthRepeat, unit);
-
-    QPen rapportPen(QColor(Qt::darkCyan), 1.0, Qt::DotLine);
-
-    if (hRepeat > 1.0 && width > 1.0)
-    {
-        for (qreal y = hRepeat; y < width - 0.5; y += hRepeat)
-        {
-            QGraphicsLineItem *line = pieceScene->addLine(-lineLength / 2.0, y, lineLength / 2.0, y, rapportPen);
-            line->setZValue(-0.5);
-            m_rapportLines.append(line);
-        }
-    }
-
-    if (lRepeat > 1.0)
-    {
-        const qreal yMin = 0;
-        const qreal yMax = qFuzzyIsNull(width) ? lineLength : width;
-        for (qreal x = 0; x < lineLength / 2.0; x += lRepeat)
-        {
-            if (x > 0)
-            {
-                QGraphicsLineItem *line = pieceScene->addLine(x, yMin, x, yMax, rapportPen);
-                line->setZValue(-0.5);
-                m_rapportLines.append(line);
-            }
-            QGraphicsLineItem *lineNeg = pieceScene->addLine(-x, yMin, -x, yMax, rapportPen);
-            lineNeg->setZValue(-0.5);
-            m_rapportLines.append(lineNeg);
-        }
-    }
-
-    // --- Additional fabrics (stacked below) ---
-    for (QGraphicsItem *item : m_additionalFabricItems)
-    {
-        pieceScene->removeItem(item);
-        delete item;
-    }
-    m_additionalFabricItems.clear();
-
-    qreal yOffset = width > 1.0 ? width + ToPixel(5.0, unit) : 0;
-    QPen additionalFabricPen(QColor(Qt::darkMagenta), 2.0, Qt::DashDotLine);
-
-    for (int i = 0; i < m_additionalFabrics.size(); ++i)
-    {
-        const auto &fab = m_additionalFabrics.at(i);
-        const qreal fabWidth = ToPixel(fab->GetWidth(), unit);
-        if (fabWidth > 1.0)
-        {
-            QGraphicsLineItem *topLine = pieceScene->addLine(
-                -lineLength / 2.0, yOffset, lineLength / 2.0, yOffset, additionalFabricPen);
-            topLine->setZValue(-0.5);
-            m_additionalFabricItems.append(topLine);
-
-            QGraphicsLineItem *bottomLine = pieceScene->addLine(
-                -lineLength / 2.0, yOffset + fabWidth, lineLength / 2.0, yOffset + fabWidth, additionalFabricPen);
-            bottomLine->setZValue(-0.5);
-            m_additionalFabricItems.append(bottomLine);
-
-            // Label
-            auto *label = new QGraphicsSimpleTextItem(fab->GetName());
-            label->setPos(-lineLength / 4.0, yOffset + 5);
-            label->setBrush(QColor(Qt::darkMagenta));
-            pieceScene->addItem(label);
-            m_additionalFabricItems.append(label);
-
-            yOffset += fabWidth + ToPixel(5.0, unit);
-        }
-    }
-
-    // --- Shrinkage/Stretch scaling ---
-    const qreal shrinkScale = 1.0 + (settings.shrinkagePercent / 100.0);
-    const qreal stretchScale = 1.0 - (settings.stretchPercent / 100.0);
-    const qreal totalScale = shrinkScale * stretchScale;
-
-    const QList<QGraphicsItem *> items = pieceScene->items();
-    for (QGraphicsItem *item : items)
-    {
-        if (item->type() == PatternPieceTool::Type)
-        {
-            item->setScale(totalScale);
-        }
-    }
 }
 
 /**
@@ -4271,9 +3956,8 @@ void MainWindow::showPieceMode(bool checked)
         setWidgetsEnabled(true);
 
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
-        updateFabricWidthLines();
 
-        // Zoom to pieces, not the entire scene (which includes fabric lines)
+        // Zoom to pieces
         {
             QRectF piecesRect;
             const QList<QGraphicsItem *> allItems = pieceScene->items();
@@ -5867,6 +5551,11 @@ void MainWindow::createMenus()
     menu->addAction(ui->details_ToolBar->toggleViewAction());
     menu->addAction(ui->layout_ToolBar->toggleViewAction());
     menu->addAction(ui->pointName_ToolBar->toggleViewAction());
+
+    if (auto *fabricMenu = ui->fabric_Menu)
+    {
+        fabricMenu->menuAction()->setVisible(false);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6100,15 +5789,6 @@ void MainWindow::initializeDocksContain()
         if (tool && m_pieceProperties)
         {
             m_pieceProperties->itemClicked(tool);
-        }
-    });
-    connect(piecesWidget, &PiecesWidget::addFabricRequested, this, &MainWindow::addFabric);
-    connect(piecesWidget, &PiecesWidget::fabricClicked, this, [this](int index)
-    {
-        if (index >= 0 && index < piecesWidget->fabrics().size())
-        {
-            FabricDialog dialog(piecesWidget->fabrics().at(index), this);
-            dialog.exec();
         }
     });
     // Clear a Canvas Editor node highlight when the user clicks anywhere on the canvas.
@@ -6639,8 +6319,6 @@ void MainWindow::createActions()
     });
 
     connect(ui->editCurrent_Action, &QAction::triggered, this, &MainWindow::editMeasurements);
-    connect(ui->editFabric_Action, &QAction::triggered, this, &MainWindow::editFabric);
-    connect(ui->addFabric_Action, &QAction::triggered, this, &MainWindow::addFabric);
     connect(ui->unloadMeasurements_Action, &QAction::triggered, this, &MainWindow::UnloadMeasurements);
     connect(ui->loadIndividual_Action, &QAction::triggered, this, &MainWindow::LoadIndividual);
     connect(ui->loadMultisize_Action, &QAction::triggered, this, &MainWindow::LoadMultisize);

@@ -67,15 +67,11 @@ private:
     QGraphicsItem                   *m_currentItem;
     QMap<VPE::VProperty *, QString>  m_propertyToId;
     QMap<QString, VPE::VProperty *>  m_idToProperty;
-    bool                             m_showingPatternSettings;
 
     void addProperty(VPE::VProperty *property, const QString &id);
     void showPieceOptions(QGraphicsItem *item);
     void updatePieceOptions();
     void changePieceData(VPE::VProperty *property);
-    void showPatternSettings();
-    void updatePatternSettings();
-    void changePatternSettingsData(VPE::VProperty *property);
 };
 
 #endif // VPIECEOPTIONSPROPERTYBROWSER_H

@@ -55,13 +55,11 @@
 
 #include <QWidget>
 #include <QTreeWidgetItem>
-#include <QSharedPointer>
 
 class VAbstractPattern;
 class VContainer;
 class VPiece;
 class VPieceNode;
-class FabricDoc;
 
 namespace Ui
 {
@@ -76,15 +74,9 @@ public:
     explicit           PiecesWidget(VContainer *data, VAbstractPattern *doc,  QWidget *parent = nullptr);
     virtual           ~PiecesWidget();
 
-    void               addFabric(QSharedPointer<FabricDoc> fabric);
-    QVector<QSharedPointer<FabricDoc>> fabrics() const { return m_fabrics; }
-
 signals:
     void               Highlight(quint32 id);
     void               pieceSelected(quint32 id);
-    void               fabricClicked(int index);
-    void               addFabricRequested();
-    void               pieceFabricChanged(quint32 pieceId, int fabricIndex);
 
 public slots:
     void               togglePiece(quint32 id);
@@ -98,7 +90,6 @@ private slots:
     void               itemDoubleClicked(QTreeWidgetItem *item, int column);
     void               itemChanged(QTreeWidgetItem *item, int column);
     void               showContextMenu(const QPoint &pos);
-    void               onDropCompleted();
 
 protected:
     virtual void       changeEvent(QEvent* event) override;
@@ -109,22 +100,17 @@ private:
     VAbstractPattern             *m_doc;
     VContainer                   *m_data;
     const QHash<quint32, VPiece> *m_allPieces;
-    QVector<QSharedPointer<FabricDoc>> m_fabrics;
-    QHash<quint32, int>              m_pieceFabricMap;
     quint32                          m_highlightedNodeId;
     bool                             m_fillTreeInProgress;
 
     enum ItemRole
     {
         PieceIdRole   = Qt::UserRole,
-        FabricIdRole  = Qt::UserRole + 1,
-        IsFabricRole  = Qt::UserRole + 2,
-        IsNodeRole    = Qt::UserRole + 3,
-        NodeIdRole    = Qt::UserRole + 4
+        IsNodeRole    = Qt::UserRole + 1,
+        NodeIdRole    = Qt::UserRole + 2
     };
 
     void               fillTree(const QHash<quint32, VPiece> *pieces);
-    QTreeWidgetItem   *createFabricNode(int fabricIndex);
     QTreeWidgetItem   *createPieceItem(quint32 id, const VPiece &piece);
     QTreeWidgetItem   *createNodeItem(const VPieceNode &node);
     void               toggleInLayoutPieces(bool inLayout);
@@ -140,7 +126,6 @@ private:
     void               editPieceProperties(quint32 id);
     void               showNodeContextMenu(QTreeWidgetItem *item, const QPoint &globalPos);
     void               highlightCurveNode(quint32 nodeId, QTreeWidgetItem *pieceItem);
-    int                fabricIndexForPiece(quint32 id) const;
     QList<QTreeWidgetItem *> allPieceItems() const;
 };
 

@@ -52,7 +52,6 @@
 
 #include "pieces_widget.h"
 #include "ui_pieces_widget.h"
-#include "../vformat/fabricdoc.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
@@ -183,7 +182,6 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     , m_doc(doc)
     , m_data(data)
     , m_allPieces()
-    , m_fabrics()
     , m_highlightedNodeId(NULL_ID)
     , m_fillTreeInProgress(false)
 {
@@ -238,7 +236,7 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
             return;
         }
         QTreeWidgetItem *item = selected.first();
-        if (item->data(0, IsFabricRole).toBool())
+        if (item->data(0, IsNodeRole).toBool())
         {
             return;
         }
@@ -266,7 +264,7 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
             return;
         }
         QTreeWidgetItem *item = selected.first();
-        if (item->data(0, IsFabricRole).toBool())
+        if (item->data(0, IsNodeRole).toBool())
         {
             return;
         }
@@ -289,8 +287,6 @@ PiecesWidget::PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     connect(ui->treeWidget, &QTreeWidget::itemDoubleClicked,              this, &PiecesWidget::itemDoubleClicked);
     connect(ui->treeWidget, &QTreeWidget::itemChanged,                    this, &PiecesWidget::itemChanged);
     connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested,     this, &PiecesWidget::showContextMenu);
-
-    connect(ui->treeWidget->model(), &QAbstractItemModel::rowsInserted, this, &PiecesWidget::onDropCompleted);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -424,20 +420,6 @@ void PiecesWidget::itemClicked(QTreeWidgetItem *item, int column)
 
     clearNodeHighlight();
 
-    if (item->data(0, IsFabricRole).toBool())
-    {
-        const int fabricIdx = item->data(0, FabricIdRole).toInt();
-        if (fabricIdx == -1)
-        {
-            emit addFabricRequested();
-        }
-        else
-        {
-            emit fabricClicked(fabricIdx);
-        }
-        return;
-    }
-
     const quint32 id = item->data(0, PieceIdRole).toUInt();
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
     const bool locked = allPieces->value(id).isLocked();
@@ -495,20 +477,6 @@ void PiecesWidget::itemDoubleClicked(QTreeWidgetItem *item, int column)
         return;
     }
 
-    if (item->data(0, IsFabricRole).toBool())
-    {
-        const int fabricIdx = item->data(0, FabricIdRole).toInt();
-        if (fabricIdx == -1)
-        {
-            emit addFabricRequested();
-        }
-        else
-        {
-            emit fabricClicked(fabricIdx);
-        }
-        return;
-    }
-
     const quint32 id = item->data(0, PieceIdRole).toUInt();
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
     const bool locked = allPieces->value(id).isLocked();
@@ -541,50 +509,6 @@ void PiecesWidget::itemDoubleClicked(QTreeWidgetItem *item, int column)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTreeWidgetItem *PiecesWidget::createFabricNode(int fabricIndex)
-{
-    QTreeWidgetItem *node = new QTreeWidgetItem();
-
-    if (fabricIndex >= 0 && fabricIndex < m_fabrics.size())
-    {
-        const auto &fab = m_fabrics.at(fabricIndex);
-        const QString label = QStringLiteral("%1 (%2 cm, %3)")
-            .arg(fab->GetName())
-            .arg(QString::number(fab->GetWidth(), 'f', 0))
-            .arg(fab->GetColor());
-        node->setIcon(0, QIcon(QStringLiteral("://icon/32x32/visible_on.png")));
-        node->setText(4, label);
-    }
-    else if (fabricIndex == -1)
-    {
-        node->setIcon(0, QIcon(QStringLiteral("://icon/24x24/plus.png")));
-        node->setText(4, tr("Add Fabric..."));
-    }
-    else
-    {
-        node->setIcon(0, QIcon(QStringLiteral("://icon/32x32/visible_on.png")));
-        node->setText(4, tr("No fabric assigned"));
-    }
-
-    QFont boldFont = node->font(4);
-    boldFont.setBold(true);
-    node->setFont(4, boldFont);
-
-    node->setData(0, IsFabricRole, true);
-    node->setData(0, FabricIdRole, fabricIndex);
-    if (fabricIndex == -1)
-    {
-        node->setFlags(Qt::ItemIsEnabled);
-    }
-    else
-    {
-        node->setFlags(Qt::ItemIsEnabled | Qt::ItemIsDropEnabled);
-    }
-
-    return node;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 QTreeWidgetItem *PiecesWidget::createPieceItem(quint32 id, const VPiece &piece)
 {
     QTreeWidgetItem *item = new QTreeWidgetItem();
@@ -611,7 +535,6 @@ QTreeWidgetItem *PiecesWidget::createPieceItem(quint32 id, const VPiece &piece)
     item->setToolTip(4, tr("Click to rename"));
 
     item->setData(0, PieceIdRole, id);
-    item->setData(0, IsFabricRole, false);
     item->setData(0, IsNodeRole, false);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled);
 
@@ -681,7 +604,6 @@ QTreeWidgetItem *PiecesWidget::createNodeItem(const VPieceNode &node)
 
     item->setData(0, IsNodeRole, true);
     item->setData(0, NodeIdRole, node.GetId());
-    item->setData(0, IsFabricRole, false);
     item->setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
     return item;
@@ -706,66 +628,17 @@ void PiecesWidget::fillTree(const QHash<quint32, VPiece> *pieces)
     ui->treeWidget->blockSignals(true);
     ui->treeWidget->clear();
 
-    QTreeWidgetItem *unassignedNode = createFabricNode(-2);
-
-    QMap<int, QTreeWidgetItem *> fabricNodes;
-    for (int i = 0; i < m_fabrics.size(); ++i)
-    {
-        QTreeWidgetItem *node = createFabricNode(i);
-        fabricNodes[i] = node;
-        ui->treeWidget->addTopLevelItem(node);
-    }
-
     auto it = pieces->constBegin();
     while (it != pieces->constEnd())
     {
-        const quint32 id = it.key();
-        const VPiece &piece = it.value();
-        QTreeWidgetItem *item = createPieceItem(id, piece);
-
-        int fabIdx = fabricIndexForPiece(id);
-        if (fabIdx >= 0 && fabricNodes.contains(fabIdx))
-        {
-            fabricNodes[fabIdx]->addChild(item);
-        }
-        else
-        {
-            unassignedNode->addChild(item);
-        }
+        QTreeWidgetItem *item = createPieceItem(it.key(), it.value());
+        ui->treeWidget->addTopLevelItem(item);
+        item->setExpanded(expandedPieces.contains(it.key()));
         ++it;
     }
 
-    if (unassignedNode->childCount() > 0)
-    {
-        ui->treeWidget->insertTopLevelItem(0, unassignedNode);
-    }
-    else
-    {
-        delete unassignedNode;
-    }
-
-    QTreeWidgetItem *addNode = createFabricNode(-1);
-    ui->treeWidget->addTopLevelItem(addNode);
-
-    for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
-    {
-        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
-        top->setExpanded(true);
-        for (int j = 0; j < top->childCount(); ++j)
-        {
-            QTreeWidgetItem *pieceItem = top->child(j);
-            const quint32 pid = pieceItem->data(0, PieceIdRole).toUInt();
-            pieceItem->setExpanded(expandedPieces.contains(pid));
-        }
-    }
     ui->treeWidget->blockSignals(false);
     m_fillTreeInProgress = false;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-int PiecesWidget::fabricIndexForPiece(quint32 id) const
-{
-    return m_pieceFabricMap.value(id, -1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -774,50 +647,15 @@ QList<QTreeWidgetItem *> PiecesWidget::allPieceItems() const
     QList<QTreeWidgetItem *> result;
     for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
     {
-        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
-        for (int j = 0; j < top->childCount(); ++j)
-        {
-            result.append(top->child(j));
-        }
+        result.append(ui->treeWidget->topLevelItem(i));
     }
     return result;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::onDropCompleted()
-{
-    for (int i = 0; i < ui->treeWidget->topLevelItemCount(); ++i)
-    {
-        QTreeWidgetItem *top = ui->treeWidget->topLevelItem(i);
-        if (!top->data(0, IsFabricRole).toBool())
-        {
-            continue;
-        }
-        const int fabricIdx = top->data(0, FabricIdRole).toInt();
-        for (int j = 0; j < top->childCount(); ++j)
-        {
-            QTreeWidgetItem *child = top->child(j);
-            if (!child->data(0, IsFabricRole).toBool())
-            {
-                const quint32 pieceId = child->data(0, PieceIdRole).toUInt();
-                if (fabricIdx >= 0)
-                {
-                    m_pieceFabricMap[pieceId] = fabricIdx;
-                }
-                else
-                {
-                    m_pieceFabricMap.remove(pieceId);
-                }
-                emit pieceFabricChanged(pieceId, fabricIdx);
-            }
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::itemChanged(QTreeWidgetItem *item, int column)
 {
-    if (!item || column != 4 || item->data(0, IsFabricRole).toBool())
+    if (!item || column != 4 || item->data(0, IsNodeRole).toBool())
     {
         return;
     }
@@ -1122,13 +960,6 @@ void PiecesWidget::editPieceProperties(quint32 id)
     PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(id));
     SCASSERT(tool != nullptr);
     tool->editPieceProperties();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PiecesWidget::addFabric(QSharedPointer<FabricDoc> fabric)
-{
-    m_fabrics.append(fabric);
-    fillTree(m_data->DataPieces());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

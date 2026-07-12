@@ -38,7 +38,6 @@
 #include "../vtools/tools/pattern_piece_tool.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/undocommands/movepiece.h"
-#include "../vtools/undocommands/savepatternfabricsettings.h"
 #include "../vtools/undocommands/savepieceoptions.h"
 
 #include <QDockWidget>
@@ -57,23 +56,6 @@ const QString IdHideSeamLine       = QStringLiteral("hideSeamLine");
 const QString IdLabelSelection     = QStringLiteral("labelSelection");
 const QString IdLabelProperties    = QStringLiteral("labelProperties");
 const QString IdLabelSeamAllowance = QStringLiteral("labelSeamAllowance");
-const QString IdLabelFabric        = QStringLiteral("labelFabric");
-const QString IdLabelSADefaults    = QStringLiteral("labelSADefaults");
-const QString IdFabricWidth        = QStringLiteral("fabricWidth");
-const QString IdSelvedge           = QStringLiteral("selvedge");
-const QString IdHeightRepeat        = QStringLiteral("heightRepeat");
-const QString IdLengthRepeat       = QStringLiteral("lengthRepeat");
-const QString IdShrinkagePercent   = QStringLiteral("shrinkagePercent");
-const QString IdStretchPercent     = QStringLiteral("stretchPercent");
-const QString IdDefaultSAWidth     = QStringLiteral("defaultSAWidth");
-const QString IdLabelNotch         = QStringLiteral("labelNotch");
-const QString IdDefaultNotchType   = QStringLiteral("defaultNotchType");
-const QString IdDefaultNotchSubType = QStringLiteral("defaultNotchSubType");
-const QString IdLabelSnapping      = QStringLiteral("labelSnapping");
-const QString IdRapportSnapping    = QStringLiteral("rapportSnapping");
-const QString IdLabelRapport       = QStringLiteral("labelRapport");
-const QString IdRapportAnchor      = QStringLiteral("rapportAnchor");
-const QString IdRapportAlign       = QStringLiteral("rapportAlign");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -86,8 +68,6 @@ VPieceOptionsPropertyBrowser::VPieceOptionsPropertyBrowser(VAbstractPattern *doc
     , m_currentItem(nullptr)
     , m_propertyToId(QMap<VPE::VProperty *, QString>())
     , m_idToProperty(QMap<QString, VPE::VProperty *>())
-    , m_showingPatternSettings(false)
-    , m_fabricDefaults()
 {
     m_propertyModel = new VPE::VPropertyModel(this);
     m_formView = new VPE::VPropertyFormView(m_propertyModel, parent);
@@ -123,7 +103,7 @@ void VPieceOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
 {
     if (item == nullptr)
     {
-        showPatternSettings();
+        clearPropertyBrowser();
         return;
     }
 
@@ -151,12 +131,6 @@ void VPieceOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
 //---------------------------------------------------------------------------------------------------------------------
 void VPieceOptionsPropertyBrowser::updateOptions()
 {
-    if (m_showingPatternSettings)
-    {
-        updatePatternSettings();
-        return;
-    }
-
     if (m_currentItem == nullptr || m_idToProperty.isEmpty())
     {
         return;
@@ -176,11 +150,7 @@ void VPieceOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         return;
     }
 
-    if (m_showingPatternSettings)
-    {
-        changePatternSettingsData(property);
-    }
-    else if (m_currentItem != nullptr && m_currentItem->type() == PatternPieceTool::Type)
+    if (m_currentItem != nullptr && m_currentItem->type() == PatternPieceTool::Type)
     {
         changePieceData(property);
     }
@@ -203,7 +173,6 @@ void VPieceOptionsPropertyBrowser::showPieceOptions(QGraphicsItem *item)
         return;
     }
 
-    m_showingPatternSettings = false;
     m_formView->setTitle(tr("Pattern Piece"));
 
     const VPiece piece = tool->getData()->GetPiece(tool->getId());
@@ -259,63 +228,6 @@ void VPieceOptionsPropertyBrowser::showPieceOptions(QGraphicsItem *item)
     hideSeamLineProperty->setValue(piece.isHideSeamLine() ? 1 : 0);
     addProperty(hideSeamLineProperty, IdHideSeamLine);
 
-    // --- Rapport Alignment ---
-    const VFabricSettings fabricSettings = m_doc->GetFabricSettings();
-    if (fabricSettings.heightRepeat > 0 || fabricSettings.lengthRepeat > 0)
-    {
-        auto *labelRapport = new VPE::VLabelProperty(
-            QStringLiteral("<b>") + tr("Rapport Alignment") + QStringLiteral("</b>"));
-        labelRapport->setValue(QString());
-        labelRapport->setPropertyType(VPE::Property::Label);
-        addProperty(labelRapport, IdLabelRapport);
-
-        const VContainer *data = tool->getData();
-        const QVector<VPieceNode> nodes = piece.GetPath().getNodes();
-        QStringList pointNames;
-        pointNames << tr("-- None --");
-        int savedAnchorIndex = 0;
-        const quint32 savedAnchorId = piece.GetRapportAnchorId();
-        int pointCount = 0;
-
-        for (int i = 0; i < nodes.size(); ++i)
-        {
-            if (nodes.at(i).GetTypeTool() == Tool::NodePoint)
-            {
-                try
-                {
-                    const QSharedPointer<VPointF> point =
-                        data->GeometricObject<VPointF>(nodes.at(i).GetId());
-                    pointNames << point->name();
-                    ++pointCount;
-                    if (nodes.at(i).GetId() == savedAnchorId)
-                    {
-                        savedAnchorIndex = pointCount;
-                    }
-                }
-                catch (...)
-                {
-                    continue;
-                }
-            }
-        }
-
-        auto *anchorProperty = new VPE::VEnumProperty(tr("Anchor point:"));
-        anchorProperty->setLiterals(pointNames);
-        anchorProperty->setValue(savedAnchorIndex);
-        addProperty(anchorProperty, IdRapportAnchor);
-
-        const QStringList alignOptions = QStringList()
-            << tr("Nearest intersection")
-            << tr("Half height")
-            << tr("Half length")
-            << tr("Center")
-            << tr("Next to piece");
-
-        auto *alignProperty = new VPE::VEnumProperty(tr("Align to:"));
-        alignProperty->setLiterals(alignOptions);
-        alignProperty->setValue(piece.GetRapportAlignMode());
-        addProperty(alignProperty, IdRapportAlign);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -428,44 +340,6 @@ void VPieceOptionsPropertyBrowser::changePieceData(VPE::VProperty *property)
     {
         newPiece.setHideSeamLine(value.toInt() != 0);
     }
-    else if (id == IdRapportAlign)
-    {
-        newPiece.SetRapportAlignMode(value.toInt());
-        SavePieceOptions *saveCmd = new SavePieceOptions(oldPiece, newPiece, m_doc, toolId);
-        qApp->getUndoStack()->push(saveCmd);
-        tool->snapToRapport();
-        return;
-    }
-    else if (id == IdRapportAnchor)
-    {
-        const int anchorIndex = value.toInt();
-        if (anchorIndex <= 0)
-        {
-            newPiece.SetRapportAnchorId(0);
-        }
-        else
-        {
-            const QVector<VPieceNode> nodes = oldPiece.GetPath().getNodes();
-            int pointCount = 0;
-            for (int i = 0; i < nodes.size(); ++i)
-            {
-                if (nodes.at(i).GetTypeTool() == Tool::NodePoint)
-                {
-                    ++pointCount;
-                    if (pointCount == anchorIndex)
-                    {
-                        newPiece.SetRapportAnchorId(nodes.at(i).GetId());
-                        break;
-                    }
-                }
-            }
-        }
-        // Save anchor first, then auto-snap
-        SavePieceOptions *saveCmd = new SavePieceOptions(oldPiece, newPiece, m_doc, toolId);
-        qApp->getUndoStack()->push(saveCmd);
-        tool->snapToRapport();
-        return;
-    }
     else
     {
         return;
@@ -475,304 +349,3 @@ void VPieceOptionsPropertyBrowser::changePieceData(VPE::VProperty *property)
     qApp->getUndoStack()->push(undoCommand);
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void VPieceOptionsPropertyBrowser::setFabricDefaults(const VFabricSettings &defaults)
-{
-    m_fabricDefaults = defaults;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPieceOptionsPropertyBrowser::showPatternSettings()
-{
-    clearPropertyBrowser();
-    m_showingPatternSettings = true;
-
-    const VFabricSettings settings = m_doc->GetFabricSettings();
-    const bool hasFabric = !qFuzzyIsNull(settings.fabricWidth);
-
-    if (!hasFabric)
-    {
-        m_formView->setTitle(tr("Pattern Settings"));
-        auto *infoLabel = new VPE::VLabelProperty(tr("No fabric loaded. Use Fabric menu to add fabrics."));
-        infoLabel->setValue(QString());
-        infoLabel->setPropertyType(VPE::Property::Label);
-        addProperty(infoLabel, QStringLiteral("infoNoFabric"));
-        return;
-    }
-
-    m_formView->setTitle(tr("Fabric Settings"));
-    const QString units = UnitsToStr(qApp->patternUnit());
-    const VFabricSettings &def = m_fabricDefaults;
-
-    auto defHint = [](const QString &label, qreal current, qreal fabricDefault) -> QString
-    {
-        if (!qFuzzyIsNull(fabricDefault) && !qFuzzyCompare(current, fabricDefault))
-        {
-            return label + QStringLiteral(" [") + QString::number(fabricDefault, 'f', 1) + QStringLiteral("]");
-        }
-        return label;
-    };
-
-    auto *labelFabric = new VPE::VLabelProperty(QStringLiteral("<b>") + tr("Fabric") + QStringLiteral("</b>"));
-    labelFabric->setValue(QString());
-    labelFabric->setPropertyType(VPE::Property::Label);
-    addProperty(labelFabric, IdLabelFabric);
-
-    auto addResetEnum = [this](const QString &id, qreal current, qreal fabricDefault)
-    {
-        if (!qFuzzyIsNull(fabricDefault) && !qFuzzyCompare(current, fabricDefault))
-        {
-            const QStringList opts = QStringList()
-                << QStringLiteral("---")
-                << tr("Reset to %1").arg(QString::number(fabricDefault, 'f', 2));
-            auto *resetProp = new VPE::VEnumProperty(QStringLiteral(""));
-            resetProp->setLiterals(opts);
-            resetProp->setValue(0);
-            addProperty(resetProp, QStringLiteral("reset_") + id);
-        }
-    };
-
-    auto *fabricWidth = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Width:") + " (" + units + ")", settings.fabricWidth, def.fabricWidth));
-    fabricWidth->setValue(settings.fabricWidth);
-    fabricWidth->setSetting(QStringLiteral("Min"), 0.0);
-    fabricWidth->setSetting(QStringLiteral("Max"), 100000.0);
-    fabricWidth->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(fabricWidth, IdFabricWidth);
-    addResetEnum(IdFabricWidth, settings.fabricWidth, def.fabricWidth);
-
-    auto *selvedgeProp = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Selvedge:") + " (" + units + ")", settings.selvedge, def.selvedge));
-    selvedgeProp->setValue(settings.selvedge);
-    selvedgeProp->setSetting(QStringLiteral("Min"), 0.0);
-    selvedgeProp->setSetting(QStringLiteral("Max"), 1000.0);
-    selvedgeProp->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(selvedgeProp, IdSelvedge);
-    addResetEnum(IdSelvedge, settings.selvedge, def.selvedge);
-
-    auto *heightRepeat = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Height repeat:") + " (" + units + ")", settings.heightRepeat, def.heightRepeat));
-    heightRepeat->setValue(settings.heightRepeat);
-    heightRepeat->setSetting(QStringLiteral("Min"), 0.0);
-    heightRepeat->setSetting(QStringLiteral("Max"), 100000.0);
-    heightRepeat->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(heightRepeat, IdHeightRepeat);
-    addResetEnum(IdHeightRepeat, settings.heightRepeat, def.heightRepeat);
-
-    auto *lengthRepeat = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Length repeat:") + " (" + units + ")", settings.lengthRepeat, def.lengthRepeat));
-    lengthRepeat->setValue(settings.lengthRepeat);
-    lengthRepeat->setSetting(QStringLiteral("Min"), 0.0);
-    lengthRepeat->setSetting(QStringLiteral("Max"), 100000.0);
-    lengthRepeat->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(lengthRepeat, IdLengthRepeat);
-    addResetEnum(IdLengthRepeat, settings.lengthRepeat, def.lengthRepeat);
-
-    auto *shrinkage = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Shrinkage:") + " (%)", settings.shrinkagePercent, def.shrinkagePercent));
-    shrinkage->setValue(settings.shrinkagePercent);
-    shrinkage->setSetting(QStringLiteral("Min"), 0.0);
-    shrinkage->setSetting(QStringLiteral("Max"), 100.0);
-    shrinkage->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(shrinkage, IdShrinkagePercent);
-    addResetEnum(IdShrinkagePercent, settings.shrinkagePercent, def.shrinkagePercent);
-
-    auto *stretch = new VPE::DoubleSpinboxProperty(
-        defHint(tr("Stretch:") + " (%)", settings.stretchPercent, def.stretchPercent));
-    stretch->setValue(settings.stretchPercent);
-    stretch->setSetting(QStringLiteral("Min"), 0.0);
-    stretch->setSetting(QStringLiteral("Max"), 100.0);
-    stretch->setSetting(QStringLiteral("Precision"), 2);
-    addProperty(stretch, IdStretchPercent);
-    addResetEnum(IdStretchPercent, settings.stretchPercent, def.stretchPercent);
-
-    auto *labelSA = new VPE::VLabelProperty(QStringLiteral("<b>") + tr("Seam Allowance") + QStringLiteral("</b>"));
-    labelSA->setValue(QString());
-    labelSA->setPropertyType(VPE::Property::Label);
-    addProperty(labelSA, IdLabelSADefaults);
-
-    qreal saDefault = settings.defaultSAWidth;
-    if (qFuzzyIsNull(saDefault))
-    {
-        saDefault = qApp->Settings()->GetDefaultSeamAllowance();
-    }
-
-    auto *defaultSA = new VPE::DoubleSpinboxProperty(tr("Default width:") + " (" + units + ")");
-    defaultSA->setValue(saDefault);
-    defaultSA->setSetting(QStringLiteral("Min"), 0.0);
-    defaultSA->setSetting(QStringLiteral("Max"), 100000.0);
-    defaultSA->setSetting(QStringLiteral("Step"), 0.1);
-    defaultSA->setSetting(QStringLiteral("Precision"), 1);
-    addProperty(defaultSA, IdDefaultSAWidth);
-
-    // Default notch settings applied to notches added from the Canvas Editor.
-    auto *labelNotch = new VPE::VLabelProperty(QStringLiteral("<b>") + tr("Notches") + QStringLiteral("</b>"));
-    labelNotch->setValue(QString());
-    labelNotch->setPropertyType(VPE::Property::Label);
-    addProperty(labelNotch, IdLabelNotch);
-
-    auto *notchType = new VPE::VEnumProperty(tr("Default type:"));
-    notchType->setLiterals(QStringList()
-                           << tr("Slit")
-                           << tr("T-Notch")
-                           << tr("V-Notch (internal)")
-                           << tr("V-Notch (external)")
-                           << tr("U-Notch")
-                           << tr("Castle")
-                           << tr("Diamond"));
-    notchType->setValue(qApp->Settings()->GetDefaultNotchType());
-    addProperty(notchType, IdDefaultNotchType);
-
-    auto *notchSubType = new VPE::VEnumProperty(tr("Default alignment:"));
-    notchSubType->setLiterals(QStringList()
-                              << tr("Straightforward")
-                              << tr("Bisector")
-                              << tr("Intersection"));
-    notchSubType->setValue(qApp->Settings()->GetDefaultNotchSubType());
-    addProperty(notchSubType, IdDefaultNotchSubType);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPieceOptionsPropertyBrowser::updatePatternSettings()
-{
-    if (m_idToProperty.isEmpty())
-    {
-        return;
-    }
-
-    const VFabricSettings settings = m_doc->GetFabricSettings();
-
-    if (m_idToProperty.contains(IdFabricWidth))
-    {
-        m_idToProperty[IdFabricWidth]->setValue(settings.fabricWidth);
-    }
-    if (m_idToProperty.contains(IdSelvedge))
-    {
-        m_idToProperty[IdSelvedge]->setValue(settings.selvedge);
-    }
-    if (m_idToProperty.contains(IdHeightRepeat))
-    {
-        m_idToProperty[IdHeightRepeat]->setValue(settings.heightRepeat);
-    }
-    if (m_idToProperty.contains(IdLengthRepeat))
-    {
-        m_idToProperty[IdLengthRepeat]->setValue(settings.lengthRepeat);
-    }
-    if (m_idToProperty.contains(IdShrinkagePercent))
-    {
-        m_idToProperty[IdShrinkagePercent]->setValue(settings.shrinkagePercent);
-    }
-    if (m_idToProperty.contains(IdStretchPercent))
-    {
-        m_idToProperty[IdStretchPercent]->setValue(settings.stretchPercent);
-    }
-    if (m_idToProperty.contains(IdDefaultSAWidth))
-    {
-        m_idToProperty[IdDefaultSAWidth]->setValue(settings.defaultSAWidth);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VPieceOptionsPropertyBrowser::changePatternSettingsData(VPE::VProperty *property)
-{
-    SCASSERT(property != nullptr)
-
-    const QString id = m_propertyToId[property];
-    const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-
-    VFabricSettings oldSettings = m_doc->GetFabricSettings();
-    VFabricSettings newSettings = oldSettings;
-
-    if (id == IdFabricWidth)
-    {
-        newSettings.fabricWidth = value.toDouble();
-    }
-    else if (id == IdSelvedge)
-    {
-        newSettings.selvedge = value.toDouble();
-    }
-    else if (id == IdHeightRepeat)
-    {
-        newSettings.heightRepeat = value.toDouble();
-    }
-    else if (id == IdLengthRepeat)
-    {
-        newSettings.lengthRepeat = value.toDouble();
-    }
-    else if (id == IdShrinkagePercent)
-    {
-        newSettings.shrinkagePercent = value.toDouble();
-    }
-    else if (id == IdStretchPercent)
-    {
-        newSettings.stretchPercent = value.toDouble();
-    }
-    else if (id == IdDefaultSAWidth)
-    {
-        const qreal newSA = value.toDouble();
-        newSettings.defaultSAWidth = newSA;
-
-        // Update all pieces' SA width to the new default
-        if (!qFuzzyIsNull(newSA))
-        {
-            QGraphicsScene *scene = qApp->getCurrentScene();
-            if (scene != nullptr)
-            {
-                const QList<QGraphicsItem *> items = scene->items();
-                for (QGraphicsItem *item : items)
-                {
-                    if (item->type() == PatternPieceTool::Type)
-                    {
-                        PatternPieceTool *tool = qgraphicsitem_cast<PatternPieceTool *>(item);
-                        if (tool == nullptr) { continue; }
-                        const quint32 pieceId = tool->getId();
-                        VPiece oldPiece = tool->getData()->GetPiece(pieceId);
-                        VPiece updatedPiece = oldPiece;
-                        updatedPiece.setSeamAllowanceWidthFormula(
-                            qApp->LocaleToString(newSA), newSA);
-                        SavePieceOptions *cmd = new SavePieceOptions(
-                            oldPiece, updatedPiece, m_doc, pieceId);
-                        qApp->getUndoStack()->push(cmd);
-                    }
-                }
-            }
-        }
-    }
-    else if (id == IdDefaultNotchType)
-    {
-        qApp->Settings()->SetDefaultNotchType(value.toInt());
-        return;
-    }
-    else if (id == IdDefaultNotchSubType)
-    {
-        qApp->Settings()->SetDefaultNotchSubType(value.toInt());
-        return;
-    }
-    else if (id.startsWith(QStringLiteral("reset_")))
-    {
-        if (value.toInt() <= 0)
-        {
-            return;
-        }
-        const QString targetId = id.mid(6);
-        if (targetId == IdFabricWidth)        { newSettings.fabricWidth = m_fabricDefaults.fabricWidth; }
-        else if (targetId == IdSelvedge)      { newSettings.selvedge = m_fabricDefaults.selvedge; }
-        else if (targetId == IdHeightRepeat)  { newSettings.heightRepeat = m_fabricDefaults.heightRepeat; }
-        else if (targetId == IdLengthRepeat)  { newSettings.lengthRepeat = m_fabricDefaults.lengthRepeat; }
-        else if (targetId == IdShrinkagePercent) { newSettings.shrinkagePercent = m_fabricDefaults.shrinkagePercent; }
-        else if (targetId == IdStretchPercent)   { newSettings.stretchPercent = m_fabricDefaults.stretchPercent; }
-        else { return; }
-    }
-    else
-    {
-        return;
-    }
-
-    SavePatternFabricSettings *undoCommand = new SavePatternFabricSettings(oldSettings, newSettings, m_doc);
-    qApp->getUndoStack()->push(undoCommand);
-
-    // SA default is per-document, not synced to app settings.
-    // It overrides the app default when creating new pieces.
-
-    QTimer::singleShot(0, this, &VPieceOptionsPropertyBrowser::showPatternSettings);
-}

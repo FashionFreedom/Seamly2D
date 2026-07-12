@@ -327,13 +327,8 @@ private:
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
     VPieceOptionsPropertyBrowser    *m_pieceProperties;
-    QGraphicsLineItem                *m_fabricTopLine;
-    QGraphicsLineItem                *m_fabricBottomLine;
-    QGraphicsLineItem                *m_selvedgeTopLine;
-    QGraphicsLineItem                *m_selvedgeBottomLine;
-    QVector<QGraphicsLineItem *>      m_rapportLines;
     GroupsWidget                     *groupsWidget;
-    PiecesWidget                     *patternPiecesWidget;
+    PiecesWidget                     *piecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
@@ -354,7 +349,6 @@ private:
     void                              initPenToolBar();
     void                              initPropertyEditor();
     void                              initPiecePropertyEditor();
-    void                              updateFabricWidthLines();
     void                              initBasePointComboBox();
 
     void                              updateToolBarVisibility();
