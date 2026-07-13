@@ -70,6 +70,7 @@ namespace Ui
 }
 
 class VToolOptionsPropertyBrowser;
+class VPieceOptionsPropertyBrowser;
 class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
@@ -328,6 +329,7 @@ private:
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
+    bool                              isPiecesDockVisible;
     bool                              drawMode;            /** @brief drawMode true if draft scene active. */
 
     enum { MaxRecentFiles = 5 };
@@ -343,8 +345,10 @@ private:
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
+    VPieceOptionsPropertyBrowser    *m_pieceProperties;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *patternPiecesWidget;
+    QAction                          *actionDockWidgetPieces;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
@@ -364,6 +368,7 @@ private:
     void                              initializeToolBarVisibility();
     void                              initPenToolBar();
     void                              initPropertyEditor();
+    void                              initPiecePropertyEditor();
     void                              initBasePointComboBox();
 
     void                              updateToolBarVisibility();

@@ -57,6 +57,7 @@
 #include "options.h"
 #include "version.h"
 #include "core/application_2d.h"
+#include "core/vpieceoptionspropertybrowser.h"
 #include "core/vtooloptionspropertybrowser.h"
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
@@ -176,6 +177,7 @@ MainWindow::MainWindow(QWidget *parent)
     , isGroupsDockVisible(true)
     , isLayoutsDockVisible(false)
     , isToolboxDockVisible(true)
+    , isPiecesDockVisible(true)
     , drawMode(true)
     , recentFileActs()
     , separatorAct(nullptr)
@@ -188,8 +190,10 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationHeightsLabel(nullptr)
     , gradationSizesLabel(nullptr)
     , toolProperties(nullptr)
+    , m_pieceProperties(nullptr)
     , groupsWidget(nullptr)
     , patternPiecesWidget(nullptr)
+    , actionDockWidgetPieces(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
@@ -2692,6 +2696,28 @@ void MainWindow::initPropertyEditor()
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::initPiecePropertyEditor()
+{
+    qCDebug(vMainWindow, "Initialize the Piece Property Editor.");
+    if (m_pieceProperties != nullptr)
+    {
+        disconnect(m_pieceProperties, nullptr, this, nullptr);
+        delete m_pieceProperties;
+    }
+    m_pieceProperties = new VPieceOptionsPropertyBrowser(doc, ui->pieceProperties_DockWidget);
+
+    connect(ui->view, &VMainGraphicsView::itemClicked,
+            m_pieceProperties, &VPieceOptionsPropertyBrowser::itemClicked);
+    connect(doc, &VPattern::FullUpdateFromFile,
+            m_pieceProperties, &VPieceOptionsPropertyBrowser::updateOptions);
+    if (patternPiecesWidget)
+    {
+        connect(m_pieceProperties, &VPieceOptionsPropertyBrowser::pieceOptionsChanged,
+                patternPiecesWidget, &PiecesWidget::updateList);
+    }
+}
+
 /**
  * Called when something changed in the pen tool bar
  * (e.g. color, weight, or type).
@@ -3847,6 +3873,9 @@ void MainWindow::showDraftMode(bool checked)
         }
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
+
+        ui->pieces_DockWidget->setVisible(false);
+        ui->pieceProperties_DockWidget->setVisible(false);
     }
     else
     {
@@ -3893,6 +3922,8 @@ void MainWindow::showPieceMode(bool checked)
         }
 
         patternPiecesWidget->updateList();
+        ui->pieces_DockWidget->setVisible(true);
+        ui->pieceProperties_DockWidget->setVisible(true);
 
         qCDebug(vMainWindow, "Show piece scene");
         SaveCurrentScene();
@@ -3923,9 +3954,6 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->groups_DockWidget->setWidget(patternPiecesWidget);
-        ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-
         helpLabel->setText("");
     }
     else
@@ -3959,6 +3987,9 @@ void MainWindow::showLayoutMode(bool checked)
         ui->showDraftMode->setChecked(false);
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(true);
+
+        ui->pieces_DockWidget->setVisible(false);
+        ui->pieceProperties_DockWidget->setVisible(false);
 
         QHash<quint32, VPiece> pieces;
         if(!qApp->getOpeningPattern())
@@ -4694,10 +4725,13 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable dock widget actions
     ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->pieces_DockWidget->setEnabled(enable && pieceStage);
     ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
+    ui->pieceProperties_DockWidget->setEnabled(enable && pieceStage);
     ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
+    actionDockWidgetPieces->setEnabled(enable && pieceStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
@@ -5241,6 +5275,7 @@ void MainWindow::ReadSettings()
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isPiecesDockVisible      = ui->pieces_DockWidget->isVisible();
     isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
     isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
@@ -5650,6 +5685,13 @@ void MainWindow::AddDocks()
         isGroupsDockVisible = visible;
     });
 
+    actionDockWidgetPieces = ui->pieces_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetPieces);
+    connect(ui->pieces_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
+    {
+        isPiecesDockVisible = visible;
+    });
+
     actionDockWidgetLayouts = ui->layoutPages_DockWidget->toggleViewAction();
     ui->view_Menu->addAction(actionDockWidgetLayouts);
     connect(ui->layoutPages_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
@@ -5674,6 +5716,7 @@ void MainWindow::initializeDocksContain()
     setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
 
     initPropertyEditor();
+    initPiecePropertyEditor();
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new GroupsWidget(pattern, doc, this);
@@ -5681,11 +5724,30 @@ void MainWindow::initializeDocksContain()
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
     patternPiecesWidget = new PiecesWidget(pattern, doc, this);
+    ui->pieces_DockWidget->setWidget(patternPiecesWidget);
+    connect(m_pieceProperties, &VPieceOptionsPropertyBrowser::pieceOptionsChanged,
+            patternPiecesWidget, &PiecesWidget::updateList);
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
     connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &PiecesWidget::togglePiece);
     connect(doc, &VPattern::showPiece, patternPiecesWidget, &PiecesWidget::selectPiece);
     connect(patternPiecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
-    patternPiecesWidget->setVisible(false);
+    connect(patternPiecesWidget, &PiecesWidget::pieceSelected, this, [this](quint32 id)
+    {
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(id));
+        if (tool && m_pieceProperties)
+        {
+            m_pieceProperties->itemClicked(tool);
+        }
+    });
+    connect(ui->view, &VMainGraphicsView::itemClicked, patternPiecesWidget, &PiecesWidget::clearNodeHighlight);
+
+    ui->groups_DockWidget->setEnabled(false);
+    ui->pieces_DockWidget->setEnabled(false);
+    ui->toolProperties_DockWidget->setEnabled(false);
+    ui->pieceProperties_DockWidget->setEnabled(false);
+    ui->layoutPages_DockWidget->setEnabled(false);
+
+    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
 
     ui->toolbox_StackedWidget->setCurrentIndex(0);
 }

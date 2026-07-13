@@ -222,7 +222,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTreeWidget" name="treeWidget">
        <property name="palette">
         <palette>
          <active>
@@ -260,9 +260,6 @@
          </disabled>
         </palette>
        </property>
-       <property name="alternatingRowColors">
-        <bool>false</bool>
-       </property>
        <property name="selectionMode">
         <enum>QAbstractItemView::SingleSelection</enum>
        </property>
@@ -278,38 +275,43 @@
        <property name="textElideMode">
         <enum>Qt::ElideNone</enum>
        </property>
-       <property name="sortingEnabled">
-        <bool>false</bool>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+       <property name="dragDropMode">
+        <enum>QAbstractItemView::InternalMove</enum>
+       </property>
+       <property name="defaultDropAction">
+        <enum>Qt::MoveAction</enum>
        </property>
        <property name="columnCount">
         <number>5</number>
        </property>
-       <attribute name="horizontalHeaderMinimumSectionSize">
-        <number>16</number>
-       </attribute>
-       <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>30</number>
-       </attribute>
-       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="horizontalHeaderStretchLastSection">
-        <bool>true</bool>
-       </attribute>
-       <attribute name="verticalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <attribute name="verticalHeaderMinimumSectionSize">
-        <number>10</number>
-       </attribute>
-       <attribute name="verticalHeaderHighlightSections">
-        <bool>false</bool>
-       </attribute>
-       <column/>
-       <column/>
-       <column/>
-       <column/>
-       <column/>
+       <column>
+        <property name="text">
+         <string>Included</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Locked</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Color</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Piece</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
       </widget>
      </item>
     </layout>

@@ -380,6 +380,11 @@ public:
     QString              getDefaultNotchColor() const;
     void                 setDefaultNotchColor(const QString &value);
 
+    void                 SetDefaultNotchType(int value);
+    int                  GetDefaultNotchType();
+    void                 SetDefaultNotchSubType(int value);
+    int                  GetDefaultNotchSubType();
+
     void                 SetCSVWithHeader(bool withHeader);
     bool                 GetCSVWithHeader() const;
     bool                 GetDefCSVWithHeader() const;

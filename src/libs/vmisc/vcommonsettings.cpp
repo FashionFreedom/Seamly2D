@@ -178,6 +178,8 @@ const QString settingDefaultNotchLength                  = QStringLiteral("patte
 const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
 const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
 const QString settingDefaultNotchColor                   = QStringLiteral("pattern/defaultNotchColor");
+const QString settingPatternDefaultNotchTypeId           = QStringLiteral("pattern/defaultNotchTypeId");
+const QString settingPatternDefaultNotchSubType          = QStringLiteral("pattern/defaultNotchSubType");
 const QString settingSeamlineNotch                       = QStringLiteral("pattern/doubleNotch");
 const QString settingSeamAllowanceNotch                  = QStringLiteral("pattern/showSeamAllowanceNotch");
 
@@ -1700,6 +1702,30 @@ QString VCommonSettings::getDefaultNotchColor() const
 void VCommonSettings::setDefaultNotchColor(const QString &value)
 {
     setValue(settingDefaultNotchColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::SetDefaultNotchType(int value)
+{
+    setValue(settingPatternDefaultNotchTypeId, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::GetDefaultNotchType()
+{
+    return value(settingPatternDefaultNotchTypeId, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::SetDefaultNotchSubType(int value)
+{
+    setValue(settingPatternDefaultNotchSubType, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::GetDefaultNotchSubType()
+{
+    return value(settingPatternDefaultNotchSubType, 0).toInt();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

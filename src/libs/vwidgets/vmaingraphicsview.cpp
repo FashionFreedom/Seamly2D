@@ -113,6 +113,9 @@ GraphicsViewZoom::GraphicsViewZoom(QGraphicsView* view)
 {
     m_view->viewport()->installEventFilter(this);
 
+    // Disabled because of bug QTBUG-103935
+    m_view->viewport()->setAttribute(Qt::WA_AcceptTouchEvents, false);
+
     //Enable gestures for the view widget
     m_view->viewport()->grabGesture(Qt::PinchGesture);
     m_view->viewport()->grabGesture(Qt::PanGesture);
@@ -687,6 +690,14 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
                             }
                             else
                             {
+                                QGraphicsItem *parent = list.at(i)->parentItem();
+                                if (parent != nullptr
+                                    && parent->type() > QGraphicsItem::UserType
+                                    && parent->type() <= VSimpleCurve::Type)
+                                {
+                                    emit itemClicked(parent);
+                                    break;
+                                }
                                 emit itemClicked(nullptr);
                             }
                         }

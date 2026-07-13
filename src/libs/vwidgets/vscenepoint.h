@@ -66,14 +66,17 @@ class VScenePoint: public QGraphicsEllipseItem
 public:
     explicit                 VScenePoint(const QColor &lineColor, QGraphicsItem *parent = nullptr);
     virtual                 ~VScenePoint() = default;
-    virtual int              type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int              type() const override {return Type;}
                              enum { Type = UserType + static_cast<int>(Vis::ScenePoint)};
 
     virtual void             paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                                   QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+                                   QWidget *widget = nullptr) override;
     virtual void             refreshPointGeometry(const VPointF &point);
 
     void                     refreshLeader();
+
+    void                     setHighlighted(bool highlighted);
+    bool                     isHighlighted() const;
 
 protected:
 
@@ -82,10 +85,11 @@ protected:
     QColor                   m_pointColor; /** @brief m_pointColor color of point. */
     bool                     m_onlyPoint;
     bool                     m_isHovered;
+    bool                     m_isHighlighted;
     bool                     m_showPointName;
 
-    virtual void             hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void             hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
+    virtual void             hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void             hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
 
     void                     setOnlyPoint(bool value);
     bool                     isOnlyPoint() const;

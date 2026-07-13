@@ -1,64 +1,65 @@
-/***************************************************************************
- **  @file   pieces_widget.h
- **  @author Douglas S Caskey
- **  @date   Jan 3, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ //-----------------------------------------------------------------------------
+ //  @file   pieces_widget.h
+ //  @author Douglas S Caskey
+ //  @date   17 Sep, 2023
+ //
+ //  @brief
+ //  @copyright
+ //  This source code is part of the Seamly2D project, a pattern making
+ //  program, whose allow create and modeling patterns of clothing.
+ //  Copyright (C) 2013-2026 Seamly2D project
+ //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ //
+ //  Seamly2D is free software: you can redistribute it and/or modify
+ //  it under the terms of the GNU General Public License as published by
+ //  the Free Software Foundation, either version 3 of the License, or
+ //  (at your option) any later version.
+ //
+ //  Seamly2D is distributed in the hope that it will be useful,
+ //  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ //  GNU General Public License for more details.
+ //
+ //  You should have received a copy of the GNU General Public License
+ //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ //-----------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   vwidgetdetails.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   25 6, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ //-----------------------------------------------------------------------------
+ //  @file   vwidgetdetails.h
+ //  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ //  @date   Jun 25, 2016
+ //
+ //  @brief
+ //  @copyright
+ //  This source code is part of the Valentina project, a pattern making
+ //  program, whose allow create and modeling patterns of clothing.
+ //  Copyright (C) 2016 Valentina project
+ //  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ //
+ //  Valentina is free software: you can redistribute it and/or modify
+ //  it under the terms of the GNU General Public License as published by
+ //  the Free Software Foundation, either version 3 of the License, or
+ //  (at your option) any later version.
+ //
+ //  Valentina is distributed in the hope that it will be useful,
+ //  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ //  GNU General Public License for more details.
+ //
+ //  You should have received a copy of the GNU General Public License
+ //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ //-----------------------------------------------------------------------------
 
 #ifndef PIECES_WIDGET_H
 #define PIECES_WIDGET_H
 
 #include <QWidget>
-#include <QTableWidgetItem>
+#include <QTreeWidgetItem>
 
 class VAbstractPattern;
 class VContainer;
 class VPiece;
+class VPieceNode;
 
 namespace Ui
 {
@@ -75,19 +76,23 @@ public:
 
 signals:
     void               Highlight(quint32 id);
+    void               pieceSelected(quint32 id);
 
 public slots:
     void               togglePiece(quint32 id);
     void               updateList();
     void               selectPiece(quint32 id);
+    void               clear();
+    void               clearNodeHighlight();
 
 private slots:
-    void               cellClicked(int row, int column);
-    void               cellDoubleClicked(int row, int column);
+    void               itemClicked(QTreeWidgetItem *item, int column);
+    void               itemDoubleClicked(QTreeWidgetItem *item, int column);
+    void               itemChanged(QTreeWidgetItem *item, int column);
     void               showContextMenu(const QPoint &pos);
 
 protected:
-    virtual void       changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void       changeEvent(QEvent* event) override;
 
 private:
     Q_DISABLE_COPY(PiecesWidget)
@@ -95,11 +100,21 @@ private:
     VAbstractPattern             *m_doc;
     VContainer                   *m_data;
     const QHash<quint32, VPiece> *m_allPieces;
+    quint32                          m_highlightedNodeId;
+    bool                             m_fillTreeInProgress;
 
-    void               fillTable(const QHash<quint32, VPiece> *details);
+    enum ItemRole
+    {
+        PieceIdRole   = Qt::UserRole,
+        IsNodeRole    = Qt::UserRole + 1,
+        NodeIdRole    = Qt::UserRole + 2
+    };
+
+    void               fillTree(const QHash<quint32, VPiece> *pieces);
+    QTreeWidgetItem   *createPieceItem(quint32 id, const VPiece &piece);
+    QTreeWidgetItem   *createNodeItem(const VPieceNode &node);
     void               toggleInLayoutPieces(bool inLayout);
     void               toggleLockedPieces(bool lock);
-    void               headerClicked(int index);
     QString            formatLetterString(const VPiece piece);
     void               includeAllPieces();
     void               invertIncludedPieces();
@@ -109,6 +124,9 @@ private:
     void               unlockAllPieces();
     void               editPieceColor(quint32 id);
     void               editPieceProperties(quint32 id);
+    void               showNodeContextMenu(QTreeWidgetItem *item, const QPoint &globalPos);
+    void               highlightCurveNode(quint32 nodeId, QTreeWidgetItem *pieceItem);
+    QList<QTreeWidgetItem *> allPieceItems() const;
 };
 
 #endif // PIECES_WIDGET_H
