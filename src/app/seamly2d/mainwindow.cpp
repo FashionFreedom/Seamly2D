@@ -315,9 +315,6 @@ MainWindow::MainWindow(QWidget *parent)
                 }
             }
 
-            // In case we will need it
-            // else if (isAncestorOf(old) == true && now == nullptr)
-            // focus OUT
         });
 
         #if defined(Q_OS_MAC)
