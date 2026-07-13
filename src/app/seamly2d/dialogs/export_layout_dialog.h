@@ -76,10 +76,6 @@ public:
     bool                  isTextAsPaths() const;
     void                  setTextAsPaths(bool textAsPaths);
 
-    void                  setAvailableSizes(const QStringList &sizes);
-    bool                  isBatchExport() const;
-    QStringList           selectedSizes() const;
-    void                  setFileName(const QString &name);
 
 protected:
     virtual void          showEvent(QShowEvent *event) override;

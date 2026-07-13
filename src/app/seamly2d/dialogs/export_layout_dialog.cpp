@@ -844,27 +844,3 @@ QString ExportLayoutDialog::modeString() const
     }
     return modeStr;
 }
-
-//---------------------------------------------------------------------------------------------------------------------
-void ExportLayoutDialog::setAvailableSizes(const QStringList &sizes)
-{
-    Q_UNUSED(sizes)
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-bool ExportLayoutDialog::isBatchExport() const
-{
-    return false;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QStringList ExportLayoutDialog::selectedSizes() const
-{
-    return QStringList();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void ExportLayoutDialog::setFileName(const QString &name)
-{
-    Q_UNUSED(name)
-}
