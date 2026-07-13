@@ -190,14 +190,14 @@ var namespaces_dup =
       [ "SaveNodeCanonically", "d6/db9/namespaceanonymous__namespace_02vdomdocument_8cpp_03.html#a48dca2f0db8a0c3d00d69eff6118f8bf", null ]
     ] ],
     [ "anonymous_namespace{vlayoutpiece.cpp}", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html", [
-      [ "ConvertInternalPaths", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#aee188e904012b2c56f9a99b8a90b554b", null ],
-      [ "CorrectPosition", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a26982c628e932aec0813e1c375387df4", null ],
+      [ "convertInternalPaths", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a5e2795caa03fd4edf984846671f95daa", null ],
+      [ "correctPosition", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a000c655a2dfc2f7c09419b0a643ed9bc", null ],
       [ "findGrainlineGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a7127c03c02e6cd087bc720219e7d9556", null ],
       [ "findLabelGeometry", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a04f05a7019f2d0feb9fc0abc773ad54e", null ],
-      [ "IsItemContained", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a4867ae9889201fd1784404a9a1fe75ea", null ],
-      [ "PieceLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
-      [ "PrepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a52a0730adfd50a44e6904c7028709d88", null ],
-      [ "RotatePoint", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ac9b8474c898648af470a9dde3441a5e8", null ]
+      [ "getLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9bda5a4945f75b8a9ba0278df977eb14", null ],
+      [ "isItemContained", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#aafadb68390e27769bbae08816fae07c5", null ],
+      [ "prepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#aa81bfa3d30caf5623bb2b64bad5e7ec6", null ],
+      [ "rotatePoint", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#abe938cdf3c612c15f09105c6214a6dc2", null ]
     ] ],
     [ "anonymous_namespace{vnodedetail.cpp}", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html", [
       [ "ConvertAfter", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html#a6333f8827e9243cf90c85518487730c6", null ],
