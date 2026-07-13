@@ -42,8 +42,6 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QMessageBox>
-#include <QProcess>
-#include <QtDebug>
 #include <QRegularExpression>
 #include <QSpinBox>
 #include <QtDebug>

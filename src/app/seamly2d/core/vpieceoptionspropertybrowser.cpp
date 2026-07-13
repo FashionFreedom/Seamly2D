@@ -29,21 +29,14 @@
 
 #include "../core/application_2d.h"
 #include "../ifc/ifcdef.h"
-#include "../vmisc/vabstractapplication.h"
-#include "../vgeometry/vpointf.h"
-#include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiece.h"
-#include "../vpatterndb/vpiecenode.h"
 #include "../vpropertyexplorer/vproperties.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 #include "../vtools/tools/vabstracttool.h"
-#include "../vtools/undocommands/movepiece.h"
 #include "../vtools/undocommands/savepieceoptions.h"
 
 #include <QDockWidget>
 #include <QScrollArea>
-#include <QTimer>
-#include <QDebug>
 
 namespace
 {

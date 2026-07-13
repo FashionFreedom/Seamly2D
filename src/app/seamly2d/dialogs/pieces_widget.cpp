@@ -609,7 +609,10 @@ QTreeWidgetItem *PiecesWidget::createNodeItem(const VPieceNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 void PiecesWidget::fillTree(const QHash<quint32, VPiece> *pieces)
 {
-    if (m_fillTreeInProgress) { return; }
+    if (m_fillTreeInProgress)
+    {
+        return;
+    }
     m_fillTreeInProgress = true;
 
     QSet<quint32> expandedPieces;

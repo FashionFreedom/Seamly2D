@@ -43,7 +43,6 @@
 ExportProgressDialog::ExportProgressDialog(int minimum, int maximum, QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::ExportProgressDialog)
-
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -80,7 +79,7 @@ void ExportProgressDialog::insertFileName(const QString &filename)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief setFileStatus Create a new draft block.
+/// @brief setFileStatus Set the export result status of the current file row.
 ///
 /// This method set the status of the exported file.
 ///
