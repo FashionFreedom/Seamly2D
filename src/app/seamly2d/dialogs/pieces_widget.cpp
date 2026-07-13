@@ -90,10 +90,8 @@
 
 namespace
 {
-    // Data key marking a temporary curve-highlight overlay item in the scene.
     const int NODE_HIGHLIGHT_KEY = 1000;
 
-    // Tool-type icon for a piece node, depending only on the node's tool type.
     QString toolTypeIconPath(Tool toolType)
     {
         switch (toolType)
@@ -111,7 +109,6 @@ namespace
         }
     }
 
-    // Icon matching the specific notch type of a node.
     QString notchIconPath(NotchType notchType)
     {
         switch (notchType)
@@ -134,7 +131,6 @@ namespace
         }
     }
 
-    // Direction arrow for a curve, computed from an (optionally reversed) point list.
     // Mirrors VAbstractCurve::DirectionArrows so a reversed node shows a reversed arrow.
     QVector<DirectionArrow> directionArrowsForPoints(const QVector<QPointF> &points, qreal length)
     {

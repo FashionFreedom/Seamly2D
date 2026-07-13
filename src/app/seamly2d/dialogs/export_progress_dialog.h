@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-//  @file   export_progress_dialog.cpp
+//  @file   export_progress_dialog.h
 //  @author Douglas S Caskey
 //  @date   31 Mar 2026
 //
@@ -31,7 +31,12 @@
 #include <QProgressBar>
 
 enum {FileNameColumn = 0, StatusColumn};
-enum class ProgressStatus {Pending = 0, Completed, Failed};
+enum class ProgressStatus
+{
+    Pending = 0,
+    Completed,
+    Failed
+};
 
 namespace Ui
 {

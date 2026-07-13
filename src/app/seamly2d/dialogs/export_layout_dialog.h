@@ -76,10 +76,10 @@ public:
     bool                  isTextAsPaths() const;
     void                  setTextAsPaths(bool textAsPaths);
 
-    void                  setAvailableSizes(const QStringList &sizes) { Q_UNUSED(sizes) }
-    bool                  isBatchExport() const { return false; }
-    QStringList           selectedSizes() const { return QStringList(); }
-    void                  setFileName(const QString &name) { Q_UNUSED(name) }
+    void                  setAvailableSizes(const QStringList &sizes);
+    bool                  isBatchExport() const;
+    QStringList           selectedSizes() const;
+    void                  setFileName(const QString &name);
 
 protected:
     virtual void          showEvent(QShowEvent *event) override;
