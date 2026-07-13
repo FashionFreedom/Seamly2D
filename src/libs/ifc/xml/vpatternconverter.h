@@ -142,7 +142,6 @@ private:
     void          toVersion0_7_2();
     void          toVersion0_7_3();
     void          toVersion0_7_4();
-    void          toVersion0_7_5();
 
     void          TagUnitToV0_2_0();
     void          TagIncrementToV0_2_0();

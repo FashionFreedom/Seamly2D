@@ -136,13 +136,6 @@
     <addaction name="table_Action"/>
     <addaction name="exportVariablesToCSV_Action"/>
    </widget>
-   <widget class="QMenu" name="fabric_Menu">
-    <property name="title">
-     <string>Fabric</string>
-    </property>
-    <addaction name="editFabric_Action"/>
-    <addaction name="addFabric_Action"/>
-   </widget>
    <widget class="QMenu" name="history_Menu">
     <property name="title">
      <string>History</string>
@@ -354,7 +347,6 @@
    <addaction name="view_Menu"/>
    <addaction name="tools_Menu"/>
    <addaction name="measurements_Menu"/>
-   <addaction name="fabric_Menu"/>
    <addaction name="history_Menu"/>
    <addaction name="menuUtiliries"/>
    <addaction name="help_Menu"/>
@@ -4861,22 +4853,6 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+PgDown</string>
-   </property>
-  </action>
-  <action name="addFabric_Action">
-   <property name="text">
-    <string>Add Fabric...</string>
-   </property>
-   <property name="toolTip">
-    <string>Load an additional fabric (shown as a separate area below)</string>
-   </property>
-  </action>
-  <action name="editFabric_Action">
-   <property name="text">
-    <string>Edit Fabric...</string>
-   </property>
-   <property name="toolTip">
-    <string>Edit fabric properties for the current pattern</string>
    </property>
   </action>
  </widget>

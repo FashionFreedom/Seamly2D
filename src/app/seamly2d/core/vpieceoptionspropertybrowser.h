@@ -53,6 +53,9 @@ public slots:
     void itemClicked(QGraphicsItem *item);
     void updateOptions();
 
+signals:
+    void pieceOptionsChanged();
+
 private slots:
     void userChangedData(VPE::VProperty *property);
 

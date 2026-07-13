@@ -2718,6 +2718,11 @@ void MainWindow::initPiecePropertyEditor()
             m_pieceProperties, &VPieceOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile,
             m_pieceProperties, &VPieceOptionsPropertyBrowser::updateOptions);
+    if (piecesWidget)
+    {
+        connect(m_pieceProperties, &VPieceOptionsPropertyBrowser::pieceOptionsChanged,
+                piecesWidget, &PiecesWidget::updateList);
+    }
 }
 
 /**
@@ -5559,10 +5564,6 @@ void MainWindow::createMenus()
     menu->addAction(ui->layout_ToolBar->toggleViewAction());
     menu->addAction(ui->pointName_ToolBar->toggleViewAction());
 
-    if (auto *fabricMenu = ui->fabric_Menu)
-    {
-        fabricMenu->menuAction()->setVisible(false);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5786,6 +5787,8 @@ void MainWindow::initializeDocksContain()
 
     piecesWidget = new PiecesWidget(pattern, doc, this);
     ui->pieces_DockWidget->setWidget(piecesWidget);
+    connect(m_pieceProperties, &VPieceOptionsPropertyBrowser::pieceOptionsChanged,
+            piecesWidget, &PiecesWidget::updateList);
     connect(doc, &VPattern::FullUpdateFromFile, piecesWidget, &PiecesWidget::updateList);
     connect(doc, &VPattern::UpdateInLayoutList, piecesWidget, &PiecesWidget::togglePiece);
     connect(doc, &VPattern::showPiece, piecesWidget, &PiecesWidget::selectPiece);

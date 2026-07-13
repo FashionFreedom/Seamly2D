@@ -81,6 +81,7 @@
 #include <QGraphicsPathItem>
 #include <QPixmap>
 #include <QRegularExpression>
+#include <QTimer>
 #include <QTreeWidget>
 #include <QUndoStack>
 #include <QLineF>
@@ -681,7 +682,7 @@ void PiecesWidget::itemChanged(QTreeWidgetItem *item, int column)
 
     SavePieceOptions *command = new SavePieceOptions(oldPiece, newPiece, m_doc, id);
     qApp->getUndoStack()->push(command);
-    updateList();
+    QTimer::singleShot(0, this, &PiecesWidget::updateList);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -84,8 +84,7 @@ enum class UndoCommand: char { AddDraftBlock,
                                RotationMoveLabel,
                                TogglePieceInLayout,
                                TogglePieceLock,
-                               SetPieceColor,
-                               SavePatternFabricSettings
+                               SetPieceColor
                              };
 
 class VPattern;

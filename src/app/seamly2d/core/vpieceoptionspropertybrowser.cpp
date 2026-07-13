@@ -347,5 +347,6 @@ void VPieceOptionsPropertyBrowser::changePieceData(VPE::VProperty *property)
 
     SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, m_doc, toolId);
     qApp->getUndoStack()->push(undoCommand);
+    emit pieceOptionsChanged();
 }
 

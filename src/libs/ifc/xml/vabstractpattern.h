@@ -66,7 +66,6 @@
 #include <QVector>
 
 #include "vdomdocument.h"
-#include "vfabricsettings.h"
 #include "vtoolrecord.h"
 #include "../vmisc/def.h"
 #include "../vwidgets/pen_toolbar.h"
@@ -189,9 +188,6 @@ public:
 
     QMap<GSizes, bool>             GetGradationSizes() const;
     void                           SetGradationSizes(const QMap<GSizes, bool> &options);
-
-    VFabricSettings                GetFabricSettings() const;
-    void                           SetFabricSettings(const VFabricSettings &settings);
 
     QString                        GetDescription() const;
     void                           SetDescription(const QString &text);
@@ -319,7 +315,6 @@ public:
     static const QString TagCompanyName;
     static const QString TagCustomerName;
     static const QString TagPatternLabel;
-    static const QString TagFabricSettings;
     static const QString TagGrainline;
     static const QString TagPath;
     static const QString TagNodes;
@@ -362,12 +357,6 @@ public:
     static const QString AttrFoldPosition;
     static const QString AttrQuantity;
     static const QString AttrOnFold;
-    static const QString AttrFabricWidth;
-    static const QString AttrHeightRepeat;
-    static const QString AttrLengthRepeat;
-    static const QString AttrShrinkagePercent;
-    static const QString AttrStretchPercent;
-    static const QString AttrDefaultSAWidth;
     static const QString AttrDateFormat;
     static const QString AttrTimeFormat;
     static const QString AttrArrows;
