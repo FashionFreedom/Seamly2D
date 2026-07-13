@@ -31,6 +31,7 @@
 #include <QLabel>
 #include <QPointer>
 #include <QPushButton>
+#include <QStandardPaths>
 
 #include "fvavailableupdate.h"
 #include "fvupdater.h"

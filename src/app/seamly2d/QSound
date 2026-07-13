@@ -1,0 +1,13 @@
+// Qt 5 → 6 compatibility stub: QSound was removed in Qt 6.
+// Plain class — no Q_OBJECT/QObject to avoid vtable link errors.
+#pragma once
+#include <QString>
+class QSound
+{
+public:
+    explicit QSound(const QString & /*filename*/, void * /*parent*/ = nullptr) {}
+    static void play(const QString & /*filename*/) {}
+    void play() {}
+    void stop() {}
+    bool isFinished() const { return true; }
+};

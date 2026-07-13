@@ -284,7 +284,7 @@ private:
     Q_DISABLE_COPY(MainWindow)
 
     Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.
-    QFileSystemWatcher               *watcher;
+    QFileSystemWatcher               *m_watcher;
     Tool                              currentTool;     /// @brief tool current tool.
     Tool                              lastUsedTool;    /// @brief tool last used tool.
     VMainGraphicsScene               *draftScene;      /// @brief draftScene draft block scene.
@@ -293,7 +293,7 @@ private:
     QPointer<QToolButton>             infoToolButton;
     QLabel                           *m_statusMessage; /// @brief helpLabel help show tooltip.
     bool                              isInitialized;   /// @brief isInitialized true after first show window.
-    bool                              mChanges;        /// @brief mChanges true if measurement file was changed.
+    bool                              m_changes;        /// @brief m_changes true if measurement file was changed.
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
@@ -311,6 +311,7 @@ private:
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
+    bool                              isPiecesDockVisible;
     bool                              drawMode;            /// @brief drawMode true if draft scene active.
 
     enum { MaxRecentFiles = 5 };
@@ -329,7 +330,9 @@ private:
     VPieceOptionsPropertyBrowser    *m_pieceProperties;
     GroupsWidget                     *groupsWidget;
     PiecesWidget                     *piecesWidget;
-    std::shared_ptr<VLockGuard<char>> lock;
+    QAction                          *actionDockWidgetPieces;
+    std::shared_ptr<VLockGuard<char>> m_lock;
+    QSharedPointer<MeasurementDoc>    m_measurements;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
@@ -460,6 +463,8 @@ private:
     void               updateZoomToPointComboBox(QStringList namesList);
 
     bool               IgnoreLocking(int error, const QString &path);
+    void               removeEmptyLinesText(const QString &filename, bool isPattern);
+    void               saveBackupFile(const QString &filename) const;
 
     void ToolSelectPoint() const;
     void ToolSelectPointByPress() const;

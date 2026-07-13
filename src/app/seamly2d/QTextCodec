@@ -1,0 +1,13 @@
+// Qt 5 → 6 compatibility stub: QTextCodec was removed in Qt 6.
+// This stub satisfies existing #include <QTextCodec> directives.
+#pragma once
+#include <QString>
+class QTextCodec
+{
+public:
+    static QTextCodec *codecForName(const char *) { return nullptr; }
+    static QTextCodec *codecForLocale()           { return nullptr; }
+    virtual QByteArray name() const               { return QByteArray(); }
+    virtual QString toUnicode(const QByteArray &) const { return QString(); }
+    virtual QByteArray fromUnicode(const QString &) const { return QByteArray(); }
+};

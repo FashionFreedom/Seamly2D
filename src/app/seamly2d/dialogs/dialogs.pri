@@ -4,6 +4,7 @@
 HEADERS += \
     $$PWD/about2d_dialog.h \
     $$PWD/abstractlayout_dialog.h \
+    $$PWD/export_progress_dialog.h \
     $$PWD/calculator_dialog.h \
     $$PWD/decimalchart_dialog.h \
     $$PWD/dialogs.h \
@@ -29,6 +30,7 @@ HEADERS += \
 SOURCES += \
     $$PWD/about2d_dialog.cpp \
     $$PWD/abstractlayout_dialog.cpp \
+    $$PWD/export_progress_dialog.cpp \
     $$PWD/calculator_dialog.cpp \
     $$PWD/decimalchart_dialog.cpp \
     $$PWD/dialogpatternproperties.cpp \
@@ -52,6 +54,7 @@ SOURCES += \
 
 FORMS += \
     $$PWD/about2d_dialog.ui \
+    $$PWD/export_progress_dialog.ui \
     $$PWD/calculator_dialog.ui \
     $$PWD/decimalchart_dialog.ui \
     $$PWD/dialogpatternproperties.ui \

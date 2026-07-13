@@ -76,6 +76,11 @@ public:
     bool                  isTextAsPaths() const;
     void                  setTextAsPaths(bool textAsPaths);
 
+    void                  setAvailableSizes(const QStringList &sizes) { Q_UNUSED(sizes) }
+    bool                  isBatchExport() const { return false; }
+    QStringList           selectedSizes() const { return QStringList(); }
+    void                  setFileName(const QString &name) { Q_UNUSED(name) }
+
 protected:
     virtual void          showEvent(QShowEvent *event) override;
     void                  initTemplates(QComboBox *templates);

@@ -151,6 +151,12 @@ QT_WARNING_POP
 // autosave extension postfix
 const QString autosavePostfix = QStringLiteral(".autosave");
 
+#ifndef Q_OS_LINUX
+const QFileDialog::Options FILEDIALOG_OPTIONS = QFileDialog::DontUseNativeDialog;
+#else
+const QFileDialog::Options FILEDIALOG_OPTIONS = QFileDialog::Options();
+#endif
+
 // Strings for dynamically translating "Ctrl" in the status bar tool tips
 const QString strQShortcut = QStringLiteral("QShortcut");
 const QString strCtrl      = QStringLiteral("Ctrl");
@@ -205,6 +211,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_pieceProperties(nullptr)
     , groupsWidget(nullptr)
     , piecesWidget(nullptr)
+    , actionDockWidgetPieces(nullptr)
     , m_lock(nullptr)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
@@ -894,15 +901,15 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
     // If insert not to the end of file call lite parse
-    if (doc->getCursorId() > NULL_ID)
+    if (doc->getCursor() > NULL_ID)
     {
         const quint32 &toolId = vtool->getId();
         doc->LiteParseTree(Document::LiteParse);
-        doc->setCursorId(toolId);
+        doc->setCursor(toolId);
     }
     if (historyDialog)
     {
-        historyDialog->updateHistory(true);
+        historyDialog->updateHistory();
     }
 }
 
@@ -2276,7 +2283,7 @@ void MainWindow::syncMeasurements()
         {
             const QString msg = tr("Measurements have been synced");
             setStatusMessage(msg + QString(" - ") + path);
-            WidgetPopup::popupMessage(msg, 4000, this);
+            VWidgetPopup::PopupMessage(this, msg);
             QApplication::beep();
             doc->LiteParseTree(Document::LiteParse);
             m_changes = false;
@@ -6784,7 +6791,7 @@ void MainWindow::saveBackupFile(const QString &filename) const
     });
 
     // Delete oldest if over limit
-    int maxFiles = qApp->Seamly2DSettings()->getMaxBackups();
+    int maxFiles = 5; // default max backup files
     int filesToDelete = filteredList.size() - maxFiles + 1;
 
     for (int i = 0; i < filesToDelete; ++i)
@@ -6809,7 +6816,7 @@ void MainWindow::saveBackupFile(const QString &filename) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList MainWindow::getUnlockedRestoreFileList() const
+QStringList MainWindow::GetUnlokedRestoreFileList() const
 {
     QStringList restoreFiles;
     //Take all files that need to be restored
@@ -7452,9 +7459,9 @@ void MainWindow::exportDraftBlocksAs()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::reopenFilesAfterCrash(QStringList &args)
+void MainWindow::ReopenFilesAfterCrash(QStringList &args)
 {
-    const QStringList files = getUnlockedRestoreFileList();
+    const QStringList files = GetUnlokedRestoreFileList();
     if (files.size() > 0)
     {
         qCDebug(vMainWindow, "Reopen files after crash.");
@@ -7692,7 +7699,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
         QString name = draftBlockComboBox->itemText(index);
         doc->changeActiveDraftBlock(name);
         doc->setCurrentData();
-        emit RefreshHistory(true);
+        emit RefreshHistory();
         if (drawMode)
         {
             handleArrowTool(true);
@@ -7917,7 +7924,7 @@ void MainWindow::processCommandLine()
 
     if (Application2D::isGUIMode())
     {
-        reopenFilesAfterCrash(args);
+        ReopenFilesAfterCrash(args);
     }
     else
     {

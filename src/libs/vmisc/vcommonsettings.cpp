@@ -1576,7 +1576,7 @@ void VCommonSettings::setVariablesDialogSize(const QSize &sz)
 QString VCommonSettings::getLatestSkippedVersion() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingLatestSkippedVersion, "").toInt();
+    return settings.value(settingLatestSkippedVersion, "").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
