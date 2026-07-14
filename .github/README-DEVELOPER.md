@@ -1,6 +1,11 @@
 # Build Seamly2D
 
-## Basic Software Prerequisites:  
+## General
+
+Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlow, Issues, Branches, etc.
+
+## Basic Software Prerequisites
+
 * [Qt 6.8.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
@@ -33,6 +38,13 @@
 * [Github issue description style guide](https://guides.github.com/features/issues/)
 * Read more about code styles and developer items of interest on our [Developer wiki](https://github.com/FashionFreedom/Seamly2D/wiki).
 
+## Fonts, Icons, Images
+
+* Seamly uses the user's system font by default.
+* Application preferences allow the user to select from installed fonts for use in pattern labels.
+* For icons and pixmaps use an svg, unless the svg contains text, in which case use a png to avoid missing font issues for the user.
+* Images imported into a pattern can be in either png, jpg, or bmp format, and are stored in the pattern file as a bytearray.
+
 ## Build method
 
 * Review our [GitHub Action CI script](workflows/ci.yml).
@@ -45,12 +57,28 @@
 
 ---
 
-## Build on Linux
+## Install
 
-These instructions apply in general
+### ... on all platforms (Linux, MacOSX, Windows)
 
-* Install Qt 6.8.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
-* Install QtCreator https://wiki.qt.io/VendorPackages
+* Install Qt 6.8.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
+  * Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer).
+  * Select:
+    * Custom Installation
+    * Qt -- Minimize your options, otherwise your download size could be in Gs
+      * Qt 6.8.3
+      * MSVC 2022
+      * Qt Debug Information Files
+      * Developer and Designer Tools
+      * Qt Creator
+      * Qt Creator CDB Debugger Support
+      * Debugging Tools for Windows
+      * Qt Creator Debug Symbols
+        (Qt Maintenance Tool is always installed with Developer & Designer Tools - this will be highlighted)
+
+### ... on Linux
+
+* Install Qt/QtCreator from Qt unified installer (see above), Or install Qt from https://github.com/miurahr/aqtinstallor and QtCreator from https://wiki.qt.io/VendorPackages.
 * Install Additional libraries
 
   * gnu compiler
@@ -75,10 +103,9 @@ Note: The default prefix for command `make install` is `/usr`.  To define anothe
 sudo make INSTALL_ROOT=/usr/local install
 ```
 
-### Note for distributions where `qmake` defaults is not Qt 6
+Note: For distributions where `qmake` default is not Qt 6
 
-On some Linux distributions (e.g. Arch Linux), the `qmake` binary still points to Qt 5.
-Make sure to create the Makefile with `qmake6`:
+On some Linux distributions (e.g. Arch Linux), the `qmake` binary still points to Qt 5. In this case, create the Makefile with `qmake6`, `make`, and `make install`.  If you accidentally invoke the Qt 5 `qmake` and generate the makefile with it, run `make distclean` to remove all generated files, then re-run with Qt 6 `qmake6`.
 
 ```bash
 qmake6
@@ -86,30 +113,13 @@ make -j$(nproc)
 sudo make install
 ```
 
-Note: If you accidentally invoke the Qt 5 `qmake` and generate the makefile with it, run `make distclean` to remove all generated files, then re-run with Qt 6 `qmake6`.
-
-This applies when building with your distribution's packaged Qt. If you're using the official Qt binary distribution (recommended above), `qmake` is always unversioned and the standard instructions apply.
-
-#### Both MacOSX and Windows 10/11
-
-* Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
-* Select:
-  * Custom Installation
-  * Qt. Minimize your options, otherwise your download size could be in Gs
-    * Qt 6.8.3
-    * MSVC 2022
-    * Qt Debug Information Files
-    * Developer and Designer Tools
-    * Qt Creator
-    * Qt Creator CDB Debugger Support
-    * Debugging Tools for Windows
-    * Qt Creator Debug Symbols
-    (Qt Maintenance Tool is always installed with Developer & Designer Tools - this will be highlighted)
+### ... on MacOSX and Windows 10/11
 
 #### MacOS only
 
 * Read about Qt for [macOS](https://doc.qt.io/qt-5/macos.html)
-* Install [Xcode 11](https://developer.apple.com/download/all/)
+* Ensure you have Xcode Command Line Tools installed by running `xcode-select --install` in your terminal. Then, download the installer directly from your Qt Account Portal or the Qt Downloads page.
+* Install [Xcode 15](https://developer.apple.com/download/all/) - Qt has been validated against Xcode SDK 15
 * Setup/validate build environment. [Read more](https://doc.qt.io/qt-5/macos.html#build-environment).
 * Switch to Xcode: `sudo xcode-select --switch /Applications/Xcode.app`
 * Validate clang compiler points to Xcode: `xcrun -sdk macosx -find clang`
@@ -120,11 +130,17 @@ This applies when building with your distribution's packaged Qt. If you're using
 
 * Read about [Qt for Windows](https://doc.qt.io/qt-5/windows.html).
 * Add Qt and QtCreator directories to the Windows PATH environment variable through Control Panel:
-`[Control Panel | System And Security | System | Advanced Tab | Environment Variables button]`
+  `[Control Panel | System And Security | System | Advanced Tab | Environment Variables button]`
 
-### Build
+#### Final install step for both MacOS and Windows
 
-#### with Qt's *QtCreator* IDE
+* Copy `Program Files\Xpdf\bin64\pdftops.exe` in Windows, or `bin32/pdftops.exe` in MacOS, to the Seamly build directory to enable creation of post script (.ps and .eps) pattern piece layouts.
+
+---
+
+## Build
+
+### with Qt's *QtCreator* IDE
 
 * Create your compiler kit.  Read more about adding compilers [on the Qt website](https://doc.qt.io/qtcreator/creator-tool-chains.html).
 * Complete your build settings.  Read more about [build settings](https://doc.qt.io/qtcreator/creator-build-settings.html).
@@ -132,7 +148,7 @@ This applies when building with your distribution's packaged Qt. If you're using
 * Open the Configure Project tab and select your compiler kit. [Read more](https://doc.qt.io/qtcreator/creator-project-opening.html).
 * Build with the `Build and Run Kit Selector` icon, or use `Build` and `Run` from the Tools menu. [Read more](https://doc.qt.io/qtcreator/creator-building-targets.html).
 
-#### with Qt's *qmake* from a terminal window
+### with Qt's *qmake* from a terminal window
 
 * Read more about [jom](https://wiki.qt.io/Jom)
 * Read more about [nmake](https://learn.microsoft.com/en-us/cpp/build/reference/nmake-reference?view=msvc-170)
@@ -140,24 +156,13 @@ This applies when building with your distribution's packaged Qt. If you're using
 ```bash
 cd $SOURCE_DIRECTORY\build
 qmake ..\Seamly2D.pro
-nmake      # (or jom. Assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.)
+nmake      # (or use jom and assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.)
 ```
 
-* MacOS Only --> Enable signing and notarizing at qmake step:
+### Additional build option for MacOSX
+
+* Enable signing and notarizing at qmake step
 
 ```bash
 qmake Seamly2D.pro CONFIG+=macSign
 ```
-
-### Copy PDFTOPS.EXE -- Windows & MacOS
-
-* Copy the `C:\Program Files\Xpdf\bin64\pdftops.exe` (or bin32) file to the Seamly build directory to enable creation of post script (.ps and .eps) pattern piece layouts.
-
----
-
-## Fonts, Icons, Images
-
-* Seamly uses the user's system font by default.
-* Application preferences allow the user to select from installed fonts for use in pattern labels.
-* For icons and pixmaps use an svg, unless the svg contains text, in which case use a png to avoid missing font issues for the user.
-* Images imported into a pattern can be in either png, jpg, or bmp format, and are stored in the pattern file as a bytearray.
