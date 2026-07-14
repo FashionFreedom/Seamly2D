@@ -50,7 +50,7 @@ git commit push issue-#155
 ```
 
 ## Create a Pull Request -- git CLI
-* Build & test your issue branch with Qt 5.15.2 or Qt 5.15.12, and Qt Creator 
+* Build & test your issue branch with Qt 6.8.3 and Qt Creator 
 * Push your issue branch up to the github repo
 ```
 git push -u origin issue-#155
