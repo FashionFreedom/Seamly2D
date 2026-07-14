@@ -4,7 +4,7 @@
 * [Qt 6.8.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
-* Compiler - MSVC 2019, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
+* Compiler - MSVC 2022, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
 * Pdftops (from XpdfReader or poppler) - Required to create PS or EPS layout files.
 * Check the sections below for your operating system to find additional installation requirements.
 
@@ -86,7 +86,7 @@ make -j$(nproc)
 sudo make install
 ```
 
-Note: If you accidentally invoke the Qt 5 `qmake` and generate the makefile with it, run `make distclean` to remove all generated files, then re-run with `qmake6`.
+Note: If you accidentally invoke the Qt 5 `qmake` and generate the makefile with it, run `make distclean` to remove all generated files, then re-run with Qt 6 `qmake6`.
 
 This applies when building with your distribution's packaged Qt. If you're using the official Qt binary distribution (recommended above), `qmake` is always unversioned and the standard instructions apply.
 
