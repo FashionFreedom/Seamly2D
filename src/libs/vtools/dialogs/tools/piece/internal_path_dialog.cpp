@@ -844,7 +844,7 @@ void InternalPathDialog::initializePathTab()
     connect(ui->listWidget, &QListWidget::itemSelectionChanged,       this, &InternalPathDialog::setMoveExclusions);
     connect(ui->cutOnFabric_CheckBox,  &QCheckBox::stateChanged,      this, &InternalPathDialog::setPenAttributes);
     connect(ui->moveTop_ToolButton,    &QToolButton::clicked, this, [this](){moveListRowTop(ui->listWidget);});
-    connect(ui->moveUp_ToolButton,     &QToolButton::clicked, this, [this](){moveListRowTop(ui->listWidget);});
+    connect(ui->moveUp_ToolButton,     &QToolButton::clicked, this, [this](){moveListRowUp(ui->listWidget);});
     connect(ui->moveDown_ToolButton,   &QToolButton::clicked, this, [this](){moveListRowDown(ui->listWidget);});
     connect(ui->moveBottom_ToolButton, &QToolButton::clicked, this, [this](){moveListRowBottom(ui->listWidget);});
 }
