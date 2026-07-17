@@ -27,7 +27,6 @@
 ._.DS_Store
 
 # Ignore these directories.
-.claude/
 html/
 latex/
 bin/
@@ -178,8 +177,8 @@ target_wrapper.sh
 .vscode/
 .qmake.stash
 
-# Claude Code local config
-.claude/
+# Claude Code personal overrides (shared settings.json is committed)
+.claude/settings.local.json
 
 # documents
 docs/
