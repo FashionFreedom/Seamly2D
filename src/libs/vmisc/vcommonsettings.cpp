@@ -512,7 +512,7 @@ void VCommonSettings::setBodyScansPath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLabelTemplatePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -530,7 +530,7 @@ void VCommonSettings::SetPathLabelTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultImageFilePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -566,7 +566,7 @@ void VCommonSettings::setBackupFilePath(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPatternTemplate() const
 {
-    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
+    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "/default_pattern_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -578,7 +578,7 @@ void VCommonSettings::setDefaultPatternTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPieceTemplate() const
 {
-    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "default_piece_label.xml").toString();
+    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "/default_piece_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
