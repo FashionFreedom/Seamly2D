@@ -4,9 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -21,7 +19,7 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -291,8 +289,9 @@ private:
     void                        reverseNode(QListWidgetItem *rowItem);
     void                        duplicateNode(QListWidgetItem *rowItem);
     void                        excludeNode(QListWidgetItem *rowItem);
-    void                        setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
-                                         NotchSubType notchSubType, int notchCount);
+    void                        setNotch(QListWidgetItem *rowItem, bool isNotch, bool showCutline, bool showSeamline,
+                                         NotchType notchType, NotchSubType notchSubType, qreal notchLength,
+                                         qreal notchWidth, int notchCount);
     void                        setCurrentText(QComboBox *box, const QString &text) const;
     qreal                       getFormulaValue(QPlainTextEdit *text) const;
 };
