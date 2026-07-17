@@ -69,4 +69,23 @@ enum class BestFrom : char
     Rotation = 0,
     Combine = 1
 };
+
+/**
+ * @brief QGraphicsItem::data() keys shared between the layout piece items and the SVG exporter.
+ *
+ * VLayoutPiece::GetItem() tags every piece component item with these keys so that
+ * SvgGenerator can identify each rendered component and write the matching
+ * data-* attributes into the exported SVG (see status-docs/new-attributes.csv).
+ * The keys live in a namespace so the enumerator names cannot collide with
+ * identifiers elsewhere in the codebase (e.g. VDrawTool::ObjectName).
+ */
+namespace PieceItemData
+{
+    enum Key : int
+    {
+        ObjectName  = 0, /**< Piece name on the root item (legacy convention, kept for the SVG group id). */
+        ItemType    = 1, /**< SVG data-type string: seamline|cutline|notch|internal_path|grainline|piece_label|pattern_label. */
+        PieceLetter = 2  /**< Piece letter, exported as the data-letter attribute when set. */
+    };
+}
 #endif // VLAYOUTDEF_H

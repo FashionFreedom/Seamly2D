@@ -37,11 +37,14 @@
 class SvgGenerator
 {
 public:
-    SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution);
+    SvgGenerator(QGraphicsRectItem *paper, QString name, QString patternName, QString description, int resolution);
     void addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item = nullptr);
     void generate();
 
 private:
+    QDomDocument renderSceneToDom(QGraphicsScene *scene);
+    void addComponentGroups(QGraphicsScene *scene, QGraphicsItem *item, QDomDocument &pieceDoc,
+                            QDomElement &pieceGroup, const QString &pieceId);
     QDomDocument mergeSvgDoms();
 
     void removeEmptyGroups(QDomElement &mainGroup);
@@ -51,8 +54,10 @@ private:
 
     QGraphicsRectItem *m_paper;
     QString m_filepath;
+    QString m_patternName;    /**< pattern name, written as data-name on the pattern group */
     QString m_description;
     int m_resolution;
+    int m_pieceCount;         /**< number of pieces added so far; provides data-type-number for pieces */
 
     QList<QDomDocument> m_domList;
 };

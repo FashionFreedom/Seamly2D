@@ -339,20 +339,28 @@ void MainWindowsNoGUI::ExportFlatLayout(const ExportLayoutDialog &dialog, const 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog,
-                                                 const QVector<VLayoutPiece> &pieceList)
+/**
+ * @brief arrangePieceItemsFlat creates the graphics items of all pieces and arranges them on one flat sheet.
+ *
+ * Each piece keeps its own position (Mx/My offsets); afterwards every item is
+ * translated so the combined bounding rectangle starts at the scene origin.
+ * The items are added to the given scene so its itemsBoundingRect() describes
+ * the flat "paper" holding all pieces.
+ *
+ * @param scene       scene the items are added to (takes ownership).
+ * @param pieceList   pieces to create items for.
+ * @param textAsPaths true to convert label text into vector paths.
+ * @return list of the created piece root items, in pieceList order.
+ */
+QList<QGraphicsItem *> MainWindowsNoGUI::arrangePieceItemsFlat(QGraphicsScene *scene,
+                                                               const QVector<VLayoutPiece> &pieceList,
+                                                               bool textAsPaths) const
 {
-    if (pieceList.isEmpty())
-    {
-        return;
-    }
-
-    QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
-
+    SCASSERT(scene != nullptr)
     QList<QGraphicsItem *> list;
     for (int i=0; i < pieceList.count(); ++i)
     {
-        QGraphicsItem *item = pieceList.at(i).GetItem(dialog.isTextAsPaths());
+        QGraphicsItem *item = pieceList.at(i).GetItem(textAsPaths);
         item->setPos(pieceList.at(i).GetMx(), pieceList.at(i).GetMy());
         list.append(item);
     }
@@ -362,21 +370,39 @@ void MainWindowsNoGUI::exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog
         scene->addItem(list.at(i));
     }
 
-    QList<QGraphicsItem *> papers;// Blank sheets
-    QRect rect = scene->itemsBoundingRect().toRect();
-
-    const int mx = rect.x();
-    const int my = rect.y();
+    // Translate every piece so the flat sheet starts at the origin.
+    const QRect rect = scene->itemsBoundingRect().toRect();
 
     QTransform transform;
-    transform = transform.translate(-mx, -my);
+    transform = transform.translate(-rect.x(), -rect.y());
 
     for (int i=0; i < list.size(); ++i)
     {
         list.at(i)->setTransform(transform);
     }
 
-    rect = scene->itemsBoundingRect().toRect();
+    return list;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief exportPiecesAsFlatLayout exports the pieces from piece mode onto one flat sheet (non-AAMA formats).
+ * @param dialog    export dialog holding format, path and text options.
+ * @param pieceList pieces to export.
+ */
+void MainWindowsNoGUI::exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog,
+                                                 const QVector<VLayoutPiece> &pieceList)
+{
+    if (pieceList.isEmpty())
+    {
+        return;
+    }
+
+    QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
+    QList<QGraphicsItem *> list = arrangePieceItemsFlat(scene.data(), pieceList, dialog.isTextAsPaths());
+
+    QList<QGraphicsItem *> papers;// Blank sheets
+    QRect rect = scene->itemsBoundingRect().toRect();
 
     QGraphicsRectItem *paper = new QGraphicsRectItem(rect);
     paper->setPen(QPen(Qt::black, 1));
@@ -395,6 +421,41 @@ void MainWindowsNoGUI::exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog
                      QMarginsF(margin, margin, margin, margin));
 
     qDeleteAll(scenes);//Scene will clear all other items
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief generatePiecesSvg writes the tagged pieces SVG consumed by SeamlyLayout.
+ *
+ * Renders every piece in pieceList (prepared by preparePiecesForLayout()) into
+ * one SVG file where the pattern, each piece and each piece component carry the
+ * SVG data-* attributes (data-type, data-type-number, data-parent, data-name,
+ * data-letter). This is the automatic handoff file created when the user enters
+ * Layout Mode; no export dialog is involved. Text is kept as real text so the
+ * layout application can still read the label contents.
+ *
+ * @param filePath absolute path of the SVG file to write.
+ * @return true when the file was written successfully.
+ */
+bool MainWindowsNoGUI::generatePiecesSvg(const QString &filePath)
+{
+    if (pieceList.isEmpty())
+    {
+        return false;
+    }
+
+    // Arrange all pieces on one flat sheet, exactly like the manual pieces export.
+    QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
+    QList<QGraphicsItem *> list = arrangePieceItemsFlat(scene.data(), pieceList, false);
+
+    // The paper rectangle only defines the SVG size and view box; it is never shown.
+    QScopedPointer<QGraphicsRectItem> paper(new QGraphicsRectItem(scene->itemsBoundingRect().toRect()));
+
+    exportSVG(filePath, paper.data(), list);
+
+    // SvgGenerator reports errors on qDebug only, so verify the file on disk.
+    const QFileInfo checkFile(filePath);
+    return checkFile.exists() && checkFile.size() > 0;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -892,14 +953,20 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
  */
 void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
 {
-    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
+    SvgGenerator svgGenerator(paper, name, doc->GetPatternName(), doc->GetDescription(), static_cast<int>(PrintDPI));
     svgGenerator.addSvgFromScene(scene);
     svgGenerator.generate();
 }
 
+/**
+ * @brief exportSVG save a list of piece items to one svg file, one tagged group per piece.
+ * @param name   layout file name.
+ * @param paper  paper rectangle defining the SVG size.
+ * @param pieces piece root items to export; each is rendered in its own scene.
+ */
 void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, const QList<QGraphicsItem *> &pieces) const
 {
-    SvgGenerator svgGenerator(paper, name, doc->GetDescription(), static_cast<int>(PrintDPI));
+    SvgGenerator svgGenerator(paper, name, doc->GetPatternName(), doc->GetDescription(), static_cast<int>(PrintDPI));
 
     for (int piece = 0; piece < pieces.size(); piece++)
     {
@@ -1241,6 +1308,34 @@ void MainWindowsNoGUI::RestorePaper(int index) const
  *
  * @param placeholder placeholder that will be appended to each QGraphicsSimpleTextItem item's text string.
  */
+/**
+ * @brief collectTextItems recursively collects every QGraphicsSimpleTextItem below an item.
+ *
+ * Label text items are grandchildren of the piece root (each label's lines are
+ * grouped under an invisible label group item), so a recursive walk is required
+ * to reach them.
+ *
+ * @param item      graphics item whose descendants are searched.
+ * @param textItems output list the found text items are appended to.
+ */
+static void collectTextItems(QGraphicsItem *item, QList<QGraphicsSimpleTextItem *> &textItems)
+{
+    const QList<QGraphicsItem *> children = item->childItems();
+    for (int i = 0; i < children.size(); ++i)
+    {
+        QGraphicsItem *child = children.at(i);
+        if (child->type() == QGraphicsSimpleTextItem::Type)
+        {
+            if (QGraphicsSimpleTextItem *textItem = qgraphicsitem_cast<QGraphicsSimpleTextItem *>(child))
+            {
+                textItems.append(textItem);
+            }
+        }
+        // Descend into grandchildren (e.g. label groups holding the text lines).
+        collectTextItems(child, textItems);
+    }
+}
+
 void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
                                          const QList<QList<QGraphicsItem *> > &pieces) const
 {
@@ -1249,17 +1344,13 @@ void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
         const QList<QGraphicsItem *> &paperItems = pieces.at(i);
         for (int j = 0; j < paperItems.size(); ++j)
         {
-            QList<QGraphicsItem *> pieceChildren = paperItems.at(j)->childItems();
-            for (int k = 0; k < pieceChildren.size(); ++k)
+            // Gather every text item below this piece, at any depth.
+            QList<QGraphicsSimpleTextItem *> textItems;
+            collectTextItems(paperItems.at(j), textItems);
+            for (int k = 0; k < textItems.size(); ++k)
             {
-                QGraphicsItem *item = pieceChildren.at(k);
-                if (item->type() == QGraphicsSimpleTextItem::Type)
-                {
-                    if(QGraphicsSimpleTextItem *textItem = qgraphicsitem_cast<QGraphicsSimpleTextItem *>(item))
-                    {
-                        textItem->setText(textItem->text() + placeholder);
-                    }
-                }
+                QGraphicsSimpleTextItem *textItem = textItems.at(k);
+                textItem->setText(textItem->text() + placeholder);
             }
         }
     }
@@ -1282,19 +1373,16 @@ void MainWindowsNoGUI::RestoreTextAfterDXF(const QString &placeholder,
         const QList<QGraphicsItem *> &paperItems = pieces.at(i);
         for (int j = 0; j < paperItems.size(); ++j)
         {
-            QList<QGraphicsItem *> pieceChildren = paperItems.at(i)->childItems();
-            for (int k = 0; k < pieceChildren.size(); ++k)
+            // Gather every text item below this piece, at any depth.
+            // Note: also fixes a pre-existing bug where paperItems.at(i) was used instead of .at(j).
+            QList<QGraphicsSimpleTextItem *> textItems;
+            collectTextItems(paperItems.at(j), textItems);
+            for (int k = 0; k < textItems.size(); ++k)
             {
-                QGraphicsItem *item = pieceChildren.at(k);
-                if (item->type() == QGraphicsSimpleTextItem::Type)
-                {
-                    if(QGraphicsSimpleTextItem *textItem = qgraphicsitem_cast<QGraphicsSimpleTextItem *>(item))
-                    {
-                        QString text = textItem->text();
-                        text.replace(placeholder, "");
-                        textItem->setText(text);
-                    }
-                }
+                QGraphicsSimpleTextItem *textItem = textItems.at(k);
+                QString text = textItem->text();
+                text.replace(placeholder, "");
+                textItem->setText(text);
             }
         }
     }

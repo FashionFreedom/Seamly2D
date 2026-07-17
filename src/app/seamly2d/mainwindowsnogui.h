@@ -205,6 +205,12 @@ private:
                           bool ignoreMargins, const QMarginsF &margins);
 
     void exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog, const QVector<VLayoutPiece> &pieceList);
+
+    QList<QGraphicsItem *> arrangePieceItemsFlat(QGraphicsScene *scene, const QVector<VLayoutPiece> &pieceList,
+                                                 bool textAsPaths) const;
+
+public:
+    bool generatePiecesSvg(const QString &filePath);
 };
 
 #endif // MAINWINDOWSNOGUI_H

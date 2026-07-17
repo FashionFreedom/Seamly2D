@@ -466,6 +466,52 @@ bool Application2D::notify(QObject *receiver, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief seamlyLayoutFilePath locates the SeamlyLayout executable.
+ *
+ * Lookup order: (1) the user-configured path from the application settings,
+ * (2) the application directory — the standard install location, mirroring
+ * how the SeamlyMe executable is found — and (3) the SeamlyLayout development
+ * build inside the source tree (Debug build of the Qt frontend), so that
+ * Layout Mode works during development without any configuration.
+ *
+ * @return absolute path of the SeamlyLayout executable, or an empty string when it cannot be found.
+ */
+QString Application2D::seamlyLayoutFilePath()
+{
+    // A path configured in the settings takes precedence over the default lookup.
+    const QString configuredPath = Seamly2DSettings()->getSeamlyLayoutAppPath();
+    if (!configuredPath.isEmpty() && QFileInfo::exists(configuredPath))
+    {
+        return QFileInfo(configuredPath).absoluteFilePath();
+    }
+
+    // Default: the SeamlyLayout executable installed next to the Seamly2D executable.
+    const QString seamlyLayout = QStringLiteral("SeamlyLayout");
+#ifdef Q_OS_WIN
+    const QFileInfo appFile(QCoreApplication::applicationDirPath() + "/" + seamlyLayout + ".exe");
+#else
+    const QFileInfo appFile(QCoreApplication::applicationDirPath() + "/" + seamlyLayout);
+#endif
+    if (appFile.exists())
+    {
+        return appFile.absoluteFilePath();
+    }
+
+    // Development fallback: the Debug build of the SeamlyLayout Qt frontend in
+    // the source tree. Lets a locally built Seamly2D hand off to the locally
+    // built SeamlyLayout when neither a setting nor an installed copy exists.
+    const QFileInfo devBuildFile(QStringLiteral(
+        "C:/Users/susan/Projects/Seamly2D-private/seamlyLayout/qt_frontend/build/Debug/SeamlyLayout.exe"));
+    if (devBuildFile.exists())
+    {
+        return devBuildFile.absoluteFilePath();
+    }
+
+    return QString(); // Not found; the caller is responsible for informing the user.
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString Application2D::seamlyMeFilePath() const
 {
     const QString seamlyme = QStringLiteral("seamlyme");
