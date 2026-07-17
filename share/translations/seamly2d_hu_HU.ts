@@ -8196,10 +8196,6 @@ Menti a módosításokat?</translation>
         <translation>Másodpéldány</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Bevágás</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8338,6 +8334,26 @@ Menti a módosításokat?</translation>
     <message>
         <source>Just rear</source>
         <translation>Csak hátul</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Vágásvonal-illesztőjel megjelenítése</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Varrásvonal-illesztőjel megjelenítése</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Beállítás alapértelmezett illesztőjelként</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Illesztőjel szerkesztése</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Illesztőjel eltávolítása</translation>
     </message>
 </context>
 <context>
@@ -9040,6 +9056,38 @@ Menti a módosításokat?</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitív előjel</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Megjelenés</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10092,6 +10140,46 @@ Menti a módosításokat?</translation>
         <source>Positive Sign</source>
         <translation>Pozitív előjel</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Üdvözöljük</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Megjelenés</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Mérések</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10242,6 +10330,34 @@ Menti a módosításokat?</translation>
         <source>Positive Sign</source>
         <translation>Pozitív előjel</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10340,6 +10456,34 @@ Menti a módosításokat?</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitív előjel</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Rendszer</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12752,16 +12896,8 @@ Menti a módosításokat?</translation>
         <translation>A második él derékszöge</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Bevágás</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Típus</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Nincs</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12814,6 +12950,26 @@ Menti a módosításokat?</translation>
     <message>
         <source>Delete</source>
         <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Vágásvonal-illesztőjel megjelenítése</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Varrásvonal-illesztőjel megjelenítése</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Beállítás alapértelmezett illesztőjelként</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Illesztőjel szerkesztése</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Illesztőjel eltávolítása</translation>
     </message>
 </context>
 <context>

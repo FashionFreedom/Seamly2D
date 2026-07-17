@@ -8108,10 +8108,6 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <translation>Duplicado</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Entalhe</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Entalhe</translation>
     </message>
@@ -8327,6 +8323,26 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selecionar os objectos da trajetória principal no sentido dos ponteiros do relógio, Utilizar &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva, ou &lt;b&gt;CTRL&lt;/b&gt; para manter a direção da curva.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar pique da linha de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar pique da linha de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Definir como pique padrão</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar pique</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Remover pique</translation>
     </message>
 </context>
 <context>
@@ -9029,6 +9045,38 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source> per file</source>
         <translation> Por arquivo</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aparância</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10081,6 +10129,46 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Positive Sign</source>
         <translation>Sinal Positivo</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bem-vindo</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aparância</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Medidas</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10231,6 +10319,34 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Positive Sign</source>
         <translation>Sinal Positivo</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10329,6 +10445,34 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Sinal Positivo</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12742,16 +12886,8 @@ carregar no SeamlyME como de costume.
         <translation>Segunda aresta ângulo reto</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Entalhe</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Nenhum</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12804,6 +12940,26 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Delete</source>
         <translation>Excluir</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar pique da linha de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar pique da linha de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Definir como pique padrão</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar pique</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Remover pique</translation>
     </message>
 </context>
 <context>

@@ -8121,10 +8121,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Çoğalt</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Çentik</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>T Çentik</translation>
     </message>
@@ -8339,6 +8335,26 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Ana yol nesnelerini saat yönünde seçin. Eğri yönünü tersine çevirmek için &lt;b&gt;SHIFT&lt;/b&gt;&apos;i veya eğri yönünü korumak için &lt;b&gt;CTRL&lt;/b&gt;&apos;yi kullanın.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kesim Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Dikiş Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Varsayılan Çentik Yap</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Çentiği Düzenle</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Çentiği Kaldır</translation>
     </message>
 </context>
 <context>
@@ -9041,6 +9057,38 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source> per file</source>
         <translation> dosya başına</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Görünüm</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10093,6 +10141,46 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Hoş Geldiniz</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Görünüm</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Ölçümler</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10243,6 +10331,34 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10341,6 +10457,34 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12753,16 +12897,8 @@ load in SeamlyME as usual.
         <translation>İkinci kenar dik açı</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Çentik</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tür</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Hiçbiri</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12815,6 +12951,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kesim Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Dikiş Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Varsayılan Çentik Yap</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Çentiği Düzenle</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Çentiği Kaldır</translation>
     </message>
 </context>
 <context>

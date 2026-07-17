@@ -8123,10 +8123,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Duplicat</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Cresătură</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8341,6 +8337,26 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Arată crestătura liniei de tăiere</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Arată crestătura liniei de coasere</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Setează ca și crestătură implicită</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ediztează crestătura</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Elimină crestătura</translation>
     </message>
 </context>
 <context>
@@ -9043,6 +9059,38 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source> per file</source>
         <translation> pe fișier</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspect</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10095,6 +10143,46 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bun venit</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspect</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Măsurători</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10245,6 +10333,34 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10343,6 +10459,34 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12755,16 +12899,8 @@ load in SeamlyME as usual.
         <translation>Unghi drept la a doua muchie</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Cresătură</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tip</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Niciunul</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12817,6 +12953,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Șterge</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Arată crestătura liniei de tăiere></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Arată crestătura liniei de coasere</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Setează ca și crestătură implicită</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ediztează crestătura</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Elimină crestătura</translation>
     </message>
 </context>
 <context>
