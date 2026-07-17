@@ -53,6 +53,16 @@ Tasks moved here from `TODO.md` when all their subtasks are complete.
 - [x] Layout Mode buttons run `C:\Users\susan\Projects\Seamly2D-private\seamlyLayout\qt_frontend\build\Debug\SeamlyLayout.exe`: added the development-build location as a lookup fallback in `Application2D::seamlyLayoutFilePath()` (after the settings override and the install-directory check)
 - [x] Doxygen brief + inline comments updated on the touched function
 
+## Task 8 — Verification (2026-07-17)
+
+- [x] Build `vlayout`, `vformat`, `seamly2d` — built clean on branch `run-seamlyLayout` (which carries the `svg-update` work) with qmake + jom, Qt 6.10.1 msvc2022_64 kit and the MSVC toolset from VS 18 Community (the only Qt/VS installed on this machine); all apps, libs and tests link
+- [x] Layout Mode click produces tagged SVG; SeamlyLayout launches with it — verified in the running GUI (Shift+L on the loaded richmond test pattern): `<basename>.pieces.svg` written beside the pattern file, SeamlyLayout development build launched detached with the SVG path as its argument, and the generated SVG passes the full structural inspection
+- [x] Manual SVG exports carry the attributes — CLI `--format 0 --exportOnlyDetails` with and without `--text2paths`, both fully tagged (12 pieces; seamline/cutline/internal_path/grainline/piece_label/pattern_label groups)
+- [x] SVG inspection — script-verified: every group under `pattern-1` has `data-type`/`data-type-number`/`data-parent`, pattern/piece groups carry `data-name`, per-type counters and structured ids correct, all ids unique, no empty groups, no `M0,0`/empty-`d` paths
+- [x] Visual diff vs baseline (`status-docs/baseline/richmond-shirt-baseline_pieces.svg`) — canvas/viewBox identical; all 53 geometry paths (seamlines, cutlines, internal paths, grainlines) byte-identical; stroke colors/line weights identical; only the 64 label glyph-outline paths differ (font outline rendering of the older installed baseline build), same count/colors/placement
+- [x] DXF / PDF / PNG export regression — flat DXF (AC1027) has 2305 polylines including label outlines (validates the recursive text traversal of Task 3), AAMA DXF keeps 34 TEXT label entities, PDF valid (%PDF-1.4, proper EOF), PNG valid 7318×3423
+- [x] `data-*` contract documented in `status-docs/svg-data-attributes.md` and mirrored to `seamlyLayout/docs/status-docs/svg-data-attributes.md`
+
 ## Task 7 — Rewire Layout Mode entry (`src/app/seamly2d/mainwindow.cpp`, `core/application_2d.*`)
 
 - [x] `showLayoutMode()`: guards + `preparePiecesForLayout` kept; `exportPiecesToSeamlyLayout()` writes `<basename>.pieces.svg` beside the pattern file (replaces the built-in layout-settings auto-click)
