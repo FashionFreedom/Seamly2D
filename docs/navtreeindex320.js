@@ -1,5 +1,7 @@
 var NAVTREEINDEX320 =
 {
+"df/dfb/classPosixFileMgr.html#ac50e06a7c6e701ef3f17e5033aab54e6":[3,0,397,8],
+"df/dfb/classPosixFileMgr.html#ad8831118ca9567398749d24fe83c5b17":[3,0,397,4],
 "df/dfb/classPosixFileMgr.html#af0ffe0824f2fb479dea7353d31141e54":[3,0,397,0],
 "df/dfb/classPosixFileMgr.html#af18cbd61162b14fbd5f13233bd14d4f4":[3,0,397,9],
 "df/dfb/classPosixFileMgr.html#afd796df9146766255cfa87b79885a258":[3,0,397,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX320 =
 "dir_8e19ef231f6da53ff37fb70c699aa23d.html":[4,0,0,1,15,1,0,0,6,2],
 "dir_93a7de65b6c5c2d2866ed2f7bf29219a.html":[4,0,0,1,13,1],
 "dir_954da4fb244336370dc8b706a4b53926.html":[4,0,0,1,15,2,0,0,7,0],
-"dir_97d355521c4cf933b349974c8906fc73.html":[4,0,0,0,0,1],
-"dir_980c2351a738a4e9ee9bb4b228ac9d83.html":[4,0,0,1,5],
-"dir_9b6bd0170ff56259d331a59e6a9c04fc.html":[4,0,0,1,13,1,0]
+"dir_97d355521c4cf933b349974c8906fc73.html":[4,0,0,0,0,1]
 };

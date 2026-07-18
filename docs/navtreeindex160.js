@@ -1,5 +1,7 @@
 var NAVTREEINDEX160 =
 {
+"d8/d73/classXMLUri.html#a4185008199c4fff8824fcabf8e187c25":[3,0,877,61],
+"d8/d73/classXMLUri.html#a4185008199c4fff8824fcabf8e187c25":[3,0,877,63],
 "d8/d73/classXMLUri.html#a4185008199c4fff8824fcabf8e187c25":[3,0,877,60],
 "d8/d73/classXMLUri.html#a42b08eed7d5e162daf66ebcbd047b402":[3,0,877,217],
 "d8/d73/classXMLUri.html#a61218f2709c521ad181e26d0e5614c98":[3,0,877,174],
@@ -247,7 +249,5 @@ var NAVTREEINDEX160 =
 "d8/d82/mingw_2include_2xercesc_2validators_2schema_2identity_2IdentityConstraintHandler_8hpp.html":[4,0,0,1,15,1,0,0,7,3,0,8],
 "d8/d82/mingw_2include_2xercesc_2validators_2schema_2identity_2IdentityConstraintHandler_8hpp_source.html":[4,0,0,1,15,1,0,0,7,3,0,8],
 "d8/d82/msvc-arm64_2include_2xercesc_2util_2XMLASCIITranscoder_8hpp.html":[4,0,0,1,15,3,0,0,6,89],
-"d8/d82/msvc-arm64_2include_2xercesc_2util_2XMLASCIITranscoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,89],
-"d8/d83/vboolproperty_8cpp.html":[4,0,0,1,11,0,9],
-"d8/d83/vboolproperty_8cpp_source.html":[4,0,0,1,11,0,9]
+"d8/d82/msvc-arm64_2include_2xercesc_2util_2XMLASCIITranscoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,89]
 };

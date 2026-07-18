@@ -1,5 +1,7 @@
 var NAVTREEINDEX179 =
 {
+"d9/d72/classVisToolPointFromArcAndTangent.html#ab995b27d4023b6f20b89c09e31fb4cac":[3,0,661,12],
+"d9/d72/classVisToolPointFromArcAndTangent.html#ad424089efe80ab8a22372ebd041e5ca6":[3,0,661,8],
 "d9/d72/classVisToolPointFromArcAndTangent.html#adb319c89ac32ef8fccd402563f3c1690":[3,0,661,11],
 "d9/d72/classVisToolPointFromArcAndTangent.html#ae94edd0d3fd027944946c8e92bfa4f8f":[3,0,661,10],
 "d9/d72/classVisToolPointFromArcAndTangent.html#af01bb4dcbff1600b47a845708b7b5640":[3,0,661,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX179 =
 "d9/d7d/classDayDatatypeValidator.html#a93153b7ebc4679ecc3c8ff49e72e2c2e":[3,0,80,28],
 "d9/d7d/classDayDatatypeValidator.html#a9fc338df24b776ba258e99d39267385b":[3,0,80,5],
 "d9/d7d/classDayDatatypeValidator.html#a9fc338df24b776ba258e99d39267385b":[3,0,80,9],
-"d9/d7d/classDayDatatypeValidator.html#a9fc338df24b776ba258e99d39267385b":[3,0,80,13],
-"d9/d7d/classDayDatatypeValidator.html#a9fc338df24b776ba258e99d39267385b":[3,0,80,1],
-"d9/d7d/classDayDatatypeValidator.html#aa0313b46706748fdc4de73c5960fe929":[3,0,80,19]
+"d9/d7d/classDayDatatypeValidator.html#a9fc338df24b776ba258e99d39267385b":[3,0,80,13]
 };

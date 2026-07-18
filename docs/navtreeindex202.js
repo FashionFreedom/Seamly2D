@@ -1,5 +1,7 @@
 var NAVTREEINDEX202 =
 {
+"da/dac/mingw_2include_2xercesc_2util_2PlatformUtils_8hpp.html#a01eb3d17e652da6041c6f12038db8d1f":[4,0,0,1,15,1,0,0,6,45,2],
+"da/dac/mingw_2include_2xercesc_2util_2PlatformUtils_8hpp_source.html":[4,0,0,1,15,1,0,0,6,45],
 "da/dae/vtoolcutspline_8cpp.html":[4,0,0,1,13,1,0,2,1,0,4],
 "da/dae/vtoolcutspline_8cpp_source.html":[4,0,0,1,13,1,0,2,1,0,4],
 "da/daf/scalesceneitems_8h.html":[4,0,0,1,14,30],
@@ -247,7 +249,5 @@ var NAVTREEINDEX202 =
 "da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,78],
 "da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,79],
 "da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,76],
-"da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,77],
-"da/db5/classDOMNotationImpl.html#ac112a44e27ae4e4dee349367e2419ec7":[3,0,211,0],
-"da/db5/classDOMNotationImpl.html#ac112a44e27ae4e4dee349367e2419ec7":[3,0,211,9]
+"da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,77]
 };

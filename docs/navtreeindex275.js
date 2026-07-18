@@ -1,5 +1,7 @@
 var NAVTREEINDEX275 =
 {
+"dd/dfa/image__dialog_8h_source.html":[4,0,0,1,3,0,1],
+"dd/dfb/mingw_2include_2xercesc_2util_2RefStackOf_8c.html":[4,0,0,1,15,1,0,0,6,58],
 "dd/dfb/mingw_2include_2xercesc_2util_2RefStackOf_8c_source.html":[4,0,0,1,15,1,0,0,6,58],
 "dd/dfd/classVisToolPointOfIntersectionCurves.html":[3,0,664],
 "dd/dfd/classVisToolPointOfIntersectionCurves.html#a07732b2490f9aeed461355e5b43b3054":[3,0,664,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX275 =
 "de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#af1e9d23d3bdea6596ce6b7beb6005778":[4,0,0,1,15,2,0,0,6,117,33],
 "de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#af97146fa88abd8e8f3a60fb18e92bff5":[4,0,0,1,15,2,0,0,6,117,43],
 "de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#afac598d87ddc6dfd09716761eddcaa17":[4,0,0,1,15,2,0,0,6,117,3],
-"de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aff94d3618f2a0c9ee96a31d6009c96cc":[4,0,0,1,15,2,0,0,6,117,75],
-"de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp_source.html":[4,0,0,1,15,2,0,0,6,117],
-"de/d04/classVToolTrueDarts.html":[3,0,771]
+"de/d03/msvc_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#aff94d3618f2a0c9ee96a31d6009c96cc":[4,0,0,1,15,2,0,0,6,117,75]
 };

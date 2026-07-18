@@ -1,5 +1,7 @@
 var NAVTREEINDEX208 =
 {
+"db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,19],
+"db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,18],
 "db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,17],
 "db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,16],
 "db/d1a/classCharOp.html#abfc867b29fdfb2651738cbdebec4a106":[3,0,52,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX208 =
 "db/d31/msvc_2include_2xercesc_2dom_2DOMLSParser_8hpp_source.html":[4,0,0,1,15,2,0,0,0,27],
 "db/d32/classLayoutSettingsDialog.html":[3,0,327],
 "db/d32/classLayoutSettingsDialog.html#a0091e6a31c014df6bd4bcf00423ac7a9":[3,0,327,19],
-"db/d32/classLayoutSettingsDialog.html#a021bfee729c109afd00c2261ffa8fca6":[3,0,327,30],
-"db/d32/classLayoutSettingsDialog.html#a0257342d3e5e771f46cff736e8cf4d8d":[3,0,327,49],
-"db/d32/classLayoutSettingsDialog.html#a03acf3f62d4d53bfa2be58274b68baac":[3,0,327,67]
+"db/d32/classLayoutSettingsDialog.html#a021bfee729c109afd00c2261ffa8fca6":[3,0,327,30]
 };

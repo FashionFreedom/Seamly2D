@@ -1,5 +1,7 @@
 var NAVTREEINDEX311 =
 {
+"df/d53/classENTITYDatatypeValidator.html#ac6d2fad627394f4f444faed354ec50cd":[3,0,263,35],
+"df/d53/classENTITYDatatypeValidator.html#ac6d2fad627394f4f444faed354ec50cd":[3,0,263,34],
 "df/d53/classENTITYDatatypeValidator.html#ac6d2fad627394f4f444faed354ec50cd":[3,0,263,33],
 "df/d53/classENTITYDatatypeValidator.html#ac6d2fad627394f4f444faed354ec50cd":[3,0,263,32],
 "df/d53/classVFormulaProperty.html":[3,0,624],
@@ -247,7 +249,5 @@ var NAVTREEINDEX311 =
 "df/d55/classXMLRecognizer.html#ab973e532735c562c5a929330e63e2f71":[3,0,861,23],
 "df/d55/classXMLRecognizer.html#ab973e532735c562c5a929330e63e2f71":[3,0,861,22],
 "df/d55/classXMLRecognizer.html#ab973e532735c562c5a929330e63e2f71":[3,0,861,20],
-"df/d55/classXMLRecognizer.html#abc3ebe5960b3e8d4ff7100109124beb3":[3,0,861,17],
-"df/d55/classXMLRecognizer.html#abc3ebe5960b3e8d4ff7100109124beb3":[3,0,861,18],
-"df/d55/classXMLRecognizer.html#abc3ebe5960b3e8d4ff7100109124beb3":[3,0,861,16]
+"df/d55/classXMLRecognizer.html#abc3ebe5960b3e8d4ff7100109124beb3":[3,0,861,17]
 };

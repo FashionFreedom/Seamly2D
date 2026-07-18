@@ -1,5 +1,7 @@
 var NAVTREEINDEX189 =
 {
+"d9/de3/measurements_8cpp.html#a772fb4ce4d5274cf05708d161720b52e":[4,0,0,1,5,0,1],
+"d9/de3/measurements_8cpp_source.html":[4,0,0,1,5,0],
 "d9/de4/qmudef_8h.html":[4,0,0,1,2,1],
 "d9/de4/qmudef_8h.html#a059d9ded86d5decac7047f702575e722":[4,0,0,1,2,1,3],
 "d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e":[4,0,0,1,2,1,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX189 =
 "da/d05/classXMLPlatformUtils.html#a15fd7d673d0c6ce193b5c068d0c4b872":[3,0,856,70],
 "da/d05/classXMLPlatformUtils.html#a15fd7d673d0c6ce193b5c068d0c4b872":[3,0,856,71],
 "da/d05/classXMLPlatformUtils.html#a1b90b8d2129bdcdfa4bf615db8dd85a7":[3,0,856,126],
-"da/d05/classXMLPlatformUtils.html#a1b90b8d2129bdcdfa4bf615db8dd85a7":[3,0,856,125],
-"da/d05/classXMLPlatformUtils.html#a1b90b8d2129bdcdfa4bf615db8dd85a7":[3,0,856,127],
-"da/d05/classXMLPlatformUtils.html#a1e0c3bc2589f19a2cf7d1427c4d2de7b":[3,0,856,24]
+"da/d05/classXMLPlatformUtils.html#a1b90b8d2129bdcdfa4bf615db8dd85a7":[3,0,856,125]
 };

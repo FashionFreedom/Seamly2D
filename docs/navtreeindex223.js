@@ -1,5 +1,7 @@
 var NAVTREEINDEX223 =
 {
+"dc/d0e/classXercesLocationPath.html#a4f9d381fc7e9acee9da9e79439cabb3c":[3,0,790,14],
+"dc/d0e/classXercesLocationPath.html#a4f9d381fc7e9acee9da9e79439cabb3c":[3,0,790,2],
 "dc/d0e/classXercesLocationPath.html#a50c169a44b1e1464dfc647d2b0cd4e3d":[3,0,790,11],
 "dc/d0e/classXercesLocationPath.html#a50c169a44b1e1464dfc647d2b0cd4e3d":[3,0,790,15],
 "dc/d0e/classXercesLocationPath.html#a50c169a44b1e1464dfc647d2b0cd4e3d":[3,0,790,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX223 =
 "dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,44],
 "dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,21],
 "dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,20],
-"dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,22],
-"dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,23],
-"dc/d19/classXPathMatcher.html#af95653b67f42b0a4d8e867b4baa0b81e":[3,0,884,63]
+"dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,22]
 };

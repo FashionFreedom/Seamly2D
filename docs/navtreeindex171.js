@@ -1,5 +1,7 @@
 var NAVTREEINDEX171 =
 {
+"d8/dfa/classXMLResourceIdentifier.html#a1ea6a449cfbc8d8be9b66357e4676a54":[3,0,863,22],
+"d8/dfa/classXMLResourceIdentifier.html#a1ea6a449cfbc8d8be9b66357e4676a54":[3,0,863,23],
 "d8/dfa/classXMLResourceIdentifier.html#a2d1df53930f8f193b092570aab17dd00":[3,0,863,46],
 "d8/dfa/classXMLResourceIdentifier.html#a2d1df53930f8f193b092570aab17dd00":[3,0,863,44],
 "d8/dfa/classXMLResourceIdentifier.html#a2d1df53930f8f193b092570aab17dd00":[3,0,863,47],
@@ -247,7 +249,5 @@ var NAVTREEINDEX171 =
 "d9/d04/classXMLStringTokenizer.html#aa3711c4078124f7d76108be26976c268":[3,0,870,35],
 "d9/d04/classXMLStringTokenizer.html#aa3711c4078124f7d76108be26976c268":[3,0,870,34],
 "d9/d04/classXMLStringTokenizer.html#aa3711c4078124f7d76108be26976c268":[3,0,870,33],
-"d9/d04/classXMLStringTokenizer.html#aa3711c4078124f7d76108be26976c268":[3,0,870,32],
-"d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,14],
-"d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,10]
+"d9/d04/classXMLStringTokenizer.html#aa3711c4078124f7d76108be26976c268":[3,0,870,32]
 };

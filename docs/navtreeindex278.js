@@ -1,5 +1,7 @@
 var NAVTREEINDEX278 =
 {
+"de/d10/classDialogSpline.html#a776dc8c2d890181113d35b0120cc392a":[3,0,131,21],
+"de/d10/classDialogSpline.html#a7db5c85035117cc06c9e45775f2dc124":[3,0,131,16],
 "de/d10/classDialogSpline.html#a80dedf3d59ae48efa7964879317b1220":[3,0,131,36],
 "de/d10/classDialogSpline.html#a84fed56821609d137b9cd26fe3454651":[3,0,131,34],
 "de/d10/classDialogSpline.html#a8c23c10913bcfdfcaa2695c2148fc567":[3,0,131,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX278 =
 "de/d1b/classXMLElementDecl.html#a02b6406b856f8d0c1717eb0ab480038d":[3,0,826,146],
 "de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,70],
 "de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,68],
-"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,71],
-"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,69],
-"de/d1b/classXMLElementDecl.html#a0f4408a0ec37618f16d58211e6c49593":[3,0,826,102]
+"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,71]
 };

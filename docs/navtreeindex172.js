@@ -1,5 +1,7 @@
 var NAVTREEINDEX172 =
 {
+"d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,14],
+"d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,10],
 "d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,2],
 "d9/d04/classXMLStringTokenizer.html#aa58b2cc48da8cf89e3661729306950a8":[3,0,870,6],
 "d9/d04/classXMLStringTokenizer.html#ab67fc38fceaa0a8e17b8bbefa35d2b6f":[3,0,870,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX172 =
 "d9/d18/classDOMDeepNodeListImpl.html#ac0d6a29faf74299ed124c44a8622d764":[3,0,154,41],
 "d9/d18/classDOMDeepNodeListImpl.html#aea40f5afdcdc27644fdedd61a7c2b2a0":[3,0,154,19],
 "d9/d18/classDOMDeepNodeListImpl.html#aea40f5afdcdc27644fdedd61a7c2b2a0":[3,0,154,18],
-"d9/d18/classDOMDeepNodeListImpl.html#aea40f5afdcdc27644fdedd61a7c2b2a0":[3,0,154,17],
-"d9/d18/classDOMDeepNodeListImpl.html#aea40f5afdcdc27644fdedd61a7c2b2a0":[3,0,154,16],
-"d9/d18/macx_2include_2xercesc_2dom_2DOMNamedNodeMap_8hpp.html":[4,0,0,1,15,0,0,0,0,33]
+"d9/d18/classDOMDeepNodeListImpl.html#aea40f5afdcdc27644fdedd61a7c2b2a0":[3,0,154,17]
 };

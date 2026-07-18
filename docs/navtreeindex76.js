@@ -1,5 +1,7 @@
 var NAVTREEINDEX76 =
 {
+"d4/d94/classDOMNode.html#acdde5f520bc2063cc4b92965952cc863":[3,0,200,110],
+"d4/d94/classDOMNode.html#acdde5f520bc2063cc4b92965952cc863":[3,0,200,111],
 "d4/d94/classDOMNode.html#acdde5f520bc2063cc4b92965952cc863":[3,0,200,109],
 "d4/d94/classDOMNode.html#acdde5f520bc2063cc4b92965952cc863":[3,0,200,108],
 "d4/d94/classDOMNode.html#ad9c9bd1315498cdf1beaa36c47f91aee":[3,0,200,121],
@@ -247,7 +249,5 @@ var NAVTREEINDEX76 =
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#abfccdc3cecfef76c8d22d7c739e9df83":[4,0,0,1,15,3,0,0,6,84,34],
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ac1dc16aaa5d3bc8729ba040b1551dd58":[4,0,0,1,15,3,0,0,6,84,12],
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ac34e9710b4ddde6ae50b897b1b535c89":[4,0,0,1,15,3,0,0,6,84,33],
-"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ac3b379dc3d5ad60325273f2a853d301a":[4,0,0,1,15,3,0,0,6,84,10],
-"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ad803dfdcc3460aff0c557f47c1310a11":[4,0,0,1,15,3,0,0,6,84,5],
-"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#adc8ba3b0de070ad1230b7d89bc9215d0":[4,0,0,1,15,3,0,0,6,84,24]
+"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ac3b379dc3d5ad60325273f2a853d301a":[4,0,0,1,15,3,0,0,6,84,10]
 };

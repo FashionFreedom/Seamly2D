@@ -1,5 +1,7 @@
 var NAVTREEINDEX274 =
 {
+"dd/de9/measurements__def_8cpp.html#aa255fcdb34622e9944dd553805480748":[4,0,0,1,10,4,76],
+"dd/de9/measurements__def_8cpp.html#aa422454d31d356bb7bddd088d39dbf01":[4,0,0,1,10,4,246],
 "dd/de9/measurements__def_8cpp.html#aa4c6b375a3012df595f82ee3debf7ece":[4,0,0,1,10,4,162],
 "dd/de9/measurements__def_8cpp.html#aa4e2291dc5f0cda66d17a3f124ee9303":[4,0,0,1,10,4,120],
 "dd/de9/measurements__def_8cpp.html#aa6dd6fa7a23ffc1b6ff0addd48ed5825":[4,0,0,1,10,4,133],
@@ -247,7 +249,5 @@ var NAVTREEINDEX274 =
 "dd/df2/classParserForXMLSchema.html#ae3d759c01c7a8a62fd504e675872bd2b":[3,0,383,12],
 "dd/df6/vabstractmainwindow_8cpp.html":[4,0,0,1,14,35],
 "dd/df6/vabstractmainwindow_8cpp_source.html":[4,0,0,1,14,35],
-"dd/dfa/image__dialog_8h.html":[4,0,0,1,3,0,1],
-"dd/dfa/image__dialog_8h_source.html":[4,0,0,1,3,0,1],
-"dd/dfb/mingw_2include_2xercesc_2util_2RefStackOf_8c.html":[4,0,0,1,15,1,0,0,6,58]
+"dd/dfa/image__dialog_8h.html":[4,0,0,1,3,0,1]
 };

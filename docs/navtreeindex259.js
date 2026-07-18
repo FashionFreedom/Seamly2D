@@ -1,5 +1,7 @@
 var NAVTREEINDEX259 =
 {
+"dc/db4/classEntityResolver.html#ac9faa5b6cf895c4684bc5995479c5982":[3,0,264,19],
+"dc/db4/classEntityResolver.html#ac9faa5b6cf895c4684bc5995479c5982":[3,0,264,18],
 "dc/db4/classEntityResolver.html#ac9faa5b6cf895c4684bc5995479c5982":[3,0,264,16],
 "dc/db4/classEntityResolver.html#af1a5983d33fce4be37fce9bfe05d5d3e":[3,0,264,8],
 "dc/db4/classEntityResolver.html#af1a5983d33fce4be37fce9bfe05d5d3e":[3,0,264,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX259 =
 "dc/dcf/classWindowsFileMgr.html#a4db434bbc2b12e084bad97dea5b271ae":[3,0,783,13],
 "dc/dcf/classWindowsFileMgr.html#a4db434bbc2b12e084bad97dea5b271ae":[3,0,783,14],
 "dc/dcf/classWindowsFileMgr.html#a4db434bbc2b12e084bad97dea5b271ae":[3,0,783,12],
-"dc/dcf/classWindowsFileMgr.html#a756e9832a6f6360710c406669f8802a2":[3,0,783,4],
-"dc/dcf/classWindowsFileMgr.html#a756e9832a6f6360710c406669f8802a2":[3,0,783,2],
-"dc/dcf/classWindowsFileMgr.html#a756e9832a6f6360710c406669f8802a2":[3,0,783,0]
+"dc/dcf/classWindowsFileMgr.html#a756e9832a6f6360710c406669f8802a2":[3,0,783,4]
 };

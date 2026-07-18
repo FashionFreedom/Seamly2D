@@ -1,5 +1,7 @@
 var NAVTREEINDEX299 =
 {
+"de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,176],
+"de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,179],
 "de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,177],
 "de/dbf/classSchemaElementDecl.html#abcef1342a3c9a8a29107a2ec91187622":[3,0,468,124],
 "de/dbf/classSchemaElementDecl.html#abd96fc19df8e36ca019233b7eab4613e":[3,0,468,131],
@@ -247,7 +249,5 @@ var NAVTREEINDEX299 =
 "de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,3],
 "de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,11],
 "de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,7],
-"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,15],
-"de/dca/classTimeDatatypeValidator.html#a7f391d8d7fb22c31ce8f9e1f3c3b3b37":[3,0,501,5],
-"de/dca/classTimeDatatypeValidator.html#a7f391d8d7fb22c31ce8f9e1f3c3b3b37":[3,0,501,1]
+"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,15]
 };

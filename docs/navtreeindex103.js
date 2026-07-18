@@ -1,5 +1,7 @@
 var NAVTREEINDEX103 =
 {
+"d5/de4/classVToolPointFromArcAndTangent.html#a281faef2098e12498619eb06bed10321":[3,0,760,14],
+"d5/de4/classVToolPointFromArcAndTangent.html#a392ad65ab7620ed5ad74424f4f67d94d":[3,0,760,20],
 "d5/de4/classVToolPointFromArcAndTangent.html#a44bfaa5fb9628714b5df9876922531e4":[3,0,760,2],
 "d5/de4/classVToolPointFromArcAndTangent.html#a4da840f6a4e387d48398acb719df7f80":[3,0,760,21],
 "d5/de4/classVToolPointFromArcAndTangent.html#a514c9074c863ae72a540e41b549495dc":[3,0,760,23],
@@ -247,7 +249,5 @@ var NAVTREEINDEX103 =
 "d5/de8/classDOMCDATASectionImpl.html#aca7ee276a6bf200d9b5d4855ea0c9ddd":[3,0,146,115],
 "d5/de8/classDOMCDATASectionImpl.html#aca7ee276a6bf200d9b5d4855ea0c9ddd":[3,0,146,114],
 "d5/de8/classDOMCDATASectionImpl.html#aca7ee276a6bf200d9b5d4855ea0c9ddd":[3,0,146,113],
-"d5/de8/classDOMCDATASectionImpl.html#aca7ee276a6bf200d9b5d4855ea0c9ddd":[3,0,146,112],
-"d5/de8/classDOMCDATASectionImpl.html#acc699077da611b4d04119f51a1740d41":[3,0,146,95],
-"d5/de8/classDOMCDATASectionImpl.html#acc699077da611b4d04119f51a1740d41":[3,0,146,94]
+"d5/de8/classDOMCDATASectionImpl.html#aca7ee276a6bf200d9b5d4855ea0c9ddd":[3,0,146,112]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX295 =
 {
+"de/d91/classSAX2XMLFilterImpl.html#a9662be74814648ea05b32b193d104f15":[3,0,457,84],
+"de/d91/classSAX2XMLFilterImpl.html#a9662be74814648ea05b32b193d104f15":[3,0,457,85],
 "de/d91/classSAX2XMLFilterImpl.html#a97bc16c9ef7a0e807685c280e7912540":[3,0,457,108],
 "de/d91/classSAX2XMLFilterImpl.html#a9d4a90524391a1acb4648a5333ca0cc7":[3,0,457,25],
 "de/d91/classSAX2XMLFilterImpl.html#a9d4a90524391a1acb4648a5333ca0cc7":[3,0,457,27],
@@ -247,7 +249,5 @@ var NAVTREEINDEX295 =
 "de/d9d/mingw_2include_2xercesc_2validators_2datatype_2TimeDatatypeValidator_8hpp.html":[4,0,0,1,15,1,0,0,7,1,31],
 "de/d9d/mingw_2include_2xercesc_2validators_2datatype_2TimeDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,31],
 "de/da1/about2d__dialog_8h.html":[4,0,0,0,0,1,2],
-"de/da1/about2d__dialog_8h_source.html":[4,0,0,0,0,1,2],
-"de/da1/macx_2include_2xercesc_2framework_2XMLGrammarPool_8hpp.html":[4,0,0,1,15,0,0,0,1,28],
-"de/da1/macx_2include_2xercesc_2framework_2XMLGrammarPool_8hpp_source.html":[4,0,0,1,15,0,0,0,1,28]
+"de/da1/about2d__dialog_8h_source.html":[4,0,0,0,0,1,2]
 };

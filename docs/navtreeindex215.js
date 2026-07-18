@@ -1,5 +1,7 @@
 var NAVTREEINDEX215 =
 {
+"db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,45],
+"db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,46],
 "db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,47],
 "db/d7f/classXMLBigInteger.html#a54cb980635b26ca3990c82975752cc96":[3,0,808,39],
 "db/d7f/classXMLBigInteger.html#a54cb980635b26ca3990c82975752cc96":[3,0,808,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX215 =
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,3,15],
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,0,15],
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,0,5],
-"db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,1,0],
-"db/d85/classDTDScanner.html":[3,0,247],
-"db/d85/classDTDScanner.html#a00db817ce649970fc403a29fe56bf7c0":[3,0,247,148]
+"db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,1,0]
 };

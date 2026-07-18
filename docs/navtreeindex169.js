@@ -1,5 +1,7 @@
 var NAVTREEINDEX169 =
 {
+"d8/dd8/classDTDEntityDecl.html#a91104399ad605856b2ed1a40a075f2cb":[3,0,244,6],
+"d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,9],
 "d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,15],
 "d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,21],
 "d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX169 =
 "d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html":[4,0,0,1,15,2,0,0,6,3,24],
 "d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,24],
 "d8/de9/vistooltruedarts_8cpp.html":[4,0,0,1,13,3,0,39],
-"d8/de9/vistooltruedarts_8cpp_source.html":[4,0,0,1,13,3,0,39],
-"d8/dea/pattern__piece__tool_8cpp.html":[4,0,0,1,13,1,2],
-"d8/dea/pattern__piece__tool_8cpp_source.html":[4,0,0,1,13,1,2]
+"d8/de9/vistooltruedarts_8cpp_source.html":[4,0,0,1,13,3,0,39]
 };

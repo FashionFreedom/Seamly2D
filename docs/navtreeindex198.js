@@ -1,5 +1,7 @@
 var NAVTREEINDEX198 =
 {
+"da/d80/classDOMDeepNodeListPool.html#a6535824e39f5e2ad6c06c977514e7d1c":[3,0,155,10],
+"da/d80/classDOMDeepNodeListPool.html#a6535824e39f5e2ad6c06c977514e7d1c":[3,0,155,5],
 "da/d80/classDOMDeepNodeListPool.html#a6572b1caea48d79d724cd7f015e43847":[3,0,155,36],
 "da/d80/classDOMDeepNodeListPool.html#a6572b1caea48d79d724cd7f015e43847":[3,0,155,37],
 "da/d80/classDOMDeepNodeListPool.html#a6572b1caea48d79d724cd7f015e43847":[3,0,155,38],
@@ -247,7 +249,5 @@ var NAVTREEINDEX198 =
 "da/d92/namespaceqmu.html#ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef":[2,0,21,51,0],
 "da/d92/namespaceqmu.html#ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5":[2,0,21,51,1],
 "da/d92/namespaceqmu.html#ab345e0ad1f32adb507926310276656e5":[2,0,21,13],
-"da/d92/namespaceqmu.html#ab8ba891f9b9aaa685826be34760c2ce7":[2,0,21,19],
-"da/d92/namespaceqmu.html#abbab00fd89ac8a2da37ce7d2967571ba":[2,0,21,30],
-"da/d92/namespaceqmu.html#abeea51e1b81fbfc9ea2a65ac530f0b11":[2,0,21,40]
+"da/d92/namespaceqmu.html#ab8ba891f9b9aaa685826be34760c2ce7":[2,0,21,19]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX209 =
 {
+"db/d32/classLayoutSettingsDialog.html#a0257342d3e5e771f46cff736e8cf4d8d":[3,0,327,49],
+"db/d32/classLayoutSettingsDialog.html#a03acf3f62d4d53bfa2be58274b68baac":[3,0,327,67],
 "db/d32/classLayoutSettingsDialog.html#a0608780fb8dae0577f75d4921609fcde":[3,0,327,50],
 "db/d32/classLayoutSettingsDialog.html#a0b45e09f070e6f0c27b04c4e75ea302b":[3,0,327,54],
 "db/d32/classLayoutSettingsDialog.html#a11f0cdaf173944fca34d86f03eb163be":[3,0,327,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX209 =
 "db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,63],
 "db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,62],
 "db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,61],
-"db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,60],
-"db/d3c/classDOMRange.html#ac7b3e797ad3f681f081a07836e369e3a":[3,0,216,39],
-"db/d3c/classDOMRange.html#ac7b3e797ad3f681f081a07836e369e3a":[3,0,216,38]
+"db/d3c/classDOMRange.html#ab59587f18cf9b1969a3f9ec8c687c950":[3,0,216,60]
 };

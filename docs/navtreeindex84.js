@@ -1,6 +1,8 @@
 var NAVTREEINDEX84 =
 {
+"d5/d36/classDOMLSInput.html#ad1c027e5f5170065d3d128250a558969":[3,0,186,0],
 "d5/d36/classDOMLSInput.html#adaa24f2165e6753cbf089d0a0b8293aa":[3,0,186,15],
+"d5/d36/classDOMLSInput.html#adaa24f2165e6753cbf089d0a0b8293aa":[3,0,186,12],
 "d5/d36/classDOMLSInput.html#adaa24f2165e6753cbf089d0a0b8293aa":[3,0,186,13],
 "d5/d36/classDOMLSInput.html#adaa24f2165e6753cbf089d0a0b8293aa":[3,0,186,14],
 "d5/d36/classDOMLSInput.html#adad6f7c1098b3a5e8dae1ea7e539f599":[3,0,186,35],
@@ -145,6 +147,7 @@ var NAVTREEINDEX84 =
 "d5/d41/classPatternPieceDialog.html#a3a304a8b3d2513579f8c6396cdbf8a3d":[3,0,384,71],
 "d5/d41/classPatternPieceDialog.html#a3cdbd8c2a5b22c1fd10421e22fb70b30":[3,0,384,128],
 "d5/d41/classPatternPieceDialog.html#a407c84956bb2985843123bcd8a79d906":[3,0,384,32],
+"d5/d41/classPatternPieceDialog.html#a413fef7ddd2ecc28aa731c0fcc2afbfe":[3,0,384,103],
 "d5/d41/classPatternPieceDialog.html#a4176c9334fa1ad8055c9117c49e46dcf":[3,0,384,54],
 "d5/d41/classPatternPieceDialog.html#a42dbcc55330ad90e327cc224bd1e0b58":[3,0,384,145],
 "d5/d41/classPatternPieceDialog.html#a4481c21f402b723acd162312a8fcda48":[3,0,384,152],
@@ -230,7 +233,6 @@ var NAVTREEINDEX84 =
 "d5/d41/classPatternPieceDialog.html#abd9caf91037b8c04d4bba1c092a1340d":[3,0,384,43],
 "d5/d41/classPatternPieceDialog.html#abeeda94bc71e89318818f3b6e694c69e":[3,0,384,28],
 "d5/d41/classPatternPieceDialog.html#abf55889f7c42623220f59836be1b2da5":[3,0,384,127],
-"d5/d41/classPatternPieceDialog.html#ac102c05c34eb29628dff5e368483e30b":[3,0,384,103],
 "d5/d41/classPatternPieceDialog.html#ac64b5fb0104726ae2384448e45eaa776":[3,0,384,109],
 "d5/d41/classPatternPieceDialog.html#ac713d0297ecb5ff52960680940834ce0":[3,0,384,124],
 "d5/d41/classPatternPieceDialog.html#ac7bdfadb0233328ea9e12b7105d12b5d":[3,0,384,138],
@@ -247,7 +249,5 @@ var NAVTREEINDEX84 =
 "d5/d41/classPatternPieceDialog.html#adca16264ef8e4a7e48fbe782d6136f5e":[3,0,384,45],
 "d5/d41/classPatternPieceDialog.html#adf1ad7877ec404da1853c5c82c98e5ee":[3,0,384,34],
 "d5/d41/classPatternPieceDialog.html#adfc5f86259ddb823740bad27f2579f44":[3,0,384,153],
-"d5/d41/classPatternPieceDialog.html#ae12abc28cb62add069f7925f5380db8b":[3,0,384,36],
-"d5/d41/classPatternPieceDialog.html#ae609e760ebc00dc2396f30e252cc52f5":[3,0,384,119],
-"d5/d41/classPatternPieceDialog.html#ae6310a089147fc4745c2f1b9b3b16500":[3,0,384,44]
+"d5/d41/classPatternPieceDialog.html#ae12abc28cb62add069f7925f5380db8b":[3,0,384,36]
 };

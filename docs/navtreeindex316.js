@@ -1,5 +1,7 @@
 var NAVTREEINDEX316 =
 {
+"df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,70],
+"df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,69],
 "df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,68],
 "df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,71],
 "df/db4/classXTemplateSerializer.html#a4a4ea2c2f740026be4c8c569ad189c0f":[3,0,921,152],
@@ -247,7 +249,5 @@ var NAVTREEINDEX316 =
 "df/dc9/macx_2include_2xercesc_2dom_2impl_2DOMNodeListImpl_8hpp_source.html":[4,0,0,1,15,0,0,0,0,0,31],
 "df/dc9/mingw_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp.html":[4,0,0,1,15,1,0,0,7,0,12],
 "df/dc9/mingw_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,7,0,12],
-"df/dca/classMoveGroupItem.html":[3,0,358],
-"df/dca/classMoveGroupItem.html#a1ff25edc89259b2bc1d4609f93ea0f9e":[3,0,358,6],
-"df/dca/classMoveGroupItem.html#a2d4cd25bc3e7a3ff6c1bf2d3f3f27475":[3,0,358,8]
+"df/dca/classMoveGroupItem.html":[3,0,358]
 };
