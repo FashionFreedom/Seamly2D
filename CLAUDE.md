@@ -28,6 +28,7 @@ Two toolchains are in use — do not treat the difference as an error:
 - **New file naming:** new source files must NOT begin with `v` — begin them with `s` (existing `v*` files keep their names when edited)
 - **License headers:** every new file gets a GPLv3-or-later header with copyright 2026 Seamly2D Project and author slspencer (follow the existing header block style, e.g. `src/libs/vformat/svg_generator.cpp`)
 - **Documentation:** all new code and every modified function gets a Doxygen-compatible `@brief` (plus `@param`/`@return` where applicable) and inline comments so an intermediate-level programmer can follow the workflow, control flow, and data flow
+- **Markdown lint:** ignore MD041 (first-line-heading) warnings — they are editor diagnostic noise, not blocking issues; do not restructure files to silence them
 
 ## Task Tracking
 
