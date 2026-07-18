@@ -2,16 +2,6 @@
 
 See `PROJECT_PLAN.md` for full details. Check off subtasks as they are accomplished; when every subtask of a task is complete, move the task to `COMPLETED.md`.
 
-## Task 11 — Add `cut_path` to the SVG component groups
-
-A cut path is a closed internal path that is cut out of the piece and can have its own seam allowance. The data model already separates them (`VLayoutPiecePath::isCutPath()`; stored as `m_cutoutPaths` on `VLayoutPiece`), but `createCutoutPathItem()` (`src/libs/vlayout/vlayoutpiece.cpp`) still tags them `internal_path` as a placeholder because the SVG spec defined no dedicated type.
-
-- [ ] Tag `createCutoutPathItem()` items with `data-type="cut_path"` instead of `"internal_path"` (remove the placeholder comment); cut paths get their own per-piece counter and `piece-<n>-cut_path-<m>` ids automatically via `addComponentGroups()`
-- [ ] Add `cut_path` to the type list in `status-docs/new-attributes.csv` and document its semantics (closed, cut out, may carry a seam allowance) in `status-docs/svg-data-attributes.md` and the mirror in `seamlyLayout/docs/status-docs/svg-data-attributes.md`
-- [ ] Verify export with a pattern containing at least one cutout internal path (the richmond test pattern may not have one — add one or pick another test pattern): cutouts appear as `data-type="cut_path"` groups, plain internal paths keep `data-type="internal_path"`, counters/ids/`data-parent` correct
-- [ ] Regression: tagged SVG inspection still passes; Layout Mode `.pieces.svg` carries the new type; DXF / PDF / PNG unaffected
-- [ ] Doxygen briefs + inline comments on all touched functions
-
 ## Task 13 — Windows .msi installer for seamly2d, seamlyme, and seamlylayout (x64 + arm64)
 
 Build a Windows MSI installer that installs all three apps — `seamly2d`, `seamlyme`, and the SeamlyLayout daughter app — with separate packages (or a multi-arch pipeline) for x64 and arm64.
@@ -41,7 +31,7 @@ In the updated Windows installation process (Task 13 installer), prompt the user
 - [ ] Handle upgrades: preserve both previously chosen paths when a newer MSI upgrades in place
 - [ ] Verify use case #1: fresh install to `D:\Program Files (x86)\Seamly2D`, exes run from there, directory present on system `PATH`, uninstall cleans it up
 - [ ] Verify use case #2: user data root set to `G:\My Drive\seamly2d`, apps read/write pattern and measurement data there, path registered automatically, uninstall/upgrade behave correctly
-- [ ] Document both prompts and the silent-install property equivalents in the installer docs
+- [ ] Document both prompts and the silent-install property equivalents in the installer docs89
 
 ## Task 15 — Unify app settings/preferences directories under one `Seamly` folder (Windows)
 
@@ -169,8 +159,15 @@ Known observations (2026-07-18, while verifying Task 10):
 - The release-built `Seamly2DTests.exe` in `build/` exited within seconds but silently with no output when probed (likely the missing-`xerces` DLL case, needs a re-probe with proper `PATH`)
 - The debug `seamly2d.exe` GUI app itself starts fine on this machine, so plain `QApplication` init is not the blocker
 
+**Root cause found (2026-07-18, while verifying Task 11):** the "hang" is a hidden modal error dialog, not a deadlock. `Seamly2DTests.exe` finds the Qt debug DLLs via `PATH` but Qt looks for the **platform plugin** (`platforms\qwindowsd.dll`) next to the *executable* — windeployqt deployed the plugin directories next to `seamly2d.exe` only, so `QGuiApplication` startup hits the "no Qt platform plugin could be initialized" `qFatal` in `qguiapplication.cpp`, which in a debug-CRT build pops a modal dialog and blocks (the popup was observed on screen while the suite "hung"). With `QT_PLUGIN_PATH` set to `seamly2d-build-debug\src\app\seamly2d\bin` (in addition to `PATH`), the suite runs to completion in seconds. Remaining loose ends for this task:
+
+- The suite currently exits with status 2 (QTest failure count OR-ed across suites) — some pre-existing suite has 2 local failures on Windows; identify and fix (the per-suite `-o file,txt` logger is overwritten by each `qExec`, so per-suite output capture needs the runner script or a logger tweak)
+- QTest output to **stdout** is lost when redirected (console and `cmd` redirection both yield 0 bytes; the `-o <file>,txt` file logger works fine) — investigate/route around in the `st.ps1` runner
+- New suites verified locally via the file logger: `TST_SvgComponentTags` (Task 11) all pass
+
 - [ ] Reproduce and locate the block: run under a debugger / capture a stack dump (procdump, WinDbg — neither currently installed), or bisect by commenting out test classes / instrumenting `qttestmainlambda.cpp` `main()` with early `fprintf(stderr, ...)`+`fflush` markers to find the last line reached
-- [ ] Rule out the usual suspects found in the startup path: settings/INI access in `TestApplication2D::openSettings()`, lock files (`VLockGuard`), network access at startup, printer enumeration (`QPrinter` — the comment in `main()` says the app object exists "For QPrinter"), and Qt platform plugin selection (try `-platform offscreen` / `minimal`)
-- [ ] Fix the root cause so the suite runs to completion locally on Windows (both debug and release builds)
-- [ ] Make the suite easy to run: a small script (e.g. `scripts/st.ps1`, "seamly2d tests", s-prefix rule) that sets `PATH` to the deployed DLL directory (debug Qt DLLs + xerces) and runs `Seamly2DTests.exe`, mirroring the `sd.ps1` style, with the GPLv3 header and `.SYNOPSIS`
+- [x] Reproduce and locate the block — root cause found 2026-07-18: missing platform plugin next to the test exe → modal `qFatal` dialog from `qguiapplication.cpp` (see above); workaround `QT_PLUGIN_PATH` confirmed
+- [ ] Fix it properly so the suite runs without manual env setup: deploy the Qt plugins next to `Seamly2DTests.exe` (windeployqt post-link step on the test target, mirroring `seamly2d.pro`) or set the plugin path in the runner script; both debug and release builds
+- [ ] Identify and fix the 2 pre-existing local test failures (suite exit status 2; suite unknown — per-suite output capture needed, see stdout loose end above)
+- [ ] Make the suite easy to run: a small script (e.g. `scripts/st.ps1`, "seamly2d tests", s-prefix rule) that sets `PATH` to the deployed DLL directory (debug Qt DLLs + xerces) plus `QT_PLUGIN_PATH`, runs `Seamly2DTests.exe`, and works around the lost-stdout issue (file logger), mirroring the `sd.ps1` style, with the GPLv3 header and `.SYNOPSIS`
 - [ ] Verify: full suite passes locally (including `TST_SvgTextItem` from Task 10); document the Windows test-run procedure in `.github/README-BUILDS.md`

@@ -1,5 +1,5 @@
 Attribute,Applies to elements in piece mode,Default Value,Alternate Value
-data-type,All,{pattern | piece | seamline | cutline | internal_path | grainline | notch | pattern_label | piece_label } ? additional data-types will be added later ,
-data-type-number,All,each piece has counters for each data-type ? increment current piece’s data-type counter and assign to data-type-cumberountn,
-data-parent,All,if data-type=piece then data-parent=pattern element’s id else data-parent=current pattern piece element’s id,
-data-name,data-type=pattern | piece,If data-type=pattern then pattern name else if data-type=piece then piece name | piece letter else data-name=””ece then piece name elsea,
+data-type,All,{pattern | piece | seamline | cutline | internal_path | cut_path | grainline | notch | pattern_label | piece_label } ? additional data-types will be added later ,
+data-type-number,All,each piece has counters for each data-type ? increment current pieceï¿½s data-type counter and assign to data-type-cumberountn,
+data-parent,All,if data-type=piece then data-parent=pattern elementï¿½s id else data-parent=current pattern piece elementï¿½s id,
+data-name,data-type=pattern | piece,If data-type=pattern then pattern name else if data-type=piece then piece name | piece letter else data-name=ï¿½ï¿½ece then piece name elsea,
