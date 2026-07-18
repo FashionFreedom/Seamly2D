@@ -8085,10 +8085,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8302,6 +8298,26 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9004,6 +9020,38 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> per file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10057,6 +10105,46 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10207,6 +10295,34 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10304,6 +10420,34 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12708,15 +12852,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12770,6 +12906,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation type="unfinished">למחוק</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

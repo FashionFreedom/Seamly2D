@@ -4,7 +4,7 @@
 //  @date   Dec 11, 2022
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -1657,6 +1657,7 @@ void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
 void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    bool isBuiltInSA = oldPiece.IsSeamAllowanceBuiltIn();
     if (!oldPiece.isLocked())
     {
         VPiece newPiece = oldPiece;
@@ -1667,8 +1668,12 @@ void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
             if (node.GetId() == id && node.GetTypeTool() == Tool::NodePoint)
             {
                 node.setNotch(notchData.isNotch);
+                node.setShowNotch(notchData.showCutline);
+                node.setShowSeamlineNotch(notchData.showSeamline && !isBuiltInSA);
                 node.setNotchType(notchData.type);
                 node.setNotchSubType(notchData.subType);
+                node.setNotchLength(notchData.length);
+                node.setNotchWidth(notchData.width);
                 node.setNotchCount(notchData.count);
                 newPiece.GetPath()[i] = node;
 

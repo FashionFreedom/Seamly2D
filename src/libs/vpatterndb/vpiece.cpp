@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -486,12 +486,12 @@ void VPiece::setAnchors(const QVector<quint32> &anchors)
     d->m_anchors = anchors;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief MissingNodes find missing nodes in piece. When we deleted object in piece and return this piece need
 ///  understand, what nodes need make invisible.
 /// @param piece changed piece.
 /// @return  list with missing nodes.
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 QVector<quint32> VPiece::MissingNodes(const VPiece &piece) const
 {
     return d->m_path.MissingNodes(piece.GetPath());
@@ -533,19 +533,19 @@ void VPiece::SetPatternPieceData(const VPieceLabelData &data)
     d->m_ppData = data;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns full access to the pattern piece data object
 /// @return pattern piece data object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VPieceLabelData &VPiece::GetPatternPieceData()
 {
     return d->m_ppData;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the read only reference to the pattern piece data object
 /// @return pattern piece data object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VPieceLabelData &VPiece::GetPatternPieceData() const
 {
     return d->m_ppData;
@@ -557,37 +557,37 @@ void VPiece::SetPatternInfo(const VPatternLabelData &info)
     d->m_piPatternInfo = info;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns full access to the pattern info geometry object
 /// @return pattern info geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VPatternLabelData &VPiece::GetPatternInfo()
 {
     return d->m_piPatternInfo;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the read only reference to the pattern info geometry object
 /// @return pattern info geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VPatternLabelData &VPiece::GetPatternInfo() const
 {
     return d->m_piPatternInfo;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief VDetail::GetGrainlineGeometry full access to the grainline geometry object
 /// @return reference to grainline geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VGrainlineData &VPiece::GetGrainlineGeometry()
 {
     return d->m_glGrainline;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief VDetail::GetGrainlineGeometry returns the read-only reference to the grainline geometry object
 /// @return reference to grainline geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VGrainlineData &VPiece::GetGrainlineGeometry() const
 {
     return d->m_glGrainline;
@@ -979,7 +979,14 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
     }
     else
     {
-        return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex, mainPathPoints);
+        if (path.at(notchIndex).showNotch())
+        {
+            return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex, mainPathPoints);
+        }
+        else
+        {
+            return QVector<QLineF>();
+        }
     }
 }
 
