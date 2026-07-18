@@ -156,3 +156,21 @@ Current label text handling (all outline-font based, and staying available): the
 - [ ] Coordinate with Task 10/Task 21: labels in a single-stroke font exporting as `<text>` should reference the bundled single-line font name so SeamlyLayout can match it
 - [ ] Verify: canvas single-stroke labels legible at typical zooms with correct placement, mirroring, and rotation; outline-font behavior unchanged everywhere; tagged pieces SVG / `.pieces.svg` / `--text2paths` / DXF / PDF / PNG correct in both font modes
 - [ ] Doxygen briefs + inline comments on all touched functions; document the font architecture in the repo docs
+
+## Task 23 — Fix the Seamly2DTests suite hanging at startup on Windows (local runs)
+
+The full unit-test suite cannot be run locally on this Windows machine: the debug-built `Seamly2DTests.exe` (from `scripts/sd.ps1`, exe at `seamly2d-build-debug/src/test/Seamly2DTest/bin/`) hangs at startup — no QTest output at all (not even the first `********* Start testing` banner), near-zero CPU after 10+ minutes, so it is blocked waiting on something, not computing. CI is unaffected (the `linux-test` job runs the suite under xvfb on Ubuntu), so the new-test gate currently relies entirely on CI.
+
+Known observations (2026-07-18, while verifying Task 10):
+
+- The exe needs DLLs that are not on `PATH` by default: the **debug** Qt DLLs (`Qt6Cored.dll` etc.) and `xerces-c_3_3.dll`, both deployed next to `seamly2d.exe` in `seamly2d-build-debug/src/app/seamly2d/bin/` — without them it dies instantly with `0xC0000135` (that part is understood, not the bug)
+- With that directory on `PATH` the process starts but blocks before any test output; stdout redirection shows nothing even after minutes
+- The hang is before or during `TestApplication2D` startup in `qttestmainlambda.cpp` (`VAbstractApplication` → `QApplication` init, `openSettings()`) or in the first test class init — exact point unknown
+- The release-built `Seamly2DTests.exe` in `build/` exited within seconds but silently with no output when probed (likely the missing-`xerces` DLL case, needs a re-probe with proper `PATH`)
+- The debug `seamly2d.exe` GUI app itself starts fine on this machine, so plain `QApplication` init is not the blocker
+
+- [ ] Reproduce and locate the block: run under a debugger / capture a stack dump (procdump, WinDbg — neither currently installed), or bisect by commenting out test classes / instrumenting `qttestmainlambda.cpp` `main()` with early `fprintf(stderr, ...)`+`fflush` markers to find the last line reached
+- [ ] Rule out the usual suspects found in the startup path: settings/INI access in `TestApplication2D::openSettings()`, lock files (`VLockGuard`), network access at startup, printer enumeration (`QPrinter` — the comment in `main()` says the app object exists "For QPrinter"), and Qt platform plugin selection (try `-platform offscreen` / `minimal`)
+- [ ] Fix the root cause so the suite runs to completion locally on Windows (both debug and release builds)
+- [ ] Make the suite easy to run: a small script (e.g. `scripts/st.ps1`, "seamly2d tests", s-prefix rule) that sets `PATH` to the deployed DLL directory (debug Qt DLLs + xerces) and runs `Seamly2DTests.exe`, mirroring the `sd.ps1` style, with the GPLv3 header and `.SYNOPSIS`
+- [ ] Verify: full suite passes locally (including `TST_SvgTextItem` from Task 10); document the Windows test-run procedure in `.github/README-BUILDS.md`
