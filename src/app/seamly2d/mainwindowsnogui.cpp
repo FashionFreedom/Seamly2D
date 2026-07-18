@@ -1315,6 +1315,10 @@ void MainWindowsNoGUI::RestorePaper(int index) const
  * grouped under an invisible label group item), so a recursive walk is required
  * to reach them.
  *
+ * The label lines are SvgTextItem instances (vlayout), a QGraphicsSimpleTextItem
+ * subclass that shares its type(); both the type check and the cast below
+ * therefore match them.
+ *
  * @param item      graphics item whose descendants are searched.
  * @param textItems output list the found text items are appended to.
  */

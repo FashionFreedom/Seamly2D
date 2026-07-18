@@ -1,1 +1,7 @@
-Add a rule: For tasks in TODO.md --> create a new branch, implement the task, write and perform unit test(s), stage changes, commit, and push.
+Add tasks in TODO.md -->
+
+1.
+
+Add a rules to CLAUDE.md -->
+
+1.

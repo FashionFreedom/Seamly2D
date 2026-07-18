@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core testlib gui printsupport xml 
+# widgets: QGraphicsScene in tst_svgtextitem; svg: QSvgGenerator in tst_svgtextitem
+QT       += core testlib gui widgets svg printsupport xml
 
 TARGET = Seamly2DTests
 
@@ -49,7 +50,8 @@ SOURCES += \
     tst_vpointf.cpp \
     tst_readval.cpp \
     tst_vtranslatevars.cpp \
-    tst_vabstractpiece.cpp
+    tst_vabstractpiece.cpp \
+    tst_svgtextitem.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -75,7 +77,8 @@ HEADERS += \
     tst_vpointf.h \
     tst_readval.h \
     tst_vtranslatevars.h \
-    tst_vabstractpiece.h
+    tst_vabstractpiece.h \
+    tst_svgtextitem.h
 
 include(warnings.pri)
 

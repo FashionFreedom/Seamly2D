@@ -56,7 +56,7 @@ All ids are unique and XML-valid by construction. **Breaking change vs. pre-cont
 - No empty `<g>` elements and no spurious `M0,0` / empty-`d` paths (Qt generator artifacts are stripped).
 - Components that paint nothing (e.g. a piece without notches or internal paths) are simply absent — consumers must not assume every type exists in every piece.
 - Component geometry is emitted in the merged document's single coordinate space (the flat-arranged paper; `viewBox` in scene units at the generator resolution). No transforms are introduced beyond what Qt's SVG generator emits inside the groups.
-- Label groups contain `<text>` elements when "text as paths" is off, `<path>` outlines when on; the Layout Mode handoff always keeps real text.
+- Label groups contain real `<text>` elements when "text as paths" is off (label lines are rendered by `SvgTextItem`, `src/libs/vlayout/svg_text_item.cpp`, which paints through `QPainter::drawText()` so Qt's SVG engine emits `<text>` with the label's `font-family`, `font-size`, `font-weight`/`font-style` and fill color), and `<path>` glyph outlines when on (`--text2paths` / "text as paths"); the Layout Mode handoff always keeps real text.
 
 ## Semantics / notes
 
@@ -65,5 +65,5 @@ All ids are unique and XML-valid by construction. **Breaking change vs. pre-cont
 - **`notch`** — all notches of a piece in one group for now; per-notch splitting is a possible follow-on if the nesting algorithm needs individual notches.
 - **`internal_path`** — one group per internal path *and* per cutout path (the CSV defines no separate cutout type yet).
 - **`grainline`** — grainline arrow geometry.
-- **`piece_label` / `pattern_label`** — the on-piece label text blocks.
+- **`piece_label` / `pattern_label`** — the on-piece label text blocks. One `<text>` element per label line (or one `<path>` per line in text-as-paths mode); per-line bold/italic, alignment, middle-eliding to the label width, mirroring and rotation are preserved in either mode.
 - Counters are per SvgGenerator instance: one instance = one file = one pattern.
