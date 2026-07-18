@@ -2,16 +2,6 @@
 
 See `PROJECT_PLAN.md` for full details. Check off subtasks as they are accomplished; when every subtask of a task is complete, move the task to `COMPLETED.md`.
 
-## Task 11 — Add `cut_path` to the SVG component groups
-
-A cut path is a closed internal path that is cut out of the piece and can have its own seam allowance. The data model already separates them (`VLayoutPiecePath::isCutPath()`; stored as `m_cutoutPaths` on `VLayoutPiece`), but `createCutoutPathItem()` (`src/libs/vlayout/vlayoutpiece.cpp`) still tags them `internal_path` as a placeholder because the SVG spec defined no dedicated type.
-
-- [ ] Tag `createCutoutPathItem()` items with `data-type="cut_path"` instead of `"internal_path"` (remove the placeholder comment); cut paths get their own per-piece counter and `piece-<n>-cut_path-<m>` ids automatically via `addComponentGroups()`
-- [ ] Add `cut_path` to the type list in `status-docs/new-attributes.csv` and document its semantics (closed, cut out, may carry a seam allowance) in `status-docs/svg-data-attributes.md` and the mirror in `seamlyLayout/docs/status-docs/svg-data-attributes.md`
-- [ ] Verify export with a pattern containing at least one cutout internal path (the richmond test pattern may not have one — add one or pick another test pattern): cutouts appear as `data-type="cut_path"` groups, plain internal paths keep `data-type="internal_path"`, counters/ids/`data-parent` correct
-- [ ] Regression: tagged SVG inspection still passes; Layout Mode `.pieces.svg` carries the new type; DXF / PDF / PNG unaffected
-- [ ] Doxygen briefs + inline comments on all touched functions
-
 ## Task 13 — Windows .msi installer for seamly2d, seamlyme, and seamlylayout (x64 + arm64)
 
 Build a Windows MSI installer that installs all three apps — `seamly2d`, `seamlyme`, and the SeamlyLayout daughter app — with separate packages (or a multi-arch pipeline) for x64 and arm64.
@@ -41,7 +31,7 @@ In the updated Windows installation process (Task 13 installer), prompt the user
 - [ ] Handle upgrades: preserve both previously chosen paths when a newer MSI upgrades in place
 - [ ] Verify use case #1: fresh install to `D:\Program Files (x86)\Seamly2D`, exes run from there, directory present on system `PATH`, uninstall cleans it up
 - [ ] Verify use case #2: user data root set to `G:\My Drive\seamly2d`, apps read/write pattern and measurement data there, path registered automatically, uninstall/upgrade behave correctly
-- [ ] Document both prompts and the silent-install property equivalents in the installer docs
+- [ ] Document both prompts and the silent-install property equivalents in the installer docs89
 
 ## Task 15 — Unify app settings/preferences directories under one `Seamly` folder (Windows)
 

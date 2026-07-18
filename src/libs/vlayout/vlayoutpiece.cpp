@@ -1097,8 +1097,7 @@ void VLayoutPiece::createCutoutPathItem(int i, QGraphicsItem *parent) const
     qreal        lineWeight = ToPixel(d->m_cutoutPaths.at(i).getLineWeight().toDouble(), Unit::Mm);
 
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
-    // Cutouts share the internal_path data-type until the SVG spec defines a dedicated one.
-    item->setData(PieceItemData::ItemType, QStringLiteral("internal_path"));
+    item->setData(PieceItemData::ItemType, QStringLiteral("cut_path"));
     item->setPath(d->transform.map(d->m_cutoutPaths.at(i).GetPainterPath()));
     item->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
 }

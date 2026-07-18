@@ -16,6 +16,16 @@ Labels exported as glyph outlines even with "text as paths" off: `QGraphicsSimpl
 
 Note: the `textAsPaths == true` branch emits filled glyph *outlines*, which remains the behavior for outline fonts; an optional single-stroke (Hershey) alternative is tracked separately in Task 22.
 
+## Task 11 — Add `cut_path` to the SVG component groups (2026-07-18)
+
+A cut path is a closed internal path that is cut out of the piece and can have its own seam allowance. The data model already separated them (`VLayoutPiecePath::isCutPath()`; stored as `m_cutoutPaths` on `VLayoutPiece`), but `createCutoutPathItem()` (`src/libs/vlayout/vlayoutpiece.cpp`) tagged them `internal_path` as a placeholder because the SVG spec defined no dedicated type.
+
+- [x] Tag `createCutoutPathItem()` items with `data-type="cut_path"` instead of `"internal_path"` (placeholder comment removed); cut paths get their own per-piece counter and `piece-<n>-cut_path-<m>` ids automatically via `addComponentGroups()` (also updated the `ItemType` doc comment in `vlayoutdef.h`)
+- [x] Add `cut_path` to the type list in `status-docs/new-attributes.csv` and document its semantics (closed, cut out, may carry a seam allowance) in `status-docs/svg-data-attributes.md` and the mirror in `seamlyLayout/docs/status-docs/svg-data-attributes.md`
+- [x] Verify export with a pattern containing a cutout internal path (richmond has none — verified with a copy of the richmond pattern with the "Left Cut" internal path of piece "Front" flipped to `cut="true"`, CLI `--format 0 --exportOnlyDetails`): the cutout appears as `piece-1-cut_path-1` (`data-type="cut_path"`, own counter starting at 1, `data-parent="piece-1"`), the piece's 4 plain internal paths keep `data-type="internal_path"` with their own counter, all other pieces unaffected
+- [x] Regression: tagged SVG inspection passes (all 12 pieces, ids/counters/parents correct); the CLI export writes the same `*_pieces.svg` the Layout Mode handoff uses (same `GetItem()` → `SvgGenerator` path), so `.pieces.svg` carries the new type; PDF and PNG exports of the cutout pattern succeed, and DXF/PDF/PNG never read `PieceItemData::ItemType`, so they are unaffected by the tag change
+- [x] Doxygen briefs + inline comments on all touched functions; unit tests `tst_svgcomponenttags.cpp` added to `Seamly2DTest` (item-tree tagging: 1× internal_path + 2× cut_path; end-to-end `SvgGenerator` export: ids, per-type counters, `data-parent`) — run in CI (`linux-test`); the local Windows debug suite still hangs at startup (Task 23, pre-existing)
+
 ## Task 0 — Setup
 
 - [x] Copy approved plan to `PROJECT_PLAN.md`

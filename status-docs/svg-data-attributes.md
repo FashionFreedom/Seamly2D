@@ -23,6 +23,7 @@ Whole-scene exports (draft blocks) keep the legacy untagged single-group structu
       <g id="piece-1-cutline-1"  data-type="cutline"  data-type-number="1" data-parent="piece-1">…</g>
       <g id="piece-1-notch-1"    data-type="notch"    data-type-number="1" data-parent="piece-1">…</g>
       <g id="piece-1-internal_path-1" data-type="internal_path" data-type-number="1" data-parent="piece-1">…</g>
+      <g id="piece-1-cut_path-1"      data-type="cut_path"      data-type-number="1" data-parent="piece-1">…</g>
       <g id="piece-1-grainline-1"     data-type="grainline"     data-type-number="1" data-parent="piece-1">…</g>
       <g id="piece-1-piece_label-1"   data-type="piece_label"   data-type-number="1" data-parent="piece-1">…</g>
       <g id="piece-1-pattern_label-1" data-type="pattern_label" data-type-number="1" data-parent="piece-1">…</g>
@@ -36,7 +37,7 @@ Whole-scene exports (draft blocks) keep the legacy untagged single-group structu
 
 | Attribute | Applies to | Value |
 |---|---|---|
-| `data-type` | every tagged `<g>` | One of `pattern`, `piece`, `seamline`, `cutline`, `internal_path`, `grainline`, `notch`, `piece_label`, `pattern_label`. More types may be added later; consumers must ignore unknown types gracefully. |
+| `data-type` | every tagged `<g>` | One of `pattern`, `piece`, `seamline`, `cutline`, `internal_path`, `cut_path`, `grainline`, `notch`, `piece_label`, `pattern_label`. More types may be added later; consumers must ignore unknown types gracefully. |
 | `data-type-number` | every tagged `<g>` | Per-scope 1-based counter for that `data-type`. The pattern is always `1`; pieces count up across the file; component counters reset per piece and per type. |
 | `data-parent` | `piece` and component groups | For a piece: the pattern group's `id` (`pattern-1`). For a component: the owning piece group's `id` (e.g. `piece-3`). The pattern group has no `data-parent` (it is the root). |
 | `data-name` | `pattern`, `piece` | Pattern name, or piece name. Omitted when empty. |
@@ -63,7 +64,8 @@ All ids are unique and XML-valid by construction. **Breaking change vs. pre-cont
 - **`seamline`** — the sew line of the piece.
 - **`cutline`** — the seam-allowance outline (cut line). Pieces drawn without a seam allowance may have no `cutline` group.
 - **`notch`** — all notches of a piece in one group for now; per-notch splitting is a possible follow-on if the nesting algorithm needs individual notches.
-- **`internal_path`** — one group per internal path *and* per cutout path (the CSV defines no separate cutout type yet).
+- **`internal_path`** — one group per plain (non-cutout) internal path of the piece.
+- **`cut_path`** — one group per internal *cutout* path: a closed path that is cut out of the piece (a hole) and may carry its own seam allowance. Distinguished in the pattern data by `VLayoutPiecePath::isCutPath()`; the nesting algorithm may treat cutout interiors as usable area, unlike `internal_path` markings.
 - **`grainline`** — grainline arrow geometry.
 - **`piece_label` / `pattern_label`** — the on-piece label text blocks. One `<text>` element per label line (or one `<path>` per line in text-as-paths mode); per-line bold/italic, alignment, middle-eliding to the label width, mirroring and rotation are preserved in either mode.
 - Counters are per SvgGenerator instance: one instance = one file = one pattern.
