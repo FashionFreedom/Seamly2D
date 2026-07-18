@@ -8149,10 +8149,6 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Dupliquer</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Repère de montage</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Repère en T</translation>
     </message>
@@ -8363,6 +8359,26 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Sélectionnez les objets du chemin principal dans le sens des aiguilles d&apos;une montre. Utilisez &lt;b&gt;MAJ&lt;/b&gt; pour inverser le sens de la courbe ou &lt;b&gt;CTRL&lt;/b&gt; pour conserver le sens de la courbe.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Cran de ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Cran de ligne de couture</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Définir comme cran par défaut</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Modifier le cran</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Supprimer le cran</translation>
     </message>
 </context>
 <context>
@@ -9067,6 +9083,38 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source> per file</source>
         <translation> par fichier</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apparence</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Système</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10121,6 +10169,46 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Positive Sign</source>
         <translation>Signe positif</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenue</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apparence</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Mesures</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Système</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10272,6 +10360,34 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Positive Sign</source>
         <translation>Signe positif</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Système</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10370,6 +10486,34 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Positive Sign</source>
         <translation>Signe positif</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Système</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12782,16 +12926,8 @@ charger dans SeamlyME comme d&apos;habitude.
         <translation>Angle droit au second bord</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Repère de montage</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Type</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Aucun</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12844,6 +12980,26 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Delete</source>
         <translation>Supprimer</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Cran de ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Cran de ligne de couture</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Définir comme cran par défaut</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Modifier le cran</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Supprimer le cran</translation>
     </message>
 </context>
 <context>

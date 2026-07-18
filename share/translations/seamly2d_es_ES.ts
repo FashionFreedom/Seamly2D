@@ -8161,10 +8161,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Duplicado</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Piquete</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Piquete T</translation>
     </message>
@@ -8375,6 +8371,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Presione la tecla &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la pieza.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar piquete de línea de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar piquete de línea de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Establecer como piquete predeterminado</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar piquete</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Eliminar piquete</translation>
     </message>
 </context>
 <context>
@@ -9078,6 +9094,38 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> por archivo</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10132,6 +10180,46 @@ actualización:</translation>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Medidas</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10282,6 +10370,34 @@ actualización:</translation>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10380,6 +10496,34 @@ actualización:</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12794,16 +12938,8 @@ load in SeamlyME as usual.
         <translation>Segundo arista ángulo recto</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Piquete</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Ninguno</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12856,6 +12992,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar piquete de línea de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar piquete de línea de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Establecer como piquete predeterminado</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar piquete</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Eliminar piquete</translation>
     </message>
 </context>
 <context>

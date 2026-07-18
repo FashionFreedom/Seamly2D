@@ -8121,10 +8121,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>复制</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>缺口</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>T缺口</translation>
     </message>
@@ -8339,6 +8335,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>顺时针选择主路径对象，使用&lt;b&gt;SHIFT&lt;/b&gt;反转曲线方向，或使用&lt;b&gt;CTRL&lt;/b&gt;保持曲线方向.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>显示裁剪线剪口</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>显示缝纫线剪口</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>设为默认剪口</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>编辑剪口</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>移除剪口</translation>
     </message>
 </context>
 <context>
@@ -9041,6 +9057,38 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> 按文件</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>外貌</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>系统</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10093,6 +10141,46 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>正号</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>欢迎</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>外貌</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>系统</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10243,6 +10331,34 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>正号</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>系统</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10341,6 +10457,34 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>正号</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>系统</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12754,16 +12898,8 @@ load in SeamlyME as usual.
         <translation>第二条边直角</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>缺口</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>类型</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>没有任何</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12816,6 +12952,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>删除</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>显示裁剪线剪口</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>显示缝纫线剪口</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>设为默认剪口</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>编辑剪口</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>移除剪口</translation>
     </message>
 </context>
 <context>

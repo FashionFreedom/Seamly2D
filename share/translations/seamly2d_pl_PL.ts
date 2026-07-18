@@ -8197,10 +8197,6 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Duplikat</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Wycięcie</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Wycięcie T</translation>
     </message>
@@ -8339,6 +8335,26 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Just rear</source>
         <translation>Tuż z tyłu</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Pokaż nacięcie linii cięcia</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Pokaż nacięcie linii szwu></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Ustaw jako nacięcie domyślne</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Edytuj nacięcie></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Usuń nacięcie</translation>
     </message>
 </context>
 <context>
@@ -9041,6 +9057,38 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Znak pozytywny</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Wygląd</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10093,6 +10141,46 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Positive Sign</source>
         <translation>Znak pozytywny</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Witamy</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Wygląd</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Pomiary</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10243,6 +10331,34 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Positive Sign</source>
         <translation>Znak pozytywny</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10341,6 +10457,34 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Znak pozytywny</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12753,16 +12897,8 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Druga krawędź pod kątem prostym</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Wycięcie</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Typ</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Brak</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12815,6 +12951,26 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Delete</source>
         <translation>Usuń</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Pokaż nacięcie linii cięcia</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Pokaż nacięcie linii szwu</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>"Ustaw jako nacięcie domyślne></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Edytuj nacięcie</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Usuń nacięcie</translation>
     </message>
 </context>
 <context>

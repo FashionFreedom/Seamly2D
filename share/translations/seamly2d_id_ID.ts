@@ -8121,10 +8121,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Duplikat</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Takik</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Takik</translation>
     </message>
@@ -8339,6 +8335,26 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Tampilkan Takikan Garis Potong</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Tampilkan Takikan Garis Kampuh</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Jadikan Takikan Standar</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ubah Takikan</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Hapus Takikan</translation>
     </message>
 </context>
 <context>
@@ -9041,6 +9057,38 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source> per file</source>
         <translation>per berkas</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Penampilan</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10093,6 +10141,46 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Selamat datang</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Penampilan</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>pengukuran</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10243,6 +10331,34 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10341,6 +10457,34 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12754,16 +12898,8 @@ unggah ke SeamlyME seperti biasa.
         <translation>Sudut siku-siku tepi kedua</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Takik</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Jenis</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Tidak ada</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12816,6 +12952,26 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Delete</source>
         <translation>hapus</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Tampilkan Takikan Garis Potong</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Tampilkan Takikan Garis Kampuh</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Jadikan Takikan Standar</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ubah Takikan</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Hapus Takikan</translation>
     </message>
 </context>
 <context>

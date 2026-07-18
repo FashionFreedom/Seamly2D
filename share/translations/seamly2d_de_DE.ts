@@ -8104,10 +8104,6 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Duplizieren</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Markierung</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TMarkierung</translation>
     </message>
@@ -8322,6 +8318,26 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren, oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Cutline-Knipse anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Nahtknipse anzeigen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als Standardknipse festlegen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Knipse bearbeiten</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Knipse entfernen</translation>
     </message>
 </context>
 <context>
@@ -9025,6 +9041,38 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source> per file</source>
         <translation>pro Datei</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aussehen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10077,6 +10125,46 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Positive Sign</source>
         <translation>Positives Vorzeichen</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aussehen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Maße</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10227,6 +10315,34 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Positive Sign</source>
         <translation>Positives Vorzeichen</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10325,6 +10441,34 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Positive Sign</source>
         <translation>Positives Vorzeichen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>System</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12741,16 +12885,8 @@ wie gewohnt in SeamlyME laden können.
         <translation>Zweite Kante rechter Winkel</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Markierung</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Typ</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Keine</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12803,6 +12939,26 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Delete</source>
         <translation>Löschen</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Cutline-Knipse anzeigen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Nahtknipse anzeigen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als Standardknipse festlegen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Knipse bearbeiten</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Knipse entfernen</translation>
     </message>
 </context>
 <context>

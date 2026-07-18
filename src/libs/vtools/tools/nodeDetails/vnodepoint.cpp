@@ -1,10 +1,10 @@
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vnodepoint.cpp
 //  @author Douglas S Caskey
 //  @date  1 Mar, 2025
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,35 +20,33 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 
-//******************************************************************************
-//
+//---------------------------------------------------------------------------------------------------------------------
 //   @file   vnodepoint.cpp
 //   @author Roman Telezhynskyi <dismine(at)gmail.com>
 //   @date   November 15, 2013
 //
-//   @brief
-//   @copyright
-//   This source code is part of the Valentine project, a pattern making
-//   program, whose allow create and modeling patterns of clothing.
-//   Copyright (C) 2013-2015 Seamly2D project
-//   <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013 - 2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
 //
-//   Seamly2D is free software: you can redistribute it and/or modify
-//   it under the terms of the GNU General Public License as published by
-//   the Free Software Foundation, either version 3 of the License, or
-//   (at your option) any later version.
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
 //
-//   Seamly2D is distributed in the hope that it will be useful,
-//   but WITHOUT ANY WARRANTY; without even the implied warranty of
-//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//   GNU General Public License for more details.
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
 //
-//   You should have received a copy of the GNU General Public License
-//   along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-//
-//******************************************************************************
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vnodepoint.h"
 
@@ -328,13 +326,25 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     PatternPieceTool *tool = qgraphicsitem_cast<PatternPieceTool *>(parentItem());
     if (tool)
     {
+        // Create a state-aware icon
+        QIcon checkIcon;
+        // Icons used when the item is checked or NOT checked
+        checkIcon.addFile("://icon/32x32/visible_off.png", QSize(), QIcon::Normal, QIcon::Off);
+        checkIcon.addFile("://icon/32x32/visible_on.png", QSize(), QIcon::Normal, QIcon::On);
+
+        // Icons used when the item IS disabled
+        checkIcon.addFile("://icon/32x32/visible_hover.png", QSize(), QIcon::Disabled, QIcon::On);
+        checkIcon.addFile("://icon/32x32/visible_hover.png", QSize(), QIcon::Disabled, QIcon::Off);
+
         QMenu menu;
 
-        const VPiece piece = VAbstractTool::data.GetPiece(tool->getId());
-        const int index = piece.GetPath().indexOfNode(m_id);
-        VPieceNode node = piece.GetPath().at(index);
+        const VPiece piece  = VAbstractTool::data.GetPiece(tool->getId());
+        bool isBuiltInSA    = piece.IsSeamAllowanceBuiltIn();
+        bool isHideSeamline = piece.isHideSeamLine();
+        const int index     = piece.GetPath().indexOfNode(m_id);
+        VPieceNode node     = piece.GetPath().at(index);
 
-        QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));
+        QAction *actionShowPointName = menu.addAction(checkIcon, tr("Show Point Name"));
         actionShowPointName->setCheckable(true);
         actionShowPointName->setChecked(VAbstractTool::data.GeometricObject<VPointF>(m_id)->isShowPointName());
 
@@ -396,21 +406,41 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
                 break;
         }
 
-        // Set default Notch values
-        NotchType notchType = node.getNotchType();
-        NotchSubType notchSubType = node.getNotchSubType();
-        int notchCount = node.getNotchCount();
-        bool isNotch = false;
+        QAction *separator = new QAction(this);
+        separator->setSeparator(true);
+        menu.addAction(separator);
 
         //Setup Notch menu
-        QAction *actionNotch     = nullptr;
-        QMenu *notchMenu = menu.addMenu(tr("Notch"));
+        // Get current Notch values
+        NotchType notchType = node.getNotchType();
+        NotchSubType notchSubType = node.getNotchSubType();
+        int notchCount    = node.getNotchCount();
+        bool isNotch      = node.isNotch();
+        bool showCutline  = node.showNotch();
+        bool showSeamline = node.showSeamlineNotch();
+        qreal notchLength = node.getNotchLength();
+        qreal notchWidth  = node.getNotchWidth();
+
+        QAction *actionShowCutNotch = menu.addAction(checkIcon, tr("Show Cut Line Notch"));
+        actionShowCutNotch->setCheckable(true);
+        actionShowCutNotch->setChecked(showCutline && isNotch);
+        actionShowCutNotch->setEnabled(isNotch);
+
+        QAction *actionShowSeamNotch = menu.addAction(checkIcon, tr("Show Seam Line Notch"));
+        actionShowSeamNotch->setCheckable(true);
+        actionShowSeamNotch->setChecked(showSeamline && isNotch);
+        actionShowSeamNotch->setEnabled(isNotch && !isBuiltInSA && !isHideSeamline);
+
+        QAction *actionDefaultNotch = menu.addAction(tr("Make Default Notch"));
+
+        QAction *actionNotch = nullptr;
+        QMenu *notchMenu = menu.addMenu(tr("Edit Notch"));
         actionNotch = notchMenu->menuAction();
-        actionNotch->setCheckable(true);
-        actionNotch->setChecked(node.isNotch());
+        notchMenu->setEnabled(isNotch);
+
+        QAction *actionRemoveNotch = menu.addAction(tr("Remove Notch"));
 
         //Setup Notch type submenu
-        QAction *actionNone      = nullptr;
         QAction *actionSlit      = nullptr;
         QAction *actionTNotch    = nullptr;
         QAction *actionUNotch    = nullptr;
@@ -419,7 +449,6 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         QAction *actionCastle    = nullptr;
         QAction *actionDiamond   = nullptr;
         QMenu *notchTypeMenu = notchMenu->addMenu(tr("Type"));
-        actionNone      = notchTypeMenu->addAction( tr("None") + QStringLiteral("\tShift + N"));
         actionSlit      = notchTypeMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
         actionTNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/t_notch.png"),          tr("TNotch") + QStringLiteral("\tShift + T"));
         actionUNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/u_notch.png"),          tr("UNotch") + QStringLiteral("\tShift + U"));
@@ -445,6 +474,10 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         action1Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("1"));
         action2Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("2"));
         action3Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("3"));
+
+        separator = new QAction(this);
+        separator->setSeparator(true);
+        menu.addAction(separator);
 
         //Setup Exclude node menu
         QAction *actionExcludeNode = menu.addAction(QIcon(), tr("Excluded"));
@@ -499,12 +532,29 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         }
         else
         {
-            if (selectedAction == actionNone)
+            if (selectedAction == actionShowCutNotch)
             {
-                isNotch = false;
-                notchType = NotchType::Slit;
+                showCutline = !showCutline;
             }
-            else if (selectedAction == actionSlit)
+
+            if (selectedAction == actionShowSeamNotch)
+            {
+                showSeamline = !showSeamline;
+            }
+
+            if (selectedAction == actionDefaultNotch)
+            {
+                notchType    = stringToNotchType(qApp->Settings()->getDefaultNotchType());
+                notchSubType = NotchSubType::Straightforward;
+                notchLength  = qApp->Settings()->getDefaultNotchLength();
+                notchWidth   = qApp->Settings()->getDefaultNotchWidth();
+                notchCount   = 1;
+                isNotch      = true;
+                showCutline  = true;
+                showSeamline = true;
+            }
+
+            if (selectedAction == actionSlit)
             {
                 isNotch = true;
                 notchType = NotchType::Slit;
@@ -569,17 +619,25 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
                 isNotch = true;
                 notchCount = 3;
             }
+            if (selectedAction == actionRemoveNotch)
+            {
+                isNotch      = false;
+                showCutline  = true;
+                showSeamline = true;
+            }
 
             if (node.GetId() == m_id && node.GetTypeTool() == Tool::NodePoint)
             {
                 NotchData notchData;
-                notchData.isNotch = isNotch;
-                notchData.type    = notchType;
-                notchData.subType = notchSubType;
-                notchData.length  = ToPixel(node.getNotchLength(), *VDataTool::data.GetPatternUnit());
-                notchData.width   = ToPixel(node.getNotchWidth(),  *VDataTool::data.GetPatternUnit());
-                notchData.angle   = node.getNotchAngle();
-                notchData.count   = notchCount;
+                notchData.isNotch      = isNotch;
+                notchData.showCutline  = showCutline;
+                notchData.showSeamline = showSeamline;
+                notchData.type         = notchType;
+                notchData.subType      = notchSubType;
+                notchData.length       = notchLength;
+                notchData.width        = notchWidth;
+                notchData.angle        = node.getNotchAngle();
+                notchData.count        = notchCount;
 
                 emit notchChanged(m_id, notchData);
             }

@@ -8121,10 +8121,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Kopio</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Hakki</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>THakki</translation>
     </message>
@@ -8339,6 +8335,26 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Näytä leikkuulinjan merkki</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Näytä saumalinjan merkki</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Aseta oletusmerkiksi</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Muokkaa merkkiä</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Poista merkki</translation>
     </message>
 </context>
 <context>
@@ -9041,6 +9057,38 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source> per file</source>
         <translation> tiedostoa kohden</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Ulkoasu</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Järjestelmä</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10093,6 +10141,46 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Tervetuloa</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Ulkoasu</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Mitat</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Järjestelmä</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10243,6 +10331,34 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Järjestelmä</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10341,6 +10457,34 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Järjestelmä</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12754,16 +12898,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Toisen reunan oikea kulma</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Hakki</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tyyppi</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Ei mitään</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12816,6 +12952,26 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Delete</source>
         <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Näytä leikkuulinjan merkki</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Näytä saumalinjan merkki</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Aseta oletusmerkiksi</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Muokkaa merkkiä</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Poista merkki</translation>
     </message>
 </context>
 <context>
