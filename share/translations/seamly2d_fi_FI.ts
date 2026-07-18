@@ -9064,31 +9064,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Järjestelmä</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>
@@ -10151,35 +10127,11 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Teema:</translation>
     </message>
     <message>
         <source>Measurements</source>
         <translation>Mitat</translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Järjestelmä</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10333,31 +10285,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Järjestelmä</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>
@@ -10460,31 +10388,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Järjestelmä</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>

@@ -9052,31 +9052,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Sistema</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10139,35 +10115,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema:</translation>
     </message>
     <message>
         <source>Measurements</source>
         <translation>Medidas</translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Sistema</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10321,31 +10273,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Sistema</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10448,31 +10376,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation>Sistema</translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>

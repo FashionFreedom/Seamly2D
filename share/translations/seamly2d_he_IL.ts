@@ -9030,30 +9030,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -10121,30 +10097,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Measurements</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10299,30 +10251,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10424,30 +10352,6 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Theme:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Light</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Dark</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fusion Twilight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Classic</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Windows11</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

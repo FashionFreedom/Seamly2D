@@ -74,14 +74,14 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
 
     //-------------------- Startup
     // Theme
-    ui->theme_ComboBox->addItem(tr("Fusion Light"), 0);
-    ui->theme_ComboBox->addItem(tr("Fusion Dark"), 1);
-    ui->theme_ComboBox->addItem(tr("Fusion Twilight"), 2);
-    ui->theme_ComboBox->addItem(tr("System"), 3);
+    ui->theme_ComboBox->addItem("Fusion Light", 0);
+    ui->theme_ComboBox->addItem("Fusion Dark", 1);
+    ui->theme_ComboBox->addItem("Fusion Twilight", 2);
+    ui->theme_ComboBox->addItem("System", 3);
 
 #if defined(Q_OS_WIN)
-    ui->theme_ComboBox->addItem(tr("Classic"), 4);
-    ui->theme_ComboBox->addItem(tr("Windows11"), 5);
+    ui->theme_ComboBox->addItem("Classic", 4);
+    ui->theme_ComboBox->addItem("Windows11", 5);
 #endif
 
     // set default theme
