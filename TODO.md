@@ -165,9 +165,50 @@ Known observations (2026-07-18, while verifying Task 10):
 - QTest output to **stdout** is lost when redirected (console and `cmd` redirection both yield 0 bytes; the `-o <file>,txt` file logger works fine) — investigate/route around in the `st.ps1` runner
 - New suites verified locally via the file logger: `TST_SvgComponentTags` (Task 11) all pass
 
-- [ ] Reproduce and locate the block: run under a debugger / capture a stack dump (procdump, WinDbg — neither currently installed), or bisect by commenting out test classes / instrumenting `qttestmainlambda.cpp` `main()` with early `fprintf(stderr, ...)`+`fflush` markers to find the last line reached
 - [x] Reproduce and locate the block — root cause found 2026-07-18: missing platform plugin next to the test exe → modal `qFatal` dialog from `qguiapplication.cpp` (see above); workaround `QT_PLUGIN_PATH` confirmed
 - [ ] Fix it properly so the suite runs without manual env setup: deploy the Qt plugins next to `Seamly2DTests.exe` (windeployqt post-link step on the test target, mirroring `seamly2d.pro`) or set the plugin path in the runner script; both debug and release builds
 - [ ] Identify and fix the 2 pre-existing local test failures (suite exit status 2; suite unknown — per-suite output capture needed, see stdout loose end above)
 - [ ] Make the suite easy to run: a small script (e.g. `scripts/st.ps1`, "seamly2d tests", s-prefix rule) that sets `PATH` to the deployed DLL directory (debug Qt DLLs + xerces) plus `QT_PLUGIN_PATH`, runs `Seamly2DTests.exe`, and works around the lost-stdout issue (file logger), mirroring the `sd.ps1` style, with the GPLv3 header and `.SYNOPSIS`
 - [ ] Verify: full suite passes locally (including `TST_SvgTextItem` from Task 10); document the Windows test-run procedure in `.github/README-BUILDS.md`
+
+## Task 24 — CLI: run seamly2d from the command line through to a finished seamlyLayout layout
+
+Extend the existing console export mode (`--basename` in `src/app/seamly2d/core/vcmdexport.cpp`) so a single seamly2d command line produces the final layout: seamly2d generates the tagged `.pieces.svg` (the Layout Mode handoff, `exportPiecesToSeamlyLayout()` in `src/app/seamly2d/mainwindow.cpp`) and then runs seamlyLayout on it to produce the layout output, using the new seamlyLayout export options (the Task 21 SVG text modes and the other export formats).
+
+**Dependency:** Task 21 (seamlyLayout export modes) for the mode pass-through; seamlyLayout also needs a headless/CLI export mode of its own, since today it is only driven interactively through its QML UI.
+
+- [ ] Add a seamly2d CLI option (export mode) that triggers the Layout Mode handoff from the console: generate `<basename>.pieces.svg` and invoke seamlyLayout on it, resolving the app path the same way as the GUI (`paths/seamlyLayoutApp` setting)
+- [ ] Add a headless CLI export mode to seamlyLayout: input `.pieces.svg`, run the layout/nesting, export to a chosen format and output path without showing the QML UI, exit with a meaningful status code
+- [ ] Pass the seamlyLayout export options through the seamly2d command line (export format incl. the Task 21 SVG text modes, output destination), and document the option mapping
+- [ ] Make the seamly2d invocation wait for seamlyLayout (unlike the GUI's `QProcess::startDetached`), propagate its exit status and stderr so scripted callers see failures
+- [ ] Tests: seamly2d CLI option parsing (extend `tst_vcommandline`), seamlyLayout headless-export tests (Rust/Qt side), and an end-to-end check with the richmond test pattern
+- [ ] Document the workflow (command-line examples) in the repo docs / `--help` output
+
+## Task 25 — Audit and fix the Seamly2D CLI so all options work
+
+Go through every command-line option seamly2d advertises (defined in `src/libs/vmisc/commandoptions.cpp`, wired in `src/app/seamly2d/core/vcmdexport.cpp`) and make each one actually work in console export mode. Known friction from Task 11 verification: option names are case-sensitive and inconsistently cased (e.g. `--exportOnlyDetails`), and errors only surface in a redirected stderr, not on the console.
+
+- [ ] Inventory all options and build a test matrix: expected behavior, required companions (e.g. `--basename` enabling export mode), valid values
+- [ ] Exercise each option against the richmond test pattern (all export formats, gradation size/height, page options, `--text2paths`, measurement overrides, etc.) and record which are broken, ignored, or misdocumented
+- [ ] Fix the broken/ignored options; make error messages reach the console reliably (the GUI-subsystem exe detaches from the console — evaluate `AttachConsole`/subsystem handling on Windows so `--help` and errors print without redirection)
+- [ ] Consider case-insensitive or consistently lowercase option aliases (keeping the existing names working for compatibility)
+- [ ] Unit tests: extend `tst_vcommandline` to cover every option and the failure modes found
+- [ ] Update `--help` text and repo docs with the verified behavior
+
+## Task 26 — Export multisize patterns (nested / marker / sized-layout-set)
+
+Add layout export for multisize patterns — `.sm2d` patterns opened with a `.smms` multisize measurement file (multiple sizes; the CLI already exposes per-size gradation via `--gradationsize`/`--gradationheight`). The user chooses one of three multisize layout products in the settings dialog; all products orient every piece with its grainline pointing up.
+
+- [ ] Settings dialog: user chooses "nested layout", "marker layout", or "set of sized layouts" for multisize export
+- [ ] Generate a "size layout" for each size in the `.smms` file, all grainlines pointing up (per-size piece generation via the existing gradation machinery)
+- [ ] Nested layout:
+  - [ ] For each piece in the largest size, create a layout with all grainlines pointing up
+  - [ ] For the remaining sizes in descending order: place each piece on top of its matching largest-size piece, grainline up, centering its center point on the largest piece's center point — each large piece becomes the base of a "pyramid" of matching pieces with the smallest on top
+  - [ ] Apply transforms so all pieces are placed in global space
+  - [ ] Group all pieces of each size together, so upstream tools (Pattern Projector, Inkscape, Illustrator, ...) can toggle each size's visibility
+- [ ] Marker layout: copy all pieces from the size layouts and arrange them into a single marker layout, all grainlines pointing up
+- [ ] Set of sized layouts:
+  - [ ] Let the user view each size's layout in the canvas — UI design open: per-size tabs across the top of the canvas is the working idea, to be settled during implementation
+  - [ ] Export the set to a single multi-page PDF, or to individual files of any export type
+- [ ] Tests with a multisize test pattern (need a `.sm2d` + `.smms` fixture); verify grouping/grainline orientation in the exported SVG/PDF
+- [ ] Doxygen briefs + inline comments on all touched functions; document the three products in the repo docs
