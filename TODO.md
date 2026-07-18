@@ -106,7 +106,10 @@ Apply the Task 15 consolidation to the Flatpak build. Flatpak sandboxes per-app 
 
 Relocate the daughter layout app into the standard app tree alongside `src/app/seamly2d` and `src/app/seamlyme`. It keeps its own build (Rust + Qt 6.10/QML, `qd.ps1`) and must still stay out of the Seamly2D qmake build.
 
-- [ ] Move the tree with `git mv seamlyLayout src/app/seamlylayout` so history is preserved
+**Decision:** seamlylayout is treated the same as seamlyme — its source is tracked directly in this repo as ordinary files (no submodule). `seamlyLayout/` is currently a nested git repository (own `.git`, untracked by this repo), so the move must absorb it, not `git mv` it.
+
+- [ ] Absorb the nested repo: remove (or archive elsewhere) `seamlyLayout/.git`, move the tree to `src/app/seamlylayout`, and `git add` the files so they are tracked directly like `src/app/seamlyme` (its standalone history stays in the old repo/remote if needed for reference)
+- [ ] Make sure this repo's `.gitignore` covers the seamlylayout build outputs formerly ignored by the nested repo's own `.gitignore` (Rust `target/`, `qt_frontend/build/`, etc.) before the `git add`
 - [ ] Update all path references to the old location: root `CLAUDE.md` (architecture bullet, test-pattern path `seamlyLayout/input/richmond-shirt_v1_v061-test.sm2d`), `TODO.md`/`PROJECT_PLAN.md` task text, status-doc mirrors (`seamlyLayout/docs/status-docs/svg-data-attributes.md`), packaging scripts (`packaging/windows/SeamlyLayout.iss`, `build_installer.ps1`), and any scripts/docs that hard-code `seamlyLayout/`
 - [ ] Check seamly2d-side references: `exportPiecesToSeamlyLayout()` and the `paths/seamlyLayoutApp` setting default — update any hard-coded relative paths to the app or its `input/` directory
 - [ ] Confirm the qmake build still excludes the moved directory (nothing under `src/app/seamlylayout` is picked up by `src/app/app.pro` / SUBDIRS)
