@@ -35,8 +35,13 @@ Two toolchains are in use — do not treat the difference as an error:
 - `PROJECT_PLAN.md` — the current approved implementation plan
 - `TODO.md` — tasks with checkbox subtasks; check off subtasks as they are accomplished
 - `COMPLETED.md` — when all subtasks of a task are complete, move the task here from `TODO.md`
+- **Pre-task branch setup:** before implementing a task from `TODO.md`, always:
+  1. update local `develop` from `origin` (`git fetch origin` + fast-forward `develop`)
+  2. update local `run-seamlyLayout` from local `develop` (merge/fast-forward `develop` into it)
+  3. create a new branch from `run-seamlyLayout` for the task, and do the work there
 
 ## Key References
 
 - `status-docs/new-attributes.csv` — SVG `data-*` attribute spec for the SeamlyLayout handoff
 - Test pattern: `seamlyLayout/input/richmond-shirt_v1_v061-test.sm2d`
+- `.github/README-BUILDS.md` — build knowledge base (toolchains, per-platform packaging, settings/data locations, packaging decisions); keep it updated when build knowledge changes
