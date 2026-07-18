@@ -80,6 +80,7 @@ public:
     void                               initOptions();
 
     QString                            seamlyMeFilePath() const;
+    QString                            seamlyLayoutFilePath();
 
     QTimer                            *getAutoSaveTimer() const;
     void                               setAutoSaveTimer(QTimer *value);

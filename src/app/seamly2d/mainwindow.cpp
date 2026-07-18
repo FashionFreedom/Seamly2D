@@ -4046,7 +4046,9 @@ void MainWindow::showLayoutMode(bool checked)
         emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
 
-        if (doc->getDraftStage() == Draw::Calculation)
+        // Remember the stage we came from so a failed SeamlyLayout handoff can revert to it.
+        const Draw priorStage = doc->getDraftStage();
+        if (priorStage == Draw::Calculation)
         {
             currentToolBoxIndex = ui->layout_ToolBox->currentIndex();
         }
@@ -4067,9 +4069,13 @@ void MainWindow::showLayoutMode(bool checked)
 
         showLayoutPages(ui->listWidget->currentRow());
 
-        if (scenes.isEmpty())
+        // SeamlyLayout handoff: instead of running the built-in layout engine,
+        // write the tagged pieces SVG and open it in the SeamlyLayout application.
+        // On failure (error already reported in a dialog) return to the prior mode.
+        if (!exportPiecesToSeamlyLayout())
         {
-            ui->layoutSettings_ToolButton->click();
+            priorStage == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
+            return;
         }
 
         setStatusMessage("");
@@ -4078,6 +4084,64 @@ void MainWindow::showLayoutMode(bool checked)
     {
         ui->layoutMode_Action->setChecked(true);
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief exportPiecesToSeamlyLayout hands the pattern pieces over to the SeamlyLayout application.
+ *
+ * Workflow: write the tagged pieces SVG (data-type / data-type-number / data-parent /
+ * data-name / data-letter attributes on every group, see generatePiecesSvg()) as
+ * "<pattern-basename>.pieces.svg" next to the pattern file, then launch the
+ * SeamlyLayout application detached with that file as its argument. The user
+ * enters layout settings, generates, adjusts, saves, views and prints the layout
+ * inside SeamlyLayout. Any problem (unsaved pattern, failed SVG generation,
+ * missing SeamlyLayout executable) is reported in a message box.
+ *
+ * @return true when the SVG was written and SeamlyLayout was launched; false on
+ *         any failure so the caller can stay in (revert to) the prior mode.
+ */
+bool MainWindow::exportPiecesToSeamlyLayout()
+{
+    // The handoff SVG is written beside the pattern file, so the pattern must be saved first.
+    if (qApp->getFilePath().isEmpty())
+    {
+        QMessageBox::information(this, tr("Layout mode"),
+                                 tr("Please save the pattern file before creating a layout. "
+                                    "The layout file is stored next to the pattern file."),
+                                 QMessageBox::Ok, QMessageBox::Ok);
+        return false;
+    }
+
+    // Build "<pattern directory>/<pattern basename>.pieces.svg".
+    const QFileInfo patternFile(qApp->getFilePath());
+    const QString svgPath = patternFile.absolutePath() + QLatin1String("/") + patternFile.completeBaseName()
+                            + QLatin1String(".pieces.svg");
+
+    // Render the pieces (pieceList was prepared by showLayoutMode) into the tagged SVG.
+    if (!generatePiecesSvg(svgPath))
+    {
+        QMessageBox::warning(this, tr("Layout mode"),
+                             tr("Could not create the layout file:\n%1").arg(svgPath),
+                             QMessageBox::Ok, QMessageBox::Ok);
+        return false;
+    }
+
+    // Locate the SeamlyLayout executable (settings override first, then the install directory).
+    const QString seamlyLayout = qApp->seamlyLayoutFilePath();
+    if (seamlyLayout.isEmpty())
+    {
+        QMessageBox::warning(this, tr("Layout mode"),
+                             tr("The SeamlyLayout application could not be found.\n"
+                                "The layout file was saved as:\n%1\n\n"
+                                "Set the SeamlyLayout path in the application preferences.").arg(svgPath),
+                             QMessageBox::Ok, QMessageBox::Ok);
+        return false;
+    }
+
+    // Launch SeamlyLayout as a detached process, the same way SeamlyMe is launched.
+    const QString workingDirectory = QFileInfo(seamlyLayout).absoluteDir().absolutePath();
+    return QProcess::startDetached(seamlyLayout, QStringList(svgPath), workingDirectory);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -247,6 +247,7 @@ private slots:
     void showDraftMode(bool checked);
     void showPieceMode(bool checked);
     void showLayoutMode(bool checked);
+    bool exportPiecesToSeamlyLayout();
 
     void New();
     bool SaveAs();

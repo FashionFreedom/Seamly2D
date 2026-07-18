@@ -28,6 +28,8 @@
  *****************************************************************************/
 
 #include "svg_generator.h"
+#include "../vlayout/vlayoutdef.h"
+
 #include <QFile>
 #include <QDebug>
 #include <QSvgGenerator>
@@ -35,14 +37,23 @@
 #include <QPainter>
 #include <QBuffer>
 
-static const int ObjectName = 0;
-
 //---------------------------------------------------------------------------------------------------------------------
-SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
+/**
+ * @brief SvgGenerator constructor.
+ * @param paper       paper rectangle defining the SVG size and view box.
+ * @param name        output file path.
+ * @param patternName pattern name, written as the data-name attribute of the pattern group.
+ * @param description pattern description (currently unused in the output).
+ * @param resolution  render resolution in DPI.
+ */
+SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString patternName, QString description,
+                           int resolution):
     m_paper(paper),
     m_filepath(name),
+    m_patternName(patternName),
     m_description(description),
-    m_resolution(resolution)
+    m_resolution(resolution),
+    m_pieceCount(0)
 {
 }
 
@@ -76,7 +87,23 @@ QDomDocument SvgGenerator::mergeSvgDoms()
         qDebug() << "Error : the SVG does not contain a <g> tag.";
         return QDomDocument();
     }
-    mergedSvgRoot.removeChild(mergedSvgGroups.at(0));
+    // Drop the clone's own main group; it is re-added from the list below.
+    mergedSvgGroups.at(0).parentNode().removeChild(mergedSvgGroups.at(0));
+
+    // Piece-based exports get one pattern group wrapping all piece groups, tagged
+    // with the SVG data-* attributes so downstream tools can identify the pattern.
+    // Whole-scene exports (draft blocks) keep the legacy flat structure.
+    QDomElement parentElement = mergedSvgRoot;
+    if (m_pieceCount > 0)
+    {
+        QDomElement patternGroup = mergedSvg.createElement("g");
+        patternGroup.setAttribute("id", "pattern-1");
+        patternGroup.setAttribute("data-type", "pattern");
+        patternGroup.setAttribute("data-type-number", "1");
+        setAttribute(patternGroup, "data-name", m_patternName);
+        mergedSvgRoot.appendChild(patternGroup);
+        parentElement = patternGroup;
+    }
 
     for (int i = 0; i < m_domList.size(); ++i) {
         QDomDocument domSvg = m_domList.at(i);
@@ -92,7 +119,9 @@ QDomDocument SvgGenerator::mergeSvgDoms()
         }
         QDomElement mainGroup = svgGroups.at(0).toElement();
         cleanSvg(mainGroup);
-        mergedSvgRoot.appendChild(mainGroup);
+        // importNode: nodes must be cloned into the target document before appending;
+        // appending a node owned by another document is silently ignored by QDom.
+        parentElement.appendChild(mergedSvg.importNode(mainGroup, true));
     }
 
     return mergedSvg;
@@ -120,7 +149,9 @@ void SvgGenerator::removeEmptyGroups(QDomElement &mainGroup)
         for (int i = 0; i < groups.size(); ++i) {
             QDomElement group = groups.at(i).toElement();
             if (group.childNodes().isEmpty()) {
-                if (mainGroup.removeChild(group).isNull()) {
+                // Remove from the group's real parent: empty groups can be nested at
+                // any depth, not only directly below mainGroup.
+                if (group.parentNode().removeChild(group).isNull()) {
                     qDebug() << "Error : could not remove empty group";
                 }
                 svgCleaned = false;
@@ -132,22 +163,28 @@ void SvgGenerator::removeEmptyGroups(QDomElement &mainGroup)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Remove the M0,0 origin path from the SVG
+ * @brief Remove the M0,0 origin paths from the SVG
  * @return void
- * @details This function removes tht M0,0 origin path from the SVG.
- *          If this path is not removed, the bounding box of the exported pattern piece
- *          when opened in a svg editing software can be wrong.
+ * @details This function removes every empty "M0,0" path from the SVG. Qt's SVG
+ *          generator emits such a path for each QGraphicsPathItem with an empty
+ *          path (e.g. the invisible piece container and label group items). If
+ *          these paths are not removed, the bounding box of the exported pattern
+ *          piece when opened in a svg editing software can be wrong.
  */
 void SvgGenerator::removeEmptyOriginPath(QDomElement &mainGroup)
 {
     QDomNodeList paths = mainGroup.elementsByTagName("path");
-    for (int i = 0; i < paths.size(); ++i) {
+    // Iterate backwards: QDomNodeList is live, removing a node reindexes the list.
+    for (int i = paths.size() - 1; i >= 0; --i) {
         QDomElement path = paths.at(i).toElement();
-        if (path.attribute("d") == "M0,0") {
+        const QString d = path.attribute("d");
+        if (d.isEmpty() || d == "M0,0") {
             QDomElement parentGroup = path.parentNode().toElement();
             parentGroup.removeChild(path);
-            mainGroup.removeChild(parentGroup);
-            break;
+            // Drop the wrapping group as well when the path was its only content.
+            if (parentGroup != mainGroup && parentGroup.childNodes().isEmpty()) {
+                parentGroup.parentNode().removeChild(parentGroup);
+            }
         }
     }
 }
@@ -155,12 +192,14 @@ void SvgGenerator::removeEmptyOriginPath(QDomElement &mainGroup)
 //-----------------------------------------------------------------------------
 /// @brief Clean the SVG
 /// @return void
-/// @details This function cleans the SVG by removing empty groups and the origin M0,0 path
+/// @details This function cleans the SVG by removing the empty origin "M0,0" paths
+///          first (which may leave their wrapping groups empty) and then removing
+///          all remaining empty groups.
 //-----------------------------------------------------------------------------
 void SvgGenerator::cleanSvg(QDomElement &mainGroup)
 {
-    removeEmptyGroups(mainGroup);
     removeEmptyOriginPath(mainGroup);
+    removeEmptyGroups(mainGroup);
 }
 
 //-----------------------------------------------------------------------------
@@ -183,14 +222,15 @@ void SvgGenerator::setAttribute(QDomElement element, const QString &attr, const 
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Add a new SVG to the list of SVGs to be merged into a single SVG.
- * @param scene : the scene that must be converted to SVG.
- * @param item : graphic item that SVg is being cretaed from. Needed for IS name.
- * @return void
- * @details This function creates a SVG from the given scene and converts it into
-            a DOM that is added to the m_domList list of SVGs to be merged.
-*/
-void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
+ * @brief Render a graphics scene into an SVG DOM document.
+ *
+ * The scene is painted through Qt's QSvgGenerator into an in-memory buffer and
+ * the resulting SVG markup is parsed into a QDomDocument for post-processing.
+ *
+ * @param scene the scene to render.
+ * @return the rendered SVG as a DOM document; a null document when parsing failed.
+ */
+QDomDocument SvgGenerator::renderSceneToDom(QGraphicsScene *scene)
 {
     QByteArray byteArray;
     QBuffer buffer(&byteArray);
@@ -213,24 +253,149 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
     painter.end();
 
     QDomDocument domDoc;
-    if (domDoc.setContent(byteArray))
-    {
-        // set pattern piece name as parent group id name
-        if (item != nullptr)
-        {
-            QDomNodeList list = domDoc.elementsByTagName("g");
-            if (!list.isEmpty())
-            {
-                setAttribute(list.at(0).toElement(), "id", item->data(ObjectName).toString());
-            }
-        }
-        m_domList.append(domDoc);
-    } else
+    if (!domDoc.setContent(byteArray))
     {
         qDebug() << "Error : Impossible to load the SVG content in the QDomDocument.";
+        return QDomDocument();
     }
 
     buffer.close();
+    return domDoc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Render each component of a piece separately and append the tagged groups to the piece group.
+ *
+ * Qt's QSvgGenerator creates <g> elements from painter state changes, not from
+ * graphics items, so a single render of the whole piece cannot be mapped back to
+ * its components. Instead each direct child of the piece root (seamline, cutline,
+ * notches, internal paths, labels, grainline) is rendered in its own pass with
+ * every sibling hidden. Each pass therefore produces exactly one <g> that belongs
+ * to one known component, which is tagged with the SVG data-* attributes:
+ * data-type, data-type-number (per-type counter within the piece), data-parent
+ * (the piece id) and a structured unique id ("<pieceId>-<type>-<n>").
+ *
+ * @param scene      scene containing (only) this piece's item tree.
+ * @param item       piece root item whose children are the components.
+ * @param pieceDoc   DOM document of the piece; receives the component groups.
+ * @param pieceGroup piece <g> element the component groups are appended to.
+ * @param pieceId    SVG id of the piece group, used to build data-parent and component ids.
+ */
+void SvgGenerator::addComponentGroups(QGraphicsScene *scene, QGraphicsItem *item, QDomDocument &pieceDoc,
+                                      QDomElement &pieceGroup, const QString &pieceId)
+{
+    const QList<QGraphicsItem *> components = item->childItems();
+    QHash<QString, int> typeCounters; // per data-type counter within this piece
+
+    for (int i = 0; i < components.size(); ++i)
+    {
+        // Show only the current component; hide every sibling.
+        for (int j = 0; j < components.size(); ++j)
+        {
+            components.at(j)->setVisible(i == j);
+        }
+
+        QDomDocument componentDoc = renderSceneToDom(scene);
+        if (componentDoc.isNull())
+        {
+            continue;
+        }
+
+        QDomNodeList groups = componentDoc.documentElement().elementsByTagName("g");
+        if (groups.isEmpty())
+        {
+            continue;
+        }
+
+        QDomElement componentGroup = groups.at(0).toElement();
+        cleanSvg(componentGroup);
+        if (componentGroup.childNodes().isEmpty())
+        {
+            // Component painted nothing (e.g. a piece without notches) — skip it.
+            continue;
+        }
+
+        // Tag the group so downstream tools (SeamlyLayout) can identify the component.
+        QString type = components.at(i)->data(PieceItemData::ItemType).toString();
+        if (type.isEmpty())
+        {
+            type = QStringLiteral("unknown");
+        }
+        const int typeNumber = ++typeCounters[type];
+        componentGroup.setAttribute("id", QString("%1-%2-%3").arg(pieceId, type).arg(typeNumber));
+        componentGroup.setAttribute("data-type", type);
+        componentGroup.setAttribute("data-type-number", QString::number(typeNumber));
+        componentGroup.setAttribute("data-parent", pieceId);
+
+        pieceGroup.appendChild(pieceDoc.importNode(componentGroup, true));
+    }
+
+    // Restore visibility so later exports (PDF, DXF, previews) see the whole piece.
+    for (int j = 0; j < components.size(); ++j)
+    {
+        components.at(j)->setVisible(true);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Add a new SVG to the list of SVGs to be merged into a single SVG.
+ *
+ * When a piece item is given, the piece becomes a <g> element carrying the SVG
+ * data-* attributes (data-type="piece", data-type-number, data-parent,
+ * data-name and data-letter) and each of the piece's components is rendered
+ * and tagged individually (see addComponentGroups()). Without an item the
+ * scene is rendered as-is in a single untagged group (whole-scene exports,
+ * e.g. draft blocks).
+ *
+ * @param scene the scene that must be converted to SVG.
+ * @param item  piece root item the scene contains; nullptr for whole-scene exports.
+ */
+void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
+{
+    if (item == nullptr)
+    {
+        // Whole-scene export: keep the legacy single-group behavior.
+        QDomDocument domDoc = renderSceneToDom(scene);
+        if (!domDoc.isNull())
+        {
+            m_domList.append(domDoc);
+        }
+        return;
+    }
+
+    // One piece: build "<g id='piece-<n>' data-type='piece' ...>" holding one tagged group per component.
+    ++m_pieceCount;
+    const QString pieceId = QString("piece-%1").arg(m_pieceCount);
+
+    // Full render only to obtain a document with the correct <svg> root attributes.
+    QDomDocument pieceDoc = renderSceneToDom(scene);
+    if (pieceDoc.isNull())
+    {
+        return;
+    }
+
+    QDomElement svgRoot = pieceDoc.documentElement();
+    QDomNodeList rootGroups = svgRoot.elementsByTagName("g");
+    if (!rootGroups.isEmpty())
+    {
+        // Drop the untagged full-piece group; it is replaced by tagged component groups.
+        rootGroups.at(0).parentNode().removeChild(rootGroups.at(0));
+    }
+
+    QDomElement pieceGroup = pieceDoc.createElement("g");
+    pieceGroup.setAttribute("id", pieceId);
+    pieceGroup.setAttribute("data-type", "piece");
+    pieceGroup.setAttribute("data-type-number", QString::number(m_pieceCount));
+    pieceGroup.setAttribute("data-parent", "pattern-1");
+    setAttribute(pieceGroup, "data-name", item->data(PieceItemData::ObjectName).toString());
+    setAttribute(pieceGroup, "data-letter", item->data(PieceItemData::PieceLetter).toString());
+    svgRoot.appendChild(pieceGroup);
+
+    addComponentGroups(scene, item, pieceDoc, pieceGroup, pieceId);
+
+    m_domList.append(pieceDoc);
 }
 
 

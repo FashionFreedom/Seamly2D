@@ -114,6 +114,9 @@ public:
     QVector<VLayoutPiecePath> getCutoutPaths() const;
     void                      setCutoutPaths(const QVector<VLayoutPiecePath> &cutoutPaths);
 
+    QString                   getPieceLetter() const;
+    void                      setPieceLetter(const QString &letter);
+
     QPointF                   getPieceTextPosition() const;
     QStringList               getPieceText() const;
     void                      setPieceText(const QString &qsName, const VPieceLabelData& data,
@@ -169,7 +172,7 @@ private:
 
     QVector<QPointF>                     piecePath() const;
 
-    Q_REQUIRED_RESULT QGraphicsPathItem *createMainItem() const;
+    void                                 createSeamlineItem(QGraphicsItem *parent) const;
     void                                 createAllowanceItem(QGraphicsItem *parent) const;
     void                                 createNotchesItem(QGraphicsItem *parent) const;
     Q_REQUIRED_RESULT QGraphicsPathItem *getMainPathItem() const;
@@ -177,7 +180,8 @@ private:
     void                                 createInternalPathItem(int i, QGraphicsItem *parent) const;
     void                                 createCutoutPathItem(int i, QGraphicsItem *parent) const;
     void                                 createLabelItem(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
-                                                         const VTextManager &tm, bool textAsPaths) const;
+                                                         const VTextManager &tm, const QString &type,
+                                                         bool textAsPaths) const;
     void                                 createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) const;
 
     template <class T>
