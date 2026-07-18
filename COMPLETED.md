@@ -2,6 +2,20 @@
 
 Tasks moved here from `TODO.md` when all their subtasks are complete.
 
+## Task 10 — Export label text as real SVG text (not paths or path outlines) (2026-07-18)
+
+Labels exported as glyph outlines even with "text as paths" off: `QGraphicsSimpleTextItem` with a pen set paints text through a `QTextLayout` outline format, so `QSvgGenerator` never received a text draw call (0 `<text>` in the baseline).
+
+- [x] Replace the `textAsPaths == false` branch of `createLabelItem()` with a text item that paints through `QPainter::drawText()` — new `SvgTextItem` class (`src/libs/vlayout/svg_text_item.h/.cpp`) subclassing `QGraphicsSimpleTextItem` with a `paint()` override, so the SVG paint engine's `drawTextItem()` emits real `<text>` elements
+- [x] Preserve current label appearance: font family/pixel size, bold/italic per line, label color, per-line alignment, middle-eliding to label width, mirroring and rotation transforms, line spacing (all outside the changed branch; fill color now comes from the brush, no outline pen)
+- [x] Keep the `textAsPaths == true` branch unchanged (explicit vector outlines remain available)
+- [x] Verify `PrepareTextForDXF` / `RestoreTextAfterDXF` (`collectTextItems()`) still find and convert the new item type — `SvgTextItem` shares `QGraphicsSimpleTextItem::Type`; DXF flat export of the richmond pattern emits 64 TEXT entities with the label strings and no `%&?_?&%` placeholder leak
+- [x] Verify exports (richmond pattern, CLI `--exportOnlyDetails`): SVG has 64 `<text>` inside the 23 correctly `data-*`-tagged `piece_label`/`pattern_label` groups (0 paths in label groups; font-family/size/fill carried); `--text2paths` yields 0 `<text>` / 63 outline paths in the same groups; DXF/PDF/PNG all valid; Layout Mode `.pieces.svg` shares the same render path (`arrangePieceItemsFlat(textAsPaths=false)` → `SvgGenerator`)
+- [x] Update the label bullet of the `data-*` contract in `status-docs/svg-data-attributes.md` and the mirror in `seamlyLayout/docs/status-docs/svg-data-attributes.md`
+- [x] Doxygen briefs + inline comments on all touched functions; unit tests `tst_svgtextitem.cpp` added to `Seamly2DTest` (`<text>` emission, font styling, multi-line, DXF-discovery cast) — run in CI (`linux-test`); the local Windows debug suite hangs at startup (pre-existing, unrelated)
+
+Note: the `textAsPaths == true` branch emits filled glyph *outlines*, which remains the behavior for outline fonts; an optional single-stroke (Hershey) alternative is tracked separately in Task 22.
+
 ## Task 0 — Setup
 
 - [x] Copy approved plan to `PROJECT_PLAN.md`

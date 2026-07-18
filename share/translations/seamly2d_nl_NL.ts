@@ -8104,10 +8104,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Dubbel</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Pasmarkering</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>T Pasmarkering</translation>
     </message>
@@ -8322,6 +8318,26 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kniplynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Naadlynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als standaardkeep instellen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Keep bewerken</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Keep verwijderen</translation>
     </message>
 </context>
 <context>
@@ -9024,6 +9040,38 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source> per file</source>
         <translation> per bestand</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Voorkomen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10076,6 +10124,46 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Voorkomen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Maten</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10226,6 +10314,34 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10324,6 +10440,34 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systeem</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12736,16 +12880,8 @@ load in SeamlyME as usual.
         <translation>Tweede rand rechte hoek</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Inkeping</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Type</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Geen</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12798,6 +12934,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kniplynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Naadlynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als standaardkeep instellen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Keep bewerken</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Keep verwijderen</translation>
     </message>
 </context>
 <context>

@@ -971,11 +971,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation type="unfinished">Длина не может быть отрицательной</translation>
+        <translation>Длина не может быть отрицательной</translation>
     </message>
 </context>
 <context>
@@ -8127,10 +8127,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дубликат</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Надсечка</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Т-Надсечка</translation>
     </message>
@@ -8345,6 +8341,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Выберите объекты основного контура по часовой стрелке. Используйте &lt;b&gt;SHIFT&lt;/b&gt;, чтобы изменить направление кривой, или &lt;b&gt;CTRL&lt;/b&gt;, чтобы сохранить направление кривой. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание детали.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Показать надсечку линии раскроя</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Показать надсечку линии шва</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Сделать надсечкой по умолчанию</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Редактировать надсечку</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Удалить надсечку</translation>
     </message>
 </context>
 <context>
@@ -9047,6 +9063,38 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> за файл</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Вид</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10100,6 +10148,46 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>Положительный Знак</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Добро пожаловать</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Вид</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Мерки</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10250,6 +10338,34 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>Положительный Знак</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10348,6 +10464,34 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Положительный Знак</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Система</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12761,16 +12905,8 @@ load in SeamlyME as usual.
         <translation>Второй край, прямой угол</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Надсечка</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Тип</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Нет</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12823,6 +12959,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Показать надсечку линии раскроя</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Показать надсечку линии шва</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Сделать надсечкой по умолчанию</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Редактировать надсечку</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Удалить надсечку</translation>
     </message>
 </context>
 <context>

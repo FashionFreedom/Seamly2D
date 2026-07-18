@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -69,6 +69,8 @@ struct NotchData
     qreal        offset {};
     int          count {};
     bool         isNotch {};
+    bool         showCutline {};
+    bool         showSeamline {};
 };
 
 class VPieceData;

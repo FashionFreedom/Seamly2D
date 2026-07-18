@@ -8119,10 +8119,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Duplikát</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Zářez</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8337,6 +8333,26 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Zobrazit nástřih střihové čáry</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Zobrazit nástřih švové čáry</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Nastavit jako výchozí nástřih</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Upravit nástřih</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Odstranit nástřih</translation>
     </message>
 </context>
 <context>
@@ -9039,6 +9055,38 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source> per file</source>
         <translation> na soubor</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Vzhled</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systém</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10091,6 +10139,46 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Vítejte</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Vzhled</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Míry</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systém</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10241,6 +10329,34 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systém</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10339,6 +10455,34 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Systém</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12752,16 +12896,8 @@ SeamlyME jako obvykle.
         <translation>Druhá hrana, pravý úhel</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Zářez</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Typ</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Žádný</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12814,6 +12950,26 @@ SeamlyME jako obvykle.
     <message>
         <source>Delete</source>
         <translation>Smazat</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Zobrazit nástřih střihové čáry</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Zobrazit nástřih švové čáry</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Nastavit jako výchozí nástřih</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Upravit nástřih</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Odstranit nástřih</translation>
     </message>
 </context>
 <context>

@@ -78,6 +78,7 @@
 #include "vlayoutpiece_p.h"
 #include "vtextmanager.h"
 #include "vgraphicsfillitem.h"
+#include "svg_text_item.h"
 
 namespace
 {
@@ -1168,6 +1169,13 @@ QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
  * with the given SVG data-type, so the SVG exporter can render the whole label
  * as a single identifiable component.
  *
+ * Each line keeps its font (family, size, per-line bold/italic), color,
+ * alignment, middle-eliding to the label width, mirroring and rotation. The
+ * line is emitted either as an explicit vector path (textAsPaths == true,
+ * QGraphicsPathItem holding the glyph outlines) or as real text
+ * (textAsPaths == false, SvgTextItem) so that SVG/PDF/DXF exports receive
+ * text draw calls and can output actual text elements.
+ *
  * @param parent      piece root item the label group is added to.
  * @param labelShape  label rectangle corners; fewer than 3 points means no label.
  * @param tm          text manager holding the label's text lines.
@@ -1266,13 +1274,18 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
             }
             else
             {
-                // Text line as real text, parented to the label group.
-                QGraphicsSimpleTextItem* item = new QGraphicsSimpleTextItem(labelGroup);
+                // Text line as real text, parented to the label group. SvgTextItem
+                // paints through QPainter::drawText(), so text-capable export
+                // engines receive real text draw calls: SVG exports emit <text>
+                // elements instead of glyph outlines, PDF keeps searchable text
+                // and DXF gets TEXT entities. The fill color comes from the
+                // brush; no pen is set because an outline pen is exactly what
+                // forces Qt to convert text to filled glyph outlines.
+                SvgTextItem* item = new SvgTextItem(labelGroup);
                 item->setData(PieceItemData::ObjectName, QString("label"));
                 item->setFont(fnt);
                 item->setText(qsText);
                 item->setTransform(labelTransform);
-                item->setPen(QPen(color));
                 item->setBrush(QBrush(color));
 
                 dY += (fm.height() + tm.GetSpacing());

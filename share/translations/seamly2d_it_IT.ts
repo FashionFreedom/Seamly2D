@@ -8109,10 +8109,6 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Duplicato</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Tacca</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Notch a T</translation>
     </message>
@@ -8327,6 +8323,26 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selezionare gli oggetti del percorso principale in senso orario, Utilizzare &lt;b&gt;SHIFT&lt;/b&gt; per invertire la direzione della curva, oppure &lt;b&gt;CTRL&lt;/b&gt; per mantenere la direzione della curva.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostra tacca della linea di taglio</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostra tacca della linea di cucitura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Imposta come tacca predefinita</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Modifica tacca</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Rimuovi tacca</translation>
     </message>
 </context>
 <context>
@@ -9029,6 +9045,38 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source> per file</source>
         <translation> per file</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspetto</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10081,6 +10129,46 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Positive Sign</source>
         <translation>Segno positivo</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspetto</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Misure</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10231,6 +10319,34 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Positive Sign</source>
         <translation>Segno positivo</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10329,6 +10445,34 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Segno positivo</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Sistema</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12742,16 +12886,8 @@ caricare in SeamlyME come di consueto.
         <translation>Secondo bordo angolo retto</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Tacca</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Nessuno</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12804,6 +12940,26 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Delete</source>
         <translation>Eliminare</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostra tacca della linea di taglio</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostra tacca della linea di cucitura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Imposta come tacca predefinita</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Modifica tacca</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Rimuovi tacca</translation>
     </message>
 </context>
 <context>

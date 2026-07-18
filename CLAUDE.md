@@ -30,13 +30,30 @@ Two toolchains are in use — do not treat the difference as an error:
 - **Documentation:** all new code and every modified function gets a Doxygen-compatible `@brief` (plus `@param`/`@return` where applicable) and inline comments so an intermediate-level programmer can follow the workflow, control flow, and data flow
 - **Markdown lint:** ignore MD041 (first-line-heading) warnings — they are editor diagnostic noise, not blocking issues; do not restructure files to silence them
 
+## Git Remotes
+
+- `origin` = `seamly/Seamly2D` — the work repo; ALL pushes and pull requests go here
+- `upstream` = `FashionFreedom/Seamly2D` — the public parent project; **NEVER push to it or open PRs against it** (fetch only; its push URL is set to `DISABLED_NEVER_PUSH` in the local clone to enforce this)
+
 ## Task Tracking
 
 - `PROJECT_PLAN.md` — the current approved implementation plan
 - `TODO.md` — tasks with checkbox subtasks; check off subtasks as they are accomplished
 - `COMPLETED.md` — when all subtasks of a task are complete, move the task here from `TODO.md`
+- **Pre-task branch setup:** before implementing a task from `TODO.md`, always:
+  1. update local `develop` from `origin` (`git fetch origin` + fast-forward `develop`)
+  2. update local `run-seamlyLayout` from local `develop` (merge/fast-forward `develop` into it)
+  3. create a new branch from `run-seamlyLayout` for the task, and do the work there
+- **Post-task workflow:** after implementing a task from `TODO.md`:
+  1. write unit tests where the task adds or changes code, and run them; run a local check build (`scripts/sd.ps1`) and verify the change works
+  2. update task tracking in the same change: check off subtasks in `TODO.md`; move fully completed tasks to `COMPLETED.md`
+  3. stage and commit on the task branch
+  4. push the task branch to origin and create a pull request targeting `run-seamlyLayout` — always in origin `seamly/Seamly2D` (the gh default repo is set to it), NEVER in the public upstream `FashionFreedom/Seamly2D`
+  5. watch the PR's CI checks (`gh pr checks <pr> --watch`); when all checks pass, merge the PR; if any check fails, do NOT merge
+  6. notify the user of the outcome either way — merged (with PR URL) or not merged (with the failing checks) — then, after a merge, update local `run-seamlyLayout` from origin and delete the local task branch (origin deletes the remote branch automatically on merge)
 
 ## Key References
 
 - `status-docs/new-attributes.csv` — SVG `data-*` attribute spec for the SeamlyLayout handoff
 - Test pattern: `seamlyLayout/input/richmond-shirt_v1_v061-test.sm2d`
+- `.github/README-BUILDS.md` — build knowledge base (toolchains, per-platform packaging, settings/data locations, packaging decisions); keep it updated when build knowledge changes

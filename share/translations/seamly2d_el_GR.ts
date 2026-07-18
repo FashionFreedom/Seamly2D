@@ -8123,10 +8123,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Διπλότυπο</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Εγκοπή</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8341,6 +8337,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Εμφάνιση εγκοπής γραμμής κοπής</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Εμφάνιση εγκοπής γραμμής ραφής</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Ορισμός ως προεπιλεγμένη εγκοπή</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Επεξεργασία εγκοπής</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Κατάργηση εγκοπής</translation>
     </message>
 </context>
 <context>
@@ -9043,6 +9059,38 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> ανά αρχείο</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Σύστημα</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10095,6 +10143,46 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Καλώς ήρθατε</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Μετρήσεις</translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Σύστημα</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10245,6 +10333,34 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
     </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Σύστημα</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
@@ -10343,6 +10459,34 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Dark</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fusion Twilight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System</source>
+        <translation>Σύστημα</translation>
+    </message>
+    <message>
+        <source>Classic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Windows11</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12756,16 +12900,8 @@ load in SeamlyME as usual.
         <translation>Δεύτερη ακμή ορθή γωνία</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Εγκοπή</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Τύπος</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Κανένα</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12818,6 +12954,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Εμφάνιση εγκοπής γραμμής κοπής</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Εμφάνιση εγκοπής γραμμής ραφής</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Ορισμός ως προεπιλεγμένη εγκοπή</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Επεξεργασία εγκοπής</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Κατάργηση εγκοπής</translation>
     </message>
 </context>
 <context>
