@@ -6,7 +6,7 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
 
 ## Basic Software Prerequisites
 
-* [Qt 6.8.3](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
+* [Qt 6.11.1](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
 * Compiler - MSVC 2022, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
@@ -61,12 +61,12 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
 
 ### ... on all platforms (Linux, MacOSX, Windows)
 
-* Install Qt 6.8.3, eg via [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
+* Install Qt 6.11.1, eg via [Qt unified installer](https://www.qt.io/download-qt-installer). Create a Qt account for open source Community Edition if you don't have one.
   * Download & run the [Qt unified installer](https://www.qt.io/download-qt-installer).
   * Select:
     * Custom Installation
     * Qt -- Minimize your options, otherwise your download size could be in Gs
-      * Qt 6.8.3
+      * Qt 6.11.1
       * MSVC 2022
       * Qt Debug Information Files
       * Developer and Designer Tools
