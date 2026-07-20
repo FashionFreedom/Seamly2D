@@ -103,6 +103,21 @@ QVariant VPE::VObjectProperty::getEditorData(const QWidget *editor) const
     return QVariant(0);
 }
 
+//! Sets the data in the widget
+bool VPE::VObjectProperty::setEditorData(QWidget *editor)
+{
+    QComboBox *objEditor = qobject_cast<QComboBox*>(editor);
+    if (objEditor)
+    {
+        objEditor->blockSignals(true);
+        objEditor->setCurrentIndex(VProperty::d_ptr->VariantValue.toInt());
+        objEditor->blockSignals(false);
+        return true;
+    }
+
+    return false;
+}
+
 //! Sets the objects list
 // cppcheck-suppress unusedFunction
 void VPE::VObjectProperty::setObjectsList(const QMap<QString, quint32> &objects)
