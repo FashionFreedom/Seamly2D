@@ -1,5 +1,7 @@
 var NAVTREEINDEX272 =
 {
+"dd/dcb/classVControlPointSpline.html#af8c9b2ba94f26cce270632cff58832e3":[3,0,594,0],
+"dd/dcb/classVControlPointSpline.html#aff53af7b03f113e5a4a599a88e1f69fd":[3,0,594,10],
 "dd/dce/mingw_2include_2xercesc_2dom_2DOMElement_8hpp.html":[4,0,0,1,15,1,0,0,0,12],
 "dd/dce/mingw_2include_2xercesc_2dom_2DOMElement_8hpp_source.html":[4,0,0,1,15,1,0,0,0,12],
 "dd/dce/mingw_2include_2xercesc_2validators_2schema_2identity_2IC__Key_8hpp.html":[4,0,0,1,15,1,0,0,7,3,0,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX272 =
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a3245f4a832a1787bda4d040623675d50":[4,0,0,1,15,1,0,0,6,117,10],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a332d2e228c9d69d4f488c199277cb9a4":[4,0,0,1,15,1,0,0,6,117,34],
 "dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a35bd7d7212e0a185f9dc6494b8bac797":[4,0,0,1,15,1,0,0,6,117,65],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a3601b73f552d0f2a6b7710e21bedcfaf":[4,0,0,1,15,1,0,0,6,117,48],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a362eee4eefd0c94ec0d4df20b5dad9ba":[4,0,0,1,15,1,0,0,6,117,7],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a37e8d5e580b5cecd5192b167dc40fdc7":[4,0,0,1,15,1,0,0,6,117,46]
+"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a3601b73f552d0f2a6b7710e21bedcfaf":[4,0,0,1,15,1,0,0,6,117,48]
 };

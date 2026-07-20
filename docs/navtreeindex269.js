@@ -1,5 +1,7 @@
 var NAVTREEINDEX269 =
 {
+"dd/d72/mingw_2include_2xercesc_2validators_2datatype_2DecimalDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,13],
+"dd/d72/msvc_2include_2xercesc_2framework_2LocalFileFormatTarget_8hpp.html":[4,0,0,1,15,2,0,0,1,2],
 "dd/d72/msvc_2include_2xercesc_2framework_2LocalFileFormatTarget_8hpp_source.html":[4,0,0,1,15,2,0,0,1,2],
 "dd/d74/classNameDatatypeValidator.html":[3,0,366],
 "dd/d74/classNameDatatypeValidator.html#a0112242b24ee8508fad04e7b1dc7ac4f":[3,0,366,32],
@@ -247,7 +249,5 @@ var NAVTREEINDEX269 =
 "dd/d97/msvc-arm64_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html":[4,0,0,1,15,3,0,0,6,3,24],
 "dd/d97/msvc-arm64_2include_2xercesc_2util_2regx_2UnionToken_8hpp_source.html":[4,0,0,1,15,3,0,0,6,3,24],
 "dd/d97/msvc_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp.html":[4,0,0,1,15,2,0,0,7,3,17],
-"dd/d97/msvc_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,7,3,17],
-"dd/d99/mingw_2include_2xercesc_2dom_2impl_2DOMErrorImpl_8hpp.html":[4,0,0,1,15,1,0,0,0,0,19],
-"dd/d99/mingw_2include_2xercesc_2dom_2impl_2DOMErrorImpl_8hpp_source.html":[4,0,0,1,15,1,0,0,0,0,19]
+"dd/d97/msvc_2include_2xercesc_2validators_2schema_2XMLSchemaDescriptionImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,7,3,17]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX299 =
 {
+"de/dbf/classSchemaElementDecl.html#ab6cbfacc72922ad6e02947d0712cb051":[3,0,468,136],
+"de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,178],
 "de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,176],
 "de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,179],
 "de/dbf/classSchemaElementDecl.html#ab93a53fce98f466c4e5c309699eb49db":[3,0,468,177],
@@ -247,7 +249,5 @@ var NAVTREEINDEX299 =
 "de/dca/classTimeDatatypeValidator.html#a18e7fa311fdd7f234d063ba4a19dd470":[3,0,501,21],
 "de/dca/classTimeDatatypeValidator.html#a18e7fa311fdd7f234d063ba4a19dd470":[3,0,501,20],
 "de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,3],
-"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,11],
-"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,7],
-"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,15]
+"de/dca/classTimeDatatypeValidator.html#a25078af6408d4c50100f136e100d33ec":[3,0,501,11]
 };

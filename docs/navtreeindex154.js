@@ -1,5 +1,7 @@
 var NAVTREEINDEX154 =
 {
+"d8/d2c/classXMLInteger.html#aea4c2c91e8104ea68c7c0941da84168e":[3,0,845,4],
+"d8/d2c/classXMLInteger.html#aea4c2c91e8104ea68c7c0941da84168e":[3,0,845,7],
 "d8/d2c/classXMLInteger.html#aea4c2c91e8104ea68c7c0941da84168e":[3,0,845,10],
 "d8/d2c/classXMLInteger.html#af9ccd1ad438a14bbe2e903a5a1517ffe":[3,0,845,8],
 "d8/d2c/classXMLInteger.html#af9ccd1ad438a14bbe2e903a5a1517ffe":[3,0,845,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX154 =
 "d8/d42/vistoolpointofintersectionarcs_8cpp_source.html":[4,0,0,1,13,3,0,33],
 "d8/d45/macx_2include_2xercesc_2util_2regx_2Match_8hpp.html":[4,0,0,1,15,0,0,0,6,3,6],
 "d8/d45/macx_2include_2xercesc_2util_2regx_2Match_8hpp_source.html":[4,0,0,1,15,0,0,0,6,3,6],
-"d8/d45/vemptyproperty_8cpp.html":[4,0,0,1,11,0,15],
-"d8/d45/vemptyproperty_8cpp_source.html":[4,0,0,1,11,0,15],
-"d8/d46/mingw_2include_2xercesc_2util_2NameIdPool_8hpp.html":[4,0,0,1,15,1,0,0,6,38]
+"d8/d45/vemptyproperty_8cpp.html":[4,0,0,1,11,0,15]
 };

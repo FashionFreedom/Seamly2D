@@ -10,6 +10,7 @@ var classVPE_1_1VObjectProperty =
     [ "getEditorData", "d5/d82/classVPE_1_1VObjectProperty.html#af858e269f280339366b5b3152aaca94f", null ],
     [ "getObjects", "d5/d82/classVPE_1_1VObjectProperty.html#afeac054265232b7cc450741919fd54df", null ],
     [ "indexOfObject", "d5/d82/classVPE_1_1VObjectProperty.html#a40c15cd80771ef55b6c1c256188d1021", null ],
+    [ "setEditorData", "d5/d82/classVPE_1_1VObjectProperty.html#af2a2aec7f2186a6d9113379176919afd", null ],
     [ "setObjectsList", "d5/d82/classVPE_1_1VObjectProperty.html#ae5bb72eca498ff213c0a39d5e3d5205b", null ],
     [ "setValue", "d5/d82/classVPE_1_1VObjectProperty.html#abcc42aad762b6ec2ffbfd636b59915f8", null ],
     [ "type", "d5/d82/classVPE_1_1VObjectProperty.html#afbf2b770a70d17762b4677195209f1ba", null ],

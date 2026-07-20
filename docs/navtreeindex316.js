@@ -1,5 +1,7 @@
 var NAVTREEINDEX316 =
 {
+"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,146],
+"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,147],
 "df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,70],
 "df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,69],
 "df/db4/classXTemplateSerializer.html#a46b9cf00383a5360147672827df6756d":[3,0,921,68],
@@ -247,7 +249,5 @@ var NAVTREEINDEX316 =
 "df/dc8/vtest_8cpp_source.html":[4,0,0,1,12,4],
 "df/dc9/macx_2include_2xercesc_2dom_2impl_2DOMNodeListImpl_8hpp.html":[4,0,0,1,15,0,0,0,0,0,31],
 "df/dc9/macx_2include_2xercesc_2dom_2impl_2DOMNodeListImpl_8hpp_source.html":[4,0,0,1,15,0,0,0,0,0,31],
-"df/dc9/mingw_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp.html":[4,0,0,1,15,1,0,0,7,0,12],
-"df/dc9/mingw_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,7,0,12],
-"df/dca/classMoveGroupItem.html":[3,0,358]
+"df/dc9/mingw_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp.html":[4,0,0,1,15,1,0,0,7,0,12]
 };

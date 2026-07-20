@@ -1,5 +1,7 @@
 var NAVTREEINDEX208 =
 {
+"db/d1a/classCharOp.html#a53840adb1d2384a0eb720d858f5015bf":[3,0,52,12],
+"db/d1a/classCharOp.html#a8542753083bba9bd3d881870fd701b2c":[3,0,52,20],
 "db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,19],
 "db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,18],
 "db/d1a/classCharOp.html#ab9f47c3031da33ba5593dea5cd5850ac":[3,0,52,17],
@@ -247,7 +249,5 @@ var NAVTREEINDEX208 =
 "db/d30/vlinecolorproperty_8h_source.html":[4,0,0,1,11,0,26],
 "db/d31/msvc_2include_2xercesc_2dom_2DOMLSParser_8hpp.html":[4,0,0,1,15,2,0,0,0,27],
 "db/d31/msvc_2include_2xercesc_2dom_2DOMLSParser_8hpp_source.html":[4,0,0,1,15,2,0,0,0,27],
-"db/d32/classLayoutSettingsDialog.html":[3,0,327],
-"db/d32/classLayoutSettingsDialog.html#a0091e6a31c014df6bd4bcf00423ac7a9":[3,0,327,19],
-"db/d32/classLayoutSettingsDialog.html#a021bfee729c109afd00c2261ffa8fca6":[3,0,327,30]
+"db/d32/classLayoutSettingsDialog.html":[3,0,327]
 };

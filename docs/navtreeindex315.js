@@ -1,5 +1,7 @@
 var NAVTREEINDEX315 =
 {
+"df/d95/classDOMDocumentFragment.html#a32bdd0fd37cfcc9783b9be8a1d1f61e2":[3,0,158,2],
+"df/d95/classDOMDocumentFragment.html#a6377889dbf64a3e1601de740c2149f14":[3,0,158,9],
 "df/d95/classDOMDocumentFragment.html#a6377889dbf64a3e1601de740c2149f14":[3,0,158,6],
 "df/d95/classDOMDocumentFragment.html#a6377889dbf64a3e1601de740c2149f14":[3,0,158,3],
 "df/d95/classDOMDocumentFragment.html#a6377889dbf64a3e1601de740c2149f14":[3,0,158,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX315 =
 "df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,85],
 "df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,87],
 "df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,144],
-"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,145],
-"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,146],
-"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,147]
+"df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,145]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX203 =
 {
+"da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,76],
+"da/db5/classDOMNotationImpl.html#aa9801d0c19652961f9ead495820ccb01":[3,0,211,77],
 "da/db5/classDOMNotationImpl.html#ac112a44e27ae4e4dee349367e2419ec7":[3,0,211,0],
 "da/db5/classDOMNotationImpl.html#ac112a44e27ae4e4dee349367e2419ec7":[3,0,211,9],
 "da/db5/classDOMNotationImpl.html#ac112a44e27ae4e4dee349367e2419ec7":[3,0,211,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX203 =
 "da/dc5/classValueStore.html#afd72a710c289cd293c99208c224ca8cd":[3,0,578,50],
 "da/dc5/classValueStore.html#afd72a710c289cd293c99208c224ca8cd":[3,0,578,49],
 "da/dc6/vistoolpointofintersectionarcs_8h.html":[4,0,0,1,13,3,0,34],
-"da/dc6/vistoolpointofintersectionarcs_8h_source.html":[4,0,0,1,13,3,0,34],
-"da/dc8/msvc-arm64_2include_2xercesc_2validators_2datatype_2InvalidDatatypeValueException_8hpp.html":[4,0,0,1,15,3,0,0,7,1,22],
-"da/dc8/msvc-arm64_2include_2xercesc_2validators_2datatype_2InvalidDatatypeValueException_8hpp_source.html":[4,0,0,1,15,3,0,0,7,1,22]
+"da/dc6/vistoolpointofintersectionarcs_8h_source.html":[4,0,0,1,13,3,0,34]
 };

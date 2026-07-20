@@ -1,5 +1,7 @@
 var NAVTREEINDEX257 =
 {
+"dc/d8b/msvc-arm64_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp.html":[4,0,0,1,15,3,0,0,7,3,4],
+"dc/d8b/msvc-arm64_2include_2xercesc_2validators_2schema_2PSVIDefs_8hpp_source.html":[4,0,0,1,15,3,0,0,7,3,4],
 "dc/d8d/macx_2include_2xercesc_2util_2HexBin_8hpp.html":[4,0,0,1,15,0,0,0,6,24],
 "dc/d8d/macx_2include_2xercesc_2util_2HexBin_8hpp_source.html":[4,0,0,1,15,0,0,0,6,24],
 "dc/d8e/classVPE_1_1VFileProperty.html":[3,0,2,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX257 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a82a6d9b6e84d438f97feb4f029aaab85":[3,0,759,71],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a8544d1525233c9e60abcc131123300e9":[3,0,759,47],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a86b7822f96683ff646dde1c5afbed9ee":[3,0,759,37],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a892a8c915210adf1da9c8412634097b5":[3,0,759,106],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a8b7ee3d9ada5ba304d0a00bf2df40807":[3,0,759,5],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a8b86804c850ed77babd16e09ecb9dfbf":[3,0,759,67]
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a892a8c915210adf1da9c8412634097b5":[3,0,759,106]
 };

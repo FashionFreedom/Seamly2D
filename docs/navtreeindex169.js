@@ -1,5 +1,7 @@
 var NAVTREEINDEX169 =
 {
+"d8/dd8/classDTDEntityDecl.html#a91104399ad605856b2ed1a40a075f2cb":[3,0,244,12],
+"d8/dd8/classDTDEntityDecl.html#a91104399ad605856b2ed1a40a075f2cb":[3,0,244,18],
 "d8/dd8/classDTDEntityDecl.html#a91104399ad605856b2ed1a40a075f2cb":[3,0,244,6],
 "d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,9],
 "d8/dd8/classDTDEntityDecl.html#a981a5d495a479de2cecee354282ef3f5":[3,0,244,15],
@@ -247,7 +249,5 @@ var NAVTREEINDEX169 =
 "d8/de8/msvc-arm64_2include_2xercesc_2dom_2impl_2DOMLSSerializerImpl_8hpp.html":[4,0,0,1,15,3,0,0,0,0,25],
 "d8/de8/msvc-arm64_2include_2xercesc_2dom_2impl_2DOMLSSerializerImpl_8hpp_source.html":[4,0,0,1,15,3,0,0,0,0,25],
 "d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp.html":[4,0,0,1,15,2,0,0,6,3,24],
-"d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,24],
-"d8/de9/vistooltruedarts_8cpp.html":[4,0,0,1,13,3,0,39],
-"d8/de9/vistooltruedarts_8cpp_source.html":[4,0,0,1,13,3,0,39]
+"d8/de9/msvc_2include_2xercesc_2util_2regx_2UnionToken_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,24]
 };

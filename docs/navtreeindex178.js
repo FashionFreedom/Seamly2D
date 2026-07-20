@@ -1,5 +1,7 @@
 var NAVTREEINDEX178 =
 {
+"d9/d67/classRefVectorOf.html#a346e00698010f41f994507a3aa948a42":[3,0,445,7],
+"d9/d67/classRefVectorOf.html#a346e00698010f41f994507a3aa948a42":[3,0,445,4],
 "d9/d67/classRefVectorOf.html#a43d27810a86813d955968ee9243d20c4":[3,0,445,0],
 "d9/d67/classRefVectorOf.html#a5691e788fa5dabbde21151800742db4c":[3,0,445,15],
 "d9/d67/classRefVectorOf.html#a5691e788fa5dabbde21151800742db4c":[3,0,445,12],
@@ -247,7 +249,5 @@ var NAVTREEINDEX178 =
 "d9/d72/classVisToolPointFromArcAndTangent.html#a34b5662704f4de0f3a77b6fd00d2a7cf":[3,0,661,6],
 "d9/d72/classVisToolPointFromArcAndTangent.html#a355e2fe21440be17456dbac87b35f45f":[3,0,661,2],
 "d9/d72/classVisToolPointFromArcAndTangent.html#a48ed30c0a89c11880d44a84d5b67730e":[3,0,661,0],
-"d9/d72/classVisToolPointFromArcAndTangent.html#a7fac27e66a66c3ac2523e89dd3ccc44c":[3,0,661,7],
-"d9/d72/classVisToolPointFromArcAndTangent.html#a888bd27253ced314179db167e732a9e8":[3,0,661,9],
-"d9/d72/classVisToolPointFromArcAndTangent.html#a8a8d96eed9e172510c26e6380b5e1f9f":[3,0,661,4]
+"d9/d72/classVisToolPointFromArcAndTangent.html#a7fac27e66a66c3ac2523e89dd3ccc44c":[3,0,661,7]
 };

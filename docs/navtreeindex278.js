@@ -1,5 +1,7 @@
 var NAVTREEINDEX278 =
 {
+"de/d10/classDialogSpline.html#a7652d32eac4187f019612f288136b332":[3,0,131,31],
+"de/d10/classDialogSpline.html#a76ff6674d718594ea1b1253ad820d769":[3,0,131,25],
 "de/d10/classDialogSpline.html#a776dc8c2d890181113d35b0120cc392a":[3,0,131,21],
 "de/d10/classDialogSpline.html#a7db5c85035117cc06c9e45775f2dc124":[3,0,131,16],
 "de/d10/classDialogSpline.html#a80dedf3d59ae48efa7964879317b1220":[3,0,131,36],
@@ -247,7 +249,5 @@ var NAVTREEINDEX278 =
 "de/d1a/classMainWindowsNoGUI.html#afdb03e326dc643a8d82e8a2c62d78438":[3,0,340,61],
 "de/d1b/classXMLElementDecl.html":[3,0,826],
 "de/d1b/classXMLElementDecl.html#a02b6406b856f8d0c1717eb0ab480038d":[3,0,826,146],
-"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,70],
-"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,68],
-"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,71]
+"de/d1b/classXMLElementDecl.html#a04db1c992ec7d0c1da94b330f0061702":[3,0,826,70]
 };

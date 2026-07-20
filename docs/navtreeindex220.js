@@ -1,5 +1,7 @@
 var NAVTREEINDEX220 =
 {
+"db/dda/mingw_2include_2xercesc_2sax2_2Attributes_8hpp.html":[4,0,0,1,15,1,0,0,5,0],
+"db/dda/mingw_2include_2xercesc_2sax2_2Attributes_8hpp_source.html":[4,0,0,1,15,1,0,0,5,0],
 "db/dda/mingw_2include_2xercesc_2util_2StringPool_8hpp.html":[4,0,0,1,15,1,0,0,6,65],
 "db/dda/mingw_2include_2xercesc_2util_2StringPool_8hpp_source.html":[4,0,0,1,15,1,0,0,6,65],
 "db/dda/msvc_2include_2xercesc_2util_2regx_2RegularExpression_8hpp.html":[4,0,0,1,15,2,0,0,6,3,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX220 =
 "db/de4/classDOMAttrImpl.html#ad48d3a856fa87321f07cf11818937f6f":[3,0,141,106],
 "db/de4/classDOMAttrImpl.html#ad48d3a856fa87321f07cf11818937f6f":[3,0,141,105],
 "db/de4/classDOMAttrImpl.html#ad48d3a856fa87321f07cf11818937f6f":[3,0,141,104],
-"db/de4/classDOMAttrImpl.html#ad48d3a856fa87321f07cf11818937f6f":[3,0,141,107],
-"db/de4/classDOMAttrImpl.html#ad518ba0fd137c15b0f45a5aae0af9eaa":[3,0,141,108],
-"db/de4/classDOMAttrImpl.html#ad518ba0fd137c15b0f45a5aae0af9eaa":[3,0,141,109]
+"db/de4/classDOMAttrImpl.html#ad48d3a856fa87321f07cf11818937f6f":[3,0,141,107]
 };

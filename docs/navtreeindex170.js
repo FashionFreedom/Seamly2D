@@ -1,5 +1,7 @@
 var NAVTREEINDEX170 =
 {
+"d8/de9/vistooltruedarts_8cpp.html":[4,0,0,1,13,3,0,39],
+"d8/de9/vistooltruedarts_8cpp_source.html":[4,0,0,1,13,3,0,39],
 "d8/dea/pattern__piece__tool_8cpp.html":[4,0,0,1,13,1,2],
 "d8/dea/pattern__piece__tool_8cpp_source.html":[4,0,0,1,13,1,2],
 "d8/deb/mingw_2include_2xercesc_2util_2XMLString_8hpp.html":[4,0,0,1,15,1,0,0,6,113],
@@ -247,7 +249,5 @@ var NAVTREEINDEX170 =
 "d8/df7/msvc-arm64_2include_2xercesc_2internal_2IANAEncodings_8hpp.html#a77a19478cb08953634d88b68760d723b":[4,0,0,1,15,3,0,0,2,6,1],
 "d8/df7/msvc-arm64_2include_2xercesc_2internal_2IANAEncodings_8hpp_source.html":[4,0,0,1,15,3,0,0,2,6],
 "d8/dfa/classXMLResourceIdentifier.html":[3,0,863],
-"d8/dfa/classXMLResourceIdentifier.html#a01f1b623177973c6b95a56812ae924d4":[3,0,863,48],
-"d8/dfa/classXMLResourceIdentifier.html#a1ea6a449cfbc8d8be9b66357e4676a54":[3,0,863,20],
-"d8/dfa/classXMLResourceIdentifier.html#a1ea6a449cfbc8d8be9b66357e4676a54":[3,0,863,21]
+"d8/dfa/classXMLResourceIdentifier.html#a01f1b623177973c6b95a56812ae924d4":[3,0,863,48]
 };
