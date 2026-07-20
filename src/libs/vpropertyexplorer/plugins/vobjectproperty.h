@@ -70,6 +70,9 @@ public:
     //! Gets the data from the widget
     virtual QVariant       getEditorData(const QWidget* editor) const override;
 
+    //! Sets the data in the widget
+    virtual bool           setEditorData(QWidget* editor) override;
+
     //! Sets the objects list
     void                   setObjectsList(const QMap<QString, quint32> &objects);
 

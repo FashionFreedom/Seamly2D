@@ -1744,11 +1744,37 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionArcs(VPE::VPr
             break;
         }
         case 47: // AttrFirstArc
-            tool->SetFirstArcId(value.toInt());
+        {
+            const quint32 arcId = value.toUInt();
+            if (arcId == tool->GetSecondArcId())
+            {
+                // Both arcs can not be the same: restore the previous selection
+                const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                         tool->FirstArcName());
+                idToProperty[AttrFirstArc]->setValue(index);
+            }
+            else
+            {
+                tool->SetFirstArcId(arcId);
+            }
             break;
+        }
         case 48: // AttrSecondArc
-            tool->SetSecondArcId(value.toInt());
+        {
+            const quint32 arcId = value.toUInt();
+            if (arcId == tool->GetFirstArcId())
+            {
+                // Both arcs can not be the same: restore the previous selection
+                const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                         tool->SecondArcName());
+                idToProperty[AttrSecondArc]->setValue(index);
+            }
+            else
+            {
+                tool->SetSecondArcId(arcId);
+            }
             break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
