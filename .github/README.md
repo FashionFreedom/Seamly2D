@@ -26,7 +26,7 @@ Don't know how? Join our multi-lingual Discourse [forum](https://forum.seamly.io
 
 ### Supported platforms:
    * Windows 10 & 11 (64-bit) 
-   * macOS Monterey (12), Ventura (13), Sonoma (14), and Sequoia (15)
+   * macOS Ventura (13), Sonoma (14), Sequoia (15), Tahoe (26)
    * Most current Linux distros as Flatpak via [Flathub](https://flathub.org/apps/io.seamly.seamly2d)
    * Most current Linux distros as AppImage
 ___________________________________________________
@@ -36,7 +36,7 @@ ___________________________________________________
 | :---:          | :---:         | :---: | :---:          | :---:         |
 | [![Seamly2D-windows.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2D-win-arm64.zip](./img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-win-arm64.zip) | [![Seamly2D-macos.zip](./img/MacOS_logo_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D AppImage](./img/linux-svgrepo-com-60x71.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [![Seamly2D Flatpak](./img/flathub-badge-en.png)](https://flathub.org/apps/io.seamly.seamly2d) |
 | Intel or AMD 64bit | ARM 64bit | Apple Silicon or Intel | Intel or AMD 64bit | Intel or AMD 64bit |
-| Windows 10<br>Windows 11 | Windows 11 | macos 12 Monterey<br>macOS 13 Ventura<br>macOS 14 Sonoma<br>macOS 15 Sequoia<br>macOS Tahoe 26 | Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy<br>ArchLabs|Debian 10 Buster<br>Debian 11 Bullseye<br>Debian 12 Bookworm<br>Ubuntu 22.04 Jammy<br>Ubuntu 23.04 Lunar<br>Up-to-date Arch Linux -<br>Manjaro<br>ArcoLinux<br>EndeavourOS<br>Anarchy,<br>ArchLabs|
+| Windows 10<br>Windows 11 | Windows 11 | macOS 13 Ventura<br>macOS 14 Sonoma<br>macOS 15 Sequoia<br>macOS Tahoe 26 | Debian 12+ (bookworm or later)<br>Ubuntu 22.04+ (jammy or later)<br>ArchLinux<br>Manjaro | Everywhere, where flathub is supported|
 
 ___________________________________________________
 ### Community :
