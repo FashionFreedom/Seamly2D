@@ -129,7 +129,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="QComboBox" name="comboBoxArc1">
+         <widget class="QLabel" name="arc1Name_Label">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -147,6 +147,9 @@
             <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="text">
+           <string notr="true"/>
           </property>
          </widget>
         </item>
@@ -179,7 +182,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="QComboBox" name="comboBoxArc2">
+         <widget class="QLabel" name="arc2Name_Label">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -197,6 +200,9 @@
             <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="text">
+           <string notr="true"/>
           </property>
          </widget>
         </item>

@@ -107,6 +107,19 @@ QVariant VPE::VLabelProperty::getEditorData(const QWidget *editor) const
     return QVariant(QString());
 }
 
+//! Sets the data in the widget
+bool VPE::VLabelProperty::setEditorData(QWidget *editor)
+{
+    QLabel *labelTextEditor = qobject_cast<QLabel*>(editor);
+    if (labelTextEditor)
+    {
+        labelTextEditor->setText(d_ptr->VariantValue.toString());
+        return true;
+    }
+
+    return false;
+}
+
 void VPE::VLabelProperty::setSetting(const QString &key, const QVariant &value)
 {
     if (key == QLatin1String("TypeForParent"))

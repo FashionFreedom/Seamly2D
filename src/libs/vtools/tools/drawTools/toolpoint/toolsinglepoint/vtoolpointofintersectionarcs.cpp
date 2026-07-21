@@ -279,42 +279,6 @@ QString VToolPointOfIntersectionArcs::SecondArcName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfIntersectionArcs::GetFirstArcId() const
-{
-    return firstArcId;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionArcs::SetFirstArcId(const quint32 &value)
-{
-    if (value != NULL_ID)
-    {
-        firstArcId = value;
-
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-        SaveOption(obj);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfIntersectionArcs::GetSecondArcId() const
-{
-    return secondArcId;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionArcs::SetSecondArcId(const quint32 &value)
-{
-    if (value != NULL_ID)
-    {
-        secondArcId = value;
-
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-        SaveOption(obj);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 CrossCirclesPoint VToolPointOfIntersectionArcs::GetCrossCirclesPoint() const
 {
     return crossPoint;
