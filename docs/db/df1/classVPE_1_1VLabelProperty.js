@@ -8,6 +8,7 @@ var classVPE_1_1VLabelProperty =
     [ "getSetting", "db/df1/classVPE_1_1VLabelProperty.html#aa26b2f6980987a13a98a9b1fce9f3f79", null ],
     [ "getSettingKeys", "db/df1/classVPE_1_1VLabelProperty.html#a2504e0460e546ecf0a9d0670c9ef82d7", null ],
     [ "getTypeForParent", "db/df1/classVPE_1_1VLabelProperty.html#a108ec8871a8a5612950719266b1c2aaa", null ],
+    [ "setEditorData", "db/df1/classVPE_1_1VLabelProperty.html#ab1b561cde57f9eb3979333f47828d1d5", null ],
     [ "setSetting", "db/df1/classVPE_1_1VLabelProperty.html#a532d26aa65b8dc51b9910b8e76c0b917", null ],
     [ "setTypeForParent", "db/df1/classVPE_1_1VLabelProperty.html#aaff1cb9a0fc92387b8c7ab0fd9528944", null ],
     [ "type", "db/df1/classVPE_1_1VLabelProperty.html#a2a0a1d265cbb0cf1af186c3bc0ca8467", null ],

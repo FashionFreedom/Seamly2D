@@ -11,7 +11,7 @@ var searchData=
   ['sceneview_8',['sceneView',['../db/dda/classVAbstractApplication.html#a21845de2391914691b5978a4f3a3cf35',1,'VAbstractApplication']]],
   ['scheme_5fcharacters_9',['SCHEME_CHARACTERS',['../d8/d73/classXMLUri.html#ac3f175cfd2b7875d591c93fa547e0f5f',1,'XMLUri']]],
   ['seamallowance_10',['seamAllowance',['../d7/dcf/classVLayoutPieceData.html#a8fa18950be286065806ab2dfb120f361',1,'VLayoutPieceData']]],
-  ['secondarcid_11',['secondArcId',['../d4/d0f/classVToolPointOfIntersectionArcs.html#ac6238c132941479d41c3e7fb810bbe0a',1,'VToolPointOfIntersectionArcs']]],
+  ['secondarcid_11',['secondArcId',['../dd/d0c/classDialogPointOfIntersectionArcs.html#a6009c9ba5c24f551594e4688fbf84126',1,'DialogPointOfIntersectionArcs::secondArcId()'],['../d4/d0f/classVToolPointOfIntersectionArcs.html#ac6238c132941479d41c3e7fb810bbe0a',1,'VToolPointOfIntersectionArcs::secondArcId()']]],
   ['secondcirclecenterid_12',['secondCircleCenterId',['../dc/d9f/classIntersectCirclesTool.html#a98a53a3c667fa51b173e5b31ba74d54c',1,'IntersectCirclesTool']]],
   ['secondcircleradius_13',['secondCircleRadius',['../dc/d9f/classIntersectCirclesTool.html#a9c2faf673d0e8f94b7346a2b9dbe5e68',1,'IntersectCirclesTool']]],
   ['secondcurveid_14',['secondCurveId',['../d5/d68/classVToolPointOfIntersectionCurves.html#abaf5a33f1ed6a0b0c7e579007e180b3f',1,'VToolPointOfIntersectionCurves']]],

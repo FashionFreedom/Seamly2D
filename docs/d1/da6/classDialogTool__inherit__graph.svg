@@ -1128,33 +1128,34 @@ var sectionId = 'dynsection-0';
 <g id="node27" class="node">
 <title>Node27</title>
 <g id="a_node27"><a xlink:href="../../dd/d0c/classDialogPointOfIntersectionArcs.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="4018.5,-209.5 4018.5,-420.5 4181.5,-420.5 4181.5,-209.5 4018.5,-209.5"/>
-<text text-anchor="middle" x="4100" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogPointOfIntersectionArcs</text>
-<polyline fill="none" stroke="#666666" points="4018.5,-401.5 4181.5,-401.5 "/>
-<text text-anchor="start" x="4026.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="#666666" points="4018.5,-382.5 4181.5,-382.5 "/>
-<text text-anchor="start" x="4026.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogPointOfIntersection</text>
-<text text-anchor="start" x="4026.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
-<text text-anchor="start" x="4026.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogPointOfIntersection</text>
-<text text-anchor="start" x="4026.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
-<text text-anchor="start" x="4026.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
-<text text-anchor="start" x="4026.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstArcId()</text>
-<text text-anchor="start" x="4026.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstArcId()</text>
-<text text-anchor="start" x="4026.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondArcId()</text>
-<text text-anchor="start" x="4026.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondArcId()</text>
-<text text-anchor="start" x="4026.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossArcPoint()</text>
-<text text-anchor="start" x="4026.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCrossArcPoint()</text>
-<text text-anchor="start" x="4026.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="4026.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcChanged()</text>
-<text text-anchor="start" x="4026.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="4026.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<polygon fill="white" stroke="#666666" points="4018.5,-204 4018.5,-426 4181.5,-426 4181.5,-204 4018.5,-204"/>
+<text text-anchor="middle" x="4100" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">DialogPointOfIntersectionArcs</text>
+<polyline fill="none" stroke="#666666" points="4018.5,-407 4181.5,-407 "/>
+<text text-anchor="start" x="4026.5" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="4026.5" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstArcId</text>
+<text text-anchor="start" x="4026.5" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondArcId</text>
+<polyline fill="none" stroke="#666666" points="4018.5,-366 4181.5,-366 "/>
+<text text-anchor="start" x="4026.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogPointOfIntersection</text>
+<text text-anchor="start" x="4026.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
+<text text-anchor="start" x="4026.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogPointOfIntersection</text>
+<text text-anchor="start" x="4026.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
+<text text-anchor="start" x="4026.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
+<text text-anchor="start" x="4026.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstArcId()</text>
+<text text-anchor="start" x="4026.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstArcId()</text>
+<text text-anchor="start" x="4026.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondArcId()</text>
+<text text-anchor="start" x="4026.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondArcId()</text>
+<text text-anchor="start" x="4026.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossArcPoint()</text>
+<text text-anchor="start" x="4026.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCrossArcPoint()</text>
+<text text-anchor="start" x="4026.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="4026.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="4026.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node27 -->
 <g id="edge26" class="edge">
 <title>Node1&#45;&gt;Node27</title>
-<path fill="none" stroke="#63b8ff" d="M3732.13,-935.9C3816.38,-866.4 3937.95,-753.55 4010,-630 4047.57,-565.58 4070.29,-484.49 4083.5,-420.85"/>
+<path fill="none" stroke="#63b8ff" d="M3732.13,-935.9C3816.38,-866.4 3937.95,-753.55 4010,-630 4046.49,-567.42 4068.98,-489.1 4082.35,-426.34"/>
 <polygon fill="none" stroke="#63b8ff" points="3729.86,-933.23 3724.35,-942.28 3734.3,-938.65 3729.86,-933.23"/>
 </g>
 <!-- Node28 -->

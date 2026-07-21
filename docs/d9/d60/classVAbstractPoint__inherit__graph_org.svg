@@ -754,43 +754,39 @@
 <g id="node31" class="node">
 <title>Node31</title>
 <g id="a_node31"><a xlink:href="../../d4/d0f/classVToolPointOfIntersectionArcs.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1650,-386 1650,-707 1808,-707 1808,-386 1650,-386"/>
-<text text-anchor="middle" x="1729" y="-695" font-family="Helvetica,sans-Serif" font-size="10.00">VToolPointOfIntersectionArcs</text>
-<polyline fill="none" stroke="#666666" points="1650,-688 1808,-688 "/>
-<text text-anchor="start" x="1658" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1658" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstArcId</text>
-<text text-anchor="start" x="1658" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondArcId</text>
-<text text-anchor="start" x="1658" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="1650,-636 1808,-636 "/>
-<text text-anchor="start" x="1658" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1658" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1658" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstArcName()</text>
-<text text-anchor="start" x="1658" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondArcName()</text>
-<text text-anchor="start" x="1658" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstArcId()</text>
-<text text-anchor="start" x="1658" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstArcId()</text>
-<text text-anchor="start" x="1658" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondArcId()</text>
-<text text-anchor="start" x="1658" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondArcId()</text>
-<text text-anchor="start" x="1658" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="1658" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="1658" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1658" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1658" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1658" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1658" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1658" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1658" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1658" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1658" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1658" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1658" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolPointOfIntersection</text>
-<text text-anchor="start" x="1658" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
+<polygon fill="white" stroke="#666666" points="1650,-408 1650,-685 1808,-685 1808,-408 1650,-408"/>
+<text text-anchor="middle" x="1729" y="-673" font-family="Helvetica,sans-Serif" font-size="10.00">VToolPointOfIntersectionArcs</text>
+<polyline fill="none" stroke="#666666" points="1650,-666 1808,-666 "/>
+<text text-anchor="start" x="1658" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1658" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstArcId</text>
+<text text-anchor="start" x="1658" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondArcId</text>
+<text text-anchor="start" x="1658" y="-621" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="1650,-614 1808,-614 "/>
+<text text-anchor="start" x="1658" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1658" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1658" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstArcName()</text>
+<text text-anchor="start" x="1658" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondArcName()</text>
+<text text-anchor="start" x="1658" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="1658" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="1658" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1658" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1658" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1658" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1658" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1658" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1658" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1658" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1658" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1658" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1658" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolPointOfIntersection</text>
+<text text-anchor="start" x="1658" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00">Arcs()</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node31 -->
 <g id="edge30" class="edge">
 <title>Node9&#45;&gt;Node31</title>
-<path fill="none" stroke="#63b8ff" d="M1162.07,-970.71C1286.22,-939.16 1503.72,-868.27 1640,-735 1648.63,-726.56 1656.53,-717.12 1663.73,-707.08"/>
+<path fill="none" stroke="#63b8ff" d="M1162.07,-970.71C1286.22,-939.16 1503.72,-868.27 1640,-735 1654.68,-720.64 1667.24,-703.38 1677.89,-685.22"/>
 <polygon fill="none" stroke="#63b8ff" points="1161.05,-967.36 1152.2,-973.18 1162.75,-974.15 1161.05,-967.36"/>
 </g>
 <!-- Node32 -->
