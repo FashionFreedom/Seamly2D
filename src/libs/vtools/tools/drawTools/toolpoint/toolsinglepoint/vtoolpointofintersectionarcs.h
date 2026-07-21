@@ -95,12 +95,6 @@ public:
     QString              FirstArcName() const;
     QString              SecondArcName() const;
 
-    quint32              GetFirstArcId() const;
-    void                 SetFirstArcId(const quint32 &value);
-
-    quint32              GetSecondArcId() const;
-    void                 SetSecondArcId(const quint32 &value);
-
     CrossCirclesPoint    GetCrossCirclesPoint() const;
     void                 setCirclesCrossPoint(const CrossCirclesPoint &value);
 
