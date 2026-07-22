@@ -279,7 +279,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
-    setOrganizationDomain(VER_COMPANYDOMAIN_STR);
+    setOrganizationDomain(VER_COMPANYDOMAIN);
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
 
