@@ -128,7 +128,7 @@ public:
     /**
      * @brief Assign a token type.
      *
-     * Token may not be of type value, variable or function. Those have seperate set functions.
+     * Token may not be of type value, variable or function. Those have separate set functions.
      *
      * @pre [assert] a_iType!=cmVAR
      * @pre [assert] a_iType!=cmVAL
