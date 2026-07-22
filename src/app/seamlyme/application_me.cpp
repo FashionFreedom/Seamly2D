@@ -260,7 +260,7 @@ ApplicationME::ApplicationME(int &argc, char **argv)
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_ME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
-    setOrganizationDomain(VER_COMPANYDOMAIN_STR);
+    setOrganizationDomain(VER_COMPANYDOMAIN);
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
 
