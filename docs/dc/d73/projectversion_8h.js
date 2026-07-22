@@ -2,6 +2,7 @@ var projectversion_8h =
 [
     [ "APP_VERSION", "dc/d73/projectversion_8h.html#a92673e33f27532767749b79edb8ef806", null ],
     [ "V_PRERELEASE", "dc/d73/projectversion_8h.html#af74d62e604e243d7fff626d4758de757", null ],
+    [ "VER_COMPANYDOMAIN", "dc/d73/projectversion_8h.html#af6ed95eeaed3d772965d08a49ae36cbe", null ],
     [ "VER_COMPANYDOMAIN_STR", "dc/d73/projectversion_8h.html#a2a7b2019dfe4e3cf3b89f7f186dc5640", null ],
     [ "VER_COMPANYNAME_STR", "dc/d73/projectversion_8h.html#ae5e9111e9af54e6a31e3f8b369cd3e19", null ],
     [ "VER_FILEVERSION", "dc/d73/projectversion_8h.html#ae6ef9058da3d1f2efdc365d6643d1de3", null ],
