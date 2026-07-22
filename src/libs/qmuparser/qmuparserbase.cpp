@@ -1382,7 +1382,7 @@ void QmuParserBase::CreateRPN() const
 
     ReInit();
 
-    // The outermost counter counts the number of seperated items
+    // The outermost counter counts the number of separated items
     // such as in "a=10,b=20,c=c+a"
     stArgCount.push(1);
 
@@ -1921,11 +1921,11 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/** @brief Evaluate an expression containing comma seperated subexpressions
+/** @brief Evaluate an expression containing comma separated subexpressions
   * @param [out] nStackSize The total number of results available
   * @return Pointer to the array containing all expression results
   *
-  * This member function can be used to retriev all results of an expression made up of multiple comma seperated
+  * This member function can be used to retrieve all results of an expression made up of multiple comma separated
   * subexpressions (i.e. "x+y,sin(x),cos(y)")
   */
 qreal* QmuParserBase::Eval(int &nStackSize) const

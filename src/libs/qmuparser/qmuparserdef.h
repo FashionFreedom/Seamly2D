@@ -176,7 +176,7 @@ enum EOprtPrecedence
     prLOR     = 1,
     prLAND    = 2,
     prLOGIC   = 3,  ///< logic operators
-    prCMP     = 4,  ///< comparsion operators
+    prCMP     = 4,  ///< comparison operators
     prADD_SUB = 5,  ///< addition
     prMUL_DIV = 6,  ///< multiplication/division
     prPOW     = 7,  ///< power operator priority (highest)

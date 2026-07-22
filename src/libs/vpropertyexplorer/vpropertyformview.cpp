@@ -104,7 +104,7 @@ void VPE::VPropertyFormView::setPropertySet(VPropertySet *property_set)
 
 void VPE::VPropertyFormView::rowsRemoved(const QModelIndex &parent, int start, int end)
 {
-    // todo: Only rebuild the neccessary parts
+    // todo: Only rebuild the necessary parts
     Q_UNUSED(parent)
     Q_UNUSED(start)
     Q_UNUSED(end)
@@ -113,7 +113,7 @@ void VPE::VPropertyFormView::rowsRemoved(const QModelIndex &parent, int start, i
 
 void VPE::VPropertyFormView::rowsInserted(const QModelIndex &parent, int start, int end) //-V524
 {
-    // todo: Only rebuild the neccessary parts
+    // todo: Only rebuild the necessary parts
     Q_UNUSED(parent)
     Q_UNUSED(start)
     Q_UNUSED(end)
