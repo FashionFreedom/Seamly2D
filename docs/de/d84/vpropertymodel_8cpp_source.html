@@ -275,7 +275,7 @@ $(document).ready(function(){initNavTree('de/d84/vpropertymodel_8cpp_source.html
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    {</div>
 <div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="keywordtype">bool</span> tmpHasChanged = tmpProperty-&gt;<a class="code hl_function" href="../../db/df9/classVPE_1_1VProperty.html#a1804ba55faa0ee9bd0852041db81997b">setData</a>(value, role);</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">if</span> (tmpProperty-&gt;<a class="code hl_function" href="../../db/df9/classVPE_1_1VProperty.html#a21f0551a09fc6bb1987bacd78c4231bb">getUpdateParent</a>() &amp;&amp; tmpHasChanged)</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        {   <span class="comment">// If neccessary, update the parent as well</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        {   <span class="comment">// If necessary, update the parent as well</span></div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            QModelIndex tmpParentIndex = parent(index);</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            emit dataChanged(tmpParentIndex, tmpParentIndex);</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        }</div>
