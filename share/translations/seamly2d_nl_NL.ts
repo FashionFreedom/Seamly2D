@@ -10183,7 +10183,7 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.</translation>
     </message>
     <message>
@@ -11742,7 +11742,7 @@ Wil je deze veranderingen opslaan?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

@@ -10200,7 +10200,7 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Lampirkan file 3DLook Anda ke email dan kirim ke convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Anda akan menerima email berisi berkas yang dikonversi, yang kemudian dapat Anda unggah ke SeamlyME seperti biasa.</translation>
     </message>
     <message>
@@ -11759,7 +11759,7 @@ Apakah Anda ingin menyimpan perubahan Anda?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

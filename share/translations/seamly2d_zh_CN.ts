@@ -10200,7 +10200,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>将您的 3DLook 文件附加到电子邮件中并发送给convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>您将收到一封包含已转换文件的电子邮件，然后您可以像往常一样将其加载到 Seamly ME 中.</translation>
     </message>
     <message>
@@ -11755,7 +11755,7 @@ Do you want to save your changes?</source>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

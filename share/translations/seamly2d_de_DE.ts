@@ -10184,7 +10184,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Hängen Sie Ihre 3DLook-Datei an eine E-Mail an und senden Sie sie an convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Sie erhalten dann eine E-Mail mit der konvertierten Datei, die Sie dann wie gewohnt in SeamlyME laden können.</translation>
     </message>
     <message>
@@ -11739,7 +11739,7 @@ Sollen die Änderungen gespeichert werden?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

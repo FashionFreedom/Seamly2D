@@ -10200,7 +10200,7 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Dołącz plik 3DLook do wiadomości e-mail i wyślij na adres convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Otrzymasz e-mail z przekonwertowanym plikiem, który możesz następnie wczytać do SeamlyME jak zwykle.</translation>
     </message>
     <message>
@@ -11586,7 +11586,7 @@ Czy chcesz zapisać zmiany?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

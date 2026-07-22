@@ -10200,7 +10200,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Liitä 3DLook-tiedostosi sähköpostiviestiin ja lähetä se osoitteeseen convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Saat sähköpostin, jossa on muunnetut tiedostot. Voit sitten ladata ne SeamlyME:hen normaalisti.</translation>
     </message>
     <message>
@@ -11570,7 +11570,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
