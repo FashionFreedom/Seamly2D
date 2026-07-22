@@ -1445,10 +1445,10 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
 // This method sets the screen position of dialogs based on the user preference setting
 //
 // @details
-//  - Get dialog prefered possition from settings.
+//  - Get dialog preferred position from settings.
 //  - Determine geometry of screen and dialog.
-//  - Move dialog to prefered screen position with margin applied.
-//  - Positions include Top left, Top right, Center, Bottom Left, and Botton right corner of screen.
+//  - Move dialog to preferred screen position with margin applied.
+//  - Positions include Top left, Top right, Center, Bottom Left, and Bottom right corner of screen.
 void  DialogTool::setDialogPosition()
 {
     int position = qApp->Settings()->getDialogPosition();
