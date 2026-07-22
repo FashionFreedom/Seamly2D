@@ -10199,7 +10199,7 @@ Menti a módosításokat?</translation>
         <translation>Csatold a 3DLook fájlodat egy e-mailhez, és küldd el a convert@seamly.io címre.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Kapni fogsz egy e-mailt a konvertált fájllal, amelyet ezután a szokásos módon betölthetsz a SeamlyME-be.</translation>
     </message>
     <message>
@@ -11585,7 +11585,7 @@ Menti a módosításokat?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

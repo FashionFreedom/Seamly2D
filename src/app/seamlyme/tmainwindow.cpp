@@ -575,7 +575,7 @@ void TMainWindow::handleBodyScanner2()
 {
     QString msg = tr("To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.\n") +
                   tr("Attach your 3DLook file to an email and send to convert@seamly.io.\n\n") +
-                  tr("You will recieve an email with the converted file, which you can then\nload in SeamlyME as usual.\n\n");
+                  tr("You will receive an email with the converted file, which you can then\nload in SeamlyME as usual.\n\n");
 
     QMessageBox messageBox(this);
     messageBox.setIconPixmap(QPixmap(":/icon/body_scan.png"));

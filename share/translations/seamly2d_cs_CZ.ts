@@ -10198,7 +10198,7 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Přiložte soubor 3DLook k e-mailu a odešlete jej na adresu convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Obdržíte e-mail s převedeným souborem, který pak můžete jako obvykle načíst do SeamlyME.</translation>
     </message>
     <message>
@@ -11757,7 +11757,7 @@ Chcete změny uložit?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

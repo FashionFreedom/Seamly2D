@@ -10200,7 +10200,7 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>3DLook dosyanızı bir e-postaya ekleyin ve convert@seamly.io adresine gönderin.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Dönüştürülen dosyanın bulunduğu bir e-posta alacaksınız, ardından dosyayı her zamanki gibi SeamlyME&apos;ye yükleyebilirsiniz.</translation>
     </message>
     <message>
@@ -11759,7 +11759,7 @@ Do you want to save your changes?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>

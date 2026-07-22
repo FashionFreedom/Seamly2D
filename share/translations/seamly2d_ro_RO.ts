@@ -10202,7 +10202,7 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Atașați fișierul 3DLook la un e-mail și trimiteți-l la convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Veți primi un e-mail cu fișierul convertit, pe care îl puteți încărca apoi în SeamlyME ca de obicei.</translation>
     </message>
     <message>
@@ -11757,7 +11757,7 @@ Doriți să salvați modificările?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
