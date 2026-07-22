@@ -82,6 +82,9 @@ extern const QString APP_VERSION_STR;
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
 #define VER_COMPANYDOMAIN_STR       "https://seamly.io"
+// Bare domain for QCoreApplication::setOrganizationDomain(): a URL scheme here breaks
+// the reverse-DNS app_id Qt derives on Wayland (e.g. "io.https://seamly.seamly2d")
+#define VER_COMPANYDOMAIN           "seamly.io"
 
 QString compilerString();
 QString buildCompatibilityString();
