@@ -251,7 +251,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     {
         if (ref == Referens::Follow)
         {
-            if (_referens > 0)
+            if (isUsed())
             {
                 qCDebug(vTool, "Delete disabled. Tool has children.");
                 actionDelete->setEnabled(false);

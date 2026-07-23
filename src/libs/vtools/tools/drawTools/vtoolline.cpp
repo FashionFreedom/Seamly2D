@@ -248,6 +248,36 @@ QString VToolLine::SecondPointName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief isUsedInFormula check if the length or the angle of this line is used in a formula.
+///
+/// A line has no object in the data container, only the length and angle variables the tool registers with
+/// VContainer::AddLine(). Those variables are referenced by name, so the id based reference counter never sees
+/// them and can't stop the line from being deleted while a formula still needs it.
+///
+/// @return true if a formula references the length or the angle of this line.
+//---------------------------------------------------------------------------------------------------------------------
+
+bool VToolLine::isUsedInFormula() const
+{
+    const QString first_name  = FirstPointName();
+    const QString second_name = SecondPointName();
+    const QString line_name   = QString("%1_%2").arg(first_name, second_name);
+
+    return doc->isVariableUsedInFormulas(line_ + line_name)
+        || doc->isVariableUsedInFormulas(angleLine_ + line_name);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief isUsed check if the line can't be deleted.
+/// @return true if another tool references the line by id, or a formula uses its length or angle.
+//---------------------------------------------------------------------------------------------------------------------
+
+bool VToolLine::isUsed() const
+{
+    return VDrawTool::isUsed() || isUsedInFormula();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief FullUpdateFromFile update tool data form file.
  */

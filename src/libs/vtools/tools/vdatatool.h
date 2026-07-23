@@ -76,6 +76,7 @@ public:
     VContainer      getData() const;
     void            setData(const VContainer *value);
     virtual quint32 referens() const;
+    virtual bool    isUsed() const;
     virtual void    incrementReferens();
     virtual void    decrementReferens();
     virtual void    GroupVisibility(quint32 object, bool visible)=0;
@@ -117,6 +118,20 @@ inline void VDataTool::setData(const VContainer *value)
 inline quint32 VDataTool::referens() const
 {
     return _referens;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief isUsed check if another tool still needs this tool, so it can't be deleted.
+///
+/// By default a tool is used when something references it by id. Tools whose dependents are not tracked by id
+/// override this, for example a line that a formula uses by name.
+///
+/// @return true if the tool can't be deleted.
+//---------------------------------------------------------------------------------------------------------------------
+
+inline bool VDataTool::isUsed() const
+{
+    return _referens > 0;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

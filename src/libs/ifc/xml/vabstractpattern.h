@@ -120,6 +120,7 @@ public:
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
     QVector<VFormulaField>         listVariableExpressions() const;
+    bool                           isVariableUsedInFormulas(const QString &variable_name) const;
 
     virtual void                   CreateEmptyFile()=0;
 

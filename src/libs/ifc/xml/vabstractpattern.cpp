@@ -1865,6 +1865,48 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief isVariableUsedInFormulas check if a variable is referenced by any formula in the pattern.
+/// @param variable_name name of the variable to look for, for example "Line_A_B".
+/// @return true if at least one formula uses the variable.
+//---------------------------------------------------------------------------------------------------------------------
+
+bool VAbstractPattern::isVariableUsedInFormulas(const QString &variable_name) const
+{
+    if (variable_name.isEmpty())
+    {
+        return false;
+    }
+
+    const QVector<VFormulaField> expressions = ListExpressions();
+    for (int i = 0; i < expressions.size(); ++i)
+    {
+        // Cheap pre-check. Parsing every formula in the pattern is expensive.
+        if (expressions.at(i).expression.indexOf(variable_name) == -1)
+        {
+            continue;
+        }
+
+        try
+        {
+            QScopedPointer<qmu::QmuTokenParser> cal(new qmu::QmuTokenParser(expressions.at(i).expression, false,
+                                                                            false));
+
+            // Tokens (variables, measurements)
+            if (cal->GetTokens().values().contains(variable_name))
+            {
+                return true;
+            }
+        }
+        catch (const qmu::QmuParserError &)
+        {
+            // Do nothing. Because we not sure if used. A formula is broken.
+        }
+    }
+
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QVector<VFormulaField> VAbstractPattern::ListPointExpressions() const
 {
     // Check if new tool doesn't bring new attribute with a formula.
