@@ -95,6 +95,9 @@ public:
     QString           FirstPointName() const;
     QString           SecondPointName() const;
 
+    bool              isUsedInFormula() const;
+    virtual bool      isUsed() const override;
+
     quint32           GetFirstPoint() const;
     void              SetFirstPoint(const quint32 &value);
 
