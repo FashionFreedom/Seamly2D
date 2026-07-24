@@ -261,7 +261,7 @@ bool VToolLine::isUsedInFormula() const
 {
     const QString line_name = QString("%1_%2").arg(FirstPointName(), SecondPointName());
 
-    return doc->isAnyVariableUsedInFormulas(QStringList() << line_ + line_name << angleLine_ + line_name);
+    return doc->isVariableUsed(QStringList() << line_ + line_name << angleLine_ + line_name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

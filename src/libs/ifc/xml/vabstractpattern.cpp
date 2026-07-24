@@ -1865,12 +1865,12 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief isAnyVariableUsedInFormulas check if any of the variables is referenced by a formula in the pattern.
+/// @brief isVariableUsed check if any of the variables is referenced by a formula in the pattern.
 /// @param variable_names names of the variables to look for.
 /// @return true if at least one formula uses one of the variables.
 //---------------------------------------------------------------------------------------------------------------------
 
-bool VAbstractPattern::isAnyVariableUsedInFormulas(const QStringList &variable_names) const
+bool VAbstractPattern::isVariableUsed(const QStringList &variable_names) const
 {
     QStringList names = variable_names;
     names.removeAll(QString());

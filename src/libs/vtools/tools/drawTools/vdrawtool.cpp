@@ -118,7 +118,7 @@ bool VDrawTool::isUsed() const
         }
     }
 
-    return doc->isAnyVariableUsedInFormulas(variable_names);
+    return doc->isVariableUsed(variable_names);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
