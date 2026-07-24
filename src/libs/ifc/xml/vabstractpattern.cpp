@@ -1865,14 +1865,17 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief isVariableUsedInFormulas check if a variable is referenced by any formula in the pattern.
-/// @param variable_name name of the variable to look for, for example "Line_A_B".
-/// @return true if at least one formula uses the variable.
+/// @brief isAnyVariableUsedInFormulas check if any of the variables is referenced by a formula in the pattern.
+/// @param variable_names names of the variables to look for.
+/// @return true if at least one formula uses one of the variables.
 //---------------------------------------------------------------------------------------------------------------------
 
-bool VAbstractPattern::isVariableUsedInFormulas(const QString &variable_name) const
+bool VAbstractPattern::isAnyVariableUsedInFormulas(const QStringList &variable_names) const
 {
-    if (variable_name.isEmpty())
+    QStringList names = variable_names;
+    names.removeAll(QString());
+
+    if (names.isEmpty())
     {
         return false;
     }
@@ -1881,7 +1884,17 @@ bool VAbstractPattern::isVariableUsedInFormulas(const QString &variable_name) co
     for (int i = 0; i < expressions.size(); ++i)
     {
         // Cheap pre-check. Parsing every formula in the pattern is expensive.
-        if (expressions.at(i).expression.indexOf(variable_name) == -1)
+        bool found = false;
+        for (int j = 0; j < names.size(); ++j)
+        {
+            if (expressions.at(i).expression.indexOf(names.at(j)) != -1)
+            {
+                found = true;
+                break;
+            }
+        }
+
+        if (not found)
         {
             continue;
         }
@@ -1892,9 +1905,13 @@ bool VAbstractPattern::isVariableUsedInFormulas(const QString &variable_name) co
                                                                             false));
 
             // Tokens (variables, measurements)
-            if (cal->GetTokens().values().contains(variable_name))
+            const QList<QString> tokens = cal->GetTokens().values();
+            for (int j = 0; j < names.size(); ++j)
             {
-                return true;
+                if (tokens.contains(names.at(j)))
+                {
+                    return true;
+                }
             }
         }
         catch (const qmu::QmuParserError &)

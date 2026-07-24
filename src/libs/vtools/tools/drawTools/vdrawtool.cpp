@@ -91,6 +91,37 @@ VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObjec
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief isUsed check if the tool can't be deleted.
+///
+/// Besides the id based reference count, a tool can also be needed through the variables it registered in the
+/// data container, for example the length of an arc or the angles of a spline. Formulas reference those variables
+/// by name, so the reference counter never sees them. VInternalVariable::Filter() tells which variables belong to
+/// this tool, the same test the formula dialog uses to hide a tool's own variables.
+///
+/// @return true if another tool references this tool by id, or a formula uses one of its variables.
+//---------------------------------------------------------------------------------------------------------------------
+
+bool VDrawTool::isUsed() const
+{
+    if (VInteractiveTool::isUsed())
+    {
+        return true;
+    }
+
+    QStringList variable_names;
+    const QHash<QString, QSharedPointer<VInternalVariable>> *variables = data.DataVariables();
+    for (auto i = variables->constBegin(); i != variables->constEnd(); ++i)
+    {
+        if (i.value()->Filter(m_id))
+        {
+            variable_names.append(i.key());
+        }
+    }
+
+    return doc->isAnyVariableUsedInFormulas(variable_names);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ShowTool  highlight tool.
  * @param id object id in container.

@@ -259,12 +259,9 @@ QString VToolLine::SecondPointName() const
 
 bool VToolLine::isUsedInFormula() const
 {
-    const QString first_name  = FirstPointName();
-    const QString second_name = SecondPointName();
-    const QString line_name   = QString("%1_%2").arg(first_name, second_name);
+    const QString line_name = QString("%1_%2").arg(FirstPointName(), SecondPointName());
 
-    return doc->isVariableUsedInFormulas(line_ + line_name)
-        || doc->isVariableUsedInFormulas(angleLine_ + line_name);
+    return doc->isAnyVariableUsedInFormulas(QStringList() << line_ + line_name << angleLine_ + line_name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
