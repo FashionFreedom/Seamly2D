@@ -196,27 +196,28 @@
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d5/d68/classVDataTool.html" target="_top" xlink:title="The VDataTool class need for getting access to data container of tool.">
-<polygon fill="white" stroke="#666666" points="118.5,-1955.5 118.5,-2089.5 249.5,-2089.5 249.5,-1955.5 118.5,-1955.5"/>
-<text text-anchor="middle" x="184" y="-2077.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDataTool</text>
-<polyline fill="none" stroke="#666666" points="118.5,-2070.5 249.5,-2070.5 "/>
-<text text-anchor="start" x="126.5" y="-2058.5" font-family="Helvetica,sans-Serif" font-size="10.00"># _referens</text>
-<polyline fill="none" stroke="#666666" points="118.5,-2051.5 249.5,-2051.5 "/>
-<text text-anchor="start" x="126.5" y="-2039.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDataTool()</text>
-<text text-anchor="start" x="126.5" y="-2028.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDataTool()</text>
-<text text-anchor="start" x="126.5" y="-2017.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
-<text text-anchor="start" x="126.5" y="-2006.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
-<text text-anchor="start" x="126.5" y="-1995.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ referens()</text>
-<text text-anchor="start" x="126.5" y="-1984.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ incrementReferens()</text>
-<text text-anchor="start" x="126.5" y="-1973.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ decrementReferens()</text>
-<text text-anchor="start" x="126.5" y="-1962.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
+<polygon fill="white" stroke="#666666" points="118.5,-1950 118.5,-2095 249.5,-2095 249.5,-1950 118.5,-1950"/>
+<text text-anchor="middle" x="184" y="-2083" font-family="Helvetica,sans-Serif" font-size="10.00">VDataTool</text>
+<polyline fill="none" stroke="#666666" points="118.5,-2076 249.5,-2076 "/>
+<text text-anchor="start" x="126.5" y="-2064" font-family="Helvetica,sans-Serif" font-size="10.00"># _referens</text>
+<polyline fill="none" stroke="#666666" points="118.5,-2057 249.5,-2057 "/>
+<text text-anchor="start" x="126.5" y="-2045" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDataTool()</text>
+<text text-anchor="start" x="126.5" y="-2034" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDataTool()</text>
+<text text-anchor="start" x="126.5" y="-2023" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
+<text text-anchor="start" x="126.5" y="-2012" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
+<text text-anchor="start" x="126.5" y="-2001" font-family="Helvetica,sans-Serif" font-size="10.00">+ referens()</text>
+<text text-anchor="start" x="126.5" y="-1990" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
+<text text-anchor="start" x="126.5" y="-1979" font-family="Helvetica,sans-Serif" font-size="10.00">+ incrementReferens()</text>
+<text text-anchor="start" x="126.5" y="-1968" font-family="Helvetica,sans-Serif" font-size="10.00">+ decrementReferens()</text>
+<text text-anchor="start" x="126.5" y="-1957" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
 <title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M115.51,-2505.69C134.99,-2368.56 159.09,-2198.88 172.89,-2101.72"/>
-<polygon fill="none" stroke="#404040" points="172.92,-2101.54 169.8,-2095.04 174.6,-2089.66 177.72,-2096.16 172.92,-2101.54"/>
+<path fill="none" stroke="#404040" d="M115.51,-2505.69C134.63,-2371.11 158.2,-2205.17 172.11,-2107.21"/>
+<polygon fill="none" stroke="#404040" points="172.11,-2107.2 169,-2100.69 173.8,-2095.31 176.92,-2101.82 172.11,-2107.2"/>
 <text text-anchor="middle" x="139" y="-2463" font-family="Helvetica,sans-Serif" font-size="10.00"> #data</text>
 </g>
 <!-- Node5 -->
@@ -281,8 +282,8 @@
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M184.54,-1945.09C185.19,-1852.47 186.33,-1691.9 187.29,-1555.85"/>
-<polygon fill="none" stroke="#63b8ff" points="181.04,-1945.19 184.47,-1955.21 188.04,-1945.24 181.04,-1945.19"/>
+<path fill="none" stroke="#63b8ff" d="M184.58,-1939.48C185.24,-1846.07 186.35,-1689.11 187.29,-1555.74"/>
+<polygon fill="none" stroke="#63b8ff" points="181.08,-1939.69 184.51,-1949.72 188.08,-1939.74 181.08,-1939.69"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -300,7 +301,7 @@
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M213.31,-2682.5C208.27,-2569.27 193.32,-2233.13 186.94,-2089.63"/>
+<path fill="none" stroke="#63b8ff" d="M213.32,-2682.64C208.35,-2570.99 193.71,-2241.8 187.19,-2095.27"/>
 <polygon fill="none" stroke="#63b8ff" points="209.82,-2682.91 213.77,-2692.75 216.82,-2682.6 209.82,-2682.91"/>
 </g>
 <!-- Node8 -->
@@ -340,12 +341,12 @@
 <text text-anchor="start" x="276" y="-2116.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="276" y="-2105.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
 <text text-anchor="start" x="276" y="-2094.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
-<text text-anchor="start" x="276" y="-2083.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
-<text text-anchor="start" x="276" y="-2072.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
-<text text-anchor="start" x="276" y="-2061.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
-<text text-anchor="start" x="276" y="-2050.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
-<text text-anchor="start" x="276" y="-2039.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockCount()</text>
-<text text-anchor="start" x="276" y="-2028.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 98 more...</text>
+<text text-anchor="start" x="276" y="-2083.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsedInFormulas()</text>
+<text text-anchor="start" x="276" y="-2072.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
+<text text-anchor="start" x="276" y="-2061.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
+<text text-anchor="start" x="276" y="-2050.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
+<text text-anchor="start" x="276" y="-2039.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
+<text text-anchor="start" x="276" y="-2028.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 99 more...</text>
 <text text-anchor="start" x="276" y="-2017.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
 <text text-anchor="start" x="276" y="-2006.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
 <text text-anchor="start" x="276" y="-1995.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>

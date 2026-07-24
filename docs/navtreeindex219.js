@@ -1,5 +1,7 @@
 var NAVTREEINDEX219 =
 {
+"db/dc4/classqmu_1_1QmuParserCallback.html#af347073ef4fc5a9cc93519c98e5d6c6b":[3,0,0,5,6],
+"db/dc4/classqmu_1_1QmuParserCallback.html#af347073ef4fc5a9cc93519c98e5d6c6b":[2,0,21,5,6],
 "db/dc4/classqmu_1_1QmuParserCallback.html#afd523b4a77fd84b4bc1b3701eee0af08":[3,0,0,5,11],
 "db/dc4/classqmu_1_1QmuParserCallback.html#afd523b4a77fd84b4bc1b3701eee0af08":[2,0,21,5,11],
 "db/dc8/namespaceanonymous__namespace_02vtextmanager_8cpp_03.html":[2,0,19],
@@ -247,7 +249,5 @@ var NAVTREEINDEX219 =
 "db/dda/classVAbstractApplication.html#af0feb90ee902a084bfc7abe2afb5a744":[3,0,547,6],
 "db/dda/classVAbstractApplication.html#af7726df174e0447e9922c0cb8f3455fd":[3,0,547,0],
 "db/dda/mingw_2include_2xercesc_2sax2_2Attributes_8hpp.html":[4,0,0,1,15,1,0,0,5,0],
-"db/dda/mingw_2include_2xercesc_2sax2_2Attributes_8hpp_source.html":[4,0,0,1,15,1,0,0,5,0],
-"db/dda/mingw_2include_2xercesc_2util_2StringPool_8hpp.html":[4,0,0,1,15,1,0,0,6,65],
-"db/dda/mingw_2include_2xercesc_2util_2StringPool_8hpp_source.html":[4,0,0,1,15,1,0,0,6,65]
+"db/dda/mingw_2include_2xercesc_2sax2_2Attributes_8hpp_source.html":[4,0,0,1,15,1,0,0,5,0]
 };

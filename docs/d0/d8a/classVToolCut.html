@@ -133,9 +133,9 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="separator:a8fe8884c89c34c7b6e56730e2ddfcfd7 inherit pub_types_classVToolSinglePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classVScenePoint"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classVScenePoint')"><img src="../../closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="../../dc/d3b/classVScenePoint.html">VScenePoint</a></td></tr>
-<tr class="memitem:ab482ea20f3bd8b46a4fd9089a60a4c53 inherit pub_types_classVScenePoint"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dc/d3b/classVScenePoint.html#ab482ea20f3bd8b46a4fd9089a60a4c53a331db2e06f284dbff366179370aaad34">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ScenePoint)
+<tr class="memitem:aea87c771d4ace5d1a0ade778dabc45b0 inherit pub_types_classVScenePoint"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="../../dc/d3b/classVScenePoint.html#aea87c771d4ace5d1a0ade778dabc45b0a331db2e06f284dbff366179370aaad34">Type</a> = UserType + static_cast&lt;int&gt;(Vis::ScenePoint)
  }</td></tr>
-<tr class="separator:ab482ea20f3bd8b46a4fd9089a60a4c53 inherit pub_types_classVScenePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aea87c771d4ace5d1a0ade778dabc45b0 inherit pub_types_classVScenePoint"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -327,6 +327,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#aec86772b06c818b523c28cb17b0441bc">referens</a> () const</td></tr>
 <tr class="memdesc:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">referens return count of referens.  <br /></td></tr>
 <tr class="separator:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#a3d25bd53df86ebf89032a75a65a9c840">isUsed</a> () const</td></tr>
+<tr class="memdesc:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">isUsed check if another tool still needs this tool, so it can't be deleted.  <br /></td></tr>
+<tr class="separator:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#ad845b82027866a5fda15de7fd677f270">incrementReferens</a> ()</td></tr>
 <tr class="memdesc:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">incrementReferens increment referens.  <br /></td></tr>
 <tr class="separator:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -718,7 +721,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00173">173</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l02613">VToolOptionsPropertyBrowser::showOptionsToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l02632">VToolOptionsPropertyBrowser::showOptionsToolCutSpline()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l02651">VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l03401">VToolOptionsPropertyBrowser::updateOptionsToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l03429">VToolOptionsPropertyBrowser::updateOptionsToolCutSpline()</a>, and <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l03457">VToolOptionsPropertyBrowser::updateOptionsToolCutSplinePath()</a>.</p>
 
@@ -942,7 +945,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00182">182</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00100">lineColor</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>, and <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00157">VScenePoint::setPointColor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00100">lineColor</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00123">VScenePoint::refreshPointGeometry()</a>, and <a class="el" href="../../d0/d5d/vscenepoint_8cpp_source.html#l00157">VScenePoint::setPointColor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00096">FullUpdateFromFile()</a>.</p>
 
@@ -977,7 +980,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00192">192</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#af1c8c3bc15ed22d49354ffb6358ff964">VAbstractPattern::DecrementReferens()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#af1c8c3bc15ed22d49354ffb6358ff964">VAbstractPattern::DecrementReferens()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>.</p>
 
 </div>
 </div>
@@ -999,7 +1002,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01411">VToolOptionsPropertyBrowser::changeDataToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01444">VToolOptionsPropertyBrowser::changeDataToolCutSpline()</a>, and <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01477">VToolOptionsPropertyBrowser::changeDataToolCutSplinePath()</a>.</p>
 
@@ -1023,7 +1026,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00098">m_direction</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00098">m_direction</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01411">VToolOptionsPropertyBrowser::changeDataToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01444">VToolOptionsPropertyBrowser::changeDataToolCutSpline()</a>, and <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01477">VToolOptionsPropertyBrowser::changeDataToolCutSplinePath()</a>.</p>
 
@@ -1047,7 +1050,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../db/d11/vformula_8cpp_source.html#l00246">VFormula::error()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00099">formula</a>, <a class="el" href="../../db/d11/vformula_8cpp_source.html#l00143">VFormula::GetFormula()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../db/d11/vformula_8cpp_source.html#l00246">VFormula::error()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00099">formula</a>, <a class="el" href="../../db/d11/vformula_8cpp_source.html#l00143">VFormula::GetFormula()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01411">VToolOptionsPropertyBrowser::changeDataToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01444">VToolOptionsPropertyBrowser::changeDataToolCutSpline()</a>, and <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01477">VToolOptionsPropertyBrowser::changeDataToolCutSplinePath()</a>.</p>
 
@@ -1071,7 +1074,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d2/dc5/vtoolcut_8cpp_source.html">vtoolcut.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00100">lineColor</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00100">lineColor</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01411">VToolOptionsPropertyBrowser::changeDataToolCutArc()</a>, <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01444">VToolOptionsPropertyBrowser::changeDataToolCutSpline()</a>, and <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l01477">VToolOptionsPropertyBrowser::changeDataToolCutSplinePath()</a>.</p>
 
@@ -1105,7 +1108,7 @@ template&lt;typename T &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00116">116</a> of file <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html">vtoolcut.h</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00674">VAbstractPattern::getTool()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00102">m_piecesMode</a>, <a class="el" href="../../d4/d36/classVAbstractTool.html#ae0f2dd6754377053294a98097b3c89ba">VAbstractTool::SetVisualization()</a>, and <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00149">VAbstractTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00101">curveCutId</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00674">VAbstractPattern::getTool()</a>, <a class="el" href="../../d7/d7d/vtoolcut_8h_source.html#l00102">m_piecesMode</a>, <a class="el" href="../../d4/d36/classVAbstractTool.html#ae0f2dd6754377053294a98097b3c89ba">VAbstractTool::SetVisualization()</a>, and <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00149">VAbstractTool::vis</a>.</p>
 
 </div>
 </div>

@@ -242,6 +242,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#aec86772b06c818b523c28cb17b0441bc">referens</a> () const</td></tr>
 <tr class="memdesc:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">referens return count of referens.  <br /></td></tr>
 <tr class="separator:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#a3d25bd53df86ebf89032a75a65a9c840">isUsed</a> () const</td></tr>
+<tr class="memdesc:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">isUsed check if another tool still needs this tool, so it can't be deleted.  <br /></td></tr>
+<tr class="separator:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#ad845b82027866a5fda15de7fd677f270">incrementReferens</a> ()</td></tr>
 <tr class="memdesc:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">incrementReferens increment referens.  <br /></td></tr>
 <tr class="separator:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -795,7 +798,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00135">135</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00746">VContainer::AddCurveWithSegments()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00344">VContainer::AddGObject()</a>, <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00566">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00685">VAbstractPattern::AddTool()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d9/dcd/vabstractspline_8h_source.html#l00217">VAbstractSpline::initSplinePathToolConnections()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00581">VContainer::UpdateGObject()</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00746">VContainer::AddCurveWithSegments()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00344">VContainer::AddGObject()</a>, <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00566">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00685">VAbstractPattern::AddTool()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d9/dcd/vabstractspline_8h_source.html#l00217">VAbstractSpline::initSplinePathToolConnections()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00581">VContainer::UpdateGObject()</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
 
 </div>
 </div>
@@ -847,7 +850,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00108">Create()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#a698f53614173279191a3f46f5ba5e950">VAbstractPattern::IncrementReferens()</a>, <a class="el" href="../../d9/dde/vinteractivetool_8h_source.html#l00076">VInteractiveTool::m_dialog</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../d9/dd8/dialogcubicbezierpath_8cpp_source.html#l00206">DialogCubicBezierPath::setLineColor()</a>, and <a class="el" href="../../d9/dd8/dialogcubicbezierpath_8cpp_source.html#l00194">DialogCubicBezierPath::setLineWeight()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00108">Create()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#a698f53614173279191a3f46f5ba5e950">VAbstractPattern::IncrementReferens()</a>, <a class="el" href="../../d9/dde/vinteractivetool_8h_source.html#l00076">VInteractiveTool::m_dialog</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../d9/dd8/dialogcubicbezierpath_8cpp_source.html#l00206">DialogCubicBezierPath::setLineColor()</a>, and <a class="el" href="../../d9/dd8/dialogcubicbezierpath_8cpp_source.html#l00194">DialogCubicBezierPath::setLineWeight()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00108">Create()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l02703">VPattern::ParseToolCubicBezierPath()</a>.</p>
 
@@ -870,7 +873,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00178">178</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d2/d00/vtooloptionspropertybrowser_8cpp_source.html#l02999">VToolOptionsPropertyBrowser::showOptionsToolCubicBezierPath()</a>.</p>
 
@@ -903,7 +906,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00266">266</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00250">SetVisualization()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00250">SetVisualization()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
 
 </div>
 </div>
@@ -936,7 +939,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00216">216</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#af1c8c3bc15ed22d49354ffb6358ff964">VAbstractPattern::DecrementReferens()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d8/dba/classVAbstractPattern.html#af1c8c3bc15ed22d49354ffb6358ff964">VAbstractPattern::DecrementReferens()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
 
 </div>
 </div>
@@ -1045,7 +1048,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d9/dde/vinteractivetool_8h_source.html#l00076">VInteractiveTool::m_dialog</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00317">VAbstractCurve::setLineColor()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../d9/dde/vinteractivetool_8h_source.html#l00076">VInteractiveTool::m_dialog</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00317">VAbstractCurve::setLineColor()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
 
 </div>
 </div>
@@ -1067,7 +1070,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00199">VContainer::GetGObject()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00162">VDrawTool::SaveOption()</a>, and <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>.</p>
 
 </div>
 </div>
@@ -1140,7 +1143,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00250">250</a> of file <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html">vtoolcubicbezierpath.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00192">lineTypeToPenStyle()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>, and <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00149">VAbstractTool::vis</a>.</p>
+<p class="reference">References <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00402">VContainer::GeometricObject()</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00192">lineTypeToPenStyle()</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00147">VAbstractTool::m_id</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00509">splPath</a>, and <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00149">VAbstractTool::vis</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d49/vtoolcubicbezierpath_8cpp_source.html#l00266">refreshGeometry()</a>.</p>
 

@@ -17,6 +17,8 @@ var classVToolLine =
     [ "GroupVisibility", "dc/d2b/classVToolLine.html#a64fdbe805969448e6613185693c80b6b", null ],
     [ "hoverEnterEvent", "dc/d2b/classVToolLine.html#a7a2c65242be527d0c9a701457efe0a10", null ],
     [ "hoverLeaveEvent", "dc/d2b/classVToolLine.html#a456cbe449fdc786476c0cc0945c71955", null ],
+    [ "isUsed", "dc/d2b/classVToolLine.html#a59490cb38e6a616c19ab1bbf41e3bad4", null ],
+    [ "isUsedInFormula", "dc/d2b/classVToolLine.html#a076e000e47746bb68c63c1d346202a37", null ],
     [ "itemChange", "dc/d2b/classVToolLine.html#ac745080de3ec864837b348ba7f5ca81e", null ],
     [ "keyReleaseEvent", "dc/d2b/classVToolLine.html#a2d0e62b105784974b629304d5e27af00", null ],
     [ "makeToolTip", "dc/d2b/classVToolLine.html#a2550f11a0b03730ec44ebde4c4e7a084", null ],

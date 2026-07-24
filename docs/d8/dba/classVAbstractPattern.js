@@ -86,6 +86,7 @@ var classVAbstractPattern =
     [ "IsModified", "d8/dba/classVAbstractPattern.html#aa42e9c14c26c88222e2ac6acf30e5ac8", null ],
     [ "IsPostfixOperator", "d8/dba/classVAbstractPattern.html#a31c4c23b82fb9186e452c4d2d0331164", null ],
     [ "IsVariable", "d8/dba/classVAbstractPattern.html#ab2244f2ff18aaadd0b268f2a9f416ad5", null ],
+    [ "isVariableUsedInFormulas", "d8/dba/classVAbstractPattern.html#ae7e75ebdbed6fc3353b46567e9c9602c", null ],
     [ "ListArcExpressions", "d8/dba/classVAbstractPattern.html#a13377df721d4b0303eca50e23fbd98e3", null ],
     [ "ListElArcExpressions", "d8/dba/classVAbstractPattern.html#a9d37fec24748662337d80ccad34871ef", null ],
     [ "ListExpressions", "d8/dba/classVAbstractPattern.html#ace38e9782ed82518017a02180d12c39d", null ],

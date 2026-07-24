@@ -211,6 +211,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#aec86772b06c818b523c28cb17b0441bc">referens</a> () const</td></tr>
 <tr class="memdesc:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">referens return count of referens.  <br /></td></tr>
 <tr class="separator:aec86772b06c818b523c28cb17b0441bc inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#a3d25bd53df86ebf89032a75a65a9c840">isUsed</a> () const</td></tr>
+<tr class="memdesc:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">isUsed check if another tool still needs this tool, so it can't be deleted.  <br /></td></tr>
+<tr class="separator:a3d25bd53df86ebf89032a75a65a9c840 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/classVDataTool.html#ad845b82027866a5fda15de7fd677f270">incrementReferens</a> ()</td></tr>
 <tr class="memdesc:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">incrementReferens increment referens.  <br /></td></tr>
 <tr class="separator:ad845b82027866a5fda15de7fd677f270 inherit pub_methods_classVDataTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -643,7 +646,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d94/vnodespline_8cpp_source.html#l00095">95</a> of file <a class="el" href="../../df/d94/vnodespline_8cpp_source.html">vnodespline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00566">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00685">VAbstractPattern::AddTool()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00856">VAbstractPattern::AddToolOnRemove()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00084">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00674">VAbstractPattern::getTool()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00091">VAbstractNode::idTool</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00566">VAbstractTool::AddRecord()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00685">VAbstractPattern::AddTool()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00856">VAbstractPattern::AddToolOnRemove()</a>, <a class="el" href="../../d8/ddf/vdatatool_8h_source.html#l00085">VDataTool::data</a>, <a class="el" href="../../d1/de6/vabstracttool_8h_source.html#l00144">VAbstractTool::doc</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00674">VAbstractPattern::getTool()</a>, <a class="el" href="../../d1/df9/vabstractnode_8h_source.html#l00091">VAbstractNode::idTool</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00448">SCASSERT</a>, and <a class="el" href="../../d8/dba/classVAbstractPattern.html#a3f3b6ce0527e751e3ce4d89f3f2ec444">VAbstractPattern::UpdateToolData()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l00533">QT_WARNING_POP::AddNodeSpline()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l02760">VPattern::ParseNodeSpline()</a>, and <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00742">VAbstractTool::PrepareNode()</a>.</p>
 
@@ -703,7 +706,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d94/vnodespline_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../df/d94/vnodespline_8cpp_source.html">vnodespline.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d89/vabstractpattern_8h_source.html#l00303">VAbstractPattern::TagSpline</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d89/vabstractpattern_8h_source.html#l00304">VAbstractPattern::TagSpline</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d94/vnodespline_8cpp_source.html#l00150">AddToFile()</a>.</p>
 
