@@ -1,5 +1,6 @@
 var NAVTREEINDEX320 =
 {
+"df/dfb/classPosixFileMgr.html#a0ed6652c67857f49fdff03462be8ff42":[3,0,397,13],
 "df/dfb/classPosixFileMgr.html#a11e09dd926e85d3f52b33abb03c7c7cd":[3,0,397,10],
 "df/dfb/classPosixFileMgr.html#a23aa3ce030b86e31d420c81d28b64f93":[3,0,397,6],
 "df/dfb/classPosixFileMgr.html#a29b6d2e3555b9ad1835e6a818e712e5e":[3,0,397,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX320 =
 "dir_8784069e3db88429259ac6c2c4d6aa45.html":[4,0,0,1,13,0],
 "dir_87a455bccb09a92130c26a11a880c98a.html":[4,0,0,1],
 "dir_8847344f24966b402ab9f9800d532b55.html":[4,0,0,1,15,1,0,0,7,1],
-"dir_89fa086523ca714548e7966bf1a47b6b.html":[4,0,0,1,3],
-"dir_8b68c05cd1a0c8ed417dc21dff5bec6d.html":[4,0,0,1,15,2]
+"dir_89fa086523ca714548e7966bf1a47b6b.html":[4,0,0,1,3]
 };

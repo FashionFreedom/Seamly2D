@@ -1,5 +1,6 @@
 var NAVTREEINDEX307 =
 {
+"df/d1d/mingw_2include_2xercesc_2util_2SynchronizedStringPool_8hpp.html":[4,0,0,1,15,1,0,0,6,66],
 "df/d1d/mingw_2include_2xercesc_2util_2SynchronizedStringPool_8hpp_source.html":[4,0,0,1,15,1,0,0,6,66],
 "df/d1e/image__item_8cpp.html":[4,0,0,1,3,0,2],
 "df/d1e/image__item_8cpp_source.html":[4,0,0,1,3,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX307 =
 "df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a8ae2d3acb26c09adbc2545467a8b1325":[3,0,804,3,27],
 "df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a8ae2d3acb26c09adbc2545467a8b1325":[3,0,804,1,9],
 "df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a8ae2d3acb26c09adbc2545467a8b1325":[3,0,804,3,45],
-"df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a8ae2d3acb26c09adbc2545467a8b1325":[3,0,804,0,45],
-"df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255aa063ccbf0d165af79a2173f29fd9e981":[3,0,804,3,57]
+"df/d1f/classXMLAttDef.html#ad029f037065bfaeb991ab7855de79255a8ae2d3acb26c09adbc2545467a8b1325":[3,0,804,0,45]
 };

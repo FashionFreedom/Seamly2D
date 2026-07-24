@@ -1,5 +1,6 @@
 var NAVTREEINDEX261 =
 {
+"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a2aa1c6c8a8f5fa5b23f1a9ba817cc048":[3,0,2,1,1],
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a2aa1c6c8a8f5fa5b23f1a9ba817cc048":[2,0,25,1,1],
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a2d92a08b4327f3c9bbfec1725d92b061":[3,0,2,1,0],
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a2d92a08b4327f3c9bbfec1725d92b061":[2,0,25,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX261 =
 "dc/df5/classXSNamespaceItem.html#af06aaea6859a6487b567fac80b732811":[3,0,912,62],
 "dc/df6/msvc_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp.html":[4,0,0,1,15,2,0,0,7,3,13],
 "dc/df6/msvc_2include_2xercesc_2validators_2schema_2TraverseSchema_8hpp_source.html":[4,0,0,1,15,2,0,0,7,3,13],
-"dc/df7/classVPE_1_1VShortcutEditWidget.html":[3,0,2,38],
-"dc/df7/classVPE_1_1VShortcutEditWidget.html":[2,0,25,38]
+"dc/df7/classVPE_1_1VShortcutEditWidget.html":[3,0,2,38]
 };

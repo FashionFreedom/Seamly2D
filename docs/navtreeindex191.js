@@ -1,5 +1,6 @@
 var NAVTREEINDEX191 =
 {
+"da/d11/classDialogPointOfIntersectionCurves.html#a977d13bba49d7a77bc038f4694d55764":[3,0,125,10],
 "da/d11/classDialogPointOfIntersectionCurves.html#aa984b377d4c25b1368249cf301192b6a":[3,0,125,0],
 "da/d11/classDialogPointOfIntersectionCurves.html#aabd10218666795983ef20b9487d071ab":[3,0,125,13],
 "da/d11/classDialogPointOfIntersectionCurves.html#ab64b602455082ee40ee7e0b2c932ee0e":[3,0,125,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX191 =
 "da/d3a/classAddGroupItem.html#adccd29e12ba2e14588e19dbd7b4c305f":[3,0,14,1],
 "da/d3b/classTST__Measurements.html":[3,0,514],
 "da/d3b/classTST__Measurements.html#a5303392245c3e2c76dfdf059b53e2ff9":[3,0,514,1],
-"da/d3b/classTST__Measurements.html#a75957ff56167109457dd17d9240b0213":[3,0,514,3],
-"da/d3b/classTST__Measurements.html#a7a1fb9d63aa2190d314d3ae4dbc7678c":[3,0,514,4]
+"da/d3b/classTST__Measurements.html#a75957ff56167109457dd17d9240b0213":[3,0,514,3]
 };

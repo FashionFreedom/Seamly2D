@@ -1,5 +1,6 @@
 var NAVTREEINDEX315 =
 {
+"df/d94/vnodespline_8cpp_source.html":[4,0,0,1,13,1,1,13],
 "df/d95/classDOMDocumentFragment.html":[3,0,158],
 "df/d95/classDOMDocumentFragment.html#a32bdd0fd37cfcc9783b9be8a1d1f61e2":[3,0,158,8],
 "df/d95/classDOMDocumentFragment.html#a32bdd0fd37cfcc9783b9be8a1d1f61e2":[3,0,158,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX315 =
 "df/db4/classXTemplateSerializer.html#a25c28b2450306347c13bfe2e56c37a4b":[3,0,921,199],
 "df/db4/classXTemplateSerializer.html#a25c28b2450306347c13bfe2e56c37a4b":[3,0,921,198],
 "df/db4/classXTemplateSerializer.html#a25c28b2450306347c13bfe2e56c37a4b":[3,0,921,197],
-"df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,84],
-"df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,85]
+"df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,84]
 };

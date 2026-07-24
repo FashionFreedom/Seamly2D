@@ -58,83 +58,83 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="207,-0.5 207,-838.5 369,-838.5 369,-0.5 207,-0.5"/>
+<polygon fill="#999999" stroke="#666666" points="197.5,-0.5 197.5,-838.5 378.5,-838.5 378.5,-0.5 197.5,-0.5"/>
 <text text-anchor="middle" x="288" y="-826.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPattern</text>
-<polyline fill="none" stroke="#666666" points="207,-819.5 369,-819.5 "/>
-<text text-anchor="start" x="215" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPattern</text>
-<text text-anchor="start" x="215" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagCalculation</text>
-<text text-anchor="start" x="215" y="-785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagModeling</text>
-<text text-anchor="start" x="215" y="-774.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPieces</text>
-<text text-anchor="start" x="215" y="-763.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPiece</text>
-<text text-anchor="start" x="215" y="-752.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagDescription</text>
-<text text-anchor="start" x="215" y="-741.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagImage</text>
-<text text-anchor="start" x="215" y="-730.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
-<text text-anchor="start" x="215" y="-719.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
-<text text-anchor="start" x="215" y="-708.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
-<text text-anchor="start" x="215" y="-697.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 148 more...</text>
-<text text-anchor="start" x="215" y="-686.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_activeDraftBlock</text>
-<text text-anchor="start" x="215" y="-675.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
-<text text-anchor="start" x="215" y="-664.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
-<text text-anchor="start" x="215" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineType</text>
-<text text-anchor="start" x="215" y="-642.5" font-family="Helvetica,sans-Serif" font-size="10.00"># defaultBasePoint</text>
-<text text-anchor="start" x="215" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lastSavedExportFormat</text>
-<text text-anchor="start" x="215" y="-620.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_cursorId</text>
-<text text-anchor="start" x="215" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00"># toolsOnRemove</text>
-<text text-anchor="start" x="215" y="-598.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_history</text>
-<text text-anchor="start" x="215" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternPieces</text>
-<text text-anchor="start" x="215" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modified</text>
-<text text-anchor="start" x="215" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelLines</text>
-<text text-anchor="start" x="215" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelWasChanged</text>
-<polyline fill="none" stroke="#666666" points="207,-547.5 369,-547.5 "/>
-<text text-anchor="start" x="215" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPattern()</text>
-<text text-anchor="start" x="215" y="-524.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
-<text text-anchor="start" x="215" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
-<text text-anchor="start" x="215" y="-502.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
-<text text-anchor="start" x="215" y="-491.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
-<text text-anchor="start" x="215" y="-480.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsedInFormulas()</text>
-<text text-anchor="start" x="215" y="-469.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
-<text text-anchor="start" x="215" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
-<text text-anchor="start" x="215" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
-<text text-anchor="start" x="215" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
-<text text-anchor="start" x="215" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 99 more...</text>
-<text text-anchor="start" x="215" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
-<text text-anchor="start" x="215" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
-<text text-anchor="start" x="215" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>
-<text text-anchor="start" x="215" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceNodes()</text>
-<text text-anchor="start" x="215" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceCSARecords()</text>
-<text text-anchor="start" x="215" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceInternalPaths()</text>
-<text text-anchor="start" x="215" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceAnchors()</text>
-<text text-anchor="start" x="215" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LiteParseTree()</text>
-<text text-anchor="start" x="215" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ haveLiteChange()</text>
-<text text-anchor="start" x="215" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ NeedFullParsing()</text>
-<text text-anchor="start" x="215" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearScene()</text>
-<text text-anchor="start" x="215" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updatePieceList()</text>
-<text text-anchor="start" x="215" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ selectedPiece()</text>
-<text text-anchor="start" x="215" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setActiveDraftBlock()</text>
-<text text-anchor="start" x="215" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckTagExists()</text>
-<text text-anchor="start" x="215" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InsertTag()</text>
-<text text-anchor="start" x="215" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetChildTag()</text>
-<text text-anchor="start" x="215" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActiveDraftBlockIndex()</text>
-<text text-anchor="start" x="215" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActiveDraftElement()</text>
-<text text-anchor="start" x="215" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hasGroupItem()</text>
-<text text-anchor="start" x="215" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolExists()</text>
-<text text-anchor="start" x="215" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParsePathNodes()</text>
-<text text-anchor="start" x="215" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParseSANode()</text>
-<text text-anchor="start" x="215" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; listVariables()</text>
-<text text-anchor="start" x="215" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPointExpressions()</text>
-<text text-anchor="start" x="215" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListArcExpressions()</text>
-<text text-anchor="start" x="215" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListElArcExpressions()</text>
-<text text-anchor="start" x="215" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListSplineExpressions()</text>
-<text text-anchor="start" x="215" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPathPointExpressions()</text>
-<text text-anchor="start" x="215" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListOperationExpressions()</text>
-<text text-anchor="start" x="215" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListNodesExpressions()</text>
-<text text-anchor="start" x="215" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPathExpressions()</text>
-<text text-anchor="start" x="215" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListGrainlineExpressions()</text>
-<text text-anchor="start" x="215" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPieceExpressions()</text>
-<text text-anchor="start" x="215" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsVariable()</text>
-<text text-anchor="start" x="215" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsPostfixOperator()</text>
-<text text-anchor="start" x="215" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsFunction()</text>
-<text text-anchor="start" x="215" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParseItemElement()</text>
+<polyline fill="none" stroke="#666666" points="197.5,-819.5 378.5,-819.5 "/>
+<text text-anchor="start" x="205.5" y="-807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPattern</text>
+<text text-anchor="start" x="205.5" y="-796.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagCalculation</text>
+<text text-anchor="start" x="205.5" y="-785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagModeling</text>
+<text text-anchor="start" x="205.5" y="-774.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPieces</text>
+<text text-anchor="start" x="205.5" y="-763.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPiece</text>
+<text text-anchor="start" x="205.5" y="-752.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagDescription</text>
+<text text-anchor="start" x="205.5" y="-741.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagImage</text>
+<text text-anchor="start" x="205.5" y="-730.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
+<text text-anchor="start" x="205.5" y="-719.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
+<text text-anchor="start" x="205.5" y="-708.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
+<text text-anchor="start" x="205.5" y="-697.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 148 more...</text>
+<text text-anchor="start" x="205.5" y="-686.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_activeDraftBlock</text>
+<text text-anchor="start" x="205.5" y="-675.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
+<text text-anchor="start" x="205.5" y="-664.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
+<text text-anchor="start" x="205.5" y="-653.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineType</text>
+<text text-anchor="start" x="205.5" y="-642.5" font-family="Helvetica,sans-Serif" font-size="10.00"># defaultBasePoint</text>
+<text text-anchor="start" x="205.5" y="-631.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lastSavedExportFormat</text>
+<text text-anchor="start" x="205.5" y="-620.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_cursorId</text>
+<text text-anchor="start" x="205.5" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00"># toolsOnRemove</text>
+<text text-anchor="start" x="205.5" y="-598.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_history</text>
+<text text-anchor="start" x="205.5" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternPieces</text>
+<text text-anchor="start" x="205.5" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modified</text>
+<text text-anchor="start" x="205.5" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelLines</text>
+<text text-anchor="start" x="205.5" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelWasChanged</text>
+<polyline fill="none" stroke="#666666" points="197.5,-547.5 378.5,-547.5 "/>
+<text text-anchor="start" x="205.5" y="-535.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPattern()</text>
+<text text-anchor="start" x="205.5" y="-524.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
+<text text-anchor="start" x="205.5" y="-513.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
+<text text-anchor="start" x="205.5" y="-502.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
+<text text-anchor="start" x="205.5" y="-491.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
+<text text-anchor="start" x="205.5" y="-480.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isAnyVariableUsedInFormulas()</text>
+<text text-anchor="start" x="205.5" y="-469.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
+<text text-anchor="start" x="205.5" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
+<text text-anchor="start" x="205.5" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
+<text text-anchor="start" x="205.5" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
+<text text-anchor="start" x="205.5" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 99 more...</text>
+<text text-anchor="start" x="205.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
+<text text-anchor="start" x="205.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
+<text text-anchor="start" x="205.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>
+<text text-anchor="start" x="205.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceNodes()</text>
+<text text-anchor="start" x="205.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceCSARecords()</text>
+<text text-anchor="start" x="205.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceInternalPaths()</text>
+<text text-anchor="start" x="205.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ParsePieceAnchors()</text>
+<text text-anchor="start" x="205.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LiteParseTree()</text>
+<text text-anchor="start" x="205.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ haveLiteChange()</text>
+<text text-anchor="start" x="205.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ NeedFullParsing()</text>
+<text text-anchor="start" x="205.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearScene()</text>
+<text text-anchor="start" x="205.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updatePieceList()</text>
+<text text-anchor="start" x="205.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ selectedPiece()</text>
+<text text-anchor="start" x="205.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setActiveDraftBlock()</text>
+<text text-anchor="start" x="205.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckTagExists()</text>
+<text text-anchor="start" x="205.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InsertTag()</text>
+<text text-anchor="start" x="205.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetChildTag()</text>
+<text text-anchor="start" x="205.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActiveDraftBlockIndex()</text>
+<text text-anchor="start" x="205.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getActiveDraftElement()</text>
+<text text-anchor="start" x="205.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hasGroupItem()</text>
+<text text-anchor="start" x="205.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolExists()</text>
+<text text-anchor="start" x="205.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParsePathNodes()</text>
+<text text-anchor="start" x="205.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParseSANode()</text>
+<text text-anchor="start" x="205.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; listVariables()</text>
+<text text-anchor="start" x="205.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPointExpressions()</text>
+<text text-anchor="start" x="205.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListArcExpressions()</text>
+<text text-anchor="start" x="205.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListElArcExpressions()</text>
+<text text-anchor="start" x="205.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListSplineExpressions()</text>
+<text text-anchor="start" x="205.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPathPointExpressions()</text>
+<text text-anchor="start" x="205.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListOperationExpressions()</text>
+<text text-anchor="start" x="205.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListNodesExpressions()</text>
+<text text-anchor="start" x="205.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPathExpressions()</text>
+<text text-anchor="start" x="205.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListGrainlineExpressions()</text>
+<text text-anchor="start" x="205.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPieceExpressions()</text>
+<text text-anchor="start" x="205.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsVariable()</text>
+<text text-anchor="start" x="205.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsPostfixOperator()</text>
+<text text-anchor="start" x="205.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsFunction()</text>
+<text text-anchor="start" x="205.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParseItemElement()</text>
 </a>
 </g>
 </g>
@@ -154,7 +154,7 @@ var sectionId = 'dynsection-1';
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M30.69,-1079.61C34.75,-1033.13 44.29,-952.32 65,-886 100.35,-772.77 158.77,-652.17 206.95,-562.1"/>
+<path fill="none" stroke="#63b8ff" d="M30.69,-1079.61C34.75,-1033.13 44.29,-952.32 65,-886 98.05,-780.15 151.26,-667.86 197.41,-580.09"/>
 <polygon fill="none" stroke="#63b8ff" points="27.18,-1079.57 29.84,-1089.83 34.16,-1080.15 27.18,-1079.57"/>
 </g>
 <!-- Node3 -->
@@ -288,8 +288,8 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M510.76,-1089.75C487.72,-1020.52 425.77,-834.39 373.03,-675.95"/>
-<polygon fill="none" stroke="#404040" points="372.88,-675.49 367.19,-671.06 369.09,-664.11 374.78,-668.54 372.88,-675.49"/>
+<path fill="none" stroke="#404040" d="M510.76,-1089.75C489.08,-1024.6 432.93,-855.92 382.44,-704.22"/>
+<polygon fill="none" stroke="#404040" points="382.29,-703.78 376.6,-699.35 378.5,-692.4 384.19,-696.83 382.29,-703.78"/>
 <text text-anchor="middle" x="452" y="-860" font-family="Helvetica,sans-Serif" font-size="10.00"> #tools</text>
 </g>
 </g>

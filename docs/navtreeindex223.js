@@ -1,5 +1,6 @@
 var NAVTREEINDEX223 =
 {
+"dc/d0e/classXercesLocationPath.html#a11bf08a131880880ebcb5866d9ccbd97":[3,0,790,36],
 "dc/d0e/classXercesLocationPath.html#a4f9d381fc7e9acee9da9e79439cabb3c":[3,0,790,14],
 "dc/d0e/classXercesLocationPath.html#a4f9d381fc7e9acee9da9e79439cabb3c":[3,0,790,10],
 "dc/d0e/classXercesLocationPath.html#a4f9d381fc7e9acee9da9e79439cabb3c":[3,0,790,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX223 =
 "dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,47],
 "dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,46],
 "dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,44],
-"dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,45],
-"dc/d19/classXPathMatcher.html#af6b38a302d3236186d85785f664ef5a3":[3,0,884,21]
+"dc/d19/classXPathMatcher.html#af55ec93f22f5825fedf2ba3cdd351964":[3,0,884,45]
 };

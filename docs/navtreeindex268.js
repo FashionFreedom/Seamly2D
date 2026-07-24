@@ -1,5 +1,6 @@
 var NAVTREEINDEX268 =
 {
+"dd/d50/classVisToolMove.html#a8af6bf55d0b1e08941d403d03df925c9":[3,0,659,11],
 "dd/d50/classVisToolMove.html#a917946c94877699b673759ebcab5a7db":[3,0,659,22],
 "dd/d50/classVisToolMove.html#a962225c5f0d473f67d3ad61eb1d4d3c1":[3,0,659,18],
 "dd/d50/classVisToolMove.html#a986e3c113b8ba32d76518e689e798318":[3,0,659,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX268 =
 "dd/d70/vlayoutpiece_8cpp.html#aa81bfa3d30caf5623bb2b64bad5e7ec6":[4,0,0,1,7,20,6],
 "dd/d70/vlayoutpiece_8cpp.html#aafadb68390e27769bbae08816fae07c5":[4,0,0,1,7,20,5],
 "dd/d70/vlayoutpiece_8cpp.html#abe938cdf3c612c15f09105c6214a6dc2":[4,0,0,1,7,20,7],
-"dd/d70/vlayoutpiece_8cpp_source.html":[4,0,0,1,7,20],
-"dd/d71/msvc-arm64_2include_2xercesc_2dom_2DOMDocumentTraversal_8hpp.html":[4,0,0,1,15,3,0,0,0,10]
+"dd/d70/vlayoutpiece_8cpp_source.html":[4,0,0,1,7,20]
 };

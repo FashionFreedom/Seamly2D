@@ -1,5 +1,6 @@
 var NAVTREEINDEX259 =
 {
+"dc/db4/classEntityResolver.html#a14e534eb2170015056ccd71458e1058c":[3,0,264,9],
 "dc/db4/classEntityResolver.html#a7d0b72111b786e9383e9620cf328b376":[3,0,264,15],
 "dc/db4/classEntityResolver.html#a7d0b72111b786e9383e9620cf328b376":[3,0,264,14],
 "dc/db4/classEntityResolver.html#a7d0b72111b786e9383e9620cf328b376":[3,0,264,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX259 =
 "dc/dcf/classWindowsFileMgr.html#a3d5278fe7e451243a6bb1fc88e56a4f9":[3,0,783,26],
 "dc/dcf/classWindowsFileMgr.html#a3d5278fe7e451243a6bb1fc88e56a4f9":[3,0,783,25],
 "dc/dcf/classWindowsFileMgr.html#a3d5278fe7e451243a6bb1fc88e56a4f9":[3,0,783,24],
-"dc/dcf/classWindowsFileMgr.html#a4a9e709ffd9c21b1c094b741191c6ebe":[3,0,783,32],
-"dc/dcf/classWindowsFileMgr.html#a4a9e709ffd9c21b1c094b741191c6ebe":[3,0,783,30]
+"dc/dcf/classWindowsFileMgr.html#a4a9e709ffd9c21b1c094b741191c6ebe":[3,0,783,32]
 };

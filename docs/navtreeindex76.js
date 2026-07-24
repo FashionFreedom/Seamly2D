@@ -1,5 +1,6 @@
 var NAVTREEINDEX76 =
 {
+"d4/d94/classDOMNode.html#acdde5f520bc2063cc4b92965952cc863":[3,0,200,111],
 "d4/d94/classDOMNode.html#ad9c9bd1315498cdf1beaa36c47f91aee":[3,0,200,122],
 "d4/d94/classDOMNode.html#ad9c9bd1315498cdf1beaa36c47f91aee":[3,0,200,121],
 "d4/d94/classDOMNode.html#ad9c9bd1315498cdf1beaa36c47f91aee":[3,0,200,123],
@@ -248,6 +249,5 @@ var NAVTREEINDEX76 =
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ac3b379dc3d5ad60325273f2a853d301a":[4,0,0,1,15,3,0,0,6,84,10],
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ad803dfdcc3460aff0c557f47c1310a11":[4,0,0,1,15,3,0,0,6,84,5],
 "d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#adc8ba3b0de070ad1230b7d89bc9215d0":[4,0,0,1,15,3,0,0,6,84,24],
-"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#adec7e93d7f89f2eb2770453128ad91e4":[4,0,0,1,15,3,0,0,6,84,6],
-"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#ae2edeaee635a587425b3ba7c49c47699":[4,0,0,1,15,3,0,0,6,84,13]
+"d4/d9f/msvc-arm64_2include_2xercesc_2util_2XercesVersion_8hpp.html#adec7e93d7f89f2eb2770453128ad91e4":[4,0,0,1,15,3,0,0,6,84,6]
 };

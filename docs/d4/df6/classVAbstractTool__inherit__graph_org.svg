@@ -551,50 +551,51 @@
 <g id="node15" class="node">
 <title>Node15</title>
 <g id="a_node15"><a xlink:href="../../d2/df2/classVDrawTool.html" target="_top" xlink:title="The VDrawTool abstract class for all draw tool.">
-<polygon fill="white" stroke="#666666" points="1449,-2048.5 1449,-2446.5 1615,-2446.5 1615,-2048.5 1449,-2048.5"/>
-<text text-anchor="middle" x="1532" y="-2434.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDrawTool</text>
-<polyline fill="none" stroke="#666666" points="1449,-2427.5 1615,-2427.5 "/>
-<text text-anchor="start" x="1457" y="-2415.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeBlockName</text>
-<text text-anchor="start" x="1457" y="-2404.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineType</text>
-<text text-anchor="start" x="1457" y="-2393.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeight</text>
-<polyline fill="none" stroke="#666666" points="1449,-2386.5 1615,-2386.5 "/>
-<text text-anchor="start" x="1457" y="-2374.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDrawTool()</text>
-<text text-anchor="start" x="1457" y="-2363.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDrawTool()</text>
-<text text-anchor="start" x="1457" y="-2352.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
-<text text-anchor="start" x="1457" y="-2341.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
-<text text-anchor="start" x="1457" y="-2330.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
-<text text-anchor="start" x="1457" y="-2319.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
-<text text-anchor="start" x="1457" y="-2308.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
-<text text-anchor="start" x="1457" y="-2297.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
-<text text-anchor="start" x="1457" y="-2286.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ activeBlockChanged()</text>
-<text text-anchor="start" x="1457" y="-2275.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ blockNameChanged()</text>
-<text text-anchor="start" x="1457" y="-2264.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
-<text text-anchor="start" x="1457" y="-2253.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="1457" y="-2242.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
-<text text-anchor="start" x="1457" y="-2231.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToCalculation()</text>
-<text text-anchor="start" x="1457" y="-2220.5" font-family="Helvetica,sans-Serif" font-size="10.00"># addDependence()</text>
-<text text-anchor="start" x="1457" y="-2209.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1457" y="-2198.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
-<text text-anchor="start" x="1457" y="-2187.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
-<text text-anchor="start" x="1457" y="-2176.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOption()</text>
-<text text-anchor="start" x="1457" y="-2165.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1457" y="-2154.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="1457" y="-2143.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectDisable()</text>
-<text text-anchor="start" x="1457" y="-2132.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadAttributes()</text>
-<text text-anchor="start" x="1457" y="-2121.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1457" y="-2110.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
-<text text-anchor="start" x="1457" y="-2099.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ContextMenu()</text>
-<text text-anchor="start" x="1457" y="-2088.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowItem()</text>
-<text text-anchor="start" x="1457" y="-2077.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ObjectName()</text>
-<text text-anchor="start" x="1457" y="-2066.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitDrawToolConnections()</text>
-<text text-anchor="start" x="1457" y="-2055.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<polygon fill="white" stroke="#666666" points="1449,-2043 1449,-2452 1615,-2452 1615,-2043 1449,-2043"/>
+<text text-anchor="middle" x="1532" y="-2440" font-family="Helvetica,sans-Serif" font-size="10.00">VDrawTool</text>
+<polyline fill="none" stroke="#666666" points="1449,-2433 1615,-2433 "/>
+<text text-anchor="start" x="1457" y="-2421" font-family="Helvetica,sans-Serif" font-size="10.00"># activeBlockName</text>
+<text text-anchor="start" x="1457" y="-2410" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineType</text>
+<text text-anchor="start" x="1457" y="-2399" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeight</text>
+<polyline fill="none" stroke="#666666" points="1449,-2392 1615,-2392 "/>
+<text text-anchor="start" x="1457" y="-2380" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDrawTool()</text>
+<text text-anchor="start" x="1457" y="-2369" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDrawTool()</text>
+<text text-anchor="start" x="1457" y="-2358" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
+<text text-anchor="start" x="1457" y="-2347" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
+<text text-anchor="start" x="1457" y="-2336" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
+<text text-anchor="start" x="1457" y="-2325" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
+<text text-anchor="start" x="1457" y="-2314" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
+<text text-anchor="start" x="1457" y="-2303" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
+<text text-anchor="start" x="1457" y="-2292" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
+<text text-anchor="start" x="1457" y="-2281" font-family="Helvetica,sans-Serif" font-size="10.00">+ activeBlockChanged()</text>
+<text text-anchor="start" x="1457" y="-2270" font-family="Helvetica,sans-Serif" font-size="10.00">+ blockNameChanged()</text>
+<text text-anchor="start" x="1457" y="-2259" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
+<text text-anchor="start" x="1457" y="-2248" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="1457" y="-2237" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
+<text text-anchor="start" x="1457" y="-2226" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToCalculation()</text>
+<text text-anchor="start" x="1457" y="-2215" font-family="Helvetica,sans-Serif" font-size="10.00"># addDependence()</text>
+<text text-anchor="start" x="1457" y="-2204" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1457" y="-2193" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
+<text text-anchor="start" x="1457" y="-2182" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
+<text text-anchor="start" x="1457" y="-2171" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOption()</text>
+<text text-anchor="start" x="1457" y="-2160" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1457" y="-2149" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="1457" y="-2138" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectDisable()</text>
+<text text-anchor="start" x="1457" y="-2127" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadAttributes()</text>
+<text text-anchor="start" x="1457" y="-2116" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1457" y="-2105" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
+<text text-anchor="start" x="1457" y="-2094" font-family="Helvetica,sans-Serif" font-size="10.00"># ContextMenu()</text>
+<text text-anchor="start" x="1457" y="-2083" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowItem()</text>
+<text text-anchor="start" x="1457" y="-2072" font-family="Helvetica,sans-Serif" font-size="10.00"># ObjectName()</text>
+<text text-anchor="start" x="1457" y="-2061" font-family="Helvetica,sans-Serif" font-size="10.00"># InitDrawToolConnections()</text>
+<text text-anchor="start" x="1457" y="-2050" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
 </a>
 </g>
 </g>
 <!-- Node13&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node13&#45;&gt;Node15</title>
-<path fill="none" stroke="#63b8ff" d="M1379.6,-2957.84C1399.74,-2913.25 1424.39,-2853.79 1440,-2799 1472.69,-2684.26 1495.22,-2552.55 1509.79,-2446.73"/>
+<path fill="none" stroke="#63b8ff" d="M1379.6,-2957.84C1399.74,-2913.25 1424.39,-2853.79 1440,-2799 1472.13,-2686.24 1494.44,-2557.09 1509.03,-2452.23"/>
 <polygon fill="none" stroke="#63b8ff" points="1376.33,-2956.57 1375.37,-2967.13 1382.7,-2959.47 1376.33,-2956.57"/>
 </g>
 <!-- Node16 -->
@@ -653,8 +654,8 @@
 <!-- Node15&#45;&gt;Node16 -->
 <g id="edge15" class="edge">
 <title>Node15&#45;&gt;Node16</title>
-<path fill="none" stroke="#63b8ff" d="M1552.04,-2038.14C1551.22,-1922.08 1528.38,-1783.71 1440,-1696 1367.81,-1624.35 1311.41,-1689.27 1214,-1660 1036.52,-1606.67 842.56,-1509.72 732.54,-1450.76"/>
-<polygon fill="none" stroke="#63b8ff" points="1548.54,-2038.24 1552.05,-2048.23 1555.54,-2038.23 1548.54,-2038.24"/>
+<path fill="none" stroke="#63b8ff" d="M1551.98,-2032.52C1550.46,-1917.63 1526.96,-1782.3 1440,-1696 1367.81,-1624.35 1311.41,-1689.27 1214,-1660 1036.52,-1606.67 842.56,-1509.72 732.54,-1450.76"/>
+<polygon fill="none" stroke="#63b8ff" points="1548.48,-2032.89 1552.06,-2042.86 1555.48,-2032.83 1548.48,-2032.89"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
@@ -680,8 +681,8 @@
 <!-- Node15&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
 <title>Node15&#45;&gt;Node22</title>
-<path fill="none" stroke="#63b8ff" d="M1510.5,-2038.31C1496.4,-1934.01 1474.09,-1806.68 1440,-1696 1415.56,-1616.64 1374.24,-1530.97 1343.54,-1472.51"/>
-<polygon fill="none" stroke="#63b8ff" points="1507.05,-2038.88 1511.84,-2048.33 1513.99,-2037.96 1507.05,-2038.88"/>
+<path fill="none" stroke="#63b8ff" d="M1509.77,-2032.9C1495.63,-1929.63 1473.5,-1804.78 1440,-1696 1415.56,-1616.64 1374.24,-1530.97 1343.54,-1472.51"/>
+<polygon fill="none" stroke="#63b8ff" points="1506.3,-2033.39 1511.11,-2042.83 1513.24,-2032.45 1506.3,-2033.39"/>
 </g>
 <!-- Node50 -->
 <g id="node41" class="node">
@@ -741,8 +742,8 @@
 <!-- Node15&#45;&gt;Node50 -->
 <g id="edge40" class="edge">
 <title>Node15&#45;&gt;Node50</title>
-<path fill="none" stroke="#63b8ff" d="M1588.38,-2038.34C1619.35,-1924 1658.04,-1781.15 1690.93,-1659.69"/>
-<polygon fill="none" stroke="#63b8ff" points="1584.93,-2037.7 1585.69,-2048.27 1591.68,-2039.53 1584.93,-2037.7"/>
+<path fill="none" stroke="#63b8ff" d="M1589.81,-2033.06C1620.53,-1919.64 1658.53,-1779.33 1690.92,-1659.74"/>
+<polygon fill="none" stroke="#63b8ff" points="1586.38,-2032.34 1587.14,-2042.91 1593.14,-2034.17 1586.38,-2032.34"/>
 </g>
 <!-- Node58 -->
 <g id="node49" class="node">

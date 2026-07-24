@@ -1,5 +1,6 @@
 var NAVTREEINDEX260 =
 {
+"dc/dcf/classWindowsFileMgr.html#a4a9e709ffd9c21b1c094b741191c6ebe":[3,0,783,30],
 "dc/dcf/classWindowsFileMgr.html#a4a9e709ffd9c21b1c094b741191c6ebe":[3,0,783,31],
 "dc/dcf/classWindowsFileMgr.html#a4db434bbc2b12e084bad97dea5b271ae":[3,0,783,14],
 "dc/dcf/classWindowsFileMgr.html#a4db434bbc2b12e084bad97dea5b271ae":[3,0,783,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX260 =
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a125296e3238ee7d19db723108f39144e":[3,0,2,1,8],
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a125296e3238ee7d19db723108f39144e":[2,0,25,1,8],
 "dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a27db586774c380d75e3c5d137eca4caf":[3,0,2,1,4],
-"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a27db586774c380d75e3c5d137eca4caf":[2,0,25,1,4],
-"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a2aa1c6c8a8f5fa5b23f1a9ba817cc048":[3,0,2,1,1]
+"dc/de2/classVPE_1_1DoubleSpinboxProperty.html#a27db586774c380d75e3c5d137eca4caf":[2,0,25,1,4]
 };

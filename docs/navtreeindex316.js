@@ -1,5 +1,6 @@
 var NAVTREEINDEX316 =
 {
+"df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,85],
 "df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,86],
 "df/db4/classXTemplateSerializer.html#a2f9e9fa978ed68e7a27a1f0de721923e":[3,0,921,87],
 "df/db4/classXTemplateSerializer.html#a33117794b19aaf4691fa683ba5a9a0f2":[3,0,921,147],
@@ -248,6 +249,5 @@ var NAVTREEINDEX316 =
 "df/dc3/classAbstractLayoutDialog.html#a603fab080ba0182f253b35dbb4e51f92":[3,0,5,0],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html":[4,0,0,2,2,0],
 "df/dc8/Seamly2DTest_2qttestmainlambda_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627":[4,0,0,2,2,0,1],
-"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp_source.html":[4,0,0,2,2,0],
-"df/dc8/vtest_8cpp.html":[4,0,0,1,12,4]
+"df/dc8/Seamly2DTest_2qttestmainlambda_8cpp_source.html":[4,0,0,2,2,0]
 };

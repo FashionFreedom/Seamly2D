@@ -24,6 +24,7 @@ var classVDrawTool =
     [ "getLineWeight", "d2/df2/classVDrawTool.html#ac887c6ccdbf647bf9adf3d49976b37f6", null ],
     [ "InitDrawToolConnections", "d2/df2/classVDrawTool.html#a6d590439bfc06504ba7f7aa0cda0fed5", null ],
     [ "isPointNameVisible", "d2/df2/classVDrawTool.html#a1d47f790e9cddac2a8c2c517f7d99596", null ],
+    [ "isUsed", "d2/df2/classVDrawTool.html#a1b0b27065986b4ff05338c1c65e7a123", null ],
     [ "makeToolTip", "d2/df2/classVDrawTool.html#a3c5e34e70a32b885d9a8863deb7e1e2f", null ],
     [ "ObjectName", "d2/df2/classVDrawTool.html#a8bc2ba71779fada9a5686dca0a47226d", null ],
     [ "piecesMode", "d2/df2/classVDrawTool.html#a81672530a07165cd6262e7a10e815900", null ],

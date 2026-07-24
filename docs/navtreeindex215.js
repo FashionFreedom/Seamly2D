@@ -1,5 +1,6 @@
 var NAVTREEINDEX215 =
 {
+"db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,47],
 "db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,46],
 "db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,45],
 "db/d7f/classXMLBigInteger.html#a44572824cca884161563e2aa60f7ac27":[3,0,808,44],
@@ -248,6 +249,5 @@ var NAVTREEINDEX215 =
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,3,5],
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,1,10],
 "db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,0,10],
-"db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,1,5],
-"db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,3,0]
+"db/d84/classDOMLSParser.html#ae31ed2448f8acdf776c946d95ba8a453a9f3a4adad1782fb1bdacc741209655b1":[3,0,190,1,5]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX296 =
 {
+"de/d9c/mingw_2include_2xercesc_2validators_2datatype_2NOTATIONDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,28],
 "de/d9c/vistoolrotation_8h.html":[4,0,0,1,13,3,0,0,9],
 "de/d9c/vistoolrotation_8h_source.html":[4,0,0,1,13,3,0,0,9],
 "de/d9d/mingw_2include_2xercesc_2validators_2datatype_2TimeDatatypeValidator_8hpp.html":[4,0,0,1,15,1,0,0,7,1,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX296 =
 "de/db3/classQxtCsvModel.html#a6eac26cc302a2af47feabf6e674019cf":[3,0,421,25],
 "de/db3/classQxtCsvModel.html#a702949bc62aef09a4489b69ae4c55f3d":[3,0,421,17],
 "de/db3/classQxtCsvModel.html#a730d4301d48a88ec96d2b33197975772":[3,0,421,30],
-"de/db3/classQxtCsvModel.html#a747d409d3f4402d6073afadac218c357":[3,0,421,18],
-"de/db3/classQxtCsvModel.html#a75ddfae3d6fe7714543ef00330d948d6":[3,0,421,5]
+"de/db3/classQxtCsvModel.html#a747d409d3f4402d6073afadac218c357":[3,0,421,18]
 };

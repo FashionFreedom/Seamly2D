@@ -1,5 +1,6 @@
 var NAVTREEINDEX217 =
 {
+"db/d85/classDTDScanner.html#add526066aea7cce6dce1cf28dcef04e7":[3,0,247,48],
 "db/d85/classDTDScanner.html#add526066aea7cce6dce1cf28dcef04e7":[3,0,247,49],
 "db/d85/classDTDScanner.html#add526066aea7cce6dce1cf28dcef04e7":[3,0,247,50],
 "db/d85/classDTDScanner.html#add526066aea7cce6dce1cf28dcef04e7":[3,0,247,51],
@@ -248,6 +249,5 @@ var NAVTREEINDEX217 =
 "db/dab/classValueVectorOf.html#a98c978118307af51ecb1932010cf7b69":[3,0,581,13],
 "db/dab/classValueVectorOf.html#a98c978118307af51ecb1932010cf7b69":[3,0,581,14],
 "db/dab/classValueVectorOf.html#a98c978118307af51ecb1932010cf7b69":[3,0,581,15],
-"db/dab/classValueVectorOf.html#a98c978118307af51ecb1932010cf7b69":[3,0,581,12],
-"db/dab/classValueVectorOf.html#aa75030fa0e056759a7fa606eb0b5ae33":[3,0,581,52]
+"db/dab/classValueVectorOf.html#a98c978118307af51ecb1932010cf7b69":[3,0,581,12]
 };

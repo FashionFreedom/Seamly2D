@@ -1,5 +1,6 @@
 var NAVTREEINDEX269 =
 {
+"dd/d71/msvc-arm64_2include_2xercesc_2dom_2DOMDocumentTraversal_8hpp.html":[4,0,0,1,15,3,0,0,0,10],
 "dd/d71/msvc-arm64_2include_2xercesc_2dom_2DOMDocumentTraversal_8hpp_source.html":[4,0,0,1,15,3,0,0,0,10],
 "dd/d71/vistoolarcwithlength_8cpp.html":[4,0,0,1,13,3,1,10],
 "dd/d71/vistoolarcwithlength_8cpp_source.html":[4,0,0,1,13,3,1,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX269 =
 "dd/d92/classMacOSLCPTranscoder.html#abfc6b6a9fe94f1f043bce9ba2d919455":[3,0,336,10],
 "dd/d92/classMacOSLCPTranscoder.html#ac6fcad6fc0d2d94a8ad6fd47cda397b8":[3,0,336,2],
 "dd/d92/classMacOSLCPTranscoder.html#acfb294c1fcb6817cf6e38d345fe0d421":[3,0,336,0],
-"dd/d92/classMacOSLCPTranscoder.html#ade79590d14fc04f4de5ae4adf07691d3":[3,0,336,4],
-"dd/d92/classMacOSLCPTranscoder.html#af121e6571565d97c689c9f0866216a73":[3,0,336,6]
+"dd/d92/classMacOSLCPTranscoder.html#ade79590d14fc04f4de5ae4adf07691d3":[3,0,336,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX228 =
 {
+"dc/d64/classComplexTypeInfo.html#ac2726b544c7cae03f208dd1563dc76f2":[3,0,66,177],
 "dc/d64/classComplexTypeInfo.html#ac2726b544c7cae03f208dd1563dc76f2":[3,0,66,179],
 "dc/d64/classComplexTypeInfo.html#ac2726b544c7cae03f208dd1563dc76f2":[3,0,66,178],
 "dc/d64/classComplexTypeInfo.html#ac2726b544c7cae03f208dd1563dc76f2":[3,0,66,176],
@@ -248,6 +249,5 @@ var NAVTREEINDEX228 =
 "dc/d80/classXMLExcepts.html":[3,0,834],
 "dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80":[3,0,834,2],
 "dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80":[3,0,834,1],
-"dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80":[3,0,834,0],
-"dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80":[3,0,834,3]
+"dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80":[3,0,834,0]
 };
