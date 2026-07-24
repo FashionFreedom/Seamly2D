@@ -111,6 +111,7 @@ public:
     virtual void     setLineWeight(const QString &value);
 
     virtual bool     isPointNameVisible(quint32 id) const;
+    virtual bool     isUsed() const override;
 
 signals:
     void             ChangedToolSelection(bool selected, quint32 object, quint32 tool);
