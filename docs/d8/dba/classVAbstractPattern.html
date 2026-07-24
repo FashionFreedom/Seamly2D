@@ -200,9 +200,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ace38e9782ed82518017a02180d12c39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569084d7279c55cf0f32e8d22ac3c872"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="../../d6/d15/structVFormulaField.html">VFormulaField</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dba/classVAbstractPattern.html#a569084d7279c55cf0f32e8d22ac3c872">listVariableExpressions</a> () const</td></tr>
 <tr class="separator:a569084d7279c55cf0f32e8d22ac3c872"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11a355aee1c4b3d217e58c412b37c713"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dba/classVAbstractPattern.html#a11a355aee1c4b3d217e58c412b37c713">isAnyVariableUsedInFormulas</a> (const QStringList &amp;variable_names) const</td></tr>
-<tr class="memdesc:a11a355aee1c4b3d217e58c412b37c713"><td class="mdescLeft">&#160;</td><td class="mdescRight">isAnyVariableUsedInFormulas check if any of the variables is referenced by a formula in the pattern.  <br /></td></tr>
-<tr class="separator:a11a355aee1c4b3d217e58c412b37c713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab537da404db09e9114fd10792f3ceb35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dba/classVAbstractPattern.html#ab537da404db09e9114fd10792f3ceb35">isVariableUsed</a> (const QStringList &amp;variable_names) const</td></tr>
+<tr class="memdesc:ab537da404db09e9114fd10792f3ceb35"><td class="mdescLeft">&#160;</td><td class="mdescRight">isVariableUsed check if any of the variables is referenced by a formula in the pattern.  <br /></td></tr>
+<tr class="separator:ab537da404db09e9114fd10792f3ceb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4d1f7ce6efd34666ec9dfd453bbef57"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dba/classVAbstractPattern.html#aa4d1f7ce6efd34666ec9dfd453bbef57">CreateEmptyFile</a> ()=0</td></tr>
 <tr class="separator:aa4d1f7ce6efd34666ec9dfd453bbef57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0079631abf55300f5a48d7630a44e9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dba/classVAbstractPattern.html#af0079631abf55300f5a48d7630a44e9f">changeActiveDraftBlock</a> (const QString &amp;name, const <a class="el" href="../../d0/d89/vabstractpattern_8h.html#a3a0d470ad581388370a4d6fd71b8d202">Document</a> &amp;parse=Document::FullParse)</td></tr>
@@ -3445,39 +3445,6 @@ True if can't find group by id. </dd></dl>
 
 </div>
 </div>
-<a id="a11a355aee1c4b3d217e58c412b37c713" name="a11a355aee1c4b3d217e58c412b37c713"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11a355aee1c4b3d217e58c412b37c713">&#9670;&#160;</a></span>isAnyVariableUsedInFormulas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool VAbstractPattern::isAnyVariableUsedInFormulas </td>
-          <td>(</td>
-          <td class="paramtype">const QStringList &amp;&#160;</td>
-          <td class="paramname"><em>variable_names</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>isAnyVariableUsedInFormulas check if any of the variables is referenced by a formula in the pattern. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">variable_names</td><td>names of the variables to look for. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if at least one formula uses one of the variables. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01873">1873</a> of file <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html">vabstractpattern.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01848">ListExpressions()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00104">VDrawTool::isUsed()</a>, and <a class="el" href="../../de/dd6/vtoolline_8cpp_source.html#l00260">VToolLine::isUsedInFormula()</a>.</p>
-
-</div>
-</div>
 <a id="a0ce62673844b88b43c143697d922ec01" name="a0ce62673844b88b43c143697d922ec01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0ce62673844b88b43c143697d922ec01">&#9670;&#160;</a></span>IsFunction()</h2>
 
@@ -3633,6 +3600,39 @@ True if can't find group by id. </dd></dl>
 
 </div>
 </div>
+<a id="ab537da404db09e9114fd10792f3ceb35" name="ab537da404db09e9114fd10792f3ceb35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab537da404db09e9114fd10792f3ceb35">&#9670;&#160;</a></span>isVariableUsed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VAbstractPattern::isVariableUsed </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&#160;</td>
+          <td class="paramname"><em>variable_names</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>isVariableUsed check if any of the variables is referenced by a formula in the pattern. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variable_names</td><td>names of the variables to look for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if at least one formula uses one of the variables. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01873">1873</a> of file <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html">vabstractpattern.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01848">ListExpressions()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/d66/vdrawtool_8cpp_source.html#l00104">VDrawTool::isUsed()</a>, and <a class="el" href="../../de/dd6/vtoolline_8cpp_source.html#l00260">VToolLine::isUsedInFormula()</a>.</p>
+
+</div>
+</div>
 <a id="a13377df721d4b0303eca50e23fbd98e3" name="a13377df721d4b0303eca50e23fbd98e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a13377df721d4b0303eca50e23fbd98e3">&#9670;&#160;</a></span>ListArcExpressions()</h2>
 
@@ -3714,7 +3714,7 @@ True if can't find group by id. </dd></dl>
 
 <p class="reference">References <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01953">ListArcExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01977">ListElArcExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l02048">ListOperationExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l02093">ListPathExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l02131">ListPieceExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01927">ListPointExpressions()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l02002">ListSplineExpressions()</a>, and <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l02033">listVariableExpressions()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01873">isAnyVariableUsedInFormulas()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00300">ListMeasurements()</a>, <a class="el" href="../../db/dd7/dialogvariables_8cpp_source.html#l00609">DialogVariables::refreshPattern()</a>, and <a class="el" href="../../db/dd7/dialogvariables_8cpp_source.html#l00541">DialogVariables::variableUsed()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l01873">isVariableUsed()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00300">ListMeasurements()</a>, <a class="el" href="../../db/dd7/dialogvariables_8cpp_source.html#l00609">DialogVariables::refreshPattern()</a>, and <a class="el" href="../../db/dd7/dialogvariables_8cpp_source.html#l00541">DialogVariables::variableUsed()</a>.</p>
 
 </div>
 </div>
