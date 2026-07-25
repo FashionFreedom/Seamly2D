@@ -298,6 +298,7 @@ void ImageTool::saveChanges()
 
         SaveToolOptions *saveOptions = new SaveToolOptions(domElement, newDomElement, m_doc, id);
         connect(saveOptions, &SaveToolOptions::NeedLiteParsing, m_doc, &VAbstractPattern::LiteParseTree);
+        connect(saveOptions, &SaveToolOptions::NeedFullParsing, m_doc, &VAbstractPattern::NeedFullParsing);
         qApp->getUndoStack()->push(saveOptions);
     }
     else
