@@ -41,7 +41,7 @@ var dir_40cd43732585e03d4f2cc5ec85e7c710 =
     [ "savepieceoptions.h", "d2/d6b/savepieceoptions_8h.html", "d2/d6b/savepieceoptions_8h" ],
     [ "savepiecepathoptions.cpp", "dd/d3a/savepiecepathoptions_8cpp.html", null ],
     [ "savepiecepathoptions.h", "d0/d8b/savepiecepathoptions_8h.html", "d0/d8b/savepiecepathoptions_8h" ],
-    [ "savetooloptions.cpp", "d9/d61/savetooloptions_8cpp.html", null ],
+    [ "savetooloptions.cpp", "d9/d61/savetooloptions_8cpp.html", "d9/d61/savetooloptions_8cpp" ],
     [ "savetooloptions.h", "d0/d14/savetooloptions_8h.html", "d0/d14/savetooloptions_8h" ],
     [ "set_piece_color.cpp", "de/dc5/set__piece__color_8cpp.html", null ],
     [ "set_piece_color.h", "db/d75/set__piece__color_8h.html", "db/d75/set__piece__color_8h" ],
