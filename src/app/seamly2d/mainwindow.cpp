@@ -2486,6 +2486,11 @@ void MainWindow::initBasePointComboBox()
     basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     basePointComboBox->setCurrentIndex(0);
     basePointComboBox->setEditable(true);
+
+    // Force any child line edit to dynamically pull from the current app palette
+    basePointComboBox->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
+
+
     basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
 }
 
