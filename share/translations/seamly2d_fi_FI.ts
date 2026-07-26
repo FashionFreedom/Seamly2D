@@ -8338,23 +8338,23 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Show Cut Line Notch</source>
-        <translation>Näytä leikkuulinjan merkki</translation>
+        <translation>Näytä leikkuulinjan hakki</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>
-        <translation>Näytä saumalinjan merkki</translation>
+        <translation>Näytä saumalinjan hakki</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
-        <translation>Aseta oletusmerkiksi</translation>
+        <translation>Aseta oletushakiksi</translation>
     </message>
     <message>
         <source>Edit Notch</source>
-        <translation>Muokkaa merkkiä</translation>
+        <translation>Muokkaa hakkia</translation>
     </message>
     <message>
         <source>Remove Notch</source>
-        <translation>Poista merkki</translation>
+        <translation>Poista hakki</translation>
     </message>
 </context>
 <context>
@@ -12859,23 +12859,23 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Show Cut Line Notch</source>
-        <translation>Näytä leikkuulinjan merkki</translation>
+        <translation>Näytä leikkuulinjan hakki</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>
-        <translation>Näytä saumalinjan merkki</translation>
+        <translation>Näytä saumalinjan hakki</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
-        <translation>Aseta oletusmerkiksi</translation>
+        <translation>Aseta oletushakiksi</translation>
     </message>
     <message>
         <source>Edit Notch</source>
-        <translation>Muokkaa merkkiä</translation>
+        <translation>Muokkaa hakkia</translation>
     </message>
     <message>
         <source>Remove Notch</source>
-        <translation>Poista merkki</translation>
+        <translation>Poista hakki</translation>
     </message>
 </context>
 <context>
