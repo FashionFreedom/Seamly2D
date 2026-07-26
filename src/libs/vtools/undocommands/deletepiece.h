@@ -53,6 +53,8 @@
 #ifndef DELETEPIECE_H
 #define DELETEPIECE_H
 
+#include <QDomElement>
+#include <QVector>
 #include <QtGlobal>
 
 #include "../tools/pattern_piece_tool.h"
@@ -74,6 +76,12 @@ private:
     QDomNode m_parentNode;
     quint32  m_siblingId;
     VPiece   m_piece;
+
+    QVector<QDomElement> m_orphanedPaths;
+    QVector<QDomNode>    m_orphanedPathParents;
+
+    void removeOrphanedPaths();
+    void restoreOrphanedPaths();
 };
 
 #endif // DELETEPIECE_H

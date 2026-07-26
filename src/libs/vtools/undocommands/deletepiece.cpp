@@ -55,6 +55,7 @@
 #include <QDomElement>
 #include <QHash>
 
+#include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
@@ -106,6 +107,7 @@ void DeletePiece::undo()
 {
     qCDebug(vUndo, "Undo.");
 
+    restoreOrphanedPaths();
     UndoDeleteAfterSibling(m_parentNode, m_siblingId);
     emit NeedFullParsing();
 }
@@ -130,6 +132,7 @@ void DeletePiece::redo()
         DecrementReferences(m_piece.getCustomSARecords());
         DecrementReferences(m_piece.getInternalPaths());
         DecrementReferences(m_piece.getAnchors());
+        removeOrphanedPaths();
         emit NeedFullParsing(); // Doesn't work when UnionDetail delete piece.
     }
     else
@@ -137,4 +140,66 @@ void DeletePiece::redo()
         qCDebug(vUndo, "Can't get piece by id = %u.", nodeId);
         return;
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief removeOrphanedPaths remove the path elements of the piece that are no longer used.
+///
+/// The internal paths and custom seam allowance paths of a piece are stored as path elements in the
+/// modeling section. Deleting the piece only lowers their reference counters, which leaves unused path
+/// elements behind in the file. Remove them here, but keep any path another piece still uses, for
+/// example a path shared through the Union tool. See issue #870.
+//---------------------------------------------------------------------------------------------------------------------
+
+void DeletePiece::removeOrphanedPaths()
+{
+    m_orphanedPaths.clear();
+    m_orphanedPathParents.clear();
+
+    QVector<quint32> pathIds = m_piece.getInternalPaths();
+    const QVector<CustomSARecord> records = m_piece.getCustomSARecords();
+    for (int i = 0; i < records.size(); ++i)
+    {
+        pathIds.append(records.at(i).path);
+    }
+
+    for (int i = 0; i < pathIds.size(); ++i)
+    {
+        VDataTool *tool = nullptr;
+        try
+        {
+            tool = VAbstractPattern::getTool(pathIds.at(i));
+        }
+        catch (const VExceptionBadId &)
+        {
+            continue;
+        }
+
+        if (tool == nullptr || tool->isUsed())
+        {
+            continue;
+        }
+
+        QDomElement element = doc->elementById(pathIds.at(i), VAbstractPattern::TagPath);
+        if (element.isElement())
+        {
+            m_orphanedPaths.append(element);
+            m_orphanedPathParents.append(element.parentNode());
+            element.parentNode().removeChild(element);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief restoreOrphanedPaths put the path elements removed by redo() back into the file.
+//---------------------------------------------------------------------------------------------------------------------
+
+void DeletePiece::restoreOrphanedPaths()
+{
+    for (int i = 0; i < m_orphanedPaths.size(); ++i)
+    {
+        m_orphanedPathParents[i].appendChild(m_orphanedPaths.at(i));
+    }
+    m_orphanedPaths.clear();
+    m_orphanedPathParents.clear();
 }
