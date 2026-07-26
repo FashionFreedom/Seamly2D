@@ -69,11 +69,11 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
     * Custom Installation
     * Qt -- Minimize your options, otherwise your download size could be in Gs
       * Qt 6.11.1
-       * MSVC 2022
-       * Additional Librairies
-        * Qt 5 Compatibility module
-        * Qt Multimedia
-        * Qt Shader Tools
+        * MSVC 2022
+        * Additional Librairies
+          * Qt 5 Compatibility module
+          * Qt Multimedia
+          * Qt Shader Tools
     * Build Tools
       * Qt Creator
       * Qt Creator CDB Debugger Support
