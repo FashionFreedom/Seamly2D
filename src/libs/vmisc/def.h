@@ -35,12 +35,15 @@
 #include <QColorDialog>
 #include <QFileDialog>
 #include <QLineF>
+#include <QPointF>
+#include <QSizeF>
 #include <QString>
 #include <QStringList>
 #include <Qt>
 #include <QtGlobal>
 #include <QPrinter>
 #include <QPixmap>
+#include <array>
 #include <csignal>
 #ifdef Q_OS_WIN
     #include <windows.h>
@@ -185,20 +188,22 @@ struct DraftImage
 {
     DraftImage() = default; 
 
-    quint32             id{0};
-    QString             name{""};
-    QString             filename{""};
-    bool                locked{false};
-    QPointF             origin{0.0, 0.0};
-    QPointF             pos{0.0, 0.0};
-    QSizeF              size{0.0, 0.0};
-    bool                aspectLocked{false};
-    Unit                units{Unit::Px};
-    qreal               rotation{0.0};
-    bool                visible{true};
-    qreal               opacity{100.0};
-    qint32              order{0};
-    quint32             basepoint{0};
+    quint32                id{0};
+    QString                name{""};
+    QString                filename{""};
+    bool                   locked{false};
+    QPointF                origin{0.0, 0.0};
+    QPointF                pos{0.0, 0.0};
+    QSizeF                 size{0.0, 0.0};
+    bool                   aspectLocked{false};
+    Unit                   units{Unit::Px};
+    qreal                  rotation{0.0};
+    bool                   visible{true};
+    qreal                  opacity{100.0};
+    qint32                 order{0};
+    quint32                basepoint{0};
+    std::array<QPointF, 3> calibrationPoints{{QPointF(), QPointF(), QPointF()}};
+    QSizeF                 calibrationDistances{0.0, 0.0};
 };
 
 Q_DECLARE_METATYPE(DraftImage)

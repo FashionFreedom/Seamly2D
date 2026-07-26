@@ -38,9 +38,9 @@
 #include <QPointF>
 #include <QString>
 #include <QVariant>
-#include <QVector>
 #include <QtCore/qglobal.h>
 #include <QGraphicsItem>
+#include <array>
 
 class ResizeHandlesItem;
 
@@ -105,34 +105,35 @@ protected:
     virtual void     keyReleaseEvent (QKeyEvent *event) override;
 
 private:
-    VAbstractPattern  *m_doc;
-    QPointF            m_clickOffset;
-    QPointF            m_origin;
-    QRectF             m_boundingRect;
-    QRectF             m_handleRect;
-    QRectF             m_actualRect;
-    ResizeHandlesItem *m_resizeHandles;
-    Position           m_resizePosition;
-    QLineF             m_rotateLine;
-    QPolygonF          m_angleHandle;
-    qreal              m_angle;
-    bool               m_mousePressed;
-    bool               m_isHovered;
-    SelectionType      m_selectionType;
-    bool               m_transformationMode;
-    DraftImage         m_image;
-    QPixmap            m_pixmap;
-    qreal              m_pixmapWidth;
-    qreal              m_pixmapHeight;
-    bool               m_selectable;
-    qreal              m_minDimension;
-    qreal              m_maxDimension;
-    bool               m_selectNewOrigin;
-    bool               m_imageWasMoved;
-    bool               m_isCalibrating;
-    QVector<QPointF>   m_calibrationPoints;
-    QPointF            m_currentMousePos;
-    QTransform         m_transform;
+    VAbstractPattern      *m_doc = nullptr;
+    QPointF                m_clickOffset{};
+    QPointF                m_origin{};
+    QRectF                 m_boundingRect{};
+    QRectF                 m_handleRect{};
+    QRectF                 m_actualRect{};
+    ResizeHandlesItem     *m_resizeHandles = nullptr;
+    Position               m_resizePosition{};
+    QLineF                 m_rotateLine{};
+    QPolygonF              m_angleHandle{};
+    qreal                  m_angle = 0.0;
+    bool                   m_mousePressed = false;
+    bool                   m_isHovered = false;
+    SelectionType          m_selectionType = SelectionType::ByMouseRelease;
+    bool                   m_transformationMode = Qt::SmoothTransformation;
+    DraftImage             m_image;
+    QPixmap                m_pixmap;
+    qreal                  m_pixmapWidth = 0.0;
+    qreal                  m_pixmapHeight = 0.0;
+    bool                   m_selectable = true;
+    qreal                  m_minDimension = 16;
+    qreal                  m_maxDimension = 60000;
+    bool                   m_selectNewOrigin = false;
+    bool                   m_imageWasMoved = false;
+    bool                   m_isCalibrating = false;
+    std::array<QPointF, 3> m_calibrationPoints{};
+    int                    m_calibrationPointCount{0};
+    QPointF                m_currentMousePos{};
+    QTransform             m_transform{};
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);
@@ -141,7 +142,7 @@ private:
     void               stopCalibration();
     void               stopOriginSelection();
 
-    QTransform         computePerspectiveTransformation(const QPolygonF &source, const QPolygonF &destination);
+    QTransform         computePerspectiveTransformation();
 };
 
 #endif // IMAGE_ITEM_H

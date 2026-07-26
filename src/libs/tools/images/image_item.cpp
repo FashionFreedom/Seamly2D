@@ -69,27 +69,7 @@ namespace
 ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     : QObject(parent)
     , m_doc(doc)
-    , m_clickOffset(QPointF(0.0, 0.0))
-    , m_boundingRect(QRectF())
-    , m_handleRect(QRectF())
-    , m_actualRect(QRectF())
-    , m_resizeHandles()
-    , m_resizePosition()
-    , m_rotateLine()
-    , m_angleHandle()
-    , m_angle()
-    , m_mousePressed(false)
-    , m_isHovered(false)
-    , m_selectionType(SelectionType::ByMouseRelease)
-    , m_transformationMode(Qt::SmoothTransformation)
     , m_image(image)
-    , m_pixmapWidth()
-    , m_pixmapHeight()
-    , m_selectable(true)
-    , m_minDimension(16)
-    , m_maxDimension(60000)
-    , m_selectNewOrigin(false)
-    , m_isCalibrating(false)
 {
     initializeItem();
 
@@ -107,7 +87,8 @@ ImageItem::ImageItem(QObject *parent, VAbstractPattern *doc, DraftImage image)
     m_boundingRect = QRectF(m_image.pos.x() - m_image.origin.x(), m_image.pos.y() - m_image.origin.y(), m_image.size.width(), m_image.size.height());
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
     m_origin = m_boundingRect.topLeft() + m_image.origin;
-
+    m_transform = computePerspectiveTransformation();
+    setTransform(m_transform);
 
     if (m_image.order == 0)
     {
@@ -274,9 +255,9 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
             painter->drawLine(QLineF(p.x(), p.y() - crossSize, p.x(), p.y() + crossSize));
         };
 
-        for (const QPointF &p : m_calibrationPoints)
+        for (int i = 0; i < m_calibrationPointCount; ++i)
         {
-            drawCalibrationSymbol(p);
+            drawCalibrationSymbol(m_image.calibrationPoints[i]);
         }
 
         if (!m_image.locked && m_isHovered)
@@ -542,17 +523,21 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (m_isCalibrating && event->button() == Qt::LeftButton)
     {
-        m_calibrationPoints.append(event->pos());
+        if (m_calibrationPointCount < 3)
+        {
+            m_image.calibrationPoints[m_calibrationPointCount] = event->pos();
+            ++m_calibrationPointCount;
+        }
 
-        if (m_calibrationPoints.size() == 3)
+        if (m_calibrationPointCount == 3)
         {
             // End of selection
             m_isCalibrating = false;
 
             // We compute the 4th point
-            QPointF A = m_calibrationPoints[0];
-            QPointF B = m_calibrationPoints[1]; // Right angle
-            QPointF C = m_calibrationPoints[2];
+            QPointF A = m_image.calibrationPoints[0];
+            QPointF B = m_image.calibrationPoints[1]; // Right angle
+            QPointF C = m_image.calibrationPoints[2];
             QPointF D = A + C - B;
 
             QPolygonF source;
@@ -562,7 +547,6 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             qreal pixelDistBC = QLineF(B, C).length();
             qreal defaultAB = qApp->fromPixel(pixelDistAB);
             qreal defaultBC = qApp->fromPixel(pixelDistBC);
-            bool ok = false;
 
             // Custom dialog to retreive the two calibration distances
             QDialog dialog(qApp->getMainWindow());
@@ -600,17 +584,12 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             {
                 qreal inputAB = spinAB->value();
                 qreal inputBC = spinBC->value();
-                ok = true;
 
-                qreal distAB = qApp->toPixel(inputAB);
-                qreal distBC = qApp->toPixel(inputBC);
+                m_image.calibrationDistances.setWidth(qApp->toPixel(inputAB));
+                m_image.calibrationDistances.setHeight(qApp->toPixel(inputBC));
 
-                QPolygonF destination;
-                destination << QPointF(0, 0) << QPointF(0, distAB)
-                            << QPointF(distBC, distAB) << QPointF(distBC, 0);
+                m_transform = computePerspectiveTransformation();
 
-                m_transform = computePerspectiveTransformation(source, destination);
-                
                 // Apply the transform to the item so it affects the entire item including resize handles
                 setTransform(m_transform);
                 prepareGeometryChange();
@@ -789,7 +768,12 @@ void ImageItem::updateImageAndHandles(DraftImage image)
 {
     m_image = image;
     m_origin = m_boundingRect.topLeft() + m_image.origin;
+    
+    m_transform = computePerspectiveTransformation();
+    setTransform(m_transform);
+
     updateImage();
+
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     m_resizeHandles->setParentRotation(m_image.rotation);
@@ -920,9 +904,30 @@ void ImageItem::showImageStatusMessage()
  * @param destination The 4 vertices of the target shape (perfect rectangle/square).
  * @return The QTransform matrix to map source to destination.
  */
-QTransform ImageItem::computePerspectiveTransformation(const QPolygonF &source, const QPolygonF &destination)
+QTransform ImageItem::computePerspectiveTransformation()
 {
-    QTransform transform;
+    QTransform transform{}; // Identity by default
+
+    if (m_calibrationPointCount < 3
+     || m_image.calibrationDistances.width() == 0
+     || m_image.calibrationDistances.height() == 0)
+    {
+        qWarning() << "Error: Not enough calibration points or distances to compute transformation.";
+        return transform; // Returns identity matrix
+    }
+    
+    const QPointF A = m_image.calibrationPoints[0];
+    const QPointF B = m_image.calibrationPoints[1];
+    const QPointF C = m_image.calibrationPoints[2];
+    const QPointF D = A + C - B;
+
+    const QPolygonF source{A, B, C, D};
+
+    QPolygonF destination;
+    destination << QPointF(0, 0) 
+                << QPointF(0, m_image.calibrationDistances.width()) 
+                << QPointF(m_image.calibrationDistances.height(), m_image.calibrationDistances.width()) 
+                << QPointF(m_image.calibrationDistances.height(), 0);
     
     bool success = QTransform::quadToQuad(source, destination, transform);
 
@@ -937,7 +942,7 @@ QTransform ImageItem::computePerspectiveTransformation(const QPolygonF &source, 
 void ImageItem::startCalibration() 
 {
     m_isCalibrating = true;
-    m_calibrationPoints.clear();
+    m_calibrationPointCount = 0;
     setFlag(QGraphicsItem::ItemIsMovable, false);
     m_resizeHandles->hide();
     update();
@@ -948,7 +953,7 @@ void ImageItem::stopCalibration()
     if (m_isCalibrating)
     {
         m_isCalibrating = false;
-        m_calibrationPoints.clear();
+        m_calibrationPointCount = 0;
         setFlag(QGraphicsItem::ItemIsMovable, true);
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         m_resizeHandles->show();

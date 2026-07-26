@@ -141,7 +141,14 @@ const QString VAbstractPattern::AttrSource              = QStringLiteral("src");
 const QString VAbstractPattern::AttrXOffset             = QStringLiteral("xOffset");
 const QString VAbstractPattern::AttrYOffset             = QStringLiteral("yOffset");
 const QString VAbstractPattern::AttrBasepoint           = QStringLiteral("basepoint");
-
+const QString VAbstractPattern::AttrCalibPoint1X        = QStringLiteral("calibPoint1X");
+const QString VAbstractPattern::AttrCalibPoint1Y        = QStringLiteral("calibPoint1Y");
+const QString VAbstractPattern::AttrCalibPoint2X        = QStringLiteral("calibPoint2X");
+const QString VAbstractPattern::AttrCalibPoint2Y        = QStringLiteral("calibPoint2Y");
+const QString VAbstractPattern::AttrCalibPoint3X        = QStringLiteral("calibPoint3X");
+const QString VAbstractPattern::AttrCalibPoint3Y        = QStringLiteral("calibPoint3Y");
+const QString VAbstractPattern::AttrCalibDistHoriz      = QStringLiteral("calibDistHoriz");
+const QString VAbstractPattern::AttrCalibDistVert       = QStringLiteral("calibDistVert");
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");

@@ -282,6 +282,14 @@ void ImageTool::saveOptions(QDomElement &tag)
     m_doc->SetAttribute(tag, VAbstractPattern::AttrOrder, qreal(image.order));
     m_doc->SetAttribute(tag, VAbstractPattern::AttrXOffset, image.origin.x());
     m_doc->SetAttribute(tag, VAbstractPattern::AttrYOffset, image.origin.y());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint1X, image.calibrationPoints[0].x());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint1Y, image.calibrationPoints[0].y());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint2X, image.calibrationPoints[1].x());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint2Y, image.calibrationPoints[1].y());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint3X, image.calibrationPoints[2].x());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibPoint3Y, image.calibrationPoints[2].y());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibDistHoriz, image.calibrationDistances.width());
+    m_doc->SetAttribute(tag, VAbstractPattern::AttrCalibDistVert, image.calibrationDistances.height());
 }
 
 void ImageTool::saveChanges()

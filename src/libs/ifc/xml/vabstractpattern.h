@@ -340,7 +340,14 @@ public:
     static const QString AttrXOffset;
     static const QString AttrYOffset;
     static const QString AttrBasepoint;
-
+    static const QString AttrCalibPoint1X;
+    static const QString AttrCalibPoint1Y;
+    static const QString AttrCalibPoint2X;
+    static const QString AttrCalibPoint2Y;
+    static const QString AttrCalibPoint3X;
+    static const QString AttrCalibPoint3Y;
+    static const QString AttrCalibDistHoriz;
+    static const QString AttrCalibDistVert;
 
     static const QString AttrName;
     static const QString AttrVisible;

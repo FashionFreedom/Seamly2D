@@ -987,6 +987,14 @@ void VPattern::parseImageElement(QDomElement &domElement, const Document &parse)
     image.origin.setY(GetParametrDouble(domElement, AttrYOffset, "0.0"));
     image.basepoint = GetParametrUInt(domElement, AttrBasepoint, 0);
     image.visible = getParameterBool(domElement, AttrVisible, trueStr);
+    image.calibrationPoints[0] = QPointF(GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint1X, "0.0"),
+                                           GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint1Y, "0.0"));
+    image.calibrationPoints[1] = QPointF(GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint2X, "0.0"),
+                                           GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint2Y, "0.0"));
+    image.calibrationPoints[2] = QPointF(GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint3X, "0.0"),
+                                           GetParametrDouble(domElement, VAbstractPattern::AttrCalibPoint3Y, "0.0"));
+    image.calibrationDistances.setWidth(GetParametrDouble(domElement, VAbstractPattern::AttrCalibDistHoriz, "0.0"));
+    image.calibrationDistances.setHeight(GetParametrDouble(domElement, VAbstractPattern::AttrCalibDistVert, "0.0"));
 
     VContainer::UpdateId(image.id);
 
