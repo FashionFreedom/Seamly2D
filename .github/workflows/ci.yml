@@ -9,7 +9,7 @@ on:
   push:
     branches:
     - develop
-    - test
+    - 'feat-*'
   pull_request:
 
 permissions:
