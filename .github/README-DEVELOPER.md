@@ -9,7 +9,9 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
 * [Qt 6.11.1](https://www.qt.io/download-open-source) (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/) Qt Visual Studio Tools extension - needed to build with MSVC.
 * [Git](https://git-scm.com/downloads) or [Github Desktop for Windows and MacOS](https://desktop.github.com)
-* Compiler - MSVC 2022, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
+* Compiler :
+  * gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool (Maintenance.exe).
+  * Checking MSVC 2022 64-bit in the Qt Maintenance Tool only installs the prebuilt Qt libraries for MSVC 2022. The Microsoft C++ compiler (cl.exe) itself has to be installed separately via Microsoft's official installer.
 * Pdftops (from XpdfReader or poppler) - Required to create PS or EPS layout files.
 * Check the sections below for your operating system to find additional installation requirements.
 
@@ -67,14 +69,16 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
     * Custom Installation
     * Qt -- Minimize your options, otherwise your download size could be in Gs
       * Qt 6.11.1
-      * MSVC 2022
-      * Qt Debug Information Files
-      * Developer and Designer Tools
+       * MSVC 2022
+       * Additional Librairies
+        * Qt 5 Compatibility module
+        * Qt Multimedia
+        * Qt Shader Tools
+    * Build Tools
       * Qt Creator
       * Qt Creator CDB Debugger Support
       * Debugging Tools for Windows
-      * Qt Creator Debug Symbols
-        (Qt Maintenance Tool is always installed with Developer & Designer Tools - this will be highlighted)
+      * (Qt Maintenance Tool is always installed with Developer & Designer Tools - this will be highlighted)
 
 ### ... on Linux
 
