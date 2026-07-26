@@ -72,6 +72,7 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
         * MSVC 2022
         * Additional Librairies
           * Qt Multimedia
+          * Qt Image Formats
     * Build Tools
       * Qt Creator
       * Qt Creator CDB Debugger Support
