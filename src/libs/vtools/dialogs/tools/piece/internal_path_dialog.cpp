@@ -305,7 +305,12 @@ void InternalPathDialog::showContextMenu(const QPoint &pos)
     QAction *selectedAction = menu->exec(ui->listWidget->viewport()->mapToGlobal(pos));
     if (selectedAction == actionDelete)
     {
-        delete ui->listWidget->item(row);
+        QList<QListWidgetItem *> items = ui->listWidget->selectedItems();
+        if (!items.contains(rowItem))
+        {
+            items.append(rowItem); // the right clicked row may not be part of the selection
+        }
+        qDeleteAll(items); // deleting an item also removes it from the list
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
