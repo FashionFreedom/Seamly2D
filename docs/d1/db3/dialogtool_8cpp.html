@@ -116,6 +116,7 @@ $(document).ready(function(){initNavTree('d1/db3/dialogtool_8cpp.html','../../')
 <code>#include &lt;QGuiApplication&gt;</code><br />
 <code>#include &lt;QHash&gt;</code><br />
 <code>#include &lt;QIcon&gt;</code><br />
+<code>#include &lt;QItemSelectionModel&gt;</code><br />
 <code>#include &lt;QKeyEvent&gt;</code><br />
 <code>#include &lt;QLabel&gt;</code><br />
 <code>#include &lt;QLineEdit&gt;</code><br />
@@ -135,10 +136,12 @@ $(document).ready(function(){initNavTree('d1/db3/dialogtool_8cpp.html','../../')
 <code>#include &lt;QSize&gt;</code><br />
 <code>#include &lt;QTextCursor&gt;</code><br />
 <code>#include &lt;QTimer&gt;</code><br />
+<code>#include &lt;QToolButton&gt;</code><br />
 <code>#include &lt;QWidget&gt;</code><br />
 <code>#include &lt;Qt&gt;</code><br />
 <code>#include &lt;QtDebug&gt;</code><br />
 <code>#include &lt;QtMath&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;new&gt;</code><br />
 <code>#include &lt;QBuffer&gt;</code><br />
 <code>#include &lt;QFont&gt;</code><br />
@@ -176,6 +179,8 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ac2e003f541cb5afc14468f3b6945ef46"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html#ac2e003f541cb5afc14468f3b6945ef46">anonymous_namespace{dialogtool.cpp}::RowId</a> (QListWidget *listWidget, int i)</td></tr>
 <tr class="separator:ac2e003f541cb5afc14468f3b6945ef46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33572ffcc0ca3404e934befd9c84bc48"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/db3/dialogtool_8cpp.html#a33572ffcc0ca3404e934befd9c84bc48">restoreSelection</a> (QListWidget *list, const <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt; QListWidgetItem * &gt; &amp;items, QListWidgetItem *current)</td></tr>
+<tr class="separator:a33572ffcc0ca3404e934befd9c84bc48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a637a585da62be12edae69e1bd4e33449" name="a637a585da62be12edae69e1bd4e33449"></a>
@@ -190,7 +195,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html">dialogtool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html">dialogtool.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,7 +211,54 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html">dialogtool.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00112">112</a> of file <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html">dialogtool.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a33572ffcc0ca3404e934befd9c84bc48" name="a33572ffcc0ca3404e934befd9c84bc48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33572ffcc0ca3404e934befd9c84bc48">&#9670;&#160;</a></span>restoreSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void restoreSelection </td>
+          <td>(</td>
+          <td class="paramtype">QListWidget *&#160;</td>
+          <td class="paramname"><em>list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt; QListWidgetItem * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QListWidgetItem *&#160;</td>
+          <td class="paramname"><em>current</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01335">1335</a> of file <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html">dialogtool.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01409">DialogTool::moveListRowBottom()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01390">DialogTool::moveListRowDown()</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01350">DialogTool::moveListRowTop()</a>, and <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01371">DialogTool::moveListRowUp()</a>.</p>
 
 </div>
 </div>
