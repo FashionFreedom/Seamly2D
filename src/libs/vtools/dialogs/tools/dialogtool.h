@@ -126,6 +126,7 @@ public:
     static void      moveListRowBottom(QListWidget *list);
     static void      setMoveButtonState(QListWidget *list, QToolButton *top, QToolButton *up,
                                         QToolButton *down, QToolButton *bottom);
+    static QList<QListWidgetItem *> selectedRowItems(QListWidget *list, QListWidgetItem *anchor = nullptr);
 
 signals:
     /**
