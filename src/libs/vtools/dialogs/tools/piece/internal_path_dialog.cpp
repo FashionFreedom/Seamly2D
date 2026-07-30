@@ -1376,31 +1376,8 @@ QString InternalPathDialog::getSeamAllowanceWidthFormulaAfter() const
 //---------------------------------------------------------------------------------------------------------------------
 void InternalPathDialog::setMoveExclusions()
 {
-    ui->moveTop_ToolButton->setEnabled(false);
-    ui->moveUp_ToolButton->setEnabled(false);
-    ui->moveDown_ToolButton->setEnabled(false);
-    ui->moveBottom_ToolButton->setEnabled(false);
-
-    if (ui->listWidget->count() > 1)
-    {
-        if (ui->listWidget->currentRow() == 0)
-        {
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-        else if (ui->listWidget->currentRow() == ui->listWidget->count() - 1)
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-        }
-        else
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-    }
+    setMoveButtonState(ui->listWidget, ui->moveTop_ToolButton, ui->moveUp_ToolButton,
+                       ui->moveDown_ToolButton, ui->moveBottom_ToolButton);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
