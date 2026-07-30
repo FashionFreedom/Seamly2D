@@ -638,107 +638,106 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
 
             if (keyEvent->key() == Qt::Key_Delete)
             {
-                qDeleteAll(list->selectedItems()); // deleting an item also removes it from the list
+                qDeleteAll(selectedRowItems(list, rowItem)); // deleting an item also removes it from the list
                 validateObjects(isMainPathValid());
                 nodeListChanged();
                 return true; // items are gone - do not fall through
             }
             if (keyEvent->modifiers() & Qt::ControlModifier)
             {
+                const QList<QListWidgetItem *> items = selectedRowItems(list, rowItem);
+                const VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
+
                 switch (keyEvent->key())
                 {
                     case Qt::Key_R:
                     {
-                        reverseNode(rowItem);
+                        if (rowNode.GetTypeTool() != Tool::NodePoint) // a point cannot anchor the reverse state
+                        {
+                            const bool reverse = !rowNode.GetReverse();
+                            for (QListWidgetItem *item : items)
+                            {
+                                reverseNode(item, reverse); // skips point nodes
+                            }
+                        }
                         break;
                     }
                     case Qt::Key_D:
                     {
-                        duplicateNode(rowItem);
+                        for (QListWidgetItem *item : items)
+                        {
+                            duplicateNode(item); // skips point nodes
+                        }
                         break;
                     }
                     case Qt::Key_E:
                     {
-                        excludeNode(rowItem);
+                        const bool exclude = !rowNode.isExcluded();
+                        for (QListWidgetItem *item : items)
+                        {
+                            excludeNode(item, exclude);
+                        }
                         break;
                     }
                 }
             }
             else if (keyEvent->modifiers() & Qt::ShiftModifier)
             {
-                VPieceNode rowNode        = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
-                bool showCutline          = rowNode.showNotch();
-                bool showSeamline         = rowNode.showSeamlineNotch();
-                NotchType notchType       = rowNode.getNotchType();
-                NotchSubType notchSubType = rowNode.getNotchSubType();
-                qreal notchLength         = rowNode.getNotchLength();
-                qreal notchWidth          = rowNode.getNotchWidth();
-                int notchCount            = rowNode.getNotchCount();
-
-                switch (keyEvent->key())
+                const QList<QListWidgetItem *> items = selectedRowItems(list, rowItem);
+                for (QListWidgetItem *item : items)
                 {
-                    case Qt::Key_S:
+                    VPieceNode node = qvariant_cast<VPieceNode>(item->data(Qt::UserRole));
+                    if (node.GetTypeTool() != Tool::NodePoint)
                     {
-                        setNotch(rowItem, true, showCutline, showSeamline, NotchType::Slit,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
+                        continue;
                     }
-                    case Qt::Key_T:
+
+                    bool showCutline          = node.showNotch();
+                    bool showSeamline         = node.showSeamlineNotch();
+                    NotchType notchType       = node.getNotchType();
+                    NotchSubType notchSubType = node.getNotchSubType();
+                    qreal notchLength         = node.getNotchLength();
+                    qreal notchWidth          = node.getNotchWidth();
+                    int notchCount            = node.getNotchCount();
+
+                    switch (keyEvent->key())
                     {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::TNotch,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
+                        case Qt::Key_S:
+                            notchType = NotchType::Slit;
+                            break;
+                        case Qt::Key_T:
+                            notchType = NotchType::TNotch;
+                            break;
+                        case Qt::Key_U:
+                            notchType = NotchType::UNotch;
+                            break;
+                        case Qt::Key_I:
+                            notchType = NotchType::VInternal;
+                            break;
+                        case Qt::Key_E:
+                            notchType = NotchType::VExternal;
+                            break;
+                        case Qt::Key_C:
+                            notchType = NotchType::Castle;
+                            break;
+                        case Qt::Key_D:
+                            notchType = NotchType::Diamond;
+                            break;
+                        case Qt::Key_F:
+                            notchSubType = NotchSubType::Straightforward;
+                            break;
+                        case Qt::Key_B:
+                            notchSubType = NotchSubType::Bisector;
+                            break;
+                        case Qt::Key_X:
+                            notchSubType = NotchSubType::Intersection;
+                            break;
+                        default:
+                            continue; // not a notch shortcut
                     }
-                    case Qt::Key_U:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::UNotch,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_I:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::VInternal,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_E:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::VExternal,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_C:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::Castle,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_D:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, NotchType::Diamond,
-                                 notchSubType, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_F:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, notchType,
-                                 NotchSubType::Straightforward, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_B:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, notchType,
-                                 NotchSubType::Bisector, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    case Qt::Key_X:
-                    {
-                        setNotch(rowItem,true, showCutline, showSeamline, notchType,
-                                 NotchSubType::Intersection, notchLength, notchWidth, notchCount);
-                        break;
-                    }
-                    default:
-                        break;
+
+                    setNotch(item, true, showCutline, showSeamline, notchType,
+                             notchSubType, notchLength, notchWidth, notchCount);
                 }
             }
             validateObjects(isMainPathValid());
@@ -860,15 +859,6 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
 
     // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
     QScopedPointer<QMenu> menu(new QMenu(ui->mainPath_ListWidget));
-    NodeInfo info;
-    NotchType notchType       = rowNode.getNotchType();
-    NotchSubType notchSubType = rowNode.getNotchSubType();
-    qreal notchLength         = rowNode.getNotchLength();
-    qreal notchWidth          = rowNode.getNotchWidth();
-    int notchCount            = rowNode.getNotchCount();
-    bool isNotch              = rowNode.isNotch();
-    bool showCutline          = rowNode.showNotch();
-    bool showSeamline         = rowNode.showSeamlineNotch();
 
     QAction *actionShowCutNotch   = nullptr;
     QAction *actionShowSeamNotch  = nullptr;
@@ -908,19 +898,19 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     {
         actionShowCutNotch = menu->addAction(checkIcon, tr("Show Cut Line Notch"));
         actionShowCutNotch->setCheckable(true);
-        actionShowCutNotch->setChecked(showCutline && isNotch);
-        actionShowCutNotch->setEnabled(isNotch);
+        actionShowCutNotch->setChecked(rowNode.showNotch() && rowNode.isNotch());
+        actionShowCutNotch->setEnabled(rowNode.isNotch());
 
         actionShowSeamNotch = menu->addAction(checkIcon, tr("Show Seam Line Notch"));
         actionShowSeamNotch->setCheckable(true);
-        actionShowSeamNotch->setChecked(showSeamline && isNotch);
-        actionShowSeamNotch->setEnabled(isNotch && !isBuiltInSA && !isHideSeamline);
+        actionShowSeamNotch->setChecked(rowNode.showSeamlineNotch() && rowNode.isNotch());
+        actionShowSeamNotch->setEnabled(rowNode.isNotch() && !isBuiltInSA && !isHideSeamline);
 
         actionDefaultNotch = menu->addAction(tr("Make Default Notch"));
 
         QMenu *notchMenu = menu->addMenu(tr("Edit Notch"));
         actionNotch = notchMenu->menuAction();
-        notchMenu->setEnabled(isNotch);
+        notchMenu->setEnabled(rowNode.isNotch());
 
         QMenu *notchTypeMenu = notchMenu->addMenu(tr("Type"));
         actionSlit      = notchTypeMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
@@ -955,126 +945,168 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QAction *actionDelete = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Delete") + QStringLiteral("\tDel"));
 
     QAction *selectedAction = menu->exec(ui->mainPath_ListWidget->viewport()->mapToGlobal(pos));
+    if (selectedAction == nullptr)
+    {
+        return; // menu dismissed - on curve rows the notch actions are null and would falsely match below
+    }
+
+    const QList<QListWidgetItem *> items = selectedRowItems(ui->mainPath_ListWidget, rowItem);
+
     if (selectedAction == actionDelete)
     {
-        QList<QListWidgetItem *> items = ui->mainPath_ListWidget->selectedItems();
-        if (!items.contains(rowItem))
-        {
-            items.append(rowItem); // the right clicked row may not be part of the selection
-        }
         qDeleteAll(items); // deleting an item also removes it from the list
         validateObjects(isMainPathValid());
         nodeListChanged();
-        return; // items are gone - do not fall through to setNotch
+        return; // items are gone - do not fall through
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
-        reverseNode(rowItem);
+        const bool reverse = !rowNode.GetReverse();
+        for (QListWidgetItem *item : items)
+        {
+            reverseNode(item, reverse); // skips point nodes
+        }
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionDuplicate)
     {
-        duplicateNode(rowItem);
+        for (QListWidgetItem *item : items)
+        {
+            duplicateNode(item); // skips point nodes
+        }
     }
     else if (selectedAction == actionExcluded)
     {
-        excludeNode(rowItem);
+        const bool exclude = !rowNode.isExcluded();
+        for (QListWidgetItem *item : items)
+        {
+            excludeNode(item, exclude);
+        }
     }
-    else if (selectedAction == actionShowCutNotch)
+    else // notch actions - apply to every selected point node, keeping its other notch settings
     {
-        showCutline = !showCutline;
-    }
+        const bool newShowCutline  = !rowNode.showNotch();
+        const bool newShowSeamline = !rowNode.showSeamlineNotch();
 
-    else if (selectedAction == actionShowSeamNotch)
-    {
-        showSeamline = !showSeamline;
-    }
+        for (QListWidgetItem *item : items)
+        {
+            VPieceNode node = qvariant_cast<VPieceNode>(item->data(Qt::UserRole));
+            if (node.GetTypeTool() != Tool::NodePoint)
+            {
+                continue;
+            }
 
-    else if (selectedAction == actionDefaultNotch)
-    {
-        notchType    = stringToNotchType(qApp->Settings()->getDefaultNotchType());
-        notchSubType = NotchSubType::Straightforward;
-        notchLength  = qApp->Settings()->getDefaultNotchLength();
-        notchWidth   = qApp->Settings()->getDefaultNotchWidth();
-        notchCount   = 1;
-        isNotch      = true;
-        showCutline  = true;
-        showSeamline = true;
-    }
+            NotchType notchType       = node.getNotchType();
+            NotchSubType notchSubType = node.getNotchSubType();
+            qreal notchLength         = node.getNotchLength();
+            qreal notchWidth          = node.getNotchWidth();
+            int notchCount            = node.getNotchCount();
+            bool isNotch              = node.isNotch();
+            bool showCutline          = node.showNotch();
+            bool showSeamline         = node.showSeamlineNotch();
 
-    else if (selectedAction == actionSlit)
-    {
-        isNotch = true;
-        notchType = NotchType::Slit;
-    }
-    else if (selectedAction == actionTNotch)
-    {
-        isNotch = true;
-        notchType = NotchType::TNotch;
-    }
-    else if (selectedAction == actionUNotch)
-    {
-        isNotch = true;
-        notchType = NotchType::UNotch;
-    }
-    else if (selectedAction == actionVInternal)
-    {
-        isNotch = true;
-        notchType = NotchType::VInternal;
-    }
-    else if (selectedAction == actionVExternal)
-    {
-        isNotch = true;
-        notchType = NotchType::VExternal;
-    }
-    else if (selectedAction == actionCastle)
-    {
-        isNotch = true;
-        notchType = NotchType::Castle;
-    }
-    else if (selectedAction == actionDiamond)
-    {
-        isNotch = true;
-        notchType = NotchType::Diamond;
-    }
-    else if (selectedAction == actionStraightforward)
-    {
-        isNotch = true;
-        notchSubType = NotchSubType::Straightforward;
-    }
-    else if (selectedAction == actionBisector)
-    {
-        isNotch = true;
-        notchSubType = NotchSubType::Bisector;
-    }
-    else if (selectedAction == actionIntersection)
-    {
-        isNotch = true;
-        notchSubType = NotchSubType::Intersection;
-    }
-    else if (selectedAction == action1Notch)
-    {
-        isNotch = true;
-        notchCount = 1;
-    }
-    else if (selectedAction == action2Notch)
-    {
-        isNotch = true;
-        notchCount = 2;
-    }
-    else if (selectedAction == action3Notch)
-    {
-        isNotch = true;
-        notchCount = 3;
-    }
-    else if (selectedAction == actionRemoveNotch)
-    {
-        isNotch      = false;
-        showCutline  = true;
-        showSeamline = true;
-    }
+            if (selectedAction == actionShowCutNotch)
+            {
+                if (!isNotch)
+                {
+                    continue; // only meaningful on nodes that have a notch
+                }
+                showCutline = newShowCutline;
+            }
+            else if (selectedAction == actionShowSeamNotch)
+            {
+                if (!isNotch)
+                {
+                    continue;
+                }
+                showSeamline = newShowSeamline;
+            }
+            else if (selectedAction == actionDefaultNotch)
+            {
+                notchType    = stringToNotchType(qApp->Settings()->getDefaultNotchType());
+                notchSubType = NotchSubType::Straightforward;
+                notchLength  = qApp->Settings()->getDefaultNotchLength();
+                notchWidth   = qApp->Settings()->getDefaultNotchWidth();
+                notchCount   = 1;
+                isNotch      = true;
+                showCutline  = true;
+                showSeamline = true;
+            }
+            else if (selectedAction == actionSlit)
+            {
+                isNotch = true;
+                notchType = NotchType::Slit;
+            }
+            else if (selectedAction == actionTNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::TNotch;
+            }
+            else if (selectedAction == actionUNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::UNotch;
+            }
+            else if (selectedAction == actionVInternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VInternal;
+            }
+            else if (selectedAction == actionVExternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VExternal;
+            }
+            else if (selectedAction == actionCastle)
+            {
+                isNotch = true;
+                notchType = NotchType::Castle;
+            }
+            else if (selectedAction == actionDiamond)
+            {
+                isNotch = true;
+                notchType = NotchType::Diamond;
+            }
+            else if (selectedAction == actionStraightforward)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Straightforward;
+            }
+            else if (selectedAction == actionBisector)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Bisector;
+            }
+            else if (selectedAction == actionIntersection)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Intersection;
+            }
+            else if (selectedAction == action1Notch)
+            {
+                isNotch = true;
+                notchCount = 1;
+            }
+            else if (selectedAction == action2Notch)
+            {
+                isNotch = true;
+                notchCount = 2;
+            }
+            else if (selectedAction == action3Notch)
+            {
+                isNotch = true;
+                notchCount = 3;
+            }
+            else if (selectedAction == actionRemoveNotch)
+            {
+                isNotch      = false;
+                showCutline  = true;
+                showSeamline = true;
+            }
 
-    setNotch(rowItem, isNotch, showCutline, showSeamline, notchType,
-             notchSubType, notchLength, notchWidth, notchCount);
+            setNotch(item, isNotch, showCutline, showSeamline, notchType,
+                     notchSubType, notchLength, notchWidth, notchCount);
+        }
+    }
 
     validateObjects(isMainPathValid());
     nodeListChanged();
@@ -3710,15 +3742,16 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief Reverses the selected node points if the node is a curve.
+/// @brief Sets the reverse state of the node if the node is a curve.
 /// @param rowItem list widget item of the selected row.
+/// @param reverse new reverse state.
 //---------------------------------------------------------------------------------------------------------------------
- void PatternPieceDialog::reverseNode(QListWidgetItem *rowItem)
+ void PatternPieceDialog::reverseNode(QListWidgetItem *rowItem, bool reverse)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
     if (rowNode.GetTypeTool() != Tool::NodePoint)
     {
-        rowNode.SetReverse(!rowNode.GetReverse());
+        rowNode.SetReverse(reverse);
         NodeInfo info;
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
@@ -3742,14 +3775,15 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief Toggles the exclude state of the selected node.
+/// @brief Sets the exclude state of the node.
 /// @param rowItem list widget item of the selected row.
+/// @param exclude new exclude state.
 //---------------------------------------------------------------------------------------------------------------------
- void PatternPieceDialog::excludeNode(QListWidgetItem *rowItem)
+ void PatternPieceDialog::excludeNode(QListWidgetItem *rowItem, bool exclude)
 {
     NodeInfo info;
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
-    rowNode.SetExcluded(!rowNode.isExcluded());
+    rowNode.SetExcluded(exclude);
     info = getNodeInfo(rowNode, true);
     rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
     rowItem->setIcon(QIcon(info.icon));

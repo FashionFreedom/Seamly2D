@@ -1309,10 +1309,16 @@ QString DialogTool::getPointName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-// Returns the selected items sorted by row. Falls back to the current item when nothing is selected.
-static QList<QListWidgetItem *> selectedRowItems(QListWidget *list)
+// Returns the selected items sorted by row, including the anchor item (the right clicked or current
+// row) when it is not part of the selection. Falls back to the current item when nothing is selected.
+QList<QListWidgetItem *> DialogTool::selectedRowItems(QListWidget *list, QListWidgetItem *anchor)
 {
+    SCASSERT(list != nullptr)
     QList<QListWidgetItem *> items = list->selectedItems();
+    if (anchor != nullptr && !items.contains(anchor))
+    {
+        items.append(anchor);
+    }
     if (items.isEmpty() && list->currentItem() != nullptr)
     {
         items.append(list->currentItem());

@@ -286,9 +286,9 @@ private:
     void                        setMoveExclusions();
 
     QString                     createPieceName() const;
-    void                        reverseNode(QListWidgetItem *rowItem);
+    void                        reverseNode(QListWidgetItem *rowItem, bool reverse);
     void                        duplicateNode(QListWidgetItem *rowItem);
-    void                        excludeNode(QListWidgetItem *rowItem);
+    void                        excludeNode(QListWidgetItem *rowItem, bool exclude);
     void                        setNotch(QListWidgetItem *rowItem, bool isNotch, bool showCutline, bool showSeamline,
                                          NotchType notchType, NotchSubType notchSubType, qreal notchLength,
                                          qreal notchWidth, int notchCount);
