@@ -550,8 +550,8 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
                 notchWidth   = qApp->Settings()->getDefaultNotchWidth();
                 notchCount   = 1;
                 isNotch      = true;
-                showCutline  = true;
-                showSeamline = true;
+                showCutline  = qApp->Settings()->showSeamAllowanceNotch();
+                showSeamline = qApp->Settings()->showSeamlineNotch();
             }
 
             if (selectedAction == actionSlit)
