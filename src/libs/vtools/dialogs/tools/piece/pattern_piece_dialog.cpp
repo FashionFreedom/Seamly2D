@@ -957,7 +957,15 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QAction *selectedAction = menu->exec(ui->mainPath_ListWidget->viewport()->mapToGlobal(pos));
     if (selectedAction == actionDelete)
     {
-        delete ui->mainPath_ListWidget->item(row);
+        QList<QListWidgetItem *> items = ui->mainPath_ListWidget->selectedItems();
+        if (!items.contains(rowItem))
+        {
+            items.append(rowItem); // the right clicked row may not be part of the selection
+        }
+        qDeleteAll(items); // deleting an item also removes it from the list
+        validateObjects(isMainPathValid());
+        nodeListChanged();
+        return; // items are gone - do not fall through to setNotch
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
