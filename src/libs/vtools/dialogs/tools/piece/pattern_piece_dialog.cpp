@@ -617,9 +617,31 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
 
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
 
+            switch (keyEvent->key())
+            {
+                case Qt::Key_Up:
+                case Qt::Key_Down:
+                case Qt::Key_Left:
+                case Qt::Key_Right:
+                case Qt::Key_Home:
+                case Qt::Key_End:
+                case Qt::Key_PageUp:
+                case Qt::Key_PageDown:
+                    return false; // let the list widget handle navigation and range selection
+                default:
+                    break;
+            }
+            if (keyEvent->matches(QKeySequence::SelectAll))
+            {
+                return false; // let the list widget handle select all
+            }
+
             if (keyEvent->key() == Qt::Key_Delete)
             {
-                delete rowItem;
+                qDeleteAll(list->selectedItems()); // deleting an item also removes it from the list
+                validateObjects(isMainPathValid());
+                nodeListChanged();
+                return true; // items are gone - do not fall through
             }
             if (keyEvent->modifiers() & Qt::ControlModifier)
             {
@@ -3653,31 +3675,8 @@ void PatternPieceDialog::showAnchorPoints()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setMoveExclusions()
 {
-    ui->moveTop_ToolButton->setEnabled(false);
-    ui->moveUp_ToolButton->setEnabled(false);
-    ui->moveDown_ToolButton->setEnabled(false);
-    ui->moveBottom_ToolButton->setEnabled(false);
-
-    if (ui->mainPath_ListWidget->count() > 1)
-    {
-        if (ui->mainPath_ListWidget->currentRow() == 0)
-        {
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-        else if (ui->mainPath_ListWidget->currentRow() == ui->mainPath_ListWidget->count() - 1)
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-        }
-        else
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-    }
+    setMoveButtonState(ui->mainPath_ListWidget, ui->moveTop_ToolButton, ui->moveUp_ToolButton,
+                       ui->moveDown_ToolButton, ui->moveBottom_ToolButton);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

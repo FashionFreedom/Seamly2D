@@ -92,6 +92,7 @@ Q_DECLARE_LOGGING_CATEGORY(vDialog)
 class QDoubleSpinBox;
 class QLabel;
 class QPlainTextEdit;
+class QToolButton;
 class VAbstractTool;
 
 enum class FillComboBox : char {Whole, NoChildren};
@@ -123,6 +124,8 @@ public:
     static void      moveListRowUp(QListWidget *list);
     static void      moveListRowDown(QListWidget *list);
     static void      moveListRowBottom(QListWidget *list);
+    static void      setMoveButtonState(QListWidget *list, QToolButton *top, QToolButton *up,
+                                        QToolButton *down, QToolButton *bottom);
 
 signals:
     /**
