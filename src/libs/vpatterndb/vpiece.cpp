@@ -55,6 +55,7 @@
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/varc.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 #include <QSharedPointer>
 #include <QDebug>
@@ -599,7 +600,6 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
     SCASSERT(data != nullptr)
 
     QVector<VPieceNode> united = d->m_path.getNodes();
-
     if (IsSeamAllowance() && IsSeamAllowanceBuiltIn())
     {
         return united;
@@ -637,7 +637,8 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
                     customNodes[j].SetReverse(!customNodes.at(j).GetReverse());
                 }
 
-                // If seam allowance is built in main path user will not see a notch provided by piece path
+                // If seam allowance is built in or seam allowance hidden
+                // user will not see a notch provided by piece path.
                 if (IsSeamAllowanceBuiltIn())
                 {
                     customNodes[j].setNotch(false);
@@ -962,7 +963,7 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
     if (!IsSeamAllowanceBuiltIn())
     {
         QVector<QLineF> lines;
-        if (path.at(notchIndex).showNotch())
+        if (path.at(notchIndex).showNotch() && qApp->Settings()->showSeamAllowances())
         {
             lines += createSeamAllowanceNotch(path, previousSAPoint, notchSAPoint,  nextSAPoint,
                                               data, notchIndex, pathPoints);

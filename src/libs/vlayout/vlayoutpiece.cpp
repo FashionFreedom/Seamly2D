@@ -430,18 +430,13 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     layoutPiece.SetMx(piece.GetMx());
     layoutPiece.SetMy(piece.GetMy());
     layoutPiece.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
+    layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern),
+                                       piece.IsSeamAllowance(),
+                                       piece.IsSeamAllowanceBuiltIn());
     layoutPiece.setInternalPaths(convertInternalPaths (piece, pattern, false));
     layoutPiece.setCutoutPaths(convertInternalPaths (piece, pattern, true));
     layoutPiece.setNotches(piece.createNotchLines(pattern));
     layoutPiece.SetName(piece.GetName());
-
-    // Disable SA in exports and layouts
-    if (qApp->Settings()->showSeamAllowances())
-    {
-        layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern),
-                                           piece.IsSeamAllowance(),
-                                           piece.IsSeamAllowanceBuiltIn());
-    };
 
     // Very important to set main path first!
     if (layoutPiece.createMainPath().isEmpty() && layoutPiece.createAllowancePath().isEmpty())
@@ -1278,14 +1273,17 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
 {
-    QColor  color      = QColor(qApp->Settings()->getDefaultCutColor());
-    QString lineType   = qApp->Settings()->getDefaultCutLinetype();
-    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+    if (qApp->Settings()->showSeamAllowances())
+    {
+        QColor  color      = QColor(qApp->Settings()->getDefaultCutColor());
+        QString lineType   = qApp->Settings()->getDefaultCutLinetype();
+        qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
-    QGraphicsPathItem *item = new QGraphicsPathItem(parent);
-    item->setData(ObjectName, QString("cutline"));
-    item->setPath(createAllowancePath());
-    item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+        QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+        item->setData(ObjectName, QString("cutline"));
+        item->setPath(createAllowancePath());
+        item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1028,8 +1028,8 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
                 notchWidth   = qApp->Settings()->getDefaultNotchWidth();
                 notchCount   = 1;
                 isNotch      = true;
-                showCutline  = true;
-                showSeamline = true;
+                showCutline  = qApp->Settings()->showSeamAllowanceNotch();
+                showSeamline = qApp->Settings()->showSeamlineNotch();
             }
             else if (selectedAction == actionSlit)
             {
