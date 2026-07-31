@@ -165,7 +165,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VSpline());
     ASSERT_TEST(new TST_VSplinePath());
     ASSERT_TEST(new TST_NameRegExp());
-    ASSERT_TEST(new TST_VLayoutDetail());
+    ASSERT_TEST(new TST_VLayoutPiece());
     ASSERT_TEST(new TST_VArc());
     ASSERT_TEST(new TST_VEllipticalArc());
     ASSERT_TEST(new TST_QmuTokenParser());

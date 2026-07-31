@@ -880,7 +880,7 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
                                                        falseStr));
         piece.SetForbidFlipping(getParameterBool(domElement, PatternPieceTool::AttrForbidFlipping,
                                            QString().setNum(qApp->Seamly2DSettings()->getForbidPieceFlipping())));
-        piece.SetInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
+        piece.setInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
         piece.SetUnited(getParameterBool(domElement, PatternPieceTool::AttrUnited, falseStr));
 
         const QString width = GetParametrString(domElement, AttrWidth, "0.0");

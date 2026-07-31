@@ -133,7 +133,7 @@ void TogglePieceInLayout::doCmd(bool state)
         doc->SetAttribute(element, AttrInLayout, state);
 
         VPiece piece = m_data->DataPieces()->value(m_id);
-        piece.SetInLayout(state);
+        piece.setInLayout(state);
         m_data->UpdatePiece(m_id, piece);
         emit updateList(m_id);
 

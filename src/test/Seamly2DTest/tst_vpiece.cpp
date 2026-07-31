@@ -1,53 +1,51 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   tst_piece.cpp
+//  @date   9 1, 2016
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   tst_vdetail.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   9 1, 2016
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   tst_vdetail.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   9 1, 2016
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2016 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "tst_vpiece.h"
 #include "../vpatterndb/vcontainer.h"
@@ -116,19 +114,19 @@ void TST_VPiece::ClearLoop()
     data->UpdateGObject(310, new VPointF(802.08718110236236, 1653.9337322834645, "Н5", 5.0000125984251973,
                                          9.9999874015748045));
 
-    VPiece detail;
-    detail.SetSeamAllowance(true);
-    detail.SetSAWidth(7);
-    detail.GetPath().Append(VPieceNode(304, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(307, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(308, Tool::NodeSplinePath));
-    detail.GetPath().Append(VPieceNode(309, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(310, Tool::NodePoint));
+    VPiece piece;
+    piece.SetSeamAllowance(true);
+    piece.SetSAWidth(7);
+    piece.GetPath().Append(VPieceNode(304, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(307, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(308, Tool::NodeSplinePath));
+    piece.GetPath().Append(VPieceNode(309, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(310, Tool::NodePoint));
     // Closed
-    detail.GetPath()[0].setBeforeSAFormula("0");
-    detail.GetPath()[detail.GetPath().nodeCount()-1].setAfterSAFormula("0");
+    piece.GetPath()[0].setBeforeSAFormula("0");
+    piece.GetPath()[piece.GetPath().nodeCount()-1].setAfterSAFormula("0");
 
-    const QVector<QPointF> pointsEkv = detail.SeamAllowancePoints(data.data());
+    const QVector<QPointF> pointsEkv = piece.seamAllowancePoints(data.data());
 
     QVector<QPointF> origPoints;
     origPoints.append(QPointF(42.46405659601932, 415.2845470563871));
@@ -223,17 +221,17 @@ void TST_VPiece::Issue620()
                                        "257.57", 170.46425196850396, "4.5102", 150.6164409448819,
                                        "3.98506"));
 
-    VPiece detail;
-    detail.SetSeamAllowance(false);
-    detail.SetSAWidth(7);
-    detail.GetPath().Append(VPieceNode(1, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(2, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(3, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(4, Tool::NodePoint));
-    detail.GetPath().Append(VPieceNode(8, Tool::NodeSpline));
-    detail.GetPath().Append(VPieceNode(7, Tool::NodeSplinePath));
+    VPiece piece;
+    piece.SetSeamAllowance(false);
+    piece.SetSAWidth(7);
+    piece.GetPath().Append(VPieceNode(1, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(2, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(3, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(4, Tool::NodePoint));
+    piece.GetPath().Append(VPieceNode(8, Tool::NodeSpline));
+    piece.GetPath().Append(VPieceNode(7, Tool::NodeSplinePath));
 
-    const QVector<QPointF> pointsEkv = detail.MainPathPoints(data.data());
+    const QVector<QPointF> pointsEkv = piece.mainPathPoints(data.data());
 
     QVector<QPointF> origPoints;
 

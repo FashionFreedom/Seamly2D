@@ -54,11 +54,11 @@
 
 #include "../vtest/abstracttest.h"
 
-class TST_VLayoutDetail : public AbstractTest
+class TST_VLayoutPiece : public AbstractTest
 {
     Q_OBJECT
 public:
-    explicit TST_VLayoutDetail(QObject *parent = nullptr);
+    explicit TST_VLayoutPiece(QObject *parent = nullptr);
 
 private slots:
     void RemoveDublicates() const;

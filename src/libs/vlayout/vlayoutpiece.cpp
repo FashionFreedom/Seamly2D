@@ -429,10 +429,10 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
 
     layoutPiece.SetMx(piece.GetMx());
     layoutPiece.SetMy(piece.GetMy());
-    layoutPiece.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
-    layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern),
-                                       piece.IsSeamAllowance(),
-                                       piece.IsSeamAllowanceBuiltIn());
+    layoutPiece.setMainPathPoints(piece.mainPathPoints(pattern), piece.isHideSeamLine());
+    layoutPiece.setSeamAllowancePoints(piece.seamAllowancePoints(pattern),
+                                       piece.hasSeamAllowance(),
+                                       piece.hasSeamAllowanceBuiltIn());
     layoutPiece.setInternalPaths(convertInternalPaths (piece, pattern, false));
     layoutPiece.setCutoutPaths(convertInternalPaths (piece, pattern, true));
     layoutPiece.setNotches(piece.createNotchLines(pattern));
@@ -480,7 +480,7 @@ QVector<QPointF> VLayoutPiece::getContourPoints() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath)
+void VLayoutPiece::setMainPathPoints(const QVector<QPointF> &points, bool hideMainPath)
 {
     d->contour = RemoveDublicates(points, false);
     setHideSeamLine(hideMainPath);
@@ -488,7 +488,7 @@ void VLayoutPiece::SetCountourPoints(const QVector<QPointF> &points, bool hideMa
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-QVector<QPointF> VLayoutPiece::GetSeamAllowancePoints() const
+QVector<QPointF> VLayoutPiece::getSeamAllowancePoints() const
 {
     return Map(d->seamAllowance);
 }
@@ -505,7 +505,7 @@ void VLayoutPiece::setSeamAllowancePoints(const QVector<QPointF> &points, bool s
         {
             d->seamAllowance = RemoveDublicates(d->seamAllowance, false);
         }
-        else if (!IsSeamAllowanceBuiltIn())
+        else if (!hasSeamAllowanceBuiltIn())
         {
             qWarning() << "Seam allowance is empty.";
             SetSeamAllowance(false);
@@ -799,9 +799,9 @@ int VLayoutPiece::LayoutEdgeByPoint(const QPointF &p1) const
 QRectF VLayoutPiece::pieceBoundingRect() const
 {
     QVector<QPointF> points;
-    if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
     {
-        points = GetSeamAllowancePoints();
+        points = getSeamAllowancePoints();
     }
     else
     {
@@ -832,7 +832,7 @@ bool VLayoutPiece::isNull() const
 {
     if (d->contour.isEmpty() == false && d->layoutWidth > 0)
     {
-        if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn() && d->seamAllowance.isEmpty() == false)
+        if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn() && d->seamAllowance.isEmpty() == false)
         {
             return false;
         }
@@ -866,9 +866,9 @@ void VLayoutPiece::SetLayoutAllowancePoints()
 {
     if (d->layoutWidth > 0)
     {
-        if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+        if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
         {
-            d->layoutAllowance = Equidistant(prepareAllowance (GetSeamAllowancePoints()), d->layoutWidth);
+            d->layoutAllowance = Equidistant(prepareAllowance (getSeamAllowancePoints()), d->layoutWidth);
             if (d->layoutAllowance.isEmpty() == false)
             {
                 d->layoutAllowance.removeLast();
@@ -898,7 +898,7 @@ QVector<QLineF> VLayoutPiece::getNotches() const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::setNotches(const QVector<QLineF> &notches)
 {
-    if (IsSeamAllowance())
+    if (hasSeamAllowance())
     {
         d->notches = notches;
     }
@@ -974,7 +974,7 @@ QPainterPath VLayoutPiece::createMainPath() const
     // contour
     QVector<QPointF> points = getContourPoints();
 
-    if (!isHideSeamLine() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (!isHideSeamLine() || not hasSeamAllowance() || hasSeamAllowanceBuiltIn())
     {
         path.moveTo(points.at(0));
         for (qint32 i = 1; i < points.count(); ++i)
@@ -992,12 +992,12 @@ QPainterPath VLayoutPiece::createAllowancePath() const
     QPainterPath path;
 
     // seam allowance
-    if (IsSeamAllowance())
+    if (hasSeamAllowance())
     {
-        if (!IsSeamAllowanceBuiltIn())
+        if (!hasSeamAllowanceBuiltIn())
         {
             // Draw seam allowance
-            QVector<QPointF>points = GetSeamAllowancePoints();
+            QVector<QPointF>points = getSeamAllowancePoints();
 
             if (points.last().toPoint() != points.first().toPoint())
             {
@@ -1235,7 +1235,7 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QPointF> VLayoutPiece::piecePath() const
 {
-    if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
     {
         return d->seamAllowance;
     }
@@ -1251,7 +1251,7 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
     QColor  color;
     QString lineType;
     qreal   lineWeight;
-    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && !hasSeamAllowanceBuiltIn())
     {
         color      = QColor(qApp->Settings()->getDefaultSeamColor());
         lineType   = qApp->Settings()->getDefaultSeamLinetype();

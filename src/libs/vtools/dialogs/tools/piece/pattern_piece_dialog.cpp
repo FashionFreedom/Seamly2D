@@ -300,8 +300,8 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     customSeamAllowanceChanged(0);
 
     ui->forbidFlipping_CheckBox->setChecked(piece.IsForbidFlipping());
-    ui->seams_CheckBox->setChecked(piece.IsSeamAllowance());
-    ui->builtIn_CheckBox->setChecked(piece.IsSeamAllowanceBuiltIn());
+    ui->seams_CheckBox->setChecked(piece.hasSeamAllowance());
+    ui->builtIn_CheckBox->setChecked(piece.hasSeamAllowanceBuiltIn());
     ui->pieceName_LineEdit->setText(piece.GetName());
     setPieceColor(piece.getColor());
     setPieceFill(piece.getFill());
@@ -430,7 +430,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             }
             else
             {
-                QVector<QPointF> points = CreatePiece().MainPathPoints(data);
+                QVector<QPointF> points = CreatePiece().mainPathPoints(data);
                 const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(id);
                 QVector<QPointF> curvePoints = curve->getPoints();
                 points.append(curvePoints);
@@ -839,7 +839,7 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     }
 
     const VPiece piece = CreatePiece();
-    bool isBuiltInSA    = piece.IsSeamAllowanceBuiltIn();
+    bool isBuiltInSA    = piece.hasSeamAllowanceBuiltIn();
     bool isHideSeamline = piece.isHideSeamLine();
 
     QListWidgetItem *rowItem = ui->mainPath_ListWidget->item(row);
@@ -2639,7 +2639,7 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.SetName(ui->pieceName_LineEdit->text());
     piece.setColor(getPieceColor());
     piece.setFill(getPieceFill());
-    piece.SetInLayout(isInLayout());
+    piece.setInLayout(isInLayout());
     piece.setIsLocked(getPieceLock());
     piece.SetMx(m_mx);
     piece.SetMy(m_my);
@@ -2827,7 +2827,7 @@ bool PatternPieceDialog::isMainPathValid() const
 {
     QString warning = DialogWarningIcon();
 
-    if(CreatePiece().MainPathPoints(data).count() < 3)
+    if(CreatePiece().mainPathPoints(data).count() < 3)
     {
         warning += tr("You need more points!");
         ui->status_Label->setText(warning);
@@ -2874,7 +2874,7 @@ void PatternPieceDialog::validateObjects(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 bool PatternPieceDialog::isMainPathClockwise() const
 {
-    const QVector<QPointF> points = CreatePiece().MainPathPoints(data);
+    const QVector<QPointF> points = CreatePiece().mainPathPoints(data);
     return VPiece::isClockwise(points);
 }
 

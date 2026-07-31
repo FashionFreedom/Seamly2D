@@ -55,13 +55,13 @@
 #include <QtDebug>
 
 //---------------------------------------------------------------------------------------------------------------------
-TST_VLayoutDetail::TST_VLayoutDetail(QObject *parent)
+TST_VLayoutPiece::TST_VLayoutPiece(QObject *parent)
     :AbstractTest(parent)
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VLayoutDetail::RemoveDublicates() const
+void TST_VLayoutPiece::RemoveDublicates() const
 {
     qDebug() << "Case 1.";
     Case1();
@@ -74,18 +74,18 @@ void TST_VLayoutDetail::RemoveDublicates() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VLayoutDetail::Case1() const
+void TST_VLayoutPiece::Case1() const
 {
 
     VLayoutPiece piece = VLayoutPiece();
-    piece.SetCountourPoints(InputPointsCase1());
+    piece.setMainPathPoints(InputPointsCase1());
 
     // Begin comparison
     Comparison(piece.getContourPoints(), OutputPointsCase1());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::InputPointsCase1() const
+QVector<QPointF> TST_VLayoutPiece::InputPointsCase1() const
 {
     QVector<QPointF> points;
 
@@ -111,7 +111,7 @@ QVector<QPointF> TST_VLayoutDetail::InputPointsCase1() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::OutputPointsCase1() const //-V524
+QVector<QPointF> TST_VLayoutPiece::OutputPointsCase1() const //-V524
 {
     QVector<QPointF> points;
 
@@ -137,17 +137,17 @@ QVector<QPointF> TST_VLayoutDetail::OutputPointsCase1() const //-V524
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VLayoutDetail::Case2() const
+void TST_VLayoutPiece::Case2() const
 {
     VLayoutPiece piece = VLayoutPiece();
-    piece.SetCountourPoints(InputPointsCase2());
+    piece.setMainPathPoints(InputPointsCase2());
 
     // Begin comparison
     Comparison(piece.getContourPoints(), OutputPointsCase2());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::InputPointsCase2() const
+QVector<QPointF> TST_VLayoutPiece::InputPointsCase2() const
 {
     QVector<QPointF> points;
 
@@ -164,7 +164,7 @@ QVector<QPointF> TST_VLayoutDetail::InputPointsCase2() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::OutputPointsCase2() const
+QVector<QPointF> TST_VLayoutPiece::OutputPointsCase2() const
 {
     QVector<QPointF> points;
 
@@ -178,17 +178,17 @@ QVector<QPointF> TST_VLayoutDetail::OutputPointsCase2() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VLayoutDetail::Case3() const
+void TST_VLayoutPiece::Case3() const
 {
     VLayoutPiece piece = VLayoutPiece();
-    piece.SetCountourPoints(InputPointsCase3());
+    piece.setMainPathPoints(InputPointsCase3());
 
     // Begin comparison
     Comparison(piece.getContourPoints(), OutputPointsCase3());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::InputPointsCase3() const
+QVector<QPointF> TST_VLayoutPiece::InputPointsCase3() const
 {
     QVector<QPointF> points;
 
@@ -198,7 +198,7 @@ QVector<QPointF> TST_VLayoutDetail::InputPointsCase3() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> TST_VLayoutDetail::OutputPointsCase3() const //-V524
+QVector<QPointF> TST_VLayoutPiece::OutputPointsCase3() const //-V524
 {
     QVector<QPointF> points;
 
