@@ -93,6 +93,15 @@ constexpr auto DAYS_TO_KEEP_LOGS = 3;
 //---------------------------------------------------------------------------------------------------------------------
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
+    // Qt's Wayland plugin warns on every focus change when the compositor sends a text input leave
+    // event for a surface it isn't tracking. The plugin carries on as normal after logging it, so
+    // it is noise. Drop it instead of logging it and popping up a dialog on every interaction.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("zwp_text_input_v3_leave"))
+            && msg.contains(QStringLiteral("Got leave event for surface")))
+    {
+        return;
+    }
+
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("::connect")))
     {
