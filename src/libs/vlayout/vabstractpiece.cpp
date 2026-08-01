@@ -156,7 +156,7 @@ void VAbstractPiece::SetForbidFlipping(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractPiece::IsSeamAllowance() const
+bool VAbstractPiece::hasSeamAllowance() const
 {
     return d->m_seamAllowance;
 }
@@ -168,7 +168,7 @@ void VAbstractPiece::SetSeamAllowance(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractPiece::IsSeamAllowanceBuiltIn() const
+bool VAbstractPiece::hasSeamAllowanceBuiltIn() const
 {
     return d->m_seamAllowanceBuiltIn;
 }

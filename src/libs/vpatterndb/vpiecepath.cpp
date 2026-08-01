@@ -494,7 +494,7 @@ QVector<VPointF> VPiecePath::PathNodePoints(const VContainer *data, bool showExc
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VSAPoint> VPiecePath::SeamAllowancePoints(const VContainer *data, qreal width, bool reverse) const
+QVector<VSAPoint> VPiecePath::seamAllowancePoints(const VContainer *data, qreal width, bool reverse) const
 {
     SCASSERT(data != nullptr);
 

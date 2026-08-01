@@ -682,9 +682,9 @@ bool VDxfEngine::ExportToAAMA(const QVector<VLayoutPiece> &details)
 void VDxfEngine::ExportAAMAOutline(dx_ifaceBlock *detailBlock, const VLayoutPiece &piece)
 {
     QVector<QPointF> outline;
-    if (piece.IsSeamAllowance() && not piece.IsSeamAllowanceBuiltIn())
+    if (piece.hasSeamAllowance() && not piece.hasSeamAllowanceBuiltIn())
     {
-        outline = piece.GetSeamAllowancePoints();
+        outline = piece.getSeamAllowancePoints();
     }
     else
     {
@@ -739,7 +739,7 @@ void VDxfEngine::ExportAAMAIntcut(dx_ifaceBlock *detailBlock, const VLayoutPiece
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::ExportAAMANotch(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
 {
-    if (detail.IsSeamAllowance())
+    if (detail.hasSeamAllowance())
     {
         QVector<QLineF> notches = detail.getNotches();
         for(int i = 0; i < notches.size(); ++i)

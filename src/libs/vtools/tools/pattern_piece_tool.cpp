@@ -264,10 +264,10 @@ void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domElement, AttrMy,               qApp->fromPixel(piece.GetMy()));
     doc->SetAttribute(domElement, AttrInLayout,         piece.isInLayout());
     doc->SetAttribute(domElement, AttrForbidFlipping,   piece.IsForbidFlipping());
-    doc->SetAttribute(domElement, AttrSeamAllowance,    piece.IsSeamAllowance());
+    doc->SetAttribute(domElement, AttrSeamAllowance,    piece.hasSeamAllowance());
     doc->SetAttribute(domElement, AttrHideSeamLine,     piece.isHideSeamLine());
 
-    const bool saBuiltIn = piece.IsSeamAllowanceBuiltIn();
+    const bool saBuiltIn = piece.hasSeamAllowanceBuiltIn();
     if (saBuiltIn)
     {
         doc->SetAttribute(domElement, AttrSeamAllowanceBuiltIn, saBuiltIn);
@@ -878,7 +878,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
 
     if (qApp->Settings()->showSeamAllowances())
     {
-        if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
+        if (piece.hasSeamAllowance() && !piece.hasSeamAllowanceBuiltIn())
         {
             color      = QColor(qApp->Settings()->getDefaultSeamColor());
             lineType   = qApp->Settings()->getDefaultSeamLinetype();
@@ -1183,12 +1183,12 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QAction *hideMainPath = menu.addAction(tr("Hide Seam Line") + "\t|");
     hideMainPath->setCheckable(true);
     hideMainPath->setChecked(piece.isHideSeamLine());
-    hideMainPath->setEnabled(piece.IsSeamAllowance() && qApp->Settings()->showSeamAllowances());
+    hideMainPath->setEnabled(piece.hasSeamAllowance() && qApp->Settings()->showSeamAllowances());
 
     QAction *showSeamAllowance = menu.addAction(QIcon("://icon/32x32/seam_allowance.png"),
                                                 tr("Show Seam Allowance") + "\tS");
     showSeamAllowance->setCheckable(true);
-    showSeamAllowance->setChecked(piece.IsSeamAllowance());
+    showSeamAllowance->setChecked(piece.hasSeamAllowance());
 
     QAction *showGrainline = menu.addAction(QIcon("://icon/32x32/grainline.png"), tr("Show Grainline") + "\tG");
     showGrainline->setCheckable(true);
@@ -1337,7 +1337,7 @@ void PatternPieceTool::keyReleaseEvent(QKeyEvent *event)
 
         case Qt::Key_Bar:
             {
-                if (piece.IsSeamAllowance() && qApp->Settings()->showSeamAllowances())
+                if (piece.hasSeamAllowance() && qApp->Settings()->showSeamAllowances())
                 {
                     toggleSeamLine(!piece.isHideSeamLine()); //Seam line is only valid if there is a seam allowance
                 }
@@ -1350,7 +1350,7 @@ void PatternPieceTool::keyReleaseEvent(QKeyEvent *event)
                 {
                     break;
                 }
-                toggleSeamAllowance(!piece.IsSeamAllowance());
+                toggleSeamAllowance(!piece.hasSeamAllowance());
                 break;
             }
 
@@ -1533,9 +1533,9 @@ void PatternPieceTool::RefreshGeometry()
     QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
     this->setBrush(newBrush);
 
-    QPainterPath path = piece.MainPathPath(this->getData());
+    QPainterPath path = piece.mainPath(this->getData());
 
-    if (!piece.isHideSeamLine() || !piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
+    if (!piece.isHideSeamLine() || !piece.hasSeamAllowance() || piece.hasSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
         m_allowanceFill->setBrush(QBrush(QColor(qApp->Settings()->getDefaultCutColor()), Qt::Dense7Pattern));
@@ -1551,14 +1551,14 @@ void PatternPieceTool::RefreshGeometry()
 
     QVector<QPointF> seamAllowancePoints;
 
-    if (piece.IsSeamAllowance())
+    if (piece.hasSeamAllowance())
     {
-        seamAllowancePoints = piece.SeamAllowancePoints(this->getData());
+        seamAllowancePoints = piece.seamAllowancePoints(this->getData());
     }
 
-    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn() && qApp->Settings()->showSeamAllowances())
+    if (piece.hasSeamAllowance() && !piece.hasSeamAllowanceBuiltIn() && qApp->Settings()->showSeamAllowances())
     {
-        m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
+        m_cutPath = piece.seamAllowancePath(seamAllowancePoints);
         m_cutLine->setPath(m_cutPath);
         m_pieceRect = m_cutLine->boundingRect();
 
@@ -1657,7 +1657,7 @@ void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
 void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
 {
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
-    bool isBuiltInSA = oldPiece.IsSeamAllowanceBuiltIn();
+    bool isBuiltInSA = oldPiece.hasSeamAllowanceBuiltIn();
     if (!oldPiece.isLocked())
     {
         VPiece newPiece = oldPiece;

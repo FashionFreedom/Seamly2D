@@ -339,7 +339,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         QMenu menu;
 
         const VPiece piece  = VAbstractTool::data.GetPiece(tool->getId());
-        bool isBuiltInSA    = piece.IsSeamAllowanceBuiltIn();
+        bool isBuiltInSA    = piece.hasSeamAllowanceBuiltIn();
         bool isHideSeamline = piece.isHideSeamLine();
         const int index     = piece.GetPath().indexOfNode(m_id);
         VPieceNode node     = piece.GetPath().at(index);

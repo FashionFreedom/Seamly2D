@@ -189,10 +189,10 @@ public:
     bool IsForbidFlipping() const;
     void SetForbidFlipping(bool value);
 
-    bool IsSeamAllowance() const;
+    bool hasSeamAllowance() const;
     void SetSeamAllowance(bool value);
 
-    bool IsSeamAllowanceBuiltIn() const;
+    bool hasSeamAllowanceBuiltIn() const;
     void SetSeamAllowanceBuiltIn(bool value);
 
     bool isHideSeamLine() const;
