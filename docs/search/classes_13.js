@@ -34,7 +34,7 @@ var searchData=
   ['tst_5fvcubicbezierpath_31',['TST_VCubicBezierPath',['../de/d02/classTST__VCubicBezierPath.html',1,'']]],
   ['tst_5fvellipticalarc_32',['TST_VEllipticalArc',['../d2/d9c/classTST__VEllipticalArc.html',1,'']]],
   ['tst_5fvgobject_33',['TST_VGObject',['../d4/d53/classTST__VGObject.html',1,'']]],
-  ['tst_5fvlayoutdetail_34',['TST_VLayoutDetail',['../d1/dd3/classTST__VLayoutDetail.html',1,'']]],
+  ['tst_5fvlayoutpiece_34',['TST_VLayoutPiece',['../d4/dd0/classTST__VLayoutPiece.html',1,'']]],
   ['tst_5fvlockguard_35',['TST_VLockGuard',['../d7/d69/classTST__VLockGuard.html',1,'']]],
   ['tst_5fvpiece_36',['TST_VPiece',['../db/dbb/classTST__VPiece.html',1,'']]],
   ['tst_5fvpointf_37',['TST_VPointF',['../d5/d29/classTST__VPointF.html',1,'']]],

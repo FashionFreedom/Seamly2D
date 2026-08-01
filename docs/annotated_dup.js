@@ -594,7 +594,7 @@ var annotated_dup =
     [ "TST_VCubicBezierPath", "de/d02/classTST__VCubicBezierPath.html", "de/d02/classTST__VCubicBezierPath" ],
     [ "TST_VEllipticalArc", "d2/d9c/classTST__VEllipticalArc.html", "d2/d9c/classTST__VEllipticalArc" ],
     [ "TST_VGObject", "d4/d53/classTST__VGObject.html", "d4/d53/classTST__VGObject" ],
-    [ "TST_VLayoutDetail", "d1/dd3/classTST__VLayoutDetail.html", "d1/dd3/classTST__VLayoutDetail" ],
+    [ "TST_VLayoutPiece", "d4/dd0/classTST__VLayoutPiece.html", "d4/dd0/classTST__VLayoutPiece" ],
     [ "TST_VLockGuard", "d7/d69/classTST__VLockGuard.html", "d7/d69/classTST__VLockGuard" ],
     [ "TST_VPiece", "db/dbb/classTST__VPiece.html", "db/dbb/classTST__VPiece" ],
     [ "TST_VPointF", "d5/d29/classTST__VPointF.html", "d5/d29/classTST__VPointF" ],

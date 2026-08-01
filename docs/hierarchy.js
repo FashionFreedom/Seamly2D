@@ -646,7 +646,7 @@ var hierarchy =
         [ "TST_VAbstractCurve", "d3/d1d/classTST__VAbstractCurve.html", null ],
         [ "TST_VAbstractPiece", "d6/d89/classTST__VAbstractPiece.html", null ],
         [ "TST_VEllipticalArc", "d2/d9c/classTST__VEllipticalArc.html", null ],
-        [ "TST_VLayoutDetail", "d1/dd3/classTST__VLayoutDetail.html", null ],
+        [ "TST_VLayoutPiece", "d4/dd0/classTST__VLayoutPiece.html", null ],
         [ "TST_VPiece", "db/dbb/classTST__VPiece.html", null ],
         [ "TST_VSpline", "d7/d3f/classTST__VSpline.html", null ]
       ] ],
