@@ -85,11 +85,15 @@ Read [.github\CONTRIBUTING.md](.github\CONTRIBUTING.md) to get started on GitFlo
 * Install Additional libraries
 
   * gnu compiler
-  * poppler (pdftops)
-  * Example for Ubuntu 22.04:
+  * poppler (pdftops) - required to create PS or EPS layout files
+  * xerces-c - required to build the `ifc` library
+  * OpenGL and xkbcommon headers - required to build against Qt GUI
+  * libxcb-cursor0 - required at runtime by the Qt xcb platform plugin (Qt 6.5 and later)
+  * Example for Ubuntu 22.04 and 24.04:
 
 ```bash
-sudo apt install -y build-essential git poppler-tools
+sudo apt install -y build-essential git poppler-utils \
+    libxerces-c-dev libgl1-mesa-dev libxkbcommon-dev libxcb-cursor0
 ```
 
 * Build and install:
