@@ -1,5 +1,14 @@
 var NAVTREEINDEX316 =
 {
+"df/db4/classXTemplateSerializer.html#a1b49c45f1807ea15b5208ca021c652f4":[3,0,921,27],
+"df/db4/classXTemplateSerializer.html#a1b49c45f1807ea15b5208ca021c652f4":[3,0,921,26],
+"df/db4/classXTemplateSerializer.html#a1b49c45f1807ea15b5208ca021c652f4":[3,0,921,25],
+"df/db4/classXTemplateSerializer.html#a1b49c45f1807ea15b5208ca021c652f4":[3,0,921,24],
+"df/db4/classXTemplateSerializer.html#a1f56c2a5bbed081b44020c318d1b811b":[3,0,921,223],
+"df/db4/classXTemplateSerializer.html#a1f56c2a5bbed081b44020c318d1b811b":[3,0,921,220],
+"df/db4/classXTemplateSerializer.html#a1f56c2a5bbed081b44020c318d1b811b":[3,0,921,221],
+"df/db4/classXTemplateSerializer.html#a1f56c2a5bbed081b44020c318d1b811b":[3,0,921,222],
+"df/db4/classXTemplateSerializer.html#a2121eeec184fb319f82c9832c088d3dd":[3,0,921,125],
 "df/db4/classXTemplateSerializer.html#a2121eeec184fb319f82c9832c088d3dd":[3,0,921,124],
 "df/db4/classXTemplateSerializer.html#a2121eeec184fb319f82c9832c088d3dd":[3,0,921,126],
 "df/db4/classXTemplateSerializer.html#a2121eeec184fb319f82c9832c088d3dd":[3,0,921,127],
@@ -240,14 +249,5 @@ var NAVTREEINDEX316 =
 "df/dbb/msvc_2include_2xercesc_2util_2RefStackOf_8hpp.html":[4,0,0,1,15,2,0,0,6,59],
 "df/dbb/msvc_2include_2xercesc_2util_2RefStackOf_8hpp_source.html":[4,0,0,1,15,2,0,0,6,59],
 "df/dbc/msvc-arm64_2include_2xercesc_2validators_2DTD_2DTDElementDecl_8hpp.html":[4,0,0,1,15,3,0,0,7,2,3],
-"df/dbc/msvc-arm64_2include_2xercesc_2validators_2DTD_2DTDElementDecl_8hpp_source.html":[4,0,0,1,15,3,0,0,7,2,3],
-"df/dbd/macx_2include_2xercesc_2dom_2DOMDocument_8hpp.html":[4,0,0,1,15,0,0,0,0,7],
-"df/dbd/macx_2include_2xercesc_2dom_2DOMDocument_8hpp_source.html":[4,0,0,1,15,0,0,0,0,7],
-"df/dbf/qmuparsertest_8cpp.html":[4,0,0,1,2,16],
-"df/dbf/qmuparsertest_8cpp.html#a95d5533a83afb20e4994d936f88ca43c":[4,0,0,1,2,16,0],
-"df/dbf/qmuparsertest_8cpp.html#ae19b1bb38c280d8cd89fd8db1098ad87":[4,0,0,1,2,16,1],
-"df/dbf/qmuparsertest_8cpp_source.html":[4,0,0,1,2,16],
-"df/dc0/addimage_8cpp.html":[4,0,0,1,13,2,9],
-"df/dc0/addimage_8cpp_source.html":[4,0,0,1,13,2,9],
-"df/dc1/msvc_2include_2xercesc_2util_2RefHash3KeysIdPool_8c.html":[4,0,0,1,15,2,0,0,6,54]
+"df/dbc/msvc-arm64_2include_2xercesc_2validators_2DTD_2DTDElementDecl_8hpp_source.html":[4,0,0,1,15,3,0,0,7,2,3]
 };

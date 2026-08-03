@@ -1,10 +1,10 @@
 var dir_03a6cd6bd5d8633f656aff60d6866985 =
 [
     [ "configpages", "dir_804884e9303ec9c4c23797b3bb5925f4.html", "dir_804884e9303ec9c4c23797b3bb5925f4" ],
+    [ "database_dialog.cpp", "dd/d3d/database__dialog_8cpp.html", null ],
+    [ "database_dialog.h", "de/dff/database__dialog_8h.html", "de/dff/database__dialog_8h" ],
     [ "dialogaboutseamlyme.cpp", "d7/d7c/dialogaboutseamlyme_8cpp.html", null ],
     [ "dialogaboutseamlyme.h", "d4/dcc/dialogaboutseamlyme_8h.html", "d4/dcc/dialogaboutseamlyme_8h" ],
-    [ "dialogmdatabase.cpp", "d1/d42/dialogmdatabase_8cpp.html", null ],
-    [ "dialogmdatabase.h", "d0/d0b/dialogmdatabase_8h.html", "d0/d0b/dialogmdatabase_8h" ],
     [ "dialogseamlymepreferences.cpp", "dd/db1/dialogseamlymepreferences_8cpp.html", null ],
     [ "dialogseamlymepreferences.h", "d0/d74/dialogseamlymepreferences_8h.html", "d0/d74/dialogseamlymepreferences_8h" ],
     [ "me_shortcuts_dialog.cpp", "d6/d8e/me__shortcuts__dialog_8cpp.html", null ],

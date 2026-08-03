@@ -16,37 +16,37 @@
 <text text-anchor="middle" x="94.5" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">MeasurementDatabaseDialog</text>
 <polyline fill="none" stroke="#666666" points="0,-401.5 189,-401.5 "/>
 <text text-anchor="start" x="8" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="8" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; selectMode</text>
-<text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; measurements</text>
-<text text-anchor="start" x="8" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newMeasurements</text>
-<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupAText</text>
-<text text-anchor="start" x="8" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupBText</text>
-<text text-anchor="start" x="8" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupCText</text>
-<text text-anchor="start" x="8" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupDText</text>
-<text text-anchor="start" x="8" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupEText</text>
-<text text-anchor="start" x="8" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupFText</text>
-<text text-anchor="start" x="8" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 28 more...</text>
+<text text-anchor="start" x="8" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_selectMode</text>
+<text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_measurements</text>
+<text text-anchor="start" x="8" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_newMeasurements</text>
+<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentSvgPath</text>
+<text text-anchor="start" x="8" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentNumber</text>
+<text text-anchor="start" x="8" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentName</text>
+<text text-anchor="start" x="8" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentDescription</text>
+<text text-anchor="start" x="8" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupAText</text>
+<text text-anchor="start" x="8" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; groupBText</text>
+<text text-anchor="start" x="8" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 32 more...</text>
 <polyline fill="none" stroke="#666666" points="0,-272.5 189,-272.5 "/>
 <text text-anchor="start" x="8" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementDatabaseDialog()</text>
 <text text-anchor="start" x="8" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementDatabaseDialog()</text>
 <text text-anchor="start" x="8" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~MeasurementDatabaseDialog()</text>
 <text text-anchor="start" x="8" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ retranslateGroups()</text>
 <text text-anchor="start" x="8" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getNewMeasurementNames()</text>
-<text text-anchor="start" x="8" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ imageUrl()</text>
-<text text-anchor="start" x="8" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
-<text text-anchor="start" x="8" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
-<text text-anchor="start" x="8" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initDataBase()</text>
-<text text-anchor="start" x="8" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initGroup()</text>
-<text text-anchor="start" x="8" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addMeasurementGroup()</text>
-<text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addMeasurement()</text>
-<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; readSettings()</text>
-<text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; writeSettings()</text>
-<text text-anchor="start" x="8" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterGroups()</text>
-<text text-anchor="start" x="8" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterGroup()</text>
-<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; retranslateGroup()</text>
-<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; retranslateMeasurement()</text>
-<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; changeCheckState()</text>
-<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; globalCheckState()</text>
+<text text-anchor="start" x="8" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
+<text text-anchor="start" x="8" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+<text text-anchor="start" x="8" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initDataBase()</text>
+<text text-anchor="start" x="8" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initGroup()</text>
+<text text-anchor="start" x="8" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addMeasurementGroup()</text>
+<text text-anchor="start" x="8" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addMeasurement()</text>
+<text text-anchor="start" x="8" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; readSettings()</text>
+<text text-anchor="start" x="8" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; writeSettings()</text>
+<text text-anchor="start" x="8" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterGroups()</text>
+<text text-anchor="start" x="8" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; filterGroup()</text>
+<text text-anchor="start" x="8" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; retranslateGroup()</text>
+<text text-anchor="start" x="8" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; retranslateMeasurement()</text>
+<text text-anchor="start" x="8" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; changeCheckState()</text>
+<text text-anchor="start" x="8" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; globalCheckState()</text>
+<text text-anchor="start" x="8" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; renderScaledDiagram()</text>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateChecks()</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showDescription()</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; treeContextMenu()</text>
