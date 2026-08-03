@@ -61,6 +61,7 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
 #include "../vmisc/vtablesearch.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "dialogs/me_shortcuts_dialog.h"
 
@@ -191,6 +192,10 @@ private:
     QAction            *recentFileActs[MaxRecentFiles];
     QAction            *separatorAct;
     QVector<QObject *>  hackedWidgets;
+    QString             m_currentSvgPath;   // Stores the current "://diagrams/..." path
+    QString             m_currentNumber;    // Stores the current measurement number (e.g. "L13")
+    QString             m_currentName;      // Stores the translated name text
+    QString             m_currentDescription;
 
     void                SetupMenu();
     void                InitWindow();
@@ -227,7 +232,7 @@ private:
 
     bool                EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
     QString             getMeasurementNumber(const QString &name);
-    void                ShowMDiagram(const QString &name);
+    void                ShowMDiagram(QSharedPointer<MeasurementVariable> meash);
 
     void                Open(const QString &pathTo, const QString &filter);
     void                UpdatePadlock(bool ro);
@@ -252,6 +257,7 @@ private:
     template <class T>
     void                HackWidget(T **widget);
     void                copyToClipboard();
+    void                renderScaledDiagram();
 };
 
 #endif // TMAINWINDOW_H

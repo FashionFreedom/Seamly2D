@@ -8342,7 +8342,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>
-        <translation>Pokaż nacięcie linii szwu></translation>
+        <translation>Pokaż nacięcie linii szwu</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
@@ -8350,7 +8350,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Edit Notch</source>
-        <translation>Edytuj nacięcie></translation>
+        <translation>Edytuj nacięcie</translation>
     </message>
     <message>
         <source>Remove Notch</source>
@@ -11396,10 +11396,6 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Schemat pomiarowy</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Nieznany pomiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Open individual ...</source>
         <translation>Otwórz indywidualnie ...</translation>
     </message>
@@ -11667,10 +11663,6 @@ load in SeamlyME as usual.
         <translation>Ten plik został już otwarty w innym oknie. Zignoruj, jeśli chcesz kontynuować (niezalecane, może spowodować uszkodzenie danych).</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Nieznany pomiar&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>The name of known measurement forbidden to change.</source>
         <translation>Zabronione jest zmienianie nazwy znanego pomiaru.</translation>
     </message>
@@ -11782,6 +11774,10 @@ Czy chcesz zapisać zmiany?</translation>
         <source>female</source>
         <comment>gender</comment>
         <translation>kobieta</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Pomiar indywidualny</translation>
     </message>
 </context>
 <context>
@@ -12866,7 +12862,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
-        <translation>"Ustaw jako nacięcie domyślne></translation>
+        <translation>&quot;Ustaw jako nacięcie domyślne</translation>
     </message>
     <message>
         <source>Edit Notch</source>

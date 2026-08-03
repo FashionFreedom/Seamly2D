@@ -57,11 +57,12 @@
 #include "ui_tmainwindow.h"
 #include "dialogs/dialogaboutseamlyme.h"
 #include "dialogs/new_measurements_dialog.h"
-#include "dialogs/dialogmdatabase.h"
+#include "dialogs/database_dialog.h"
 #include "dialogs/dialogseamlymepreferences.h"
 #include "dialogs/dialogexporttocsv.h"
 #include "dialogs/me_shortcuts_dialog.h"
 #include "../vpatterndb/calculator.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/xml/individual_size_converter.h"
@@ -85,12 +86,14 @@
 #include <QFileInfo>
 #include <QLabel>
 #include <QMessageBox>
+#include <QPainter>
 #include <QPixmap>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QProcess>
-#include <QtNumeric>
 #include <QStringConverter>
+#include <QSvgRenderer>
+#include <QtNumeric>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -136,7 +139,11 @@ TMainWindow::TMainWindow(QWidget *parent)
 	  m_isReadOnly(false),
 	  recentFileActs(),
 	  separatorAct(nullptr),
-	  hackedWidgets()
+	  hackedWidgets(),
+      m_currentSvgPath(),
+      m_currentNumber(),
+      m_currentName(),
+      m_currentDescription()
 {
 	ui->setupUi(this);
 
@@ -768,6 +775,10 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			}
 		}
 	}
+    else if (object == ui->dockWidgetDiagram && event->type() == QEvent::Resize)
+    {
+        renderScaledDiagram();
+    }
 	else
 	{
 		// pass the event on to the parent class
@@ -1764,7 +1775,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 			return;
 		}
 
-		ShowMDiagram(meash->GetName());
+		ShowMDiagram(meash);
 
 		// Don't block all signal for QLineEdit. Need for correct handle with clear button.
 		disconnect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
@@ -1845,27 +1856,39 @@ QString TMainWindow::getMeasurementNumber(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ShowMDiagram(const QString &name)
+void TMainWindow::ShowMDiagram(QSharedPointer<MeasurementVariable> meash)
 {
+    //const QString description = meash->GetDescription();
+    const QString name        = meash->GetName();
 	const VTranslateVars *trv = qApp->translateVariables();
-	const QString number = trv->MNumber(name);
+	const QString number      = trv->MNumber(name);
+    const QString description = trv->Description(name);
 
-	if (number.isEmpty())
-	{
-		ui->labelDiagram->setText(tr("<html><head/><body><p><span style=\" font-size:340pt;\">?</span></p>"
-									 "<p align=\"center\">Unknown measurement</p></body></html>"));
-	}
-	else
-	{
-		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
-										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->guiText(name)));
-	}
-	// This part is very ugly, can't find better way to resize dockWidget.
-	ui->labelDiagram->adjustSize();
-	// And also those 50 px. DockWidget has some border. And i can't find how big it is.
-	// Can lead to problem in future.
-	ui->dockWidgetDiagram->setMaximumWidth(ui->labelDiagram->width()+50);
+    // Clear variables so resizes don't draw a stale image
+    m_currentSvgPath.clear();
+    m_currentNumber.clear();
+    m_currentName.clear();
+    m_currentDescription.clear();
+
+    if (number.isEmpty())
+    {
+        // Save the current states for the resize event to look at later
+        m_currentSvgPath     = QString("://diagrams/custom.svg");
+        m_currentNumber      = tr("Custom measurement");
+        m_currentName        = name;
+        m_currentDescription = QStringLiteral("");
+    }
+    else
+    {
+        // Save the current states for the resize event to look at later
+        m_currentSvgPath     = QString("://diagrams/%1.svg").arg(MapDiagrams(trv, number));
+        m_currentNumber      = number;
+        m_currentName        = trv->guiText(name);
+        m_currentDescription = description;
+    }
+
+    // Execute the initial draw pass using the live dock size
+    renderScaledDiagram();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3533,4 +3556,61 @@ void TMainWindow::copyToClipboard()
 
     QClipboard *clipboard = QApplication::clipboard();
     clipboard->setText(clipboardString);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief renderScaledDiagram Generates a pixel-perfect, crisp vector diagram to fit the current dock size.
+///
+/// Loads the active SVG file path from memory and dynamically reads the real-time dimensions of the
+/// main window's dock container. It compares horizontal and vertical scaling factors to determine the
+/// maximum aspect-ratio fit, preventing layout bleeding. The mathematical vector paths are then rendered
+/// onto a sharp, transparent canvas layout, updating the display widget alongside its text caption label.
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::renderScaledDiagram()
+{
+    if (m_currentSvgPath.isEmpty()) return;
+
+    QSvgRenderer renderer(m_currentSvgPath);
+    QSize nativeSize = renderer.defaultSize();
+
+    if (nativeSize.isValid() && nativeSize.width() > 0 && nativeSize.height() > 0)
+    {
+        // 1. Read live dimensions from the dock container layout
+        double dockW = ui->dockWidgetDiagram->width();
+        double dockH = ui->dockWidgetDiagram->height();
+
+        // 2. Enforce fallback defaults BEFORE doing math if hidden or unpainted (<= 0)
+        double maxW = (dockW > 10.0)  ? (dockW - 10.0)  : 290.0;
+        double maxH = (dockH > 120.0) ? (dockH - 120.0) : 500.0;
+
+        double ratioW = maxW / nativeSize.width();
+        double ratioH = maxH / nativeSize.height();
+        double scaleFactor = (ratioW < ratioH) ? ratioW : ratioH;
+
+        int targetWidth = static_cast<int>(nativeSize.width() * scaleFactor);
+        int targetHeight = static_cast<int>(nativeSize.height() * scaleFactor);
+
+        // 3. Safety Check: Guarantee pixmap has valid dimensions to prevent painter warnings
+        if (targetWidth <= 0 || targetHeight <= 0)
+        {
+            targetWidth = 290;
+            targetHeight = 500;
+        }
+
+        QPixmap pixmap(targetWidth, targetHeight);
+        pixmap.fill(Qt::transparent);
+
+        QPainter painter(&pixmap);
+        if (painter.isActive()) // Extra safety check for active painting context
+        {
+            renderer.render(&painter);
+            painter.end();
+        }
+
+        ui->diagram_Label->setPixmap(pixmap);
+        ui->diagram_Label->setText(QString(""));
+    }
+
+    ui->caption_Label->setText(QString("<b>%1</b>. <i>%2</i>").arg(m_currentNumber, m_currentName));
+    ui->description_Label->setText(m_currentDescription);
 }
