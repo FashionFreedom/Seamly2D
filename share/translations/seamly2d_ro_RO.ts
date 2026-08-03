@@ -11515,14 +11515,6 @@ Doriți să salvați modificările?</translation>
         <translation>Diagramă de măsurare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Măsurătoare necunoscută&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Măsurătoare necunoscută&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Despre Qt</translation>
     </message>
@@ -11784,6 +11776,10 @@ load in SeamlyME as usual.
     <message>
         <source>Value:</source>
         <translation>Valoare:</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Măsurătoare personalizată</translation>
     </message>
 </context>
 <context>
@@ -12860,7 +12856,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Show Cut Line Notch</source>
-        <translation>Arată crestătura liniei de tăiere></translation>
+        <translation>Arată crestătura liniei de tăiere</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>

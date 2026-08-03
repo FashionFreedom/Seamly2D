@@ -11395,10 +11395,6 @@ Menti a módosításokat?</translation>
         <translation>Mérési ábra</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Ismeretlen mértékegység&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Open individual ...</source>
         <translation>Nyílt egyéni ...</translation>
     </message>
@@ -11666,10 +11662,6 @@ load in SeamlyME as usual.
         <translation>Ez a fájl már megnyílt egy másik ablakban. Ha folytatni szeretné, hagyja figyelmen kívül (nem ajánlott, adatvesztést okozhat).</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Ismeretlen mértékegység&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>The name of known measurement forbidden to change.</source>
         <translation>Az ismert mértékegység nevét tilos megváltoztatni.</translation>
     </message>
@@ -11781,6 +11773,10 @@ Menti a módosításokat?</translation>
         <source>female</source>
         <comment>gender</comment>
         <translation>női</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Egyedi méretvétel</translation>
     </message>
 </context>
 <context>
