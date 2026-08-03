@@ -57,7 +57,7 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vseamlymesettings.h"
 #include "../vmisc/vabstractapplication.h"
-#include "dialogs/dialogmdatabase.h"
+#include "dialogs/database_dialog.h"
 
 class ApplicationME;// use in define
 class TMainWindow;
