@@ -1,0 +1,10 @@
+file(GLOB_RECURSE vobj_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(vobj_sources)
+file(GLOB_RECURSE vobj_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vobj_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vobj_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vobj STATIC ${vobj_sources} ${vobj_resources})
+target_include_directories(vobj PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vobj PUBLIC Qt6::Xml Qt6::PrintSupport libs_common_include)
+target_compile_features(vobj PUBLIC cxx_std_14)

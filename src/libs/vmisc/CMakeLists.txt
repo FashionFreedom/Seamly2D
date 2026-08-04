@@ -1,0 +1,10 @@
+file(GLOB_RECURSE vmisc_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(vmisc_sources)
+file(GLOB_RECURSE vmisc_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vmisc_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vmisc_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vmisc STATIC ${vmisc_sources} ${vmisc_resources})
+target_include_directories(vmisc PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vmisc PUBLIC Qt6::Widgets Qt6::PrintSupport Qt6::Test libs_common_include)
+target_compile_features(vmisc PUBLIC cxx_std_14)

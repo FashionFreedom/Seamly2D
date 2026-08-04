@@ -1,0 +1,11 @@
+file(GLOB_RECURSE seamlyme_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(seamlyme_sources)
+file(GLOB_RECURSE seamlyme_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE seamlyme_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE seamlyme_resources CONFIGURE_DEPENDS *.qrc)
+list(FILTER seamlyme_resources EXCLUDE REGEX ".*[\\/](rcc)[\\/].*\\.qrc$")
+
+add_executable(seamlyme ${seamlyme_sources} ${seamlyme_resources})
+target_include_directories(seamlyme PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(seamlyme PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Network Qt6::Xml Qt6::PrintSupport Qt6::Svg vtools vwidgets vformat vpatterndb fervor ifc vmisc vgeometry vlayout qmuparser vpropertyexplorer libs_common_include)
+target_compile_features(seamlyme PRIVATE cxx_std_14)

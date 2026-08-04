@@ -1,0 +1,10 @@
+file(GLOB_RECURSE vpropertyexplorer_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(vpropertyexplorer_sources)
+file(GLOB_RECURSE vpropertyexplorer_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vpropertyexplorer_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vpropertyexplorer_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vpropertyexplorer STATIC ${vpropertyexplorer_sources} ${vpropertyexplorer_resources})
+target_include_directories(vpropertyexplorer PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vpropertyexplorer PUBLIC Qt6::Core Qt6::Widgets Qt6::Xml Qt6::PrintSupport qmuparser libs_common_include)
+target_compile_features(vpropertyexplorer PUBLIC cxx_std_14)

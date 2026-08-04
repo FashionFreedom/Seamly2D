@@ -1,0 +1,11 @@
+file(GLOB_RECURSE seamly2dtest_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(seamly2dtest_sources)
+file(GLOB_RECURSE seamly2dtest_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE seamly2dtest_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE seamly2dtest_resources CONFIGURE_DEPENDS *.qrc)
+
+add_executable(Seamly2DTest ${seamly2dtest_sources} ${seamly2dtest_resources})
+target_include_directories(Seamly2DTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_definitions(Seamly2DTest PRIVATE SRCDIR="${CMAKE_CURRENT_SOURCE_DIR}")
+target_link_libraries(Seamly2DTest PRIVATE Qt6::Core Qt6::Test Qt6::Gui Qt6::PrintSupport Qt6::Xml vtools vwidgets vformat vpatterndb ifc vtest vmisc vgeometry vlayout qmuparser vpropertyexplorer libs_common_include)
+target_compile_features(Seamly2DTest PRIVATE cxx_std_14)

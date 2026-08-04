@@ -1,0 +1,10 @@
+file(GLOB_RECURSE vtest_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(vtest_sources)
+file(GLOB_RECURSE vtest_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vtest_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vtest_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vtest STATIC ${vtest_sources} ${vtest_resources})
+target_include_directories(vtest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vtest PUBLIC Qt6::Test Qt6::Widgets Qt6::PrintSupport libs_common_include)
+target_compile_features(vtest PUBLIC cxx_std_14)

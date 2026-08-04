@@ -1,0 +1,10 @@
+file(GLOB_RECURSE qmuparser_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(qmuparser_sources)
+file(GLOB_RECURSE qmuparser_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE qmuparser_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE qmuparser_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(qmuparser STATIC ${qmuparser_sources} ${qmuparser_resources})
+target_include_directories(qmuparser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(qmuparser PUBLIC Qt6::Core)
+target_compile_features(qmuparser PUBLIC cxx_std_14)

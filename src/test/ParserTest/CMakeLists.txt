@@ -1,0 +1,10 @@
+file(GLOB_RECURSE parsertest_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(parsertest_sources)
+file(GLOB_RECURSE parsertest_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE parsertest_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE parsertest_resources CONFIGURE_DEPENDS *.qrc)
+
+add_executable(ParserTest ${parsertest_sources} ${parsertest_resources})
+target_include_directories(ParserTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(ParserTest PRIVATE Qt6::Core qmuparser libs_common_include)
+target_compile_features(ParserTest PRIVATE cxx_std_14)

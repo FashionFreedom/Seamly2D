@@ -1,0 +1,11 @@
+file(GLOB_RECURSE collectiontest_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(collectiontest_sources)
+file(GLOB_RECURSE collectiontest_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE collectiontest_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE collectiontest_resources CONFIGURE_DEPENDS *.qrc)
+
+add_executable(CollectionTest ${collectiontest_sources} ${collectiontest_resources})
+target_include_directories(CollectionTest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_compile_definitions(CollectionTest PRIVATE SRCDIR="${CMAKE_CURRENT_SOURCE_DIR}")
+target_link_libraries(CollectionTest PRIVATE Qt6::Test Qt6::Widgets Qt6::PrintSupport vtools vwidgets vformat vpatterndb vtest vgeometry ifc vmisc vlayout qmuparser vpropertyexplorer libs_common_include)
+target_compile_features(CollectionTest PRIVATE cxx_std_14)

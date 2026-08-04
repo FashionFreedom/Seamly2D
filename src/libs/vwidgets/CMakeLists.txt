@@ -1,0 +1,18 @@
+include(${CMAKE_SOURCE_DIR}/cmake/GlobHelpers.cmake)
+
+file(GLOB_RECURSE vwidgets_sources CONFIGURE_DEPENDS *.cpp)
+cmake_glob_remove_generated_sources(vwidgets_sources)
+list(FILTER vwidgets_sources EXCLUDE REGEX ".*/calculator/main\.cpp$")
+list(FILTER vwidgets_sources EXCLUDE REGEX ".*/pen\.cpp$")
+if(NOT MSVC)
+    list(FILTER vwidgets_sources EXCLUDE REGEX ".*/stable\.cpp$")
+endif()
+file(GLOB_RECURSE vwidgets_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vwidgets_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vwidgets_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vwidgets STATIC ${vwidgets_sources} ${vwidgets_resources})
+target_include_directories(vwidgets PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vwidgets PUBLIC Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Xml Qt6::PrintSupport)
+target_link_libraries(vwidgets PUBLIC libs_common_include)
+target_compile_features(vwidgets PUBLIC cxx_std_14)

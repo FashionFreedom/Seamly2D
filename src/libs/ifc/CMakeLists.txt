@@ -1,0 +1,23 @@
+file(GLOB_RECURSE ifc_sources CONFIGURE_DEPENDS *.cpp)
+file(GLOB_RECURSE ifc_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE ifc_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(ifc STATIC ${ifc_sources} ${ifc_resources})
+target_include_directories(ifc PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+set(XERCESC_ROOT "${CMAKE_SOURCE_DIR}/src/libs/xerces-c")
+if(EXISTS "${XERCESC_ROOT}/msvc/include")
+  target_include_directories(ifc PUBLIC "${XERCESC_ROOT}/msvc/include")
+  if(EXISTS "${XERCESC_ROOT}/msvc/lib/xerces-c_3.lib")
+    target_link_libraries(ifc PUBLIC "${XERCESC_ROOT}/msvc/lib/xerces-c_3.lib")
+  endif()
+elseif(EXISTS "${XERCESC_ROOT}/msvc-arm64/include")
+  target_include_directories(ifc PUBLIC "${XERCESC_ROOT}/msvc-arm64/include")
+  if(EXISTS "${XERCESC_ROOT}/msvc-arm64/lib/xerces-c_3.lib")
+    target_link_libraries(ifc PUBLIC "${XERCESC_ROOT}/msvc-arm64/lib/xerces-c_3.lib")
+  endif()
+endif()
+
+target_link_libraries(ifc PUBLIC Qt6::Xml Qt6::PrintSupport)
+target_link_libraries(ifc PUBLIC qmuparser vmisc libs_common_include)
+target_compile_features(ifc PUBLIC cxx_std_14)

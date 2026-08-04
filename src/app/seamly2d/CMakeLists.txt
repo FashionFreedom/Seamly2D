@@ -1,0 +1,11 @@
+file(GLOB_RECURSE seamly2d_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(seamly2d_sources)
+file(GLOB_RECURSE seamly2d_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE seamly2d_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE seamly2d_resources CONFIGURE_DEPENDS *.qrc)
+list(FILTER seamly2d_resources EXCLUDE REGEX ".*[\\/](rcc)[\\/].*\\.qrc$")
+
+add_executable(seamly2d ${seamly2d_sources} ${seamly2d_resources})
+target_include_directories(seamly2d PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(seamly2d PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Xml Qt6::Svg Qt6::PrintSupport Qt6::Network Qt6::Multimedia tools vtools vwidgets vformat vpatterndb fervor ifc vmisc vgeometry vobj vdxf vlayout qmuparser vpropertyexplorer libs_common_include)
+target_compile_features(seamly2d PRIVATE cxx_std_14)

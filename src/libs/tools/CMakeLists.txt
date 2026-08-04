@@ -1,0 +1,10 @@
+file(GLOB_RECURSE tools_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(tools_sources)
+file(GLOB_RECURSE tools_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE tools_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE tools_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(tools STATIC ${tools_sources} ${tools_resources})
+target_include_directories(tools PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(tools PUBLIC Qt6::Widgets Qt6::Xml Qt6::PrintSupport vpatterndb vwidgets vmisc libs_common_include)
+target_compile_features(tools PUBLIC cxx_std_14)

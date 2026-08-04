@@ -1,0 +1,10 @@
+file(GLOB_RECURSE vdxf_sources CONFIGURE_DEPENDS *.cpp *.c)
+cmake_glob_remove_generated_sources(vdxf_sources)
+file(GLOB_RECURSE vdxf_headers CONFIGURE_DEPENDS *.h)
+file(GLOB_RECURSE vdxf_forms CONFIGURE_DEPENDS *.ui)
+file(GLOB_RECURSE vdxf_resources CONFIGURE_DEPENDS *.qrc)
+
+add_library(vdxf STATIC ${vdxf_sources} ${vdxf_resources})
+target_include_directories(vdxf PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(vdxf PUBLIC Qt6::Xml Qt6::PrintSupport libs_common_include)
+target_compile_features(vdxf PUBLIC cxx_std_14)
