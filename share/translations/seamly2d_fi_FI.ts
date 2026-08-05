@@ -11778,7 +11778,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Custom measurement</source>
-        <translation>Mittatilaus</translation>
+        <translation>Räätälöity mitta</translation>
     </message>
 </context>
 <context>
