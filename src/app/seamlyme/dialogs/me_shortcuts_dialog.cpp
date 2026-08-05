@@ -1,30 +1,28 @@
-/************************************************************************
- **
- **  @file   me_shortcuts_dialog.h
- **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   21 Oct, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2022-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+// ---------------------------------------------------------------------------------------------------------------------
+//  @file   me_shortcuts_dialog.h
+//  @author DSCaskey <dscaskey@gmail.com>
+//  @date   21 Oct, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+// ---------------------------------------------------------------------------------------------------------------------
 
 #include "me_shortcuts_dialog.h"
 #include "ui_me_shortcuts_dialog.h"
@@ -54,6 +52,22 @@ MeShortcutsDialog::MeShortcutsDialog(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    // Extract the hex colors safely from the application palette
+    QString bgColor = qApp->palette().color(QPalette::Base).name();
+    QString textColor = qApp->palette().color(QPalette::Text).name();
+
+    // Target the QTextBrowser layout hierarchy using a safe stylesheet string
+    QString style = QString(
+        "QTextBrowser {"
+        "  background-color: %1;"
+        "  color: %2;"
+        "  border: none;" // Optional: cleans up dark mode borders
+        "}"
+    ).arg(bgColor).arg(textColor);
+
+    // Set the stylesheet on the widget directly
+    ui->shortcuts_TextBrowser->setStyleSheet(style);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
