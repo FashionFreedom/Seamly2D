@@ -543,8 +543,13 @@ void MainWindow::initializeScenes()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fileName)
+QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fileName, bool *usable)
 {
+    if (usable != nullptr)
+    {
+        *usable = true;
+    }
+
     QSharedPointer<MeasurementDoc> measurements;
     if (fileName.isEmpty())
     {
@@ -603,6 +608,15 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                     qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
+        // The document keeps the content read so far - clearing it here would make
+        // updateMeasurements() fail and bring back the sync error fixed in 4193356f6e.
+        // Only the callers that load a file report the failure, through 'usable'.
+        if (usable != nullptr)
+        {
+            *usable = false;
+        }
+
         if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -618,9 +632,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     // remove any extraneous LF's or trailing white space.
     removeEmptyLinesText(fileName, false);
 
-    m_measurements = openMeasurementFile(fileName);
+    bool usable = true;
+    m_measurements = openMeasurementFile(fileName, &usable);
 
-    if (m_measurements->isNull())
+    // An unusable file keeps its parsed content, so isNull() alone doesn't detect the failure.
+    if (m_measurements->isNull() || !usable)
     {
         return false;
     }
@@ -6581,8 +6597,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
 
             if (!loadMeasurements(newPath))
             {
-                qCCritical(vMainWindow, "%s", qUtf8Printable(tr("The measurements file '%1' could not be found.")
-                                                             .arg(newPath)));
+                // The file was found, so don't claim otherwise. loadMeasurements() has
+                // already reported the specific reason it couldn't be used.
                 qApp->setOpeningPattern();// End opening file
                 Clear();
                 if (!Application2D::isGUIMode())
