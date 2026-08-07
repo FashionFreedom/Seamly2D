@@ -83,6 +83,9 @@ public:
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                   const Document &parse, const Source &typeCreation);
 
+    static QPointF         findRotationOrigin(const QVector<quint32> &objectIds, const VContainer *data,
+                                              qreal calcLength, qreal calcAngle, quint32 originPointId);
+
     static const QString   ToolType;
 
     virtual int            type() const override {return Type;}
