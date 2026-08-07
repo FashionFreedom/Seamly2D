@@ -116,15 +116,19 @@ void TST_VToolMove::implicitOriginStillFollowsTheMove()
     const Unit unit = Unit::Cm;
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
 
-    data->UpdateGObject(sourcePointId, new VPointF(0, 0, "A1", 0, 0));
+    // Three points, deliberately asymmetric: their bounding-box centre (10, 10) differs from both their
+    // centroid (10, 6.667) and any pairwise midpoint, so this test actually pins "bounding-box centre"
+    // rather than passing under any of those other, superficially similar rules too.
+    data->UpdateGObject(sourcePointId,     new VPointF(0,  0, "A1", 0, 0));
     data->UpdateGObject(sourcePointId + 1, new VPointF(10, 20, "A2", 0, 0));
+    data->UpdateGObject(sourcePointId + 2, new VPointF(20, 0, "A3", 0, 0));
 
-    const QPointF origin = VToolMove::findRotationOrigin(QVector<quint32>{sourcePointId, sourcePointId + 1},
-                                                         data.data(), moveLength, moveAngle, NULL_ID);
+    const QVector<quint32> objectIds{sourcePointId, sourcePointId + 1, sourcePointId + 2};
+    const QPointF origin = VToolMove::findRotationOrigin(objectIds, data.data(), moveLength, moveAngle, NULL_ID);
 
     // Without an explicit rotation point the origin is the bounding box centre translated by the move
     // vector. That behaviour is correct and must not change.
-    const QPointF expected = VPointF::MovePF(QPointF(5, 10), moveLength, moveAngle);
+    const QPointF expected = VPointF::MovePF(QPointF(10, 10), moveLength, moveAngle);
 
     QVERIFY2(VFuzzyComparePoints(origin, expected),
              qUtf8Printable(QStringLiteral("Without an explicit rotation point the origin must keep following the "
