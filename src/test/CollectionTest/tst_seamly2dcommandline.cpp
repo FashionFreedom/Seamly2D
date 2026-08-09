@@ -230,7 +230,7 @@ void TST_Seamly2DCommandLine::TestMode_data() const
     QTest::newRow("Issue #1275. Individual measurements missing a required measurement.")
                                << "issue_1275.sm2d"
                                << QString("--test;;-m;;%1").arg(tmp + QDir::separator() +
-                                                                QLatin1String("issue_256_wrong.smis"))
+                                                                QLatin1String("issue_1275.smis"))
                                << V_EX_NOINPUT;
 
     QTest::newRow("Wrong formula.")<< "wrong_formula.sm2d"
