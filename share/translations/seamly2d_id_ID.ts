@@ -7238,6 +7238,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Gagal membuat salinan cadangan: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Font</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Font &quot;%1&quot; tidak memiliki huruf atau angka, sehingga nama titik tidak akan ditampilkan dengannya. Silakan pilih font lain.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

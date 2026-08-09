@@ -7238,6 +7238,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Yedek kopyası oluşturulurken hata oluştu: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Yazı tipi</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>&quot;%1&quot; yazı tipinde harf veya rakam yok, bu nedenle nokta adları bu yazı tipiyle gösterilmeyecek. Lütfen başka bir yazı tipi seçin.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

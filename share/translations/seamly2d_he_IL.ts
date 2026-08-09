@@ -7202,6 +7202,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>גופן</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>לגופן „%1” אין אותיות או ספרות, ולכן שמות הנקודות לא יוצגו באמצעותו. יש לבחור גופן אחר.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

@@ -7262,6 +7262,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Error creating a backup copy: %1.</source>
         <translation>Erreur lors de la création d&apos;un copie de sauvegarde: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Police</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>La police « %1 » ne contient ni lettres ni chiffres, les noms de points ne seront donc pas affichés avec elle. Veuillez choisir une autre police.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

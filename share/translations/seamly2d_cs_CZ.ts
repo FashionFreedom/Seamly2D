@@ -7236,6 +7236,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Chyba při vytváření záložní kopie: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Písmo</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Písmo „%1“ neobsahuje žádná písmena ani číslice, takže názvy bodů se v něm nezobrazí. Vyberte prosím jiné písmo.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

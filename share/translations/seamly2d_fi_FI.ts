@@ -7238,6 +7238,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Error creating a backup copy: %1.</source>
         <translation>Virhe luotaessa varmuuskopiota: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Fontti</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Fontissa ”%1” ei ole kirjaimia eikä numeroita, joten pisteiden nimiä ei näytetä sillä. Valitse toinen fontti.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

@@ -79,6 +79,7 @@
 #include <QThread>
 #include <QDateTime>
 #include <QIcon>
+#include <QTimer>
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
@@ -89,6 +90,71 @@ Q_LOGGING_CATEGORY(vApp, "v.application")
 QT_WARNING_POP
 
 constexpr auto DAYS_TO_KEEP_LOGS = 3;
+
+// True from the moment a message dialog is queued until it is closed, so that messages emitted
+// in the meantime are logged without stacking more modal dialogs on top of it.
+static bool isMessageBoxOpen = false;
+
+//---------------------------------------------------------------------------------------------------------------------
+// Shows the modal dialog for a message that reached noisyFailureMsgHandler().
+inline void showNoisyMessageBox(QtMsgType type, const QString &msg)
+{
+    // fixme: trying to make sure that no save/load dialogs are opened, because an error message
+    // during them will lead to a crash
+    if (QApplication::activeModalWidget() != nullptr &&
+            QApplication::activeModalWidget()->inherits("QFileDialog"))
+    {
+        return;
+    }
+
+    QMessageBox messageBox;
+
+    switch (type)
+    {
+        case QtWarningMsg:
+            messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Warning"));
+            messageBox.setIcon(QMessageBox::Warning);
+            break;
+        case QtCriticalMsg:
+            messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Critical Error"));
+            messageBox.setIcon(QMessageBox::Critical);
+            break;
+        case QtFatalMsg:
+            messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Fatal Error"));
+            messageBox.setIcon(QMessageBox::Critical);
+            break;
+        default:
+            return;
+    }
+
+    messageBox.setText(msg);
+    messageBox.setStandardButtons(QMessageBox::Ok);
+    messageBox.setWindowModality(Qt::ApplicationModal);
+    messageBox.setModal(true);
+#ifndef QT_NO_CURSOR
+    QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
+#endif
+    messageBox.setWindowFlags(messageBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    messageBox.exec();
+#ifndef QT_NO_CURSOR
+    QGuiApplication::restoreOverrideCursor();
+#endif
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// A modal dialog would close any open popup (combo box list, menu) and steal its focus, breaking
+// the interaction the user is in the middle of. Wait for the popup to close before showing it.
+static void showNoisyMessageBoxWhenSafe(QtMsgType type, const QString &msg)
+{
+    if (QApplication::activePopupWidget() != nullptr)
+    {
+        QTimer::singleShot(150, qApp, [type, msg]() { showNoisyMessageBoxWhenSafe(type, msg); });
+        return;
+    }
+
+    showNoisyMessageBox(type, msg);
+    isMessageBoxOpen = false;
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
@@ -132,6 +198,15 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
     // See issue #568
     if (msg.contains(QStringLiteral("Error receiving trust for a CA certificate")))
+    {
+        type = QtDebugMsg;
+    }
+
+    // The pre-installed macOS font "GB18030 Bitmap" is bitmap-only and has no metrics tables,
+    // so Qt cannot compute its bearings. The warning fires every time a font list is populated
+    // and is harmless - keep it in the log only. See issue #852
+    // https://bugreports.qt.io/browse/QTBUG-100170
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("minimum bearings")))
     {
         type = QtDebugMsg;
     }
@@ -202,56 +277,30 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
     if (isGuiThread)
     {
-        // fixme: trying to make sure that no save/load dialogs are opened, because an error message
-        // during them will lead to a crash
-        const bool topWinAllowsPop = (QApplication::activeModalWidget() == nullptr) ||
-                !QApplication::activeModalWidget()->inherits("QFileDialog");
-
-        QMessageBox messageBox;
-
-        switch (type)
-        {
-            case QtWarningMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Warning"));
-                messageBox.setIcon(QMessageBox::Warning);
-                break;
-            case QtCriticalMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Critical Error"));
-                messageBox.setIcon(QMessageBox::Critical);
-                break;
-            case QtFatalMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Fatal Error"));
-                messageBox.setIcon(QMessageBox::Critical);
-                break;
-            #if QT_VERSION > QT_VERSION_CHECK(5, 4, 2)
-            case QtInfoMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Information"));
-                messageBox.setIcon(QMessageBox::Information);
-                break;
-            #endif
-            case QtDebugMsg:
-            default:
-                break;
-        }
-
         if (type == QtWarningMsg || type == QtCriticalMsg || type == QtFatalMsg)
         {
             if (Application2D::isGUIMode())
             {
-                if (topWinAllowsPop)
+                // Opening a modal dialog right here spins a nested event loop inside the message
+                // handler. When the message is emitted mid-paint (e.g. while the font combo box
+                // popup is being built - see issue #852 with the macOS "GB18030 Bitmap" font),
+                // that nested loop repaints half-constructed widgets, which emits more warnings,
+                // re-enters this handler and stacks modal dialogs until the application crashes.
+                // Defer the dialog to the next event loop pass, and never open a second one while
+                // the first is still up: the extra messages are still logged above, just without
+                // a popup for each.
+                if (QtFatalMsg == type)
                 {
-                    messageBox.setText(msg);
-                    messageBox.setStandardButtons(QMessageBox::Ok);
-                    messageBox.setWindowModality(Qt::ApplicationModal);
-                    messageBox.setModal(true);
-                #ifndef QT_NO_CURSOR
-                    QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
-                #endif
-                    messageBox.setWindowFlags(messageBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
-                    messageBox.exec();
-                #ifndef QT_NO_CURSOR
-                    QGuiApplication::restoreOverrideCursor();
-                #endif
+                    // A fatal message aborts below, so its dialog cannot be deferred.
+                    showNoisyMessageBox(type, msg);
+                }
+                else if (!isMessageBoxOpen)
+                {
+                    isMessageBoxOpen = true;
+                    QMetaObject::invokeMethod(qApp, [type, msg]()
+                    {
+                        showNoisyMessageBoxWhenSafe(type, msg);
+                    }, Qt::QueuedConnection);
                 }
             }
         }

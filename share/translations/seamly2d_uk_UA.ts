@@ -7239,6 +7239,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Помилка створення резервної копії: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Шрифт</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Шрифт «%1» не містить літер або цифр, тому назви точок не відображатимуться з ним. Виберіть інший шрифт.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

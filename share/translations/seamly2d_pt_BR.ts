@@ -7225,6 +7225,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Erro ao criar uma cópia de backup: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Fonte</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>A fonte &quot;%1&quot; não possui letras ou dígitos, portanto os nomes dos pontos não serão exibidos com ela. Escolha outra fonte.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

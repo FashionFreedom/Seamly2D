@@ -7238,6 +7238,14 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Czcionka</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Czcionka „%1” nie zawiera liter ani cyfr, więc nazwy punktów nie będą w niej wyświetlane. Wybierz inną czcionkę.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

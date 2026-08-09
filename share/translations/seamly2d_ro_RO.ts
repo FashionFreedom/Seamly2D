@@ -7240,6 +7240,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Eroare la crearea unei copii rezervate: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Font</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Fontul „%1” nu are litere sau cifre, așa că numele punctelor nu vor fi afișate cu el. Alegeți alt font.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

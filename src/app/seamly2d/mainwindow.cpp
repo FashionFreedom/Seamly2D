@@ -123,6 +123,7 @@
 #include <QLabel>
 #include <QMessageBox>
 #include <QProcess>
+#include <QRawFont>
 #include <QScrollBar>
 #include <QSettings>
 #include <QSharedPointer>
@@ -153,6 +154,36 @@ const QString autosavePostfix = QStringLiteral(".autosave");
 // Strings for dynamically translating "Ctrl" in the status bar tool tips
 const QString strQShortcut = QStringLiteral("QShortcut");
 const QString strCtrl      = QStringLiteral("Ctrl");
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief fontCanDrawPointNames checks that a font actually holds glyphs for the characters point
+ * names are made of.
+ *
+ * QFontDatabase::writingSystems() and QFontMetrics::inFont() both answer through the font
+ * substitution chain, so they claim coverage a font does not have - the pre-installed macOS
+ * "GB18030 Bitmap" is reported as supporting Latin while its cmap only maps CJK ideographs.
+ * QRawFont bypasses substitution and reports what the font file really contains. See issue #852.
+ */
+static bool fontCanDrawPointNames(const QFont &font)
+{
+    const QRawFont rawFont = QRawFont::fromFont(font);
+    if (!rawFont.isValid())
+    {
+        return true; // Nothing reliable to test against, so don't cry wolf.
+    }
+
+    // Point names are alphanumeric, so a font missing these cannot label a pattern at all.
+    for (const QChar &character : {QChar('A'), QChar('a'), QChar('0')})
+    {
+        if (!rawFont.supportsCharacter(character))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 
 /// @brief Seamly2D MainWindow constructor.
@@ -2416,6 +2447,20 @@ void MainWindow::initializePointNameToolBar()
             {
                 qApp->Seamly2DSettings()->setPointNameFont(font);
                 upDateScenes();
+
+                if (!fontCanDrawPointNames(font))
+                {
+                    // Warn once the combo box popup has closed, otherwise the dialog steals its
+                    // focus and the selection cannot be completed.
+                    const QString family = font.family();
+                    QTimer::singleShot(0, this, [this, family]()
+                    {
+                        QMessageBox::warning(this, tr("Font"),
+                                             tr("The font \"%1\" has no letters or digits, so point "
+                                                "names will not be shown with it. Please pick "
+                                                "another font.").arg(family));
+                    });
+                }
             });
 
     fontSizeComboBox = new QComboBox ;

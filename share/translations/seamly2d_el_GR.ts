@@ -7240,6 +7240,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Σφάλμα κατά τη δημιουργία αντιγράφου ασφαλείας: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Γραμματοσειρά</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Η γραμματοσειρά «%1» δεν έχει γράμματα ή ψηφία, επομένως τα ονόματα σημείων δεν θα εμφανίζονται με αυτήν. Επιλέξτε άλλη γραμματοσειρά.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

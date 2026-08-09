@@ -7221,6 +7221,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Fout bij het maken van een back-upkopie: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Lettertype</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Het lettertype ‘%1’ bevat geen letters of cijfers, dus puntnamen worden er niet mee weergegeven. Kies een ander lettertype.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

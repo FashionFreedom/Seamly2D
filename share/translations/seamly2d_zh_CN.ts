@@ -7238,6 +7238,14 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>创建备份副本出错:%1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>字体</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>字体“%1”不包含字母或数字，因此点名称将无法使用该字体显示。请选择其他字体。</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

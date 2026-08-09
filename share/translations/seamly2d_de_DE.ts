@@ -7221,6 +7221,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Error creating a backup copy: %1.</source>
         <translation>Fehler bei der Erstellung einer Sicherungskopie: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Schriftart</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Die Schriftart „%1“ enthält keine Buchstaben oder Ziffern, daher werden Punktnamen damit nicht angezeigt. Bitte wählen Sie eine andere Schriftart.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

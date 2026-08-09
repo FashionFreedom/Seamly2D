@@ -7237,6 +7237,14 @@ Menti a módosításokat?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Betűtípus</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>A(z) „%1” betűtípus nem tartalmaz betűket vagy számjegyeket, ezért a pontnevek nem jelennek meg vele. Válasszon másik betűtípust.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

@@ -7226,6 +7226,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Errore nella creazione di una copia di backup: %1.</translation>
     </message>
+    <message>
+        <source>Font</source>
+        <translation>Carattere</translation>
+    </message>
+    <message>
+        <source>The font &quot;%1&quot; has no letters or digits, so point names will not be shown with it. Please pick another font.</source>
+        <translation>Il carattere «%1» non contiene lettere o cifre, quindi i nomi dei punti non verranno visualizzati con esso. Scegliere un altro carattere.</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
