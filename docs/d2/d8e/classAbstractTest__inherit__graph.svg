@@ -348,31 +348,36 @@ var sectionId = 'dynsection-0';
 <g id="node14" class="node">
 <title>Node14</title>
 <g id="a_node14"><a xlink:href="../../d7/d3f/classTST__VSpline.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1617.5,-485 1617.5,-674 1807.5,-674 1807.5,-485 1617.5,-485"/>
-<text text-anchor="middle" x="1712.5" y="-662" font-family="Helvetica,sans-Serif" font-size="10.00">TST_VSpline</text>
-<polyline fill="none" stroke="#666666" points="1617.5,-655 1807.5,-655 "/>
-<text text-anchor="middle" x="1712.5" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="1617.5,-636 1807.5,-636 "/>
-<text text-anchor="start" x="1625.5" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ TST_VSpline()</text>
-<text text-anchor="start" x="1625.5" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CompareSplines()</text>
-<text text-anchor="start" x="1625.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints()</text>
-<text text-anchor="start" x="1625.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_issue412()</text>
-<text text-anchor="start" x="1625.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_TestPuzzle()</text>
-<text text-anchor="start" x="1625.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_NullSegment()</text>
-<text text-anchor="start" x="1625.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_RotateTool()</text>
-<text text-anchor="start" x="1625.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CompareThreeWays()</text>
-<text text-anchor="start" x="1625.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestParametrT()</text>
-<text text-anchor="start" x="1625.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestLengthByPoint_data()</text>
-<text text-anchor="start" x="1625.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestLengthByPoint()</text>
-<text text-anchor="start" x="1625.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestFlip_data()</text>
-<text text-anchor="start" x="1625.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestFlip()</text>
+<polygon fill="white" stroke="#666666" points="1617.5,-457.5 1617.5,-701.5 1807.5,-701.5 1807.5,-457.5 1617.5,-457.5"/>
+<text text-anchor="middle" x="1712.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">TST_VSpline</text>
+<polyline fill="none" stroke="#666666" points="1617.5,-682.5 1807.5,-682.5 "/>
+<text text-anchor="middle" x="1712.5" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="1617.5,-663.5 1807.5,-663.5 "/>
+<text text-anchor="start" x="1625.5" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TST_VSpline()</text>
+<text text-anchor="start" x="1625.5" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CompareSplines()</text>
+<text text-anchor="start" x="1625.5" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; HobbyCurveLength()</text>
+<text text-anchor="start" x="1625.5" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints()</text>
+<text text-anchor="start" x="1625.5" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_issue412()</text>
+<text text-anchor="start" x="1625.5" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_TestPuzzle()</text>
+<text text-anchor="start" x="1625.5" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_NullSegment()</text>
+<text text-anchor="start" x="1625.5" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetSegmentPoints_RotateTool()</text>
+<text text-anchor="start" x="1625.5" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CompareThreeWays()</text>
+<text text-anchor="start" x="1625.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestParametrT()</text>
+<text text-anchor="start" x="1625.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestLengthByPoint_data()</text>
+<text text-anchor="start" x="1625.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestLengthByPoint()</text>
+<text text-anchor="start" x="1625.5" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestFlip_data()</text>
+<text text-anchor="start" x="1625.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestFlip()</text>
+<text text-anchor="start" x="1625.5" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestAutoSmoothLengthSolver</text>
+<text text-anchor="start" x="1625.5" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">_data()</text>
+<text text-anchor="start" x="1625.5" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestAutoSmoothLengthSolver()</text>
+<text text-anchor="start" x="1625.5" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; TestHobbySymmetry()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="#63b8ff" d="M1079.18,-877.31C1217.78,-867.65 1524.88,-839.83 1608.5,-779 1643.66,-753.42 1667.94,-712.35 1684.14,-674.19"/>
+<path fill="none" stroke="#63b8ff" d="M1079.18,-877.31C1217.78,-867.65 1524.88,-839.83 1608.5,-779 1635.32,-759.49 1655.81,-730.96 1671.21,-701.58"/>
 <polygon fill="none" stroke="#63b8ff" points="1078.83,-873.82 1069.1,-878 1079.31,-880.8 1078.83,-873.82"/>
 </g>
 <!-- Node2 -->

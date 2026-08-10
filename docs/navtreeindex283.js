@@ -1,5 +1,9 @@
 var NAVTREEINDEX283 =
 {
+"de/d2b/classVToolCubicBezier.html#ae1964d350c670d3f9802fa40bf1f31f0":[3,0,740,21],
+"de/d2b/classVToolCubicBezier.html#ae3708ab15a1c3f6fcf754fe6fd11281d":[3,0,740,22],
+"de/d2b/classVToolCubicBezier.html#aeb3bc803fe0fdec05da4ec372a77bafe":[3,0,740,18],
+"de/d2b/classVToolCubicBezier.html#afb083762b5bd7c781ea6571ffd08a072":[3,0,740,15],
 "de/d2c/classXMLMutex.html":[3,0,849],
 "de/d2c/classXMLMutex.html#a1a00e92f5f9c1c061fea313f3c552412":[3,0,849,8],
 "de/d2c/classXMLMutex.html#a1a00e92f5f9c1c061fea313f3c552412":[3,0,849,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX283 =
 "de/d39/macx_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp.html":[4,0,0,1,15,0,0,0,7,3,5],
 "de/d39/macx_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,5],
 "de/d3a/macx_2include_2xercesc_2validators_2datatype_2ENTITYDatatypeValidator_8hpp.html":[4,0,0,1,15,0,0,0,7,1,16],
-"de/d3a/macx_2include_2xercesc_2validators_2datatype_2ENTITYDatatypeValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,1,16],
-"de/d3a/mingw_2include_2xercesc_2framework_2XMLGrammarPool_8hpp.html":[4,0,0,1,15,1,0,0,1,28],
-"de/d3a/mingw_2include_2xercesc_2framework_2XMLGrammarPool_8hpp_source.html":[4,0,0,1,15,1,0,0,1,28],
-"de/d3a/structPtrHasher.html":[3,0,413],
-"de/d3a/structPtrHasher.html#a0609a9126073397543b462e584402df3":[3,0,413,3]
+"de/d3a/macx_2include_2xercesc_2validators_2datatype_2ENTITYDatatypeValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,1,16]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX196 =
 {
+"da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp_source.html":[4,0,0,1,15,2,0,0,6,63],
+"da/d67/classDOMLSException.html":[3,0,185],
+"da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,14],
+"da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,18],
 "da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,10],
 "da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,6],
 "da/d67/classDOMLSException.html#a79a9b81bc73d72378ae6504b5f34f4a5":[3,0,185,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX196 =
 "da/d79/classDOMEntityReferenceImpl.html#a3a814792d38fbabdd36844dfaca59ea4":[3,0,171,201],
 "da/d79/classDOMEntityReferenceImpl.html#a3a814792d38fbabdd36844dfaca59ea4":[3,0,171,200],
 "da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,42],
-"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,41],
-"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,40],
-"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,43],
-"da/d79/classDOMEntityReferenceImpl.html#a450fce77a615f88d558e813f821ee850":[3,0,171,55],
-"da/d79/classDOMEntityReferenceImpl.html#a450fce77a615f88d558e813f821ee850":[3,0,171,54]
+"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,41]
 };

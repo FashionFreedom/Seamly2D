@@ -1,5 +1,9 @@
 var NAVTREEINDEX297 =
 {
+"de/db2/mingw_2include_2xercesc_2validators_2schema_2XercesElementWildcard_8hpp_source.html":[4,0,0,1,15,1,0,0,7,3,15],
+"de/db2/vtoolpointfromarcandtangent_8h.html":[4,0,0,1,13,1,0,2,1,13],
+"de/db2/vtoolpointfromarcandtangent_8h_source.html":[4,0,0,1,13,1,0,2,1,13],
+"de/db3/classQxtCsvModel.html":[3,0,421],
 "de/db3/classQxtCsvModel.html#a01f3e737d2878d8948c944be79a7fbb6":[3,0,421,8],
 "de/db3/classQxtCsvModel.html#a02866f9318247a0e774f4c22073f2825":[3,0,421,2],
 "de/db3/classQxtCsvModel.html#a105710b686ac867a3f3390cd5929f8e0":[3,0,421,26],
@@ -245,9 +249,5 @@ var NAVTREEINDEX297 =
 "de/dbd/classExportLayoutDialog.html#ae2159043346c5a6a1c052d7479d23ccd":[3,0,268,9],
 "de/dbd/classExportLayoutDialog.html#ae8ddcf722aa88bd4f6a7ba71c2a8f846":[3,0,268,14],
 "de/dbd/classExportLayoutDialog.html#af0c6264f6d4efb098b6088ddd8071dee":[3,0,268,3],
-"de/dbd/classExportLayoutDialog.html#af6faf332613a178772707ddf9d76ca8d":[3,0,268,10],
-"de/dbd/classExportLayoutDialog.html#afccf6d5fe6f528f0992c35012bc564c5":[3,0,268,18],
-"de/dbf/classSchemaElementDecl.html":[3,0,468],
-"de/dbf/classSchemaElementDecl.html#a03a4254aca8c7a725e5fd11b3aae8591":[3,0,468,185],
-"de/dbf/classSchemaElementDecl.html#a079081a3e00cd14c9cdf888b1f18a7ba":[3,0,468,21]
+"de/dbd/classExportLayoutDialog.html#af6faf332613a178772707ddf9d76ca8d":[3,0,268,10]
 };

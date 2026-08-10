@@ -1,5 +1,9 @@
 var NAVTREEINDEX226 =
 {
+"dc/d41/macx_2include_2xercesc_2dom_2DOMXPathNamespace_8hpp.html":[4,0,0,1,15,0,0,0,0,51],
+"dc/d41/macx_2include_2xercesc_2dom_2DOMXPathNamespace_8hpp_source.html":[4,0,0,1,15,0,0,0,0,51],
+"dc/d42/classRefHash3KeysIdPool.html":[3,0,437],
+"dc/d42/classRefHash3KeysIdPool.html#a1943ae3aff9880a9aa61e1cffd9602b8":[3,0,437,35],
 "dc/d42/classRefHash3KeysIdPool.html#a1943ae3aff9880a9aa61e1cffd9602b8":[3,0,437,32],
 "dc/d42/classRefHash3KeysIdPool.html#a1943ae3aff9880a9aa61e1cffd9602b8":[3,0,437,33],
 "dc/d42/classRefHash3KeysIdPool.html#a1943ae3aff9880a9aa61e1cffd9602b8":[3,0,437,34],
@@ -245,9 +249,5 @@ var NAVTREEINDEX226 =
 "dc/d59/classVAbstractMainWindow.html":[3,0,558],
 "dc/d59/classVAbstractMainWindow.html#a05b5c4707a62ed5df183415fc44d3d86":[3,0,558,4],
 "dc/d59/classVAbstractMainWindow.html#a2f212e09c4af91ab6e34a5380e935dca":[3,0,558,7],
-"dc/d59/classVAbstractMainWindow.html#a3bdd5329bd2ebe9716311d6b45e25d0e":[3,0,558,10],
-"dc/d59/classVAbstractMainWindow.html#a3d5d5e3cf10fa4fcbc9b0009c622bf3e":[3,0,558,9],
-"dc/d59/classVAbstractMainWindow.html#a48cec0e82be5e94769329e8096ee1dc0":[3,0,558,6],
-"dc/d59/classVAbstractMainWindow.html#a4d0d915a24348d3b182f69e3445d73d0":[3,0,558,11],
-"dc/d59/classVAbstractMainWindow.html#a5dd60672089cf580b4a244516a1eeaab":[3,0,558,8]
+"dc/d59/classVAbstractMainWindow.html#a3bdd5329bd2ebe9716311d6b45e25d0e":[3,0,558,10]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX317 =
 {
+"df/dbb/msvc_2include_2xercesc_2util_2RefStackOf_8hpp.html":[4,0,0,1,15,2,0,0,6,59],
+"df/dbb/msvc_2include_2xercesc_2util_2RefStackOf_8hpp_source.html":[4,0,0,1,15,2,0,0,6,59],
+"df/dbc/msvc-arm64_2include_2xercesc_2validators_2DTD_2DTDElementDecl_8hpp.html":[4,0,0,1,15,3,0,0,7,2,3],
+"df/dbc/msvc-arm64_2include_2xercesc_2validators_2DTD_2DTDElementDecl_8hpp_source.html":[4,0,0,1,15,3,0,0,7,2,3],
 "df/dbd/macx_2include_2xercesc_2dom_2DOMDocument_8hpp.html":[4,0,0,1,15,0,0,0,0,7],
 "df/dbd/macx_2include_2xercesc_2dom_2DOMDocument_8hpp_source.html":[4,0,0,1,15,0,0,0,0,7],
 "df/dbf/qmuparsertest_8cpp.html":[4,0,0,1,2,16],
@@ -245,9 +249,5 @@ var NAVTREEINDEX317 =
 "df/de0/classSeamlyMePreferencesConfigurationPage.html#acd39090344114641d3c934acf81f5027":[3,0,473,1],
 "df/de1/classVPiecePath.html":[3,0,711],
 "df/de1/classVPiecePath.html#a0bd0a63055a98bfe0801176e75efcca0":[3,0,711,45],
-"df/de1/classVPiecePath.html#a10d1b914fabbc61adf8a8eac47433e29":[3,0,711,48],
-"df/de1/classVPiecePath.html#a15bbdfc456e74c2708ffbccc317aced2":[3,0,711,18],
-"df/de1/classVPiecePath.html#a1aa476454e756181d647fc6dc2a72cdc":[3,0,711,12],
-"df/de1/classVPiecePath.html#a1d9ded741d10835505547f2eda55de3e":[3,0,711,44],
-"df/de1/classVPiecePath.html#a1fee36c6b3cacef7e1acd292270d8b57":[3,0,711,7]
+"df/de1/classVPiecePath.html#a10d1b914fabbc61adf8a8eac47433e29":[3,0,711,48]
 };

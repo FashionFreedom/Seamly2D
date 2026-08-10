@@ -1,5 +1,9 @@
 var NAVTREEINDEX195 =
 {
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,2,13],
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,2,26],
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,0,13],
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,0,26],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,1,13],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,1,26],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,0,39],
@@ -245,9 +249,5 @@ var NAVTREEINDEX195 =
 "da/d64/msvc_2include_2xercesc_2framework_2psvi_2XSComplexTypeDefinition_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,9],
 "da/d66/macx_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp.html":[4,0,0,1,15,0,0,0,7,0,12],
 "da/d66/macx_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp_source.html":[4,0,0,1,15,0,0,0,7,0,12],
-"da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp.html":[4,0,0,1,15,2,0,0,6,63],
-"da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp_source.html":[4,0,0,1,15,2,0,0,6,63],
-"da/d67/classDOMLSException.html":[3,0,185],
-"da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,14],
-"da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,18]
+"da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp.html":[4,0,0,1,15,2,0,0,6,63]
 };

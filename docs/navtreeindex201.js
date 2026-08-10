@@ -1,5 +1,9 @@
 var NAVTREEINDEX201 =
 {
+"da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,269],
+"da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,268],
+"da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,271],
+"da/da7/classSAXParser.html#a85ab9011a4fc5fa2dd1fe249a84fde7a":[3,0,464,69],
 "da/da7/classSAXParser.html#a85ab9011a4fc5fa2dd1fe249a84fde7a":[3,0,464,68],
 "da/da7/classSAXParser.html#a85ab9011a4fc5fa2dd1fe249a84fde7a":[3,0,464,71],
 "da/da7/classSAXParser.html#a85ab9011a4fc5fa2dd1fe249a84fde7a":[3,0,464,70],
@@ -245,9 +249,5 @@ var NAVTREEINDEX201 =
 "da/da8/classDialogNewPattern.html#abcaccaf0e55f923f202f6255479a4502":[3,0,119,7],
 "da/dab/vabstractbezier_8cpp.html":[4,0,0,1,6,5],
 "da/dab/vabstractbezier_8cpp_source.html":[4,0,0,1,6,5],
-"da/dac/classVSAPoint.html":[3,0,717],
-"da/dac/classVSAPoint.html#a08638fcac5539a48e2690babeebde960":[3,0,717,11],
-"da/dac/classVSAPoint.html#a0b5b16912dec08c13cc5f0621a77b25a":[3,0,717,3],
-"da/dac/classVSAPoint.html#a1f5a23bcc673ece40d70de0578449b27":[3,0,717,12],
-"da/dac/classVSAPoint.html#a2fd9470c46f6d653b411b864997fa56b":[3,0,717,2]
+"da/dac/classVSAPoint.html":[3,0,717]
 };

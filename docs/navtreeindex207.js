@@ -1,5 +1,9 @@
 var NAVTREEINDEX207 =
 {
+"db/d0a/classVSplinePointData.html#afa27d674c0514ddc94adf0bd538645ee":[3,0,730,1],
+"db/d0a/vabstractcubicbezierpath_8cpp.html":[4,0,0,1,6,9],
+"db/d0a/vabstractcubicbezierpath_8cpp_source.html":[4,0,0,1,6,9],
+"db/d0b/macx_2include_2xercesc_2internal_2XMLInternalErrorHandler_8hpp.html":[4,0,0,1,15,0,0,0,2,15],
 "db/d0b/macx_2include_2xercesc_2internal_2XMLInternalErrorHandler_8hpp_source.html":[4,0,0,1,15,0,0,0,2,15],
 "db/d0b/msvc_2include_2xercesc_2dom_2DOMElement_8hpp.html":[4,0,0,1,15,2,0,0,0,12],
 "db/d0b/msvc_2include_2xercesc_2dom_2DOMElement_8hpp_source.html":[4,0,0,1,15,2,0,0,0,12],
@@ -245,9 +249,5 @@ var NAVTREEINDEX207 =
 "db/d16/dialogshoulderpoint_8h_source.html":[4,0,0,1,13,0,1,58],
 "db/d17/libs_2vmisc_2stable_8h.html":[4,0,0,1,8,14],
 "db/d17/libs_2vmisc_2stable_8h_source.html":[4,0,0,1,8,14],
-"db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp.html":[4,0,0,1,15,3,0,0,6,104],
-"db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,104],
-"db/d1a/classCharOp.html":[3,0,52],
-"db/d1a/classCharOp.html#a0365a87e81c656ef8d1651b7774b5396":[3,0,52,2],
-"db/d1a/classCharOp.html#a0365a87e81c656ef8d1651b7774b5396":[3,0,52,5]
+"db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp.html":[4,0,0,1,15,3,0,0,6,104]
 };

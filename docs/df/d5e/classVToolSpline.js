@@ -4,7 +4,7 @@ var classVToolSpline =
     [ "VToolSpline", "df/d5e/classVToolSpline.html#af14eb1510db63f14a29b6746ecd64dc4", null ],
     [ "controlPointPositionChanged", "df/d5e/classVToolSpline.html#a3a9dabbc88488948e7ecc02266bc3812", null ],
     [ "Create", "df/d5e/classVToolSpline.html#a1cb98261b49acfbe60b18bb596c9b83f", null ],
-    [ "Create", "df/d5e/classVToolSpline.html#adc6aa7a4c308c0c3b2192e4fe7b7a674", null ],
+    [ "Create", "df/d5e/classVToolSpline.html#a9d94615b6d80641d5a5b745972b31ccc", null ],
     [ "Create", "df/d5e/classVToolSpline.html#a44626c72ddc0c28e90d93bceb31f57aa", null ],
     [ "EnableToolMove", "df/d5e/classVToolSpline.html#a23621f4a24f8830a64af48aaf85b9952", null ],
     [ "GetAutoSmooth", "df/d5e/classVToolSpline.html#ad4d16f2909c14dba06b132c299b2ba08", null ],
