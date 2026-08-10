@@ -55,6 +55,7 @@
 #include "../vtest/abstracttest.h"
 
 class VSpline;
+class QPointF;
 
 class TST_VSpline : public AbstractTest
 {
@@ -76,10 +77,15 @@ private slots:
     void TestLengthByPoint();
     void TestFlip_data();
     void TestFlip();
+    void TestAutoSmoothLengthSolver_data();
+    void TestAutoSmoothLengthSolver();
+    void TestHobbySymmetry();
 
 private:
     Q_DISABLE_COPY(TST_VSpline)
     void CompareSplines(const VSpline &spl1, const VSpline &spl2) const;
+    static qreal HobbyCurveLength(const QPointF &p1, const QPointF &p4, qreal angle1Deg, qreal angle2Deg,
+                                  qreal tensionStart, qreal tensionEnd);
 };
 
 #endif // TST_VSPLINE_H

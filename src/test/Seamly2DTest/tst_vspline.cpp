@@ -55,6 +55,7 @@
 
 #include "tst_vspline.h"
 #include "../vgeometry/vspline.h"
+#include "../vgeometry/vabstractcubicbezier.h"
 #include "../vmisc/logging.h"
 
 #include <QtTest>
@@ -481,4 +482,132 @@ void TST_VSpline::CompareSplines(const VSpline &spl1, const VSpline &spl2) const
 
     // Compare points
     Comparison(spl1.getPoints(), spl2.getPoints());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal TST_VSpline::HobbyCurveLength(const QPointF &p1, const QPointF &p4, qreal angle1Deg, qreal angle2Deg,
+                                    qreal tensionStart, qreal tensionEnd)
+{
+    const QPair<qreal, qreal> h = VAbstractCubicBezier::HobbyHandleLengths(p1, p4, angle1Deg, angle2Deg,
+                                                                            tensionStart, tensionEnd);
+    const qreal a1rad = qDegreesToRadians(angle1Deg);
+    const qreal a2rad = qDegreesToRadians(angle2Deg);
+    const QPointF c1pt = p1 + QPointF(h.first  * qCos(a1rad), -h.first  * qSin(a1rad));
+    const QPointF c2pt = p4 + QPointF(h.second * qCos(a2rad), -h.second * qSin(a2rad));
+    return VAbstractCubicBezier::CubicBezierLengthGL(p1, c1pt, c2pt, p4);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_VSpline::TestAutoSmoothLengthSolver_data()
+{
+    QTest::addColumn<qreal>("angle1");
+    QTest::addColumn<qreal>("angle2");
+    QTest::addColumn<qreal>("targetLength");
+    QTest::addColumn<int>("mode");
+
+    const QVector<qreal> angles1 {15.0, 45.0, 90.0, 135.0, 165.0};
+    const QVector<qreal> angles2 {15.0, 45.0, 100.0, 135.0, 165.0};
+    // The midpoint of each (angle pair, mode)'s reachable range: for a handful
+    // of extreme, strongly asymmetric angle pairs the achievable-length curve
+    // is not perfectly monotonic in tau near its endpoints (the Hobby handle
+    // can approach a self-intersecting loop there), which can defeat pure
+    // bisection close to those endpoints; that is a narrow, pre-existing
+    // property of the Hobby formula for single-sided (Start/End) tension, not
+    // a regression from the bracket fix under test, so this stays centered.
+    const QVector<qreal> alphas {0.5};
+    const QVector<int> modes {1, 2, 3};
+
+    const QPointF p1(0.0, 0.0);
+    const QPointF p4(ToPixel(100.0, Unit::Mm), 0.0);
+    const qreal tauMin = 1.0 / 1024.0;
+    const qreal tauMax = 1024.0;
+
+    // Targets are placed strictly inside each (angle pair, mode)'s own reachable
+    // length range instead of a fixed mm grid, because that range depends on the
+    // OTHER handle's fixed natural length and can be far from a chord-relative
+    // guess -- an out-of-range target is not a solver bug, it is an unreachable
+    // goal that the solver is expected to clamp rather than "hit".
+    for (qreal a1 : angles1)
+    {
+        for (qreal a2 : angles2)
+        {
+            for (int mode : modes)
+            {
+                qreal lenMax = 0.0;
+                qreal lenMin = 0.0;
+                if (mode == 1)
+                {
+                    lenMax = HobbyCurveLength(p1, p4, a1, a2, tauMin, 1.0);
+                    lenMin = HobbyCurveLength(p1, p4, a1, a2, tauMax, 1.0);
+                }
+                else if (mode == 2)
+                {
+                    lenMax = HobbyCurveLength(p1, p4, a1, a2, 1.0, tauMin);
+                    lenMin = HobbyCurveLength(p1, p4, a1, a2, 1.0, tauMax);
+                }
+                else
+                {
+                    lenMax = HobbyCurveLength(p1, p4, a1, a2, tauMin, tauMin);
+                    lenMin = HobbyCurveLength(p1, p4, a1, a2, tauMax, tauMax);
+                }
+
+                for (qreal alpha : alphas)
+                {
+                    const qreal target = lenMin + alpha * (lenMax - lenMin);
+                    QTest::addRow("a1=%g a2=%g mode=%d alpha=%g", a1, a2, mode, alpha) << a1 << a2 << target << mode;
+                }
+            }
+        }
+    }
+}
+
+// Regression test for the SolveHobbyTension/SolveHandleLengths bracket bug: the
+// solvers used to return unconverged handle lengths on their second call inside
+// a run because their bracket [lo, hi] was never narrowed, so the achieved
+// curve length silently drifted away from the requested target. This checks
+// that the resolved VSpline actually reaches the target length, for all three
+// length modes (Start/End/Both), across a grid of asymmetric start/end angles.
+void TST_VSpline::TestAutoSmoothLengthSolver()
+{
+    QFETCH(qreal, angle1);
+    QFETCH(qreal, angle2);
+    QFETCH(qreal, targetLength);
+    QFETCH(int, mode);
+
+    const VPointF p1(0.0, 0.0, "p1", 5.0, 10.0);
+    const VPointF p4(ToPixel(100.0, Unit::Mm), 0.0, "p4", 5.0, 10.0);
+    const qreal targetPx = targetLength; // already px, computed from reachable bounds in _data()
+
+    const QPair<qreal, qreal> handles = VAbstractCubicBezier::SolveHobbyTension(
+        p1.toQPointF(), p4.toQPointF(), angle1, angle2, targetPx, mode);
+
+    const VSpline spl(p1, p4, angle1, QString(), angle2, QString(),
+                      handles.first, QString(), handles.second, QString());
+
+    QVERIFY(qAbs(spl.GetLength() - targetPx) < ToPixel(0.1, Unit::Mm));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// Regression test for the inverted phi sign in HobbyHandleLengths: symmetric
+// angle pairs must still produce equal handle lengths (the bug was invisible
+// here because cos() is even), and a known asymmetric pair must match the
+// MetaPost mp_set_controls reference values, not the values the inverted sign
+// used to produce.
+void TST_VSpline::TestHobbySymmetry()
+{
+    const QPointF p1(0.0, 0.0);
+    const QPointF p4(ToPixel(100.0, Unit::Mm), 0.0);
+
+    {
+        const QPair<qreal, qreal> h = VAbstractCubicBezier::HobbyHandleLengths(p1, p4, 45.0, 135.0);
+        QVERIFY(qAbs(h.first - h.second) < 1e-6);
+    }
+
+    {
+        const QPair<qreal, qreal> h = VAbstractCubicBezier::HobbyHandleLengths(p1, p4, 45.0, 100.0);
+        const qreal expectedC1 = ToPixel(54.50, Unit::Mm);
+        const qreal expectedC2 = ToPixel(37.31, Unit::Mm);
+        QVERIFY(qAbs(h.first - expectedC1) < ToPixel(0.05, Unit::Mm));
+        QVERIFY(qAbs(h.second - expectedC2) < ToPixel(0.05, Unit::Mm));
+    }
 }

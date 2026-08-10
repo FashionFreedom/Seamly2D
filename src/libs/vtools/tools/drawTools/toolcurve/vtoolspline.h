@@ -78,7 +78,8 @@ public:
     static VToolSpline *Create(const quint32 _id, VSpline *spline,
                                VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                const Document &parse, const Source &typeCreation,
-                               bool autoSmooth = false);
+                               bool autoSmooth = false, int lengthMode = 0,
+                               const QString &targetLength = QString());
     static VToolSpline *Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2, QString &l1,
                                QString &l2, quint32 duplicate, const QString &color, const QString &penStyle,
                                const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc,
