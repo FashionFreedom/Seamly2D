@@ -387,11 +387,8 @@ void PreferencesGraphicsViewPage::setFontComboBox(QFontComboBox *combo, const QF
     try
     {
 #if defined(Q_OS_MAC)
-        QTimer::singleShot(100, [this, combo = QPointer<QFontComboBox>(combo), font]()
+        QTimer::singleShot(100, combo, [combo, font]()
         {
-            if (!combo)
-                return;
-
             try
             {
                 combo->setCurrentFont(font);
@@ -399,11 +396,13 @@ void PreferencesGraphicsViewPage::setFontComboBox(QFontComboBox *combo, const QF
             catch (const std::exception &e)
             {
                 qCWarning(vGraphicsViewConfig) << "Exception setting font on macOS:" << e.what();
+                combo->setCurrentText(font.family());
                 combo->setFont(font);
             }
             catch (...)
             {
                 qCWarning(vGraphicsViewConfig) << "Unknown exception setting font on macOS";
+                combo->setCurrentText(font.family());
                 combo->setFont(font);
             }
         });
