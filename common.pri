@@ -24,7 +24,15 @@ unix{
 }
 
 macx{
-    QMAKE_APPLE_DEVICE_ARCHS = x86_64 arm64
+    # Detect available Qt architectures and build for matching native architectures.
+    # This allows users with either x86_64 or arm64 Qt installations to build successfully.
+    # 
+    # Requirements: Xcode Command Line Tools (which includes the 'lipo' utility)
+    # lipo is part of standard Xcode/CLT installation and detects binary architectures.
+    # Falls back to arm64 if detection fails to prevent build interruption.
+    QT_ARCHS = $$system(lipo -archs $$[QT_INSTALL_LIBS]/QtCore.framework/QtCore 2>/dev/null || echo "arm64")
+    QMAKE_APPLE_DEVICE_ARCHS = $$QT_ARCHS
+    message("Building for Qt architectures: $$QMAKE_APPLE_DEVICE_ARCHS")
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
