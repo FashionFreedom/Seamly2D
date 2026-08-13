@@ -29,11 +29,14 @@
 
 #include <QWidget>
 #include <QComboBox>
+#include <QFont>
 
 namespace Ui
 {
     class PreferencesGraphicsViewPage ;
 }
+
+class QFontComboBox;
 
 class PreferencesGraphicsViewPage  : public QWidget
 {
@@ -54,6 +57,7 @@ private:
     Ui::PreferencesGraphicsViewPage  *ui;
 
     void                              setIndex(QComboBox *box, const QString &text);
+    void                              setFontComboBox(QFontComboBox *combo, const QFont &font);
 };
 
 #endif // PREFERENCES_GRAPHICSVIEWPAGE_H

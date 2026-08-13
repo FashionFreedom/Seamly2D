@@ -50,51 +50,6 @@
 Q_LOGGING_CATEGORY(vGraphicsViewConfig, "vgraphicsviewconfig")
 
 //---------------------------------------------------------------------------------------------------------------------
-// Helper function to safely set font in QFontComboBox with error handling for macOS Qt6 crash
-static void SafeSetFontCombo(QFontComboBox *combo, const QFont &font)
-{
-    if (!combo)
-        return;
-
-    try
-    {
-#ifdef Q_OS_MAC
-        QTimer::singleShot(100, [combo, font]()
-        {
-            try
-            {
-                combo->setCurrentFont(font);
-            }
-            catch (const std::exception &e)
-            {
-                qCWarning(vGraphicsViewConfig) << "Exception setting font on macOS:" << e.what();
-                combo->setFont(font);
-            }
-            catch (...)
-            {
-                qCWarning(vGraphicsViewConfig) << "Unknown exception setting font on macOS";
-                combo->setFont(font);
-            }
-        });
-#else
-        combo->setCurrentFont(font);
-#endif
-    }
-    catch (const std::exception &e)
-    {
-        qCWarning(vGraphicsViewConfig) << "Exception in SafeSetFontCombo:" << e.what();
-        if (combo)
-            combo->setFont(font);
-    }
-    catch (...)
-    {
-        qCWarning(vGraphicsViewConfig) << "Unknown exception in SafeSetFontCombo";
-        if (combo)
-            combo->setFont(font);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesGraphicsViewPage)
@@ -202,7 +157,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Pattern piece labels font
     QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
     labelFont.setPointSize(12);
-    SafeSetFontCombo(ui->labelFont_ComboBox, labelFont);
+    setFontComboBox(ui->labelFont_ComboBox, labelFont);
     ui->label_Label->setFont(labelFont);
 
     connect(ui->labelFont_ComboBox,
@@ -215,7 +170,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Point name font
     QFont nameFont = qApp->Seamly2DSettings()->getPointNameFont();
-    SafeSetFontCombo(ui->pointNameFont_ComboBox, nameFont);
+    setFontComboBox(ui->pointNameFont_ComboBox, nameFont);
 
     int index = ui->pointNameFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getPointNameSize()));
     if (index != -1)
@@ -243,7 +198,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // GUI font
     QFont guiFont = qApp->Seamly2DSettings()->getGuiFont();
-    SafeSetFontCombo(ui->guiFont_ComboBox, guiFont);
+    setFontComboBox(ui->guiFont_ComboBox, guiFont);
 
     index = ui->guiFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getGuiFontSize()));
     if (index != -1)
@@ -410,5 +365,62 @@ void PreferencesGraphicsViewPage::setIndex(QComboBox *box, const QString &text)
     else
     {
         box->setCurrentIndex(box->findText(text));
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setFontComboBox() safely set the selected font in a QFontComboBox.
+///
+/// @Details
+///  - On macOS, font enumeration in QFontComboBox can cause exceptions during initialization.
+///  - This method defers initialization by 100ms to avoid crashes during dialog setup.
+///  - Includes exception handling with fallback to setFont() if setCurrentFont() fails.
+///  - Logs warnings when exceptions occur for debugging purposes.
+///
+/// @param[in] combo The QFontComboBox to configure.
+/// @param[in] font The font to set as current.
+void PreferencesGraphicsViewPage::setFontComboBox(QFontComboBox *combo, const QFont &font)
+{
+    if (!combo)
+        return;
+
+    try
+    {
+#if defined(Q_OS_MAC)
+        QTimer::singleShot(100, [this, combo = QPointer<QFontComboBox>(combo), font]()
+        {
+            if (!combo)
+                return;
+
+            try
+            {
+                combo->setCurrentFont(font);
+            }
+            catch (const std::exception &e)
+            {
+                qCWarning(vGraphicsViewConfig) << "Exception setting font on macOS:" << e.what();
+                combo->setFont(font);
+            }
+            catch (...)
+            {
+                qCWarning(vGraphicsViewConfig) << "Unknown exception setting font on macOS";
+                combo->setFont(font);
+            }
+        });
+#else
+        combo->setCurrentFont(font);
+#endif
+    }
+    catch (const std::exception &e)
+    {
+        qCWarning(vGraphicsViewConfig) << "Exception in setFontComboBox:" << e.what();
+        if (combo)
+            combo->setFont(font);
+    }
+    catch (...)
+    {
+        qCWarning(vGraphicsViewConfig) << "Unknown exception in setFontComboBox";
+        if (combo)
+            combo->setFont(font);
     }
 }
