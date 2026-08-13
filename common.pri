@@ -30,7 +30,7 @@ macx{
     # Requirements: Xcode Command Line Tools (which includes the 'lipo' utility)
     # lipo is part of standard Xcode/CLT installation and detects binary architectures.
     # Falls back to arm64 if detection fails to prevent build interruption.
-    QT_ARCHS = $$system(lipo -archs $$[QT_INSTALL_LIBS]/QtCore.framework/QtCore 2>/dev/null || echo "arm64")
+    QT_ARCHS = $$system(lipo -archs $$shell_quote($$[QT_INSTALL_LIBS]/QtCore.framework/QtCore) 2>/dev/null || uname -m)
     QMAKE_APPLE_DEVICE_ARCHS = $$QT_ARCHS
     message("Building for Qt architectures: $$QMAKE_APPLE_DEVICE_ARCHS")
 }
