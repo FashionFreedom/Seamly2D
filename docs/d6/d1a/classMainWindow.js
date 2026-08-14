@@ -161,7 +161,7 @@ var classMainWindow =
     [ "MouseMove", "d6/d1a/classMainWindow.html#a6e267d690ca87f34e757ae1e1f3cafd2", null ],
     [ "New", "d6/d1a/classMainWindow.html#a4be50dd9285a277a49e92325112e39b7", null ],
     [ "Open", "d6/d1a/classMainWindow.html#a6e5a4e6a7aa3263b6cf734c01ade5e10", null ],
-    [ "openMeasurementFile", "d6/d1a/classMainWindow.html#ae37d49c2b2b3c07cead2d2cbcc7ce748", null ],
+    [ "openMeasurementFile", "d6/d1a/classMainWindow.html#aad2104d216ba8f48f0278e5c31b95e10", null ],
     [ "patternChangesWereSaved", "d6/d1a/classMainWindow.html#afa949935f3e3b3defce7dd2ab4c85894", null ],
     [ "PatternPieceName", "d6/d1a/classMainWindow.html#a8c2590b74d13f0784471ff31b629a1ac", null ],
     [ "penChanged", "d6/d1a/classMainWindow.html#a4975ee645ef62d0d6e7fd89ee46ec810", null ],
