@@ -176,8 +176,11 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     spline->SetPenStyle(dialogTool->getPenStyle());
     spline->setLineWeight(dialogTool->getLineWeight());
     const bool autoSmooth = dialogTool->GetAutoSmooth();
+    const int lengthMode = dialogTool->GetLengthMode();
+    const QString targetLength = dialogTool->GetTargetLength();
 
-    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui, autoSmooth);
+    auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui, autoSmooth,
+                      lengthMode, targetLength);
 
     if (spl != nullptr)
     {
@@ -197,7 +200,7 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 // @return the created tool
 VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data, const Document &parse, const Source &typeCreation,
-                                 bool autoSmooth)
+                                 bool autoSmooth, int lengthMode, const QString &targetLength)
 {
     quint32 id = _id;
 
@@ -219,7 +222,7 @@ VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphi
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::Spline, doc);
-        auto _spl = new VToolSpline(doc, data, id, autoSmooth, 0, QString(), typeCreation);
+        auto _spl = new VToolSpline(doc, data, id, autoSmooth, lengthMode, targetLength, typeCreation);
         scene->addItem(_spl);
         initSplineToolConnections(scene, _spl);
         VAbstractPattern::AddTool(id, _spl);
@@ -299,7 +302,8 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     spline->SetPenStyle(penStyle);
     spline->setLineWeight(lineWeight);
 
-    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation, autoSmooth);
+    return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation, autoSmooth,
+                               lengthMode, targetLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
