@@ -96,6 +96,7 @@
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vwidgetpopup.h"
 
+#include <QAbstractItemModel>
 #include <QInputDialog>
 #include <QtDebug>
 #include <QMessageBox>
@@ -113,7 +114,6 @@
 #include <QAction>
 #include <QComboBox>
 #include <QDateTime>
-#include <QFontComboBox>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
 #include <QFileSystemWatcher>
@@ -2415,6 +2415,51 @@ void MainWindow::initializeModesToolBar()
     ui->mode_ToolBar->insertWidget(ui->layoutMode_Action, rightGoToStage);
 }
 
+#ifdef Q_OS_MAC
+#include <CoreText/CoreText.h>
+
+// Helper to inspect raw binary font tables on macOS
+bool MainWindow::hasEmbeddedBitmapTables(const QString &familyName)
+{
+    bool hasBitmaps = false;
+    CFStringRef cfFamilyName = familyName.toCFString();
+
+    CFStringRef keys[] = { kCTFontFamilyNameAttribute };
+    CFTypeRef values[] = { cfFamilyName };
+    CFDictionaryRef attributes = CFDictionaryCreate(kCTFontAllocatorDefault, (const void**)keys, (const void**)values, 1, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+    CTFontDescriptorRef descriptor = CTFontDescriptorCreateWithAttributes(attributes);
+    CFRelease(attributes);
+    CFRelease(cfFamilyName);
+
+    if (descriptor)
+    {
+        CTFontRef font = CTFontCreateWithFontDescriptor(descriptor, 12.0, nullptr);
+        if (font)
+        {
+            CFArrayRef tags = CTFontCopyAvailableTables(font, kCTFontTableOptionNoOptions);
+            if (tags)
+            {
+                CFIndex count = CFArrayGetCount(tags);
+                for (CFIndex i = 0; i < count; ++i)
+                {
+                    CTFontTableTag tag = (CTFontTableTag)(uintptr_t)CFArrayGetValueAtIndex(tags, i);
+
+                    // Blocks 'sbix'/'CBDT' (Color) and 'EBLC'/'EBDT' (Monochrome/GB18030)
+                    if (tag == 'sbix' || tag == 'CBDT' || tag == 'EBLC' || tag == 'EBDT')
+                    {
+                        hasBitmaps = true;
+                        break;
+                    }
+                }
+                CFRelease(tags);
+            }
+            CFRelease(font);
+        }
+        CFRelease(descriptor);
+    }
+    return hasBitmaps;
+}
+#endif
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -2424,6 +2469,25 @@ void MainWindow::initializePointNameToolBar()
 {
     fontComboBox = new QFontComboBox ;
     fontComboBox->setFontFilters(QFontComboBox::ScalableFonts);
+
+// Filter out bitmap fonts contaained in a tff wrapper.
+#ifdef Q_OS_MAC
+    QAbstractItemModel *fontModel = fontCombo->model();
+    if (fontModel)
+    {
+        // Loop backwards to safely remove rows from the internal model
+        for (int i = fontModel->rowCount() - 1; i >= 0; --i)
+        {
+            QString familyName = fontModel->data(fontModel->index(i, 0)).toString();
+
+            if (hasEmbeddedBitmapTables(familyName))
+            {
+                fontModel->removeRow(i);
+            }
+        }
+    }
+#endif
+
     fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
     fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
