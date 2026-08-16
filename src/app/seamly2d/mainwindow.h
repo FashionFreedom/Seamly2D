@@ -346,6 +346,11 @@ private:
     void                              initializeStatusToolBar();
     void                              initializeModesToolBar();
     void                              initializeDraftToolBar();
+
+#ifdef Q_OS_MAC
+    bool                              hasEmbeddedBitmapTables(const QString &familyName);
+#endif
+
     void                              initializePointNameToolBar();
     void                              initializeToolsToolBar();
     void                              initializeToolBarVisibility();
