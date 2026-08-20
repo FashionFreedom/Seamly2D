@@ -9400,6 +9400,10 @@ actualización:</translation>
         <source>Auto clear formula</source>
         <translation>Fórmula de borrado automático</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizar cuadros de diálogo nativos</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10171,6 +10175,14 @@ actualización:</translation>
     <message>
         <source>Measurements</source>
         <translation>Medidas</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diálogos</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizar cuadros de diálogo nativos</translation>
     </message>
 </context>
 <context>

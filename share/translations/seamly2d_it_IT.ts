@@ -9350,6 +9350,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Auto clear formula</source>
         <translation>Formula di pulizia automatica</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizza le finestre di dialogo native</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10120,6 +10124,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Measurements</source>
         <translation>Misure</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoghi</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizza le finestre di dialogo native</translation>
     </message>
 </context>
 <context>

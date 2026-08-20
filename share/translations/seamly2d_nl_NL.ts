@@ -9345,6 +9345,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Auto clear formula</source>
         <translation>Formule automatisch wissen</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10115,6 +10119,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Measurements</source>
         <translation>Maten</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogen</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
     </message>
 </context>
 <context>

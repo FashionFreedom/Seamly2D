@@ -9362,6 +9362,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation>自动清除公式</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>使用原生对话框</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10136,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>测量数据</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>对话框</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>使用原生对话框</translation>
     </message>
 </context>
 <context>

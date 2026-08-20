@@ -9364,6 +9364,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation>Φόρμουλα αυτόματης διαγραφής</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Χρήση εγγενών παραθύρων διαλόγου</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10134,6 +10138,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>Μετρήσεις</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Διάλογοι</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Χρήση εγγενών παραθύρων διαλόγου</translation>
     </message>
 </context>
 <context>

@@ -9326,6 +9326,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10095,6 +10099,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

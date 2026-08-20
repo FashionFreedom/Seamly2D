@@ -9364,6 +9364,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Auto clear formula</source>
         <translation>Formula cu auto-claritate</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10134,6 +10138,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Measurements</source>
         <translation>Măsurători</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoguri</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
     </message>
 </context>
 <context>
