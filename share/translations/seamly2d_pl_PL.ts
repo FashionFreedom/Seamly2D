@@ -9362,6 +9362,10 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Auto clear formula</source>
         <translation>Automatyczne czyszczenie formuły</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Korzystaj z natywnych okien dialogowych</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10136,14 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Measurements</source>
         <translation>Pomiary</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Korzystaj z natywnych okien dialogowych</translation>
     </message>
 </context>
 <context>

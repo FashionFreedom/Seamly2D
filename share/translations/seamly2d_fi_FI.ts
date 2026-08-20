@@ -9362,6 +9362,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Auto clear formula</source>
         <translation>Tyhjennä matemaattinenkaava automaattisesti</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Käytä järjestelmän omia valintaikkunoita</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10136,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Measurements</source>
         <translation>Mitat</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Valintaikkunat</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Käytä järjestelmän omia valintaikkunoita</translation>
     </message>
 </context>
 <context>

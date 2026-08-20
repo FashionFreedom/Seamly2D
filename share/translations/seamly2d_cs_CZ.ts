@@ -9360,6 +9360,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Auto clear formula</source>
         <translation>Automatické vymazání vzorce</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Používejte nativní dialogová okna</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10130,6 +10134,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Measurements</source>
         <translation>Míry</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogy</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Používejte nativní dialogová okna</translation>
     </message>
 </context>
 <context>

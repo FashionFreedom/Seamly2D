@@ -9362,6 +9362,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Auto clear formula</source>
         <translation>Otomatik temizleme formülü</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10136,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Measurements</source>
         <translation>Ölçümler</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diyaloglar</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
     </message>
 </context>
 <context>

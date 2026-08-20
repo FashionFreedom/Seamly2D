@@ -9361,6 +9361,10 @@ Menti a módosításokat?</translation>
         <source>Auto clear formula</source>
         <translation>Automatikusan törlődő képlet</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Használjon natív párbeszédablakokat</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10131,6 +10135,14 @@ Menti a módosításokat?</translation>
     <message>
         <source>Measurements</source>
         <translation>Mérések</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Párbeszédablakok</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Használjon natív párbeszédablakokat</translation>
     </message>
 </context>
 <context>

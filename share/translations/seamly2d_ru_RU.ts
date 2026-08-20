@@ -9369,6 +9369,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation>Автоматическое удаление формулы</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Используйте встроенные диалоговые окна</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10139,6 +10143,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>Мерки</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Диалоги</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Используйте встроенные диалоговые окна</translation>
     </message>
 </context>
 <context>

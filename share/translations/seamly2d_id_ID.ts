@@ -9362,6 +9362,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Auto clear formula</source>
         <translation>Rumus pembersihan otomatis</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gunakan kotak dialog bawaan</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10136,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Measurements</source>
         <translation>pengukuran</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation><Gunakan kotak dialog bawaan/translation>
     </message>
 </context>
 <context>

@@ -9363,6 +9363,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation>Автоматичне очищення формули</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Використовуйте вбудовані діалогові вікна</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10133,6 +10137,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>вимірювань</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Διάλογοι</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Використовуйте вбудовані діалогові вікна</translation>
     </message>
 </context>
 <context>

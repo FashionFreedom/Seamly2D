@@ -9388,6 +9388,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Auto clear formula</source>
         <translation>Formule de suppression automatique</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utiliser les boîtes de dialogue natives</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10160,6 +10164,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Measurements</source>
         <translation>Mesures</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogues</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utiliser les boîtes de dialogue natives</translation>
     </message>
 </context>
 <context>
