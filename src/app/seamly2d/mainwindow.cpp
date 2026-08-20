@@ -2070,7 +2070,8 @@ void MainWindow::LoadIndividual()
 
     QDir directory(dir);
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
 
@@ -2110,7 +2111,8 @@ void MainWindow::LoadMultisize()
     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
     dir = VCommonSettings::prepareMultisizeTables(dir);
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (!filename.isEmpty())
@@ -4137,8 +4139,8 @@ bool MainWindow::SaveAs()
 
     fileName = fileDialog(this, tr("Save as"),
                                         dir + QLatin1String("/") + fileName + QLatin1String(".") + sm2dExt,
-                                        filters, nullptr, FILEDIALOG_OPTIONS, QFileDialog::AnyFile,
-                                        QFileDialog::AcceptSave);
+                                        filters, nullptr, qApp->Settings()->getUseNativeFileDialogs(),
+                                        QFileDialog::AnyFile, QFileDialog::AcceptSave);
 
     if (fileName.isEmpty())
     {
@@ -4325,7 +4327,8 @@ void MainWindow::Open()
     }
     qCDebug(vMainWindow, "Run QFileDialog::getOpenFileName: dir = %s.", qUtf8Printable(dir));
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (filename.isEmpty())
@@ -7511,7 +7514,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     //Use standard path to multisize measurements
                     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
                     dir = VCommonSettings::prepareMultisizeTables(dir);
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                 }
@@ -7531,7 +7535,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)
@@ -7560,7 +7565,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)

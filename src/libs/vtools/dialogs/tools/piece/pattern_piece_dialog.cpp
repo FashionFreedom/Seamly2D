@@ -819,7 +819,8 @@ void PatternPieceDialog::pieceNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::pieceColorChanged()
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), COLORDIALOG_OPTIONS);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"),
+                                                qApp->Settings()->getUseNativeColorDialogs());
 
     if (color.isValid())
     {

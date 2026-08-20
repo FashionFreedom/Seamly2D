@@ -56,6 +56,7 @@
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 #include "../vtools/undocommands/togglepieceinlayout.h"
 #include "../vtools/undocommands/toggle_piecelock.h"
@@ -696,7 +697,8 @@ void PiecesWidget::unlockAllPieces()
 
 void PiecesWidget::editPieceColor(quint32 id)
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), COLORDIALOG_OPTIONS);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"),
+                                                qApp->Settings()->getUseNativeColorDialogs());
     if (color.isValid())
     {
         SetPieceColor *command = new SetPieceColor(id, color.name(), m_data, m_doc);

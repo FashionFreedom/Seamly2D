@@ -75,7 +75,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
@@ -415,6 +415,16 @@
          <layout class="QVBoxLayout" name="verticalLayout_25">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_24">
+            <item>
+             <widget class="QCheckBox" name="use_native_checkbox">
+              <property name="text">
+               <string>Use native dialogs</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QCheckBox" name="useSecondMonitor_CheckBox">
               <property name="sizePolicy">
