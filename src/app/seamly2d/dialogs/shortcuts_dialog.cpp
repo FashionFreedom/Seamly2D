@@ -419,7 +419,8 @@ void ShortcutsDialog::sendToPrinter()
 void ShortcutsDialog::exportPdf()
 {
     QString filename = QFileDialog::getSaveFileName(nullptr, tr("Export PDF"), QString(),
-                                                    "*.pdf", nullptr, FILEDIALOG_OPTIONS);
+                                                    "*.pdf", nullptr,
+                                                    qApp->Seamly2DSettings()->getUseNativeFileDialogs());
 
     if (QFileInfo(filename).suffix().isEmpty())
     {

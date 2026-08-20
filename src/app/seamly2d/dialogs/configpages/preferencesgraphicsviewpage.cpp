@@ -66,6 +66,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->detailsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowDetailsToolBar());
     ui->layoutToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowLayoutToolBar());
 
+    ui->use_native_checkbox->setChecked(qApp->Seamly2DSettings()->useNativeDialogs());
     ui->useSecondMonitor_CheckBox->setChecked(qApp->Seamly2DSettings()->useSecondMonitor());
 
     int id = qApp->Seamly2DSettings()->getDialogPosition();
@@ -276,6 +277,7 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setShowDetailsToolBar(ui->detailsToolbar_CheckBox->isChecked());
     settings->setShowLayoutToolBar(ui->layoutToolbar_CheckBox->isChecked());
 
+    settings->setUseNativeDialogs(ui->use_native_checkbox->isChecked());
     settings->setUseSecondMonitor(ui->useSecondMonitor_CheckBox->isChecked());
     settings->setDialogPosition(ui->position_ButtonGroup->checkedId());
     settings->setXOffset(ui->xOffset_SpinBox->value());

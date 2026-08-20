@@ -55,6 +55,8 @@
 #include <QApplication>
 #include <QDate>
 #include <QDir>
+#include <QColorDialog>
+#include <QFileDialog>
 #include <QFont>
 #include <QtGlobal>
 #include <QLocale>
@@ -128,6 +130,7 @@ const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graph
 const QString settingGraphicsAutoClearFx                 = QStringLiteral("graphicsview/autoClearFx");
 
 const QString settingGraphicsViewDialogPosition          = QStringLiteral("graphicsview/dialogPosition");
+const QString settingGraphicsUseNativeDialogs            = QStringLiteral("graphicsview/useNativeDialogs");
 const QString settingGraphicsUseSecondMonitor            = QStringLiteral("graphicsview/useSecondMonitor");
 const QString settingGraphicsViewXOffset                 = QStringLiteral("graphicsview/xOffset");
 const QString settingGraphicsViewYOffset                 = QStringLiteral("graphicsview/yOffset");
@@ -961,6 +964,40 @@ bool VCommonSettings::getShowLayoutToolBar() const
 void VCommonSettings::setShowLayoutToolBar(const bool &value)
 {
     setValue(settingGraphicsViewShowLayoutToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useNativeDialogs() const
+{
+    return value(settingGraphicsUseNativeDialogs, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseNativeDialogs(const bool &value)
+{
+    setValue(settingGraphicsUseNativeDialogs, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFileDialog::Options VCommonSettings::getUseNativeFileDialogs() const
+{
+    QFileDialog::Options options = QFileDialog::Options();
+    if (!value(settingGraphicsUseNativeDialogs, true).toBool())
+    {
+        options = QFileDialog::DontUseNativeDialog;
+    }
+    return options;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QColorDialog::ColorDialogOptions VCommonSettings::getUseNativeColorDialogs() const
+{
+    QColorDialog::ColorDialogOptions options = QColorDialog::ColorDialogOptions();
+    if (!value(settingGraphicsUseNativeDialogs, true).toBool())
+    {
+        options = QColorDialog::DontUseNativeDialog;
+    }
+    return options;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
