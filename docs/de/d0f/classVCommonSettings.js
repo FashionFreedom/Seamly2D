@@ -133,6 +133,8 @@ var classVCommonSettings =
     [ "getToolBarStyle", "de/d0f/classVCommonSettings.html#a970e00ac32bde12c9493e227d901ead1", null ],
     [ "GetUndoCount", "de/d0f/classVCommonSettings.html#aafd9b5f6ad126ed1cd71ee6728968776", null ],
     [ "getUnit", "de/d0f/classVCommonSettings.html#a35dc0f5062e5ab57489ba6b1a6b6f4d2", null ],
+    [ "getUseNativeColorDialogs", "de/d0f/classVCommonSettings.html#a9a46e68d211074d7ffb446e64fc2237e", null ],
+    [ "getUseNativeFileDialogs", "de/d0f/classVCommonSettings.html#a1092bf71633232ee7b763d4fc8795034", null ],
     [ "GetUserDefinedDateFormats", "de/d0f/classVCommonSettings.html#af142efc95380d4542ae350b9146dd8d7", null ],
     [ "GetUserDefinedTimeFormats", "de/d0f/classVCommonSettings.html#a7429fa53ae91ccc37ec016ff0709618c", null ],
     [ "getUseToolColor", "de/d0f/classVCommonSettings.html#a3b45f4343f55e9ebd4c2d9ebef0e59ec", null ],
@@ -287,6 +289,7 @@ var classVCommonSettings =
     [ "setUseCurrentPen", "de/d0f/classVCommonSettings.html#a058dcc1a6cb1bdf822fdce815569791e", null ],
     [ "setUseLastExportFormat", "de/d0f/classVCommonSettings.html#a33b1731409f36c12883b5d29464048ec", null ],
     [ "setUseModeType", "de/d0f/classVCommonSettings.html#ad894935ca0ce6f9217de78a2b4945f1e", null ],
+    [ "setUseNativeDialogs", "de/d0f/classVCommonSettings.html#a85efca68d5afafd7d826c9d683edcc71", null ],
     [ "SetUserDefinedDateFormats", "de/d0f/classVCommonSettings.html#a86f4deda19434852bded81a9573667a3", null ],
     [ "SetUserDefinedTimeFormats", "de/d0f/classVCommonSettings.html#af9d76a6ccb3967962443ce3f3ebd5bc4", null ],
     [ "setUseSecondMonitor", "de/d0f/classVCommonSettings.html#ac17b2c7332394a5fc5af41b5e35e664d", null ],
@@ -316,6 +319,7 @@ var classVCommonSettings =
     [ "useCurrentPen", "de/d0f/classVCommonSettings.html#ab6b99bd0b2bf218afadcc1e70a5f23a2", null ],
     [ "useLastExportFormat", "de/d0f/classVCommonSettings.html#a33582d4f160f3ba0c669932d425107d0", null ],
     [ "useModeType", "de/d0f/classVCommonSettings.html#a88b31bf6c37bde8820a80b3ac28b4a5e", null ],
+    [ "useNativeDialogs", "de/d0f/classVCommonSettings.html#a6714ec7d093e6f6cc96b54e005b5e515", null ],
     [ "useSecondMonitor", "de/d0f/classVCommonSettings.html#a8847e56221cc4dc6eadbce1920d10eec", null ],
     [ "unixStandardSharePath", "de/d0f/classVCommonSettings.html#a8255af76f09b99f162be4cef80c2755d", null ]
 ];

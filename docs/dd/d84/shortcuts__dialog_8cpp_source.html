@@ -522,22 +522,23 @@ $(document).ready(function(){initNavTree('dd/d84/shortcuts__dialog_8cpp_source.h
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno"><a class="line" href="../../de/d8e/classShortcutsDialog.html#ac9a114dea0e2cdb1a1bd1c22d37cae11">  419</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../de/d8e/classShortcutsDialog.html#ac9a114dea0e2cdb1a1bd1c22d37cae11">ShortcutsDialog::exportPdf</a>()</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>{</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    QString filename = QFileDialog::getSaveFileName(<span class="keyword">nullptr</span>, tr(<span class="stringliteral">&quot;Export PDF&quot;</span>), QString(),</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                                                    <span class="stringliteral">&quot;*.pdf&quot;</span>, <span class="keyword">nullptr</span>, <a class="code hl_variable" href="../../d4/da4/def_8h.html#a12119dda36b857038e4f27258ffd836b">FILEDIALOG_OPTIONS</a>);</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <span class="keywordflow">if</span> (QFileInfo(filename).suffix().isEmpty())</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    {</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>        filename.append(<span class="stringliteral">&quot;.pdf&quot;</span>);</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    }</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    QPrinter printer(QPrinter::PrinterResolution);</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    printer.setOutputFormat(QPrinter::PdfFormat);</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    printer.setPageSize(printer.pageLayout().pageSize());</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    printer.setOutputFileName(filename);</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>    QTextDocument textDocument;</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    textDocument.setHtml(<a class="code hl_variable" href="../../de/d8e/classShortcutsDialog.html#a64dff46391c4f77453a12abe1781df22">ui</a>-&gt;shortcuts_TextBrowser-&gt;toHtml());</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    textDocument.setPageSize(printer.pageLayout().paintRectPixels(printer.resolution()).size());</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    textDocument.print(&amp;printer);</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>}</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                                                    <span class="stringliteral">&quot;*.pdf&quot;</span>, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>                                                    <a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getUseNativeFileDialogs());</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordflow">if</span> (QFileInfo(filename).suffix().isEmpty())</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    {</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        filename.append(<span class="stringliteral">&quot;.pdf&quot;</span>);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    }</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    QPrinter printer(QPrinter::PrinterResolution);</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    printer.setOutputFormat(QPrinter::PdfFormat);</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>    printer.setPageSize(printer.pageLayout().pageSize());</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>    printer.setOutputFileName(filename);</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span> </div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>    QTextDocument textDocument;</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>    textDocument.setHtml(<a class="code hl_variable" href="../../de/d8e/classShortcutsDialog.html#a64dff46391c4f77453a12abe1781df22">ui</a>-&gt;shortcuts_TextBrowser-&gt;toHtml());</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    textDocument.setPageSize(printer.pageLayout().paintRectPixels(printer.resolution()).size());</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    textDocument.print(&amp;printer);</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>}</div>
 <div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00066">application_2d.h:66</a></div></div>
 <div class="ttc" id="aclassShortcutsDialog_html"><div class="ttname"><a href="../../de/d8e/classShortcutsDialog.html">ShortcutsDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/shortcuts__dialog_8h_source.html#l00039">shortcuts_dialog.h:40</a></div></div>
 <div class="ttc" id="aclassShortcutsDialog_html_a055f525af67de5393f6c744db6b460cf"><div class="ttname"><a href="../../de/d8e/classShortcutsDialog.html#a055f525af67de5393f6c744db6b460cf">ShortcutsDialog::copyToClipboard</a></div><div class="ttdeci">void copyToClipboard()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d84/shortcuts__dialog_8cpp_source.html#l00402">shortcuts_dialog.cpp:402</a></div></div>
@@ -548,7 +549,6 @@ $(document).ready(function(){initNavTree('dd/d84/shortcuts__dialog_8cpp_source.h
 <div class="ttc" id="aclassShortcutsDialog_html_a93f6ced54110b296aa0572472ca7cc6a"><div class="ttname"><a href="../../de/d8e/classShortcutsDialog.html#a93f6ced54110b296aa0572472ca7cc6a">ShortcutsDialog::sendToPrinter</a></div><div class="ttdeci">void sendToPrinter()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d84/shortcuts__dialog_8cpp_source.html#l00407">shortcuts_dialog.cpp:407</a></div></div>
 <div class="ttc" id="aclassShortcutsDialog_html_aa68dbcb3b7ae70e72d800d12a29dfe5a"><div class="ttname"><a href="../../de/d8e/classShortcutsDialog.html#aa68dbcb3b7ae70e72d800d12a29dfe5a">ShortcutsDialog::ShortcutsDialog</a></div><div class="ttdeci">ShortcutsDialog(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d84/shortcuts__dialog_8cpp_source.html#l00050">shortcuts_dialog.cpp:50</a></div></div>
 <div class="ttc" id="aclassShortcutsDialog_html_ac9a114dea0e2cdb1a1bd1c22d37cae11"><div class="ttname"><a href="../../de/d8e/classShortcutsDialog.html#ac9a114dea0e2cdb1a1bd1c22d37cae11">ShortcutsDialog::exportPdf</a></div><div class="ttdeci">void exportPdf()</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d84/shortcuts__dialog_8cpp_source.html#l00419">shortcuts_dialog.cpp:419</a></div></div>
-<div class="ttc" id="adef_8h_html_a12119dda36b857038e4f27258ffd836b"><div class="ttname"><a href="../../d4/da4/def_8h.html#a12119dda36b857038e4f27258ffd836b">FILEDIALOG_OPTIONS</a></div><div class="ttdeci">const QFileDialog::Options FILEDIALOG_OPTIONS</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00059">def.h:59</a></div></div>
 <div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/da1/about2d__dialog_8h_source.html#l00059">about2d_dialog.h:60</a></div></div>
 <div class="ttc" id="ashortcuts__dialog_8h_html"><div class="ttname"><a href="../../d9/d49/shortcuts__dialog_8h.html">shortcuts_dialog.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

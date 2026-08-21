@@ -74,6 +74,7 @@ var vcommonsettings_8cpp =
     [ "settingGeneralToolbarsState", "d4/d11/vcommonsettings_8cpp.html#af3454acdd594dd98d4348de6cc8643a7", null ],
     [ "settingGeneralWindowState", "d4/d11/vcommonsettings_8cpp.html#a0696d67afde5d1eb5346a7a90c11beae", null ],
     [ "settingGraphicsAutoClearFx", "d4/d11/vcommonsettings_8cpp.html#ab6d7c0132ed611b7a2c649e0e7d65771", null ],
+    [ "settingGraphicsUseNativeDialogs", "d4/d11/vcommonsettings_8cpp.html#ae909559fcf29f9941cfe10bffcec8932", null ],
     [ "settingGraphicsUseSecondMonitor", "d4/d11/vcommonsettings_8cpp.html#a2474fcf7a475730787f7dcc8c7789a6f", null ],
     [ "settingGraphicsUseToolColor", "d4/d11/vcommonsettings_8cpp.html#a634ebb3df267982daf0e69606dbcda37", null ],
     [ "settingGraphicsViewAngleDelta", "d4/d11/vcommonsettings_8cpp.html#a4737f155235118b924d74d65812b04b6", null ],
