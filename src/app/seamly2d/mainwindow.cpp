@@ -2442,46 +2442,84 @@ void MainWindow::initializeModesToolBar()
 
 #ifdef Q_OS_MAC
 #include <CoreText/CoreText.h>
+#include <QSortFilterProxyModel>
+
+// Inline proxy to seamlessly intercept and drop SFNT-wrapped bitmap fonts from the UI view
+class MacBitmapFontFilterProxy : public QSortFilterProxyModel
+{
+protected:
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override
+    {
+        QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
+        QString familyName = sourceModel()->data(index).toString();
+
+        // Return true to keep the font, false to hide it seamlessly from the UI
+        return !MainWindow::hasEmbeddedBitmapTables(familyName);
+    }
+};
 
 // Helper to inspect raw binary font tables on macOS
 bool MainWindow::hasEmbeddedBitmapTables(const QString &familyName)
 {
-    bool hasBitmaps = false;
     CFStringRef cfFamilyName = familyName.toCFString();
-
     CFStringRef keys[] = { kCTFontFamilyNameAttribute };
     CFTypeRef values[] = { cfFamilyName };
-    CFDictionaryRef attributes = CFDictionaryCreate(kCTFontAllocatorDefault, (const void**)keys, (const void**)values, 1, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+
+    CFDictionaryRef attributes = CFDictionaryCreate(
+        kCFAllocatorDefault,
+        (const void**)keys,
+        (const void**)values,
+        1,
+        &kCTTypeDictionaryKeyCallBacks,
+        &kCTTypeDictionaryValueCallBacks
+    );
+
     CTFontDescriptorRef descriptor = CTFontDescriptorCreateWithAttributes(attributes);
     CFRelease(attributes);
     CFRelease(cfFamilyName);
 
-    if (descriptor)
+    // Guard 1: Exit early if the font descriptor failed to create
+    if (!descriptor)
     {
-        CTFontRef font = CTFontCreateWithFontDescriptor(descriptor, 12.0, nullptr);
-        if (font)
-        {
-            CFArrayRef tags = CTFontCopyAvailableTables(font, kCTFontTableOptionNoOptions);
-            if (tags)
-            {
-                CFIndex count = CFArrayGetCount(tags);
-                for (CFIndex i = 0; i < count; ++i)
-                {
-                    CTFontTableTag tag = (CTFontTableTag)(uintptr_t)CFArrayGetValueAtIndex(tags, i);
-
-                    // Blocks 'sbix'/'CBDT' (Color) and 'EBLC'/'EBDT' (Monochrome/GB18030)
-                    if (tag == 'sbix' || tag == 'CBDT' || tag == 'EBLC' || tag == 'EBDT')
-                    {
-                        hasBitmaps = true;
-                        break;
-                    }
-                }
-                CFRelease(tags);
-            }
-            CFRelease(font);
-        }
-        CFRelease(descriptor);
+        return false;
     }
+
+    CTFontRef font = CTFontCreateWithFontDescriptor(descriptor, 12.0, nullptr);
+    CFRelease(descriptor);
+
+    // Exit early if the font could not be resolved
+    if (!font)
+    {
+        return false;
+    }
+
+    CFArrayRef tags = CTFontCopyAvailableTables(font, kCTFontTableOptionNoOptions);
+    CFRelease(font);
+
+    // Exit early if the font has no available tables
+    if (!tags)
+    {
+        return false;
+    }
+
+    bool hasBitmaps = false;
+    CFIndex count = CFArrayGetCount(tags);
+
+    for (CFIndex i = 0; i < count; ++i)
+    {
+        uintptr_t value = (uintptr_t)CFArrayGetValueAtIndex(tags, i);
+        CTFontTableTag tag = (CTFontTableTag)value;
+
+        // 'sbix' = 0x73626978 | 'CBDT' = 0x43424454
+        // 'EBLC' = 0x45424C43 | 'EBDT' = 0x45424454
+        if (tag == 0x73626978 || tag == 0x43424454 || tag == 0x45424C43 || tag == 0x45424454)
+        {
+            hasBitmaps = true;
+            break;
+        }
+    }
+
+    CFRelease(tags);
     return hasBitmaps;
 }
 #endif
@@ -2495,21 +2533,15 @@ void MainWindow::initializePointNameToolBar()
     fontComboBox = new QFontComboBox ;
     fontComboBox->setFontFilters(QFontComboBox::ScalableFonts);
 
-// Filter out bitmap fonts contaained in a tff wrapper.
+    // Intercept fonts containing a bitmap wrapper using the proxy filter on macOS
 #ifdef Q_OS_MAC
-    QAbstractItemModel *fontModel = fontCombo->model();
+    QAbstractItemModel *fontModel = fontComboBox->model();
+
     if (fontModel)
     {
-        // Loop backwards to safely remove rows from the internal model
-        for (int i = fontModel->rowCount() - 1; i >= 0; --i)
-        {
-            QString familyName = fontModel->data(fontModel->index(i, 0)).toString();
-
-            if (hasEmbeddedBitmapTables(familyName))
-            {
-                fontModel->removeRow(i);
-            }
-        }
+        MacBitmapFontFilterProxy *proxy = new MacBitmapFontFilterProxy(fontComboBox);
+        proxy->setSourceModel(fontModel);
+        fontComboBox->setModel(proxy);
     }
 #endif
 
