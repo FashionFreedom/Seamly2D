@@ -10143,7 +10143,7 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
-        <translation><Gunakan kotak dialog bawaan/translation>
+        <translation>Gunakan kotak dialog bawaan</translation>
     </message>
 </context>
 <context>
