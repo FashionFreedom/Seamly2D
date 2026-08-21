@@ -2472,7 +2472,7 @@ void MainWindow::initializePointNameToolBar()
 
 // Filter out bitmap fonts contaained in a tff wrapper.
 #ifdef Q_OS_MAC
-    QAbstractItemModel *fontModel = fontCombo->model();
+    QAbstractItemModel *fontModel = fontComboBox->model();
     if (fontModel)
     {
         // Loop backwards to safely remove rows from the internal model
