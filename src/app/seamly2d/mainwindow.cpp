@@ -179,8 +179,8 @@ MainWindow::MainWindow(QWidget *parent)
     , dialogTable(nullptr)
     , dialogTool()
     , historyDialog(nullptr)
-    , fontComboBox(nullptr)
-    , fontSizeComboBox(nullptr)
+    , font_combo_box(nullptr)
+    , font_size_combo_box(nullptr)
     , draftBlockComboBox(nullptr)
     , draftBlockLabel(nullptr)
     , currentBlockIndex(0)
@@ -2440,197 +2440,123 @@ void MainWindow::initializeModesToolBar()
     ui->mode_ToolBar->insertWidget(ui->layoutMode_Action, rightGoToStage);
 }
 
-#ifdef Q_OS_MAC
-#include <CoreText/CoreText.h>
-#include <QSortFilterProxyModel>
+//---------------------------------------------------------------------------------------------------------------------
+//
+// @brief MainWindow::initializePointNameToolBar enable Point Name toolbar.
+//---------------------------------------------------------------------------------------------------------------------
+ void MainWindow::initializePointNameToolBar()
+ {
+     font_combo_box = new QComboBox(this);
+     QFontDatabase font_database;
+     QStringList font_families = font_database.families();
 
-// Inline proxy to seamlessly intercept and drop SFNT-wrapped bitmap fonts from the UI view
-class MacBitmapFontFilterProxy : public QSortFilterProxyModel
-{
-protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override
-    {
-        QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
-        QString familyName = sourceModel()->data(index).toString();
+     // Loop through each item and apply its respective font to the FontRole
+     for (int i = 0; i < font_families.count(); ++i)
+     {
+         QString font_name = font_families.at(i);
 
-        // Return true to keep the font, false to hide it seamlessly from the UI
-        return !MainWindow::hasEmbeddedBitmapTables(familyName);
-    }
-};
+         // enforces vector outlines and catches fonts wrapped in bitmap tables
+         if (font_database.isSmoothlyScalable(font_name))
+         {
+             // Cross-platform safety block: Catch explicit bitmap wrappers
+             if (font_name.contains("bitmap", Qt::CaseInsensitive) ||
+             font_name.contains("GB18030", Qt::CaseInsensitive))
+             {
+                 continue;
+             }
 
-// Helper to inspect raw binary font tables on macOS
-bool MainWindow::hasEmbeddedBitmapTables(const QString &familyName)
-{
-    CFStringRef cfFamilyName = familyName.toCFString();
-    CFStringRef keys[] = { kCTFontFamilyNameAttribute };
-    CFTypeRef values[] = { cfFamilyName };
+             font_combo_box->addItem(font_name);
+             int inserted_index = font_combo_box->count() - 1;
 
-    CFDictionaryRef attributes = CFDictionaryCreate(
-        kCFAllocatorDefault,
-        (const void**)keys,
-        (const void**)values,
-        1,
-        &kCTTypeDictionaryKeyCallBacks,
-        &kCTTypeDictionaryValueCallBacks
-    );
+             QFont font(font_name, 10);
+             font_combo_box->setItemData(inserted_index, font, Qt::FontRole);
+         }
+     }
 
-    CTFontDescriptorRef descriptor = CTFontDescriptorCreateWithAttributes(attributes);
-    CFRelease(attributes);
-    CFRelease(cfFamilyName);
+     //font_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
+     font_combo_box->setFixedWidth(250);
+     font_combo_box->setEnabled(true);
 
-    // Guard 1: Exit early if the font descriptor failed to create
-    if (!descriptor)
-    {
-        return false;
-    }
+     int font_index = font_combo_box->findText(qApp->Seamly2DSettings()->getPointNameFont().family());
+     if (font_index >= 0)
+     {
+         font_combo_box->setCurrentIndex(font_index);
+         QFont initial_font = qApp->Seamly2DSettings()->getPointNameFont();
+         initial_font.setPointSize(10);
+         font_combo_box->setFont(initial_font);
+     }
 
-    CTFontRef font = CTFontCreateWithFontDescriptor(descriptor, 12.0, nullptr);
-    CFRelease(descriptor);
+     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_combo_box);
 
-    // Exit early if the font could not be resolved
-    if (!font)
-    {
-        return false;
-    }
+     connect(font_combo_box, &QComboBox::currentTextChanged, this, [this](const QString &family)
+     {
+         QFont selected_font(family);
+         selected_font.setPointSize(10);
+         font_combo_box->setFont(selected_font);
+         qApp->Seamly2DSettings()->setPointNameFont(selected_font);
+         upDateScenes();
+     });
 
-    CFArrayRef tags = CTFontCopyAvailableTables(font, kCTFontTableOptionNoOptions);
-    CFRelease(font);
+     font_size_combo_box = new QComboBox;
+     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_size_combo_box);
+     font_size_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
 
-    // Exit early if the font has no available tables
-    if (!tags)
-    {
-        return false;
-    }
+     const QList<int> font_sizes = {
+         6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 28, 32, 36, 40, 44, 48, 54, 60, 66, 72, 80, 96
+     };
 
-    bool hasBitmaps = false;
-    CFIndex count = CFArrayGetCount(tags);
+     for (int size : font_sizes)
+     {
+         font_size_combo_box->addItem(QString::number(size), QVariant(size));
+     }
 
-    for (CFIndex i = 0; i < count; ++i)
-    {
-        uintptr_t value = (uintptr_t)CFArrayGetValueAtIndex(tags, i);
-        CTFontTableTag tag = (CTFontTableTag)value;
+     int size_index = font_size_combo_box->findData(qApp->Seamly2DSettings()->getPointNameSize());
+     if (size_index < 0 || size_index > 28)
+     {
+         size_index = 18;
+     }
+     font_size_combo_box->setCurrentIndex(size_index);
 
-        // 'sbix' = 0x73626978 | 'CBDT' = 0x43424454
-        // 'EBLC' = 0x45424C43 | 'EBDT' = 0x45424454
-        if (tag == 0x73626978 || tag == 0x43424454 || tag == 0x45424C43 || tag == 0x45424454)
-        {
-            hasBitmaps = true;
-            break;
-        }
-    }
+     connect(font_size_combo_box, &QComboBox::currentTextChanged, this, [this](QString text)
+     {
+         qApp->Seamly2DSettings()->setPointNameSize(text.toInt());
+         upDateScenes();
+     });
 
-    CFRelease(tags);
-    return hasBitmaps;
-}
-#endif
+     font_size_combo_box->setEnabled(true);
+
+     base_point_combo_box = new QComboBox;
+     ui->pointName_ToolBar->addWidget(base_point_combo_box);
+     initBasePointComboBox();
+     base_point_combo_box->setEnabled(true);
+
+     font_combo_box->ensurePolished();
+     font_size_combo_box->ensurePolished();
+
+     // Lock the font box height to perfectly match the size box height
+     int locked_height = font_size_combo_box->sizeHint().height();
+     font_combo_box->setFixedHeight(locked_height);
+
+     connect(base_point_combo_box, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
+ }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initializePointNameToolBar enable Point Name toolbar.
- */
-void MainWindow::initializePointNameToolBar()
-{
-    fontComboBox = new QFontComboBox ;
-    fontComboBox->setFontFilters(QFontComboBox::ScalableFonts);
-
-    // Intercept fonts containing a bitmap wrapper using the proxy filter on macOS
-#ifdef Q_OS_MAC
-    QAbstractItemModel *fontModel = fontComboBox->model();
-
-    if (fontModel)
-    {
-        MacBitmapFontFilterProxy *proxy = new MacBitmapFontFilterProxy(fontComboBox);
-        proxy->setSourceModel(fontModel);
-        fontComboBox->setModel(proxy);
-    }
-#endif
-
-    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
-    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
-    fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    fontComboBox->setEnabled(true);
-
-    connect(fontComboBox, static_cast<void (QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont font)
-            {
-                qApp->Seamly2DSettings()->setPointNameFont(font);
-                upDateScenes();
-            });
-
-    fontSizeComboBox = new QComboBox ;
-    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontSizeComboBox);
-    fontSizeComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    fontSizeComboBox->addItem("6", QVariant(static_cast<int>(6)));
-    fontSizeComboBox->addItem("7", QVariant(static_cast<int>(7)));
-    fontSizeComboBox->addItem("8", QVariant(static_cast<int>(8)));
-    fontSizeComboBox->addItem("9", QVariant(static_cast<int>(9)));
-    fontSizeComboBox->addItem("10", QVariant(static_cast<int>(10)));
-    fontSizeComboBox->addItem("11", QVariant(static_cast<int>(11)));
-    fontSizeComboBox->addItem("12", QVariant(static_cast<int>(12)));
-    fontSizeComboBox->addItem("13", QVariant(static_cast<int>(13)));
-    fontSizeComboBox->addItem("14", QVariant(static_cast<int>(14)));
-    fontSizeComboBox->addItem("15", QVariant(static_cast<int>(15)));
-    fontSizeComboBox->addItem("16", QVariant(static_cast<int>(16)));
-    fontSizeComboBox->addItem("18", QVariant(static_cast<int>(18)));
-    fontSizeComboBox->addItem("20", QVariant(static_cast<int>(20)));
-    fontSizeComboBox->addItem("22", QVariant(static_cast<int>(22)));
-    fontSizeComboBox->addItem("24", QVariant(static_cast<int>(24)));
-    fontSizeComboBox->addItem("26", QVariant(static_cast<int>(26)));
-    fontSizeComboBox->addItem("28", QVariant(static_cast<int>(28)));
-    fontSizeComboBox->addItem("32", QVariant(static_cast<int>(32)));
-    fontSizeComboBox->addItem("36", QVariant(static_cast<int>(36)));
-    fontSizeComboBox->addItem("40", QVariant(static_cast<int>(40)));
-    fontSizeComboBox->addItem("44", QVariant(static_cast<int>(44)));
-    fontSizeComboBox->addItem("48", QVariant(static_cast<int>(48)));
-    fontSizeComboBox->addItem("54", QVariant(static_cast<int>(54)));
-    fontSizeComboBox->addItem("60", QVariant(static_cast<int>(60)));
-    fontSizeComboBox->addItem("66", QVariant(static_cast<int>(66)));
-    fontSizeComboBox->addItem("72", QVariant(static_cast<int>(72)));
-    fontSizeComboBox->addItem("80", QVariant(static_cast<int>(80)));
-    fontSizeComboBox->addItem("96", QVariant(static_cast<int>(96)));
-
-    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
-    if (index < 0 || index > 28)
-    {
-        index = 18;
-    }
-    fontSizeComboBox->setCurrentIndex(index);
-
-    connect(fontSizeComboBox, &QComboBox::currentTextChanged, this, [this](QString text)
-            {
-                qApp->Seamly2DSettings()->setPointNameSize(text.toInt());
-                upDateScenes();
-            });
-    fontSizeComboBox->setEnabled(true);
-
-    basePointComboBox = new QComboBox ;
-    ui->pointName_ToolBar->addWidget(basePointComboBox);
-    initBasePointComboBox();
-    basePointComboBox->setEnabled(true);
-
-    connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
-}
-
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief initBasePointComboBox fills basePointComboBox.
+ * @brief initBasePointComboBox fills base_point_combo_box.
  */
 void MainWindow::initBasePointComboBox()
 {
-    basePointComboBox->clear();
-    basePointComboBox->addItem(tr("Default"));
-    basePointComboBox->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
-    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
-    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    basePointComboBox->setCurrentIndex(0);
-    basePointComboBox->setEditable(true);
+    base_point_combo_box->clear();
+    base_point_combo_box->addItem(tr("Default"));
+    base_point_combo_box->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
+    base_point_combo_box->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
+    base_point_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    base_point_combo_box->setCurrentIndex(0);
+    base_point_combo_box->setEditable(true);
+    base_point_combo_box->setInsertPolicy(QComboBox::InsertAtTop);
 
     // Force any child line edit to dynamically pull from the current app palette
-    basePointComboBox->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
-
-
-    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
+    base_point_combo_box->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2848,17 +2774,17 @@ void MainWindow::penChanged(Pen pen)
 
 void MainWindow::basePointChanged()
 {
-    QString text = basePointComboBox->currentText();
+    QString text = base_point_combo_box->currentText();
     QString basePoint = QString();
 
     QRegularExpression rx(NameRegExp());
     if (rx.match(text).hasMatch() == false)
     {
-        basePointComboBox->setStyleSheet("QComboBox {color: red;}");
+        base_point_combo_box->setStyleSheet("QComboBox {color: red;}");
     }
     else
     {
-        basePointComboBox->setStyleSheet("QComboBox {color: black;}");
+        base_point_combo_box->setStyleSheet("QComboBox {color: black;}");
 
         if (!text.isEmpty() && text != tr("Default"))
         {
@@ -6036,17 +5962,17 @@ void MainWindow::createActions()
 
     connect(ui->increaseSize_Action, &QAction::triggered, this, [this]()
     {
-        int index = qMin(fontSizeComboBox->currentIndex() + 1, fontSizeComboBox->count()-1);
-        fontSizeComboBox->setCurrentIndex(index);
-        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        int index = qMin(font_size_combo_box->currentIndex() + 1, font_size_combo_box->count()-1);
+        font_size_combo_box->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(font_size_combo_box->currentText().toInt());
         upDateScenes();
     });
 
     connect(ui->decreaseSize_Action, &QAction::triggered, this, [this]()
     {
-        const int index = qMax(fontSizeComboBox->currentIndex() - 1, 0);
-        fontSizeComboBox->setCurrentIndex(index);
-        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        const int index = qMax(font_size_combo_box->currentIndex() - 1, 0);
+        font_size_combo_box->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(font_size_combo_box->currentText().toInt());
         upDateScenes();
     });
 
@@ -6943,10 +6869,6 @@ void MainWindow::initToolBarStyles()
     initToolBarStyle(ui->edit_Toolbar);
     initToolBarStyle(ui->zoom_ToolBar);
     initToolBarStyle(ui->file_ToolBar);
-
-    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
-    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
-    fontSizeComboBox->setCurrentIndex(index);
 }
 
 void MainWindow::resetOrigins()
