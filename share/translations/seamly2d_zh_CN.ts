@@ -7238,6 +7238,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>创建备份副本出错:%1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>删除草稿块</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>的</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>确认删除</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>您确定要删除基准点和当前的草稿块吗?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

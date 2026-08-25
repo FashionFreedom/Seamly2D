@@ -7236,6 +7236,22 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Chyba při vytváření záložní kopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Smazat blok konceptu</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Vymazat</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Potvrdit smazání</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Opravdu chcete smazat základní bod a aktuální blok konceptu?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

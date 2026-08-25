@@ -7238,6 +7238,22 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Gagal membuat salinan cadangan: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Hapus blok draf</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Hapus</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Konfirmasi hapus</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Apakah Anda yakin ingin menghapus titik acuan dan blok draf saat ini?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
