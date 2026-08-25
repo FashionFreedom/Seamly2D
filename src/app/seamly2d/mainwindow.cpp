@@ -91,6 +91,7 @@
 #include "../vtools/tools/nodeDetails/internal_path_tool.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/rename_draftblock.h"
+#include "../vtools/undocommands/delete_draftblock.h"
 #include "../vtools/undocommands/label/showpointname.h"
 #include "../vwidgets/mouse_coordinates.h"
 #include "../vwidgets/vmaingraphicsscene.h"
@@ -420,6 +421,30 @@ void MainWindow::addDraftBlock(const QString &blockName)
     groupsWidget->updateGroups();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::deleteDraftBlock()
+{
+    if (doc->draftBlockCount() == 1)
+    {
+        return;
+    }
+
+    qApp->getSceneView()->itemClicked(nullptr);
+    const auto answer = QMessageBox::question(this, tr("Confirm Delete"),
+                                              tr("Are you sure you want to delete basepoint and current draft block?"),
+                                              QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+    if (answer == QMessageBox::No)
+    {
+        return;
+    }
+
+    DeleteDraftBlock *command = new DeleteDraftBlock(doc, doc->getActiveDraftBlockName());
+    connect(command, &DeleteDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
+    connect(command, &DeleteDraftBlock::NeedFullParsing, this, [this](){setWidgetsEnabled(true);});
+    qApp->getUndoStack()->push(command);
+
+    setWidgetsEnabled(true);
+}
 
 /// @brief draftBlockStartPosition Set start position for draft block.
 ///
@@ -4369,6 +4394,8 @@ void MainWindow::Clear()
     ui->layoutMode_Action->setEnabled(false);
     ui->newDraft_Action->setEnabled(false);
     ui->renameDraft_Action->setEnabled(false);
+    ui->delete_draft_action->setEnabled(false);
+
     ui->save_Action->setEnabled(false);
     ui->saveAs_Action->setEnabled(false);
     ui->patternPreferences_Action->setEnabled(false);
@@ -4728,7 +4755,8 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
-    ui->renameDraft_Action->setEnabled(enable && draftStage);
+    ui->renameDraft_Action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 0));
+    ui->delete_draft_action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 1));
 
     //enable measurement menu actions
     ui->loadIndividual_Action->setEnabled(enable && designStage);
@@ -5956,6 +5984,8 @@ void MainWindow::createActions()
 
         addDraftBlock(draftBlockName);
     });
+
+    connect(ui->delete_draft_action, &QAction::triggered, this,&MainWindow::deleteDraftBlock);
 
     //Tools->Point submenu actions
     connect(ui->midpoint_Action, &QAction::triggered, this, [this]
