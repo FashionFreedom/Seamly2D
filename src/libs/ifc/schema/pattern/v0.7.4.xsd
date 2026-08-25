@@ -718,7 +718,7 @@
                         <xs:attribute name="xPos" type="xs:double" use="required"/>
                         <xs:attribute name="yPos" type="xs:double" use="required"/>
                         <xs:attribute name="locked" type="xs:boolean" use="required"/>
-                        <xs:attribute name="units" type="xs:string" use="required"/>
+                        <xs:attribute name="units" type="imageUnits" use="required"/>
                         <xs:attribute name="opacity" type="xs:double" use="required"/>
                         <xs:attribute name="order" type="xs:double" use="required"/>
                         <xs:attribute name="xOffset" type="xs:double" use="required"/>
@@ -759,6 +759,14 @@
   <xs:simpleType name="formatVersion">
     <xs:restriction base="xs:string">
       <xs:pattern value="(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="imageUnits">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="mm"/>
+      <xs:enumeration value="cm"/>
+      <xs:enumeration value="inch"/>
+      <xs:enumeration value="px"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="imageExtension">
