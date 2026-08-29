@@ -7221,6 +7221,22 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Fout bij het maken van een back-upkopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Conceptblok verwijderen</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Verwijdering bevestigen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Weet u zeker dat u het basispunt en het huidige conceptblok wilt verwijderen?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

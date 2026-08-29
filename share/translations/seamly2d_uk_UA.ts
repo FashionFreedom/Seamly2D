@@ -7239,6 +7239,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Помилка створення резервної копії: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Видалити блок чернетки</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Підтвердити видалення</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Ви впевнені, що хочете видалити базову точку та поточний блок чернетки?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

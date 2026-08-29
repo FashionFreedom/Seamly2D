@@ -7237,6 +7237,22 @@ Menti a módosításokat?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Vázlattömb törlése</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Törlés megerősítése</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Biztosan törölni szeretné a bázispontot és a jelenlegi vázlattömböt?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
