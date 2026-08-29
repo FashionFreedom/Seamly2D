@@ -7240,6 +7240,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Σφάλμα κατά τη δημιουργία αντιγράφου ασφαλείας: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Διαγραφή προσχεδίου μπλοκ</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Επιβεβαίωση διαγραφής</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε το σημείο βάσης και το τρέχον προσχέδιο μπλοκ?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

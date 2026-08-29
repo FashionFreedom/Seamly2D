@@ -7262,6 +7262,22 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Error creating a backup copy: %1.</source>
         <translation>Erreur lors de la création d&apos;un copie de sauvegarde: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Supprimer le bloc de brouillon</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmer la suppression</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Êtes-vous sûr de vouloir supprimer le point de base et le bloc de brouillon actuel ?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

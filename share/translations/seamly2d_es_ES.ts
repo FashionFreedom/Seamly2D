@@ -7257,6 +7257,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Error al crear una copia de seguridad: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Eliminar bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Suprimir</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmar eliminación</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>¿Está seguro de que desea eliminar el punto base y el bloque de borrador actual?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
