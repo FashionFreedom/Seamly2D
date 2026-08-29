@@ -1,5 +1,6 @@
 var NAVTREEINDEX178 =
 {
+"d9/d64/classDialogCutArc.html#af8e7d98d8b99fc585d506d1f8d291e21":[3,0,104,19],
 "d9/d65/vtoollineintersect_8h.html":[4,0,0,1,13,1,0,2,1,11],
 "d9/d65/vtoollineintersect_8h_source.html":[4,0,0,1,13,1,0,2,1,11],
 "d9/d66/libs_2vtest_2stable_8cpp.html":[4,0,0,1,12,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX178 =
 "d9/d71/classInternalPathDialog.html#adc5a142016f6ff016da356db9f52a058":[3,0,313,18],
 "d9/d71/classInternalPathDialog.html#ade62e29d04e9256191b393eafea25928":[3,0,313,43],
 "d9/d71/classInternalPathDialog.html#ae75895fcd368b09e059e1c4cecadde44":[3,0,313,7],
-"d9/d71/classInternalPathDialog.html#aeb24ef4073ac791cedf44b6cc6e4a84e":[3,0,313,52],
-"d9/d71/classInternalPathDialog.html#af00261b2e21c41847a1b1b248e83f261":[3,0,313,44]
+"d9/d71/classInternalPathDialog.html#aeb24ef4073ac791cedf44b6cc6e4a84e":[3,0,313,52]
 };

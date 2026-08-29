@@ -1,5 +1,6 @@
 var NAVTREEINDEX207 =
 {
+"db/d0a/classVSplinePointData.html#af73be3cc94abd1cdca38b4e61ad1efd8":[3,0,730,8],
 "db/d0a/classVSplinePointData.html#afa27d674c0514ddc94adf0bd538645ee":[3,0,730,1],
 "db/d0a/vabstractcubicbezierpath_8cpp.html":[4,0,0,1,6,9],
 "db/d0a/vabstractcubicbezierpath_8cpp_source.html":[4,0,0,1,6,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX207 =
 "db/d16/dialogshoulderpoint_8h.html":[4,0,0,1,13,0,1,58],
 "db/d16/dialogshoulderpoint_8h_source.html":[4,0,0,1,13,0,1,58],
 "db/d17/libs_2vmisc_2stable_8h.html":[4,0,0,1,8,14],
-"db/d17/libs_2vmisc_2stable_8h_source.html":[4,0,0,1,8,14],
-"db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp.html":[4,0,0,1,15,3,0,0,6,104]
+"db/d17/libs_2vmisc_2stable_8h_source.html":[4,0,0,1,8,14]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX297 =
 {
+"de/db2/classVNodeEllipticalArc.html#abf238b6aa868130e3f1ff31849da0bd2":[3,0,694,0],
 "de/db2/classVNodeEllipticalArc.html#ae012d341de5b97c28c649d48192117d0":[3,0,694,9],
 "de/db2/dialogcubicbezier_8h.html":[4,0,0,1,13,0,1,14],
 "de/db2/dialogcubicbezier_8h_source.html":[4,0,0,1,13,0,1,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX297 =
 "de/dbd/classExportLayoutDialog.html#aac5130ef046671ad9da4c8ec77c6bd18":[3,0,268,30],
 "de/dbd/classExportLayoutDialog.html#ac9c8759ec741bde4ea85640fc4a68047":[3,0,268,35],
 "de/dbd/classExportLayoutDialog.html#acddbbe1458589ca2c1fdb96ce369b225":[3,0,268,29],
-"de/dbd/classExportLayoutDialog.html#acf55ba320421e4004141423618fe8c36":[3,0,268,21],
-"de/dbd/classExportLayoutDialog.html#ad750b12f032ee99f3f0b1db737938669":[3,0,268,1]
+"de/dbd/classExportLayoutDialog.html#acf55ba320421e4004141423618fe8c36":[3,0,268,21]
 };

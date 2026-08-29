@@ -1,5 +1,6 @@
 var NAVTREEINDEX226 =
 {
+"dc/d3f/msvc_2include_2xercesc_2dom_2impl_2DOMNodeVector_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,32],
 "dc/d41/macx_2include_2xercesc_2dom_2DOMXPathNamespace_8hpp.html":[4,0,0,1,15,0,0,0,0,51],
 "dc/d41/macx_2include_2xercesc_2dom_2DOMXPathNamespace_8hpp_source.html":[4,0,0,1,15,0,0,0,0,51],
 "dc/d42/classRefHash3KeysIdPool.html":[3,0,437],
@@ -248,6 +249,5 @@ var NAVTREEINDEX226 =
 "dc/d57/msvc_2include_2xercesc_2validators_2datatype_2NCNameDatatypeValidator_8hpp_source.html":[4,0,0,1,15,2,0,0,7,1,27],
 "dc/d59/classVAbstractMainWindow.html":[3,0,558],
 "dc/d59/classVAbstractMainWindow.html#a05b5c4707a62ed5df183415fc44d3d86":[3,0,558,4],
-"dc/d59/classVAbstractMainWindow.html#a2f212e09c4af91ab6e34a5380e935dca":[3,0,558,7],
-"dc/d59/classVAbstractMainWindow.html#a3bdd5329bd2ebe9716311d6b45e25d0e":[3,0,558,10]
+"dc/d59/classVAbstractMainWindow.html#a2f212e09c4af91ab6e34a5380e935dca":[3,0,558,7]
 };

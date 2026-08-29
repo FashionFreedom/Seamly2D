@@ -1,5 +1,6 @@
 var NAVTREEINDEX283 =
 {
+"de/d2b/classVToolCubicBezier.html#ac79680b0ace3840d88738a07fe54da13":[3,0,740,17],
 "de/d2b/classVToolCubicBezier.html#ac9096bc43432b9ed2ce57360093f0552":[3,0,740,14],
 "de/d2b/classVToolCubicBezier.html#ad45391daf9a66c4a10d70f61202d170d":[3,0,740,2],
 "de/d2b/classVToolCubicBezier.html#add909ee6b54254fd2987765ea58db012":[3,0,740,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX283 =
 "de/d38/msvc-arm64_2include_2xercesc_2dom_2DOMXPathExpression_8hpp_source.html":[4,0,0,1,15,3,0,0,0,50],
 "de/d38/msvc-arm64_2include_2xercesc_2util_2regx_2TokenFactory_8hpp.html":[4,0,0,1,15,3,0,0,6,3,20],
 "de/d38/msvc-arm64_2include_2xercesc_2util_2regx_2TokenFactory_8hpp_source.html":[4,0,0,1,15,3,0,0,6,3,20],
-"de/d39/macx_2include_2xercesc_2dom_2DOMImplementationLS_8hpp.html":[4,0,0,1,15,0,0,0,0,20],
-"de/d39/macx_2include_2xercesc_2dom_2DOMImplementationLS_8hpp_source.html":[4,0,0,1,15,0,0,0,0,20]
+"de/d39/macx_2include_2xercesc_2dom_2DOMImplementationLS_8hpp.html":[4,0,0,1,15,0,0,0,0,20]
 };

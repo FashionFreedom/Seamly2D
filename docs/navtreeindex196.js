@@ -1,5 +1,6 @@
 var NAVTREEINDEX196 =
 {
+"da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp.html":[4,0,0,1,15,2,0,0,6,63],
 "da/d66/msvc_2include_2xercesc_2util_2SchemaDateTimeException_8hpp_source.html":[4,0,0,1,15,2,0,0,6,63],
 "da/d67/classDOMLSException.html":[3,0,185],
 "da/d67/classDOMLSException.html#a3a4d318ea26267636383e8528fa5697a":[3,0,185,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX196 =
 "da/d79/classDOMEntityReferenceImpl.html#a3a814792d38fbabdd36844dfaca59ea4":[3,0,171,203],
 "da/d79/classDOMEntityReferenceImpl.html#a3a814792d38fbabdd36844dfaca59ea4":[3,0,171,202],
 "da/d79/classDOMEntityReferenceImpl.html#a3a814792d38fbabdd36844dfaca59ea4":[3,0,171,201],
-"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,43],
-"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,42]
+"da/d79/classDOMEntityReferenceImpl.html#a437c0b74eb5792b7b695a55345714347":[3,0,171,43]
 };

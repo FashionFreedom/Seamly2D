@@ -1,5 +1,6 @@
 var NAVTREEINDEX188 =
 {
+"d9/dbf/classDOMXPathResultImpl.html#a5217afadf6fac1cfa033689f9976ca54":[3,0,237,20],
 "d9/dbf/classDOMXPathResultImpl.html#a5217afadf6fac1cfa033689f9976ca54":[3,0,237,21],
 "d9/dbf/classDOMXPathResultImpl.html#a5217afadf6fac1cfa033689f9976ca54":[3,0,237,22],
 "d9/dbf/classDOMXPathResultImpl.html#a5217afadf6fac1cfa033689f9976ca54":[3,0,237,23],
@@ -248,6 +249,5 @@ var NAVTREEINDEX188 =
 "d9/dde/vinteractivetool_8h_source.html":[4,0,0,1,13,1,12],
 "d9/de0/msvc-arm64_2include_2xercesc_2util_2ValueArrayOf_8c.html":[4,0,0,1,15,3,0,0,6,74],
 "d9/de0/msvc-arm64_2include_2xercesc_2util_2ValueArrayOf_8c_source.html":[4,0,0,1,15,3,0,0,6,74],
-"d9/de1/msvc-arm64_2include_2xercesc_2validators_2common_2ContentLeafNameTypeVector_8hpp.html":[4,0,0,1,15,3,0,0,7,0,8],
-"d9/de1/msvc-arm64_2include_2xercesc_2validators_2common_2ContentLeafNameTypeVector_8hpp_source.html":[4,0,0,1,15,3,0,0,7,0,8]
+"d9/de1/msvc-arm64_2include_2xercesc_2validators_2common_2ContentLeafNameTypeVector_8hpp.html":[4,0,0,1,15,3,0,0,7,0,8]
 };

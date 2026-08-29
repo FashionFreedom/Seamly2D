@@ -1,5 +1,6 @@
 var NAVTREEINDEX300 =
 {
+"de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8afaddb92c46697b90d0a92718d94e271a":[3,0,792,3,13],
 "de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8afaddb92c46697b90d0a92718d94e271a":[3,0,792,2,8],
 "de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8afaddb92c46697b90d0a92718d94e271a":[3,0,792,2,18],
 "de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8afaddb92c46697b90d0a92718d94e271a":[3,0,792,3,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX300 =
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a49a493cac8b5bdb8984f08ba6c750c13":[3,0,919,17,39],
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a49a493cac8b5bdb8984f08ba6c750c13":[3,0,919,16,28],
 "de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a49a493cac8b5bdb8984f08ba6c750c13":[3,0,919,14,17],
-"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a49a493cac8b5bdb8984f08ba6c750c13":[3,0,919,15,17],
-"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a57cd33e972a35e789b2b9015adbf85a8":[3,0,919,14,24]
+"de/dcf/classXSValue.html#a51d52439745495eca3b06dc46c355791a49a493cac8b5bdb8984f08ba6c750c13":[3,0,919,15,17]
 };

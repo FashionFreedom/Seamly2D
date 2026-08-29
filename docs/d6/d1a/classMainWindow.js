@@ -36,6 +36,7 @@ var classMainWindow =
     [ "createDraftBlockName", "d6/d1a/classMainWindow.html#a5aa459f35f06e08729c3e41db396266b", null ],
     [ "createMenus", "d6/d1a/classMainWindow.html#aa4907b0251d305659e403c62921ef331", null ],
     [ "customEvent", "d6/d1a/classMainWindow.html#a47386b1d055c2c16f4a218128f7c35fa", null ],
+    [ "deleteDraftBlock", "d6/d1a/classMainWindow.html#a9fec35824add920712b3e8b7647790c2", null ],
     [ "deleteGroupFromList", "d6/d1a/classMainWindow.html#a77e4724842ae2bfd7a3190941f66fa97", null ],
     [ "DoExport", "d6/d1a/classMainWindow.html#af0652363df16366ac21f22bf2734c3f5", null ],
     [ "draftBlockStartPosition", "d6/d1a/classMainWindow.html#a23dfaf6132acfa6cbeb47b94a6bbe680", null ],

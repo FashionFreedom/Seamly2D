@@ -1,5 +1,6 @@
 var NAVTREEINDEX309 =
 {
+"df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fa220287d4936e14c85b73024058fa1da5":[3,0,804,11,9],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fa220287d4936e14c85b73024058fa1da5":[3,0,804,8,9],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fa220287d4936e14c85b73024058fa1da5":[3,0,804,10,22],
 "df/d1f/classXMLAttDef.html#adbac7febf3455722cc9736f1dc03c02fa220287d4936e14c85b73024058fa1da5":[3,0,804,11,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX309 =
 "df/d34/classDOMStringList.html#aff5c95f05e75378c9d856336c9198639":[3,0,219,24],
 "df/d34/classDOMStringList.html#aff5c95f05e75378c9d856336c9198639":[3,0,219,25],
 "df/d34/classDOMStringList.html#aff5c95f05e75378c9d856336c9198639":[3,0,219,26],
-"df/d34/classDOMStringList.html#aff5c95f05e75378c9d856336c9198639":[3,0,219,27],
-"df/d35/classVAbstractPieceData.html":[3,0,564]
+"df/d34/classDOMStringList.html#aff5c95f05e75378c9d856336c9198639":[3,0,219,27]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX185 =
 {
+"d9/dac/mingw_2include_2xercesc_2util_2BitSet_8hpp.html":[4,0,0,1,15,1,0,0,6,13],
 "d9/dac/mingw_2include_2xercesc_2util_2BitSet_8hpp_source.html":[4,0,0,1,15,1,0,0,6,13],
 "d9/dac/msvc-arm64_2include_2xercesc_2util_2XMLFileMgr_8hpp.html":[4,0,0,1,15,3,0,0,6,102],
 "d9/dac/msvc-arm64_2include_2xercesc_2util_2XMLFileMgr_8hpp.html#a6738b6a1cc86fbf4c231eac94e357446":[4,0,0,1,15,3,0,0,6,102,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX185 =
 "d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,0,91],
 "d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,1,63],
 "d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,1,35],
-"d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,3,7],
-"d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,2,35]
+"d9/db9/classDatatypeValidator.html#a3fbf8d58a1883dd3b6b2e83660eedf8da80aa5c6c9d7eb23e3febe61d44b705c2":[3,0,75,3,7]
 };

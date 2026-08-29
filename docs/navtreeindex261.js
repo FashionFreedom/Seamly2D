@@ -1,5 +1,6 @@
 var NAVTREEINDEX261 =
 {
+"dc/ddf/expandingtextedit_8cpp.html":[4,0,0,1,11,0,3],
 "dc/ddf/expandingtextedit_8cpp_source.html":[4,0,0,1,11,0,3],
 "dc/ddf/test_2CollectionTest_2stable_8cpp.html":[4,0,0,2,0,1],
 "dc/ddf/test_2CollectionTest_2stable_8cpp_source.html":[4,0,0,2,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX261 =
 "dc/df5/classXSNamespaceItem.html#adefd3808f6aa66c7eeb4c58ebe645d02":[3,0,912,30],
 "dc/df5/classXSNamespaceItem.html#adefd3808f6aa66c7eeb4c58ebe645d02":[3,0,912,31],
 "dc/df5/classXSNamespaceItem.html#ae5777718ba823d1d52b7722cf8fa6ea8":[3,0,912,68],
-"dc/df5/classXSNamespaceItem.html#aec157cb05962a7cc4abedffaeb2c7c52":[3,0,912,20],
-"dc/df5/classXSNamespaceItem.html#aec157cb05962a7cc4abedffaeb2c7c52":[3,0,912,21]
+"dc/df5/classXSNamespaceItem.html#aec157cb05962a7cc4abedffaeb2c7c52":[3,0,912,20]
 };

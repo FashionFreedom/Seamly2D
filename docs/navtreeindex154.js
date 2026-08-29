@@ -1,5 +1,6 @@
 var NAVTREEINDEX154 =
 {
+"d8/d2c/classXMLInteger.html#ac50b619f66053158a7d5a502e0f1406f":[3,0,845,20],
 "d8/d2c/classXMLInteger.html#ade7d279965ad0a4fd283d437ae63de97":[3,0,845,19],
 "d8/d2c/classXMLInteger.html#ade7d279965ad0a4fd283d437ae63de97":[3,0,845,18],
 "d8/d2c/classXMLInteger.html#ade7d279965ad0a4fd283d437ae63de97":[3,0,845,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX154 =
 "d8/d3e/internal__path__tool_8h_source.html":[4,0,0,1,13,1,1,3],
 "d8/d3f/macx_2include_2xercesc_2framework_2psvi_2XSParticle_8hpp.html":[4,0,0,1,15,0,0,0,1,0,23],
 "d8/d3f/macx_2include_2xercesc_2framework_2psvi_2XSParticle_8hpp_source.html":[4,0,0,1,15,0,0,0,1,0,23],
-"d8/d3f/vtoolheight_8h.html":[4,0,0,1,13,1,0,2,1,1,11],
-"d8/d3f/vtoolheight_8h_source.html":[4,0,0,1,13,1,0,2,1,1,11]
+"d8/d3f/vtoolheight_8h.html":[4,0,0,1,13,1,0,2,1,1,11]
 };

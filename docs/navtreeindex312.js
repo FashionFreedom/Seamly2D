@@ -1,5 +1,6 @@
 var NAVTREEINDEX312 =
 {
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8ac2da50d30537ac75a169e97831b5781e":[3,0,861,3,10],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8ac2da50d30537ac75a169e97831b5781e":[3,0,861,3,46],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8ac2da50d30537ac75a169e97831b5781e":[3,0,861,3,22],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8ac2da50d30537ac75a169e97831b5781e":[3,0,861,3,34],
@@ -248,6 +249,5 @@ var NAVTREEINDEX312 =
 "df/d6f/classKVStringPair.html#ac94149592b418a0f0abb9f35125aa4b1":[3,0,326,30],
 "df/d6f/classKVStringPair.html#ac94149592b418a0f0abb9f35125aa4b1":[3,0,326,29],
 "df/d6f/classKVStringPair.html#ad383c0d31284fe8d31f438c5ee789c04":[3,0,326,12],
-"df/d6f/classKVStringPair.html#ad383c0d31284fe8d31f438c5ee789c04":[3,0,326,6],
-"df/d6f/classKVStringPair.html#ad383c0d31284fe8d31f438c5ee789c04":[3,0,326,0]
+"df/d6f/classKVStringPair.html#ad383c0d31284fe8d31f438c5ee789c04":[3,0,326,6]
 };

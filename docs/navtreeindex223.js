@@ -1,5 +1,6 @@
 var NAVTREEINDEX223 =
 {
+"dc/d0a/classVToolMirrorByLine.html#a8e89db78e91b9d1e4365bcf04bb4437b":[3,0,756,17],
 "dc/d0a/classVToolMirrorByLine.html#a8edb5839634cd7b1eb65e67b54ecf809":[3,0,756,18],
 "dc/d0a/classVToolMirrorByLine.html#aa3b34fe6b2b26eeb6fb5ed52d0cbc1c2":[3,0,756,15],
 "dc/d0a/classVToolMirrorByLine.html#aa66ca4c56658e1c9254b95ef0a302002":[3,0,756,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX223 =
 "dc/d19/classXPathMatcher.html#a9e5ea547a7ab4bd239beec79acb81b3b":[3,0,884,4],
 "dc/d19/classXPathMatcher.html#ab4410681b1ab0ef017f26e10934da6ec":[3,0,884,69],
 "dc/d19/classXPathMatcher.html#ab8cd0b7e11f95eeb7f32defe4e2e5e63":[3,0,884,33],
-"dc/d19/classXPathMatcher.html#ab8cd0b7e11f95eeb7f32defe4e2e5e63":[3,0,884,32],
-"dc/d19/classXPathMatcher.html#ab8cd0b7e11f95eeb7f32defe4e2e5e63":[3,0,884,34]
+"dc/d19/classXPathMatcher.html#ab8cd0b7e11f95eeb7f32defe4e2e5e63":[3,0,884,32]
 };

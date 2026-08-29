@@ -1,5 +1,6 @@
 var NAVTREEINDEX282 =
 {
+"de/d1e/macx_2include_2xercesc_2validators_2datatype_2UnionDatatypeValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,1,32],
 "de/d1e/msvc-arm64_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp.html":[4,0,0,1,15,3,0,0,7,3,3],
 "de/d1e/msvc-arm64_2include_2xercesc_2validators_2schema_2NamespaceScope_8hpp_source.html":[4,0,0,1,15,3,0,0,7,3,3],
 "de/d1f/vpatternlabeldata_8h.html":[4,0,0,1,10,0,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX282 =
 "de/d2b/classVToolCubicBezier.html#abdcae613b42834af6daaff5ace8b0f7d":[3,0,740,29],
 "de/d2b/classVToolCubicBezier.html#ac114b3a374e13a66709bbed6cf88f588":[3,0,740,16],
 "de/d2b/classVToolCubicBezier.html#ac2049c903254e77a67e9fd73b31b770c":[3,0,740,30],
-"de/d2b/classVToolCubicBezier.html#ac5d51669d51194e6f36f425578c0be19":[3,0,740,6],
-"de/d2b/classVToolCubicBezier.html#ac79680b0ace3840d88738a07fe54da13":[3,0,740,17]
+"de/d2b/classVToolCubicBezier.html#ac5d51669d51194e6f36f425578c0be19":[3,0,740,6]
 };
