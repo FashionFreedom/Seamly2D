@@ -74,6 +74,10 @@ public:
     VCurveCLength(const VCurveCLength &var);
     VCurveCLength &operator=(const VCurveCLength &var);
     virtual ~VCurveCLength() override;
+
+    CurveCLength GetCType() const;
+private:
+    CurveCLength m_cType{CurveCLength::C1};
 };
 
 #endif // VCURVECLENGTH_H

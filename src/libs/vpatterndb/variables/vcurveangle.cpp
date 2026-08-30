@@ -69,7 +69,7 @@ VCurveAngle::VCurveAngle()
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveAngle::VCurveAngle(const quint32 &id, const quint32 &parentId, const VAbstractCurve *curve, CurveAngle angle)
-    :VCurveVariable(id, parentId)
+    :VCurveVariable(id, parentId), m_angle(angle)
 {
     SetType(VarType::CurveAngle);
     SCASSERT(curve != nullptr)
@@ -88,7 +88,7 @@ VCurveAngle::VCurveAngle(const quint32 &id, const quint32 &parentId, const VAbst
 //---------------------------------------------------------------------------------------------------------------------
 VCurveAngle::VCurveAngle(const quint32 &id, const quint32 &parentId, const QString &baseCurveName, const VSpline &spl,
                          CurveAngle angle, qint32 segment)
-    :VCurveVariable(id, parentId)
+    :VCurveVariable(id, parentId), m_angle(angle)
 {
     SetType(VarType::CurveAngle);
     if (angle == CurveAngle::StartAngle)
@@ -105,7 +105,7 @@ VCurveAngle::VCurveAngle(const quint32 &id, const quint32 &parentId, const QStri
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveAngle::VCurveAngle(const VCurveAngle &var)
-    :VCurveVariable(var)
+    :VCurveVariable(var), m_angle(var.m_angle)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -116,9 +116,16 @@ VCurveAngle &VCurveAngle::operator=(const VCurveAngle &var)
         return *this;
     }
     VCurveVariable::operator=(var);
+    m_angle = var.m_angle;
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveAngle::~VCurveAngle()
 {}
+
+//---------------------------------------------------------------------------------------------------------------------
+CurveAngle VCurveAngle::GetAngle() const
+{
+    return m_angle;
+}

@@ -36,6 +36,12 @@ private slots:
     void TestLineLengthMapping();
     void TestLineLengthSurvivesRename();
     void TestUnknownVariableTypeLeftOut();
+    void TestLineAngleMapping();
+    void TestArcRadiusMapping();
+    void TestEllipticalArcRadiusMapping();
+    void TestCurveAngleMapping();
+    void TestCurveCLengthMapping();
+    void TestPlainCurveLengthLeftOutOfCompositeMap();
 
 private:
     Q_DISABLE_COPY(TST_VCompositeVariableTokens)
