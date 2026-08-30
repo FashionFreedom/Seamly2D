@@ -26,6 +26,8 @@
 #include <QtTest>
 
 #include "../../libs/vpatterndb/vformulaidtranslator.h"
+#include "../../libs/vpatterndb/vcontainer.h"
+#include "../../libs/vgeometry/vpointf.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 TST_VFormulaIdTranslator::TST_VFormulaIdTranslator(QObject *parent)
@@ -109,4 +111,33 @@ void TST_VFormulaIdTranslator::TestRoundTripSurvivesRename()
 
     // The stored formula itself must be untouched by the rename.
     QCOMPARE(stored, QStringLiteral("id42+5"));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Same proof as TestRoundTripSurvivesRename, but against a real VContainer/VPointF pair instead
+ * of hand-built hashes - confirms the maps built off VContainer::DataGObjects() behave the same way,
+ * and that a rename (mutating the point object in place) is picked up live, with no separate table
+ * to keep in sync.
+ */
+void TST_VFormulaIdTranslator::TestMapsFromRealContainer()
+{
+    const Unit unit = Unit::Cm;
+    QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
+
+    VPointF *point = new VPointF(10, 20, QStringLiteral("A1"), 5, 5);
+    const quint32 id = data->AddGObject(point);
+
+    const QString stored = VFormulaIdTranslator::FormulaNamesToIds(
+        QStringLiteral("A1+5"), VFormulaIdTranslator::NameToIdMap(*data->DataGObjects()));
+    QCOMPARE(stored, QStringLiteral("id%1+5").arg(id));
+
+    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VFormulaIdTranslator::IdToNameMap(*data->DataGObjects())),
+             QStringLiteral("A1+5"));
+
+    data->GetGObject(id)->setName(QStringLiteral("Halsloch_hinten"));
+
+    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VFormulaIdTranslator::IdToNameMap(*data->DataGObjects())),
+             QStringLiteral("Halsloch_hinten+5"));
+    QCOMPARE(stored, QStringLiteral("id%1+5").arg(id));
 }

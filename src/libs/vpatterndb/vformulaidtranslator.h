@@ -26,8 +26,11 @@
 
 #include <QHash>
 #include <QMap>
+#include <QSharedPointer>
 #include <QString>
 #include <QtGlobal>
+
+#include "../vgeometry/vgobject.h"
 
 /**
  * @brief Translates the object names inside a formula to/from the stable numeric
@@ -44,6 +47,11 @@ public:
 
     static QString FormulaNamesToIds(const QString &formula, const QHash<QString, quint32> &nameToId);
     static QString FormulaIdsToNames(const QString &formula, const QHash<quint32, QString> &idToName);
+
+    // Builds the lookups straight off VContainer::DataGObjects() - no separate name/id table
+    // is kept anywhere, this just reads each object's own id and current name.
+    static QHash<QString, quint32> NameToIdMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    static QHash<quint32, QString> IdToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
 
 private:
     static void Replace(QString &formula, const QString &newToken, int position, const QString &token, int &bias);
