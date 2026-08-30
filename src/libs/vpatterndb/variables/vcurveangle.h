@@ -73,6 +73,10 @@ public:
     VCurveAngle(const VCurveAngle &var);
     VCurveAngle &operator=(const VCurveAngle &var);
     virtual ~VCurveAngle() override;
+
+    CurveAngle GetAngle() const;
+private:
+    CurveAngle m_angle{CurveAngle::StartAngle};
 };
 
 #endif // VCURVEANGLE_H
