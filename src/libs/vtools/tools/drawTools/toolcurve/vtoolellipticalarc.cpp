@@ -66,6 +66,8 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
 #include "../vdrawtool.h"
@@ -434,11 +436,13 @@ void VToolEllipticalArc::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogEllipticalArc> dialogTool = m_dialog.objectCast<DialogEllipticalArc>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrCenter,        QString().setNum(dialogTool->GetCenter()));
-    doc->SetAttribute(domElement, AttrRadius1,       dialogTool->GetRadius1());
-    doc->SetAttribute(domElement, AttrRadius2,       dialogTool->GetRadius2());
-    doc->SetAttribute(domElement, AttrAngle1,        dialogTool->GetF1());
-    doc->SetAttribute(domElement, AttrAngle2,        dialogTool->GetF2());
-    doc->SetAttribute(domElement, AttrRotationAngle, dialogTool->getRotationAngle());
+    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius1, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetRadius1(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrRadius2, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetRadius2(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetF2(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrRotationAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->getRotationAngle(), nameToIdToken));
     doc->SetAttribute(domElement, AttrColor,         dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrPenStyle,      dialogTool->getPenStyle());
     doc->SetAttribute(domElement, AttrLineWeight,    dialogTool->getLineWeight());
@@ -454,11 +458,13 @@ void VToolEllipticalArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter,        elArc->GetCenter().id());
-    doc->SetAttribute(tag, AttrRadius1,       elArc->GetFormulaRadius1());
-    doc->SetAttribute(tag, AttrRadius2,       elArc->GetFormulaRadius2());
-    doc->SetAttribute(tag, AttrAngle1,        elArc->GetFormulaF1());
-    doc->SetAttribute(tag, AttrAngle2,        elArc->GetFormulaF2());
-    doc->SetAttribute(tag, AttrRotationAngle, elArc->GetFormulaRotationAngle());
+    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius1, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRadius1(), nameToIdToken));
+    doc->SetAttribute(tag, AttrRadius2, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRadius2(), nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaF1(), nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaF2(), nameToIdToken));
+    doc->SetAttribute(tag, AttrRotationAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRotationAngle(), nameToIdToken));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

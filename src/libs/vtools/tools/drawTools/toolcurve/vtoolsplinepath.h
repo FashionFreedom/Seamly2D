@@ -53,6 +53,7 @@
 
 #include <qcompilerdetection.h>
 #include <QGraphicsItem>
+#include <QHash>
 #include <QMetaObject>
 #include <QObject>
 #include <QPointF>
@@ -87,7 +88,8 @@ public:
                                    VContainer *data, const Document &parse, const Source &typeCreation);
     static const QString ToolType;
     static const QString OldToolType;
-    static void   UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path);
+    static void   UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path,
+                                   const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>());
     virtual int   type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::SplinePath)};
 
@@ -134,7 +136,8 @@ private:
                                   const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     bool          IsMovable(int index) const;
-    static void   AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint);
+    static void   AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint,
+                               const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>());
     void          updateControlPoints(const VSpline &spl, VSplinePath &splPath, const qint32 &splineIndex) const;
     void          SetSplinePathAttributes(QDomElement &domElement, const VSplinePath &path);
 };

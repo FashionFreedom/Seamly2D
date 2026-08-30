@@ -81,6 +81,8 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vmath.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vwidgets/vcontrolpointspline.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
@@ -716,13 +718,14 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
 {
     SCASSERT(doc != nullptr)
 
+    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
     doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
-    doc->SetAttribute(domElement, AttrAngle1,  spl.GetStartAngleFormula());
-    doc->SetAttribute(domElement, AttrAngle2,  spl.GetEndAngleFormula());
-    doc->SetAttribute(domElement, AttrLength1, spl.GetC1LengthFormula());
-    doc->SetAttribute(domElement, AttrLength2, spl.GetC2LengthFormula());
+    doc->SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(spl.GetStartAngleFormula(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(spl.GetEndAngleFormula(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrLength1, VFormulaIdTranslator::FormulaNamesToIds(spl.GetC1LengthFormula(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrLength2, VFormulaIdTranslator::FormulaNamesToIds(spl.GetC2LengthFormula(), nameToIdToken));
 
     if (spl.GetDuplicate() > 0)
     {

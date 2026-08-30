@@ -64,11 +64,13 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 MoveSplinePath::MoveSplinePath(VAbstractPattern *doc, const VSplinePath &oldSplPath, const VSplinePath &newSplPath,
-                               const quint32 &id, QUndoCommand *parent)
+                               const quint32 &id, const QHash<QString, QString> &nameToIdToken,
+                               QUndoCommand *parent)
     : VUndoCommand(QDomElement(), doc, parent),
       oldSplinePath(oldSplPath),
       newSplinePath(newSplPath),
-      scene(qApp->getCurrentScene())
+      scene(qApp->getCurrentScene()),
+      nameToIdToken(nameToIdToken)
 {
     setText(tr("move spline path"));
     nodeId = id;
@@ -126,7 +128,7 @@ void MoveSplinePath::Do(const VSplinePath &splPath)
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagSpline);
     if (domElement.isElement())
     {
-        VToolSplinePath::UpdatePathPoints(doc, domElement, splPath);
+        VToolSplinePath::UpdatePathPoints(doc, domElement, splPath, nameToIdToken);
 
         emit NeedLiteParsing(Document::LiteParse);
     }

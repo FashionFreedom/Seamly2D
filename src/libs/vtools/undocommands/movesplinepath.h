@@ -53,6 +53,7 @@
 #define MOVESPLINEPATH_H
 
 #include <qcompilerdetection.h>
+#include <QHash>
 #include <QMetaObject>
 #include <QObject>
 #include <QString>
@@ -68,7 +69,8 @@ class MoveSplinePath : public VUndoCommand
     Q_OBJECT
 public:
     MoveSplinePath(VAbstractPattern *doc, const VSplinePath &oldSplPath, const VSplinePath &newSplPath,
-                   const quint32 &id, QUndoCommand *parent = nullptr);
+                   const quint32 &id, const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>(),
+                   QUndoCommand *parent = nullptr);
     virtual ~MoveSplinePath() override;
     virtual void undo() override;
     virtual void redo() override;
@@ -81,6 +83,7 @@ private:
     VSplinePath oldSplinePath;
     VSplinePath newSplinePath;
     QGraphicsScene *scene;
+    QHash<QString, QString> nameToIdToken;
     void         Do(const VSplinePath &splPath);
 };
 
