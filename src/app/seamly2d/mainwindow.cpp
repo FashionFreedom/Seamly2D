@@ -6695,6 +6695,13 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
 
     if (guiEnabled)
     { // No errors occurred
+        if (m_curFileFormatVersion < VPatternConverter::PatternMaxVer)
+        {
+            // One-time catch-up: bring every formula in this file to the id-token form, not just
+            // the ones a tool happens to touch next. See VPattern::ConvertFormulasToIdTokens().
+            doc->ConvertFormulasToIdTokens();
+        }
+
         patternReadOnly = doc->isReadOnly();
         setWidgetsEnabled(true);
         setCurrentFile(fileName);

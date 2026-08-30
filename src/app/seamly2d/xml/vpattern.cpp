@@ -3893,6 +3893,94 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
     }
 }
 
+namespace
+{
+//---------------------------------------------------------------------------------------------------------------------
+void TranslateExpressionAttribute(QDomElement &element, const QString &attribute,
+                                  const QHash<QString, QString> &nameToIdToken, bool &changedAny)
+{
+    if (not element.hasAttribute(attribute))
+    {
+        return;
+    }
+
+    const QString formula = element.attribute(attribute);
+    try
+    {
+        const QString translated = VFormulaIdTranslator::FormulaNamesToIds(formula, nameToIdToken);
+        if (translated != formula)
+        {
+            element.setAttribute(attribute, translated);
+            changedAny = true;
+        }
+    }
+    catch (const qmu::QmuParserError &error)
+    {
+        // Leave a formula we can't even tokenize untouched - not this pass's job to fix a broken formula.
+        Q_UNUSED(error)
+    }
+}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief ConvertFormulasToIdTokens is the one-time catch-up pass for a pattern that was just
+ * upgraded from a pre-0.7.5 file: every individual tool only translates its OWN formula when
+ * it's next read or saved, so a freshly-opened old file still has every OTHER tool's formula
+ * sitting in plain-name form until that tool happens to get touched. Renaming any point before
+ * that catch-up happens breaks every formula still in the old form, exactly the problem this
+ * whole feature exists to fix. This walks every known formula-bearing attribute across the whole
+ * pattern once, right after a full parse (so VContainer - and with it every composite variable
+ * name) already exists, and converts anything still in plain-name form to the id-token form -
+ * bringing the entire in-memory document to the same state a version bump alone can't produce
+ * (see VPatternConverter::toVersion0_7_5's own explanation for why the version bump itself
+ * doesn't need to touch formula text). Caller decides *whether* to call this (only for a file
+ * whose original version was below the current schema); this only decides *what* to translate.
+ */
+void VPattern::ConvertFormulasToIdTokens()
+{
+    qCDebug(vXML, "Converting formulas to id tokens (one-time catch-up for an upgraded pattern).");
+
+    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
+    bool changedAny = false;
+
+    auto translateAll = [&](const QString &tag, const QVector<QString> &attributes)
+    {
+        const QDomNodeList list = elementsByTagName(tag);
+        for (int i = 0; i < list.size(); ++i)
+        {
+            QDomElement element = list.at(i).toElement();
+            if (element.isNull())
+            {
+                continue;
+            }
+            for (const QString &attribute : attributes)
+            {
+                TranslateExpressionAttribute(element, attribute, nameToIdToken, changedAny);
+            }
+        }
+    };
+
+    // Point tools (alongLine, shoulderPoint, bisector, normal, pointOfContact, lineIntersectAxis,
+    // curveIntersectAxis, endLine, circle-tangent, intersect-circles, the three cut tools) all
+    // share this one tag, distinguished only by their "type" attribute - trying every known
+    // point-formula attribute name on every <point> is safe, since a name this tool doesn't
+    // actually have is simply absent (TranslateExpressionAttribute skips it).
+    translateAll(TagPoint, {AttrLength, AttrAngle, AttrRadius, AttrCRadius, AttrC1Radius, AttrC2Radius});
+    translateAll(TagArc, {AttrRadius, AttrAngle1, AttrAngle2, AttrLength});
+    translateAll(TagElArc, {AttrRadius1, AttrRadius2, AttrAngle1, AttrAngle2, AttrRotationAngle});
+    translateAll(TagSpline, {AttrAngle1, AttrAngle2, AttrLength1, AttrLength2});
+    translateAll(AttrPathPoint, {AttrLength1, AttrLength2, AttrAngle1, AttrAngle2});
+    translateAll(TagOperation, {AttrAngle, AttrLength, AttrRotationAngle});
+
+    if (changedAny)
+    {
+        qCDebug(vXML, "Converted at least one formula to id tokens.");
+        modified = true;
+        haveLiteChange();
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief GenerateLabel create name for draft block basepoints.
 /// @param type type of the label.
