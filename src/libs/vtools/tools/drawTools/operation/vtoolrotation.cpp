@@ -83,6 +83,8 @@
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
 #include "../vwidgets/vabstractsimple.h"
@@ -360,7 +362,9 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
     SCASSERT(not dialogTool.isNull())
 
     doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getOriginPointId()));
-    doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(),
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
 }
 
@@ -368,7 +372,9 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 void VToolRotation::ReadToolAttributes(const QDomElement &domElement)
 {
     m_originPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
-    formulaAngle = doc->GetParametrString(domElement, AttrAngle, "0");
+    formulaAngle = VFormulaIdTranslator::FormulaIdsToNames(
+                       doc->GetParametrString(domElement, AttrAngle, "0"),
+                       VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
     suffix = doc->GetParametrString(domElement, AttrSuffix);
 }
 
@@ -379,7 +385,9 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, QString().setNum(m_originPointId));
-    doc->SetAttribute(tag, AttrAngle, formulaAngle);
+    doc->SetAttribute(tag, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(formulaAngle,
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrSuffix, suffix);
 
     SaveSourceDestination(tag);

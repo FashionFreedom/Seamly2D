@@ -68,6 +68,8 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -319,7 +321,9 @@ void VToolBisector::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetFormula());
+    doc->SetAttribute(domElement, AttrLength,
+                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetFormula(),
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrFirstPoint, QString().setNum(dialogTool->GetFirstPointId()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPointId()));
     doc->SetAttribute(domElement, AttrThirdPoint, QString().setNum(dialogTool->GetThirdPointId()));
@@ -331,7 +335,9 @@ void VToolBisector::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrLength, formulaLength);
+    doc->SetAttribute(tag, AttrLength,
+                      VFormulaIdTranslator::FormulaNamesToIds(formulaLength,
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrFirstPoint, firstPointId);
     doc->SetAttribute(tag, AttrSecondPoint, basePointId);
     doc->SetAttribute(tag, AttrThirdPoint, thirdPointId);
@@ -343,7 +349,9 @@ void VToolBisector::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = doc->GetParametrString(domElement, AttrLength, "");
+    formulaLength = VFormulaIdTranslator::FormulaIdsToNames(
+                        doc->GetParametrString(domElement, AttrLength, ""),
+                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
     firstPointId  = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     basePointId   = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
     thirdPointId  = doc->GetParametrUInt(domElement, AttrThirdPoint, NULL_ID_STR);
