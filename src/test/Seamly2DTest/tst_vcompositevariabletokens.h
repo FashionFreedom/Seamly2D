@@ -42,6 +42,9 @@ private slots:
     void TestCurveAngleMapping();
     void TestCurveCLengthMapping();
     void TestPlainCurveLengthLeftOutOfCompositeMap();
+    void TestCurveLengthSegmentMapping();
+    void TestCurveAngleSegmentMapping();
+    void TestCurveCLengthSegmentMapping();
 
 private:
     Q_DISABLE_COPY(TST_VCompositeVariableTokens)

@@ -39,14 +39,14 @@ class VInternalVariable;
  * translator to split a glued name apart itself - a constituent point's own name can contain
  * an underscore, so the glued string can't be reliably split back into its parts.
  *
- * Covers line length, line angle, arc radius (plain and elliptical), curve start/end angle and
- * curve control-point length. Plain curve length needs no entry here - it's just the curve's own
- * name, already covered by VFormulaIdTranslator::NameToIdTokenMap() since a curve is a VGObject
- * with its own id, same as a point. Not yet covered: the segment-suffixed variants of curve
- * length/angle/control-point-length that appear on multi-segment curve paths - those classes
- * don't currently expose the segment index needed to build an unambiguous token. A variable type
- * this class doesn't (yet) recognize is simply left out of the map, which just means
- * VFormulaIdTranslator leaves its formula tokens untouched for now.
+ * Covers all six formula-visible variable types: line length, line angle, arc radius (plain and
+ * elliptical), curve start/end angle, curve control-point length, and curve length - including
+ * the segment-suffixed variants of the latter three that appear on multi-segment curve paths.
+ * Plain (non-segmented) curve length needs no entry here - it's just the curve's own name,
+ * already covered by VFormulaIdTranslator::NameToIdTokenMap() since a curve is a VGObject with
+ * its own id, same as a point. A variable type this class doesn't recognize (measurements,
+ * user-defined custom variables) is simply left out of the map, which just means
+ * VFormulaIdTranslator leaves its formula tokens untouched.
  */
 class VCompositeVariableTokens
 {
