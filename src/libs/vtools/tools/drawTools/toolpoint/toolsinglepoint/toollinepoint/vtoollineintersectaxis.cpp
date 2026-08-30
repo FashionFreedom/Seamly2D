@@ -59,6 +59,8 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../vdrawtool.h"
 #include "../../../../vabstracttool.h"
@@ -337,7 +339,9 @@ void VToolLineIntersectAxis::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrAngle,      dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(),
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrBasePoint,  QString().setNum(dialogTool->GetBasePointId()));
     doc->SetAttribute(domElement, AttrP1Line,     QString().setNum(dialogTool->GetFirstPointId()));
     doc->SetAttribute(domElement, AttrP2Line,     QString().setNum(dialogTool->GetSecondPointId()));
@@ -349,7 +353,9 @@ void VToolLineIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObje
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType,      ToolType);
-    doc->SetAttribute(tag, AttrAngle,     formulaAngle);
+    doc->SetAttribute(tag, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(formulaAngle,
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
     doc->SetAttribute(tag, AttrP1Line,    firstPointId);
     doc->SetAttribute(tag, AttrP2Line,    secondPointId);
@@ -364,7 +370,9 @@ void VToolLineIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
     basePointId   = doc->GetParametrUInt(domElement,   AttrBasePoint,  NULL_ID_STR);
     firstPointId  = doc->GetParametrUInt(domElement,   AttrP1Line,     NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement,   AttrP2Line,     NULL_ID_STR);
-    formulaAngle  = doc->GetParametrString(domElement, AttrAngle,      "");
+    formulaAngle  = VFormulaIdTranslator::FormulaIdsToNames(
+                        doc->GetParametrString(domElement, AttrAngle, ""),
+                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

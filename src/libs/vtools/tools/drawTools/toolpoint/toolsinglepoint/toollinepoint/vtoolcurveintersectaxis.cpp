@@ -80,6 +80,8 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vtools/visualization/visualization.h"
 #include "../vtools/visualization/line/vistoolcurveintersectaxis.h"
 #include "../vwidgets/vmaingraphicsscene.h"
@@ -344,7 +346,9 @@ void VToolCurveIntersectAxis::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrAngle,      dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(),
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrBasePoint,  QString().setNum(dialogTool->GetBasePointId()));
     doc->SetAttribute(domElement, AttrCurve,      QString().setNum(dialogTool->getCurveId()));
 }
@@ -355,7 +359,9 @@ void VToolCurveIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObj
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType,      ToolType);
-    doc->SetAttribute(tag, AttrAngle,     formulaAngle);
+    doc->SetAttribute(tag, AttrAngle,
+                      VFormulaIdTranslator::FormulaNamesToIds(formulaAngle,
+                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
     doc->SetAttribute(tag, AttrCurve,     curveId);
 }
@@ -368,7 +374,9 @@ void VToolCurveIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
     lineColor    = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     basePointId  = doc->GetParametrUInt(domElement,   AttrBasePoint, NULL_ID_STR);
     curveId      = doc->GetParametrUInt(domElement,   AttrCurve, NULL_ID_STR);
-    formulaAngle = doc->GetParametrString(domElement, AttrAngle, "");
+    formulaAngle = VFormulaIdTranslator::FormulaIdsToNames(
+                       doc->GetParametrString(domElement, AttrAngle, ""),
+                       VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
