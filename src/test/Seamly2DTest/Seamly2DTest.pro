@@ -50,7 +50,8 @@ SOURCES += \
     tst_readval.cpp \
     tst_vtranslatevars.cpp \
     tst_vabstractpiece.cpp \
-    tst_vtoolmove.cpp
+    tst_vtoolmove.cpp \
+    tst_vformulaidtranslator.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -77,7 +78,8 @@ HEADERS += \
     tst_readval.h \
     tst_vtranslatevars.h \
     tst_vabstractpiece.h \
-    tst_vtoolmove.h
+    tst_vtoolmove.h \
+    tst_vformulaidtranslator.h
 
 include(warnings.pri)
 
