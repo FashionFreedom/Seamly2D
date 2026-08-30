@@ -131,6 +131,36 @@ QString VFormulaIdTranslator::FormulaIdsToNames(const QString &formula, const QH
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QHash<QString, quint32> VFormulaIdTranslator::NameToIdMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects)
+{
+    QHash<QString, quint32> nameToId;
+    nameToId.reserve(gObjects.size());
+
+    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = gObjects.constBegin();
+    while (i != gObjects.constEnd())
+    {
+        nameToId.insert(i.value()->name(), i.key());
+        ++i;
+    }
+    return nameToId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QHash<quint32, QString> VFormulaIdTranslator::IdToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects)
+{
+    QHash<quint32, QString> idToName;
+    idToName.reserve(gObjects.size());
+
+    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = gObjects.constBegin();
+    while (i != gObjects.constEnd())
+    {
+        idToName.insert(i.key(), i.value()->name());
+        ++i;
+    }
+    return idToName;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VFormulaIdTranslator::Replace(QString &formula, const QString &newToken, int position, const QString &token,
                                     int &bias)
 {

@@ -38,6 +38,7 @@ private slots:
     void TestFormulaIdsToNames_data();
     void TestFormulaIdsToNames();
     void TestRoundTripSurvivesRename();
+    void TestMapsFromRealContainer();
 
 private:
     Q_DISABLE_COPY(TST_VFormulaIdTranslator)
