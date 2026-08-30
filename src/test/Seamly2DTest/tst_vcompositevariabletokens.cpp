@@ -234,3 +234,70 @@ void TST_VCompositeVariableTokens::TestPlainCurveLengthLeftOutOfCompositeMap()
 
     QVERIFY(VCompositeVariableTokens::NameToIdTokenMap(variables).isEmpty());
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief On a multi-segment curve path, each segment gets its own length variable. The segment
+ * index (a plain integer, never a name) must be part of the stored token, or segment 1 and
+ * segment 2 of the same path would collide onto the same id token.
+ */
+void TST_VCompositeVariableTokens::TestCurveLengthSegmentMapping()
+{
+    const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
+    const VPointF p4(10, 10, QStringLiteral("A2"), 5, 5);
+    VSpline spl(p1, QPointF(3, 3), QPointF(7, 7), p4);
+
+    QSharedPointer<VInternalVariable> seg1(new VCurveLength(99, NULL_ID, QStringLiteral("Curve1"), spl, Unit::Cm, 1));
+    QSharedPointer<VInternalVariable> seg2(new VCurveLength(99, NULL_ID, QStringLiteral("Curve1"), spl, Unit::Cm, 2));
+
+    QHash<QString, QSharedPointer<VInternalVariable>> variables;
+    variables.insert(seg1->GetName(), seg1);
+    variables.insert(seg2->GetName(), seg2);
+
+    const QHash<QString, QString> nameToIdToken = VCompositeVariableTokens::NameToIdTokenMap(variables);
+    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("id99_Seg_1"));
+    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("id99_Seg_2"));
+    QVERIFY(nameToIdToken.value(seg1->GetName()) != nameToIdToken.value(seg2->GetName()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_VCompositeVariableTokens::TestCurveAngleSegmentMapping()
+{
+    const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
+    const VPointF p4(10, 10, QStringLiteral("A2"), 5, 5);
+    VSpline spl(p1, QPointF(3, 3), QPointF(7, 7), p4);
+
+    QSharedPointer<VInternalVariable> seg1(
+        new VCurveAngle(99, NULL_ID, QStringLiteral("Curve1"), spl, CurveAngle::StartAngle, 1));
+    QSharedPointer<VInternalVariable> seg2(
+        new VCurveAngle(99, NULL_ID, QStringLiteral("Curve1"), spl, CurveAngle::StartAngle, 2));
+
+    QHash<QString, QSharedPointer<VInternalVariable>> variables;
+    variables.insert(seg1->GetName(), seg1);
+    variables.insert(seg2->GetName(), seg2);
+
+    const QHash<QString, QString> nameToIdToken = VCompositeVariableTokens::NameToIdTokenMap(variables);
+    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("Angle1id99_Seg_1"));
+    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("Angle1id99_Seg_2"));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_VCompositeVariableTokens::TestCurveCLengthSegmentMapping()
+{
+    const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
+    const VPointF p4(10, 10, QStringLiteral("A2"), 5, 5);
+    VSpline spl(p1, QPointF(3, 3), QPointF(7, 7), p4);
+
+    QSharedPointer<VInternalVariable> seg1(
+        new VCurveCLength(99, NULL_ID, QStringLiteral("Curve1"), spl, CurveCLength::C1, Unit::Cm, 1));
+    QSharedPointer<VInternalVariable> seg2(
+        new VCurveCLength(99, NULL_ID, QStringLiteral("Curve1"), spl, CurveCLength::C1, Unit::Cm, 2));
+
+    QHash<QString, QSharedPointer<VInternalVariable>> variables;
+    variables.insert(seg1->GetName(), seg1);
+    variables.insert(seg2->GetName(), seg2);
+
+    const QHash<QString, QString> nameToIdToken = VCompositeVariableTokens::NameToIdTokenMap(variables);
+    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("C1Lengthid99_Seg_1"));
+    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("C1Lengthid99_Seg_2"));
+}
