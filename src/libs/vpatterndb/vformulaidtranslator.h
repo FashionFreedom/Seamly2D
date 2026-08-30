@@ -33,25 +33,32 @@
 #include "../vgeometry/vgobject.h"
 
 /**
- * @brief Translates the object names inside a formula to/from the stable numeric
- * object ids they refer to, so formulas can be stored keyed by id while the user
- * only ever sees and edits names.
+ * @brief Translates the tokens inside a formula to/from a stable, id-based form, so formulas
+ * can be stored keyed by object id while the user only ever sees and edits names.
  *
- * This does not look anything up itself - the caller supplies the name/id lookup,
- * built from whatever objects (points, lines, ...) are relevant at the time.
+ * This does not look anything up and does not know anything about how a token is built - the
+ * caller supplies the full display-token <-> stored-token pairs, built from whatever objects
+ * (points, but also derived values like a line length or angle, whose displayed name is built
+ * by gluing constituent point names together) are relevant at the time. Deliberately whole-token
+ * lookup only, never split apart: a glued-together display name like "Line_A1_A2" can't be
+ * reliably split back into its parts by string position once a point name can itself contain an
+ * underscore (e.g. "Halsloch_hinten"), so the caller must hand over the exact pairing instead of
+ * this class trying to reconstruct it.
  */
 class VFormulaIdTranslator
 {
 public:
     static QString IdToken(quint32 id);
 
-    static QString FormulaNamesToIds(const QString &formula, const QHash<QString, quint32> &nameToId);
-    static QString FormulaIdsToNames(const QString &formula, const QHash<quint32, QString> &idToName);
+    static QString FormulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken);
+    static QString FormulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName);
 
-    // Builds the lookups straight off VContainer::DataGObjects() - no separate name/id table
-    // is kept anywhere, this just reads each object's own id and current name.
-    static QHash<QString, quint32> NameToIdMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
-    static QHash<quint32, QString> IdToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    // Builds the lookup straight off VContainer::DataGObjects() - no separate name/id table
+    // is kept anywhere, this just reads each object's own id and current name. Covers plain
+    // object names only; composite/derived-variable names are the caller's responsibility to
+    // add to the map (there is no persisted object to enumerate them from).
+    static QHash<QString, QString> NameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    static QHash<QString, QString> IdTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
 
 private:
     static void Replace(QString &formula, const QString &newToken, int position, const QString &token, int &bias);
