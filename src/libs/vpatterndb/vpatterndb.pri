@@ -18,6 +18,7 @@ SOURCES += \
     $$PWD/variables/vvariable.cpp \
     $$PWD/vformula.cpp \
     $$PWD/vformulaidtranslator.cpp \
+    $$PWD/vcompositevariabletokens.cpp \
     $$PWD/variables/vcurveclength.cpp \
     $$PWD/vpiece.cpp \
     $$PWD/vpiecenode.cpp \
@@ -59,6 +60,7 @@ HEADERS += \
     $$PWD/variables/vvariable_p.h \
     $$PWD/vformula.h \
     $$PWD/vformulaidtranslator.h \
+    $$PWD/vcompositevariabletokens.h \
     $$PWD/variables/vcurveclength.h \
     $$PWD/vpiece.h \
     $$PWD/vpiece_p.h \

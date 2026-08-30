@@ -74,6 +74,7 @@
 #include "tst_readval.h"
 #include "tst_vtranslatevars.h"
 #include "tst_vformulaidtranslator.h"
+#include "tst_vcompositevariabletokens.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -181,6 +182,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
     ASSERT_TEST(new TST_VFormulaIdTranslator());
+    ASSERT_TEST(new TST_VCompositeVariableTokens());
 
     return status;
 }
