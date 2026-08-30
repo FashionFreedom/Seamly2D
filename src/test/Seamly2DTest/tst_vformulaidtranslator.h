@@ -38,6 +38,7 @@ private slots:
     void TestFormulaIdsToNames_data();
     void TestFormulaIdsToNames();
     void TestRoundTripSurvivesRename();
+    void TestCompositeNameNoSplittingAmbiguity();
     void TestMapsFromRealContainer();
 
 private:
