@@ -2215,8 +2215,8 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (c1R != c1Radius || c2R != c2Radius)
         {
-            SetAttribute(domElement, AttrC1Center, c1R);
-            SetAttribute(domElement, AttrC2Center, c2R);
+            SetAttribute(domElement, AttrC1Radius, c1R);
+            SetAttribute(domElement, AttrC2Radius, c2R);
             modified = true;
             haveLiteChange();
         }
@@ -2290,7 +2290,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (cR != cRadius)
         {
-            SetAttribute(domElement, AttrCCenter, cR);
+            SetAttribute(domElement, AttrCRadius, cR);
             modified = true;
             haveLiteChange();
         }
@@ -3203,9 +3203,9 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (a != angle || len != length || rot != rotation)
         {
-            SetAttribute(domElement, AttrAngle, angle);
-            SetAttribute(domElement, AttrLength, length);
-            SetAttribute(domElement, AttrRotationAngle, rotation);
+            SetAttribute(domElement, AttrAngle, a);
+            SetAttribute(domElement, AttrLength, len);
+            SetAttribute(domElement, AttrRotationAngle, rot);
             modified = true;
             haveLiteChange();
         }
