@@ -77,6 +77,8 @@
 #include "../core/application_2d.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
@@ -1493,7 +1495,9 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         bool showPointName = true;
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineWeight, lineColor);
-        const QString formula = GetParametrString(domElement, AttrLength, "100.0");
+        const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
+        const QString formula =
+            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
@@ -1503,7 +1507,8 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
-            SetAttribute(domElement, AttrLength, f);
+            SetAttribute(domElement, AttrLength,
+                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
