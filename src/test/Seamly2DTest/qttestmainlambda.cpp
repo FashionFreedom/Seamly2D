@@ -76,6 +76,7 @@
 #include "tst_vtoolmove.h"
 #include "tst_vformulaidtranslator.h"
 #include "tst_vcompositevariabletokens.h"
+#include "tst_vpatternformulatokens.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -185,6 +186,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VToolMove());
     ASSERT_TEST(new TST_VFormulaIdTranslator());
     ASSERT_TEST(new TST_VCompositeVariableTokens());
+    ASSERT_TEST(new TST_VPatternFormulaTokens());
 
     return status;
 }
