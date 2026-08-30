@@ -1,5 +1,7 @@
 var NAVTREEINDEX259 =
 {
+"dc/db3/classArrayJanitor.html#ae4ec5128776ebd40f175ea6af367ab60":[3,0,27,22],
+"dc/db3/classArrayJanitor.html#ae4ec5128776ebd40f175ea6af367ab60":[3,0,27,23],
 "dc/db3/classArrayJanitor.html#ae4ec5128776ebd40f175ea6af367ab60":[3,0,27,20],
 "dc/db3/classArrayJanitor.html#ae9ff4d56fb444e1a58f63fba79f2dabc":[3,0,27,25],
 "dc/db3/classArrayJanitor.html#ae9ff4d56fb444e1a58f63fba79f2dabc":[3,0,27,24],
@@ -247,7 +249,5 @@ var NAVTREEINDEX259 =
 "dc/dcb/structVPE_1_1Vector3D.html#a175e485da44c1f419676f2124cefe407":[2,0,26,12,1],
 "dc/dcb/structVPE_1_1Vector3D.html#a17d490a8d2ad85a14673fc08193c809b":[3,0,2,12,5],
 "dc/dcb/structVPE_1_1Vector3D.html#a17d490a8d2ad85a14673fc08193c809b":[2,0,26,12,5],
-"dc/dcb/structVPE_1_1Vector3D.html#a1b513adf35e27a771e45cf1863ce883b":[2,0,26,12,0],
-"dc/dcb/structVPE_1_1Vector3D.html#a1b513adf35e27a771e45cf1863ce883b":[3,0,2,12,0],
-"dc/dcb/structVPE_1_1Vector3D.html#a26c64e56d367dcdd328da301e3b587d0":[2,0,26,12,6]
+"dc/dcb/structVPE_1_1Vector3D.html#a1b513adf35e27a771e45cf1863ce883b":[2,0,26,12,0]
 };

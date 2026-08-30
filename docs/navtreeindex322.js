@@ -1,5 +1,7 @@
 var NAVTREEINDEX322 =
 {
+"globals_defs_c.html":[4,1,6,3],
+"globals_defs_d.html":[4,1,6,4],
 "globals_defs_e.html":[4,1,6,5],
 "globals_defs_f.html":[4,1,6,6],
 "globals_defs_g.html":[4,1,6,7],

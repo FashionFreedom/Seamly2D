@@ -1,5 +1,7 @@
 var NAVTREEINDEX316 =
 {
+"df/db4/classXTemplateSerializer.html#a108553b7fde9619dc4d67a84a69a3c58":[3,0,921,175],
+"df/db4/classXTemplateSerializer.html#a108553b7fde9619dc4d67a84a69a3c58":[3,0,921,174],
 "df/db4/classXTemplateSerializer.html#a108553b7fde9619dc4d67a84a69a3c58":[3,0,921,172],
 "df/db4/classXTemplateSerializer.html#a172e845cb5874f094f4e1a403d701c27":[3,0,921,151],
 "df/db4/classXTemplateSerializer.html#a172e845cb5874f094f4e1a403d701c27":[3,0,921,150],
@@ -247,7 +249,5 @@ var NAVTREEINDEX316 =
 "df/db9/structRefHash3KeysTableBucketElem.html#ae3247a306b5b9a03b6168de05eb0ccb8":[3,0,439,3],
 "df/db9/structRefHash3KeysTableBucketElem.html#ae47b305d98643c57f06277537d4fb940":[3,0,439,23],
 "df/dba/vpiecenode__p_8h.html":[4,0,0,1,10,23],
-"df/dba/vpiecenode__p_8h.html#aa16b5469492769486b19ccdb6c561fd3":[4,0,0,1,10,23,2],
-"df/dba/vpiecenode__p_8h.html#ab5384607743e6abcd74377e30b3fa149":[4,0,0,1,10,23,1],
-"df/dba/vpiecenode__p_8h_source.html":[4,0,0,1,10,23]
+"df/dba/vpiecenode__p_8h.html#aa16b5469492769486b19ccdb6c561fd3":[4,0,0,1,10,23,2]
 };

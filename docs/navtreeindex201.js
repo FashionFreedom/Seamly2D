@@ -1,5 +1,7 @@
 var NAVTREEINDEX201 =
 {
+"da/da7/classSAXParser.html#a81db2fe479b7377e754ced1a04be5f38":[3,0,464,62],
+"da/da7/classSAXParser.html#a81db2fe479b7377e754ced1a04be5f38":[3,0,464,63],
 "da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,268],
 "da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,271],
 "da/da7/classSAXParser.html#a828fb53069e35e7af09b8e1fa34f536a":[3,0,464,270],
@@ -247,7 +249,5 @@ var NAVTREEINDEX201 =
 "da/da8/classDialogNewPattern.html#a8b9fe8cb3acd45de16c14e27c9cc3044":[3,0,119,2],
 "da/da8/classDialogNewPattern.html#a8f8066bc60c4421dc4f97b42f41b883d":[3,0,119,8],
 "da/da8/classDialogNewPattern.html#aa48212f4478a766b9a4bbb4b2a2897e0":[3,0,119,4],
-"da/da8/classDialogNewPattern.html#abcaccaf0e55f923f202f6255479a4502":[3,0,119,7],
-"da/dab/vabstractbezier_8cpp.html":[4,0,0,1,6,5],
-"da/dab/vabstractbezier_8cpp_source.html":[4,0,0,1,6,5]
+"da/da8/classDialogNewPattern.html#abcaccaf0e55f923f202f6255479a4502":[3,0,119,7]
 };

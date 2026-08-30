@@ -1,5 +1,7 @@
 var NAVTREEINDEX317 =
 {
+"df/dba/vpiecenode__p_8h.html#ab5384607743e6abcd74377e30b3fa149":[4,0,0,1,10,23,1],
+"df/dba/vpiecenode__p_8h_source.html":[4,0,0,1,10,23],
 "df/dba/vseamlymesettings_8cpp.html":[4,0,0,1,8,21],
 "df/dba/vseamlymesettings_8cpp.html#a81e60c38d4ebf840401f4beff170ebac":[4,0,0,1,8,21,0],
 "df/dba/vseamlymesettings_8cpp.html#aa552e31f884d779f0169278961812092":[4,0,0,1,8,21,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX317 =
 "df/de0/classSeamlyMePreferencesConfigurationPage.html#a2aa3a790e1b579f6135af2ce6ba7f99c":[3,0,473,5],
 "df/de0/classSeamlyMePreferencesConfigurationPage.html#a405b39bcce5c85f49a00329d23fc2276":[3,0,473,9],
 "df/de0/classSeamlyMePreferencesConfigurationPage.html#a5eca0b669060321620ac5b19e25fa305":[3,0,473,6],
-"df/de0/classSeamlyMePreferencesConfigurationPage.html#a710f9eabbe03774c40813672ca76418e":[3,0,473,4],
-"df/de0/classSeamlyMePreferencesConfigurationPage.html#a86e14b69e1eff0844fd0edc73cfe8377":[3,0,473,0],
-"df/de0/classSeamlyMePreferencesConfigurationPage.html#a909be8831e264f4fba613cc9fcc83148":[3,0,473,7]
+"df/de0/classSeamlyMePreferencesConfigurationPage.html#a710f9eabbe03774c40813672ca76418e":[3,0,473,4]
 };

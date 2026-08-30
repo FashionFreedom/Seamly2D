@@ -1,5 +1,7 @@
 var NAVTREEINDEX272 =
 {
+"dd/dca/classXSElementDeclaration.html#aead95a4e8d69e7438a8829137016b7ce":[3,0,901,40],
+"dd/dca/classXSElementDeclaration.html#aead95a4e8d69e7438a8829137016b7ce":[3,0,901,41],
 "dd/dca/classXSElementDeclaration.html#aefacb8aabc7576d8b1024f33aaa22875":[3,0,901,92],
 "dd/dca/mingw_2include_2xercesc_2util_2BinMemInputStream_8hpp.html":[4,0,0,1,15,1,0,0,6,11],
 "dd/dca/mingw_2include_2xercesc_2util_2BinMemInputStream_8hpp_source.html":[4,0,0,1,15,1,0,0,6,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX272 =
 "dd/de3/macx_2include_2xercesc_2util_2regx_2CharToken_8hpp.html":[4,0,0,1,15,0,0,0,6,3,3],
 "dd/de3/macx_2include_2xercesc_2util_2regx_2CharToken_8hpp_source.html":[4,0,0,1,15,0,0,0,6,3,3],
 "dd/de3/msvc-arm64_2include_2xercesc_2util_2XML88591Transcoder_8hpp.html":[4,0,0,1,15,3,0,0,6,87],
-"dd/de3/msvc-arm64_2include_2xercesc_2util_2XML88591Transcoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,87],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html":[4,0,0,1,15,1,0,0,6,117],
-"dd/de7/mingw_2include_2xercesc_2util_2XMLUniDefs_8hpp.html#a03384f191e6f72e609effb5c73e714d9":[4,0,0,1,15,1,0,0,6,117,79]
+"dd/de3/msvc-arm64_2include_2xercesc_2util_2XML88591Transcoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,87]
 };

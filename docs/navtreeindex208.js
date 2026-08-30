@@ -1,5 +1,7 @@
 var NAVTREEINDEX208 =
 {
+"db/d17/libs_2vmisc_2stable_8h.html":[4,0,0,1,8,14],
+"db/d17/libs_2vmisc_2stable_8h_source.html":[4,0,0,1,8,14],
 "db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp.html":[4,0,0,1,15,3,0,0,6,104],
 "db/d18/msvc-arm64_2include_2xercesc_2util_2XMLIBM1047Transcoder_8hpp_source.html":[4,0,0,1,15,3,0,0,6,104],
 "db/d1a/classCharOp.html":[3,0,52],
@@ -247,7 +249,5 @@ var NAVTREEINDEX208 =
 "db/d2c/macx_2include_2xercesc_2validators_2common_2ContentSpecNode_8hpp.html":[4,0,0,1,15,0,0,0,7,0,9],
 "db/d2c/macx_2include_2xercesc_2validators_2common_2ContentSpecNode_8hpp_source.html":[4,0,0,1,15,0,0,0,7,0,9],
 "db/d2c/macx_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp.html":[4,0,0,1,15,0,0,0,7,1,6],
-"db/d2c/macx_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,1,6],
-"db/d2e/macx_2include_2xercesc_2internal_2XSerializable_8hpp.html":[4,0,0,1,15,0,0,0,2,21],
-"db/d2e/macx_2include_2xercesc_2internal_2XSerializable_8hpp.html#a1e4e4198ff449d5def5863cb1eec3679":[4,0,0,1,15,0,0,0,2,21,4]
+"db/d2c/macx_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,1,6]
 };

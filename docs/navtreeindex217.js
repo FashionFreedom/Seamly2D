@@ -1,5 +1,7 @@
 var NAVTREEINDEX217 =
 {
+"db/d85/classDTDScanner.html#acec19c0254c5656f1b8596a0da53555e":[3,0,247,64],
+"db/d85/classDTDScanner.html#acec19c0254c5656f1b8596a0da53555e":[3,0,247,65],
 "db/d85/classDTDScanner.html#acec19c0254c5656f1b8596a0da53555e":[3,0,247,67],
 "db/d85/classDTDScanner.html#acec19c0254c5656f1b8596a0da53555e":[3,0,247,66],
 "db/d85/classDTDScanner.html#ad65866a66d86877cfa3ff958cfcede53":[3,0,247,33],
@@ -247,7 +249,5 @@ var NAVTREEINDEX217 =
 "db/dab/classValueVectorOf.html#a6ef364fc5354eafcfa7ba45afb9efd50":[3,0,581,60],
 "db/dab/classValueVectorOf.html#a6ef364fc5354eafcfa7ba45afb9efd50":[3,0,581,61],
 "db/dab/classValueVectorOf.html#a6ef364fc5354eafcfa7ba45afb9efd50":[3,0,581,62],
-"db/dab/classValueVectorOf.html#a6ef364fc5354eafcfa7ba45afb9efd50":[3,0,581,63],
-"db/dab/classValueVectorOf.html#a7bb9e93a317fa4199ba97b5e5f078c66":[3,0,581,23],
-"db/dab/classValueVectorOf.html#a7bb9e93a317fa4199ba97b5e5f078c66":[3,0,581,21]
+"db/dab/classValueVectorOf.html#a6ef364fc5354eafcfa7ba45afb9efd50":[3,0,581,63]
 };

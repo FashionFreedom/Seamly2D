@@ -1,5 +1,7 @@
 var NAVTREEINDEX202 =
 {
+"da/dab/vabstractbezier_8cpp.html":[4,0,0,1,6,5],
+"da/dab/vabstractbezier_8cpp_source.html":[4,0,0,1,6,5],
 "da/dac/classVSAPoint.html":[3,0,717],
 "da/dac/classVSAPoint.html#a08638fcac5539a48e2690babeebde960":[3,0,717,11],
 "da/dac/classVSAPoint.html#a0b5b16912dec08c13cc5f0621a77b25a":[3,0,717,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX202 =
 "da/db5/classDOMNotationImpl.html#a996cb259793c8ab99f79ac8efad1f8f8":[3,0,211,153],
 "da/db5/classDOMNotationImpl.html#a99f28992713b1f8c0adb315c5e513353":[3,0,211,108],
 "da/db5/classDOMNotationImpl.html#a99f28992713b1f8c0adb315c5e513353":[3,0,211,111],
-"da/db5/classDOMNotationImpl.html#a99f28992713b1f8c0adb315c5e513353":[3,0,211,110],
-"da/db5/classDOMNotationImpl.html#a99f28992713b1f8c0adb315c5e513353":[3,0,211,109],
-"da/db5/classDOMNotationImpl.html#a9ec98dbdb279ff74099de9b8dfb47540":[3,0,211,159]
+"da/db5/classDOMNotationImpl.html#a99f28992713b1f8c0adb315c5e513353":[3,0,211,110]
 };

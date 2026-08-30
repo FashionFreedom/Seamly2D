@@ -169,25 +169,27 @@
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../d9/d0d/classPreferencesGraphicsViewPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="622.5,-265 622.5,-388 805.5,-388 805.5,-265 622.5,-265"/>
-<text text-anchor="middle" x="714" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
-<polyline fill="none" stroke="#666666" points="622.5,-369 805.5,-369 "/>
-<text text-anchor="start" x="630.5" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="#666666" points="622.5,-350 805.5,-350 "/>
-<text text-anchor="start" x="630.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
-<text text-anchor="start" x="630.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
-<text text-anchor="start" x="630.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
-<text text-anchor="start" x="630.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
-<text text-anchor="start" x="630.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00"># enableOffsets()</text>
-<text text-anchor="start" x="630.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
-<text text-anchor="start" x="630.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setIndex()</text>
+<polygon fill="white" stroke="#666666" points="622.5,-254 622.5,-399 805.5,-399 805.5,-254 622.5,-254"/>
+<text text-anchor="middle" x="714" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
+<polyline fill="none" stroke="#666666" points="622.5,-380 805.5,-380 "/>
+<text text-anchor="start" x="630.5" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="#666666" points="622.5,-361 805.5,-361 "/>
+<text text-anchor="start" x="630.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
+<text text-anchor="start" x="630.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
+<text text-anchor="start" x="630.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
+<text text-anchor="start" x="630.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="630.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00"># enableOffsets()</text>
+<text text-anchor="start" x="630.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
+<text text-anchor="start" x="630.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setIndex()</text>
+<text text-anchor="start" x="630.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setupFontComboBox()</text>
+<text text-anchor="start" x="630.5" y="-261" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getTargetSize()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node7 -->
 <g id="edge9" class="edge">
 <title>Node4&#45;&gt;Node7</title>
-<path fill="none" stroke="#63b8ff" d="M482.59,-516.48C519.14,-507.17 573.57,-489.5 613,-460 638.82,-440.68 661.31,-413.05 678.47,-388.02"/>
+<path fill="none" stroke="#63b8ff" d="M482.59,-516.48C519.14,-507.17 573.57,-489.5 613,-460 635,-443.54 654.58,-421.05 670.51,-399.27"/>
 <polygon fill="none" stroke="#63b8ff" points="481.66,-513.11 472.79,-518.89 483.33,-519.91 481.66,-513.11"/>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
@@ -207,7 +209,7 @@
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M677.11,-264.82C659.93,-240.21 637.79,-212.94 613,-193 559.89,-150.29 488.95,-118.87 435.22,-99.07"/>
+<path fill="none" stroke="#404040" d="M669.31,-253.94C653.43,-232.43 634.19,-210.04 613,-193 559.89,-150.29 488.95,-118.87 435.22,-99.07"/>
 <polygon fill="none" stroke="#404040" points="434.97,-98.98 427.97,-100.71 423.68,-94.91 430.68,-93.18 434.97,-98.98"/>
 <text text-anchor="middle" x="632.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_graphicsPage</text>
 </g>

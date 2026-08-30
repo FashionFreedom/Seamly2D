@@ -1,5 +1,7 @@
 var NAVTREEINDEX283 =
 {
+"de/d2b/classVToolCubicBezier.html#ac2049c903254e77a67e9fd73b31b770c":[3,0,740,30],
+"de/d2b/classVToolCubicBezier.html#ac5d51669d51194e6f36f425578c0be19":[3,0,740,6],
 "de/d2b/classVToolCubicBezier.html#ac79680b0ace3840d88738a07fe54da13":[3,0,740,17],
 "de/d2b/classVToolCubicBezier.html#ac9096bc43432b9ed2ce57360093f0552":[3,0,740,14],
 "de/d2b/classVToolCubicBezier.html#ad45391daf9a66c4a10d70f61202d170d":[3,0,740,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX283 =
 "de/d37/msvc-arm64_2include_2xercesc_2validators_2schema_2identity_2IC__Unique_8hpp_source.html":[4,0,0,1,15,3,0,0,7,3,0,6],
 "de/d38/msvc-arm64_2include_2xercesc_2dom_2DOMXPathExpression_8hpp.html":[4,0,0,1,15,3,0,0,0,50],
 "de/d38/msvc-arm64_2include_2xercesc_2dom_2DOMXPathExpression_8hpp_source.html":[4,0,0,1,15,3,0,0,0,50],
-"de/d38/msvc-arm64_2include_2xercesc_2util_2regx_2TokenFactory_8hpp.html":[4,0,0,1,15,3,0,0,6,3,20],
-"de/d38/msvc-arm64_2include_2xercesc_2util_2regx_2TokenFactory_8hpp_source.html":[4,0,0,1,15,3,0,0,6,3,20],
-"de/d39/macx_2include_2xercesc_2dom_2DOMImplementationLS_8hpp.html":[4,0,0,1,15,0,0,0,0,20]
+"de/d38/msvc-arm64_2include_2xercesc_2util_2regx_2TokenFactory_8hpp.html":[4,0,0,1,15,3,0,0,6,3,20]
 };

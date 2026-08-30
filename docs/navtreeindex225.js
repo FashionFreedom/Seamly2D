@@ -1,5 +1,7 @@
 var NAVTREEINDEX225 =
 {
+"dc/d2a/classVisToolTrueDarts.html#add987008300f2d6ded5241f4ca278682":[3,0,670,15],
+"dc/d2a/classVisToolTrueDarts.html#afd77c1193fb07887c15a33c05faf2d2d":[3,0,670,11],
 "dc/d2a/msvc-arm64_2include_2xercesc_2dom_2DOMLSSerializerFilter_8hpp.html":[4,0,0,1,15,3,0,0,0,31],
 "dc/d2a/msvc-arm64_2include_2xercesc_2dom_2DOMLSSerializerFilter_8hpp_source.html":[4,0,0,1,15,3,0,0,0,31],
 "dc/d2b/classVToolLine.html":[3,0,751],
@@ -247,7 +249,5 @@ var NAVTREEINDEX225 =
 "dc/d3e/classqmu_1_1QmuTranslation.html#ac26ac026f0e1da2db6e81ebbaff2ebfc":[2,0,22,11,9],
 "dc/d3e/classqmu_1_1QmuTranslation.html#aeb5a65a70997570f1855b45e3fad83b1":[3,0,0,11,12],
 "dc/d3e/classqmu_1_1QmuTranslation.html#aeb5a65a70997570f1855b45e3fad83b1":[2,0,22,11,12],
-"dc/d3e/classqmu_1_1QmuTranslation.html#afba1b563a6f5a03e66c2e55858cecf4a":[2,0,22,11,4],
-"dc/d3e/classqmu_1_1QmuTranslation.html#afba1b563a6f5a03e66c2e55858cecf4a":[3,0,0,11,4],
-"dc/d3f/msvc_2include_2xercesc_2dom_2impl_2DOMNodeVector_8hpp.html":[4,0,0,1,15,2,0,0,0,0,32]
+"dc/d3e/classqmu_1_1QmuTranslation.html#afba1b563a6f5a03e66c2e55858cecf4a":[2,0,22,11,4]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX189 =
 {
+"d9/de0/msvc-arm64_2include_2xercesc_2util_2ValueArrayOf_8c_source.html":[4,0,0,1,15,3,0,0,6,74],
+"d9/de1/msvc-arm64_2include_2xercesc_2validators_2common_2ContentLeafNameTypeVector_8hpp.html":[4,0,0,1,15,3,0,0,7,0,8],
 "d9/de1/msvc-arm64_2include_2xercesc_2validators_2common_2ContentLeafNameTypeVector_8hpp_source.html":[4,0,0,1,15,3,0,0,7,0,8],
 "d9/de2/classLineTypeComboBox.html":[3,0,329],
 "d9/de2/classLineTypeComboBox.html#a037057e0bf7ef0cf540282bc219a88d5":[3,0,329,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX189 =
 "da/d05/classDOMDocumentType.html#aaa04887227b6d33f7e0f5c78e025fb04":[3,0,163,9],
 "da/d05/classDOMDocumentType.html#aaa04887227b6d33f7e0f5c78e025fb04":[3,0,163,0],
 "da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,38],
-"da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,39],
-"da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,36],
-"da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,37]
+"da/d05/classDOMDocumentType.html#ab1e0cc333f363e4e01ce295acbc605e1":[3,0,163,39]
 };

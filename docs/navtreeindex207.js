@@ -1,5 +1,7 @@
 var NAVTREEINDEX207 =
 {
+"db/d0a/classVSplinePointData.html#ae8f955aeda2512adc2e078a22e66a0bc":[3,0,730,3],
+"db/d0a/classVSplinePointData.html#af08b0db4758868de248811e688bd2601":[3,0,730,13],
 "db/d0a/classVSplinePointData.html#af73be3cc94abd1cdca38b4e61ad1efd8":[3,0,730,8],
 "db/d0a/classVSplinePointData.html#afa27d674c0514ddc94adf0bd538645ee":[3,0,730,1],
 "db/d0a/vabstractcubicbezierpath_8cpp.html":[4,0,0,1,6,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX207 =
 "db/d14/msvc_2include_2xercesc_2framework_2psvi_2XSObject_8hpp.html":[4,0,0,1,15,2,0,0,1,0,22],
 "db/d14/msvc_2include_2xercesc_2framework_2psvi_2XSObject_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,22],
 "db/d16/dialogshoulderpoint_8h.html":[4,0,0,1,13,0,1,58],
-"db/d16/dialogshoulderpoint_8h_source.html":[4,0,0,1,13,0,1,58],
-"db/d17/libs_2vmisc_2stable_8h.html":[4,0,0,1,8,14],
-"db/d17/libs_2vmisc_2stable_8h_source.html":[4,0,0,1,8,14]
+"db/d16/dialogshoulderpoint_8h_source.html":[4,0,0,1,13,0,1,58]
 };

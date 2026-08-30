@@ -1,5 +1,7 @@
 var NAVTREEINDEX195 =
 {
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1ad200d9480fe4a886c6a104542e3b803c":[3,0,236,3,28],
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,0,0],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,2,0],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,1,39],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af45137ec81ca51dfc185072f18bd33c7":[3,0,236,0,39],
@@ -247,7 +249,5 @@ var NAVTREEINDEX195 =
 "da/d63/classDOMLSInputImpl.html#aff80954f7f42be583a89515a69840c68":[3,0,187,0],
 "da/d63/classDOMLSInputImpl.html#aff80954f7f42be583a89515a69840c68":[3,0,187,3],
 "da/d64/msvc_2include_2xercesc_2framework_2psvi_2XSComplexTypeDefinition_8hpp.html":[4,0,0,1,15,2,0,0,1,0,9],
-"da/d64/msvc_2include_2xercesc_2framework_2psvi_2XSComplexTypeDefinition_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,9],
-"da/d66/macx_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp.html":[4,0,0,1,15,0,0,0,7,0,12],
-"da/d66/macx_2include_2xercesc_2validators_2common_2GrammarResolver_8hpp_source.html":[4,0,0,1,15,0,0,0,7,0,12]
+"da/d64/msvc_2include_2xercesc_2framework_2psvi_2XSComplexTypeDefinition_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,9]
 };

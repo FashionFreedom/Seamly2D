@@ -1,5 +1,7 @@
 var NAVTREEINDEX270 =
 {
+"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#ab9bed7b0de862a1654eec7718572f26e":[4,0,0,1,15,2,0,0,0,0,3,3],
+"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#ad078fc4546c9404b5ec6cbf8e3031099":[4,0,0,1,15,2,0,0,0,0,3,1],
 "dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#aef47d22d74a66c031152fd67746a5cb3":[4,0,0,1,15,2,0,0,0,0,3,4],
 "dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,3],
 "dd/d91/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSElementDeclaration_8hpp.html":[4,0,0,1,15,3,0,0,1,0,11],
@@ -247,7 +249,5 @@ var NAVTREEINDEX270 =
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#a56e5c6b510a9b4b1914032336a7e98ae":[2,0,25,0,8],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#a5861f131d692e2feac308d17b5e592b7":[3,0,1,0,13],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#a5861f131d692e2feac308d17b5e592b7":[2,0,25,0,13],
-"dd/dc4/classUtils_1_1CheckableMessageBox.html#a61df735b4b31dbafba41a08706d3acb9":[2,0,25,0,23],
-"dd/dc4/classUtils_1_1CheckableMessageBox.html#a61df735b4b31dbafba41a08706d3acb9":[3,0,1,0,23],
-"dd/dc4/classUtils_1_1CheckableMessageBox.html#a76a2635d6a92eefd6ee1a406c5b6d1c2":[2,0,25,0,16]
+"dd/dc4/classUtils_1_1CheckableMessageBox.html#a61df735b4b31dbafba41a08706d3acb9":[2,0,25,0,23]
 };

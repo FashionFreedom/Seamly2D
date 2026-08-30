@@ -1,5 +1,7 @@
 var NAVTREEINDEX269 =
 {
+"dd/d6b/macx_2include_2xercesc_2validators_2schema_2SchemaSymbols_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,10],
+"dd/d6b/msvc_2include_2xercesc_2framework_2XMLGrammarPool_8hpp.html":[4,0,0,1,15,2,0,0,1,28],
 "dd/d6b/msvc_2include_2xercesc_2framework_2XMLGrammarPool_8hpp_source.html":[4,0,0,1,15,2,0,0,1,28],
 "dd/d6e/vvariable_8h.html":[4,0,0,1,10,1,28],
 "dd/d6e/vvariable_8h.html#a9c7900f6f1cb6cf934289bf7a686b667":[4,0,0,1,10,1,28,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX269 =
 "dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html":[4,0,0,1,15,2,0,0,0,0,3],
 "dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#a17b3ce72e5f6fb9386db087033b1bb86":[4,0,0,1,15,2,0,0,0,0,3,5],
 "dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#a2a0f4e86498377fc45556b99415804e1":[4,0,0,1,15,2,0,0,0,0,3,2],
-"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#a998b97f3aaf0890432c887048a65b027":[4,0,0,1,15,2,0,0,0,0,3,0],
-"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#ab9bed7b0de862a1654eec7718572f26e":[4,0,0,1,15,2,0,0,0,0,3,3],
-"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#ad078fc4546c9404b5ec6cbf8e3031099":[4,0,0,1,15,2,0,0,0,0,3,1]
+"dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html#a998b97f3aaf0890432c887048a65b027":[4,0,0,1,15,2,0,0,0,0,3,0]
 };
