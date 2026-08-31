@@ -266,6 +266,13 @@ QT_WARNING_POP
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
+
+            // The tool object itself isn't rebuilt on a lite parse (see below), so its cached formula
+            // would otherwise keep referencing a name that no longer resolves after a rename elsewhere.
+            if (VToolRotation *existingTool = qobject_cast<VToolRotation *>(doc->getTool(id)))
+            {
+                existingTool->formulaAngle = angle;
+            }
         }
     }
 

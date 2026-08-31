@@ -246,6 +246,29 @@ void VToolAlongLine::SetSecondPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VFormula VToolAlongLine::GetFormulaLength() const
+{
+    // "CurrentLength" is normally only registered as a live variable inside Create(), for the
+    // duration of that call. Outside that window (e.g. the property editor displaying this
+    // formula, or the user editing it live in the property panel after that) it wouldn't
+    // otherwise resolve. Register it here and leave it registered — like DialogAlongLine's own
+    // SetCurrentLength() does for the whole lifetime of its dialog — instead of removing it
+    // again immediately, since the property panel re-evaluates this formula asynchronously
+    // (VFormulaProperty::childValueChanged) well after this function has already returned.
+    VContainer *locData = const_cast<VContainer *>(this->getData());
+
+    const QSharedPointer<VPointF> firstPoint  = locData->GeometricObject<VPointF>(GetBasePointId());
+    const QSharedPointer<VPointF> secondPoint = locData->GeometricObject<VPointF>(GetSecondPointId());
+
+    VLengthLine *length = new VLengthLine(firstPoint.data(), GetBasePointId(), secondPoint.data(),
+                                          GetSecondPointId(), *locData->GetPatternUnit());
+    length->SetName(currentLength);
+    locData->AddVariable(currentLength, length);
+
+    return VToolLinePoint::GetFormulaLength();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolAlongLine::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolAlongLine>(show);
@@ -264,9 +287,11 @@ void VToolAlongLine::setDialog()
     dialogTool->setLineType(m_lineType);
     dialogTool->setLineWeight(m_lineWeight);
     dialogTool->setLineColor(lineColor);
-    dialogTool->SetFormula(formulaLength);
+    // Set the points first: selecting them is what registers the "CurrentLength" variable
+    // (DialogAlongLine::PointChanged -> SetCurrentLength), which the formula below may depend on.
     dialogTool->SetFirstPointId(basePointId);
     dialogTool->SetSecondPointId(secondPointId);
+    dialogTool->SetFormula(formulaLength);
     dialogTool->SetPointName(p->name());
 }
 
