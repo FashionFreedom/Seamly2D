@@ -152,7 +152,9 @@ VPiecePath getPiecePath(int piece, VAbstractPattern *doc, quint32 id)
                 const QDomElement element = pieceList.at(j).toElement();
                 if (!element.isNull() && element.tagName() == VAbstractPattern::TagNodes)
                 {
-                    return VAbstractPattern::ParsePieceNodes(element);
+                    // These node formulas are never evaluated for a union piece copy, so deliberately
+                    // left untranslated rather than threading a VContainer in here.
+                    return VAbstractPattern::ParsePieceNodes(element, QHash<QString, QString>());
                 }
             }
         }
@@ -1578,7 +1580,9 @@ void UnionTool::addPiece(QDomElement &domElement, const VPiece &piece) const
     QDomElement element = doc->createElement(TagUnionPiece);
 
     // nodes
-    PatternPieceTool::addNodes(doc, element, piece);
+    // These node formulas are never evaluated for a union piece copy (kept only to simplify working
+    // with nodes), so deliberately left untranslated rather than threading a VContainer in here.
+    PatternPieceTool::addNodes(doc, element, piece, QHash<QString, QString>());
     //custom seam allowance
     PatternPieceTool::addCSARecords(doc, element, piece.getCustomSARecords());
     PatternPieceTool::addInternalPaths(doc, element, piece.getInternalPaths());

@@ -52,6 +52,7 @@
 #include "../../dialogs/tools/piece/internal_path_dialog.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../../undocommands/savepieceoptions.h"
 #include "../../undocommands/savepiecepathoptions.h"
 #include "../vmisc/vcommonsettings.h"
@@ -245,7 +246,7 @@ void InternalPathTool::AddToFile()
         doc->SetAttribute(domElement, AttrIdTool, idTool);
     }
 
-    addNodes(doc, domElement, path);
+    addNodes(doc, domElement, path, VPatternFormulaTokens::NameToIdTokenMap(&(VAbstractTool::data)));
 
     AddToModeling(domElement);
 
@@ -268,7 +269,7 @@ void InternalPathTool::AddToFile()
             incrementReferens();
         }
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_pieceId);
         qApp->getUndoStack()->push(saveCommand);
         connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     }

@@ -53,7 +53,8 @@ SOURCES += \
     tst_vtoolmove.cpp \
     tst_vformulaidtranslator.cpp \
     tst_vcompositevariabletokens.cpp \
-    tst_vpatternformulatokens.cpp
+    tst_vpatternformulatokens.cpp \
+    tst_vpieceformulaidtranslation.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -83,7 +84,8 @@ HEADERS += \
     tst_vtoolmove.h \
     tst_vformulaidtranslator.h \
     tst_vcompositevariabletokens.h \
-    tst_vpatternformulatokens.h
+    tst_vpatternformulatokens.h \
+    tst_vpieceformulaidtranslation.h
 
 include(warnings.pri)
 
