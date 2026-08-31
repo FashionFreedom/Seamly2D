@@ -1869,9 +1869,11 @@ QVector<QPointF> TST_VAbstractPiece::OutputPointsCase3() const
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VAbstractPiece::sumTrapezoids() const
 {
-    // Case3 checks that the method 'sumTrapezoids' returns negative value for three clockwise allocated points
-    // Case4 checks that the method 'sumTrapezoids' returns positive value for three counterclock-wise allocated points
-    // Case5 checks that the method 'sumTrapezoids' returns 0 for one point
+    // Case3 checks that the method 'sumTrapezoids' returns twice the negative area for three clockwise
+    // allocated points
+    // Case4 checks that the method 'sumTrapezoids' returns twice the positive area for three
+    // counterclock-wise allocated points
+    // Case5 checks that the method 'sumTrapezoids' returns 0 for fewer than three points
     Case3();
     Case4();
     Case5();
@@ -3118,8 +3120,10 @@ void TST_VAbstractPiece::Case3() const
 {
     const QVector<QPointF> points = InputPointsCase3a(); // Input points.
 
+    // The triangle has an area of 262.5 and its points are clockwise, so the sum is -525.
     const qreal result = VAbstractPiece::sumTrapezoids(points);
     QVERIFY(result < 0);
+    QCOMPARE(result, -525.0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3127,17 +3131,20 @@ void TST_VAbstractPiece::Case4() const
 {
     const QVector<QPointF> points = InputPointsCase4a(); // Input points.
 
+    // The triangle has an area of 612.5 and its points are counterclock-wise, so the sum is 1225.
     const qreal result = VAbstractPiece::sumTrapezoids(points);
     QVERIFY(result > 0);
+    QCOMPARE(result, 1225.0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VAbstractPiece::Case5() const
 {
-    const QVector<QPointF> points = InputPointsCase5a(); // Input points.
-
-    const qreal result = VAbstractPiece::sumTrapezoids(points);
-    QVERIFY(qFuzzyIsNull(result));
+    // Fewer than three points enclose no area. This case covers the guard in 'sumTrapezoids', so it
+    // has to exercise every size the guard admits, not just one of them.
+    QVERIFY(qFuzzyIsNull(VAbstractPiece::sumTrapezoids(QVector<QPointF>())));  // No points.
+    QVERIFY(qFuzzyIsNull(VAbstractPiece::sumTrapezoids(InputPointsCase5a()))); // One point.
+    QVERIFY(qFuzzyIsNull(VAbstractPiece::sumTrapezoids(InputPointsCase5b()))); // Two points.
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3506,6 +3513,17 @@ QVector<QPointF> TST_VAbstractPiece::InputPointsCase5a() const
     QVector<QPointF> points;
 
     points += QPointF(35, 35);
+
+    return points;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QPointF> TST_VAbstractPiece::InputPointsCase5b() const
+{
+    QVector<QPointF> points;
+
+    points += QPointF(35, 35);
+    points += QPointF(50, 50);
 
     return points;
 }
