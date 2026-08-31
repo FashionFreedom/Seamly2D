@@ -120,7 +120,7 @@ public:
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
     QVector<VFormulaField>         listVariableExpressions() const;
-    bool                           isVariableUsed(const QStringList &variable_names) const;
+    bool                           isVariableUsed(const QStringList &variable_names, const VContainer *data) const;
 
     virtual void                   CreateEmptyFile()=0;
 
@@ -158,7 +158,8 @@ public:
     static void                    AddTool(quint32 id, VDataTool *tool);
     static void                    RemoveTool(quint32 id);
 
-    static VPiecePath              ParsePieceNodes(const QDomElement &domElement);
+    static VPiecePath              ParsePieceNodes(const QDomElement &domElement,
+                                                    const QHash<QString, QString> &idTokenToName);
     static QVector<CustomSARecord> ParsePieceCSARecords(const QDomElement &domElement);
     static QVector<quint32>        ParsePieceInternalPaths(const QDomElement &domElement);
     static QVector<quint32>        ParsePieceAnchors(const QDomElement &domElement);
@@ -526,8 +527,8 @@ protected:
     static bool                        patternLabelWasChanged;
 
     static void       ToolExists(const quint32 &id);
-    static VPiecePath ParsePathNodes(const QDomElement &domElement);
-    static VPieceNode ParseSANode(const QDomElement &domElement);
+    static VPiecePath ParsePathNodes(const QDomElement &domElement, const QHash<QString, QString> &idTokenToName);
+    static VPieceNode ParseSANode(const QDomElement &domElement, const QHash<QString, QString> &idTokenToName);
 
     void              setActiveDraftBlock(const QString &name);
 
@@ -554,6 +555,7 @@ private:
     QVector<VFormulaField> ListNodesExpressions(const QDomElement &nodes) const;
     QVector<VFormulaField> ListPathExpressions() const;
     QVector<VFormulaField> ListGrainlineExpressions(const QDomElement &element) const;
+    QVector<VFormulaField> ListLabelExpressions(const QDomElement &element) const;
     QVector<VFormulaField> ListPieceExpressions() const;
 
     bool                   IsVariable(const QString &token) const;
