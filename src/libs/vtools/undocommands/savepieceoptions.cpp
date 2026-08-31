@@ -63,15 +63,18 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
+#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 #include "../tools/pattern_piece_tool.h"
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-SavePieceOptions::SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiece, VAbstractPattern *doc, quint32 id,
-                                   QUndoCommand *parent)
+SavePieceOptions::SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiece, VAbstractPattern *doc,
+                                   VContainer *data, quint32 id, QUndoCommand *parent)
     : VUndoCommand(QDomElement(), doc, parent)
     , m_oldPiece(oldPiece)
     , m_newPiece(newPiece)
+    , m_data(data)
 {
     setText(tr("save piece options"));
     nodeId = id;
@@ -89,12 +92,13 @@ void SavePieceOptions::undo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece);
+        const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(m_data);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece, nameToIdToken);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece);
-        PatternPieceTool::addPatternLabel(doc, domElement, m_oldPiece);
-        PatternPieceTool::addGrainline(doc, domElement, m_oldPiece);
-        PatternPieceTool::addNodes(doc, domElement, m_oldPiece);
+        PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece, nameToIdToken);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_oldPiece, nameToIdToken);
+        PatternPieceTool::addGrainline(doc, domElement, m_oldPiece, nameToIdToken);
+        PatternPieceTool::addNodes(doc, domElement, m_oldPiece, nameToIdToken);
         PatternPieceTool::addCSARecords(doc, domElement, m_oldPiece.getCustomSARecords());
         PatternPieceTool::addInternalPaths(doc, domElement, m_oldPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_oldPiece.getAnchors());
@@ -131,12 +135,13 @@ void SavePieceOptions::redo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece);
+        const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(m_data);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece, nameToIdToken);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece);
-        PatternPieceTool::addPatternLabel(doc, domElement, m_newPiece);
-        PatternPieceTool::addGrainline(doc, domElement, m_newPiece);
-        PatternPieceTool::addNodes(doc, domElement, m_newPiece);
+        PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece, nameToIdToken);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_newPiece, nameToIdToken);
+        PatternPieceTool::addGrainline(doc, domElement, m_newPiece, nameToIdToken);
+        PatternPieceTool::addNodes(doc, domElement, m_newPiece, nameToIdToken);
         PatternPieceTool::addCSARecords(doc, domElement, m_newPiece.getCustomSARecords());
         PatternPieceTool::addInternalPaths(doc, domElement, m_newPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_newPiece.getAnchors());

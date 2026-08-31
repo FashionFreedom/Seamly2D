@@ -52,6 +52,7 @@
 
 #include <QtGlobal>
 #include <qcompilerdetection.h>
+#include <QHash>
 #include <QObject>
 #include <QGraphicsPathItem>
 
@@ -103,14 +104,18 @@ public:
     static void insertNodes(const QVector<VPieceNode> &nodes, quint32 pieceId, VMainGraphicsScene *scene,
                             VContainer *data, VAbstractPattern *doc);
 
-    static void addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece);
+    static void addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece,
+                              const QHash<QString, QString> &nameToIdToken);
     static void AddCSARecord(VAbstractPattern *doc, QDomElement &domElement, const CustomSARecord &record);
     static void addCSARecords(VAbstractPattern *doc, QDomElement &domElement, const QVector<CustomSARecord> &records);
     static void addInternalPaths(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &paths);
     static void addAnchors(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &anchors);
-    static void addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
-    static void addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
-    static void addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
+    static void addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                              const QHash<QString, QString> &nameToIdToken);
+    static void addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                                const QHash<QString, QString> &nameToIdToken);
+    static void addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                             const QHash<QString, QString> &nameToIdToken);
 
     void                 updatePiece(const VPiece &piece);
     void                 RefreshGeometry();

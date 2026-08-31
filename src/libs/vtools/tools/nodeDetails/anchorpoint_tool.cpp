@@ -168,7 +168,7 @@ void AnchorPointTool::AddToFile()
         newPiece.getAnchors().append(m_id);
         incrementReferens();
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_pieceId);
         saveCommand->setText(tr("add anchor point"));
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
     }

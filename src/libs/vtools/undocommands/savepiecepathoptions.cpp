@@ -59,6 +59,7 @@
 #include "../tools/nodeDetails/internal_path_tool.h"
 #include "../tools/pattern_piece_tool.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/vpatternformulatokens.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 SavePiecePathOptions::SavePiecePathOptions(quint32 pieceId, const VPiecePath &oldPath, const VPiecePath &newPath,
@@ -88,7 +89,7 @@ void SavePiecePathOptions::undo()
     {
         InternalPathTool::addAttributes(doc, domElement, nodeId, m_oldPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        InternalPathTool::addNodes(doc, domElement, m_oldPath);
+        InternalPathTool::addNodes(doc, domElement, m_oldPath, VPatternFormulaTokens::NameToIdTokenMap(m_data));
 
         IncrementReferences(m_oldPath.MissingNodes(m_newPath));
 
@@ -119,7 +120,7 @@ void SavePiecePathOptions::redo()
     {
         InternalPathTool::addAttributes(doc, domElement, nodeId, m_newPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        InternalPathTool::addNodes(doc, domElement, m_newPath);
+        InternalPathTool::addNodes(doc, domElement, m_newPath, VPatternFormulaTokens::NameToIdTokenMap(m_data));
 
         DecrementReferences(m_oldPath.MissingNodes(m_newPath));
 
