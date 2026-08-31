@@ -92,6 +92,7 @@ public:
     QString              SecondPointName() const;
     quint32              GetSecondPointId() const;
     void                 SetSecondPointId(const quint32 &value);
+    VFormula             GetFormulaLength() const;
     virtual void         ShowVisualization(bool show) override;
 
 protected slots:
