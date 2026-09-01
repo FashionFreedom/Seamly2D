@@ -61,15 +61,21 @@
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vspline.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
 #include "vundocommand.h"
 
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
+
 //---------------------------------------------------------------------------------------------------------------------
-MoveSpline::MoveSpline(VAbstractPattern *doc, const VSpline *oldSpl, const VSpline &newSpl, const quint32 &id,
-                       QUndoCommand *parent)
+MoveSpline::MoveSpline(VAbstractPattern *doc, const VSpline *oldSpl, const VSpline &newSpl, VContainer *data,
+                       const quint32 &id, QUndoCommand *parent)
     : VUndoCommand(QDomElement(), doc, parent),
       oldSpline(*oldSpl),
       newSpline(newSpl),
-      scene(qApp->getCurrentScene())
+      scene(qApp->getCurrentScene()),
+      nameToIdToken(nameToIdTokenMap(data))
 {
     setText(tr("move spline"));
     nodeId = id;
@@ -129,10 +135,10 @@ void MoveSpline::Do(const VSpline &spl)
     {
         doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
         doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
-        doc->SetAttribute(domElement, AttrAngle1,  spl.GetStartAngleFormula());
-        doc->SetAttribute(domElement, AttrAngle2,  spl.GetEndAngleFormula());
-        doc->SetAttribute(domElement, AttrLength1, spl.GetC1LengthFormula());
-        doc->SetAttribute(domElement, AttrLength2, spl.GetC2LengthFormula());
+        doc->SetAttribute(domElement, AttrAngle1,  formulaNamesToIds(spl.GetStartAngleFormula(), nameToIdToken));
+        doc->SetAttribute(domElement, AttrAngle2,  formulaNamesToIds(spl.GetEndAngleFormula(), nameToIdToken));
+        doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), nameToIdToken));
+        doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), nameToIdToken));
 
         emit NeedLiteParsing(Document::LiteParse);
     }
