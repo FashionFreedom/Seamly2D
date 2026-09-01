@@ -429,7 +429,8 @@ void VToolSpline::ReadToolAttributes(const QDomElement &domElement)
 {
     m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
     m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
-    m_targetLength = domElement.attribute(AttrLength, QString());
+    m_targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()),
+                                       idTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 // @brief RemoveReferens decrement value of reference.
@@ -779,7 +780,7 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     // Off and back On does not lose the user's entered value.
     if (!m_targetLength.isEmpty())
     {
-        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, nameToIdToken));
     }
     else
     {

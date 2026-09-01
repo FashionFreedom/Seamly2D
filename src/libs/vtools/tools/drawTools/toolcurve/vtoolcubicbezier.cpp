@@ -70,11 +70,16 @@
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
 #include "../vdrawtool.h"
 #include "vabstractspline.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 
 const QString VToolCubicBezier::ToolType = QStringLiteral("cubicBezier");
 
@@ -385,7 +390,8 @@ void VToolCubicBezier::ReadToolAttributes(const QDomElement &domElement)
 {
     m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
     m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
-    m_targetLength = domElement.attribute(AttrLength, QString());
+    m_targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()),
+                                       idTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -465,6 +471,7 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
 {
     SCASSERT(doc != nullptr)
 
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
     doc->SetAttribute(domElement, AttrPoint2,  m_p2Id);
@@ -505,7 +512,7 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
     // Off and back On does not lose the user's entered value.
     if (!m_targetLength.isEmpty())
     {
-        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, nameToIdToken));
     }
     else
     {

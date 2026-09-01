@@ -35,6 +35,7 @@ public:
 private slots:
     void TestMergesPlainAndCompositeEntries();
     void TestFormulaReferencingBothTranslatesAndSurvivesRename();
+    void TestCurveTargetLengthFormulaSurvivesRename();
 
 private:
     Q_DISABLE_COPY(TST_PatternFormulaTokens)
