@@ -72,6 +72,7 @@ SavePiecePathOptions::SavePiecePathOptions(quint32 pieceId, const VPiecePath &ol
     , m_newPath(newPath)
     , m_data(data)
     , m_pieceId(pieceId)
+    , m_nameToIdToken(nameToIdTokenMap(data))
 {
     setText(tr("save path options"));
     nodeId = id;
@@ -91,7 +92,7 @@ void SavePiecePathOptions::undo()
     {
         InternalPathTool::addAttributes(doc, domElement, nodeId, m_oldPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        InternalPathTool::addNodes(doc, domElement, m_oldPath, nameToIdTokenMap(m_data));
+        InternalPathTool::addNodes(doc, domElement, m_oldPath, m_nameToIdToken);
 
         IncrementReferences(m_oldPath.MissingNodes(m_newPath));
 
@@ -122,7 +123,7 @@ void SavePiecePathOptions::redo()
     {
         InternalPathTool::addAttributes(doc, domElement, nodeId, m_newPath);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        InternalPathTool::addNodes(doc, domElement, m_newPath, nameToIdTokenMap(m_data));
+        InternalPathTool::addNodes(doc, domElement, m_newPath, m_nameToIdToken);
 
         DecrementReferences(m_oldPath.MissingNodes(m_newPath));
 

@@ -51,6 +51,8 @@
 #ifndef SAVEPIECEOPTIONS_H
 #define SAVEPIECEOPTIONS_H
 
+#include <QHash>
+#include <QString>
 #include <QtGlobal>
 
 #include "vpiece.h"
@@ -76,7 +78,10 @@ private:
 
     const VPiece  m_oldPiece;
     VPiece        m_newPiece;
-    VContainer   *m_data;
+    // Frozen at construction time, when m_oldPiece/m_newPiece's name-form formula text was
+    // captured - NOT recomputed in undo()/redo(), which could otherwise run long after an
+    // intervening rename desyncs the live container's names from that already-captured text.
+    const QHash<QString, QString> m_nameToIdToken;
 };
 
 //---------------------------------------------------------------------------------------------------------------------
