@@ -2529,7 +2529,7 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
 
         const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
         const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
-        const QString targetLength = domElement.attribute(AttrLength, QString());
+        const QString targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()), idTokenToName);
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
                                                lineWeight, scene, this, data, parse, Source::FromFile,
@@ -2605,7 +2605,8 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
 
         const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
         const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
-        const QString targetLength = domElement.attribute(AttrLength, QString());
+        const QString targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()),
+                                                        idTokenToNameMap(data));
 
         VToolCubicBezier::Create(id, spline, autoSmooth, lengthMode, targetLength, scene, this, data, parse, Source::FromFile);
     }

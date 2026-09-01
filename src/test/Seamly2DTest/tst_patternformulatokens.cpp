@@ -94,3 +94,31 @@ void TST_PatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesRe
     // The stored formula itself must be untouched by the rename.
     QCOMPARE(stored, QStringLiteral("id%1+Line_id%1_id%2/2").arg(id1).arg(id2));
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief VToolSpline and VToolCubicBezier carry a "Curve Length" target formula (<... length="..."/>,
+ * the AttrLength attribute alongside AttrLengthMode) independent of their Angle1/Angle2/Length1/Length2
+ * control-handle formulas. It goes through the exact same PatternFormulaTokens calls at the XML boundary
+ * (VToolSpline::SetSplineAttributes/ReadToolAttributes, VToolCubicBezier's counterparts, and
+ * VPattern::ParseToolSpline/ParseToolCubicBezier) - proving it survives a rename of the point it
+ * references, the same way the control-handle formulas do.
+ */
+void TST_PatternFormulaTokens::TestCurveTargetLengthFormulaSurvivesRename()
+{
+    const Unit unit = Unit::Cm;
+    const quint32 id1 = 3001;
+
+    QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
+    before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+
+    const QString stored = formulaNamesToIds(
+        QStringLiteral("A1*2"), nameToIdTokenMap(before.data()));
+    QCOMPARE(stored, QStringLiteral("id%1*2").arg(id1));
+
+    QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
+    after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("Saum_vorne"), 5, 5));
+
+    QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
+             QStringLiteral("Saum_vorne*2"));
+}
