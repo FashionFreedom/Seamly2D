@@ -172,11 +172,13 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
     const QString tools = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
                                     "<tr><td width = 50%>%2        </td><td>%3</td></tr>"
-                                    "<tr><td width = 50%>%4        </td><td>%5<br></td></tr>"
+                                    "<tr><td width = 50%>%4        </td><td>%5</td></tr>"
+                                    "<tr><td width = 50%>%6        </td><td>%7<br></td></tr>"
                                   "</table>")
                                    .arg(tr("Tools"))                                        //1
                                    .arg(tr("New Draft Block")).arg(tr("Ctrl+Shift+N"))      //2 & 3
-                                   .arg(tr("Rename Draft Block")).arg("F2");                //4 & 5
+                                   .arg(tr("Duplicate Draft Block")).arg(tr("Ctrl+D"))      //4 & 5
+                                   .arg(tr("Rename Draft Block")).arg("F2");                //6 & 7
 
     const QString points = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
