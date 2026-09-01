@@ -3741,7 +3741,8 @@ void VPattern::parseVariablesElement(const QDomNode &node)
                         Q_UNUSED(error)
                     }
 
-                    const QString formula = GetParametrString(domElement, VariableFormula, "0");
+                    const QString stored = GetParametrString(domElement, VariableFormula, "0");
+                    const QString formula = formulaIdsToNames(stored, idTokenToNameMap(data));
                     bool ok = false;
                     const qreal value = EvalFormula(data, formula, &ok);
 
@@ -3841,7 +3842,7 @@ void VPattern::setVariableFormula(const QString &name, const QString &text)
     QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, VariableFormula, text);
+        SetAttribute(node, VariableFormula, formulaNamesToIds(text, nameToIdTokenMap(data)));
         emit patternChanged(false);
     }
 }
@@ -3998,6 +3999,7 @@ void VPattern::ConvertFormulasToIdTokens()
     translateAll(TagData, {AttrWidth, PatternPieceTool::AttrHeight, AttrRotation});
     translateAll(TagPatternInfo, {AttrWidth, PatternPieceTool::AttrHeight, AttrRotation});
     translateAll(TagGrainline, {AttrLength, AttrRotation, AttrArrowLength});
+    translateAll(TagVariable, {VariableFormula});
 
     if (changedAny)
     {
