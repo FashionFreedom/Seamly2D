@@ -78,6 +78,7 @@ public:
     virtual int  id() const override;
     quint32      getSplinePathId() const;
     VSplinePath  getNewSplinePath() const;
+    QHash<QString, QString> getNameToIdToken() const;
 private:
     Q_DISABLE_COPY(MoveSplinePath)
     VSplinePath oldSplinePath;
@@ -97,6 +98,12 @@ inline quint32 MoveSplinePath::getSplinePathId() const
 inline VSplinePath MoveSplinePath::getNewSplinePath() const
 {
     return newSplinePath;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+inline QHash<QString, QString> MoveSplinePath::getNameToIdToken() const
+{
+    return nameToIdToken;
 }
 
 #endif // MOVESPLINEPATH_H

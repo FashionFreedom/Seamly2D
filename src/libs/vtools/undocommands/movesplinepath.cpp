@@ -113,6 +113,7 @@ bool MoveSplinePath::mergeWith(const QUndoCommand *command)
     }
 
     newSplinePath = moveCommand->getNewSplinePath();
+    nameToIdToken = moveCommand->getNameToIdToken();
     return true;
 }
 
