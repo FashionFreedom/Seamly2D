@@ -60,8 +60,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vdrawtool.h"
 #include "../../../vabstracttool.h"
@@ -354,8 +357,8 @@ void IntersectCircleTangentTool::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrCCenter, QString().setNum(dialogTool->GetCircleCenterId()));
     doc->SetAttribute(domElement, AttrTangent, QString().setNum(dialogTool->GetTangentPointId()));
     doc->SetAttribute(domElement, AttrCRadius,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetCircleRadius(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetCircleRadius(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrCrossPoint,
                       QString().setNum(static_cast<int>(dialogTool->GetCrossCirclesPoint())));
 }
@@ -369,8 +372,8 @@ void IntersectCircleTangentTool::SaveOptions(QDomElement &tag, QSharedPointer<VG
     doc->SetAttribute(tag, AttrCCenter, circleCenterId);
     doc->SetAttribute(tag, AttrTangent, tangentPointId);
     doc->SetAttribute(tag, AttrCRadius,
-                      VFormulaIdTranslator::FormulaNamesToIds(circleRadius,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(circleRadius,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrCrossPoint, static_cast<int>(crossPoint));
 }
 
@@ -379,9 +382,9 @@ void IntersectCircleTangentTool::ReadToolAttributes(const QDomElement &domElemen
 {
     circleCenterId = doc->GetParametrUInt(domElement, AttrCCenter, NULL_ID_STR);
     tangentPointId = doc->GetParametrUInt(domElement, AttrTangent, NULL_ID_STR);
-    circleRadius = VFormulaIdTranslator::FormulaIdsToNames(
+    circleRadius = formulaIdsToNames(
                        doc->GetParametrString(domElement, AttrCRadius),
-                       VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                       idTokenToNameMap(&(this->VAbstractTool::data)));
     crossPoint = static_cast<CrossCirclesPoint>(doc->GetParametrUInt(domElement, AttrCrossPoint, "1"));
 }
 

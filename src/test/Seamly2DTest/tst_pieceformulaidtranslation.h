@@ -21,16 +21,16 @@
  **
  **************************************************************************/
 
-#ifndef TST_VPIECEFORMULAIDTRANSLATION_H
-#define TST_VPIECEFORMULAIDTRANSLATION_H
+#ifndef TST_PIECEFORMULAIDTRANSLATION_H
+#define TST_PIECEFORMULAIDTRANSLATION_H
 
 #include <QObject>
 
-class TST_VPieceFormulaIdTranslation : public QObject
+class TST_PieceFormulaIdTranslation : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VPieceFormulaIdTranslation(QObject *parent = nullptr);
+    explicit TST_PieceFormulaIdTranslation(QObject *parent = nullptr);
 
 private slots:
     void TestSeamAllowanceWidthFormulaSurvivesRename();
@@ -38,7 +38,7 @@ private slots:
     void TestGrainlineFormulaSurvivesRename();
 
 private:
-    Q_DISABLE_COPY(TST_VPieceFormulaIdTranslation)
+    Q_DISABLE_COPY(TST_PieceFormulaIdTranslation)
 };
 
-#endif // TST_VPIECEFORMULAIDTRANSLATION_H
+#endif // TST_PIECEFORMULAIDTRANSLATION_H

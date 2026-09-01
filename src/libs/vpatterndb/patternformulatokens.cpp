@@ -21,19 +21,18 @@
  **
  **************************************************************************/
 
-#include "vpatternformulatokens.h"
+#include "patternformulatokens.h"
 
 #include "vcontainer.h"
-#include "vformulaidtranslator.h"
-#include "vcompositevariabletokens.h"
+#include "formulaidtranslator.h"
+#include "compositevariabletokens.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> VPatternFormulaTokens::NameToIdTokenMap(const VContainer *data)
+QHash<QString, QString> PatternFormulaTokens::nameToIdTokenMap(const VContainer *data)
 {
-    QHash<QString, QString> nameToIdToken = VFormulaIdTranslator::NameToIdTokenMap(*data->DataGObjects());
+    QHash<QString, QString> nameToIdToken = FormulaIdTranslator::nameToIdTokenMap(*data->DataGObjects());
 
-    const QHash<QString, QString> composite =
-        VCompositeVariableTokens::NameToIdTokenMap(*data->DataVariables());
+    const QHash<QString, QString> composite = CompositeVariableTokens::nameToIdTokenMap(*data->DataVariables());
     QHash<QString, QString>::const_iterator i = composite.constBegin();
     while (i != composite.constEnd())
     {
@@ -44,12 +43,11 @@ QHash<QString, QString> VPatternFormulaTokens::NameToIdTokenMap(const VContainer
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> VPatternFormulaTokens::IdTokenToNameMap(const VContainer *data)
+QHash<QString, QString> PatternFormulaTokens::idTokenToNameMap(const VContainer *data)
 {
-    QHash<QString, QString> idTokenToName = VFormulaIdTranslator::IdTokenToNameMap(*data->DataGObjects());
+    QHash<QString, QString> idTokenToName = FormulaIdTranslator::idTokenToNameMap(*data->DataGObjects());
 
-    const QHash<QString, QString> composite =
-        VCompositeVariableTokens::IdTokenToNameMap(*data->DataVariables());
+    const QHash<QString, QString> composite = CompositeVariableTokens::idTokenToNameMap(*data->DataVariables());
     QHash<QString, QString>::const_iterator i = composite.constBegin();
     while (i != composite.constEnd())
     {

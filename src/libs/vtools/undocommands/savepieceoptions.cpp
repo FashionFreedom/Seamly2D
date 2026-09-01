@@ -63,8 +63,11 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../tools/pattern_piece_tool.h"
 #include "vundocommand.h"
 
@@ -92,7 +95,7 @@ void SavePieceOptions::undo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(m_data);
+        const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(m_data);
         PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece, nameToIdToken);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
         PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece, nameToIdToken);
@@ -135,7 +138,7 @@ void SavePieceOptions::redo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(m_data);
+        const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(m_data);
         PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece, nameToIdToken);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
         PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece, nameToIdToken);

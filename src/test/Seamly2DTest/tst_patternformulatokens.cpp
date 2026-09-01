@@ -21,23 +21,26 @@
  **
  **************************************************************************/
 
-#include "tst_vpatternformulatokens.h"
+#include "tst_patternformulatokens.h"
 
 #include <QtTest>
 
-#include "../../libs/vpatterndb/vpatternformulatokens.h"
-#include "../../libs/vpatterndb/vformulaidtranslator.h"
+#include "../../libs/vpatterndb/patternformulatokens.h"
+#include "../../libs/vpatterndb/formulaidtranslator.h"
 #include "../../libs/vpatterndb/vcontainer.h"
 #include "../../libs/vgeometry/vpointf.h"
 
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
+
 //---------------------------------------------------------------------------------------------------------------------
-TST_VPatternFormulaTokens::TST_VPatternFormulaTokens(QObject *parent)
+TST_PatternFormulaTokens::TST_PatternFormulaTokens(QObject *parent)
     : QObject(parent)
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VPatternFormulaTokens::TestMergesPlainAndCompositeEntries()
+void TST_PatternFormulaTokens::TestMergesPlainAndCompositeEntries()
 {
     const Unit unit = Unit::Cm;
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
@@ -46,11 +49,11 @@ void TST_VPatternFormulaTokens::TestMergesPlainAndCompositeEntries()
     const quint32 id2 = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     data->AddLine(id1, id2);
 
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data.data());
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data.data());
 
-    QCOMPARE(nameToIdToken.value(QStringLiteral("A1")), VFormulaIdTranslator::IdToken(id1));
+    QCOMPARE(nameToIdToken.value(QStringLiteral("A1")), idToken(id1));
     QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")),
-             QStringLiteral("Line_%1_%2").arg(VFormulaIdTranslator::IdToken(id1), VFormulaIdTranslator::IdToken(id2)));
+             QStringLiteral("Line_%1_%2").arg(idToken(id1), idToken(id2)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -61,7 +64,7 @@ void TST_VPatternFormulaTokens::TestMergesPlainAndCompositeEntries()
  * by rebuilding the container fresh (what a full reparse after rename actually does), not by
  * mutating a variable object that was already computed before the rename.
  */
-void TST_VPatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesRename()
+void TST_PatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesRename()
 {
     const Unit unit = Unit::Cm;
     // Explicit ids (via UpdateGObject, the same call tools use for Source::FromFile) so both
@@ -75,8 +78,8 @@ void TST_VPatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesR
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     before->AddLine(id1, id2);
 
-    const QString stored = VFormulaIdTranslator::FormulaNamesToIds(
-        QStringLiteral("A1+Line_A1_A2/2"), VPatternFormulaTokens::NameToIdTokenMap(before.data()));
+    const QString stored = formulaNamesToIds(
+        QStringLiteral("A1+Line_A1_A2/2"), nameToIdTokenMap(before.data()));
     QCOMPARE(stored, QStringLiteral("id%1+Line_id%1_id%2/2").arg(id1).arg(id2));
 
     // Same ids, A1 renamed - matches what a full reparse produces after a rename on disk.
@@ -85,7 +88,7 @@ void TST_VPatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesR
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     after->AddLine(id1, id2);
 
-    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VPatternFormulaTokens::IdTokenToNameMap(after.data())),
+    QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Halsloch_hinten+Line_Halsloch_hinten_A2/2"));
 
     // The stored formula itself must be untouched by the rename.

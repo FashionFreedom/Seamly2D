@@ -69,8 +69,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vpatterndb/variables/vlinelength.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
@@ -148,8 +151,8 @@ void VToolAlongLine::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineWeight,  dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,   dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetFormula(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrFirstPoint,  dialogTool->GetFirstPointId());
     doc->SetAttribute(domElement, AttrSecondPoint, dialogTool->GetSecondPointId());
 }
@@ -161,8 +164,8 @@ void VToolAlongLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
 
     doc->SetAttribute(tag, AttrType,        ToolType);
     doc->SetAttribute(tag, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaLength,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrFirstPoint,  basePointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
 }
@@ -173,9 +176,9 @@ void VToolAlongLine::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType,    LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor,   ColorBlack);
-    formulaLength = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaLength = formulaIdsToNames(
                         doc->GetParametrString(domElement, AttrLength, ""),
-                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
 }

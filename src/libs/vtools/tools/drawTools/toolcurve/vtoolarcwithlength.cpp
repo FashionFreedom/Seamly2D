@@ -72,8 +72,11 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
 #include "../vdrawtool.h"
@@ -333,10 +336,10 @@ void VToolArcWithLength::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogArcWithLength> dialogTool = m_dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->GetCenter()));
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(domElement, AttrRadius, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetRadius(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrLength, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetLength(), nameToIdToken));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius, formulaNamesToIds(dialogTool->GetRadius(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(dialogTool->GetLength(), nameToIdToken));
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
@@ -352,10 +355,10 @@ void VToolArcWithLength::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, arc->GetCenter().id());
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(tag, AttrRadius, VFormulaIdTranslator::FormulaNamesToIds(arc->GetFormulaRadius(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(arc->GetFormulaF1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrLength, VFormulaIdTranslator::FormulaNamesToIds(arc->GetFormulaLength(), nameToIdToken));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius, formulaNamesToIds(arc->GetFormulaRadius(), nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(arc->GetFormulaF1(), nameToIdToken));
+    doc->SetAttribute(tag, AttrLength, formulaNamesToIds(arc->GetFormulaLength(), nameToIdToken));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

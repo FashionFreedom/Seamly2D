@@ -70,8 +70,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -338,8 +341,8 @@ void VToolShoulderPoint::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetFormula(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrP1Line,     QString().setNum(dialogTool->GetP1Line()));
     doc->SetAttribute(domElement, AttrP2Line,     QString().setNum(dialogTool->GetP2Line()));
     doc->SetAttribute(domElement, AttrPShoulder,  QString().setNum(dialogTool->GetP3()));
@@ -352,8 +355,8 @@ void VToolShoulderPoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType,      ToolType);
     doc->SetAttribute(tag, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaLength,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrP1Line,    basePointId);
     doc->SetAttribute(tag, AttrP2Line,    p2Line);
     doc->SetAttribute(tag, AttrPShoulder, pShoulder);
@@ -365,9 +368,9 @@ void VToolShoulderPoint::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaLength = formulaIdsToNames(
                         doc->GetParametrString(domElement, AttrLength, ""),
-                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
     p2Line        = doc->GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
     pShoulder     = doc->GetParametrUInt(domElement, AttrPShoulder, NULL_ID_STR);

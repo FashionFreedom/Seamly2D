@@ -79,8 +79,11 @@
 #include "../undocommands/savepieceoptions.h"
 #include "../undocommands/togglepieceinlayout.h"
 #include "../undocommands/toggle_piecelock.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vwidgets/nonscalingfill_pathitem.h"
@@ -281,7 +284,7 @@ void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElem
     }
 
     doc->SetAttribute(domElement, VAbstractPattern::AttrWidth,
-                      VFormulaIdTranslator::FormulaNamesToIds(piece.getSeamAllowanceWidthFormula(), nameToIdToken));
+                      formulaNamesToIds(piece.getSeamAllowanceWidthFormula(), nameToIdToken));
     doc->SetAttribute(domElement, AttrUnited, piece.IsUnited());
 }
 
@@ -364,12 +367,12 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, AttrMx,                             data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                             data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
     doc->SetAttribute(domData, AttrHeight,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
     doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -413,12 +416,12 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
     doc->SetAttribute(domData, AttrMx,                         data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
     doc->SetAttribute(domData, AttrHeight,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
     doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -461,12 +464,12 @@ void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domEleme
     doc->SetAttribute(domData, AttrMx,                            data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                            data.GetPos().y());
     doc->SetAttribute(domData, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.getLength(), nameToIdToken));
+                      formulaNamesToIds(data.getLength(), nameToIdToken));
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
     doc->SetAttribute(domData, VAbstractPattern::AttrArrows,      int(data.getArrowType()));
     doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(data.getArrowLength(), nameToIdToken));
+                      formulaNamesToIds(data.getArrowLength(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -975,7 +978,7 @@ QPainterPath PatternPieceTool::shape() const
 void PatternPieceTool::AddToFile()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(VAbstractTool::data));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(VAbstractTool::data));
 
     QDomElement domElement = doc->createElement(getTagName());
 
@@ -1013,7 +1016,7 @@ void PatternPieceTool::RefreshDataInFile()
             {
                 const VPiece piece = VAbstractTool::data.GetPiece(m_id);
                 const QHash<QString, QString> nameToIdToken =
-                    VPatternFormulaTokens::NameToIdTokenMap(&(VAbstractTool::data));
+                    nameToIdTokenMap(&(VAbstractTool::data));
 
                 doc->SetAttribute(domElement, AttrVersion, QString().setNum(pieceVersion));
 

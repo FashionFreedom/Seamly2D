@@ -21,8 +21,8 @@
  **
  **************************************************************************/
 
-#ifndef VFORMULAIDTRANSLATOR_H
-#define VFORMULAIDTRANSLATOR_H
+#ifndef FORMULAIDTRANSLATOR_H
+#define FORMULAIDTRANSLATOR_H
 
 #include <QHash>
 #include <QMap>
@@ -43,26 +43,21 @@
  * lookup only, never split apart: a glued-together display name like "Line_A1_A2" can't be
  * reliably split back into its parts by string position once a point name can itself contain an
  * underscore (e.g. "Halsloch_hinten"), so the caller must hand over the exact pairing instead of
- * this class trying to reconstruct it.
+ * this namespace trying to reconstruct it.
  */
-class VFormulaIdTranslator
+namespace FormulaIdTranslator
 {
-public:
-    static QString IdToken(quint32 id);
+    QString idToken(quint32 id);
 
-    static QString FormulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken);
-    static QString FormulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName);
+    QString formulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken);
+    QString formulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName);
 
     // Builds the lookup straight off VContainer::DataGObjects() - no separate name/id table
     // is kept anywhere, this just reads each object's own id and current name. Covers plain
     // object names only; composite/derived-variable names are the caller's responsibility to
     // add to the map (there is no persisted object to enumerate them from).
-    static QHash<QString, QString> NameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
-    static QHash<QString, QString> IdTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    QHash<QString, QString> nameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    QHash<QString, QString> idTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+}
 
-private:
-    static void Replace(QString &formula, const QString &newToken, int position, const QString &token, int &bias);
-    static void CorrectionsPositions(int position, int bias, QMap<int, QString> &tokens);
-};
-
-#endif // VFORMULAIDTRANSLATOR_H
+#endif // FORMULAIDTRANSLATOR_H

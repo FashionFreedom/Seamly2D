@@ -70,8 +70,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -337,8 +340,8 @@ void VToolCutSplinePath::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrName,       dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrDirection,  dialogTool->getDirection());
     doc->SetAttribute(domElement, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetFormula(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrSplinePath, QString().setNum(dialogTool->getSplinePathId()));
 }
@@ -351,8 +354,8 @@ void VToolCutSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
     doc->SetAttribute(tag, AttrDirection,  m_direction);
     doc->SetAttribute(tag, AttrType,       ToolType);
     doc->SetAttribute(tag, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(formula,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formula,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrLineColor,  lineColor);
     doc->SetAttribute(tag, AttrSplinePath, curveCutId);
 }
@@ -361,9 +364,9 @@ void VToolCutSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 void VToolCutSplinePath::ReadToolAttributes(const QDomElement &domElement)
 {
     m_direction = doc->GetParametrString(domElement, AttrDirection,  "forward");
-    formula     = VFormulaIdTranslator::FormulaIdsToNames(
+    formula     = formulaIdsToNames(
                       doc->GetParametrString(domElement, AttrLength, ""),
-                      VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                      idTokenToNameMap(&(this->VAbstractTool::data)));
     lineColor   = doc->GetParametrString(domElement, AttrLineColor,  ColorBlack);
     curveCutId  = doc->GetParametrUInt(domElement,   AttrSplinePath, NULL_ID_STR);
 }
