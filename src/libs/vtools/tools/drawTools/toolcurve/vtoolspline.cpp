@@ -391,7 +391,7 @@ void VToolSpline::controlPointPositionChanged(const qint32 &splineIndex, const S
     const QSharedPointer<VSpline> spline = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     const VSpline spl = correctedSpline(*spline, position, pos);
 
-    MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, m_id);
+    MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, &(this->VAbstractTool::data), m_id);
     connect(moveSpl, &MoveSpline::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveSpl);
 }
@@ -579,7 +579,7 @@ void VToolSpline::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
         VSpline spl = VSpline(spline->GetP1(), p2, p3, spline->GetP4());
 
-        MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, m_id);
+        MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, &(this->VAbstractTool::data), m_id);
         connect(moveSpl, &MoveSpline::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(moveSpl);
 
