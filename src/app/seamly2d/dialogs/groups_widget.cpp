@@ -220,7 +220,26 @@ void GroupsWidget::renameGroup(int row, int column)
     const bool locked = m_doc->getGroupLock(groupId);
     if (locked == false)
     {
-        m_doc->setGroupName(groupId, ui->groups_TableWidget->item(row, column)->text());
+        QTableWidgetItem *item = ui->groups_TableWidget->item(row, column);
+        const QString newGroupName = item->text();
+        const QString oldGroupName = m_doc->getGroupName(groupId);
+
+        if (newGroupName != oldGroupName && m_doc->groupNameExists(newGroupName))
+        {
+            QMessageBox messageBox;
+            messageBox.setWindowTitle(tr("Name Exists"));
+            messageBox.setIcon(QMessageBox::Warning);
+            messageBox.setStandardButtons(QMessageBox::Ok);
+            messageBox.setText(tr("The action can't be completed because the group name already exists."));
+            messageBox.exec();
+
+            ui->groups_TableWidget->blockSignals(true);
+            item->setText(oldGroupName);
+            ui->groups_TableWidget->blockSignals(false);
+            return;
+        }
+
+        m_doc->setGroupName(groupId, newGroupName);
         updateGroups();
     }
 }
