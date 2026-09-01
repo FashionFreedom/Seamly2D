@@ -95,11 +95,13 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
-#include "../vpatterndb/vformulaidtranslator.h"
+#include "../vpatterndb/formulaidtranslator.h"
 #include "../vwidgets/vgraphicssimpletextitem.h"
 #include "nodeDetails/nodedetails.h"
 #include "../dialogs/support/dialogundo.h"
 #include "../dialogs/support/edit_formula_dialog.h"
+
+using namespace FormulaIdTranslator;
 
 template <class T> class QSharedPointer;
 
@@ -634,13 +636,13 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
         if (node.GetFormulaSABefore() != currentSeamAllowance)
         {
             doc->SetAttribute(nod, VAbstractPattern::AttrSABefore,
-                              VFormulaIdTranslator::FormulaNamesToIds(node.GetFormulaSABefore(), nameToIdToken));
+                              formulaNamesToIds(node.GetFormulaSABefore(), nameToIdToken));
         }
 
         if (node.GetFormulaSAAfter() != currentSeamAllowance)
         {
             doc->SetAttribute(nod, VAbstractPattern::AttrSAAfter,
-                              VFormulaIdTranslator::FormulaNamesToIds(node.GetFormulaSAAfter(), nameToIdToken));
+                              formulaNamesToIds(node.GetFormulaSAAfter(), nameToIdToken));
         }
     }
 

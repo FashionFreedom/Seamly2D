@@ -70,8 +70,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/vdatatool.h"
 
@@ -783,10 +786,10 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement, const QH
     const quint32 id = VDomDocument::GetParametrUInt(domElement, AttrIdObject, NULL_ID_STR);
     const bool reverse = VDomDocument::GetParametrUInt(domElement, VAbstractPattern::AttrNodeReverse, "0");
     const bool excluded = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeExcluded, falseStr);
-    const QString saBefore = VFormulaIdTranslator::FormulaIdsToNames(
+    const QString saBefore = formulaIdsToNames(
         VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSABefore, currentSeamAllowance),
         idTokenToName);
-    const QString saAfter = VFormulaIdTranslator::FormulaIdsToNames(
+    const QString saAfter = formulaIdsToNames(
         VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSAAfter, currentSeamAllowance),
         idTokenToName);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
@@ -1887,7 +1890,7 @@ bool VAbstractPattern::isVariableUsed(const QStringList &variable_names, const V
         return false;
     }
 
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
     for (int i = 0; i < names.size(); ++i)
     {
         // Custom variables/increments aren't in the id-token map (they have no numeric id to

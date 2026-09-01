@@ -21,9 +21,9 @@
  **
  **************************************************************************/
 
-#include "vcompositevariabletokens.h"
+#include "compositevariabletokens.h"
 
-#include "vformulaidtranslator.h"
+#include "formulaidtranslator.h"
 #include "variables/vinternalvariable.h"
 #include "variables/vlinelength.h"
 #include "variables/vlineangle.h"
@@ -34,8 +34,10 @@
 #include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
 
+using namespace FormulaIdTranslator;
+
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> VCompositeVariableTokens::NameToIdTokenMap(
+QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
     const QHash<QString, QSharedPointer<VInternalVariable>> &variables)
 {
     QHash<QString, QString> nameToIdToken;
@@ -48,31 +50,31 @@ QHash<QString, QString> VCompositeVariableTokens::NameToIdTokenMap(
             case VarType::LineLength:
             {
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                nameToIdToken.insert(i.key(), line_ + VFormulaIdTranslator::IdToken(length->GetP1Id()) +
+                nameToIdToken.insert(i.key(), line_ + idToken(length->GetP1Id()) +
                                                    QLatin1Char('_') +
-                                                   VFormulaIdTranslator::IdToken(length->GetP2Id()));
+                                                   idToken(length->GetP2Id()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                nameToIdToken.insert(i.key(), angleLine_ + VFormulaIdTranslator::IdToken(angle->GetP1Id()) +
+                nameToIdToken.insert(i.key(), angleLine_ + idToken(angle->GetP1Id()) +
                                                    QLatin1Char('_') +
-                                                   VFormulaIdTranslator::IdToken(angle->GetP2Id()));
+                                                   idToken(angle->GetP2Id()));
                 break;
             }
             case VarType::ArcRadius:
             {
                 const QSharedPointer<VArcRadius> radius = i.value().staticCast<VArcRadius>();
                 nameToIdToken.insert(i.key(), radius_V + QString::number(radius->GetNumberRadius()) +
-                                                   VFormulaIdTranslator::IdToken(radius->GetId()));
+                                                   idToken(radius->GetId()));
                 break;
             }
             case VarType::CurveAngle:
             {
                 const QSharedPointer<VCurveAngle> angle = i.value().staticCast<VCurveAngle>();
                 const QString &prefix = (angle->GetAngle() == CurveAngle::StartAngle) ? angle1_V : angle2_V;
-                QString token = prefix + VFormulaIdTranslator::IdToken(angle->GetId());
+                QString token = prefix + idToken(angle->GetId());
                 if (angle->GetSegment() > 0)
                 {
                     token += QLatin1Char('_') + seg_ + QString::number(angle->GetSegment());
@@ -84,7 +86,7 @@ QHash<QString, QString> VCompositeVariableTokens::NameToIdTokenMap(
             {
                 const QSharedPointer<VCurveCLength> cLength = i.value().staticCast<VCurveCLength>();
                 const QString &prefix = (cLength->GetCType() == CurveCLength::C1) ? c1Length_V : c2Length_V;
-                QString token = prefix + VFormulaIdTranslator::IdToken(cLength->GetId());
+                QString token = prefix + idToken(cLength->GetId());
                 if (cLength->GetSegment() > 0)
                 {
                     token += QLatin1Char('_') + seg_ + QString::number(cLength->GetSegment());
@@ -97,12 +99,12 @@ QHash<QString, QString> VCompositeVariableTokens::NameToIdTokenMap(
                 const QSharedPointer<VCurveLength> length = i.value().staticCast<VCurveLength>();
                 if (length->GetSegment() > 0)
                 {
-                    nameToIdToken.insert(i.key(), VFormulaIdTranslator::IdToken(length->GetId()) +
+                    nameToIdToken.insert(i.key(), idToken(length->GetId()) +
                                                        QLatin1Char('_') + seg_ +
                                                        QString::number(length->GetSegment()));
                 }
                 // Plain (non-segmented) form is just the curve's own name - already covered by
-                // VFormulaIdTranslator::NameToIdTokenMap() since a curve is a VGObject with its own id,
+                // FormulaIdTranslator::nameToIdTokenMap() since a curve is a VGObject with its own id,
                 // same as a point. Nothing to add here for that case.
                 break;
             }
@@ -120,12 +122,12 @@ QHash<QString, QString> VCompositeVariableTokens::NameToIdTokenMap(
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> VCompositeVariableTokens::IdTokenToNameMap(
+QHash<QString, QString> CompositeVariableTokens::idTokenToNameMap(
     const QHash<QString, QSharedPointer<VInternalVariable>> &variables)
 {
     QHash<QString, QString> idTokenToName;
 
-    const QHash<QString, QString> nameToIdToken = NameToIdTokenMap(variables);
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
     QHash<QString, QString>::const_iterator i = nameToIdToken.constBegin();
     while (i != nameToIdToken.constEnd())
     {

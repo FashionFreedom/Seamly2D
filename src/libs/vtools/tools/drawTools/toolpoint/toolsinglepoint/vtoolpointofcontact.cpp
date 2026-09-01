@@ -72,8 +72,11 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
@@ -343,8 +346,8 @@ void VToolPointOfContact::SaveDialog(QDomElement &domElement)
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrRadius,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->getRadius(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->getRadius(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getCenter()));
     doc->SetAttribute(domElement, AttrFirstPoint, QString().setNum(dialogTool->GetFirstPoint()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPoint()));
@@ -357,8 +360,8 @@ void VToolPointOfContact::SaveOptions(QDomElement &tag, QSharedPointer<VGObject>
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrRadius,
-                      VFormulaIdTranslator::FormulaNamesToIds(arcRadius,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(arcRadius,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrCenter, center);
     doc->SetAttribute(tag, AttrFirstPoint, firstPointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
@@ -367,9 +370,9 @@ void VToolPointOfContact::SaveOptions(QDomElement &tag, QSharedPointer<VGObject>
 //---------------------------------------------------------------------------------------------------------------------
 void VToolPointOfContact::ReadToolAttributes(const QDomElement &domElement)
 {
-    arcRadius = VFormulaIdTranslator::FormulaIdsToNames(
+    arcRadius = formulaIdsToNames(
                     doc->GetParametrString(domElement, AttrRadius, ""),
-                    VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                    idTokenToNameMap(&(this->VAbstractTool::data)));
     center = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
     firstPointId = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);

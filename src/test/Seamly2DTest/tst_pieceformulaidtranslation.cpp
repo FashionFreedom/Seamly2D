@@ -21,17 +21,20 @@
  **
  **************************************************************************/
 
-#include "tst_vpieceformulaidtranslation.h"
+#include "tst_pieceformulaidtranslation.h"
 
 #include <QtTest>
 
-#include "../../libs/vpatterndb/vpatternformulatokens.h"
-#include "../../libs/vpatterndb/vformulaidtranslator.h"
+#include "../../libs/vpatterndb/patternformulatokens.h"
+#include "../../libs/vpatterndb/formulaidtranslator.h"
 #include "../../libs/vpatterndb/vcontainer.h"
 #include "../../libs/vgeometry/vpointf.h"
 
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
+
 //---------------------------------------------------------------------------------------------------------------------
-TST_VPieceFormulaIdTranslation::TST_VPieceFormulaIdTranslation(QObject *parent)
+TST_PieceFormulaIdTranslation::TST_PieceFormulaIdTranslation(QObject *parent)
     : QObject(parent)
 {
 }
@@ -39,11 +42,11 @@ TST_VPieceFormulaIdTranslation::TST_VPieceFormulaIdTranslation(QObject *parent)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief A piece's seam allowance width formula (<piece width="..."/>) is translated and read back
- * through the exact same VFormulaIdTranslator/VPatternFormulaTokens calls
+ * through the exact same FormulaIdTranslator/PatternFormulaTokens calls
  * PatternPieceTool::addAttributes/VPattern::parsePieceElement use at the XML boundary - proving the
  * formula survives a rename of the point it references, the same way a draft tool's formula does.
  */
-void TST_VPieceFormulaIdTranslation::TestSeamAllowanceWidthFormulaSurvivesRename()
+void TST_PieceFormulaIdTranslation::TestSeamAllowanceWidthFormulaSurvivesRename()
 {
     const Unit unit = Unit::Cm;
     const quint32 id1 = 2001;
@@ -51,14 +54,14 @@ void TST_VPieceFormulaIdTranslation::TestSeamAllowanceWidthFormulaSurvivesRename
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
 
-    const QString stored = VFormulaIdTranslator::FormulaNamesToIds(
-        QStringLiteral("A1/2"), VPatternFormulaTokens::NameToIdTokenMap(before.data()));
+    const QString stored = formulaNamesToIds(
+        QStringLiteral("A1/2"), nameToIdTokenMap(before.data()));
     QCOMPARE(stored, QStringLiteral("id%1/2").arg(id1));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("Saum_vorne"), 5, 5));
 
-    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VPatternFormulaTokens::IdTokenToNameMap(after.data())),
+    QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Saum_vorne/2"));
 }
 
@@ -67,7 +70,7 @@ void TST_VPieceFormulaIdTranslation::TestSeamAllowanceWidthFormulaSurvivesRename
  * @brief A per-node seam allowance before/after override (<node saBefore="..." saAfter="..."/>) is
  * translated the same way VAbstractTool::AddSANode/VAbstractPattern::ParseSANode do.
  */
-void TST_VPieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
+void TST_PieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
 {
     const Unit unit = Unit::Cm;
     const quint32 id1 = 2002;
@@ -78,8 +81,8 @@ void TST_VPieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     before->AddLine(id1, id2);
 
-    const QString stored = VFormulaIdTranslator::FormulaNamesToIds(
-        QStringLiteral("Line_A1_A2/3"), VPatternFormulaTokens::NameToIdTokenMap(before.data()));
+    const QString stored = formulaNamesToIds(
+        QStringLiteral("Line_A1_A2/3"), nameToIdTokenMap(before.data()));
     QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/3").arg(id1).arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
@@ -87,7 +90,7 @@ void TST_VPieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("Armloch"), 5, 5));
     after->AddLine(id1, id2);
 
-    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VPatternFormulaTokens::IdTokenToNameMap(after.data())),
+    QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_A1_Armloch/3"));
 }
 
@@ -96,7 +99,7 @@ void TST_VPieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
  * @brief A grainline length formula (<grainline length="..."/>) is translated the same way
  * PatternPieceTool::addGrainline/VPattern::ParsePieceGrainline do.
  */
-void TST_VPieceFormulaIdTranslation::TestGrainlineFormulaSurvivesRename()
+void TST_PieceFormulaIdTranslation::TestGrainlineFormulaSurvivesRename()
 {
     const Unit unit = Unit::Cm;
     const quint32 id1 = 2004;
@@ -107,8 +110,8 @@ void TST_VPieceFormulaIdTranslation::TestGrainlineFormulaSurvivesRename()
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     before->AddLine(id1, id2);
 
-    const QString stored = VFormulaIdTranslator::FormulaNamesToIds(
-        QStringLiteral("Line_A1_A2"), VPatternFormulaTokens::NameToIdTokenMap(before.data()));
+    const QString stored = formulaNamesToIds(
+        QStringLiteral("Line_A1_A2"), nameToIdTokenMap(before.data()));
     QCOMPARE(stored, QStringLiteral("Line_id%1_id%2").arg(id1).arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
@@ -116,6 +119,6 @@ void TST_VPieceFormulaIdTranslation::TestGrainlineFormulaSurvivesRename()
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     after->AddLine(id1, id2);
 
-    QCOMPARE(VFormulaIdTranslator::FormulaIdsToNames(stored, VPatternFormulaTokens::IdTokenToNameMap(after.data())),
+    QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_Schulter_A2"));
 }

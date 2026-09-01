@@ -83,8 +83,11 @@
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vabstractpattern.h"
@@ -530,15 +533,15 @@ void VToolMove::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogMove> dialogTool = m_dialog.objectCast<DialogMove>();
     SCASSERT(!dialogTool.isNull())
 
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(), nameToIdToken));
+                      formulaNamesToIds(dialogTool->GetAngle(), nameToIdToken));
     QString length = dialogTool->GetLength();
-    doc->SetAttribute(domElement, AttrLength, VFormulaIdTranslator::FormulaNamesToIds(length, nameToIdToken));
+    doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(length, nameToIdToken));
     doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
     doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getOriginPointId()));
     doc->SetAttribute(domElement, AttrRotationAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->getRotation(), nameToIdToken));
+                      formulaNamesToIds(dialogTool->getRotation(), nameToIdToken));
 
     source = dialogTool->getSourceObjects();
     SaveSourceDestination(domElement);
@@ -549,12 +552,12 @@ void VToolMove::ReadToolAttributes(const QDomElement &domElement)
 {
     VAbstractOperation::ReadToolAttributes(domElement);
 
-    const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data));
-    formulaAngle      = VFormulaIdTranslator::FormulaIdsToNames(
+    const QHash<QString, QString> idTokenToName = idTokenToNameMap(&(this->VAbstractTool::data));
+    formulaAngle      = formulaIdsToNames(
                              doc->GetParametrString(domElement, AttrAngle, "0"), idTokenToName);
-    formulaLength     = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaLength     = formulaIdsToNames(
                              doc->GetParametrString(domElement, AttrLength, "0"), idTokenToName);
-    formulaRotation   = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaRotation   = formulaIdsToNames(
                              doc->GetParametrString(domElement, AttrRotationAngle, "0"), idTokenToName);
     suffix            = doc->GetParametrString(domElement, AttrSuffix);
     m_originPointId   = doc->GetParametrUInt(domElement,   AttrCenter, NULL_ID_STR);
@@ -566,12 +569,12 @@ void VToolMove::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VAbstractOperation::SaveOptions(tag, obj);
 
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(tag, AttrType,     ToolType);
-    doc->SetAttribute(tag, AttrAngle,    VFormulaIdTranslator::FormulaNamesToIds(formulaAngle, nameToIdToken));
-    doc->SetAttribute(tag, AttrLength,   VFormulaIdTranslator::FormulaNamesToIds(formulaLength, nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle,    formulaNamesToIds(formulaAngle, nameToIdToken));
+    doc->SetAttribute(tag, AttrLength,   formulaNamesToIds(formulaLength, nameToIdToken));
     doc->SetAttribute(tag, AttrRotationAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaRotation, nameToIdToken));
+                      formulaNamesToIds(formulaRotation, nameToIdToken));
     doc->SetAttribute(tag, AttrSuffix,   suffix);
     doc->SetAttribute(tag, AttrCenter,   QString().setNum(m_originPointId));
 }

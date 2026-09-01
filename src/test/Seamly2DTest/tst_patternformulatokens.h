@@ -21,23 +21,23 @@
  **
  **************************************************************************/
 
-#ifndef TST_VPATTERNFORMULATOKENS_H
-#define TST_VPATTERNFORMULATOKENS_H
+#ifndef TST_PATTERNFORMULATOKENS_H
+#define TST_PATTERNFORMULATOKENS_H
 
 #include <QObject>
 
-class TST_VPatternFormulaTokens : public QObject
+class TST_PatternFormulaTokens : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VPatternFormulaTokens(QObject *parent = nullptr);
+    explicit TST_PatternFormulaTokens(QObject *parent = nullptr);
 
 private slots:
     void TestMergesPlainAndCompositeEntries();
     void TestFormulaReferencingBothTranslatesAndSurvivesRename();
 
 private:
-    Q_DISABLE_COPY(TST_VPatternFormulaTokens)
+    Q_DISABLE_COPY(TST_PatternFormulaTokens)
 };
 
-#endif // TST_VPATTERNFORMULATOKENS_H
+#endif // TST_PATTERNFORMULATOKENS_H

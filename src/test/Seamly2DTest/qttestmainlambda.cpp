@@ -73,10 +73,10 @@
 #include "tst_vpointf.h"
 #include "tst_readval.h"
 #include "tst_vtranslatevars.h"
-#include "tst_vformulaidtranslator.h"
-#include "tst_vcompositevariabletokens.h"
-#include "tst_vpatternformulatokens.h"
-#include "tst_vpieceformulaidtranslation.h"
+#include "tst_formulaidtranslator.h"
+#include "tst_compositevariabletokens.h"
+#include "tst_patternformulatokens.h"
+#include "tst_pieceformulaidtranslation.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -183,10 +183,10 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VPointF());
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
-    ASSERT_TEST(new TST_VFormulaIdTranslator());
-    ASSERT_TEST(new TST_VCompositeVariableTokens());
-    ASSERT_TEST(new TST_VPatternFormulaTokens());
-    ASSERT_TEST(new TST_VPieceFormulaIdTranslation());
+    ASSERT_TEST(new TST_FormulaIdTranslator());
+    ASSERT_TEST(new TST_CompositeVariableTokens());
+    ASSERT_TEST(new TST_PatternFormulaTokens());
+    ASSERT_TEST(new TST_PieceFormulaIdTranslation());
 
     return status;
 }

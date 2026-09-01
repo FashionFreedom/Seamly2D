@@ -77,8 +77,11 @@
 #include "../core/application_2d.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
@@ -886,8 +889,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         piece.SetUnited(getParameterBool(domElement, PatternPieceTool::AttrUnited, falseStr));
 
         const QString width = GetParametrString(domElement, AttrWidth, "0.0");
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
-        QString w = VFormulaIdTranslator::FormulaIdsToNames(width, idTokenToName);//need for saving fixed formula;
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
+        QString w = formulaIdsToNames(width, idTokenToName);//need for saving fixed formula;
         const uint version = GetParametrUInt(domElement, PatternPieceTool::AttrVersion, "1");
 
         const QStringList tags = QStringList() << TagNodes
@@ -947,7 +950,7 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         PatternPieceTool::Create(id, piece, w, pieceScene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         const QString wIdToken =
-            VFormulaIdTranslator::FormulaNamesToIds(w, VPatternFormulaTokens::NameToIdTokenMap(data));
+            formulaNamesToIds(w, nameToIdTokenMap(data));
         if (wIdToken != width)
         {
             SetAttribute(domElement, AttrWidth, wIdToken);
@@ -1036,7 +1039,7 @@ void VPattern::parsePieceNodes(const QDomElement &domElement, VPiece &piece, qre
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) const
 {
-    const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
+    const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
 
     VPieceLabelData &ppData = piece.GetPatternPieceData();
     ppData.SetVisible(getParameterBool(domElement, AttrVisible, trueStr));
@@ -1049,12 +1052,12 @@ void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) c
     ppData.SetQuantity(static_cast<int>(GetParametrUInt(domElement, AttrQuantity, "1")));
     ppData.SetOnFold(getParameterBool(domElement, AttrOnFold, falseStr));
     ppData.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    ppData.SetLabelWidth(VFormulaIdTranslator::FormulaIdsToNames(
+    ppData.SetLabelWidth(formulaIdsToNames(
         GetParametrString(domElement, AttrWidth, "1"), idTokenToName));
-    ppData.SetLabelHeight(VFormulaIdTranslator::FormulaIdsToNames(
+    ppData.SetLabelHeight(formulaIdsToNames(
         GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"), idTokenToName));
     ppData.SetFontSize(static_cast<int>(GetParametrUInt(domElement, PatternPieceTool::AttrFont, "0")));
-    ppData.SetRotation(VFormulaIdTranslator::FormulaIdsToNames(
+    ppData.SetRotation(formulaIdsToNames(
         GetParametrString(domElement, AttrRotation, "0"), idTokenToName));
     ppData.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     ppData.setTopLeftAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopLeftAnchor, NULL_ID_STR));
@@ -1065,17 +1068,17 @@ void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) c
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePiecePatternInfo(const QDomElement &domElement, VPiece &piece) const
 {
-    const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
+    const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
 
     VPatternLabelData &patternInfo = piece.GetPatternInfo();
     patternInfo.SetVisible(getParameterBool(domElement, AttrVisible, trueStr));
     patternInfo.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    patternInfo.SetLabelWidth(VFormulaIdTranslator::FormulaIdsToNames(
+    patternInfo.SetLabelWidth(formulaIdsToNames(
         GetParametrString(domElement, AttrWidth, "1"), idTokenToName));
-    patternInfo.SetLabelHeight(VFormulaIdTranslator::FormulaIdsToNames(
+    patternInfo.SetLabelHeight(formulaIdsToNames(
         GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"), idTokenToName));
     patternInfo.SetFontSize(static_cast<int>(GetParametrUInt(domElement, PatternPieceTool::AttrFont, "0")));
-    patternInfo.SetRotation(VFormulaIdTranslator::FormulaIdsToNames(
+    patternInfo.SetRotation(formulaIdsToNames(
         GetParametrString(domElement, AttrRotation, "0"), idTokenToName));
     patternInfo.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     patternInfo.setTopLeftAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopLeftAnchor, NULL_ID_STR));
@@ -1085,17 +1088,17 @@ void VPattern::ParsePiecePatternInfo(const QDomElement &domElement, VPiece &piec
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &piece) const
 {
-    const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
+    const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
 
     VGrainlineData &gGeometry = piece.GetGrainlineGeometry();
     gGeometry.SetVisible(getParameterBool(domElement, AttrVisible, falseStr));
     gGeometry.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    gGeometry.setLength(VFormulaIdTranslator::FormulaIdsToNames(
+    gGeometry.setLength(formulaIdsToNames(
         GetParametrString(domElement, AttrLength, "1"), idTokenToName));
-    gGeometry.setRotation(VFormulaIdTranslator::FormulaIdsToNames(
+    gGeometry.setRotation(formulaIdsToNames(
         GetParametrString(domElement, AttrRotation, "90"), idTokenToName));
     gGeometry.setArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
-    gGeometry.setArrowLength(VFormulaIdTranslator::FormulaIdsToNames(
+    gGeometry.setArrowLength(formulaIdsToNames(
         GetParametrString(domElement, AttrArrowLength, ".5"), idTokenToName));
     gGeometry.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     gGeometry.setTopAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopAnchorPoint, NULL_ID_STR));
@@ -1464,14 +1467,14 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
 
         const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
 
         const quint32 basePointId = GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
 
         const QString storedAngle = GetParametrString(domElement, AttrAngle, "0.0");
         const QString angle =
-            VFormulaIdTranslator::FormulaIdsToNames(storedAngle, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
 
         VToolEndLine::Create(id, name, lineType, lineWeight, lineColor, f, angleFix, basePointId, mx, my, showPointName, scene, this, data,
@@ -1480,9 +1483,9 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
         if (f != formula || angleFix != angle)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             SetAttribute(domElement, AttrAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(angleFix, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(angleFix, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1521,7 +1524,7 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineWeight, lineColor);
         const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
@@ -1532,7 +1535,7 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1571,7 +1574,7 @@ void VPattern::ParseToolShoulderPoint(VMainGraphicsScene *scene, QDomElement &do
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineWeight, lineColor);
         const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 p1Line = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
         const quint32 p2Line = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
@@ -1583,7 +1586,7 @@ void VPattern::ParseToolShoulderPoint(VMainGraphicsScene *scene, QDomElement &do
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1622,7 +1625,7 @@ void VPattern::ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElemen
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineWeight, lineColor);
         const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
@@ -1634,7 +1637,7 @@ void VPattern::ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElemen
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1673,7 +1676,7 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineWeight, lineColor);
         const QString storedFormula = GetParametrString(domElement, AttrLength, "100.0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
@@ -1685,7 +1688,7 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1752,7 +1755,7 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
         const QString storedRadius = GetParametrString(domElement, AttrRadius, "0");
         const QString radius =
-            VFormulaIdTranslator::FormulaIdsToNames(storedRadius, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedRadius, idTokenToNameMap(data));
         QString f = radius;//need for saving fixed formula;
         const quint32 center = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
@@ -1764,7 +1767,7 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
         if (f != radius)
         {
             SetAttribute(domElement, AttrRadius,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1971,7 +1974,7 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
         QString direction       = GetParametrString(domElement, AttrDirection, "forward");
         const QString storedFormula = GetParametrString(domElement, AttrLength, "0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f               = formula;//need for saving fixed formula;
         const quint32 splineId  = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
 
@@ -1982,7 +1985,7 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2020,7 +2023,7 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
         QString direction          = GetParametrString(domElement, AttrDirection, "forward");
         const QString storedFormula = GetParametrString(domElement, AttrLength, "0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula; //need for saving fixed formula;
         const quint32 splinePathId = GetParametrUInt(domElement, VToolCutSplinePath::AttrSplinePath,
                                                      NULL_ID_STR);
@@ -2031,7 +2034,7 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2069,7 +2072,7 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
         QString direction     = GetParametrString(domElement, AttrDirection, "forward");
         const QString storedFormula = GetParametrString(domElement, AttrLength, "0");
         const QString formula =
-            VFormulaIdTranslator::FormulaIdsToNames(storedFormula, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedFormula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 arcId   = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
 
@@ -2079,7 +2082,7 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
         if (f != formula)
         {
             SetAttribute(domElement, AttrLength,
-                         VFormulaIdTranslator::FormulaNamesToIds(f, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2124,7 +2127,7 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
 
         const QString storedAngle = GetParametrString(domElement, AttrAngle, "0.0");
         const QString angle =
-            VFormulaIdTranslator::FormulaIdsToNames(storedAngle, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
 
         VToolLineIntersectAxis::Create(id, name, lineType, lineWeight, lineColor, angleFix, basePointId, firstPointId,
@@ -2133,7 +2136,7 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
         if (angleFix != angle)
         {
             SetAttribute(domElement, AttrAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(angleFix, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(angleFix, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2178,7 +2181,7 @@ void VPattern::ParseToolCurveIntersectAxis(VMainGraphicsScene *scene, QDomElemen
         const quint32 curveId = GetParametrUInt(domElement, AttrCurve, NULL_ID_STR);
         const QString storedAngle = GetParametrString(domElement, AttrAngle, "0.0");
         const QString angle =
-            VFormulaIdTranslator::FormulaIdsToNames(storedAngle, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
 
         VToolCurveIntersectAxis::Create(id, name, lineType, lineWeight, lineColor, angleFix, basePointId, curveId, mx, my,
@@ -2187,7 +2190,7 @@ void VPattern::ParseToolCurveIntersectAxis(VMainGraphicsScene *scene, QDomElemen
         if (angleFix != angle)
         {
             SetAttribute(domElement, AttrAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(angleFix, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(angleFix, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2261,11 +2264,11 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         const quint32 c2CenterId = GetParametrUInt(domElement, AttrC2Center, NULL_ID_STR);
         const QString storedC1Radius = GetParametrString(domElement, AttrC1Radius);
         const QString c1Radius =
-            VFormulaIdTranslator::FormulaIdsToNames(storedC1Radius, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedC1Radius, idTokenToNameMap(data));
         QString c1R = c1Radius;
         const QString storedC2Radius = GetParametrString(domElement, AttrC2Radius);
         const QString c2Radius =
-            VFormulaIdTranslator::FormulaIdsToNames(storedC2Radius, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedC2Radius, idTokenToNameMap(data));
         QString c2R = c2Radius;
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
                                                                                   AttrCrossPoint, "1"));
@@ -2276,9 +2279,9 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         if (c1R != c1Radius || c2R != c2Radius)
         {
             SetAttribute(domElement, AttrC1Radius,
-                         VFormulaIdTranslator::FormulaNamesToIds(c1R, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(c1R, nameToIdTokenMap(data)));
             SetAttribute(domElement, AttrC2Radius,
-                         VFormulaIdTranslator::FormulaNamesToIds(c2R, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(c2R, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2343,7 +2346,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
         const quint32 tangentId = GetParametrUInt(domElement, AttrTangent, NULL_ID_STR);
         const QString storedCRadius = GetParametrString(domElement, AttrCRadius);
         const QString cRadius =
-            VFormulaIdTranslator::FormulaIdsToNames(storedCRadius, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedCRadius, idTokenToNameMap(data));
         QString cR = cRadius;
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
                                                                                             AttrCrossPoint,
@@ -2355,7 +2358,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
         if (cR != cRadius)
         {
             SetAttribute(domElement, AttrCRadius,
-                         VFormulaIdTranslator::FormulaNamesToIds(cR, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(cR, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2502,20 +2505,20 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         const quint32 point1 = GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
         const quint32 point4 = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
 
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
-        const QString angle1 = VFormulaIdTranslator::FormulaIdsToNames(
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
+        const QString angle1 = formulaIdsToNames(
                                     GetParametrString(domElement, AttrAngle1, "0"), idTokenToName);
         QString a1 = angle1;//need for saving fixed formula;
 
-        const QString angle2 = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString angle2 = formulaIdsToNames(
                                     GetParametrString(domElement, AttrAngle2, "0"), idTokenToName);
         QString a2 = angle2;//need for saving fixed formula;
 
-        const QString length1 = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString length1 = formulaIdsToNames(
                                      GetParametrString(domElement, AttrLength1, "0"), idTokenToName);
         QString l1 = length1;//need for saving fixed formula;
 
-        const QString length2 = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString length2 = formulaIdsToNames(
                                      GetParametrString(domElement, AttrLength2, "0"), idTokenToName);
         QString l2 = length2;//need for saving fixed formula;
 
@@ -2542,11 +2545,11 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (a1 != angle1 || a2 != angle2 || l1 != length1 || l2 != length2)
         {
-            const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
-            SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(a1, nameToIdToken));
-            SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(a2, nameToIdToken));
-            SetAttribute(domElement, AttrLength1, VFormulaIdTranslator::FormulaNamesToIds(l1, nameToIdToken));
-            SetAttribute(domElement, AttrLength2, VFormulaIdTranslator::FormulaNamesToIds(l2, nameToIdToken));
+            const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+            SetAttribute(domElement, AttrAngle1, formulaNamesToIds(a1, nameToIdToken));
+            SetAttribute(domElement, AttrAngle2, formulaNamesToIds(a2, nameToIdToken));
+            SetAttribute(domElement, AttrLength1, formulaNamesToIds(l1, nameToIdToken));
+            SetAttribute(domElement, AttrLength2, formulaNamesToIds(l2, nameToIdToken));
             modified = true;
             haveLiteChange();
         }
@@ -2698,7 +2701,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
         QVector<QString> length1, l1;
         QVector<QString> length2, l2;
 
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
         const QDomNodeList nodeList = domElement.childNodes();
         const qint32 num = nodeList.size();
         for (qint32 i = 0; i < num; ++i)
@@ -2706,13 +2709,13 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
             const QDomElement element = nodeList.at(i).toElement();
             if (not element.isNull() && element.tagName() == AttrPathPoint)
             {
-                angle1.append(VFormulaIdTranslator::FormulaIdsToNames(
+                angle1.append(formulaIdsToNames(
                     GetParametrString(element, AttrAngle1, "0"), idTokenToName));
-                angle2.append(VFormulaIdTranslator::FormulaIdsToNames(
+                angle2.append(formulaIdsToNames(
                     GetParametrString(element, AttrAngle2, "0"), idTokenToName));
-                length1.append(VFormulaIdTranslator::FormulaIdsToNames(
+                length1.append(formulaIdsToNames(
                     GetParametrString(element, AttrLength1, "0"), idTokenToName));
-                length2.append(VFormulaIdTranslator::FormulaIdsToNames(
+                length2.append(formulaIdsToNames(
                     GetParametrString(element, AttrLength2, "0"), idTokenToName));
                 const quint32 pSpline = GetParametrUInt(element, AttrPSpline, NULL_ID_STR);
                 points.append(pSpline);
@@ -2741,7 +2744,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
         }
 
         //Rewrite attribute formula. Need for situation when we have wrong formula.
-        const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
+        const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
         int count = 0;
         for (qint32 i = 0; i < num; ++i)
         {
@@ -2752,13 +2755,13 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
                     l1.at(count) != length1.at(count) || l2.at(count) != length2.at(count))
                 {
                     SetAttribute(element, AttrAngle1,
-                                 VFormulaIdTranslator::FormulaNamesToIds(a1.at(count), nameToIdToken));
+                                 formulaNamesToIds(a1.at(count), nameToIdToken));
                     SetAttribute(element, AttrAngle2,
-                                 VFormulaIdTranslator::FormulaNamesToIds(a2.at(count), nameToIdToken));
+                                 formulaNamesToIds(a2.at(count), nameToIdToken));
                     SetAttribute(element, AttrLength1,
-                                 VFormulaIdTranslator::FormulaNamesToIds(l1.at(count), nameToIdToken));
+                                 formulaNamesToIds(l1.at(count), nameToIdToken));
                     SetAttribute(element, AttrLength2,
-                                 VFormulaIdTranslator::FormulaNamesToIds(l2.at(count), nameToIdToken));
+                                 formulaNamesToIds(l2.at(count), nameToIdToken));
                     modified = true;
                     haveLiteChange();
                 }
@@ -2940,14 +2943,14 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
 
         ToolsCommonAttributes(domElement, id);
         const quint32 center     = GetParametrUInt(domElement,   AttrCenter,     NULL_ID_STR);
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
-        const QString radius     = VFormulaIdTranslator::FormulaIdsToNames(
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
+        const QString radius     = formulaIdsToNames(
                                         GetParametrString(domElement, AttrRadius, "10"), idTokenToName);
               QString r          = radius;//need for saving fixed formula;
-        const QString f1         = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString f1         = formulaIdsToNames(
                                         GetParametrString(domElement, AttrAngle1, "180"), idTokenToName);
               QString f1Fix      = f1;//need for saving fixed formula;
-        const QString f2         = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString f2         = formulaIdsToNames(
                                         GetParametrString(domElement, AttrAngle2, "270"), idTokenToName);
               QString f2Fix      = f2;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor,      ColorBlack);
@@ -2959,10 +2962,10 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (r != radius || f1Fix != f1 || f2Fix != f2)
         {
-            const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
-            SetAttribute(domElement, AttrRadius, VFormulaIdTranslator::FormulaNamesToIds(r, nameToIdToken));
-            SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(f1Fix, nameToIdToken));
-            SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(f2Fix, nameToIdToken));
+            const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+            SetAttribute(domElement, AttrRadius, formulaNamesToIds(r, nameToIdToken));
+            SetAttribute(domElement, AttrAngle1, formulaNamesToIds(f1Fix, nameToIdToken));
+            SetAttribute(domElement, AttrAngle2, formulaNamesToIds(f2Fix, nameToIdToken));
             modified = true;
             haveLiteChange();
         }
@@ -2993,20 +2996,20 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
 
         ToolsCommonAttributes(domElement, id);
         const quint32 center     = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
-        const QString radius1    = VFormulaIdTranslator::FormulaIdsToNames(
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
+        const QString radius1    = formulaIdsToNames(
                                         GetParametrString(domElement, AttrRadius1, "10"), idTokenToName);
-        const QString radius2    = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString radius2    = formulaIdsToNames(
                                         GetParametrString(domElement, AttrRadius2, "10"), idTokenToName);
         QString r1               = radius1;//need for saving fixed formula;
         QString r2               = radius2;//need for saving fixed formula;
-        const QString f1         = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString f1         = formulaIdsToNames(
                                         GetParametrString(domElement, AttrAngle1, "180"), idTokenToName);
         QString f1Fix            = f1;//need for saving fixed formula;
-        const QString f2         = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString f2         = formulaIdsToNames(
                                         GetParametrString(domElement, AttrAngle2, "270"), idTokenToName);
         QString f2Fix            = f2;//need for saving fixed formula;
-        const QString frotation  = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString frotation  = formulaIdsToNames(
                                         GetParametrString(domElement, AttrRotationAngle, "0"), idTokenToName);
         QString frotationFix     = frotation;//need for saving fixed formula;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
@@ -3019,13 +3022,13 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (r1 != radius1 || r2 != radius2 || f1Fix != f1 || f2Fix != f2 || frotationFix != frotation)
         {
-            const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
-            SetAttribute(domElement, AttrRadius1, VFormulaIdTranslator::FormulaNamesToIds(r1, nameToIdToken));
-            SetAttribute(domElement, AttrRadius2, VFormulaIdTranslator::FormulaNamesToIds(r2, nameToIdToken));
-            SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(f1Fix, nameToIdToken));
-            SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(f2Fix, nameToIdToken));
+            const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+            SetAttribute(domElement, AttrRadius1, formulaNamesToIds(r1, nameToIdToken));
+            SetAttribute(domElement, AttrRadius2, formulaNamesToIds(r2, nameToIdToken));
+            SetAttribute(domElement, AttrAngle1, formulaNamesToIds(f1Fix, nameToIdToken));
+            SetAttribute(domElement, AttrAngle2, formulaNamesToIds(f2Fix, nameToIdToken));
             SetAttribute(domElement, AttrRotationAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(frotationFix, nameToIdToken));
+                         formulaNamesToIds(frotationFix, nameToIdToken));
             modified = true;
             haveLiteChange();
         }
@@ -3126,14 +3129,14 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
 
         ToolsCommonAttributes(domElement, id);
         const quint32 center     = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
-        const QString radius     = VFormulaIdTranslator::FormulaIdsToNames(
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
+        const QString radius     = formulaIdsToNames(
                                         GetParametrString(domElement, AttrRadius, "10"), idTokenToName);
         QString r                = radius;//need for saving fixed formula;
-        const QString f1         = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString f1         = formulaIdsToNames(
                                         GetParametrString(domElement, AttrAngle1, "180"), idTokenToName);
         QString f1Fix            = f1;//need for saving fixed formula;
-        const QString length     = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString length     = formulaIdsToNames(
                                         GetParametrString(domElement, AttrLength, "10"), idTokenToName);
         QString lengthFix        = length;//need for saving fixed length;
         const QString color      = GetParametrString(domElement, AttrColor, ColorBlack);
@@ -3146,10 +3149,10 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (r != radius || f1Fix != f1 || lengthFix != length)
         {
-            const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
-            SetAttribute(domElement, AttrRadius, VFormulaIdTranslator::FormulaNamesToIds(r, nameToIdToken));
-            SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(f1Fix, nameToIdToken));
-            SetAttribute(domElement, AttrLength, VFormulaIdTranslator::FormulaNamesToIds(lengthFix, nameToIdToken));
+            const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+            SetAttribute(domElement, AttrRadius, formulaNamesToIds(r, nameToIdToken));
+            SetAttribute(domElement, AttrAngle1, formulaNamesToIds(f1Fix, nameToIdToken));
+            SetAttribute(domElement, AttrLength, formulaNamesToIds(lengthFix, nameToIdToken));
             modified = true;
             haveLiteChange();
         }
@@ -3182,7 +3185,7 @@ void VPattern::ParseToolRotation(VMainGraphicsScene *scene, QDomElement &domElem
         const quint32 center = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
         const QString storedAngle = GetParametrString(domElement, AttrAngle, "10");
         const QString angle =
-            VFormulaIdTranslator::FormulaIdsToNames(storedAngle, VPatternFormulaTokens::IdTokenToNameMap(data));
+            formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString a = angle;//need for saving fixed formula;
         const QString suffix = GetParametrString(domElement, AttrSuffix, "");
 
@@ -3195,7 +3198,7 @@ void VPattern::ParseToolRotation(VMainGraphicsScene *scene, QDomElement &domElem
         if (a != angle)
         {
             SetAttribute(domElement, AttrAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(a, VPatternFormulaTokens::NameToIdTokenMap(data)));
+                         formulaNamesToIds(a, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -3285,15 +3288,15 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
         quint32 id = NULL_ID;
 
         ToolsCommonAttributes(domElement, id);
-        const QHash<QString, QString> idTokenToName = VPatternFormulaTokens::IdTokenToNameMap(data);
+        const QHash<QString, QString> idTokenToName = idTokenToNameMap(data);
         const QString angle =
-            VFormulaIdTranslator::FormulaIdsToNames(GetParametrString(domElement, AttrAngle, "0"), idTokenToName);
+            formulaIdsToNames(GetParametrString(domElement, AttrAngle, "0"), idTokenToName);
         QString a = angle;//need for saving fixed formula;
         const QString length =
-            VFormulaIdTranslator::FormulaIdsToNames(GetParametrString(domElement, AttrLength, "0"), idTokenToName);
+            formulaIdsToNames(GetParametrString(domElement, AttrLength, "0"), idTokenToName);
         QString len = length;//need for saving fixed formula;
 
-        const QString rotation = VFormulaIdTranslator::FormulaIdsToNames(
+        const QString rotation = formulaIdsToNames(
             GetParametrString(domElement, AttrRotationAngle, "0"), idTokenToName);
         QString rot = rotation;//need for saving fixed formula;
         quint32 originPointId = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
@@ -3309,11 +3312,11 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (a != angle || len != length || rot != rotation)
         {
-            const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
-            SetAttribute(domElement, AttrAngle, VFormulaIdTranslator::FormulaNamesToIds(a, nameToIdToken));
-            SetAttribute(domElement, AttrLength, VFormulaIdTranslator::FormulaNamesToIds(len, nameToIdToken));
+            const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+            SetAttribute(domElement, AttrAngle, formulaNamesToIds(a, nameToIdToken));
+            SetAttribute(domElement, AttrLength, formulaNamesToIds(len, nameToIdToken));
             SetAttribute(domElement, AttrRotationAngle,
-                         VFormulaIdTranslator::FormulaNamesToIds(rot, nameToIdToken));
+                         formulaNamesToIds(rot, nameToIdToken));
             modified = true;
             haveLiteChange();
         }
@@ -3667,7 +3670,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         const QDomElement element = domElement.firstChildElement(VAbstractPattern::TagNodes);
         if (!element.isNull())
         {
-            path = ParsePathNodes(element, VPatternFormulaTokens::IdTokenToNameMap(data));
+            path = ParsePathNodes(element, idTokenToNameMap(data));
 
             // Check if nodes are still in use, if not an excpetion will be thrown that we can just ignore.
             try
@@ -3925,7 +3928,7 @@ void TranslateExpressionAttribute(QDomElement &element, const QString &attribute
     const QString formula = element.attribute(attribute);
     try
     {
-        const QString translated = VFormulaIdTranslator::FormulaNamesToIds(formula, nameToIdToken);
+        const QString translated = formulaNamesToIds(formula, nameToIdToken);
         if (translated != formula)
         {
             element.setAttribute(attribute, translated);
@@ -3943,23 +3946,23 @@ void TranslateExpressionAttribute(QDomElement &element, const QString &attribute
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ConvertFormulasToIdTokens is the one-time catch-up pass for a pattern that was just
- * upgraded from a pre-0.7.5 file: every individual tool only translates its OWN formula when
+ * upgraded from an older-schema file: every individual tool only translates its OWN formula when
  * it's next read or saved, so a freshly-opened old file still has every OTHER tool's formula
  * sitting in plain-name form until that tool happens to get touched. Renaming any point before
  * that catch-up happens breaks every formula still in the old form, exactly the problem this
  * whole feature exists to fix. This walks every known formula-bearing attribute across the whole
  * pattern once, right after a full parse (so VContainer - and with it every composite variable
- * name) already exists, and converts anything still in plain-name form to the id-token form -
- * bringing the entire in-memory document to the same state a version bump alone can't produce
- * (see VPatternConverter::toVersion0_7_5's own explanation for why the version bump itself
- * doesn't need to touch formula text). Caller decides *whether* to call this (only for a file
- * whose original version was below the current schema); this only decides *what* to translate.
+ * name) already exists, and converts anything still in plain-name form to the id-token form.
+ * The id-token form itself needed no schema bump: an id-token only ever replaces a token that
+ * already parsed as a name, so an older file (name-only formulas) is already valid content as-is.
+ * Caller decides *whether* to call this (only for a file whose original version was below the
+ * current schema); this only decides *what* to translate.
  */
 void VPattern::ConvertFormulasToIdTokens()
 {
     qCDebug(vXML, "Converting formulas to id tokens (one-time catch-up for an upgraded pattern).");
 
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(data);
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
     bool changedAny = false;
 
     auto translateAll = [&](const QString &tag, const QVector<QString> &attributes)

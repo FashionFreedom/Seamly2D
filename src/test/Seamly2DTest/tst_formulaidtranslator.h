@@ -21,16 +21,16 @@
  **
  **************************************************************************/
 
-#ifndef TST_VFORMULAIDTRANSLATOR_H
-#define TST_VFORMULAIDTRANSLATOR_H
+#ifndef TST_FORMULAIDTRANSLATOR_H
+#define TST_FORMULAIDTRANSLATOR_H
 
 #include <QObject>
 
-class TST_VFormulaIdTranslator : public QObject
+class TST_FormulaIdTranslator : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VFormulaIdTranslator(QObject *parent = nullptr);
+    explicit TST_FormulaIdTranslator(QObject *parent = nullptr);
 
 private slots:
     void TestFormulaNamesToIds_data();
@@ -42,7 +42,7 @@ private slots:
     void TestMapsFromRealContainer();
 
 private:
-    Q_DISABLE_COPY(TST_VFormulaIdTranslator)
+    Q_DISABLE_COPY(TST_FormulaIdTranslator)
 };
 
-#endif // TST_VFORMULAIDTRANSLATOR_H
+#endif // TST_FORMULAIDTRANSLATOR_H

@@ -21,16 +21,16 @@
  **
  **************************************************************************/
 
-#ifndef TST_VCOMPOSITEVARIABLETOKENS_H
-#define TST_VCOMPOSITEVARIABLETOKENS_H
+#ifndef TST_COMPOSITEVARIABLETOKENS_H
+#define TST_COMPOSITEVARIABLETOKENS_H
 
 #include <QObject>
 
-class TST_VCompositeVariableTokens : public QObject
+class TST_CompositeVariableTokens : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VCompositeVariableTokens(QObject *parent = nullptr);
+    explicit TST_CompositeVariableTokens(QObject *parent = nullptr);
 
 private slots:
     void TestLineLengthMapping();
@@ -47,7 +47,7 @@ private slots:
     void TestCurveCLengthSegmentMapping();
 
 private:
-    Q_DISABLE_COPY(TST_VCompositeVariableTokens)
+    Q_DISABLE_COPY(TST_CompositeVariableTokens)
 };
 
-#endif // TST_VCOMPOSITEVARIABLETOKENS_H
+#endif // TST_COMPOSITEVARIABLETOKENS_H

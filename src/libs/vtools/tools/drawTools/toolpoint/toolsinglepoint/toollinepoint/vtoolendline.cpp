@@ -68,8 +68,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -255,11 +258,11 @@ void VToolEndLine::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetFormula(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetAngle(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
 }
 
@@ -270,11 +273,11 @@ void VToolEndLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrLength,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaLength,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaAngle,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formulaAngle,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
 }
 
@@ -284,13 +287,13 @@ void VToolEndLine::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaLength = formulaIdsToNames(
                         doc->GetParametrString(domElement, AttrLength, ""),
-                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
-    formulaAngle  = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaAngle  = formulaIdsToNames(
                         doc->GetParametrString(domElement, AttrAngle, ""),
-                        VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

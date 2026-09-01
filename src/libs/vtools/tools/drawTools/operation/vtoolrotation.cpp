@@ -83,8 +83,11 @@
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
 #include "../vwidgets/vabstractsimple.h"
@@ -370,8 +373,8 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 
     doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getOriginPointId()));
     doc->SetAttribute(domElement, AttrAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetAngle(),
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(dialogTool->GetAngle(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
 }
 
@@ -379,9 +382,9 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 void VToolRotation::ReadToolAttributes(const QDomElement &domElement)
 {
     m_originPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
-    formulaAngle = VFormulaIdTranslator::FormulaIdsToNames(
+    formulaAngle = formulaIdsToNames(
                        doc->GetParametrString(domElement, AttrAngle, "0"),
-                       VPatternFormulaTokens::IdTokenToNameMap(&(this->VAbstractTool::data)));
+                       idTokenToNameMap(&(this->VAbstractTool::data)));
     suffix = doc->GetParametrString(domElement, AttrSuffix);
 }
 
@@ -393,8 +396,8 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, QString().setNum(m_originPointId));
     doc->SetAttribute(tag, AttrAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(formulaAngle,
-                                                               VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data))));
+                      formulaNamesToIds(formulaAngle,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrSuffix, suffix);
 
     SaveSourceDestination(tag);

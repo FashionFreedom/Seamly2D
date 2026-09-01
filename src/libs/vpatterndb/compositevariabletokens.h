@@ -21,8 +21,8 @@
  **
  **************************************************************************/
 
-#ifndef VCOMPOSITEVARIABLETOKENS_H
-#define VCOMPOSITEVARIABLETOKENS_H
+#ifndef COMPOSITEVARIABLETOKENS_H
+#define COMPOSITEVARIABLETOKENS_H
 
 #include <QHash>
 #include <QSharedPointer>
@@ -35,7 +35,7 @@ class VInternalVariable;
  * (line length, angle, curve length, radius, ...), whose display name is glued together from
  * the names of the points/curves they're computed from.
  *
- * See VFormulaIdTranslator for why this hands over whole-string pairs instead of asking the
+ * See FormulaIdTranslator for why this hands over whole-string pairs instead of asking the
  * translator to split a glued name apart itself - a constituent point's own name can contain
  * an underscore, so the glued string can't be reliably split back into its parts.
  *
@@ -43,18 +43,15 @@ class VInternalVariable;
  * elliptical), curve start/end angle, curve control-point length, and curve length - including
  * the segment-suffixed variants of the latter three that appear on multi-segment curve paths.
  * Plain (non-segmented) curve length needs no entry here - it's just the curve's own name,
- * already covered by VFormulaIdTranslator::NameToIdTokenMap() since a curve is a VGObject with
- * its own id, same as a point. A variable type this class doesn't recognize (measurements,
+ * already covered by FormulaIdTranslator::nameToIdTokenMap() since a curve is a VGObject with
+ * its own id, same as a point. A variable type this namespace doesn't recognize (measurements,
  * user-defined custom variables) is simply left out of the map, which just means
- * VFormulaIdTranslator leaves its formula tokens untouched.
+ * FormulaIdTranslator leaves its formula tokens untouched.
  */
-class VCompositeVariableTokens
+namespace CompositeVariableTokens
 {
-public:
-    static QHash<QString, QString> NameToIdTokenMap(
-        const QHash<QString, QSharedPointer<VInternalVariable>> &variables);
-    static QHash<QString, QString> IdTokenToNameMap(
-        const QHash<QString, QSharedPointer<VInternalVariable>> &variables);
-};
+    QHash<QString, QString> nameToIdTokenMap(const QHash<QString, QSharedPointer<VInternalVariable>> &variables);
+    QHash<QString, QString> idTokenToNameMap(const QHash<QString, QSharedPointer<VInternalVariable>> &variables);
+}
 
-#endif // VCOMPOSITEVARIABLETOKENS_H
+#endif // COMPOSITEVARIABLETOKENS_H

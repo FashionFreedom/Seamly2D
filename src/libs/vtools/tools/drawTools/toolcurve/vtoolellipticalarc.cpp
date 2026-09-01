@@ -66,8 +66,11 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "../vpatterndb/vformulaidtranslator.h"
-#include "../vpatterndb/vpatternformulatokens.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
 #include "../vdrawtool.h"
@@ -436,13 +439,13 @@ void VToolEllipticalArc::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogEllipticalArc> dialogTool = m_dialog.objectCast<DialogEllipticalArc>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrCenter,        QString().setNum(dialogTool->GetCenter()));
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(domElement, AttrRadius1, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetRadius1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrRadius2, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetRadius2(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(dialogTool->GetF2(), nameToIdToken));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius1, formulaNamesToIds(dialogTool->GetRadius1(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrRadius2, formulaNamesToIds(dialogTool->GetRadius2(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(dialogTool->GetF2(), nameToIdToken));
     doc->SetAttribute(domElement, AttrRotationAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(dialogTool->getRotationAngle(), nameToIdToken));
+                      formulaNamesToIds(dialogTool->getRotationAngle(), nameToIdToken));
     doc->SetAttribute(domElement, AttrColor,         dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrPenStyle,      dialogTool->getPenStyle());
     doc->SetAttribute(domElement, AttrLineWeight,    dialogTool->getLineWeight());
@@ -458,13 +461,13 @@ void VToolEllipticalArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter,        elArc->GetCenter().id());
-    const QHash<QString, QString> nameToIdToken = VPatternFormulaTokens::NameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(tag, AttrRadius1, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRadius1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrRadius2, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRadius2(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle1, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaF1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle2, VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaF2(), nameToIdToken));
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius1, formulaNamesToIds(elArc->GetFormulaRadius1(), nameToIdToken));
+    doc->SetAttribute(tag, AttrRadius2, formulaNamesToIds(elArc->GetFormulaRadius2(), nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(elArc->GetFormulaF1(), nameToIdToken));
+    doc->SetAttribute(tag, AttrAngle2, formulaNamesToIds(elArc->GetFormulaF2(), nameToIdToken));
     doc->SetAttribute(tag, AttrRotationAngle,
-                      VFormulaIdTranslator::FormulaNamesToIds(elArc->GetFormulaRotationAngle(), nameToIdToken));
+                      formulaNamesToIds(elArc->GetFormulaRotationAngle(), nameToIdToken));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
