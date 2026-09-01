@@ -82,8 +82,8 @@ Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.7.5");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.7.5.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.7.4");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.7.4.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -346,9 +346,7 @@ QString VPatternConverter::getSchema(int ver) const
         case (0x000703):
             return QStringLiteral("://schema/pattern/v0.7.3.xsd");
         case (0x000704):
-            return QStringLiteral("://schema/pattern/v0.7.4.xsd");
-        case (0x000705):
-            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.7.5.xsd");
+            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.7.4.xsd");
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -555,10 +553,6 @@ void VPatternConverter::applyPatches()
             ValidateXML(getSchema(0x000704), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000704):
-            toVersion0_7_5();
-            ValidateXML(getSchema(0x000705), m_convertedFileName);
-            V_FALLTHROUGH
-        case (0x000705):
             break;
         default:
             InvalidVersion(m_ver);
@@ -577,7 +571,7 @@ void VPatternConverter::downgradeToCurrentMaxVersion()
 bool VPatternConverter::isReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 7, 5),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 7, 4),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -1450,28 +1444,6 @@ void VPatternConverter::toVersion0_7_4()
     Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 4),
                       "Time to refactor the code.");
     setVersion(QStringLiteral("0.7.4"));
-    Save();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief toVersion0_7_5 marks that formula attributes may now hold internal object-id tokens
- * (e.g. "id42", "Line_id42_id17") instead of only object names, so a stable id survives renaming
- * the object it refers to.
- *
- * No formula text needs rewriting here: every id-token the app produces is only ever swapped in
- * for a token that already parsed as a name, so a 0.7.4 file (name-only formulas) is already
- * valid 0.7.5 content as-is - the id-token form is read exactly like a plain name when it isn't
- * one of ours, and translated back to the current name for evaluation when it is (see
- * VFormulaIdTranslator). This version bump exists purely so a file this app saves is never
- * silently misread by an older build that doesn't know what an id-token is.
- */
-void VPatternConverter::toVersion0_7_5()
-{
-    // TODO. Delete if minimal supported version is 0.7.5
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 5),
-                      "Time to refactor the code.");
-    setVersion(QStringLiteral("0.7.5"));
     Save();
 }
 
