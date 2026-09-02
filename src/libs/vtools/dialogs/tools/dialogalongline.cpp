@@ -293,7 +293,7 @@ void DialogAlongLine::SetCurrentLength()
     const QSharedPointer<VPointF> p2 = data->GeometricObject<VPointF>(GetSecondPointId());
 
     VLengthLine *length = new VLengthLine(p1.data(), GetFirstPointId(), p2.data(),
-                                          GetSecondPointId(), *data->GetPatternUnit());
+                                          GetSecondPointId(), toolId, *data->GetPatternUnit());
     length->SetName(currentLength);
 
     VContainer *locData = const_cast<VContainer *> (data);
