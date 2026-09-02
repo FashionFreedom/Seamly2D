@@ -79,16 +79,16 @@ void TST_PieceFormulaIdTranslation::TestNodeSAOverrideFormulaSurvivesRename()
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    before->AddLine(id1, id2);
+    before->AddLine(id1, id2, id2);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_A1_A2/3"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/3").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/3").arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("Armloch"), 5, 5));
-    after->AddLine(id1, id2);
+    after->AddLine(id1, id2, id2);
 
     QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_A1_Armloch/3"));
@@ -108,16 +108,16 @@ void TST_PieceFormulaIdTranslation::TestGrainlineFormulaSurvivesRename()
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    before->AddLine(id1, id2);
+    before->AddLine(id1, id2, id2);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_A1_A2"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1").arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("Schulter"), 5, 5));
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    after->AddLine(id1, id2);
+    after->AddLine(id1, id2, id2);
 
     QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_Schulter_A2"));

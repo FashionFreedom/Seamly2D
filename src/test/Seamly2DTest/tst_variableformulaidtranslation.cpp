@@ -85,20 +85,20 @@ void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaReferencingLineL
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("C5"), 5, 5));
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("D1"), 5, 5));
-    before->AddLine(id1, id2);
+    before->AddLine(id1, id2, id2);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_C5_D1/2"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("C5qqq"), 5, 5));
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("D1"), 5, 5));
-    after->AddLine(id1, id2);
+    after->AddLine(id1, id2, id2);
 
     QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_C5qqq_D1/2"));
 
     // The stored formula itself must be untouched by the rename.
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(id2));
 }
