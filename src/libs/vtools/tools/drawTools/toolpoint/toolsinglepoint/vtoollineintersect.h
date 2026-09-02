@@ -79,6 +79,7 @@ public:
                                       VAbstractPattern *doc, VContainer *data);
     static VToolLineIntersect *Create(const quint32 _id, const quint32 &p1Line1Id, const quint32 &p2Line1Id,
                                       const quint32 &p1Line2Id, const quint32 &p2Line2Id, const QString &pointName,
+                                      quint32 line1Id, quint32 line2Id, quint32 line3Id, quint32 line4Id,
                                       qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc,
                                       VContainer *data, const Document &parse, const Source &typeCreation);
@@ -132,10 +133,16 @@ private:
     /** @brief p2Line2 id second point second line.*/
     quint32               p2Line2;
 
+    quint32               line1Id; /** @brief line1Id persisted id of the p1Line1-to-point line. See issue #1678. */
+    quint32               line2Id; /** @brief line2Id persisted id of the point-to-p2Line1 line. See issue #1678. */
+    quint32               line3Id; /** @brief line3Id persisted id of the p1Line2-to-point line. See issue #1678. */
+    quint32               line4Id; /** @brief line4Id persisted id of the point-to-p2Line2 line. See issue #1678. */
+
                           VToolLineIntersect(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                              const quint32 &p1Line1, const quint32 &p2Line1, const quint32 &p1Line2,
-                                             const quint32 &p2Line2, const Source &typeCreation,
-                                             QGraphicsItem * parent = nullptr);
+                                             const quint32 &p2Line2, const quint32 &line1Id, const quint32 &line2Id,
+                                             const quint32 &line3Id, const quint32 &line4Id,
+                                             const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLLINEINTERSECT_H

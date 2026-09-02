@@ -82,7 +82,7 @@ public:
     static VToolCurveIntersectAxis *Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                            const QString &lineWeight,
                                            const QString &lineColor, QString &formulaAngle, quint32 basePointId,
-                                           quint32 curveId, qreal mx, qreal my, bool showPointName,
+                                           quint32 curveId, quint32 lineId, qreal mx, qreal my, bool showPointName,
                                            VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                            const Document &parse, const Source &typeCreation);
 
@@ -116,13 +116,14 @@ private:
     Q_DISABLE_COPY(VToolCurveIntersectAxis)
     QString              formulaAngle;
     quint32              curveId;
+    quint32              lineId; /** @brief lineId persisted id of this tool's line. See issue #1678. */
 
                          VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                                  const QString &lineType, const QString &lineWeight,
                                                  const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
-                                                 const quint32 &curveId, const Source &typeCreation,
-                                                 QGraphicsItem * parent = nullptr);
+                                                 const quint32 &curveId, const quint32 &lineId,
+                                                 const Source &typeCreation, QGraphicsItem * parent = nullptr);
 
     template <class Item>
     static void          InitArc(VContainer *data, qreal segLength, const VPointF *p, quint32 curveId);

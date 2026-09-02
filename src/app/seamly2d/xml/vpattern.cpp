@@ -1169,6 +1169,33 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief ResolveOrAssignLineId reads a persisted line id, assigning and self-healing one if absent.
+///
+/// A point-tool that implicitly registers a line (e.g. VToolHeight's base-to-point line) needs a
+/// stable id of its own, independent of the two points it currently connects - so a later change to
+/// which points it connects doesn't break a formula referencing the line's length/angle. Files saved
+/// before this attribute existed have it absent; this assigns a fresh one exactly once and writes it
+/// back into the DOM so it becomes permanent on the next save. See issue #1678.
+///
+/// @param domElement tag in xml tree.
+/// @param attrName the line id attribute to read/assign (e.g. AttrLineId, AttrLine1Id).
+/// @return the persisted or freshly assigned line id.
+//---------------------------------------------------------------------------------------------------------------------
+
+quint32 VPattern::ResolveOrAssignLineId(QDomElement &domElement, const QString &attrName)
+{
+    quint32 lineId = GetParametrUInt(domElement, attrName, NULL_ID_STR);
+    if (lineId == NULL_ID)
+    {
+        lineId = VContainer::getNextId();
+        SetAttribute(domElement, attrName, lineId);
+        modified = true;
+        haveLiteChange();
+    }
+    return lineId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief ParsePointElement parse point tag.
 /// @param scene scene.
 /// @param domElement tag in xml tree.
@@ -1476,8 +1503,9 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
         const QString angle =
             formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
+        const quint32 lineId = ResolveOrAssignLineId(domElement, AttrLineId);
 
-        VToolEndLine::Create(id, name, lineType, lineWeight, lineColor, f, angleFix, basePointId, mx, my, showPointName, scene, this, data,
+        VToolEndLine::Create(id, name, lineType, lineWeight, lineColor, f, angleFix, basePointId, lineId, mx, my, showPointName, scene, this, data,
                              parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula || angleFix != angle)
@@ -1528,9 +1556,11 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
+        const quint32 line1Id = ResolveOrAssignLineId(domElement, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(domElement, AttrLine2Id);
 
-        VToolAlongLine::Create(id, name, lineType, lineWeight, lineColor, f, firstPointId, secondPointId, mx, my, showPointName, scene,
-                               this, data, parse, Source::FromFile);
+        VToolAlongLine::Create(id, name, lineType, lineWeight, lineColor, f, firstPointId, secondPointId, line1Id,
+                               line2Id, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1579,9 +1609,11 @@ void VPattern::ParseToolShoulderPoint(VMainGraphicsScene *scene, QDomElement &do
         const quint32 p1Line = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
         const quint32 p2Line = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
         const quint32 pShoulder = GetParametrUInt(domElement, AttrPShoulder, NULL_ID_STR);
+        const quint32 line1Id = ResolveOrAssignLineId(domElement, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(domElement, AttrLine2Id);
 
-        VToolShoulderPoint::Create(id, f, p1Line, p2Line, pShoulder, lineType, lineWeight, lineColor, name, mx, my,
-                                   showPointName, scene, this, data, parse, Source::FromFile);
+        VToolShoulderPoint::Create(id, f, p1Line, p2Line, pShoulder, lineType, lineWeight, lineColor, name, line1Id,
+                                   line2Id, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1630,9 +1662,10 @@ void VPattern::ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElemen
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
         const qreal angle = GetParametrDouble(domElement, AttrAngle, "0.0");
+        const quint32 lineId = ResolveOrAssignLineId(domElement, AttrLineId);
 
         VToolNormal::Create(id, f, firstPointId, secondPointId, lineType, lineWeight, lineColor, name, angle,
-                            mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+                            lineId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1681,9 +1714,10 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
         const quint32 thirdPointId = GetParametrUInt(domElement, AttrThirdPoint, NULL_ID_STR);
+        const quint32 lineId = ResolveOrAssignLineId(domElement, AttrLineId);
 
         VToolBisector::Create(id, f, firstPointId, secondPointId, thirdPointId,
-                            lineType, lineWeight, lineColor, name, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+                            lineType, lineWeight, lineColor, name, lineId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1727,7 +1761,14 @@ void VPattern::ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomEleme
         const quint32 p1Line2Id = GetParametrUInt(domElement, AttrP1Line2, NULL_ID_STR);
         const quint32 p2Line2Id = GetParametrUInt(domElement, AttrP2Line2, NULL_ID_STR);
 
+        QDomElement element = domElement;
+        const quint32 line1Id = ResolveOrAssignLineId(element, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(element, AttrLine2Id);
+        const quint32 line3Id = ResolveOrAssignLineId(element, AttrLine3Id);
+        const quint32 line4Id = ResolveOrAssignLineId(element, AttrLine4Id);
+
         VToolLineIntersect::Create(id, p1Line1Id, p2Line1Id, p1Line2Id, p2Line2Id, name,
+                                   line1Id, line2Id, line3Id, line4Id,
                                    mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
@@ -1760,9 +1801,12 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
         const quint32 center = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
+        const quint32 line1Id = ResolveOrAssignLineId(domElement, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(domElement, AttrLine2Id);
+        const quint32 line3Id = ResolveOrAssignLineId(domElement, AttrLine3Id);
 
-        VToolPointOfContact::Create(id, f, center, firstPointId, secondPointId, name, mx, my, showPointName, scene, this,
-                                    data, parse, Source::FromFile);
+        VToolPointOfContact::Create(id, f, center, firstPointId, secondPointId, name, line1Id, line2Id, line3Id,
+                                    mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != radius)
         {
@@ -1880,7 +1924,13 @@ void VPattern::ParseToolHeight(VMainGraphicsScene *scene, const QDomElement &dom
         const quint32 p1LineId = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
         const quint32 p2LineId = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
 
+        QDomElement element = domElement;
+        const quint32 line1Id = ResolveOrAssignLineId(element, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(element, AttrLine2Id);
+        const quint32 line3Id = ResolveOrAssignLineId(element, AttrLine3Id);
+
         VToolHeight::Create(id, name, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId,
+                            line1Id, line2Id, line3Id,
                             mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
@@ -1944,8 +1994,13 @@ void VPattern::parseIntersectXYTool(VMainGraphicsScene *scene, const QDomElement
         const quint32 firstPointId  = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
 
+        QDomElement element = domElement;
+        const quint32 line1Id = ResolveOrAssignLineId(element, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(element, AttrLine2Id);
+
         PointIntersectXYTool::Create(id, name, lineType, lineWeight, lineColor, firstPointId, secondPointId,
-                                     mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+                                     line1Id, line2Id, mx, my, showPointName, scene, this, data, parse,
+                                     Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {
@@ -2129,9 +2184,13 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
         const QString angle =
             formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
+        const quint32 line1Id = ResolveOrAssignLineId(domElement, AttrLine1Id);
+        const quint32 line2Id = ResolveOrAssignLineId(domElement, AttrLine2Id);
+        const quint32 line3Id = ResolveOrAssignLineId(domElement, AttrLine3Id);
 
         VToolLineIntersectAxis::Create(id, name, lineType, lineWeight, lineColor, angleFix, basePointId, firstPointId,
-                                       secondPointId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
+                                       secondPointId, line1Id, line2Id, line3Id, mx, my, showPointName, scene, this,
+                                       data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (angleFix != angle)
         {
@@ -2183,9 +2242,10 @@ void VPattern::ParseToolCurveIntersectAxis(VMainGraphicsScene *scene, QDomElemen
         const QString angle =
             formulaIdsToNames(storedAngle, idTokenToNameMap(data));
         QString angleFix = angle;
+        const quint32 lineId = ResolveOrAssignLineId(domElement, AttrLineId);
 
-        VToolCurveIntersectAxis::Create(id, name, lineType, lineWeight, lineColor, angleFix, basePointId, curveId, mx, my,
-                                        showPointName, scene, this, data, parse, Source::FromFile);
+        VToolCurveIntersectAxis::Create(id, name, lineType, lineWeight, lineColor, angleFix, basePointId, curveId,
+                                        lineId, mx, my, showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (angleFix != angle)
         {

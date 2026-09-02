@@ -91,11 +91,15 @@ const QString VToolHeight::ToolType = QStringLiteral("height");
 VToolHeight::VToolHeight(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &lineType,
                          const QString &lineWeight, const QString &lineColor, const quint32 &basePointId,
                          const quint32 &p1LineId, const quint32 &p2LineId,
+                         const quint32 &line1Id, const quint32 &line2Id, const quint32 &line3Id,
                          const Source &typeCreation, QGraphicsItem * parent)
     : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, QString()
     , basePointId, 0, parent)
     , p1LineId(p1LineId)
     , p2LineId(p2LineId)
+    , line1Id(line1Id)
+    , line2Id(line2Id)
+    , line3Id(line3Id)
 {
     ToolCreation(typeCreation);
 }
@@ -142,7 +146,8 @@ VToolHeight* VToolHeight::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     const quint32 p1LineId    = dialogTool->GetP1LineId();
     const quint32 p2LineId    = dialogTool->GetP2LineId();
 
-    VToolHeight *point = Create(0, pointName, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId, 5, 10, true,
+    VToolHeight *point = Create(0, pointName, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId,
+                                NULL_ID, NULL_ID, NULL_ID, 5, 10, true,
                                 scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -175,6 +180,7 @@ VToolHeight* VToolHeight::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                  const QString &lineWeight, const QString &lineColor, quint32 basePointId,
                                  quint32 p1LineId, quint32 p2LineId,
+                                 quint32 line1Id, quint32 line2Id, quint32 line3Id,
                                  qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
                                  const Source &typeCreation)
@@ -192,16 +198,19 @@ VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, co
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        data->AddLine(basePointId, id);
-        data->AddLine(p1LineId, id);
-        data->AddLine(p2LineId, id);
+        line1Id = VContainer::getNextId();
+        line2Id = VContainer::getNextId();
+        line3Id = VContainer::getNextId();
+        data->AddLine(basePointId, id, line1Id);
+        data->AddLine(p1LineId, id, line2Id);
+        data->AddLine(p2LineId, id, line3Id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(basePointId, id);
-        data->AddLine(p1LineId, id);
-        data->AddLine(p2LineId, id);
+        data->AddLine(basePointId, id, line1Id);
+        data->AddLine(p1LineId, id, line2Id);
+        data->AddLine(p2LineId, id, line3Id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -212,7 +221,7 @@ VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, co
     {
         VDrawTool::AddRecord(id, Tool::Height, doc);
         VToolHeight *point = new VToolHeight(doc, data, id, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId,
-                                             typeCreation);
+                                             line1Id, line2Id, line3Id, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -293,6 +302,9 @@ void VToolHeight::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
     doc->SetAttribute(tag, AttrP1Line,    p1LineId);
     doc->SetAttribute(tag, AttrP2Line,    p2LineId);
+    doc->SetAttribute(tag, AttrLine1Id,   line1Id);
+    doc->SetAttribute(tag, AttrLine2Id,   line2Id);
+    doc->SetAttribute(tag, AttrLine3Id,   line3Id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -304,6 +316,9 @@ void VToolHeight::ReadToolAttributes(const QDomElement &domElement)
     basePointId  = doc->GetParametrUInt(domElement,   AttrBasePoint,  NULL_ID_STR);
     p1LineId     = doc->GetParametrUInt(domElement,   AttrP1Line,     NULL_ID_STR);
     p2LineId     = doc->GetParametrUInt(domElement,   AttrP2Line,     NULL_ID_STR);
+    line1Id      = doc->GetParametrUInt(domElement,   AttrLine1Id,    NULL_ID_STR);
+    line2Id      = doc->GetParametrUInt(domElement,   AttrLine2Id,    NULL_ID_STR);
+    line3Id      = doc->GetParametrUInt(domElement,   AttrLine3Id,    NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

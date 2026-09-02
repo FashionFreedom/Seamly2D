@@ -84,7 +84,8 @@ public:
     static VToolShoulderPoint *Create(const quint32 _id, QString &formula, quint32 p1Line, quint32 p2Line,
                                       quint32 pShoulder, const QString &typeLine, const QString &lineWeight,
                                       const QString &lineColor,
-                                      const QString &pointName, qreal mx, qreal my, bool showPointName,
+                                      const QString &pointName, quint32 line1Id, quint32 line2Id, qreal mx, qreal my,
+                                      bool showPointName,
                                       VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                       const Document &parse,
                                       const Source &typeCreation);
@@ -121,11 +122,14 @@ private:
 
     quint32                    p2Line;        /** @brief p2Line id second line point. */
     quint32                    pShoulder;     /** @brief pShoulder id shoulder line point. */
+    quint32                    line1Id; /** @brief line1Id persisted id of the p1Line-to-point line. See issue #1678. */
+    quint32                    line2Id; /** @brief line2Id persisted id of the p2Line-to-point line. See issue #1678. */
 
     VToolShoulderPoint(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
                        const QString &lineWeight,
                        const QString &lineColor, const QString &formula, const quint32 &p1Line, const quint32 &p2Line,
-                       const quint32 &pShoulder, const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                       const quint32 &pShoulder, const quint32 &line1Id, const quint32 &line2Id,
+                       const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLSHOULDERPOINT_H
