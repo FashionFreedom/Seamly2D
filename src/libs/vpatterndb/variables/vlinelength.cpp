@@ -78,8 +78,8 @@ VLengthLine::VLengthLine()
 
 //---------------------------------------------------------------------------------------------------------------------
 VLengthLine::VLengthLine(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id,
-                         Unit patternUnit)
-    :VInternalVariable(), d(new VLengthLineData(p1Id, p2Id, patternUnit))
+                         const quint32 &lineId, Unit patternUnit)
+    :VInternalVariable(), d(new VLengthLineData(p1Id, p2Id, lineId, patternUnit))
 {
     SCASSERT(p1 != nullptr)
     SCASSERT(p2 != nullptr)
@@ -136,4 +136,10 @@ quint32 VLengthLine::GetP1Id() const
 quint32 VLengthLine::GetP2Id() const
 {
     return d->p2Id;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VLengthLine::GetLineId() const
+{
+    return d->lineId;
 }

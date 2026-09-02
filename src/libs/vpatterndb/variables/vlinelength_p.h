@@ -66,21 +66,22 @@ class VLengthLineData : public QSharedData
 public:
 
     VLengthLineData()
-        :p1Id(NULL_ID), p2Id(NULL_ID), patternUnit(Unit::Cm)
+        :p1Id(NULL_ID), p2Id(NULL_ID), lineId(NULL_ID), patternUnit(Unit::Cm)
     {}
 
-    VLengthLineData(const quint32 &p1Id, const quint32 &p2Id, Unit patternUnit)
-        :p1Id(p1Id), p2Id(p2Id), patternUnit(patternUnit)
+    VLengthLineData(const quint32 &p1Id, const quint32 &p2Id, const quint32 &lineId, Unit patternUnit)
+        :p1Id(p1Id), p2Id(p2Id), lineId(lineId), patternUnit(patternUnit)
     {}
 
     VLengthLineData(const VLengthLineData &var)
-        :QSharedData(var), p1Id(var.p1Id), p2Id(var.p2Id), patternUnit(var.patternUnit)
+        :QSharedData(var), p1Id(var.p1Id), p2Id(var.p2Id), lineId(var.lineId), patternUnit(var.patternUnit)
     {}
 
     virtual  ~VLengthLineData();
 
     quint32 p1Id;
     quint32 p2Id;
+    quint32 lineId;
     Unit    patternUnit;
 
 private:

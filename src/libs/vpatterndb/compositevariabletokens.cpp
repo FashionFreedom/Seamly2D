@@ -50,17 +50,13 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
             case VarType::LineLength:
             {
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                nameToIdToken.insert(i.key(), line_ + idToken(length->GetP1Id()) +
-                                                   QLatin1Char('_') +
-                                                   idToken(length->GetP2Id()));
+                nameToIdToken.insert(i.key(), line_ + idToken(length->GetLineId()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                nameToIdToken.insert(i.key(), angleLine_ + idToken(angle->GetP1Id()) +
-                                                   QLatin1Char('_') +
-                                                   idToken(angle->GetP2Id()));
+                nameToIdToken.insert(i.key(), angleLine_ + idToken(angle->GetLineId()));
                 break;
             }
             case VarType::ArcRadius:
