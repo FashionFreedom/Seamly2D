@@ -80,6 +80,7 @@
 #include "tst_pieceformulaidtranslation.h"
 #include "tst_variableformulaidtranslation.h"
 #include "tst_customvariablecontainer.h"
+#include "tst_lineendpointreconnectiondetection.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -193,6 +194,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_PieceFormulaIdTranslation());
     ASSERT_TEST(new TST_VariableFormulaIdTranslation());
     ASSERT_TEST(new TST_CustomVariableContainer());
+    ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
 
     return status;
 }
