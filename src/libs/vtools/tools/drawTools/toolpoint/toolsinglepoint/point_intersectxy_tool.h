@@ -60,7 +60,8 @@ public:
     static PointIntersectXYTool *Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                             const QString &lineWeight,
                                             const QString &lineColor, const quint32 &firstPointId,
-                                            const quint32 &secondPointId, qreal mx, qreal my, bool showPointName,
+                                            const quint32 &secondPointId, quint32 line1Id, quint32 line2Id,
+                                            qreal mx, qreal my, bool showPointName,
                                             VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                             const Document &parse, const Source &typeCreation);
 
@@ -85,10 +86,15 @@ protected:
 
 private:
                          Q_DISABLE_COPY(PointIntersectXYTool)
+
+    quint32              line1Id; /** @brief line1Id persisted id of the firstPoint-to-point line. See issue #1678. */
+    quint32              line2Id; /** @brief line2Id persisted id of the secondPoint-to-point line. See issue #1678. */
+
                          PointIntersectXYTool(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                               const QString &lineType, const QString &lineWeight,
                                               const QString &lineColor,
                                               const quint32 &firstPointId, const quint32 &secondPointId,
+                                              const quint32 &line1Id, const quint32 &line2Id,
                                               const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

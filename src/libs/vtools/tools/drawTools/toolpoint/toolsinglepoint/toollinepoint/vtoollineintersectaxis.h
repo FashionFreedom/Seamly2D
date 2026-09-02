@@ -82,6 +82,7 @@ public:
                                           const QString &lineWeight, const QString &lineColor,
                                           QString &formulaAngle, quint32 basePointId,
                                           quint32 firstPointId, quint32 secondPointId,
+                                          quint32 line1Id, quint32 line2Id, quint32 line3Id,
                                           qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                           VAbstractPattern *doc,
                                           VContainer *data, const Document &parse, const Source &typeCreation);
@@ -122,10 +123,14 @@ private:
     QString              formulaAngle;
     quint32              firstPointId;
     quint32              secondPointId;
+    quint32              line1Id; /** @brief line1Id persisted id of the basePoint-to-point line. See issue #1678. */
+    quint32              line2Id; /** @brief line2Id persisted id of the firstPoint-to-point line. See issue #1678. */
+    quint32              line3Id; /** @brief line3Id persisted id of the point-to-secondPoint line. See issue #1678. */
 
     VToolLineIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &lineType,
                            const QString &lineWeight, const QString &lineColor, const QString &formulaAngle,
                            const quint32 &basePointId, const quint32 &firstPointId, const quint32 &secondPointId,
+                           const quint32 &line1Id, const quint32 &line2Id, const quint32 &line3Id,
                            const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

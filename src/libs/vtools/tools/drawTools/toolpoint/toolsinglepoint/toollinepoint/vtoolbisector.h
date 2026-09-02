@@ -84,7 +84,7 @@ public:
     static VToolBisector *Create(const quint32 _id, QString &formula, quint32 firstPointId, quint32 secondPointId,
                                  quint32 thirdPointId, const QString &lineType, const QString &lineWeight,
                                  const QString &lineColor,
-                                 const QString &pointName,  qreal mx, qreal my,  bool showPointName,
+                                 const QString &pointName, quint32 lineId, qreal mx, qreal my,  bool showPointName,
                                  VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                  const Document &parse, const Source &typeCreation);
 
@@ -120,12 +120,13 @@ private:
 
     /** @brief thirdPointId id third point of angle. */
     quint32        thirdPointId;
+    quint32        lineId; /** @brief lineId persisted id of this tool's line. See issue #1678. */
 
                    VToolBisector(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                  const QString &lineType, const QString &lineWeight,
                                  const QString &lineColor, const QString &formula,
                                  const quint32 &firstPointId, const quint32 &secondPointId,
-                                 const quint32 &thirdPointId, const Source &typeCreation,
+                                 const quint32 &thirdPointId, const quint32 &lineId, const Source &typeCreation,
                                  QGraphicsItem * parent = nullptr);
 };
 

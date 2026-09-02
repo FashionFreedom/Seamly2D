@@ -102,12 +102,16 @@ const QString VToolPointOfContact::ToolType = QStringLiteral("pointOfContact");
 VToolPointOfContact::VToolPointOfContact(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                          const QString &radius, const quint32 &center,
                                          const quint32 &firstPointId, const quint32 &secondPointId,
+                                         const quint32 &line1Id, const quint32 &line2Id, const quint32 &line3Id,
                                          const Source &typeCreation, QGraphicsItem *parent)
     : VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
     , arcRadius(radius)
     , center(center)
     , firstPointId(firstPointId)
     , secondPointId(secondPointId)
+    , line1Id(line1Id)
+    , line2Id(line2Id)
+    , line3Id(line3Id)
 {
     ToolCreation(typeCreation);
 }
@@ -204,7 +208,8 @@ VToolPointOfContact* VToolPointOfContact::Create(QSharedPointer<DialogTool> dial
     const quint32 firstPointId = dialogTool->GetFirstPoint();
     const quint32 secondPointId = dialogTool->GetSecondPoint();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfContact *point = Create(0, radius, center, firstPointId, secondPointId, pointName, 5, 10, true, scene, doc,
+    VToolPointOfContact *point = Create(0, radius, center, firstPointId, secondPointId, pointName,
+                                        NULL_ID, NULL_ID, NULL_ID, 5, 10, true, scene, doc,
                                         data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -232,7 +237,8 @@ VToolPointOfContact* VToolPointOfContact::Create(QSharedPointer<DialogTool> dial
  */
 VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &radius, const quint32 &center,
                                                  const quint32 &firstPointId, const quint32 &secondPointId,
-                                                 const QString &pointName, qreal mx, qreal my, bool showPointName,
+                                                 const QString &pointName, quint32 line1Id, quint32 line2Id,
+                                                 quint32 line3Id, qreal mx, qreal my, bool showPointName,
                                                  VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                                  const Document &parse, const Source &typeCreation)
 {
@@ -252,16 +258,19 @@ VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &rad
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        data->AddLine(firstPointId, id);
-        data->AddLine(secondPointId, id);
-        data->AddLine(center, id);
+        line1Id = VContainer::getNextId();
+        line2Id = VContainer::getNextId();
+        line3Id = VContainer::getNextId();
+        data->AddLine(firstPointId, id, line1Id);
+        data->AddLine(secondPointId, id, line2Id);
+        data->AddLine(center, id, line3Id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(firstPointId, id);
-        data->AddLine(secondPointId, id);
-        data->AddLine(center, id);
+        data->AddLine(firstPointId, id, line1Id);
+        data->AddLine(secondPointId, id, line2Id);
+        data->AddLine(center, id, line3Id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -272,7 +281,8 @@ VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &rad
     {
         VDrawTool::AddRecord(id, Tool::PointOfContact, doc);
         VToolPointOfContact *point = new VToolPointOfContact(doc, data, id, radius, center,
-                                                             firstPointId, secondPointId, typeCreation);
+                                                             firstPointId, secondPointId, line1Id, line2Id, line3Id,
+                                                             typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -365,6 +375,9 @@ void VToolPointOfContact::SaveOptions(QDomElement &tag, QSharedPointer<VGObject>
     doc->SetAttribute(tag, AttrCenter, center);
     doc->SetAttribute(tag, AttrFirstPoint, firstPointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
+    doc->SetAttribute(tag, AttrLine1Id, line1Id);
+    doc->SetAttribute(tag, AttrLine2Id, line2Id);
+    doc->SetAttribute(tag, AttrLine3Id, line3Id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -376,6 +389,9 @@ void VToolPointOfContact::ReadToolAttributes(const QDomElement &domElement)
     center = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
     firstPointId = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
+    line1Id = doc->GetParametrUInt(domElement, AttrLine1Id, NULL_ID_STR);
+    line2Id = doc->GetParametrUInt(domElement, AttrLine2Id, NULL_ID_STR);
+    line3Id = doc->GetParametrUInt(domElement, AttrLine3Id, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
