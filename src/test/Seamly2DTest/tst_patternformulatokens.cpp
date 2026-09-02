@@ -47,13 +47,13 @@ void TST_PatternFormulaTokens::TestMergesPlainAndCompositeEntries()
 
     const quint32 id1 = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     const quint32 id2 = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    data->AddLine(id1, id2);
+    data->AddLine(id1, id2, id2);
 
     const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data.data());
 
     QCOMPARE(nameToIdToken.value(QStringLiteral("A1")), idToken(id1));
     QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")),
-             QStringLiteral("Line_%1_%2").arg(idToken(id1), idToken(id2)));
+             QStringLiteral("Line_%1").arg(idToken(id2)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -76,23 +76,23 @@ void TST_PatternFormulaTokens::TestFormulaReferencingBothTranslatesAndSurvivesRe
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    before->AddLine(id1, id2);
+    before->AddLine(id1, id2, id2);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("A1+Line_A1_A2/2"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("id%1+Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("id%1+Line_id%2/2").arg(id1).arg(id2));
 
     // Same ids, A1 renamed - matches what a full reparse produces after a rename on disk.
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("Halsloch_hinten"), 5, 5));
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    after->AddLine(id1, id2);
+    after->AddLine(id1, id2, id2);
 
     QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Halsloch_hinten+Line_Halsloch_hinten_A2/2"));
 
     // The stored formula itself must be untouched by the rename.
-    QCOMPARE(stored, QStringLiteral("id%1+Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("id%1+Line_id%2/2").arg(id1).arg(id2));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

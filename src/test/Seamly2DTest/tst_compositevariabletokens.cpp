@@ -56,20 +56,20 @@ void TST_CompositeVariableTokens::TestLineLengthMapping()
     const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
     const VPointF p2(10, 0, QStringLiteral("A2"), 5, 5);
 
-    QSharedPointer<VInternalVariable> length(new VLengthLine(&p1, 42, &p2, 17, Unit::Cm));
+    QSharedPointer<VInternalVariable> length(new VLengthLine(&p1, 42, &p2, 17, 99, Unit::Cm));
 
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(length->GetName(), length);
     QCOMPARE(length->GetName(), QStringLiteral("Line_A1_A2"));
 
     const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")), QStringLiteral("Line_id42_id17"));
+    QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")), QStringLiteral("Line_id99"));
 
     const QHash<QString, QString> idTokenToName = idTokenToNameMap(variables);
-    QCOMPARE(idTokenToName.value(QStringLiteral("Line_id42_id17")), QStringLiteral("Line_A1_A2"));
+    QCOMPARE(idTokenToName.value(QStringLiteral("Line_id99")), QStringLiteral("Line_A1_A2"));
 
     QCOMPARE(formulaNamesToIds(QStringLiteral("Line_A1_A2*2"), nameToIdToken),
-             QStringLiteral("Line_id42_id17*2"));
+             QStringLiteral("Line_id99*2"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -83,17 +83,17 @@ void TST_CompositeVariableTokens::TestLineLengthSurvivesRename()
     const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
     const VPointF p2(10, 0, QStringLiteral("A2"), 5, 5);
 
-    QSharedPointer<VInternalVariable> lengthBeforeRename(new VLengthLine(&p1, 42, &p2, 17, Unit::Cm));
+    QSharedPointer<VInternalVariable> lengthBeforeRename(new VLengthLine(&p1, 42, &p2, 17, 99, Unit::Cm));
     QHash<QString, QSharedPointer<VInternalVariable>> variablesBeforeRename;
     variablesBeforeRename.insert(lengthBeforeRename->GetName(), lengthBeforeRename);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_A1_A2*2"), nameToIdTokenMap(variablesBeforeRename));
-    QCOMPARE(stored, QStringLiteral("Line_id42_id17*2"));
+    QCOMPARE(stored, QStringLiteral("Line_id99*2"));
 
     // A2 renamed to Halsloch_hinten: same ids, a fresh VLengthLine reflects the new name.
     const VPointF p2Renamed(10, 0, QStringLiteral("Halsloch_hinten"), 5, 5);
-    QSharedPointer<VInternalVariable> lengthAfterRename(new VLengthLine(&p1, 42, &p2Renamed, 17, Unit::Cm));
+    QSharedPointer<VInternalVariable> lengthAfterRename(new VLengthLine(&p1, 42, &p2Renamed, 17, 99, Unit::Cm));
     QHash<QString, QSharedPointer<VInternalVariable>> variablesAfterRename;
     variablesAfterRename.insert(lengthAfterRename->GetName(), lengthAfterRename);
 
@@ -102,7 +102,7 @@ void TST_CompositeVariableTokens::TestLineLengthSurvivesRename()
              QStringLiteral("Line_A1_Halsloch_hinten*2"));
 
     // The stored formula itself must be untouched by the rename.
-    QCOMPARE(stored, QStringLiteral("Line_id42_id17*2"));
+    QCOMPARE(stored, QStringLiteral("Line_id99*2"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -122,13 +122,13 @@ void TST_CompositeVariableTokens::TestLineAngleMapping()
     const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
     const VPointF p2(10, 0, QStringLiteral("A2"), 5, 5);
 
-    QSharedPointer<VInternalVariable> angle(new VLineAngle(&p1, 42, &p2, 17));
+    QSharedPointer<VInternalVariable> angle(new VLineAngle(&p1, 42, &p2, 17, 99));
 
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(angle->GetName(), angle);
 
     const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(angle->GetName()), QStringLiteral("AngleLine_id42_id17"));
+    QCOMPARE(nameToIdToken.value(angle->GetName()), QStringLiteral("AngleLine_id99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
