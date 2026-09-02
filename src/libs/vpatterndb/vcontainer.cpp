@@ -609,16 +609,20 @@ void VContainer::ClearVariables(const VarType &type)
  * @brief AddLine add line to container
  * @param firstPointId id of first point of line
  * @param secondPointId id of second point of line
+ * @param lineId the line's own persisted id (a file-stored XML attribute on the generating tool, or
+ * the tool's own id for VToolLine), used to key its id-token so the token survives the tool later
+ * connecting a different pair of points. See issue #1678.
  */
-void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPointId)
+void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPointId, const quint32 &lineId)
 {
     const QSharedPointer<VPointF> first = GeometricObject<VPointF>(firstPointId);
     const QSharedPointer<VPointF> second = GeometricObject<VPointF>(secondPointId);
 
-    VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, *GetPatternUnit());
+    VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, lineId,
+                                          *GetPatternUnit());
     AddVariable(length->GetName(), length);
 
-    VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId);
+    VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId, lineId);
     AddVariable(angle->GetName(), angle);
 }
 
