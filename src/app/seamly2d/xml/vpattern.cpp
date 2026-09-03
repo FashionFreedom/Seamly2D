@@ -3869,7 +3869,7 @@ QString VPattern::generateSuffix(const QString &type) const
     }
     else
     {
-        suffixBase = QString("_%1%").arg(GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex())).toLower());
+        suffixBase = QString("_%1").arg(GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex())).toLower());
     }
 
     const QStringList uniqueNames = VContainer::AllUniqueNames();
