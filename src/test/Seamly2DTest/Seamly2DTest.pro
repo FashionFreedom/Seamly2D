@@ -56,7 +56,8 @@ SOURCES += \
     tst_pieceformulaidtranslation.cpp \
     tst_variableformulaidtranslation.cpp \
     tst_customvariablecontainer.cpp \
-    tst_lineendpointreconnectiondetection.cpp
+    tst_lineendpointreconnectiondetection.cpp \
+    tst_linevariablelookup.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -89,7 +90,8 @@ HEADERS += \
     tst_pieceformulaidtranslation.h \
     tst_variableformulaidtranslation.h \
     tst_customvariablecontainer.h \
-    tst_lineendpointreconnectiondetection.h
+    tst_lineendpointreconnectiondetection.h \
+    tst_linevariablelookup.h
 
 include(warnings.pri)
 

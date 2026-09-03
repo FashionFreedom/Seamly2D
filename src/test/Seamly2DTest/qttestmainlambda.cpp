@@ -75,6 +75,7 @@
 #include "tst_vtranslatevars.h"
 #include "tst_formulaidtranslator.h"
 #include "tst_compositevariabletokens.h"
+#include "tst_linevariablelookup.h"
 #include "tst_patternformulatokens.h"
 #include "tst_pieceformulaidtranslation.h"
 #include "tst_variableformulaidtranslation.h"
@@ -193,6 +194,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VariableFormulaIdTranslation());
     ASSERT_TEST(new TST_CustomVariableContainer());
     ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
+    ASSERT_TEST(new TST_LineVariableLookup());
 
     return status;
 }
