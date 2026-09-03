@@ -105,9 +105,16 @@ QPointF VToolMove::findRotationOrigin(const QVector<quint32> &objectIds, const V
 {
     if (originPointId != NULL_ID)
     {
-        // An explicitly selected rotation point is the pivot itself, so it must not be translated by the
-        // move. Objects are moved and then rotated about it, matching what the Rotation tool does.
-        return static_cast<QPointF>(*data->GeometricObject<VPointF>(originPointId));
+        const QPointF rotationOrigin = static_cast<QPointF>(*data->GeometricObject<VPointF>(originPointId));
+        if (!objectIds.contains(originPointId))
+        {
+            return rotationOrigin;
+        }
+
+        // A selected rotation point that is also moved must remain the pivot after the move.
+        QLineF move(rotationOrigin, QPointF(rotationOrigin.x() + calcLength, rotationOrigin.y()));
+        move.setAngle(calcAngle);
+        return move.p2();
     }
 
     QPolygonF originObjects;
