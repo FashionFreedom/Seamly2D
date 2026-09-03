@@ -22,12 +22,18 @@
     <height>16777215</height>
    </size>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
   <property name="windowTitle">
    <string>Internal Path Tool</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -37,6 +43,9 @@
        <width>16777215</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -171,6 +180,9 @@
           </item>
           <item>
            <widget class="QListWidget" name="listWidget">
+            <property name="focusPolicy">
+             <enum>Qt::TabFocus</enum>
+            </property>
             <property name="dragDropMode">
              <enum>QAbstractItemView::InternalMove</enum>
             </property>
@@ -1902,14 +1914,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>LineTypeComboBox</class>
-   <extends>QComboBox</extends>
-   <header>linetype_combobox.h</header>
-  </customwidget>
-  <customwidget>
    <class>ColorComboBox</class>
    <extends>QComboBox</extends>
    <header location="global">color_combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>LineTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">linetype_combobox.h</header>
   </customwidget>
   <customwidget>
    <class>LineWeightComboBox</class>
@@ -1917,9 +1929,58 @@
    <header location="global">lineweight_combobox.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>pathName_LineEdit</tabstop>
+  <tabstop>type_ComboBox</tabstop>
+  <tabstop>piece_ComboBox</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>moveTop_ToolButton</tabstop>
+  <tabstop>moveUp_ToolButton</tabstop>
+  <tabstop>moveDown_ToolButton</tabstop>
+  <tabstop>moveBottom_ToolButton</tabstop>
+  <tabstop>lineColor_ComboBox</tabstop>
+  <tabstop>lineType_ComboBox</tabstop>
+  <tabstop>lineWeight_ComboBox</tabstop>
+  <tabstop>cutOnFabric_CheckBox</tabstop>
+  <tabstop>extendStartPoint_CheckBox</tabstop>
+  <tabstop>extendEndPoint_CheckBox</tabstop>
+  <tabstop>toolButtonExprWidth</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>widthFormula_PlainTextEdit</tabstop>
+  <tabstop>widthGrow_PushButton</tabstop>
+  <tabstop>nodes_ComboBox</tabstop>
+  <tabstop>beforeDefault_PushButton</tabstop>
+  <tabstop>beforeExpr_ToolButton</tabstop>
+  <tabstop>beforeWidthFormula_PlainTextEdit</tabstop>
+  <tabstop>beforeWidthGrow_PushButton</tabstop>
+  <tabstop>afterDefault_PushButton</tabstop>
+  <tabstop>afterExpr_ToolButton</tabstop>
+  <tabstop>afterWidthFormula_PlainTextEdit</tabstop>
+  <tabstop>afterWidthGrow_PushButton</tabstop>
+  <tabstop>angle_ComboBox</tabstop>
+  <tabstop>notches_ComboBox</tabstop>
+  <tabstop>slitNotch_RadioButton</tabstop>
+  <tabstop>tNotch_RadioButton</tabstop>
+  <tabstop>uNotch_RadioButton</tabstop>
+  <tabstop>vInternalNotch_RadioButton</tabstop>
+  <tabstop>vExternalNotch_RadioButton</tabstop>
+  <tabstop>castleNotch_RadioButton</tabstop>
+  <tabstop>diamondNotch_RadioButton</tabstop>
+  <tabstop>straightforward_RadioButton</tabstop>
+  <tabstop>bisector_RadioButton</tabstop>
+  <tabstop>intersection_RadioButton</tabstop>
+  <tabstop>notchAngle_DoubleSpinBox</tabstop>
+  <tabstop>resetAngle_PushButton</tabstop>
+  <tabstop>resetWidth_PushButton</tabstop>
+  <tabstop>notchWidth_DoubleSpinBox</tabstop>
+  <tabstop>notchCount_SpinBox</tabstop>
+  <tabstop>showSeamlineNotch_CheckBox</tabstop>
+  <tabstop>resetLength_PushButton</tabstop>
+  <tabstop>notchLength_DoubleSpinBox</tabstop>
+ </tabstops>
  <resources>
-  <include location="../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../vmisc/share/resources/icon.qrc"/>
+  <include location="../../../../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

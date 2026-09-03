@@ -1,48 +1,52 @@
-/******************************************************************************
- *   @file   dialogarcwithlength.h
- **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+// @file   dialogarcwithlength.cpp
+// @author Douglas S Caskey
+// @date   21 Mar, 2023
+//
+// @copyright
+// Copyright (C) 2017 - 2024 Seamly, LLC
+// https://github.com/fashionfreedom/seamly2d
+//
+// @brief
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.\
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   dialogarcwithlength.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   9 6, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+// @file   dialogarcwithlength.h
+// @author Roman Telezhynskyi <dismine(at)gmail.com>
+// @date   9 6, 2015
+//
+// @brief
+// @copyright
+// This source code is part of the Valentine project, a pattern making
+// program, whose allow create and modeling patterns of clothing.
+// Copyright (C) 2015 Seamly2D project
+// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+// Seamly2D is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Seamly2D is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef DIALOGARCWITHLENGTH_H
 #define DIALOGARCWITHLENGTH_H
@@ -96,12 +100,6 @@ public:
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
-    /**
-     * @brief DeployFormulaTextEdit grow or shrink formula input
-     */
-    void          DeployRadiusTextEdit();
-    void          DeployF1TextEdit();
-    void          DeployLengthTextEdit();
 
     void          RadiusChanged();
     void          F1Changed();
@@ -148,11 +146,6 @@ private:
     QString       f1;
 
     QString       length;
-
-    /** @brief formulaBaseHeight base height defined by dialogui */
-    int           formulaBaseHeightRadius;
-    int           formulaBaseHeightF1;
-    int           formulaBaseHeightLength;
 
     qreal         angleF1;
     VArc          m_arc;

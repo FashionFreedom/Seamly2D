@@ -97,7 +97,6 @@ VToolLineIntersectAxis::VToolLineIntersectAxis(VAbstractPattern *doc, VContainer
 void VToolLineIntersectAxis::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
-    m_dialog->setModal(true);
     QSharedPointer<DialogLineIntersectAxis> dialogTool = m_dialog.objectCast<DialogLineIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);

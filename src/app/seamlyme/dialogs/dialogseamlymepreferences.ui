@@ -46,6 +46,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::TabFocus</enum>
+       </property>
        <property name="iconSize">
         <size>
          <width>96</width>
@@ -134,8 +137,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

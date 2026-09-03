@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialoglineintersectaxis.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialoglineintersectaxis.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   19 Oct, 2014
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialoglineintersectaxis.h"
 
@@ -84,7 +84,6 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
     : DialogTool(data, toolId, parent),
       ui(new Ui::DialogLineIntersectAxis),
       formulaAngle(),
-      formulaBaseHeightAngle(0),
       m_firstRelease(false)
 {
     ui->setupUi(this);
@@ -99,7 +98,6 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeightAngle = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditFormula->setToolTip(makeAngleTooltip());
 
@@ -132,7 +130,6 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
     connect(ui->toolButtonExprAngle,  &QPushButton::clicked,        this, &DialogLineIntersectAxis::FXAngle);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogLineIntersectAxis::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogLineIntersectAxis::AngleTextChanged);
-    connect(ui->pushButtonGrowLengthAngle, &QPushButton::clicked, this, &DialogLineIntersectAxis::DeployAngleTextEdit);
     connect(timerFormula, &QTimer::timeout, this, &DialogLineIntersectAxis::EvalAngle);
     connect(ui->comboBoxFirstLinePoint, &QComboBox::currentTextChanged,
             this, &DialogLineIntersectAxis::PointNameChanged);
@@ -142,6 +139,8 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
             this, &DialogLineIntersectAxis::PointNameChanged);
 
     vis = new VisToolLineIntersectAxis(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -171,20 +170,18 @@ void DialogLineIntersectAxis::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogLineIntersectAxis::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -213,19 +210,11 @@ QString DialogLineIntersectAxis::GetAngle() const
 void DialogLineIntersectAxis::SetAngle(const QString &value)
 {
     formulaAngle = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
-    // of this PlainTextEdit to change 80 to this value
-    if (formulaAngle.length() > 80)
-    {
-        this->DeployAngleTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(formulaAngle);
 
     VisToolLineIntersectAxis *line = qobject_cast<VisToolLineIntersectAxis *>(vis);
     SCASSERT(line != nullptr)
     line->SetAngle(formulaAngle);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -382,12 +371,6 @@ void DialogLineIntersectAxis::EvalAngle()
 void DialogLineIntersectAxis::AngleTextChanged()
 {
     formulaValueChanged(flagError, ui->plainTextEditFormula, timerFormula, degreeSymbol);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogLineIntersectAxis::DeployAngleTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLengthAngle, formulaBaseHeightAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
