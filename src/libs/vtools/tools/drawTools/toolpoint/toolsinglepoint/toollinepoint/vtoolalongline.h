@@ -100,6 +100,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      GetCopyLengthLineId() const override {return line1Id;}
+    virtual quint32      GetCopyAngleLineId() const override {return line1Id;}
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
