@@ -68,6 +68,24 @@ void TST_VToolMove::explicitOriginIsNotTranslatedByTheMove()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void TST_VToolMove::explicitOriginIncludedInTheMoveFollowsTheMove()
+{
+    const Unit unit = Unit::Cm;
+    QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
+
+    data->UpdateGObject(originPointId, new VPointF(rotationPointA5.x(), rotationPointA5.y(), "A3", 0, 0));
+
+    const QPointF origin = VToolMove::findRotationOrigin(QVector<quint32>{originPointId}, data.data(), moveLength,
+                                                         moveAngle, originPointId);
+    const QPointF expected = VPointF::MovePF(rotationPointA5, moveLength, moveAngle);
+
+    QVERIFY2(VFuzzyComparePoints(origin, expected),
+             qUtf8Printable(QStringLiteral("A selected rotation point that is moved with the source objects must "
+                                          "follow the move. Expected (%1, %2), got (%3, %4).")
+                            .arg(expected.x()).arg(expected.y()).arg(origin.x()).arg(origin.y())));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void TST_VToolMove::moveWithRotationMatchesRotationAfterMove()
 {
     const Unit unit = Unit::Cm;

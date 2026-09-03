@@ -35,6 +35,7 @@ public:
 
 private slots:
     void explicitOriginIsNotTranslatedByTheMove();
+    void explicitOriginIncludedInTheMoveFollowsTheMove();
     void moveWithRotationMatchesRotationAfterMove();
     void implicitOriginStillFollowsTheMove();
 
