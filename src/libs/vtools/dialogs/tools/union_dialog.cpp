@@ -210,7 +210,6 @@ void UnionDialog::chosenPiece(const quint32 &id, const SceneObject &type, quint3
                 {
                     ++numberP;
                     emit ToolTip("");
-                    this->setModal(true);
                     this->show();
                     return;
                 }

@@ -61,6 +61,7 @@
 #include <QDialog>
 #include <QFont>
 #include <QHeaderView>
+#include <QKeyEvent>
 #include <QLabel>
 #include <QListWidget>
 #include <QMapIterator>
@@ -121,6 +122,8 @@ EditFormulaDialog::EditFormulaDialog(const VContainer *data, const quint32 &tool
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    this->installEventFilter(this);
 
     // Resize the dialog based on last saved size.
     const QSize size = qApp->Settings()->GetFormulaWizardDialogSize();
@@ -544,6 +547,24 @@ void EditFormulaDialog::resizeEvent(QResizeEvent *event)
     DialogTool::resizeEvent(event);
 }
 
+bool EditFormulaDialog::eventFilter(QObject *watched, QEvent *event)
+{
+    if (event->type() == QEvent::KeyPress)
+    {
+        QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+
+        if (keyEvent->key() == Qt::Key_Escape)
+        {
+
+            reject();
+
+            // Consume the keypress so it stops propagating
+            return true;
+        }
+    }
+    return QDialog::eventFilter(watched, event);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::SetFormula(const QString &value)
 {
@@ -566,7 +587,6 @@ void EditFormulaDialog::SetFormula(const QString &value)
         }
     }
     ui->plainTextEditFormula->setPlainText(m_formula);
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

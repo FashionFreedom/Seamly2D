@@ -1158,7 +1158,6 @@ void PatternPieceDialog::showCustomSAContextMenu(const QPoint &pos)
             dialog->setSeamAllowanceWidthFormula(getSeamAllowanceWidthFormula());
         }
         m_dialog = dialog;
-        m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
         m_dialog->show();
     }
@@ -1195,7 +1194,6 @@ void PatternPieceDialog::showInternalPathsContextMenu(const QPoint &pos)
         dialog->setPiecePath(data->getPiecePath(pathId));
         dialog->setPieceId(toolId);
         m_dialog = dialog;
-        m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
         m_dialog->show();
     }
@@ -1297,7 +1295,6 @@ void PatternPieceDialog::nodeChanged(int index)
             w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
 
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
-            MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
             // Seam allowance after node
             ui->afterWidthFormula_PlainTextEdit->setEnabled(true);
@@ -1308,7 +1305,6 @@ void PatternPieceDialog::nodeChanged(int index)
             w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
 
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
-            MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
             //Angle type
             ui->angle_ComboBox->setEnabled(true);
@@ -3523,8 +3519,6 @@ void PatternPieceDialog::setSeamAllowanceWidthFormula(const QString &formula)
     SCASSERT(path != nullptr)
     const VPiece p = CreatePiece();
     path->SetPiece(p);
-
-    MoveCursorToEnd(ui->widthFormula_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3573,8 +3567,6 @@ void PatternPieceDialog::setGrainlineAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->rotationFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->rotationFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3587,8 +3579,6 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->lengthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->lengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3601,8 +3591,6 @@ void PatternPieceDialog::setGrainlineArrowLength(QString lengthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->arrowlLengthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->arrowlLengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3615,8 +3603,6 @@ void PatternPieceDialog::setPieceLabelWidth(QString widthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelWidthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelWidthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3629,8 +3615,6 @@ void PatternPieceDialog::setPieceLabelHeight(QString heightFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelHeightFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelHeightFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3643,8 +3627,6 @@ void PatternPieceDialog::setPieceLabelAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelAngleFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelAngleFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3657,8 +3639,6 @@ void PatternPieceDialog::setPatternLabelWidth(QString widthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelWidthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelWidthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3671,8 +3651,6 @@ void PatternPieceDialog::setPatternLabelHeight(QString heightFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelHeightFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelHeightFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3685,8 +3663,6 @@ void PatternPieceDialog::setPatternLabelAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelAngleFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelAngleFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

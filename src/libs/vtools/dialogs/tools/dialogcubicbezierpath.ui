@@ -23,6 +23,9 @@
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="selection_GroupBox">
@@ -82,6 +85,9 @@
             <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -416,6 +422,13 @@
    <header location="global">lineweight_combobox.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>comboBoxPoint</tabstop>
+  <tabstop>listWidget</tabstop>
+  <tabstop>lineColor_ComboBox</tabstop>
+  <tabstop>lineType_ComboBox</tabstop>
+  <tabstop>lineWeight_ComboBox</tabstop>
+ </tabstops>
  <resources>
   <include location="../../../vmisc/share/resources/icon.qrc"/>
  </resources>

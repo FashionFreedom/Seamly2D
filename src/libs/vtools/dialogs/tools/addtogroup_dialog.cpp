@@ -97,7 +97,6 @@ void  AddToGroupDialog::ShowDialog(bool click)
             return;
         }
 
-        setModal(true);
         emit ToolTip("");
         show();
     }

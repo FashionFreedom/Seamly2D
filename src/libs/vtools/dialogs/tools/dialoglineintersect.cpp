@@ -182,7 +182,6 @@ void DialogLineIntersect::ChosenObject(quint32 id, const SceneObject &type)
                             }
                             else
                             {
-                                this->setModal(true);
                                 this->show();
 
                                 connect(ui->comboBoxP1Line1,   &QComboBox::currentTextChanged, this,
