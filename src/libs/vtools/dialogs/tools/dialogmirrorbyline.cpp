@@ -213,7 +213,6 @@ void DialogMirrorByLine::ShowDialog(bool click)
     else if (not stage1 && prepare && click)
     {
         CheckState();
-        setModal(true);
         emit ToolTip("");
         show();
     }

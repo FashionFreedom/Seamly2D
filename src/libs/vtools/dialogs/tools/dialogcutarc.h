@@ -91,9 +91,6 @@ public:
 public slots:
     virtual void       ChosenObject(quint32 id, const SceneObject &type) override;
 
-    /// @brief DeployFormulaTextEdit grow or shrink formula input.
-    void               DeployFormulaTextEdit();
-
     /// @brief FormulaTextChanged when formula text changes for validation and calc.
     void               FormulaTextChanged();
     void               FXLength();
@@ -107,14 +104,9 @@ protected:
 
 private:
     Q_DISABLE_COPY(DialogCutArc)
-    /// @brief ui keeps information about user interface.
-    Ui::DialogCutArc  *ui;
 
-    /// @brief formula string with formula.
-    QString            formula;
-
-    /// @brief formulaBaseHeight base height defined by dialogui.
-    int                formulaBaseHeight;
+    Ui::DialogCutArc  *ui;      /// @brief ui keeps information about user interface.
+    QString            formula; /// @brief formula string with formula.
 };
 
 #endif // DIALOGCUTARC_H

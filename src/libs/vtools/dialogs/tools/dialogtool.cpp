@@ -51,6 +51,7 @@
 #include <limits.h>
 #include <qiterator.h>
 #include <qnumeric.h>
+#include <QByteArray>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDoubleSpinBox>
@@ -67,6 +68,7 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QPlainTextEdit>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRect>
 #include <QRegularExpression>
@@ -216,25 +218,52 @@ void DialogTool::closeEvent(QCloseEvent *event)
  * @brief showEvent handle when window show
  * @param event event
  */
-void DialogTool::showEvent(QShowEvent *event)
-{
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
-    {
-        return;
-    }
-    if (isInitialized)
-    {
-        return;
-    }
-    // do your init stuff here
+ void DialogTool::showEvent(QShowEvent *event)
+ {
+     // Let the base class handle the initial native show event
+     QDialog::showEvent(event);
 
-    setMaximumSize(size());
-    setMinimumSize(size());
+     // Filter out OS system updates or subsequent window activations
+     if (event->spontaneous())
+     {
+         return;
+     }
 
-    isInitialized = true;//first show windows are held
-    ShowVisualization();
-}
+     if (isInitialized)
+     {
+         return;
+     }
+
+     // --- GNOME MODAL WORKAROUND START ---
+     // Safely check if this instance was flagged as modal inside Qt Creator
+     if (this->isModal())
+     {
+         QString desktop = QProcessEnvironment::systemEnvironment().value("XDG_CURRENT_DESKTOP").toUpper();
+
+         if (desktop.contains("GNOME") || desktop.contains("UNITY"))
+         {
+             // Read whatever flags the dialog
+             Qt::WindowFlags currentFlags = this->windowFlags();
+
+             // Inject the window behavior hints to make GNOME float this modal window freely
+             currentFlags |= (Qt::Window | Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint);
+             currentFlags &= ~Qt::WindowContextHelpButtonHint;
+             this->setWindowFlags(currentFlags);
+
+             // Re-call show() immediately because changing flags hides the widget momentarily
+             this->show();
+         }
+     }
+
+     // Do your standard initialization stuff here
+     // Running this *after* the flag change ensures your strict dimensions are applied cleanly
+     setMaximumSize(size());
+     setMinimumSize(size());
+
+     isInitialized = true; // Prevents this block from ever running again
+
+     ShowVisualization();
+ }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::fillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &list)
@@ -442,15 +471,6 @@ void DialogTool::changeCurrentData(QComboBox *box, const QVariant &value) const
         box->setCurrentIndex(index);
         box->blockSignals(false);
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogTool::MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const
-{
-    SCASSERT(plainTextEdit != nullptr)
-    QTextCursor cursor = plainTextEdit->textCursor();
-    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
-    plainTextEdit->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

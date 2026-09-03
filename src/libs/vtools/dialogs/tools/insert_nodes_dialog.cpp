@@ -141,7 +141,6 @@ void InsertNodesDialog::ShowDialog(bool click)
         validateNodes();
 
         prepare = true;
-        setModal(true);
         emit ToolTip(QString());
         show();
     }
