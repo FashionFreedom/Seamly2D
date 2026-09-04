@@ -180,7 +180,7 @@ protected:
     /** @brief isInitialized true if window is initialized */
     bool             isInitialized;
 
-    int              initial_dialog_height_;
+    int              initialDialogHeight;
 
     /** @brief flagName true if name is correct */
     bool             flagName;

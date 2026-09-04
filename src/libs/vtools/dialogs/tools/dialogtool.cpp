@@ -139,7 +139,7 @@ DialogTool:: DialogTool(const VContainer *data, const quint32 &toolId, QWidget *
     : QDialog(parent)
     , data(data)
     , isInitialized(false)
-    , initial_dialog_height_(0)
+    , initialDialogHeight(0)
     , flagName(true)
     , flagFormula(true)
     , flagError(true)
@@ -228,7 +228,7 @@ void DialogTool::showEvent(QShowEvent *event)
     }
     // do your init stuff here
 
-    initial_dialog_height_ = height();
+    initialDialogHeight = height();
     setMaximumSize(size());
     setMinimumSize(size());
 
@@ -1040,7 +1040,7 @@ void DialogTool::UpdateFormulaLayout(bool expanded)
 
     setMinimumHeight(0);
     setMaximumHeight(QWIDGETSIZE_MAX);
-    resize(width(), expanded ? qMax(initial_dialog_height_, sizeHint().height()) : initial_dialog_height_);
+    resize(width(), expanded ? qMax(initialDialogHeight, sizeHint().height()) : initialDialogHeight);
     setMinimumHeight(height());
     setMaximumHeight(height());
     update();
