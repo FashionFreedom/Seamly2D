@@ -7237,6 +7237,22 @@ Menti a módosításokat?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Ismeretlen hiba történt, például egy megtelt partíció megakadályozta a zárolási fájl kiírását.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Vázlattömb törlése</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Törlés</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Törlés megerősítése</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Biztosan törölni szeretné a bázispontot és a jelenlegi vázlattömböt?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9361,6 +9377,10 @@ Menti a módosításokat?</translation>
         <source>Auto clear formula</source>
         <translation>Automatikusan törlődő képlet</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Használjon natív párbeszédablakokat</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10131,6 +10151,14 @@ Menti a módosításokat?</translation>
     <message>
         <source>Measurements</source>
         <translation>Mérések</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Párbeszédablakok</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Használjon natív párbeszédablakokat</translation>
     </message>
 </context>
 <context>

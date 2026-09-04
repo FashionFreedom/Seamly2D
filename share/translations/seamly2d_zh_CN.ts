@@ -7238,6 +7238,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>创建备份副本出错:%1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>删除草稿块</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>的</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>确认删除</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>您确定要删除基准点和当前的草稿块吗?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9362,6 +9378,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation>自动清除公式</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>使用原生对话框</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10152,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>测量数据</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>对话框</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>使用原生对话框</translation>
     </message>
 </context>
 <context>

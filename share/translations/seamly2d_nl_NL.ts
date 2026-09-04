@@ -7221,6 +7221,22 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Fout bij het maken van een back-upkopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Conceptblok verwijderen</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Verwijdering bevestigen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Weet u zeker dat u het basispunt en het huidige conceptblok wilt verwijderen?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9345,6 +9361,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Auto clear formula</source>
         <translation>Formule automatisch wissen</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10115,6 +10135,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Measurements</source>
         <translation>Maten</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogen</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
     </message>
 </context>
 <context>

@@ -195,7 +195,7 @@ void PreferencesPathPage::editPath()
     QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
                                                               QFileDialog::ShowDirsOnly |
                                                               QFileDialog::DontResolveSymlinks |
-                                                              FILEDIALOG_OPTIONS,
+                                                              qApp->Seamly2DSettings()->getUseNativeFileDialogs(),
                                                               QFileDialog::Directory, QFileDialog::AcceptOpen);
 
     const QString dir = QFileInfo(filename).filePath();

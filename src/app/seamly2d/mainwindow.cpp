@@ -91,11 +91,13 @@
 #include "../vtools/tools/nodeDetails/internal_path_tool.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/rename_draftblock.h"
+#include "../vtools/undocommands/delete_draftblock.h"
 #include "../vtools/undocommands/label/showpointname.h"
 #include "../vwidgets/mouse_coordinates.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vwidgetpopup.h"
 
+#include <QAbstractItemModel>
 #include <QInputDialog>
 #include <QtDebug>
 #include <QMessageBox>
@@ -113,7 +115,6 @@
 #include <QAction>
 #include <QComboBox>
 #include <QDateTime>
-#include <QFontComboBox>
 #include <QDoubleSpinBox>
 #include <QFileDialog>
 #include <QFileSystemWatcher>
@@ -178,8 +179,8 @@ MainWindow::MainWindow(QWidget *parent)
     , dialogTable(nullptr)
     , dialogTool()
     , historyDialog(nullptr)
-    , fontComboBox(nullptr)
-    , fontSizeComboBox(nullptr)
+    , font_combo_box(nullptr)
+    , font_size_combo_box(nullptr)
     , draftBlockComboBox(nullptr)
     , draftBlockLabel(nullptr)
     , currentBlockIndex(0)
@@ -420,6 +421,30 @@ void MainWindow::addDraftBlock(const QString &blockName)
     groupsWidget->updateGroups();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::deleteDraftBlock()
+{
+    if (doc->draftBlockCount() == 1)
+    {
+        return;
+    }
+
+    qApp->getSceneView()->itemClicked(nullptr);
+    const auto answer = QMessageBox::question(this, tr("Confirm Delete"),
+                                              tr("Are you sure you want to delete basepoint and current draft block?"),
+                                              QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+    if (answer == QMessageBox::No)
+    {
+        return;
+    }
+
+    DeleteDraftBlock *command = new DeleteDraftBlock(doc, doc->getActiveDraftBlockName());
+    connect(command, &DeleteDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
+    connect(command, &DeleteDraftBlock::NeedFullParsing, this, [this](){setWidgetsEnabled(true);});
+    qApp->getUndoStack()->push(command);
+
+    setWidgetsEnabled(true);
+}
 
 /// @brief draftBlockStartPosition Set start position for draft block.
 ///
@@ -543,8 +568,13 @@ void MainWindow::initializeScenes()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fileName)
+QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fileName, bool *usable)
 {
+    if (usable != nullptr)
+    {
+        *usable = true;
+    }
+
     QSharedPointer<MeasurementDoc> measurements;
     if (fileName.isEmpty())
     {
@@ -603,6 +633,15 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                     qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
+        // The document keeps the content read so far - clearing it here would make
+        // updateMeasurements() fail and bring back the sync error fixed in 4193356f6e.
+        // Only the callers that load a file report the failure, through 'usable'.
+        if (usable != nullptr)
+        {
+            *usable = false;
+        }
+
         if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -618,9 +657,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     // remove any extraneous LF's or trailing white space.
     removeEmptyLinesText(fileName, false);
 
-    m_measurements = openMeasurementFile(fileName);
+    bool usable = true;
+    m_measurements = openMeasurementFile(fileName, &usable);
 
-    if (m_measurements->isNull())
+    // An unusable file keeps its parsed content, so isNull() alone doesn't detect the failure.
+    if (m_measurements->isNull() || !usable)
     {
         return false;
     }
@@ -2054,7 +2095,8 @@ void MainWindow::LoadIndividual()
 
     QDir directory(dir);
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
 
@@ -2094,7 +2136,8 @@ void MainWindow::LoadMultisize()
     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
     dir = VCommonSettings::prepareMultisizeTables(dir);
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (!filename.isEmpty())
@@ -2397,101 +2440,123 @@ void MainWindow::initializeModesToolBar()
     ui->mode_ToolBar->insertWidget(ui->layoutMode_Action, rightGoToStage);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+//
+// @brief MainWindow::initializePointNameToolBar enable Point Name toolbar.
+//---------------------------------------------------------------------------------------------------------------------
+ void MainWindow::initializePointNameToolBar()
+ {
+     font_combo_box = new QComboBox(this);
+     QFontDatabase font_database;
+     QStringList font_families = font_database.families();
+
+     // Loop through each item and apply its respective font to the FontRole
+     for (int i = 0; i < font_families.count(); ++i)
+     {
+         QString font_name = font_families.at(i);
+
+         // enforces vector outlines and catches fonts wrapped in bitmap tables
+         if (font_database.isSmoothlyScalable(font_name))
+         {
+             // Cross-platform safety block: Catch explicit bitmap wrappers
+             if (font_name.contains("bitmap", Qt::CaseInsensitive) ||
+             font_name.contains("GB18030", Qt::CaseInsensitive))
+             {
+                 continue;
+             }
+
+             font_combo_box->addItem(font_name);
+             int inserted_index = font_combo_box->count() - 1;
+
+             QFont font(font_name, 10);
+             font_combo_box->setItemData(inserted_index, font, Qt::FontRole);
+         }
+     }
+
+     //font_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
+     font_combo_box->setFixedWidth(250);
+     font_combo_box->setEnabled(true);
+
+     int font_index = font_combo_box->findText(qApp->Seamly2DSettings()->getPointNameFont().family());
+     if (font_index >= 0)
+     {
+         font_combo_box->setCurrentIndex(font_index);
+         QFont initial_font = qApp->Seamly2DSettings()->getPointNameFont();
+         initial_font.setPointSize(10);
+         font_combo_box->setFont(initial_font);
+     }
+
+     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_combo_box);
+
+     connect(font_combo_box, &QComboBox::currentTextChanged, this, [this](const QString &family)
+     {
+         QFont selected_font(family);
+         selected_font.setPointSize(10);
+         font_combo_box->setFont(selected_font);
+         qApp->Seamly2DSettings()->setPointNameFont(selected_font);
+         upDateScenes();
+     });
+
+     font_size_combo_box = new QComboBox;
+     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_size_combo_box);
+     font_size_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
+
+     const QList<int> font_sizes = {
+         6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 22, 24, 26, 28, 32, 36, 40, 44, 48, 54, 60, 66, 72, 80, 96
+     };
+
+     for (int size : font_sizes)
+     {
+         font_size_combo_box->addItem(QString::number(size), QVariant(size));
+     }
+
+     int size_index = font_size_combo_box->findData(qApp->Seamly2DSettings()->getPointNameSize());
+     if (size_index < 0 || size_index > 28)
+     {
+         size_index = 18;
+     }
+     font_size_combo_box->setCurrentIndex(size_index);
+
+     connect(font_size_combo_box, &QComboBox::currentTextChanged, this, [this](QString text)
+     {
+         qApp->Seamly2DSettings()->setPointNameSize(text.toInt());
+         upDateScenes();
+     });
+
+     font_size_combo_box->setEnabled(true);
+
+     base_point_combo_box = new QComboBox;
+     ui->pointName_ToolBar->addWidget(base_point_combo_box);
+     initBasePointComboBox();
+     base_point_combo_box->setEnabled(true);
+
+     font_combo_box->ensurePolished();
+     font_size_combo_box->ensurePolished();
+
+     // Lock the font box height to perfectly match the size box height
+     int locked_height = font_size_combo_box->sizeHint().height();
+     font_combo_box->setFixedHeight(locked_height);
+
+     connect(base_point_combo_box, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
+ }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initializePointNameToolBar enable Point Name toolbar.
- */
-void MainWindow::initializePointNameToolBar()
-{
-    fontComboBox = new QFontComboBox ;
-    fontComboBox->setFontFilters(QFontComboBox::ScalableFonts);
-    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
-    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
-    fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    fontComboBox->setEnabled(true);
-
-    connect(fontComboBox, static_cast<void (QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont font)
-            {
-                qApp->Seamly2DSettings()->setPointNameFont(font);
-                upDateScenes();
-            });
-
-    fontSizeComboBox = new QComboBox ;
-    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontSizeComboBox);
-    fontSizeComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    fontSizeComboBox->addItem("6", QVariant(static_cast<int>(6)));
-    fontSizeComboBox->addItem("7", QVariant(static_cast<int>(7)));
-    fontSizeComboBox->addItem("8", QVariant(static_cast<int>(8)));
-    fontSizeComboBox->addItem("9", QVariant(static_cast<int>(9)));
-    fontSizeComboBox->addItem("10", QVariant(static_cast<int>(10)));
-    fontSizeComboBox->addItem("11", QVariant(static_cast<int>(11)));
-    fontSizeComboBox->addItem("12", QVariant(static_cast<int>(12)));
-    fontSizeComboBox->addItem("13", QVariant(static_cast<int>(13)));
-    fontSizeComboBox->addItem("14", QVariant(static_cast<int>(14)));
-    fontSizeComboBox->addItem("15", QVariant(static_cast<int>(15)));
-    fontSizeComboBox->addItem("16", QVariant(static_cast<int>(16)));
-    fontSizeComboBox->addItem("18", QVariant(static_cast<int>(18)));
-    fontSizeComboBox->addItem("20", QVariant(static_cast<int>(20)));
-    fontSizeComboBox->addItem("22", QVariant(static_cast<int>(22)));
-    fontSizeComboBox->addItem("24", QVariant(static_cast<int>(24)));
-    fontSizeComboBox->addItem("26", QVariant(static_cast<int>(26)));
-    fontSizeComboBox->addItem("28", QVariant(static_cast<int>(28)));
-    fontSizeComboBox->addItem("32", QVariant(static_cast<int>(32)));
-    fontSizeComboBox->addItem("36", QVariant(static_cast<int>(36)));
-    fontSizeComboBox->addItem("40", QVariant(static_cast<int>(40)));
-    fontSizeComboBox->addItem("44", QVariant(static_cast<int>(44)));
-    fontSizeComboBox->addItem("48", QVariant(static_cast<int>(48)));
-    fontSizeComboBox->addItem("54", QVariant(static_cast<int>(54)));
-    fontSizeComboBox->addItem("60", QVariant(static_cast<int>(60)));
-    fontSizeComboBox->addItem("66", QVariant(static_cast<int>(66)));
-    fontSizeComboBox->addItem("72", QVariant(static_cast<int>(72)));
-    fontSizeComboBox->addItem("80", QVariant(static_cast<int>(80)));
-    fontSizeComboBox->addItem("96", QVariant(static_cast<int>(96)));
-
-    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
-    if (index < 0 || index > 28)
-    {
-        index = 18;
-    }
-    fontSizeComboBox->setCurrentIndex(index);
-
-    connect(fontSizeComboBox, &QComboBox::currentTextChanged, this, [this](QString text)
-            {
-                qApp->Seamly2DSettings()->setPointNameSize(text.toInt());
-                upDateScenes();
-            });
-    fontSizeComboBox->setEnabled(true);
-
-    basePointComboBox = new QComboBox ;
-    ui->pointName_ToolBar->addWidget(basePointComboBox);
-    initBasePointComboBox();
-    basePointComboBox->setEnabled(true);
-
-    connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
-}
-
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief initBasePointComboBox fills basePointComboBox.
+ * @brief initBasePointComboBox fills base_point_combo_box.
  */
 void MainWindow::initBasePointComboBox()
 {
-    basePointComboBox->clear();
-    basePointComboBox->addItem(tr("Default"));
-    basePointComboBox->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
-    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
-    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    basePointComboBox->setCurrentIndex(0);
-    basePointComboBox->setEditable(true);
+    base_point_combo_box->clear();
+    base_point_combo_box->addItem(tr("Default"));
+    base_point_combo_box->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
+    base_point_combo_box->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
+    base_point_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    base_point_combo_box->setCurrentIndex(0);
+    base_point_combo_box->setEditable(true);
+    base_point_combo_box->setInsertPolicy(QComboBox::InsertAtTop);
 
     // Force any child line edit to dynamically pull from the current app palette
-    basePointComboBox->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
-
-
-    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
+    base_point_combo_box->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2709,17 +2774,17 @@ void MainWindow::penChanged(Pen pen)
 
 void MainWindow::basePointChanged()
 {
-    QString text = basePointComboBox->currentText();
+    QString text = base_point_combo_box->currentText();
     QString basePoint = QString();
 
     QRegularExpression rx(NameRegExp());
     if (rx.match(text).hasMatch() == false)
     {
-        basePointComboBox->setStyleSheet("QComboBox {color: red;}");
+        base_point_combo_box->setStyleSheet("QComboBox {color: red;}");
     }
     else
     {
-        basePointComboBox->setStyleSheet("QComboBox {color: black;}");
+        base_point_combo_box->setStyleSheet("QComboBox {color: black;}");
 
         if (!text.isEmpty() && text != tr("Default"))
         {
@@ -4121,8 +4186,8 @@ bool MainWindow::SaveAs()
 
     fileName = fileDialog(this, tr("Save as"),
                                         dir + QLatin1String("/") + fileName + QLatin1String(".") + sm2dExt,
-                                        filters, nullptr, FILEDIALOG_OPTIONS, QFileDialog::AnyFile,
-                                        QFileDialog::AcceptSave);
+                                        filters, nullptr, qApp->Settings()->getUseNativeFileDialogs(),
+                                        QFileDialog::AnyFile, QFileDialog::AcceptSave);
 
     if (fileName.isEmpty())
     {
@@ -4309,7 +4374,8 @@ void MainWindow::Open()
     }
     qCDebug(vMainWindow, "Run QFileDialog::getOpenFileName: dir = %s.", qUtf8Printable(dir));
 
-    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+    const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                        qApp->Settings()->getUseNativeFileDialogs(),
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
     if (filename.isEmpty())
@@ -4350,6 +4416,8 @@ void MainWindow::Clear()
     ui->layoutMode_Action->setEnabled(false);
     ui->newDraft_Action->setEnabled(false);
     ui->renameDraft_Action->setEnabled(false);
+    ui->delete_draft_action->setEnabled(false);
+
     ui->save_Action->setEnabled(false);
     ui->saveAs_Action->setEnabled(false);
     ui->patternPreferences_Action->setEnabled(false);
@@ -4709,7 +4777,8 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
-    ui->renameDraft_Action->setEnabled(enable && draftStage);
+    ui->renameDraft_Action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 0));
+    ui->delete_draft_action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 1));
 
     //enable measurement menu actions
     ui->loadIndividual_Action->setEnabled(enable && designStage);
@@ -5893,17 +5962,17 @@ void MainWindow::createActions()
 
     connect(ui->increaseSize_Action, &QAction::triggered, this, [this]()
     {
-        int index = qMin(fontSizeComboBox->currentIndex() + 1, fontSizeComboBox->count()-1);
-        fontSizeComboBox->setCurrentIndex(index);
-        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        int index = qMin(font_size_combo_box->currentIndex() + 1, font_size_combo_box->count()-1);
+        font_size_combo_box->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(font_size_combo_box->currentText().toInt());
         upDateScenes();
     });
 
     connect(ui->decreaseSize_Action, &QAction::triggered, this, [this]()
     {
-        const int index = qMax(fontSizeComboBox->currentIndex() - 1, 0);
-        fontSizeComboBox->setCurrentIndex(index);
-        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        const int index = qMax(font_size_combo_box->currentIndex() - 1, 0);
+        font_size_combo_box->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(font_size_combo_box->currentText().toInt());
         upDateScenes();
     });
 
@@ -5937,6 +6006,8 @@ void MainWindow::createActions()
 
         addDraftBlock(draftBlockName);
     });
+
+    connect(ui->delete_draft_action, &QAction::triggered, this,&MainWindow::deleteDraftBlock);
 
     //Tools->Point submenu actions
     connect(ui->midpoint_Action, &QAction::triggered, this, [this]
@@ -6581,8 +6652,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
 
             if (!loadMeasurements(newPath))
             {
-                qCCritical(vMainWindow, "%s", qUtf8Printable(tr("The measurements file '%1' could not be found.")
-                                                             .arg(newPath)));
+                // The file was found, so don't claim otherwise. loadMeasurements() has
+                // already reported the specific reason it couldn't be used.
                 qApp->setOpeningPattern();// End opening file
                 Clear();
                 if (!Application2D::isGUIMode())
@@ -6798,10 +6869,6 @@ void MainWindow::initToolBarStyles()
     initToolBarStyle(ui->edit_Toolbar);
     initToolBarStyle(ui->zoom_ToolBar);
     initToolBarStyle(ui->file_ToolBar);
-
-    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
-    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
-    fontSizeComboBox->setCurrentIndex(index);
 }
 
 void MainWindow::resetOrigins()
@@ -7495,7 +7562,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     //Use standard path to multisize measurements
                     QString dir = qApp->Seamly2DSettings()->getMultisizePath();
                     dir = VCommonSettings::prepareMultisizeTables(dir);
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                 }
@@ -7515,7 +7583,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)
@@ -7544,7 +7613,8 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                         usedNotExistedDir = directory.mkpath(".");
                     }
 
-                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, FILEDIALOG_OPTIONS,
+                    filename = fileDialog(this, tr("Open file"), dir, filter, nullptr,
+                                          qApp->Settings()->getUseNativeFileDialogs(),
                                           QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
                     if (usedNotExistedDir)

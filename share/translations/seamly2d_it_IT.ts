@@ -7226,6 +7226,22 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Errore nella creazione di una copia di backup: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Elimina blocco bozza</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirma eliminazione</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Sei sicuro di voler eliminare il punto base e il blocco bozza corrente?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9350,6 +9366,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Auto clear formula</source>
         <translation>Formula di pulizia automatica</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizza le finestre di dialogo native</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10120,6 +10140,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Measurements</source>
         <translation>Misure</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoghi</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizza le finestre di dialogo native</translation>
     </message>
 </context>
 <context>

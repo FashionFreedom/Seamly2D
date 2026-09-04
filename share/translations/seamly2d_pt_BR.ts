@@ -7225,6 +7225,22 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Erro ao criar uma cópia de backup: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Excluir bloco de rascunho</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmar exclusão</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Tem certeza de que deseja excluir o ponto base e o bloco de rascunho atual?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9350,6 +9366,10 @@ Prima enter para o adicionar temporariamente à lista.</translation>
         <source>Auto clear formula</source>
         <translation>Fórmula de limpeza automática</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Use caixas de diálogo nativas</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10120,6 +10140,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Measurements</source>
         <translation>Medidas</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diâlogos</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Use caixas de diálogo nativas</translation>
     </message>
 </context>
 <context>

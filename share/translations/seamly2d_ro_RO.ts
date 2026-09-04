@@ -7240,6 +7240,22 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Eroare la crearea unei copii rezervate: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Șterge blocul de schiță</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Șterge</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmă ștergerea</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Sigur doriți să ștergeți punctul de bază și blocul de schiță curent?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9364,6 +9380,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Auto clear formula</source>
         <translation>Formula cu auto-claritate</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10134,6 +10154,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Measurements</source>
         <translation>Măsurători</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoguri</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
     </message>
 </context>
 <context>

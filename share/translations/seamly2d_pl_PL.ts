@@ -7238,6 +7238,22 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Usuń blok szkicu</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Potwierdź usunięcie</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Czy na pewno chcesz usunąć punkt bazowy i bieżący blok szkicu?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9362,6 +9378,10 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Auto clear formula</source>
         <translation>Automatyczne czyszczenie formuły</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Korzystaj z natywnych okien dialogowych</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10152,14 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Measurements</source>
         <translation>Pomiary</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogi</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Korzystaj z natywnych okien dialogowych</translation>
     </message>
 </context>
 <context>

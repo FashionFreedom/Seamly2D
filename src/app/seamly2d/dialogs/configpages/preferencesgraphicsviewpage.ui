@@ -75,7 +75,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
@@ -415,6 +415,16 @@
          <layout class="QVBoxLayout" name="verticalLayout_25">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_24">
+            <item>
+             <widget class="QCheckBox" name="use_native_checkbox">
+              <property name="text">
+               <string>Use native dialogs</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
             <item>
              <widget class="QCheckBox" name="useSecondMonitor_CheckBox">
               <property name="sizePolicy">
@@ -807,26 +817,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QFontComboBox" name="labelFont_ComboBox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="fontFilters">
-               <set>QFontComboBox::ScalableFonts</set>
-              </property>
-             </widget>
+             <widget class="QComboBox" name="labelFont_ComboBox"/>
             </item>
            </layout>
           </item>
@@ -863,7 +854,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>120</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
@@ -907,32 +898,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QFontComboBox" name="pointNameFont_ComboBox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="fontFilters">
-               <set>QFontComboBox::ScalableFonts</set>
-              </property>
-             </widget>
+             <widget class="QComboBox" name="pointNameFont_ComboBox"/>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="pointNameFontSize_Label">
@@ -1176,7 +1142,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>120</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
@@ -1220,32 +1186,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QFontComboBox" name="guiFont_ComboBox">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>200</width>
-                <height>20</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <pointsize>9</pointsize>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="fontFilters">
-               <set>QFontComboBox::ScalableFonts</set>
-              </property>
-             </widget>
+             <widget class="QComboBox" name="guiFont_ComboBox"/>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="guiFontSize_Label">

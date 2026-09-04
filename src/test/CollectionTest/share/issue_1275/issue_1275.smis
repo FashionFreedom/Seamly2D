@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<smis>
+    <!--Measurements created with Seamly2D (https://seamly.io/).-->
+    <version>0.3.4</version>
+    <read-only>false</read-only>
+    <notes>Deliberately missing height_scapula, the measurement the pattern needs.</notes>
+    <unit>cm</unit>
+    <pm_system>998</pm_system>
+    <personal>
+        <family-name/>
+        <given-name/>
+        <birth-date>1900-01-01</birth-date>
+        <gender>female</gender>
+        <email/>
+    </personal>
+    <body-measurements>
+        <m name="height" value="167.64" description="Vertical distance from top of Head to Floor" full_name="Height-&gt;Total"/>
+        <m name="height_neck_back" value="141.5" description="Vertical distance from Neck Back (Nape) to Floor" full_name="Height-&gt;Neck Back (Nape)"/>
+        <m name="height_waist_side" value="101" description="Vertical distance from Waist Side to Floor" full_name="Height-&gt;Waist Side"/>
+        <m name="height_knee" value="42" description="Vertical distance from Knee to Floor" full_name="Height-&gt;Knee"/>
+    </body-measurements>
+</smis>

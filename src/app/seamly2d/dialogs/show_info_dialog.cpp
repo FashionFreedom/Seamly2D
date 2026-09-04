@@ -177,7 +177,8 @@ void ShowInfoDialog::exportPdf()
     QString filters(tr("Info files") + QLatin1String("(*.pdf)"));
     QString filename = QFileDialog::getSaveFileName(this, tr("Export PDF"),
                                                     doc->GetPatternName() + tr("_info") + QLatin1String(".pdf"),
-                                                    filters, nullptr, FILEDIALOG_OPTIONS);
+                                                    filters, nullptr,
+                                                    qApp->Seamly2DSettings()->getUseNativeFileDialogs());
 
     if (QFileInfo(filename).suffix().isEmpty())
     {

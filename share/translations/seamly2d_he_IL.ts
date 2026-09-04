@@ -7202,6 +7202,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9326,6 +9342,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Auto clear formula</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10095,6 +10115,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

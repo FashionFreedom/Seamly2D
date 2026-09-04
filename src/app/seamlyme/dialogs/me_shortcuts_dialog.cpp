@@ -160,7 +160,8 @@ void MeShortcutsDialog::sendToPrinter()
 void MeShortcutsDialog::exportPdf()
 {
     QString filename = QFileDialog::getSaveFileName(nullptr, tr("Export PDF"), QString(),
-                                                    "*.pdf", nullptr, FILEDIALOG_OPTIONS);
+                                                    "*.pdf", nullptr,
+                                                    qApp->seamlyMeSettings()->getUseNativeFileDialogs());
 
     if (QFileInfo(filename).suffix().isEmpty())
     {

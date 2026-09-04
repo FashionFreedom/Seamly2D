@@ -299,9 +299,9 @@ private:
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<HistoryDialog>           historyDialog;
 
-    QFontComboBox                    *fontComboBox;
-    QComboBox                        *fontSizeComboBox;
-    QComboBox                        *basePointComboBox;
+    QComboBox                        *font_combo_box;
+    QComboBox                        *font_size_combo_box;
+    QComboBox                        *base_point_combo_box;
     QComboBox                        *draftBlockComboBox;  /// @brief draftBlockComboBox stores names of draft blocks.
     QLabel                           *draftBlockLabel;
     qint32                            currentBlockIndex;   /// @brief currentBlockIndex  current selected draft block.
@@ -433,11 +433,12 @@ private:
     QStringList        getUnlockedRestoreFileList()const;
 
     void               addDraftBlock(const QString &blockName);
+    void               deleteDraftBlock();
     QPointF            draftBlockStartPosition() const;
 
     void               initializeScenes();
 
-    QSharedPointer<MeasurementDoc> openMeasurementFile(const QString &fileName);
+    QSharedPointer<MeasurementDoc> openMeasurementFile(const QString &fileName, bool *usable = nullptr);
     bool               loadMeasurements(const QString &fileName);
     bool               updateMeasurements(const QString &fileName, int size, int height);
     void               checkRequiredMeasurements(const MeasurementDoc *m);

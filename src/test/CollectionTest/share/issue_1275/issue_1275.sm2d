@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pattern>
+    <!--Pattern created with Seamly2D (https://seamly.io/).-->
+    <version>0.7.4</version>
+    <unit>cm</unit>
+    <description/>
+    <notes>The variable needs height_scapula, which issue_1275.smis does not provide. Keeping the measurement out of the draft block formulas is what makes the missing measurement itself the only reason the file cannot be used.</notes>
+    <measurements>issue_1275.smis</measurements>
+    <variables>
+        <variable description="Uses a measurement no measurement file of this test provides." formula="height_scapula/10" name="#Test"/>
+    </variables>
+    <draftBlock name="Draft block 1">
+        <calculation>
+            <point type="single" x="1.34938" y="1.24354" id="1" name="A" mx="0.132292" my="0.264583"/>
+            <point type="endLine" lineType="solidLine" lineWeight="0.35" id="2" name="A1" basePoint="1" mx="0.175422" lineColor="black" angle="0" my="0.27896" length="10"/>
+            <point type="endLine" lineType="solidLine" lineWeight="0.35" id="3" name="A2" basePoint="1" mx="0.132292" lineColor="black" angle="269.719" my="0.264583" length="Line_A_A1"/>
+            <point type="intersectXY" lineType="dashLine" lineWeight="0.35" lineColor="black" id="4" name="A3" firstPoint="2" secondPoint="3" mx="0.132292" my="0.264583"/>
+            <line lineType="solidLine" lineWeight="0.35" id="5" firstPoint="3" secondPoint="4" lineColor="black"/>
+            <line lineType="solidLine" lineWeight="0.35" id="6" firstPoint="2" secondPoint="4" lineColor="black"/>
+        </calculation>
+        <modeling/>
+        <pieces/>
+    </draftBlock>
+</pattern>

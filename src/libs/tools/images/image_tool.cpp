@@ -71,7 +71,7 @@ QString getImageFilename(QWidget *parent)
     }
 
     const QString filename = QFileDialog::getOpenFileName(parent, QObject::tr("Open Image File"), path, filter, nullptr,
-                                                          FILEDIALOG_OPTIONS);
+                                                          qApp->Seamly2DSettings()->getUseNativeFileDialogs());
 
     return filename;
 }

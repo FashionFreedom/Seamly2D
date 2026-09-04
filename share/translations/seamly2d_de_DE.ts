@@ -7221,6 +7221,22 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Error creating a backup copy: %1.</source>
         <translation>Fehler bei der Erstellung einer Sicherungskopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Entwurfblock löschen</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Löschen bestätigen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Sind Sie sicher, dass Sie den Basispunkt und den aktuellen Entwurfsblock löschen möchten?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9346,6 +9362,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <source>Auto clear formula</source>
         <translation>Formel automatisch löschen</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Native Dialogfelder verwenden</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10116,6 +10136,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Measurements</source>
         <translation>Maße</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoge</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Native Dialogfelder verwenden</translation>
     </message>
 </context>
 <context>

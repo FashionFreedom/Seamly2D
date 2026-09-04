@@ -41,6 +41,7 @@
 #include <QDirIterator>
 #include <QDoubleSpinBox>
 #include <QFontComboBox>
+#include <QLabel>
 #include <QMessageBox>
 #include <QPixmap>
 #include <QTimer>
@@ -66,6 +67,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->detailsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowDetailsToolBar());
     ui->layoutToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowLayoutToolBar());
 
+    ui->use_native_checkbox->setChecked(qApp->Seamly2DSettings()->useNativeDialogs());
     ui->useSecondMonitor_CheckBox->setChecked(qApp->Seamly2DSettings()->useSecondMonitor());
 
     int id = qApp->Seamly2DSettings()->getDialogPosition();
@@ -153,74 +155,27 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Font preferences
     // Pattern piece labels font
-    QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
-    labelFont.setPointSize(12);
-    ui->labelFont_ComboBox->setCurrentFont(labelFont);
-    ui->label_Label->setFont(labelFont);
-
-    connect(ui->labelFont_ComboBox,
-            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont labelFont)
-    {
-        labelFont.setPointSize(12);
-        ui->label_Label->setFont(labelFont);
-    });
+    setupFontComboBox(ui->labelFont_ComboBox, ui->label_Label, qApp->Seamly2DSettings()->getLabelFont(), nullptr, 12);
 
     // Point name font
-    QFont nameFont = qApp->Seamly2DSettings()->getPointNameFont();
-    ui->pointNameFont_ComboBox->setCurrentFont(nameFont);
-
     int index = ui->pointNameFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getPointNameSize()));
     if (index != -1)
     {
         ui->pointNameFontSize_ComboBox->setCurrentIndex(index);
     }
 
-    nameFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
-    ui->pointName_Label->setFont(nameFont);
-
-    connect(ui->pointNameFont_ComboBox,
-            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont nameFont)
-    {
-        nameFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
-        ui->pointName_Label->setFont(nameFont);
-    });
-
-    connect(ui->pointNameFontSize_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        QFont labelFont = ui->pointName_Label->font();
-        labelFont.setPointSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
-        ui->pointName_Label->setFont(labelFont);
-    });
+    setupFontComboBox(ui->pointNameFont_ComboBox, ui->pointName_Label, qApp->Seamly2DSettings()->getPointNameFont(),
+                      ui->pointNameFontSize_ComboBox, 0);
 
     // GUI font
-    QFont guiFont = qApp->Seamly2DSettings()->getGuiFont();
-    ui->guiFont_ComboBox->setCurrentFont(guiFont);
-
     index = ui->guiFontSize_ComboBox->findText(QString().setNum(qApp->Seamly2DSettings()->getGuiFontSize()));
     if (index != -1)
     {
         ui->guiFontSize_ComboBox->setCurrentIndex(index);
     }
 
-    guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
-    ui->gui_Label->setFont(guiFont);
-
-    connect(ui->guiFont_ComboBox,
-            static_cast<void(QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
-            this, [this](QFont guiFont)
-    {
-        guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
-        ui->gui_Label->setFont(guiFont);
-    });
-
-    connect(ui->guiFontSize_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        QFont guiFont = ui->gui_Label->font();
-        guiFont.setPointSize(ui->guiFontSize_ComboBox->currentText().toInt());
-        ui->gui_Label->setFont(guiFont);
-    });
+    setupFontComboBox(ui->guiFont_ComboBox, ui->gui_Label, qApp->Seamly2DSettings()->getGuiFont(),
+                      ui->guiFontSize_ComboBox, 0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -276,6 +231,7 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setShowDetailsToolBar(ui->detailsToolbar_CheckBox->isChecked());
     settings->setShowLayoutToolBar(ui->layoutToolbar_CheckBox->isChecked());
 
+    settings->setUseNativeDialogs(ui->use_native_checkbox->isChecked());
     settings->setUseSecondMonitor(ui->useSecondMonitor_CheckBox->isChecked());
     settings->setDialogPosition(ui->position_ButtonGroup->checkedId());
     settings->setXOffset(ui->xOffset_SpinBox->value());
@@ -343,12 +299,15 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setAutoClearFx(ui->autoClearFx_CheckBox->isChecked());
 
     //Fonts
-    settings->setLabelFont(ui->labelFont_ComboBox->currentFont());
+    settings->setLabelFont(ui->labelFont_ComboBox->itemData(ui->labelFont_ComboBox->currentIndex(),
+                                                            Qt::FontRole).value<QFont>());
 
-    settings->setGuiFont(ui->guiFont_ComboBox->currentFont());
+    settings->setGuiFont(ui->guiFont_ComboBox->itemData(ui->guiFont_ComboBox->currentIndex(),
+                                                        Qt::FontRole).value<QFont>());
     settings->setGuiFontSize(ui->guiFontSize_ComboBox->currentText().toInt());
 
-    settings->setPointNameFont(ui->pointNameFont_ComboBox->currentFont());
+    settings->setPointNameFont(ui->pointNameFont_ComboBox->itemData(ui->pointNameFont_ComboBox->currentIndex(),
+                                                                    Qt::FontRole).value<QFont>());
     settings->setPointNameSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
 }
 
@@ -364,4 +323,118 @@ void PreferencesGraphicsViewPage::setIndex(QComboBox *box, const QString &text)
     {
         box->setCurrentIndex(box->findText(text));
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// @brief Configures a raw QComboBox to act as a locked, filtered font selector.
+// @param combo_box The target font QComboBox to populate.
+// @param label The companion preview QLabel to style.
+// @param initial_font The initial saved QFont setting.
+// @param size_combo_box Optional companion size QComboBox (pass nullptr if not used).
+// @param fixed_size Optional explicit font size override (set to 0 to use dynamic sizing).
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesGraphicsViewPage::setupFontComboBox(QComboBox *combo_box, QLabel *label, const QFont &initial_font, QComboBox *size_combo_box, int fixed_size)
+{
+    if (!combo_box || !label)
+    {
+        return;
+    }
+
+    // Configure stable horizontal layout policies
+    combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
+    combo_box->setEnabled(true);
+
+    // Populate and filter fonts safely
+    QFontDatabase font_database;
+    QStringList font_families = font_database.families();
+    int fallback_size = initial_font.pointSize();
+
+    for (int i = 0; i < font_families.count(); ++i)
+    {
+        QString font_name = font_families.at(i);
+
+        // Enforce vector outlines across all platforms
+        if (font_database.isSmoothlyScalable(font_name))
+        {
+            // Defensive cross-platform check to drop explicit bitmap containers
+            if (font_name.contains("bitmap", Qt::CaseInsensitive) ||
+                font_name.contains("GB18030", Qt::CaseInsensitive))
+            {
+                continue;
+            }
+
+            combo_box->addItem(font_name);
+            int inserted_index = combo_box->count() - 1;
+
+            // Set individual dropdown row preview text style (fixed to 10pt for clean scannability)
+            QFont row_font(font_name, 10);
+            combo_box->setItemData(inserted_index, row_font, Qt::FontRole);
+        }
+    }
+
+    // Set up initial current font choices
+    int font_index = combo_box->findText(initial_font.family());
+    if (font_index >= 0)
+    {
+        combo_box->setCurrentIndex(font_index);
+    }
+
+    // Enforce standardized point size for the main layout boxes to avoid layout shifting
+    QFont base_font = initial_font;
+    base_font.setPointSize(10);
+    combo_box->setFont(base_font);
+
+    // Style the preview label to match the baseline font setting
+    int initial_target_size = getTargetSize(size_combo_box, fixed_size, fallback_size);
+    QFont preview_font = initial_font;
+    preview_font.setPointSize(initial_target_size);
+    label->setFont(preview_font);
+
+    // Handle runtime font family changes
+    connect(combo_box, &QComboBox::currentTextChanged, label, [this, combo_box, label,
+            size_combo_box, fixed_size, fallback_size](const QString &family)
+    {
+        // Adjust the closed combo box to prevent visual size bouncing
+        QFont closed_box_font(family);
+        closed_box_font.setPointSize(10);
+        combo_box->setFont(closed_box_font);
+
+        // Adjust the companion preview text label style using the class method
+        int dynamic_size = getTargetSize(size_combo_box, fixed_size, fallback_size);
+        QFont display_font(family);
+        display_font.setPointSize(dynamic_size);
+        label->setFont(display_font);
+    });
+
+    // Handle runtime font size changes (if a companion size box exists)
+    if (size_combo_box)
+    {
+        connect(size_combo_box, &QComboBox::currentTextChanged, label, [this, label, size_combo_box,
+               fixed_size, fallback_size]()
+        {
+            int dynamic_size = getTargetSize(size_combo_box, fixed_size, fallback_size);
+            QFont label_font = label->font();
+            label_font.setPointSize(dynamic_size);
+            label->setFont(label_font);
+        });
+    }
+
+    // Lock visual box vertical layout dimensions perfectly
+    combo_box->ensurePolished();
+    label->ensurePolished();
+
+    //combo_box->setFixedHeight(22);
+}
+
+int PreferencesGraphicsViewPage::getTargetSize(QComboBox * size_combo_box, int fixed_size, int fallback_size)
+{
+    if (fixed_size > 0)
+    {
+        return fixed_size;
+    }
+    if (size_combo_box)
+    {
+        return size_combo_box->currentText().toInt();
+    }
+    return fallback_size;
 }

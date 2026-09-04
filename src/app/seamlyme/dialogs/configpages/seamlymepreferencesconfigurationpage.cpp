@@ -149,6 +149,10 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     //----------------------- Toolbar
     ui->toolBarStyle_CheckBox->setChecked(qApp->seamlyMeSettings()->getToolBarStyle());
 
+    // ----------------------- Dialogs
+    ui->use_native_checkox->setChecked(qApp->seamlyMeSettings()->useNativeDialogs());
+
+
     //---------------------------Default height and size
     ui->defHeightCombo->addItems(MeasurementVariable::WholeListHeights(Unit::Cm));
     index = ui->defHeightCombo->findText(QString().setNum(qApp->seamlyMeSettings()->GetDefHeight()));
@@ -206,6 +210,8 @@ void SeamlyMePreferencesConfigurationPage::Apply()
         settings->setOsSeparator(true);
     }
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
+
+    settings->setUseNativeDialogs(ui->use_native_checkox->isChecked());
 
     if (m_themeChanged)
     {

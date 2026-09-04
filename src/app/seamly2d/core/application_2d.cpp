@@ -96,8 +96,8 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     // Qt's Wayland plugin warns on every focus change when the compositor sends a text input leave
     // event for a surface it isn't tracking. The plugin carries on as normal after logging it, so
     // it is noise. Drop it instead of logging it and popping up a dialog on every interaction.
-    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("zwp_text_input_v3_leave"))
-            && msg.contains(QStringLiteral("Got leave event for surface")))
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QWaylandTextInputv3"))
+            && msg.contains(QStringLiteral("surface 0x0")))
     {
         return;
     }

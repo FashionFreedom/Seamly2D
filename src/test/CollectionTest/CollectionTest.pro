@@ -174,6 +174,8 @@ SEAMLY2D_TEST_FILES += \
     share/issue_256/issue_256_wrong.smis \
     share/issue_256/issue_256_correct.smms \
     share/issue_256/issue_256_wrong.smms \
+    share/issue_1275/issue_1275.sm2d \
+    share/issue_1275/issue_1275.smis \
     tst_seamly2d/empty.sm2d \
     tst_seamly2d/issue_372.sm2d \
     tst_seamly2d/wrong_obj_type.sm2d \

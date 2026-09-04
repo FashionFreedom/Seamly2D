@@ -7238,6 +7238,22 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Yedek kopyası oluşturulurken hata oluştu: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Taslak bloğunu sil</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Silmeyi onayla</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Taban noktasını ve mevcut taslak bloğunu silmek istediğinizden emin misiniz?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9362,6 +9378,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Auto clear formula</source>
         <translation>Otomatik temizleme formülü</translation>
     </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
@@ -10132,6 +10152,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Measurements</source>
         <translation>Ölçümler</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diyaloglar</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
     </message>
 </context>
 <context>
