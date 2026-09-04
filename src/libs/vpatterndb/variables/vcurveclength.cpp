@@ -70,7 +70,7 @@ VCurveCLength::VCurveCLength()
 //---------------------------------------------------------------------------------------------------------------------
 VCurveCLength::VCurveCLength(const quint32 &id, const quint32 &parentId, const VAbstractBezier *curve,
                              CurveCLength cType, Unit patternUnit)
-    : VCurveVariable(id, parentId)
+    : VCurveVariable(id, parentId), m_cType(cType)
 {
     SetType(VarType::CurveCLength);
     SCASSERT(curve != nullptr)
@@ -89,7 +89,7 @@ VCurveCLength::VCurveCLength(const quint32 &id, const quint32 &parentId, const V
 //---------------------------------------------------------------------------------------------------------------------
 VCurveCLength::VCurveCLength(const quint32 &id, const quint32 &parentId, const QString &baseCurveName,
                              const VSpline &spl, CurveCLength cType, Unit patternUnit, qint32 segment)
-    : VCurveVariable(id, parentId)
+    : VCurveVariable(id, parentId), m_cType(cType), m_segment(segment)
 {
     SetType(VarType::CurveCLength);
     if (cType == CurveCLength::C1)
@@ -106,7 +106,7 @@ VCurveCLength::VCurveCLength(const quint32 &id, const quint32 &parentId, const Q
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveCLength::VCurveCLength(const VCurveCLength &var)
-    : VCurveVariable(var)
+    : VCurveVariable(var), m_cType(var.m_cType), m_segment(var.m_segment)
 {
 }
 
@@ -118,11 +118,25 @@ VCurveCLength &VCurveCLength::operator=(const VCurveCLength &var)
         return *this;
     }
     VCurveVariable::operator=(var);
+    m_cType = var.m_cType;
+    m_segment = var.m_segment;
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveCLength::~VCurveCLength()
 {
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+CurveCLength VCurveCLength::GetCType() const
+{
+    return m_cType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qint32 VCurveCLength::GetSegment() const
+{
+    return m_segment;
 }
 

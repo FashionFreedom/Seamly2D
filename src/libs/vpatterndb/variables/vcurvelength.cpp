@@ -79,7 +79,7 @@ VCurveLength::VCurveLength(const quint32 &id, const quint32 &parentId, const VAb
 //---------------------------------------------------------------------------------------------------------------------
 VCurveLength::VCurveLength(const quint32 &id, const quint32 &parentId, const QString &baseCurveName, const VSpline &spl,
                            Unit patternUnit, qint32 segment)
-    :VCurveVariable(id, parentId)
+    :VCurveVariable(id, parentId), m_segment(segment)
 {
     SCASSERT(not baseCurveName.isEmpty())
 
@@ -90,7 +90,7 @@ VCurveLength::VCurveLength(const quint32 &id, const quint32 &parentId, const QSt
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveLength::VCurveLength(const VCurveLength &var)
-    :VCurveVariable(var)
+    :VCurveVariable(var), m_segment(var.m_segment)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -101,9 +101,16 @@ VCurveLength &VCurveLength::operator=(const VCurveLength &var)
         return *this;
     }
     VCurveVariable::operator=(var);
+    m_segment = var.m_segment;
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VCurveLength::~VCurveLength()
 {}
+
+//---------------------------------------------------------------------------------------------------------------------
+qint32 VCurveLength::GetSegment() const
+{
+    return m_segment;
+}

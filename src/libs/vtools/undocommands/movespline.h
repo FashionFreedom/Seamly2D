@@ -53,6 +53,7 @@
 #define MOVESPLINE_H
 
 #include <qcompilerdetection.h>
+#include <QHash>
 #include <QMetaObject>
 #include <QObject>
 #include <QString>
@@ -62,13 +63,14 @@
 #include "vundocommand.h"
 
 class QGraphicsScene;
+class VContainer;
 
 class MoveSpline : public VUndoCommand
 {
     Q_OBJECT
 public:
-    MoveSpline(VAbstractPattern *doc, const VSpline *oldSpl, const VSpline &newSpl, const quint32 &id,
-               QUndoCommand *parent = nullptr);
+    MoveSpline(VAbstractPattern *doc, const VSpline *oldSpl, const VSpline &newSpl, VContainer *data,
+               const quint32 &id, QUndoCommand *parent = nullptr);
     virtual ~MoveSpline() override;
     virtual void undo() override;
     virtual void redo() override;
@@ -81,6 +83,10 @@ private:
     VSpline  oldSpline;
     VSpline  newSpline;
     QGraphicsScene *scene;
+    // Frozen at construction time, when oldSpline/newSpline's name-form formulas were captured -
+    // NOT recomputed in undo()/redo(), which could otherwise run long after an intervening rename
+    // desyncs the live container's names from that already-captured text.
+    const QHash<QString, QString> nameToIdToken;
     void         Do(const VSpline &spl);
 };
 

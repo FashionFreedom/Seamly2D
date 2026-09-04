@@ -49,7 +49,15 @@ SOURCES += \
     tst_vpointf.cpp \
     tst_readval.cpp \
     tst_vtranslatevars.cpp \
-    tst_vabstractpiece.cpp
+    tst_vabstractpiece.cpp \
+    tst_formulaidtranslator.cpp \
+    tst_compositevariabletokens.cpp \
+    tst_patternformulatokens.cpp \
+    tst_pieceformulaidtranslation.cpp \
+    tst_variableformulaidtranslation.cpp \
+    tst_customvariablecontainer.cpp \
+    tst_lineendpointreconnectiondetection.cpp \
+    tst_linevariablelookup.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -75,7 +83,15 @@ HEADERS += \
     tst_vpointf.h \
     tst_readval.h \
     tst_vtranslatevars.h \
-    tst_vabstractpiece.h
+    tst_vabstractpiece.h \
+    tst_formulaidtranslator.h \
+    tst_compositevariabletokens.h \
+    tst_patternformulatokens.h \
+    tst_pieceformulaidtranslation.h \
+    tst_variableformulaidtranslation.h \
+    tst_customvariablecontainer.h \
+    tst_lineendpointreconnectiondetection.h \
+    tst_linevariablelookup.h
 
 include(warnings.pri)
 

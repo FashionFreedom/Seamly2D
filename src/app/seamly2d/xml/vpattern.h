@@ -74,6 +74,7 @@ public:
     virtual void   CreateEmptyFile() override;
 
     void           Parse(const Document &parse);
+    void           ConvertFormulasToIdTokens();
 
     void           setCurrentData();
     virtual void   UpdateToolData(const quint32 &id, VContainer *data) override;
@@ -186,6 +187,7 @@ private:
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, qreal &mx, qreal &my);
+    quint32        ResolveOrAssignLineId(QDomElement &domElement, const QString &attrName);
     void           SplinesCommonAttributes(const QDomElement &domElement, quint32 &id, quint32 &idObject,
                                            quint32 &idTool);
     template <typename T>

@@ -85,6 +85,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vmath.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/../vgeometry/vsplinepath.h"
 #include "../vwidgets/vcontrolpointspline.h"
 #include "../vwidgets/vmaingraphicsscene.h"
@@ -276,7 +281,8 @@ void VToolSplinePath::controlPointPositionChanged(const qint32 &splineIndex, con
     const VSpline spl = correctedSpline(newSplPath.GetSpline(splineIndex), position, pos);
     updateControlPoints(spl, newSplPath, splineIndex);
 
-    MoveSplinePath *moveSplPath = new MoveSplinePath(doc, oldSplPath, newSplPath, m_id);
+    MoveSplinePath *moveSplPath = new MoveSplinePath(doc, oldSplPath, newSplPath, m_id,
+                                                     nameToIdTokenMap(&(this->VAbstractTool::data)));
     connect(moveSplPath, &VUndoCommand::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveSplPath);
 }
@@ -331,19 +337,21 @@ void VToolSplinePath::SetSplinePathAttributes(QDomElement &domElement, const VSp
         domElement.removeAttribute(AttrKCurve);
     }
 
-    UpdatePathPoints(doc, domElement, path);
+    UpdatePathPoints(doc, domElement, path, nameToIdTokenMap(&(this->VAbstractTool::data)));
 }
 
 // @brief UpdatePathPoints update spline path in pattern file.
 // @param doc dom document container.
 // @param element tag in file.
 // @param path spline path.
-void VToolSplinePath::UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path)
+// @param nameToIdToken display-name -> stored-id-token map; empty means no translation (e.g. no container available).
+void VToolSplinePath::UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path,
+                                       const QHash<QString, QString> &nameToIdToken)
 {
     VDomDocument::RemoveAllChildren(element);
     for (qint32 i = 0; i < path.CountPoints(); ++i)
     {
-        AddPathPoint(doc, element, path.at(i));
+        AddPathPoint(doc, element, path.at(i), nameToIdToken);
     }
 }
 
@@ -389,16 +397,21 @@ void VToolSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, qui
 // @brief AddPathPoint write path point to pattern file.
 // @param domElement dom element.
 // @param splPoint spline path point.
-void VToolSplinePath::AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint)
+void VToolSplinePath::AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint,
+                                   const QHash<QString, QString> &nameToIdToken)
 {
     SCASSERT(doc != nullptr)
     QDomElement pathPoint = doc->createElement(AttrPathPoint);
 
     doc->SetAttribute(pathPoint, AttrPSpline, splPoint.P().id());
-    doc->SetAttribute(pathPoint, AttrLength1, splPoint.Length1Formula());
-    doc->SetAttribute(pathPoint, AttrLength2, splPoint.Length2Formula());
-    doc->SetAttribute(pathPoint, AttrAngle1, splPoint.Angle1Formula());
-    doc->SetAttribute(pathPoint, AttrAngle2, splPoint.Angle2Formula());
+    doc->SetAttribute(pathPoint, AttrLength1,
+                      formulaNamesToIds(splPoint.Length1Formula(), nameToIdToken));
+    doc->SetAttribute(pathPoint, AttrLength2,
+                      formulaNamesToIds(splPoint.Length2Formula(), nameToIdToken));
+    doc->SetAttribute(pathPoint, AttrAngle1,
+                      formulaNamesToIds(splPoint.Angle1Formula(), nameToIdToken));
+    doc->SetAttribute(pathPoint, AttrAngle2,
+                      formulaNamesToIds(splPoint.Angle2Formula(), nameToIdToken));
 
     if (domElement.hasAttribute(AttrKAsm1))
     {
@@ -574,7 +587,8 @@ void VToolSplinePath::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
         updateControlPoints(spl, newSplPath, splIndex);
 
-        MoveSplinePath *moveSplPath = new MoveSplinePath(doc, oldSplPath, newSplPath, m_id);
+        MoveSplinePath *moveSplPath = new MoveSplinePath(doc, oldSplPath, newSplPath, m_id,
+                                                         nameToIdTokenMap(&(this->VAbstractTool::data)));
         connect(moveSplPath, &VUndoCommand::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(moveSplPath);
 

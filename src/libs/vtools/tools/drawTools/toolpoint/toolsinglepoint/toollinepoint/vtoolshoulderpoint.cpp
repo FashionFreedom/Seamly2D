@@ -70,6 +70,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -98,10 +103,10 @@ const QString VToolShoulderPoint::ToolType = QStringLiteral("shoulder");
 VToolShoulderPoint::VToolShoulderPoint(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                        const QString &lineType, const QString &lineWeight,
                                        const QString &lineColor, const QString &formula, const quint32 &p1Line,
-                                       const quint32 &p2Line, const quint32 &pShoulder, const Source &typeCreation,
-                                       QGraphicsItem * parent)
+                                       const quint32 &p2Line, const quint32 &pShoulder, const quint32 &line1Id,
+                                       const quint32 &line2Id, const Source &typeCreation, QGraphicsItem * parent)
     : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, formula, p1Line, 0, parent), p2Line(p2Line)
-    , pShoulder(pShoulder)
+    , pShoulder(pShoulder), line1Id(line1Id), line2Id(line2Id)
 {
     ToolCreation(typeCreation);
 }
@@ -194,7 +199,8 @@ VToolShoulderPoint* VToolShoulderPoint::Create(QSharedPointer<DialogTool> dialog
     const QString lineColor  = dialogTool->getLineColor();
     const QString pointName  = dialogTool->getPointName();
     VToolShoulderPoint * point = Create(0, formula, p1Line, p2Line, pShoulder, lineType, lineWeight, lineColor, pointName,
-                                        5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
+                                        NULL_ID, NULL_ID, 5, 10, true, scene, doc, data, Document::FullParse,
+                                        Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -227,7 +233,8 @@ VToolShoulderPoint* VToolShoulderPoint::Create(QSharedPointer<DialogTool> dialog
 VToolShoulderPoint* VToolShoulderPoint::Create(const quint32 _id, QString &formula, quint32 p1Line,
                                                quint32 p2Line, quint32 pShoulder, const QString &lineType,
                                                const QString &lineWeight,
-                                               const QString &lineColor, const QString &pointName, qreal mx, qreal my,
+                                               const QString &lineColor, const QString &pointName, quint32 line1Id,
+                                               quint32 line2Id, qreal mx, qreal my,
                                                bool showPointName, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                                VContainer *data, const Document &parse, const Source &typeCreation)
 {
@@ -247,14 +254,16 @@ VToolShoulderPoint* VToolShoulderPoint::Create(const quint32 _id, QString &formu
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        data->AddLine(p1Line, id);
-        data->AddLine(p2Line, id);
+        line1Id = VContainer::getNextId();
+        line2Id = VContainer::getNextId();
+        data->AddLine(p1Line, id, line1Id);
+        data->AddLine(p2Line, id, line2Id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(p1Line, id);
-        data->AddLine(p2Line, id);
+        data->AddLine(p1Line, id, line1Id);
+        data->AddLine(p2Line, id, line2Id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -265,7 +274,7 @@ VToolShoulderPoint* VToolShoulderPoint::Create(const quint32 _id, QString &formu
     {
         VDrawTool::AddRecord(id, Tool::ShoulderPoint, doc);
         VToolShoulderPoint *point = new VToolShoulderPoint(doc, data, id, lineType, lineWeight, lineColor, formula,
-                                                           p1Line, p2Line, pShoulder,
+                                                           p1Line, p2Line, pShoulder, line1Id, line2Id,
                                                            typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -335,7 +344,9 @@ void VToolShoulderPoint::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetFormula());
+    doc->SetAttribute(domElement, AttrLength,
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrP1Line,     QString().setNum(dialogTool->GetP1Line()));
     doc->SetAttribute(domElement, AttrP2Line,     QString().setNum(dialogTool->GetP2Line()));
     doc->SetAttribute(domElement, AttrPShoulder,  QString().setNum(dialogTool->GetP3()));
@@ -347,10 +358,14 @@ void VToolShoulderPoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType,      ToolType);
-    doc->SetAttribute(tag, AttrLength,    formulaLength);
+    doc->SetAttribute(tag, AttrLength,
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrP1Line,    basePointId);
     doc->SetAttribute(tag, AttrP2Line,    p2Line);
     doc->SetAttribute(tag, AttrPShoulder, pShoulder);
+    doc->SetAttribute(tag, AttrLine1Id,   line1Id);
+    doc->SetAttribute(tag, AttrLine2Id,   line2Id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -359,10 +374,14 @@ void VToolShoulderPoint::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = doc->GetParametrString(domElement, AttrLength, "");
+    formulaLength = formulaIdsToNames(
+                        doc->GetParametrString(domElement, AttrLength, ""),
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
     p2Line        = doc->GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
     pShoulder     = doc->GetParametrUInt(domElement, AttrPShoulder, NULL_ID_STR);
+    line1Id       = doc->GetParametrUInt(domElement, AttrLine1Id, NULL_ID_STR);
+    line2Id       = doc->GetParametrUInt(domElement, AttrLine2Id, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

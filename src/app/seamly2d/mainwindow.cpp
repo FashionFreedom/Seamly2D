@@ -5799,6 +5799,7 @@ void MainWindow::initializeDocksContain()
     groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
+    connect(doc, &VPattern::FullUpdateFromFile, groupsWidget, &GroupsWidget::updateGroups);
 
     piecesWidget = new PiecesWidget(pattern, doc, this);
     ui->pieces_DockWidget->setWidget(piecesWidget);
@@ -6368,6 +6369,10 @@ void MainWindow::createActions()
         {
             historyDialog = new HistoryDialog(pattern, doc, this);
             connect(this, &MainWindow::RefreshHistory, historyDialog.data(), &HistoryDialog::updateHistory);
+            connect(doc, &VPattern::FullUpdateFromFile, historyDialog.data(), [this]()
+            {
+                historyDialog->updateHistory(true);
+            });
             connect(historyDialog.data(), &HistoryDialog::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
@@ -6695,6 +6700,13 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
 
     if (guiEnabled)
     { // No errors occurred
+        if (m_curFileFormatVersion < VPatternConverter::PatternMaxVer)
+        {
+            // One-time catch-up: bring every formula in this file to the id-token form, not just
+            // the ones a tool happens to touch next. See VPattern::ConvertFormulasToIdTokens().
+            doc->ConvertFormulasToIdTokens();
+        }
+
         patternReadOnly = doc->isReadOnly();
         setWidgetsEnabled(true);
         setCurrentFile(fileName);

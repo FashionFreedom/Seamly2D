@@ -80,7 +80,8 @@ public:
     static VToolAlongLine *Create(const quint32 _id, const QString &pointName, const QString &typeLine,
                                   const QString &lineWeight,
                                   const QString &lineColor, QString &formula, const quint32 &firstPointId,
-                                  quint32 secondPointId, qreal mx, qreal my, bool showPointName,
+                                  quint32 secondPointId, quint32 line1Id, quint32 line2Id, qreal mx, qreal my,
+                                  bool showPointName,
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                   const Document &parse,
                                   const Source &typeCreation);
@@ -92,12 +93,15 @@ public:
     QString              SecondPointName() const;
     quint32              GetSecondPointId() const;
     void                 SetSecondPointId(const quint32 &value);
+    VFormula             GetFormulaLength() const;
     virtual void         ShowVisualization(bool show) override;
 
 protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      GetCopyLengthLineId() const override {return line1Id;}
+    virtual quint32      GetCopyAngleLineId() const override {return line1Id;}
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -110,9 +114,12 @@ private:
 
     /** @brief secondPointId id second point of line. */
     quint32              secondPointId;
+    quint32              line1Id; /** @brief line1Id persisted id of the first-to-point line. See issue #1678. */
+    quint32              line2Id; /** @brief line2Id persisted id of the point-to-second line. See issue #1678. */
 
                          VToolAlongLine(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &formula,
                                         const quint32 &firstPointId, const quint32 &secondPointId,
+                                        const quint32 &line1Id, const quint32 &line2Id,
                                         const QString &typeLine, const QString &lineWeight, const QString &lineColor,
                                         const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };

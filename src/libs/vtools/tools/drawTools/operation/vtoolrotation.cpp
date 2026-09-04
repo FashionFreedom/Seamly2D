@@ -83,6 +83,11 @@
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
 #include "../vwidgets/vabstractsimple.h"
@@ -264,6 +269,13 @@ QT_WARNING_POP
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
+
+            // The tool object itself isn't rebuilt on a lite parse (see below), so its cached formula
+            // would otherwise keep referencing a name that no longer resolves after a rename elsewhere.
+            if (VToolRotation *existingTool = qobject_cast<VToolRotation *>(doc->getTool(id)))
+            {
+                existingTool->formulaAngle = angle;
+            }
         }
     }
 
@@ -360,7 +372,9 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
     SCASSERT(not dialogTool.isNull())
 
     doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getOriginPointId()));
-    doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrAngle,
+                      formulaNamesToIds(dialogTool->GetAngle(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
 }
 
@@ -368,7 +382,9 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 void VToolRotation::ReadToolAttributes(const QDomElement &domElement)
 {
     m_originPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
-    formulaAngle = doc->GetParametrString(domElement, AttrAngle, "0");
+    formulaAngle = formulaIdsToNames(
+                       doc->GetParametrString(domElement, AttrAngle, "0"),
+                       idTokenToNameMap(&(this->VAbstractTool::data)));
     suffix = doc->GetParametrString(domElement, AttrSuffix);
 }
 
@@ -379,7 +395,9 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, QString().setNum(m_originPointId));
-    doc->SetAttribute(tag, AttrAngle, formulaAngle);
+    doc->SetAttribute(tag, AttrAngle,
+                      formulaNamesToIds(formulaAngle,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrSuffix, suffix);
 
     SaveSourceDestination(tag);

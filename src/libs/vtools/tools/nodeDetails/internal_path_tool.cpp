@@ -52,11 +52,14 @@
 #include "../../dialogs/tools/piece/internal_path_dialog.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/patternformulatokens.h"
 #include "../../undocommands/savepieceoptions.h"
 #include "../../undocommands/savepiecepathoptions.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../pattern_piece_tool.h"
 #include "../ifc/xml/vabstractpattern.h"
+
+using namespace PatternFormulaTokens;
 
 //---------------------------------------------------------------------------------------------------------------------
 InternalPathTool *InternalPathTool::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
@@ -245,7 +248,7 @@ void InternalPathTool::AddToFile()
         doc->SetAttribute(domElement, AttrIdTool, idTool);
     }
 
-    addNodes(doc, domElement, path);
+    addNodes(doc, domElement, path, nameToIdTokenMap(&(VAbstractTool::data)));
 
     AddToModeling(domElement);
 
@@ -268,7 +271,7 @@ void InternalPathTool::AddToFile()
             incrementReferens();
         }
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_pieceId);
         qApp->getUndoStack()->push(saveCommand);
         connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     }

@@ -82,7 +82,8 @@ public:
     static VToolHeight  *Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                 const QString &lineWeight,
                                 const QString &lineColor, quint32 basePointId, quint32 p1LineId,
-                                quint32 p2LineId, qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
+                                quint32 p2LineId, quint32 line1Id, quint32 line2Id, quint32 line3Id,
+                                qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
                                 const Source &typeCreation);
 
@@ -106,6 +107,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      GetCopyLengthLineId() const override {return line1Id;}
+    virtual quint32      GetCopyAngleLineId() const override {return line1Id;}
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
     virtual void         ReadToolAttributes(const QDomElement &domElement) override;
@@ -117,10 +120,14 @@ private:
 
     quint32              p1LineId; /** @brief p1LineId id first point of line.  */
     quint32              p2LineId; /** @brief p2LineId id second point of line. */
+    quint32              line1Id; /** @brief line1Id persisted id of the basePoint-to-point line. See issue #1678. */
+    quint32              line2Id; /** @brief line2Id persisted id of the p1Line-to-point line. See issue #1678. */
+    quint32              line3Id; /** @brief line3Id persisted id of the p2Line-to-point line. See issue #1678. */
 
                          VToolHeight(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                      const QString &lineType, const QString &lineWeight, const QString &lineColor,
                                      const quint32 &basePointId, const quint32 &p1LineId, const quint32 &p2LineId,
+                                     const quint32 &line1Id, const quint32 &line2Id, const quint32 &line3Id,
                                      const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

@@ -68,6 +68,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -96,10 +101,10 @@ const QString VToolNormal::ToolType = QStringLiteral("normal");
 VToolNormal::VToolNormal(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &lineType,
                          const QString &lineWeight, const QString &lineColor, const QString &formula,
                          const qreal &angle,
-                         const quint32 &firstPointId, const quint32 &secondPointId, const Source &typeCreation,
-                         QGraphicsItem *parent)
+                         const quint32 &firstPointId, const quint32 &secondPointId, const quint32 &lineId,
+                         const Source &typeCreation, QGraphicsItem *parent)
     :VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, formula, firstPointId, angle, parent),
-    secondPointId(secondPointId)
+    secondPointId(secondPointId), lineId(lineId)
 {
 
     ToolCreation(typeCreation);
@@ -148,7 +153,7 @@ VToolNormal* VToolNormal::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     const QString pointName     = dialogTool->getPointName();
     const qreal   angle         = dialogTool->GetAngle();
     VToolNormal *point = Create(0, formula, firstPointId, secondPointId, lineType, lineWeight, lineColor, pointName, angle,
-                                5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
+                                NULL_ID, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -180,7 +185,8 @@ VToolNormal* VToolNormal::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, quint32 firstPointId,
                                  quint32 secondPointId, const QString &lineType, const QString &lineWeight,
                                  const QString &lineColor,
-                                 const QString &pointName, qreal angle, qreal mx, qreal my, bool showPointName,
+                                 const QString &pointName, qreal angle, quint32 lineId, qreal mx, qreal my,
+                                 bool showPointName,
                                  VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                  const Document &parse,
                                  const Source &typeCreation)
@@ -199,12 +205,13 @@ VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, quint32 fi
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        data->AddLine(firstPointId, id);
+        lineId = VContainer::getNextId();
+        data->AddLine(firstPointId, id, lineId);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(firstPointId, id);
+        data->AddLine(firstPointId, id, lineId);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -215,7 +222,7 @@ VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, quint32 fi
     {
         VDrawTool::AddRecord(id, Tool::Normal, doc);
         VToolNormal *point = new VToolNormal(doc, data, id, lineType, lineWeight, lineColor, formula, angle, firstPointId,
-                                             secondPointId, typeCreation);
+                                             secondPointId, lineId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -293,7 +300,9 @@ void VToolNormal::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,    dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight,  dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,   dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrLength,      dialogTool->GetFormula());
+    doc->SetAttribute(domElement, AttrLength,
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrAngle,       QString().setNum(dialogTool->GetAngle()));
     doc->SetAttribute(domElement, AttrFirstPoint,  QString().setNum(dialogTool->GetFirstPointId()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPointId()));
@@ -305,10 +314,13 @@ void VToolNormal::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrLength, formulaLength);
+    doc->SetAttribute(tag, AttrLength,
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrAngle, angle);
     doc->SetAttribute(tag, AttrFirstPoint, basePointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
+    doc->SetAttribute(tag, AttrLineId, lineId);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -317,10 +329,13 @@ void VToolNormal::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = doc->GetParametrString(domElement, AttrLength, "");
+    formulaLength = formulaIdsToNames(
+                        doc->GetParametrString(domElement, AttrLength, ""),
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
     angle         = doc->GetParametrDouble(domElement, AttrAngle, "0");
+    lineId        = doc->GetParametrUInt(domElement, AttrLineId, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

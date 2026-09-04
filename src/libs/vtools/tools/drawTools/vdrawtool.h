@@ -153,6 +153,20 @@ protected:
     virtual void     ReadToolAttributes(const QDomElement &domElement)=0;
     virtual void     updatePointNameVisibility(quint32 id, bool visible);
 
+    QString          LineLengthName(quint32 lineId) const;
+    QString          LineAngleName(quint32 lineId) const;
+
+    /**
+     * @brief GetCopyLengthLineId persisted id of the line "Copy > Length" should copy, for tools
+     * that implicitly register a line (see VContainer::AddLine(), issue #1678). NULL_ID (the
+     * default) means this tool has no such line - overridden by each of those tools to return its
+     * own lineId/line1Id member. Kept virtual rather than a switch-on-Tool-enum in ContextMenu()
+     * to avoid vdrawtool.h needing to include every concrete tool's header (which would be
+     * circular, since those headers already include this one).
+     */
+    virtual quint32  GetCopyLengthLineId() const;
+    virtual quint32  GetCopyAngleLineId() const;
+
     template <typename Dialog>
     void             ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemId = NULL_ID,
                                  const RemoveOption &showRemove = RemoveOption::Enable,
@@ -383,16 +397,25 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         switch (tooltype)
         {
             case Tool::Line:
+            case Tool::EndLine:
+            case Tool::Normal:
+            case Tool::Bisector:
+            case Tool::CurveIntersectAxis:
+            case Tool::AlongLine:
+            case Tool::Height:
+            case Tool::LineIntersectAxis:
+            case Tool::ShoulderPoint:
+            case Tool::LineIntersect:
+            case Tool::PointOfContact:
+            case Tool::PointOfIntersection:
             {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    text = VDrawTool::tr("Line_") +
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                            "_"+
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
-                    break;
-                }
+                // These tools each implicitly register a line via VContainer::AddLine() (see
+                // issue #1678); GetCopyLengthLineId() (overridden per tool) gives that line's
+                // persisted id, so the clipboard text always matches a real, resolvable
+                // VLengthLine - not a hand-built string that can drift out of sync with how
+                // CompositeVariableTokens builds names.
+                text = LineLengthName(GetCopyLengthLineId());
+                break;
             }
             case Tool::Arc:
             case Tool::ArcWithLength:
@@ -402,21 +425,11 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
                 text = arc->NameForHistory(VDrawTool::tr("Arc_"));
                 break;
             }
-            case Tool::ShoulderPoint:
-            case Tool::Normal:
-            case Tool::Bisector:
-            case Tool::LineIntersect:
             case Tool::BasePoint:
-            case Tool::EndLine:
-            case Tool::PointOfContact:
-            case Tool::Height:
             case Tool::Triangle:
-            case Tool::PointOfIntersection:
             case Tool::CutArc:
             case Tool::CutSpline:
             case Tool::CutSplinePath:
-            case Tool::LineIntersectAxis:
-            case Tool::CurveIntersectAxis:
             case Tool::PointOfIntersectionArcs:
             case Tool::PointOfIntersectionCircles:
             case Tool::PointOfIntersectionCurves:
@@ -537,53 +550,18 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         switch (tooltype)
         {
             case Tool::Line:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = VDrawTool::tr("AngleLine_") +
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                            "_"+
-                            data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name();
-                    break;
-                }
-            }
             case Tool::AlongLine:
             case Tool::Normal:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = VDrawTool::tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrFirstPoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
-            }
             case Tool::Bisector:
-            {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = VDrawTool::tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrSecondPoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
-            }
             case Tool::EndLine:
             case Tool::Height:
             case Tool::LineIntersectAxis:
             case Tool::CurveIntersectAxis:
             {
-                const QDomElement domElement = doc->elementById(toolId);
-                if (domElement.isElement())
-                {
-                    angleName = VDrawTool::tr("AngleLine_") +
-                    data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, AttrBasePoint, "0"))->name() +
-                    "_" +  data.GeometricObject<VPointF>(doc->GetParametrUInt(domElement, "id", "0"))->name();
-                    break;
-                }
+                // Same reasoning as the Length case above - derive from the real VLineAngle via
+                // the tool's own persisted line id instead of hand-building the name.
+                angleName = LineAngleName(GetCopyAngleLineId());
+                break;
             }
         }
         QClipboard *clipboard = QApplication::clipboard();

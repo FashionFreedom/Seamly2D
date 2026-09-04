@@ -68,7 +68,8 @@ class VLengthLine :public VInternalVariable
 {
 public:
     VLengthLine();
-    VLengthLine(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id, Unit patternUnit);
+    VLengthLine(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id,
+                const quint32 &lineId, Unit patternUnit);
     VLengthLine(const VLengthLine &var);
 
     virtual ~VLengthLine() override;
@@ -84,6 +85,7 @@ public:
     void         SetValue(const VPointF *p1, const VPointF *p2);
     quint32      GetP1Id() const;
     quint32      GetP2Id() const;
+    quint32      GetLineId() const;
 private:
     QSharedDataPointer<VLengthLineData> d;
 };

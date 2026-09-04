@@ -58,6 +58,9 @@
 #include "../qmuparser/qmuparsererror.h"
 #include "../vmisc/logging.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/variables/vlinelength.h"
+#include "../vpatterndb/variables/vlineangle.h"
+#include "../vpatterndb/variables/vlinevariablelookup.h"
 #include "../../undocommands/addtocalc.h"
 #include "../../undocommands/savetooloptions.h"
 
@@ -118,7 +121,7 @@ bool VDrawTool::isUsed() const
         }
     }
 
-    return doc->isVariableUsed(variable_names);
+    return doc->isVariableUsed(variable_names, &data);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -331,4 +334,48 @@ bool VDrawTool::isPointNameVisible(quint32 id) const
 {
     Q_UNUSED(id)
     return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief LineLengthName current display name of the VLengthLine registered for a line's
+ * persisted id, for use as "Copy Length" clipboard text. Empty if no such line is registered.
+ */
+QString VDrawTool::LineLengthName(quint32 lineId) const
+{
+    const QSharedPointer<VLengthLine> length = FindLineLength(data, lineId);
+    if (length.isNull())
+    {
+        qWarning() << "VDrawTool::LineLengthName: no VLengthLine found for lineId" << lineId;
+        return QString();
+    }
+    return length->GetName();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief LineAngleName current display name of the VLineAngle registered for a line's persisted
+ * id, for use as "Copy Angle" clipboard text. Empty if no such line is registered.
+ */
+QString VDrawTool::LineAngleName(quint32 lineId) const
+{
+    const QSharedPointer<VLineAngle> angle = FindLineAngle(data, lineId);
+    if (angle.isNull())
+    {
+        qWarning() << "VDrawTool::LineAngleName: no VLineAngle found for lineId" << lineId;
+        return QString();
+    }
+    return angle->GetName();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VDrawTool::GetCopyLengthLineId() const
+{
+    return NULL_ID;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VDrawTool::GetCopyAngleLineId() const
+{
+    return NULL_ID;
 }

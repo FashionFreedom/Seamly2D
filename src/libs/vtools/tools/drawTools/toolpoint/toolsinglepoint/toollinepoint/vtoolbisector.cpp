@@ -68,6 +68,11 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
@@ -96,11 +101,12 @@ const QString VToolBisector::ToolType = QStringLiteral("bisector");
 VToolBisector::VToolBisector(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                              const QString &lineType, const QString &lineWeight,
                              const QString &lineColor, const QString &formula, const quint32 &firstPointId,
-                             const quint32 &secondPointId, const quint32 &thirdPointId, const Source &typeCreation,
-                             QGraphicsItem *parent)
+                             const quint32 &secondPointId, const quint32 &thirdPointId, const quint32 &lineId,
+                             const Source &typeCreation, QGraphicsItem *parent)
     : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, formula, secondPointId, 0, parent)
     , firstPointId(firstPointId)
     , thirdPointId(thirdPointId)
+    , lineId(lineId)
 {
     ToolCreation(typeCreation);
 }
@@ -183,7 +189,8 @@ VToolBisector* VToolBisector::Create(QSharedPointer<DialogTool> dialog, VMainGra
     const QString lineColor     = dialogTool->getLineColor();
     const QString pointName     = dialogTool->getPointName();
     VToolBisector *point = Create(0, formula, firstPointId, secondPointId, thirdPointId, lineType, lineWeight, lineColor,
-                                  pointName, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
+                                  pointName, NULL_ID, 5, 10, true, scene, doc, data, Document::FullParse,
+                                  Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -215,7 +222,7 @@ VToolBisector* VToolBisector::Create(QSharedPointer<DialogTool> dialog, VMainGra
 VToolBisector* VToolBisector::Create(const quint32 _id, QString &formula, quint32 firstPointId, quint32 secondPointId,
                                      quint32 thirdPointId, const QString &lineType,
                                      const QString &lineWeight, const QString &lineColor,
-                                     const QString &pointName, qreal mx, qreal my, bool showPointName,
+                                     const QString &pointName, quint32 lineId, qreal mx, qreal my, bool showPointName,
                                      VMainGraphicsScene *scene, VAbstractPattern *doc,
                                      VContainer *data, const Document &parse, const Source &typeCreation)
 {
@@ -234,12 +241,13 @@ VToolBisector* VToolBisector::Create(const quint32 _id, QString &formula, quint3
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        data->AddLine(secondPointId, id);
+        lineId = VContainer::getNextId();
+        data->AddLine(secondPointId, id, lineId);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(secondPointId, id);
+        data->AddLine(secondPointId, id, lineId);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -250,7 +258,7 @@ VToolBisector* VToolBisector::Create(const quint32 _id, QString &formula, quint3
     {
         VDrawTool::AddRecord(id, Tool::Bisector, doc);
         VToolBisector *point = new VToolBisector(doc, data, id, lineType, lineWeight, lineColor, formula, firstPointId,
-                                                 secondPointId, thirdPointId, typeCreation);
+                                                 secondPointId, thirdPointId, lineId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -319,7 +327,9 @@ void VToolBisector::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
-    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetFormula());
+    doc->SetAttribute(domElement, AttrLength,
+                      formulaNamesToIds(dialogTool->GetFormula(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrFirstPoint, QString().setNum(dialogTool->GetFirstPointId()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPointId()));
     doc->SetAttribute(domElement, AttrThirdPoint, QString().setNum(dialogTool->GetThirdPointId()));
@@ -331,10 +341,13 @@ void VToolBisector::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     VToolLinePoint::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrLength, formulaLength);
+    doc->SetAttribute(tag, AttrLength,
+                      formulaNamesToIds(formulaLength,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrFirstPoint, firstPointId);
     doc->SetAttribute(tag, AttrSecondPoint, basePointId);
     doc->SetAttribute(tag, AttrThirdPoint, thirdPointId);
+    doc->SetAttribute(tag, AttrLineId, lineId);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -343,10 +356,13 @@ void VToolBisector::ReadToolAttributes(const QDomElement &domElement)
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    formulaLength = doc->GetParametrString(domElement, AttrLength, "");
+    formulaLength = formulaIdsToNames(
+                        doc->GetParametrString(domElement, AttrLength, ""),
+                        idTokenToNameMap(&(this->VAbstractTool::data)));
     firstPointId  = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     basePointId   = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
     thirdPointId  = doc->GetParametrUInt(domElement, AttrThirdPoint, NULL_ID_STR);
+    lineId        = doc->GetParametrUInt(domElement, AttrLineId, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

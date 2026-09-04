@@ -79,6 +79,11 @@
 #include "../undocommands/savepieceoptions.h"
 #include "../undocommands/togglepieceinlayout.h"
 #include "../undocommands/toggle_piecelock.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vwidgets/nonscalingfill_pathitem.h"
@@ -241,7 +246,7 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
             initializeNode(node, scene, data, doc, patternPiece);
         }
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, data, pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
 
         data->UpdatePiece(pieceId, newPiece);// Update piece because first save will not call lite update
@@ -250,7 +255,8 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece)
+void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece,
+                                     const QHash<QString, QString> &nameToIdToken)
 {
     SCASSERT(doc != nullptr);
 
@@ -277,7 +283,8 @@ void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElem
         domElement.removeAttribute(AttrSeamAllowanceBuiltIn);
     }
 
-    doc->SetAttribute(domElement, VAbstractPattern::AttrWidth, piece.getSeamAllowanceWidthFormula());
+    doc->SetAttribute(domElement, VAbstractPattern::AttrWidth,
+                      formulaNamesToIds(piece.getSeamAllowanceWidthFormula(), nameToIdToken));
     doc->SetAttribute(domElement, AttrUnited, piece.IsUnited());
 }
 
@@ -343,7 +350,8 @@ void PatternPieceTool::addAnchors(VAbstractPattern *doc, QDomElement &domElement
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece)
+void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                                     const QHash<QString, QString> &nameToIdToken)
 {
     QDomElement domData = doc->createElement(VAbstractPattern::TagData);
     const VPieceLabelData &data = piece.GetPatternPieceData();
@@ -358,10 +366,13 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, VAbstractPattern::AttrOnFold,       data.IsOnFold());
     doc->SetAttribute(domData, AttrMx,                             data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                             data.GetPos().y());
-    doc->SetAttribute(domData, VAbstractPattern::AttrWidth,        data.GetLabelWidth());
-    doc->SetAttribute(domData, AttrHeight,                         data.GetLabelHeight());
+    doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
+                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+    doc->SetAttribute(domData, AttrHeight,
+                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
     doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.getRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -396,17 +407,21 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece)
+void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                                       const QHash<QString, QString> &nameToIdToken)
 {
     QDomElement domData = doc->createElement(VAbstractPattern::TagPatternInfo);
     const VPatternLabelData &data = piece.GetPatternInfo();
     doc->SetAttribute(domData, VAbstractPattern::AttrVisible,  data.IsVisible());
     doc->SetAttribute(domData, AttrMx,                         data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
-    doc->SetAttribute(domData, VAbstractPattern::AttrWidth,    data.GetLabelWidth());
-    doc->SetAttribute(domData, AttrHeight,                     data.GetLabelHeight());
+    doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
+                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+    doc->SetAttribute(domData, AttrHeight,
+                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
     doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.getRotation());
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -439,7 +454,8 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece)
+void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
+                                    const QHash<QString, QString> &nameToIdToken)
 {
     // grainline
     QDomElement domData = doc->createElement(VAbstractPattern::TagGrainline);
@@ -447,10 +463,13 @@ void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domEleme
     doc->SetAttribute(domData, VAbstractPattern::AttrVisible,     data.IsVisible());
     doc->SetAttribute(domData, AttrMx,                            data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                            data.GetPos().y());
-    doc->SetAttribute(domData, AttrLength,                        data.getLength());
-    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,    data.getRotation());
+    doc->SetAttribute(domData, AttrLength,
+                      formulaNamesToIds(data.getLength(), nameToIdToken));
+    doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
+                      formulaNamesToIds(data.getRotation(), nameToIdToken));
     doc->SetAttribute(domData, VAbstractPattern::AttrArrows,      int(data.getArrowType()));
-    doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength, data.getArrowLength());
+    doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength,
+                      formulaNamesToIds(data.getArrowLength(), nameToIdToken));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -718,7 +737,7 @@ void PatternPieceTool::saveMovePiece(const QPointF &ptPos)
     VPiece newPiece = oldPiece;
     newPiece.GetPatternPieceData().SetPos(ptPos);
 
-    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     moveCommand->setText(tr("move pattern piece label"));
     qApp->getUndoStack()->push(moveCommand);
 }
@@ -737,7 +756,7 @@ void PatternPieceTool::saveResizePiece(qreal dLabelW, int iFontSize)
     newPiece.GetPatternPieceData().SetLabelHeight(QString().setNum(height));
     newPiece.GetPatternPieceData().SetFontSize(iFontSize);
 
-    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     resizeCommand->setText(tr("resize pattern piece label"));
     qApp->getUndoStack()->push(resizeCommand);
 }
@@ -757,7 +776,7 @@ void PatternPieceTool::savePieceRotation(qreal dRot)
     line.setAngle(-dRot);
     newPiece.GetPatternPieceData().SetRotation(QString().setNum(line.angle()));
 
-    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     rotateCommand->setText(tr("rotate pattern piece label"));
     qApp->getUndoStack()->push(rotateCommand);
 }
@@ -771,7 +790,7 @@ void PatternPieceTool::SaveMovePattern(const QPointF &ptPos)
     VPiece newPiece = oldPiece;
     newPiece.GetPatternInfo().SetPos(ptPos);
 
-    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     moveCommand->setText(tr("move pattern info label"));
     qApp->getUndoStack()->push(moveCommand);
 }
@@ -790,7 +809,7 @@ void PatternPieceTool::SaveResizePattern(qreal dLabelW, int iFontSize)
     newPiece.GetPatternInfo().SetLabelHeight(QString().setNum(height));
     newPiece.GetPatternInfo().SetFontSize(iFontSize);
 
-    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     resizeCommand->setText(tr("resize pattern info label"));
     qApp->getUndoStack()->push(resizeCommand);
 }
@@ -809,7 +828,7 @@ void PatternPieceTool::SaveRotationPattern(qreal dRot)
     line.setAngle(-dRot);
     newPiece.GetPatternInfo().SetRotation(QString().setNum(line.angle()));
 
-    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     rotateCommand->setText(tr("rotate pattern info label"));
     qApp->getUndoStack()->push(rotateCommand);
 }
@@ -823,7 +842,7 @@ void PatternPieceTool::SaveMoveGrainline(const QPointF &ptPos)
     newPiece.GetGrainlineGeometry().SetPos(ptPos);
     qDebug() << "******* new grainline pos" << ptPos;
 
-    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     moveCommand->setText(tr("move grainline"));
     qApp->getUndoStack()->push(moveCommand);
 }
@@ -837,7 +856,7 @@ void PatternPieceTool::SaveResizeGrainline(qreal dLength)
     dLength = FromPixel(dLength, *VDataTool::data.GetPatternUnit());
     newPiece.GetGrainlineGeometry().SetPos(m_grainLine->pos());
     newPiece.GetGrainlineGeometry().setLength(QString().setNum(dLength));
-    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     resizeCommand->setText(tr("resize grainline"));
     qApp->getUndoStack()->push(resizeCommand);
 }
@@ -850,7 +869,7 @@ void PatternPieceTool::SaveRotateGrainline(qreal dRot, const QPointF &ptPos)
 
     newPiece.GetGrainlineGeometry().setRotation(QString().setNum(qRadiansToDegrees(dRot)));
     newPiece.GetGrainlineGeometry().SetPos(ptPos);
-    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     rotateCommand->setText(tr("rotate grainline"));
     qApp->getUndoStack()->push(rotateCommand);
 }
@@ -959,16 +978,17 @@ QPainterPath PatternPieceTool::shape() const
 void PatternPieceTool::AddToFile()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
+    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(VAbstractTool::data));
 
     QDomElement domElement = doc->createElement(getTagName());
 
-    addAttributes(doc, domElement, m_id, piece);
-    addPieceLabel(doc, domElement, piece);
-    addPatternLabel(doc, domElement, piece);
-    addGrainline(doc, domElement, piece);
+    addAttributes(doc, domElement, m_id, piece, nameToIdToken);
+    addPieceLabel(doc, domElement, piece, nameToIdToken);
+    addPatternLabel(doc, domElement, piece, nameToIdToken);
+    addGrainline(doc, domElement, piece, nameToIdToken);
 
     // nodes
-    addNodes(doc, domElement, piece);
+    addNodes(doc, domElement, piece, nameToIdToken);
     //custom seam allowance
     addCSARecords(doc, domElement, piece.getCustomSARecords());
     addInternalPaths(doc, domElement, piece.getInternalPaths());
@@ -995,14 +1015,16 @@ void PatternPieceTool::RefreshDataInFile()
             if (version == 1)
             {
                 const VPiece piece = VAbstractTool::data.GetPiece(m_id);
+                const QHash<QString, QString> nameToIdToken =
+                    nameToIdTokenMap(&(VAbstractTool::data));
 
                 doc->SetAttribute(domElement, AttrVersion, QString().setNum(pieceVersion));
 
                 doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-                addPieceLabel(doc, domElement, piece);
-                addPatternLabel(doc, domElement, piece);
-                addGrainline(doc, domElement, piece);
-                addNodes(doc, domElement, piece);
+                addPieceLabel(doc, domElement, piece, nameToIdToken);
+                addPatternLabel(doc, domElement, piece, nameToIdToken);
+                addGrainline(doc, domElement, piece, nameToIdToken);
+                addNodes(doc, domElement, piece, nameToIdToken);
                 addCSARecords(doc, domElement, piece.getCustomSARecords());
                 addInternalPaths(doc, domElement, piece.getInternalPaths());
                 addAnchors(doc, domElement, piece.getAnchors());
@@ -1596,7 +1618,7 @@ void PatternPieceTool::SaveDialogChange()
     const VPiece newPiece = dialogTool->GetPiece();
     const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
 
-    SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(saveCommand);
 
@@ -1631,7 +1653,7 @@ void PatternPieceTool::nodeAngleChanged(quint32 id, PieceNodeAngle type)
                 node.SetAngleType(type);
                 newPiece.GetPath()[i] = node;
 
-                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
                 undoCommand->setText(tr("Update Node Angle"));
                 connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
                 qApp->getUndoStack()->push(undoCommand);
@@ -1677,7 +1699,7 @@ void PatternPieceTool::notchChanged(quint32 id, NotchData notchData)
                 node.setNotchCount(notchData.count);
                 newPiece.GetPath()[i] = node;
 
-                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
                 undoCommand->setText(tr("Update Notch"));
                 connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
                 qApp->getUndoStack()->push(undoCommand);
@@ -1714,7 +1736,7 @@ void PatternPieceTool::nodeExcluded(quint32 id)
                 node.SetExcluded(true);
                 newPiece.GetPath()[i] = node;
 
-                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+                SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
                 undoCommand->setText(tr("Exclude Node"));
                 connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
                 qApp->getUndoStack()->push(undoCommand);
@@ -1751,7 +1773,7 @@ void PatternPieceTool::nodeDeleted(quint32 id)
             path.setNodes(newNodes);
             newPiece.SetPath(path);
 
-            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+            SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
             undoCommand->setText(tr("Delete Node"));
             connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
             qApp->getUndoStack()->push(undoCommand);
@@ -2248,7 +2270,7 @@ void PatternPieceTool::toggleFlipping(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.SetForbidFlipping(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Forbid Flipping"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2265,7 +2287,7 @@ void PatternPieceTool::toggleSeamLine(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.setHideSeamLine(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Hide Seam Line"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2282,7 +2304,7 @@ void PatternPieceTool::toggleSeamAllowance(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.SetSeamAllowance(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Show seam allowance"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2299,7 +2321,7 @@ void PatternPieceTool::toggleGrainline(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.GetGrainlineGeometry().SetVisible(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Show grainline"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2316,7 +2338,7 @@ void PatternPieceTool::togglePatternLabel(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.GetPatternInfo().SetVisible(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Show pattern label"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2333,7 +2355,7 @@ void PatternPieceTool::togglePieceLabel(bool checked)
     VPiece newPiece = oldPiece;
     newPiece.GetPatternPieceData().SetVisible(checked);
 
-    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
     undoCommand->setText(tr("Show piece label"));
     qApp->getUndoStack()->push(undoCommand);
 
@@ -2366,7 +2388,7 @@ void PatternPieceTool::renamePiece(VPiece piece)
         VPiece newPiece = oldPiece;
         newPiece.SetName(pieceName);
 
-        SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+        SavePieceOptions *undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, &(VAbstractTool::data), m_id);
         undoCommand->setText(tr("Rename pattern piece"));
         qApp->getUndoStack()->push(undoCommand);
 

@@ -82,7 +82,7 @@ public:
     static VToolEndLine *Create(const quint32 _id, const QString &pointName,
                                 const QString &lineType, const QString &lineWeight,
                                 const QString &lineColor, QString &formulaLength, QString &formulaAngle,
-                                quint32 basePointId, qreal mx, qreal my, bool showPointName,
+                                quint32 basePointId, quint32 lineId, qreal mx, qreal my, bool showPointName,
                                 VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                 const Document &parse,
                                 const Source &typeCreation);
@@ -99,6 +99,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      GetCopyLengthLineId() const override {return lineId;}
+    virtual quint32      GetCopyAngleLineId() const override {return lineId;}
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
     virtual void         ReadToolAttributes(const QDomElement &domElement) override;
@@ -108,12 +110,14 @@ private:
     Q_DISABLE_COPY(VToolEndLine)
 
     QString formulaAngle;
+    quint32 lineId; /** @brief lineId persisted id of this tool's line. See issue #1678. */
 
                          VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                       const QString &lineType, const QString &lineWeight,
                                       const QString &lineColor, const QString &formulaLength,
                                       const QString &formulaAngle, const quint32 &basePointId,
-                                      const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                                      const quint32 &lineId, const Source &typeCreation,
+                                      QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLENDLINE_H

@@ -66,21 +66,22 @@ class VLineAngleData : public QSharedData
 public:
 
     VLineAngleData()
-        :p1Id(NULL_ID), p2Id(NULL_ID)
+        :p1Id(NULL_ID), p2Id(NULL_ID), lineId(NULL_ID)
     {}
 
-    VLineAngleData(const quint32 &p1Id, const quint32 &p2Id)
-        :p1Id(p1Id), p2Id(p2Id)
+    VLineAngleData(const quint32 &p1Id, const quint32 &p2Id, const quint32 &lineId)
+        :p1Id(p1Id), p2Id(p2Id), lineId(lineId)
     {}
 
     VLineAngleData(const VLineAngleData &var)
-        :QSharedData(var), p1Id(var.p1Id), p2Id(var.p2Id)
+        :QSharedData(var), p1Id(var.p1Id), p2Id(var.p2Id), lineId(var.lineId)
     {}
 
     virtual  ~VLineAngleData();
 
     quint32 p1Id;
     quint32 p2Id;
+    quint32 lineId;
 
 private:
     VLineAngleData &operator=(const VLineAngleData &) Q_DECL_EQ_DELETE;

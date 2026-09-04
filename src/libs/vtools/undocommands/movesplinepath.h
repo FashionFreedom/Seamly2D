@@ -53,6 +53,7 @@
 #define MOVESPLINEPATH_H
 
 #include <qcompilerdetection.h>
+#include <QHash>
 #include <QMetaObject>
 #include <QObject>
 #include <QString>
@@ -68,7 +69,8 @@ class MoveSplinePath : public VUndoCommand
     Q_OBJECT
 public:
     MoveSplinePath(VAbstractPattern *doc, const VSplinePath &oldSplPath, const VSplinePath &newSplPath,
-                   const quint32 &id, QUndoCommand *parent = nullptr);
+                   const quint32 &id, const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>(),
+                   QUndoCommand *parent = nullptr);
     virtual ~MoveSplinePath() override;
     virtual void undo() override;
     virtual void redo() override;
@@ -76,11 +78,13 @@ public:
     virtual int  id() const override;
     quint32      getSplinePathId() const;
     VSplinePath  getNewSplinePath() const;
+    QHash<QString, QString> getNameToIdToken() const;
 private:
     Q_DISABLE_COPY(MoveSplinePath)
     VSplinePath oldSplinePath;
     VSplinePath newSplinePath;
     QGraphicsScene *scene;
+    QHash<QString, QString> nameToIdToken;
     void         Do(const VSplinePath &splPath);
 };
 
@@ -94,6 +98,12 @@ inline quint32 MoveSplinePath::getSplinePathId() const
 inline VSplinePath MoveSplinePath::getNewSplinePath() const
 {
     return newSplinePath;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+inline QHash<QString, QString> MoveSplinePath::getNameToIdToken() const
+{
+    return nameToIdToken;
 }
 
 #endif // MOVESPLINEPATH_H
