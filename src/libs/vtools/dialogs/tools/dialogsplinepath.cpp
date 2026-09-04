@@ -1077,14 +1077,6 @@ void DialogSplinePath::collapseFormula(QPlainTextEdit *textEdit, QPushButton *pu
     SCASSERT(textEdit != nullptr)
     SCASSERT(pushButton != nullptr)
 
-    const QTextCursor cursor = textEdit->textCursor();
-
-    setMaximumWidth(260);
     textEdit->setFixedHeight(height);
     pushButton->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
-    setUpdatesEnabled(false);
-    repaint();
-    setUpdatesEnabled(true);
-    textEdit->setFocus();
-    textEdit->setTextCursor(cursor);
 }

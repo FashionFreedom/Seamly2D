@@ -180,6 +180,8 @@ protected:
     /** @brief isInitialized true if window is initialized */
     bool             isInitialized;
 
+    int              initial_dialog_height_;
+
     /** @brief flagName true if name is correct */
     bool             flagName;
 
@@ -281,6 +283,7 @@ protected:
 
     bool             SetObject(const quint32 &id, QComboBox *box, const QString &toolTip);
     void             DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowLength, int formulaBaseHeight);
+    void             UpdateFormulaLayout(bool expanded);
 
     template <typename T>
     void             initializeOkCancelApply(T *ui);

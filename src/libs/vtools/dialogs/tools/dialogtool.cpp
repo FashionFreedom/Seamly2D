@@ -84,12 +84,11 @@
 #include <QtDebug>
 #include <QtMath>
 #include <algorithm>
-#include <new>
 #include <QBuffer>
 #include <QFont>
+#include <QBoxLayout>
 
 #include "../ifc/xml/vabstractpattern.h"
-#include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vgeometry/vpointf.h"
@@ -109,7 +108,6 @@ template <class T> class QSharedPointer;
 Q_LOGGING_CATEGORY(vDialog, "v.dialog")
 
 #define DIALOG_MAX_FORMULA_HEIGHT 64
-#define DIALOG_MIN_WIDTH 260
 
 namespace
 {
@@ -141,6 +139,7 @@ DialogTool:: DialogTool(const VContainer *data, const quint32 &toolId, QWidget *
     : QDialog(parent)
     , data(data)
     , isInitialized(false)
+    , initial_dialog_height_(0)
     , flagName(true)
     , flagFormula(true)
     , flagError(true)
@@ -229,6 +228,7 @@ void DialogTool::showEvent(QShowEvent *event)
     }
     // do your init stuff here
 
+    initial_dialog_height_ = height();
     setMaximumSize(size());
     setMinimumSize(size());
 
@@ -1005,10 +1005,10 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
     SCASSERT(buttonGrowLength != nullptr)
 
     const QTextCursor cursor = formula->textCursor();
+    const bool expanded = formula->height() < DIALOG_MAX_FORMULA_HEIGHT;
 
-    if (formula->height() < DIALOG_MAX_FORMULA_HEIGHT)
+    if (expanded)
     {
-        setMaximumWidth(QWIDGETSIZE_MAX);
         formula->setFixedHeight(DIALOG_MAX_FORMULA_HEIGHT);
         //Set icon from theme (internal for Windows system)
         buttonGrowLength->setIcon(QIcon::fromTheme("go-up",
@@ -1016,21 +1016,34 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
     }
     else
     {
-        setMaximumWidth(DIALOG_MIN_WIDTH);
         formula->setFixedHeight(formulaBaseHeight);
         //Set icon from theme (internal for Windows system)
         buttonGrowLength->setIcon(QIcon::fromTheme("go-down",
                                                    QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
     }
 
-    // I found that after change size of formula field, it was filed for angle formula, field for formula became black.
-    // This code prevent this.
-    setUpdatesEnabled(false);
-    repaint();
-    setUpdatesEnabled(true);
+    formula->updateGeometry();
+    QTimer::singleShot(0, this, [this, expanded]() { UpdateFormulaLayout(expanded); });
 
     formula->setFocus();
     formula->setTextCursor(cursor);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::UpdateFormulaLayout(bool expanded)
+{
+    QLayout *dialogLayout = layout();
+    SCASSERT(dialogLayout != nullptr)
+
+    dialogLayout->invalidate();
+    dialogLayout->activate();
+
+    setMinimumHeight(0);
+    setMaximumHeight(QWIDGETSIZE_MAX);
+    resize(width(), expanded ? qMax(initial_dialog_height_, sizeHint().height()) : initial_dialog_height_);
+    setMinimumHeight(height());
+    setMaximumHeight(height());
+    update();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
