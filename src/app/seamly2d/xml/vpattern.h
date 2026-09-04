@@ -108,7 +108,7 @@ public:
     QStringList    GetCurrentAlphabet() const;
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const override;
-    virtual QString GenerateSuffix(const QString &type) const override;
+    virtual QString generateSuffix(const QString &type) const override;
 
     bool IsDefCustom() const;
     void SetDefCustom(bool value);

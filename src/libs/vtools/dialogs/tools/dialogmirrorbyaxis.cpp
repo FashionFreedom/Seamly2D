@@ -93,7 +93,7 @@ DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &to
     // Set the position that the dialog opens based on user preference.
     setDialogPosition();
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByAxisSuffix()));
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->generateSuffix(qApp->Settings()->getMirrorByAxisSuffix()));
 
     initializeOkCancelApply(ui);
 

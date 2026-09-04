@@ -128,8 +128,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
-    ui->moveSuffix_ComboBox->addItem(tr("_M"), "_M");
-    ui->moveSuffix_ComboBox->addItem(tr("_MOV"), "_MOV");
+    ui->moveSuffix_ComboBox->addItem("_m", "_m");
+    ui->moveSuffix_ComboBox->addItem("_M", "_M");
+    ui->moveSuffix_ComboBox->addItem("_MOV", "_MOV");
     index = ui->moveSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMoveSuffix());
     if (index != -1)
     {
@@ -140,8 +141,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_moveSuffixChanged = true;
     });
     ui->rotateSuffix_ComboBox->addItem(tr("None"), "");
-    ui->rotateSuffix_ComboBox->addItem(tr("_R"), "_R");
-    ui->rotateSuffix_ComboBox->addItem(tr("_ROT"), "_ROT");
+    ui->rotateSuffix_ComboBox->addItem("_r", "_r");
+    ui->rotateSuffix_ComboBox->addItem("_R", "_R");
+    ui->rotateSuffix_ComboBox->addItem("_ROT", "_ROT");
     index = ui->rotateSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getRotateSuffix());
     if (index != -1)
     {
@@ -153,8 +155,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     ui->mirrorByAxisSuffix_ComboBox->addItem(tr("None"), "");
-    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MA"), "_MA");
-    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MBA"), "_MBA");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_ma", "_ma");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_MA", "_MA");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_MBA", "_MBA");
     index = ui->mirrorByAxisSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByAxisSuffix());
     if (index != -1)
     {
@@ -166,8 +169,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     ui->mirrorByLineSuffix_ComboBox->addItem(tr("None"), "");
-    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MB"), "_MB");
-    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MBL"), "_MBL");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_ml", "_ml");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_ML", "_ML");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_MBL", "_MBL");
     index = ui->mirrorByLineSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByLineSuffix());
     if (index != -1)
     {
