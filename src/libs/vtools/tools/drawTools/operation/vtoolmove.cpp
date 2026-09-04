@@ -97,25 +97,39 @@ template <class T> class QSharedPointer;
 
 const QString VToolMove::ToolType = QStringLiteral("moving");
 
-namespace
-{
+//---------------------------------------------------------------------------------------------------------------------
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
-QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *data, qreal calcLength, qreal calcAngle)
+QPointF VToolMove::findRotationOrigin(const QVector<quint32> &objectIds, const VContainer *data, qreal calcLength,
+                                      qreal calcAngle, quint32 originPointId)
 {
+    if (originPointId != NULL_ID)
+    {
+        const QPointF rotationOrigin = static_cast<QPointF>(*data->GeometricObject<VPointF>(originPointId));
+        if (!objectIds.contains(originPointId))
+        {
+            return rotationOrigin;
+        }
+
+        // A selected rotation point that is also moved must remain the pivot after the move.
+        QLineF move(rotationOrigin, QPointF(rotationOrigin.x() + calcLength, rotationOrigin.y()));
+        move.setAngle(calcAngle);
+        return move.p2();
+    }
+
     QPolygonF originObjects;
     qCDebug(vTool, "Find center of objects: ");
-    for (auto item : objects)
+    for (auto id : objectIds)
     {
-        qCDebug(vTool, "Object:  %d", item.id);
-        const QSharedPointer<VGObject> object = data->GetGObject(item.id);
+        qCDebug(vTool, "Object:  %d", id);
+        const QSharedPointer<VGObject> object = data->GetGObject(id);
 
         Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
         switch(static_cast<GOType>(object->getType()))
         {
             case GOType::Point:
-                originObjects.append(data->GeometricObject<VPointF>(item.id)->toQPointF());
+                originObjects.append(data->GeometricObject<VPointF>(id)->toQPointF());
                 break;
             case GOType::Arc:
             case GOType::EllipticalArc:
@@ -123,7 +137,7 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
             case GOType::SplinePath:
             case GOType::CubicBezier:
             case GOType::CubicBezierPath:
-                originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->getPoints());
+                originObjects.append(data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::Unknown:
             case GOType::Curve:
@@ -138,9 +152,9 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
     QPointF rotationOrigin = originObjects.boundingRect().center();
     QLineF move(rotationOrigin, QPointF(rotationOrigin.x() + calcLength, rotationOrigin.y()));
     move.setAngle(calcAngle);
-    return move.p2();}
-QT_WARNING_POP
+    return move.p2();
 }
+QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolMove::VToolMove(VAbstractPattern *doc, VContainer *data, quint32 id,
@@ -211,21 +225,14 @@ VToolMove *VToolMove::Create(quint32 _id, QString &formulaAngle, QString &formul
     calcLength   = qApp->toPixel(CheckFormula(_id, formulaLength, data));
     calcRotation = CheckFormula(_id, formulaRotation, data);
 
-    QPointF rotationOrigin;
     QSharedPointer<VPointF> originPoint;
-
-    if (originPointId == NULL_ID)
-    {
-        rotationOrigin = findRotationOrigin(source, data, calcLength, calcAngle);
-    }
-    else
+    if (originPointId != NULL_ID)
     {
         originPoint = data->GeometricObject<VPointF>(originPointId);
-        rotationOrigin = static_cast<QPointF>(*originPoint);
-        QLineF moveLine(rotationOrigin, QPointF(rotationOrigin.x() + calcLength, rotationOrigin.y()));
-        moveLine.setAngle(calcAngle);
-        rotationOrigin = moveLine.p2();
     }
+
+    const QPointF rotationOrigin = findRotationOrigin(sourceToObjects(source), data, calcLength, calcAngle,
+                                                      originPointId);
 
     QVector<DestinationItem> dest = destination;
 
