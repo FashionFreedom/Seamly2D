@@ -13,6 +13,7 @@ HEADERS += \
     $$PWD/layoutsettings_dialog.h \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogvariables.h \
+    $$PWD/dialogvariablesimport.h \
     $$PWD/export_layout_dialog.h \
     $$PWD/groups_widget.h \
     $$PWD/history_dialog.h \
@@ -38,6 +39,7 @@ SOURCES += \
     $$PWD/layoutsettings_dialog.cpp \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogvariables.cpp \
+    $$PWD/dialogvariablesimport.cpp \
     $$PWD/export_layout_dialog.cpp \
     $$PWD/groups_widget.cpp \
     $$PWD/history_dialog.cpp \
