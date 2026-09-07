@@ -4061,7 +4061,8 @@ void VPattern::ConvertFormulasToIdTokens()
     translateAll(TagPoint, {AttrLength, AttrAngle, AttrRadius, AttrCRadius, AttrC1Radius, AttrC2Radius});
     translateAll(TagArc, {AttrRadius, AttrAngle1, AttrAngle2, AttrLength});
     translateAll(TagElArc, {AttrRadius1, AttrRadius2, AttrAngle1, AttrAngle2, AttrRotationAngle});
-    translateAll(TagSpline, {AttrAngle1, AttrAngle2, AttrLength1, AttrLength2});
+    // VToolCubicBezier shares this tag too and adds its own curve-length target formula.
+    translateAll(TagSpline, {AttrAngle1, AttrAngle2, AttrLength1, AttrLength2, AttrLength});
     translateAll(AttrPathPoint, {AttrLength1, AttrLength2, AttrAngle1, AttrAngle2});
     translateAll(TagOperation, {AttrAngle, AttrLength, AttrRotationAngle});
     translateAll(TagPiece, {AttrWidth});
