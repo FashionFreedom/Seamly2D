@@ -78,6 +78,7 @@ public:
                                       VAbstractPattern *doc, VContainer *data);
     static VToolCutSplinePath *Create(const quint32 _id, const QString &pointName, QString &direction,
                                       QString &formula, const QString &lineColor, quint32 splinePathId,
+                                      quint32 segment1Id, quint32 segment2Id,
                                       qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
                                       const Source &typeCreation);
@@ -107,6 +108,7 @@ private:
 
     VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
                        const QString &formula, const QString &lineColor, const quint32 &splinePathId,
+                       const quint32 &segment1Id, const quint32 &segment2Id,
                        const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

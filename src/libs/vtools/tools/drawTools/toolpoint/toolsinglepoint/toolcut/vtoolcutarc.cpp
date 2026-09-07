@@ -90,9 +90,10 @@ const QString VToolCutArc::ToolType = QStringLiteral("cutArc");
 /// @param parent parent object.
 //-----------------------------------------------------------------------------
 VToolCutArc::VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
-                         const QString &formula, const QString &lineColor, const quint32 &arcId, const Source &typeCreation,
+                         const QString &formula, const QString &lineColor, const quint32 &arcId,
+                         const quint32 &segment1Id, const quint32 &segment2Id, const Source &typeCreation,
                          QGraphicsItem *parent)
-    : VToolCut(doc, data, id, direction, formula, lineColor, arcId, parent)
+    : VToolCut(doc, data, id, direction, formula, lineColor, arcId, segment1Id, segment2Id, parent)
 {
     ToolCreation(typeCreation);
 }
@@ -131,7 +132,7 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     QString formula         = dialogTool->GetFormula();
     const QString lineColor = dialogTool->getLineColor();
     const quint32 arcId     = dialogTool->getArcId();
-    VToolCutArc* point = Create(0, pointName, direction, formula, lineColor, arcId, 5, 10, true,
+    VToolCutArc* point = Create(0, pointName, direction, formula, lineColor, arcId, NULL_ID, NULL_ID, 5, 10, true,
                                 scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -156,7 +157,8 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
 /// @param typeCreation way we create this tool.
 //-----------------------------------------------------------------------------
 VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &direction, QString &formula,
-                                 const QString &lineColor, quint32 arcId, qreal mx, qreal my, bool showPointName,
+                                 const QString &lineColor, quint32 arcId, quint32 segment1Id, quint32 segment2Id,
+                                 qreal mx, qreal my, bool showPointName,
                                  VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data, const Document &parse, const Source &typeCreation)
 {
@@ -190,16 +192,18 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        a1->setId(VContainer::getNextId());
-        a2->setId(VContainer::getNextId());
+        segment1Id = VContainer::getNextId();
+        segment2Id = VContainer::getNextId();
+        a1->setId(segment1Id);
+        a2->setId(segment2Id);
         data->AddArc(a1, a1->id(), id);
         data->AddArc(a2, a2->id(), id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        a1->setId(id + 1);
-        a2->setId(id + 2);
+        a1->setId(segment1Id);
+        a2->setId(segment2Id);
         data->AddArc(a1, a1->id(), id);
         data->AddArc(a2, a2->id(), id);
 
@@ -212,7 +216,8 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CutArc, doc);
-        VToolCutArc *point = new VToolCutArc(doc, data, id, direction, formula, lineColor, arcId, typeCreation);
+        VToolCutArc *point = new VToolCutArc(doc, data, id, direction, formula, lineColor, arcId,
+                                              segment1Id, segment2Id, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -274,6 +279,8 @@ void VToolCutArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
                                                                nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrLineColor, lineColor);
     doc->SetAttribute(tag, AttrArc,       curveCutId);
+    doc->SetAttribute(tag, AttrSegment1Id, segment1Id);
+    doc->SetAttribute(tag, AttrSegment2Id, segment2Id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -285,6 +292,8 @@ void VToolCutArc::ReadToolAttributes(const QDomElement &domElement)
                       idTokenToNameMap(&(this->VAbstractTool::data)));
     lineColor   = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     curveCutId  = doc->GetParametrUInt(domElement,   AttrArc,       NULL_ID_STR);
+    segment1Id  = doc->GetParametrUInt(domElement,   AttrSegment1Id, NULL_ID_STR);
+    segment2Id  = doc->GetParametrUInt(domElement,   AttrSegment2Id, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

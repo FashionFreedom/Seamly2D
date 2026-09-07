@@ -174,6 +174,8 @@
                           <xs:attribute name="curve" type="xs:unsignedInt"/>
                           <xs:attribute name="curve1" type="xs:unsignedInt"/>
                           <xs:attribute name="curve2" type="xs:unsignedInt"/>
+                          <xs:attribute name="segment1Id" type="xs:unsignedInt"/>
+                          <xs:attribute name="segment2Id" type="xs:unsignedInt"/>
                           <xs:attribute name="lineColor" type="colors"/>
                           <xs:attribute name="color" type="colors"/>
                           <xs:attribute name="firstArc" type="xs:unsignedInt"/>

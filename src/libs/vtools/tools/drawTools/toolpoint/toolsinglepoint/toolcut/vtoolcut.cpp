@@ -64,12 +64,15 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCut::VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
-                   const QString &formula, const QString &lineColor, const quint32 &curveCutId, QGraphicsItem *parent)
+                   const QString &formula, const QString &lineColor, const quint32 &curveCutId,
+                   const quint32 &segment1Id, const quint32 &segment2Id, QGraphicsItem *parent)
     : VToolSinglePoint(doc, data, id, QColor(lineColor), parent)
     , m_direction(direction)
     , formula(formula)
     , lineColor(lineColor)
     , curveCutId(curveCutId)
+    , segment1Id(segment1Id)
+    , segment2Id(segment2Id)
     , m_piecesMode(false)
 {
     setPointColor(lineColor);

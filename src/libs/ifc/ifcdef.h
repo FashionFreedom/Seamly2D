@@ -158,6 +158,8 @@ extern const QString AttrAxisP2;
 extern const QString AttrCurve;
 extern const QString AttrCurve1;
 extern const QString AttrCurve2;
+extern const QString AttrSegment1Id;
+extern const QString AttrSegment2Id;
 extern const QString AttrLineColor;
 extern const QString AttrColor;
 extern const QString AttrPenStyle;

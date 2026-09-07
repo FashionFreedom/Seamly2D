@@ -97,9 +97,10 @@ const QString VToolCutSplinePath::AttrSplinePath = QStringLiteral("splinePath");
 //---------------------------------------------------------------------------------------------------------------------
 VToolCutSplinePath::VToolCutSplinePath(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                        QString &direction, const QString &formula, const QString &lineColor,
-                                       const quint32 &splinePathId, const Source &typeCreation,
+                                       const quint32 &splinePathId, const quint32 &segment1Id,
+                                       const quint32 &segment2Id, const Source &typeCreation,
                                        QGraphicsItem *parent)
-    : VToolCut(doc, data, id, direction, formula, lineColor, splinePathId, parent)
+    : VToolCut(doc, data, id, direction, formula, lineColor, splinePathId, segment1Id, segment2Id, parent)
 {
     ToolCreation(typeCreation);
 }
@@ -138,7 +139,8 @@ VToolCutSplinePath* VToolCutSplinePath::Create(QSharedPointer<DialogTool> dialog
     QString formula            = dialogTool->GetFormula();
     const QString lineColor    = dialogTool->getLineColor();
     const quint32 splinePathId = dialogTool->getSplinePathId();
-    VToolCutSplinePath* point  = Create(0, pointName, direction, formula, lineColor, splinePathId, 5, 10, true,
+    VToolCutSplinePath* point  = Create(0, pointName, direction, formula, lineColor, splinePathId,
+                                        NULL_ID, NULL_ID, 5, 10, true,
                                         scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -164,6 +166,7 @@ VToolCutSplinePath* VToolCutSplinePath::Create(QSharedPointer<DialogTool> dialog
 //---------------------------------------------------------------------------------------------------------------------
 VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString &pointName, QString &direction,
                                                QString &formula, const QString &lineColor, quint32 splinePathId,
+                                               quint32 segment1Id, quint32 segment2Id,
                                                qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                                VAbstractPattern *doc, VContainer *data, const Document &parse,
                                                const Source &typeCreation)
@@ -201,15 +204,17 @@ VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString 
     {
         id = data->AddGObject(p);
 
-        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath1), NULL_ID, id);
-        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath2), NULL_ID, id);
+        segment1Id = VContainer::getNextId();
+        segment2Id = VContainer::getNextId();
+        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath1), segment1Id, id);
+        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath2), segment2Id, id);
     }
     else
     {
         data->UpdateGObject(id, p);
 
-        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath1), NULL_ID, id);
-        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath2), NULL_ID, id);
+        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath1), segment1Id, id);
+        data->AddSpline(QSharedPointer<VAbstractBezier>(splPath2), segment2Id, id);
 
         if (parse != Document::FullParse)
         {
@@ -220,7 +225,8 @@ VToolCutSplinePath* VToolCutSplinePath::Create(const quint32 _id, const QString 
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CutSplinePath, doc);
-        VToolCutSplinePath *point = new VToolCutSplinePath(doc, data, id, direction, formula, lineColor, splinePathId, typeCreation);
+        VToolCutSplinePath *point = new VToolCutSplinePath(doc, data, id, direction, formula, lineColor,
+                                                            splinePathId, segment1Id, segment2Id, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -358,6 +364,8 @@ void VToolCutSplinePath::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
                                                                nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrLineColor,  lineColor);
     doc->SetAttribute(tag, AttrSplinePath, curveCutId);
+    doc->SetAttribute(tag, AttrSegment1Id, segment1Id);
+    doc->SetAttribute(tag, AttrSegment2Id, segment2Id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -369,6 +377,8 @@ void VToolCutSplinePath::ReadToolAttributes(const QDomElement &domElement)
                       idTokenToNameMap(&(this->VAbstractTool::data)));
     lineColor   = doc->GetParametrString(domElement, AttrLineColor,  ColorBlack);
     curveCutId  = doc->GetParametrUInt(domElement,   AttrSplinePath, NULL_ID_STR);
+    segment1Id  = doc->GetParametrUInt(domElement,   AttrSegment1Id, NULL_ID_STR);
+    segment2Id  = doc->GetParametrUInt(domElement,   AttrSegment2Id, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

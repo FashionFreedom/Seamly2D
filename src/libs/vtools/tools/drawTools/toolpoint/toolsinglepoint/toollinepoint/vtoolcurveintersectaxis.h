@@ -82,7 +82,8 @@ public:
     static VToolCurveIntersectAxis *Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                            const QString &lineWeight,
                                            const QString &lineColor, QString &formulaAngle, quint32 basePointId,
-                                           quint32 curveId, quint32 lineId, qreal mx, qreal my, bool showPointName,
+                                           quint32 curveId, quint32 lineId, quint32 segment1Id, quint32 segment2Id,
+                                           qreal mx, qreal my, bool showPointName,
                                            VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                            const Document &parse, const Source &typeCreation);
 
@@ -119,18 +120,24 @@ private:
     QString              formulaAngle;
     quint32              curveId;
     quint32              lineId; /** @brief lineId persisted id of this tool's line. See issue #1678. */
+    /** @brief segment1Id, segment2Id persisted ids of the two virtual curve segments the intersection
+     *  point cuts the source curve into - needed so a formula referencing either segment's length/angle
+     *  composite variable keeps resolving after id-token translation. See issue #1692. */
+    quint32              segment1Id;
+    quint32              segment2Id;
 
                          VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                                  const QString &lineType, const QString &lineWeight,
                                                  const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
                                                  const quint32 &curveId, const quint32 &lineId,
+                                                 const quint32 &segment1Id, const quint32 &segment2Id,
                                                  const Source &typeCreation, QGraphicsItem * parent = nullptr);
 
     template <class Item>
     static void          InitArc(VContainer *data, qreal segLength, const VPointF *p, quint32 curveId);
     static void          InitSegments(const GOType &curveType, qreal segLength, const VPointF *p, quint32 curveId,
-                                      VContainer *data);
+                                      quint32 segment1Id, quint32 segment2Id, VContainer *data);
 };
 
 #endif // VTOOLCURVEINTERSECTAXIS_H
