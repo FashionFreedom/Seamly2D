@@ -872,8 +872,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         VPiece piece;
         const quint32 id = getParameterId(domElement);
         piece.SetName(GetParametrString(domElement, AttrName, tr("Piece")));
-        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, tr("white")));
-        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, tr("nobrush")));
+        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, ColorWhite));
+        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, FillNone));
         piece.setIsLocked(getParameterBool(domElement, AttrPieceLocked, falseStr));
 
         piece.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
