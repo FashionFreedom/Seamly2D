@@ -49,6 +49,13 @@ namespace FormulaIdTranslator
 {
     QString idToken(quint32 id);
 
+    // Recognizes any token this namespace or CompositeVariableTokens could have produced -
+    // a bare "id<n>", or one of the composite prefixes (Line_, AngleLine_, Radius<n>, Angle1,
+    // Angle2, C1Length, C2Length) wrapped around "id<n>", optionally followed by "_Seg_<n>".
+    // Lets callers that only have the raw, on-disk formula text (no VContainer to resolve
+    // against yet) tell an id-token apart from a real user-authored name like a measurement.
+    bool isIdToken(const QString &token);
+
     QString formulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken);
     QString formulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName);
 

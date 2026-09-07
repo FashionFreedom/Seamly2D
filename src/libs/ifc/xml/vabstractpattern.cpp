@@ -343,6 +343,14 @@ QStringList VAbstractPattern::ListMeasurements() const
             {
                 others.insert(tValues.at(j));
             }
+            else if (FormulaIdTranslator::isIdToken(tValues.at(j)))
+            {
+                // A stored formula now references points/lines/curves by id token, not by name
+                // (see formulaidtranslator.h) - such a token is never a measurement, whether or
+                // not the object it refers to happens to be registered yet at this early,
+                // pre-parse point in loading.
+                others.insert(tValues.at(j));
+            }
             else
             {
                 measurements.insert(tValues.at(j));

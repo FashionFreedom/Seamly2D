@@ -167,3 +167,46 @@ void TST_FormulaIdTranslator::TestMapsFromRealContainer()
              QStringLiteral("Halsloch_hinten+5"));
     QCOMPARE(stored, QStringLiteral("id%1+5").arg(id));
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_FormulaIdTranslator::TestIsIdToken_data()
+{
+    QTest::addColumn<QString>("token");
+    QTest::addColumn<bool>("expected");
+
+    QTest::newRow("bare id token")                << "id45"             << true;
+    QTest::newRow("bare id token, multi digit")    << "id123456"         << true;
+    QTest::newRow("line length")                   << "Line_id45"        << true;
+    QTest::newRow("line angle")                    << "AngleLine_id45"   << true;
+    QTest::newRow("arc radius 1st")                << "Radius1id45"      << true;
+    QTest::newRow("arc radius 2nd")                << "Radius2id45"      << true;
+    QTest::newRow("curve start angle")             << "Angle1id45"       << true;
+    QTest::newRow("curve end angle")                << "Angle2id45"      << true;
+    QTest::newRow("curve control length C1")       << "C1Lengthid45"     << true;
+    QTest::newRow("curve control length C2")       << "C2Lengthid45"     << true;
+    QTest::newRow("segmented curve length")        << "id45_Seg_2"       << true;
+    QTest::newRow("segmented curve angle")         << "Angle1id45_Seg_2" << true;
+
+    // A real user-authored name never happens to look like one of the above.
+    QTest::newRow("plain measurement name")        << "bust_circ"        << false;
+    QTest::newRow("plain point name")              << "A1"               << false;
+    QTest::newRow("custom variable name")          << "#BustCircumfence" << false;
+    QTest::newRow("name that merely contains id")  << "Middle"           << false;
+    QTest::newRow("id without digits")             << "id"               << false;
+    QTest::newRow("empty")                         << ""                 << false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Lets a caller with only the raw, on-disk formula text (no VContainer to translate
+ * against yet, e.g. VAbstractPattern::ListMeasurements() scanning formulas before the pattern is
+ * parsed) tell an id token apart from a real user-authored name such as a measurement - see the
+ * "Measurement file doesn't include all the required measurements" false positive this fixed.
+ */
+void TST_FormulaIdTranslator::TestIsIdToken()
+{
+    QFETCH(QString, token);
+    QFETCH(bool, expected);
+
+    QCOMPARE(isIdToken(token), expected);
+}

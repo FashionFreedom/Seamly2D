@@ -40,6 +40,8 @@ private slots:
     void TestRoundTripSurvivesRename();
     void TestCompositeNameNoSplittingAmbiguity();
     void TestMapsFromRealContainer();
+    void TestIsIdToken_data();
+    void TestIsIdToken();
 
 private:
     Q_DISABLE_COPY(TST_FormulaIdTranslator)

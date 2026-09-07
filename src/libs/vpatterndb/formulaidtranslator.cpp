@@ -24,6 +24,7 @@
 #include "formulaidtranslator.h"
 
 #include <QList>
+#include <QRegularExpression>
 #include <QScopedPointer>
 
 #include "../qmuparser/qmutokenparser.h"
@@ -46,6 +47,15 @@ namespace
 QString FormulaIdTranslator::idToken(quint32 id)
 {
     return QStringLiteral("id%1").arg(id);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool FormulaIdTranslator::isIdToken(const QString &token)
+{
+    static const QRegularExpression idTokenRx(
+        QStringLiteral("^(Line_|AngleLine_|Radius\\d+|Angle1|Angle2|C1Length|C2Length)?"
+                       "id\\d+(_Seg_\\d+)?$"));
+    return idTokenRx.match(token).hasMatch();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
