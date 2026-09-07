@@ -98,6 +98,471 @@ QString FileComment()
 {
     return QString("Pattern created with Seamly2D v%1 (https://seamly.io).").arg(APP_VERSION_STR);
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief idAttributes attributes holding the id of an object.
+///
+/// Kept in sync with the pattern schema: the id of an object itself and every attribute declared there as
+/// xs:unsignedInt which refers to an object. A draft block never refers to an object of another draft block, so
+/// every id found in a draft block belongs to it.
+/// @return list of attribute names.
+//---------------------------------------------------------------------------------------------------------------------
+const QStringList &idAttributes()
+{
+    static const QStringList attributes = QStringList()
+            << VAbstractPattern::AttrId
+            << QStringLiteral("arc")          << QStringLiteral("axisP1")      << QStringLiteral("axisP2")
+            << QStringLiteral("baseLineP1")   << QStringLiteral("baseLineP2")  << QStringLiteral("basePoint")
+            << QStringLiteral("basepoint")    << QStringLiteral("bottomAnchor")
+            << QStringLiteral("bottomRightAnchor")
+            << QStringLiteral("c1Center")     << QStringLiteral("c2Center")    << QStringLiteral("cCenter")
+            << QStringLiteral("center")
+            << QStringLiteral("centerAnchor") << QStringLiteral("curve")       << QStringLiteral("curve1")
+            << QStringLiteral("curve2")       << QStringLiteral("dartP1")      << QStringLiteral("dartP2")
+            << QStringLiteral("dartP3")       << QStringLiteral("elArc")       << QStringLiteral("end")
+            << QStringLiteral("firstArc")     << QStringLiteral("firstPoint")  << QStringLiteral("idObject")
+            << QStringLiteral("idTool")       << QStringLiteral("object")      << QStringLiteral("p1Line")
+            << QStringLiteral("p1Line1")      << QStringLiteral("p1Line2")     << QStringLiteral("p2Line")
+            << QStringLiteral("p2Line1")      << QStringLiteral("p2Line2")     << QStringLiteral("pShoulder")
+            << QStringLiteral("pSpline")      << QStringLiteral("path")        << QStringLiteral("point1")
+            << QStringLiteral("point2")       << QStringLiteral("point3")      << QStringLiteral("point4")
+            << QStringLiteral("secondArc")    << QStringLiteral("secondPoint") << QStringLiteral("spline")
+            << QStringLiteral("splinePath")   << QStringLiteral("start")       << QStringLiteral("tangent")
+            << QStringLiteral("thirdPoint")   << QStringLiteral("tool")        << QStringLiteral("topAnchor")
+            << QStringLiteral("topLeftAnchor");
+    return attributes;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief pointNameAttributes attributes of a point holding the name of an object.
+///
+/// name1 and name2 are the two points the true darts tool creates.
+/// @return list of attribute names.
+//---------------------------------------------------------------------------------------------------------------------
+const QStringList &pointNameAttributes()
+{
+    static const QStringList attributes = QStringList() << AttrName << AttrName1 << AttrName2;
+    return attributes;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief variablePrefixes prefixes a name puts in front of the names it is built from.
+///
+/// Line_A1_A2 or RadiusArc_A1_15 for example. The prefixes built by putting two of them together, RadiusArc_ or
+/// Angle1Spl_, are left out, they are found one after the other. A curve prefix is only used when the name of the
+/// curve itself is not known, for a curve the cut tools created for instance, which has no id of its own.
+/// @return list of prefixes.
+//---------------------------------------------------------------------------------------------------------------------
+const QStringList &variablePrefixes()
+{
+    static const QStringList prefixes = QStringList()
+            << line_ << angleLine_ << seg_ << arc_ << elarc_ << spl_ << splPath
+            << radius_V << radius_V + QLatin1Char('1') << radius_V + QLatin1Char('2')
+            << angle1_V << angle2_V << c1Length_V << c2Length_V;
+    return prefixes;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief formulaAttributes attributes of a tag holding a formula.
+///
+/// The attributes VAbstractPattern::ListExpressions() collects when the whole pattern is searched for formulas.
+/// @param tag tag name.
+/// @return list of attribute names, empty for a tag without formula.
+//---------------------------------------------------------------------------------------------------------------------
+QStringList formulaAttributes(const QString &tag)
+{
+    if (tag == VAbstractPattern::TagPoint)
+    {
+        return QStringList() << AttrLength << AttrAngle << AttrRadius << AttrC1Radius << AttrC2Radius << AttrCRadius;
+    }
+    if (tag == VAbstractPattern::TagArc)
+    {
+        return QStringList() << AttrAngle1 << AttrAngle2 << AttrRadius << AttrLength;
+    }
+    if (tag == VAbstractPattern::TagElArc)
+    {
+        return QStringList() << AttrAngle1 << AttrAngle2 << AttrRadius1 << AttrRadius2 << AttrRotationAngle
+                             << AttrLength;
+    }
+    if (tag == VAbstractPattern::TagSpline)
+    {
+        return QStringList() << AttrAngle1 << AttrAngle2 << AttrLength1 << AttrLength2;
+    }
+    if (tag == AttrPathPoint)
+    {
+        return QStringList() << AttrAngle << AttrAngle1 << AttrAngle2 << AttrLength1 << AttrLength2 << AttrKAsm1
+                             << AttrKAsm2;
+    }
+    if (tag == VAbstractPattern::TagOperation)
+    {
+        return QStringList() << AttrAngle << AttrRotationAngle << AttrLength;
+    }
+    if (tag == VAbstractPattern::TagNode)
+    {
+        return QStringList() << VAbstractPattern::AttrSABefore << VAbstractPattern::AttrSAAfter;
+    }
+    if (tag == VAbstractPattern::TagPiece)
+    {
+        return QStringList() << VAbstractPattern::AttrWidth;
+    }
+    if (tag == VAbstractPattern::TagGrainline)
+    {
+        return QStringList() << VAbstractPattern::AttrRotation << AttrLength;
+    }
+    return QStringList();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief textId id of an object stored as the text of a tag.
+///
+/// The anchor points of a piece and the nodes united by the union tool are stored that way.
+/// @param element element to read.
+/// @return the text node holding the id, a null node for any other tag.
+//---------------------------------------------------------------------------------------------------------------------
+QDomText textId(const QDomElement &element)
+{
+    if (element.tagName() == PatternPieceTool::TagRecord || element.tagName() == UnionTool::TagChild)
+    {
+        return element.firstChild().toText();
+    }
+    return QDomText();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief collectBlockIds find the ids used by a copied draft block and the ids they get in the copy.
+/// @param element element of the copy to look at, its children are looked at too.
+/// @param idMap ids of the source draft block and the ids they get in the copy.
+//---------------------------------------------------------------------------------------------------------------------
+void collectBlockIds(const QDomElement &element, QMap<quint32, quint32> &idMap)
+{
+    // When it reads a pattern the cut arc tool gives its two arcs the id of the point it cut the arc at, plus one
+    // and plus two. Those two ids are used by no tag, keep them free and translate them the same way.
+    if (element.tagName() == VAbstractPattern::TagPoint && element.attribute(AttrType) == VToolCutArc::ToolType)
+    {
+        bool ok = false;
+        const quint32 id = element.attribute(VAbstractPattern::AttrId).toUInt(&ok);
+        if (ok && id != NULL_ID && idMap.contains(id) == false)
+        {
+            idMap.insert(id, VContainer::getNextId());
+            idMap.insert(id + 1, VContainer::getNextId());
+            idMap.insert(id + 2, VContainer::getNextId());
+        }
+    }
+
+    const QStringList &attributes = idAttributes();
+    for (int i = 0; i < attributes.size(); ++i)
+    {
+        bool ok = false;
+        const quint32 id = element.attribute(attributes.at(i)).toUInt(&ok);
+        if (ok && id != NULL_ID && idMap.contains(id) == false)
+        {
+            idMap.insert(id, VContainer::getNextId());
+        }
+    }
+
+    const QDomText text = textId(element);
+    if (text.isNull() == false)
+    {
+        bool ok = false;
+        const quint32 id = text.data().toUInt(&ok);
+        if (ok && id != NULL_ID && idMap.contains(id) == false)
+        {
+            idMap.insert(id, VContainer::getNextId());
+        }
+    }
+
+    const QDomNodeList children = element.childNodes();
+    for (int i = 0; i < children.size(); ++i)
+    {
+        const QDomElement child = children.at(i).toElement();
+        if (child.isNull() == false)
+        {
+            collectBlockIds(child, idMap);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief collectBlockPointNames find the point names of a copied draft block and the names they get in the copy.
+/// @param element element of the copy to look at, its children are looked at too.
+/// @param suffix suffix appended to the name of the copied points.
+/// @param nameMap point names of the source draft block and the names they get in the copy.
+//---------------------------------------------------------------------------------------------------------------------
+void collectBlockPointNames(const QDomElement &element, const QString &suffix, QMap<QString, QString> &nameMap)
+{
+    if (element.tagName() == VAbstractPattern::TagPoint)
+    {
+        // Points are the only objects with a name stored in the file.
+        const QStringList &attributes = pointNameAttributes();
+        for (int i = 0; i < attributes.size(); ++i)
+        {
+            const QString name = element.attribute(attributes.at(i));
+            if (name.isEmpty() == false && nameMap.contains(name) == false)
+            {
+                nameMap.insert(name, name + suffix);
+            }
+        }
+    }
+
+    const QDomNodeList children = element.childNodes();
+    for (int i = 0; i < children.size(); ++i)
+    {
+        const QDomElement child = children.at(i).toElement();
+        if (child.isNull() == false)
+        {
+            collectBlockPointNames(child, suffix, nameMap);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief updateBlockCopy give the objects of a copied draft block their own ids and point names.
+/// @param element element of the copy to update, its children are updated too.
+/// @param idMap ids of the source draft block and the ids they get in the copy.
+/// @param nameMap point names of the source draft block and the names they get in the copy.
+//---------------------------------------------------------------------------------------------------------------------
+void updateBlockCopy(QDomElement element, const QMap<quint32, quint32> &idMap,
+                     const QMap<QString, QString> &nameMap)
+{
+    const QStringList &attributes = idAttributes();
+    for (int i = 0; i < attributes.size(); ++i)
+    {
+        bool ok = false;
+        const quint32 id = element.attribute(attributes.at(i)).toUInt(&ok);
+        if (ok && idMap.contains(id))
+        {
+            element.setAttribute(attributes.at(i), QString::number(idMap.value(id)));
+        }
+    }
+
+    QDomText text = textId(element);
+    if (text.isNull() == false)
+    {
+        bool ok = false;
+        const quint32 id = text.data().toUInt(&ok);
+        if (ok && idMap.contains(id))
+        {
+            text.setData(QString::number(idMap.value(id)));
+        }
+    }
+
+    if (element.tagName() == VAbstractPattern::TagPoint)
+    {
+        const QStringList &nameAttributes = pointNameAttributes();
+        for (int i = 0; i < nameAttributes.size(); ++i)
+        {
+            const QString name = element.attribute(nameAttributes.at(i));
+            if (nameMap.contains(name))
+            {
+                element.setAttribute(nameAttributes.at(i), nameMap.value(name));
+            }
+        }
+    }
+
+    const QDomNodeList children = element.childNodes();
+    for (int i = 0; i < children.size(); ++i)
+    {
+        QDomElement child = children.at(i).toElement();
+        if (child.isNull() == false)
+        {
+            updateBlockCopy(child, idMap, nameMap);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief longestPrefix longest prefix of a list a name starts with at a given position.
+/// @param name name to look at.
+/// @param position position in the name to start from.
+/// @param prefixes prefixes to look for.
+/// @return the prefix found, an empty string when none matches.
+//---------------------------------------------------------------------------------------------------------------------
+QString longestPrefix(const QString &name, int position, const QStringList &prefixes)
+{
+    QString longest;
+    for (int i = 0; i < prefixes.size(); ++i)
+    {
+        if (prefixes.at(i).length() > longest.length()
+            && QStringView(name).mid(position).startsWith(prefixes.at(i)))
+        {
+            longest = prefixes.at(i);
+        }
+    }
+    return longest;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief longestObjectName longest object name a name holds at a given position.
+///
+/// A name is made of parts split by underscores, so the object name has to end the part it starts, otherwise
+/// SplPath_ShiftedFront_A1 would be found in SplPath_ShiftedFront_A18.
+/// @param name name to look at.
+/// @param position position in the name to start from.
+/// @param names object names of the source draft block.
+/// @return the object name found, an empty string when none matches.
+//---------------------------------------------------------------------------------------------------------------------
+QString longestObjectName(const QString &name, int position, const QStringList &names)
+{
+    QString longest;
+    for (int i = 0; i < names.size(); ++i)
+    {
+        if (names.at(i).length() <= longest.length()
+            || QStringView(name).mid(position).startsWith(names.at(i)) == false)
+        {
+            continue;
+        }
+
+        const int end = position + names.at(i).length();
+        if (end == name.length() || name.at(end) == QLatin1Char('_'))
+        {
+            longest = names.at(i);
+        }
+    }
+    return longest;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief mapObjectName translate a name used by the source draft block into the name used by its copy.
+///
+/// A formula uses the name of an object - Arc_A1_15 - but also names built from it: the name of one of its
+/// variables, RadiusArc_A1_15, the name of a line, Line_A1_A2, or the name a curve the cut tools created gets,
+/// SplPath_ShiftedFront_A18. Such a name starts with a prefix or with the name of an object, so a name which
+/// starts with neither belongs to something else - a measurement or a custom variable - and is left alone.
+///
+/// @param name name used by the source draft block.
+/// @param nameMap object names of the source draft block and the names they got in the copy.
+/// @param names keys of nameMap.
+/// @return name to use in the copy, the given name if it doesn't belong to the copied draft block.
+//---------------------------------------------------------------------------------------------------------------------
+QString mapObjectName(const QString &name, const QMap<QString, QString> &nameMap, const QStringList &names)
+{
+    if (nameMap.contains(name))
+    {
+        return nameMap.value(name);
+    }
+
+    QString mapped;
+    bool prefixes = true;   // Still reading the prefixes a name starts with.
+    bool copied = false;    // An object of the copied draft block was found in the name.
+    int position = 0;
+
+    while (position < name.length())
+    {
+        if (prefixes || name.at(position - 1) == QLatin1Char('_'))
+        {
+            const QString object = longestObjectName(name, position, names);
+            if (object.isEmpty() == false)
+            {
+                mapped += nameMap.value(object);
+                position += object.length();
+                prefixes = false;
+                copied = true;
+                continue;
+            }
+        }
+
+        if (prefixes)
+        {
+            const QString prefix = longestPrefix(name, position, variablePrefixes());
+            if (prefix.isEmpty() == false)
+            {
+                mapped += prefix;
+                position += prefix.length();
+                continue;
+            }
+
+            if (name.at(position) != QLatin1Char('_'))
+            {
+                return name; // Neither a prefix nor an object of the copied draft block starts this name.
+            }
+        }
+
+        mapped += name.at(position);
+        ++position;
+    }
+
+    return copied ? mapped : name;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief mapFormula translate the object names used by a formula of a copied draft block.
+/// @param element element of the copy holding the formula.
+/// @param attribute attribute holding the formula.
+/// @param nameMap object names of the source draft block and the names they got in the copy.
+/// @param names keys of nameMap.
+/// @return true if the formula was changed.
+//---------------------------------------------------------------------------------------------------------------------
+bool mapFormula(QDomElement &element, const QString &attribute, const QMap<QString, QString> &nameMap,
+                const QStringList &names)
+{
+    if (element.hasAttribute(attribute) == false)
+    {
+        return false;
+    }
+
+    const QString formula = element.attribute(attribute);
+    QMap<int, QString> tokens;
+    try
+    {
+        QScopedPointer<qmu::QmuTokenParser> parser(new qmu::QmuTokenParser(formula, false, false));
+        tokens = parser->GetTokens(); // Tokens (variables, measurements) and where they start in the formula.
+    }
+    catch (const qmu::QmuParserError &)
+    {
+        return false; // Because we not sure if used. A formula is broken.
+    }
+
+    QString newFormula = formula;
+    QMapIterator<int, QString> token(tokens);
+    token.toBack();
+    while (token.hasPrevious()) // From the last token so the position of the tokens left to translate stays valid.
+    {
+        token.previous();
+        const QString name = mapObjectName(token.value(), nameMap, names);
+        if (name != token.value())
+        {
+            newFormula.replace(token.key(), token.value().length(), name);
+        }
+    }
+
+    if (newFormula == formula)
+    {
+        return false;
+    }
+
+    element.setAttribute(attribute, newFormula);
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief updateBlockFormulas translate the object names used by the formulas of a copied draft block.
+/// @param element element of the copy to update, its children are updated too.
+/// @param nameMap object names of the source draft block and the names they got in the copy.
+/// @param names keys of nameMap.
+/// @return true if at least one formula was changed.
+//---------------------------------------------------------------------------------------------------------------------
+bool updateBlockFormulas(QDomElement element, const QMap<QString, QString> &nameMap, const QStringList &names)
+{
+    bool changed = false;
+
+    const QStringList formulas = formulaAttributes(element.tagName());
+    for (int i = 0; i < formulas.size(); ++i)
+    {
+        changed = mapFormula(element, formulas.at(i), nameMap, names) || changed;
+    }
+
+    const QDomNodeList children = element.childNodes();
+    for (int i = 0; i < children.size(); ++i)
+    {
+        QDomElement child = children.at(i).toElement();
+        if (child.isNull() == false)
+        {
+            changed = updateBlockFormulas(child, nameMap, names) || changed;
+        }
+    }
+
+    return changed;
+}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3801,6 +4266,156 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
             emit patternChanged(false);
         }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief duplicateDraftBlock create a copy of a draft block.
+///
+/// The copy holds the same tools as the draft block it was made from, but with ids and point names of its own, so
+/// that it can be reworked without touching the block it was copied from. Its formulas still use the names of the
+/// source objects, both blocks have the same shape so they give the same result. Once the pattern is parsed and
+/// the objects of the copy exist, renameDuplicatedObjects() makes the formulas use them.
+///
+/// @param sourceBlockName name of the draft block to copy.
+/// @param newBlockName name of the copy.
+/// @param basePointPosition position, in pixels, of the base point of the copy.
+/// @param idMap filled with the ids of the source draft block and the ids they get in the copy.
+/// @return draft block element of the copy, a null element if the block could not be copied. The element is not
+/// part of the document yet, adding it is the job of the AddDraftBlock undo command.
+//---------------------------------------------------------------------------------------------------------------------
+QDomElement VPattern::duplicateDraftBlock(const QString &sourceBlockName, const QString &newBlockName,
+                                          const QPointF &basePointPosition, QMap<quint32, quint32> &idMap)
+{
+    const QDomElement sourceBlock = getDraftBlockElement(sourceBlockName);
+    if (sourceBlock.isNull())
+    {
+        qCWarning(vXML, "Can't find draft block %s.", qUtf8Printable(sourceBlockName));
+        return QDomElement();
+    }
+
+    if (draftBlockNameExists(newBlockName))
+    {
+        qCWarning(vXML, "Draft block already exists with name %s.", qUtf8Printable(newBlockName));
+        return QDomElement();
+    }
+
+    // Object names are unique in the whole pattern, the copied objects need names of their own.
+    const QString suffix = GenerateSuffix(QString());
+    if (suffix.isEmpty())
+    {
+        qCWarning(vXML, "Can't generate a unique suffix for the objects of draft block %s.",
+                  qUtf8Printable(newBlockName));
+        return QDomElement();
+    }
+
+    QDomElement block = sourceBlock.cloneNode(true).toElement();
+    SetAttribute(block, AttrName, newBlockName);
+
+    QMap<QString, QString> nameMap;
+    idMap.clear();
+    collectBlockIds(block, idMap);
+    collectBlockPointNames(block, suffix, nameMap);
+    updateBlockCopy(block, idMap, nameMap);
+
+    // Without this the copy would sit on top of the block it was made from. Every other object of a draft block is
+    // placed relatively to the base point and follows it.
+    QDomElement calculation = block.firstChildElement(TagCalculation);
+    QDomElement point = calculation.firstChildElement(TagPoint);
+    while (point.isNull() == false)
+    {
+        if (point.attribute(AttrType) == VToolBasePoint::ToolType)
+        {
+            SetAttribute(point, AttrX, qApp->fromPixel(basePointPosition.x()));
+            SetAttribute(point, AttrY, qApp->fromPixel(basePointPosition.y()));
+            break;
+        }
+        point = point.nextSiblingElement(TagPoint);
+    }
+
+    return block;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief draftBlockObjectNames names the objects of a draft block have.
+///
+/// Data only holds the objects of the draft block being worked on, so this makes the wanted block the active one
+/// and restores its data. The caller is responsible for setting the active draft block back.
+///
+/// @param blockName name of the draft block.
+/// @param ids ids to look for.
+/// @return name of each of the given ids known by the draft block.
+//---------------------------------------------------------------------------------------------------------------------
+QMap<quint32, QString> VPattern::draftBlockObjectNames(const QString &blockName, const QList<quint32> &ids)
+{
+    changeActiveDraftBlock(blockName, Document::LiteParse);
+    setCurrentData();
+
+    const QHash<quint32, QSharedPointer<VGObject>> *objects = data->DataGObjects();
+    QMap<quint32, QString> names;
+    for (int i = 0; i < ids.size(); ++i)
+    {
+        if (objects->contains(ids.at(i)))
+        {
+            names.insert(ids.at(i), objects->value(ids.at(i))->name());
+        }
+    }
+    return names;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief renameDuplicatedObjects make the formulas of a copied draft block use the objects of the copy.
+///
+/// Only points carry a name of their own, the name of a line, of a curve or of a copy an operation made is built
+/// when the pattern is parsed. Call this once the pattern holds the copy and has been parsed: the name each copied
+/// object ended up with is then known.
+///
+/// @param sourceBlockName name of the draft block the copy was made from.
+/// @param blockName name of the copy.
+/// @param idMap ids of the source draft block and the ids they got in the copy.
+/// @return true if at least one formula was changed, the pattern then has to be parsed again.
+//---------------------------------------------------------------------------------------------------------------------
+bool VPattern::renameDuplicatedObjects(const QString &sourceBlockName, const QString &blockName,
+                                       const QMap<quint32, quint32> &idMap)
+{
+    QDomElement block = getDraftBlockElement(blockName);
+    if (block.isNull())
+    {
+        qCWarning(vXML, "Can't find draft block %s.", qUtf8Printable(blockName));
+        return false;
+    }
+
+    const QString activeBlock = getActiveDraftBlockName();
+    const QMap<quint32, QString> sourceNames = draftBlockObjectNames(sourceBlockName, idMap.keys());
+    const QMap<quint32, QString> copyNames = draftBlockObjectNames(blockName, idMap.values());
+    changeActiveDraftBlock(activeBlock, Document::LiteParse);
+    setCurrentData();
+
+    QMap<QString, QString> nameMap;
+    QMapIterator<quint32, quint32> id(idMap);
+    while (id.hasNext())
+    {
+        id.next();
+        const QString name = sourceNames.value(id.key());
+        const QString newName = copyNames.value(id.value());
+        if (name.isEmpty() == false && newName.isEmpty() == false && name != newName)
+        {
+            nameMap.insert(name, newName);
+        }
+    }
+
+    // A measurement or a custom variable is not an object of the pattern, but it could be named after one.
+    const QList<QString> measurements = data->DataMeasurements().keys();
+    for (int i = 0; i < measurements.size(); ++i)
+    {
+        nameMap.remove(measurements.at(i));
+    }
+    const QList<QString> variables = data->variablesData().keys();
+    for (int i = 0; i < variables.size(); ++i)
+    {
+        nameMap.remove(variables.at(i));
+    }
+
+    return updateBlockFormulas(block, nameMap, nameMap.keys());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

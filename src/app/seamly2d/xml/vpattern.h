@@ -105,6 +105,11 @@ public:
 
     void replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName);
 
+    QDomElement    duplicateDraftBlock(const QString &sourceBlockName, const QString &newBlockName,
+                                       const QPointF &basePointPosition, QMap<quint32, quint32> &idMap);
+    bool           renameDuplicatedObjects(const QString &sourceBlockName, const QString &blockName,
+                                           const QMap<quint32, quint32> &idMap);
+
     QStringList    GetCurrentAlphabet() const;
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const override;
@@ -137,6 +142,7 @@ protected:
 
 private:
     Q_DISABLE_COPY(VPattern)
+    QMap<quint32, QString> draftBlockObjectNames(const QString &blockName, const QList<quint32> &ids);
 
     VContainer         *data;        /** @brief container with data. */
     Draw                m_stage;     /** @brief current draft stage. */
