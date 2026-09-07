@@ -8894,38 +8894,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>None</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>

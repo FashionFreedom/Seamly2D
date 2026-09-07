@@ -93,7 +93,7 @@ DialogMirrorByLine::DialogMirrorByLine(const VContainer *data, const quint32 &to
     // Set the position that the dialog opens based on user preference.
     setDialogPosition();
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByLineSuffix()));
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->generateSuffix(qApp->Settings()->getMirrorByLineSuffix()));
 
     initializeOkCancelApply(ui);
 
