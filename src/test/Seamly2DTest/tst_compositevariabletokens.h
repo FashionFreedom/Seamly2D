@@ -41,7 +41,7 @@ private slots:
     void TestEllipticalArcRadiusMapping();
     void TestCurveAngleMapping();
     void TestCurveCLengthMapping();
-    void TestPlainCurveLengthLeftOutOfCompositeMap();
+    void TestPlainCurveLengthIncludedInCompositeMap();
     void TestCurveLengthSegmentMapping();
     void TestCurveAngleSegmentMapping();
     void TestCurveCLengthSegmentMapping();

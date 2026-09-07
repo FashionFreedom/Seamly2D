@@ -219,11 +219,14 @@ void TST_CompositeVariableTokens::TestCurveCLengthMapping()
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Plain curve length is just the curve's own name (VCurveLength::VCurveLength() calls
- * SetName(curve->name()), no prefix, no gluing) - it needs no entry in the composite map at all,
- * FormulaIdTranslator::nameToIdTokenMap() already covers it since a curve is a VGObject like a
- * point. This just documents/locks in that CompositeVariableTokens correctly stays out of the way.
+ * SetName(curve->name()), no prefix, no gluing), so it looks like FormulaIdTranslator::
+ * nameToIdTokenMap(data->DataGObjects()) already covers it - a curve is a VGObject like a point.
+ * It doesn't: DataGObjects() can lag behind DataVariables() when a formula in one draft block
+ * references a curve defined in another (the curve's own VGObject isn't visible there yet, while
+ * its length variable already is, pattern-wide). CompositeVariableTokens must add the plain form
+ * itself, straight from the variable table, rather than leaving it to the gObjects map.
  */
-void TST_CompositeVariableTokens::TestPlainCurveLengthLeftOutOfCompositeMap()
+void TST_CompositeVariableTokens::TestPlainCurveLengthIncludedInCompositeMap()
 {
     VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
     VArc curve(p1, 10, 0, 90);
@@ -235,7 +238,7 @@ void TST_CompositeVariableTokens::TestPlainCurveLengthLeftOutOfCompositeMap()
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(length->GetName(), length);
 
-    QVERIFY(nameToIdTokenMap(variables).isEmpty());
+    QCOMPARE(nameToIdTokenMap(variables).value(QStringLiteral("Arc1")), QStringLiteral("id99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

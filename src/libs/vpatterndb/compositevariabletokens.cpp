@@ -99,9 +99,18 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
                                                        QLatin1Char('_') + seg_ +
                                                        QString::number(length->GetSegment()));
                 }
-                // Plain (non-segmented) form is just the curve's own name - already covered by
-                // FormulaIdTranslator::nameToIdTokenMap() since a curve is a VGObject with its own id,
-                // same as a point. Nothing to add here for that case.
+                else
+                {
+                    // Plain (non-segmented) form uses the same bare "id<n>" token a curve's own
+                    // VGObject entry would produce, and is deliberately added here too rather than
+                    // left to FormulaIdTranslator::nameToIdTokenMap(data->DataGObjects()) alone:
+                    // a later draft block referencing an earlier block's curve can be translated
+                    // before that curve's VGObject is visible in the currently active block's
+                    // DataGObjects(), while the pattern-wide variable table (this map's source) is
+                    // already populated - see the referencing point's own broken-formula symptom
+                    // this was fixed for.
+                    nameToIdToken.insert(i.key(), idToken(length->GetId()));
+                }
                 break;
             }
             case VarType::Measurement:
