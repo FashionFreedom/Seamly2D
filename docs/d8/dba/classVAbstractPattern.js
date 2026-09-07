@@ -29,7 +29,7 @@ var classVAbstractPattern =
     [ "draftBlockNameExists", "d8/dba/classVAbstractPattern.html#a606f94b6733093ee8ae2a705efedd866", null ],
     [ "FullUpdateFromFile", "d8/dba/classVAbstractPattern.html#a2490137462ef75b44abc4cceafb2f0a3", null ],
     [ "GenerateLabel", "d8/dba/classVAbstractPattern.html#a0d40e39a61c18c8663d82e3280065859", null ],
-    [ "GenerateSuffix", "d8/dba/classVAbstractPattern.html#ae5fcc863a494308e7397906d0972bfde", null ],
+    [ "generateSuffix", "d8/dba/classVAbstractPattern.html#a4518deb3981a7340504a0cc8bc277cf0", null ],
     [ "getActiveDraftBlockIndex", "d8/dba/classVAbstractPattern.html#afc233b2d8c5066086c838af58f791182", null ],
     [ "getActiveDraftBlockName", "d8/dba/classVAbstractPattern.html#acc1c3efbffeeb7fc9861fb3cc2c966e5", null ],
     [ "getActiveDraftElement", "d8/dba/classVAbstractPattern.html#aa630833d4bb764c227f9754c140e77e4", null ],

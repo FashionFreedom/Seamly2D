@@ -30,10 +30,10 @@ var searchData=
   ['ordered_5fnode_5fsnapshot_5ftype_27',['ORDERED_NODE_SNAPSHOT_TYPE',['../da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1af8ee45085569842650c8b2d5f4da8d20',1,'DOMXPathResult']]],
   ['ordered_5fpartial_28',['ORDERED_PARTIAL',['../d3/d52/classXSSimpleTypeDefinition.html#a4559ac38f84151cbb56c2f3eceeb61d2ad53ee3a89351d24ffb06f8b494c362b5',1,'XSSimpleTypeDefinition']]],
   ['ordered_5ftotal_29',['ORDERED_TOTAL',['../d3/d52/classXSSimpleTypeDefinition.html#a4559ac38f84151cbb56c2f3eceeb61d2a5b7b1f456f58763637e8297fe67b5a0f',1,'XSSimpleTypeDefinition']]],
-  ['other_5fletter_30',['OTHER_LETTER',['../dd/d02/classXMLUniCharacter.html#af448cbcf69d5283df87999dbd7421170a157212b945dea54af0a1b2884ce03d31',1,'XMLUniCharacter']]],
-  ['other_5fnumber_31',['OTHER_NUMBER',['../dd/d02/classXMLUniCharacter.html#af448cbcf69d5283df87999dbd7421170ac0f27980a4037dd1a647e5ed9b4b8e19',1,'XMLUniCharacter']]],
-  ['other_5fpunctuation_32',['OTHER_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#af448cbcf69d5283df87999dbd7421170a0782cbb84e3aa69713dd448879744577',1,'XMLUniCharacter']]],
-  ['other_5fsymbol_33',['OTHER_SYMBOL',['../dd/d02/classXMLUniCharacter.html#af448cbcf69d5283df87999dbd7421170aaab3629e7f01258fd111dbabf3b647dc',1,'XMLUniCharacter']]],
+  ['other_5fletter_30',['OTHER_LETTER',['../dd/d02/classXMLUniCharacter.html#acebfed3baed047c5d725c53a812acab4a157212b945dea54af0a1b2884ce03d31',1,'XMLUniCharacter']]],
+  ['other_5fnumber_31',['OTHER_NUMBER',['../dd/d02/classXMLUniCharacter.html#acebfed3baed047c5d725c53a812acab4ac0f27980a4037dd1a647e5ed9b4b8e19',1,'XMLUniCharacter']]],
+  ['other_5fpunctuation_32',['OTHER_PUNCTUATION',['../dd/d02/classXMLUniCharacter.html#acebfed3baed047c5d725c53a812acab4a0782cbb84e3aa69713dd448879744577',1,'XMLUniCharacter']]],
+  ['other_5fsymbol_33',['OTHER_SYMBOL',['../dd/d02/classXMLUniCharacter.html#acebfed3baed047c5d725c53a812acab4aaab3629e7f01258fd111dbabf3b647dc',1,'XMLUniCharacter']]],
   ['otherencoding_34',['OtherEncoding',['../df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a004032cc19b7c76f932edaeed514e505',1,'XMLRecognizer']]],
   ['out_5fof_5fmemory_35',['Out_Of_Memory',['../dc/d80/classXMLExcepts.html#a0b13780541d8e00bfae96459fece2e80ae4976ca80c29defc000d076cd490c687',1,'XMLExcepts']]]
 ];

@@ -12,7 +12,7 @@ var classVPattern =
     [ "findVariable", "d4/d43/classVPattern.html#a9897ad49c4096f02c15e7d9c26e3236b", null ],
     [ "GarbageCollector", "d4/d43/classVPattern.html#aa5394816d09a7102d49c8e646814c79e", null ],
     [ "GenerateLabel", "d4/d43/classVPattern.html#a395c64589d8008ed3a2ceed9a93b743d", null ],
-    [ "GenerateSuffix", "d4/d43/classVPattern.html#a67b6429120abbd3d4ffc66aa1d18f06d", null ],
+    [ "generateSuffix", "d4/d43/classVPattern.html#a321d3c00d6834d330b11dae021acc878", null ],
     [ "getActiveBasePoint", "d4/d43/classVPattern.html#a19e139b0a879cb5cfafb864563d34573", null ],
     [ "getActivePatternPieces", "d4/d43/classVPattern.html#a117c4c20ac04d46cdd73d91381354c87", null ],
     [ "GetCurrentAlphabet", "d4/d43/classVPattern.html#a44338b819f687039815556d0006a3a08", null ],
