@@ -7242,6 +7242,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Ошибка создания резервной копии: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Удалить блок черновика</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Удалить</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Подтвердить удаление</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Вы уверены, что хотите удалить базовую точку и текущий блок черновика?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

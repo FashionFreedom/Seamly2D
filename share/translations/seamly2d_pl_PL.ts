@@ -7238,6 +7238,22 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
         <translation>Wystąpił nieznany błąd, na przykład pełna partycja uniemożliwiła zapisanie pliku blokady.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Usuń blok szkicu</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Potwierdź usunięcie</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Czy na pewno chcesz usunąć punkt bazowy i bieżący blok szkicu?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>

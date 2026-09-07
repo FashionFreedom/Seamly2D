@@ -7238,6 +7238,22 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Error creating a backup copy: %1.</source>
         <translation>Virhe luotaessa varmuuskopiota: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Poista luonnoslohko</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Vahvista poistaminen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Haluatko varmasti poistaa peruspisteen ja nykyisen luonnoslohkon?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
