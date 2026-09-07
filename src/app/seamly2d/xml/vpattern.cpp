@@ -714,7 +714,8 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
                 {
                     case 0: // TagCalculation
                         qCDebug(vXML, "Tag calculation.");
-                        data->ClearCalculationGObjects();
+                        data->ClearCalculationGObjects(getActiveDraftBlockName(),
+                                                        [this](quint32 id){ return getToolDraftBlockName(id); });
                         ParseDraftStage(domElement, parse, Draw::Calculation);
                         break;
                     case 1: // TagModeling
