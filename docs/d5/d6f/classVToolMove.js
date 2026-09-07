@@ -1,7 +1,7 @@
 var classVToolMove =
 [
     [ "~VToolMove", "d5/d6f/classVToolMove.html#a97fc02705fe5d34fe9b4995a7334bede", null ],
-    [ "VToolMove", "d5/d6f/classVToolMove.html#a76a48aabf71b78aa6a404901deb5b905", null ],
+    [ "VToolMove", "d5/d6f/classVToolMove.html#a819cad6db14924c887315744b00b23dc", null ],
     [ "Create", "d5/d6f/classVToolMove.html#a0e3c1af63a51f620d2e0ff7ed49e6aba", null ],
     [ "Create", "d5/d6f/classVToolMove.html#a3850806c2c5821b57727c85e8ec21e93", null ],
     [ "createArc", "d5/d6f/classVToolMove.html#a26452a8fa2e3f9a58888da4b62710ed9", null ],
@@ -9,6 +9,7 @@ var classVToolMove =
     [ "createCurveWithSegments", "d5/d6f/classVToolMove.html#aa4fb4f8a85895196f4e9da5f59ee4839", null ],
     [ "createItem", "d5/d6f/classVToolMove.html#a26f60cd7d863e6ca068a829f6880ab2a", null ],
     [ "createPoint", "d5/d6f/classVToolMove.html#a7ecb42b7fcfb6e5d87617ccd6a2ad4e1", null ],
+    [ "findRotationOrigin", "d5/d6f/classVToolMove.html#a9d54ab28cb89726867fd7495a507a67b", null ],
     [ "GetFormulaAngle", "d5/d6f/classVToolMove.html#af63ff2f4639071deff2ea52227ed0e45", null ],
     [ "GetFormulaLength", "d5/d6f/classVToolMove.html#ab6515d03ec9e24330b7b565f0201fb29", null ],
     [ "getFormulaRotation", "d5/d6f/classVToolMove.html#a626d3d79ddb14c7627f06d5537fde46b", null ],

@@ -601,6 +601,7 @@ var annotated_dup =
     [ "TST_VPoster", "db/d56/classTST__VPoster.html", "db/d56/classTST__VPoster" ],
     [ "TST_VSpline", "d7/d3f/classTST__VSpline.html", "d7/d3f/classTST__VSpline" ],
     [ "TST_VSplinePath", "d8/d25/classTST__VSplinePath.html", "d8/d25/classTST__VSplinePath" ],
+    [ "TST_VToolMove", "d4/df1/classTST__VToolMove.html", "d4/df1/classTST__VToolMove" ],
     [ "TST_VTranslateVars", "da/d3d/classTST__VTranslateVars.html", "da/d3d/classTST__VTranslateVars" ],
     [ "UndoEvent", "d0/d5b/classUndoEvent.html", "d0/d5b/classUndoEvent" ],
     [ "UnicodeRangeFactory", "df/deb/classUnicodeRangeFactory.html", "df/deb/classUnicodeRangeFactory" ],

@@ -285,7 +285,7 @@ var searchData=
   ['vtoollinepoint_282',['VToolLinePoint',['../dc/d1d/classVToolLinePoint.html#a38f97018d002702064a56e6a5a7d3600',1,'VToolLinePoint']]],
   ['vtoolmirrorbyaxis_283',['VToolMirrorByAxis',['../d1/d6f/classVToolMirrorByAxis.html#aa376887d89c343b4485392ba20275149',1,'VToolMirrorByAxis']]],
   ['vtoolmirrorbyline_284',['VToolMirrorByLine',['../dc/d0a/classVToolMirrorByLine.html#aa66ca4c56658e1c9254b95ef0a302002',1,'VToolMirrorByLine']]],
-  ['vtoolmove_285',['VToolMove',['../d5/d6f/classVToolMove.html#a76a48aabf71b78aa6a404901deb5b905',1,'VToolMove']]],
+  ['vtoolmove_285',['VToolMove',['../d5/d6f/classVToolMove.html#a819cad6db14924c887315744b00b23dc',1,'VToolMove']]],
   ['vtoolnormal_286',['VToolNormal',['../d5/d3b/classVToolNormal.html#ac132fac21e77c6b4bcc38c48629c1417',1,'VToolNormal']]],
   ['vtooloptionspropertybrowser_287',['VToolOptionsPropertyBrowser',['../dc/d8f/classVToolOptionsPropertyBrowser.html#a280d9d78d6bb61b48e7f9050d9773c36',1,'VToolOptionsPropertyBrowser']]],
   ['vtoolpointfromarcandtangent_288',['VToolPointFromArcAndTangent',['../d5/de4/classVToolPointFromArcAndTangent.html#ad7b8608f57928e7ed6798d4f13f0e92c',1,'VToolPointFromArcAndTangent']]],

@@ -1,227 +1,228 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" title=" " alt="" coords="14,1025,145,1051"/>
-<area shape="rect" id="node2" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="232,1025,361,1051"/>
-<area shape="rect" id="node3" href="$d9/d6d/classMeasurementDoc.html" title=" " alt="" coords="483,1000,620,1025"/>
-<area shape="rect" id="node4" href="$dc/d68/classVAbstractConverter.html" title=" " alt="" coords="477,1049,625,1075"/>
-<area shape="rect" id="node10" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="486,1123,617,1148"/>
-<area shape="rect" id="node13" href="$d0/df9/classVLabelTemplate.html" title=" " alt="" coords="488,951,615,976"/>
-<area shape="rect" id="node5" href="$d8/d6b/classAbstractMConverter.html" title=" " alt="" coords="743,1012,895,1037"/>
-<area shape="rect" id="node8" href="$db/d5e/classVLabelTemplateConverter.html" title=" " alt="" coords="723,1061,914,1087"/>
-<area shape="rect" id="node9" href="$dc/dd3/classVPatternConverter.html" title=" " alt="" coords="748,963,889,988"/>
-<area shape="rect" id="node6" href="$d8/dfc/classIndividualSizeConverter.html" title=" " alt="" coords="990,1037,1167,1063"/>
-<area shape="rect" id="node7" href="$d6/d91/classMultiSizeConverter.html" title=" " alt="" coords="1005,988,1152,1013"/>
-<area shape="rect" id="node11" href="$da/d79/classVLitePattern.html" title=" " alt="" coords="768,1160,869,1185"/>
-<area shape="rect" id="node12" href="$d4/d43/classVPattern.html" title="The VPattern class working with pattern file." alt="" coords="780,1111,857,1136"/>
-<area shape="rect" id="node14" title=" " alt="" coords="737,1261,900,1287"/>
-<area shape="rect" id="node15" href="$d8/dbf/classVScaledEllipse.html" title=" " alt="" coords="1020,1213,1137,1239"/>
-<area shape="rect" id="node16" href="$dc/d3b/classVScenePoint.html" title=" " alt="" coords="1027,1263,1130,1288"/>
-<area shape="rect" id="node17" href="$d6/d7a/classVNodePoint.html" title=" " alt="" coords="1267,1337,1366,1363"/>
-<area shape="rect" id="node18" href="$d1/d6b/classVSimplePoint.html" title=" " alt="" coords="1262,1236,1371,1261"/>
-<area shape="rect" id="node19" href="$da/dbc/classVToolSinglePoint.html" title="The VToolSinglePoint class parent for all tools what create points." alt="" coords="1678,1664,1809,1689"/>
-<area shape="rect" id="node20" href="$d0/db5/classDoubleLinePointTool.html" title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines." alt="" coords="1926,1689,2081,1715"/>
-<area shape="rect" id="node22" href="$d9/d63/classIntersectCircleTangentTool.html" title=" " alt="" coords="1907,1739,2100,1764"/>
-<area shape="rect" id="node23" href="$dc/d9f/classIntersectCirclesTool.html" title=" " alt="" coords="1929,1788,2078,1813"/>
-<area shape="rect" id="node24" href="$de/ddd/classVToolBasePoint.html" title="The VToolBasePoint class tool for creation pattern base point. Only base point can move...." alt="" coords="1942,1837,2065,1863"/>
-<area shape="rect" id="node25" href="$d0/d8a/classVToolCut.html" title=" " alt="" coords="1964,1887,2043,1912"/>
-<area shape="rect" id="node29" href="$d3/dac/classVToolLineIntersect.html" title="The VToolLineIntersect class help find point intersection lines." alt="" coords="1933,1936,2074,1961"/>
-<area shape="rect" id="node30" href="$dc/d1d/classVToolLinePoint.html" title="The VToolLinePoint class parent for all tools what create point with line." alt="" coords="1945,1377,2062,1403"/>
-<area shape="rect" id="node39" href="$d5/de4/classVToolPointFromArcAndTangent.html" title=" " alt="" coords="1893,1427,2113,1452"/>
-<area shape="rect" id="node40" href="$d1/da5/classVToolPointOfContact.html" title="The VToolPointOfContact class tool for creation point intersection arc ad line." alt="" coords="1926,1476,2081,1501"/>
-<area shape="rect" id="node41" href="$d4/d0f/classVToolPointOfIntersectionArcs.html" title=" " alt="" coords="1898,1525,2109,1551"/>
-<area shape="rect" id="node42" href="$d5/d68/classVToolPointOfIntersectionCurves.html" title=" " alt="" coords="1912,1575,2095,1615"/>
-<area shape="rect" id="node43" href="$dd/df1/classVToolTriangle.html" title="The VToolTriangle class for tool that find point intersection two foots right triangle (triangle with..." alt="" coords="1949,1640,2057,1665"/>
-<area shape="rect" id="node21" href="$df/d11/classPointIntersectXYTool.html" title="The PointIntersectXYTool class tool for creation point intersection two lines." alt="" coords="2179,1689,2334,1715"/>
-<area shape="rect" id="node26" href="$d1/d98/classVToolCutArc.html" title="The VToolCutArc class tool for cutting arc." alt="" coords="2207,1936,2307,1961"/>
-<area shape="rect" id="node27" href="$d9/d86/classVToolCutSpline.html" title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two." alt="" coords="2197,1837,2316,1863"/>
-<area shape="rect" id="node28" href="$d8/d67/classVToolCutSplinePath.html" title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin..." alt="" coords="2183,1887,2330,1912"/>
-<area shape="rect" id="node31" href="$d2/d31/classVToolAlongLine.html" title="The VToolAlongLine class tool for creation point along line." alt="" coords="2196,1204,2317,1229"/>
-<area shape="rect" id="node32" href="$d6/d6b/classVToolBisector.html" title="The VToolBisector class tool for creation bisector point." alt="" coords="2201,1253,2312,1279"/>
-<area shape="rect" id="node33" href="$d6/d61/classVToolCurveIntersectAxis.html" title=" " alt="" coords="2167,1303,2347,1328"/>
-<area shape="rect" id="node34" href="$dc/d21/classVToolEndLine.html" title="The VToolEndLine class tool for creation point on the line end." alt="" coords="2203,1352,2311,1377"/>
-<area shape="rect" id="node35" href="$d7/d9e/classVToolHeight.html" title="The VToolHeight class tool for creation point of height. Help find point of projection onto line." alt="" coords="2207,1401,2307,1427"/>
-<area shape="rect" id="node36" href="$dc/df4/classVToolLineIntersectAxis.html" title=" " alt="" coords="2172,1451,2341,1476"/>
-<area shape="rect" id="node37" href="$d5/d3b/classVToolNormal.html" title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line." alt="" coords="2204,1500,2309,1525"/>
-<area shape="rect" id="node38" href="$db/d3d/classVToolShoulderPoint.html" title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati..." alt="" coords="2183,1549,2330,1575"/>
-<area shape="rect" id="node44" title=" " alt="" coords="237,1333,356,1359"/>
-<area shape="rect" id="node45" href="$d6/da8/classImageItem.html" title="The ImageItem class pointer label." alt="" coords="505,1359,598,1384"/>
-<area shape="rect" id="node46" href="$d0/de9/classResizeHandlesItem.html" title=" " alt="" coords="477,1309,625,1335"/>
-<area shape="rect" id="node47" title=" " alt="" coords="1243,953,1390,979"/>
-<area shape="rect" id="node48" href="$d6/d43/classArrowedLineItem.html" title=" " alt="" coords="1458,795,1591,820"/>
-<area shape="rect" id="node49" href="$d7/d15/classVAbstractOperation.html" title=" " alt="" coords="1451,1183,1599,1208"/>
-<area shape="rect" id="node55" href="$dd/da2/classVScaledLine.html" title=" " alt="" coords="1474,844,1575,869"/>
-<area shape="rect" id="node81" href="$dc/d2b/classVToolLine.html" title="The VToolLine class tool for creation line." alt="" coords="1483,1883,1567,1908"/>
-<area shape="rect" id="node50" href="$d3/dba/classVAbstractMirror.html" title=" " alt="" coords="1682,1328,1805,1353"/>
-<area shape="rect" id="node53" href="$d5/d6f/classVToolMove.html" title=" " alt="" coords="1697,1229,1790,1255"/>
-<area shape="rect" id="node54" href="$d2/d0f/classVToolRotation.html" title=" " alt="" coords="1687,1279,1799,1304"/>
-<area shape="rect" id="node51" href="$d1/d6f/classVToolMirrorByAxis.html" title=" " alt="" coords="1933,1328,2074,1353"/>
-<area shape="rect" id="node52" href="$dc/d0a/classVToolMirrorByLine.html" title=" " alt="" coords="1933,1279,2073,1304"/>
-<area shape="rect" id="node56" href="$de/d0e/classVisLine.html" title=" " alt="" coords="1709,473,1778,499"/>
-<area shape="rect" id="node57" href="$d8/d3d/classAnchorPointVisual.html" title=" " alt="" coords="1933,745,2073,771"/>
-<area shape="rect" id="node58" href="$d7/d8f/classIntersectCircleTangentVisual.html" title=" " alt="" coords="1900,795,2107,820"/>
-<area shape="rect" id="node59" href="$dd/d25/classIntersectCirclesVisual.html" title=" " alt="" coords="1922,844,2085,869"/>
-<area shape="rect" id="node60" href="$d3/d38/classPointIntersectXYVisual.html" title=" " alt="" coords="1919,893,2088,919"/>
-<area shape="rect" id="node61" href="$d7/dba/classVisOperation.html" title=" " alt="" coords="1950,943,2057,968"/>
-<area shape="rect" id="node66" href="$de/d5b/classVisToolAlongLine.html" title=" " alt="" coords="1937,5,2069,31"/>
-<area shape="rect" id="node67" href="$dd/d3b/classVisToolBisector.html" title=" " alt="" coords="1943,55,2064,80"/>
-<area shape="rect" id="node68" href="$d4/d67/classVisToolCurveIntersectAxis.html" title=" " alt="" coords="1908,104,2099,129"/>
-<area shape="rect" id="node69" href="$d2/d21/classVisToolEndLine.html" title=" " alt="" coords="1944,153,2063,179"/>
-<area shape="rect" id="node70" href="$d4/dc5/classVisToolHeight.html" title=" " alt="" coords="1948,203,2059,228"/>
-<area shape="rect" id="node71" href="$d5/d8f/classVisToolLine.html" title=" " alt="" coords="1956,252,2051,277"/>
-<area shape="rect" id="node72" href="$d1/ddc/classVisToolLineIntersect.html" title=" " alt="" coords="1927,301,2079,327"/>
-<area shape="rect" id="node73" href="$d9/deb/classVisToolLineIntersectAxis.html" title=" " alt="" coords="1913,351,2093,376"/>
-<area shape="rect" id="node74" href="$de/d5c/classVisToolNormal.html" title=" " alt="" coords="1945,400,2061,425"/>
-<area shape="rect" id="node75" href="$d9/d72/classVisToolPointFromArcAndTangent.html" title=" " alt="" coords="1888,449,2119,475"/>
-<area shape="rect" id="node76" href="$d3/d92/classVisToolPointOfContact.html" title=" " alt="" coords="1920,499,2087,524"/>
-<area shape="rect" id="node77" href="$da/de3/classVisToolPointOfIntersectionArcs.html" title=" " alt="" coords="1893,548,2114,573"/>
-<area shape="rect" id="node78" href="$d7/df0/classVisToolShoulderPoint.html" title=" " alt="" coords="1924,597,2083,623"/>
-<area shape="rect" id="node79" href="$d9/d01/classVisToolTriangle.html" title=" " alt="" coords="1944,647,2063,672"/>
-<area shape="rect" id="node80" href="$dc/d2a/classVisToolTrueDarts.html" title=" " alt="" coords="1938,696,2069,721"/>
-<area shape="rect" id="node62" href="$da/db3/classVisToolMirrorByAxis.html" title=" " alt="" coords="2181,869,2333,895"/>
-<area shape="rect" id="node63" href="$d3/d9c/classVisToolMirrorByLine.html" title=" " alt="" coords="2181,919,2332,944"/>
-<area shape="rect" id="node64" href="$dd/d50/classVisToolMove.html" title=" " alt="" coords="2205,968,2309,993"/>
-<area shape="rect" id="node65" href="$d6/d62/classVisToolRotation.html" title=" " alt="" coords="2195,1017,2318,1043"/>
-<area shape="rect" id="node82" title=" " alt="" coords="1005,1756,1152,1781"/>
-<area shape="rect" id="node83" href="$d9/d3f/classInternalPathTool.html" title=" " alt="" coords="1253,1633,1380,1659"/>
-<area shape="rect" id="node84" href="$df/d63/classNonScalingFillPathItem.html" title=" " alt="" coords="1231,1781,1403,1807"/>
-<area shape="rect" id="node85" href="$da/dfb/classPatternPieceTool.html" title=" " alt="" coords="1252,1933,1381,1959"/>
-<area shape="rect" id="node86" href="$d3/d64/classVAbstractSpline.html" title=" " alt="" coords="1463,1983,1587,2008"/>
-<area shape="rect" id="node94" href="$d3/d85/classVCurvePathItem.html" title=" " alt="" coords="1253,1683,1380,1708"/>
-<area shape="rect" id="node111" href="$d1/d64/classVGraphicsFillItem.html" title=" " alt="" coords="1248,1732,1385,1757"/>
-<area shape="rect" id="node112" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="1675,1833,1811,1859"/>
-<area shape="rect" id="node87" href="$d4/dd5/classVToolArc.html" title="The VToolArc class tool for creation arc." alt="" coords="1704,2080,1783,2105"/>
-<area shape="rect" id="node88" href="$d4/d2b/classVToolArcWithLength.html" title=" " alt="" coords="1667,2129,1819,2155"/>
-<area shape="rect" id="node89" href="$de/d2b/classVToolCubicBezier.html" title=" " alt="" coords="1676,2179,1811,2204"/>
-<area shape="rect" id="node90" href="$d1/d95/classVToolCubicBezierPath.html" title=" " alt="" coords="1662,1883,1825,1908"/>
-<area shape="rect" id="node91" href="$d4/daa/classVToolEllipticalArc.html" title="The VToolEllipticalArc class tool for creation elliptical arc." alt="" coords="1676,1932,1811,1957"/>
-<area shape="rect" id="node92" href="$df/d5e/classVToolSpline.html" title=" " alt="" coords="1695,1981,1792,2007"/>
-<area shape="rect" id="node93" href="$dc/d08/classVToolSplinePath.html" title=" " alt="" coords="1681,2031,1806,2056"/>
-<area shape="rect" id="node95" href="$d4/d36/classVSimpleCurve.html" title=" " alt="" coords="1467,1485,1582,1511"/>
-<area shape="rect" id="node96" href="$db/d76/classVisPath.html" title=" " alt="" coords="1489,893,1560,919"/>
-<area shape="rect" id="node97" href="$dc/dee/classInternalPathVisual.html" title=" " alt="" coords="1673,1180,1813,1205"/>
-<area shape="rect" id="node98" href="$de/d44/classPatternPieceVisual.html" title=" " alt="" coords="1672,523,1815,548"/>
-<area shape="rect" id="node99" href="$dd/d5b/classPieceAnchorPointVisual.html" title=" " alt="" coords="1656,572,1831,597"/>
-<area shape="rect" id="node100" href="$d2/deb/classVisToolArc.html" title=" " alt="" coords="1699,621,1788,647"/>
-<area shape="rect" id="node101" href="$db/d33/classVisToolArcWithLength.html" title=" " alt="" coords="1662,671,1825,696"/>
-<area shape="rect" id="node102" href="$de/d6d/classVisToolCubicBezier.html" title=" " alt="" coords="1671,720,1816,745"/>
-<area shape="rect" id="node103" href="$da/dde/classVisToolCubicBezierPath.html" title=" " alt="" coords="1657,769,1830,795"/>
-<area shape="rect" id="node104" href="$d7/d4b/classVisToolCutArc.html" title=" " alt="" coords="1688,819,1799,844"/>
-<area shape="rect" id="node105" href="$d1/dcd/classVisToolCutSpline.html" title=" " alt="" coords="1678,868,1809,893"/>
-<area shape="rect" id="node106" href="$d4/dd9/classVisToolCutSplinePath.html" title=" " alt="" coords="1664,917,1823,943"/>
-<area shape="rect" id="node107" href="$d5/d62/classVisToolEllipticalArc.html" title=" " alt="" coords="1671,967,1816,992"/>
-<area shape="rect" id="node108" href="$dd/dfd/classVisToolPointOfIntersectionCurves.html" title=" " alt="" coords="1647,1017,1840,1057"/>
-<area shape="rect" id="node109" href="$d0/d12/classVisToolSpline.html" title=" " alt="" coords="1689,1081,1797,1107"/>
-<area shape="rect" id="node110" href="$df/d7b/classVisToolSplinePath.html" title=" " alt="" coords="1675,1131,1811,1156"/>
-<area shape="rect" id="node113" href="$de/d04/classVToolTrueDarts.html" title=" " alt="" coords="1944,1985,2063,2011"/>
-<area shape="rect" id="node114" title=" " alt="" coords="5,2295,153,2320"/>
-<area shape="rect" id="node115" href="$d0/dc5/classResizeHandlesItem_1_1HandleItem.html" title=" " alt="" coords="219,2062,375,2102"/>
-<area shape="rect" id="node116" href="$d3/db3/classSceneRect.html" title=" " alt="" coords="251,2521,342,2547"/>
-<area shape="rect" id="node117" href="$dd/dcb/classVControlPointSpline.html" title=" " alt="" coords="476,2843,627,2868"/>
-<area shape="rect" id="node118" title=" " alt="" coords="201,2892,392,2917"/>
-<area shape="rect" id="node119" href="$de/dbc/classVGraphicsSimpleTextItem.html" title="The VGraphicsSimpleTextItem class pointer label." alt="" coords="456,2892,647,2917"/>
-<area shape="rect" id="node120" title=" " alt="" coords="259,2127,334,2152"/>
-<area shape="rect" id="node121" href="$d0/d9b/classAbstractTest.html" title=" " alt="" coords="500,2103,603,2128"/>
-<area shape="rect" id="node134" href="$d5/d23/classFvUpdater.html" title=" " alt="" coords="506,2152,597,2177"/>
-<area shape="rect" id="node135" href="$da/d19/classGraphicsViewZoom.html" title=" " alt="" coords="477,2201,626,2227"/>
-<area shape="rect" id="node136" href="$df/d5b/classImageTool.html" title=" " alt="" coords="507,2251,596,2276"/>
-<area shape="rect" id="node137" href="$d6/d30/classTST__FindPoint.html" title=" " alt="" coords="495,2300,608,2325"/>
-<area shape="rect" id="node138" href="$da/d3b/classTST__Measurements.html" title=" " alt="" coords="476,2349,627,2375"/>
-<area shape="rect" id="node139" href="$d5/d79/classTST__Misc.html" title=" " alt="" coords="510,2399,593,2424"/>
-<area shape="rect" id="node140" href="$d3/d4d/classTST__NameRegExp.html" title=" " alt="" coords="481,2448,622,2473"/>
-<area shape="rect" id="node141" href="$d3/df0/classTST__QmuTokenParser.html" title=" " alt="" coords="471,2497,632,2523"/>
-<area shape="rect" id="node142" href="$dc/d3d/classTST__ReadVal.html" title=" " alt="" coords="498,2547,605,2572"/>
-<area shape="rect" id="node143" href="$d9/dd4/classTST__TSTranslation.html" title=" " alt="" coords="481,2596,621,2621"/>
-<area shape="rect" id="node144" href="$df/daf/classTST__VArc.html" title=" " alt="" coords="510,2645,593,2671"/>
-<area shape="rect" id="node145" href="$d0/dcb/classTST__VCommandLine.html" title=" " alt="" coords="473,2695,629,2720"/>
-<area shape="rect" id="node146" href="$de/d02/classTST__VCubicBezierPath.html" title=" " alt="" coords="468,2744,635,2769"/>
-<area shape="rect" id="node147" href="$d4/d53/classTST__VGObject.html" title=" " alt="" coords="494,2793,609,2819"/>
-<area shape="rect" id="node148" href="$d7/d69/classTST__VLockGuard.html" title=" " alt="" coords="486,1408,617,1433"/>
-<area shape="rect" id="node149" href="$d5/d29/classTST__VPointF.html" title=" " alt="" coords="500,1457,603,1483"/>
-<area shape="rect" id="node150" href="$db/d56/classTST__VPoster.html" title=" " alt="" coords="500,1507,603,1532"/>
-<area shape="rect" id="node151" href="$d8/d25/classTST__VSplinePath.html" title=" " alt="" coords="486,1556,617,1581"/>
-<area shape="rect" id="node152" href="$da/d3d/classTST__VTranslateVars.html" title=" " alt="" coords="477,1605,626,1631"/>
-<area shape="rect" id="node153" href="$dc/de5/classVAbstractSimple.html" title=" " alt="" coords="1014,1312,1143,1337"/>
-<area shape="rect" id="node154" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="507,1757,595,1783"/>
-<area shape="rect" id="node166" href="$d8/d8a/classVLayoutGenerator.html" title=" " alt="" coords="481,1807,621,1832"/>
-<area shape="rect" id="node167" href="$db/df9/classVPE_1_1VProperty.html" title=" " alt="" coords="492,1856,611,1881"/>
-<area shape="rect" id="node188" href="$d1/daa/classVPE_1_1VPropertyFactoryManager.html" title=" " alt="" coords="440,1905,663,1931"/>
-<area shape="rect" id="node189" href="$d1/dd3/classVTableSearch.html" title=" " alt="" coords="497,1955,606,1980"/>
-<area shape="rect" id="node190" href="$dc/d8f/classVToolOptionsPropertyBrowser.html" title=" " alt="" coords="444,2004,659,2029"/>
-<area shape="rect" id="node191" href="$de/d04/classVUndoCommand.html" title=" " alt="" coords="485,3435,617,3460"/>
-<area shape="rect" id="node223" href="$d7/d24/classVisualization.html" title=" " alt="" coords="1263,893,1370,919"/>
-<area shape="rect" id="node224" href="$da/d59/classqmu_1_1Test_1_1QmuParserTester.html" title="Test cases for unit testing." alt="" coords="450,2053,653,2079"/>
-<area shape="rect" id="node122" href="$d7/d66/classTST__AbstractRegExp.html" title=" " alt="" coords="741,2349,897,2375"/>
-<area shape="rect" id="node125" href="$de/da6/classTST__QmuParserErrorMsg.html" title=" " alt="" coords="727,2399,910,2424"/>
-<area shape="rect" id="node126" href="$d2/d3e/classTST__Seamly2DCommandLine.html" title=" " alt="" coords="711,2448,926,2473"/>
-<area shape="rect" id="node127" href="$d8/dde/classTST__SeamlyMeCommandLine.html" title=" " alt="" coords="711,2497,927,2523"/>
-<area shape="rect" id="node128" href="$d3/d1d/classTST__VAbstractCurve.html" title=" " alt="" coords="742,2547,895,2572"/>
-<area shape="rect" id="node129" href="$d6/d89/classTST__VAbstractPiece.html" title=" " alt="" coords="743,2596,894,2621"/>
-<area shape="rect" id="node130" href="$d2/d9c/classTST__VEllipticalArc.html" title=" " alt="" coords="749,2645,888,2671"/>
-<area shape="rect" id="node131" href="$d4/dd0/classTST__VLayoutPiece.html" title=" " alt="" coords="748,2695,889,2720"/>
-<area shape="rect" id="node132" href="$db/dbb/classTST__VPiece.html" title=" " alt="" coords="770,2744,867,2769"/>
-<area shape="rect" id="node133" href="$d7/d3f/classTST__VSpline.html" title=" " alt="" coords="767,2300,870,2325"/>
-<area shape="rect" id="node123" href="$d8/d54/classTST__BuitInRegExp.html" title=" " alt="" coords="1009,2375,1149,2400"/>
-<area shape="rect" id="node124" href="$da/d11/classTST__MeasurementRegExp.html" title=" " alt="" coords="983,2325,1175,2351"/>
-<area shape="rect" id="node155" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="763,1363,874,1388"/>
-<area shape="rect" id="node156" href="$d4/dd5/classUnionTool.html" title="The UnionTool class tool union details." alt="" coords="1035,1363,1122,1388"/>
-<area shape="rect" id="node157" href="$d3/d16/classVAbstractNode.html" title="The VAbstractNode class parent class for all detail node." alt="" coords="1019,1461,1138,1487"/>
-<area shape="rect" id="node163" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="1015,1805,1142,1831"/>
-<area shape="rect" id="node158" href="$d5/da9/classAnchorPointTool.html" title=" " alt="" coords="1253,1387,1380,1412"/>
-<area shape="rect" id="node159" href="$df/d93/classVNodeArc.html" title="The VNodeArc class arc detail node." alt="" coords="1273,1535,1360,1560"/>
-<area shape="rect" id="node160" href="$de/db2/classVNodeEllipticalArc.html" title=" " alt="" coords="1245,1584,1388,1609"/>
-<area shape="rect" id="node161" href="$d4/df7/classVNodeSpline.html" title="The VNodeSpline class spline detail node." alt="" coords="1264,1436,1369,1461"/>
-<area shape="rect" id="node162" href="$d4/d69/classVNodeSplinePath.html" title="The VNodeSplinePath class spline path detail node." alt="" coords="1250,1485,1383,1511"/>
-<area shape="rect" id="node164" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="1271,1983,1362,2008"/>
-<area shape="rect" id="node165" href="$da/da4/classVAbstractPoint.html" title=" " alt="" coords="1466,1932,1583,1957"/>
-<area shape="rect" id="node168" href="$df/d53/classVFormulaProperty.html" title=" " alt="" coords="749,2201,888,2227"/>
-<area shape="rect" id="node169" href="$df/d74/classVPE_1_1DirectionProperty.html" title=" " alt="" coords="734,2251,903,2276"/>
-<area shape="rect" id="node170" href="$d5/daa/classVPE_1_1LineTypeProperty.html" title=" " alt="" coords="735,1412,902,1437"/>
-<area shape="rect" id="node171" href="$d8/ddf/classVPE_1_1LineWeightProperty.html" title=" " alt="" coords="727,1461,910,1487"/>
-<area shape="rect" id="node172" href="$d6/d0b/classVPE_1_1PlainTextProperty.html" title="Class for holding a plain text property." alt="" coords="734,1511,903,1536"/>
-<area shape="rect" id="node173" href="$d8/d90/classVPE_1_1QVector3DProperty.html" title=" " alt="" coords="729,1560,908,1585"/>
-<area shape="rect" id="node174" href="$d4/de6/classVPE_1_1SpinboxProperty.html" title="Class for holding an integer property." alt="" coords="737,1609,900,1635"/>
-<area shape="rect" id="node176" href="$df/d02/classVPE_1_1VBoolProperty.html" title="The VBoolProperty can take two states: True or False." alt="" coords="745,1659,893,1684"/>
-<area shape="rect" id="node177" href="$da/d5e/classVPE_1_1VColorProperty.html" title=" " alt="" coords="742,1708,895,1733"/>
-<area shape="rect" id="node178" href="$d6/dd6/classVPE_1_1VEmptyProperty.html" title=" " alt="" coords="738,1757,899,1783"/>
-<area shape="rect" id="node180" href="$d2/dcb/classVPE_1_1VEnumProperty.html" title=" " alt="" coords="741,1807,897,1832"/>
-<area shape="rect" id="node181" href="$dc/d8e/classVPE_1_1VFileProperty.html" title=" " alt="" coords="747,1856,890,1881"/>
-<area shape="rect" id="node182" href="$db/df1/classVPE_1_1VLabelProperty.html" title="Class for holding a string property." alt="" coords="741,1905,896,1931"/>
-<area shape="rect" id="node183" href="$d6/d22/classVPE_1_1VLineColorProperty.html" title=" " alt="" coords="729,1955,909,1980"/>
-<area shape="rect" id="node184" href="$d5/d82/classVPE_1_1VObjectProperty.html" title=" " alt="" coords="738,2004,899,2029"/>
-<area shape="rect" id="node185" href="$de/d98/classVPE_1_1VPointFProperty.html" title=" " alt="" coords="739,2053,899,2079"/>
-<area shape="rect" id="node186" href="$d9/d73/classVPE_1_1VShortcutProperty.html" title="This property can be used to handle key shortcuts." alt="" coords="732,2103,905,2128"/>
-<area shape="rect" id="node187" href="$d7/d7b/classVPE_1_1VStringProperty.html" title="Class for holding a string property." alt="" coords="740,2152,897,2177"/>
-<area shape="rect" id="node175" href="$dc/de2/classVPE_1_1DoubleSpinboxProperty.html" title="Class for holding a double property." alt="" coords="975,1855,1183,1880"/>
-<area shape="rect" id="node179" href="$df/d07/classVPE_1_1VWidgetProperty.html" title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like..." alt="" coords="996,1904,1161,1929"/>
-<area shape="rect" id="node192" href="$db/d26/classAddDetNode.html" title=" " alt="" coords="767,3632,871,3657"/>
-<area shape="rect" id="node193" href="$d2/d4d/classAddDraftBlock.html" title=" " alt="" coords="761,3681,876,3707"/>
-<area shape="rect" id="node194" href="$d2/d67/classAddGroup.html" title=" " alt="" coords="775,3731,862,3756"/>
-<area shape="rect" id="node195" href="$da/d3a/classAddGroupItem.html" title=" " alt="" coords="761,3780,877,3805"/>
-<area shape="rect" id="node196" href="$df/d11/classAddImage.html" title=" " alt="" coords="775,3829,863,3855"/>
-<area shape="rect" id="node197" href="$dc/d9d/classAddPiece.html" title=" " alt="" coords="777,3879,860,3904"/>
-<area shape="rect" id="node198" href="$d6/db3/classAddToCalc.html" title=" " alt="" coords="774,3928,863,3953"/>
-<area shape="rect" id="node199" href="$d5/dbd/classDelGroup.html" title=" " alt="" coords="777,3977,860,4003"/>
-<area shape="rect" id="node200" href="$d9/d22/classDelTool.html" title=" " alt="" coords="783,4027,854,4052"/>
-<area shape="rect" id="node201" href="$d4/d10/classDeleteDraftBlock.html" title=" " alt="" coords="752,4076,885,4101"/>
-<area shape="rect" id="node202" href="$d0/d3f/classDeletePiece.html" title=" " alt="" coords="769,4125,869,4151"/>
-<area shape="rect" id="node203" href="$d6/d7c/classMoveAbstractLabel.html" title=" " alt="" coords="745,2793,892,2819"/>
-<area shape="rect" id="node207" href="$df/dca/classMoveGroupItem.html" title=" " alt="" coords="755,2843,882,2868"/>
-<area shape="rect" id="node208" href="$d9/da7/classMovePiece.html" title=" " alt="" coords="772,2892,865,2917"/>
-<area shape="rect" id="node209" href="$da/df9/classMoveSPoint.html" title=" " alt="" coords="769,2941,868,2967"/>
-<area shape="rect" id="node210" href="$de/db1/classMoveSpline.html" title=" " alt="" coords="769,2991,868,3016"/>
-<area shape="rect" id="node211" href="$d9/de8/classMoveSplinePath.html" title=" " alt="" coords="755,3040,882,3065"/>
-<area shape="rect" id="node212" href="$d7/d18/classRemoveGroupItem.html" title=" " alt="" coords="746,3089,891,3115"/>
-<area shape="rect" id="node213" href="$dd/d20/classRenameDraftBlock.html" title=" " alt="" coords="747,3139,891,3164"/>
-<area shape="rect" id="node214" href="$d9/d20/classSavePieceOptions.html" title=" " alt="" coords="749,3188,888,3213"/>
-<area shape="rect" id="node215" href="$df/d94/classSavePiecePathOptions.html" title=" " alt="" coords="735,3237,902,3263"/>
-<area shape="rect" id="node216" href="$d6/d4d/classSaveToolOptions.html" title=" " alt="" coords="753,3287,884,3312"/>
-<area shape="rect" id="node217" href="$dd/d52/classSetPieceColor.html" title=" " alt="" coords="763,3336,875,3361"/>
-<area shape="rect" id="node218" href="$d2/dbe/classShowDoublePointName.html" title=" " alt="" coords="731,3385,906,3411"/>
-<area shape="rect" id="node219" href="$dc/d9b/classShowOperationPointName.html" title=" " alt="" coords="722,3435,915,3460"/>
-<area shape="rect" id="node220" href="$d8/d2c/classShowPointName.html" title=" " alt="" coords="754,3484,883,3509"/>
-<area shape="rect" id="node221" href="$dd/d47/classTogglePieceInLayout.html" title=" " alt="" coords="741,3533,896,3559"/>
-<area shape="rect" id="node222" href="$d9/d39/classTogglePieceLock.html" title=" " alt="" coords="754,3583,883,3608"/>
-<area shape="rect" id="node204" href="$d1/d74/classMoveDoubleLabel.html" title=" " alt="" coords="1009,2793,1148,2819"/>
-<area shape="rect" id="node205" href="$d7/ddb/classMoveLabel.html" title=" " alt="" coords="1032,2843,1125,2868"/>
-<area shape="rect" id="node206" href="$d7/d7b/classMoveOperationLabel.html" title=" " alt="" coords="1000,2744,1157,2769"/>
-<area shape="rect" id="node225" title=" " alt="" coords="230,3435,363,3460"/>
+<area shape="rect" id="node1" title=" " alt="" coords="14,993,145,1019"/>
+<area shape="rect" id="node2" href="$d6/deb/classVDomDocument.html" title="The VDomDocument class represents a Seamly2D document (.val file)." alt="" coords="232,993,361,1019"/>
+<area shape="rect" id="node3" href="$d9/d6d/classMeasurementDoc.html" title=" " alt="" coords="483,919,620,944"/>
+<area shape="rect" id="node4" href="$dc/d68/classVAbstractConverter.html" title=" " alt="" coords="477,968,625,993"/>
+<area shape="rect" id="node10" href="$d8/dba/classVAbstractPattern.html" title=" " alt="" coords="486,1091,617,1116"/>
+<area shape="rect" id="node13" href="$d0/df9/classVLabelTemplate.html" title=" " alt="" coords="488,1017,615,1043"/>
+<area shape="rect" id="node5" href="$d8/d6b/classAbstractMConverter.html" title=" " alt="" coords="743,955,895,980"/>
+<area shape="rect" id="node8" href="$db/d5e/classVLabelTemplateConverter.html" title=" " alt="" coords="723,1004,914,1029"/>
+<area shape="rect" id="node9" href="$dc/dd3/classVPatternConverter.html" title=" " alt="" coords="748,905,889,931"/>
+<area shape="rect" id="node6" href="$d8/dfc/classIndividualSizeConverter.html" title=" " alt="" coords="990,955,1167,980"/>
+<area shape="rect" id="node7" href="$d6/d91/classMultiSizeConverter.html" title=" " alt="" coords="1005,905,1152,931"/>
+<area shape="rect" id="node11" href="$da/d79/classVLitePattern.html" title=" " alt="" coords="768,1103,869,1128"/>
+<area shape="rect" id="node12" href="$d4/d43/classVPattern.html" title="The VPattern class working with pattern file." alt="" coords="780,1053,857,1079"/>
+<area shape="rect" id="node14" title=" " alt="" coords="737,1263,900,1288"/>
+<area shape="rect" id="node15" href="$d8/dbf/classVScaledEllipse.html" title=" " alt="" coords="1020,1239,1137,1264"/>
+<area shape="rect" id="node16" href="$dc/d3b/classVScenePoint.html" title=" " alt="" coords="1027,1288,1130,1313"/>
+<area shape="rect" id="node17" href="$d6/d7a/classVNodePoint.html" title=" " alt="" coords="1267,1089,1366,1115"/>
+<area shape="rect" id="node18" href="$d1/d6b/classVSimplePoint.html" title=" " alt="" coords="1262,1591,1371,1616"/>
+<area shape="rect" id="node19" href="$da/dbc/classVToolSinglePoint.html" title="The VToolSinglePoint class parent for all tools what create points." alt="" coords="1678,1288,1809,1313"/>
+<area shape="rect" id="node20" href="$d0/db5/classDoubleLinePointTool.html" title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines." alt="" coords="1926,1501,2081,1527"/>
+<area shape="rect" id="node22" href="$d9/d63/classIntersectCircleTangentTool.html" title=" " alt="" coords="1907,1551,2100,1576"/>
+<area shape="rect" id="node23" href="$dc/d9f/classIntersectCirclesTool.html" title=" " alt="" coords="1929,1600,2078,1625"/>
+<area shape="rect" id="node24" href="$de/ddd/classVToolBasePoint.html" title="The VToolBasePoint class tool for creation pattern base point. Only base point can move...." alt="" coords="1942,1649,2065,1675"/>
+<area shape="rect" id="node25" href="$d0/d8a/classVToolCut.html" title=" " alt="" coords="1964,1091,2043,1116"/>
+<area shape="rect" id="node29" href="$d3/dac/classVToolLineIntersect.html" title="The VToolLineIntersect class help find point intersection lines." alt="" coords="1933,1140,2074,1165"/>
+<area shape="rect" id="node30" href="$dc/d1d/classVToolLinePoint.html" title="The VToolLinePoint class parent for all tools what create point with line." alt="" coords="1945,1189,2062,1215"/>
+<area shape="rect" id="node39" href="$d5/de4/classVToolPointFromArcAndTangent.html" title=" " alt="" coords="1893,1239,2113,1264"/>
+<area shape="rect" id="node40" href="$d1/da5/classVToolPointOfContact.html" title="The VToolPointOfContact class tool for creation point intersection arc ad line." alt="" coords="1926,1288,2081,1313"/>
+<area shape="rect" id="node41" href="$d4/d0f/classVToolPointOfIntersectionArcs.html" title=" " alt="" coords="1898,1337,2109,1363"/>
+<area shape="rect" id="node42" href="$d5/d68/classVToolPointOfIntersectionCurves.html" title=" " alt="" coords="1912,1387,2095,1427"/>
+<area shape="rect" id="node43" href="$dd/df1/classVToolTriangle.html" title="The VToolTriangle class for tool that find point intersection two foots right triangle (triangle with..." alt="" coords="1949,1452,2057,1477"/>
+<area shape="rect" id="node21" href="$df/d11/classPointIntersectXYTool.html" title="The PointIntersectXYTool class tool for creation point intersection two lines." alt="" coords="2179,1501,2334,1527"/>
+<area shape="rect" id="node26" href="$d1/d98/classVToolCutArc.html" title="The VToolCutArc class tool for cutting arc." alt="" coords="2207,992,2307,1017"/>
+<area shape="rect" id="node27" href="$d9/d86/classVToolCutSpline.html" title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two." alt="" coords="2197,1041,2316,1067"/>
+<area shape="rect" id="node28" href="$d8/d67/classVToolCutSplinePath.html" title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin..." alt="" coords="2183,943,2330,968"/>
+<area shape="rect" id="node31" href="$d2/d31/classVToolAlongLine.html" title="The VToolAlongLine class tool for creation point along line." alt="" coords="2196,1140,2317,1165"/>
+<area shape="rect" id="node32" href="$d6/d6b/classVToolBisector.html" title="The VToolBisector class tool for creation bisector point." alt="" coords="2201,1189,2312,1215"/>
+<area shape="rect" id="node33" href="$d6/d61/classVToolCurveIntersectAxis.html" title=" " alt="" coords="2167,1239,2347,1264"/>
+<area shape="rect" id="node34" href="$dc/d21/classVToolEndLine.html" title="The VToolEndLine class tool for creation point on the line end." alt="" coords="2203,1288,2311,1313"/>
+<area shape="rect" id="node35" href="$d7/d9e/classVToolHeight.html" title="The VToolHeight class tool for creation point of height. Help find point of projection onto line." alt="" coords="2207,1337,2307,1363"/>
+<area shape="rect" id="node36" href="$dc/df4/classVToolLineIntersectAxis.html" title=" " alt="" coords="2172,1387,2341,1412"/>
+<area shape="rect" id="node37" href="$d5/d3b/classVToolNormal.html" title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line." alt="" coords="2204,1436,2309,1461"/>
+<area shape="rect" id="node38" href="$db/d3d/classVToolShoulderPoint.html" title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati..." alt="" coords="2183,1091,2330,1116"/>
+<area shape="rect" id="node44" title=" " alt="" coords="237,1275,356,1300"/>
+<area shape="rect" id="node45" href="$d6/da8/classImageItem.html" title="The ImageItem class pointer label." alt="" coords="505,1251,598,1276"/>
+<area shape="rect" id="node46" href="$d0/de9/classResizeHandlesItem.html" title=" " alt="" coords="477,1300,625,1325"/>
+<area shape="rect" id="node47" title=" " alt="" coords="1243,623,1390,648"/>
+<area shape="rect" id="node48" href="$d6/d43/classArrowedLineItem.html" title=" " alt="" coords="1458,524,1591,549"/>
+<area shape="rect" id="node49" href="$d7/d15/classVAbstractOperation.html" title=" " alt="" coords="1451,573,1599,599"/>
+<area shape="rect" id="node55" href="$dd/da2/classVScaledLine.html" title=" " alt="" coords="1474,623,1575,648"/>
+<area shape="rect" id="node81" href="$dc/d2b/classVToolLine.html" title="The VToolLine class tool for creation line." alt="" coords="1483,781,1567,807"/>
+<area shape="rect" id="node50" href="$d3/dba/classVAbstractMirror.html" title=" " alt="" coords="1682,573,1805,599"/>
+<area shape="rect" id="node53" href="$d5/d6f/classVToolMove.html" title=" " alt="" coords="1697,475,1790,500"/>
+<area shape="rect" id="node54" href="$d2/d0f/classVToolRotation.html" title=" " alt="" coords="1687,524,1799,549"/>
+<area shape="rect" id="node51" href="$d1/d6f/classVToolMirrorByAxis.html" title=" " alt="" coords="1933,55,2074,80"/>
+<area shape="rect" id="node52" href="$dc/d0a/classVToolMirrorByLine.html" title=" " alt="" coords="1933,5,2073,31"/>
+<area shape="rect" id="node56" href="$de/d0e/classVisLine.html" title=" " alt="" coords="1709,623,1778,648"/>
+<area shape="rect" id="node57" href="$d8/d3d/classAnchorPointVisual.html" title=" " alt="" coords="1933,252,2073,277"/>
+<area shape="rect" id="node58" href="$d7/d8f/classIntersectCircleTangentVisual.html" title=" " alt="" coords="1900,301,2107,327"/>
+<area shape="rect" id="node59" href="$dd/d25/classIntersectCirclesVisual.html" title=" " alt="" coords="1922,351,2085,376"/>
+<area shape="rect" id="node60" href="$d3/d38/classPointIntersectXYVisual.html" title=" " alt="" coords="1919,400,2088,425"/>
+<area shape="rect" id="node61" href="$d7/dba/classVisOperation.html" title=" " alt="" coords="1950,449,2057,475"/>
+<area shape="rect" id="node66" href="$de/d5b/classVisToolAlongLine.html" title=" " alt="" coords="1937,499,2069,524"/>
+<area shape="rect" id="node67" href="$dd/d3b/classVisToolBisector.html" title=" " alt="" coords="1943,548,2064,573"/>
+<area shape="rect" id="node68" href="$d4/d67/classVisToolCurveIntersectAxis.html" title=" " alt="" coords="1908,597,2099,623"/>
+<area shape="rect" id="node69" href="$d2/d21/classVisToolEndLine.html" title=" " alt="" coords="1944,647,2063,672"/>
+<area shape="rect" id="node70" href="$d4/dc5/classVisToolHeight.html" title=" " alt="" coords="1948,696,2059,721"/>
+<area shape="rect" id="node71" href="$d5/d8f/classVisToolLine.html" title=" " alt="" coords="1956,745,2051,771"/>
+<area shape="rect" id="node72" href="$d1/ddc/classVisToolLineIntersect.html" title=" " alt="" coords="1927,795,2079,820"/>
+<area shape="rect" id="node73" href="$d9/deb/classVisToolLineIntersectAxis.html" title=" " alt="" coords="1913,844,2093,869"/>
+<area shape="rect" id="node74" href="$de/d5c/classVisToolNormal.html" title=" " alt="" coords="1945,893,2061,919"/>
+<area shape="rect" id="node75" href="$d9/d72/classVisToolPointFromArcAndTangent.html" title=" " alt="" coords="1888,943,2119,968"/>
+<area shape="rect" id="node76" href="$d3/d92/classVisToolPointOfContact.html" title=" " alt="" coords="1920,992,2087,1017"/>
+<area shape="rect" id="node77" href="$da/de3/classVisToolPointOfIntersectionArcs.html" title=" " alt="" coords="1893,1041,2114,1067"/>
+<area shape="rect" id="node78" href="$d7/df0/classVisToolShoulderPoint.html" title=" " alt="" coords="1924,104,2083,129"/>
+<area shape="rect" id="node79" href="$d9/d01/classVisToolTriangle.html" title=" " alt="" coords="1944,153,2063,179"/>
+<area shape="rect" id="node80" href="$dc/d2a/classVisToolTrueDarts.html" title=" " alt="" coords="1938,203,2069,228"/>
+<area shape="rect" id="node62" href="$da/db3/classVisToolMirrorByAxis.html" title=" " alt="" coords="2181,376,2333,401"/>
+<area shape="rect" id="node63" href="$d3/d9c/classVisToolMirrorByLine.html" title=" " alt="" coords="2181,425,2332,451"/>
+<area shape="rect" id="node64" href="$dd/d50/classVisToolMove.html" title=" " alt="" coords="2205,475,2309,500"/>
+<area shape="rect" id="node65" href="$d6/d62/classVisToolRotation.html" title=" " alt="" coords="2195,524,2318,549"/>
+<area shape="rect" id="node82" title=" " alt="" coords="1005,1440,1152,1465"/>
+<area shape="rect" id="node83" href="$d9/d3f/classInternalPathTool.html" title=" " alt="" coords="1253,1139,1380,1164"/>
+<area shape="rect" id="node84" href="$df/d63/classNonScalingFillPathItem.html" title=" " alt="" coords="1231,1489,1403,1515"/>
+<area shape="rect" id="node85" href="$da/dfb/classPatternPieceTool.html" title=" " alt="" coords="1252,1237,1381,1263"/>
+<area shape="rect" id="node86" href="$d3/d64/classVAbstractSpline.html" title=" " alt="" coords="1463,1535,1587,1560"/>
+<area shape="rect" id="node94" href="$d3/d85/classVCurvePathItem.html" title=" " alt="" coords="1253,1977,1380,2003"/>
+<area shape="rect" id="node111" href="$d1/d64/classVGraphicsFillItem.html" title=" " alt="" coords="1248,1440,1385,1465"/>
+<area shape="rect" id="node112" href="$d0/dcf/classVToolDoublePoint.html" title=" " alt="" coords="1675,1337,1811,1363"/>
+<area shape="rect" id="node87" href="$d4/dd5/classVToolArc.html" title="The VToolArc class tool for creation arc." alt="" coords="1704,1485,1783,1511"/>
+<area shape="rect" id="node88" href="$d4/d2b/classVToolArcWithLength.html" title=" " alt="" coords="1667,1535,1819,1560"/>
+<area shape="rect" id="node89" href="$de/d2b/classVToolCubicBezier.html" title=" " alt="" coords="1676,1584,1811,1609"/>
+<area shape="rect" id="node90" href="$d1/d95/classVToolCubicBezierPath.html" title=" " alt="" coords="1662,1633,1825,1659"/>
+<area shape="rect" id="node91" href="$d4/daa/classVToolEllipticalArc.html" title="The VToolEllipticalArc class tool for creation elliptical arc." alt="" coords="1676,1683,1811,1708"/>
+<area shape="rect" id="node92" href="$df/d5e/classVToolSpline.html" title=" " alt="" coords="1695,1387,1792,1412"/>
+<area shape="rect" id="node93" href="$dc/d08/classVToolSplinePath.html" title=" " alt="" coords="1681,1436,1806,1461"/>
+<area shape="rect" id="node95" href="$d4/d36/classVSimpleCurve.html" title=" " alt="" coords="1467,2028,1582,2053"/>
+<area shape="rect" id="node96" href="$db/d76/classVisPath.html" title=" " alt="" coords="1489,1979,1560,2004"/>
+<area shape="rect" id="node97" href="$dc/dee/classInternalPathVisual.html" title=" " alt="" coords="1673,1732,1813,1757"/>
+<area shape="rect" id="node98" href="$de/d44/classPatternPieceVisual.html" title=" " alt="" coords="1672,1781,1815,1807"/>
+<area shape="rect" id="node99" href="$dd/d5b/classPieceAnchorPointVisual.html" title=" " alt="" coords="1656,1831,1831,1856"/>
+<area shape="rect" id="node100" href="$d2/deb/classVisToolArc.html" title=" " alt="" coords="1699,1880,1788,1905"/>
+<area shape="rect" id="node101" href="$db/d33/classVisToolArcWithLength.html" title=" " alt="" coords="1662,1929,1825,1955"/>
+<area shape="rect" id="node102" href="$de/d6d/classVisToolCubicBezier.html" title=" " alt="" coords="1671,1979,1816,2004"/>
+<area shape="rect" id="node103" href="$da/dde/classVisToolCubicBezierPath.html" title=" " alt="" coords="1657,2028,1830,2053"/>
+<area shape="rect" id="node104" href="$d7/d4b/classVisToolCutArc.html" title=" " alt="" coords="1688,2077,1799,2103"/>
+<area shape="rect" id="node105" href="$d1/dcd/classVisToolCutSpline.html" title=" " alt="" coords="1678,2127,1809,2152"/>
+<area shape="rect" id="node106" href="$d4/dd9/classVisToolCutSplinePath.html" title=" " alt="" coords="1664,2176,1823,2201"/>
+<area shape="rect" id="node107" href="$d5/d62/classVisToolEllipticalArc.html" title=" " alt="" coords="1671,2225,1816,2251"/>
+<area shape="rect" id="node108" href="$dd/dfd/classVisToolPointOfIntersectionCurves.html" title=" " alt="" coords="1647,2275,1840,2315"/>
+<area shape="rect" id="node109" href="$d0/d12/classVisToolSpline.html" title=" " alt="" coords="1689,2340,1797,2365"/>
+<area shape="rect" id="node110" href="$df/d7b/classVisToolSplinePath.html" title=" " alt="" coords="1675,2389,1811,2415"/>
+<area shape="rect" id="node113" href="$de/d04/classVToolTrueDarts.html" title=" " alt="" coords="1944,1699,2063,1724"/>
+<area shape="rect" id="node114" title=" " alt="" coords="5,2397,153,2423"/>
+<area shape="rect" id="node115" href="$d0/dc5/classResizeHandlesItem_1_1HandleItem.html" title=" " alt="" coords="219,2165,375,2205"/>
+<area shape="rect" id="node116" href="$d3/db3/classSceneRect.html" title=" " alt="" coords="251,2624,342,2649"/>
+<area shape="rect" id="node117" href="$dd/dcb/classVControlPointSpline.html" title=" " alt="" coords="476,2969,627,2995"/>
+<area shape="rect" id="node118" title=" " alt="" coords="201,3019,392,3044"/>
+<area shape="rect" id="node119" href="$de/dbc/classVGraphicsSimpleTextItem.html" title="The VGraphicsSimpleTextItem class pointer label." alt="" coords="456,3019,647,3044"/>
+<area shape="rect" id="node120" title=" " alt="" coords="259,2229,334,2255"/>
+<area shape="rect" id="node121" href="$d0/d9b/classAbstractTest.html" title=" " alt="" coords="500,2131,603,2156"/>
+<area shape="rect" id="node134" href="$d5/d23/classFvUpdater.html" title=" " alt="" coords="506,2180,597,2205"/>
+<area shape="rect" id="node135" href="$da/d19/classGraphicsViewZoom.html" title=" " alt="" coords="477,2229,626,2255"/>
+<area shape="rect" id="node136" href="$df/d5b/classImageTool.html" title=" " alt="" coords="507,2279,596,2304"/>
+<area shape="rect" id="node137" href="$d6/d30/classTST__FindPoint.html" title=" " alt="" coords="495,2328,608,2353"/>
+<area shape="rect" id="node138" href="$da/d3b/classTST__Measurements.html" title=" " alt="" coords="476,2377,627,2403"/>
+<area shape="rect" id="node139" href="$d5/d79/classTST__Misc.html" title=" " alt="" coords="510,2427,593,2452"/>
+<area shape="rect" id="node140" href="$d3/d4d/classTST__NameRegExp.html" title=" " alt="" coords="481,2476,622,2501"/>
+<area shape="rect" id="node141" href="$d3/df0/classTST__QmuTokenParser.html" title=" " alt="" coords="471,2525,632,2551"/>
+<area shape="rect" id="node142" href="$dc/d3d/classTST__ReadVal.html" title=" " alt="" coords="498,2575,605,2600"/>
+<area shape="rect" id="node143" href="$d9/dd4/classTST__TSTranslation.html" title=" " alt="" coords="481,2624,621,2649"/>
+<area shape="rect" id="node144" href="$df/daf/classTST__VArc.html" title=" " alt="" coords="510,2673,593,2699"/>
+<area shape="rect" id="node145" href="$d0/dcb/classTST__VCommandLine.html" title=" " alt="" coords="473,2723,629,2748"/>
+<area shape="rect" id="node146" href="$de/d02/classTST__VCubicBezierPath.html" title=" " alt="" coords="468,2772,635,2797"/>
+<area shape="rect" id="node147" href="$d4/d53/classTST__VGObject.html" title=" " alt="" coords="494,2821,609,2847"/>
+<area shape="rect" id="node148" href="$d7/d69/classTST__VLockGuard.html" title=" " alt="" coords="486,2871,617,2896"/>
+<area shape="rect" id="node149" href="$d5/d29/classTST__VPointF.html" title=" " alt="" coords="500,2920,603,2945"/>
+<area shape="rect" id="node150" href="$db/d56/classTST__VPoster.html" title=" " alt="" coords="500,1349,603,1375"/>
+<area shape="rect" id="node151" href="$d8/d25/classTST__VSplinePath.html" title=" " alt="" coords="486,1399,617,1424"/>
+<area shape="rect" id="node152" href="$d4/df1/classTST__VToolMove.html" title=" " alt="" coords="489,1448,613,1473"/>
+<area shape="rect" id="node153" href="$da/d3d/classTST__VTranslateVars.html" title=" " alt="" coords="477,1497,626,1523"/>
+<area shape="rect" id="node154" href="$dc/de5/classVAbstractSimple.html" title=" " alt="" coords="1014,1540,1143,1565"/>
+<area shape="rect" id="node155" href="$d5/d68/classVDataTool.html" title="The VDataTool class need for getting access to data container of tool." alt="" coords="507,1547,595,1572"/>
+<area shape="rect" id="node167" href="$d8/d8a/classVLayoutGenerator.html" title=" " alt="" coords="481,1835,621,1860"/>
+<area shape="rect" id="node168" href="$db/df9/classVPE_1_1VProperty.html" title=" " alt="" coords="492,1884,611,1909"/>
+<area shape="rect" id="node189" href="$d1/daa/classVPE_1_1VPropertyFactoryManager.html" title=" " alt="" coords="440,1933,663,1959"/>
+<area shape="rect" id="node190" href="$d1/dd3/classVTableSearch.html" title=" " alt="" coords="497,1983,606,2008"/>
+<area shape="rect" id="node191" href="$dc/d8f/classVToolOptionsPropertyBrowser.html" title=" " alt="" coords="444,2032,659,2057"/>
+<area shape="rect" id="node192" href="$de/d04/classVUndoCommand.html" title=" " alt="" coords="485,3463,617,3488"/>
+<area shape="rect" id="node224" href="$d7/d24/classVisualization.html" title=" " alt="" coords="1263,1339,1370,1364"/>
+<area shape="rect" id="node225" href="$da/d59/classqmu_1_1Test_1_1QmuParserTester.html" title="Test cases for unit testing." alt="" coords="450,2081,653,2107"/>
+<area shape="rect" id="node122" href="$d7/d66/classTST__AbstractRegExp.html" title=" " alt="" coords="741,2476,897,2501"/>
+<area shape="rect" id="node125" href="$de/da6/classTST__QmuParserErrorMsg.html" title=" " alt="" coords="727,2525,910,2551"/>
+<area shape="rect" id="node126" href="$d2/d3e/classTST__Seamly2DCommandLine.html" title=" " alt="" coords="711,2575,926,2600"/>
+<area shape="rect" id="node127" href="$d8/dde/classTST__SeamlyMeCommandLine.html" title=" " alt="" coords="711,2624,927,2649"/>
+<area shape="rect" id="node128" href="$d3/d1d/classTST__VAbstractCurve.html" title=" " alt="" coords="742,2673,895,2699"/>
+<area shape="rect" id="node129" href="$d6/d89/classTST__VAbstractPiece.html" title=" " alt="" coords="743,2723,894,2748"/>
+<area shape="rect" id="node130" href="$d2/d9c/classTST__VEllipticalArc.html" title=" " alt="" coords="749,2772,888,2797"/>
+<area shape="rect" id="node131" href="$d4/dd0/classTST__VLayoutPiece.html" title=" " alt="" coords="748,2328,889,2353"/>
+<area shape="rect" id="node132" href="$db/dbb/classTST__VPiece.html" title=" " alt="" coords="770,2377,867,2403"/>
+<area shape="rect" id="node133" href="$d7/d3f/classTST__VSpline.html" title=" " alt="" coords="767,2427,870,2452"/>
+<area shape="rect" id="node123" href="$d8/d54/classTST__BuitInRegExp.html" title=" " alt="" coords="1009,2452,1149,2477"/>
+<area shape="rect" id="node124" href="$da/d11/classTST__MeasurementRegExp.html" title=" " alt="" coords="983,2501,1175,2527"/>
+<area shape="rect" id="node156" href="$d4/d36/classVAbstractTool.html" title="The VAbstractTool abstract class for all tools." alt="" coords="763,1176,874,1201"/>
+<area shape="rect" id="node157" href="$d4/dd5/classUnionTool.html" title="The UnionTool class tool union details." alt="" coords="1035,1004,1122,1029"/>
+<area shape="rect" id="node158" href="$d3/d16/classVAbstractNode.html" title="The VAbstractNode class parent class for all detail node." alt="" coords="1019,1053,1138,1079"/>
+<area shape="rect" id="node164" href="$d4/d36/classVInteractiveTool.html" title=" " alt="" coords="1015,1188,1142,1213"/>
+<area shape="rect" id="node159" href="$d5/da9/classAnchorPointTool.html" title=" " alt="" coords="1253,573,1380,599"/>
+<area shape="rect" id="node160" href="$df/d93/classVNodeArc.html" title="The VNodeArc class arc detail node." alt="" coords="1273,991,1360,1016"/>
+<area shape="rect" id="node161" href="$de/db2/classVNodeEllipticalArc.html" title=" " alt="" coords="1245,1040,1388,1065"/>
+<area shape="rect" id="node162" href="$d4/df7/classVNodeSpline.html" title="The VNodeSpline class spline detail node." alt="" coords="1264,892,1369,917"/>
+<area shape="rect" id="node163" href="$d4/d69/classVNodeSplinePath.html" title="The VNodeSplinePath class spline path detail node." alt="" coords="1250,941,1383,967"/>
+<area shape="rect" id="node165" href="$d2/df2/classVDrawTool.html" title="The VDrawTool abstract class for all draw tool." alt="" coords="1271,1188,1362,1213"/>
+<area shape="rect" id="node166" href="$da/da4/classVAbstractPoint.html" title=" " alt="" coords="1466,1237,1583,1263"/>
+<area shape="rect" id="node169" href="$df/d53/classVFormulaProperty.html" title=" " alt="" coords="749,1884,888,1909"/>
+<area shape="rect" id="node170" href="$df/d74/classVPE_1_1DirectionProperty.html" title=" " alt="" coords="734,1933,903,1959"/>
+<area shape="rect" id="node171" href="$d5/daa/classVPE_1_1LineTypeProperty.html" title=" " alt="" coords="735,1983,902,2008"/>
+<area shape="rect" id="node172" href="$d8/ddf/classVPE_1_1LineWeightProperty.html" title=" " alt="" coords="727,2032,910,2057"/>
+<area shape="rect" id="node173" href="$d6/d0b/classVPE_1_1PlainTextProperty.html" title="Class for holding a plain text property." alt="" coords="734,2081,903,2107"/>
+<area shape="rect" id="node174" href="$d8/d90/classVPE_1_1QVector3DProperty.html" title=" " alt="" coords="729,2131,908,2156"/>
+<area shape="rect" id="node175" href="$d4/de6/classVPE_1_1SpinboxProperty.html" title="Class for holding an integer property." alt="" coords="737,2180,900,2205"/>
+<area shape="rect" id="node177" href="$df/d02/classVPE_1_1VBoolProperty.html" title="The VBoolProperty can take two states: True or False." alt="" coords="745,2229,893,2255"/>
+<area shape="rect" id="node178" href="$da/d5e/classVPE_1_1VColorProperty.html" title=" " alt="" coords="742,2279,895,2304"/>
+<area shape="rect" id="node179" href="$d6/dd6/classVPE_1_1VEmptyProperty.html" title=" " alt="" coords="738,1440,899,1465"/>
+<area shape="rect" id="node181" href="$d2/dcb/classVPE_1_1VEnumProperty.html" title=" " alt="" coords="741,1489,897,1515"/>
+<area shape="rect" id="node182" href="$dc/d8e/classVPE_1_1VFileProperty.html" title=" " alt="" coords="747,1539,890,1564"/>
+<area shape="rect" id="node183" href="$db/df1/classVPE_1_1VLabelProperty.html" title="Class for holding a string property." alt="" coords="741,1588,896,1613"/>
+<area shape="rect" id="node184" href="$d6/d22/classVPE_1_1VLineColorProperty.html" title=" " alt="" coords="729,1637,909,1663"/>
+<area shape="rect" id="node185" href="$d5/d82/classVPE_1_1VObjectProperty.html" title=" " alt="" coords="738,1687,899,1712"/>
+<area shape="rect" id="node186" href="$de/d98/classVPE_1_1VPointFProperty.html" title=" " alt="" coords="739,1736,899,1761"/>
+<area shape="rect" id="node187" href="$d9/d73/classVPE_1_1VShortcutProperty.html" title="This property can be used to handle key shortcuts." alt="" coords="732,1785,905,1811"/>
+<area shape="rect" id="node188" href="$d7/d7b/classVPE_1_1VStringProperty.html" title="Class for holding a string property." alt="" coords="740,1835,897,1860"/>
+<area shape="rect" id="node176" href="$dc/de2/classVPE_1_1DoubleSpinboxProperty.html" title="Class for holding a double property." alt="" coords="975,2180,1183,2205"/>
+<area shape="rect" id="node180" href="$df/d07/classVPE_1_1VWidgetProperty.html" title="This property holds a QWidget and displays it, if the view supports that. If not, it will behave like..." alt="" coords="996,1589,1161,1615"/>
+<area shape="rect" id="node193" href="$db/d26/classAddDetNode.html" title=" " alt="" coords="767,3660,871,3685"/>
+<area shape="rect" id="node194" href="$d2/d4d/classAddDraftBlock.html" title=" " alt="" coords="761,3709,876,3735"/>
+<area shape="rect" id="node195" href="$d2/d67/classAddGroup.html" title=" " alt="" coords="775,3759,862,3784"/>
+<area shape="rect" id="node196" href="$da/d3a/classAddGroupItem.html" title=" " alt="" coords="761,3808,877,3833"/>
+<area shape="rect" id="node197" href="$df/d11/classAddImage.html" title=" " alt="" coords="775,3857,863,3883"/>
+<area shape="rect" id="node198" href="$dc/d9d/classAddPiece.html" title=" " alt="" coords="777,3907,860,3932"/>
+<area shape="rect" id="node199" href="$d6/db3/classAddToCalc.html" title=" " alt="" coords="774,3956,863,3981"/>
+<area shape="rect" id="node200" href="$d5/dbd/classDelGroup.html" title=" " alt="" coords="777,4005,860,4031"/>
+<area shape="rect" id="node201" href="$d9/d22/classDelTool.html" title=" " alt="" coords="783,4055,854,4080"/>
+<area shape="rect" id="node202" href="$d4/d10/classDeleteDraftBlock.html" title=" " alt="" coords="752,4104,885,4129"/>
+<area shape="rect" id="node203" href="$d0/d3f/classDeletePiece.html" title=" " alt="" coords="769,4153,869,4179"/>
+<area shape="rect" id="node204" href="$d6/d7c/classMoveAbstractLabel.html" title=" " alt="" coords="745,2821,892,2847"/>
+<area shape="rect" id="node208" href="$df/dca/classMoveGroupItem.html" title=" " alt="" coords="755,2871,882,2896"/>
+<area shape="rect" id="node209" href="$d9/da7/classMovePiece.html" title=" " alt="" coords="772,2920,865,2945"/>
+<area shape="rect" id="node210" href="$da/df9/classMoveSPoint.html" title=" " alt="" coords="769,2969,868,2995"/>
+<area shape="rect" id="node211" href="$de/db1/classMoveSpline.html" title=" " alt="" coords="769,3019,868,3044"/>
+<area shape="rect" id="node212" href="$d9/de8/classMoveSplinePath.html" title=" " alt="" coords="755,3068,882,3093"/>
+<area shape="rect" id="node213" href="$d7/d18/classRemoveGroupItem.html" title=" " alt="" coords="746,3117,891,3143"/>
+<area shape="rect" id="node214" href="$dd/d20/classRenameDraftBlock.html" title=" " alt="" coords="747,3167,891,3192"/>
+<area shape="rect" id="node215" href="$d9/d20/classSavePieceOptions.html" title=" " alt="" coords="749,3216,888,3241"/>
+<area shape="rect" id="node216" href="$df/d94/classSavePiecePathOptions.html" title=" " alt="" coords="735,3265,902,3291"/>
+<area shape="rect" id="node217" href="$d6/d4d/classSaveToolOptions.html" title=" " alt="" coords="753,3315,884,3340"/>
+<area shape="rect" id="node218" href="$dd/d52/classSetPieceColor.html" title=" " alt="" coords="763,3364,875,3389"/>
+<area shape="rect" id="node219" href="$d2/dbe/classShowDoublePointName.html" title=" " alt="" coords="731,3413,906,3439"/>
+<area shape="rect" id="node220" href="$dc/d9b/classShowOperationPointName.html" title=" " alt="" coords="722,3463,915,3488"/>
+<area shape="rect" id="node221" href="$d8/d2c/classShowPointName.html" title=" " alt="" coords="754,3512,883,3537"/>
+<area shape="rect" id="node222" href="$dd/d47/classTogglePieceInLayout.html" title=" " alt="" coords="741,3561,896,3587"/>
+<area shape="rect" id="node223" href="$d9/d39/classTogglePieceLock.html" title=" " alt="" coords="754,3611,883,3636"/>
+<area shape="rect" id="node205" href="$d1/d74/classMoveDoubleLabel.html" title=" " alt="" coords="1009,2821,1148,2847"/>
+<area shape="rect" id="node206" href="$d7/ddb/classMoveLabel.html" title=" " alt="" coords="1032,2871,1125,2896"/>
+<area shape="rect" id="node207" href="$d7/d7b/classMoveOperationLabel.html" title=" " alt="" coords="1000,2772,1157,2797"/>
+<area shape="rect" id="node226" title=" " alt="" coords="230,3463,363,3488"/>
 </map>

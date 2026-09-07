@@ -1,5 +1,13 @@
 var NAVTREEINDEX106 =
 {
+"d6/d15/structVFormulaField.html":[3,0,624],
+"d6/d15/structVFormulaField.html#a815fd1833f3496ac20ad69cef5465897":[3,0,624,1],
+"d6/d15/structVFormulaField.html#a956c5c7f4048e2077124af233083845f":[3,0,624,0],
+"d6/d15/structVFormulaField.html#ad91a1bdc8d51df07c2dcff235d2e9edf":[3,0,624,2],
+"d6/d16/mingw_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp.html":[4,0,0,1,15,1,0,0,6,72],
+"d6/d16/mingw_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp_source.html":[4,0,0,1,15,1,0,0,6,72],
+"d6/d17/macx_2include_2xercesc_2util_2MsgLoaders_2InMemory_2InMemMsgLoader_8hpp.html":[4,0,0,1,15,0,0,0,6,1,0,0],
+"d6/d17/macx_2include_2xercesc_2util_2MsgLoaders_2InMemory_2InMemMsgLoader_8hpp_source.html":[4,0,0,1,15,0,0,0,6,1,0,0],
 "d6/d17/mingw_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp.html":[4,0,0,1,15,1,0,0,7,1,6],
 "d6/d17/mingw_2include_2xercesc_2validators_2datatype_2BooleanDatatypeValidator_8hpp_source.html":[4,0,0,1,15,1,0,0,7,1,6],
 "d6/d1a/classMainWindow.html":[3,0,339],
@@ -241,13 +249,5 @@ var NAVTREEINDEX106 =
 "d6/d1a/classMainWindow.html#ac6f37954c0724d4014098f69072584d1":[3,0,339,242],
 "d6/d1a/classMainWindow.html#ac758e205ae74382444bc1b21aeb8264d":[3,0,339,84],
 "d6/d1a/classMainWindow.html#acae1beb5e7af21cfbed2bee1cb7440c0":[3,0,339,115],
-"d6/d1a/classMainWindow.html#acc56b9a3e0c5847e603a7f151141e7c1":[3,0,339,229],
-"d6/d1a/classMainWindow.html#accaa8558d170df2b454e19af765e20ef":[3,0,339,217],
-"d6/d1a/classMainWindow.html#ace47a2f2bef148b1eee71f39ddac763e":[3,0,339,239],
-"d6/d1a/classMainWindow.html#ace6bf47476f95ccc4a541de646322059":[3,0,339,156],
-"d6/d1a/classMainWindow.html#acfc68de871932a4a87248f6cdcef6290":[3,0,339,227],
-"d6/d1a/classMainWindow.html#ad0ebc61481af3846ecbce81711112e56":[3,0,339,111],
-"d6/d1a/classMainWindow.html#ad1aa67ae9659bdc20386ab251bec2567":[3,0,339,244],
-"d6/d1a/classMainWindow.html#ad34f997070aefaf0a92aa377c1536992":[3,0,339,151],
-"d6/d1a/classMainWindow.html#ad46599a9d5c2f7a364e43974ae28a1dd":[3,0,339,43]
+"d6/d1a/classMainWindow.html#acc56b9a3e0c5847e603a7f151141e7c1":[3,0,339,229]
 };

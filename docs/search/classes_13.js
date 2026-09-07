@@ -41,5 +41,6 @@ var searchData=
   ['tst_5fvposter_38',['TST_VPoster',['../db/d56/classTST__VPoster.html',1,'']]],
   ['tst_5fvspline_39',['TST_VSpline',['../d7/d3f/classTST__VSpline.html',1,'']]],
   ['tst_5fvsplinepath_40',['TST_VSplinePath',['../d8/d25/classTST__VSplinePath.html',1,'']]],
-  ['tst_5fvtranslatevars_41',['TST_VTranslateVars',['../da/d3d/classTST__VTranslateVars.html',1,'']]]
+  ['tst_5fvtoolmove_41',['TST_VToolMove',['../d4/df1/classTST__VToolMove.html',1,'']]],
+  ['tst_5fvtranslatevars_42',['TST_VTranslateVars',['../da/d3d/classTST__VTranslateVars.html',1,'']]]
 ];

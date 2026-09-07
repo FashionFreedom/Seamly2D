@@ -534,54 +534,55 @@
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="../../d5/d6f/classVToolMove.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="470,-777 470,-1219 634,-1219 634,-777 470,-777"/>
-<text text-anchor="middle" x="552" y="-1207" font-family="Helvetica,sans-Serif" font-size="10.00">VToolMove</text>
-<polyline fill="none" stroke="#666666" points="470,-1200 634,-1200 "/>
-<text text-anchor="start" x="478" y="-1188" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="478" y="-1177" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
-<text text-anchor="start" x="478" y="-1166" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaLength</text>
-<text text-anchor="start" x="478" y="-1155" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaRotation</text>
-<text text-anchor="start" x="478" y="-1144" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_originPointId</text>
-<polyline fill="none" stroke="#666666" points="470,-1137 634,-1137 "/>
-<text text-anchor="start" x="478" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolMove()</text>
-<text text-anchor="start" x="478" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="478" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="478" y="-1092" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
-<text text-anchor="start" x="478" y="-1081" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
-<text text-anchor="start" x="478" y="-1070" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaLength()</text>
-<text text-anchor="start" x="478" y="-1059" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaLength()</text>
-<text text-anchor="start" x="478" y="-1048" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFormulaRotation()</text>
-<text text-anchor="start" x="478" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFormulaRotation()</text>
-<text text-anchor="start" x="478" y="-1026" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOriginPointName()</text>
-<text text-anchor="start" x="478" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOriginPointId()</text>
-<text text-anchor="start" x="478" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginPointId()</text>
-<text text-anchor="start" x="478" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="478" y="-982" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="478" y="-971" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="478" y="-960" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="478" y="-949" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="478" y="-938" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="478" y="-927" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="478" y="-916" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="478" y="-905" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="478" y="-894" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolMove()</text>
-<text text-anchor="start" x="478" y="-883" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createPoint()</text>
-<text text-anchor="start" x="478" y="-872" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createItem()</text>
-<text text-anchor="start" x="478" y="-861" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createArc()</text>
-<text text-anchor="start" x="478" y="-850" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createCurve()</text>
-<text text-anchor="start" x="478" y="-839" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createCurveWithSegments()</text>
-<text text-anchor="start" x="478" y="-828" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updatePoint()</text>
-<text text-anchor="start" x="478" y="-817" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateItem()</text>
-<text text-anchor="start" x="478" y="-806" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateArc()</text>
-<text text-anchor="start" x="478" y="-795" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateCurve()</text>
-<text text-anchor="start" x="478" y="-784" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateCurveWithSegments()</text>
+<polygon fill="white" stroke="#666666" points="470,-771.5 470,-1224.5 634,-1224.5 634,-771.5 470,-771.5"/>
+<text text-anchor="middle" x="552" y="-1212.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolMove</text>
+<polyline fill="none" stroke="#666666" points="470,-1205.5 634,-1205.5 "/>
+<text text-anchor="start" x="478" y="-1193.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="478" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
+<text text-anchor="start" x="478" y="-1171.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaLength</text>
+<text text-anchor="start" x="478" y="-1160.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaRotation</text>
+<text text-anchor="start" x="478" y="-1149.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_originPointId</text>
+<polyline fill="none" stroke="#666666" points="470,-1142.5 634,-1142.5 "/>
+<text text-anchor="start" x="478" y="-1130.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolMove()</text>
+<text text-anchor="start" x="478" y="-1119.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="478" y="-1108.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="478" y="-1097.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
+<text text-anchor="start" x="478" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
+<text text-anchor="start" x="478" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaLength()</text>
+<text text-anchor="start" x="478" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaLength()</text>
+<text text-anchor="start" x="478" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFormulaRotation()</text>
+<text text-anchor="start" x="478" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFormulaRotation()</text>
+<text text-anchor="start" x="478" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOriginPointName()</text>
+<text text-anchor="start" x="478" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getOriginPointId()</text>
+<text text-anchor="start" x="478" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginPointId()</text>
+<text text-anchor="start" x="478" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="478" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="478" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="478" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ findRotationOrigin()</text>
+<text text-anchor="start" x="478" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="478" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="478" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="478" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="478" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="478" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="478" y="-888.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolMove()</text>
+<text text-anchor="start" x="478" y="-877.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createPoint()</text>
+<text text-anchor="start" x="478" y="-866.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createItem()</text>
+<text text-anchor="start" x="478" y="-855.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createArc()</text>
+<text text-anchor="start" x="478" y="-844.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createCurve()</text>
+<text text-anchor="start" x="478" y="-833.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createCurveWithSegments()</text>
+<text text-anchor="start" x="478" y="-822.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updatePoint()</text>
+<text text-anchor="start" x="478" y="-811.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateItem()</text>
+<text text-anchor="start" x="478" y="-800.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateArc()</text>
+<text text-anchor="start" x="478" y="-789.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateCurve()</text>
+<text text-anchor="start" x="478" y="-778.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateCurveWithSegments()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node7&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M598.01,-1262.42C595.47,-1247.9 592.94,-1233.37 590.43,-1219"/>
+<path fill="none" stroke="#63b8ff" d="M598.01,-1262.41C595.82,-1249.86 593.62,-1237.31 591.45,-1224.86"/>
 <polygon fill="none" stroke="#63b8ff" points="594.6,-1263.22 599.77,-1272.47 601.49,-1262.02 594.6,-1263.22"/>
 </g>
 <!-- Node12 -->

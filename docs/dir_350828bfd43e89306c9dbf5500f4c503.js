@@ -43,6 +43,8 @@ var dir_350828bfd43e89306c9dbf5500f4c503 =
     [ "tst_vspline.h", "d8/d07/tst__vspline_8h.html", "d8/d07/tst__vspline_8h" ],
     [ "tst_vsplinepath.cpp", "d2/dba/tst__vsplinepath_8cpp.html", null ],
     [ "tst_vsplinepath.h", "d8/d23/tst__vsplinepath_8h.html", "d8/d23/tst__vsplinepath_8h" ],
+    [ "tst_vtoolmove.cpp", "da/d26/tst__vtoolmove_8cpp.html", "da/d26/tst__vtoolmove_8cpp" ],
+    [ "tst_vtoolmove.h", "d5/d13/tst__vtoolmove_8h.html", "d5/d13/tst__vtoolmove_8h" ],
     [ "tst_vtranslatevars.cpp", "d4/d1d/tst__vtranslatevars_8cpp.html", null ],
     [ "tst_vtranslatevars.h", "db/de1/tst__vtranslatevars_8h.html", "db/de1/tst__vtranslatevars_8h" ]
 ];
