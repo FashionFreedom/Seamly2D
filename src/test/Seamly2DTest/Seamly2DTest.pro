@@ -56,6 +56,7 @@ SOURCES += \
     tst_patternformulatokens.cpp \
     tst_pieceformulaidtranslation.cpp \
     tst_variableformulaidtranslation.cpp \
+    tst_historydialogformulatranslation.cpp \
     tst_customvariablecontainer.cpp \
     tst_lineendpointreconnectiondetection.cpp \
     tst_linevariablelookup.cpp
@@ -91,6 +92,7 @@ HEADERS += \
     tst_patternformulatokens.h \
     tst_pieceformulaidtranslation.h \
     tst_variableformulaidtranslation.h \
+    tst_historydialogformulatranslation.h \
     tst_customvariablecontainer.h \
     tst_lineendpointreconnectiondetection.h \
     tst_linevariablelookup.h

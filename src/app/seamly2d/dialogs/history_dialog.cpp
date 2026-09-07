@@ -67,6 +67,8 @@
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
 #include "../xml/vpattern.h"
 
 #include <QApplication>
@@ -385,8 +387,8 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::EndLine:
                 rowData.icon   = ":/toolicon/32x32/segment.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
-                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+                rowData.length = formulaValue(domElement, AttrLength);
+                rowData.angle  = formulaValue(domElement, AttrAngle);
                 rowData.tool   = tr("Point Length and Angle from point %1")
                                     .arg(getName(attrUInt(domElement, AttrBasePoint)));
                                 break;
@@ -418,8 +420,8 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::Normal:
                 rowData.icon   = ":/toolicon/32x32/normal.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
-                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+                rowData.length = formulaValue(domElement, AttrLength);
+                rowData.angle  = formulaValue(domElement, AttrAngle);
                 rowData.tool   = tr("Point On Perpendicular %1_%2")
                                 .arg(getName(attrUInt(domElement, AttrFirstPoint)))
                                 .arg(getName(attrUInt(domElement, AttrSecondPoint)));
@@ -449,11 +451,11 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 rowData.icon   = ":/toolicon/32x32/spline.png";
                 rowData.name   = getName(toolId);
                 rowData.length = QString("%1\n%2")
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QString()))
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QString()));
+                                   .arg(formulaValue(domElement, AttrLength1))
+                                   .arg(formulaValue(domElement, AttrLength2));
                 rowData.angle  = QString("%1\n%2")
-                                   .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
-                                   .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
+                                   .arg(formulaValue(domElement, AttrAngle1))
+                                   .arg(formulaValue(domElement, AttrAngle2));
                 rowData.tool   = tr("Curve Interactive");
                 break;
             }
@@ -470,10 +472,10 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/arc.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrRadius, QString());
+                rowData.length = formulaValue(domElement, AttrRadius);
                 rowData.angle  = QString("%1\n %2")
-                                 .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
-                                 .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
+                                 .arg(formulaValue(domElement, AttrAngle1))
+                                 .arg(formulaValue(domElement, AttrAngle2));
                 rowData.tool   = tr("Arc Radius & Angles");
                 break;
             }
@@ -482,9 +484,9 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/arc_with_length.png";
                 rowData.name   = getName(toolId);
-                rowData.length = QString("%1\n %2").arg(m_doc->GetParametrString(domElement, AttrRadius, ""))
-                                                   .arg(m_doc->GetParametrString(domElement, AttrLength, ""));
-                rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle1, QString());
+                rowData.length = QString("%1\n %2").arg(formulaValue(domElement, AttrRadius))
+                                                   .arg(formulaValue(domElement, AttrLength));
+                rowData.angle  = formulaValue(domElement, AttrAngle1);
                 rowData.tool   = tr("Arc with Radius, Length, and Angle");
                 break;
             }
@@ -545,7 +547,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/arc_cut.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.length = formulaValue(domElement, AttrLength);
                 rowData.tool   = tr("Point On Arc");
                 break;
             }
@@ -554,7 +556,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/spline_cut_point.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.length = formulaValue(domElement, AttrLength);
                 rowData.tool   = tr("Point On Curve");
                 break;
             }
@@ -563,7 +565,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/splinePath_cut_point.png";
                 rowData.name   = getName(toolId);
-                rowData.length = m_doc->GetParametrString(domElement, AttrLength, QString());
+                rowData.length = formulaValue(domElement, AttrLength);
                 rowData.tool   = tr("Point On Spline");
                 break;
             }
@@ -580,7 +582,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::CurveIntersectAxis:
             rowData.icon   = ":/toolicon/32x32/arc_intersect_axis.png";
             rowData.name   = getName(toolId);
-            rowData.angle  = m_doc->GetParametrString(domElement, AttrAngle, QString());
+            rowData.angle  = formulaValue(domElement, AttrAngle);
             rowData.tool   = tr("Point Intersect Curve & Axis through point %1")
                                 .arg(getName(attrUInt(domElement, AttrBasePoint)));
             break;
@@ -784,6 +786,18 @@ QString HistoryDialog::getDestinationNames(const QDomElement &domElement, const 
 quint32 HistoryDialog::attrUInt(const QDomElement &domElement, const QString &name)
 {
     return m_doc->GetParametrUInt(domElement, name, "0");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief formulaValue reads a formula attribute and translates its stored id tokens back to names
+/// @param domElement tag in xml tree
+/// @param name attribute name
+/// @param defValue value used when the attribute is missing
+//---------------------------------------------------------------------------------------------------------------------
+QString HistoryDialog::formulaValue(const QDomElement &domElement, const QString &name, const QString &defValue)
+{
+    const QString formula = m_doc->GetParametrString(domElement, name, defValue);
+    return FormulaIdTranslator::formulaIdsToNames(formula, PatternFormulaTokens::idTokenToNameMap(data));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -80,6 +80,7 @@
 #include "tst_patternformulatokens.h"
 #include "tst_pieceformulaidtranslation.h"
 #include "tst_variableformulaidtranslation.h"
+#include "tst_historydialogformulatranslation.h"
 #include "tst_customvariablecontainer.h"
 #include "tst_lineendpointreconnectiondetection.h"
 
@@ -194,6 +195,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_PatternFormulaTokens());
     ASSERT_TEST(new TST_PieceFormulaIdTranslation());
     ASSERT_TEST(new TST_VariableFormulaIdTranslation());
+    ASSERT_TEST(new TST_HistoryDialogFormulaTranslation());
     ASSERT_TEST(new TST_CustomVariableContainer());
     ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
     ASSERT_TEST(new TST_LineVariableLookup());
