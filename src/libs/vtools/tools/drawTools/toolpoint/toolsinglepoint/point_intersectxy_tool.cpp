@@ -93,10 +93,10 @@ PointIntersectXYTool::PointIntersectXYTool(VAbstractPattern *doc, VContainer *da
                                                    const QString &lineType, const QString &lineWeight,
                                                    const QString &lineColor,
                                                    const quint32 &firstPointId, const quint32 &secondPointId,
-                                                   const quint32 &line1Id, const quint32 &line2Id,
+                                                   const quint32 &line1_id, const quint32 &line2_id,
                                                    const Source &typeCreation, QGraphicsItem *parent)
     : DoubleLinePointTool(doc, data, id, lineType, lineWeight, lineColor, firstPointId, secondPointId, parent)
-    , line1Id(line1Id), line2Id(line2Id)
+    , m_line1_id(line1_id), m_line2_id(line2_id)
 {
     ToolCreation(typeCreation);
 }
@@ -173,7 +173,7 @@ PointIntersectXYTool *PointIntersectXYTool::Create(const quint32 _id, const QStr
                                                            const QString &lineType, const QString &lineWeight,
                                                            const QString &lineColor,
                                                            const quint32 &firstPointId, const quint32 &secondPointId,
-                                                           quint32 line1Id, quint32 line2Id,
+                                                           quint32 line1_id, quint32 line2_id,
                                                            qreal mx, qreal my, bool showPointName,
                                                            VMainGraphicsScene *scene, VAbstractPattern *doc,
                                                            VContainer *data, const Document &parse,
@@ -190,16 +190,16 @@ PointIntersectXYTool *PointIntersectXYTool::Create(const quint32 _id, const QStr
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        line1Id = VContainer::getNextId();
-        line2Id = VContainer::getNextId();
-        data->AddLine(firstPointId, id, line1Id);
-        data->AddLine(secondPointId, id, line2Id);
+        line1_id = VContainer::getNextId();
+        line2_id = VContainer::getNextId();
+        data->AddLine(firstPointId, id, line1_id);
+        data->AddLine(secondPointId, id, line2_id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(firstPointId, id, line1Id);
-        data->AddLine(secondPointId, id, line2Id);
+        data->AddLine(firstPointId, id, line1_id);
+        data->AddLine(secondPointId, id, line2_id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -210,7 +210,7 @@ PointIntersectXYTool *PointIntersectXYTool::Create(const quint32 _id, const QStr
     {
         VDrawTool::AddRecord(id, Tool::PointOfIntersection, doc);
         PointIntersectXYTool *point = new PointIntersectXYTool(doc, data, id, lineType, lineWeight, lineColor,
-                                                               firstPointId, secondPointId, line1Id, line2Id,
+                                                               firstPointId, secondPointId, line1_id, line2_id,
                                                                typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -291,8 +291,8 @@ void PointIntersectXYTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject
     doc->SetAttribute(tag, AttrType,        ToolType);
     doc->SetAttribute(tag, AttrFirstPoint,  firstPointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
-    doc->SetAttribute(tag, AttrLine1Id,     line1Id);
-    doc->SetAttribute(tag, AttrLine2Id,     line2Id);
+    doc->SetAttribute(tag, AttrLine1Id,     m_line1_id);
+    doc->SetAttribute(tag, AttrLine2Id,     m_line2_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -303,8 +303,8 @@ void PointIntersectXYTool::ReadToolAttributes(const QDomElement &domElement)
     lineColor     = doc->GetParametrString(domElement, AttrLineColor,   ColorBlack);
     firstPointId  = doc->GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
-    line1Id       = doc->GetParametrUInt(domElement,   AttrLine1Id,     NULL_ID_STR);
-    line2Id       = doc->GetParametrUInt(domElement,   AttrLine2Id,     NULL_ID_STR);
+    m_line1_id    = doc->GetParametrUInt(domElement,   AttrLine1Id,     NULL_ID_STR);
+    m_line2_id    = doc->GetParametrUInt(domElement,   AttrLine2Id,     NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
