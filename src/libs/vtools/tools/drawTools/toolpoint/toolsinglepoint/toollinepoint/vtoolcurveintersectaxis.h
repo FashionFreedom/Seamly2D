@@ -82,7 +82,7 @@ public:
     static VToolCurveIntersectAxis *Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                            const QString &lineWeight,
                                            const QString &lineColor, QString &formulaAngle, quint32 basePointId,
-                                           quint32 curveId, quint32 lineId, quint32 segment1Id, quint32 segment2Id,
+                                           quint32 curveId, quint32 line_id, quint32 segment1_id, quint32 segment2_id,
                                            qreal mx, qreal my, bool showPointName,
                                            VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                            const Document &parse, const Source &typeCreation);
@@ -108,8 +108,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
-    virtual quint32      GetCopyLengthLineId() const override {return lineId;}
-    virtual quint32      GetCopyAngleLineId() const override {return lineId;}
+    virtual quint32      GetCopyLengthLineId() const override {return m_line_id;}
+    virtual quint32      GetCopyAngleLineId() const override {return m_line_id;}
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
     virtual void         ReadToolAttributes(const QDomElement &domElement) override;
@@ -119,25 +119,25 @@ private:
     Q_DISABLE_COPY(VToolCurveIntersectAxis)
     QString              formulaAngle;
     quint32              curveId;
-    quint32              lineId; /** @brief lineId persisted id of this tool's line. See issue #1678. */
-    /** @brief segment1Id, segment2Id persisted ids of the two virtual curve segments the intersection
+    quint32              m_line_id; /** @brief m_line_id persisted id of this tool's line. See issue #1678. */
+    /** @brief m_segment1_id, m_segment2_id persisted ids of the two virtual curve segments the intersection
      *  point cuts the source curve into - needed so a formula referencing either segment's length/angle
      *  composite variable keeps resolving after id-token translation. See issue #1692. */
-    quint32              segment1Id;
-    quint32              segment2Id;
+    quint32              m_segment1_id;
+    quint32              m_segment2_id;
 
                          VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                                  const QString &lineType, const QString &lineWeight,
                                                  const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
-                                                 const quint32 &curveId, const quint32 &lineId,
-                                                 const quint32 &segment1Id, const quint32 &segment2Id,
+                                                 const quint32 &curveId, const quint32 &line_id,
+                                                 const quint32 &segment1_id, const quint32 &segment2_id,
                                                  const Source &typeCreation, QGraphicsItem * parent = nullptr);
 
     template <class Item>
     static void          InitArc(VContainer *data, qreal segLength, const VPointF *p, quint32 curveId);
     static void          InitSegments(const GOType &curveType, qreal segLength, const VPointF *p, quint32 curveId,
-                                      quint32 segment1Id, quint32 segment2Id, VContainer *data);
+                                      quint32 segment1_id, quint32 segment2_id, VContainer *data);
 };
 
 #endif // VTOOLCURVEINTERSECTAXIS_H

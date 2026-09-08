@@ -92,18 +92,18 @@ const QString VToolLineIntersect::ToolType = QStringLiteral("lineIntersect");
  */
 VToolLineIntersect::VToolLineIntersect(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                        const quint32 &p1Line1, const quint32 &p2Line1, const quint32 &p1Line2,
-                                       const quint32 &p2Line2, const quint32 &line1Id, const quint32 &line2Id,
-                                       const quint32 &line3Id, const quint32 &line4Id, const Source &typeCreation,
+                                       const quint32 &p2Line2, const quint32 &line1_id, const quint32 &line2_id,
+                                       const quint32 &line3_id, const quint32 &line4_id, const Source &typeCreation,
                                        QGraphicsItem *parent)
     :VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
     , p1Line1(p1Line1)
     , p2Line1(p2Line1)
     , p1Line2(p1Line2)
     , p2Line2(p2Line2)
-    , line1Id(line1Id)
-    , line2Id(line2Id)
-    , line3Id(line3Id)
-    , line4Id(line4Id)
+    , m_line1_id(line1_id)
+    , m_line2_id(line2_id)
+    , m_line3_id(line3_id)
+    , m_line4_id(line4_id)
 {
     ToolCreation(typeCreation);
 }
@@ -175,8 +175,8 @@ VToolLineIntersect* VToolLineIntersect::Create(QSharedPointer<DialogTool> dialog
  */
 VToolLineIntersect* VToolLineIntersect::Create(const quint32 _id, const quint32 &p1Line1Id, const quint32 &p2Line1Id,
                                                const quint32 &p1Line2Id, const quint32 &p2Line2Id,
-                                               const QString &pointName, quint32 line1Id, quint32 line2Id,
-                                               quint32 line3Id, quint32 line4Id, qreal mx, qreal my,
+                                               const QString &pointName, quint32 line1_id, quint32 line2_id,
+                                               quint32 line3_id, quint32 line4_id, qreal mx, qreal my,
                                                bool showPointName,
                                                VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                                const Document &parse, const Source &typeCreation)
@@ -200,22 +200,22 @@ VToolLineIntersect* VToolLineIntersect::Create(const quint32 _id, const quint32 
         if (typeCreation == Source::FromGui)
         {
             id = data->AddGObject(p);
-            line1Id = VContainer::getNextId();
-            line2Id = VContainer::getNextId();
-            line3Id = VContainer::getNextId();
-            line4Id = VContainer::getNextId();
-            data->AddLine(p1Line1Id, id, line1Id);
-            data->AddLine(id, p2Line1Id, line2Id);
-            data->AddLine(p1Line2Id, id, line3Id);
-            data->AddLine(id, p2Line2Id, line4Id);
+            line1_id = VContainer::getNextId();
+            line2_id = VContainer::getNextId();
+            line3_id = VContainer::getNextId();
+            line4_id = VContainer::getNextId();
+            data->AddLine(p1Line1Id, id, line1_id);
+            data->AddLine(id, p2Line1Id, line2_id);
+            data->AddLine(p1Line2Id, id, line3_id);
+            data->AddLine(id, p2Line2Id, line4_id);
         }
         else
         {
             data->UpdateGObject(id, p);
-            data->AddLine(p1Line1Id, id, line1Id);
-            data->AddLine(id, p2Line1Id, line2Id);
-            data->AddLine(p1Line2Id, id, line3Id);
-            data->AddLine(id, p2Line2Id, line4Id);
+            data->AddLine(p1Line1Id, id, line1_id);
+            data->AddLine(id, p2Line1Id, line2_id);
+            data->AddLine(p1Line2Id, id, line3_id);
+            data->AddLine(id, p2Line2Id, line4_id);
             if (parse != Document::FullParse)
             {
                 doc->UpdateToolData(id, data);
@@ -226,7 +226,7 @@ VToolLineIntersect* VToolLineIntersect::Create(const quint32 _id, const quint32 
         {
             VDrawTool::AddRecord(id, Tool::LineIntersect, doc);
             VToolLineIntersect *point = new VToolLineIntersect(doc, data, id, p1Line1Id, p2Line1Id, p1Line2Id,
-                                                               p2Line2Id, line1Id, line2Id, line3Id, line4Id,
+                                                               p2Line2Id, line1_id, line2_id, line3_id, line4_id,
                                                                typeCreation);
             scene->addItem(point);
             InitToolConnections(scene, point);
@@ -326,10 +326,10 @@ void VToolLineIntersect::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
     doc->SetAttribute(tag, AttrP2Line1, p2Line1);
     doc->SetAttribute(tag, AttrP1Line2, p1Line2);
     doc->SetAttribute(tag, AttrP2Line2, p2Line2);
-    doc->SetAttribute(tag, AttrLine1Id, line1Id);
-    doc->SetAttribute(tag, AttrLine2Id, line2Id);
-    doc->SetAttribute(tag, AttrLine3Id, line3Id);
-    doc->SetAttribute(tag, AttrLine4Id, line4Id);
+    doc->SetAttribute(tag, AttrLine1Id, m_line1_id);
+    doc->SetAttribute(tag, AttrLine2Id, m_line2_id);
+    doc->SetAttribute(tag, AttrLine3Id, m_line3_id);
+    doc->SetAttribute(tag, AttrLine4Id, m_line4_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -339,10 +339,10 @@ void VToolLineIntersect::ReadToolAttributes(const QDomElement &domElement)
     p2Line1 = doc->GetParametrUInt(domElement, AttrP2Line1, NULL_ID_STR);
     p1Line2 = doc->GetParametrUInt(domElement, AttrP1Line2, NULL_ID_STR);
     p2Line2 = doc->GetParametrUInt(domElement, AttrP2Line2, NULL_ID_STR);
-    line1Id = doc->GetParametrUInt(domElement, AttrLine1Id, NULL_ID_STR);
-    line2Id = doc->GetParametrUInt(domElement, AttrLine2Id, NULL_ID_STR);
-    line3Id = doc->GetParametrUInt(domElement, AttrLine3Id, NULL_ID_STR);
-    line4Id = doc->GetParametrUInt(domElement, AttrLine4Id, NULL_ID_STR);
+    m_line1_id = doc->GetParametrUInt(domElement, AttrLine1Id, NULL_ID_STR);
+    m_line2_id = doc->GetParametrUInt(domElement, AttrLine2Id, NULL_ID_STR);
+    m_line3_id = doc->GetParametrUInt(domElement, AttrLine3Id, NULL_ID_STR);
+    m_line4_id = doc->GetParametrUInt(domElement, AttrLine4Id, NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

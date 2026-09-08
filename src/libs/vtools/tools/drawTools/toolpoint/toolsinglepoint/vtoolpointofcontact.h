@@ -84,7 +84,7 @@ public:
                                        VAbstractPattern *doc, VContainer *data);
     static VToolPointOfContact *Create(const quint32 _id, QString &radius, const quint32 &center,
                                        const quint32 &firstPointId, const quint32 &secondPointId,
-                                       const QString &pointName, quint32 line1Id, quint32 line2Id, quint32 line3Id,
+                                       const QString &pointName, quint32 line1_id, quint32 line2_id, quint32 line3_id,
                                        qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                        VAbstractPattern *doc,
                                        VContainer *data, const Document &parse, const Source &typeCreation);
@@ -115,7 +115,7 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
-    virtual quint32      GetCopyLengthLineId() const override {return line1Id;}
+    virtual quint32      GetCopyLengthLineId() const override {return m_line1_id;}
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -138,14 +138,14 @@ private:
     /** @brief secondPointId id second line point. */
     quint32             secondPointId;
 
-    quint32             line1Id; /** @brief line1Id persisted id of the firstPoint-to-point line. See issue #1678. */
-    quint32             line2Id; /** @brief line2Id persisted id of the secondPoint-to-point line. See issue #1678. */
-    quint32             line3Id; /** @brief line3Id persisted id of the center-to-point line. See issue #1678. */
+    quint32             m_line1_id; /** @brief m_line1_id persisted id of the firstPoint-to-point line. See issue #1678. */
+    quint32             m_line2_id; /** @brief m_line2_id persisted id of the secondPoint-to-point line. See issue #1678. */
+    quint32             m_line3_id; /** @brief m_line3_id persisted id of the center-to-point line. See issue #1678. */
 
                         VToolPointOfContact(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                             const QString &radius, const quint32 &center, const quint32 &firstPointId,
-                                            const quint32 &secondPointId, const quint32 &line1Id,
-                                            const quint32 &line2Id, const quint32 &line3Id,
+                                            const quint32 &secondPointId, const quint32 &line1_id,
+                                            const quint32 &line2_id, const quint32 &line3_id,
                                             const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

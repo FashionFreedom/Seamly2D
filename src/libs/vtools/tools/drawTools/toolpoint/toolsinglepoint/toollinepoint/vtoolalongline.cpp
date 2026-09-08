@@ -99,11 +99,11 @@ const QString VToolAlongLine::ToolType = QStringLiteral("alongLine");
  */
 VToolAlongLine::VToolAlongLine(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &formula,
                                const quint32 &firstPointId, const quint32 &secondPointId,
-                               const quint32 &line1Id, const quint32 &line2Id,
+                               const quint32 &line1_id, const quint32 &line2_id,
                                const QString &lineType, const QString &lineWeight, const QString &lineColor,
                                const Source &typeCreation, QGraphicsItem *parent)
     :VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, formula, firstPointId, 0, parent),
-    secondPointId(secondPointId), line1Id(line1Id), line2Id(line2Id)
+    secondPointId(secondPointId), m_line1_id(line1_id), m_line2_id(line2_id)
 {
     m_pointColor = QColor(lineColor);
     ToolCreation(typeCreation);
@@ -170,8 +170,8 @@ void VToolAlongLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
                                                                nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrFirstPoint,  basePointId);
     doc->SetAttribute(tag, AttrSecondPoint, secondPointId);
-    doc->SetAttribute(tag, AttrLine1Id,     line1Id);
-    doc->SetAttribute(tag, AttrLine2Id,     line2Id);
+    doc->SetAttribute(tag, AttrLine1Id,     m_line1_id);
+    doc->SetAttribute(tag, AttrLine2Id,     m_line2_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -185,8 +185,8 @@ void VToolAlongLine::ReadToolAttributes(const QDomElement &domElement)
                         idTokenToNameMap(&(this->VAbstractTool::data)));
     basePointId   = doc->GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
     secondPointId = doc->GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
-    line1Id       = doc->GetParametrUInt(domElement,   AttrLine1Id,     NULL_ID_STR);
-    line2Id       = doc->GetParametrUInt(domElement,   AttrLine2Id,     NULL_ID_STR);
+    m_line1_id    = doc->GetParametrUInt(domElement,   AttrLine1Id,     NULL_ID_STR);
+    m_line2_id    = doc->GetParametrUInt(domElement,   AttrLine2Id,     NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -357,7 +357,7 @@ VToolAlongLine* VToolAlongLine::Create(QSharedPointer<DialogTool> dialog, VMainG
 VToolAlongLine* VToolAlongLine::Create(const quint32 _id, const QString &pointName, const QString &lineType,
                                        const QString &lineWeight,
                                        const QString &lineColor, QString &formula, const quint32 &firstPointId,
-                                       quint32 secondPointId, quint32 line1Id, quint32 line2Id, qreal mx, qreal my,
+                                       quint32 secondPointId, quint32 line1_id, quint32 line2_id, qreal mx, qreal my,
                                        bool showPointName,
                                        VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                        const Document &parse, const Source &typeCreation)
@@ -381,16 +381,16 @@ VToolAlongLine* VToolAlongLine::Create(const quint32 _id, const QString &pointNa
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        line1Id = VContainer::getNextId();
-        line2Id = VContainer::getNextId();
-        data->AddLine(firstPointId, id, line1Id);
-        data->AddLine(id, secondPointId, line2Id);
+        line1_id = VContainer::getNextId();
+        line2_id = VContainer::getNextId();
+        data->AddLine(firstPointId, id, line1_id);
+        data->AddLine(id, secondPointId, line2_id);
     }
     else
     {
         data->UpdateGObject(id, p);
-        data->AddLine(firstPointId, id, line1Id);
-        data->AddLine(id, secondPointId, line2Id);
+        data->AddLine(firstPointId, id, line1_id);
+        data->AddLine(id, secondPointId, line2_id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -401,7 +401,7 @@ VToolAlongLine* VToolAlongLine::Create(const quint32 _id, const QString &pointNa
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::AlongLine, doc);
-        point = new VToolAlongLine(doc, data, id, formula, firstPointId, secondPointId, line1Id, line2Id, lineType,
+        point = new VToolAlongLine(doc, data, id, formula, firstPointId, secondPointId, line1_id, line2_id, lineType,
                                    lineWeight, lineColor, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
