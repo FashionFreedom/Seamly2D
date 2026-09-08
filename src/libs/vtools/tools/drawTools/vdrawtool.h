@@ -153,19 +153,19 @@ protected:
     virtual void     ReadToolAttributes(const QDomElement &domElement)=0;
     virtual void     updatePointNameVisibility(quint32 id, bool visible);
 
-    QString          LineLengthName(quint32 lineId) const;
-    QString          LineAngleName(quint32 lineId) const;
+    QString          lineLengthName(quint32 line_id) const;
+    QString          lineAngleName(quint32 line_id) const;
 
     /**
-     * @brief GetCopyLengthLineId persisted id of the line "Copy > Length" should copy, for tools
+     * @brief getCopyLengthLineId persisted id of the line "Copy > Length" should copy, for tools
      * that implicitly register a line (see VContainer::AddLine(), issue #1678). NULL_ID (the
      * default) means this tool has no such line - overridden by each of those tools to return its
-     * own lineId/line1Id member. Kept virtual rather than a switch-on-Tool-enum in ContextMenu()
+     * own m_line_id/m_line1_id member. Kept virtual rather than a switch-on-Tool-enum in ContextMenu()
      * to avoid vdrawtool.h needing to include every concrete tool's header (which would be
      * circular, since those headers already include this one).
      */
-    virtual quint32  GetCopyLengthLineId() const;
-    virtual quint32  GetCopyAngleLineId() const;
+    virtual quint32  getCopyLengthLineId() const;
+    virtual quint32  getCopyAngleLineId() const;
 
     template <typename Dialog>
     void             ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemId = NULL_ID,
@@ -410,11 +410,11 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             case Tool::PointOfIntersection:
             {
                 // These tools each implicitly register a line via VContainer::AddLine() (see
-                // issue #1678); GetCopyLengthLineId() (overridden per tool) gives that line's
+                // issue #1678); getCopyLengthLineId() (overridden per tool) gives that line's
                 // persisted id, so the clipboard text always matches a real, resolvable
                 // VLengthLine - not a hand-built string that can drift out of sync with how
                 // CompositeVariableTokens builds names.
-                text = LineLengthName(GetCopyLengthLineId());
+                text = lineLengthName(getCopyLengthLineId());
                 break;
             }
             case Tool::Arc:
@@ -560,7 +560,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             {
                 // Same reasoning as the Length case above - derive from the real VLineAngle via
                 // the tool's own persisted line id instead of hand-building the name.
-                angleName = LineAngleName(GetCopyAngleLineId());
+                angleName = lineAngleName(getCopyAngleLineId());
                 break;
             }
         }

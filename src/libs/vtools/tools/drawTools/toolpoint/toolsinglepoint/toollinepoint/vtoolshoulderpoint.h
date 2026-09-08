@@ -110,7 +110,7 @@ protected slots:
 
 
 protected:
-    virtual quint32            GetCopyLengthLineId() const override {return m_line1_id;}
+    virtual quint32            getCopyLengthLineId() const override {return m_line1_id;}
     virtual void               RemoveReferens() override;
     virtual void               SaveDialog(QDomElement &domElement) override;
     virtual void               SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;

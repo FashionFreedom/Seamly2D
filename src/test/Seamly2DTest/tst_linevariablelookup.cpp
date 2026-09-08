@@ -42,8 +42,8 @@ TST_LineVariableLookup::TST_LineVariableLookup(QObject *parent)
 /**
  * @brief Mirrors what VContainer::AddLine() does when a draw tool registers its implicit line (see
  * issue #1678): two points plus a persisted line_id, then a lookup by that same line_id must find the
- * VLengthLine/VLineAngle AddLine() created for it - the same lookup VDrawTool::LineLengthName()/
- * LineAngleName() rely on to build "Copy Length"/"Copy Angle" clipboard text.
+ * VLengthLine/VLineAngle AddLine() created for it - the same lookup VDrawTool::lineLengthName()/
+ * lineAngleName() rely on to build "Copy Length"/"Copy Angle" clipboard text.
  */
 void TST_LineVariableLookup::TestFindLineLengthReturnsMatchingLine()
 {
