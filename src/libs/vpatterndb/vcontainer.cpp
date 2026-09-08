@@ -526,18 +526,31 @@ void VContainer::ClearGObjects()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Clears all geometric objects marked for calculation from the container.
+ * @brief Clears one draft block's Calculation-mode geometric objects from the container.
  *
- * This method removes all geometric objects that are marked with the mode `Draw::Calculation` from the container.
+ * This method removes the geometric objects that are marked with the mode `Draw::Calculation` AND
+ * belong to the given draft block, ahead of that block being reparsed. Objects belonging to other
+ * draft blocks are left untouched, so a later block can keep forward-referencing an earlier block's
+ * still-valid objects (see issue #1694).
+ *
+ * @param block_name the draft block about to be reparsed - only its own objects are cleared.
+ * @param draft_block_for_tool resolves an object's owning tool id (VGObject::getIdTool()) to the draft
+ *        block that tool was created in - the container has no notion of draft blocks of its own, so
+ *        the caller supplies this lookup (backed by the document's existing tool history, see
+ *        VAbstractPattern::getHistory()/VToolRecord::getDraftBlockName()). Returns an empty string for
+ *        an id with no matching history entry, which never matches a real block name and so is never
+ *        cleared here - a conservative default, not a silent bug.
  *
  * @details
  * - The method first checks if the `gObjects` hash map is not empty.
- * - It iterates over the `gObjects` hash map to identify objects marked with `Draw::Calculation` mode.
+ * - It iterates over the `gObjects` hash map to identify objects marked with `Draw::Calculation` mode
+ *   whose owning tool resolves to @p block_name.
  * - Identified objects are cleared and their keys are collected in a vector.
  * - After the iteration, the method removes the objects with the collected keys from the hash map.
  * - This two-step process ensures that the iterator is not invalidated during the removal of objects.
  */
-void VContainer::ClearCalculationGObjects()
+void VContainer::ClearCalculationGObjects(const QString &block_name,
+                                           const std::function<QString(quint32)> &draft_block_for_tool)
 {
     if (not d->gObjects.isEmpty()) //-V807
     {
@@ -545,7 +558,7 @@ void VContainer::ClearCalculationGObjects()
         QHash<quint32, QSharedPointer<VGObject> >::iterator i;
         for (i = d->gObjects.begin(); i != d->gObjects.end(); ++i)
         {
-            if (i.value()->getMode() == Draw::Calculation)
+            if (i.value()->getMode() == Draw::Calculation && draft_block_for_tool(i.value()->getIdTool()) == block_name)
             {
                 i.value().clear();
                 keys.append(i.key());

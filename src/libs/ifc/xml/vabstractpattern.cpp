@@ -885,6 +885,24 @@ QVector<VToolRecord> VAbstractPattern::getBlockHistory() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getToolDraftBlockName return the draft block a tool was created in, by its history id.
+ * @param id tool id, e.g. VGObject::getIdTool() for one of its created objects.
+ * @return draft block name, or an empty string if no history entry has this id.
+ */
+QString VAbstractPattern::getToolDraftBlockName(quint32 id) const
+{
+    for (qint32 i = 0; i < m_history.size(); ++i)
+    {
+        if (m_history.at(i).getId() == id)
+        {
+            return m_history.at(i).getDraftBlockName();
+        }
+    }
+    return QString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QMap<quint32, Tool> VAbstractPattern::getGroupObjHistory() const
 {
     QMap<quint32, Tool> draftBlockHistory;

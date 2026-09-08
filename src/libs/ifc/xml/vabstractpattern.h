@@ -167,6 +167,7 @@ public:
 
     QVector<VToolRecord>          *getHistory();
     QVector<VToolRecord>           getBlockHistory() const;
+    QString                        getToolDraftBlockName(quint32 id) const;
     QMap<quint32, Tool>            getGroupObjHistory() const;
 
     QString                        MPath() const;
