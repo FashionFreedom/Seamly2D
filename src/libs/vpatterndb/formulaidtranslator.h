@@ -56,15 +56,15 @@ namespace FormulaIdTranslator
     // against yet) tell an id-token apart from a real user-authored name like a measurement.
     bool isIdToken(const QString &token);
 
-    QString formulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken);
-    QString formulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName);
+    QString formulaNamesToIds(const QString &formula, const QHash<QString, QString> &name_to_id_token);
+    QString formulaIdsToNames(const QString &formula, const QHash<QString, QString> &id_token_to_name);
 
     // Builds the lookup straight off VContainer::DataGObjects() - no separate name/id table
     // is kept anywhere, this just reads each object's own id and current name. Covers plain
     // object names only; composite/derived-variable names are the caller's responsibility to
     // add to the map (there is no persisted object to enumerate them from).
-    QHash<QString, QString> nameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
-    QHash<QString, QString> idTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects);
+    QHash<QString, QString> nameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &g_objects);
+    QHash<QString, QString> idTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &g_objects);
 }
 
 #endif // FORMULAIDTRANSLATOR_H

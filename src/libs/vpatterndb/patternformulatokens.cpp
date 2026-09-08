@@ -30,29 +30,29 @@
 //---------------------------------------------------------------------------------------------------------------------
 QHash<QString, QString> PatternFormulaTokens::nameToIdTokenMap(const VContainer *data)
 {
-    QHash<QString, QString> nameToIdToken = FormulaIdTranslator::nameToIdTokenMap(*data->DataGObjects());
+    QHash<QString, QString> name_to_id_token = FormulaIdTranslator::nameToIdTokenMap(*data->DataGObjects());
 
     const QHash<QString, QString> composite = CompositeVariableTokens::nameToIdTokenMap(*data->DataVariables());
     QHash<QString, QString>::const_iterator i = composite.constBegin();
     while (i != composite.constEnd())
     {
-        nameToIdToken.insert(i.key(), i.value());
+        name_to_id_token.insert(i.key(), i.value());
         ++i;
     }
-    return nameToIdToken;
+    return name_to_id_token;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QHash<QString, QString> PatternFormulaTokens::idTokenToNameMap(const VContainer *data)
 {
-    QHash<QString, QString> idTokenToName = FormulaIdTranslator::idTokenToNameMap(*data->DataGObjects());
+    QHash<QString, QString> id_token_to_name = FormulaIdTranslator::idTokenToNameMap(*data->DataGObjects());
 
     const QHash<QString, QString> composite = CompositeVariableTokens::idTokenToNameMap(*data->DataVariables());
     QHash<QString, QString>::const_iterator i = composite.constBegin();
     while (i != composite.constEnd())
     {
-        idTokenToName.insert(i.key(), i.value());
+        id_token_to_name.insert(i.key(), i.value());
         ++i;
     }
-    return idTokenToName;
+    return id_token_to_name;
 }

@@ -33,7 +33,7 @@ using namespace FormulaIdTranslator;
 
 namespace
 {
-    void replaceToken(QString &formula, const QString &newToken, int position, const QString &token, int &bias);
+    void replaceToken(QString &formula, const QString &new_token, int position, const QString &token, int &bias);
     void correctPositions(int position, int bias, QMap<int, QString> &tokens);
 }
 
@@ -65,7 +65,7 @@ bool FormulaIdTranslator::isIdToken(const QString &token)
  * @param nameToIdToken lookup from a whole display token (e.g. "A1" or "Line_A1_A2") to its stored id token
  * @return formula with each known token replaced; unknown tokens are left untouched
  */
-QString FormulaIdTranslator::formulaNamesToIds(const QString &formula, const QHash<QString, QString> &nameToIdToken)
+QString FormulaIdTranslator::formulaNamesToIds(const QString &formula, const QHash<QString, QString> &name_to_id_token)
 {
     if (formula.isEmpty())
     {
@@ -76,27 +76,27 @@ QString FormulaIdTranslator::formulaNamesToIds(const QString &formula, const QHa
     QMap<int, QString> tokens = cal->GetTokens();
     delete cal.take();
 
-    QList<int> tKeys = tokens.keys();
-    QList<QString> tValues = tokens.values();
+    QList<int> t_keys = tokens.keys();
+    QList<QString> t_values = tokens.values();
 
-    QString newFormula = formula;
-    for (int i = 0; i < tValues.size(); ++i)
+    QString new_formula = formula;
+    for (int i = 0; i < t_values.size(); ++i)
     {
-        if (not nameToIdToken.contains(tValues.at(i)))
+        if (not name_to_id_token.contains(t_values.at(i)))
         {
             continue;
         }
 
         int bias = 0;
-        replaceToken(newFormula, nameToIdToken.value(tValues.at(i)), tKeys.at(i), tValues.at(i), bias);
+        replaceToken(new_formula, name_to_id_token.value(t_values.at(i)), t_keys.at(i), t_values.at(i), bias);
         if (bias != 0)
         {
-            correctPositions(tKeys.at(i), bias, tokens);
-            tKeys = tokens.keys();
-            tValues = tokens.values();
+            correctPositions(t_keys.at(i), bias, tokens);
+            t_keys = tokens.keys();
+            t_values = tokens.values();
         }
     }
-    return newFormula;
+    return new_formula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ QString FormulaIdTranslator::formulaNamesToIds(const QString &formula, const QHa
  * display name
  * @return formula with each known token replaced; unknown tokens are left untouched
  */
-QString FormulaIdTranslator::formulaIdsToNames(const QString &formula, const QHash<QString, QString> &idTokenToName)
+QString FormulaIdTranslator::formulaIdsToNames(const QString &formula, const QHash<QString, QString> &id_token_to_name)
 {
     if (formula.isEmpty())
     {
@@ -118,66 +118,66 @@ QString FormulaIdTranslator::formulaIdsToNames(const QString &formula, const QHa
     QMap<int, QString> tokens = cal->GetTokens();
     delete cal.take();
 
-    QList<int> tKeys = tokens.keys();
-    QList<QString> tValues = tokens.values();
+    QList<int> t_keys = tokens.keys();
+    QList<QString> t_values = tokens.values();
 
-    QString newFormula = formula;
-    for (int i = 0; i < tValues.size(); ++i)
+    QString new_formula = formula;
+    for (int i = 0; i < t_values.size(); ++i)
     {
-        if (not idTokenToName.contains(tValues.at(i)))
+        if (not id_token_to_name.contains(t_values.at(i)))
         {
             continue;
         }
 
         int bias = 0;
-        replaceToken(newFormula, idTokenToName.value(tValues.at(i)), tKeys.at(i), tValues.at(i), bias);
+        replaceToken(new_formula, id_token_to_name.value(t_values.at(i)), t_keys.at(i), t_values.at(i), bias);
         if (bias != 0)
         {
-            correctPositions(tKeys.at(i), bias, tokens);
-            tKeys = tokens.keys();
-            tValues = tokens.values();
+            correctPositions(t_keys.at(i), bias, tokens);
+            t_keys = tokens.keys();
+            t_values = tokens.values();
         }
     }
-    return newFormula;
+    return new_formula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> FormulaIdTranslator::nameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects)
+QHash<QString, QString> FormulaIdTranslator::nameToIdTokenMap(const QHash<quint32, QSharedPointer<VGObject>> &g_objects)
 {
-    QHash<QString, QString> nameToIdToken;
-    nameToIdToken.reserve(gObjects.size());
+    QHash<QString, QString> name_to_id_token;
+    name_to_id_token.reserve(g_objects.size());
 
-    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = gObjects.constBegin();
-    while (i != gObjects.constEnd())
+    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = g_objects.constBegin();
+    while (i != g_objects.constEnd())
     {
-        nameToIdToken.insert(i.value()->name(), idToken(i.key()));
+        name_to_id_token.insert(i.value()->name(), idToken(i.key()));
         ++i;
     }
-    return nameToIdToken;
+    return name_to_id_token;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QHash<QString, QString> FormulaIdTranslator::idTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &gObjects)
+QHash<QString, QString> FormulaIdTranslator::idTokenToNameMap(const QHash<quint32, QSharedPointer<VGObject>> &g_objects)
 {
-    QHash<QString, QString> idTokenToName;
-    idTokenToName.reserve(gObjects.size());
+    QHash<QString, QString> id_token_to_name;
+    id_token_to_name.reserve(g_objects.size());
 
-    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = gObjects.constBegin();
-    while (i != gObjects.constEnd())
+    QHash<quint32, QSharedPointer<VGObject>>::const_iterator i = g_objects.constBegin();
+    while (i != g_objects.constEnd())
     {
-        idTokenToName.insert(idToken(i.key()), i.value()->name());
+        id_token_to_name.insert(idToken(i.key()), i.value()->name());
         ++i;
     }
-    return idTokenToName;
+    return id_token_to_name;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 namespace
 {
-    void replaceToken(QString &formula, const QString &newToken, int position, const QString &token, int &bias)
+    void replaceToken(QString &formula, const QString &new_token, int position, const QString &token, int &bias)
     {
-        formula.replace(position, token.length(), newToken);
-        bias = token.length() - newToken.length();
+        formula.replace(position, token.length(), new_token);
+        bias = token.length() - new_token.length();
     }
 
     //-----------------------------------------------------------------------------------------------------------------
@@ -188,20 +188,20 @@ namespace
             return;
         }
 
-        QMap<int, QString> newTokens;
+        QMap<int, QString> new_tokens;
         QMap<int, QString>::const_iterator i = tokens.constBegin();
         while (i != tokens.constEnd())
         {
             if (i.key() <= position)
             {
-                newTokens.insert(i.key(), i.value());
+                new_tokens.insert(i.key(), i.value());
             }
             else
             {
-                newTokens.insert(i.key() - bias, i.value());
+                new_tokens.insert(i.key() - bias, i.value());
             }
             ++i;
         }
-        tokens = newTokens;
+        tokens = new_tokens;
     }
 }

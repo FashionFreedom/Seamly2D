@@ -40,7 +40,7 @@ using namespace FormulaIdTranslator;
 QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
     const QHash<QString, QSharedPointer<VInternalVariable>> &variables)
 {
-    QHash<QString, QString> nameToIdToken;
+    QHash<QString, QString> name_to_id_token;
 
     QHash<QString, QSharedPointer<VInternalVariable>>::const_iterator i = variables.constBegin();
     while (i != variables.constEnd())
@@ -50,19 +50,19 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
             case VarType::LineLength:
             {
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                nameToIdToken.insert(i.key(), line_ + idToken(length->GetLineId()));
+                name_to_id_token.insert(i.key(), line_ + idToken(length->GetLineId()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                nameToIdToken.insert(i.key(), angleLine_ + idToken(angle->GetLineId()));
+                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->GetLineId()));
                 break;
             }
             case VarType::ArcRadius:
             {
                 const QSharedPointer<VArcRadius> radius = i.value().staticCast<VArcRadius>();
-                nameToIdToken.insert(i.key(), radius_V + QString::number(radius->GetNumberRadius()) +
+                name_to_id_token.insert(i.key(), radius_V + QString::number(radius->GetNumberRadius()) +
                                                    idToken(radius->GetId()));
                 break;
             }
@@ -75,19 +75,19 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
                 {
                     token += QLatin1Char('_') + seg_ + QString::number(angle->GetSegment());
                 }
-                nameToIdToken.insert(i.key(), token);
+                name_to_id_token.insert(i.key(), token);
                 break;
             }
             case VarType::CurveCLength:
             {
-                const QSharedPointer<VCurveCLength> cLength = i.value().staticCast<VCurveCLength>();
-                const QString &prefix = (cLength->GetCType() == CurveCLength::C1) ? c1Length_V : c2Length_V;
-                QString token = prefix + idToken(cLength->GetId());
-                if (cLength->GetSegment() > 0)
+                const QSharedPointer<VCurveCLength> c_length = i.value().staticCast<VCurveCLength>();
+                const QString &prefix = (c_length->GetCType() == CurveCLength::C1) ? c1Length_V : c2Length_V;
+                QString token = prefix + idToken(c_length->GetId());
+                if (c_length->GetSegment() > 0)
                 {
-                    token += QLatin1Char('_') + seg_ + QString::number(cLength->GetSegment());
+                    token += QLatin1Char('_') + seg_ + QString::number(c_length->GetSegment());
                 }
-                nameToIdToken.insert(i.key(), token);
+                name_to_id_token.insert(i.key(), token);
                 break;
             }
             case VarType::CurveLength:
@@ -95,7 +95,7 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
                 const QSharedPointer<VCurveLength> length = i.value().staticCast<VCurveLength>();
                 if (length->GetSegment() > 0)
                 {
-                    nameToIdToken.insert(i.key(), idToken(length->GetId()) +
+                    name_to_id_token.insert(i.key(), idToken(length->GetId()) +
                                                        QLatin1Char('_') + seg_ +
                                                        QString::number(length->GetSegment()));
                 }
@@ -109,7 +109,7 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
                     // DataGObjects(), while the pattern-wide variable table (this map's source) is
                     // already populated - see the referencing point's own broken-formula symptom
                     // this was fixed for.
-                    nameToIdToken.insert(i.key(), idToken(length->GetId()));
+                    name_to_id_token.insert(i.key(), idToken(length->GetId()));
                 }
                 break;
             }
@@ -123,21 +123,21 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
         }
         ++i;
     }
-    return nameToIdToken;
+    return name_to_id_token;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QHash<QString, QString> CompositeVariableTokens::idTokenToNameMap(
     const QHash<QString, QSharedPointer<VInternalVariable>> &variables)
 {
-    QHash<QString, QString> idTokenToName;
+    QHash<QString, QString> id_token_to_name;
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QHash<QString, QString>::const_iterator i = nameToIdToken.constBegin();
-    while (i != nameToIdToken.constEnd())
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QHash<QString, QString>::const_iterator i = name_to_id_token.constBegin();
+    while (i != name_to_id_token.constEnd())
     {
-        idTokenToName.insert(i.value(), i.key());
+        id_token_to_name.insert(i.value(), i.key());
         ++i;
     }
-    return idTokenToName;
+    return id_token_to_name;
 }
