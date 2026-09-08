@@ -48,20 +48,20 @@ void TST_VContainer::reparseDoesNotClearOtherBlocks() const
     const Unit unit = Unit::Cm;
     VContainer data(nullptr, &unit);
 
-    const quint32 idA = data.AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 0, 0));
-    const quint32 idB = data.AddGObject(new VPointF(10, 10, QStringLiteral("B1"), 0, 0));
+    const quint32 id_a = data.AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 0, 0));
+    const quint32 id_b = data.AddGObject(new VPointF(10, 10, QStringLiteral("B1"), 0, 0));
 
     QHash<quint32, QString> tool_block;
-    tool_block.insert(idA, QStringLiteral("BlockA"));
-    tool_block.insert(idB, QStringLiteral("BlockB"));
-    const auto draftBlockForTool = [&tool_block](quint32 id){ return tool_block.value(id); };
+    tool_block.insert(id_a, QStringLiteral("BlockA"));
+    tool_block.insert(id_b, QStringLiteral("BlockB"));
+    const auto draft_block_for_tool = [&tool_block](quint32 id){ return tool_block.value(id); };
 
     // Simulate reparsing BlockB's calculation stage - BlockA must survive untouched.
-    data.ClearCalculationGObjects(QStringLiteral("BlockB"), draftBlockForTool);
+    data.ClearCalculationGObjects(QStringLiteral("BlockB"), draft_block_for_tool);
 
-    QVERIFY2(data.DataGObjects()->contains(idA),
+    QVERIFY2(data.DataGObjects()->contains(id_a),
              "BlockA's object was wiped while reparsing BlockB - the clear is not block-scoped");
-    QVERIFY2(not data.DataGObjects()->contains(idB),
+    QVERIFY2(not data.DataGObjects()->contains(id_b),
              "BlockB's own object survived the reparse of its own block");
 }
 
@@ -76,12 +76,12 @@ void TST_VContainer::unknownToolIsNeverCleared() const
     const Unit unit = Unit::Cm;
     VContainer data(nullptr, &unit);
 
-    const quint32 idUnknown = data.AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 0, 0));
+    const quint32 id_unknown = data.AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 0, 0));
 
-    const auto draftBlockForTool = [](quint32 /*id*/){ return QString(); };
+    const auto draft_block_for_tool = [](quint32 /*id*/){ return QString(); };
 
-    data.ClearCalculationGObjects(QStringLiteral("BlockA"), draftBlockForTool);
+    data.ClearCalculationGObjects(QStringLiteral("BlockA"), draft_block_for_tool);
 
-    QVERIFY2(data.DataGObjects()->contains(idUnknown),
+    QVERIFY2(data.DataGObjects()->contains(id_unknown),
              "An object with no resolvable draft block was cleared instead of conservatively kept");
 }
