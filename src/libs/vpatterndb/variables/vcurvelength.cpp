@@ -110,7 +110,7 @@ VCurveLength::~VCurveLength()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-qint32 VCurveLength::GetSegment() const
+qint32 VCurveLength::getSegment() const
 {
     return m_segment;
 }

@@ -74,8 +74,8 @@ public:
     VCurveAngle &operator=(const VCurveAngle &var);
     virtual ~VCurveAngle() override;
 
-    CurveAngle GetAngle() const;
-    qint32 GetSegment() const;
+    CurveAngle getAngle() const;
+    qint32 getSegment() const;
 private:
     CurveAngle m_angle{CurveAngle::StartAngle};
     // 0 for the plain (whole-curve) form; 1-based segment index on a multi-segment curve path.

@@ -50,30 +50,30 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
             case VarType::LineLength:
             {
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                name_to_id_token.insert(i.key(), line_ + idToken(length->GetLineId()));
+                name_to_id_token.insert(i.key(), line_ + idToken(length->getLineId()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->GetLineId()));
+                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->getLineId()));
                 break;
             }
             case VarType::ArcRadius:
             {
                 const QSharedPointer<VArcRadius> radius = i.value().staticCast<VArcRadius>();
-                name_to_id_token.insert(i.key(), radius_V + QString::number(radius->GetNumberRadius()) +
+                name_to_id_token.insert(i.key(), radius_V + QString::number(radius->getNumberRadius()) +
                                                    idToken(radius->GetId()));
                 break;
             }
             case VarType::CurveAngle:
             {
                 const QSharedPointer<VCurveAngle> angle = i.value().staticCast<VCurveAngle>();
-                const QString &prefix = (angle->GetAngle() == CurveAngle::StartAngle) ? angle1_V : angle2_V;
+                const QString &prefix = (angle->getAngle() == CurveAngle::StartAngle) ? angle1_V : angle2_V;
                 QString token = prefix + idToken(angle->GetId());
-                if (angle->GetSegment() > 0)
+                if (angle->getSegment() > 0)
                 {
-                    token += QLatin1Char('_') + seg_ + QString::number(angle->GetSegment());
+                    token += QLatin1Char('_') + seg_ + QString::number(angle->getSegment());
                 }
                 name_to_id_token.insert(i.key(), token);
                 break;
@@ -81,11 +81,11 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
             case VarType::CurveCLength:
             {
                 const QSharedPointer<VCurveCLength> c_length = i.value().staticCast<VCurveCLength>();
-                const QString &prefix = (c_length->GetCType() == CurveCLength::C1) ? c1Length_V : c2Length_V;
+                const QString &prefix = (c_length->getCType() == CurveCLength::C1) ? c1Length_V : c2Length_V;
                 QString token = prefix + idToken(c_length->GetId());
-                if (c_length->GetSegment() > 0)
+                if (c_length->getSegment() > 0)
                 {
-                    token += QLatin1Char('_') + seg_ + QString::number(c_length->GetSegment());
+                    token += QLatin1Char('_') + seg_ + QString::number(c_length->getSegment());
                 }
                 name_to_id_token.insert(i.key(), token);
                 break;
@@ -93,11 +93,11 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
             case VarType::CurveLength:
             {
                 const QSharedPointer<VCurveLength> length = i.value().staticCast<VCurveLength>();
-                if (length->GetSegment() > 0)
+                if (length->getSegment() > 0)
                 {
                     name_to_id_token.insert(i.key(), idToken(length->GetId()) +
                                                        QLatin1Char('_') + seg_ +
-                                                       QString::number(length->GetSegment()));
+                                                       QString::number(length->getSegment()));
                 }
                 else
                 {

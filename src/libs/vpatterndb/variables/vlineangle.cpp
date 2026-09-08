@@ -80,8 +80,8 @@ VLineAngle::VLineAngle()
 
 //---------------------------------------------------------------------------------------------------------------------
 VLineAngle::VLineAngle(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id,
-                       const quint32 &lineId)
-    :VInternalVariable(), d(new VLineAngleData(p1Id, p2Id, lineId))
+                       const quint32 &line_id)
+    :VInternalVariable(), d(new VLineAngleData(p1Id, p2Id, line_id))
 {
     SetType(VarType::LineAngle);
 
@@ -145,7 +145,7 @@ quint32 VLineAngle::GetP2Id() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VLineAngle::GetLineId() const
+quint32 VLineAngle::getLineId() const
 {
-    return d->lineId;
+    return d->m_line_id;
 }

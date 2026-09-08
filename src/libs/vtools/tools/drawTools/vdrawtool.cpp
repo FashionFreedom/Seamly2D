@@ -343,7 +343,7 @@ bool VDrawTool::isPointNameVisible(quint32 id) const
  */
 QString VDrawTool::lineLengthName(quint32 line_id) const
 {
-    const QSharedPointer<VLengthLine> length = FindLineLength(data, line_id);
+    const QSharedPointer<VLengthLine> length = findLineLength(data, line_id);
     if (length.isNull())
     {
         qWarning() << "VDrawTool::lineLengthName: no VLengthLine found for line_id" << line_id;
@@ -359,7 +359,7 @@ QString VDrawTool::lineLengthName(quint32 line_id) const
  */
 QString VDrawTool::lineAngleName(quint32 line_id) const
 {
-    const QSharedPointer<VLineAngle> angle = FindLineAngle(data, line_id);
+    const QSharedPointer<VLineAngle> angle = findLineAngle(data, line_id);
     if (angle.isNull())
     {
         qWarning() << "VDrawTool::lineAngleName: no VLineAngle found for line_id" << line_id;

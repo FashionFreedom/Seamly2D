@@ -126,13 +126,13 @@ VCurveAngle::~VCurveAngle()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-CurveAngle VCurveAngle::GetAngle() const
+CurveAngle VCurveAngle::getAngle() const
 {
     return m_angle;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qint32 VCurveAngle::GetSegment() const
+qint32 VCurveAngle::getSegment() const
 {
     return m_segment;
 }

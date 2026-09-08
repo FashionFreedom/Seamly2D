@@ -46,10 +46,10 @@ class VLineAngle;
  * formula load/save.
  *
  * @param data container with variables.
- * @param lineId the line's persisted id.
+ * @param line_id the line's persisted id.
  * @return the matching object, or a null pointer if no line with that id is registered.
  */
-QSharedPointer<VLengthLine> FindLineLength(const VContainer &data, quint32 lineId);
-QSharedPointer<VLineAngle>  FindLineAngle(const VContainer &data, quint32 lineId);
+QSharedPointer<VLengthLine> findLineLength(const VContainer &data, quint32 line_id);
+QSharedPointer<VLineAngle>  findLineAngle(const VContainer &data, quint32 line_id);
 
 #endif // VLINEVARIABLELOOKUP_H

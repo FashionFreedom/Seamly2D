@@ -28,12 +28,12 @@
 #include "../vcontainer.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-QSharedPointer<VLengthLine> FindLineLength(const VContainer &data, quint32 lineId)
+QSharedPointer<VLengthLine> findLineLength(const VContainer &data, quint32 line_id)
 {
     const QMap<QString, QSharedPointer<VLengthLine>> lines = data.lineLengthsData();
     for (auto i = lines.constBegin(); i != lines.constEnd(); ++i)
     {
-        if (i.value()->GetLineId() == lineId)
+        if (i.value()->getLineId() == line_id)
         {
             return i.value();
         }
@@ -42,12 +42,12 @@ QSharedPointer<VLengthLine> FindLineLength(const VContainer &data, quint32 lineI
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSharedPointer<VLineAngle> FindLineAngle(const VContainer &data, quint32 lineId)
+QSharedPointer<VLineAngle> findLineAngle(const VContainer &data, quint32 line_id)
 {
     const QMap<QString, QSharedPointer<VLineAngle>> angles = data.lineAnglesData();
     for (auto i = angles.constBegin(); i != angles.constEnd(); ++i)
     {
-        if (i.value()->GetLineId() == lineId)
+        if (i.value()->getLineId() == line_id)
         {
             return i.value();
         }

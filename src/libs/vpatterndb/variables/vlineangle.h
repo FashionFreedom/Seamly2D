@@ -67,7 +67,7 @@ class VLineAngle :public VInternalVariable
 public:
     VLineAngle();
     VLineAngle(const VPointF *p1, const quint32 &p1Id, const VPointF *p2, const quint32 &p2Id,
-               const quint32 &lineId);
+               const quint32 &line_id);
     VLineAngle(const VLineAngle &var);
 
     virtual ~VLineAngle() override;
@@ -83,7 +83,7 @@ public:
     void         SetValue(const VPointF *p1, const VPointF *p2);
     quint32      GetP1Id() const;
     quint32      GetP2Id() const;
-    quint32      GetLineId() const;
+    quint32      getLineId() const;
 private:
     QSharedDataPointer<VLineAngleData> d;
 };

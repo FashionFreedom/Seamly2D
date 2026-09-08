@@ -57,9 +57,9 @@ void TST_LineVariableLookup::TestFindLineLengthReturnsMatchingLine()
 
     data->AddLine(p1_id, p2_id, line_id);
 
-    const QSharedPointer<VLengthLine> found = FindLineLength(*data, line_id);
+    const QSharedPointer<VLengthLine> found = findLineLength(*data, line_id);
     QVERIFY(!found.isNull());
-    QCOMPARE(found->GetLineId(), line_id);
+    QCOMPARE(found->getLineId(), line_id);
     QCOMPARE(found->GetName(), QStringLiteral("Line_A1_A2"));
 }
 
@@ -76,9 +76,9 @@ void TST_LineVariableLookup::TestFindLineAngleReturnsMatchingLine()
 
     data->AddLine(p1_id, p2_id, line_id);
 
-    const QSharedPointer<VLineAngle> found = FindLineAngle(*data, line_id);
+    const QSharedPointer<VLineAngle> found = findLineAngle(*data, line_id);
     QVERIFY(!found.isNull());
-    QCOMPARE(found->GetLineId(), line_id);
+    QCOMPARE(found->getLineId(), line_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ void TST_LineVariableLookup::TestFindLineLengthReturnsNullForUnknownId()
     const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     data->AddLine(p1_id, p2_id, 99);
 
-    QVERIFY(FindLineLength(*data, 12345).isNull());
+    QVERIFY(findLineLength(*data, 12345).isNull());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -106,5 +106,5 @@ void TST_LineVariableLookup::TestFindLineAngleReturnsNullForUnknownId()
     const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     data->AddLine(p1_id, p2_id, 99);
 
-    QVERIFY(FindLineAngle(*data, 12345).isNull());
+    QVERIFY(findLineAngle(*data, 12345).isNull());
 }
