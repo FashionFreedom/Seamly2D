@@ -69,7 +69,7 @@ class MoveSplinePath : public VUndoCommand
     Q_OBJECT
 public:
     MoveSplinePath(VAbstractPattern *doc, const VSplinePath &oldSplPath, const VSplinePath &newSplPath,
-                   const quint32 &id, const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>(),
+                   const quint32 &id, const QHash<QString, QString> &name_to_id_token = QHash<QString, QString>(),
                    QUndoCommand *parent = nullptr);
     virtual ~MoveSplinePath() override;
     virtual void undo() override;
@@ -84,7 +84,7 @@ private:
     VSplinePath oldSplinePath;
     VSplinePath newSplinePath;
     QGraphicsScene *scene;
-    QHash<QString, QString> nameToIdToken;
+    QHash<QString, QString> m_name_to_id_token;
     void         Do(const VSplinePath &splPath);
 };
 
@@ -103,7 +103,7 @@ inline VSplinePath MoveSplinePath::getNewSplinePath() const
 //---------------------------------------------------------------------------------------------------------------------
 inline QHash<QString, QString> MoveSplinePath::getNameToIdToken() const
 {
-    return nameToIdToken;
+    return m_name_to_id_token;
 }
 
 #endif // MOVESPLINEPATH_H

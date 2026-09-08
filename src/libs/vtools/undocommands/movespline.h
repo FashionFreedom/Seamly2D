@@ -86,7 +86,7 @@ private:
     // Frozen at construction time, when oldSpline/newSpline's name-form formulas were captured -
     // NOT recomputed in undo()/redo(), which could otherwise run long after an intervening rename
     // desyncs the live container's names from that already-captured text.
-    const QHash<QString, QString> nameToIdToken;
+    const QHash<QString, QString> m_name_to_id_token;
     void         Do(const VSpline &spl);
 };
 

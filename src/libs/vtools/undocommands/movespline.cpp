@@ -75,7 +75,7 @@ MoveSpline::MoveSpline(VAbstractPattern *doc, const VSpline *oldSpl, const VSpli
       oldSpline(*oldSpl),
       newSpline(newSpl),
       scene(qApp->getCurrentScene()),
-      nameToIdToken(nameToIdTokenMap(data))
+      m_name_to_id_token(nameToIdTokenMap(data))
 {
     setText(tr("move spline"));
     nodeId = id;
@@ -135,10 +135,10 @@ void MoveSpline::Do(const VSpline &spl)
     {
         doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
         doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
-        doc->SetAttribute(domElement, AttrAngle1,  formulaNamesToIds(spl.GetStartAngleFormula(), nameToIdToken));
-        doc->SetAttribute(domElement, AttrAngle2,  formulaNamesToIds(spl.GetEndAngleFormula(), nameToIdToken));
-        doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), nameToIdToken));
-        doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), nameToIdToken));
+        doc->SetAttribute(domElement, AttrAngle1,  formulaNamesToIds(spl.GetStartAngleFormula(), m_name_to_id_token));
+        doc->SetAttribute(domElement, AttrAngle2,  formulaNamesToIds(spl.GetEndAngleFormula(), m_name_to_id_token));
+        doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), m_name_to_id_token));
+        doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), m_name_to_id_token));
 
         emit NeedLiteParsing(Document::LiteParse);
     }

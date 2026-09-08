@@ -64,13 +64,13 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 MoveSplinePath::MoveSplinePath(VAbstractPattern *doc, const VSplinePath &oldSplPath, const VSplinePath &newSplPath,
-                               const quint32 &id, const QHash<QString, QString> &nameToIdToken,
+                               const quint32 &id, const QHash<QString, QString> &name_to_id_token,
                                QUndoCommand *parent)
     : VUndoCommand(QDomElement(), doc, parent),
       oldSplinePath(oldSplPath),
       newSplinePath(newSplPath),
       scene(qApp->getCurrentScene()),
-      nameToIdToken(nameToIdToken)
+      m_name_to_id_token(name_to_id_token)
 {
     setText(tr("move spline path"));
     nodeId = id;
@@ -113,7 +113,7 @@ bool MoveSplinePath::mergeWith(const QUndoCommand *command)
     }
 
     newSplinePath = moveCommand->getNewSplinePath();
-    nameToIdToken = moveCommand->getNameToIdToken();
+    m_name_to_id_token = moveCommand->getNameToIdToken();
     return true;
 }
 
@@ -129,7 +129,7 @@ void MoveSplinePath::Do(const VSplinePath &splPath)
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagSpline);
     if (domElement.isElement())
     {
-        VToolSplinePath::UpdatePathPoints(doc, domElement, splPath, nameToIdToken);
+        VToolSplinePath::UpdatePathPoints(doc, domElement, splPath, m_name_to_id_token);
 
         emit NeedLiteParsing(Document::LiteParse);
     }

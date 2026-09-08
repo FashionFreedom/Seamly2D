@@ -77,7 +77,7 @@ SavePieceOptions::SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiec
     : VUndoCommand(QDomElement(), doc, parent)
     , m_oldPiece(oldPiece)
     , m_newPiece(newPiece)
-    , m_nameToIdToken(nameToIdTokenMap(data))
+    , m_name_to_id_token(nameToIdTokenMap(data))
 {
     setText(tr("save piece options"));
     nodeId = id;
@@ -95,12 +95,12 @@ void SavePieceOptions::undo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece, m_nameToIdToken);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_oldPiece, m_name_to_id_token);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece, m_nameToIdToken);
-        PatternPieceTool::addPatternLabel(doc, domElement, m_oldPiece, m_nameToIdToken);
-        PatternPieceTool::addGrainline(doc, domElement, m_oldPiece, m_nameToIdToken);
-        PatternPieceTool::addNodes(doc, domElement, m_oldPiece, m_nameToIdToken);
+        PatternPieceTool::addPieceLabel(doc, domElement, m_oldPiece, m_name_to_id_token);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_oldPiece, m_name_to_id_token);
+        PatternPieceTool::addGrainline(doc, domElement, m_oldPiece, m_name_to_id_token);
+        PatternPieceTool::addNodes(doc, domElement, m_oldPiece, m_name_to_id_token);
         PatternPieceTool::addCSARecords(doc, domElement, m_oldPiece.getCustomSARecords());
         PatternPieceTool::addInternalPaths(doc, domElement, m_oldPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_oldPiece.getAnchors());
@@ -137,12 +137,12 @@ void SavePieceOptions::redo()
     QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
-        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece, m_nameToIdToken);
+        PatternPieceTool::addAttributes(doc, domElement, nodeId, m_newPiece, m_name_to_id_token);
         doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-        PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece, m_nameToIdToken);
-        PatternPieceTool::addPatternLabel(doc, domElement, m_newPiece, m_nameToIdToken);
-        PatternPieceTool::addGrainline(doc, domElement, m_newPiece, m_nameToIdToken);
-        PatternPieceTool::addNodes(doc, domElement, m_newPiece, m_nameToIdToken);
+        PatternPieceTool::addPieceLabel(doc, domElement, m_newPiece, m_name_to_id_token);
+        PatternPieceTool::addPatternLabel(doc, domElement, m_newPiece, m_name_to_id_token);
+        PatternPieceTool::addGrainline(doc, domElement, m_newPiece, m_name_to_id_token);
+        PatternPieceTool::addNodes(doc, domElement, m_newPiece, m_name_to_id_token);
         PatternPieceTool::addCSARecords(doc, domElement, m_newPiece.getCustomSARecords());
         PatternPieceTool::addInternalPaths(doc, domElement, m_newPiece.getInternalPaths());
         PatternPieceTool::addAnchors(doc, domElement, m_newPiece.getAnchors());

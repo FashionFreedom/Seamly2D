@@ -82,7 +82,7 @@ private:
     // Frozen at construction time, when m_oldPath/m_newPath's name-form formula text was
     // captured - NOT recomputed in undo()/redo(), which could otherwise run long after an
     // intervening rename desyncs the live container's names from that already-captured text.
-    const QHash<QString, QString> m_nameToIdToken;
+    const QHash<QString, QString> m_name_to_id_token;
 };
 
 #endif // SAVEPIECEPATHOPTIONS_H
