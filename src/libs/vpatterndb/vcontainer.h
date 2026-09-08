@@ -220,7 +220,7 @@ QT_WARNING_POP
  * - void Clear();
  * - void ClearForFullParse();
  * - void ClearGObjects();
- * - void ClearCalculationGObjects(const QString &blockName, const std::function<QString(quint32)> &draftBlockForTool);
+ * - void ClearCalculationGObjects(const QString &block_name, const std::function<QString(quint32)> &draft_block_for_tool);
  * - void ClearVariables(const VarType &type = VarType::Unknown);
  * - static void ClearUniqueNames();
  * - static void clearUniqueVariableNames();
@@ -316,8 +316,8 @@ public:
     void               Clear();
     void               ClearForFullParse();
     void               ClearGObjects();
-    void               ClearCalculationGObjects(const QString &blockName,
-                                                 const std::function<QString(quint32)> &draftBlockForTool);
+    void               ClearCalculationGObjects(const QString &block_name,
+                                                 const std::function<QString(quint32)> &draft_block_for_tool);
     void               ClearVariables(const VarType &type = VarType::Unknown);
     static void        ClearUniqueNames();
     static void        clearUniqueVariableNames();
