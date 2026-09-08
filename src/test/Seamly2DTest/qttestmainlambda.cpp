@@ -74,6 +74,15 @@
 #include "tst_readval.h"
 #include "tst_vtranslatevars.h"
 #include "tst_vtoolmove.h"
+#include "tst_formulaidtranslator.h"
+#include "tst_compositevariabletokens.h"
+#include "tst_linevariablelookup.h"
+#include "tst_patternformulatokens.h"
+#include "tst_pieceformulaidtranslation.h"
+#include "tst_variableformulaidtranslation.h"
+#include "tst_historydialogformulatranslation.h"
+#include "tst_customvariablecontainer.h"
+#include "tst_lineendpointreconnectiondetection.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -181,6 +190,15 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
     ASSERT_TEST(new TST_VToolMove());
+    ASSERT_TEST(new TST_FormulaIdTranslator());
+    ASSERT_TEST(new TST_CompositeVariableTokens());
+    ASSERT_TEST(new TST_PatternFormulaTokens());
+    ASSERT_TEST(new TST_PieceFormulaIdTranslation());
+    ASSERT_TEST(new TST_VariableFormulaIdTranslation());
+    ASSERT_TEST(new TST_HistoryDialogFormulaTranslation());
+    ASSERT_TEST(new TST_CustomVariableContainer());
+    ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
+    ASSERT_TEST(new TST_LineVariableLookup());
 
     return status;
 }

@@ -70,6 +70,7 @@ class VToolCut : public VToolSinglePoint
 public:
                   VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, QString &direction,
                            const QString &formula, const QString &lineColor, const quint32 &curveCutId,
+                           const quint32 &segment1_id, const quint32 &segment2_id,
                            QGraphicsItem * parent = nullptr);
 
     virtual int   type() const override {return Type;}
@@ -99,6 +100,11 @@ protected:
     QString       formula;      /*!< @brief formula keep formula of length */
     QString       lineColor;
     quint32       curveCutId;
+    /** @brief m_segment1_id, m_segment2_id persisted ids of the two curve segments this cut produces -
+     *  needed so a formula referencing either segment's length/angle composite variable keeps
+     *  resolving after id-token translation. See issue #1692. */
+    quint32       m_segment1_id;
+    quint32       m_segment2_id;
     bool          m_piecesMode;
 
     void          RefreshGeometry();

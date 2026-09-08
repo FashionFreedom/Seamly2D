@@ -135,5 +135,5 @@ bool CustomVariable::IsFormulaOk() const
 //---------------------------------------------------------------------------------------------------------------------
 VContainer *CustomVariable::GetData()
 {
-    return &d->data;
+    return d->data;
 }

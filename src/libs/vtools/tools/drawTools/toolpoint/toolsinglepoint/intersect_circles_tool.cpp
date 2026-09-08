@@ -60,6 +60,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vdrawtool.h"
 #include "../../../vabstracttool.h"
@@ -389,8 +394,12 @@ void IntersectCirclesTool::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrC1Center, QString().setNum(dialogTool->GetFirstCircleCenterId()));
     doc->SetAttribute(domElement, AttrC2Center, QString().setNum(dialogTool->GetSecondCircleCenterId()));
-    doc->SetAttribute(domElement, AttrC1Radius, dialogTool->GetFirstCircleRadius());
-    doc->SetAttribute(domElement, AttrC2Radius, dialogTool->GetSecondCircleRadius());
+    doc->SetAttribute(domElement, AttrC1Radius,
+                      formulaNamesToIds(dialogTool->GetFirstCircleRadius(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
+    doc->SetAttribute(domElement, AttrC2Radius,
+                      formulaNamesToIds(dialogTool->GetSecondCircleRadius(),
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(domElement, AttrCrossPoint,
                       QString().setNum(static_cast<int>(dialogTool->GetCrossCirclesPoint())));
 }
@@ -403,8 +412,12 @@ void IntersectCirclesTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrC1Center, firstCircleCenterId);
     doc->SetAttribute(tag, AttrC2Center, secondCircleCenterId);
-    doc->SetAttribute(tag, AttrC1Radius, firstCircleRadius);
-    doc->SetAttribute(tag, AttrC2Radius, secondCircleRadius);
+    doc->SetAttribute(tag, AttrC1Radius,
+                      formulaNamesToIds(firstCircleRadius,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
+    doc->SetAttribute(tag, AttrC2Radius,
+                      formulaNamesToIds(secondCircleRadius,
+                                                               nameToIdTokenMap(&(this->VAbstractTool::data))));
     doc->SetAttribute(tag, AttrCrossPoint, static_cast<int>(crossPoint));
 }
 
@@ -413,8 +426,12 @@ void IntersectCirclesTool::ReadToolAttributes(const QDomElement &domElement)
 {
     firstCircleCenterId = doc->GetParametrUInt(domElement, AttrC1Center, NULL_ID_STR);
     secondCircleCenterId = doc->GetParametrUInt(domElement, AttrC2Center, NULL_ID_STR);
-    firstCircleRadius = doc->GetParametrString(domElement, AttrC1Radius);
-    secondCircleRadius = doc->GetParametrString(domElement, AttrC2Radius);
+    firstCircleRadius = formulaIdsToNames(
+                             doc->GetParametrString(domElement, AttrC1Radius),
+                             idTokenToNameMap(&(this->VAbstractTool::data)));
+    secondCircleRadius = formulaIdsToNames(
+                              doc->GetParametrString(domElement, AttrC2Radius),
+                              idTokenToNameMap(&(this->VAbstractTool::data)));
     crossPoint = static_cast<CrossCirclesPoint>(doc->GetParametrUInt(domElement, AttrCrossPoint, "1"));
 }
 

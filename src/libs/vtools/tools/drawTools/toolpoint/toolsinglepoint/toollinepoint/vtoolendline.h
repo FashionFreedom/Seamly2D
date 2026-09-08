@@ -82,7 +82,7 @@ public:
     static VToolEndLine *Create(const quint32 _id, const QString &pointName,
                                 const QString &lineType, const QString &lineWeight,
                                 const QString &lineColor, QString &formulaLength, QString &formulaAngle,
-                                quint32 basePointId, qreal mx, qreal my, bool showPointName,
+                                quint32 basePointId, quint32 line_id, qreal mx, qreal my, bool showPointName,
                                 VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                 const Document &parse,
                                 const Source &typeCreation);
@@ -99,6 +99,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      getCopyLengthLineId() const override {return m_line_id;}
+    virtual quint32      getCopyAngleLineId() const override {return m_line_id;}
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
     virtual void         ReadToolAttributes(const QDomElement &domElement) override;
@@ -108,12 +110,14 @@ private:
     Q_DISABLE_COPY(VToolEndLine)
 
     QString formulaAngle;
+    quint32 m_line_id; /** @brief m_line_id persisted id of this tool's line. See issue #1678. */
 
                          VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                       const QString &lineType, const QString &lineWeight,
                                       const QString &lineColor, const QString &formulaLength,
                                       const QString &formulaAngle, const quint32 &basePointId,
-                                      const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                                      const quint32 &line_id, const Source &typeCreation,
+                                      QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLENDLINE_H

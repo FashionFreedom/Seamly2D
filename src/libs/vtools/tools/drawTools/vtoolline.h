@@ -125,6 +125,8 @@ protected slots:
     virtual void      showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32   getCopyLengthLineId() const override {return m_id;}
+    virtual quint32   getCopyAngleLineId() const override {return m_id;}
     virtual void      contextMenuEvent(QGraphicsSceneContextMenuEvent * event ) override;
     virtual void      AddToFile() override;
     virtual void      hoverEnterEvent(QGraphicsSceneHoverEvent * event ) override;

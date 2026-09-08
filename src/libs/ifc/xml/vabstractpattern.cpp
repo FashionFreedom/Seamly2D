@@ -70,6 +70,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/vdatatool.h"
 
@@ -336,6 +341,14 @@ QStringList VAbstractPattern::ListMeasurements() const
 
             if (IsVariable(tValues.at(j)) || IsPostfixOperator(tValues.at(j)) || IsFunction(tValues.at(j)))
             {
+                others.insert(tValues.at(j));
+            }
+            else if (FormulaIdTranslator::isIdToken(tValues.at(j)))
+            {
+                // A stored formula now references points/lines/curves by id token, not by name
+                // (see formulaidtranslator.h) - such a token is never a measurement, whether or
+                // not the object it refers to happens to be registered yet at this early,
+                // pre-parse point in loading.
                 others.insert(tValues.at(j));
             }
             else
@@ -696,7 +709,7 @@ void VAbstractPattern::RemoveTool(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement)
+VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     VPiecePath path;
     const QDomNodeList nodeList = domElement.childNodes();
@@ -705,7 +718,7 @@ VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement)
         const QDomElement element = nodeList.at(i).toElement();
         if (!element.isNull())
         {
-            path.Append(ParseSANode(element));
+            path.Append(ParseSANode(element, id_token_to_name));
         }
     }
     return path;
@@ -776,15 +789,17 @@ QVector<quint32> VAbstractPattern::ParsePieceAnchors(const QDomElement &domEleme
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
+VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     const quint32 id = VDomDocument::GetParametrUInt(domElement, AttrIdObject, NULL_ID_STR);
     const bool reverse = VDomDocument::GetParametrUInt(domElement, VAbstractPattern::AttrNodeReverse, "0");
     const bool excluded = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeExcluded, falseStr);
-    const QString saBefore = VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSABefore,
-                                                             currentSeamAllowance);
-    const QString saAfter = VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSAAfter,
-                                                            currentSeamAllowance);
+    const QString saBefore = formulaIdsToNames(
+        VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSABefore, currentSeamAllowance),
+        id_token_to_name);
+    const QString saAfter = formulaIdsToNames(
+        VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSAAfter, currentSeamAllowance),
+        id_token_to_name);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
 
     const bool notch = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeIsNotch, falseStr);
@@ -1696,7 +1711,7 @@ void VAbstractPattern::ToolExists(const quint32 &id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
+VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     VPiecePath path;
     const QDomNodeList nodeList = domElement.childNodes();
@@ -1705,7 +1720,7 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
         const QDomElement element = nodeList.at(i).toElement();
         if (!element.isNull() && element.tagName() == VAbstractPattern::TagNode)
         {
-            path.Append(ParseSANode(element));
+            path.Append(ParseSANode(element, id_token_to_name));
         }
     }
     return path;
@@ -1867,10 +1882,13 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief isVariableUsed check if any of the variables is referenced by a formula in the pattern.
 /// @param variable_names names of the variables to look for.
+/// @param data live container, used to translate object/composite-variable names to the id-token
+///        form formulas are actually stored in - a plain string match against the raw names would
+///        never find a match, since every formula in the pattern is id-token text on disk.
 /// @return true if at least one formula uses one of the variables.
 //---------------------------------------------------------------------------------------------------------------------
 
-bool VAbstractPattern::isVariableUsed(const QStringList &variable_names) const
+bool VAbstractPattern::isVariableUsed(const QStringList &variable_names, const VContainer *data) const
 {
     QStringList names = variable_names;
     names.removeAll(QString());
@@ -1878,6 +1896,14 @@ bool VAbstractPattern::isVariableUsed(const QStringList &variable_names) const
     if (names.isEmpty())
     {
         return false;
+    }
+
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(data);
+    for (int i = 0; i < names.size(); ++i)
+    {
+        // Custom variables/increments aren't in the id-token map (they have no numeric id to
+        // begin with), so they pass through unchanged - exactly what's needed for them.
+        names[i] = name_to_id_token.value(names.at(i), names.at(i));
     }
 
     const QVector<VFormulaField> expressions = ListExpressions();
@@ -2001,7 +2027,24 @@ QVector<VFormulaField> VAbstractPattern::ListElArcExpressions() const
 //---------------------------------------------------------------------------------------------------------------------
 QVector<VFormulaField> VAbstractPattern::ListSplineExpressions() const
 {
+    // Check if new tool doesn't bring new attribute with a formula.
+    // If no just increment number.
+    // If new tool bring absolutely new type and has formula(s) create new method to cover it.
+    Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54);
+
     QVector<VFormulaField> expressions;
+    const QDomNodeList list = elementsByTagName(TagSpline);
+    for (int i=0; i < list.size(); ++i)
+    {
+        const QDomElement dom = list.at(i).toElement();
+
+        // Each tag can contains several attributes.
+        ReadExpressionAttribute(expressions, dom, AttrAngle1);
+        ReadExpressionAttribute(expressions, dom, AttrAngle2);
+        ReadExpressionAttribute(expressions, dom, AttrLength1);
+        ReadExpressionAttribute(expressions, dom, AttrLength2);
+    }
+
     expressions << ListPathPointExpressions();
     return expressions;
 }
@@ -2021,9 +2064,15 @@ QVector<VFormulaField> VAbstractPattern::ListPathPointExpressions() const
         const QDomElement dom = list.at(i).toElement();
 
         // Each tag can contains several attributes.
+        // Legacy (old-format) attributes, kept for old files still using them.
         ReadExpressionAttribute(expressions, dom, AttrKAsm1);
         ReadExpressionAttribute(expressions, dom, AttrKAsm2);
         ReadExpressionAttribute(expressions, dom, AttrAngle);
+        // Current-format attributes.
+        ReadExpressionAttribute(expressions, dom, AttrLength1);
+        ReadExpressionAttribute(expressions, dom, AttrLength2);
+        ReadExpressionAttribute(expressions, dom, AttrAngle1);
+        ReadExpressionAttribute(expressions, dom, AttrAngle2);
     }
 
     return expressions;
@@ -2061,6 +2110,7 @@ QVector<VFormulaField> VAbstractPattern::ListOperationExpressions() const
         // Each tag can contains several attributes.
         ReadExpressionAttribute(expressions, dom, AttrAngle);
         ReadExpressionAttribute(expressions, dom, AttrLength);
+        ReadExpressionAttribute(expressions, dom, AttrRotationAngle);
     }
 
     return expressions;
@@ -2122,6 +2172,7 @@ QVector<VFormulaField> VAbstractPattern::ListGrainlineExpressions(const QDomElem
         // Each tag can contains several attributes.
         ReadExpressionAttribute(expressions, element, AttrRotation);
         ReadExpressionAttribute(expressions, element, AttrLength);
+        ReadExpressionAttribute(expressions, element, AttrArrowLength);
     }
 
     return expressions;
@@ -2150,6 +2201,23 @@ QVector<VFormulaField> VAbstractPattern::ListPieceExpressions() const
 
         expressions << ListNodesExpressions(dom.firstChildElement(TagNodes));
         expressions << ListGrainlineExpressions(dom.firstChildElement(TagGrainline));
+        expressions << listLabelExpressions(dom.firstChildElement(TagData));
+        expressions << listLabelExpressions(dom.firstChildElement(TagPatternInfo));
+    }
+
+    return expressions;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<VFormulaField> VAbstractPattern::listLabelExpressions(const QDomElement &element) const
+{
+    QVector<VFormulaField> expressions;
+    if (!element.isNull())
+    {
+        // Each tag can contains several attributes.
+        ReadExpressionAttribute(expressions, element, AttrWidth);
+        ReadExpressionAttribute(expressions, element, AttrHeight);
+        ReadExpressionAttribute(expressions, element, AttrRotation);
     }
 
     return expressions;
@@ -3128,14 +3196,17 @@ bool VAbstractPattern::groupNameExists(const QString &groupName)
 QString VAbstractPattern::useGroupColor(quint32 toolId, QString color)
 {
     QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
-    QStringList list = QStringList(groupsContainingItem.values());
-    QString  groupName = list.value(0);
+    if (groupsContainingItem.isEmpty())
+    {
+        return color;
+    }
+    const quint32 groupId = groupsContainingItem.firstKey();
 
     quint32 objectId = toolId;
-    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    bool groupHasItem = hasGroupItem(elementById(groupId, TagGroup), toolId, objectId);
     if ((color == ColorByGroup) && groupHasItem)
     {
-        QString groupColor = getGroupColor(getGroupIdByName(groupName));
+        QString groupColor = getGroupColor(groupId);
         return groupColor;
     }
     else
@@ -3147,15 +3218,18 @@ QString VAbstractPattern::useGroupColor(quint32 toolId, QString color)
 QString VAbstractPattern::useGroupLineType(quint32 toolId, QString type)
 {
     QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
-    QStringList list = QStringList(groupsContainingItem.values());
-    QString  groupName = list.value(0);
+    if (groupsContainingItem.isEmpty())
+    {
+        return type;
+    }
+    const quint32 groupId = groupsContainingItem.firstKey();
 
     quint32 objectId = toolId;
-    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    bool groupHasItem = hasGroupItem(elementById(groupId, TagGroup), toolId, objectId);
 
     if ((type == LineTypeByGroup) && groupHasItem)
     {
-        QString groupLineType = getGroupLineType(getGroupIdByName(groupName));
+        QString groupLineType = getGroupLineType(groupId);
         return groupLineType;
     }
     else
@@ -3167,14 +3241,17 @@ QString VAbstractPattern::useGroupLineType(quint32 toolId, QString type)
 QString VAbstractPattern::useGroupLineWeight(quint32 toolId, QString weight)
 {
     QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
-    QStringList list = QStringList(groupsContainingItem.values());
-    QString  groupName = list.value(0);
+    if (groupsContainingItem.isEmpty())
+    {
+        return weight;
+    }
+    const quint32 groupId = groupsContainingItem.firstKey();
 
     quint32 objectId = toolId;
-    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    bool groupHasItem = hasGroupItem(elementById(groupId, TagGroup), toolId, objectId);
     if ((weight == LineWeightByGroup) && groupHasItem)
     {
-        QString groupLineWeight = getGroupLineWeight(getGroupIdByName(groupName));
+        QString groupLineWeight = getGroupLineWeight(groupId);
         return groupLineWeight;
     }
     else

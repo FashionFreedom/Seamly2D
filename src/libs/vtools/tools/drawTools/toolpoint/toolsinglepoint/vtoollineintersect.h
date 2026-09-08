@@ -79,6 +79,7 @@ public:
                                       VAbstractPattern *doc, VContainer *data);
     static VToolLineIntersect *Create(const quint32 _id, const quint32 &p1Line1Id, const quint32 &p2Line1Id,
                                       const quint32 &p1Line2Id, const quint32 &p2Line2Id, const QString &pointName,
+                                      quint32 line1_id, quint32 line2_id, quint32 line3_id, quint32 line4_id,
                                       qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc,
                                       VContainer *data, const Document &parse, const Source &typeCreation);
@@ -110,6 +111,7 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      getCopyLengthLineId() const override {return m_line1_id;}
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -132,10 +134,16 @@ private:
     /** @brief p2Line2 id second point second line.*/
     quint32               p2Line2;
 
+    quint32               m_line1_id; /** @brief m_line1_id persisted id of the p1Line1-to-point line. See issue #1678. */
+    quint32               m_line2_id; /** @brief m_line2_id persisted id of the point-to-p2Line1 line. See issue #1678. */
+    quint32               m_line3_id; /** @brief m_line3_id persisted id of the p1Line2-to-point line. See issue #1678. */
+    quint32               m_line4_id; /** @brief m_line4_id persisted id of the point-to-p2Line2 line. See issue #1678. */
+
                           VToolLineIntersect(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                              const quint32 &p1Line1, const quint32 &p2Line1, const quint32 &p1Line2,
-                                             const quint32 &p2Line2, const Source &typeCreation,
-                                             QGraphicsItem * parent = nullptr);
+                                             const quint32 &p2Line2, const quint32 &line1_id, const quint32 &line2_id,
+                                             const quint32 &line3_id, const quint32 &line4_id,
+                                             const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLLINEINTERSECT_H
