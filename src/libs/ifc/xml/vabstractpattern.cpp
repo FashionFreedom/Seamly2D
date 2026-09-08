@@ -709,7 +709,7 @@ void VAbstractPattern::RemoveTool(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement, const QHash<QString, QString> &idTokenToName)
+VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     VPiecePath path;
     const QDomNodeList nodeList = domElement.childNodes();
@@ -718,7 +718,7 @@ VPiecePath VAbstractPattern::ParsePieceNodes(const QDomElement &domElement, cons
         const QDomElement element = nodeList.at(i).toElement();
         if (!element.isNull())
         {
-            path.Append(ParseSANode(element, idTokenToName));
+            path.Append(ParseSANode(element, id_token_to_name));
         }
     }
     return path;
@@ -789,17 +789,17 @@ QVector<quint32> VAbstractPattern::ParsePieceAnchors(const QDomElement &domEleme
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement, const QHash<QString, QString> &idTokenToName)
+VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     const quint32 id = VDomDocument::GetParametrUInt(domElement, AttrIdObject, NULL_ID_STR);
     const bool reverse = VDomDocument::GetParametrUInt(domElement, VAbstractPattern::AttrNodeReverse, "0");
     const bool excluded = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeExcluded, falseStr);
     const QString saBefore = formulaIdsToNames(
         VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSABefore, currentSeamAllowance),
-        idTokenToName);
+        id_token_to_name);
     const QString saAfter = formulaIdsToNames(
         VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSAAfter, currentSeamAllowance),
-        idTokenToName);
+        id_token_to_name);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
 
     const bool notch = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeIsNotch, falseStr);
@@ -1711,7 +1711,7 @@ void VAbstractPattern::ToolExists(const quint32 &id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement, const QHash<QString, QString> &idTokenToName)
+VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement, const QHash<QString, QString> &id_token_to_name)
 {
     VPiecePath path;
     const QDomNodeList nodeList = domElement.childNodes();
@@ -1720,7 +1720,7 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement, const
         const QDomElement element = nodeList.at(i).toElement();
         if (!element.isNull() && element.tagName() == VAbstractPattern::TagNode)
         {
-            path.Append(ParseSANode(element, idTokenToName));
+            path.Append(ParseSANode(element, id_token_to_name));
         }
     }
     return path;
@@ -1898,12 +1898,12 @@ bool VAbstractPattern::isVariableUsed(const QStringList &variable_names, const V
         return false;
     }
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data);
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(data);
     for (int i = 0; i < names.size(); ++i)
     {
         // Custom variables/increments aren't in the id-token map (they have no numeric id to
         // begin with), so they pass through unchanged - exactly what's needed for them.
-        names[i] = nameToIdToken.value(names.at(i), names.at(i));
+        names[i] = name_to_id_token.value(names.at(i), names.at(i));
     }
 
     const QVector<VFormulaField> expressions = ListExpressions();
@@ -2201,15 +2201,15 @@ QVector<VFormulaField> VAbstractPattern::ListPieceExpressions() const
 
         expressions << ListNodesExpressions(dom.firstChildElement(TagNodes));
         expressions << ListGrainlineExpressions(dom.firstChildElement(TagGrainline));
-        expressions << ListLabelExpressions(dom.firstChildElement(TagData));
-        expressions << ListLabelExpressions(dom.firstChildElement(TagPatternInfo));
+        expressions << listLabelExpressions(dom.firstChildElement(TagData));
+        expressions << listLabelExpressions(dom.firstChildElement(TagPatternInfo));
     }
 
     return expressions;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VFormulaField> VAbstractPattern::ListLabelExpressions(const QDomElement &element) const
+QVector<VFormulaField> VAbstractPattern::listLabelExpressions(const QDomElement &element) const
 {
     QVector<VFormulaField> expressions;
     if (!element.isNull())
