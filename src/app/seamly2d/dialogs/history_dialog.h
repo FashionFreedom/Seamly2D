@@ -118,7 +118,7 @@ private:
     void                    initializeTable();
     void                    showTool();
     quint32                 attrUInt(const QDomElement &domElement, const QString &name);
-    QString                 formulaValue(const QDomElement &domElement, const QString &name, const QString &defValue = QString());
+    QString                 formulaValue(const QDomElement &domElement, const QString &name, const QString &def_value = QString());
     void                    retranslateUi();
     int                     cursorRow() const;
     void                    findText(const QString &text);

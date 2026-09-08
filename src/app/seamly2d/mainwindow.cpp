@@ -6701,10 +6701,10 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
     if (m_curFileFormatVersion < VPatternConverter::PatternMaxVer)
     {
         // One-time catch-up: bring every formula in this file to the id-token form, not just
-        // the ones a tool happens to touch next. See VPattern::ConvertFormulasToIdTokens().
+        // the ones a tool happens to touch next. See VPattern::convertFormulasToIdTokens().
         // Runs regardless of GUI mode so a headless load (e.g. --test) converts old files too,
         // not just interactive loads.
-        doc->ConvertFormulasToIdTokens();
+        doc->convertFormulasToIdTokens();
     }
 
     if (guiEnabled)

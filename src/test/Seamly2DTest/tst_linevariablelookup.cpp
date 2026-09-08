@@ -41,25 +41,25 @@ TST_LineVariableLookup::TST_LineVariableLookup(QObject *parent)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Mirrors what VContainer::AddLine() does when a draw tool registers its implicit line (see
- * issue #1678): two points plus a persisted lineId, then a lookup by that same lineId must find the
+ * issue #1678): two points plus a persisted line_id, then a lookup by that same line_id must find the
  * VLengthLine/VLineAngle AddLine() created for it - the same lookup VDrawTool::LineLengthName()/
  * LineAngleName() rely on to build "Copy Length"/"Copy Angle" clipboard text.
  */
 void TST_LineVariableLookup::TestFindLineLengthReturnsMatchingLine()
 {
     const Unit unit = Unit::Cm;
-    const VTranslateVars trVars;
-    QScopedPointer<VContainer> data(new VContainer(&trVars, &unit));
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
 
-    const quint32 p1Id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    const quint32 p2Id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    const quint32 lineId = 99;
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    const quint32 line_id = 99;
 
-    data->AddLine(p1Id, p2Id, lineId);
+    data->AddLine(p1_id, p2_id, line_id);
 
-    const QSharedPointer<VLengthLine> found = FindLineLength(*data, lineId);
+    const QSharedPointer<VLengthLine> found = FindLineLength(*data, line_id);
     QVERIFY(!found.isNull());
-    QCOMPARE(found->GetLineId(), lineId);
+    QCOMPARE(found->GetLineId(), line_id);
     QCOMPARE(found->GetName(), QStringLiteral("Line_A1_A2"));
 }
 
@@ -67,30 +67,30 @@ void TST_LineVariableLookup::TestFindLineLengthReturnsMatchingLine()
 void TST_LineVariableLookup::TestFindLineAngleReturnsMatchingLine()
 {
     const Unit unit = Unit::Cm;
-    const VTranslateVars trVars;
-    QScopedPointer<VContainer> data(new VContainer(&trVars, &unit));
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
 
-    const quint32 p1Id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    const quint32 p2Id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    const quint32 lineId = 99;
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    const quint32 line_id = 99;
 
-    data->AddLine(p1Id, p2Id, lineId);
+    data->AddLine(p1_id, p2_id, line_id);
 
-    const QSharedPointer<VLineAngle> found = FindLineAngle(*data, lineId);
+    const QSharedPointer<VLineAngle> found = FindLineAngle(*data, line_id);
     QVERIFY(!found.isNull());
-    QCOMPARE(found->GetLineId(), lineId);
+    QCOMPARE(found->GetLineId(), line_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void TST_LineVariableLookup::TestFindLineLengthReturnsNullForUnknownId()
 {
     const Unit unit = Unit::Cm;
-    const VTranslateVars trVars;
-    QScopedPointer<VContainer> data(new VContainer(&trVars, &unit));
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
 
-    const quint32 p1Id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    const quint32 p2Id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    data->AddLine(p1Id, p2Id, 99);
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p1_id, p2_id, 99);
 
     QVERIFY(FindLineLength(*data, 12345).isNull());
 }
@@ -99,12 +99,12 @@ void TST_LineVariableLookup::TestFindLineLengthReturnsNullForUnknownId()
 void TST_LineVariableLookup::TestFindLineAngleReturnsNullForUnknownId()
 {
     const Unit unit = Unit::Cm;
-    const VTranslateVars trVars;
-    QScopedPointer<VContainer> data(new VContainer(&trVars, &unit));
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
 
-    const quint32 p1Id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    const quint32 p2Id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    data->AddLine(p1Id, p2Id, 99);
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p1_id, p2_id, 99);
 
     QVERIFY(FindLineAngle(*data, 12345).isNull());
 }

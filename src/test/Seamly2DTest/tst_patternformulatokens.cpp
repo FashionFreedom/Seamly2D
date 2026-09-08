@@ -49,10 +49,10 @@ void TST_PatternFormulaTokens::TestMergesPlainAndCompositeEntries()
     const quint32 id2 = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
     data->AddLine(id1, id2, id2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(data.data());
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(data.data());
 
-    QCOMPARE(nameToIdToken.value(QStringLiteral("A1")), idToken(id1));
-    QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")),
+    QCOMPARE(name_to_id_token.value(QStringLiteral("A1")), idToken(id1));
+    QCOMPARE(name_to_id_token.value(QStringLiteral("Line_A1_A2")),
              QStringLiteral("Line_%1").arg(idToken(id2)));
 }
 

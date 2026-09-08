@@ -55,12 +55,12 @@ void TST_FormulaIdTranslator::TestFormulaNamesToIds()
     QFETCH(QString, formula);
     QFETCH(QString, expected);
 
-    QHash<QString, QString> nameToIdToken;
-    nameToIdToken.insert(QStringLiteral("A1"), QStringLiteral("id42"));
-    nameToIdToken.insert(QStringLiteral("A"), QStringLiteral("id1"));
-    nameToIdToken.insert(QStringLiteral("B"), QStringLiteral("id2"));
+    QHash<QString, QString> name_to_id_token;
+    name_to_id_token.insert(QStringLiteral("A1"), QStringLiteral("id42"));
+    name_to_id_token.insert(QStringLiteral("A"), QStringLiteral("id1"));
+    name_to_id_token.insert(QStringLiteral("B"), QStringLiteral("id2"));
 
-    QCOMPARE(formulaNamesToIds(formula, nameToIdToken), expected);
+    QCOMPARE(formulaNamesToIds(formula, name_to_id_token), expected);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -81,12 +81,12 @@ void TST_FormulaIdTranslator::TestFormulaIdsToNames()
     QFETCH(QString, formula);
     QFETCH(QString, expected);
 
-    QHash<QString, QString> idTokenToName;
-    idTokenToName.insert(QStringLiteral("id42"), QStringLiteral("A1"));
-    idTokenToName.insert(QStringLiteral("id1"), QStringLiteral("A"));
-    idTokenToName.insert(QStringLiteral("id2"), QStringLiteral("B"));
+    QHash<QString, QString> id_token_to_name;
+    id_token_to_name.insert(QStringLiteral("id42"), QStringLiteral("A1"));
+    id_token_to_name.insert(QStringLiteral("id1"), QStringLiteral("A"));
+    id_token_to_name.insert(QStringLiteral("id2"), QStringLiteral("B"));
 
-    QCOMPARE(formulaIdsToNames(formula, idTokenToName), expected);
+    QCOMPARE(formulaIdsToNames(formula, id_token_to_name), expected);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -96,19 +96,19 @@ void TST_FormulaIdTranslator::TestFormulaIdsToNames()
  */
 void TST_FormulaIdTranslator::TestRoundTripSurvivesRename()
 {
-    QHash<QString, QString> nameToIdToken;
-    nameToIdToken.insert(QStringLiteral("A1"), QStringLiteral("id42"));
+    QHash<QString, QString> name_to_id_token;
+    name_to_id_token.insert(QStringLiteral("A1"), QStringLiteral("id42"));
 
-    const QString stored = formulaNamesToIds(QStringLiteral("A1+5"), nameToIdToken);
+    const QString stored = formulaNamesToIds(QStringLiteral("A1+5"), name_to_id_token);
     QCOMPARE(stored, QStringLiteral("id42+5"));
 
-    QHash<QString, QString> idTokenToNameBeforeRename;
-    idTokenToNameBeforeRename.insert(QStringLiteral("id42"), QStringLiteral("A1"));
-    QCOMPARE(formulaIdsToNames(stored, idTokenToNameBeforeRename), QStringLiteral("A1+5"));
+    QHash<QString, QString> id_token_to_name_before_rename;
+    id_token_to_name_before_rename.insert(QStringLiteral("id42"), QStringLiteral("A1"));
+    QCOMPARE(formulaIdsToNames(stored, id_token_to_name_before_rename), QStringLiteral("A1+5"));
 
-    QHash<QString, QString> idTokenToNameAfterRename;
-    idTokenToNameAfterRename.insert(QStringLiteral("id42"), QStringLiteral("Halsloch_hinten"));
-    QCOMPARE(formulaIdsToNames(stored, idTokenToNameAfterRename),
+    QHash<QString, QString> id_token_to_name_after_rename;
+    id_token_to_name_after_rename.insert(QStringLiteral("id42"), QStringLiteral("Halsloch_hinten"));
+    QCOMPARE(formulaIdsToNames(stored, id_token_to_name_after_rename),
              QStringLiteral("Halsloch_hinten+5"));
 
     // The stored formula itself must be untouched by the rename.
@@ -124,16 +124,16 @@ void TST_FormulaIdTranslator::TestRoundTripSurvivesRename()
  */
 void TST_FormulaIdTranslator::TestCompositeNameNoSplittingAmbiguity()
 {
-    QHash<QString, QString> nameToIdToken;
-    nameToIdToken.insert(QStringLiteral("Line_Halsloch_hinten_A2"), QStringLiteral("Line_id42_id17"));
+    QHash<QString, QString> name_to_id_token;
+    name_to_id_token.insert(QStringLiteral("Line_Halsloch_hinten_A2"), QStringLiteral("Line_id42_id17"));
 
     const QString stored = formulaNamesToIds(
-        QStringLiteral("Line_Halsloch_hinten_A2*2"), nameToIdToken);
+        QStringLiteral("Line_Halsloch_hinten_A2*2"), name_to_id_token);
     QCOMPARE(stored, QStringLiteral("Line_id42_id17*2"));
 
-    QHash<QString, QString> idTokenToName;
-    idTokenToName.insert(QStringLiteral("Line_id42_id17"), QStringLiteral("Line_Halsloch_hinten_A2"));
-    QCOMPARE(formulaIdsToNames(stored, idTokenToName),
+    QHash<QString, QString> id_token_to_name;
+    id_token_to_name.insert(QStringLiteral("Line_id42_id17"), QStringLiteral("Line_Halsloch_hinten_A2"));
+    QCOMPARE(formulaIdsToNames(stored, id_token_to_name),
              QStringLiteral("Line_Halsloch_hinten_A2*2"));
 }
 

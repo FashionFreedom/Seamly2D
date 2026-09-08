@@ -54,29 +54,29 @@ TST_LineEndpointReconnectionDetection::TST_LineEndpointReconnectionDetection(QOb
 void TST_LineEndpointReconnectionDetection::TestReconnectedLineLeavesDependentFormulaUnresolved()
 {
     const Unit unit = Unit::Cm;
-    const quint32 idA1 = 4001;
-    const quint32 idA2 = 4002;
-    const quint32 idA3 = 4003;
-    const quint32 lineToolId = 4010;
+    const quint32 id_a1 = 4001;
+    const quint32 id_a2 = 4002;
+    const quint32 id_a3 = 4003;
+    const quint32 line_tool_id = 4010;
 
     // Before: the line tool connects A1 to A2, and a dependent formula references that line.
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
-    before->UpdateGObject(idA1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    before->UpdateGObject(idA2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    before->UpdateGObject(idA3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
-    before->AddLine(idA1, idA2, lineToolId);
+    before->UpdateGObject(id_a1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    before->UpdateGObject(id_a2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    before->UpdateGObject(id_a3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
+    before->AddLine(id_a1, id_a2, line_tool_id);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_A1_A2/2"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(lineToolId));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(line_tool_id));
 
     // After: the user edited the line tool's second point in the property editor/dialog, so it now
     // connects A1 to A3 instead. Same tool, same generating id - just a different current pairing.
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
-    after->UpdateGObject(idA1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    after->UpdateGObject(idA2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    after->UpdateGObject(idA3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
-    after->AddLine(idA1, idA3, lineToolId);
+    after->UpdateGObject(id_a1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    after->UpdateGObject(id_a2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    after->UpdateGObject(id_a3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
+    after->AddLine(id_a1, id_a3, line_tool_id);
 
     // The stored token must resolve against the reconnected container, correctly picking up the new
     // pairing (A1-A3) instead of staying broken.
@@ -95,25 +95,25 @@ void TST_LineEndpointReconnectionDetection::TestReconnectedLineLeavesDependentFo
 void TST_LineEndpointReconnectionDetection::TestReconnectedLineFormulaFailsEvaluation()
 {
     const Unit unit = Unit::Cm;
-    const quint32 idA1 = 4004;
-    const quint32 idA2 = 4005;
-    const quint32 idA3 = 4006;
-    const quint32 lineToolId = 4011;
+    const quint32 id_a1 = 4004;
+    const quint32 id_a2 = 4005;
+    const quint32 id_a3 = 4006;
+    const quint32 line_tool_id = 4011;
 
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
-    before->UpdateGObject(idA1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    before->UpdateGObject(idA2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    before->UpdateGObject(idA3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
-    before->AddLine(idA1, idA2, lineToolId);
+    before->UpdateGObject(id_a1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    before->UpdateGObject(id_a2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    before->UpdateGObject(id_a3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
+    before->AddLine(id_a1, id_a2, line_tool_id);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_A1_A2/2"), nameToIdTokenMap(before.data()));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
-    after->UpdateGObject(idA1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
-    after->UpdateGObject(idA2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    after->UpdateGObject(idA3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
-    after->AddLine(idA1, idA3, lineToolId);
+    after->UpdateGObject(id_a1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    after->UpdateGObject(id_a2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    after->UpdateGObject(id_a3, new VPointF(0, 10, QStringLiteral("A3"), 5, 5));
+    after->AddLine(id_a1, id_a3, line_tool_id);
 
     const QString translated = formulaIdsToNames(stored, idTokenToNameMap(after.data()));
 
@@ -132,8 +132,8 @@ void TST_LineEndpointReconnectionDetection::TestReconnectedLineFormulaFailsEvalu
                       "line, with no repair needed");
     // Half the reconnected line's own (VPointF coordinates are in pixels, not cm) length - computed
     // the same way the production code does, rather than assuming a px-per-cm factor here.
-    const QSharedPointer<VPointF> a1 = after->GeometricObject<VPointF>(idA1);
-    const QSharedPointer<VPointF> a3 = after->GeometricObject<VPointF>(idA3);
+    const QSharedPointer<VPointF> a1 = after->GeometricObject<VPointF>(id_a1);
+    const QSharedPointer<VPointF> a3 = after->GeometricObject<VPointF>(id_a3);
     const qreal expected = FromPixel(QLineF(static_cast<QPointF>(*a1), static_cast<QPointF>(*a3)).length(), unit) / 2;
     QCOMPARE(result, expected);
 }

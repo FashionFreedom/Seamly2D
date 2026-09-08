@@ -792,11 +792,11 @@ quint32 HistoryDialog::attrUInt(const QDomElement &domElement, const QString &na
 /// @brief formulaValue reads a formula attribute and translates its stored id tokens back to names
 /// @param domElement tag in xml tree
 /// @param name attribute name
-/// @param defValue value used when the attribute is missing
+/// @param def_value value used when the attribute is missing
 //---------------------------------------------------------------------------------------------------------------------
-QString HistoryDialog::formulaValue(const QDomElement &domElement, const QString &name, const QString &defValue)
+QString HistoryDialog::formulaValue(const QDomElement &domElement, const QString &name, const QString &def_value)
 {
-    const QString formula = m_doc->GetParametrString(domElement, name, defValue);
+    const QString formula = m_doc->GetParametrString(domElement, name, def_value);
     return FormulaIdTranslator::formulaIdsToNames(formula, PatternFormulaTokens::idTokenToNameMap(data));
 }
 

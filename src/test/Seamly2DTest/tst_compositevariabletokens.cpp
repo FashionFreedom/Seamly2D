@@ -62,13 +62,13 @@ void TST_CompositeVariableTokens::TestLineLengthMapping()
     variables.insert(length->GetName(), length);
     QCOMPARE(length->GetName(), QStringLiteral("Line_A1_A2"));
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(QStringLiteral("Line_A1_A2")), QStringLiteral("Line_id99"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(QStringLiteral("Line_A1_A2")), QStringLiteral("Line_id99"));
 
-    const QHash<QString, QString> idTokenToName = idTokenToNameMap(variables);
-    QCOMPARE(idTokenToName.value(QStringLiteral("Line_id99")), QStringLiteral("Line_A1_A2"));
+    const QHash<QString, QString> id_token_to_name = idTokenToNameMap(variables);
+    QCOMPARE(id_token_to_name.value(QStringLiteral("Line_id99")), QStringLiteral("Line_A1_A2"));
 
-    QCOMPARE(formulaNamesToIds(QStringLiteral("Line_A1_A2*2"), nameToIdToken),
+    QCOMPARE(formulaNamesToIds(QStringLiteral("Line_A1_A2*2"), name_to_id_token),
              QStringLiteral("Line_id99*2"));
 }
 
@@ -83,22 +83,22 @@ void TST_CompositeVariableTokens::TestLineLengthSurvivesRename()
     const VPointF p1(0, 0, QStringLiteral("A1"), 5, 5);
     const VPointF p2(10, 0, QStringLiteral("A2"), 5, 5);
 
-    QSharedPointer<VInternalVariable> lengthBeforeRename(new VLengthLine(&p1, 42, &p2, 17, 99, Unit::Cm));
-    QHash<QString, QSharedPointer<VInternalVariable>> variablesBeforeRename;
-    variablesBeforeRename.insert(lengthBeforeRename->GetName(), lengthBeforeRename);
+    QSharedPointer<VInternalVariable> length_before_rename(new VLengthLine(&p1, 42, &p2, 17, 99, Unit::Cm));
+    QHash<QString, QSharedPointer<VInternalVariable>> variables_before_rename;
+    variables_before_rename.insert(length_before_rename->GetName(), length_before_rename);
 
     const QString stored = formulaNamesToIds(
-        QStringLiteral("Line_A1_A2*2"), nameToIdTokenMap(variablesBeforeRename));
+        QStringLiteral("Line_A1_A2*2"), nameToIdTokenMap(variables_before_rename));
     QCOMPARE(stored, QStringLiteral("Line_id99*2"));
 
     // A2 renamed to Halsloch_hinten: same ids, a fresh VLengthLine reflects the new name.
-    const VPointF p2Renamed(10, 0, QStringLiteral("Halsloch_hinten"), 5, 5);
-    QSharedPointer<VInternalVariable> lengthAfterRename(new VLengthLine(&p1, 42, &p2Renamed, 17, 99, Unit::Cm));
-    QHash<QString, QSharedPointer<VInternalVariable>> variablesAfterRename;
-    variablesAfterRename.insert(lengthAfterRename->GetName(), lengthAfterRename);
+    const VPointF p2_renamed(10, 0, QStringLiteral("Halsloch_hinten"), 5, 5);
+    QSharedPointer<VInternalVariable> length_after_rename(new VLengthLine(&p1, 42, &p2_renamed, 17, 99, Unit::Cm));
+    QHash<QString, QSharedPointer<VInternalVariable>> variables_after_rename;
+    variables_after_rename.insert(length_after_rename->GetName(), length_after_rename);
 
     QCOMPARE(formulaIdsToNames(
-                 stored, idTokenToNameMap(variablesAfterRename)),
+                 stored, idTokenToNameMap(variables_after_rename)),
              QStringLiteral("Line_A1_Halsloch_hinten*2"));
 
     // The stored formula itself must be untouched by the rename.
@@ -127,8 +127,8 @@ void TST_CompositeVariableTokens::TestLineAngleMapping()
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(angle->GetName(), angle);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(angle->GetName()), QStringLiteral("AngleLine_id99"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(angle->GetName()), QStringLiteral("AngleLine_id99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -143,8 +143,8 @@ void TST_CompositeVariableTokens::TestArcRadiusMapping()
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(radius->GetName(), radius);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(radius->GetName()), QStringLiteral("Radius0id99"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(radius->GetName()), QStringLiteral("Radius0id99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -156,20 +156,20 @@ void TST_CompositeVariableTokens::TestArcRadiusMapping()
 void TST_CompositeVariableTokens::TestEllipticalArcRadiusMapping()
 {
     VPointF center(0, 0, QStringLiteral("A1"), 5, 5);
-    VEllipticalArc elArc(center, 10, 5, 0, 90, 0);
-    elArc.setName(QStringLiteral("EllArc1"));
+    VEllipticalArc el_arc(center, 10, 5, 0, 90, 0);
+    el_arc.setName(QStringLiteral("EllArc1"));
 
-    QSharedPointer<VInternalVariable> radius1(new VArcRadius(99, NULL_ID, &elArc, 1, Unit::Cm));
-    QSharedPointer<VInternalVariable> radius2(new VArcRadius(99, NULL_ID, &elArc, 2, Unit::Cm));
+    QSharedPointer<VInternalVariable> radius1(new VArcRadius(99, NULL_ID, &el_arc, 1, Unit::Cm));
+    QSharedPointer<VInternalVariable> radius2(new VArcRadius(99, NULL_ID, &el_arc, 2, Unit::Cm));
 
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
     variables.insert(radius1->GetName(), radius1);
     variables.insert(radius2->GetName(), radius2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(radius1->GetName()), QStringLiteral("Radius1id99"));
-    QCOMPARE(nameToIdToken.value(radius2->GetName()), QStringLiteral("Radius2id99"));
-    QVERIFY(nameToIdToken.value(radius1->GetName()) != nameToIdToken.value(radius2->GetName()));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(radius1->GetName()), QStringLiteral("Radius1id99"));
+    QCOMPARE(name_to_id_token.value(radius2->GetName()), QStringLiteral("Radius2id99"));
+    QVERIFY(name_to_id_token.value(radius1->GetName()) != name_to_id_token.value(radius2->GetName()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -191,9 +191,9 @@ void TST_CompositeVariableTokens::TestCurveAngleMapping()
     variables.insert(start->GetName(), start);
     variables.insert(end->GetName(), end);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(start->GetName()), QStringLiteral("Angle1id99"));
-    QCOMPARE(nameToIdToken.value(end->GetName()), QStringLiteral("Angle2id99"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(start->GetName()), QStringLiteral("Angle1id99"));
+    QCOMPARE(name_to_id_token.value(end->GetName()), QStringLiteral("Angle2id99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -211,9 +211,9 @@ void TST_CompositeVariableTokens::TestCurveCLengthMapping()
     variables.insert(c1->GetName(), c1);
     variables.insert(c2->GetName(), c2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(c1->GetName()), QStringLiteral("C1Lengthid99"));
-    QCOMPARE(nameToIdToken.value(c2->GetName()), QStringLiteral("C2Lengthid99"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(c1->GetName()), QStringLiteral("C1Lengthid99"));
+    QCOMPARE(name_to_id_token.value(c2->GetName()), QStringLiteral("C2Lengthid99"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -260,10 +260,10 @@ void TST_CompositeVariableTokens::TestCurveLengthSegmentMapping()
     variables.insert(seg1->GetName(), seg1);
     variables.insert(seg2->GetName(), seg2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("id99_Seg_1"));
-    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("id99_Seg_2"));
-    QVERIFY(nameToIdToken.value(seg1->GetName()) != nameToIdToken.value(seg2->GetName()));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(seg1->GetName()), QStringLiteral("id99_Seg_1"));
+    QCOMPARE(name_to_id_token.value(seg2->GetName()), QStringLiteral("id99_Seg_2"));
+    QVERIFY(name_to_id_token.value(seg1->GetName()) != name_to_id_token.value(seg2->GetName()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -282,9 +282,9 @@ void TST_CompositeVariableTokens::TestCurveAngleSegmentMapping()
     variables.insert(seg1->GetName(), seg1);
     variables.insert(seg2->GetName(), seg2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("Angle1id99_Seg_1"));
-    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("Angle1id99_Seg_2"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(seg1->GetName()), QStringLiteral("Angle1id99_Seg_1"));
+    QCOMPARE(name_to_id_token.value(seg2->GetName()), QStringLiteral("Angle1id99_Seg_2"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -303,7 +303,7 @@ void TST_CompositeVariableTokens::TestCurveCLengthSegmentMapping()
     variables.insert(seg1->GetName(), seg1);
     variables.insert(seg2->GetName(), seg2);
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(variables);
-    QCOMPARE(nameToIdToken.value(seg1->GetName()), QStringLiteral("C1Lengthid99_Seg_1"));
-    QCOMPARE(nameToIdToken.value(seg2->GetName()), QStringLiteral("C1Lengthid99_Seg_2"));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(variables);
+    QCOMPARE(name_to_id_token.value(seg1->GetName()), QStringLiteral("C1Lengthid99_Seg_1"));
+    QCOMPARE(name_to_id_token.value(seg2->GetName()), QStringLiteral("C1Lengthid99_Seg_2"));
 }

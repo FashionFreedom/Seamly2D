@@ -63,11 +63,11 @@ void TST_HistoryDialogFormulaTranslation::TestFormulaAttributeIsTranslatedFromId
     QDomElement domElement = doc.createElement(QStringLiteral("line"));
     domElement.setAttribute(QStringLiteral("length"), QStringLiteral("id%1*2").arg(id1));
 
-    const QString storedFormula = doc.GetParametrString(domElement, QStringLiteral("length"), QString());
-    QCOMPARE(storedFormula, QStringLiteral("id%1*2").arg(id1));
+    const QString stored_formula = doc.GetParametrString(domElement, QStringLiteral("length"), QString());
+    QCOMPARE(stored_formula, QStringLiteral("id%1*2").arg(id1));
 
-    const QString displayedFormula = formulaIdsToNames(storedFormula, idTokenToNameMap(data.data()));
-    QCOMPARE(displayedFormula, QStringLiteral("A1*2"));
+    const QString displayed_formula = formulaIdsToNames(stored_formula, idTokenToNameMap(data.data()));
+    QCOMPARE(displayed_formula, QStringLiteral("A1*2"));
 
     // The stored attribute itself must stay in id-token form - only the value shown to the user changes.
     QCOMPARE(doc.GetParametrString(domElement, QStringLiteral("length"), QString()),
