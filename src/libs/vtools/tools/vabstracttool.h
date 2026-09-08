@@ -100,9 +100,9 @@ public:
 
     static void                   AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc);
     static void                   addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path,
-                                           const QHash<QString, QString> &nameToIdToken);
+                                           const QHash<QString, QString> &name_to_id_token);
     static void                   addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                                           const QHash<QString, QString> &nameToIdToken);
+                                           const QHash<QString, QString> &name_to_id_token);
 
     const VContainer             *getData() const;
 
@@ -174,9 +174,9 @@ protected:
     virtual void                 ToolCreation(const Source &typeCreation);
 
     static QDomElement           AddSANode(VAbstractPattern *doc, const QString &tagName, const VPieceNode &node,
-                                           const QHash<QString, QString> &nameToIdToken);
+                                           const QHash<QString, QString> &name_to_id_token);
     static void                  AddNode(VAbstractPattern *doc, QDomElement &domElement, const VPieceNode &node,
-                                         const QHash<QString, QString> &nameToIdToken);
+                                         const QHash<QString, QString> &name_to_id_token);
 
     static QVector<VPieceNode>   PrepareNodes(const VPiecePath &path, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                              VContainer *data);

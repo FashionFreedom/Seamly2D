@@ -89,7 +89,7 @@ public:
     static const QString ToolType;
     static const QString OldToolType;
     static void   UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path,
-                                   const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>());
+                                   const QHash<QString, QString> &name_to_id_token = QHash<QString, QString>());
     virtual int   type() const override {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::SplinePath)};
 
@@ -137,7 +137,7 @@ private:
 
     bool          IsMovable(int index) const;
     static void   AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint,
-                               const QHash<QString, QString> &nameToIdToken = QHash<QString, QString>());
+                               const QHash<QString, QString> &name_to_id_token = QHash<QString, QString>());
     void          updateControlPoints(const VSpline &spl, VSplinePath &splPath, const qint32 &splineIndex) const;
     void          SetSplinePathAttributes(QDomElement &domElement, const VSplinePath &path);
 };

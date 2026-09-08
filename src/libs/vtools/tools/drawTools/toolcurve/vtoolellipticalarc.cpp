@@ -439,13 +439,13 @@ void VToolEllipticalArc::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogEllipticalArc> dialogTool = m_dialog.objectCast<DialogEllipticalArc>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrCenter,        QString().setNum(dialogTool->GetCenter()));
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(domElement, AttrRadius1, formulaNamesToIds(dialogTool->GetRadius1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrRadius2, formulaNamesToIds(dialogTool->GetRadius2(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(dialogTool->GetF2(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius1, formulaNamesToIds(dialogTool->GetRadius1(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrRadius2, formulaNamesToIds(dialogTool->GetRadius2(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(dialogTool->GetF2(), name_to_id_token));
     doc->SetAttribute(domElement, AttrRotationAngle,
-                      formulaNamesToIds(dialogTool->getRotationAngle(), nameToIdToken));
+                      formulaNamesToIds(dialogTool->getRotationAngle(), name_to_id_token));
     doc->SetAttribute(domElement, AttrColor,         dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrPenStyle,      dialogTool->getPenStyle());
     doc->SetAttribute(domElement, AttrLineWeight,    dialogTool->getLineWeight());
@@ -461,13 +461,13 @@ void VToolEllipticalArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter,        elArc->GetCenter().id());
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(tag, AttrRadius1, formulaNamesToIds(elArc->GetFormulaRadius1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrRadius2, formulaNamesToIds(elArc->GetFormulaRadius2(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(elArc->GetFormulaF1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle2, formulaNamesToIds(elArc->GetFormulaF2(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius1, formulaNamesToIds(elArc->GetFormulaRadius1(), name_to_id_token));
+    doc->SetAttribute(tag, AttrRadius2, formulaNamesToIds(elArc->GetFormulaRadius2(), name_to_id_token));
+    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(elArc->GetFormulaF1(), name_to_id_token));
+    doc->SetAttribute(tag, AttrAngle2, formulaNamesToIds(elArc->GetFormulaF2(), name_to_id_token));
     doc->SetAttribute(tag, AttrRotationAngle,
-                      formulaNamesToIds(elArc->GetFormulaRotationAngle(), nameToIdToken));
+                      formulaNamesToIds(elArc->GetFormulaRotationAngle(), name_to_id_token));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

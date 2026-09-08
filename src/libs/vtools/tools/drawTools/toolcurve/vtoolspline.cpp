@@ -722,14 +722,14 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
 {
     SCASSERT(doc != nullptr)
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
     doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
-    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(spl.GetStartAngleFormula(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(spl.GetEndAngleFormula(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), nameToIdToken));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(spl.GetStartAngleFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(spl.GetEndAngleFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), name_to_id_token));
 
     if (spl.GetDuplicate() > 0)
     {
@@ -780,7 +780,7 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     // Off and back On does not lose the user's entered value.
     if (!m_targetLength.isEmpty())
     {
-        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, nameToIdToken));
+        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, name_to_id_token));
     }
     else
     {

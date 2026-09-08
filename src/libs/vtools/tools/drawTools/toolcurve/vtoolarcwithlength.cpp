@@ -336,10 +336,10 @@ void VToolArcWithLength::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogArcWithLength> dialogTool = m_dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->GetCenter()));
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(domElement, AttrRadius, formulaNamesToIds(dialogTool->GetRadius(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(dialogTool->GetLength(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius, formulaNamesToIds(dialogTool->GetRadius(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->GetF1(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(dialogTool->GetLength(), name_to_id_token));
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
@@ -355,10 +355,10 @@ void VToolArcWithLength::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, arc->GetCenter().id());
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(tag, AttrRadius, formulaNamesToIds(arc->GetFormulaRadius(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(arc->GetFormulaF1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrLength, formulaNamesToIds(arc->GetFormulaLength(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius, formulaNamesToIds(arc->GetFormulaRadius(), name_to_id_token));
+    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(arc->GetFormulaF1(), name_to_id_token));
+    doc->SetAttribute(tag, AttrLength, formulaNamesToIds(arc->GetFormulaLength(), name_to_id_token));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

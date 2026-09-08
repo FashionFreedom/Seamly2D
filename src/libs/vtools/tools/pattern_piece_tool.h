@@ -105,17 +105,17 @@ public:
                             VContainer *data, VAbstractPattern *doc);
 
     static void addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece,
-                              const QHash<QString, QString> &nameToIdToken);
+                              const QHash<QString, QString> &name_to_id_token);
     static void AddCSARecord(VAbstractPattern *doc, QDomElement &domElement, const CustomSARecord &record);
     static void addCSARecords(VAbstractPattern *doc, QDomElement &domElement, const QVector<CustomSARecord> &records);
     static void addInternalPaths(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &paths);
     static void addAnchors(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &anchors);
     static void addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                              const QHash<QString, QString> &nameToIdToken);
+                              const QHash<QString, QString> &name_to_id_token);
     static void addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                                const QHash<QString, QString> &nameToIdToken);
+                                const QHash<QString, QString> &name_to_id_token);
     static void addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                             const QHash<QString, QString> &nameToIdToken);
+                             const QHash<QString, QString> &name_to_id_token);
 
     void                 updatePiece(const VPiece &piece);
     void                 RefreshGeometry();

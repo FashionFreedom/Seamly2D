@@ -471,7 +471,7 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
 {
     SCASSERT(doc != nullptr)
 
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
     doc->SetAttribute(domElement, AttrPoint2,  m_p2Id);
@@ -512,7 +512,7 @@ void VToolCubicBezier::SetSplineAttributes(QDomElement &domElement, const VCubic
     // Off and back On does not lose the user's entered value.
     if (!m_targetLength.isEmpty())
     {
-        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, nameToIdToken));
+        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, name_to_id_token));
     }
     else
     {

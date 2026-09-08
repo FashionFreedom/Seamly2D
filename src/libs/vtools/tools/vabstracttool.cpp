@@ -598,14 +598,14 @@ void VAbstractTool::AddRecord(const quint32 id, const Tool &toolType, VAbstractP
 
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractTool::addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path,
-                             const QHash<QString, QString> &nameToIdToken)
+                             const QHash<QString, QString> &name_to_id_token)
 {
     if (path.nodeCount() > 0)
     {
         QDomElement nodesElement = doc->createElement(VAbstractPattern::TagNodes);
         for (int i = 0; i < path.nodeCount(); ++i)
         {
-            AddNode(doc, nodesElement, path.at(i), nameToIdToken);
+            AddNode(doc, nodesElement, path.at(i), name_to_id_token);
         }
         domElement.appendChild(nodesElement);
     }
@@ -613,14 +613,14 @@ void VAbstractTool::addNodes(VAbstractPattern *doc, QDomElement &domElement, con
 
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractTool::addNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                             const QHash<QString, QString> &nameToIdToken)
+                             const QHash<QString, QString> &name_to_id_token)
 {
-    addNodes(doc, domElement, piece.GetPath(), nameToIdToken);
+    addNodes(doc, domElement, piece.GetPath(), name_to_id_token);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagName, const VPieceNode &node,
-                                     const QHash<QString, QString> &nameToIdToken)
+                                     const QHash<QString, QString> &name_to_id_token)
 {
     QDomElement nod = doc->createElement(tagName);
 
@@ -636,13 +636,13 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
         if (node.GetFormulaSABefore() != currentSeamAllowance)
         {
             doc->SetAttribute(nod, VAbstractPattern::AttrSABefore,
-                              formulaNamesToIds(node.GetFormulaSABefore(), nameToIdToken));
+                              formulaNamesToIds(node.GetFormulaSABefore(), name_to_id_token));
         }
 
         if (node.GetFormulaSAAfter() != currentSeamAllowance)
         {
             doc->SetAttribute(nod, VAbstractPattern::AttrSAAfter,
-                              formulaNamesToIds(node.GetFormulaSAAfter(), nameToIdToken));
+                              formulaNamesToIds(node.GetFormulaSAAfter(), name_to_id_token));
         }
     }
 
@@ -724,9 +724,9 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
 
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractTool::AddNode(VAbstractPattern *doc, QDomElement &domElement, const VPieceNode &node,
-                            const QHash<QString, QString> &nameToIdToken)
+                            const QHash<QString, QString> &name_to_id_token)
 {
-    domElement.appendChild(AddSANode(doc, VAbstractPattern::TagNode, node, nameToIdToken));
+    domElement.appendChild(AddSANode(doc, VAbstractPattern::TagNode, node, name_to_id_token));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

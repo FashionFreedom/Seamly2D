@@ -344,14 +344,14 @@ void VToolSplinePath::SetSplinePathAttributes(QDomElement &domElement, const VSp
 // @param doc dom document container.
 // @param element tag in file.
 // @param path spline path.
-// @param nameToIdToken display-name -> stored-id-token map; empty means no translation (e.g. no container available).
+// @param name_to_id_token display-name -> stored-id-token map; empty means no translation (e.g. no container available).
 void VToolSplinePath::UpdatePathPoints(VAbstractPattern *doc, QDomElement &element, const VSplinePath &path,
-                                       const QHash<QString, QString> &nameToIdToken)
+                                       const QHash<QString, QString> &name_to_id_token)
 {
     VDomDocument::RemoveAllChildren(element);
     for (qint32 i = 0; i < path.CountPoints(); ++i)
     {
-        AddPathPoint(doc, element, path.at(i), nameToIdToken);
+        AddPathPoint(doc, element, path.at(i), name_to_id_token);
     }
 }
 
@@ -398,20 +398,20 @@ void VToolSplinePath::showContextMenu(QGraphicsSceneContextMenuEvent *event, qui
 // @param domElement dom element.
 // @param splPoint spline path point.
 void VToolSplinePath::AddPathPoint(VAbstractPattern *doc, QDomElement &domElement, const VSplinePoint &splPoint,
-                                   const QHash<QString, QString> &nameToIdToken)
+                                   const QHash<QString, QString> &name_to_id_token)
 {
     SCASSERT(doc != nullptr)
     QDomElement pathPoint = doc->createElement(AttrPathPoint);
 
     doc->SetAttribute(pathPoint, AttrPSpline, splPoint.P().id());
     doc->SetAttribute(pathPoint, AttrLength1,
-                      formulaNamesToIds(splPoint.Length1Formula(), nameToIdToken));
+                      formulaNamesToIds(splPoint.Length1Formula(), name_to_id_token));
     doc->SetAttribute(pathPoint, AttrLength2,
-                      formulaNamesToIds(splPoint.Length2Formula(), nameToIdToken));
+                      formulaNamesToIds(splPoint.Length2Formula(), name_to_id_token));
     doc->SetAttribute(pathPoint, AttrAngle1,
-                      formulaNamesToIds(splPoint.Angle1Formula(), nameToIdToken));
+                      formulaNamesToIds(splPoint.Angle1Formula(), name_to_id_token));
     doc->SetAttribute(pathPoint, AttrAngle2,
-                      formulaNamesToIds(splPoint.Angle2Formula(), nameToIdToken));
+                      formulaNamesToIds(splPoint.Angle2Formula(), name_to_id_token));
 
     if (domElement.hasAttribute(AttrKAsm1))
     {

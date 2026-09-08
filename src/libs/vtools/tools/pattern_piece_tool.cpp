@@ -256,7 +256,7 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiece &piece,
-                                     const QHash<QString, QString> &nameToIdToken)
+                                     const QHash<QString, QString> &name_to_id_token)
 {
     SCASSERT(doc != nullptr);
 
@@ -284,7 +284,7 @@ void PatternPieceTool::addAttributes(VAbstractPattern *doc, QDomElement &domElem
     }
 
     doc->SetAttribute(domElement, VAbstractPattern::AttrWidth,
-                      formulaNamesToIds(piece.getSeamAllowanceWidthFormula(), nameToIdToken));
+                      formulaNamesToIds(piece.getSeamAllowanceWidthFormula(), name_to_id_token));
     doc->SetAttribute(domElement, AttrUnited, piece.IsUnited());
 }
 
@@ -351,7 +351,7 @@ void PatternPieceTool::addAnchors(VAbstractPattern *doc, QDomElement &domElement
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                                     const QHash<QString, QString> &nameToIdToken)
+                                     const QHash<QString, QString> &name_to_id_token)
 {
     QDomElement domData = doc->createElement(VAbstractPattern::TagData);
     const VPieceLabelData &data = piece.GetPatternPieceData();
@@ -367,12 +367,12 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
     doc->SetAttribute(domData, AttrMx,                             data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                             data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
-                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelWidth(), name_to_id_token));
     doc->SetAttribute(domData, AttrHeight,
-                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelHeight(), name_to_id_token));
     doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      formulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), name_to_id_token));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -408,7 +408,7 @@ void PatternPieceTool::addPieceLabel(VAbstractPattern *doc, QDomElement &domElem
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                                       const QHash<QString, QString> &nameToIdToken)
+                                       const QHash<QString, QString> &name_to_id_token)
 {
     QDomElement domData = doc->createElement(VAbstractPattern::TagPatternInfo);
     const VPatternLabelData &data = piece.GetPatternInfo();
@@ -416,12 +416,12 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
     doc->SetAttribute(domData, AttrMx,                         data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,
-                      formulaNamesToIds(data.GetLabelWidth(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelWidth(), name_to_id_token));
     doc->SetAttribute(domData, AttrHeight,
-                      formulaNamesToIds(data.GetLabelHeight(), nameToIdToken));
+                      formulaNamesToIds(data.GetLabelHeight(), name_to_id_token));
     doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      formulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), name_to_id_token));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -455,7 +455,7 @@ void PatternPieceTool::addPatternLabel(VAbstractPattern *doc, QDomElement &domEl
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece,
-                                    const QHash<QString, QString> &nameToIdToken)
+                                    const QHash<QString, QString> &name_to_id_token)
 {
     // grainline
     QDomElement domData = doc->createElement(VAbstractPattern::TagGrainline);
@@ -464,12 +464,12 @@ void PatternPieceTool::addGrainline(VAbstractPattern *doc, QDomElement &domEleme
     doc->SetAttribute(domData, AttrMx,                            data.GetPos().x());
     doc->SetAttribute(domData, AttrMy,                            data.GetPos().y());
     doc->SetAttribute(domData, AttrLength,
-                      formulaNamesToIds(data.getLength(), nameToIdToken));
+                      formulaNamesToIds(data.getLength(), name_to_id_token));
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,
-                      formulaNamesToIds(data.getRotation(), nameToIdToken));
+                      formulaNamesToIds(data.getRotation(), name_to_id_token));
     doc->SetAttribute(domData, VAbstractPattern::AttrArrows,      int(data.getArrowType()));
     doc->SetAttribute(domData, VAbstractPattern::AttrArrowLength,
-                      formulaNamesToIds(data.getArrowLength(), nameToIdToken));
+                      formulaNamesToIds(data.getArrowLength(), name_to_id_token));
 
     if (data.centerAnchorPoint() > NULL_ID)
     {
@@ -978,17 +978,17 @@ QPainterPath PatternPieceTool::shape() const
 void PatternPieceTool::AddToFile()
 {
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(VAbstractTool::data));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(VAbstractTool::data));
 
     QDomElement domElement = doc->createElement(getTagName());
 
-    addAttributes(doc, domElement, m_id, piece, nameToIdToken);
-    addPieceLabel(doc, domElement, piece, nameToIdToken);
-    addPatternLabel(doc, domElement, piece, nameToIdToken);
-    addGrainline(doc, domElement, piece, nameToIdToken);
+    addAttributes(doc, domElement, m_id, piece, name_to_id_token);
+    addPieceLabel(doc, domElement, piece, name_to_id_token);
+    addPatternLabel(doc, domElement, piece, name_to_id_token);
+    addGrainline(doc, domElement, piece, name_to_id_token);
 
     // nodes
-    addNodes(doc, domElement, piece, nameToIdToken);
+    addNodes(doc, domElement, piece, name_to_id_token);
     //custom seam allowance
     addCSARecords(doc, domElement, piece.getCustomSARecords());
     addInternalPaths(doc, domElement, piece.getInternalPaths());
@@ -1015,16 +1015,16 @@ void PatternPieceTool::RefreshDataInFile()
             if (version == 1)
             {
                 const VPiece piece = VAbstractTool::data.GetPiece(m_id);
-                const QHash<QString, QString> nameToIdToken =
+                const QHash<QString, QString> name_to_id_token =
                     nameToIdTokenMap(&(VAbstractTool::data));
 
                 doc->SetAttribute(domElement, AttrVersion, QString().setNum(pieceVersion));
 
                 doc->RemoveAllChildren(domElement);//Very important to clear before rewrite
-                addPieceLabel(doc, domElement, piece, nameToIdToken);
-                addPatternLabel(doc, domElement, piece, nameToIdToken);
-                addGrainline(doc, domElement, piece, nameToIdToken);
-                addNodes(doc, domElement, piece, nameToIdToken);
+                addPieceLabel(doc, domElement, piece, name_to_id_token);
+                addPatternLabel(doc, domElement, piece, name_to_id_token);
+                addGrainline(doc, domElement, piece, name_to_id_token);
+                addNodes(doc, domElement, piece, name_to_id_token);
                 addCSARecords(doc, domElement, piece.getCustomSARecords());
                 addInternalPaths(doc, domElement, piece.getInternalPaths());
                 addAnchors(doc, domElement, piece.getAnchors());

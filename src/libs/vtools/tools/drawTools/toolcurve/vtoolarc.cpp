@@ -397,10 +397,10 @@ void VToolArc::SaveDialog(QDomElement &domElement)
     SCASSERT(!dialogTool.isNull())
     doc->SetAttribute(domElement, AttrType,       ToolType);
     doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->getCenter()));
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(domElement, AttrRadius, formulaNamesToIds(dialogTool->getRadius(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->getF1(), nameToIdToken));
-    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(dialogTool->getF2(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(domElement, AttrRadius, formulaNamesToIds(dialogTool->getRadius(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(dialogTool->getF1(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(dialogTool->getF2(), name_to_id_token));
     doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
     doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
     doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
@@ -416,10 +416,10 @@ void VToolArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrType, ToolType);
     doc->SetAttribute(tag, AttrCenter, arc->GetCenter().id());
-    const QHash<QString, QString> nameToIdToken = nameToIdTokenMap(&(this->VAbstractTool::data));
-    doc->SetAttribute(tag, AttrRadius, formulaNamesToIds(arc->GetFormulaRadius(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(arc->GetFormulaF1(), nameToIdToken));
-    doc->SetAttribute(tag, AttrAngle2, formulaNamesToIds(arc->GetFormulaF2(), nameToIdToken));
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
+    doc->SetAttribute(tag, AttrRadius, formulaNamesToIds(arc->GetFormulaRadius(), name_to_id_token));
+    doc->SetAttribute(tag, AttrAngle1, formulaNamesToIds(arc->GetFormulaF1(), name_to_id_token));
+    doc->SetAttribute(tag, AttrAngle2, formulaNamesToIds(arc->GetFormulaF2(), name_to_id_token));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
