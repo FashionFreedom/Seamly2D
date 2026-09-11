@@ -189,6 +189,8 @@ unix{
             seamlyme \
             xpdf \
             icns_resources
+
+        QMAKE_APPLE_DEVICE_ARCHS = arm64
     }
 }
 

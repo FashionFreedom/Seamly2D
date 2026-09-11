@@ -94,6 +94,8 @@ unix{
             templates \
             multisize \
             format
+
+        QMAKE_APPLE_DEVICE_ARCHS = arm64
     }
 }
 
