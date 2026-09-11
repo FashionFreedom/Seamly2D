@@ -200,6 +200,7 @@ private:
     void                SetupMenu();
     void                InitWindow();
     void                initializeTable();
+    void                RetranslateTableHeaders();
     void                SetDecimals();
     void                initUnits();
     void                setCurrentPatternUnits();

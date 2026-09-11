@@ -84,6 +84,7 @@
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QHeaderView>
 #include <QLabel>
 #include <QMessageBox>
 #include <QPainter>
@@ -111,7 +112,7 @@ Q_LOGGING_CATEGORY(tMainWindow, "t.mainwindow")
 QT_WARNING_POP
 
 // We need this enum in case we will add or delete a column. And also make code more readable.
-enum {ColumnName = 0, ColumnNumber, ColumnFullName, ColumnCalcValue, ColumnFormula, ColumnBaseValue, ColumnInSizes, ColumnInHeights};
+enum {ColumnName = 0, ColumnNumber, ColumnFullName, ColumnCalcValue, ColumnFormula, ColumnBaseValue, ColumnInSizes, ColumnInHeights, ColumnDescription};
 
 //---------------------------------------------------------------------------------------------------------------------
 TMainWindow::TMainWindow(QWidget *parent)
@@ -161,6 +162,12 @@ TMainWindow::TMainWindow(QWidget *parent)
 
 	m_search = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidget));
 	ui->tabWidget->setVisible(false);
+
+    // Разрешаем перенос текста по словам в ячейках таблицы
+    ui->tableWidget->setWordWrap(true);
+
+    // Заставляем строки автоматически расширяться по высоте под объем текста
+    ui->tableWidget->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 
 	ui->mainToolBar->setContextMenuPolicy(Qt::PreventContextMenu);
 	ui->toolBarGradation->setContextMenuPolicy(Qt::PreventContextMenu);
@@ -658,6 +665,7 @@ void TMainWindow::changeEvent(QEvent *event)
 
 		// retranslate designer form (single inheritance approach)
 		ui->retranslateUi(this);
+		RetranslateTableHeaders();
 
 		if (mType == MeasurementsType::Multisize)
 		{
@@ -739,12 +747,11 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 		if (event->type() == QEvent::KeyPress)
 		{
 			QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-			if ((keyEvent->key() == Qt::Key_Enter) || (keyEvent->key() == Qt::Key_Return))
-			{
-				// Ignore Enter key
-				return true;
-			}
-			else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
+			// Enter/Return is intentionally left unhandled here so it inserts a line
+			// break, the same way it already does in the Description field. Formula
+			// text is sanitized (newlines replaced with spaces) before it is evaluated
+			// or saved, see TMainWindow::SaveMValue().
+			if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
 			{
 				if (qApp->Settings()->getOsSeparator())
 				{
@@ -2307,6 +2314,12 @@ void TMainWindow::InitWindow()
 	if (mType == MeasurementsType::Multisize)
 	{
 		ui->labelMType->setText(tr("Multisize measurements"));
+
+		// Base value/In sizes/In heights are only meaningful for multisize measurements.
+		ui->widgetBaseValue->setVisible(true);
+		ui->widgetInSizes->setVisible(true);
+		ui->widgetInHeights->setVisible(true);
+
 		ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->BaseSize()) + " " +
 										UnitsToStr(individualMeasurements->measurementUnits(), true));
 		ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->BaseHeight()) + " " +
@@ -2375,6 +2388,12 @@ void TMainWindow::InitWindow()
 		HackWidget(&ui->labelBaseValue);
 		HackWidget(&ui->labelInSizes);
 		HackWidget(&ui->labelInHeights);
+
+		// Individual measurements don't use Base value/In sizes/In heights.
+		// Hide the whole row so it doesn't keep reserving empty space on the form.
+		ui->widgetBaseValue->setVisible(false);
+		ui->widgetInSizes->setVisible(false);
+		ui->widgetInHeights->setVisible(false);
 
 		// Tab Information
 		HackWidget(&ui->labelBaseSize);
@@ -2513,18 +2532,42 @@ void TMainWindow::InitWindow()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::RetranslateTableHeaders()
+{
+	// The Description column reuses the same translatable source text as the
+	// Description field's own label ("Description:"), so it picks up the
+	// translation already set up for that field instead of needing a new one.
+	// The trailing colon fits a form label but not a table header, so it is
+	// stripped after translation.
+	QString descriptionHeader = tr("Description:");
+	if (descriptionHeader.endsWith(QLatin1Char(':')))
+	{
+		descriptionHeader.chop(1);
+	}
+
+	QTableWidgetItem *headerItem = ui->tableWidget->horizontalHeaderItem(ColumnDescription);
+	if (headerItem != nullptr)
+	{
+		headerItem->setText(descriptionHeader);
+	}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::initializeTable()
 {
 	if (mType == MeasurementsType::Multisize)
 	{
 		ui->tableWidget->setColumnHidden( ColumnFormula, true );// formula
 	}
-	else
-	{
-		ui->tableWidget->setColumnHidden( ColumnBaseValue, true );// base value
-		ui->tableWidget->setColumnHidden( ColumnInSizes, true );// in sizes
-		ui->tableWidget->setColumnHidden( ColumnInHeights, true );// in heights
-	}
+
+	// These columns duplicate what the details panel already shows below the table,
+	// so keep the table itself compact by always hiding them.
+	ui->tableWidget->setColumnHidden( ColumnNumber, true );// number
+	ui->tableWidget->setColumnHidden( ColumnBaseValue, true );// base value
+	ui->tableWidget->setColumnHidden( ColumnInSizes, true );// in sizes
+	ui->tableWidget->setColumnHidden( ColumnInHeights, true );// in heights
+
+	RetranslateTableHeaders();
 
 	connect(ui->tableWidget, &QTableWidget::itemSelectionChanged, this, &TMainWindow::ShowMData);
 
@@ -2796,6 +2839,10 @@ void TMainWindow::RefreshTable(bool freshCall)
 			}
 
 			AddCell(formula, currentRow, ColumnFormula, Qt::AlignVCenter); // formula
+
+			const QString description = meash->isCustom() ? meash->GetDescription()
+												: qApp->translateVariables()->Description(meash->GetName());
+			AddCell(description, currentRow, ColumnDescription, Qt::AlignVCenter); // description
 		}
 		else
 		{
@@ -2827,6 +2874,10 @@ void TMainWindow::RefreshTable(bool freshCall)
 
 			AddCell(locale().toString(meash->GetKheight()), currentRow, ColumnInHeights,
 					Qt::AlignHCenter | Qt::AlignVCenter); // in heights
+
+			const QString description = meash->isCustom() ? meash->GetDescription()
+												: qApp->translateVariables()->Description(meash->GetName());
+			AddCell(description, currentRow, ColumnDescription, Qt::AlignVCenter); // description
 		}
 	}
 
