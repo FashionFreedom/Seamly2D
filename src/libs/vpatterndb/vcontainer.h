@@ -79,6 +79,10 @@
 #include "vpiecepath.h"
 #include "vtranslatevars.h"
 
+#include <QLoggingCategory>
+
+Q_DECLARE_LOGGING_CATEGORY(vCon)
+
 class VEllipticalArc;
 
 QT_WARNING_PUSH

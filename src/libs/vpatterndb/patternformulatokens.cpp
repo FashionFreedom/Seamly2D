@@ -51,6 +51,18 @@ QHash<QString, QString> PatternFormulaTokens::idTokenToNameMap(const VContainer 
     QHash<QString, QString>::const_iterator i = composite.constBegin();
     while (i != composite.constEnd())
     {
+        // Two different composite variables should never resolve to the same internal id-token. If they do,
+        // one of them is silently going to display the wrong name. This should be unreachable after the
+        // id self-healing fix in VPattern::PrepareForParse(), but is kept as a loud safety net rather than
+        // a hard assertion because a wrong displayed name is recoverable, a crash is not.
+        const QHash<QString, QString>::const_iterator existing = id_token_to_name.constFind(i.key());
+        if (existing != id_token_to_name.constEnd() && existing.value() != i.value())
+        {
+            qCWarning(vCon, "Id-token collision while merging composite variable names: token '%s' already maps "
+                             "to '%s', ignoring conflicting name '%s'. This points at two objects sharing one "
+                             "internal id.",
+                      qUtf8Printable(i.key()), qUtf8Printable(existing.value()), qUtf8Printable(i.value()));
+        }
         id_token_to_name.insert(i.key(), i.value());
         ++i;
     }

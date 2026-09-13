@@ -24,6 +24,7 @@
 #include "compositevariabletokens.h"
 
 #include "formulaidtranslator.h"
+#include "vcontainer.h"
 #include "variables/vinternalvariable.h"
 #include "variables/vlinelength.h"
 #include "variables/vlineangle.h"
@@ -136,6 +137,17 @@ QHash<QString, QString> CompositeVariableTokens::idTokenToNameMap(
     QHash<QString, QString>::const_iterator i = name_to_id_token.constBegin();
     while (i != name_to_id_token.constEnd())
     {
+        // Two differently-named composite variables collapsing onto the same id-token means they
+        // ultimately refer to the same internal id - one of the two names below is about to be lost.
+        // Should be unreachable after the id self-healing fix in VPattern::PrepareForParse(), but a
+        // loud warning is safer here than either silently picking a winner or asserting.
+        const QHash<QString, QString>::const_iterator existing = id_token_to_name.constFind(i.value());
+        if (existing != id_token_to_name.constEnd() && existing.value() != i.key())
+        {
+            qCWarning(vCon, "Id-token collision in composite variable map: token '%s' already maps to name '%s', "
+                             "ignoring conflicting name '%s'. This points at two objects sharing one internal id.",
+                      qUtf8Printable(i.value()), qUtf8Printable(existing.value()), qUtf8Printable(i.key()));
+        }
         id_token_to_name.insert(i.value(), i.key());
         ++i;
     }
