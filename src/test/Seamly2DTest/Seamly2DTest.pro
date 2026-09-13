@@ -64,7 +64,8 @@ SOURCES += \
     tst_lineidselfhealcollision.cpp \
     tst_duplicatepointnamelinecollision.cpp \
     tst_duplicatepointnamearccurvecollision.cpp \
-    tst_emptypathsplinenamecollision.cpp
+    tst_emptypathsplinenamecollision.cpp \
+    tst_cutsegmentcanonicalnamecollision.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -105,7 +106,8 @@ HEADERS += \
     tst_lineidselfhealcollision.h \
     tst_duplicatepointnamelinecollision.h \
     tst_duplicatepointnamearccurvecollision.h \
-    tst_emptypathsplinenamecollision.h
+    tst_emptypathsplinenamecollision.h \
+    tst_cutsegmentcanonicalnamecollision.h
 
 include(warnings.pri)
 

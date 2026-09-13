@@ -88,6 +88,7 @@
 #include "tst_duplicatepointnamelinecollision.h"
 #include "tst_duplicatepointnamearccurvecollision.h"
 #include "tst_emptypathsplinenamecollision.h"
+#include "tst_cutsegmentcanonicalnamecollision.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -209,6 +210,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_DuplicatePointNameLineCollision());
     ASSERT_TEST(new TST_DuplicatePointNameArcCurveCollision());
     ASSERT_TEST(new TST_EmptyPathSplineNameCollision());
+    ASSERT_TEST(new TST_CutSegmentCanonicalNameCollision());
 
     return status;
 }
