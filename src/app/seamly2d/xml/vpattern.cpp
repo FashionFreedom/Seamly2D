@@ -434,7 +434,7 @@ bool VPattern::SaveDocument(const QString &fileName, QString &error)
 {
     try
     {
-        TestUniqueId();
+        Q_UNUSED(TestUniqueId())
     }
     catch (const VExceptionWrongId &error)
     {
@@ -4390,12 +4390,17 @@ void VPattern::PrepareForParse(const Document &parse)
     SCASSERT(pieceScene != nullptr)
     if (parse == Document::FullParse)
     {
-        TestUniqueId();
+        // Full document pre-scan: the largest id literally present anywhere in the file, regardless of
+        // document order. Self-healing of missing ids (e.g. resolveOrAssignLineId()) must never hand out an id
+        // that a later, not-yet-parsed node already owns, so VContainer's id counter is seeded with this value
+        // right after ClearForFullParse() resets it, before any parsing (and thus any self-heal) can happen.
+        const quint32 maxFileId = TestUniqueId();
         draftScene->clear();
         draftScene->initializeOrigins();
         pieceScene->clear();
         pieceScene->initializeOrigins();
         data->ClearForFullParse();
+        VContainer::UpdateId(maxFileId);
         m_activeDraftBlock.clear();
         patternPieces.clear();
         clearBackgroundImageMap();

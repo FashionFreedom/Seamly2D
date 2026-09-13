@@ -541,11 +541,25 @@ QString VDomDocument::UniqueTagText(const QString &tagName, const QString &defVa
 
 ///--------------------------------------------------------------------------------------------------------------------
 /// @brief TestUniqueId test exist unique id in pattern file. Each id must be unique.
+/// @return the largest id literally present anywhere in the whole document, or NULL_ID if the document has
+/// no id-bearing nodes at all. Callers that self-heal missing ids during parsing (see VPattern::resolveOrAssignLineId)
+/// must seed VContainer's id counter with this value first, so a freshly minted id can never collide with an id
+/// that appears later in document order but was not yet parsed.
 ///--------------------------------------------------------------------------------------------------------------------
-void VDomDocument::TestUniqueId() const
+quint32 VDomDocument::TestUniqueId() const
 {
     QVector<quint32> vector;
     CollectId(documentElement(), vector);
+
+    quint32 maxId = NULL_ID;
+    for (int i = 0; i < vector.size(); ++i)
+    {
+        if (vector.at(i) > maxId)
+        {
+            maxId = vector.at(i);
+        }
+    }
+    return maxId;
 }
 
 ///--------------------------------------------------------------------------------------------------------------------
