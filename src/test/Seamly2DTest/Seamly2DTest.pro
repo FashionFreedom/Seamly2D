@@ -63,7 +63,8 @@ SOURCES += \
     tst_danglingidtokenformula.cpp \
     tst_lineidselfhealcollision.cpp \
     tst_duplicatepointnamelinecollision.cpp \
-    tst_duplicatepointnamearccurvecollision.cpp
+    tst_duplicatepointnamearccurvecollision.cpp \
+    tst_emptypathsplinenamecollision.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -103,7 +104,8 @@ HEADERS += \
     tst_danglingidtokenformula.h \
     tst_lineidselfhealcollision.h \
     tst_duplicatepointnamelinecollision.h \
-    tst_duplicatepointnamearccurvecollision.h
+    tst_duplicatepointnamearccurvecollision.h \
+    tst_emptypathsplinenamecollision.h
 
 include(warnings.pri)
 

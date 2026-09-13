@@ -87,6 +87,7 @@
 #include "tst_lineidselfhealcollision.h"
 #include "tst_duplicatepointnamelinecollision.h"
 #include "tst_duplicatepointnamearccurvecollision.h"
+#include "tst_emptypathsplinenamecollision.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -207,6 +208,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_LineIdSelfHealCollision());
     ASSERT_TEST(new TST_DuplicatePointNameLineCollision());
     ASSERT_TEST(new TST_DuplicatePointNameArcCurveCollision());
+    ASSERT_TEST(new TST_EmptyPathSplineNameCollision());
 
     return status;
 }
