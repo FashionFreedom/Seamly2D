@@ -362,6 +362,8 @@ private:
 
     void AddCurve(const QSharedPointer<VAbstractCurve> &curve, const quint32 &id, quint32 parentId = NULL_ID);
 
+    QString UniqueLineVariableName(const QString &name, const quint32 &line_id, const VarType &type) const;
+
     template <class T>
     uint qHash( const QSharedPointer<T> &p );
 

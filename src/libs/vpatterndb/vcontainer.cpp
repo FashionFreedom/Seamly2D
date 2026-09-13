@@ -606,6 +606,48 @@ void VContainer::ClearVariables(const VarType &type)
 }
 
 /**
+ * @brief UniqueLineVariableName resolves a name collision between two structurally different lines that
+ * happen to generate the identical display name.
+ *
+ * Point display names have never been enforced globally unique across a whole pattern (see issue #1678 -
+ * an old, pre-0.7.5 file can legally carry two different points sharing the same display name in unrelated
+ * draft blocks). VContainer::AddVariable()'s "name already exists -> update the existing object in place"
+ * semantics is meant to support re-parsing the SAME line after an edit; applied blindly here it would
+ * instead splice a second, unrelated line's identity onto the first line's name, silently discarding the
+ * first line's own persisted line id from the variable table. Any formula already saved against that
+ * orphaned id becomes an unresolvable dangling id-token on the next load - the same "Defekte Formel"
+ * symptom the id self-healing fix addressed, but caused by a name collision instead of a counter collision.
+ *
+ * @param name candidate display name generated from the line's two point names.
+ * @param line_id the line's own persisted id.
+ * @param type VarType::LineLength or VarType::LineAngle - which family name belongs to.
+ * @return name unchanged if it is free, or already belongs to this same line_id; otherwise a disambiguated
+ * variant that does not collide with any existing line of a different line_id.
+ */
+QString VContainer::UniqueLineVariableName(const QString &name, const quint32 &line_id, const VarType &type) const
+{
+    QString candidate = name;
+    quint32 suffix = 2;
+    while (d->variables.contains(candidate))
+    {
+        const QSharedPointer<VInternalVariable> existing = d->variables.value(candidate);
+        if (existing->GetType() == type)
+        {
+            const quint32 existing_line_id = (type == VarType::LineLength)
+                                              ? existing.staticCast<VLengthLine>()->getLineId()
+                                              : existing.staticCast<VLineAngle>()->getLineId();
+            if (existing_line_id == line_id)
+            {
+                return candidate;
+            }
+        }
+        candidate = QStringLiteral("%1_%2").arg(name).arg(suffix);
+        ++suffix;
+    }
+    return candidate;
+}
+
+/**
  * @brief AddLine add line to container
  * @param firstPointId id of first point of line
  * @param secondPointId id of second point of line
@@ -620,10 +662,10 @@ void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPoint
 
     VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, line_id,
                                           *GetPatternUnit());
-    AddVariable(length->GetName(), length);
+    AddVariable(UniqueLineVariableName(length->GetName(), line_id, VarType::LineLength), length);
 
     VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId, line_id);
-    AddVariable(angle->GetName(), angle);
+    AddVariable(UniqueLineVariableName(angle->GetName(), line_id, VarType::LineAngle), angle);
 }
 
 /**
