@@ -2,8 +2,6 @@
  *                                                                         *
  *   Copyright (C) 2026  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
  ***************************************************************************
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -21,26 +19,27 @@
  **
  **************************************************************************/
 
-#ifndef TST_PATTERNFORMULATOKENS_H
-#define TST_PATTERNFORMULATOKENS_H
+#ifndef TST_DANGLINGIDTOKENFORMULA_H
+#define TST_DANGLINGIDTOKENFORMULA_H
 
 #include <QObject>
 
-class TST_PatternFormulaTokens : public QObject
+// PROBE for issue-#1678 code-quality review Finding 2: no test previously confirmed what
+// happens when a formula's stored id token refers to a point that no longer exists (deleted
+// after the formula was stored). This is a temporary, uncommitted probe left in the working
+// tree per the review task - not yet decided whether a real fix is warranted.
+class TST_DanglingIdTokenFormula : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_PatternFormulaTokens(QObject *parent = nullptr);
+    explicit TST_DanglingIdTokenFormula(QObject *parent = nullptr);
 
 private slots:
-    void TestMergesPlainAndCompositeEntries();
-    void TestFormulaReferencingBothTranslatesAndSurvivesRename();
-    void TestCurveTargetLengthFormulaSurvivesRename();
-    void TestCurveLengthDuplicateEntryAgreesWithGObjectName();
-    void TestIdTokenCollisionOverwritesAndLogsWarning();
+    void TestDanglingIdTokenLeftUntouchedByTranslation();
+    void TestDanglingIdTokenFailsEvaluationGracefullyInsteadOfCrashing();
 
 private:
-    Q_DISABLE_COPY(TST_PatternFormulaTokens)
+    Q_DISABLE_COPY(TST_DanglingIdTokenFormula)
 };
 
-#endif // TST_PATTERNFORMULATOKENS_H
+#endif // TST_DANGLINGIDTOKENFORMULA_H

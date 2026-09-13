@@ -59,7 +59,9 @@ SOURCES += \
     tst_historydialogformulatranslation.cpp \
     tst_customvariablecontainer.cpp \
     tst_lineendpointreconnectiondetection.cpp \
-    tst_linevariablelookup.cpp
+    tst_linevariablelookup.cpp \
+    tst_danglingidtokenformula.cpp \
+    tst_lineidselfhealcollision.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -95,7 +97,9 @@ HEADERS += \
     tst_historydialogformulatranslation.h \
     tst_customvariablecontainer.h \
     tst_lineendpointreconnectiondetection.h \
-    tst_linevariablelookup.h
+    tst_linevariablelookup.h \
+    tst_danglingidtokenformula.h \
+    tst_lineidselfhealcollision.h
 
 include(warnings.pri)
 
