@@ -127,7 +127,10 @@ public:
 
     static const qreal       lengthCurveDirectionArrow;
 
-protected:
+    // Public (not protected) so VContainer::AddCurve() can force a curve to regenerate its display
+    // name once the curve has been given its final, real container id - needed for a path spline
+    // that had no points yet when its constructor first called this and so produced an empty name
+    // (see issue #1678).
     virtual void             CreateName() =0;
 
 private:
