@@ -86,6 +86,7 @@
 #include "tst_danglingidtokenformula.h"
 #include "tst_lineidselfhealcollision.h"
 #include "tst_duplicatepointnamelinecollision.h"
+#include "tst_duplicatepointnamearccurvecollision.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -205,6 +206,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_DanglingIdTokenFormula());
     ASSERT_TEST(new TST_LineIdSelfHealCollision());
     ASSERT_TEST(new TST_DuplicatePointNameLineCollision());
+    ASSERT_TEST(new TST_DuplicatePointNameArcCurveCollision());
 
     return status;
 }
