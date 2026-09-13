@@ -606,25 +606,31 @@ void VContainer::ClearVariables(const VarType &type)
 }
 
 /**
- * @brief UniqueLineVariableName resolves a name collision between two structurally different lines that
- * happen to generate the identical display name.
+ * @brief UniqueCompositeVariableName resolves a name collision between two structurally different
+ * composite variables (lines, arcs, or curves) that happen to generate the identical display name.
  *
  * Point display names have never been enforced globally unique across a whole pattern (see issue #1678 -
  * an old, pre-0.7.5 file can legally carry two different points sharing the same display name in unrelated
- * draft blocks). VContainer::AddVariable()'s "name already exists -> update the existing object in place"
- * semantics is meant to support re-parsing the SAME line after an edit; applied blindly here it would
- * instead splice a second, unrelated line's identity onto the first line's name, silently discarding the
- * first line's own persisted line id from the variable table. Any formula already saved against that
- * orphaned id becomes an unresolvable dangling id-token on the next load - the same "Defekte Formel"
- * symptom the id self-healing fix addressed, but caused by a name collision instead of a counter collision.
+ * draft blocks). That collides here too: a line's display name is built from its two endpoint names
+ * (VLengthLine/VLineAngle), an arc's from its center point's name (VArcRadius), and a curve's from its
+ * control point names (VCurveLength/VCurveAngle/VCurveCLength) - so two structurally different lines, arcs
+ * or curves in unrelated draft blocks can legally generate the identical composite display name.
  *
- * @param name candidate display name generated from the line's two point names.
- * @param line_id the line's own persisted id.
- * @param type VarType::LineLength or VarType::LineAngle - which family name belongs to.
- * @return name unchanged if it is free, or already belongs to this same line_id; otherwise a disambiguated
- * variant that does not collide with any existing line of a different line_id.
+ * VContainer::AddVariable()'s "name already exists -> update the existing object in place" semantics is
+ * meant to support re-parsing the SAME object after an edit; applied blindly here it would instead splice
+ * a second, unrelated object's identity onto the first object's name, silently discarding the first
+ * object's own persisted id from the variable table. Any formula already saved against that orphaned id
+ * becomes an unresolvable dangling id-token on the next load - the same "Defekte Formel" symptom the id
+ * self-healing fix addressed, but caused by a name collision instead of a counter collision.
+ *
+ * @param name candidate display name generated from the object's constituent point/curve names.
+ * @param owner_id the persisted id of the object the name belongs to (a line's own id for LineLength/
+ * LineAngle; the arc's/curve's own id for ArcRadius/CurveLength/CurveAngle/CurveCLength).
+ * @param type which VarType family the name belongs to.
+ * @return name unchanged if it is free, or already belongs to this same owner_id; otherwise a
+ * disambiguated variant that does not collide with any existing object of a different owner_id.
  */
-QString VContainer::UniqueLineVariableName(const QString &name, const quint32 &line_id, const VarType &type) const
+QString VContainer::UniqueCompositeVariableName(const QString &name, const quint32 &owner_id, const VarType &type) const
 {
     QString candidate = name;
     quint32 suffix = 2;
@@ -633,10 +639,23 @@ QString VContainer::UniqueLineVariableName(const QString &name, const quint32 &l
         const QSharedPointer<VInternalVariable> existing = d->variables.value(candidate);
         if (existing->GetType() == type)
         {
-            const quint32 existing_line_id = (type == VarType::LineLength)
-                                              ? existing.staticCast<VLengthLine>()->getLineId()
-                                              : existing.staticCast<VLineAngle>()->getLineId();
-            if (existing_line_id == line_id)
+            quint32 existing_owner_id = NULL_ID;
+            switch (type)
+            {
+                case VarType::LineLength:
+                    existing_owner_id = existing.staticCast<VLengthLine>()->getLineId();
+                    break;
+                case VarType::LineAngle:
+                    existing_owner_id = existing.staticCast<VLineAngle>()->getLineId();
+                    break;
+                default:
+                    // ArcRadius, CurveLength, CurveAngle and CurveCLength all derive from VCurveVariable,
+                    // which uniformly exposes the owning arc's/curve's own id via GetId().
+                    existing_owner_id = existing.staticCast<VCurveVariable>()->GetId();
+                    break;
+            }
+
+            if (existing_owner_id == owner_id)
             {
                 return candidate;
             }
@@ -662,10 +681,10 @@ void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPoint
 
     VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, line_id,
                                           *GetPatternUnit());
-    AddVariable(UniqueLineVariableName(length->GetName(), line_id, VarType::LineLength), length);
+    AddVariable(UniqueCompositeVariableName(length->GetName(), line_id, VarType::LineLength), length);
 
     VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId, line_id);
-    AddVariable(UniqueLineVariableName(angle->GetName(), line_id, VarType::LineAngle), angle);
+    AddVariable(UniqueCompositeVariableName(angle->GetName(), line_id, VarType::LineAngle), angle);
 }
 
 /**
@@ -692,17 +711,17 @@ void VContainer::AddArc(const QSharedPointer<VAbstractCurve> &arc, const quint32
         const QSharedPointer<VArc> casted = arc.staticCast<VArc>();
 
         VArcRadius *radius = new VArcRadius(id, parentId, casted.data(), *GetPatternUnit());
-        AddVariable(radius->GetName(), radius);
+        AddVariable(UniqueCompositeVariableName(radius->GetName(), id, VarType::ArcRadius), radius);
     }
     else if (arc->getType() == GOType::EllipticalArc)
     {
         const QSharedPointer<VEllipticalArc> casted = arc.staticCast<VEllipticalArc>();
 
         VArcRadius *radius1 = new VArcRadius(id, parentId, casted.data(), 1, *GetPatternUnit());
-        AddVariable(radius1->GetName(), radius1);
+        AddVariable(UniqueCompositeVariableName(radius1->GetName(), id, VarType::ArcRadius), radius1);
 
         VArcRadius *radius2 = new VArcRadius(id, parentId, casted.data(), 2, *GetPatternUnit());
-        AddVariable(radius2->GetName(), radius2);
+        AddVariable(UniqueCompositeVariableName(radius2->GetName(), id, VarType::ArcRadius), radius2);
     }
 }
 
@@ -737,13 +756,13 @@ void VContainer::AddCurve(const QSharedPointer<VAbstractCurve> &curve, const qui
     }
 
     VCurveLength *length = new VCurveLength(id, parentId, curve.data(), *GetPatternUnit());
-    AddVariable(length->GetName(), length);
+    AddVariable(UniqueCompositeVariableName(length->GetName(), id, VarType::CurveLength), length);
 
     VCurveAngle *startAngle = new VCurveAngle(id, parentId, curve.data(), CurveAngle::StartAngle);
-    AddVariable(startAngle->GetName(), startAngle);
+    AddVariable(UniqueCompositeVariableName(startAngle->GetName(), id, VarType::CurveAngle), startAngle);
 
     VCurveAngle *endAngle = new VCurveAngle(id, parentId, curve.data(), CurveAngle::EndAngle);
-    AddVariable(endAngle->GetName(), endAngle);
+    AddVariable(UniqueCompositeVariableName(endAngle->GetName(), id, VarType::CurveAngle), endAngle);
 }
 
 /**
@@ -765,10 +784,10 @@ void VContainer::AddSpline(const QSharedPointer<VAbstractBezier> &curve, quint32
     AddCurve(curve, id, parentId);
 
     VCurveCLength *c1Length = new VCurveCLength(id, parentId, curve.data(), CurveCLength::C1, *GetPatternUnit());
-    AddVariable(c1Length->GetName(), c1Length);
+    AddVariable(UniqueCompositeVariableName(c1Length->GetName(), id, VarType::CurveCLength), c1Length);
 
     VCurveCLength *c2Length = new VCurveCLength(id, parentId, curve.data(), CurveCLength::C2, *GetPatternUnit());
-    AddVariable(c2Length->GetName(), c2Length);
+    AddVariable(UniqueCompositeVariableName(c2Length->GetName(), id, VarType::CurveCLength), c2Length);
 }
 
 /**
@@ -799,21 +818,21 @@ void VContainer::AddCurveWithSegments(const QSharedPointer<VAbstractCubicBezierP
         const VSpline spl = curve->GetSpline(i);
 
         VCurveLength *length = new VCurveLength(id, parentId, curve->name(), spl, *GetPatternUnit(), i);
-        AddVariable(length->GetName(), length);
+        AddVariable(UniqueCompositeVariableName(length->GetName(), id, VarType::CurveLength), length);
 
         VCurveAngle *startAngle = new VCurveAngle(id, parentId, curve->name(), spl, CurveAngle::StartAngle, i);
-        AddVariable(startAngle->GetName(), startAngle);
+        AddVariable(UniqueCompositeVariableName(startAngle->GetName(), id, VarType::CurveAngle), startAngle);
 
         VCurveAngle *endAngle = new VCurveAngle(id, parentId, curve->name(), spl, CurveAngle::EndAngle, i);
-        AddVariable(endAngle->GetName(), endAngle);
+        AddVariable(UniqueCompositeVariableName(endAngle->GetName(), id, VarType::CurveAngle), endAngle);
 
         VCurveCLength *c1Length = new VCurveCLength(id, parentId, curve->name(), spl, CurveCLength::C1,
                                                     *GetPatternUnit(), i);
-        AddVariable(c1Length->GetName(), c1Length);
+        AddVariable(UniqueCompositeVariableName(c1Length->GetName(), id, VarType::CurveCLength), c1Length);
 
         VCurveCLength *c2Length = new VCurveCLength(id, parentId, curve->name(), spl, CurveCLength::C2,
                                                     *GetPatternUnit(), i);
-        AddVariable(c2Length->GetName(), c2Length);
+        AddVariable(UniqueCompositeVariableName(c2Length->GetName(), id, VarType::CurveCLength), c2Length);
     }
 }
 
