@@ -2626,10 +2626,11 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
         const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
         const QString targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()), id_token_to_name);
+        QString tl = targetLength;//need for saving fixed formula;
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
                                                lineWeight, scene, this, data, parse, Source::FromFile,
-                                               autoSmooth, lengthMode, targetLength);
+                                               autoSmooth, lengthMode, tl);
 
         if (spl != nullptr)
         {
@@ -2639,13 +2640,17 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         }
 
         //Rewrite attribute formula. Need for situation when we have wrong formula.
-        if (a1 != angle1 || a2 != angle2 || l1 != length1 || l2 != length2)
+        if (a1 != angle1 || a2 != angle2 || l1 != length1 || l2 != length2 || tl != targetLength)
         {
             const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(data);
             SetAttribute(domElement, AttrAngle1, formulaNamesToIds(a1, name_to_id_token));
             SetAttribute(domElement, AttrAngle2, formulaNamesToIds(a2, name_to_id_token));
             SetAttribute(domElement, AttrLength1, formulaNamesToIds(l1, name_to_id_token));
             SetAttribute(domElement, AttrLength2, formulaNamesToIds(l2, name_to_id_token));
+            if (tl != targetLength)
+            {
+                SetAttribute(domElement, AttrLength, formulaNamesToIds(tl, name_to_id_token));
+            }
             modified = true;
             haveLiteChange();
         }

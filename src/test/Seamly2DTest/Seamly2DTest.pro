@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core testlib gui printsupport xml 
+QT       += core testlib gui printsupport xml
 
 TARGET = Seamly2DTests
 
@@ -67,7 +67,8 @@ SOURCES += \
     tst_emptypathsplinenamecollision.cpp \
     tst_cutsegmentcanonicalnamecollision.cpp \
     tst_movesplinemergeidtoken.cpp \
-    tst_savepieceundomergeidtoken.cpp
+    tst_savepieceundomergeidtoken.cpp \
+    tst_splinetargetlengthformulapropagation.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -111,7 +112,8 @@ HEADERS += \
     tst_emptypathsplinenamecollision.h \
     tst_cutsegmentcanonicalnamecollision.h \
     tst_movesplinemergeidtoken.h \
-    tst_savepieceundomergeidtoken.h
+    tst_savepieceundomergeidtoken.h \
+    tst_splinetargetlengthformulapropagation.h
 
 include(warnings.pri)
 
