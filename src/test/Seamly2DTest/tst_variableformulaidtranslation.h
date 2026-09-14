@@ -35,6 +35,8 @@ public:
 private slots:
     void TestCustomVariableFormulaSurvivesRename();
     void TestCustomVariableFormulaReferencingLineLengthSurvivesRename();
+    void TestCustomVariableFormulaFailsWhenVariablesParseBeforeReferencedDraftGeometry();
+    void TestReparsingVariablesAfterDraftBlockFixesTranslationAndValue();
 
 private:
     Q_DISABLE_COPY(TST_VariableFormulaIdTranslation)
