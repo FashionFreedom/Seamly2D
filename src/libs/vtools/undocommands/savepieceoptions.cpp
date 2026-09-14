@@ -184,6 +184,7 @@ bool SavePieceOptions::mergeWith(const QUndoCommand *command)
     }
 
     m_newPiece = saveCommand->getNewPiece();
+    m_name_to_id_token = saveCommand->getNameToIdToken();
     return true;
 }
 

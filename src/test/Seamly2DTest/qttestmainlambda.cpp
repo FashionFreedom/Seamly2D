@@ -90,6 +90,7 @@
 #include "tst_emptypathsplinenamecollision.h"
 #include "tst_cutsegmentcanonicalnamecollision.h"
 #include "tst_movesplinemergeidtoken.h"
+#include "tst_savepieceundomergeidtoken.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -213,6 +214,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_EmptyPathSplineNameCollision());
     ASSERT_TEST(new TST_CutSegmentCanonicalNameCollision());
     ASSERT_TEST(new TST_MoveSplineMergeIdToken());
+    ASSERT_TEST(new TST_SavePieceUndoMergeIdToken());
 
     return status;
 }

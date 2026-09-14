@@ -157,6 +157,7 @@ bool SavePiecePathOptions::mergeWith(const QUndoCommand *command)
     }
 
     m_newPath = saveCommand->newPath();
+    m_name_to_id_token = saveCommand->getNameToIdToken();
     return true;
 }
 
