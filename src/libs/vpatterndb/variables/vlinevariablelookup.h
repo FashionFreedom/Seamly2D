@@ -52,4 +52,25 @@ class VLineAngle;
 QSharedPointer<VLengthLine> findLineLength(const VContainer &data, quint32 line_id);
 QSharedPointer<VLineAngle>  findLineAngle(const VContainer &data, quint32 line_id);
 
+/**
+ * @brief Resolves a line's persisted id to the actual name it is registered under in the
+ * container's variable table (i.e. the key lineLengthsData()/lineAnglesData() returns it keyed
+ * by), NOT VLengthLine::GetName()/VLineAngle::GetName().
+ *
+ * VContainer::AddLine() may register a line under a disambiguated name that differs from the
+ * plain "Line_<p1>_<p2>" the object was constructed with, when another unrelated line's endpoints
+ * happen to produce the identical display name (see VContainer::UniqueCompositeVariableName(),
+ * issue #1678 - point display names are not enforced globally unique). The object itself is never
+ * told about that disambiguation: its own GetName() keeps returning the original, undisambiguated
+ * string, which in that situation is a real but DIFFERENT line's name - pasting it into a formula
+ * would silently resolve to the wrong line.
+ *
+ * @param data container with variables.
+ * @param line_id the line's persisted id.
+ * @return the name line_id is actually registered under, or an empty string if no line with that
+ * id is registered.
+ */
+QString findLineLengthName(const VContainer &data, quint32 line_id);
+QString findLineAngleName(const VContainer &data, quint32 line_id);
+
 #endif // VLINEVARIABLELOOKUP_H

@@ -343,13 +343,16 @@ bool VDrawTool::isPointNameVisible(quint32 id) const
  */
 QString VDrawTool::lineLengthName(quint32 line_id) const
 {
-    const QSharedPointer<VLengthLine> length = findLineLength(data, line_id);
-    if (length.isNull())
+    // Deliberately NOT VLengthLine::GetName(): when this line's display name collided with an
+    // unrelated line's and got disambiguated by VContainer::UniqueCompositeVariableName(), the
+    // object's own GetName() still returns the original, undisambiguated name - which then names
+    // a different line. findLineLengthName() returns the name it is actually registered under.
+    const QString name = findLineLengthName(data, line_id);
+    if (name.isEmpty())
     {
         qWarning() << "VDrawTool::lineLengthName: no VLengthLine found for line_id" << line_id;
-        return QString();
     }
-    return length->GetName();
+    return name;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -359,13 +362,13 @@ QString VDrawTool::lineLengthName(quint32 line_id) const
  */
 QString VDrawTool::lineAngleName(quint32 line_id) const
 {
-    const QSharedPointer<VLineAngle> angle = findLineAngle(data, line_id);
-    if (angle.isNull())
+    // See the comment in lineLengthName() above - same reasoning applies to VLineAngle::GetName().
+    const QString name = findLineAngleName(data, line_id);
+    if (name.isEmpty())
     {
         qWarning() << "VDrawTool::lineAngleName: no VLineAngle found for line_id" << line_id;
-        return QString();
     }
-    return angle->GetName();
+    return name;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

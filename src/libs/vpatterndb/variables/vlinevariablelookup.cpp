@@ -54,3 +54,31 @@ QSharedPointer<VLineAngle> findLineAngle(const VContainer &data, quint32 line_id
     }
     return QSharedPointer<VLineAngle>();
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+QString findLineLengthName(const VContainer &data, quint32 line_id)
+{
+    const QMap<QString, QSharedPointer<VLengthLine>> lines = data.lineLengthsData();
+    for (auto i = lines.constBegin(); i != lines.constEnd(); ++i)
+    {
+        if (i.value()->getLineId() == line_id)
+        {
+            return i.key();
+        }
+    }
+    return QString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString findLineAngleName(const VContainer &data, quint32 line_id)
+{
+    const QMap<QString, QSharedPointer<VLineAngle>> angles = data.lineAnglesData();
+    for (auto i = angles.constBegin(); i != angles.constEnd(); ++i)
+    {
+        if (i.value()->getLineId() == line_id)
+        {
+            return i.key();
+        }
+    }
+    return QString();
+}

@@ -108,3 +108,64 @@ void TST_LineVariableLookup::TestFindLineAngleReturnsNullForUnknownId()
 
     QVERIFY(findLineAngle(*data, 12345).isNull());
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Point display names are not enforced globally unique across a whole pattern (issue
+ * #1678), so two structurally different lines in unrelated draft blocks can legally share
+ * endpoint names and therefore the identical "Line_<p1>_<p2>" display name.
+ * VContainer::UniqueCompositeVariableName() disambiguates the second one's container key (e.g.
+ * "Line_A1_A2_2"), but never updates the VLengthLine object's own internal name, which keeps
+ * returning the original, undisambiguated string via GetName() - a real but DIFFERENT line's
+ * name. "Copy Length" must use the name the line is actually registered under
+ * (findLineLengthName()), not VLengthLine::GetName(), or it silently copies a formula that
+ * resolves to the wrong line.
+ */
+void TST_LineVariableLookup::TestFindLineLengthNameReturnsRegisteredKeyNotObjectName()
+{
+    const Unit unit = Unit::Cm;
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
+
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p1_id, p2_id, 1);
+
+    // A second, unrelated line whose endpoints happen to share names with the first line's.
+    const quint32 p3_id = data->AddGObject(new VPointF(0, 20, QStringLiteral("A1"), 5, 5));
+    const quint32 p4_id = data->AddGObject(new VPointF(10, 20, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p3_id, p4_id, 2);
+
+    // Both objects report the same undisambiguated GetName() - using that for line 2 would name
+    // line 1 instead.
+    QCOMPARE(findLineLength(*data, 1)->GetName(), QStringLiteral("Line_A1_A2"));
+    QCOMPARE(findLineLength(*data, 2)->GetName(), QStringLiteral("Line_A1_A2"));
+
+    // The actually-registered, resolvable names differ.
+    QCOMPARE(findLineLengthName(*data, 1), QStringLiteral("Line_A1_A2"));
+    QCOMPARE(findLineLengthName(*data, 2), QStringLiteral("Line_A1_A2_2"));
+    QVERIFY(data->lineLengthsData().contains(findLineLengthName(*data, 2)));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_LineVariableLookup::TestFindLineAngleNameReturnsRegisteredKeyNotObjectName()
+{
+    const Unit unit = Unit::Cm;
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
+
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p1_id, p2_id, 1);
+
+    const quint32 p3_id = data->AddGObject(new VPointF(0, 20, QStringLiteral("A1"), 5, 5));
+    const quint32 p4_id = data->AddGObject(new VPointF(10, 20, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p3_id, p4_id, 2);
+
+    QCOMPARE(findLineAngle(*data, 1)->GetName(), QStringLiteral("AngleLine_A1_A2"));
+    QCOMPARE(findLineAngle(*data, 2)->GetName(), QStringLiteral("AngleLine_A1_A2"));
+
+    QCOMPARE(findLineAngleName(*data, 1), QStringLiteral("AngleLine_A1_A2"));
+    QCOMPARE(findLineAngleName(*data, 2), QStringLiteral("AngleLine_A1_A2_2"));
+    QVERIFY(data->lineAnglesData().contains(findLineAngleName(*data, 2)));
+}
