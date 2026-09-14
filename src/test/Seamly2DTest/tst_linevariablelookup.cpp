@@ -24,12 +24,14 @@
 #include "tst_linevariablelookup.h"
 
 #include <QtTest>
+#include <utility>
 
 #include "../../libs/vpatterndb/variables/vlinevariablelookup.h"
 #include "../../libs/vpatterndb/variables/vlinelength.h"
 #include "../../libs/vpatterndb/variables/vlineangle.h"
 #include "../../libs/vpatterndb/vcontainer.h"
 #include "../../libs/vpatterndb/vtranslatevars.h"
+#include "../../libs/vpatterndb/calculator.h"
 #include "../../libs/vgeometry/vpointf.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -168,4 +170,58 @@ void TST_LineVariableLookup::TestFindLineAngleNameReturnsRegisteredKeyNotObjectN
     QCOMPARE(findLineAngleName(*data, 1), QStringLiteral("AngleLine_A1_A2"));
     QCOMPARE(findLineAngleName(*data, 2), QStringLiteral("AngleLine_A1_A2_2"));
     QVERIFY(data->lineAnglesData().contains(findLineAngleName(*data, 2)));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief The two tests above only prove findLineLengthName()/findLineAngleName() return the
+ * correctly-disambiguated *string*. That alone doesn't prove "Copy Length" actually produces a
+ * usable, correct formula - the two colliding lines in those tests happen to have the same
+ * real length (both 10cm), so evaluating the wrong name would have silently returned the
+ * *coincidentally* right number and this whole bug class would have gone unnoticed.
+ *
+ * This test closes that gap: two colliding lines with genuinely DIFFERENT real lengths (10cm
+ * vs. 30cm). It takes the exact string "Copy Length" would put on the clipboard for the second
+ * line, evaluates it through Calculator::EvalFormula() against the same VContainer::DataVariables()
+ * a pasted formula is evaluated against (the same call VFormula::Eval() makes), and checks the
+ * *number* that comes back - not just the name.
+ */
+void TST_LineVariableLookup::TestCopiedLineLengthFormulaEvaluatesToTheCorrectLineNotTheCollider()
+{
+    const Unit unit = Unit::Cm;
+    const VTranslateVars tr_vars;
+    QScopedPointer<VContainer> data(new VContainer(&tr_vars, &unit));
+
+    // Line 1: A1(0,0) to A2(10,0) - length 10cm.
+    const quint32 p1_id = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
+    const quint32 p2_id = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p1_id, p2_id, 1);
+
+    // Line 2: unrelated points that happen to share the same names "A1"/"A2", but placed so the
+    // line is genuinely a different length - 30cm, not a coincidental match with line 1.
+    const quint32 p3_id = data->AddGObject(new VPointF(0, 20, QStringLiteral("A1"), 5, 5));
+    const quint32 p4_id = data->AddGObject(new VPointF(0, 50, QStringLiteral("A2"), 5, 5));
+    data->AddLine(p3_id, p4_id, 2);
+
+    // VInternalVariable::GetValue() has a const qreal-returning overload and a non-const
+    // qreal*-returning one; QSharedPointer's operator-> is non-const here, so force the const
+    // overload explicitly rather than dereferencing the pointer form.
+    const qreal line1_value = std::as_const(*findLineLength(*data, 1)).GetValue();
+    const qreal line2_value = std::as_const(*findLineLength(*data, 2)).GetValue();
+    QVERIFY2(!qFuzzyCompare(line1_value, line2_value),
+             "Test setup error: the two lines must have different real lengths, or a bug that "
+             "evaluates to the wrong line's length would go unnoticed.");
+
+    // What "Copy Length" would actually put on the clipboard for line 2.
+    const QString copied_formula = findLineLengthName(*data, 2);
+    QCOMPARE(copied_formula, QStringLiteral("Line_A1_A2_2"));
+
+    // Evaluate it exactly the way a pasted formula is evaluated (VFormula::Eval's own call).
+    Calculator cal;
+    const qreal evaluated_value = cal.EvalFormula(data->DataVariables(), copied_formula);
+
+    QCOMPARE(evaluated_value, line2_value);
+    QVERIFY2(!qFuzzyCompare(evaluated_value, line1_value),
+             "Copy Length for line 2 evaluated to line 1's length - the exact silent-wrong-value "
+             "bug this fix addresses.");
 }

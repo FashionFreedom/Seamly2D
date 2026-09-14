@@ -39,6 +39,7 @@ private slots:
     void TestFindLineAngleReturnsNullForUnknownId();
     void TestFindLineLengthNameReturnsRegisteredKeyNotObjectName();
     void TestFindLineAngleNameReturnsRegisteredKeyNotObjectName();
+    void TestCopiedLineLengthFormulaEvaluatesToTheCorrectLineNotTheCollider();
 
 private:
     Q_DISABLE_COPY(TST_LineVariableLookup)
