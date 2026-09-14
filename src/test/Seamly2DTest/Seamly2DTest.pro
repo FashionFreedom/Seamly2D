@@ -65,7 +65,8 @@ SOURCES += \
     tst_duplicatepointnamelinecollision.cpp \
     tst_duplicatepointnamearccurvecollision.cpp \
     tst_emptypathsplinenamecollision.cpp \
-    tst_cutsegmentcanonicalnamecollision.cpp
+    tst_cutsegmentcanonicalnamecollision.cpp \
+    tst_movesplinemergeidtoken.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -107,7 +108,8 @@ HEADERS += \
     tst_duplicatepointnamelinecollision.h \
     tst_duplicatepointnamearccurvecollision.h \
     tst_emptypathsplinenamecollision.h \
-    tst_cutsegmentcanonicalnamecollision.h
+    tst_cutsegmentcanonicalnamecollision.h \
+    tst_movesplinemergeidtoken.h
 
 include(warnings.pri)
 
