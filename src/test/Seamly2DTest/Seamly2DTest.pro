@@ -45,6 +45,7 @@ SOURCES += \
     tst_vellipticalarc.cpp \
     tst_vcubicbezierpath.cpp \
     tst_vgobject.cpp \
+    tst_vcontainer.cpp \
     tst_vsplinepath.cpp \
     tst_vpointf.cpp \
     tst_readval.cpp \
@@ -72,6 +73,7 @@ HEADERS += \
     tst_vellipticalarc.h \
     tst_vcubicbezierpath.h \
     tst_vgobject.h \
+    tst_vcontainer.h \
     tst_vsplinepath.h \
     tst_vpointf.h \
     tst_readval.h \
