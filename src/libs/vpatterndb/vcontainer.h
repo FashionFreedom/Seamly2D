@@ -79,6 +79,10 @@
 #include "vpiecepath.h"
 #include "vtranslatevars.h"
 
+#include <QLoggingCategory>
+
+Q_DECLARE_LOGGING_CATEGORY(vCon)
+
 class VEllipticalArc;
 
 QT_WARNING_PUSH
@@ -204,7 +208,7 @@ QT_WARNING_POP
  * - quint32 AddGObject(VGObject *obj);
  * - quint32 AddPiece(const VPiece &piece);
  * - quint32 AddPiecePath(const VPiecePath &path);
- * - void AddLine(const quint32 &firstPointId, const quint32 &secondPointId);
+ * - void AddLine(const quint32 &firstPointId, const quint32 &secondPointId, const quint32 &line_id);
  * - void AddArc(const QSharedPointer<VAbstractCurve> &arc, const quint32 &id, const quint32 &parentId = NULL_ID);
  * - void AddSpline(const QSharedPointer<VAbstractBezier> &curve, quint32 id, quint32 parentId = NULL_ID);
  * - void AddCurveWithSegments(const QSharedPointer<VAbstractCubicBezierPath> &curve, const quint32 &id, quint32 parentId = NULL_ID);
@@ -290,7 +294,7 @@ public:
     quint32            AddGObject(VGObject *obj);
     quint32            AddPiece(const VPiece &piece);
     quint32            AddPiecePath(const VPiecePath &path);
-    void               AddLine(const quint32 &firstPointId, const quint32 &secondPointId);
+    void               AddLine(const quint32 &firstPointId, const quint32 &secondPointId, const quint32 &line_id);
     void               AddArc(const QSharedPointer<VAbstractCurve> &arc, const quint32 &id,
                               const quint32 &parentId = NULL_ID);
     void               AddSpline(const QSharedPointer<VAbstractBezier> &curve, quint32 id, quint32 parentId = NULL_ID);
@@ -357,6 +361,8 @@ private:
     QSharedDataPointer<VContainerData> d;
 
     void AddCurve(const QSharedPointer<VAbstractCurve> &curve, const quint32 &id, quint32 parentId = NULL_ID);
+
+    QString UniqueCompositeVariableName(const QString &name, const quint32 &owner_id, const VarType &type);
 
     template <class T>
     uint qHash( const QSharedPointer<T> &p );
