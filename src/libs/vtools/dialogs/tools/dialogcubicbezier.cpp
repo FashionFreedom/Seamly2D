@@ -135,6 +135,8 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     updateCurveLengthEnabled();
 
     vis = new VisToolCubicBezier(data);
+
+    ui->plainTextEditCurveLength->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -205,7 +207,6 @@ void DialogCubicBezier::FXCurveLength()
     {
         lengthF = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
         ui->plainTextEditCurveLength->setPlainText(lengthF);
-        MoveCursorToEnd(ui->plainTextEditCurveLength);
     }
     delete dialog;
 }

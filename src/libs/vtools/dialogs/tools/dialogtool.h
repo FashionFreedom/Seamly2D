@@ -303,7 +303,6 @@ protected:
      * @brief SaveData Put dialog data in local variables
      */
     virtual void     SaveData() {}
-    void             MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const;
     virtual bool     eventFilter(QObject *object, QEvent *event) override;
     quint32          DNumber(const QString &baseName) const;
 
@@ -358,11 +357,10 @@ inline VAbstractTool *DialogTool::GetAssociatedTool()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief initializeOkCancelApply initialize OK / Cancel and Apply buttons
+/// @param ui Dialog container
+//---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-/**
- * @brief initializeOkCancelApply initialize OK / Cancel and Apply buttons
- * @param ui Dialog container
- */
 inline void DialogTool::initializeOkCancelApply(T *ui)
 {
     initializeOkCancel(ui);
@@ -372,11 +370,10 @@ inline void DialogTool::initializeOkCancelApply(T *ui)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief initializeOkCancel initialize OK and Cancel buttons
+/// @param ui Dialog container
+//---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-/**
- * @brief initializeOkCancel initialize OK and Cancel buttons
- * @param ui Dialog container
- */
 inline void DialogTool::initializeOkCancel(T *ui)
 {
     ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
@@ -391,11 +388,10 @@ inline void DialogTool::initializeOkCancel(T *ui)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief initializeFormulaUi initialize ui object for the formula field
+/// @param ui Dialog container
+//---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-/**
- * @brief initializeFormulaUi initialize ui object for the formula field
- * @param ui Dialog container
- */
 inline void DialogTool::initializeFormulaUi(T *ui)
 {
     labelResultCalculation = ui->labelResultCalculation;

@@ -3,7 +3,7 @@
  <class>EditFormulaDialog</class>
  <widget class="QDialog" name="EditFormulaDialog">
   <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
+   <enum>Qt::ApplicationModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -374,7 +374,7 @@ QListWidget::item:selected {
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
-             <widget class="QPlainTextEdit" name="plainTextEditFormula">
+             <widget class="ExpandingTextEdit" name="plainTextEditFormula">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -384,13 +384,13 @@ QListWidget::item:selected {
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>72</height>
+                <height>62</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>16777215</height>
+                <height>62</height>
                </size>
               </property>
               <property name="toolTip">
@@ -1033,9 +1033,28 @@ QListWidget::item:selected {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ExpandingTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>expandingtextedit.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
+  <tabstop>menuTab_ListWidget</tabstop>
   <tabstop>plainTextEditFormula</tabstop>
-  <tabstop>buttonBox</tabstop>
+  <tabstop>clear_PushButton</tabstop>
+  <tabstop>undo_PushButton</tabstop>
+  <tabstop>insert_PushButton</tabstop>
+  <tabstop>fx_minus_45_PushButton</tabstop>
+  <tabstop>fx_plus_45_PushButton</tabstop>
+  <tabstop>fx_minus_90_PushButton</tabstop>
+  <tabstop>fx_plus_90_PushButton</tabstop>
+  <tabstop>fx_minus_180_PushButton</tabstop>
+  <tabstop>fx_plus_180_PushButton</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>checkBoxHideEmpty</tabstop>
+  <tabstop>filterFormulaInputs</tabstop>
  </tabstops>
  <resources>
   <include location="../../../vmisc/share/resources/icon.qrc"/>

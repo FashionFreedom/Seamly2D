@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogtriangle.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogtriangle.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 Nov, 2013
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialogtriangle.h"
 
@@ -64,11 +64,10 @@
 #include "ui_dialogtriangle.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogTriangle create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogTriangle create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogTriangle::DialogTriangle(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogTriangle)
@@ -109,11 +108,10 @@ DialogTriangle::~DialogTriangle()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -237,10 +235,9 @@ void DialogTriangle::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::SetPointName(const QString &value)
 {
     pointName = value;
@@ -248,10 +245,9 @@ void DialogTriangle::SetPointName(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetSecondPointId set id of second point
- * @param value id
- */
+/// @brief SetSecondPointId set id of second point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::SetSecondPointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
@@ -262,10 +258,9 @@ void DialogTriangle::SetSecondPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFirstPointId set id of first point
- * @param value id
- */
+/// @brief SetFirstPointId set id of first point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::SetFirstPointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
@@ -276,10 +271,9 @@ void DialogTriangle::SetFirstPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetAxisP2Id set id second point of axis
- * @param value id
- */
+/// @brief SetAxisP2Id set id second point of axis
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::SetAxisP2Id(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxAxisP2, value);
@@ -290,10 +284,9 @@ void DialogTriangle::SetAxisP2Id(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetAxisP1Id set id first point of axis
- * @param value id
- */
+/// @brief SetAxisP1Id set id first point of axis
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTriangle::SetAxisP1Id(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxAxisP1, value);
@@ -304,40 +297,36 @@ void DialogTriangle::SetAxisP1Id(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetAxisP1Id return id first point of axis
- * @return id
- */
+/// @brief GetAxisP1Id return id first point of axis
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogTriangle::GetAxisP1Id() const
 {
     return getCurrentObjectId(ui->comboBoxAxisP1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetAxisP2Id return id second point of axis
- * @return id
- */
+/// @brief GetAxisP2Id return id second point of axis
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogTriangle::GetAxisP2Id() const
 {
     return getCurrentObjectId(ui->comboBoxAxisP2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFirstPointId return id of first point
- * @return id
- */
+/// @brief GetFirstPointId return id of first point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogTriangle::GetFirstPointId() const
 {
     return getCurrentObjectId(ui->comboBoxFirstPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetSecondPointId return id of second point
- * @return id
- */
+/// @brief GetSecondPointId return id of second point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogTriangle::GetSecondPointId() const
 {
     return getCurrentObjectId(ui->comboBoxSecondPoint);

@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogpointofcontact.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogpointofcontact.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 Nov, 2013
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialogpointofcontact.h"
 
@@ -71,16 +71,14 @@
 #include "ui_dialogpointofcontact.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogPointOfContact create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogPointOfContact create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogPointOfContact)
     , radius(QString())
-    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -94,7 +92,6 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
     initializeOkCancelApply(ui);
@@ -108,12 +105,13 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
     connect(ui->toolButtonExprRadius, &QPushButton::clicked,        this, &DialogPointOfContact::FXRadius);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogPointOfContact::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogPointOfContact::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked,        this, &DialogPointOfContact::DeployFormulaTextEdit);
     connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
     connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
     connect(ui->comboBoxCenter,       &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
 
     vis = new VisToolPointOfContact(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -174,17 +172,10 @@ void DialogPointOfContact::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
-}
-
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
 void DialogPointOfContact::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -228,7 +219,6 @@ void DialogPointOfContact::ChosenObject(quint32 id, const SceneObject &type)
                             line->setRadiusId(id);
                             line->RefreshGeometry();
                             prepare = true;
-                            this->setModal(true);
                             this->show();
                         }
                     }
@@ -266,10 +256,9 @@ void DialogPointOfContact::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetSecondPoint set id second point
- * @param value id
- */
+/// @brief SetSecondPoint set id second point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::SetSecondPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
@@ -280,10 +269,9 @@ void DialogPointOfContact::SetSecondPoint(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFirstPoint set id first point
- * @param value id
- */
+/// @brief SetFirstPoint set id first point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::SetFirstPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
@@ -294,10 +282,9 @@ void DialogPointOfContact::SetFirstPoint(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetCenter set id of center point
- * @param value id
- */
+/// @brief SetCenter set id of center point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::setCenter(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxCenter, value);
@@ -308,32 +295,23 @@ void DialogPointOfContact::setCenter(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setRadius set formula radius of arc
- * @param value formula
- */
+/// @brief setRadius set formula radius of arc
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::setRadius(const QString &value)
 {
     radius = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (radius.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(radius);
 
     VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
     SCASSERT(line != nullptr)
     line->setRadius(radius);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::SetPointName(const QString &value)
 {
     pointName = value;
@@ -341,40 +319,36 @@ void DialogPointOfContact::SetPointName(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getRadius return formula radius of arc
- * @return formula
- */
+/// @brief getRadius return formula radius of arc
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogPointOfContact::getRadius() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetCenter return id of center point
- * @return id
- */
+/// @brief GetCenter return id of center point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogPointOfContact::getCenter() const
 {
     return getCurrentObjectId(ui->comboBoxCenter);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFirstPoint return id first point
- * @return id
- */
+/// @brief GetFirstPoint return id first point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogPointOfContact::GetFirstPoint() const
 {
     return getCurrentObjectId(ui->comboBoxFirstPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetSecondPoint return id second point
- * @return id
- */
+/// @brief GetSecondPoint return id second point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogPointOfContact::GetSecondPoint() const
 {
     return getCurrentObjectId(ui->comboBoxSecondPoint);

@@ -75,7 +75,6 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutSpline)
     , formula(QString())
-    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -89,7 +88,6 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
     initializeOkCancelApply(ui);
@@ -110,9 +108,10 @@ DialogCutSpline::DialogCutSpline(const VContainer *data, const quint32 &toolId, 
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutSpline::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutSpline::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCutSpline::FormulaChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogCutSpline::DeployFormulaTextEdit);
 
     vis = new VisToolCutSpline(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -160,19 +159,11 @@ QString DialogCutSpline::getDirection() const
 void DialogCutSpline::setFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
-    // of this PlainTextEdit to change 80 to this value
-    if (formula.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(formula);
 
     VisToolCutSpline *path = qobject_cast<VisToolCutSpline *>(vis);
     SCASSERT(path != nullptr)
     path->setLength(formula);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -221,7 +212,6 @@ void DialogCutSpline::ChosenObject(quint32 id, const SceneObject &type)
             {
                 vis->VisualMode(id);
                 prepare = true;
-                this->setModal(true);
                 this->show();
             }
         }
@@ -249,12 +239,6 @@ void DialogCutSpline::closeEvent(QCloseEvent *event)
 {
     ui->plainTextEditFormula->blockSignals(true);
     DialogTool::closeEvent(event);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCutSpline::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

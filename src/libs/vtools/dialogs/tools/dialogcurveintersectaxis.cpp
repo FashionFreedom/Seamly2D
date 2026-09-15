@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogcurveintersectaxis.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogcurveintersectaxis.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   21 Nov, 2014
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialogcurveintersectaxis.h"
 
@@ -79,7 +79,6 @@ DialogCurveIntersectAxis::DialogCurveIntersectAxis(const VContainer *data, const
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCurveIntersectAxis)
     , formulaAngle()
-    , formulaBaseHeightAngle(0)
     , m_firstRelease(false)
 {
     ui->setupUi(this);
@@ -94,7 +93,6 @@ DialogCurveIntersectAxis::DialogCurveIntersectAxis(const VContainer *data, const
     initializeFormulaUi(ui);
     ui->pointName_LineEdit->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->pointName_Label;
-    this->formulaBaseHeightAngle = plainTextEditFormula->height();
     plainTextEditFormula->installEventFilter(this);
     plainTextEditFormula->setToolTip(makeAngleTooltip());
 
@@ -126,10 +124,11 @@ DialogCurveIntersectAxis::DialogCurveIntersectAxis(const VContainer *data, const
     connect(ui->exprAngle_ToolButton, &QPushButton::clicked, this, &DialogCurveIntersectAxis::FXAngle);
     connect(ui->pointName_LineEdit, &QLineEdit::textChanged, this, &DialogCurveIntersectAxis::NamePointChanged);
     connect(plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCurveIntersectAxis::AngleTextChanged);
-    connect(ui->growLengthAngle_PushButton, &QPushButton::clicked, this, &DialogCurveIntersectAxis::DeployAngleTextEdit);
     connect(timerFormula, &QTimer::timeout, this, &DialogCurveIntersectAxis::EvalAngle);
 
     vis = new VisToolCurveIntersectAxis(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -159,20 +158,18 @@ void DialogCurveIntersectAxis::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogCurveIntersectAxis::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCurveIntersectAxis::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -189,19 +186,11 @@ QString DialogCurveIntersectAxis::GetAngle() const
 void DialogCurveIntersectAxis::SetAngle(const QString &value)
 {
     formulaAngle = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
-    // of this PlainTextEdit to change 80 to this value
-    if (formulaAngle.length() > 80)
-    {
-        this->DeployAngleTextEdit();
-    }
     plainTextEditFormula->setPlainText(formulaAngle);
 
     VisToolCurveIntersectAxis *line = qobject_cast<VisToolCurveIntersectAxis *>(vis);
     SCASSERT(line != nullptr)
     line->SetAngle(formulaAngle);
-
-    MoveCursorToEnd(plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -237,19 +226,18 @@ void DialogCurveIntersectAxis::setCurveId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineColor get the color of line
- * @param value type
- */
+/// @brief getLineColor get the color of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
  QString DialogCurveIntersectAxis::getLineColor() const
 {
     return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/* @brief setLineColor set color of the line
- * @param value type
- */
+/// @brief setLineColor set color of the line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCurveIntersectAxis::setLineColor(const QString &value)
 {
     changeCurrentData(ui->lineColor_ComboBox, value);
@@ -347,12 +335,6 @@ void DialogCurveIntersectAxis::EvalAngle()
 void DialogCurveIntersectAxis::AngleTextChanged()
 {
     formulaValueChanged(flagError, plainTextEditFormula, timerFormula, degreeSymbol);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogCurveIntersectAxis::DeployAngleTextEdit()
-{
-    DeployFormula(plainTextEditFormula, ui->growLengthAngle_PushButton, formulaBaseHeightAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

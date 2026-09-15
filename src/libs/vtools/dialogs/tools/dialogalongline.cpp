@@ -87,7 +87,6 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogAlongLine)
     , formula(QString())
-    , formulaBaseHeight(0)
     , buildMidpoint(false)
 {
     ui->setupUi(this);
@@ -103,7 +102,6 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
     initializeOkCancelApply(ui);
@@ -134,7 +132,6 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogAlongLine::FXLength);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogAlongLine::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,   this, &DialogAlongLine::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked,          this, &DialogAlongLine::DeployFormulaTextEdit);
     connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogAlongLine::PointChanged);
     connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogAlongLine::PointChanged);
 
@@ -147,6 +144,8 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
         setLineType(LineTypeNone);  //By default don't show line
         setLineWeight(DefaultLineWeight);
     }
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -182,6 +181,7 @@ void DialogAlongLine::FXLength()
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
+
     if (dialog->exec() == QDialog::Accepted)
     {
         SetFormula(dialog->GetFormula());
@@ -193,12 +193,6 @@ void DialogAlongLine::FXLength()
 void DialogAlongLine::ShowVisualization()
 {
     AddVisualization<VisToolAlongLine>();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogAlongLine::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -244,7 +238,6 @@ void DialogAlongLine::ChosenObject(quint32 id, const SceneObject &type)
                                 SetFormula(currentLength + QLatin1String("/2"));
                             }
                             prepare = true;
-                            this->setModal(true);
                             this->show();
                         }
                         else
@@ -345,18 +338,12 @@ void DialogAlongLine::SetFirstPointId(const quint32 &value)
 void DialogAlongLine::SetFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
+
     ui->plainTextEditFormula->setPlainText(formula);
 
     VisToolAlongLine *line = qobject_cast<VisToolAlongLine *>(vis);
     SCASSERT(line != nullptr)
     line->setLength(formula);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

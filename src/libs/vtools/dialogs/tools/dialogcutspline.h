@@ -90,27 +90,17 @@ public:
 
 public slots:
     virtual void        ChosenObject(quint32 id, const SceneObject &type) override;
-
-    /// @brief DeployFormulaTextEdit grow or shrink formula input
-    void                DeployFormulaTextEdit();
     void                FXLength();
+
 protected:
     virtual void        ShowVisualization() override;
-
-    /// @brief SaveData Put dialog data in local variables
-    virtual void        SaveData() override;
+    virtual void        SaveData() override; /// @brief SaveData Put dialog data in local variables
     virtual void        closeEvent(QCloseEvent *event) override;
+
 private:
     Q_DISABLE_COPY(DialogCutSpline)
-
-    ///  @brief ui keeps information about user interface */
-    Ui::DialogCutSpline *ui;
-
-    ///  @brief formula string with formula */
-    QString             formula;
-
-    ///  @brief formulaBaseHeight base height defined by dialogui */
-    int                 formulaBaseHeight;
+    Ui::DialogCutSpline *ui;     ///  @brief ui keeps information about user interface 
+    QString             formula; ///  @brief formula string with formula
 };
 
 #endif // DIALOGCUTSPLINE_H

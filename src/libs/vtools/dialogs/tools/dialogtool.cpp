@@ -51,6 +51,7 @@
 #include <limits.h>
 #include <qiterator.h>
 #include <qnumeric.h>
+#include <QByteArray>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDoubleSpinBox>
@@ -67,6 +68,7 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QPlainTextEdit>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRect>
 #include <QRegularExpression>
@@ -212,27 +214,60 @@ void DialogTool::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showEvent handle when window show
- * @param event event
- */
-void DialogTool::showEvent(QShowEvent *event)
+/// @brief showEvent handle when window show
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
+ void DialogTool::showEvent(QShowEvent *event)
 {
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
+    // Let the base class handle the initial native show event
+    QDialog::showEvent(event);
+
+    // Filter out OS system updates or subsequent window activations
+    if (event->spontaneous())
     {
         return;
     }
+
     if (isInitialized)
     {
         return;
     }
-    // do your init stuff here
 
+    // --- GNOME MODAL WORKAROUND START ---
+    // Safely check if this instance was flagged as modal inside Qt Creator
+    if (this->isModal())
+    {
+        QString desktop = QProcessEnvironment::systemEnvironment().value("XDG_CURRENT_DESKTOP").toUpper();
+
+        if (desktop.contains("GNOME") || desktop.contains("UNITY"))
+        {
+            // Force Qt to treat it as an independent top-level window and strip Dialog hints
+            Qt::WindowFlags currentFlags = this->windowFlags();
+            currentFlags |= Qt::Window;
+            currentFlags |= (Qt::WindowTitleHint | Qt::WindowSystemMenuHint | Qt::WindowCloseButtonHint);
+            currentFlags &= ~Qt::Dialog;
+            currentFlags &= ~Qt::WindowContextHelpButtonHint;
+            this->setWindowFlags(currentFlags);
+
+            // Clear the transient parent relationship so GNOME Mutter releases its lock
+            if (this->windowHandle())
+            {
+                this->windowHandle()->setTransientParent(nullptr);
+            }
+
+            // Keep it behaviorally modal inside the application
+            this->setWindowModality(Qt::ApplicationModal);
+        }
+    }
+    // --- GNOME MODAL WORKAROUND END ---
+
+    // Standard initialization stuff here
+    // Running this *after* the flag change ensures your strict dimensions are applied cleanly
     setMaximumSize(size());
     setMinimumSize(size());
 
-    isInitialized = true;//first show windows are held
+    isInitialized = true; // Prevents this block from ever running again
+
     ShowVisualization();
 }
 
@@ -442,15 +477,6 @@ void DialogTool::changeCurrentData(QComboBox *box, const QVariant &value) const
         box->setCurrentIndex(index);
         box->blockSignals(false);
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogTool::MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const
-{
-    SCASSERT(plainTextEdit != nullptr)
-    QTextCursor cursor = plainTextEdit->textCursor();
-    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
-    plainTextEdit->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

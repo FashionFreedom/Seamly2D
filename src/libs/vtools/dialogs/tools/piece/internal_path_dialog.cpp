@@ -231,7 +231,6 @@ void InternalPathDialog::ShowDialog(bool click)
                 visPath->SetMode(Mode::Show);
                 visPath->RefreshGeometry();
             }
-            setModal(true);
             show();
         }
     }
@@ -457,7 +456,6 @@ void InternalPathDialog::nodeChanged(int index)
             }
             w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
-            MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
             // Seam allowance after
             ui->afterWidthFormula_PlainTextEdit->setEnabled(true);
@@ -474,7 +472,6 @@ void InternalPathDialog::nodeChanged(int index)
             }
             w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
-            MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
             // Angle type
             ui->angle_ComboBox->setEnabled(true);
@@ -1242,8 +1239,6 @@ void InternalPathDialog::setSeamAllowanceWidthFormula(const QString &formula)
     {
         ui->tabWidget->addTab(ui->notches_Tab, tr("Notches"));
     }
-
-    MoveCursorToEnd(ui->widthFormula_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

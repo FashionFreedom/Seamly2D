@@ -4,7 +4,7 @@
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -73,11 +73,10 @@
 #include "ui_dialogheight.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogHeight create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogHeight create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent), ui(new Ui::DialogHeight)
 {
@@ -139,10 +138,9 @@ DialogHeight::~DialogHeight()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::SetPointName(const QString &value)
 {
     pointName = value;
@@ -150,20 +148,18 @@ void DialogHeight::SetPointName(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineType return type of line
- * @return type
- */
+/// @brief getLineType return type of line
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogHeight::getLineType() const
 {
     return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineType set type of line
- * @param value type
- */
+/// @brief setLineType set type of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::setLineType(const QString &value)
 {
     changeCurrentData(ui->lineType_ComboBox, value);
@@ -171,20 +167,18 @@ void DialogHeight::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogHeight::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -204,10 +198,9 @@ void DialogHeight::setLineColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetBasePointId set id base point of height
- * @param value id
- */
+/// @brief SetBasePointId set id base point of height
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::SetBasePointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxBasePoint, value);
@@ -218,10 +211,9 @@ void DialogHeight::SetBasePointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetP1LineId set id first point of line
- * @param value id
- */
+/// @brief SetP1LineId set id first point of line
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::SetP1LineId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxP1Line, value);
@@ -232,10 +224,9 @@ void DialogHeight::SetP1LineId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetP2LineId set id second point of line
- * @param value id
- */
+/// @brief SetP2LineId set id second point of line
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::SetP2LineId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxP2Line, value);
@@ -246,11 +237,10 @@ void DialogHeight::SetP2LineId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -362,30 +352,27 @@ void DialogHeight::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetBasePointId return id base point of height
- * @return id
- */
+/// @brief GetBasePointId return id base point of height
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogHeight::GetBasePointId() const
 {
     return getCurrentObjectId(ui->comboBoxBasePoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetP1LineId return id first point of line
- * @return id id
- */
+/// @brief GetP1LineId return id first point of line
+/// @return id id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogHeight::GetP1LineId() const
 {
     return getCurrentObjectId(ui->comboBoxP1Line);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetP2LineId return id second point of line
- * @return id
- */
+/// @brief GetP2LineId return id second point of line
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogHeight::GetP2LineId() const
 {
     return getCurrentObjectId(ui->comboBoxP2Line);
