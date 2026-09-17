@@ -57,7 +57,9 @@ SOURCES += \
     tst_duplicatepointnamearccurvecollision.cpp \
     tst_pieceformulaidtranslation.cpp \
     tst_variableformulaidtranslation.cpp \
-    tst_customvariablecontainer.cpp
+    tst_customvariablecontainer.cpp \
+    tst_emptypathsplinenamecollision.cpp \
+    tst_cutsegmentcanonicalnamecollision.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -91,7 +93,9 @@ HEADERS += \
     tst_duplicatepointnamearccurvecollision.h \
     tst_pieceformulaidtranslation.h \
     tst_variableformulaidtranslation.h \
-    tst_customvariablecontainer.h
+    tst_customvariablecontainer.h \
+    tst_emptypathsplinenamecollision.h \
+    tst_cutsegmentcanonicalnamecollision.h
 
 include(warnings.pri)
 
