@@ -73,6 +73,7 @@ public:
 
 const quint32 pointA1Id  = 8001;
 const quint32 pointA2Id  = 8002;
+const quint32 lineId     = 8003;
 const quint32 splineId   = 8004;
 
 // Builds a container with two named points and the line-length/line-angle composite variables
@@ -84,7 +85,7 @@ VContainer *buildContainer(const QString &a1Name, const QString &a2Name)
     VContainer *data = new VContainer(nullptr, &unit);
     data->UpdateGObject(pointA1Id, new VPointF(0, 0, a1Name, 5, 5));
     data->UpdateGObject(pointA2Id, new VPointF(10, 0, a2Name, 5, 5));
-    data->AddLine(pointA1Id, pointA2Id);
+    data->AddLine(pointA1Id, pointA2Id, lineId);
     return data;
 }
 

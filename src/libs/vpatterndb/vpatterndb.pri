@@ -15,6 +15,7 @@ SOURCES += \
     $$PWD/variables/vinternalvariable.cpp \
     $$PWD/variables/vlineangle.cpp \
     $$PWD/variables/vlinelength.cpp \
+    $$PWD/variables/vlinevariablelookup.cpp \
     $$PWD/variables/vvariable.cpp \
     $$PWD/vformula.cpp \
     $$PWD/formulaidtranslator.cpp \
@@ -57,6 +58,7 @@ HEADERS += \
     $$PWD/variables/vlineangle_p.h \
     $$PWD/variables/vlinelength.h \
     $$PWD/variables/vlinelength_p.h \
+    $$PWD/variables/vlinevariablelookup.h \
     $$PWD/variables/vvariable.h \
     $$PWD/variables/vvariable_p.h \
     $$PWD/vformula.h \
