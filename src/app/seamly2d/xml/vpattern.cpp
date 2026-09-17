@@ -263,6 +263,33 @@ void VPattern::Parse(const Document &parse)
         }
         domNode = domNode.nextSibling();
     }
+
+    if (parse == Document::FullParse)
+    {
+        // A custom variable's formula can legitimately reference draft geometry by id-token - a
+        // point name, or a line/curve length/angle composite variable (see #1678). On disk
+        // <variables> always precedes every <draftBlock> (VPattern::CreateEmptyFile() appends
+        // TagVariables right away; AddDraftBlock::redo() only ever appends a draft block onto a
+        // document that already has one), so the single top-to-bottom walk above just parsed every
+        // <variables> element while `data` still held none of the points/lines/curves the draft
+        // blocks below it define. Any custom-variable formula referencing one of them was left as a
+        // raw, untranslated id-token (formulaIdsToNames() leaves unknown tokens untouched) and failed
+        // to evaluate.
+        //
+        // Re-run variable parsing now that every draft block has been parsed and `data` is complete.
+        // VContainer::AddVariable() updates an existing entry (matched by name) in place, so this is
+        // purely a correction pass, not a duplication.
+        const QDomNodeList variablesTags = elementsByTagName(TagVariables);
+        for (int i = 0; i < variablesTags.size(); ++i)
+        {
+            const QDomNode variablesNode = variablesTags.at(i);
+            if (not variablesNode.isNull())
+            {
+                parseVariablesElement(variablesNode);
+            }
+        }
+    }
+
     emit patternParsed();
 }
 

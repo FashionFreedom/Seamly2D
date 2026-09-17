@@ -2,8 +2,6 @@
  *                                                                         *
  *   Copyright (C) 2026  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
  ***************************************************************************
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -21,25 +19,31 @@
  **
  **************************************************************************/
 
-#ifndef TST_VARIABLEFORMULAIDTRANSLATION_H
-#define TST_VARIABLEFORMULAIDTRANSLATION_H
+#ifndef TST_MOVESPLINEMERGEIDTOKEN_H
+#define TST_MOVESPLINEMERGEIDTOKEN_H
 
 #include <QObject>
 
-class TST_VariableFormulaIdTranslation : public QObject
+// Regression coverage for issue #1678: MoveSpline::mergeWith() (undo/redo continuation of an
+// interactive spline drag) adopted the merged-in command's new spline - including its name-form
+// formula text - but kept its own, earlier m_name_to_id_token snapshot taken at construction time.
+// A merge spanning a rename could then translate the second command's formula against the first
+// command's stale map, silently leaving a composite-variable reference as raw display-name text
+// instead of a rename-proof id token. The exact same bug class, for the sibling MoveSplinePath
+// command, was already found and fixed (commit 89b19f2e92); this proves MoveSpline had it too and
+// pins the fix.
+class TST_MoveSplineMergeIdToken : public QObject
 {
     Q_OBJECT
 public:
-    explicit TST_VariableFormulaIdTranslation(QObject *parent = nullptr);
+    explicit TST_MoveSplineMergeIdToken(QObject *parent = nullptr);
 
 private slots:
-    void TestCustomVariableFormulaSurvivesRename();
-    void TestCustomVariableFormulaReferencingLineLengthSurvivesRename();
-    void TestCustomVariableFormulaFailsWhenVariablesParseBeforeReferencedDraftGeometry();
-    void TestReparsingVariablesAfterDraftBlockFixesTranslationAndValue();
+    void TestMergeAdoptsMergedCommandsIdTokenMap();
+    void TestStaleMapSurvivesASecondRenameWithWrongOrFailingValue();
 
 private:
-    Q_DISABLE_COPY(TST_VariableFormulaIdTranslation)
+    Q_DISABLE_COPY(TST_MoveSplineMergeIdToken)
 };
 
-#endif // TST_VARIABLEFORMULAIDTRANSLATION_H
+#endif // TST_MOVESPLINEMERGEIDTOKEN_H

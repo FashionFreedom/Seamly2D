@@ -78,13 +78,13 @@ public:
     virtual int  id() const override;
     quint32      getSplinePathId() const;
     VSplinePath  getNewSplinePath() const;
+    QHash<QString, QString> getNameToIdToken() const;
 private:
     Q_DISABLE_COPY(MoveSplinePath)
     VSplinePath oldSplinePath;
     VSplinePath newSplinePath;
     QGraphicsScene *scene;
-    // Frozen at construction time. See issue #1678.
-    const QHash<QString, QString> m_name_to_id_token;
+    QHash<QString, QString> m_name_to_id_token;
     void         Do(const VSplinePath &splPath);
 };
 
@@ -98,6 +98,12 @@ inline quint32 MoveSplinePath::getSplinePathId() const
 inline VSplinePath MoveSplinePath::getNewSplinePath() const
 {
     return newSplinePath;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+inline QHash<QString, QString> MoveSplinePath::getNameToIdToken() const
+{
+    return m_name_to_id_token;
 }
 
 #endif // MOVESPLINEPATH_H

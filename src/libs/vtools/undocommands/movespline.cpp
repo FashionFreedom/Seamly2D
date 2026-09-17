@@ -118,6 +118,7 @@ bool MoveSpline::mergeWith(const QUndoCommand *command)
     }
 
     newSpline = moveCommand->getNewSpline();
+    m_name_to_id_token = moveCommand->getNameToIdToken();
     return true;
 }
 

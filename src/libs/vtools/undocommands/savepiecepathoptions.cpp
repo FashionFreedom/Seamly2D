@@ -157,6 +157,7 @@ bool SavePiecePathOptions::mergeWith(const QUndoCommand *command)
     }
 
     m_newPath = saveCommand->newPath();
+    m_name_to_id_token = saveCommand->getNameToIdToken();
     return true;
 }
 
@@ -176,4 +177,10 @@ quint32 SavePiecePathOptions::pathId() const
 VPiecePath SavePiecePathOptions::newPath() const
 {
     return m_newPath;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QHash<QString, QString> SavePiecePathOptions::getNameToIdToken() const
+{
+    return m_name_to_id_token;
 }
