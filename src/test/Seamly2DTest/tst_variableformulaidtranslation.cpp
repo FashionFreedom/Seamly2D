@@ -88,22 +88,22 @@ void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaReferencingLineL
     QScopedPointer<VContainer> before(new VContainer(nullptr, &unit));
     before->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("C5"), 5, 5));
     before->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("D1"), 5, 5));
-    before->AddLine(id1, id2);
+    before->AddLine(id1, id2, id2);
 
     const QString stored = formulaNamesToIds(
         QStringLiteral("Line_C5_D1/2"), nameToIdTokenMap(before.data()));
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(id2));
 
     QScopedPointer<VContainer> after(new VContainer(nullptr, &unit));
     after->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("C5qqq"), 5, 5));
     after->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("D1"), 5, 5));
-    after->AddLine(id1, id2);
+    after->AddLine(id1, id2, id2);
 
     QCOMPARE(formulaIdsToNames(stored, idTokenToNameMap(after.data())),
              QStringLiteral("Line_C5qqq_D1/2"));
 
     // The stored formula itself must be untouched by the rename.
-    QCOMPARE(stored, QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2));
+    QCOMPARE(stored, QStringLiteral("Line_id%1/2").arg(id2));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -112,36 +112,39 @@ void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaReferencingLineL
  * length between two points, the same way TestCustomVariableFormulaReferencingLineLengthSurvivesRename
  * above proves for a rename (see #1678). But on disk <variables> always precedes every <draftBlock>
  * (VPattern::CreateEmptyFile() appends TagVariables immediately; AddDraftBlock::redo() only ever
- * appends a draft block onto a document that already has one), and VPattern::Parse() walks the DOM
- * in a single top-to-bottom pass in physical document order, so the single top-to-bottom walk parses
- * every <variables> element while `data` still holds none of the points/lines the draft blocks below
- * it define.
+ * appends a draft block onto a document that already has one - add_draftblock.cpp:104), and
+ * VPattern::Parse() walks the DOM in a single top-to-bottom pass in physical document order
+ * (vpattern.cpp:188-264), dispatching by QDomNode::nextSibling() - the `tags` QStringList built at
+ * vpattern.cpp:183 is only a tag-name-to-switch-case lookup table, it does not reorder anything.
+ * VPattern::PrepareForParse() also calls VContainer::ClearForFullParse() right before that walk
+ * begins (vpattern.cpp:4402), so `data` starts genuinely empty.
  *
- * This test reproduces exactly that moment: VPattern::parseVariablesElement() calling
- * formulaIdsToNames()/EvalFormula() against a `data` that has not yet seen the referenced line - the
- * same failure mode tst_danglingidtokenformula.cpp proves for an actually-deleted point, except here
- * the object is not deleted, only not-yet-parsed. formulaIdsToNames() cannot tell the two situations
- * apart: both look like an unknown token, so both are left untranslated.
+ * This test reproduces exactly that moment: VPattern::parseVariablesElement() (vpattern.cpp:3814-
+ * 3819) calling formulaIdsToNames()/EvalFormula() against a `data` that has not yet seen the
+ * <draftBlock> below it - the same sequence TestDanglingIdTokenLeftUntouchedByTranslation and
+ * TestDanglingIdTokenFailsEvaluationGracefullyInsteadOfCrashing (tst_danglingidtokenformula.cpp)
+ * exercise for an actually-deleted point, except here the point is not deleted - it just has not
+ * been parsed YET. formulaIdsToNames() cannot tell the two situations apart: both look like an
+ * unknown token, so both are left untranslated (documented behaviour of formulaIdsToNames()).
  */
 void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaFailsWhenVariablesParseBeforeReferencedDraftGeometry()
 {
     const Unit unit = Unit::Cm;
-    const quint32 id1 = 3006;
-    const quint32 id2 = 3007;
+    const quint32 id2 = 3007; // the line's own id, as embedded in the persisted "Line_id<N>" token
 
     // Step 1: VPattern::PrepareForParse() - data->ClearForFullParse() runs right before the walk.
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
     data->ClearForFullParse();
 
     // Step 2: <variables> is the first meaningful sibling in the file - parseVariablesElement()
-    // runs while `data` still holds none of the points/line the draft block below will define. As
-    // persisted on disk (VPattern::setVariableFormula -> formulaNamesToIds), a formula like
-    // "Line_A1_A2/2" is stored as "Line_id<id1>_id<id2>/2" (see the previous test).
-    const QString stored = QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2);
+    // runs while `data` still holds none of the points/line the draft block below will define.
+    // As persisted on disk (VPattern::setVariableFormula -> formulaNamesToIds), a formula like
+    // "Line_A1_A2/2" is stored as "Line_id<id2>/2" (see the previous test).
+    const QString stored = QStringLiteral("Line_id%1/2").arg(id2);
 
     const QString formula = formulaIdsToNames(stored, idTokenToNameMap(data.data()));
-    // id1/id2 are unknown to `data` at this point (not deleted - simply not parsed yet), so the
-    // id-token is left exactly as stored, not translated to "Line_A1_A2/2".
+    // id2 is unknown to `data` at this point (not deleted - simply not parsed yet), so the id-token
+    // is left exactly as stored, not translated to "Line_A1_A2/2".
     QCOMPARE(formula, stored);
 
     bool threw = false;
@@ -158,13 +161,13 @@ void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaFailsWhenVariabl
     }
     QVERIFY2(threw, "Expected evaluating the still-raw id-token formula against a VContainer that "
                      "has not parsed the referenced line yet to fail, exactly the way "
-                     "VPattern::EvalFormula turns this into value=0, ok=false instead of the real, "
-                     "correct line length.");
+                     "VPattern::EvalFormula (vpattern.cpp:3409) turns this into value=0, ok=false "
+                     "instead of the real, correct line length.");
     QCOMPARE(caughtCode, qmu::ecUNASSIGNABLE_TOKEN);
 
-    // This is exactly the (formula, ok) pair VPattern::parseVariablesElement would hand to
-    // `new CustomVariable(...)` on a first, single-pass parse: the raw, untranslated formula and
-    // ok=false - not "Line_A1_A2/2" and the real evaluated length.
+    // This is exactly the (formula, ok) pair VPattern::parseVariablesElement (vpattern.cpp:3814-
+    // 3819) would hand to `new CustomVariable(...)` on a first, single-pass parse: the raw,
+    // untranslated formula and ok=false - not "Line_A1_A2/2" and the real evaluated length.
     const CustomVariable variable(data.data(), QStringLiteral("#Var1"), 0, 0, formula, /*ok=*/false);
     QCOMPARE(variable.GetFormula(), stored);
     QVERIFY2(!variable.IsFormulaOk(),
@@ -176,8 +179,9 @@ void TST_VariableFormulaIdTranslation::TestCustomVariableFormulaFailsWhenVariabl
 /**
  * @brief The fix: VPattern::Parse() re-runs parseVariablesElement() for every <variables> element a
  * second time, once the single top-to-bottom walk over the whole document (and so every
- * <draftBlock>) has finished. VContainer::AddVariable() updates an existing entry matched by name in
- * place, so re-running is a correction pass, not a duplicate.
+ * <draftBlock>) has finished (vpattern.cpp, end of Parse(), guarded by
+ * `parse == Document::FullParse`). VContainer::AddVariable() updates an existing entry matched by
+ * name in place (vcontainer.h:523-548), so re-running is a correction pass, not a duplicate.
  *
  * This test picks up exactly where TestCustomVariableFormulaFailsWhenVariablesParseBeforeReferenced-
  * DraftGeometry left off: the draft block has now been parsed (data holds the line's two points),
@@ -194,19 +198,23 @@ void TST_VariableFormulaIdTranslation::TestReparsingVariablesAfterDraftBlockFixe
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
     data->ClearForFullParse();
 
-    const QString stored = QStringLiteral("Line_id%1_id%2/2").arg(id1).arg(id2);
+    const QString stored = QStringLiteral("Line_id%1/2").arg(id2);
 
     // First pass (pre-fix behaviour, still runs unchanged): translation and evaluation both fail
     // because `data` is still empty of the referenced line.
     const QString firstPassFormula = formulaIdsToNames(stored, idTokenToNameMap(data.data()));
     QCOMPARE(firstPassFormula, stored);
 
-    // The draft block is now parsed: two points on the X axis, and the line between them - exactly
-    // VContainer::UpdateGObject()/AddLine() as called from VPattern::ParsePointElement()/
-    // ParseToolEndLine() et al.
+    // The draft block is now parsed: two points on the X axis, and the line between them -
+    // exactly VContainer::UpdateGObject()/AddLine() as called from
+    // VPattern::ParsePointElement()/ParseToolEndLine() et al. (Point coordinates are scene pixels,
+    // not the container's display unit, so the real cm length is whatever VLengthLine converts
+    // that pixel distance to - fetched below rather than assumed, the same way
+    // TST_LineVariableLookup::TestCopiedLineLengthFormulaEvaluatesToTheCorrectLineNotTheCollider
+    // avoids hard-coding a real-world length.)
     data->UpdateGObject(id1, new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     data->UpdateGObject(id2, new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    data->AddLine(id1, id2);
+    data->AddLine(id1, id2, id2);
 
     Calculator lengthProbe;
     const qreal fullLineLength = lengthProbe.EvalFormula(data->DataVariables(), QStringLiteral("Line_A1_A2"));

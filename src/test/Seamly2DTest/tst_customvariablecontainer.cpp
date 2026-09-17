@@ -61,7 +61,7 @@ void TST_CustomVariableContainer::TestGetDataSeesObjectsAddedAfterConstruction()
     // Now populate the container - mirrors the draft block being parsed afterward.
     const quint32 id1 = data->AddGObject(new VPointF(0, 0, QStringLiteral("A1"), 5, 5));
     const quint32 id2 = data->AddGObject(new VPointF(10, 0, QStringLiteral("A2"), 5, 5));
-    data->AddLine(id1, id2);
+    data->AddLine(id1, id2, id2);
 
     // GetData() must see the same live container, not a stale snapshot from before these existed.
     QCOMPARE(variable.GetData()->DataGObjects()->size(), 2);

@@ -541,11 +541,25 @@ QString VDomDocument::UniqueTagText(const QString &tagName, const QString &defVa
 
 ///--------------------------------------------------------------------------------------------------------------------
 /// @brief TestUniqueId test exist unique id in pattern file. Each id must be unique.
+/// @return the largest id literally present anywhere in the whole document, or NULL_ID if the document has
+/// no id-bearing nodes at all. Callers that self-heal missing ids during parsing (see VPattern::resolveOrAssignLineId)
+/// must seed VContainer's id counter with this value first, so a freshly minted id can never collide with an id
+/// that appears later in document order but was not yet parsed.
 ///--------------------------------------------------------------------------------------------------------------------
-void VDomDocument::TestUniqueId() const
+quint32 VDomDocument::TestUniqueId() const
 {
     QVector<quint32> vector;
     CollectId(documentElement(), vector);
+
+    quint32 maxId = NULL_ID;
+    for (int i = 0; i < vector.size(); ++i)
+    {
+        if (vector.at(i) > maxId)
+        {
+            maxId = vector.at(i);
+        }
+    }
+    return maxId;
 }
 
 ///--------------------------------------------------------------------------------------------------------------------
@@ -559,6 +573,24 @@ void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) 
             throw VExceptionWrongId(tr("This id is not unique."), node);
         }
         vector.append(id);
+    }
+
+    // A node's own identity (AttrId) isn't the only id VContainer::getNextId() must never reissue -
+    // AttrLineId/AttrLine1Id/AttrLine2Id/AttrSegment1Id/AttrSegment2Id (see VPattern::resolveOrAssignLineId)
+    // persist ids from that exact same global id space too, but a node that carries one of these instead
+    // of (or in addition to) its own AttrId - e.g. an old file's <point type="alongLine"> with a
+    // self-healed line1Id/line2Id - was invisible to the scan above. Missing one of these left the seed
+    // too low, so a later getNextId() call could walk straight into it. Two different nodes
+    // legitimately sharing one of these (unlike AttrId) isn't necessarily a corrupt file, so unlike
+    // AttrId this only feeds the max-id seed - it doesn't also enforce uniqueness by throwing.
+    static const QStringList other_id_attributes = { AttrLineId, AttrLine1Id, AttrLine2Id,
+                                                       AttrSegment1Id, AttrSegment2Id };
+    for (const QString &attr_name : other_id_attributes)
+    {
+        if (node.hasAttribute(attr_name))
+        {
+            vector.append(GetParametrUInt(node, attr_name, NULL_ID_STR));
+        }
     }
 
     for (qint32 i=0; i<node.childNodes().length(); ++i)

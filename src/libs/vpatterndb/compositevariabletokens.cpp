@@ -50,18 +50,28 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
         {
             case VarType::LineLength:
             {
-                // Lines don't have their own persisted id yet (see issue #1678's line-id work) -
-                // identify one by its endpoint id pair until then.
+                // "CurrentLength" (VToolAlongLine's live, tool-scoped placeholder for "the
+                // length of the line this point sits on") is only ever registered transiently
+                // inside VToolAlongLine::Create() and removed again before Create() returns - it
+                // never exists in `variables` at the time a formula referencing it would need to
+                // be translated back from an id-token to a name during parsing (that happens
+                // BEFORE Create() runs, since the tool doesn't exist yet). Translating it to an
+                // id-token here would produce a token nothing can ever resolve back on reload.
+                // It isn't a renamable object reference to begin with (its meaning is intrinsic
+                // to whichever tool declared it, already pinned by that tool's own firstPoint/
+                // secondPoint attributes) - so keep it as the literal reserved keyword always.
+                if (i.key() == currentLength)
+                {
+                    break;
+                }
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                name_to_id_token.insert(i.key(), line_ + idToken(length->GetP1Id()) + QLatin1Char('_') +
-                                                   idToken(length->GetP2Id()));
+                name_to_id_token.insert(i.key(), line_ + idToken(length->getLineId()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->GetP1Id()) + QLatin1Char('_') +
-                                                   idToken(angle->GetP2Id()));
+                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->getLineId()));
                 break;
             }
             case VarType::ArcRadius:

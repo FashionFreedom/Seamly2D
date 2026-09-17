@@ -652,11 +652,23 @@ QString VContainer::UniqueCompositeVariableName(const QString &name, const quint
         const QSharedPointer<VInternalVariable> existing = d->variables.value(candidate);
         if (existing->GetType() == type)
         {
-            // ArcRadius, CurveLength, CurveAngle and CurveCLength all derive from VCurveVariable,
-            // which uniformly exposes the owning arc's/curve's own id via GetId(). Line collision
-            // protection (LineLength/LineAngle) is added once lines have their own persisted id
-            // (see issue #1678's line-id work).
-            const quint32 existing_owner_id = existing.staticCast<VCurveVariable>()->GetId();
+            quint32 existing_owner_id = NULL_ID;
+            switch (type)
+            {
+                case VarType::LineLength:
+                    existing_owner_id = existing.staticCast<VLengthLine>()->getLineId();
+                    break;
+                case VarType::LineAngle:
+                    existing_owner_id = existing.staticCast<VLineAngle>()->getLineId();
+                    break;
+                default:
+                    // ArcRadius, CurveLength, CurveAngle and CurveCLength all derive from
+                    // VCurveVariable, which uniformly exposes the owning arc's/curve's own id via
+                    // GetId().
+                    existing_owner_id = existing.staticCast<VCurveVariable>()->GetId();
+                    break;
+            }
+
             if (existing_owner_id == owner_id)
             {
                 return candidate;
@@ -690,17 +702,19 @@ QString VContainer::UniqueCompositeVariableName(const QString &name, const quint
  * @brief AddLine add line to container
  * @param firstPointId id of first point of line
  * @param secondPointId id of second point of line
+ * @param line_id persisted id of this line. See issue #1678.
  */
-void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPointId)
+void VContainer::AddLine(const quint32 &firstPointId, const quint32 &secondPointId, const quint32 &line_id)
 {
     const QSharedPointer<VPointF> first = GeometricObject<VPointF>(firstPointId);
     const QSharedPointer<VPointF> second = GeometricObject<VPointF>(secondPointId);
 
-    VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, *GetPatternUnit());
-    AddVariable(length->GetName(), length);
+    VLengthLine *length = new VLengthLine(first.data(), firstPointId, second.data(), secondPointId, line_id,
+                                          *GetPatternUnit());
+    AddVariable(UniqueCompositeVariableName(length->GetName(), line_id, VarType::LineLength), length);
 
-    VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId);
-    AddVariable(angle->GetName(), angle);
+    VLineAngle *angle = new VLineAngle(first.data(), firstPointId, second.data(), secondPointId, line_id);
+    AddVariable(UniqueCompositeVariableName(angle->GetName(), line_id, VarType::LineAngle), angle);
 }
 
 /**

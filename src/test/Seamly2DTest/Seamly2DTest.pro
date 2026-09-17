@@ -63,7 +63,11 @@ SOURCES += \
     tst_movesplinemergeidtoken.cpp \
     tst_savepieceundomergeidtoken.cpp \
     tst_historydialogformulatranslation.cpp \
-    tst_splinetargetlengthformulapropagation.cpp
+    tst_splinetargetlengthformulapropagation.cpp \
+    tst_linevariablelookup.cpp \
+    tst_lineidselfhealcollision.cpp \
+    tst_lineendpointreconnectiondetection.cpp \
+    tst_danglingidtokenformula.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -103,7 +107,11 @@ HEADERS += \
     tst_movesplinemergeidtoken.h \
     tst_savepieceundomergeidtoken.h \
     tst_historydialogformulatranslation.h \
-    tst_splinetargetlengthformulapropagation.h
+    tst_splinetargetlengthformulapropagation.h \
+    tst_linevariablelookup.h \
+    tst_lineidselfhealcollision.h \
+    tst_lineendpointreconnectiondetection.h \
+    tst_danglingidtokenformula.h
 
 include(warnings.pri)
 
