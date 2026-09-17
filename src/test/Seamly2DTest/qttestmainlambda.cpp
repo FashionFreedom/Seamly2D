@@ -86,6 +86,7 @@
 #include "tst_movesplinemergeidtoken.h"
 #include "tst_savepieceundomergeidtoken.h"
 #include "tst_historydialogformulatranslation.h"
+#include "tst_splinetargetlengthformulapropagation.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -205,6 +206,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_MoveSplineMergeIdToken());
     ASSERT_TEST(new TST_SavePieceUndoMergeIdToken());
     ASSERT_TEST(new TST_HistoryDialogFormulaTranslation());
+    ASSERT_TEST(new TST_SplineTargetLengthFormulaPropagation());
 
     return status;
 }
