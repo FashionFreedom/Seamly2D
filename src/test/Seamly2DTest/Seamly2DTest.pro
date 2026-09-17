@@ -59,7 +59,9 @@ SOURCES += \
     tst_variableformulaidtranslation.cpp \
     tst_customvariablecontainer.cpp \
     tst_emptypathsplinenamecollision.cpp \
-    tst_cutsegmentcanonicalnamecollision.cpp
+    tst_cutsegmentcanonicalnamecollision.cpp \
+    tst_movesplinemergeidtoken.cpp \
+    tst_savepieceundomergeidtoken.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -95,7 +97,9 @@ HEADERS += \
     tst_variableformulaidtranslation.h \
     tst_customvariablecontainer.h \
     tst_emptypathsplinenamecollision.h \
-    tst_cutsegmentcanonicalnamecollision.h
+    tst_cutsegmentcanonicalnamecollision.h \
+    tst_movesplinemergeidtoken.h \
+    tst_savepieceundomergeidtoken.h
 
 include(warnings.pri)
 
