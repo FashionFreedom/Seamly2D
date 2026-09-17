@@ -11566,8 +11566,8 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
 load in SeamlyME as usual.
 
 </source>
-        <translation>Saat sähköpostin, jossa on muunnetut tiedostot. Voit sitten ladata
-tiedoston SeamlyME:hen normaalisti.
+        <translation>Saat sähköpostin, jossa on muunnetut tiedostot,
+jotka voit ladata SeamlyME:hen normaalisti.
 
 </translation>
     </message>
@@ -11774,7 +11774,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Custom measurement</source>
-        <translation>Räätälöity mitta</translation>
+        <translation>Räätälöitymitta</translation>
     </message>
 </context>
 <context>
