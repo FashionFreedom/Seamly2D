@@ -72,6 +72,11 @@ public:
     VArcRadius(const VArcRadius &var);
     VArcRadius &operator=(const VArcRadius &var);
     virtual ~VArcRadius() override;
+
+    int getNumberRadius() const;
+private:
+    // 0 for a plain arc (only one radius, no ambiguity); 1 or 2 for an elliptical arc's first/second radius.
+    int m_number_radius{0};
 };
 
 #endif // VARCRADIUS_H

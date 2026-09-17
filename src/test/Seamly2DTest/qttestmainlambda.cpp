@@ -74,6 +74,10 @@
 #include "tst_readval.h"
 #include "tst_vtranslatevars.h"
 #include "tst_vtoolmove.h"
+#include "tst_formulaidtranslator.h"
+#include "tst_compositevariabletokens.h"
+#include "tst_patternformulatokens.h"
+#include "tst_duplicatepointnamearccurvecollision.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -181,6 +185,10 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
     ASSERT_TEST(new TST_VToolMove());
+    ASSERT_TEST(new TST_FormulaIdTranslator());
+    ASSERT_TEST(new TST_CompositeVariableTokens());
+    ASSERT_TEST(new TST_PatternFormulaTokens());
+    ASSERT_TEST(new TST_DuplicatePointNameArcCurveCollision());
 
     return status;
 }

@@ -74,6 +74,7 @@ public:
     virtual void   CreateEmptyFile() override;
 
     void           Parse(const Document &parse);
+    void           convertFormulasToIdTokens();
 
     void           setCurrentData();
     virtual void   UpdateToolData(const quint32 &id, VContainer *data) override;
