@@ -55,6 +55,7 @@
 #include <QCoreApplication>
 #include <QHash>
 #include <QMap>
+#include <QLoggingCategory>
 #include <QMessageLogger>
 #include <QSet>
 #include <QSharedPointer>
@@ -78,6 +79,8 @@
 #include "vpiece.h"
 #include "vpiecepath.h"
 #include "vtranslatevars.h"
+
+Q_DECLARE_LOGGING_CATEGORY(vCon)
 
 class VEllipticalArc;
 
@@ -357,6 +360,8 @@ private:
     QSharedDataPointer<VContainerData> d;
 
     void AddCurve(const QSharedPointer<VAbstractCurve> &curve, const quint32 &id, quint32 parentId = NULL_ID);
+
+    QString UniqueCompositeVariableName(const QString &name, const quint32 &owner_id, const VarType &type) const;
 
     template <class T>
     uint qHash( const QSharedPointer<T> &p );

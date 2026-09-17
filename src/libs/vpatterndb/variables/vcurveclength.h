@@ -74,6 +74,13 @@ public:
     VCurveCLength(const VCurveCLength &var);
     VCurveCLength &operator=(const VCurveCLength &var);
     virtual ~VCurveCLength() override;
+
+    CurveCLength getCType() const;
+    qint32 getSegment() const;
+private:
+    CurveCLength m_c_type{CurveCLength::C1};
+    // 0 for the plain (whole-curve) form; 1-based segment index on a multi-segment curve path.
+    qint32 m_segment{0};
 };
 
 #endif // VCURVECLENGTH_H
