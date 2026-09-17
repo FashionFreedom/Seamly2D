@@ -78,6 +78,9 @@
 #include "tst_compositevariabletokens.h"
 #include "tst_patternformulatokens.h"
 #include "tst_duplicatepointnamearccurvecollision.h"
+#include "tst_pieceformulaidtranslation.h"
+#include "tst_variableformulaidtranslation.h"
+#include "tst_customvariablecontainer.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -189,6 +192,9 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_CompositeVariableTokens());
     ASSERT_TEST(new TST_PatternFormulaTokens());
     ASSERT_TEST(new TST_DuplicatePointNameArcCurveCollision());
+    ASSERT_TEST(new TST_PieceFormulaIdTranslation());
+    ASSERT_TEST(new TST_VariableFormulaIdTranslation());
+    ASSERT_TEST(new TST_CustomVariableContainer());
 
     return status;
 }
