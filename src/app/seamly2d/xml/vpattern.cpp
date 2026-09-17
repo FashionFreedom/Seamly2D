@@ -77,6 +77,11 @@
 #include "../core/application_2d.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
@@ -867,8 +872,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         VPiece piece;
         const quint32 id = getParameterId(domElement);
         piece.SetName(GetParametrString(domElement, AttrName, tr("Piece")));
-        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, tr("white")));
-        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, tr("nobrush")));
+        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, ColorWhite));
+        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, FillNone));
         piece.setIsLocked(getParameterBool(domElement, AttrPieceLocked, falseStr));
 
         piece.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
@@ -884,7 +889,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         piece.SetUnited(getParameterBool(domElement, PatternPieceTool::AttrUnited, falseStr));
 
         const QString width = GetParametrString(domElement, AttrWidth, "0.0");
-        QString w = width;//need for saving fixed formula;
+        const QHash<QString, QString> id_token_to_name = idTokenToNameMap(data);
+        QString w = formulaIdsToNames(width, id_token_to_name);//need for saving fixed formula;
         const uint version = GetParametrUInt(domElement, PatternPieceTool::AttrVersion, "1");
 
         const QStringList tags = QStringList() << TagNodes
@@ -915,7 +921,7 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
                         }
                         else
                         {
-                            piece.SetPath(ParsePieceNodes(element));
+                            piece.SetPath(ParsePieceNodes(element, id_token_to_name));
                         }
                         break;
                     case 1:// TagData
@@ -943,9 +949,11 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         }
         PatternPieceTool::Create(id, piece, w, pieceScene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
-        if (w != width)
+        const QString w_id_token =
+            formulaNamesToIds(w, nameToIdTokenMap(data));
+        if (w_id_token != width)
         {
-            SetAttribute(domElement, AttrWidth, w);
+            SetAttribute(domElement, AttrWidth, w_id_token);
             modified = true;
             haveLiteChange();
         }
@@ -1031,6 +1039,8 @@ void VPattern::parsePieceNodes(const QDomElement &domElement, VPiece &piece, qre
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) const
 {
+    const QHash<QString, QString> id_token_to_name = idTokenToNameMap(data);
+
     VPieceLabelData &ppData = piece.GetPatternPieceData();
     ppData.SetVisible(getParameterBool(domElement, AttrVisible, trueStr));
     ppData.SetLetter(GetParametrEmptyString(domElement, AttrLetter));
@@ -1042,10 +1052,13 @@ void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) c
     ppData.SetQuantity(static_cast<int>(GetParametrUInt(domElement, AttrQuantity, "1")));
     ppData.SetOnFold(getParameterBool(domElement, AttrOnFold, falseStr));
     ppData.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    ppData.SetLabelWidth(GetParametrString(domElement, AttrWidth, "1"));
-    ppData.SetLabelHeight(GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"));
+    ppData.SetLabelWidth(formulaIdsToNames(
+        GetParametrString(domElement, AttrWidth, "1"), id_token_to_name));
+    ppData.SetLabelHeight(formulaIdsToNames(
+        GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"), id_token_to_name));
     ppData.SetFontSize(static_cast<int>(GetParametrUInt(domElement, PatternPieceTool::AttrFont, "0")));
-    ppData.SetRotation(GetParametrString(domElement, AttrRotation, "0"));
+    ppData.SetRotation(formulaIdsToNames(
+        GetParametrString(domElement, AttrRotation, "0"), id_token_to_name));
     ppData.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     ppData.setTopLeftAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopLeftAnchor, NULL_ID_STR));
     ppData.setBottomRightAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrBottomRightAnchor, NULL_ID_STR));
@@ -1055,13 +1068,18 @@ void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) c
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePiecePatternInfo(const QDomElement &domElement, VPiece &piece) const
 {
+    const QHash<QString, QString> id_token_to_name = idTokenToNameMap(data);
+
     VPatternLabelData &patternInfo = piece.GetPatternInfo();
     patternInfo.SetVisible(getParameterBool(domElement, AttrVisible, trueStr));
     patternInfo.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    patternInfo.SetLabelWidth(GetParametrString(domElement, AttrWidth, "1"));
-    patternInfo.SetLabelHeight(GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"));
+    patternInfo.SetLabelWidth(formulaIdsToNames(
+        GetParametrString(domElement, AttrWidth, "1"), id_token_to_name));
+    patternInfo.SetLabelHeight(formulaIdsToNames(
+        GetParametrString(domElement, PatternPieceTool::AttrHeight, "1"), id_token_to_name));
     patternInfo.SetFontSize(static_cast<int>(GetParametrUInt(domElement, PatternPieceTool::AttrFont, "0")));
-    patternInfo.SetRotation(GetParametrString(domElement, AttrRotation, "0"));
+    patternInfo.SetRotation(formulaIdsToNames(
+        GetParametrString(domElement, AttrRotation, "0"), id_token_to_name));
     patternInfo.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     patternInfo.setTopLeftAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopLeftAnchor, NULL_ID_STR));
     patternInfo.setBottomRightAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrBottomRightAnchor, NULL_ID_STR));
@@ -1070,13 +1088,18 @@ void VPattern::ParsePiecePatternInfo(const QDomElement &domElement, VPiece &piec
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &piece) const
 {
+    const QHash<QString, QString> id_token_to_name = idTokenToNameMap(data);
+
     VGrainlineData &gGeometry = piece.GetGrainlineGeometry();
     gGeometry.SetVisible(getParameterBool(domElement, AttrVisible, falseStr));
     gGeometry.SetPos(QPointF(GetParametrDouble(domElement, AttrMx, "0"), GetParametrDouble(domElement, AttrMy, "0")));
-    gGeometry.setLength(GetParametrString(domElement, AttrLength, "1"));
-    gGeometry.setRotation(GetParametrString(domElement, AttrRotation, "90"));
+    gGeometry.setLength(formulaIdsToNames(
+        GetParametrString(domElement, AttrLength, "1"), id_token_to_name));
+    gGeometry.setRotation(formulaIdsToNames(
+        GetParametrString(domElement, AttrRotation, "90"), id_token_to_name));
     gGeometry.setArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
-    gGeometry.setArrowLength(GetParametrString(domElement, AttrArrowLength, ".5"));
+    gGeometry.setArrowLength(formulaIdsToNames(
+        GetParametrString(domElement, AttrArrowLength, ".5"), id_token_to_name));
     gGeometry.setCenterAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrCenterAnchor, NULL_ID_STR));
     gGeometry.setTopAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrTopAnchorPoint, NULL_ID_STR));
     gGeometry.setBottomAnchorPoint(GetParametrUInt(domElement, PatternPieceTool::AttrBottomAnchorPoint, NULL_ID_STR));
@@ -3559,7 +3582,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         const QDomElement element = domElement.firstChildElement(VAbstractPattern::TagNodes);
         if (!element.isNull())
         {
-            path = ParsePathNodes(element);
+            path = ParsePathNodes(element, idTokenToNameMap(data));
 
             // Check if nodes are still in use, if not an excpetion will be thrown that we can just ignore.
             try
@@ -3800,6 +3823,101 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
             expressions[i].element.setAttribute(expressions.at(i).attribute, newFormula);
             emit patternChanged(false);
         }
+    }
+}
+
+namespace
+{
+//---------------------------------------------------------------------------------------------------------------------
+void translateExpressionAttribute(QDomElement &element, const QString &attribute,
+                                  const QHash<QString, QString> &name_to_id_token, bool &changed_any)
+{
+    if (not element.hasAttribute(attribute))
+    {
+        return;
+    }
+
+    const QString formula = element.attribute(attribute);
+    try
+    {
+        const QString translated = formulaNamesToIds(formula, name_to_id_token);
+        if (translated != formula)
+        {
+            element.setAttribute(attribute, translated);
+            changed_any = true;
+        }
+    }
+    catch (const qmu::QmuParserError &error)
+    {
+        // Leave a formula we can't even tokenize untouched - not this pass's job to fix a broken formula.
+        Q_UNUSED(error)
+    }
+}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief convertFormulasToIdTokens is the one-time catch-up pass for a pattern that was just
+ * upgraded from an older-schema file: every individual tool only translates its OWN formula when
+ * it's next read or saved, so a freshly-opened old file still has every OTHER tool's formula
+ * sitting in plain-name form until that tool happens to get touched. Renaming any point before
+ * that catch-up happens breaks every formula still in the old form, exactly the problem this
+ * whole feature exists to fix. This walks every known formula-bearing attribute across the whole
+ * pattern once, right after a full parse (so VContainer - and with it every composite variable
+ * name) already exists, and converts anything still in plain-name form to the id-token form.
+ * The id-token form itself needed no schema bump: an id-token only ever replaces a token that
+ * already parsed as a name, so an older file (name-only formulas) is already valid content as-is.
+ * Caller decides *whether* to call this (only for a file whose original version was below the
+ * current schema); this only decides *what* to translate.
+ */
+void VPattern::convertFormulasToIdTokens()
+{
+    qCDebug(vXML, "Converting formulas to id tokens (one-time catch-up for an upgraded pattern).");
+
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(data);
+    bool changed_any = false;
+
+    auto translate_all = [&](const QString &tag, const QVector<QString> &attributes)
+    {
+        const QDomNodeList list = elementsByTagName(tag);
+        for (int i = 0; i < list.size(); ++i)
+        {
+            QDomElement element = list.at(i).toElement();
+            if (element.isNull())
+            {
+                continue;
+            }
+            for (const QString &attribute : attributes)
+            {
+                translateExpressionAttribute(element, attribute, name_to_id_token, changed_any);
+            }
+        }
+    };
+
+    // Point tools (alongLine, shoulderPoint, bisector, normal, pointOfContact, lineIntersectAxis,
+    // curveIntersectAxis, endLine, circle-tangent, intersect-circles, the three cut tools) all
+    // share this one tag, distinguished only by their "type" attribute - trying every known
+    // point-formula attribute name on every <point> is safe, since a name this tool doesn't
+    // actually have is simply absent (translateExpressionAttribute skips it).
+    translate_all(TagPoint, {AttrLength, AttrAngle, AttrRadius, AttrCRadius, AttrC1Radius, AttrC2Radius});
+    translate_all(TagArc, {AttrRadius, AttrAngle1, AttrAngle2, AttrLength});
+    translate_all(TagElArc, {AttrRadius1, AttrRadius2, AttrAngle1, AttrAngle2, AttrRotationAngle});
+    // VToolCubicBezier shares this tag too and adds its own curve-length target formula.
+    translate_all(TagSpline, {AttrAngle1, AttrAngle2, AttrLength1, AttrLength2, AttrLength});
+    translate_all(AttrPathPoint, {AttrLength1, AttrLength2, AttrAngle1, AttrAngle2});
+    translate_all(TagOperation, {AttrAngle, AttrLength, AttrRotationAngle});
+    translate_all(TagPiece, {AttrWidth});
+    translate_all(TagNode, {AttrSABefore, AttrSAAfter});
+    translate_all(TagData, {AttrWidth, PatternPieceTool::AttrHeight, AttrRotation});
+    translate_all(TagPatternInfo, {AttrWidth, PatternPieceTool::AttrHeight, AttrRotation});
+    translate_all(TagGrainline, {AttrLength, AttrRotation, AttrArrowLength});
+    translate_all(TagVariable, {VariableFormula});
+
+    if (changed_any)
+    {
+        qCDebug(vXML, "Converted at least one formula to id tokens.");
+        modified = true;
+        haveLiteChange();
     }
 }
 

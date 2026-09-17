@@ -79,7 +79,7 @@ VArcRadius::VArcRadius(const quint32 &id, const quint32 &parentId, const VArc *a
 //---------------------------------------------------------------------------------------------------------------------
 VArcRadius::VArcRadius(const quint32 &id, const quint32 &parentId, const VEllipticalArc *elArc, const int numberRadius,
                        Unit patternUnit)
-    : VCurveVariable(id, parentId)
+    : VCurveVariable(id, parentId), m_number_radius(numberRadius)
 {
     SCASSERT(elArc != nullptr)
 
@@ -97,7 +97,7 @@ VArcRadius::VArcRadius(const quint32 &id, const quint32 &parentId, const VEllipt
 
 //---------------------------------------------------------------------------------------------------------------------
 VArcRadius::VArcRadius(const VArcRadius &var)
-    :VCurveVariable(var)
+    :VCurveVariable(var), m_number_radius(var.m_number_radius)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -108,9 +108,16 @@ VArcRadius &VArcRadius::operator=(const VArcRadius &var)
         return *this;
     }
     VCurveVariable::operator=(var);
+    m_number_radius = var.m_number_radius;
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VArcRadius::~VArcRadius()
 {}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VArcRadius::getNumberRadius() const
+{
+    return m_number_radius;
+}
