@@ -1169,6 +1169,34 @@ void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief resolveOrAssignLineId reads a persisted id, assigning and self-healing one if absent.
+///
+/// A point-tool that implicitly registers a line (e.g. VToolHeight's base-to-point line), or a
+/// virtual curve-cut segment (e.g. VToolCutSpline's two halves, see issue #1692), needs a stable id
+/// of its own, independent of whatever it currently connects - so a later change doesn't break a
+/// formula referencing its length/angle. Files saved before this attribute existed have it absent;
+/// this assigns a fresh one exactly once and writes it back into the DOM so it becomes permanent on
+/// the next save. See issue #1678.
+///
+/// @param domElement tag in xml tree.
+/// @param attr_name the id attribute to read/assign (e.g. AttrLineId, AttrSegment1Id).
+/// @return the persisted or freshly assigned id.
+//---------------------------------------------------------------------------------------------------------------------
+
+quint32 VPattern::resolveOrAssignLineId(QDomElement &domElement, const QString &attr_name)
+{
+    quint32 line_id = GetParametrUInt(domElement, attr_name, NULL_ID_STR);
+    if (line_id == NULL_ID)
+    {
+        line_id = VContainer::getNextId();
+        SetAttribute(domElement, attr_name, line_id);
+        modified = true;
+        haveLiteChange();
+    }
+    return line_id;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief ParsePointElement parse point tag.
 /// @param scene scene.
 /// @param domElement tag in xml tree.
@@ -1951,17 +1979,22 @@ void VPattern::ParseToolCutSpline(VMainGraphicsScene *scene, QDomElement &domEle
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
         QString direction       = GetParametrString(domElement, AttrDirection, "forward");
-        const QString formula   = GetParametrString(domElement, AttrLength, "0");
+        const QString stored_formula = GetParametrString(domElement, AttrLength, "0");
+        const QString formula =
+            formulaIdsToNames(stored_formula, idTokenToNameMap(data));
         QString f               = formula;//need for saving fixed formula;
         const quint32 splineId  = GetParametrUInt(domElement, VToolCutSpline::AttrSpline, NULL_ID_STR);
+        const quint32 segment1_id = resolveOrAssignLineId(domElement, AttrSegment1Id);
+        const quint32 segment2_id = resolveOrAssignLineId(domElement, AttrSegment2Id);
 
-        VToolCutSpline::Create(id, name, direction, f, lineColor, splineId, mx, my, showPointName, scene,
-                               this, data, parse, Source::FromFile);
+        VToolCutSpline::Create(id, name, direction, f, lineColor, splineId, segment1_id, segment2_id, mx, my,
+                               showPointName, scene, this, data, parse, Source::FromFile);
 
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
-            SetAttribute(domElement, AttrLength, f);
+            SetAttribute(domElement, AttrLength,
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -1997,17 +2030,22 @@ void VPattern::ParseToolCutSplinePath(VMainGraphicsScene *scene, QDomElement &do
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
         QString direction          = GetParametrString(domElement, AttrDirection, "forward");
-        const QString formula      = GetParametrString(domElement, AttrLength, "0");
+        const QString stored_formula = GetParametrString(domElement, AttrLength, "0");
+        const QString formula =
+            formulaIdsToNames(stored_formula, idTokenToNameMap(data));
         QString f = formula; //need for saving fixed formula;
         const quint32 splinePathId = GetParametrUInt(domElement, VToolCutSplinePath::AttrSplinePath,
                                                      NULL_ID_STR);
+        const quint32 segment1_id = resolveOrAssignLineId(domElement, AttrSegment1Id);
+        const quint32 segment2_id = resolveOrAssignLineId(domElement, AttrSegment2Id);
 
-        VToolCutSplinePath::Create(id, name, direction, f, lineColor, splinePathId, mx, my, showPointName, scene,
-                                   this, data, parse, Source::FromFile);
+        VToolCutSplinePath::Create(id, name, direction, f, lineColor, splinePathId, segment1_id, segment2_id, mx, my,
+                                   showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
-            SetAttribute(domElement, AttrLength, f);
+            SetAttribute(domElement, AttrLength,
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
@@ -2043,16 +2081,21 @@ void VPattern::ParseToolCutArc(VMainGraphicsScene *scene, QDomElement &domElemen
 
         PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineColor);
         QString direction     = GetParametrString(domElement, AttrDirection, "forward");
-        const QString formula = GetParametrString(domElement, AttrLength, "0");
+        const QString stored_formula = GetParametrString(domElement, AttrLength, "0");
+        const QString formula =
+            formulaIdsToNames(stored_formula, idTokenToNameMap(data));
         QString f = formula;//need for saving fixed formula;
         const quint32 arcId   = GetParametrUInt(domElement, AttrArc, NULL_ID_STR);
+        const quint32 segment1_id = resolveOrAssignLineId(domElement, AttrSegment1Id);
+        const quint32 segment2_id = resolveOrAssignLineId(domElement, AttrSegment2Id);
 
-        VToolCutArc::Create(id, name, direction, f, lineColor, arcId, mx, my, showPointName, scene,
-                            this, data, parse, Source::FromFile);
+        VToolCutArc::Create(id, name, direction, f, lineColor, arcId, segment1_id, segment2_id, mx, my,
+                            showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
-            SetAttribute(domElement, AttrLength, f);
+            SetAttribute(domElement, AttrLength,
+                         formulaNamesToIds(f, nameToIdTokenMap(data)));
             modified = true;
             haveLiteChange();
         }
