@@ -54,7 +54,10 @@ SOURCES += \
     tst_formulaidtranslator.cpp \
     tst_compositevariabletokens.cpp \
     tst_patternformulatokens.cpp \
-    tst_duplicatepointnamearccurvecollision.cpp
+    tst_duplicatepointnamearccurvecollision.cpp \
+    tst_pieceformulaidtranslation.cpp \
+    tst_variableformulaidtranslation.cpp \
+    tst_customvariablecontainer.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -85,7 +88,10 @@ HEADERS += \
     tst_formulaidtranslator.h \
     tst_compositevariabletokens.h \
     tst_patternformulatokens.h \
-    tst_duplicatepointnamearccurvecollision.h
+    tst_duplicatepointnamearccurvecollision.h \
+    tst_pieceformulaidtranslation.h \
+    tst_variableformulaidtranslation.h \
+    tst_customvariablecontainer.h
 
 include(warnings.pri)
 
