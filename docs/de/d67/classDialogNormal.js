@@ -4,7 +4,6 @@ var classDialogNormal =
     [ "~DialogNormal", "de/d67/classDialogNormal.html#a9e221218e05e60735966995c9841b127", null ],
     [ "ChosenObject", "de/d67/classDialogNormal.html#ae44ccedfbf8111cc8621a8909e0c9173", null ],
     [ "closeEvent", "de/d67/classDialogNormal.html#a47b6cdec54cebfb7ab0c9737db575dfe", null ],
-    [ "DeployFormulaTextEdit", "de/d67/classDialogNormal.html#a9083e118175bcb205f452cf971208832", null ],
     [ "FormulaTextChanged", "de/d67/classDialogNormal.html#a4804e2a5500b8e0343531bee9a1fa346", null ],
     [ "FXLength", "de/d67/classDialogNormal.html#ad0a65b714e537ff59ff9fd3c56bf30dd", null ],
     [ "GetAngle", "de/d67/classDialogNormal.html#aa401a6edc218663a47b3989f3a42d1ce", null ],
@@ -27,6 +26,5 @@ var classDialogNormal =
     [ "ShowVisualization", "de/d67/classDialogNormal.html#a1139d798f88c0b085bff8389413ebc40", null ],
     [ "angle", "de/d67/classDialogNormal.html#a90f077f7e714e02213b42b8295b4afb4", null ],
     [ "formula", "de/d67/classDialogNormal.html#a7200f0ee0da60262d81894b755c99dc5", null ],
-    [ "formulaBaseHeight", "de/d67/classDialogNormal.html#a1382215c41662c8aeb273979099dca08", null ],
     [ "ui", "de/d67/classDialogNormal.html#accc1214687d4f850480aabe8497ed45c", null ]
 ];

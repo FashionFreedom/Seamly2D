@@ -4,7 +4,6 @@ var classDialogCutSpline =
     [ "~DialogCutSpline", "d0/dd9/classDialogCutSpline.html#a5fb96db7868f2dd885a45c1251b5a090", null ],
     [ "ChosenObject", "d0/dd9/classDialogCutSpline.html#a3cf2f8259fa6827d31836ae91de0d8ca", null ],
     [ "closeEvent", "d0/dd9/classDialogCutSpline.html#a45c2b113d687ecaf59603a2445f4414b", null ],
-    [ "DeployFormulaTextEdit", "d0/dd9/classDialogCutSpline.html#a2958397d6c0b15eecc7d2ea64ace23cf", null ],
     [ "FXLength", "d0/dd9/classDialogCutSpline.html#a4b0029d0b4e30f6653cc81d85e3b64b3", null ],
     [ "getDirection", "d0/dd9/classDialogCutSpline.html#ac9b2021f4232fb2ee10a8aef41772621", null ],
     [ "getFormula", "d0/dd9/classDialogCutSpline.html#af49cbc234ce2c9e09e1433d48f73cb16", null ],
@@ -18,6 +17,5 @@ var classDialogCutSpline =
     [ "setSplineId", "d0/dd9/classDialogCutSpline.html#aacd3c09f8d9d23b335e8d49e22278e56", null ],
     [ "ShowVisualization", "d0/dd9/classDialogCutSpline.html#a7724772fd37367c011a7c6804a0a0452", null ],
     [ "formula", "d0/dd9/classDialogCutSpline.html#a5e1621f7116fb754f0d8c4b363367321", null ],
-    [ "formulaBaseHeight", "d0/dd9/classDialogCutSpline.html#a28536310e7a502c1e10cd0d8e7aebaef", null ],
     [ "ui", "d0/dd9/classDialogCutSpline.html#a5128aa9b8957c3673af39045ba77a029", null ]
 ];

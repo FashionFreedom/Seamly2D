@@ -3,8 +3,6 @@ var dir_089e271760586872816ceb2d9372fbe0 =
     [ "Vector3d", "dir_01889396b94d5a2685f896c005fb76b8.html", "dir_01889396b94d5a2685f896c005fb76b8" ],
     [ "direction_property.cpp", "d2/d1d/direction__property_8cpp.html", null ],
     [ "direction_property.h", "d1/d38/direction__property_8h.html", "d1/d38/direction__property_8h" ],
-    [ "expandingtextedit.cpp", "dc/ddf/expandingtextedit_8cpp.html", null ],
-    [ "expandingtextedit.h", "d5/d39/expandingtextedit_8h.html", "d5/d39/expandingtextedit_8h" ],
     [ "lineweight_property.cpp", "d9/d33/lineweight__property_8cpp.html", null ],
     [ "lineweight_property.h", "dd/d62/lineweight__property_8h.html", "dd/d62/lineweight__property_8h" ],
     [ "plaintext_property.cpp", "da/d2f/plaintext__property_8cpp.html", null ],

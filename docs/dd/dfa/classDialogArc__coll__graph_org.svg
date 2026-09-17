@@ -12,47 +12,47 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="128.5,-0.5 128.5,-442.5 269.5,-442.5 269.5,-0.5 128.5,-0.5"/>
+<polygon fill="#999999" stroke="#666666" points="133,-0.5 133,-442.5 265,-442.5 265,-0.5 133,-0.5"/>
 <text text-anchor="middle" x="199" y="-430.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogArc</text>
-<polyline fill="none" stroke="#666666" points="128.5,-423.5 269.5,-423.5 "/>
-<text text-anchor="start" x="136.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="136.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagRadius</text>
-<text text-anchor="start" x="136.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle1</text>
-<text text-anchor="start" x="136.5" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle2</text>
-<text text-anchor="start" x="136.5" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerRadius</text>
-<text text-anchor="start" x="136.5" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle1</text>
-<text text-anchor="start" x="136.5" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle2</text>
-<text text-anchor="start" x="136.5" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_radiusFx</text>
-<text text-anchor="start" x="136.5" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle1Fx</text>
-<text text-anchor="start" x="136.5" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle2Fx</text>
-<text text-anchor="start" x="136.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
-<polyline fill="none" stroke="#666666" points="128.5,-294.5 269.5,-294.5 "/>
-<text text-anchor="start" x="136.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogArc()</text>
-<text text-anchor="start" x="136.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogArc()</text>
-<text text-anchor="start" x="136.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
-<text text-anchor="start" x="136.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
-<text text-anchor="start" x="136.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
-<text text-anchor="start" x="136.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
-<text text-anchor="start" x="136.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRadius()</text>
-<text text-anchor="start" x="136.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius()</text>
-<text text-anchor="start" x="136.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getF1()</text>
-<text text-anchor="start" x="136.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF1()</text>
-<text text-anchor="start" x="136.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
-<text text-anchor="start" x="136.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="136.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployRadiusTextEdit()</text>
-<text text-anchor="start" x="136.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployAngle1TextEdit()</text>
-<text text-anchor="start" x="136.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deployAngle2TextEdit()</text>
-<text text-anchor="start" x="136.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ radiusFX()</text>
-<text text-anchor="start" x="136.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ angle1FX()</text>
-<text text-anchor="start" x="136.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ angle2FX()</text>
-<text text-anchor="start" x="136.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># pointNameChanged()</text>
-<text text-anchor="start" x="136.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
-<text text-anchor="start" x="136.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="136.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="136.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="136.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalRadius()</text>
-<text text-anchor="start" x="136.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalAngles()</text>
-<text text-anchor="start" x="136.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkAngles()</text>
+<polyline fill="none" stroke="#666666" points="133,-423.5 265,-423.5 "/>
+<text text-anchor="start" x="141" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="141" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagRadius</text>
+<text text-anchor="start" x="141" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle1</text>
+<text text-anchor="start" x="141" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_flagAngle2</text>
+<text text-anchor="start" x="141" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerRadius</text>
+<text text-anchor="start" x="141" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle1</text>
+<text text-anchor="start" x="141" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_timerAngle2</text>
+<text text-anchor="start" x="141" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_radiusFx</text>
+<text text-anchor="start" x="141" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle1Fx</text>
+<text text-anchor="start" x="141" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle2Fx</text>
+<text text-anchor="start" x="141" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle1</text>
+<text text-anchor="start" x="141" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle2</text>
+<text text-anchor="start" x="141" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_Id</text>
+<text text-anchor="start" x="141" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_newDuplicate</text>
+<polyline fill="none" stroke="#666666" points="133,-261.5 265,-261.5 "/>
+<text text-anchor="start" x="141" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogArc()</text>
+<text text-anchor="start" x="141" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogArc()</text>
+<text text-anchor="start" x="141" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
+<text text-anchor="start" x="141" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
+<text text-anchor="start" x="141" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
+<text text-anchor="start" x="141" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
+<text text-anchor="start" x="141" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getRadius()</text>
+<text text-anchor="start" x="141" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRadius()</text>
+<text text-anchor="start" x="141" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getF1()</text>
+<text text-anchor="start" x="141" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setF1()</text>
+<text text-anchor="start" x="141" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<text text-anchor="start" x="141" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="141" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ radiusFX()</text>
+<text text-anchor="start" x="141" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ angle1FX()</text>
+<text text-anchor="start" x="141" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ angle2FX()</text>
+<text text-anchor="start" x="141" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># pointNameChanged()</text>
+<text text-anchor="start" x="141" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="141" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="141" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="141" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="141" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalRadius()</text>
+<text text-anchor="start" x="141" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; evalAngles()</text>
+<text text-anchor="start" x="141" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkAngles()</text>
 </a>
 </g>
 </g>
@@ -112,7 +112,7 @@
 <text text-anchor="start" x="47" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxSplinesPath()</text>
 <text text-anchor="start" x="47" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxCurves()</text>
 <text text-anchor="start" x="47" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxLineType()</text>
-<text text-anchor="start" x="47" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
+<text text-anchor="start" x="47" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
 <text text-anchor="start" x="47" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FindNotExcludedNodeDown()</text>
 <text text-anchor="start" x="47" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FindNotExcludedNodeUp()</text>
 <text text-anchor="start" x="47" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isFirstPointSameAsLast()</text>

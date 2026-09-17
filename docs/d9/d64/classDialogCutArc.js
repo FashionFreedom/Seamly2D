@@ -4,7 +4,6 @@ var classDialogCutArc =
     [ "~DialogCutArc", "d9/d64/classDialogCutArc.html#a095c4c9d391f55838be70fabe4e8b19a", null ],
     [ "ChosenObject", "d9/d64/classDialogCutArc.html#af7509b23af81e7b0cef4fec145284ba5", null ],
     [ "closeEvent", "d9/d64/classDialogCutArc.html#a9ee8d52373797c53e301371224ac5583", null ],
-    [ "DeployFormulaTextEdit", "d9/d64/classDialogCutArc.html#a483ed14cf2913b43e5f11ac91f1a50dc", null ],
     [ "FormulaTextChanged", "d9/d64/classDialogCutArc.html#a2e241cb7b881453c1ad7413722a7c865", null ],
     [ "FXLength", "d9/d64/classDialogCutArc.html#a5067581a19587585a967d3e542ad72c7", null ],
     [ "getArcId", "d9/d64/classDialogCutArc.html#a6206c42e2e518285bdc647c90014f1f5", null ],
@@ -19,6 +18,5 @@ var classDialogCutArc =
     [ "SetPointName", "d9/d64/classDialogCutArc.html#a59d002c129e35c30f3fcd9af2cba441c", null ],
     [ "ShowVisualization", "d9/d64/classDialogCutArc.html#ab2a0da96a1e4d911f50025cd80ab912e", null ],
     [ "formula", "d9/d64/classDialogCutArc.html#a707ed7efec5c7ba89dae46ea59b09a55", null ],
-    [ "formulaBaseHeight", "d9/d64/classDialogCutArc.html#af8e7d98d8b99fc585d506d1f8d291e21", null ],
     [ "ui", "d9/d64/classDialogCutArc.html#a868d48af3ff71a19dc16938c3e1380a4", null ]
 ];

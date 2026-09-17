@@ -3,6 +3,8 @@ var dir_fa16871e366acf28eec42e1eb99c66a0 =
     [ "calculator", "dir_6f67c4fc059510090b39fc442429035f.html", "dir_6f67c4fc059510090b39fc442429035f" ],
     [ "color_combobox.cpp", "d5/d73/color__combobox_8cpp.html", null ],
     [ "color_combobox.h", "df/dce/color__combobox_8h.html", "df/dce/color__combobox_8h" ],
+    [ "expandingtextedit.cpp", "dc/ddf/expandingtextedit_8cpp.html", null ],
+    [ "expandingtextedit.h", "d5/d39/expandingtextedit_8h.html", "d5/d39/expandingtextedit_8h" ],
     [ "export_format_combobox.cpp", "df/d40/export__format__combobox_8cpp.html", "df/d40/export__format__combobox_8cpp" ],
     [ "export_format_combobox.h", "d0/da5/export__format__combobox_8h.html", "d0/da5/export__format__combobox_8h" ],
     [ "fill_combobox.cpp", "d0/d65/fill__combobox_8cpp.html", null ],

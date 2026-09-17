@@ -5,7 +5,6 @@ var classDialogCurveIntersectAxis =
     [ "AngleTextChanged", "dc/d10/classDialogCurveIntersectAxis.html#a628466d0981824f0c3f9bb46dbdeae80", null ],
     [ "ChosenObject", "dc/d10/classDialogCurveIntersectAxis.html#a82816cddf34bd4bbfa60a98c69124be2", null ],
     [ "closeEvent", "dc/d10/classDialogCurveIntersectAxis.html#a04dc304c4c742e2452e82091572d9514", null ],
-    [ "DeployAngleTextEdit", "dc/d10/classDialogCurveIntersectAxis.html#a353ab9c9c41a48013e08c3679aa150ab", null ],
     [ "EvalAngle", "dc/d10/classDialogCurveIntersectAxis.html#a5dd49ec269057162289f2899d4a8a279", null ],
     [ "FXAngle", "dc/d10/classDialogCurveIntersectAxis.html#ace6693f47fc416d370a94607317127d8", null ],
     [ "GetAngle", "dc/d10/classDialogCurveIntersectAxis.html#afe23dc2fc3c1cc0b69cb8d79c34b73a9", null ],
@@ -27,7 +26,6 @@ var classDialogCurveIntersectAxis =
     [ "ShowDialog", "dc/d10/classDialogCurveIntersectAxis.html#a20130ca9df086d0c1ae5981cdbfb12b6", null ],
     [ "ShowVisualization", "dc/d10/classDialogCurveIntersectAxis.html#a9578cab56942d37ba82869055cae6b26", null ],
     [ "formulaAngle", "dc/d10/classDialogCurveIntersectAxis.html#a95934db2a5c881184406f982de04dfa3", null ],
-    [ "formulaBaseHeightAngle", "dc/d10/classDialogCurveIntersectAxis.html#ad851a3b8616739aa3097a53d72e8b027", null ],
     [ "m_firstRelease", "dc/d10/classDialogCurveIntersectAxis.html#a8483ae27ec006ce48e50ce829f1592af", null ],
     [ "ui", "dc/d10/classDialogCurveIntersectAxis.html#a2d219face234d414d4d7f9c08d13bd3e", null ]
 ];

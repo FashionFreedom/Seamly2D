@@ -277,6 +277,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a3949e10e3e659fdfb9641c3b279d577e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2d1b683a94af89ae25f4bd209b65a60"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7d/classEditFormulaDialog.html#af2d1b683a94af89ae25f4bd209b65a60">resizeEvent</a> (QResizeEvent *event) override</td></tr>
 <tr class="separator:af2d1b683a94af89ae25f4bd209b65a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae747b4d7e265508c6bc795d1c4f54882"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7d/classEditFormulaDialog.html#ae747b4d7e265508c6bc795d1c4f54882">eventFilter</a> (QObject *watched, QEvent *event)</td></tr>
+<tr class="separator:ae747b4d7e265508c6bc795d1c4f54882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classDialogTool"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classDialogTool')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d2/d7b/classDialogTool.html">DialogTool</a></td></tr>
 <tr class="memitem:a03a2d012695dacb79d48b126fa5c46af inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a03a2d012695dacb79d48b126fa5c46af">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
 <tr class="separator:a03a2d012695dacb79d48b126fa5c46af inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -374,8 +376,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa197a256d8d19a03878816f138e4e248 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#aa197a256d8d19a03878816f138e4e248">SaveData</a> ()</td></tr>
 <tr class="memdesc:aa197a256d8d19a03878816f138e4e248 inherit pro_methods_classDialogTool"><td class="mdescLeft">&#160;</td><td class="mdescRight">SaveData Put dialog data in local variables.  <br /></td></tr>
 <tr class="separator:aa197a256d8d19a03878816f138e4e248 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36321c7aa19366c412c876622c944941 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a36321c7aa19366c412c876622c944941">MoveCursorToEnd</a> (QPlainTextEdit *plainTextEdit) const</td></tr>
-<tr class="separator:a36321c7aa19366c412c876622c944941 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7933a2b9e8fcf35b0c746daf4f38ebd5 inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a7933a2b9e8fcf35b0c746daf4f38ebd5">eventFilter</a> (QObject *object, QEvent *event) override</td></tr>
 <tr class="separator:a7933a2b9e8fcf35b0c746daf4f38ebd5 inherit pro_methods_classDialogTool"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a019114875b8df91da6678dbc581ea3dc inherit pro_methods_classDialogTool"><td class="memItemLeft" align="right" valign="top">quint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d7b/classDialogTool.html#a019114875b8df91da6678dbc581ea3dc">DNumber</a> (const QString &amp;baseName) const</td></tr>
@@ -602,9 +602,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">110</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">111</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00515">CheckState()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00926">clearFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00891">filterVariables()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00187">DialogTool::flagFormula</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01182">DialogTool::FormulaChanged()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00399">DialogTool::initializeFormulaUi()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00380">DialogTool::initializeOkCancel()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00377">insertVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">m_restoreCursor</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01530">DialogTool::setDialogPosition()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00931">undoFormula()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00518">CheckState()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00946">clearFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00911">filterVariables()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00187">DialogTool::flagFormula</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01176">DialogTool::FormulaChanged()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00395">DialogTool::initializeFormulaUi()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00377">DialogTool::initializeOkCancel()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00380">insertVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00135">m_restoreCursor</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l01524">DialogTool::setDialogPosition()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00951">undoFormula()</a>.</p>
 
 </div>
 </div>
@@ -631,9 +631,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00198">198</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00201">201</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">m_restoreCursor</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00135">m_restoreCursor</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
 </div>
 </div>
@@ -663,11 +663,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>arcRadii show radii of arc variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">441</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">444</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00999">VContainer::arcRadiusesData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00999">VContainer::arcRadiusesData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -698,11 +698,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#a1dde216466b3f09ff51f8538bb279457">DialogTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00515">515</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00518">518</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00187">DialogTool::flagFormula</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00200">DialogTool::ok_Button</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -729,11 +729,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00926">926</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00946">946</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -771,9 +771,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#a5c1c1b58f9c2d2f02b1155d081f2a5b3">DialogTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00522">522</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00525">525</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00208">DialogTool::closeEvent()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00210">DialogTool::closeEvent()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
 </div>
 </div>
@@ -802,11 +802,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>controlPointLengths show lengths of control point variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">474</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">477</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00967">VContainer::controlPointLengthsData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00967">VContainer::controlPointLengthsData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -835,11 +835,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>curveAngles show angles of curve variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">452</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">455</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01015">VContainer::curveAnglesData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01015">VContainer::curveAnglesData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -868,11 +868,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>curveLengths show lengths of curve variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">463</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">466</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00951">VContainer::curveLengthsData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00951">VContainer::curveLengthsData()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -901,11 +901,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>customVariables show custom variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">496</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">499</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00689">showCustomVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00919">VContainer::variablesData()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00709">showCustomVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00919">VContainer::variablesData()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -942,11 +942,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>description text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00941">941</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">961</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00622">setInfo()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00744">showMeasurements()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">valueChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00642">setInfo()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00764">showMeasurements()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">valueChanged()</a>.</p>
 
 </div>
 </div>
@@ -973,9 +973,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00210">210</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00213">213</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d7b/classDialogTool.html#a2393a727a5d951da5daf2a5950b726af">DialogTool::DialogClosed()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00129">m_formula</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d7b/classDialogTool.html#a2393a727a5d951da5daf2a5950b726af">DialogTool::DialogClosed()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">m_formula</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
 </div>
 </div>
@@ -1002,7 +1002,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00219">219</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00222">222</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d2/d7b/classDialogTool.html#a2393a727a5d951da5daf2a5950b726af">DialogTool::DialogClosed()</a>.</p>
 
@@ -1031,9 +1031,49 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00226">226</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00229">229</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00821">DialogTool::Eval()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00187">DialogTool::flagFormula</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00212">DialogTool::labelResultCalculation</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">m_checkLessThanZero</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">m_checkZero</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">m_postfix</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00209">DialogTool::plainTextEditFormula</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00815">DialogTool::Eval()</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00187">DialogTool::flagFormula</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00212">DialogTool::labelResultCalculation</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">m_checkLessThanZero</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">m_checkZero</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">m_postfix</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00209">DialogTool::plainTextEditFormula</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+
+</div>
+</div>
+<a id="ae747b4d7e265508c6bc795d1c4f54882" name="ae747b4d7e265508c6bc795d1c4f54882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae747b4d7e265508c6bc795d1c4f54882">&#9670;&#160;</a></span>eventFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool EditFormulaDialog::eventFilter </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>watched</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#a7933a2b9e8fcf35b0c746daf4f38ebd5">DialogTool</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00550">550</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 </div>
 </div>
@@ -1061,11 +1101,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00891">891</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00911">911</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -1102,11 +1142,11 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>fullName text. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">961</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00981">981</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">fullName()</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00981">fullName()</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">fullName()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00622">setInfo()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">valueChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00981">fullName()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00642">setInfo()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">valueChanged()</a>.</p>
 
 </div>
 </div>
@@ -1135,11 +1175,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>functions show functions in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00507">507</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00510">510</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00830">showFunctions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00850">showFunctions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -1158,11 +1198,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00591">591</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00611">611</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00129">m_formula</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">m_formula</a>, and <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00412">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00426">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00781">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02457">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00404">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00353">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00766">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02442">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00751">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02427">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02168">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00418">DialogMove::editLengthFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02289">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02229">PatternPieceDialog::editPieceLabelFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00432">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00359">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00191">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00419">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00326">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00340">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00294">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00395">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00549">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00563">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00179">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00409">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00178">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00125">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00261">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00233">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00205">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00172">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00178">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00381">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00157">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00521">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00535">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00577">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00398">DialogArc::radiusFX()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00367">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00381">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00778">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02453">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00399">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00352">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00763">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02438">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00748">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02423">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02164">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00413">DialogMove::editLengthFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02285">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02225">PatternPieceDialog::editPieceLabelFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00427">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00341">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00172">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00402">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00323">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00337">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00278">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00349">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00499">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00513">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00178">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00363">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00176">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00124">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00245">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00217">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00186">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00170">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00176">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00335">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00155">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00471">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00485">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00527">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00353">DialogArc::radiusFX()</a>.</p>
 
 </div>
 </div>
@@ -1189,11 +1229,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">597</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">617</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00135">m_source</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">valueChanged()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00136">m_source</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">valueChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -1230,11 +1270,11 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00377">377</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00380">380</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -1263,11 +1303,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>lineAngles show angles of line variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">485</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00983">VContainer::lineAnglesData()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00983">VContainer::lineAnglesData()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -1296,11 +1336,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>lineLengths show lengths of line variables in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">430</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">433</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00935">VContainer::lineLengthsData()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00935">VContainer::lineLengthsData()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -1329,11 +1369,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>measurements show measurements in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">419</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">422</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00903">VContainer::DataMeasurements()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00744">showMeasurements()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00903">VContainer::DataMeasurements()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">showHeaderUnits()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00764">showMeasurements()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">tabChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">tabChanged()</a>.</p>
 
 </div>
 </div>
@@ -1361,7 +1401,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00538">538</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00541">541</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
@@ -1383,11 +1423,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00579">579</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00599">599</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">m_checkLessThanZero</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">m_checkLessThanZero</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00781">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02457">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00766">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02442">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00751">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, and <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02427">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00778">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02453">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00763">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02438">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00748">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, and <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02423">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>.</p>
 
 </div>
 </div>
@@ -1407,11 +1447,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00573">573</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00593">593</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">m_checkZero</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">m_checkZero</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02168">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02289">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02229">PatternPieceDialog::editPieceLabelFormula()</a>, and <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02164">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02285">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02225">PatternPieceDialog::editPieceLabelFormula()</a>, and <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>.</p>
 
 </div>
 </div>
@@ -1431,11 +1471,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00548">548</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00569">569</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00129">m_formula</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">m_undoFormula</a>, <a class="el" href="../../d1/db3/dialogtool_8cpp_source.html#l00448">DialogTool::MoveCursorToEnd()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">m_formula</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">m_undoFormula</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00412">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00426">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00781">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02457">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00404">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00353">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00766">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02442">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00751">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02427">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02168">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00418">DialogMove::editLengthFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02289">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02229">PatternPieceDialog::editPieceLabelFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00432">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00359">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00191">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00419">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00326">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00340">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00294">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00395">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00549">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00563">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00179">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00409">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00178">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00125">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00261">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00233">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00205">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00172">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00178">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00381">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00157">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00521">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00535">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00577">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00398">DialogArc::radiusFX()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00367">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00381">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00778">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02453">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00399">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00352">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00763">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02438">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00748">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02423">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02164">PatternPieceDialog::editGrainlineFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00413">DialogMove::editLengthFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02285">PatternPieceDialog::editPatternLabelFormula()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02225">PatternPieceDialog::editPieceLabelFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00427">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00341">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00172">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00402">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00323">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00337">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00278">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00349">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00499">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00513">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00178">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00363">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00176">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00124">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00245">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00217">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00186">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00170">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00176">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00335">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00155">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00471">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00485">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00527">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00353">DialogArc::radiusFX()</a>.</p>
 
 </div>
 </div>
@@ -1497,11 +1537,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00622">622</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00642">642</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00941">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">fullName()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00981">fullName()</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">valueChanged()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">valueChanged()</a>.</p>
 
 </div>
 </div>
@@ -1521,11 +1561,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00585">585</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00605">605</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">m_postfix</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">m_postfix</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00412">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00426">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00781">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02457">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00404">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00353">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00766">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02442">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00751">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02427">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00418">DialogMove::editLengthFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00432">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00359">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00191">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00419">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00326">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00340">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00294">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00395">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00549">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00563">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00179">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00409">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00178">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00125">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00261">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00233">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00205">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00172">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00178">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00381">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00157">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00521">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00535">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00577">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00398">DialogArc::radiusFX()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00367">DialogArc::angle1FX()</a>, <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00381">DialogArc::angle2FX()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00778">InternalPathDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02453">PatternPieceDialog::editAfterSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00399">DialogMove::editAngleFormula()</a>, <a class="el" href="../../dc/d64/dialogrotation_8cpp_source.html#l00352">DialogRotation::editAngleFormula()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00763">InternalPathDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02438">PatternPieceDialog::editBeforeSeamAllowanceWidth()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00748">InternalPathDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02423">PatternPieceDialog::editDefaultSeamAllowanceWidth()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00413">DialogMove::editLengthFormula()</a>, <a class="el" href="../../d2/d51/dialogmove_8cpp_source.html#l00427">DialogMove::editRotationFormula()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01508">TMainWindow::Fx()</a>, <a class="el" href="../../dd/d39/dialogcurveintersectaxis_8cpp_source.html#l00341">DialogCurveIntersectAxis::FXAngle()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00172">DialogEndLine::FXAngle()</a>, <a class="el" href="../../de/d3c/dialoglineintersectaxis_8cpp_source.html#l00402">DialogLineIntersectAxis::FXAngle()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00323">IntersectCirclesDialog::FXCircle1Radius()</a>, <a class="el" href="../../d5/de8/intersect__circles__dialog_8cpp_source.html#l00337">IntersectCirclesDialog::FXCircle2Radius()</a>, <a class="el" href="../../d5/d5a/intersect__circletangent__dialog_8cpp_source.html#l00278">IntersectCircleTangentDialog::FXCircleRadius()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00349">DialogArcWithLength::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00499">DialogEllipticalArc::FXF1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00513">DialogEllipticalArc::FXF2()</a>, <a class="el" href="../../d6/d5d/dialogalongline_8cpp_source.html#l00178">DialogAlongLine::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00363">DialogArcWithLength::FXLength()</a>, <a class="el" href="../../da/dfa/dialogbisector_8cpp_source.html#l00176">DialogBisector::FXLength()</a>, <a class="el" href="../../d9/d90/dialogcutarc_8cpp_source.html#l00124">DialogCutArc::FXLength()</a>, <a class="el" href="../../d3/d2e/dialogcutspline_8cpp_source.html#l00245">DialogCutSpline::FXLength()</a>, <a class="el" href="../../df/d30/dialogcutsplinepath_8cpp_source.html#l00217">DialogCutSplinePath::FXLength()</a>, <a class="el" href="../../d3/d15/dialogendline_8cpp_source.html#l00186">DialogEndLine::FXLength()</a>, <a class="el" href="../../da/df4/dialognormal_8cpp_source.html#l00170">DialogNormal::FXLength()</a>, <a class="el" href="../../d3/d23/dialogshoulderpoint_8cpp_source.html#l00176">DialogShoulderPoint::FXLength()</a>, <a class="el" href="../../d2/d29/dialogarcwithlength_8cpp_source.html#l00335">DialogArcWithLength::FXRadius()</a>, <a class="el" href="../../d9/df4/dialogpointofcontact_8cpp_source.html#l00155">DialogPointOfContact::FXRadius()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00471">DialogEllipticalArc::FXRadius1()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00485">DialogEllipticalArc::FXRadius2()</a>, <a class="el" href="../../d9/d68/dialogellipticalarc_8cpp_source.html#l00527">DialogEllipticalArc::FXRotationAngle()</a>, <a class="el" href="../../db/dac/vformulapropertyeditor_8cpp_source.html#l00119">VFormulaPropertyEditor::onToolButtonClicked()</a>, and <a class="el" href="../../d1/d37/dialogarc_8cpp_source.html#l00353">DialogArc::radiusFX()</a>.</p>
 
 </div>
 </div>
@@ -1563,11 +1603,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00689">689</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00709">709</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">ValueColumn</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">ValueColumn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">customVariables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">customVariables()</a>.</p>
 
 </div>
 </div>
@@ -1605,7 +1645,7 @@ template&lt;class key , class val &gt; </div>
 
 <p>Reimplemented from <a class="el" href="../../d2/d7b/classDialogTool.html#a4365106b74e74d39ab76bb61112509e9">DialogTool</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00528">528</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00531">531</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
 </div>
 </div>
@@ -1634,11 +1674,11 @@ template&lt;class key , class val &gt; </div>
 
 <p>showFunctions show functions in list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00830">830</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00850">850</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">ValueColumn</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">ValueColumn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00507">functions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00510">functions()</a>.</p>
 
 </div>
 </div>
@@ -1686,11 +1726,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00879">879</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00899">899</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">ValueColumn</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">ValueColumn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>.</p>
 
 </div>
 </div>
@@ -1727,11 +1767,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">863</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">883</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00507">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00510">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>.</p>
 
 </div>
 </div>
@@ -1767,11 +1807,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00744">744</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00764">764</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00941">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">FullNameColumn</a>, <a class="el" href="../../dd/de9/measurements__def_8cpp_source.html#l00710">MapDiagrams()</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00235">DialogTool::number</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">ValueColumn</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">FullNameColumn</a>, <a class="el" href="../../dd/de9/measurements__def_8cpp_source.html#l00710">MapDiagrams()</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00235">DialogTool::number</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">ValueColumn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>.</p>
 
 </div>
 </div>
@@ -1809,11 +1849,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">644</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">664</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00226">DialogTool::toolId</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00107">ValueColumn</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">DescriptionColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">FullNameColumn</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">NumberColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00226">DialogTool::toolId</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00108">ValueColumn</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">lineAngles()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">lineLengths()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">lineAngles()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">lineLengths()</a>.</p>
 
 </div>
 </div>
@@ -1849,11 +1889,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00317">317</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00320">320</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00507">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00510">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">lineLengths()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>.</p>
 
 </div>
 </div>
@@ -1880,11 +1920,11 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00931">931</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00951">951</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">m_undoFormula</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">m_undoFormula</a>, and <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -1920,11 +1960,11 @@ template&lt;class key , class val &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">241</a> of file <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html">edit_formula_dialog.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01290">VContainer::DataVariables()</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00941">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">fullName()</a>, <a class="el" href="../../dc/de4/vinternalvariable_8cpp_source.html#l00101">VInternalVariable::GetValue()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00454">VContainer::getVariable()</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00622">setInfo()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/d30/dialogtool_8h_source.html#l00178">DialogTool::data</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01290">VContainer::DataVariables()</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00181">degreeSymbol</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00961">description()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00981">fullName()</a>, <a class="el" href="../../dc/de4/vinternalvariable_8cpp_source.html#l00101">VInternalVariable::GetValue()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00454">VContainer::getVariable()</a>, <a class="el" href="../../d5/d6c/history__dialog_8cpp_source.html#l00081">NameColumn</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00642">setInfo()</a>, <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">ui</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00864">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>.</p>
 
 </div>
 </div>
@@ -1949,9 +1989,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">132</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">133</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00226">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00579">setCheckLessThanZero()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00229">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00599">setCheckLessThanZero()</a>.</p>
 
 </div>
 </div>
@@ -1977,9 +2017,9 @@ template&lt;class key , class val &gt; </div>
 
 <p>copy of formula string used to perform undo </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">131</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00132">132</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00226">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00573">setCheckZero()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00229">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00593">setCheckZero()</a>.</p>
 
 </div>
 </div>
@@ -2003,9 +2043,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00129">129</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">130</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00210">DialogAccepted()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00591">GetFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00548">SetFormula()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00213">DialogAccepted()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00611">GetFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00569">SetFormula()</a>.</p>
 
 </div>
 </div>
@@ -2029,9 +2069,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00133">133</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">134</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00226">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00585">setPostfix()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00229">EvalFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00605">setPostfix()</a>.</p>
 
 </div>
 </div>
@@ -2055,9 +2095,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00134">134</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00135">135</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00198">~EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00201">~EditFormulaDialog()</a>.</p>
 
 </div>
 </div>
@@ -2081,9 +2121,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00135">135</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00136">136</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>.</p>
 
 </div>
 </div>
@@ -2109,9 +2149,9 @@ template&lt;class key , class val &gt; </div>
 
 <p>formula string with formula </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00130">130</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00131">131</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00548">SetFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00931">undoFormula()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00569">SetFormula()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00951">undoFormula()</a>.</p>
 
 </div>
 </div>
@@ -2135,9 +2175,9 @@ template&lt;class key , class val &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00127">127</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html#l00128">128</a> of file <a class="el" href="../../d7/d4c/edit__formula__dialog_8h_source.html">edit_formula_dialog.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00441">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00926">clearFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00522">closeEvent()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00474">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00452">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00463">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00496">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00210">DialogAccepted()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00110">EditFormulaDialog()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00891">filterVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00507">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00597">initializeVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00377">insertVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00485">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00430">lineLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00419">measurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00548">SetFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00622">setInfo()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00689">showCustomVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00830">showFunctions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00863">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00744">showMeasurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00644">showVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00931">undoFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00238">valueChanged()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00198">~EditFormulaDialog()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00444">arcRadii()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00946">clearFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00525">closeEvent()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00477">controlPointLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00455">curveAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00466">curveLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00499">customVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00213">DialogAccepted()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00111">EditFormulaDialog()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00911">filterVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00510">functions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00617">initializeVariables()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00380">insertVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00488">lineAngles()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00433">lineLengths()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00422">measurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00569">SetFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00642">setInfo()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00709">showCustomVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00850">showFunctions()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00883">showInsertionButtons()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00764">showMeasurements()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00664">showVariable()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00951">undoFormula()</a>, <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00241">valueChanged()</a>, and <a class="el" href="../../d7/d8d/edit__formula__dialog_8cpp_source.html#l00201">~EditFormulaDialog()</a>.</p>
 
 </div>
 </div>

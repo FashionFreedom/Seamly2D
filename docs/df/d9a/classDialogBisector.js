@@ -4,7 +4,6 @@ var classDialogBisector =
     [ "~DialogBisector", "df/d9a/classDialogBisector.html#a6d7a46528d121d24c875407a3c81dcd2", null ],
     [ "ChosenObject", "df/d9a/classDialogBisector.html#a156a4965cade4260ed6fe67ddb1986bd", null ],
     [ "closeEvent", "df/d9a/classDialogBisector.html#a691215e0c61fb12010af29cb807119cb", null ],
-    [ "DeployFormulaTextEdit", "df/d9a/classDialogBisector.html#a288d62647d12476354636336e5e46757", null ],
     [ "FormulaTextChanged", "df/d9a/classDialogBisector.html#ab2aa15d35968b09b4da74a6b4cfb28e7", null ],
     [ "FXLength", "df/d9a/classDialogBisector.html#a9d6a5266b1669037bc10490c84b07f3e", null ],
     [ "GetFirstPointId", "df/d9a/classDialogBisector.html#a23c96229c663016e9a3a4fec595bdd46", null ],
@@ -26,6 +25,5 @@ var classDialogBisector =
     [ "SetThirdPointId", "df/d9a/classDialogBisector.html#aada01a7c17bacf9d6bee1a711047c545", null ],
     [ "ShowVisualization", "df/d9a/classDialogBisector.html#a7d32a6fda31b7bbec1864d43d9862ec0", null ],
     [ "formula", "df/d9a/classDialogBisector.html#a457ce4929ed3a717d89b9188f2881157", null ],
-    [ "formulaBaseHeight", "df/d9a/classDialogBisector.html#ab34a2fe04ce5720a1104e46beb1df3ef", null ],
     [ "ui", "df/d9a/classDialogBisector.html#ae76d274789f25489d108107f256512ea", null ]
 ];

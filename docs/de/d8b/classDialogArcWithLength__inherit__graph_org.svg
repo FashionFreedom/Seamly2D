@@ -25,23 +25,23 @@
 <text text-anchor="start" x="20" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; radius</text>
 <text text-anchor="start" x="20" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; f1</text>
 <text text-anchor="start" x="20" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; length</text>
-<text text-anchor="start" x="20" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
-<polyline fill="none" stroke="#666666" points="12,-327.5 158,-327.5 "/>
-<text text-anchor="start" x="20" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogArcWithLength()</text>
-<text text-anchor="start" x="20" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogArcWithLength()</text>
-<text text-anchor="start" x="20" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
-<text text-anchor="start" x="20" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
-<text text-anchor="start" x="20" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCenter()</text>
-<text text-anchor="start" x="20" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCenter()</text>
-<text text-anchor="start" x="20" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius()</text>
-<text text-anchor="start" x="20" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius()</text>
-<text text-anchor="start" x="20" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetF1()</text>
-<text text-anchor="start" x="20" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetF1()</text>
-<text text-anchor="start" x="20" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
-<text text-anchor="start" x="20" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="20" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployRadiusTextEdit()</text>
-<text text-anchor="start" x="20" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployF1TextEdit()</text>
-<text text-anchor="start" x="20" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployLengthTextEdit()</text>
+<text text-anchor="start" x="20" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; angleF1</text>
+<text text-anchor="start" x="20" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_arc</text>
+<text text-anchor="start" x="20" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_Id</text>
+<text text-anchor="start" x="20" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newDuplicate</text>
+<polyline fill="none" stroke="#666666" points="12,-294.5 158,-294.5 "/>
+<text text-anchor="start" x="20" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogArcWithLength()</text>
+<text text-anchor="start" x="20" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogArcWithLength()</text>
+<text text-anchor="start" x="20" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArc()</text>
+<text text-anchor="start" x="20" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArc()</text>
+<text text-anchor="start" x="20" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCenter()</text>
+<text text-anchor="start" x="20" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCenter()</text>
+<text text-anchor="start" x="20" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetRadius()</text>
+<text text-anchor="start" x="20" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetRadius()</text>
+<text text-anchor="start" x="20" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetF1()</text>
+<text text-anchor="start" x="20" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetF1()</text>
+<text text-anchor="start" x="20" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<text text-anchor="start" x="20" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
 <text text-anchor="start" x="20" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RadiusChanged()</text>
 <text text-anchor="start" x="20" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ F1Changed()</text>
 <text text-anchor="start" x="20" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LengthChanged()</text>
@@ -115,7 +115,7 @@
 <text text-anchor="start" x="8" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxSplinesPath()</text>
 <text text-anchor="start" x="8" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxCurves()</text>
 <text text-anchor="start" x="8" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00"># fillComboBoxLineType()</text>
-<text text-anchor="start" x="8" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
+<text text-anchor="start" x="8" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
 <text text-anchor="start" x="8" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FindNotExcludedNodeDown()</text>
 <text text-anchor="start" x="8" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FindNotExcludedNodeUp()</text>
 <text text-anchor="start" x="8" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isFirstPointSameAsLast()</text>

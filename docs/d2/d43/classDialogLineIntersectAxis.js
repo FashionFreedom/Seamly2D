@@ -5,7 +5,6 @@ var classDialogLineIntersectAxis =
     [ "AngleTextChanged", "d2/d43/classDialogLineIntersectAxis.html#a3c7532b54712b31a5c3d20f6de577094", null ],
     [ "ChosenObject", "d2/d43/classDialogLineIntersectAxis.html#a4af39ab452511cfc88270c0d077cc17b", null ],
     [ "closeEvent", "d2/d43/classDialogLineIntersectAxis.html#a1f0da2503e8280d72723361b9f5289ea", null ],
-    [ "DeployAngleTextEdit", "d2/d43/classDialogLineIntersectAxis.html#ad6ff2df6df12b3488c128e4d9f7a430b", null ],
     [ "EvalAngle", "d2/d43/classDialogLineIntersectAxis.html#a3d11d13182dbb2d9e4b43829e0fa59b2", null ],
     [ "FXAngle", "d2/d43/classDialogLineIntersectAxis.html#a45f4fe3e41b472615a327bdca9749df5", null ],
     [ "GetAngle", "d2/d43/classDialogLineIntersectAxis.html#ac8b0e0fbf7967d35cf7455c9b0bf3009", null ],
@@ -28,7 +27,6 @@ var classDialogLineIntersectAxis =
     [ "ShowDialog", "d2/d43/classDialogLineIntersectAxis.html#afef70ed2eaf4fddd33c1c6fddc79552e", null ],
     [ "ShowVisualization", "d2/d43/classDialogLineIntersectAxis.html#a31826f4d996583d0ba1e89a566d69ed2", null ],
     [ "formulaAngle", "d2/d43/classDialogLineIntersectAxis.html#a7d8ed30a7349c65af30bbeaa6dfb0a04", null ],
-    [ "formulaBaseHeightAngle", "d2/d43/classDialogLineIntersectAxis.html#a71f972daa19bf8d445a99cfd39d563ce", null ],
     [ "m_firstRelease", "d2/d43/classDialogLineIntersectAxis.html#aadcd4880d38bb8e18f09618d3b00bc5f", null ],
     [ "ui", "d2/d43/classDialogLineIntersectAxis.html#ac933cda9aeb76385ecf7b268a8afc4ec", null ]
 ];

@@ -5,7 +5,6 @@ var classDialogAlongLine =
     [ "Build", "dd/d63/classDialogAlongLine.html#aa6c922663c116bb812de52bc1d4d1984", null ],
     [ "ChosenObject", "dd/d63/classDialogAlongLine.html#a644fe89f5549ca283790fa18cac33f85", null ],
     [ "closeEvent", "dd/d63/classDialogAlongLine.html#a3578b0caf40fa7a74c060b672e8eba1e", null ],
-    [ "DeployFormulaTextEdit", "dd/d63/classDialogAlongLine.html#ac672c96c7198fb8eb808dd85c16322c1", null ],
     [ "FormulaTextChanged", "dd/d63/classDialogAlongLine.html#aca5a2a8bb3fe14844cb39678fa4f31b2", null ],
     [ "FXLength", "dd/d63/classDialogAlongLine.html#ad5713b5a5f76cb0dbbe8361e912e31d5", null ],
     [ "GetFirstPointId", "dd/d63/classDialogAlongLine.html#a6b78adb193903d26a441a49bf27aa988", null ],
@@ -27,6 +26,5 @@ var classDialogAlongLine =
     [ "ShowVisualization", "dd/d63/classDialogAlongLine.html#a2ed3c1cd69a55bfcc3474203ffbc9b50", null ],
     [ "buildMidpoint", "dd/d63/classDialogAlongLine.html#a1105315b9d15465a56d2e4e4a020da54", null ],
     [ "formula", "dd/d63/classDialogAlongLine.html#a935985d2f866c7bb4a38fc83a420d4ff", null ],
-    [ "formulaBaseHeight", "dd/d63/classDialogAlongLine.html#ad0cf41ffc2a87acda07fae647929b390", null ],
     [ "ui", "dd/d63/classDialogAlongLine.html#a7b01981a8e7b26c0a4961cd27795c6f6", null ]
 ];

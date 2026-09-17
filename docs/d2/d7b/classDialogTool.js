@@ -66,7 +66,6 @@ var classDialogTool =
     [ "IsSplinePath", "d2/d7b/classDialogTool.html#afa5b038b1b7df8c71b214cc8f7f4ec7e", null ],
     [ "keyPressEvent", "d2/d7b/classDialogTool.html#a03a2d012695dacb79d48b126fa5c46af", null ],
     [ "makeAngleTooltip", "d2/d7b/classDialogTool.html#a4516064f164836b807a8501b6d17381f", null ],
-    [ "MoveCursorToEnd", "d2/d7b/classDialogTool.html#a36321c7aa19366c412c876622c944941", null ],
     [ "moveListRowBottom", "d2/d7b/classDialogTool.html#a4902afcca8125302cdde635be455f83e", null ],
     [ "moveListRowDown", "d2/d7b/classDialogTool.html#a5672621ca3d899af2173bc1444a6dea8", null ],
     [ "moveListRowTop", "d2/d7b/classDialogTool.html#a8117559f39a9b9068f94f21f25a4b4ad", null ],

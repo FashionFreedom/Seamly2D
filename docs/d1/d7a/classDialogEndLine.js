@@ -5,8 +5,6 @@ var classDialogEndLine =
     [ "AngleTextChanged", "d1/d7a/classDialogEndLine.html#a290f5f2cb6801e3cf64809c0ce252d08", null ],
     [ "ChosenObject", "d1/d7a/classDialogEndLine.html#aff0528c352bfec6b717b48769878435f", null ],
     [ "closeEvent", "d1/d7a/classDialogEndLine.html#afc10fd600730021f8818142b2dc222bb", null ],
-    [ "DeployAngleTextEdit", "d1/d7a/classDialogEndLine.html#a7108f3f8ca2f032e5c0269726b310dec", null ],
-    [ "DeployFormulaTextEdit", "d1/d7a/classDialogEndLine.html#a2d6587d4a810dab76328735e0416e6e7", null ],
     [ "EvalAngle", "d1/d7a/classDialogEndLine.html#a16ff56ce0c1fba0ece25dac826b53414", null ],
     [ "FormulaTextChanged", "d1/d7a/classDialogEndLine.html#a05aba1877b1a03674991783730b843fd", null ],
     [ "FXAngle", "d1/d7a/classDialogEndLine.html#a3f7235f8dae82ef88929360850ccff78", null ],
@@ -28,8 +26,6 @@ var classDialogEndLine =
     [ "ShowDialog", "d1/d7a/classDialogEndLine.html#a6aad057f09370fb1ce1fd4ea93d0905b", null ],
     [ "ShowVisualization", "d1/d7a/classDialogEndLine.html#ad6bba5e7f81cdba5829e3785349feda4", null ],
     [ "formulaAngle", "d1/d7a/classDialogEndLine.html#a3faf00309143cdb1135e3fb6910bf1ee", null ],
-    [ "formulaBaseHeight", "d1/d7a/classDialogEndLine.html#a744e1adab5a8b968d4ae00a73f906921", null ],
-    [ "formulaBaseHeightAngle", "d1/d7a/classDialogEndLine.html#ac10bd822d0259e520c32194bb93563db", null ],
     [ "formulaLength", "d1/d7a/classDialogEndLine.html#a9f33af32c4fbdc9ccd4e275f7389d95a", null ],
     [ "m_firstRelease", "d1/d7a/classDialogEndLine.html#a60ea3816ab038049694ff11829a9d94d", null ],
     [ "ui", "d1/d7a/classDialogEndLine.html#ab3896fe25f56eebc5700eb28e32b5022", null ]

@@ -14,6 +14,7 @@ var classEditFormulaDialog =
     [ "DialogAccepted", "d1/d7d/classEditFormulaDialog.html#aee46daf3e59d12c9205038f9ae163a00", null ],
     [ "DialogRejected", "d1/d7d/classEditFormulaDialog.html#ade1958127f845f904eb2e76d96e6e854", null ],
     [ "EvalFormula", "d1/d7d/classEditFormulaDialog.html#ad955f068331e1e797953a30cffbaba68", null ],
+    [ "eventFilter", "d1/d7d/classEditFormulaDialog.html#ae747b4d7e265508c6bc795d1c4f54882", null ],
     [ "filterVariables", "d1/d7d/classEditFormulaDialog.html#a4811ca77afb38d1c2f098fd0dfca74db", null ],
     [ "fullName", "d1/d7d/classEditFormulaDialog.html#a53f81d63289447871e1ec5f0abcf0461", null ],
     [ "functions", "d1/d7d/classEditFormulaDialog.html#ab16908ba748f2804e23cd328d5091eaa", null ],

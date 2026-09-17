@@ -6,7 +6,6 @@ var classIntersectCircleTangentDialog =
     [ "ChosenObject", "dc/dfe/classIntersectCircleTangentDialog.html#a905b9b1130a1ceb58d9adb16173d7d56", null ],
     [ "CircleRadiusChanged", "dc/dfe/classIntersectCircleTangentDialog.html#a829c178dfff902555b8625fb9d630d6b", null ],
     [ "closeEvent", "dc/dfe/classIntersectCircleTangentDialog.html#aa39a9e765f70c03fa8d29e59343e8b31", null ],
-    [ "DeployCircleRadiusTextEdit", "dc/dfe/classIntersectCircleTangentDialog.html#a66d01bc729dd03f606aafd7e2b256f3b", null ],
     [ "EvalCircleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#a95fc045c423dbbb375aacf9f5c364eb5", null ],
     [ "FXCircleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#a3a0d6ca684b87c8ab89e75b87af3495d", null ],
     [ "GetCircleCenterId", "dc/dfe/classIntersectCircleTangentDialog.html#a35df5d66fb30441a66a4745f3a57130a", null ],
@@ -23,7 +22,6 @@ var classIntersectCircleTangentDialog =
     [ "ShowVisualization", "dc/dfe/classIntersectCircleTangentDialog.html#a5484bc5ba80b4ef79dbb5a91c26629b9", null ],
     [ "circleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#a80ba50f6209287ce289d35cd3ed919c5", null ],
     [ "flagCircleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#a0ada0e5e124cc87ab84d5b86c9f4b2d9", null ],
-    [ "formulaBaseHeightCircleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#a7a603a4e9bc707aeaedd1f975e5bb2de", null ],
     [ "timerCircleRadius", "dc/dfe/classIntersectCircleTangentDialog.html#aa4a96beb7a232c49d50698d90e2cfe10", null ],
     [ "ui", "dc/dfe/classIntersectCircleTangentDialog.html#ad189bed486551866dbbd1e132c8cef36", null ]
 ];
