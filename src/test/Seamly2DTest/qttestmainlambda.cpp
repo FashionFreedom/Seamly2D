@@ -87,6 +87,10 @@
 #include "tst_savepieceundomergeidtoken.h"
 #include "tst_historydialogformulatranslation.h"
 #include "tst_splinetargetlengthformulapropagation.h"
+#include "tst_linevariablelookup.h"
+#include "tst_lineidselfhealcollision.h"
+#include "tst_lineendpointreconnectiondetection.h"
+#include "tst_danglingidtokenformula.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -207,6 +211,10 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_SavePieceUndoMergeIdToken());
     ASSERT_TEST(new TST_HistoryDialogFormulaTranslation());
     ASSERT_TEST(new TST_SplineTargetLengthFormulaPropagation());
+    ASSERT_TEST(new TST_LineVariableLookup());
+    ASSERT_TEST(new TST_LineIdSelfHealCollision());
+    ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
+    ASSERT_TEST(new TST_DanglingIdTokenFormula());
 
     return status;
 }

@@ -74,6 +74,7 @@ public:
 
 const quint32 pointA1Id = 9001;
 const quint32 pointA2Id = 9002;
+const quint32 lineId    = 9003;
 const quint32 pieceId   = 9004;
 const quint32 pathId    = 9005;
 
@@ -86,7 +87,7 @@ VContainer *buildContainer(const QString &a1Name, const QString &a2Name)
     VContainer *data = new VContainer(nullptr, &unit);
     data->UpdateGObject(pointA1Id, new VPointF(0, 0, a1Name, 5, 5));
     data->UpdateGObject(pointA2Id, new VPointF(10, 0, a2Name, 5, 5));
-    data->AddLine(pointA1Id, pointA2Id);
+    data->AddLine(pointA1Id, pointA2Id, lineId);
     return data;
 }
 

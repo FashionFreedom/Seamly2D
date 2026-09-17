@@ -183,12 +183,12 @@ VToolLine * VToolLine::Create(const quint32 &_id, const quint32 &firstPoint, con
     if (typeCreation == Source::FromGui)
     {
         id = VContainer::getNextId();
-        data->AddLine(firstPoint, secondPoint);
+        data->AddLine(firstPoint, secondPoint, id);
     }
     else
     {
         VContainer::UpdateId(id);
-        data->AddLine(firstPoint, secondPoint);
+        data->AddLine(firstPoint, secondPoint, id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);

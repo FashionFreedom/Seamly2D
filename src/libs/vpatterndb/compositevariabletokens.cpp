@@ -50,18 +50,14 @@ QHash<QString, QString> CompositeVariableTokens::nameToIdTokenMap(
         {
             case VarType::LineLength:
             {
-                // Lines don't have their own persisted id yet (see issue #1678's line-id work) -
-                // identify one by its endpoint id pair until then.
                 const QSharedPointer<VLengthLine> length = i.value().staticCast<VLengthLine>();
-                name_to_id_token.insert(i.key(), line_ + idToken(length->GetP1Id()) + QLatin1Char('_') +
-                                                   idToken(length->GetP2Id()));
+                name_to_id_token.insert(i.key(), line_ + idToken(length->getLineId()));
                 break;
             }
             case VarType::LineAngle:
             {
                 const QSharedPointer<VLineAngle> angle = i.value().staticCast<VLineAngle>();
-                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->GetP1Id()) + QLatin1Char('_') +
-                                                   idToken(angle->GetP2Id()));
+                name_to_id_token.insert(i.key(), angleLine_ + idToken(angle->getLineId()));
                 break;
             }
             case VarType::ArcRadius:
