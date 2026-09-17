@@ -62,7 +62,8 @@ SOURCES += \
     tst_cutsegmentcanonicalnamecollision.cpp \
     tst_movesplinemergeidtoken.cpp \
     tst_savepieceundomergeidtoken.cpp \
-    tst_historydialogformulatranslation.cpp
+    tst_historydialogformulatranslation.cpp \
+    tst_splinetargetlengthformulapropagation.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -101,7 +102,8 @@ HEADERS += \
     tst_cutsegmentcanonicalnamecollision.h \
     tst_movesplinemergeidtoken.h \
     tst_savepieceundomergeidtoken.h \
-    tst_historydialogformulatranslation.h
+    tst_historydialogformulatranslation.h \
+    tst_splinetargetlengthformulapropagation.h
 
 include(warnings.pri)
 
