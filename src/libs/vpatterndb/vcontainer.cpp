@@ -629,8 +629,21 @@ void VContainer::ClearVariables(const VarType &type)
  * @param type which VarType family the name belongs to.
  * @return name unchanged if it is free, or already belongs to this same owner_id; otherwise a
  * disambiguated variant that does not collide with any existing object of a different owner_id.
+ *
+ * @note An arc or curve that is ALSO independently registered as its own geometric object (a literal
+ * <arc>/<spline> tool, added via AddGObject()/UpdateGObject()) has a canonical display name that
+ * DataGObjects() reports for its id. PatternFormulaTokens::idTokenToNameMap() lets a composite
+ * variable's name win over DataGObjects()'s for the same id-token, so if such an object lost the race
+ * for the plain name to a cutSpline/cutArc/cutSplinePath segment - which has no independent identity
+ * of its own, existing only as this composite variable - merely because the segment happened to parse
+ * first, its own length/angle variables would display under a name DataGObjects() has never heard of
+ * instead of its real one (see issue #1678/#1692). When that exact situation is detected, the
+ * segment's entry is evicted to a disambiguated key instead, and the canonical object keeps the plain
+ * name it is entitled to. Two arcs/curves that are BOTH independently registered and happen to
+ * generate the identical name still disambiguate the usual way - there is no way to give both the
+ * plain name.
  */
-QString VContainer::UniqueCompositeVariableName(const QString &name, const quint32 &owner_id, const VarType &type) const
+QString VContainer::UniqueCompositeVariableName(const QString &name, const quint32 &owner_id, const VarType &type)
 {
     QString candidate = name;
     quint32 suffix = 2;
@@ -646,6 +659,24 @@ QString VContainer::UniqueCompositeVariableName(const QString &name, const quint
             const quint32 existing_owner_id = existing.staticCast<VCurveVariable>()->GetId();
             if (existing_owner_id == owner_id)
             {
+                return candidate;
+            }
+
+            if (candidate == name && type != VarType::LineLength && type != VarType::LineAngle &&
+                d->gObjects.contains(owner_id) && not d->gObjects.contains(existing_owner_id))
+            {
+                // owner_id has its own canonical name via DataGObjects(); existing_owner_id does not
+                // (it is a cut segment or similar composite-only object) - evict the squatter instead
+                // of demoting the canonical object.
+                d->variables.remove(candidate);
+                quint32 evictedSuffix = 2;
+                QString evictedName = QStringLiteral("%1_%2").arg(name).arg(evictedSuffix);
+                while (d->variables.contains(evictedName))
+                {
+                    ++evictedSuffix;
+                    evictedName = QStringLiteral("%1_%2").arg(name).arg(evictedSuffix);
+                }
+                d->variables.insert(evictedName, existing);
                 return candidate;
             }
         }
@@ -738,6 +769,18 @@ void VContainer::AddCurve(const QSharedPointer<VAbstractCurve> &curve, const qui
         curveType != GOType::Arc         && curveType != GOType::EllipticalArc)
     {
         throw VException(tr("Can't create a curve with type '%1'").arg(static_cast<int>(curveType)));
+    }
+
+    if (curve->name().isEmpty())
+    {
+        // A path spline with no points yet (a freshly created, not-yet-configured tool, or one saved
+        // to disk in that state - see issue #1678) generated an empty name when its own constructor
+        // called CreateName(), since a name built from point names has nothing to build from. By now
+        // the caller (AddGObject()/UpdateGObject(), via AddObject()/UpdateObject()) has already given
+        // curve its final, real id, so re-running CreateName() lets its own fallback for the no-points
+        // case (VAbstractCubicBezierPath::CreateName()) pick that id up. Without this, two such
+        // curves would both register their length/angle variables under the identical empty name.
+        curve->CreateName();
     }
 
     VCurveLength *length = new VCurveLength(id, parentId, curve.data(), *GetPatternUnit());
