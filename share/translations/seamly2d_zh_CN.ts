@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>姓名:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>将新组添加到列表中</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>名称已存在</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>该操作无法完成，因为组名称已存在.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Lineweight:</source>
         <translation>线宽:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>组</translation>
     </message>
 </context>
 <context>

@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Название:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Добавить новую группу в список</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Название уже существует</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Действие невозможно выполнить, поскольку название группы уже существует.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3476,6 +3488,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Lineweight:</source>
         <translation>Толщина Линии:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Группа</translation>
     </message>
 </context>
 <context>

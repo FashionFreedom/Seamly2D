@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nimi:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Lisää uusi ryhmä listaan</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nimi on olemassa</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Toimintoa ei voida suorittaa loppuun, koska ryhmän nimi on jo olemassa.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ryhmä</translation>
     </message>
 </context>
 <context>

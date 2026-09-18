@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Adı:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Listeye yeni bir grup ekle</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>İsim Mevcut</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Grup adı zaten mevcut olduğundan eylem tamamlanamıyor.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     <message>
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>

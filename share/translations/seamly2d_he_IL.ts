@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3457,6 +3469,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
