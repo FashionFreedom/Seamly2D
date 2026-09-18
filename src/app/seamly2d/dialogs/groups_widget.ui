@@ -33,7 +33,7 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QToolButton" name="showAllGroups_ToolButton">
+      <widget class="QToolButton" name="show_all__toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -56,7 +56,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="hideAllGroups_ToolButton">
+      <widget class="QToolButton" name="hide_all__toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -79,7 +79,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="lockAllGroups_ToolButton">
+      <widget class="QToolButton" name="lock_all__toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -102,7 +102,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="unlockAllGroups_ToolButton">
+      <widget class="QToolButton" name="unlock_all__toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -125,7 +125,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="addGroup_ToolButton">
+      <widget class="QToolButton" name="add_group_toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -151,7 +151,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="deleteGroup_ToolButton">
+      <widget class="QToolButton" name="delete_group_toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -171,7 +171,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="editGroup_ToolButton">
+      <widget class="QToolButton" name="edit_group_toolbutton">
        <property name="enabled">
         <bool>true</bool>
        </property>
@@ -193,11 +193,11 @@
     </layout>
    </item>
    <item>
-    <widget class="QSplitter" name="groups_Splitter">
+    <widget class="QSplitter" name="groups_splitter">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-          <property name="childrenCollapsible">
+     <property name="childrenCollapsible">
       <bool>false</bool>
      </property>
      <widget class="QGroupBox" name="groups_GroupBox">
@@ -212,7 +212,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QTableWidget" name="groups_TableWidget">
+        <widget class="QTableWidget" name="groups_table_widget">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
@@ -373,7 +373,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QListWidget" name="groupItems_ListWidget">
+        <widget class="QListWidget" name="groupItems_list_widget">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
            <horstretch>0</horstretch>
