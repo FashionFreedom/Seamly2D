@@ -195,6 +195,18 @@
         <source>Name:</source>
         <translation>Nom :</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Ajouter un nouveau groupe à la liste</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Le nom existe déjà</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>L&apos;opération ne peut aboutir car le nom du groupe existe déjà.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3492,6 +3504,10 @@ points de contrôle</translation>
     <message>
         <source>Lineweight:</source>
         <translation>Épaisseur de la ligne :</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Groupe</translation>
     </message>
 </context>
 <context>
@@ -11067,7 +11083,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Select the currently highlighted item and close the list.</source>
-        <translation>Sélectionnez l'élément actuellement en surbrillance et fermez la liste.</translation>
+        <translation>Sélectionnez l&apos;élément actuellement en surbrillance et fermez la liste.</translation>
     </message>
     <message>
         <source>Escape</source>
@@ -11083,15 +11099,15 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Type the first letters of an item name to jump directly to that item in the list.</source>
-        <translation>Saisir les premières lettres du nom d'un élément pour accéder directement à cet élément dans la liste.</translation>
+        <translation>Saisir les premières lettres du nom d&apos;un élément pour accéder directement à cet élément dans la liste.</translation>
     </message>
     <message>
         <source>Tab Bar</source>
-        <translation>Barre d'onglets</translation>
+        <translation>Barre d&apos;onglets</translation>
     </message>
     <message>
         <source>Move focus the tab bar.</source>
-        <translation>Déplacer le focus sur la barre d'onglets.</translation>
+        <translation>Déplacer le focus sur la barre d&apos;onglets.</translation>
     </message>
     <message>
         <source>Left and Right Arrow</source>
@@ -11107,7 +11123,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Spacebar</source>
-        <translation>Barre d'espace</translation>
+        <translation>Barre d&apos;espace</translation>
     </message>
     <message>
         <source>To trigger the focused push button.</source>
@@ -11127,7 +11143,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Moves the selection to the previous or next item in the list.</source>
-        <translation>Déplace la sélection vers l'élément précédent ou suivant dans la liste.</translation>
+        <translation>Déplace la sélection vers l&apos;élément précédent ou suivant dans la liste.</translation>
     </message>
     <message>
         <source>Home / End Keys</source>

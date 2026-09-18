@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nume:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Adăugați un grup nou la listă</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Numele există</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Acțiunea nu poate fi finalizată deoarece numele grupului există deja.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3476,6 +3488,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     <message>
         <source>Lineweight:</source>
         <translation>Groime linie:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>

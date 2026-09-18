@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Aggiungi un nuovo gruppo all&apos;elenco</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Il nome esiste</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>L&apos;azione non può essere completata perché il nome del gruppo esiste già.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3461,6 +3473,10 @@ punti di controllo</translation>
     <message>
         <source>Lineweight:</source>
         <translation>Spessore della linea:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppo</translation>
     </message>
 </context>
 <context>
@@ -11018,7 +11034,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Open the drop-down list.</source>
-        <translation>Apri l'elenco a discesa.</translation>
+        <translation>Apri l&apos;elenco a discesa.</translation>
     </message>
     <message>
         <source>Enter or Return</source>
@@ -11026,7 +11042,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Select the currently highlighted item and close the list.</source>
-        <translation>Seleziona l'elemento attualmente evidenziato e chiudi l'elenco.</translation>
+        <translation>Seleziona l&apos;elemento attualmente evidenziato e chiudi l&apos;elenco.</translation>
     </message>
     <message>
         <source>Escape</source>
@@ -11034,7 +11050,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Close the list without changing the selection.</source>
-        <translation>Chiudi l'elenco senza modificare la selezione.</translation>
+        <translation>Chiudi l&apos;elenco senza modificare la selezione.</translation>
     </message>
     <message>
         <source>Letter Keys (A-Z)</source>
@@ -11042,7 +11058,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Type the first letters of an item name to jump directly to that item in the list.</source>
-        <translation>Digita le prime lettere del nome di un elemento per passare direttamente a quell'elemento nell'elenco.</translation>
+        <translation>Digita le prime lettere del nome di un elemento per passare direttamente a quell&apos;elemento nell&apos;elenco.</translation>
     </message>
     <message>
         <source>Tab Bar</source>
@@ -11082,11 +11098,11 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Move focus to the list.</source>
-        <translation>Sposta il focus sull'elenco.</translation>
+        <translation>Sposta il focus sull&apos;elenco.</translation>
     </message>
     <message>
         <source>Moves the selection to the previous or next item in the list.</source>
-        <translation>Sposta la selezione all'elemento precedente o successivo nell'elenco.</translation>
+        <translation>Sposta la selezione all&apos;elemento precedente o successivo nell&apos;elenco.</translation>
     </message>
     <message>
         <source>Home / End Keys</source>
@@ -11094,7 +11110,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Jumps directly to the first or last item in the list.</source>
-        <translation>Passa direttamente al primo o all'ultimo elemento dell'elenco.</translation>
+        <translation>Passa direttamente al primo o all&apos;ultimo elemento dell&apos;elenco.</translation>
     </message>
     <message>
         <source>Page Up / Page Down</source>

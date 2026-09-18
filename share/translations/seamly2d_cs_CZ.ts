@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Název:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Přidat novou skupinu do seznamu</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Jméno existuje</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Akci nelze dokončit, protože název skupiny již existuje.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     <message>
         <source>Lineweight:</source>
         <translation>Tloušťka čáry:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Skupina</translation>
     </message>
 </context>
 <context>

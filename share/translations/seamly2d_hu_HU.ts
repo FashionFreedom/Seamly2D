@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Név:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Új csoport hozzáadása a listához</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>A név létezik</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>A művelet nem hajtható végre, mert a csoportnév már létezik.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     <message>
         <source>Linetype:</source>
         <translation>Vonaltípus:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Csoport</translation>
     </message>
 </context>
 <context>

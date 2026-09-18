@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Eine neue Gruppe der Liste zufügen</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Die Aktion kann nicht abgeschlossen werden weil die Gruppenbezeichnung bereits existiert.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3459,6 +3471,10 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
     <message>
         <source>Lineweight:</source>
         <translation>Linienstärke:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Gruppe</translation>
     </message>
 </context>
 <context>
@@ -11090,7 +11106,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <source>Jumps directly to the first or last item in the list.</source>
-        <translation>>Direkt zum ersten oder letzten Element in der Liste springen.</translation>
+        <translation>&gt;Direkt zum ersten oder letzten Element in der Liste springen.</translation>
     </message>
     <message>
         <source>Page Up / Page Down</source>

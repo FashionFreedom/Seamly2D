@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Een nieuwe groep toevoegen aan de lijst</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Naam Bestaat</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>De actie kan niet worden voltooid omdat de groepsnaam al bestaat.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3459,6 +3471,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Groep</translation>
     </message>
 </context>
 <context>

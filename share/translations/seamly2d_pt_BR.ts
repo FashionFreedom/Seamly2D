@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Adicionar um novo grupo â lista</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nome Existe</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>A ação nâo pode ser concluâda porque o nome do grupo jâ existe.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3461,6 +3473,10 @@ pontos de controle</translation>
     <message>
         <source>Lineweight:</source>
         <translation>Espessura da linha:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupo</translation>
     </message>
 </context>
 <context>

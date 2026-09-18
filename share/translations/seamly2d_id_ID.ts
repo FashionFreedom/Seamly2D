@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nama:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Tambahkan grup baru ke dalam daftar</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nama Ada</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Tindakan tidak dapat diselesaikan karena nama grup sudah ada.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3474,6 +3486,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     <message>
         <source>Lineweight:</source>
         <translation>Ketebalan garis:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>

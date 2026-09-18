@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Όνομα:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Προσθήκη νέας ομάδας στη λίστα</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Το όνομα υπάρχει</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Η ενέργεια δεν μπορεί να ολοκληρωθεί επειδή το όνομα της ομάδας υπάρχει ήδη.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -3476,6 +3488,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ομάδα</translation>
     </message>
 </context>
 <context>
