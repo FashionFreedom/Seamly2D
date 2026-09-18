@@ -88,7 +88,7 @@
          </widget>
         </item>
         <item row="0" column="1">
-         <widget class="QLineEdit" name="groupName_LineEdit">
+         <widget class="QLineEdit" name="group_name_line_edit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -132,7 +132,7 @@
          </widget>
         </item>
         <item row="1" column="1">
-         <widget class="ColorComboBox" name="groupColor_ComboBox">
+         <widget class="ColorComboBox" name="group_color_combobox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -176,7 +176,7 @@
          </widget>
         </item>
         <item row="2" column="1">
-         <widget class="LineWeightComboBox" name="groupLineWeight_ComboBox">
+         <widget class="LineWeightComboBox" name="group_lineweight_combobox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
@@ -220,7 +220,7 @@
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="LineTypeComboBox" name="groupLineType_ComboBox">
+         <widget class="LineTypeComboBox" name="group_linetype_combobox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
