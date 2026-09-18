@@ -91,6 +91,7 @@
 #include "tst_lineidselfhealcollision.h"
 #include "tst_lineendpointreconnectiondetection.h"
 #include "tst_danglingidtokenformula.h"
+#include "tst_duplicatepointnamelinecollision.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -215,6 +216,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_LineIdSelfHealCollision());
     ASSERT_TEST(new TST_LineEndpointReconnectionDetection());
     ASSERT_TEST(new TST_DanglingIdTokenFormula());
+    ASSERT_TEST(new TST_DuplicatePointNameLineCollision());
 
     return status;
 }
