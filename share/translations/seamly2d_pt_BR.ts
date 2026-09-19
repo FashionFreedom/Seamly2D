@@ -239,7 +239,7 @@
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Erro de ID invâlido. O programa serâ encerrado.</translation>
+        <translation>Erro de ID incorreto. O programa será finalizado.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
@@ -274,7 +274,7 @@
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Erro de ID invâlido. O programa serâ encerrado.</translation>
+        <translation>Erro de ID incorreto. O programa será finalizado.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
@@ -2781,8 +2781,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Fórmula do comprimento do arco de curva (aplicada se o campo estiver preenchido)
-Edit curve length -&gt; Editar comprimento da curva</translation>
+        <translation>Fórmula do comprimento do arco da curva (aplicada se preenchida)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
@@ -3336,8 +3335,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Comprimentos dos
-pontos de controle</translation>
+        <translation> Comprimentos do Ponto de Controle</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -6409,7 +6407,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - Criar grupo:&lt;/b&gt;Selecionar um ou mais objectos - Manter&lt;b&gt;%1&lt;/b&gt; para uma seleção múltipla, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação do grupo </translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Criar Grupo:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação do grupo </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -12500,11 +12498,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Shift/Offset length</source>
-        <translation>Comprimento de deslocamento/deslocamento</translation>
+        <translation>Comprimento de deslocamento/ distância de deslocamento</translation>
     </message>
     <message>
         <source>Shift/Offset length must be used together with shift units.</source>
-        <translation>O comprimento de deslocamento/deslocamento deve ser usado junto com as unidades de deslocamento.</translation>
+        <translation>O comprimento de deslocamento deve ser usado em conjunto com as unidades de deslocamento.</translation>
     </message>
     <message>
         <source>Number corresponding to output format (default = 0, export mode):</source>
@@ -15389,14 +15387,14 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Comprimento e ângulo do ponto:&lt;/b&gt; ângulo = %1°, comprimento = %2%3, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta</translation>
+        <translation>&lt;b&gt;Ponto por Comprimento e Ângulo&lt;/b&gt;: ângulo = %1°, comprimento = %2%3; Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, Pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da ferramenta</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Linha de intersecção e eixo:&lt;/b&gt; ângulo = %1°, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta</translation>
+        <translation>&lt;b&gt;Interseção entre linha e eixo&lt;/b&gt;: ângulo = %1°, Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, Pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da ferramenta</translation>
     </message>
 </context>
 <context>

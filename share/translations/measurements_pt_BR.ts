@@ -116,7 +116,7 @@
     <message>
         <source>Height: Knee</source>
         <comment>Full measurement name.</comment>
-        <translation>Altura: Joelho.</translation>
+        <translation>Altura: Joelho</translation>
     </message>
     <message>
         <source>Vertical distance from the fold at the back of the Knee to the floor.</source>
@@ -321,17 +321,17 @@
     <message>
         <source>height_neck_back_to_waist_side</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>altura_da_nuca_até_a_lateral_da_cintura</translation>
     </message>
     <message>
         <source>Height: Neck Back to Waist Side</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Altura: Nuca à Lateral da Cintura</translation>
     </message>
     <message>
         <source>Vertical distance from Neck Back to Waist Side. (&apos;Height: Neck Back&apos; - &apos;Height: Waist Side&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Distância vertical da nuca até a lateral da cintura. (&apos;Altura: Nuca&apos; - &apos;Altura: Lateral da Cintura&apos;).</translation>
     </message>
     <message>
         <source>Vertical height from Waist Back to floor.</source>
