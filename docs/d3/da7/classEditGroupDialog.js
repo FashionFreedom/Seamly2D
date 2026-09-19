@@ -4,6 +4,7 @@ var classEditGroupDialog =
     [ "~EditGroupDialog", "d3/da7/classEditGroupDialog.html#af954856845a17c8231650fef1cb5fa1a", null ],
     [ "EditGroupDialog", "d3/da7/classEditGroupDialog.html#aed97ff06511550bdbafc0e7ca4974787", null ],
     [ "~EditGroupDialog", "d3/da7/classEditGroupDialog.html#a49446282313f7bce3b21f9f6a6d2eab7", null ],
+    [ "createGroupName", "d3/da7/classEditGroupDialog.html#a6bd0b88d1f5ab86e0e526da7df0aec5d", null ],
     [ "getColor", "d3/da7/classEditGroupDialog.html#a1b5ce4c817afbe3966e40c1b38e8f335", null ],
     [ "GetGroup", "d3/da7/classEditGroupDialog.html#a008fd43c72ac6dab5d5587d77c97c662", null ],
     [ "getGroupData", "d3/da7/classEditGroupDialog.html#a477df69a22595702c2dc461e5274ed66", null ],
@@ -24,7 +25,6 @@ var classEditGroupDialog =
     [ "ShowDialog", "d3/da7/classEditGroupDialog.html#a79c33e672848e7668618c1cabcd739dd", null ],
     [ "group", "d3/da7/classEditGroupDialog.html#ab0b0c4f12d9b3f0ab672348d6a6ce929", null ],
     [ "m_doc", "d3/da7/classEditGroupDialog.html#a24f7462f5f6e5e3ed575096109427b62", null ],
-    [ "m_groupData", "d3/da7/classEditGroupDialog.html#a620bc7d553b0a9674c389b9ced15b4bf", null ],
-    [ "m_oldGroupName", "d3/da7/classEditGroupDialog.html#a8037c9b2748d8a32a45512fad748bff2", null ],
+    [ "m_group_data", "d3/da7/classEditGroupDialog.html#a206f757eb04fd8733fd342b5268ddfc5", null ],
     [ "ui", "d3/da7/classEditGroupDialog.html#a234ffcd47fbbe7bcacdb986671fc419d", null ]
 ];

@@ -16,21 +16,21 @@
 <text text-anchor="middle" x="293" y="-210.5" font-family="Helvetica,sans-Serif" font-size="10.00">EditGroupDialog</text>
 <polyline fill="none" stroke="#666666" points="231.5,-203.5 354.5,-203.5 "/>
 <text text-anchor="start" x="239.5" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="239.5" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_oldGroupName</text>
-<polyline fill="none" stroke="#666666" points="231.5,-173.5 354.5,-173.5 "/>
-<text text-anchor="start" x="239.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditGroupDialog()</text>
-<text text-anchor="start" x="239.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditGroupDialog()</text>
-<text text-anchor="start" x="239.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
-<text text-anchor="start" x="239.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
-<text text-anchor="start" x="239.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetGroup()</text>
-<text text-anchor="start" x="239.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
-<text text-anchor="start" x="239.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditGroupDialog()</text>
-<text text-anchor="start" x="239.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditGroupDialog()</text>
-<text text-anchor="start" x="239.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setName()</text>
-<text text-anchor="start" x="239.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getName()</text>
-<text text-anchor="start" x="239.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<polyline fill="none" stroke="#666666" points="231.5,-184.5 354.5,-184.5 "/>
+<text text-anchor="start" x="239.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditGroupDialog()</text>
+<text text-anchor="start" x="239.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditGroupDialog()</text>
+<text text-anchor="start" x="239.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
+<text text-anchor="start" x="239.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
+<text text-anchor="start" x="239.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetGroup()</text>
+<text text-anchor="start" x="239.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
+<text text-anchor="start" x="239.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EditGroupDialog()</text>
+<text text-anchor="start" x="239.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~EditGroupDialog()</text>
+<text text-anchor="start" x="239.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setName()</text>
+<text text-anchor="start" x="239.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getName()</text>
+<text text-anchor="start" x="239.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<text text-anchor="start" x="239.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectedObject()</text>
 <text text-anchor="start" x="239.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectedObject()</text>
-<text text-anchor="start" x="239.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectedObject()</text>
+<text text-anchor="start" x="239.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createGroupName()</text>
 <text text-anchor="start" x="239.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; NameChanged()</text>
 <text text-anchor="start" x="239.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; nameChanged()</text>
 </a>
@@ -556,8 +556,8 @@
 <title>Node14&#45;&gt;Node1</title>
 <path fill="none" stroke="#404040" d="M389.59,-605.86C376.21,-537.5 340.91,-357.2 316.9,-234.58"/>
 <polygon fill="none" stroke="#404040" points="316.85,-234.3 311.77,-229.19 314.54,-222.53 319.62,-227.65 316.85,-234.3"/>
-<text text-anchor="middle" x="356" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;group</text>
-<text text-anchor="middle" x="356" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;m_groupData</text>
+<text text-anchor="middle" x="358" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;group</text>
+<text text-anchor="middle" x="358" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;m_group_data</text>
 </g>
 </g>
 </svg>

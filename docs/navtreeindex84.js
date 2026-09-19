@@ -1,8 +1,9 @@
 var NAVTREEINDEX84 =
 {
 "d5/d36/classDOMLSInput.html#aeca2b7a4721979fe0690ab1dc168f2f5":[3,0,186,45],
-"d5/d36/classDOMLSInput.html#aeca2b7a4721979fe0690ab1dc168f2f5":[3,0,186,46],
+"d5/d36/classDOMLSInput.html#aeca2b7a4721979fe0690ab1dc168f2f5":[3,0,186,44],
 "d5/d36/classDOMLSInput.html#aeca2b7a4721979fe0690ab1dc168f2f5":[3,0,186,47],
+"d5/d36/classDOMLSInput.html#aeca2b7a4721979fe0690ab1dc168f2f5":[3,0,186,46],
 "d5/d36/macx_2include_2xercesc_2dom_2DOMDocumentFragment_8hpp.html":[4,0,0,1,15,0,0,0,0,8],
 "d5/d36/macx_2include_2xercesc_2dom_2DOMDocumentFragment_8hpp_source.html":[4,0,0,1,15,0,0,0,0,8],
 "d5/d36/msvc-arm64_2include_2xercesc_2util_2NumberFormatException_8hpp.html":[4,0,0,1,15,3,0,0,6,41],
@@ -78,14 +79,14 @@ var NAVTREEINDEX84 =
 "d5/d3b/vtoolmirrorbyaxis_8cpp.html":[4,0,0,1,13,1,0,0,0,2],
 "d5/d3b/vtoolmirrorbyaxis_8cpp_source.html":[4,0,0,1,13,1,0,0,0,2],
 "d5/d3f/classXMLBufferFullHandler.html":[3,0,812],
-"d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,812,7],
 "d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,812,5],
 "d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,812,6],
 "d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,812,4],
-"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,0],
-"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,2],
+"d5/d3f/classXMLBufferFullHandler.html#a02eb8b3db9cfacda46dddbf676df63d5":[3,0,812,7],
 "d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,3],
 "d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,1],
+"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,2],
+"d5/d3f/classXMLBufferFullHandler.html#a1a908aaa5a3e44998651d77e4abb403c":[3,0,812,0],
 "d5/d3f/msvc_2include_2xercesc_2dom_2DOMLSInput_8hpp.html":[4,0,0,1,15,2,0,0,0,25],
 "d5/d3f/msvc_2include_2xercesc_2dom_2DOMLSInput_8hpp_source.html":[4,0,0,1,15,2,0,0,0,25],
 "d5/d40/mingw_2include_2xercesc_2sax_2DocumentHandler_8hpp.html":[4,0,0,1,15,1,0,0,4,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX84 =
 "d5/d41/classPatternPieceDialog.html#aebc200c1ff577b369e306d5a2e3e788f":[3,0,384,86],
 "d5/d41/classPatternPieceDialog.html#aed3c2490f3c225cfa6f672ceb3e255e6":[3,0,384,91],
 "d5/d41/classPatternPieceDialog.html#aedfe7bcaac945986510aeb74005809db":[3,0,384,50],
-"d5/d41/classPatternPieceDialog.html#af352fe63d7fee0b321264d03af649888":[3,0,384,121],
-"d5/d41/classPatternPieceDialog.html#af473cfe0a34255d8430751399e318a87":[3,0,384,11]
+"d5/d41/classPatternPieceDialog.html#af352fe63d7fee0b321264d03af649888":[3,0,384,121]
 };
