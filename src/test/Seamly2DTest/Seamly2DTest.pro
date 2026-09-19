@@ -50,7 +50,25 @@ SOURCES += \
     tst_readval.cpp \
     tst_vtranslatevars.cpp \
     tst_vabstractpiece.cpp \
-    tst_vtoolmove.cpp
+    tst_vtoolmove.cpp \
+    tst_formulaidtranslator.cpp \
+    tst_compositevariabletokens.cpp \
+    tst_patternformulatokens.cpp \
+    tst_duplicatepointnamearccurvecollision.cpp \
+    tst_pieceformulaidtranslation.cpp \
+    tst_variableformulaidtranslation.cpp \
+    tst_customvariablecontainer.cpp \
+    tst_emptypathsplinenamecollision.cpp \
+    tst_cutsegmentcanonicalnamecollision.cpp \
+    tst_movesplinemergeidtoken.cpp \
+    tst_savepieceundomergeidtoken.cpp \
+    tst_historydialogformulatranslation.cpp \
+    tst_splinetargetlengthformulapropagation.cpp \
+    tst_linevariablelookup.cpp \
+    tst_lineidselfhealcollision.cpp \
+    tst_lineendpointreconnectiondetection.cpp \
+    tst_danglingidtokenformula.cpp \
+    tst_duplicatepointnamelinecollision.cpp
 
 *msvc*:SOURCES += stable.cpp
 
@@ -77,7 +95,25 @@ HEADERS += \
     tst_readval.h \
     tst_vtranslatevars.h \
     tst_vabstractpiece.h \
-    tst_vtoolmove.h
+    tst_vtoolmove.h \
+    tst_formulaidtranslator.h \
+    tst_compositevariabletokens.h \
+    tst_patternformulatokens.h \
+    tst_duplicatepointnamearccurvecollision.h \
+    tst_pieceformulaidtranslation.h \
+    tst_variableformulaidtranslation.h \
+    tst_customvariablecontainer.h \
+    tst_emptypathsplinenamecollision.h \
+    tst_cutsegmentcanonicalnamecollision.h \
+    tst_movesplinemergeidtoken.h \
+    tst_savepieceundomergeidtoken.h \
+    tst_historydialogformulatranslation.h \
+    tst_splinetargetlengthformulapropagation.h \
+    tst_linevariablelookup.h \
+    tst_lineidselfhealcollision.h \
+    tst_lineendpointreconnectiondetection.h \
+    tst_danglingidtokenformula.h \
+    tst_duplicatepointnamelinecollision.h
 
 include(warnings.pri)
 

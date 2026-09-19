@@ -51,6 +51,8 @@
 #ifndef SAVEPIECEPATHOPTIONS_H
 #define SAVEPIECEPATHOPTIONS_H
 
+#include <QHash>
+#include <QString>
 #include <QtGlobal>
 
 #include "../vpatterndb/vpiecepath.h"
@@ -69,6 +71,7 @@ public:
     virtual int  id() const override;
     quint32      pathId() const;
     VPiecePath   newPath() const;
+    QHash<QString, QString> getNameToIdToken() const;
 
 private:
     Q_DISABLE_COPY(SavePiecePathOptions)
@@ -76,7 +79,13 @@ private:
     const VPiecePath m_oldPath;
     VPiecePath       m_newPath;
     VContainer      *m_data;
-    quint32          m_pieceId; 
+    quint32          m_pieceId;
+    // Frozen at construction time, when m_oldPath/m_newPath's name-form formula text was
+    // captured - NOT recomputed in undo()/redo(), which could otherwise run long after an
+    // intervening rename desyncs the live container's names from that already-captured text.
+    // mergeWith() DOES replace it with the merged-in command's own snapshot, mirroring
+    // MoveSpline::mergeWith()/MoveSplinePath::mergeWith() - see issue #1678.
+    QHash<QString, QString> m_name_to_id_token;
 };
 
 #endif // SAVEPIECEPATHOPTIONS_H

@@ -51,6 +51,8 @@
 #ifndef SAVEPIECEOPTIONS_H
 #define SAVEPIECEOPTIONS_H
 
+#include <QHash>
+#include <QString>
 #include <QtGlobal>
 
 #include "vpiece.h"
@@ -60,7 +62,7 @@ class SavePieceOptions : public VUndoCommand
 {
 public:
                   SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiece, VAbstractPattern *doc,
-                                   quint32 id, QUndoCommand *parent = nullptr);
+                                   VContainer *data, quint32 id, QUndoCommand *parent = nullptr);
 
     virtual      ~SavePieceOptions();
 
@@ -70,12 +72,19 @@ public:
     virtual int   id() const override;
     quint32       pieceId() const;
     VPiece        getNewPiece() const;
+    QHash<QString, QString> getNameToIdToken() const;
 
 private:
     Q_DISABLE_COPY(SavePieceOptions)
 
     const VPiece  m_oldPiece;
     VPiece        m_newPiece;
+    // Frozen at construction time, when m_oldPiece/m_newPiece's name-form formula text was
+    // captured - NOT recomputed in undo()/redo(), which could otherwise run long after an
+    // intervening rename desyncs the live container's names from that already-captured text.
+    // mergeWith() DOES replace it with the merged-in command's own snapshot, mirroring
+    // MoveSpline::mergeWith()/MoveSplinePath::mergeWith() - see issue #1678.
+    QHash<QString, QString> m_name_to_id_token;
 };
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -88,6 +97,12 @@ inline quint32 SavePieceOptions::pieceId() const
 inline VPiece SavePieceOptions::getNewPiece() const
 {
     return m_newPiece;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+inline QHash<QString, QString> SavePieceOptions::getNameToIdToken() const
+{
+    return m_name_to_id_token;
 }
 
 #endif // SAVEPIECEOPTIONS_H
