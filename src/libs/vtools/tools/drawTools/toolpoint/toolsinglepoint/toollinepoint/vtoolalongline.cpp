@@ -366,9 +366,21 @@ VToolAlongLine* VToolAlongLine::Create(const quint32 _id, const QString &pointNa
     const QSharedPointer<VPointF> secondPoint = data->GeometricObject<VPointF>(secondPointId);
     QLineF line = QLineF(static_cast<QPointF>(*firstPoint), static_cast<QPointF>(*secondPoint));
 
+    // Resolve the persisted id of the line from firstPoint to the new point BEFORE constructing
+    // the "CurrentLength" special variable below: VLengthLine's line_id (used to build this
+    // variable's id-token when a formula referencing it gets saved) must be the real line's id,
+    // not left to default to the new point's own id. For Source::FromFile, line1_id already
+    // holds the persisted value read from the pattern; for Source::FromGui it doesn't exist yet,
+    // so allocate it here instead of after CurrentLength is already built with the wrong id.
+    if (typeCreation == Source::FromGui)
+    {
+        line1_id = VContainer::getNextId();
+        line2_id = VContainer::getNextId();
+    }
+
     //Declare special variable "CurrentLength"
     VLengthLine *length = new VLengthLine(firstPoint.data(), firstPointId, secondPoint.data(),
-                                          secondPointId, _id, *data->GetPatternUnit());
+                                          secondPointId, line1_id, *data->GetPatternUnit());
     length->SetName(currentLength);
     data->AddVariable(currentLength, length);
 
@@ -381,8 +393,6 @@ VToolAlongLine* VToolAlongLine::Create(const quint32 _id, const QString &pointNa
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
-        line1_id = VContainer::getNextId();
-        line2_id = VContainer::getNextId();
         data->AddLine(firstPointId, id, line1_id);
         data->AddLine(id, secondPointId, line2_id);
     }
