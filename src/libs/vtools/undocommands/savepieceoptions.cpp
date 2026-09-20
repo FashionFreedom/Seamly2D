@@ -121,6 +121,15 @@ void SavePieceOptions::undo()
         {
             tool->updatePiece(m_oldPiece);
         }
+
+        // The Pieces dock list only repaints a row on VAbstractPattern::UpdateInLayoutList (see
+        // PiecesWidget::togglePiece, which also refreshes the name column) - unlike
+        // DelTool/DeletePiece, this command never emitted it, so a rename (or any other piece
+        // property edit routed through this command) left the dock showing the pre-undo/redo
+        // name until the next full reparse. Emitting it here, not just once from
+        // PatternPieceTool::renamePiece() after the initial push, keeps every later undo/redo of
+        // the same command in sync too.
+        doc->updatePieceList(nodeId);
     }
     else
     {
@@ -163,6 +172,9 @@ void SavePieceOptions::redo()
         {
             tool->updatePiece(m_newPiece);
         }
+
+        // See the matching comment in undo() above.
+        doc->updatePieceList(nodeId);
     }
     else
     {
