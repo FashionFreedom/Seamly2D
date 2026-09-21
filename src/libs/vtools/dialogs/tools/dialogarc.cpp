@@ -89,9 +89,6 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
     , m_radiusFx(QString())
     , m_angle1Fx(QString())
     , m_angle2Fx(QString())
-    , m_baseHeightRadius(0)
-    , m_baseHeightAngle1(0)
-    , m_baseHeightAngle2(0)
     , m_angle1(INT_MIN)
     , m_angle2(INT_MIN)
     , m_arc()
@@ -107,9 +104,6 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
 
     m_Id  = data->getId();
     plainTextEditFormula = ui->plainTextEditFormula;
-    this->m_baseHeightRadius = ui->plainTextEditFormula->height();
-    this->m_baseHeightAngle1 = ui->plainTextEditF1->height();
-    this->m_baseHeightAngle2 = ui->plainTextEditF2->height();
 
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditF1->installEventFilter(this);
@@ -167,10 +161,6 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
     connect(ui->plainTextEditF2, &QPlainTextEdit::textChanged, this,
             [this]() {m_timerAngle2->start(std::chrono::milliseconds(300));});
 
-    connect(ui->pushButtonGrowLength,   &QPushButton::clicked, this, &DialogArc::deployRadiusTextEdit);
-    connect(ui->pushButtonGrowLengthF1, &QPushButton::clicked, this, &DialogArc::deployAngle1TextEdit);
-    connect(ui->pushButtonGrowLengthF2, &QPushButton::clicked, this, &DialogArc::deployAngle2TextEdit);
-
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArc::pointNameChanged);
 
     // Set default values for angles
@@ -181,24 +171,8 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
     CheckState();
 
     vis = new VisToolArc(data);
-}
 
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArc::deployRadiusTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, m_baseHeightRadius);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArc::deployAngle1TextEdit()
-{
-    DeployFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, m_baseHeightAngle1);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArc::deployAngle2TextEdit()
-{
-    DeployFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, m_baseHeightAngle2);
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -237,18 +211,12 @@ void DialogArc::setCenter(const quint32 &value)
 void DialogArc::setF2(const QString &value)
 {
     m_angle2Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (m_angle2Fx.length() > 80)
-    {
-        this->deployAngle2TextEdit();
-    }
+
     ui->plainTextEditF2->setPlainText(m_angle2Fx);
 
     VisToolArc *path = qobject_cast<VisToolArc *>(vis);
     SCASSERT(path != nullptr)
     path->setF2(m_angle2Fx);
-
-    MoveCursorToEnd(ui->plainTextEditF2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -300,18 +268,12 @@ void DialogArc::setLineColor(const QString &value)
 void DialogArc::setF1(const QString &value)
 {
     m_angle1Fx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (m_angle1Fx.length() > 80)
-    {
-        this->deployAngle1TextEdit();
-    }
+
     ui->plainTextEditF1->setPlainText(m_angle1Fx);
 
     VisToolArc *path = qobject_cast<VisToolArc *>(vis);
     SCASSERT(path != nullptr)
     path->setF1(m_angle1Fx);
-
-    MoveCursorToEnd(ui->plainTextEditF1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -321,18 +283,12 @@ void DialogArc::setF1(const QString &value)
 void DialogArc::setRadius(const QString &value)
 {
     m_radiusFx = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (m_radiusFx.length() > 80)
-    {
-        this->deployRadiusTextEdit();
-    }
+
     ui->plainTextEditFormula->setPlainText(m_radiusFx);
 
     VisToolArc *path = qobject_cast<VisToolArc *>(vis);
     SCASSERT(path != nullptr)
     path->setRadius(m_radiusFx);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -350,7 +306,6 @@ void DialogArc::ChosenObject(quint32 id, const SceneObject &type)
             {
                 vis->VisualMode(id);
                 prepare = true;
-                this->setModal(true);
                 this->show();
             }
         }

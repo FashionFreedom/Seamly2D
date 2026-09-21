@@ -90,10 +90,6 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     , ui(new Ui::DialogSpline)
     , spl()
     , newDuplicate(-1)
-    , formulaBaseHeightAngle1(0)
-    , formulaBaseHeightAngle2(0)
-    , formulaBaseHeightLength1(0)
-    , formulaBaseHeightLength2(0)
     , timerAngle1(new QTimer(this))
     , timerAngle2(new QTimer(this))
     , timerLength1(new QTimer(this))
@@ -113,11 +109,6 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     setDialogPosition();
 
     plainTextEditFormula = ui->plainTextEditAngle1F;
-
-    formulaBaseHeightAngle1 = ui->plainTextEditAngle1F->height();
-    formulaBaseHeightAngle2 = ui->plainTextEditAngle2F->height();
-    formulaBaseHeightLength1 = ui->plainTextEditLength1F->height();
-    formulaBaseHeightLength2 = ui->plainTextEditLength2F->height();
 
     ui->plainTextEditAngle1F->installEventFilter(this);
     ui->plainTextEditAngle1F->setToolTip(makeAngleTooltip());
@@ -177,11 +168,6 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->plainTextEditLength1F, &QPlainTextEdit::textChanged, this, &DialogSpline::Length1Changed);
     connect(ui->plainTextEditLength2F, &QPlainTextEdit::textChanged, this, &DialogSpline::Length2Changed);
 
-    connect(ui->pushButtonGrowAngle1, &QPushButton::clicked, this, &DialogSpline::DeployAngle1TextEdit);
-    connect(ui->pushButtonGrowAngle2, &QPushButton::clicked, this, &DialogSpline::DeployAngle2TextEdit);
-    connect(ui->pushButtonGrowLength1, &QPushButton::clicked, this, &DialogSpline::DeployLength1TextEdit);
-    connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSpline::DeployLength2TextEdit);
-
     connect(ui->comboBoxLengthMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &DialogSpline::updateCurveLengthEnabled);
     connect(ui->plainTextEditCurveLength, &QPlainTextEdit::textChanged, this, &DialogSpline::CurveLengthChanged);
     updateCurveLengthEnabled();
@@ -192,8 +178,10 @@ DialogSpline::DialogSpline(const VContainer *data, const quint32 &toolId, QWidge
 
     auto scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
     SCASSERT(scene != nullptr)
-    connect(scene, &VMainGraphicsScene::MouseLeftPressed, path, &VisToolSpline::MouseLeftPressed);
+    connect(scene, &VMainGraphicsScene::MouseLeftPressed,  path, &VisToolSpline::MouseLeftPressed);
     connect(scene, &VMainGraphicsScene::MouseLeftReleased, path, &VisToolSpline::MouseLeftReleased);
+
+    ui->plainTextEditLength1F->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -282,30 +270,6 @@ void DialogSpline::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSpline::DeployAngle1TextEdit()
-{
-    DeployFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSpline::DeployAngle2TextEdit()
-{
-    DeployFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSpline::DeployLength1TextEdit()
-{
-    DeployFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSpline::DeployLength2TextEdit()
-{
-    DeployFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::Angle1Changed()
 {
     labelEditFormula = ui->labelEditAngle1;
@@ -351,13 +315,7 @@ void DialogSpline::FXAngle1()
     if (dialog->exec() == QDialog::Accepted)
     {
         angle1F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (angle1F.length() > 80)
-        {
-            DeployAngle1TextEdit();
-        }
         ui->plainTextEditAngle1F->setPlainText(angle1F);
-        MoveCursorToEnd(ui->plainTextEditAngle1F);
     }
     delete dialog;
 }
@@ -374,13 +332,7 @@ void DialogSpline::FXAngle2()
     if (dialog->exec() == QDialog::Accepted)
     {
         angle2F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (angle2F.length() > 80)
-        {
-            DeployAngle1TextEdit();
-        }
         ui->plainTextEditAngle2F->setPlainText(angle2F);
-        MoveCursorToEnd(ui->plainTextEditAngle2F);
     }
     delete dialog;
 }
@@ -397,13 +349,7 @@ void DialogSpline::FXLength1()
     if (dialog->exec() == QDialog::Accepted)
     {
         length1F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (length1F.length() > 80)
-        {
-            DeployLength1TextEdit();
-        }
         ui->plainTextEditLength1F->setPlainText(length1F);
-        MoveCursorToEnd(ui->plainTextEditLength1F);
     }
     delete dialog;
 }
@@ -420,13 +366,7 @@ void DialogSpline::FXLength2()
     if (dialog->exec() == QDialog::Accepted)
     {
         length2F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (length2F.length() > 80)
-        {
-            DeployLength2TextEdit();
-        }
         ui->plainTextEditLength2F->setPlainText(length2F);
-        MoveCursorToEnd(ui->plainTextEditLength2F);
     }
     delete dialog;
 }
@@ -444,7 +384,6 @@ void DialogSpline::FXCurveLength()
     {
         lengthF = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
         ui->plainTextEditCurveLength->setPlainText(lengthF);
-        MoveCursorToEnd(ui->plainTextEditCurveLength);
     }
     delete dialog;
 }

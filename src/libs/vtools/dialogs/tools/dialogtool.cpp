@@ -51,6 +51,7 @@
 #include <limits.h>
 #include <qiterator.h>
 #include <qnumeric.h>
+#include <QByteArray>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDoubleSpinBox>
@@ -67,6 +68,7 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QPlainTextEdit>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRect>
 #include <QRegularExpression>
@@ -212,27 +214,28 @@ void DialogTool::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showEvent handle when window show
- * @param event event
- */
+/// @brief showEvent handle when window show
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTool::showEvent(QShowEvent *event)
 {
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
+    QDialog::showEvent(event);
+
+    if (event->spontaneous())
     {
         return;
     }
+
     if (isInitialized)
     {
         return;
     }
-    // do your init stuff here
 
     setMaximumSize(size());
     setMinimumSize(size());
 
-    isInitialized = true;//first show windows are held
+    isInitialized = true;
+
     ShowVisualization();
 }
 
@@ -442,15 +445,6 @@ void DialogTool::changeCurrentData(QComboBox *box, const QVariant &value) const
         box->setCurrentIndex(index);
         box->blockSignals(false);
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogTool::MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const
-{
-    SCASSERT(plainTextEdit != nullptr)
-    QTextCursor cursor = plainTextEdit->textCursor();
-    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
-    plainTextEdit->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

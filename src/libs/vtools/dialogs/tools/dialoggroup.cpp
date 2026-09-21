@@ -102,7 +102,6 @@ void EditGroupDialog::ShowDialog(bool click)
 
         SetName(tr("New group"));
 
-        setModal(true);
         emit ToolTip("");
         show();
     }

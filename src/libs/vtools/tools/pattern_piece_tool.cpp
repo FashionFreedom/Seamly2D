@@ -2207,7 +2207,6 @@ void PatternPieceTool::editPieceProperties()
                                                                                    m_id, qApp->getMainWindow()));
     dialog->enableApply(true);
     m_dialog = dialog;
-    m_dialog->setModal(true);
     connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceTool::FullUpdateFromGuiOk);
     connect(m_dialog.data(), &DialogTool::DialogApplied, this, &PatternPieceTool::FullUpdateFromGuiApply);
     SetDialog();

@@ -106,20 +106,19 @@ private:
     Ui::GroupsWidget *ui;
     VAbstractPattern *m_doc;
     VContainer       *m_data;
-    bool              m_patternHasGroups;
-    quint32           m_currentGroupId;
+    bool              m_pattern_has_groups;
 
     void              fillTable(const QMap<quint32, GroupAttributes> &groups);
     void              fillGroupItemList();
-    void              addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype);
+    void              addGroupItem(const quint32 &tool_id, const quint32 &obj_id, const Tool &tool_type);
     void              groupItemContextMenu(const QPoint &pos);
     void              cellClicked(int row, int column);
     void              cellDoubleClicked(int row, int column);
     void              itemDoubleClicked(QListWidgetItem *item);
     void              zoomToObject(QSharedPointer<VPointF> point);
-    void              setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible);
-    QString           getPointName(quint32 pointId);
-    quint32           attrUInt(const QDomElement &domElement, const QString &name);
+    void              setGroupVisibility(QTableWidgetItem *item, const quint32 &group_id, const bool &visible);
+    QString           getPointName(quint32 tool_id);
+    quint32           attrUInt(const QDomElement &dom_element, const QString &name);
     QString           getObjName(quint32 id);
     void              splitterMoved(int pos, int index);
     void              headerClicked(int index);

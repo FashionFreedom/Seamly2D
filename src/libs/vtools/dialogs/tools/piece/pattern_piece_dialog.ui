@@ -35,6 +35,9 @@
    <iconset resource="../../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/32x32/option_draw.png</normaloff>:/icon/32x32/option_draw.png</iconset>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_20">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -58,6 +61,9 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::TabFocus</enum>
+       </property>
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -70,6 +76,9 @@ background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb
 QListWidget::item:selected {
      border: 1px solid #6a6ea9;
  }</string>
+       </property>
+       <property name="tabKeyNavigation">
+        <bool>false</bool>
        </property>
        <property name="iconSize">
         <size>
@@ -325,7 +334,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1084,7 +1093,7 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>1</number>
            </property>
            <widget class="QWidget" name="mainPaths_Tab">
             <attribute name="title">
@@ -1128,6 +1137,12 @@ QListWidget::item:selected {
                  <pointsize>9</pointsize>
                  <bold>true</bold>
                 </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::TabFocus</enum>
+               </property>
+               <property name="tabKeyNavigation">
+                <bool>false</bool>
                </property>
                <property name="dragDropMode">
                 <enum>QAbstractItemView::InternalMove</enum>
@@ -1267,6 +1282,9 @@ QListWidget::item:selected {
                  <pointsize>9</pointsize>
                  <bold>true</bold>
                 </font>
+               </property>
+               <property name="focusPolicy">
+                <enum>Qt::TabFocus</enum>
                </property>
                <property name="dragDropMode">
                 <enum>QAbstractItemView::InternalMove</enum>
@@ -1545,7 +1563,7 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="widthFormula_PlainTextEdit">
+                   <widget class="ExpandingTextEdit" name="widthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
@@ -1555,7 +1573,7 @@ QListWidget::item:selected {
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
-                      <height>0</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="maximumSize">
@@ -1877,12 +1895,18 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="beforeWidthFormula_PlainTextEdit">
+                   <widget class="ExpandingTextEdit" name="beforeWidthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>62</height>
+                     </size>
                     </property>
                     <property name="maximumSize">
                      <size>
@@ -2104,12 +2128,18 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="afterWidthFormula_PlainTextEdit">
+                   <widget class="ExpandingTextEdit" name="afterWidthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>62</height>
+                     </size>
                     </property>
                     <property name="maximumSize">
                      <size>
@@ -2624,12 +2654,18 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="pieceLabelWidthFormula_LineEdit">
+                   <widget class="ExpandingTextEdit" name="pieceLabelWidthFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>62</height>
+                     </size>
                     </property>
                     <property name="maximumSize">
                      <size>
@@ -2814,12 +2850,18 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="pieceLabelHeightFormula_LineEdit">
+                   <widget class="ExpandingTextEdit" name="pieceLabelHeightFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>62</height>
+                     </size>
                     </property>
                     <property name="maximumSize">
                      <size>
@@ -3004,12 +3046,18 @@ QListWidget::item:selected {
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QPlainTextEdit" name="pieceLabelAngleFormula_LineEdit">
+                   <widget class="ExpandingTextEdit" name="pieceLabelAngleFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>62</height>
+                     </size>
                     </property>
                     <property name="maximumSize">
                      <size>
@@ -4094,6 +4142,9 @@ QListWidget::item:selected {
                 <bold>false</bold>
                </font>
               </property>
+              <property name="focusPolicy">
+               <enum>Qt::TabFocus</enum>
+              </property>
               <property name="dragDropMode">
                <enum>QAbstractItemView::InternalMove</enum>
               </property>
@@ -4304,17 +4355,23 @@ QListWidget::item:selected {
                </spacer>
               </item>
               <item row="0" column="1">
-               <widget class="QPlainTextEdit" name="rotationFormula_LineEdit">
+               <widget class="ExpandingTextEdit" name="rotationFormula_LineEdit">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>62</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>80</height>
+                  <height>62</height>
                  </size>
                 </property>
                 <property name="font">
@@ -4494,17 +4551,23 @@ QListWidget::item:selected {
                </spacer>
               </item>
               <item row="0" column="1">
-               <widget class="QPlainTextEdit" name="lengthFormula_LineEdit">
+               <widget class="ExpandingTextEdit" name="lengthFormula_LineEdit">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>62</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>80</height>
+                  <height>62</height>
                  </size>
                 </property>
                 <property name="font">
@@ -4883,7 +4946,7 @@ QListWidget::item:selected {
                </spacer>
               </item>
               <item row="0" column="1">
-               <widget class="QPlainTextEdit" name="arrowlLengthFormula_LineEdit">
+               <widget class="ExpandingTextEdit" name="arrowlLengthFormula_LineEdit">
                 <property name="enabled">
                  <bool>true</bool>
                 </property>
@@ -4893,10 +4956,16 @@ QListWidget::item:selected {
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>62</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>80</height>
+                  <height>62</height>
                  </size>
                 </property>
                 <property name="font">
@@ -4920,19 +4989,6 @@ QListWidget::item:selected {
             </item>
            </layout>
           </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>189</height>
-            </size>
-           </property>
-          </spacer>
          </item>
         </layout>
        </widget>
@@ -5867,6 +5923,11 @@ QListWidget::item:selected {
  </widget>
  <customwidgets>
   <customwidget>
+   <class>ExpandingTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>expandingtextedit.h</header>
+  </customwidget>
+  <customwidget>
    <class>VLineEdit</class>
    <extends>QLineEdit</extends>
    <header>vlineedit.h</header>
@@ -5916,7 +5977,7 @@ QListWidget::item:selected {
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchSubType_ButtonGroup"/>
   <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>

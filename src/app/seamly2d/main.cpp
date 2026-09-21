@@ -62,7 +62,27 @@
 
 #include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
+#include <QProcess>
 #include <QTimer>
+
+// Global flag to track state
+bool originalGnomeSettingWasAttached = true;
+
+// 1. THE CLEAN CLEANUP FUNCTION BLOCK
+#ifdef Q_OS_LINUX
+void restoreOriginalGnomeBehavior()
+{
+    if (originalGnomeSettingWasAttached)
+    {
+        QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP").toUpper();
+        if (desktopEnv.contains("GNOME") || desktopEnv.contains("UBUNTU"))
+        {
+            QProcess::execute("gsettings", QStringList() << "set" << "org.gnome.mutter" << "attach-modal-dialogs" << "true");
+        }
+    }
+}
+
+#endif // Ends the function block safely
 
 //---------------------------------------------------------------------------------------------------------------------
 int main(int argc, char *argv[])
@@ -88,6 +108,29 @@ int main(int argc, char *argv[])
     Application2D app(argc, argv);
     // Initialize application options
     app.initOptions();
+
+    // Bypass Gnome Dialog Block
+#ifdef Q_OS_LINUX
+    QString desktopEnv = qgetenv("XDG_CURRENT_DESKTOP").toUpper();
+    if (desktopEnv.contains("GNOME") || desktopEnv.contains("UBUNTU")) {
+        QProcess readProcess;
+        readProcess.start("gsettings", QStringList() << "get" << "org.gnome.mutter" << "attach-modal-dialogs");
+        readProcess.waitForFinished();
+
+        QString output = QString::fromUtf8(readProcess.readAllStandardOutput()).trimmed();
+        if (output == "false")
+        {
+            originalGnomeSettingWasAttached = false;
+        }
+
+        if (originalGnomeSettingWasAttached)
+        {
+            QProcess::execute("gsettings", QStringList() << "set" << "org.gnome.mutter" << "attach-modal-dialogs" << "false");
+            // Register post-routine to clean up even during an ungraceful thread crash
+            qAddPostRoutine(restoreOriginalGnomeBehavior);
+        }
+    }
+#endif
 
     // Only show welcome dialog if in GUI mode
     if (Application2D::isGUIMode())
@@ -130,6 +173,14 @@ int main(int argc, char *argv[])
     // Process command line arguments after a delay
     QTimer::singleShot(msec, &window, &MainWindow::processCommandLine);
 
-    // Start the application event loop
-    return app.exec();
+    // Capture the event loop return code instead of returning instantly
+    int result = app.exec();
+
+    // Cleanup the Gnome bypass safely after the event loop quits
+#ifdef Q_OS_LINUX
+    restoreOriginalGnomeBehavior();
+#endif
+
+    // Return the captured result code to close the application cleanly
+    return result;
 }

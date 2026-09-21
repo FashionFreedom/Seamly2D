@@ -35,7 +35,7 @@
 #include <QString>
 #include <QWidget>
 
-#include "expandingtextedit.h"
+#include "../vwidgets/expandingtextedit.h"
 #include "../qmuparser/qmudef.h"
 #include "../vproperty_p.h"
 

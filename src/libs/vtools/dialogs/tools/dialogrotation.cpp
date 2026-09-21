@@ -104,7 +104,7 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
 
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditFormula->setToolTip(makeAngleTooltip());
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getRotateSuffix()));
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->generateSuffix(qApp->Settings()->getRotateSuffix()));
 
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogRotation::evaluateAngle);
@@ -122,6 +122,8 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
     connect(ui->rotation_ComboBox,    &QComboBox::currentTextChanged, this, &DialogRotation::pointChanged);
 
     vis = new VisToolRotation(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -160,8 +162,6 @@ void DialogRotation::SetAngle(const QString &value)
     VisToolRotation *operation = qobject_cast<VisToolRotation *>(vis);
     SCASSERT(operation != nullptr)
     operation->SetAngle(angleFormula);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,6 @@ void DialogRotation::ShowDialog(bool click)
         SCASSERT(operation != nullptr)
 
         SetAngle(operation->Angle());//Show in dialog angle that a user choose
-        setModal(true);
         emit ToolTip("");
         angleTimer->start();
         show();

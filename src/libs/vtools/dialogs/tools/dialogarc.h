@@ -99,10 +99,6 @@ public:
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) override;
 
-    void          deployRadiusTextEdit();
-    void          deployAngle1TextEdit();
-    void          deployAngle2TextEdit();
-
     void          radiusFX();
     void          angle1FX();
     void          angle2FX();
@@ -130,10 +126,6 @@ private:
     QString       m_radiusFx;     /// @brief m_radiusFx formula of radius
     QString       m_angle1Fx;     /// @brief m_angle1Fx formula of first angle
     QString       m_angle2Fx;     /// @brief m_angle2Fx formula of second angle
-
-    int           m_baseHeightRadius; /// @brief m_baseHeightRadius base height defined by dialogui
-    int           m_baseHeightAngle1; /// @brief m_baseHeightAngle1 base height defined by dialogui
-    int           m_baseHeightAngle2; /// @brief m_baseHeightAngle2 base height defined by dialogui
 
     qreal         m_angle1;
     qreal         m_angle2;

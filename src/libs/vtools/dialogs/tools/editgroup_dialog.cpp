@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
-//  @file   dialog_editgroup.cpp
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   editgroup_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   Mar 1, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialog_editgroup.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   4 Apr, 2016
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "editgroup_dialog.h"
 #include "ui_editgroup_dialog.h"
@@ -73,8 +73,7 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
     : DialogTool(data, toolId, parent)
     , ui(new Ui::EditGroupDialog)
     , m_doc(qApp->getCurrentDocument())
-    , m_groupData()
-    , m_oldGroupName()
+    , m_group_data()
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -83,15 +82,15 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
     // Set the position that the dialog opens based on user preference.
     setDialogPosition();
 
-    ui->groupColor_ComboBox->removeItem(ui->groupColor_ComboBox->findData(ColorByGroup));                //remove color "BY Group" item
-    ui->groupLineType_ComboBox->removeItem(ui->groupLineType_ComboBox->findData(LineTypeByGroup));       //remove linetype "BY Group" item
-    ui->groupLineType_ComboBox->removeItem(ui->groupLineType_ComboBox->findData(LineTypeNone));          //remove linetype "No Pen" item
-    ui->groupLineWeight_ComboBox->removeItem(ui->groupLineWeight_ComboBox->findData(LineWeightByGroup)); //remove lineweight "BY Group" item
-    m_oldGroupName = ui->groupName_LineEdit->text();
+    ui->group_color_combobox->removeItem(ui->group_color_combobox->findData(ColorByGroup));                //remove color "BY Group" item
+    ui->group_linetype_combobox->removeItem(ui->group_linetype_combobox->findData(LineTypeByGroup));       //remove linetype "BY Group" item
+    ui->group_linetype_combobox->removeItem(ui->group_linetype_combobox->findData(LineTypeNone));          //remove linetype "No Pen" item
+    ui->group_lineweight_combobox->removeItem(ui->group_lineweight_combobox->findData(LineWeightByGroup)); //remove lineweight "BY Group" item
+    ui->group_name_line_edit->setText(createGroupName());
 
     initializeOkCancel(ui);
     DialogTool::CheckState();
-    connect(ui->groupName_LineEdit, &QLineEdit::textChanged, this, &EditGroupDialog::nameChanged);
+    connect(ui->group_name_line_edit, &QLineEdit::textChanged, this, &EditGroupDialog::nameChanged);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -103,28 +102,25 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setName(const QString &name)
 {
-    ui->groupName_LineEdit->setText(name);
+    ui->group_name_line_edit->setText(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getName() const
 {
-    return ui->groupName_LineEdit->text();
+    return ui->group_name_line_edit->text();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::ShowDialog(bool click)
 {
-    if (not click)
+    if (!click)
     {
-        if (m_groupData.isEmpty())
+        if (m_group_data.isEmpty())
         {
             return;
         }
 
-        //setName(tr("New group"));
-
-        setModal(true);
         emit ToolTip("");
         show();
     }
@@ -135,59 +131,75 @@ void  EditGroupDialog::SelectedObject(bool selected, quint32 object, quint32 too
 {
     if (selected)
     {
-        m_groupData.insert(object, tool);
+        m_group_data.insert(object, tool);
     }
     else
     {
-        m_groupData.remove(object);
+        m_group_data.remove(object);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void EditGroupDialog::nameChanged()
 {
-    ui->groupName_LineEdit->text().isEmpty() ? flagName = false : flagName = true;
+    ui->group_name_line_edit->text().isEmpty() ? flagName = false : flagName = true;
     CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QMap<quint32, quint32>  EditGroupDialog::getGroupData() const
 {
-    return m_groupData;
+    return m_group_data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getColor() const
 {
-    return getComboBoxCurrentData(ui->groupColor_ComboBox, ColorBlack);
+    return getComboBoxCurrentData(ui->group_color_combobox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setColor(const QString &color)
 {
-    changeCurrentData(ui->groupColor_ComboBox, color);
+    changeCurrentData(ui->group_color_combobox, color);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getLineType() const
 {
-    return getComboBoxCurrentData(ui->groupLineType_ComboBox, LineTypeSolidLine);
+    return getComboBoxCurrentData(ui->group_linetype_combobox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setLineType(const QString &type)
 {
-    changeCurrentData(ui->groupLineType_ComboBox, type);
+    changeCurrentData(ui->group_linetype_combobox, type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString  EditGroupDialog::getLineWeight() const
 {
-    return getComboBoxCurrentData(ui->groupLineWeight_ComboBox, DefaultLineWeight);
+    return getComboBoxCurrentData(ui->group_lineweight_combobox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void  EditGroupDialog::setLineWeight(const QString &weight)
 {
-    changeCurrentData(ui->groupLineWeight_ComboBox, weight);
+    changeCurrentData(ui->group_lineweight_combobox, weight);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString EditGroupDialog::createGroupName() const
+{
+    QStringList group_names = m_doc->groupListByName();
+
+    const QString default_name = tr("Group");
+    QString group_name = default_name + "_1";
+    int i = 0;
+
+    while(group_names.contains(group_name))
+    {
+        group_name = default_name + QString("_%1").arg(++i);
+    }
+    return group_name;
 }

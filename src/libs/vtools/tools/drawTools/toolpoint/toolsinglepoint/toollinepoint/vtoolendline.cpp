@@ -109,7 +109,6 @@ VToolEndLine::VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint3
 void VToolEndLine::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
-    m_dialog->setModal(true);
     QSharedPointer<DialogEndLine> dialogTool = m_dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
@@ -272,7 +271,7 @@ void VToolEndLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 void VToolEndLine::ReadToolAttributes(const QDomElement &domElement)
 {
     m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight);
     lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     formulaLength = doc->GetParametrString(domElement, AttrLength, "");
     basePointId   = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
