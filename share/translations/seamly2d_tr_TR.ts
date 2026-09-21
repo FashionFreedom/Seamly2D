@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Adı:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Listeye yeni bir grup ekle</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>İsim Mevcut</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Grup adı zaten mevcut olduğundan eylem tamamlanamıyor.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -498,10 +510,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Çizginin ikinci noktasını seçin</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Hata</translation>
@@ -680,10 +684,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Yarıçapı düzenle</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Açının ikinci noktasını seçin</translation>
@@ -1028,10 +1024,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation>Eksen noktasını seçin</translation>
     </message>
@@ -1102,10 +1094,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogCutArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
@@ -1178,10 +1166,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
     </message>
@@ -1252,10 +1236,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
@@ -1363,10 +1343,6 @@ p, li { boşluk: ön sarma; }
         <translation>Hesaplama</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Yarıçap2:</translation>
     </message>
@@ -1457,10 +1433,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Açıyı düzenle</translation>
@@ -1756,10 +1728,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Satırın ilk noktası</translation>
     </message>
@@ -2046,10 +2014,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Çizginin ikinci noktasını seçin</translation>
     </message>
@@ -2335,10 +2299,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogPointOfContact</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select point of center of arc</source>
         <translation>Yayın merkezinin noktasını seçin</translation>
     </message>
@@ -2573,10 +2533,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Çizginin ilk noktasını seç</translation>
     </message>
@@ -2747,10 +2703,6 @@ p, li { boşluk: ön sarma; }
         <translation>Değer</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>İlk kontrol noktası açısını düzenle</translation>
     </message>
@@ -2900,10 +2852,6 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Value</source>
         <translation>Değer</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3538,6 +3486,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     <message>
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>
@@ -5114,10 +5066,6 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
         <translation>Değer</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Hesaplama</translation>
     </message>
@@ -5198,10 +5146,6 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
     <message>
         <source>Formula wizard</source>
         <translation>Formül sihirbazı</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -11071,6 +11015,119 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgAşağı</translation>
+    </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>İletişim Kutusu Gezinmesi</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Açılır Kutu</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Sekme</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Odağı açılır kutuya taşıyın.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Yukarı / Aşağı Ok</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Açılır kutu kapalı veya açıkken öğeler arasında gezinin.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Aşağı Ok veya F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Açılır listeyi açın.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter veya Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Şu anda vurgulanan öğeyi seçin mudu ve listeyi kapatın.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Seçimi değiştirmeden listeyi kapatın.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Harf Tuşları (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Listede doğrudan o öğeye atlamak için bir öğe adının ilk harflerini yazın.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Sekme Çubuğu</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Odağı sekme çubuğuna taşıyın.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Sol ve Sağ Ok</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Seçimi bitişik sekmeler arasında taşıyın.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translatorcomment>Komut Düğmesi</translatorcomment>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Ara Çubuğu</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Odaklanmış komut düğmesini tetiklemek için.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Komut düğmesi bir iletişim penceresinde varsayılan düğme olarak ayarlanmışsa varsayılan eylem.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Liste</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Odağı listeye taşıyın.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Seçimi listedeki önceki veya sonraki öğeye taşır.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End Tuşları</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Listede doğrudan ilk veya son öğeye atlar.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
     </message>
 </context>
 <context>

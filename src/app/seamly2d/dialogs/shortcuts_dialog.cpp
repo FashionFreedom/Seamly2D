@@ -361,8 +361,67 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Help"))                                            //1
                                  .arg(tr("Keyboard Shortcuts")).arg(QString("K"));           //2 & 3
 
+
+    const QString drop_down = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%><b>%2</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%3       </td><td>%4</td></tr>"
+                                        "<tr><td width = 50%>%5       </td><td>%6</td></tr>"
+                                        "<tr><td width = 50%>%7       </td><td>%8</td></tr>"
+                                        "<tr><td width = 50%>%9       </td><td>%10</td></tr>"
+                                        "<tr><td width = 50%>%11      </td><td>%12</td></tr>"
+                                        "<tr><td width = 50%>%13      </td><td>%14</td></tr>"
+                                      "</table>")
+        .arg(tr("Dialog Navigation"))                                                                                               //1
+        .arg(tr("Drop Down Box"))                                                                                                   //2
+        .arg(tr("Tab")).arg(tr("Move focus to the drop-down."))                                                                     //3 & 4
+        .arg(tr("Up / Down Arrow")).arg(tr("Cycle through items when the drop-down is closed or open."))                            //5 & 6
+        .arg(tr("Alt + Down Arrow or F4")).arg(tr("Open the drop-down list."))                                                      //7 & 8
+        .arg(tr("Enter or Return")).arg(tr("Select the currently highlighted item and close the list."))                            //9 & 10
+        .arg(tr("Escape")).arg(tr("Close the list without changing the selection."))                                                //11 &12
+        .arg(tr("Letter Keys (A-Z)")).arg(tr("Type the first letters of an item name to jump directly to that item in the list.")); //13 & 14
+
+
+    const QString tab_bar = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                        "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                        "<tr></tr>"
+                                      "</table>")
+        .arg(tr("Tab Bar"))                                                                    //1
+        .arg(tr("Tab")).arg(tr("Move focus the tab bar."))                                     //2 & 3
+        .arg(tr("Left and Right Arrow")).arg(tr("Move the selection between adjacent tabs.")); //4 & 5
+
+    const QString push_button = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                        "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                        "<tr><td width = 50%>%6       </td><td>%7</td></tr>"
+                                      "</table>")
+        .arg(tr("Push Button"))                                                                                                     //1
+        .arg(tr("Tab")).arg(tr("Move focus to the drop-down."))                                                                     //2 & 3
+        .arg(tr("Spacebar")).arg(tr("To trigger the focused push button."))                                                         //4 & 5
+        .arg(tr("Enter or Return")).arg(tr("Default action if the push button is set as the default button in a dialog window."));  //6 & 7
+
+
+    const QString list_widget = QString("<table style=font-size:11pt; font-weight:600>"
+                                            "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                            "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                            "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                            "<tr><td width = 50%>%6       </td><td>%7</td></tr>"
+                                            "<tr><td width = 50%>%8       </td><td>%9</td></tr>"
+                                            "<tr><td width = 50%>%10      </td><td>%11</td></tr>"
+                                        "</table>")
+        .arg(tr("List"))                                                                                                            //1
+        .arg(tr("Tab")).arg(tr("Move focus to the list."))                                                                          //2 & 3
+        .arg(tr("Up / Down Arrow")).arg(tr("Moves the selection to the previous or next item in the list."))                        //4 & 5
+        .arg(tr("Home / End Keys")).arg(tr("Jumps directly to the first or last item in the list."))                                //6 & 7
+        .arg(tr("Page Up / Page Down")).arg(tr("Select the currently highlighted item and close the list."))                        //8 & 9
+        .arg(tr("Letter Keys (A-Z)")).arg(tr("Type the first letters of an item name to jump directly to that item in the list.")); //10 & 11
+
     ui->shortcuts_TextBrowser->setHtml(file + edit + view + measurements + tools + points + line + curves +
-                                       arcs + operations + images + pattern + details + layout + history + utilities + help);
+                                       arcs + operations + images + pattern + details + layout + history +
+                                       utilities + help + drop_down + tab_bar + push_button + list_widget);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));

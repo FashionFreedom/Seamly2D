@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Imię:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Dodaj nową grupę do listy</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nazwa istnieje</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Nie można ukończyć akcji, ponieważ nazwa grupy już istnieje.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -550,10 +562,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -619,10 +627,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -710,10 +714,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -817,10 +817,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1072,10 +1068,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Atrybuty</translation>
     </message>
@@ -1145,10 +1137,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1222,10 +1210,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -1295,10 +1279,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1399,10 +1379,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calulation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -1496,10 +1472,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1816,10 +1788,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Atrybuty</translation>
     </message>
@@ -2088,10 +2056,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -2383,10 +2347,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -2621,10 +2581,6 @@ p, li { white-space: pre-wrap; }
         <translation>Kreator formuł</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -2753,10 +2709,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -2912,10 +2864,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -3538,6 +3486,10 @@ Spróbuj cofnąć ostatnią operację lub naprawić uszkodzoną formułę.</tran
     <message>
         <source>Linetype:</source>
         <translation>Rodzaj linii:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupa</translation>
     </message>
 </context>
 <context>
@@ -5130,10 +5082,6 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>Wartość</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Obliczanie</translation>
     </message>
@@ -5214,10 +5162,6 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     <message>
         <source>Formula wizard</source>
         <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pokaż pełne obliczenia w oknie komunikatu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -11071,6 +11015,118 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Export PDF</source>
         <translation>Eksportuj PDF</translation>
+    </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Nawigacja w oknach dialogowych</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Lista rozwijana</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Zakładka</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Przenieś fokus na listę rozwijaną.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Strzałka w górę / w dół</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Przechodź między elementami, gdy lista rozwijana jest zamknięta lub otwarta.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Strzałka w dół lub F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Otwórz listę rozwijaną.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter lub Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Wybierz aktualnie wyróżniony element i zamknij listę.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Zamknij listę bez zmiany wyboru.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Klawisze literowe (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Wpisz pierwsze litery nazwy elementu, aby przejść bezpośrednio do tego elementu na liście.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Pasek kart</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Przenieś fokus na pasek kart.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Strzałka w lewo i w prawo</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Przenieś wybór między sąsiednimi kartami.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Przycisk</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Spacja</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Uruchom aktywowany przycisk.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Działanie domyślne, jeśli przycisk jest ustawiony jako przycisk domyślny w oknie dialogowym.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lista</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Przenieś fokus na listę.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Przenosi wybór do poprzedniego lub następnego elementu na liście.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Klawisze Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Przechodzi bezpośrednio do pierwszego lub ostatniego elementu na liście.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
     </message>
 </context>
 <context>

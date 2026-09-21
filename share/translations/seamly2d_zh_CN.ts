@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>姓名:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>将新组添加到列表中</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>名称已存在</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>该操作无法完成，因为组名称已存在.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -498,10 +510,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>选择直线的第二个点</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { 空白:预换行； }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>错误</translation>
@@ -680,10 +684,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>编辑半径</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { 空白:预换行； }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>选择角度的第二个点</translation>
@@ -1028,10 +1024,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation>选择轴点</translation>
     </message>
@@ -1102,10 +1094,6 @@ p, li { 空白:预换行； }
 </context>
 <context>
     <name>DialogCutArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>修长度</translation>
@@ -1178,10 +1166,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>修长度</translation>
     </message>
@@ -1252,10 +1236,6 @@ p, li { 空白:预换行； }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>修长度</translation>
@@ -1363,10 +1343,6 @@ p, li { 空白:预换行； }
         <translation>计算</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>半径2:</translation>
     </message>
@@ -1457,10 +1433,6 @@ p, li { 空白:预换行； }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>编辑角度</translation>
@@ -1756,10 +1728,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>线的第一个点</translation>
     </message>
@@ -2046,10 +2014,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>选择直线的第二个点</translation>
     </message>
@@ -2335,10 +2299,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogPointOfContact</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select point of center of arc</source>
         <translation>选择圆弧中心点</translation>
     </message>
@@ -2573,10 +2533,6 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>选择线的第一个点</translation>
     </message>
@@ -2747,10 +2703,6 @@ p, li { 空白:预换行； }
         <translation>价值</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>编辑第一个控制点角度</translation>
     </message>
@@ -2900,10 +2852,6 @@ p, li { 空白:预换行； }
     <message>
         <source>Value</source>
         <translation>数值</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3538,6 +3486,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Lineweight:</source>
         <translation>线宽:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>组</translation>
     </message>
 </context>
 <context>
@@ -5114,10 +5066,6 @@ Seamly2D 是一款免费（开源）软件。
         <translation>价值</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>计算</translation>
     </message>
@@ -5198,10 +5146,6 @@ Seamly2D 是一款免费（开源）软件。
     <message>
         <source>Formula wizard</source>
         <translation>公式向导</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在消息框中显示完整的计算&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -11071,6 +11015,119 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
+    </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>对话框导航</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>下拉组合框</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>选项卡</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>将焦点移动到下拉框.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>上 / 下方向键</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>在下拉框关闭或打开时循环浏览选项.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + 下方向键 或 F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>打开下拉列表.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter 或 Return 键</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>选择当前高亮的选项并关闭列表.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>关闭列表且不更改当前选择.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translatorcomment>字母键 (A-Z)</translatorcomment>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>键入选项名称的首字母以直接跳转到列表中的该选项.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>标签栏</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>将焦点移动到标签栏.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>左 和 右方向键</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>在相邻标签之间移动选择.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>命令按钮</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>空格键</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>触发当前获得焦点的命令按钮.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>若命令按钮在对话框窗口中被设置为默认按钮，则触发默认操作.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>列表</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>将焦点移动到列表.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>将选择移动到列表中的上一个或下一个选项局.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End 键</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>直接跳转到列表中的第一个或最后一个选项.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down 键</translation>
     </message>
 </context>
 <context>

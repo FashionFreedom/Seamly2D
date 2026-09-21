@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Név:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Új csoport hozzáadása a listához</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>A név létezik</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>A művelet nem hajtható végre, mert a csoportnév már létezik.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -550,10 +562,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Számítás</translation>
     </message>
@@ -619,10 +627,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -710,10 +714,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -817,10 +817,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1072,10 +1068,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Attribútumok</translation>
     </message>
@@ -1145,10 +1137,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1222,10 +1210,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Számítás</translation>
     </message>
@@ -1295,10 +1279,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1399,10 +1379,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calulation</source>
         <translation>Számítás</translation>
     </message>
@@ -1496,10 +1472,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -1816,10 +1788,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Attribútumok</translation>
     </message>
@@ -2088,10 +2056,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -2383,10 +2347,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Számítás</translation>
     </message>
@@ -2621,10 +2581,6 @@ p, li { white-space: pre-wrap; }
         <translation>Képletvarázsló</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Számítás</translation>
     </message>
@@ -2753,10 +2709,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -2912,10 +2864,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -3538,6 +3486,10 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     <message>
         <source>Linetype:</source>
         <translation>Vonaltípus:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Csoport</translation>
     </message>
 </context>
 <context>
@@ -5129,10 +5081,6 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Érték</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Számítás</translation>
     </message>
@@ -5213,10 +5161,6 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     <message>
         <source>Formula wizard</source>
         <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A teljes számítás megjelenítése az üzenetablakban&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -11070,6 +11014,118 @@ Menti a módosításokat?</translation>
     <message>
         <source>Export PDF</source>
         <translation>PDF exportálása</translation>
+    </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Párbeszédpanel-navigáció</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Legördülő lista</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Fül</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Fókusz áthelyezése a legördülő listára.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Felfelé / Lefelé nyíl</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Elemek görgetése, amikor a legördülő lista zárva vagy nyitva van.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Lefelé nyíl vagy F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>A legördülő lista megnyitása.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter vagy Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>A kijelölt elem kiválasztása és a lista bezárása.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>A lista bezárása a kijelölés módosítása nélkül.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Betűbillentyűk (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Írja be az elem nevének első betűit, hogy közvetlenül az adott elemre ugorjon a listában.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Fül sáv</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Fókusz áthelyezése a fül sávra.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Balra és Jobbra nyíl</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Kijelölés mozgatása a szomszédos fülek között.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Nyomógomb</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Szóköz</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>A fókuszban lévő nyomógomb aktiválása.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Alapértelmezett művelet, ha a nyomógomb alapértelmezett gombként van beállítva a párbeszédablakban.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lista</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Fókusz áthelyezése a listára.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>A kijelölést a lista előző vagy következő elemére mozgatja.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End billentyűk</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Közvetlenül a lista első vagy utolsó elemére ugrik.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
     </message>
 </context>
 <context>

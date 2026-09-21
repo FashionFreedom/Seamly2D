@@ -5,7 +5,7 @@
     <name>About2DAppDialog</name>
     <message>
         <source>About Seamly2D</source>
-        <translation>Sobre Seamly2D</translation>
+        <translation>Sobre o Seamly2D</translation>
     </message>
     <message>
         <source>Left to right</source>
@@ -17,11 +17,11 @@
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automâtico</translation>
+        <translation>Automático</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Construído de %1 a %2</translation>
+        <translation>Compilado em %1 às %2</translation>
     </message>
     <message>
         <source>About</source>
@@ -29,27 +29,27 @@
     </message>
     <message>
         <source>Copy build data to clipboard</source>
-        <translation>Copiar dados de construção para a ârea de transferância</translation>
+        <translation>Copiar dados de compilação para a área de transferência</translation>
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>2D perfeitamente</translation>
+        <translation>Seamly 2D</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Versâo</translation>
+        <translation>Versão</translation>
     </message>
     <message>
         <source>Build date:</source>
-        <translation>Data de construção :</translation>
+        <translation>Data de compilação:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation>Versâo Qt :</translation>
+        <translation>Versão do Qt:</translation>
     </message>
     <message>
         <source>Compiler:</source>
-        <translation>Compilador :</translation>
+        <translation>Compilador:</translation>
     </message>
     <message>
         <source>System</source>
@@ -57,11 +57,11 @@
     </message>
     <message>
         <source>Revision:</source>
-        <translation>Revisâo :</translation>
+        <translation>Revisão:</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Versâo :</translation>
+        <translation>Versão:</translation>
     </message>
     <message>
         <source>Architecture</source>
@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>OS Version:</source>
-        <translation>Versâo do SO :</translation>
+        <translation>Versão do SO:</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -77,15 +77,15 @@
     </message>
     <message>
         <source>Country:</source>
-        <translation>Paâs :</translation>
+        <translation>País:</translation>
     </message>
     <message>
         <source>Decimal point:</source>
-        <translation>Ponto decimal :</translation>
+        <translation>Separador decimal:</translation>
     </message>
     <message>
         <source>Script name:</source>
-        <translation>Nome do script :</translation>
+        <translation>Nome do script:</translation>
     </message>
     <message>
         <source>System codec:</source>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Language:</source>
-        <translation>Linguagem:</translation>
+        <translation>Idioma:</translation>
     </message>
     <message>
         <source>Text direction:</source>
@@ -125,11 +125,11 @@
     </message>
     <message>
         <source>Check For Updates</source>
-        <translation>Checar atualizações</translation>
+        <translation>Verificar atualizações</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>O download do instalador %p% foi concluâdo</translation>
+        <translation>Download do instalador %p% concluído</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -172,7 +172,7 @@
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation>adicionar pedaâo</translation>
+        <translation>adicionar peça</translation>
     </message>
 </context>
 <context>
@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nome:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Adicionar um novo grupo â lista</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nome Existe</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>A ação nâo pode ser concluâda porque o nome do grupo jâ existe.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -201,15 +213,15 @@
     </message>
     <message>
         <source>Anchor Point tool</source>
-        <translation>Ferramenta Ponto de Ancoragem</translation>
+        <translation>Ferramenta de ponto de ancoragem</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Apontar:</translation>
+        <translation>Ponto:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Pedaâo:</translation>
+        <translation>Peça:</translation>
     </message>
 </context>
 <context>
@@ -223,70 +235,70 @@
     <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Erro ao analisar o arquivo. O programa serâ encerrado.</translation>
+        <translation>Erro ao analisar o arquivo. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Erro de ID invâlido. O programa serâ encerrado.</translation>
+        <translation>Erro: ID inválido. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Erro nâo pode converter valor. O programa serâ encerrado.</translation>
+        <translation>Erro: não foi possível converter o valor. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Erro parâmetro vazio. O programa serâ encerrado.</translation>
+        <translation>Erro: parâmetro vazio. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Erro id errado. O programa serâ encerrado.</translation>
+        <translation>Erro: ID incorreto. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Algo estâ errado!!</translation>
+        <translation>Algo está errado!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Erro do analisador: %1. O programa serâ encerrado.</translation>
+        <translation>Erro do analisador: %1. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Exceção lanâada: %1. O programa serâ encerrado.</translation>
+        <translation>Exceção lançada: %1. O programa será encerrado.</translation>
     </message>
 </context>
 <context>
     <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Erro ao analisar o arquivo. O programa serâ encerrado.</translation>
+        <translation>Erro ao analisar o arquivo. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Erro de ID invâlido. O programa serâ encerrado.</translation>
+        <translation>Erro: ID inválido. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Erro nâo pode converter valor. O programa serâ encerrado.</translation>
+        <translation>Erro: não foi possível converter o valor. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Erro parâmetro vazio. O programa serâ encerrado.</translation>
+        <translation>Erro: parâmetro vazio. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Erro id errado. O programa serâ encerrado.</translation>
+        <translation>Erro: ID incorreto. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
-        <translation>Algo estâ errado!!</translation>
+        <translation>Algo está errado!!</translation>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Erro do analisador: %1. O programa serâ encerrado.</translation>
+        <translation>Erro do parser: %1. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Exceção lanâada: %1. O programa serâ encerrado.</translation>
+        <translation>Exceção lançada: %1. O programa será encerrado.</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s measurements editor.</source>
@@ -294,7 +306,7 @@
     </message>
     <message>
         <source>The measurement file.</source>
-        <translation>O arquivo de medição.</translation>
+        <translation>O arquivo de medidas.</translation>
     </message>
     <message>
         <source>The base height</source>
@@ -306,51 +318,51 @@
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Defina a unidade do arquivo de padrâo: cm, mm, polegada.</translation>
+        <translation>Defina a unidade do arquivo de molde: cm, mm, polegada.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
-        <translation>A unidade de padrâo</translation>
+        <translation>A unidade do molde</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation>Argumento de tamanho de base invâlido. Deve ser cm, mm ou polegada.</translation>
+        <translation>Argumento de tamanho de base inválido. Deve ser cm, mm ou polegada.</translation>
     </message>
     <message>
         <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Nâo â possâvel comeâar a escutar conexâes de entrada no nome &apos;%1&apos;</translation>
+        <translation>Não é possível iniciar a escuta de conexões de entrada no nome &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>O modo de teste nâo suporta a abertura de vârios arquivos.</translation>
+        <translation>O modo de teste não suporta abrir vários arquivos.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Por favor, forneâa um arquivo de entrada.</translation>
+        <translation>Por favor, forneça um arquivo de entrada.</translation>
     </message>
     <message>
         <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Abra com o tamanho base. Valores vâlidos: %1cm.</translation>
+        <translation>Abrir com o tamanho da base. Valores válidos: %1cm.</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Argumento de altura de base invâlido. Deve ser %1cm.</translation>
+        <translation>Argumento de altura da base inválido. Deve ser %1cm.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Argumento de tamanho base invâlido. Deve ser %1cm.</translation>
+        <translation>Argumento de tamanho da base inválido. Deve ser %1cm.</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Abra com a altura da base. Valores vâlidos: %1cm.</translation>
+        <translation>Abrir com a altura da base. Valores válidos: %1cm.</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Use para teste de unidade. Execute o programa e abra um arquivo sem mostrar a janela principal.</translation>
+        <translation>Use para testes unitários. Execute o programa e abra um arquivo sem mostrar a janela principal.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Desabilite o dimensionamento de alto dpi. Chame esta opção se tiver problemas com o dimensionamento (por padrâo, o dimensionamento estâ habilitado). Como alternativa, vocâ pode usar a variâvel de ambiente %1.</translation>
+        <translation>Desative o dimensionamento de alto DPI. Use essa opção se tiver problema com o dimensionamento (por padrão, o dimensionamento está habilitado). Como alternativa, você pode usar a variável de ambiente %1.</translation>
     </message>
 </context>
 <context>
@@ -364,11 +376,11 @@
     <name>CalculatorUtil</name>
     <message>
         <source>Backspace</source>
-        <translation>Retrocesso</translation>
+        <translation>Retroceder</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Claro</translation>
+        <translation>Limpar</translation>
     </message>
     <message>
         <source>Clear All</source>
@@ -383,7 +395,7 @@
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation>Grâfico Decimal</translation>
+        <translation>Gráfico decimal</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -420,21 +432,21 @@ p, li { white-space: pre-wrap; }
     <name>DelTool</name>
     <message>
         <source>delete tool</source>
-        <translation>ferramenta de exclusâo</translation>
+        <translation>excluir ferramenta</translation>
     </message>
 </context>
 <context>
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>apagar bloco de rascunho %1</translation>
+        <translation>excluir bloco de rascunho %1</translation>
     </message>
 </context>
 <context>
     <name>DeletePiece</name>
     <message>
         <source>delete tool</source>
-        <translation>ferramenta de exclusâo</translation>
+        <translation>excluir ferramenta</translation>
     </message>
 </context>
 <context>
@@ -445,11 +457,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>SeamlyMe version</source>
-        <translation>Versâo SeamlyMe</translation>
+        <translation>Versão do SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Revisâo de construção: %1</translation>
+        <translation>Revisão da compilação: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
@@ -457,19 +469,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>O download do instalador %p% foi concluâdo</translation>
+        <translation>Download do instalador %p% concluído</translation>
     </message>
     <message>
         <source>Check For Updates</source>
-        <translation>Verificar atualizaçães</translation>
+        <translation>Verificar atualizações</translation>
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Nâo â possâvel abrir seu navegador padrâo</translation>
+        <translation>Não é possível abrir seu navegador padrão</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Construâdo em %1 em %2</translation>
+        <translation>Construído em %1 às %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
@@ -482,10 +494,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogAlongLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar câlculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of line</source>
         <translation>Selecione o segundo ponto da linha</translation>
@@ -500,7 +508,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -536,7 +544,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Ponto - On-line</translation>
+        <translation>Ponto - na linha</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -544,11 +552,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -569,10 +577,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Erro</translation>
@@ -603,7 +607,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -639,7 +643,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Arco - Raio e ângulos</translation>
+        <translation>Arco - raio e ângulos</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -664,10 +668,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArcWithLength</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar câlculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit radius</source>
         <translation>Editar raio</translation>
@@ -698,7 +698,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -730,7 +730,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - Raio e Comprimento</translation>
+        <translation>Arco - raio e comprimento</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -756,16 +756,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of angle</source>
-        <translation>Selecionar segundo ponto do ângulo</translation>
+        <translation>Selecione o segundo ponto do ângulo</translation>
     </message>
     <message>
         <source>Select third point of angle</source>
-        <translation>Selecione terceiro ponto do ângulo</translation>
+        <translation>Selecione o terceiro ponto do ângulo</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -777,7 +773,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -809,7 +805,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Ponto - Na Bissetriz</translation>
+        <translation>Ponto - na bissetriz</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -817,11 +813,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -868,15 +864,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select the second point of curve</source>
-        <translation>Selecionar segundo ponto da curva</translation>
+        <translation>Selecione o segundo ponto da curva</translation>
     </message>
     <message>
         <source>Select the third point of curve</source>
-        <translation>Selecionar terceiro ponto da curva</translation>
+        <translation>Selecione o terceiro ponto da curva</translation>
     </message>
     <message>
         <source>Select the fourth point of curve</source>
-        <translation>Selecionar quarto ponto da curva</translation>
+        <translation>Selecione o quarto ponto da curva</translation>
     </message>
     <message>
         <source>Invalid spline</source>
@@ -944,11 +940,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Fórmula do comprimento do arco de curva (aplicada se o campo estiver preenchido)</translation>
+        <translation>Fórmula do comprimento do arco da curva (aplicada se preenchida)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
@@ -960,7 +956,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>O comprimento nâo pode ser negativo</translation>
+        <translation>O comprimento não pode ser negativo</translation>
     </message>
 </context>
 <context>
@@ -1013,12 +1009,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
-        <translation>Selecione ponto do eixo</translation>
+        <translation>Selecione o ponto do eixo</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1030,7 +1022,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1054,7 +1046,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>intersecção - Curva e Eixo</translation>
+        <translation>Interseção - curva e eixo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1062,7 +1054,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -1088,10 +1080,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editar comprimento</translation>
     </message>
@@ -1101,7 +1089,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1117,7 +1105,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Ponto - Em Arco</translation>
+        <translation>Ponto - no arco</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1125,11 +1113,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1141,15 +1129,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Direção:</translation>
+        <translation>Direção :</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Avanâar (do ponto inicial)</translation>
+        <translation>Avançar (do ponto inicial)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Para trâs (do ponto final)</translation>
+        <translation>Para trás (do ponto final)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1163,10 +1151,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editar comprimento</translation>
     </message>
@@ -1176,7 +1160,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1192,7 +1176,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Ponto - Na Curva</translation>
+        <translation>Ponto - na curva</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1200,11 +1184,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1216,15 +1200,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Direção:</translation>
+        <translation>Direção :</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Avanâar (do ponto inicial)</translation>
+        <translation>Avançar (do ponto inicial)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Para trâs (do ponto final)</translation>
+        <translation>Para trás (do ponto final)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1238,10 +1222,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editar comprimento</translation>
     </message>
@@ -1251,7 +1231,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1267,7 +1247,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Ponto - Em Spline</translation>
+        <translation>Ponto - na spline</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1275,11 +1255,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1291,15 +1271,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Direção:</translation>
+        <translation>Direção :</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Avanâar (do ponto inicial)</translation>
+        <translation>Avançar (do ponto inicial)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Para trâs (do ponto final)</translation>
+        <translation>Para trás (do ponto final)</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1314,11 +1294,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogDateTimeFormats</name>
     <message>
         <source>Label date time editor</source>
-        <translation>Editor de data e hora de râtulo</translation>
+        <translation>Editor de data e hora do rótulo</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Formatar:</translation>
+        <translation>Formato:</translation>
     </message>
     <message>
         <source>Insert a format</source>
@@ -1337,7 +1317,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1345,11 +1325,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Calulation</source>
-        <translation>Câlculo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Radius2:</source>
@@ -1373,7 +1349,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select center point of the arc</source>
-        <translation>Selecionar o ponto central do arco</translation>
+        <translation>Selecione o ponto central do arco</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1385,7 +1361,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>O raio nâo pode ser negativo</translation>
+        <translation>O raio não pode ser negativo</translation>
     </message>
     <message>
         <source>Angles equal</source>
@@ -1393,11 +1369,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit radius1</source>
-        <translation>Editar raio1</translation>
+        <translation>Editar raio 1</translation>
     </message>
     <message>
         <source>Edit radius2</source>
-        <translation>Editar raio2</translation>
+        <translation>Editar raio 2</translation>
     </message>
     <message>
         <source>Edit first angle</source>
@@ -1417,7 +1393,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Arco - Elâptico</translation>
+        <translation>Arco - elíptico</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1443,10 +1419,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit angle</source>
         <translation>Editar ângulo</translation>
     </message>
@@ -1460,7 +1432,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1488,7 +1460,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Ponto - Comprimento e ângulo</translation>
+        <translation>Ponto - comprimento e ângulo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1496,11 +1468,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1535,7 +1507,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Codec:</source>
-        <translation>Câdigo:</translation>
+        <translation>Codificação:</translation>
     </message>
     <message>
         <source>Separator</source>
@@ -1551,7 +1523,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Semicolon</source>
-        <translation>Ponto-e-vírgula</translation>
+        <translation>Ponto e vírgula</translation>
     </message>
     <message>
         <source>Space</source>
@@ -1566,7 +1538,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Selecione o segundo pontoda linha</translation>
+        <translation>Selecione o segundo ponto da linha</translation>
     </message>
     <message>
         <source>Base point:</source>
@@ -1582,7 +1554,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Ponto - intersecção de reta e perpendicular</translation>
+        <translation>Ponto - interseção de reta e perpendicular</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1590,11 +1562,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1621,30 +1593,30 @@ p, li { white-space: pre-wrap; }
     <name>DialogLayoutProgress</name>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>Não foi possível preparar dados para layout</translation>
+        <translation>Não foi possível preparar os dados para a criação do layout</translation>
     </message>
     <message>
         <source>Create a Layout</source>
-        <translation>Criar Layout</translation>
+        <translation>Criar layout</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
-        <translation>Peâas de trabalho organizadas: %1 de %2</translation>
+        <translation>Peças organizadas: %1 de %2</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for workpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encontrando a melhor posição para as peâas de trabalho. Por favor, aguarde.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Encontrando a melhor posição para as peças de trabalho. Por favor, aguarde.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Uma ou mais peâas do molde sâo maiores do que o formato de papel selecionado. Selecione um formato de papel maior.</translation>
+        <translation>Uma ou mais peças do molde são maiores do que o formato de papel selecionado. Selecione um formato de papel maior.</translation>
     </message>
 </context>
 <context>
     <name>DialogLine</name>
     <message>
         <source>Select second point</source>
-        <translation>Selecioneo segundo ponto</translation>
+        <translation>Selecione o segundo ponto</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1664,7 +1636,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line - Between Points</source>
-        <translation>Linha - Entre Pontos</translation>
+        <translation>Linha - entre pontos</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1699,7 +1671,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second point of first line</source>
-        <translation>Selecione o segundo ponto da segunda linha</translation>
+        <translation>Selecione o segundo ponto da primeira linha</translation>
     </message>
     <message>
         <source>Select first point of second line</source>
@@ -1719,7 +1691,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Ponto - Linhas de intersecção</translation>
+        <translation>Ponto - interseção de linhas</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1727,11 +1699,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1741,24 +1713,20 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Primeiro ponto da linha</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Selecione o segundo pontoda linha</translation>
+        <translation>Selecione o segundo ponto da linha</translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Selecione ponto central</translation>
+        <translation>Selecione o ponto do eixo</translation>
     </message>
     <message>
         <source>Axis Point</source>
-        <translation>Ponto central</translation>
+        <translation>Ponto do eixo</translation>
     </message>
     <message>
         <source>Second point of line</source>
@@ -1774,7 +1742,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1782,7 +1750,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Ponto central:</translation>
+        <translation>Ponto do eixo:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1794,7 +1762,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Line and Axis</source>
-        <translation>intersecção - Linha e Eixo</translation>
+        <translation>Interseção - linha e eixo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1802,11 +1770,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1841,7 +1809,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ME Database - Add known measurement</source>
-        <translation>Banco de dados ME - Adicionar medição conhecida</translation>
+        <translation>Banco de dados ME - adicionar medida conhecida</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1856,7 +1824,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Espelho por eixo</translation>
+        <translation>Espelhar por eixo</translation>
     </message>
     <message>
         <source>Axis point:</source>
@@ -1876,7 +1844,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select axis rotation point that is not part of the list of objects</source>
-        <translation>Selecione o ponto de rotação do eixo que nâo faz parte da lista de objetos</translation>
+        <translation>Selecione o ponto de rotação do eixo que não faz parte da lista de objetos</translation>
     </message>
     <message>
         <source>Vertical axis</source>
@@ -1895,7 +1863,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByLine</name>
     <message>
         <source>Mirror by Line</source>
-        <translation>Espelho por Linha</translation>
+        <translation>Espelhar por linha</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1907,7 +1875,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Segundo ponto de linha:</translation>
+        <translation>Segundo ponto da linha:</translation>
     </message>
     <message>
         <source>Suffix:</source>
@@ -1919,7 +1887,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
-        <translation>Selecione o primeiro ponto da linha do espelho que nâo faz parte da lista de objetos</translation>
+        <translation>Selecione o primeiro ponto da linha do espelho que não faz parte da lista de objetos</translation>
     </message>
     <message>
         <source>Select second mirror line point</source>
@@ -1927,7 +1895,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select second mirror line point that is not part of the list of objects</source>
-        <translation>Selecione o segundo ponto da linha do espelho que nâo faz parte da lista de objetos</translation>
+        <translation>Selecione o segundo ponto da linha do espelho que não faz parte da lista de objetos</translation>
     </message>
 </context>
 <context>
@@ -1938,7 +1906,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1962,7 +1930,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Move</source>
@@ -1982,7 +1950,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>rotação:</translation>
+        <translation>Rotação:</translation>
     </message>
     <message>
         <source>Center point</source>
@@ -2001,7 +1969,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centimetros</translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -2009,11 +1977,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Nome único da peça de molde</translation>
+        <translation>Nome único da peça do molde</translation>
     </message>
     <message>
         <source>Choose unique pattern piece name.</source>
-        <translation>Escolha um nome único para peça de modelagem.</translation>
+        <translation>Escolha um nome único para a peça do molde.</translation>
     </message>
     <message>
         <source>New pattern</source>
@@ -2021,7 +1989,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Draft block name:</source>
@@ -2031,12 +1999,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
-        <translation>Selecione o segundo pontoda linha</translation>
+        <translation>Selecione o segundo ponto da linha</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2048,7 +2012,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2076,7 +2040,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Ponto - Na Perpendicular</translation>
+        <translation>Ponto - na perpendicular</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2084,7 +2048,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -2096,7 +2060,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>rotação:</translation>
+        <translation>Rotação:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -2119,7 +2083,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Heights and Sizes</source>
-        <translation>Alturas e Tamanhos</translation>
+        <translation>Alturas e tamanhos</translation>
     </message>
     <message>
         <source>All heights (cm)</source>
@@ -2131,7 +2095,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Altura e tamanho padrões</translation>
+        <translation>Altura e tamanho padrão</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -2155,7 +2119,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Call context menu for edit</source>
-        <translation>Chamar menu de contexto para edição</translation>
+        <translation>Abrir menu de contexto para editar</translation>
     </message>
     <message>
         <source>No image</source>
@@ -2163,15 +2127,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Delete image</source>
-        <translation>Remover imagem</translation>
+        <translation>Excluir imagem</translation>
     </message>
     <message>
         <source>Change image</source>
-        <translation>Trocar imagem</translation>
+        <translation>Alterar imagem</translation>
     </message>
     <message>
         <source>Save image to file</source>
-        <translation>Salvar imagem para arquivo</translation>
+        <translation>Salvar imagem em arquivo</translation>
     </message>
     <message>
         <source>Show image</source>
@@ -2179,7 +2143,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Image for pattern</source>
-        <translation>Imagem para padrâo</translation>
+        <translation>Imagem do molde</translation>
     </message>
     <message>
         <source>Images</source>
@@ -2187,7 +2151,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save File</source>
-        <translation>Salvar Arquivo</translation>
+        <translation>Salvar arquivo</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -2203,7 +2167,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
-        <translation>&lt;Empty&gt;</translation>
+        <translation>&lt;Vazio&gt;</translation>
     </message>
     <message>
         <source>File was not saved yet.</source>
@@ -2211,7 +2175,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show in Finder</source>
-        <translation>Mostrar no Localizador</translation>
+        <translation>&lt;Empty&gt;</translation>
     </message>
     <message>
         <source>Pattern name:</source>
@@ -2223,7 +2187,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Company/Designer name:</source>
-        <translation>Nome da Empresa/Modelista:</translation>
+        <translation>Nome da empresa/modelista:</translation>
     </message>
     <message>
         <source>Customer name:</source>
@@ -2231,7 +2195,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>From multisize measurements</source>
-        <translation>A partir de medições multisize</translation>
+        <translation>A partir de medidas multisize</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -2239,19 +2203,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>For technical notes</source>
-        <translation>Para notas tâcnicas</translation>
+        <translation>Para notas técnicas</translation>
     </message>
     <message>
         <source>Label data</source>
-        <translation>Dados do râtulo</translation>
+        <translation>Dados do rótulo</translation>
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Modelo de etiqueta:</translation>
+        <translation>Modelo de rótulo:</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Editar râtulo do padrâo</translation>
+        <translation>Editar rótulo do molde</translation>
     </message>
     <message>
         <source>Edit template</source>
@@ -2267,15 +2231,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save label data.</source>
-        <translation>Salvar dados do râtulo.</translation>
+        <translation>Salvar dados do rótulo.</translation>
     </message>
     <message>
         <source>Label data were changed. Do you want to save them before editing label template?</source>
-        <translation>Os dados do râtulo foram alterados. Vocâ quer salvâ-los antes de editar o modelo do râtulo?</translation>
+        <translation>Os dados do rótulo foram alterados. Deseja salvá-los antes de editar o modelo do rótulo?</translation>
     </message>
     <message>
         <source>Pattern preferences</source>
-        <translation>Preferâncias de padrâes</translation>
+        <translation>Preferências do molde</translation>
     </message>
 </context>
 <context>
@@ -2294,11 +2258,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Take:</source>
-        <translation>Pegar:</translation>
+        <translation>Usar:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Ponto - intersecção Arco e Tangente</translation>
+        <translation>Ponto - interseção entre arco e tangente</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2306,11 +2270,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2320,16 +2284,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogPointOfContact</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select point of center of arc</source>
-        <translation>Selecione o ponto central da curva</translation>
+        <translation>Selecione o centro do arco</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Selecione o segundo pontoda linha</translation>
+        <translation>Selecione o segundo ponto da linha</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -2341,7 +2301,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2357,7 +2317,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Ponto - intersecção Arco e Linha</translation>
+        <translation>Ponto - interseção entre arco e linha</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2365,19 +2325,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>1â ponto da linha:</translation>
+        <translation>1º ponto da linha:</translation>
     </message>
     <message>
         <source>2nd line point</source>
-        <translation>2â ponto de linha</translation>
+        <translation>2º ponto da linha</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2404,11 +2364,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Take:</source>
-        <translation>Pegar:</translation>
+        <translation>Escolher:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Ponto - Arcos de intersecção</translation>
+        <translation>Ponto - interseção de arcos</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2416,11 +2376,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2443,7 +2403,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Ponto - intersecção de Curvas</translation>
+        <translation>Ponto - interseção de curvas</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2451,19 +2411,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>Tomada vertical:</translation>
+        <translation>Escolha vertical:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>Tomada horizontal:</translation>
+        <translation>Escolha horizontal:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2478,11 +2438,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Application Preferences</source>
-        <translation>Preferâncias do aplicativo</translation>
+        <translation>Preferências do aplicativo</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Em geral</translation>
+        <translation>Geral</translation>
     </message>
     <message>
         <source>File Paths</source>
@@ -2490,7 +2450,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Graphics</source>
-        <translation>Grâficos</translation>
+        <translation>Gráficos</translation>
     </message>
 </context>
 <context>
@@ -2505,7 +2465,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2525,7 +2485,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation pt:</source>
-        <translation>rotação pt:</translation>
+        <translation>Ponto de rotação:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2537,14 +2497,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
-        <translation>Selecione o ponto de rotação que nâo faz parte da lista de objetos</translation>
+        <translation>Selecione o ponto de rotação que não faz parte da lista de objetos</translation>
     </message>
 </context>
 <context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Preferâncias</translation>
+        <translation>Preferências</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -2558,16 +2518,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Selecione o primeiro ponto da linha</translation>
     </message>
     <message>
         <source>Select second point of line</source>
-        <translation>Selecione o segundo pontoda linha</translation>
+        <translation>Selecione o segundo ponto da linha</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2579,7 +2535,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2611,7 +2567,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Ponto - Comprimento da Linha</translation>
+        <translation>Ponto - distância até a linha</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2619,11 +2575,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2662,11 +2618,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>X coordinate:</source>
@@ -2693,7 +2649,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select last point of curve</source>
-        <translation>Selecione o âltimo ponto da curva</translation>
+        <translation>Selecione o último ponto da curva</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -2717,7 +2673,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid spline</source>
-        <translation>Spline inválido</translation>
+        <translation>Spline inválida</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2725,23 +2681,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
         <translation>Valor</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
-        <translation>Editar primeiro ângulo do ponto de controle</translation>
+        <translation>Editar ângulo do primeiro ponto de controle</translation>
     </message>
     <message>
         <source>Edit second control point angle</source>
-        <translation>Editar segundo ângulo do ponto de controle</translation>
+        <translation>Editar ângulo do segundo ponto de controle</translation>
     </message>
     <message>
         <source>Edit first control point length</source>
@@ -2757,11 +2709,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>O comprimento nâo pode ser negativo</translation>
+        <translation>O comprimento não pode ser negativo</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2769,7 +2721,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Curva - Interativo</translation>
+        <translation>Curva - interativa</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2829,8 +2781,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Fórmula do comprimento do arco de curva (aplicada se o campo estiver preenchido)
-Edit curve length -&gt; Editar comprimento da curva</translation>
+        <translation>Fórmula do comprimento do arco da curva (aplicada se preenchida)</translation>
     </message>
     <message>
         <source>Edit curve length</source>
@@ -2881,23 +2832,19 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
         <translation>Valor</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
-        <translation>Editar primeiro ângulo do ponto de controle</translation>
+        <translation>Editar ângulo do primeiro ponto de controle</translation>
     </message>
     <message>
         <source>Edit second control point angle</source>
-        <translation>Editar segundo ângulo do ponto de controle</translation>
+        <translation>Editar ângulo do segundo ponto de controle</translation>
     </message>
     <message>
         <source>Edit first control point length</source>
@@ -2913,15 +2860,15 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
-        <translation>O comprimento nâo pode ser negativo</translation>
+        <translation>O comprimento não pode ser negativo</translation>
     </message>
     <message>
         <source>Not used</source>
-        <translation>Nâo usado</translation>
+        <translation>Não usado</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2929,7 +2876,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interativo</translation>
+        <translation>Spline - interativo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2968,7 +2915,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Value can&apos;t be 0</source>
-        <translation>O valor nâo pode ser 0</translation>
+        <translation>O valor não pode ser 0</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
@@ -2992,11 +2939,11 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Ponto mais â esquerda</translation>
+        <translation>Ponto mais à esquerda</translation>
     </message>
     <message>
         <source>Rightmost point</source>
-        <translation>Ponto mais â direita</translation>
+        <translation>Ponto mais à direita</translation>
     </message>
     <message>
         <source>by length</source>
@@ -3012,15 +2959,15 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>by second edge symmetry</source>
-        <translation>por simetria de segunda aresta</translation>
+        <translation>pela simetria da segunda aresta</translation>
     </message>
     <message>
         <source>by first edge right angle</source>
-        <translation>pela primeira aresta ângulo reto</translation>
+        <translation>pelo ângulo reto da primeira aresta</translation>
     </message>
     <message>
         <source>by second edge right angle</source>
-        <translation>por segunda aresta ângulo reto</translation>
+        <translation>pelo ângulo reto da segunda aresta</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
@@ -3028,7 +2975,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Value can&apos;t be less than 0</source>
-        <translation>O valor nâo pode ser menor que 0</translation>
+        <translation>O valor não pode ser menor que 0</translation>
     </message>
     <message>
         <source>Result Value</source>
@@ -3036,11 +2983,11 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Angle Calculation</source>
-        <translation>Câlculo do ângulo</translation>
+        <translation>Cálculo do ângulo</translation>
     </message>
     <message>
         <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
-        <translation>Os ângulos sâo especificados em graus, ou seja, um cârculo completo equivale a 360 graus. Valores positivos para um ângulo significam sentido anti-horârio, enquanto um valor negativo significa sentido horârio. Zero grau estâ na posição de 3 horas.</translation>
+        <translation>Os ângulos são especificados em graus, ou seja, um círculo completo equivale a 360°. Valores positivos para um ângulo significam sentido anti-horário, enquanto valores negativos significam sentido horário. Zero grau está na posição das 3 horas.</translation>
     </message>
 </context>
 <context>
@@ -3055,7 +3002,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Select second point</source>
-        <translation>Selecioneo segundo ponto</translation>
+        <translation>Selecione o segundo ponto</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -3067,7 +3014,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Ponto - intersecção Eixo e Triângulo</translation>
+        <translation>Ponto - interseção entre eixo e triângulo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3075,19 +3022,19 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>1â ponto do eixo:</translation>
+        <translation>1º ponto do eixo:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>2â ponto do eixo:</translation>
+        <translation>2º ponto do eixo:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3102,15 +3049,15 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>Select the first dart point</source>
-        <translation>Selecione o primeiro ponto de dardo</translation>
+        <translation>Selecione o primeiro ponto do dardo</translation>
     </message>
     <message>
         <source>Select the second dart point</source>
-        <translation>Selecione o segundo ponto de dardo</translation>
+        <translation>Selecione o segundo ponto do dardo</translation>
     </message>
     <message>
         <source>Select the third dart point</source>
-        <translation>Selecione o terceiro ponto de dardo</translation>
+        <translation>Selecione o terceiro ponto do dardo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3118,35 +3065,35 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>1st base point:</source>
-        <translation>1â ponto base:</translation>
+        <translation>1º ponto base:</translation>
     </message>
     <message>
         <source>2nd base point:</source>
-        <translation>2â ponto base:</translation>
+        <translation>2º ponto base:</translation>
     </message>
     <message>
         <source>1st dart point:</source>
-        <translation>1â ponto de dardo:</translation>
+        <translation>1º ponto do dardo:</translation>
     </message>
     <message>
         <source>2nd dart point:</source>
-        <translation>2â ponto de dardo:</translation>
+        <translation>2º ponto do dardo:</translation>
     </message>
     <message>
         <source>3rd dart point:</source>
-        <translation>3â ponto de dardo:</translation>
+        <translation>3º ponto do dardo:</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Dardos Verdadeiros</translation>
+        <translation>Dardos verdadeiros</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Point name 1:</source>
@@ -3161,7 +3108,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     <name>DialogUndo</name>
     <message>
         <source>Broken formula</source>
-        <translation>Fârmula quebrada</translation>
+        <translation>Fórmula quebrada</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
@@ -3169,7 +3116,7 @@ Edit curve length -&gt; Editar comprimento da curva</translation>
     </message>
     <message>
         <source>&amp;Fix formula</source>
-        <translation>Fârmula &amp;Fix</translation>
+        <translation>&amp;Corrigir fórmula</translation>
     </message>
     <message>
         <source>Seamly2D encountered an error while computing a formula.
@@ -3182,7 +3129,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     <name>DialogVariables</name>
     <message>
         <source>Variables</source>
-        <translation>Variâveis</translation>
+        <translation>Variáveis</translation>
     </message>
     <message>
         <source>Filter:</source>
@@ -3194,7 +3141,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Custom variables</source>
-        <translation>Variâveis personalizadas</translation>
+        <translation>Variáveis personalizadas</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3202,27 +3149,27 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Formula</source>
-        <translation>Fârmula</translation>
+        <translation>Fórmula</translation>
     </message>
     <message>
         <source>Move measurement up</source>
-        <translation>Mover medição para cima</translation>
+        <translation>Mover medida para cima</translation>
     </message>
     <message>
         <source>Move measurement down</source>
-        <translation>Mover medição para baixo</translation>
+        <translation>Mover medida para baixo</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Add custom variable</source>
-        <translation>Adicionar variâvel personalizada</translation>
+        <translation>Adicionar variável personalizada</translation>
     </message>
     <message>
         <source>Remove custom variable</source>
-        <translation>Remover variâvel personalizada</translation>
+        <translation>Remover variável personalizada</translation>
     </message>
     <message>
         <source>Details</source>
@@ -3234,7 +3181,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Unique variable name</source>
-        <translation>Nome de variâvel exclusivo</translation>
+        <translation>Nome de variável exclusivo</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -3242,11 +3189,11 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Fârmula:</translation>
+        <translation>Fórmula:</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -3254,7 +3201,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Refresh a pattern with all changes you made</source>
-        <translation>Atualizar um padrâo com todas as alteraçães feitas</translation>
+        <translation>Atualizar o molde com todas as alterações feitas</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -3298,7 +3245,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Arc radiuses</source>
-        <translation>Raios de arco</translation>
+        <translation>Raios do arco</translation>
     </message>
     <message>
         <source>Arc</source>
@@ -3322,7 +3269,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Resultado invâlido. O valor â infinito ou NaN. Por favor, verifique seus câlculos.</translation>
+        <translation>Resultado inválido. O valor é infinito ou NaN. Por favor, verifique seus cálculos.</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3334,7 +3281,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Edit variable</source>
-        <translation>Editar variâvel</translation>
+        <translation>Editar variável</translation>
     </message>
     <message>
         <source>Description</source>
@@ -3360,7 +3307,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     <name>EditFormulaDialog</name>
     <message>
         <source>Edit formula</source>
-        <translation>Editar fârmula</translation>
+        <translation>Editar fórmula</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -3368,7 +3315,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source>Custom Variables</source>
-        <translation>Variâveis personalizadas</translation>
+        <translation>Variáveis personalizadas</translation>
     </message>
     <message>
         <source>Line Lengths</source>
@@ -3388,8 +3335,7 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Comprimentos dos
-pontos de controle</translation>
+        <translation> Comprimentos dos pontos de controle</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -3397,11 +3343,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Functions</source>
-        <translation>Funçães</translation>
+        <translation>Funções</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Fârmula:</translation>
+        <translation>Fórmula:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3409,27 +3355,27 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Fârmula clara</translation>
+        <translation>Limpar fórmula</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Redefinir para a fârmula original</translation>
+        <translation>Redefinir para a fórmula original</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Inserir variâvel na fârmula</translation>
+        <translation>Inserir variável na fórmula</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
-        <translation>Oculta variâveis de medição que nâo tâm valor</translation>
+        <translation>Oculta variáveis de medição que não têm valor</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
-        <translation>Ocultar medidas vazias</translation>
+        <translation>Ocultar medições vazias</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3441,7 +3387,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
-        <translation>Filtrar lista de variâveis por palavra-chave</translation>
+        <translation>Filtrar lista de variáveis por palavra-chave</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
@@ -3449,11 +3395,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Measurement</source>
-        <translation>medição</translation>
+        <translation>Medição</translation>
     </message>
     <message>
         <source>Custom Variable</source>
-        <translation>Variâvel personalizada</translation>
+        <translation>Variável personalizada</translation>
     </message>
     <message>
         <source>Line length</source>
@@ -3477,7 +3423,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Nâmero</translation>
+        <translation>Número</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -3489,7 +3435,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Full Name:</source>
-        <translation>Nome Completo:</translation>
+        <translation>Nome completo:</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -3512,11 +3458,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Nome exclusivo da peâa padrâo</translation>
+        <translation>Nome exclusivo da peça do molde</translation>
     </message>
     <message>
         <source>Unique group name</source>
-        <translation>Nome de grupo exclusivo</translation>
+        <translation>Nome exclusivo do grupo</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3525,6 +3471,10 @@ pontos de controle</translation>
     <message>
         <source>Lineweight:</source>
         <translation>Espessura da linha:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupo</translation>
     </message>
 </context>
 <context>
@@ -3535,7 +3485,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Clear current and begin new label</source>
-        <translation>Limpar atual e iniciar novo râtulo</translation>
+        <translation>Limpar o atual e iniciar novo rótulo</translation>
     </message>
     <message>
         <source>Import from label template</source>
@@ -3552,12 +3502,12 @@ pontos de controle</translation>
     <message>
         <source>Bold</source>
         <comment>Font formatting</comment>
-        <translation>Audacioso</translation>
+        <translation>Negrito</translation>
     </message>
     <message>
         <source>Italic</source>
         <comment>Font formatting</comment>
-        <translation>itâlico</translation>
+        <translation>Itálico</translation>
     </message>
     <message>
         <source>Aligns with the left edge</source>
@@ -3565,7 +3515,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Centers horizontally in the available space</source>
-        <translation>Centraliza horizontalmente no espaâo disponâvel</translation>
+        <translation>Centraliza horizontalmente no espaço disponível</translation>
     </message>
     <message>
         <source>Aligns with the right edge</source>
@@ -3573,7 +3523,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Additional font size. Use to make a line bigger.</source>
-        <translation>Tamanho de fonte adicional. Use para tornar uma linha maior.</translation>
+        <translation>Tamanho de fonte adicional. Use para aumentar uma linha.</translation>
     </message>
     <message>
         <source>Text:</source>
@@ -3593,7 +3543,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Prâ-visualização</translation>
+        <translation>Pré-visualização</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
@@ -3605,7 +3555,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation>Criar um novo modelo substituirâ o atual. Deseja continuar?</translation>
+        <translation>Criar um novo modelo irá sobrescrever o atual, deseja continuar?</translation>
     </message>
     <message>
         <source>Label template</source>
@@ -3613,7 +3563,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Export label template</source>
-        <translation>Modelo de etiqueta de exportação</translation>
+        <translation>Exportar modelo de etiqueta</translation>
     </message>
     <message>
         <source>template</source>
@@ -3621,7 +3571,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nâo foi possâvel salvar o arquivo</translation>
+        <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
         <source>Import template</source>
@@ -3629,7 +3579,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation>O modelo de importação substituirâ o atual. Vocâ deseja continuar?</translation>
+        <translation>A importação do modelo substituirá o atual. Deseja continuar?</translation>
     </message>
     <message>
         <source>File error.</source>
@@ -3641,19 +3591,19 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Tempo</translation>
+        <translation>Hora</translation>
     </message>
     <message>
         <source>Pattern name</source>
-        <translation>Nome do padrâo</translation>
+        <translation>Nome do molde</translation>
     </message>
     <message>
         <source>Pattern number</source>
-        <translation>Nâmero do padrâo</translation>
+        <translation>Número do molde</translation>
     </message>
     <message>
         <source>Company name or designer name</source>
-        <translation>Nome da empresa ou nome do designer</translation>
+        <translation>Nome da empresa ou do designer</translation>
     </message>
     <message>
         <source>Customer name</source>
@@ -3661,11 +3611,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Pattern file extension</source>
-        <translation>Extensão de arquivo padrão</translation>
+        <translation>Extensão do arquivo do molde</translation>
     </message>
     <message>
         <source>Pattern file name</source>
-        <translation>Nome do arquivo do padrâo</translation>
+        <translation>Nome do arquivo do molde</translation>
     </message>
     <message>
         <source>Measurements file name</source>
@@ -3681,35 +3631,35 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Measurements file extension</source>
-        <translation>Extensão de arquivo medição</translation>
+        <translation>Extensão do arquivo de medições</translation>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>Letra de pedaâo</translation>
+        <translation>Letra da peça</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>Anotação da peâa</translation>
+        <translation>Anotação da peça</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>Orientação da peâa</translation>
+        <translation>Orientação da peça</translation>
     </message>
     <message>
         <source>Piece rotation</source>
-        <translation>rotação de peâas</translation>
+        <translation>Rotação da peça</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>Inclinação da peâa</translation>
+        <translation>Inclinação da peça</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>Posição de dobra da peâa</translation>
+        <translation>Posição de dobra da peça</translation>
     </message>
     <message>
         <source>Piece name</source>
-        <translation>Nome da peâa</translation>
+        <translation>Nome da peça</translation>
     </message>
     <message>
         <source>Quantity</source>
@@ -3729,7 +3679,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Resina</translation>
+        <translation>Forro</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
@@ -3737,7 +3687,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Interfaceamento</translation>
+        <translation>Entretela</translation>
     </message>
     <message>
         <source>Material: Interlining</source>
@@ -3761,7 +3711,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>em dobra</translation>
+        <translation>na dobra</translation>
     </message>
 </context>
 <context>
@@ -3779,11 +3729,11 @@ pontos de controle</translation>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translation>Layout de exportação</translation>
+        <translation>Exportar layout</translation>
     </message>
     <message>
         <source>Binary form</source>
-        <translation>Forma binâria</translation>
+        <translation>Formato binário</translation>
     </message>
     <message>
         <source>Text as paths</source>
@@ -3827,7 +3777,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Certo:</translation>
+        <translation>Direita:</translation>
     </message>
     <message>
         <source>Left:</source>
@@ -3835,11 +3785,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Principal:</translation>
+        <translation>Topo:</translation>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Fundo:</translation>
+        <translation>Inferior:</translation>
     </message>
     <message>
         <source>Templates: </source>
@@ -3851,7 +3801,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>The base filename does not match a regular expression.</source>
-        <translation>O nome do arquivo base nâo corresponde a uma expressâo regular.</translation>
+        <translation>O nome base do arquivo não corresponde a uma expressão regular.</translation>
     </message>
     <message>
         <source>Select folder</source>
@@ -3859,27 +3809,27 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Tried to use out of range format number.</source>
-        <translation>Tentou usar um nâmero de formato fora do intervalo.</translation>
+        <translation>Tentou usar um número de formato fora do intervalo.</translation>
     </message>
     <message>
         <source>Selected not present format.</source>
-        <translation>Formato selecionado nâo presente.</translation>
+        <translation>Formato selecionado não está disponível.</translation>
     </message>
     <message>
         <source>The destination directory doesn&apos;t exist or is not readable.</source>
-        <translation>O diretârio de destino nâo existe ou nâo â legâvel.</translation>
+        <translation>O diretório de destino não existe ou não é legível.</translation>
     </message>
     <message>
         <source>%1 already exists.</source>
-        <translation>%1 jâ existe.</translation>
+        <translation>%1 já existe.</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
-        <translation>%1 arquivos com nome base %2 jâ existem.</translation>
+        <translation>%1 arquivos com nome base %2 já existem.</translation>
     </message>
     <message>
         <source>Do you want to replace them?</source>
-        <translation>Vocâ quer substituâ-los?</translation>
+        <translation>Deseja substituí-los?</translation>
     </message>
     <message>
         <source>Confirm Export</source>
@@ -3891,11 +3841,11 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Margins (tiled PDF only)</source>
-        <translation>Margens (somente PDF em mosaico)</translation>
+        <translation>Margens (apenas PDF em mosaico)</translation>
     </message>
     <message>
         <source>Paper format (tiled PDF only)</source>
-        <translation>Formato de papel (somente PDF em mosaico)</translation>
+        <translation>Formato de papel (apenas PDF em mosaico)</translation>
     </message>
     <message>
         <source>Export Selected Sizes</source>
@@ -3934,7 +3884,7 @@ pontos de controle</translation>
     </message>
     <message>
         <source>Failed</source>
-        <translation>Fracassado</translation>
+        <translation>Falhou</translation>
     </message>
 </context>
 <context>
@@ -3943,39 +3893,39 @@ pontos de controle</translation>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Não é possível abrir o ficheiro
+        <translation>Não é possível abrir o arquivo
 %1
-para escrever</translation>
+para escrita</translation>
     </message>
     <message>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Não é possível obter acesso exclusivo ao ficheiro
+        <translation>Não foi possível obter acesso exclusivo ao arquivo
 %1
-Possivelmente, o ficheiro já está a ser descarregado.</translation>
+Possivelmente o arquivo já está sendo baixado.</translation>
     </message>
     <message>
         <source>File download failed: %1.</source>
-        <translation>Falha no download do arquivo: %1.</translation>
+        <translation>Falha ao baixar o arquivo: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>O download foi iniciado, o instalador serâ aberto assim que terminar o download</translation>
+        <translation>O download foi iniciado. O instalador será aberto assim que o download terminar</translation>
     </message>
     <message>
         <source>Feed download failed: %1.</source>
-        <translation>Falha no download do feed: %1.</translation>
+        <translation>Falha ao baixar o feed: %1.</translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>Nâo hâ novos lanâamentos disponâveis.</translation>
+        <translation>Nenhuma nova versão disponível.</translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation>Está disponível uma nova versão %1.
-Deseja descarregá-la?</translation>
+        <translation>Uma nova versão %1 está disponível.
+Deseja baixá-la?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3990,7 +3940,7 @@ Deseja descarregá-la?</translation>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation>Gerente de grupo</translation>
+        <translation>Gerenciador de grupos</translation>
     </message>
     <message>
         <source>Show All Groups</source>
@@ -4010,11 +3960,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Adicionar um novo grupo â lista</translation>
+        <translation>Adicionar um novo grupo à lista</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
-        <translation>Excluir grupo ativo da lista</translation>
+        <translation>Excluir o grupo ativo da lista</translation>
     </message>
     <message>
         <source>Edit group properties</source>
@@ -4042,15 +3992,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Nome Existe</translation>
+        <translation>Nome já existe</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>A ação nâo pode ser concluâda porque o nome do grupo jâ existe.</translation>
+        <translation>A ação não pode ser concluída porque o nome do grupo já existe.</translation>
     </message>
     <message>
         <source>Edit Group</source>
-        <translation>Editar Grupo</translation>
+        <translation>Editar grupo</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4058,15 +4008,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Show which groups in the list are visible</source>
-        <translation>Mostrar quais grupos na lista sâo visâveis</translation>
+        <translation>Mostrar quais grupos na lista são visíveis</translation>
     </message>
     <message>
         <source>Show which groups in the list are locked</source>
-        <translation>Mostrar quais grupos na lista estâo bloqueados</translation>
+        <translation>Mostrar quais grupos na lista estão bloqueados</translation>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation>Mostrar quais grupos contâm objetos</translation>
+        <translation>Mostrar quais grupos contêm objetos</translation>
     </message>
     <message>
         <source>Unknown Object</source>
@@ -4086,27 +4036,27 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>%1 - Point On Line</source>
-        <translation>%1 - Ponto na Linha</translation>
+        <translation>%1 - Ponto na linha</translation>
     </message>
     <message>
         <source>%1 - Point Length to Line</source>
-        <translation>%1 - Comprimento do ponto atâ a linha</translation>
+        <translation>%1 - Distância do ponto até a linha</translation>
     </message>
     <message>
         <source>%1 - Point On Perpendicular</source>
-        <translation>%1 - Ponto na Perpendicular</translation>
+        <translation>%1 - Ponto na perpendicular</translation>
     </message>
     <message>
         <source>%1 - Point On Bisector</source>
-        <translation>%1 - Ponto na Bissetriz</translation>
+        <translation>%1 - Ponto na bissetriz</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Pontos que Intersectam Linhas</translation>
+        <translation>%1 - Ponto de interseção de linhas</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
-        <translation>%1 - Curva Interativa</translation>
+        <translation>%1 - Curva interativa</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4114,11 +4064,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
-        <translation>%1 - Curva Fixa</translation>
+        <translation>%1 - Curva fixa</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
-        <translation>%1 - Raio do arco e ângulos</translation>
+        <translation>%1 - Raio e ângulos do arco</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -4130,35 +4080,35 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
-        <translation>%1 - Spline Interativo</translation>
+        <translation>%1 - Spline interativa</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Caminho Spl_</translation>
+        <translation>CaminhoSpl_</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
-        <translation>%1 - Spline Fixo</translation>
+        <translation>%1 - Spline fixa</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
-        <translation>%1 - Ponto Intersecta Arco e Linha</translation>
+        <translation>%1 - Ponto de interseção entre arco e linha</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Ponto intersecção Linha e Perpendicular</translation>
+        <translation>%1 - Ponto de interseção entre linha e reta perpendicular</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
-        <translation>%1 - Ponto Intersecta Eixo e Triângulo</translation>
+        <translation>%1 - Ponto de interseção entre eixo e triângulo</translation>
     </message>
     <message>
         <source>%1 - Point Intersect XY</source>
-        <translation>%1 - Ponto intersecção XY</translation>
+        <translation>%1 - Ponto de interseção XY</translation>
     </message>
     <message>
         <source>%1 - Point On Arc</source>
-        <translation>%1 - Ponto no Arco</translation>
+        <translation>%1 - Ponto no arco</translation>
     </message>
     <message>
         <source>%1 - Point On Curve</source>
@@ -4166,71 +4116,71 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>%1 - Point On Spline</source>
-        <translation>%1 - Ponto na Spline</translation>
+        <translation>%1 - Ponto na spline</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Ponto intersecção Linha e Eixo</translation>
+        <translation>%1 - Ponto de interseção entre linha e eixo</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
-        <translation>%1 - Ponto Intersecta Curva e Eixo</translation>
+        <translation>%1 - Ponto de interseção entre curva e eixo</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arcs</source>
-        <translation>%1 - Arcos de intersecção de Pontos</translation>
+        <translation>%1 - Ponto de interseção de arcos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Ponto Intersecta Cârculos</translation>
+        <translation>%1 - Ponto de interseção de círculos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Pontos que Intersectam Curvas</translation>
+        <translation>%1 - Ponto de interseção de curvas</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Ponto intersecção Cârculo e Tangente</translation>
+        <translation>%1 - Ponto de interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Ponto intersecção Arco e Tangente</translation>
+        <translation>%1 - Ponto de interseção entre arco e tangente</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Dardo Verdadeiro %2_%3_%4</translation>
+        <translation>%1 - Pence verdadeira %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
-        <translation>%1 - Arco Elâptico</translation>
+        <translation>%1 - Arco elíptico</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>ArcoEl_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
-        <translation>%1 - rotação</translation>
+        <translation>%1 - Rotação</translation>
     </message>
     <message>
         <source>%1 - Move</source>
-        <translation>%1 - Move</translation>
+        <translation>%1 - Mover</translation>
     </message>
     <message>
         <source>%1 - Mirror by Line</source>
-        <translation>%1 - Espelho por linha</translation>
+        <translation>%1 - Espelhar por linha</translation>
     </message>
     <message>
         <source>%1 - Mirror by Axis</source>
-        <translation>%1 - Espelho por eixo</translation>
+        <translation>%1 - Espelhar por eixo</translation>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Mover objeto de grupo</translation>
+        <translation>Mover objeto do grupo</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Remover objeto de grupo</translation>
+        <translation>Remover objeto do grupo</translation>
     </message>
     <message>
         <source>Group color</source>
@@ -4250,11 +4200,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Visâvel</translation>
+        <translation>Visível</translation>
     </message>
     <message>
         <source>Group is visible</source>
-        <translation>O grupo â visâvel</translation>
+        <translation>Grupo está visível</translation>
     </message>
     <message>
         <source>Locked</source>
@@ -4262,11 +4212,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Group is locked</source>
-        <translation>O grupo estâ bloqueado</translation>
+        <translation>Grupo está bloqueado</translation>
     </message>
     <message>
         <source>Group has objects</source>
-        <translation>O grupo tem objetos</translation>
+        <translation>Grupo contém objetos</translation>
     </message>
     <message>
         <source>Color</source>
@@ -4277,7 +4227,7 @@ Deseja descarregá-la?</translation>
     <name>HistoryDialog</name>
     <message>
         <source>History</source>
-        <translation>Histâria</translation>
+        <translation>Histórico</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -4289,7 +4239,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Eu ia</translation>
+        <translation>Id</translation>
     </message>
     <message>
         <source>Name</source>
@@ -4313,7 +4263,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Point Length to Line</source>
-        <translation>Comprimento do ponto para a linha</translation>
+        <translation>Distância do ponto à linha</translation>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
@@ -4325,15 +4275,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Pontos que interceptam linhas %1_%2 e %3_%4</translation>
+        <translation>Ponto de interseção entre linhas %1_%2 e %3_%4</translation>
     </message>
     <message>
         <source>Curve Interactive</source>
-        <translation>Curva Interativa</translation>
+        <translation>Curva interativa</translation>
     </message>
     <message>
         <source>Curve Fixed</source>
-        <translation>Curva Fixa</translation>
+        <translation>Curva fixa</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
@@ -4341,91 +4291,91 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Spline Interactive</source>
-        <translation>Spline Interativo</translation>
+        <translation>Spline interativa</translation>
     </message>
     <message>
         <source>Spline Fixed</source>
-        <translation>Spline Fixo</translation>
+        <translation>Spline fixa</translation>
     </message>
     <message>
         <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
-        <translation>Ponto intersecção Arco com centro %1 e Linha %2_%3</translation>
+        <translation>Ponto de interseção entre arco com centro %1 e linha %2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
-        <translation>Ponto intersecção Linha %1_%2 e Perpendicular %3</translation>
+        <translation>Ponto de interseção entre linha %1_%2 e perpendicular %3</translation>
     </message>
     <message>
         <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Ponto de intersecção do eixo %1_%2 e pontos do triângulo %3 e %4</translation>
+        <translation>Ponto de interseção entre eixo %1_%2 e pontos do triângulo %3 e %4</translation>
     </message>
     <message>
         <source>Point Intersect XY of points %1 and %2</source>
-        <translation>Ponto de intersecção XY dos pontos %1 e %2</translation>
+        <translation>Ponto de interseção XY dos pontos %1 e %2</translation>
     </message>
     <message>
         <source>Point On Arc</source>
-        <translation>Ponto no arco</translation>
+        <translation>Ponto no Arco</translation>
     </message>
     <message>
         <source>Point On Curve</source>
-        <translation>Ponto na curva</translation>
+        <translation>Ponto na Curva</translation>
     </message>
     <message>
         <source>Point On Spline</source>
-        <translation>Ponto na Spline</translation>
+        <translation>Ponto na spline</translation>
     </message>
     <message>
         <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>%Ponto Intersecta Linha &amp; %1_%2 e Eixo atravâs do ponto %3</translation>
+        <translation>%Ponto de interseção entre linha &amp; %1_%2 e eixo através do ponto %3</translation>
     </message>
     <message>
         <source>Point Intersect Curve &amp; Axis through point %1</source>
-        <translation>Ponto Intersecta Curva e Eixo atravâs do ponto %1</translation>
+        <translation>Ponto de interseção entre curva e eixo através do ponto %1</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Arcos de intersecção de Pontos</translation>
+        <translation>Ponto de interseção de arcos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Ponto Intersecta Cârculos</translation>
+        <translation>%1 - Ponto de interseção de círculos</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Curvas de intersecção de pontos</translation>
+        <translation>Ponto de interseção de curvas</translation>
     </message>
     <message>
         <source>Point Intersect Circle &amp; Tangent</source>
-        <translation>Ponto intersecção Cârculo e Tangente</translation>
+        <translation>Ponto de interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Ponto intersecção Arco e Tangente</translation>
+        <translation>Ponto de interseção: arco e tangente</translation>
     </message>
     <message>
         <source>True Dart %1_%2_%3</source>
-        <translation>Dardo Verdadeiro %1_%2_%3</translation>
+        <translation>Pinça verdadeira %1_%2_%3</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>ArcoEl_</translation>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
-        <translation>Arco Elâptico com comprimento %1</translation>
+        <translation>Arco elíptico com comprimento %1</translation>
     </message>
     <message>
         <source>Rotation around point %1. Suffix %2</source>
-        <translation>rotação em torno do ponto %1. Sufixo %2</translation>
+        <translation>Rotação em torno do ponto %1. Sufixo %2</translation>
     </message>
     <message>
         <source>Mirror by Line %1_%2. Suffix %3</source>
-        <translation>Espelhar por Linha %1_%2. Sufixo %3</translation>
+        <translation>Espelhar pela linha %1_%2. Sufixo %3</translation>
     </message>
     <message>
         <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>Espelhar por Eixo atravâs de %1 ponto. Sufixo %2</translation>
+        <translation>Espelhar por eixo através do ponto %1. Sufixo %2</translation>
     </message>
     <message>
         <source>Move - rotate around point %1. Suffix %2</source>
@@ -4437,27 +4387,27 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Point Length and Angle from point %1</source>
-        <translation>Comprimento do ponto e ângulo do ponto %1</translation>
+        <translation>Comprimento e ângulo a partir do ponto %1</translation>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
-        <translation>Nâo â possâvel criar registro.</translation>
+        <translation>Não foi possível criar o registro.</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Encontrar anterior</translation>
+        <translation>Localizar anterior</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Encontre o prâximo</translation>
+        <translation>Localizar próximo</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Maiúsculas e minúsculas</translation>
+        <translation>Diferenciar maiúsculas e minúsculas</translation>
     </message>
     <message>
         <source>Search by full word</source>
-        <translation>Pesquise por palavra completa</translation>
+        <translation>Pesquisar por palavra inteira</translation>
     </message>
     <message>
         <source>Seach by regular expression</source>
@@ -4465,7 +4415,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Bloco de Rascunho:</translation>
+        <translation>Bloco de rascunho:</translation>
     </message>
     <message>
         <source>block</source>
@@ -4473,7 +4423,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Radius / Length</source>
-        <translation>Raio / Comprimento</translation>
+        <translation>Raio / comprimento</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -4481,7 +4431,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Arco com Raio, Comprimento, e Ângulo</translation>
+        <translation>Arco com raio, comprimento e ângulo</translation>
     </message>
     <message>
         <source>Center point</source>
@@ -4500,11 +4450,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Id:</source>
-        <translation>Eu ia:</translation>
+        <translation>Id:</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Eu ia</translation>
+        <translation>Id</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -4512,7 +4462,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Lock Image:</source>
-        <translation>Bloqueio de imagem:</translation>
+        <translation>Bloquear imagem:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -4520,7 +4470,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Switch between px and pattern units</source>
-        <translation>Alternar entre unidades px e padrâo</translation>
+        <translation>Alternar entre px e unidades do molde</translation>
     </message>
     <message>
         <source>Unit:</source>
@@ -4536,11 +4486,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Lock aspect ratio</source>
-        <translation>Bloqueio de proporção de aspecto</translation>
+        <translation>Bloquear proporção</translation>
     </message>
     <message>
         <source>Lock Aspect:</source>
-        <translation>Aspecto do bloqueio:</translation>
+        <translation>Bloqueio de proporção:</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -4560,7 +4510,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>rotação:</translation>
+        <translation>Rotação:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -4579,7 +4529,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Trancar</translation>
+        <translation>Bloquear</translation>
     </message>
     <message>
         <source>Order</source>
@@ -4591,7 +4541,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Subir</translation>
+        <translation>Mover para cima</translation>
     </message>
     <message>
         <source>Move down</source>
@@ -4611,11 +4561,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation> - &lt;b&gt;Proporçâo de aspecto bloqueada&lt;/b&gt;</translation>
+        <translation> - &lt;b&gt;Proporção bloqueada&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation>Mover Origem</translation>
+        <translation>Mover origem</translation>
     </message>
 </context>
 <context>
@@ -4626,11 +4576,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Nâo foi possâvel carregar a imagem.</translation>
+        <translation>Não foi possível carregar a imagem.</translation>
     </message>
     <message>
         <source>Could not read the image.</source>
-        <translation>Nâo foi possâvel ler a imagem.</translation>
+        <translation>Não foi possível ler a imagem.</translation>
     </message>
     <message>
         <source>File may be corrupted...</source>
@@ -4638,15 +4588,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
-        <translation>Confirmar exclusâo</translation>
+        <translation>Confirmar exclusão</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Vocâ realmente quer excluir?</translation>
+        <translation>Deseja realmente excluir?</translation>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>A imagem &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; nâo pâde ser encontrada. Vocâ quer atualizar o local do arquivo?</translation>
+        <translation>A imagem &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; não pôde ser encontrada. Deseja atualizar a localização do arquivo?</translation>
     </message>
     <message>
         <source>Loading image</source>
@@ -4665,15 +4615,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Pedaâo:</translation>
+        <translation>Peça:</translation>
     </message>
     <message>
         <source>Nodes:</source>
-        <translation>Nâs:</translation>
+        <translation>Nós:</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Status:</translation>
+        <translation>Estado:</translation>
     </message>
     <message>
         <source>msg</source>
@@ -4681,7 +4631,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Reverter</translation>
+        <translation>Inverter</translation>
     </message>
     <message>
         <source>Notch</source>
@@ -4697,15 +4647,15 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Entalhe</translation>
+        <translation>EntalheT</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>DESENTUPIR</translation>
+        <translation>EntalheU</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>Vinterno</translation>
+        <translation>VInterno</translation>
     </message>
     <message>
         <source>VExternal</source>
@@ -4725,7 +4675,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>No nodes selected. Press Cancel to continue</source>
-        <translation>Nenhum nâ selecionado. Pressione Cancelar para continuar</translation>
+        <translation>Nenhum nó foi selecionado. Pressione Cancelar para continuar</translation>
     </message>
     <message>
         <source> was auto reversed.</source>
@@ -4733,18 +4683,18 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation> pode ter de ser invertida manualmente.</translation>
+        <translation> pode precisar ser invertido manualmente.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Inserir nâs</translation>
+        <translation>Inserir nós</translation>
     </message>
 </context>
 <context>
     <name>InternalPathDialog</name>
     <message>
         <source>Internal Path Tool</source>
-        <translation>Ferramenta de Caminho Interno</translation>
+        <translation>Ferramenta de caminho interno</translation>
     </message>
     <message>
         <source>Path</source>
@@ -4776,23 +4726,23 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Mover linha para o topo da lista</translation>
+        <translation>Mover a linha para o topo da lista</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Mover linha uma linha para cima</translation>
+        <translation>Mover a linha uma posição para cima</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Mover linha uma linha para baixo</translation>
+        <translation>Mover a linha uma posição para baixo</translation>
     </message>
     <message>
         <source>Move row to bottom of list</source>
-        <translation>Mover linha para o final da lista</translation>
+        <translation>Mover a linha para o final da lista</translation>
     </message>
     <message>
         <source>The path is a cut contour</source>
-        <translation>O caminho é um contorno cortado</translation>
+        <translation>O caminho é um contorno de corte</translation>
     </message>
     <message>
         <source>Cut on fabric</source>
@@ -4816,7 +4766,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Auxiliar de fórmula</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4912,11 +4862,11 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Select to designate the corner point as a notch</source>
-        <translation>Selecione para designar o ponto de canto como um entalhe</translation>
+        <translation>Selecione para designar o ponto de canto como entalhe</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Intersecção</translation>
+        <translation>Interseção</translation>
     </message>
     <message>
         <source>Geomtery</source>
@@ -4924,19 +4874,19 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Redefinir ângulo de entalhe para o padrão.</translation>
+        <translation>Redefinir ângulo do entalhe para o padrão.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Contar:</translation>
+        <translation>Contagem:</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Redefinir entalhe com padrão.</translation>
+        <translation>Redefinir largura do entalhe para o padrão.</translation>
     </message>
     <message>
         <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Esta opção só tem efeito se o segundo entalhe na linha de costura estiver habilitado nas preferências globais. A opção ajuda a desabilitar o segundo entalhe somente para este entalhe.</translation>
+        <translation>Esta opção tem efeito apenas se o segundo entalhe na linha de costura estiver habilitado nas preferências globais. Permite desativar o segundo entalhe apenas para este entalhe.</translation>
     </message>
     <message>
         <source>Show second notch on seam line</source>
@@ -4960,7 +4910,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation>Reverso</translation>
+        <translation>Inverter</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4972,7 +4922,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Editar tamanho da margem de costura</translation>
+        <translation>Editar largura da margem de costura</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
@@ -5004,7 +4954,7 @@ Deseja descarregá-la?</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Cada ponto na &lt;b&gt;margem de costura personalizada&lt;/b&gt; deve ser único!</translation>
+        <translation>Cada ponto no caminho da &lt;b&gt;margem de costura personalizada&lt;/b&gt; deve ser único!</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -5043,7 +4993,7 @@ Deseja descarregá-la?</translation>
     <name>InternalStrings</name>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER TIPO DE GARANTIA, INCLUINDO A GARANTIA DE CONCEPÇÃO, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM FIM ESPECÍFICO.</translation>
+        <translation>O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER TIPO DE GARANTIA, INCLUINDO GARANTIAS DE PROJETO, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM DETERMINADO FIM.</translation>
     </message>
     <message>
         <source>Seamly2D is an application for computer-aided design of garment patterns.
@@ -5057,17 +5007,17 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>O Seamly2D é uma aplicação para a conceção de moldes de vestuário assistida por computador.
+        <translation>Seamly2D é um aplicativo para desenho assistido por computador de moldes de vestuário.
 
-Seamly2D é um software livre (open source).
+Seamly2D é um software livre (código aberto).
 
-Todas as marcas ou nomes de produtos são marcas comerciais ou marcas registadas dos respectivos titulares.
+Todos os nomes de marcas ou produtos são marcas comerciais ou marcas registradas de seus respectivos proprietários.
 
 © 2017-2026 Projeto Seamly2D.
 
 Partes deste software © 2008-2026 The Qt Company Ltd.
 
-O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER TIPO, INCLUINDO A GARANTIA DE DESIGN, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM DETERMINADO FIM.</translation>
+O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE QUALQUER TIPO, INCLUINDO GARANTIAS DE PROJETO, COMERCIALIZAÇÃO E ADEQUAÇÃO A UM DETERMINADO FIM.</translation>
     </message>
 </context>
 <context>
@@ -5078,7 +5028,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Take:</source>
-        <translation>Pegar:</translation>
+        <translation>Selecionar:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -5101,16 +5051,12 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
         <translation>Valor</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar câlculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Select a circle center</source>
-        <translation></translation>
+        <translation>Selecione o centro do círculo</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -5122,19 +5068,19 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>O raio nâo pode ser negativo</translation>
+        <translation>O raio não pode ser negativo</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation></translation>
+        <translation>Ponto - interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -5145,11 +5091,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     <name>IntersectCircleTangentTool</name>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>intersecção de cârculo e tangente</translation>
+        <translation>Interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Circle and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Cârculo e Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não foi possível encontrar o ponto de interseção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Círculo e Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
 </context>
 <context>
@@ -5160,7 +5106,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Take:</source>
-        <translation>Pegar:</translation>
+        <translation>Selecionar:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -5168,7 +5114,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Circle 1</source>
-        <translation>Cârculo 1</translation>
+        <translation>Círculo 1</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -5184,31 +5130,27 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar câlculo completo na caixa de mensagem&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Circle 2</source>
-        <translation>Cârculo 2</translation>
+        <translation>Círculo 2</translation>
     </message>
     <message>
         <source>Select second circle center</source>
-        <translation>Selecione o segundo centro do cârculo</translation>
+        <translation>Selecione o centro do segundo círculo</translation>
     </message>
     <message>
         <source>Edit first circle radius</source>
-        <translation>Editar raio do primeiro cârculo</translation>
+        <translation>Editar raio do primeiro círculo</translation>
     </message>
     <message>
         <source>Edit second circle radius</source>
-        <translation>Editar raio do segundo cârculo</translation>
+        <translation>Editar raio do segundo círculo</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5216,19 +5158,19 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>O raio nâo pode ser negativo</translation>
+        <translation>O raio não pode ser negativo</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Ponto - intersecção de Cârculos</translation>
+        <translation>Ponto - interseção de círculos</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome exclusivo.</translation>
+        <translation>Escolha um nome único.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -5239,11 +5181,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     <name>IntersectCirclesTool</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Circles&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 dos cârculos&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não foi possível encontrar o ponto de interseção %1 dos círculos&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Point Intersect Circles</source>
-        <translation>Pontos Intersectam Cârculos</translation>
+        <translation>Ponto - interseção de círculos</translation>
     </message>
 </context>
 <context>
@@ -5274,7 +5216,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Three groups: big, middle, small</source>
-        <translation>Três grupos: grande médio, pequeno</translation>
+        <translation>Três grupos: grande, médio, pequeno</translation>
     </message>
     <message>
         <source>Two groups: big, small</source>
@@ -5282,11 +5224,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Descending area</source>
-        <translation>Ârea descendente</translation>
+        <translation>Área decrescente</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centimetros</translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -5294,19 +5236,19 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Pixels</source>
-        <translation>Píxels</translation>
+        <translation>Pixels</translation>
     </message>
     <message>
         <source>Auto crop unused length</source>
-        <translation>Cortar automaticamente comprimento não usado</translation>
+        <translation>Cortar automaticamente o comprimento não utilizado</translation>
     </message>
     <message>
         <source>Unite pages (if possible)</source>
-        <translation>Unir páginas (se for possível)</translation>
+        <translation>Unir páginas (se possível)</translation>
     </message>
     <message>
         <source>Gap width:</source>
-        <translation>Largura da lacuna:</translation>
+        <translation>Largura do espaço:</translation>
     </message>
     <message>
         <source>Save length of the sheet</source>
@@ -5330,7 +5272,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Base:</translation>
+        <translation>Inferior:</translation>
     </message>
     <message>
         <source>Wrong fields.</source>
@@ -5344,7 +5286,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
         <translation>
 	Três grupos: grande, médio, pequeno = 0;
 	Dois grupos: grande, pequeno = 1;
-	Área descendente = 2</translation>
+	Área decrescente = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
@@ -5352,11 +5294,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Shift/Offset length:</source>
-        <translation>Comprimento de deslocamento/deslocamento:</translation>
+        <translation>Comprimento do deslocamento:</translation>
     </message>
     <message>
         <source>Rule for choosing the next workpiece</source>
-        <translation>Regra para escolha da próxima peça</translation>
+        <translation>Regra para escolher a próxima peça</translation>
     </message>
     <message>
         <source>Divide into strips</source>
@@ -5368,11 +5310,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation>Defina o multiplicador para o comprimento da maior peâa de trabalho no layout.</translation>
+        <translation>Defina o multiplicador para o comprimento da maior peça de trabalho no layout.</translation>
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation>Habilitar para folhas com altura grande acelerarâ a criação.</translation>
+        <translation>Habilitar para folhas de grande altura acelerará a criação.</translation>
     </message>
     <message>
         <source>Printer:</source>
@@ -5381,7 +5323,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Nenhum</translation>
+        <translation>Nenhuma</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5389,7 +5331,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Text will be converted to paths</source>
-        <translation>O texto serâ convertido em caminhos</translation>
+        <translation>O texto será convertido em caminhos</translation>
     </message>
     <message>
         <source>Export text as paths</source>
@@ -5405,15 +5347,15 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Layout print settings</source>
-        <translation>Configuraçães de impressâo de layout</translation>
+        <translation>Configurações de impressão do layout</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Margins go beyond printing. Apply settings anyway?</source>
-        <translation>As margens vâo alâm da impressâo. Aplicar configuraçães mesmo assim?</translation>
+        <translation>As margens vão além da impressão. Aplicar as configurações mesmo assim?</translation>
     </message>
 </context>
 <context>
@@ -5424,30 +5366,30 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Linha sâlida</translation>
+        <translation>Linha sólida</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Traâo</translation>
+        <translation>Traço</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Ponto</translation>
+        <translation>Pontilhado</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Traâo Ponto</translation>
+        <translation>Traço Ponto</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Traâo Ponto Ponto</translation>
+        <translation>Traço Ponto Ponto</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Seamly2D</source>
-        <translation>Sem emendas2D</translation>
+        <translation>Seamly2D</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
@@ -5455,7 +5397,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Point</source>
-        <translation>Apontar</translation>
+        <translation>Ponto</translation>
     </message>
     <message>
         <source>Tools for creating lines.</source>
@@ -5483,11 +5425,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>Arquivo</translation>
+        <translation>&amp;Arquivo</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>Ajuda</translation>
+        <translation>&amp;Ajuda</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -5503,7 +5445,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Create a new pattern</source>
-        <translation>Crie um novo padrâo</translation>
+        <translation>Criar um novo molde</translation>
     </message>
     <message>
         <source>Open</source>
@@ -5511,11 +5453,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>Abrir</translation>
+        <translation>&amp;Abrir</translation>
     </message>
     <message>
         <source>Open file with pattern</source>
-        <translation>Abrir arquivo com padrâo</translation>
+        <translation>Abrir arquivo com molde</translation>
     </message>
     <message>
         <source>Save</source>
@@ -5523,15 +5465,15 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Save pattern</source>
-        <translation>Salvar padrâo</translation>
+        <translation>Salvar molde</translation>
     </message>
     <message>
         <source>Save As...</source>
-        <translation>Salvar Como...</translation>
+        <translation>Salvar como...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
-        <translation>Salvar padrâo ainda nâo salvo</translation>
+        <translation>Salvar molde que ainda não foi salvo</translation>
     </message>
     <message>
         <source>Details</source>
@@ -5539,7 +5481,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Pointer tools</source>
-        <translation>Ferramentas de ponteiro</translation>
+        <translation>Ferramentas de seleção</translation>
     </message>
     <message>
         <source>History</source>
@@ -5555,7 +5497,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Saâda</translation>
+        <translation>&amp;Sair</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -5579,7 +5521,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nâo foi possâvel salvar o arquivo</translation>
+        <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -5591,15 +5533,15 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Error can&apos;t convert value.</source>
-        <translation>Erro: nâo â possâvel converter valor.</translation>
+        <translation>Erro: não é possível converter o valor.</translation>
     </message>
     <message>
         <source>Error empty parameter.</source>
-        <translation>Erro de parâmetro vazio.</translation>
+        <translation>Erro: parâmetro vazio.</translation>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation>Erro id errado.</translation>
+        <translation>Erro: ID incorreto.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
@@ -5607,21 +5549,21 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM GARANTIA DE QUALQUER T
     </message>
     <message>
         <source>Bad id.</source>
-        <translation>Identificação incorreta.</translation>
+        <translation>ID inválido.</translation>
     </message>
     <message>
         <source>File saved</source>
-        <translation>Arquivo Salvo</translation>
+        <translation>Arquivo salvo</translation>
     </message>
     <message>
         <source>untitled.sm2d</source>
-        <translation>sem tâtulo.sm2d</translation>
+        <translation>sem título.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
-        <translation>O modelo foi modificado.
-Pretende guardar as suas alterações?</translation>
+        <translation>O molde foi modificado.
+Deseja salvar suas alterações?</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
@@ -5633,11 +5575,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Este arquivo jâ foi aberto em outra janela.</translation>
+        <translation>Este arquivo já está aberto em outra janela.</translation>
     </message>
     <message>
         <source>Wrong units.</source>
-        <translation>Unidades erradas.</translation>
+        <translation>Unidades incorretas.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5645,7 +5587,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Seamly2D nâo desligou corretamente. Vocâ quer reabrir os arquivos (%1) que vocâ tinha abertos?</translation>
+        <translation>Seamly2D não foi encerrado corretamente. Deseja reabrir os arquivos (%1) que estavam abertos?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -5653,7 +5595,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Disposição</translation>
+        <translation>Layout</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5669,15 +5611,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Dividir e imprimir um layout em pâginas menores (para impressoras comuns)</translation>
+        <translation>Dividir e imprimir um layout em páginas menores (para impressoras comuns)</translation>
     </message>
     <message>
         <source>Print preview</source>
-        <translation>Visualização de impressâo</translation>
+        <translation>Visualização de impressão</translation>
     </message>
     <message>
         <source>Print preview original layout</source>
-        <translation>Visualização de impressâo do layout original</translation>
+        <translation>Visualização de impressão do layout original</translation>
     </message>
     <message>
         <source>Export Layout As...</source>
@@ -5689,39 +5631,39 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Alteraçães nâo salvas</translation>
+        <translation>Alterações não salvas</translation>
     </message>
     <message>
         <source>Measurements loaded</source>
-        <translation>medições carregadas</translation>
+        <translation>Medições carregadas</translation>
     </message>
     <message>
         <source>You can&apos;t export empty scene.</source>
-        <translation>Nâo â possâvel exportar uma cena vazia.</translation>
+        <translation>Não é possível exportar uma cena vazia.</translation>
     </message>
     <message>
         <source>Measurement file contains invalid known measurement(s).</source>
-        <translation>O arquivo de medição contâm medições conhecidas invâlidas.</translation>
+        <translation>O arquivo de medições contém medições conhecidas inválidas.</translation>
     </message>
     <message>
         <source>Measurement file has unknown format.</source>
-        <translation>O arquivo de medição tem formato desconhecido.</translation>
+        <translation>O arquivo de medições tem formato desconhecido.</translation>
     </message>
     <message>
         <source>Measurement files types have not match.</source>
-        <translation>Os tipos de arquivos de medição nâo correspondem.</translation>
+        <translation>Os tipos dos arquivos de medições não correspondem.</translation>
     </message>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
-        <translation>Nâo foi possâvel sincronizar as medições.</translation>
+        <translation>Não foi possível sincronizar as medições.</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
-        <translation>Nâo foi possâvel atualizar as medições.</translation>
+        <translation>Não foi possível atualizar as medições.</translation>
     </message>
     <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
-        <translation>O arquivo de medições &apos;%1&apos; nâo pâde ser encontrado.</translation>
+        <translation>O arquivo de medições &apos;%1&apos; não pôde ser encontrado.</translation>
     </message>
     <message>
         <source>Loading measurements file</source>
@@ -5729,31 +5671,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Not supported size value &apos;%1&apos; for this pattern file.</source>
-        <translation>Valor de tamanho &apos;%1&apos; nâo suportado para este arquivo de padrâo.</translation>
+        <translation>Valor de tamanho &apos;%1&apos; não suportado para este arquivo de molde.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. File wasn&apos;t opened.</source>
-        <translation>Nâo foi possâvel definir o tamanho. O arquivo nâo foi aberto.</translation>
+        <translation>Não foi possível definir o tamanho. O arquivo não foi aberto.</translation>
     </message>
     <message>
         <source>The method %1 does nothing in GUI mode</source>
-        <translation>O mâtodo %1 nâo faz nada no modo GUI</translation>
+        <translation>O método %1 não faz nada no modo GUI</translation>
     </message>
     <message>
         <source>Not supported height value &apos;%1&apos; for this pattern file.</source>
-        <translation>Valor de altura &apos;%1&apos; nâo suportado para este arquivo de padrâo.</translation>
+        <translation>Valor de altura &apos;%1&apos; não suportado para este arquivo de molde.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
-        <translation>Nâo foi possâvel definir a altura. O arquivo nâo foi aberto.</translation>
+        <translation>Não foi possível definir a altura. O arquivo não foi aberto.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Por favor, forneâa um arquivo de entrada.</translation>
+        <translation>Por favor, forneça um arquivo de entrada.</translation>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>Imprimir um layout original</translation>
+        <translation>Imprimir layout original</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
@@ -5761,15 +5703,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Print preview tiled layout</source>
-        <translation>Layout de visualização de impressâo em mosaico</translation>
+        <translation>Pré-visualizar impressão do layout em mosaico</translation>
     </message>
     <message>
         <source>Measurements unloaded</source>
-        <translation>medições descarregadas</translation>
+        <translation>Medições descarregadas</translation>
     </message>
     <message>
         <source>Couldn&apos;t unload measurements. Some of them are used in the pattern.</source>
-        <translation>Nâo foi possâvel descarregar as medidas. Algumas delas sâo usadas no padrâo.</translation>
+        <translation>Não foi possível descarregar as medições. Algumas delas são usadas no molde.</translation>
     </message>
     <message>
         <source>New pattern</source>
@@ -5777,7 +5719,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Open pattern</source>
-        <translation>Padrâo aberto</translation>
+        <translation>Abrir molde</translation>
     </message>
     <message>
         <source>Create/Edit measurements</source>
@@ -5789,7 +5731,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nâo salvar</translation>
+        <translation>Não salvar</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -5797,31 +5739,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Este arquivo jâ foi aberto em outra janela. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>Este arquivo já está aberto em outra janela. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>O arquivo de bloqueio nâo pâde ser criado, por falta de permissâes. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>O arquivo de bloqueio não pôde ser criado por falta de permissões. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravaçâo do arquivo de bloqueio. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravação do arquivo de bloqueio. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>O arquivo de bloqueio nâo pâde ser criado por falta de permissâes.</translation>
+        <translation>O arquivo de bloqueio não pôde ser criado por falta de permissões.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravaçâo do arquivo de bloqueio.</translation>
+        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravação do arquivo de bloqueio.</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operaçães</translation>
+        <translation>Operações</translation>
     </message>
     <message>
         <source>Close pattern</source>
-        <translation>Padrâo de fechamento</translation>
+        <translation>Fechar molde</translation>
     </message>
     <message>
         <source>Tool pointer</source>
@@ -5841,11 +5783,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>O arquivo de medições &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; nâo pâde ser encontrado. Vocâ quer atualizar o local do arquivo?</translation>
+        <translation>O arquivo de medições &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; não pôde ser encontrado. Deseja atualizar o local do arquivo?</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
-        <translation>A gradação nâo suporta polegadas</translation>
+        <translation>A gradação não suporta polegadas</translation>
     </message>
     <message>
         <source>Measurements have been synced</source>
@@ -5853,19 +5795,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>The document has no write permissions.</source>
-        <translation>O documento nâo tem permissâes de gravaçâo.</translation>
+        <translation>O documento não tem permissões de gravação.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Nâo â possâvel definir permissâes para %1 como gravâveis.</translation>
+        <translation>Não foi possível definir permissões de gravação para %1.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation>Nâo foi possâvel salvar o arquivo.</translation>
+        <translation>Não foi possível salvar o arquivo.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation>Nâo foi possâvel salvar o arquivo</translation>
+        <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
         <source>read only</source>
@@ -5873,7 +5815,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Load Individual</source>
-        <translation>Carregar Individual</translation>
+        <translation>Carregar individual</translation>
     </message>
     <message>
         <source>Load Individual measurements file</source>
@@ -5881,23 +5823,23 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Load Multisize</source>
-        <translation>Carregar Multisize</translation>
+        <translation>Carregar multitamanho</translation>
     </message>
     <message>
         <source>Load multisize measurements file</source>
-        <translation>Carregar arquivo de medidas de vârios tamanhos</translation>
+        <translation>Carregar arquivo de medições multitamanho</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
-        <translation>Abra o SeamlyMe</translation>
+        <translation>Abrir SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
-        <translation>Editar Atual</translation>
+        <translation>Editar atual</translation>
     </message>
     <message>
         <source>Edit linked to the pattern measurements</source>
-        <translation>Editar vinculado âs medidas do padrâo</translation>
+        <translation>Editar vinculado às medições do molde</translation>
     </message>
     <message>
         <source>Sync</source>
@@ -5905,27 +5847,27 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Synchronize linked to the pattern measurements after change</source>
-        <translation>Sincronizar vinculado âs medidas do padrâo apâs a alteração</translation>
+        <translation>Sincronizar vinculado às medições do molde após a alteração</translation>
     </message>
     <message>
         <source>Unload Current</source>
-        <translation>Descarregar corrente</translation>
+        <translation>Descarregar atual</translation>
     </message>
     <message>
         <source>Unload measurements if they were not used in a pattern file</source>
-        <translation>Descarregue as medições se elas nâo foram usadas em um arquivo de padrâo</translation>
+        <translation>Descarregar as medições se elas não foram usadas em um arquivo de molde</translation>
     </message>
     <message>
         <source>Individual measurements</source>
-        <translation>Medidas individuais</translation>
+        <translation>Medições individuais</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation>Medidas multitamanho</translation>
+        <translation>Medições multitamanho</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation>Arquivos de padrâes</translation>
+        <translation>Arquivos de moldes</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -5933,7 +5875,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Forum</source>
-        <translation>Fârum</translation>
+        <translation>Fórum</translation>
     </message>
     <message>
         <source>Name</source>
@@ -5945,31 +5887,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Formula</source>
-        <translation>Fârmula</translation>
+        <translation>Fórmula</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet.</source>
-        <translation>Vocâ ainda nâo pode usar o modo Layout.</translation>
+        <translation>Você ainda não pode usar o modo Layout.</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
-        <translation>O aplicativo nâo suporta tabelas de vârios tamanhos com polegadas.</translation>
+        <translation>O aplicativo não suporta tabela multisize com polegadas.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
-        <translation>Nâo foi possâvel definir o tamanho. Precisa de um arquivo com medidas multisize.</translation>
+        <translation>Não foi possível definir o tamanho. É necessário um arquivo com medidas multisize.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. Need a file with multisize measurements.</source>
-        <translation>Nâo foi possâvel definir a altura. Precisa de um arquivo com medidas multisize.</translation>
+        <translation>Não foi possível definir a altura. É necessário um arquivo com medidas multisize.</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Prâ-visualização</translation>
+        <translation>Pré-visualização</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Visualizar</translation>
+        <translation>Exibir</translation>
     </message>
     <message>
         <source>Point Names</source>
@@ -5985,15 +5927,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Operaçães</translation>
+        <translation>&amp;Operações</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Pedaâo</translation>
+        <translation>Peça</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Utilitârios</translation>
+        <translation>Utilitários</translation>
     </message>
     <message>
         <source>File Toolbar</source>
@@ -6005,23 +5947,23 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation>Barra de ferramentas de padrâes</translation>
+        <translation>Barra de ferramentas de moldes</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation>Editar barra de ferramentas</translation>
+        <translation>Barra de ferramentas de edição</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Editor de Propriedade</translation>
+        <translation>Editor de propriedades</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Pâginas de layout</translation>
+        <translation>Páginas de layout</translation>
     </message>
     <message>
         <source>Group Manager</source>
-        <translation>Gerente de grupo</translation>
+        <translation>Gerenciador de grupos</translation>
     </message>
     <message>
         <source>Zoom ToolBar</source>
@@ -6029,7 +5971,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Caixa de ferramentas Barra de ferramentas</translation>
+        <translation>Barra da caixa de ferramentas</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
@@ -6049,15 +5991,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Barra de ferramentas de operaçães</translation>
+        <translation>Barra de ferramentas de operações</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>Barra de ferramentas de peâa</translation>
+        <translation>Barra de ferramentas de peças</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Detalhes da barra de ferramentas</translation>
+        <translation>Barra de ferramentas de detalhes</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
@@ -6077,7 +6019,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Tools for performing operations on objects</source>
-        <translation>Ferramentas para executar operaçães em objetos</translation>
+        <translation>Ferramentas para executar operações em objetos</translation>
     </message>
     <message>
         <source>Rotate Selected Objects (R)</source>
@@ -6089,7 +6031,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
-        <translation>Ferramentas para adicionar peâas de molde.</translation>
+        <translation>Ferramentas para adicionar peças de molde.</translation>
     </message>
     <message>
         <source>Add Details</source>
@@ -6097,15 +6039,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>Ferramentas para adicionar detalhes âs peâas do molde</translation>
+        <translation>Ferramentas para adicionar detalhes às peças de molde</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation>Unir 2 peâas (U)</translation>
+        <translation>Unir 2 peças (U)</translation>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>Exibir barra de ferramentas</translation>
+        <translation>Barra de ferramentas de exibição</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -6113,11 +6055,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabalhar com blocos de rascunho. Esses blocos de rascunho sâo a base para ir para o prâximo estâgio &amp;quot;Modo de peâa&amp;quot;. Antes de poder habilitar o &amp;quot;Modo de peâa&amp;quot;, vocâ precisa criar pelo menos uma peâa de padrâo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabalhar com blocos de rascunho. Esses blocos de rascunho são a base para ir para o próximo estágio &quot;Modo de peça&quot;. Antes de poder habilitar o &quot;Modo de peça&quot;, você precisa criar pelo menos uma peça de molde.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabalhar com peâas de padrâo. Antes de poder habilitar o &amp;quot;Modo de peâa&amp;quot;, vocâ precisa criar pelo menos uma peâa de padrâo no estâgio &amp;quot;Modo de rascunho&amp;quot;. As peâas de padrâo criadas neste estâgio serâo usadas para criar um layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabalhar com peças de molde. Antes de poder habilitar o &quot;Modo de peça&quot; você precisa criar pelo menos uma peça de molde no estágio &quot;Modo de rascunho&quot;. As peças de molde criadas neste estágio serão usadas para criar um layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
@@ -6129,7 +6071,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Renomear Bloco de Rascunho</translation>
+        <translation>Renomear bloco de rascunho</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
@@ -6137,23 +6079,23 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Variables table</source>
-        <translation>Tabela de variâveis</translation>
+        <translation>Tabela de variáveis</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para criar um layout de peâas de padrâo. Este modo estâ disponâvel se pelo menos uma peâa de padrâo foi criada no &amp;quot;modo Piece&amp;quot;. O layout pode ser exportado para seu formato de arquivo preferido e salvo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para criar um layout de peças de molde. Este modo está disponível se pelo menos uma peça de molde foi criada no &quot;modo Peça&quot;. O layout pode ser exportado para o seu formato de arquivo preferido e salvo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>rotação</translation>
+        <translation>Rotação</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Espelho por Linha</translation>
+        <translation>Espelhar por linha</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Espelho por eixo</translation>
+        <translation>Espelhar por eixo</translation>
     </message>
     <message>
         <source>Move</source>
@@ -6161,15 +6103,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Dardos Verdadeiros</translation>
+        <translation>Dardos verdadeiros</translation>
     </message>
     <message>
         <source>Midpoint</source>
-        <translation>Ponto mâdio</translation>
+        <translation>Ponto médio</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>intersecção XY</translation>
+        <translation>Interseção XY</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -6197,11 +6139,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Application Preferences...</source>
-        <translation>Preferâncias do aplicativo...</translation>
+        <translation>Preferências do aplicativo...</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Preferâncias de Padrâo...</translation>
+        <translation>Preferências do molde...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -6209,7 +6151,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>In</source>
-        <translation>Em</translation>
+        <translation>Aproximar</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
@@ -6217,19 +6159,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Diminuir o zoom</translation>
+        <translation>Reduzir</translation>
     </message>
     <message>
         <source>Out</source>
-        <translation>Fora</translation>
+        <translation>Afastar</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
-        <translation>Diminuir o zoom (Ctrl+-)</translation>
+        <translation>Reduzir (Ctrl+-)</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Serve para todos</translation>
+        <translation>Ajustar tudo</translation>
     </message>
     <message>
         <source>Fit</source>
@@ -6249,11 +6191,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Last tool</source>
-        <translation>Âltima ferramenta</translation>
+        <translation>Última ferramenta</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Pontos de controle de curva</translation>
+        <translation>Pontos de controle da curva</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
@@ -6265,11 +6207,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Open SeamlyMe measurements app (Ctrl+M)</source>
-        <translation>Abra o aplicativo de medidas SeamlyMe (Ctrl+M)</translation>
+        <translation>Abrir o aplicativo de medidas SeamlyMe (Ctrl+M)</translation>
     </message>
     <message>
         <source>Export Variables to CSV</source>
-        <translation>Exportar variâveis para CSV</translation>
+        <translation>Exportar variáveis para CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6277,7 +6219,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Editor de modelo de etiqueta...</translation>
+        <translation>Editor de modelo de rótulo...</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -6285,19 +6227,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation>Ampliar para anterior (Ctrl+Esquerda)</translation>
+        <translation>Zoom para anterior (Ctrl+Left)</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Ârea</translation>
+        <translation>Área</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Frigideira</translation>
+        <translation>Deslocar</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation>Ampliar para 100 por cento (Ctrl+0)</translation>
+        <translation>Zoom para 100% (Ctrl+0)</translation>
     </message>
     <message>
         <source>Point Tools</source>
@@ -6321,7 +6263,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Operations Tools</source>
-        <translation>Ferramentas de Operaçães</translation>
+        <translation>Ferramentas de operações</translation>
     </message>
     <message>
         <source>Layout Tools</source>
@@ -6329,19 +6271,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Piece tools</source>
-        <translation>Ferramentas de peâa</translation>
+        <translation>Ferramentas de peça</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nova peâa de padrâo</translation>
+        <translation>Nova peça de molde</translation>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>Novo Layout de Impressâo</translation>
+        <translation>Novo layout de impressão</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Layout de exportação</translation>
+        <translation>Exportar layout</translation>
     </message>
     <message>
         <source>Anchor Point</source>
@@ -6353,15 +6295,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Inserir nâs</translation>
+        <translation>Inserir nós</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Unir peâas</translation>
+        <translation>Unir peças</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Peâas de exportação</translation>
+        <translation>Exportar peças</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -6369,7 +6311,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Point Name Text</source>
-        <translation>Nome do ponto Texto</translation>
+        <translation>Texto do nome do ponto</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -6381,19 +6323,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Diminuir tamanho do texto</translation>
+        <translation>Diminuir o tamanho do texto</translation>
     </message>
     <message>
         <source>Decrease Text Size (Ctrl+[)</source>
-        <translation>Diminuir tamanho do texto (Ctrl+[)</translation>
+        <translation>Diminuir o tamanho do texto (Ctrl+[)</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Usar Cor da Ferramenta</translation>
+        <translation>Usar cor da ferramenta</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation>Usar ferramenta Cor (T)</translation>
+        <translation>Usar cor da ferramenta (T)</translation>
     </message>
     <message>
         <source>Axis Origin </source>
@@ -6405,27 +6347,27 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Wireframe Mode</source>
-        <translation>Modo Wireframe</translation>
+        <translation>Modo wireframe</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation>Alternar modo Wireframe (V, W)</translation>
+        <translation>Alternar modo wireframe (V, W)</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linhas de grâos</translation>
+        <translation>Linhas do fio</translation>
     </message>
     <message>
         <source>Toggle Grainlines (V, G)</source>
-        <translation>Alternar linhas de grâos (V, G)</translation>
+        <translation>Alternar linhas do fio (V, G)</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiquetas</translation>
+        <translation>Rótulos</translation>
     </message>
     <message>
         <source>Toggle Labels (V, L)</source>
-        <translation>Alternar râtulos (V, L)</translation>
+        <translation>Alternar rótulos (V, L)</translation>
     </message>
     <message>
         <source>Calculator</source>
@@ -6433,7 +6375,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Grâfico Decimal</translation>
+        <translation>Gráfico decimal</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
@@ -6449,51 +6391,51 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Document Info...</source>
-        <translation>informação do documento...</translation>
+        <translation>Informações do documento...</translation>
     </message>
     <message>
         <source>Document Info</source>
-        <translation>informação do documento</translation>
+        <translation>Informações do documento</translation>
     </message>
     <message>
         <source>Display document Info</source>
-        <translation>Exibir informação do documento</translation>
+        <translation>Exibir informações do documento</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
-        <translation>O arquivo de medição nâo inclui todas as medidas necessârias.</translation>
+        <translation>O arquivo de medições não inclui todas as medidas necessárias.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - Criar grupo:&lt;/b&gt;Selecionar um ou mais objectos - Manter&lt;b&gt;%1&lt;/b&gt; para uma seleção múltipla, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação do grupo </translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Criar grupo:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação do grupo </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - rotação:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção mâltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Rotação:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - Espelhar por linha:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção mâltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por linha:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - Espelhar por eixo:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção mâltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por eixo:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - Mover:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção mâltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - Mover:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
-        <translation>&lt;b&gt;Ferramenta::Operaçães - TrueDarts:&lt;/b&gt; Selecione o primeiro ponto da linha base</translation>
+        <translation>&lt;b&gt;Ferramenta::Operações - TrueDarts:&lt;/b&gt; Selecione o primeiro ponto da linha base</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Nâo foi possâvel carregar a imagem.</translation>
+        <translation>Não foi possível carregar a imagem.</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Bloco de Rascunho:</translation>
+        <translation>Bloco de rascunho:</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6501,7 +6443,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Add AnchorPoint</source>
-        <translation>Adicionar AnchorPoint</translation>
+        <translation>Adicionar ponto de ancoragem</translation>
     </message>
     <message>
         <source>Create Internal Path</source>
@@ -6509,15 +6451,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Insert Nodes in Path</source>
-        <translation>Inserir nâs no caminho</translation>
+        <translation>Inserir nós no caminho</translation>
     </message>
     <message>
         <source>Union Tool</source>
-        <translation>Ferramenta Uniâo</translation>
+        <translation>Ferramenta de União</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Exportar peâas de padrâo</translation>
+        <translation>Exportar peças do molde</translation>
     </message>
     <message>
         <source>Import Image</source>
@@ -6525,23 +6467,23 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Piece mode</source>
-        <translation>Modo de peâa</translation>
+        <translation>Modo de peça</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>Vocâ ainda nâo pode usar o modo Piece. Por favor, crie pelo menos uma peâa de molde.</translation>
+        <translation>Você ainda não pode usar o modo peça. Por favor, crie pelo menos uma peça de molde.</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Peâas de molde</translation>
+        <translation>Peças do molde</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Vocâ ainda nâo pode usar o modo Layout. Por favor, crie pelo menos uma peâa de padrâo.</translation>
+        <translation>Você ainda não pode usar o modo layout. Por favor, crie pelo menos uma peça do molde.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Vocâ nâo pode usar o modo Layout ainda. Por favor, inclua pelo menos uma peâa de padrâo no layout.</translation>
+        <translation>Você ainda não pode usar o modo layout. Por favor, inclua pelo menos uma peça do molde no layout.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -6553,43 +6495,43 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Nome Existe</translation>
+        <translation>Nome já existe</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>A ação nâo pode ser concluâda porque o nome do Bloco de Rascunho jâ existe.</translation>
+        <translation>A ação não pode ser concluída porque o nome do bloco de rascunho já existe.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>Vocâ nâo tem nenhuma peâa para exportar. Por favor, inclua pelo menos uma peâa no layout.</translation>
+        <translation>Você não tem nenhuma peça para exportar. Por favor, inclua pelo menos uma peça no layout.</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>Peâas de exportação</translation>
+        <translation>Exportar peças</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Nâo â possâvel exportar peâas.</translation>
+        <translation>Não é possível exportar peças.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Ferramenta::Peâa - Adicionar Nova Peâa de Padrâo:&lt;/b&gt; Selecione o caminho principal dos objetos no sentido horârio.</translation>
+        <translation>&lt;b&gt;Ferramenta::Peça - Adicionar nova peça de molde:&lt;/b&gt; Selecione o caminho principal dos objetos no sentido horário.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation>&lt;b&gt;Ferramenta::Peâa - Adicionar ponto de ancoragem:&lt;/b&gt; Selecionar ponto de ancoragem</translation>
+        <translation>&lt;b&gt;Ferramenta::Peça - Adicionar ponto de ancoragem:&lt;/b&gt; Selecione um ponto de ancoragem</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt;Ferramenta::Peâa - Caminho Interno:&lt;/b&gt; Selecione objetos de caminho, use &lt;b&gt;SHIFT&lt;/b&gt; para reverter a direção da curva</translation>
+        <translation>&lt;b&gt;Ferramenta::Peça - Caminho interno:&lt;/b&gt; Selecione os objetos do caminho, use &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Ferramenta::Peâa - Inserir nâs:&lt;/b&gt; Selecione um ou mais objetos - Segure &lt;b&gt;%1&lt;/b&gt; para seleção mâltipla, Pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+        <translation>&lt;b&gt;Ferramenta::Peça - Inserir nós:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;Ferramenta::Detalhes - Uniâo:&lt;/b&gt; Selecionar peâa do padrâo</translation>
+        <translation>&lt;b&gt;Ferramenta::Detalhes - União:&lt;/b&gt; Selecione a peça do molde</translation>
     </message>
     <message>
         <source>Draft block %1</source>
@@ -6597,63 +6539,63 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Bloco de Rascunho %1</translation>
+        <translation>Bloco de rascunho %1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
-        <translation>Ponto - Na Bissetriz (O, B)</translation>
+        <translation>Ponto - na bissetriz (O, B)</translation>
     </message>
     <message>
         <source>Point - Length to Line (P, S)</source>
-        <translation>Ponto - Comprimento da Linha (P, S)</translation>
+        <translation>Ponto - comprimento até a linha (P, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line (A, L)</source>
-        <translation>Ponto - intersecção Arco e Linha (A, L)</translation>
+        <translation>Ponto - interseção entre arco e linha (A, L)</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
-        <translation>Ponto - intersecção Eixo e Triângulo (X, T)</translation>
+        <translation>Ponto - interseção entre eixo e triângulo (X, T)</translation>
     </message>
     <message>
         <source>Point - Intersect XY (X, Y)</source>
-        <translation>Ponto - intersecção XY (X, Y)</translation>
+        <translation>Ponto - interseção XY (X, Y)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
-        <translation>Ponto - intersecção de reta e perpendicular (L, P)</translation>
+        <translation>Ponto - interseção entre linha e reta perpendicular (L, P)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
-        <translation>Ponto - intersecção de Linha e Eixo (L, X)</translation>
+        <translation>Ponto - interseção entre linha e eixo (L, X)</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
-        <translation>Ponto - Na Perpendicular (O, P)</translation>
+        <translation>Ponto - na perpendicular (O, P)</translation>
     </message>
     <message>
         <source>Point - Length and Angle (L, A)</source>
-        <translation>Ponto - Comprimento e ângulo (L, A)</translation>
+        <translation>Ponto - comprimento e ângulo (L, A)</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
-        <translation>Ponto - Em Linha (O, L)</translation>
+        <translation>Ponto - na linha (O, L)</translation>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
-        <translation>Ponto - Ponto mâdio na linha (Shift+O, Shift+L)</translation>
+        <translation>Ponto - ponto médio na linha (Shift+O, Shift+L)</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
-        <translation>Ponto - Linhas de intersecção (I, L)</translation>
+        <translation>Ponto - Interseção de linhas (I, L)</translation>
     </message>
     <message>
         <source>Curve - Interactive (Alt+C)</source>
-        <translation>Curva - Interativo (Alt+C)</translation>
+        <translation>Curva - Interativa (Alt+C)</translation>
     </message>
     <message>
         <source>Spline - Interactive (Alt+S)</source>
-        <translation>Spline - Interativo (Alt+S)</translation>
+        <translation>Spline - Interativa (Alt+S)</translation>
     </message>
     <message>
         <source>Curve - Fixed (Alt+Shift+C)</source>
@@ -6661,19 +6603,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Spline - Fixed (Alt+Shift+S)</source>
-        <translation>Spline - Fixo (Alt+Shift+S)</translation>
+        <translation>Spline - Fixa (Alt+Shift+S)</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
-        <translation>Ponto - Em Spline (O, S)</translation>
+        <translation>Ponto - Na Spline (O, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Curves (I, C)</source>
-        <translation>Ponto - Curvas de intersecção (I, C)</translation>
+        <translation>Ponto - Interseção de curvas (I, C)</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis (C, X)</source>
-        <translation>Ponto - intersecção Curva e Eixo (C, X)</translation>
+        <translation>Ponto - Interseção de curva e eixo (C, X)</translation>
     </message>
     <message>
         <source>Point - On Curve (O, C)</source>
@@ -6689,39 +6631,39 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis (A, X)</source>
-        <translation>Ponto - intersecção Arco e Eixo (A, X)</translation>
+        <translation>Ponto - Interseção de arco e eixo (A, X)</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs (I, A)</source>
-        <translation>Ponto - Arcos de intersecção (I, A)</translation>
+        <translation>Ponto - Interseção de arcos (I, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Ponto - intersecção de cârculos (Shift+I, Shift+C)</translation>
+        <translation>Ponto - Interseção de círculos (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
-        <translation>Ponto - intersecção Cârculo e Tangente (C, T)</translation>
+        <translation>Ponto - Interseção de círculo e tangente (C, T)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent (A, T)</source>
-        <translation>Ponto - intersecção Arco e Tangente (A, T)</translation>
+        <translation>Ponto - Interseção de arco e tangente (A, T)</translation>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Arco - Raio e Comprimento (Alt+Shift+A)</translation>
+        <translation>Arco - Raio e comprimento (Alt+Shift+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
-        <translation>Arco - Elâptico (Alt+E)</translation>
+        <translation>Arco - Elíptico (Alt+E)</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Objetos de espelho por linha (M, L)</translation>
+        <translation>Espelhar objetos por linha (M, L)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Objetos Espelhados por Eixo (M, A)</translation>
+        <translation>Espelhar objetos por eixo (M, A)</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
@@ -6729,11 +6671,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
-        <translation>Dardos Verdadeiros (T, D)</translation>
+        <translation>Dardos verdadeiros (T, D)</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
-        <translation>Adicionar nova peâa de padrâo (N, P)</translation>
+        <translation>Adicionar nova peça de molde (N, P)</translation>
     </message>
     <message>
         <source>Add Anchor Point (A, P)</source>
@@ -6741,7 +6683,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Insert Nodes (I, N)</source>
-        <translation>Inserir nâs (I, N)</translation>
+        <translation>Inserir nós (I, N)</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
@@ -6753,19 +6695,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
-        <translation>Peâas de exportação (E, P)</translation>
+        <translation>Exportar peças (E, P)</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>Novo Layout de Impressâo (N, L)</translation>
+        <translation>Novo layout de impressão (N, L)</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>Layout de exportação (E, L)</translation>
+        <translation>Exportar layout (E, L)</translation>
     </message>
     <message>
         <source>Contains information about custom and internal variables</source>
-        <translation>Contâm informação sobre variâveis internas e personalizadas</translation>
+        <translation>Contém informações sobre variáveis internas e personalizadas</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6773,11 +6715,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Elliptical</source>
-        <translation>Elâptico</translation>
+        <translation>Elíptico</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Arco - Elâptico</translation>
+        <translation>Arco - Elíptico</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -6785,7 +6727,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Midpoint on Line</source>
-        <translation>Ponto mâdio na linha</translation>
+        <translation>Ponto médio na linha</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -6793,7 +6735,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>On-line</translation>
+        <translation>Na linha</translation>
     </message>
     <message>
         <source>Length and Angle</source>
@@ -6809,31 +6751,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Comprimento da linha</translation>
+        <translation>Comprimento até a linha</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
-        <translation>intersecção de arco e linha</translation>
+        <translation>Interseção  Arco e Linha</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>intersecção do eixo e do triângulo</translation>
+        <translation>Interseção de eixo e triângulo</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>intersecção de reta e perpendicular</translation>
+        <translation>Interseção de linha e perpendicular</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>intersecção de linha e eixo</translation>
+        <translation>Interseção de linha e eixo</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
-        <translation>Linhas de intersecção</translation>
+        <translation>Interseção de linhas</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Curva - Interativo</translation>
+        <translation>Curva - Interativa</translation>
     </message>
     <message>
         <source>Point on Curve</source>
@@ -6849,7 +6791,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interativo</translation>
+        <translation>Spline - Interativa</translation>
     </message>
     <message>
         <source>Point on Spline</source>
@@ -6861,7 +6803,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline - Fixo</translation>
+        <translation>Spline - Fixa</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
@@ -6869,11 +6811,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Intersect Curves</source>
-        <translation>intersecção de curvas</translation>
+        <translation>Interseção de curvas</translation>
     </message>
     <message>
         <source>Intersect Curve and Axis</source>
-        <translation>intersecção de curva e eixo</translation>
+        <translation>Interseção de curva e eixo</translation>
     </message>
     <message>
         <source>Radius and Angles</source>
@@ -6889,31 +6831,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
-        <translation>Ponto no Arco (O, A)</translation>
+        <translation>Ponto no arco (O, A)</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis</source>
-        <translation>intersecção de arco e eixo</translation>
+        <translation>Interseção entre arco e eixo</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis (A, X)</source>
-        <translation>intersecção de arco e eixo (A, X)</translation>
+        <translation>Interseção entre arco e eixo (A, X)</translation>
     </message>
     <message>
         <source>Intersect Arcs</source>
-        <translation>Arcos de intersecção</translation>
+        <translation>Interseção entre arcos</translation>
     </message>
     <message>
         <source>Intersect Arcs (I, A)</source>
-        <translation>Arcos de intersecção (I, A)</translation>
+        <translation>Interseção entre arcos (I, A)</translation>
     </message>
     <message>
         <source>Intersect Circles</source>
-        <translation>intersecção de cârculos</translation>
+        <translation>Interseção entre círculos</translation>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>intersecção de cârculos (Shift+I, Shift+C)</translation>
+        <translation>Interseção entre círculos (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -6921,19 +6863,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>intersecção de cârculo e tangente</translation>
+        <translation>Interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent (C, T)</source>
-        <translation>intersecção de cârculo e tangente (C, T)</translation>
+        <translation>Interseção entre círculo e tangente (C, T)</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>intersecção de arco e tangente</translation>
+        <translation>Interseção entre arco e tangente</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent (A, T)</source>
-        <translation>intersecção de arco e tangente (A, T)</translation>
+        <translation>Interseção entre arco e tangente (A, T)</translation>
     </message>
     <message>
         <source>Radius and Length</source>
@@ -6941,7 +6883,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - Raio e Comprimento</translation>
+        <translation>Arco - raio e comprimento</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -6949,31 +6891,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
-        <translation>Ativar âltima ferramenta usada (Ctrl+Shift+L)</translation>
+        <translation>Ativar última ferramenta usada (Ctrl+Shift+L)</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
-        <translation>Ampliar para selecionado (Ctrl+Direita)</translation>
+        <translation>Ajustar ao selecionado (Ctrl+Right)</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Ampliar para a ârea selecionada (Ctrl+A)</translation>
+        <translation>Ajustar à área selecionada (Ctrl+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
-        <translation>Ârea de trabalho da panela (Z, P)</translation>
+        <translation>Mover área de trabalho (Z, P)</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>Criar novo layout de impressâo (N, L)</translation>
+        <translation>Criar novo layout de impressão (N, L)</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation>Nome do ponto de alternância Texto (V, P)</translation>
+        <translation>Alternar exibição do nome do ponto (V, P)</translation>
     </message>
     <message>
         <source>Images tools</source>
-        <translation>Ferramentas de imagens</translation>
+        <translation>Ferramentas de imagem</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -6985,27 +6927,27 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Trancar</translation>
+        <translation>Bloquear</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Ampliar para ponto (Ctrl + Alt + P)</translation>
+        <translation>Ajustar ao ponto (Ctrl + Alt + P)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
-        <translation>Por favor, forneâa medidas adicionais: %1</translation>
+        <translation>Por favor, forneça medidas adicionais: %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Ponto mâdio na linha&lt;/b&gt;: Selecionar o primeiro ponto</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Ponto médio na linha&lt;/b&gt;: Selecione o primeiro ponto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Comprimento e ângulo&lt;/b&gt;: Selecionar ponto</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Comprimento e ângulo&lt;/b&gt;: Selecione o ponto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - On-line:&lt;/b&gt; Selecione o primeiro ponto</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na linha:&lt;/b&gt; Selecione o primeiro ponto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
@@ -7013,55 +6955,55 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Na Bissetriz:&lt;/b&gt; Selecione o primeiro ponto do ângulo</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na bissetriz:&lt;/b&gt; Selecione o primeiro ponto do ângulo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Comprimento da linha:&lt;/b&gt; Selecionar ponto</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Distância até a linha:&lt;/b&gt; Selecione o ponto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de arco e linha:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre arco e linha:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção do eixo e do triângulo:&lt;/b&gt; Selecione o primeiro ponto do eixo</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre eixo e triângulo:&lt;/b&gt; Selecione o primeiro ponto do eixo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção XY&lt;/b&gt; Selecionar ponto para valor X (vertical)</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção XY&lt;/b&gt; Selecione o ponto para o valor X (vertical)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de Linha e Perpendicular:&lt;/b&gt; Selecionar ponto base</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linha e perpendicular:&lt;/b&gt; Selecione o ponto base</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de linha e eixo:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linha e eixo:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Ferramenta::Linha:&lt;/b&gt;:Selecionar primeiro ponto</translation>
+        <translation>&lt;b&gt;Ferramenta::Linha:&lt;/b&gt;: Selecione o primeiro ponto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de linhas:&lt;/b&gt; Seleciona o primeiro ponto da primeira linha</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linhas:&lt;/b&gt; Selecione o primeiro ponto da primeira linha</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt;Ferramenta::Curva - Interativo:&lt;/b&gt; Selecione o ponto inicial da curva</translation>
+        <translation>&lt;b&gt;Ferramenta::Curva - Interativa:&lt;/b&gt; Selecione o ponto inicial da curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Ferramenta::Spline - Interativo:&lt;/b&gt; Selecione o ponto inicial da spline</translation>
+        <translation>&lt;b&gt;Ferramenta::Spline - Interativa:&lt;/b&gt; Selecione o ponto inicial da spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Ferramenta::Curva - Corrigido:&lt;/b&gt; Selecionar o primeiro ponto da curva</translation>
+        <translation>&lt;b&gt;Ferramenta::Curva - Fixa:&lt;/b&gt; Selecione o primeiro ponto da curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Ferramenta::Spline - Corrigido:&lt;/b&gt; Selecione o primeiro ponto da spline</translation>
+        <translation>&lt;b&gt;Ferramenta::Spline - Fixa:&lt;/b&gt; Selecione o primeiro ponto da spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
@@ -7069,15 +7011,15 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Em Spline:&lt;/b&gt; Selecionar spline</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na spline:&lt;/b&gt; Selecione a spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de curvas:&lt;/b&gt; Selecionar a primeira curva</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre curvas:&lt;/b&gt; Selecione a primeira curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de curva e eixo:&lt;/b&gt; Selecionar curva</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre curva e eixo:&lt;/b&gt; Selecione a curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
@@ -7085,35 +7027,35 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - No arco:&lt;/b&gt; Selecionar arco</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - No arco:&lt;/b&gt; Selecione o arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de arco e eixo:&lt;/b&gt; Selecionar arco</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre arco e eixo:&lt;/b&gt; Selecione o arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de arcos:&lt;/b&gt; Selecione primeiro um arco</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre arcos:&lt;/b&gt; Selecione primeiro um arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de cârculos:&lt;/b&gt; Selecione o centro do primeiro cârculo</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre círculos:&lt;/b&gt; Selecione o centro do primeiro círculo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de Cârculo e Tangente:&lt;/b&gt; Selecionar ponto na tangente</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre círculo e tangente:&lt;/b&gt; Selecione o ponto na tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - intersecção de arco e tangente:&lt;/b&gt; Selecionar ponto na tangente</translation>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre arco e tangente:&lt;/b&gt; Selecione o ponto na tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;Ferramenta::Arco - Raio e Comprimento:&lt;/b&gt; Selecione o ponto do centro do arco</translation>
+        <translation>&lt;b&gt;Ferramenta::Arco - Raio e comprimento:&lt;/b&gt; Selecione o ponto central do arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;Ferramenta::Arco - Elâptico:&lt;/b&gt; Selecionar ponto central do arco elâptico</translation>
+        <translation>&lt;b&gt;Ferramenta::Arco - Elíptico:&lt;/b&gt; Selecione o ponto central do arco elíptico</translation>
     </message>
     <message>
         <source>Images</source>
@@ -7121,19 +7063,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Zoom para apontar</translation>
+        <translation>Ajustar ao ponto</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Apontar:</translation>
+        <translation>Ponto:</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>intersecção de arco e linha</translation>
+        <translation>Interseção de Arco e Linha</translation>
     </message>
     <message>
         <source>Intersect Curve &amp; Axis</source>
-        <translation>intersecção de curva e eixo</translation>
+        <translation>Interseção de curva &amp; eixo</translation>
     </message>
     <message>
         <source>Add Objects to Group (G)</source>
@@ -7145,31 +7087,31 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Add Group Objects</source>
-        <translation>Adicionar objetos de grupo</translation>
+        <translation>Adicionar objetos do grupo</translation>
     </message>
     <message>
         <source>Group is Locked. Unlock to add objects</source>
-        <translation>O grupo estâ bloqueado. Desbloqueie para adicionar objetos</translation>
+        <translation>O grupo está bloqueado. Desbloqueie para adicionar objetos</translation>
     </message>
     <message>
         <source>Can not save file.</source>
-        <translation>Nâo â possâvel salvar o arquivo.</translation>
+        <translation>Não é possível salvar o arquivo.</translation>
     </message>
     <message>
         <source>Pattern is read only.</source>
-        <translation>O padrâo â somente leitura.</translation>
+        <translation>O molde é somente leitura.</translation>
     </message>
     <message>
         <source>Failed to lock. File with this name is opened in another window.</source>
-        <translation>Falha ao bloquear. O arquivo com este nome â aberto em outra janela.</translation>
+        <translation>Falha ao bloquear. O arquivo com este nome está aberto em outra janela.</translation>
     </message>
     <message>
         <source>untitled</source>
-        <translation>sem tâtulo</translation>
+        <translation>sem título</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Falha ao bloquear. Este arquivo jâ foi aberto em outra janela. Espere colisâes ao executar 2 câpias do programa.</translation>
+        <translation>Falha ao bloquear. Este arquivo já está aberto em outra janela. Espere colisões ao executar 2 cópias do programa.</translation>
     </message>
     <message>
         <source>Pen Toolbar</source>
@@ -7194,20 +7136,20 @@ Pretende guardar as suas alterações?</translation>
     <message>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
-        <translation>Nome de base utilizado para os novos pontos.
-Prima enter para o adicionar temporariamente à lista.</translation>
+        <translation>Nome base usado para novos pontos.
+Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Padrâo</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Ampliar para ajustar tudo (Ctrl+9)</translation>
+        <translation>Ajustar tudo (Ctrl+9)</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Ampliar 100%</translation>
+        <translation>Zoom 100%</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
@@ -7215,11 +7157,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Prâximo bloco de rascunho</translation>
+        <translation>Próximo bloco de rascunho</translation>
     </message>
     <message>
         <source>Exporting...</source>
-        <translation>Exportador...</translation>
+        <translation>Exportando...</translation>
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
@@ -7235,7 +7177,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Confirm Delete</source>
-        <translation>Confirmar exclusão</translation>
+        <translation>Confirmar Exclusão</translation>
     </message>
     <message>
         <source>Are you sure you want to delete basepoint and current draft block?</source>
@@ -7246,19 +7188,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>MainWindowsNoGUI</name>
     <message>
         <source>Creating file &apos;%1&apos; failed! %2</source>
-        <translation>Falha na criação do arquivo &apos;%1&apos;! %2</translation>
+        <translation>Falha ao criar o arquivo &apos;%1&apos;! %2</translation>
     </message>
     <message>
         <source>Critical error!</source>
-        <translation>Erro crâtico!</translation>
+        <translation>Erro crítico!</translation>
     </message>
     <message>
         <source>Print error</source>
-        <translation>Erro de impressâo</translation>
+        <translation>Erro de impressão</translation>
     </message>
     <message>
         <source>Cannot proceed because there are no available printers in your system.</source>
-        <translation>Nâo â possâvel prosseguir porque nâo hâ impressoras disponâveis no seu sistema.</translation>
+        <translation>Não é possível prosseguir porque não há impressoras disponíveis no seu sistema.</translation>
     </message>
     <message>
         <source>unnamed</source>
@@ -7266,50 +7208,50 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>The layout is stale.</source>
-        <translation>O layout estâ desatualizado.</translation>
+        <translation>O layout está desatualizado.</translation>
     </message>
     <message>
         <source>The layout was not updated since last pattern modification. Do you want to continue?</source>
-        <translation>O layout nâo foi atualizado desde a âltima modificação do padrâo. Vocâ quer continuar?</translation>
+        <translation>O layout não foi atualizado desde a última modificação do molde. Deseja continuar?</translation>
     </message>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>Não foi possível preparar dados para layout</translation>
+        <translation>Não foi possível preparar os dados para a criação do layout</translation>
     </message>
     <message>
         <source>Can&apos;t open printer %1</source>
-        <translation>Nâo â possâvel abrir a impressora %1</translation>
+        <translation>Não foi possível abrir a impressora %1</translation>
     </message>
     <message>
         <source>For previewing multipage document all sheet should have the same size.</source>
-        <translation>Para visualizar um documento com vârias pâginas, todas as folhas devem ter o mesmo tamanho.</translation>
+        <translation>Para visualizar um documento com várias páginas, todas as folhas devem ter o mesmo tamanho.</translation>
     </message>
     <message>
         <source>For printing multipages document all sheet should have the same size.</source>
-        <translation>Para imprimir documentos com vârias pâginas, todas as folhas devem ter o mesmo tamanho.</translation>
+        <translation>Para imprimir um documento com várias páginas, todas as folhas devem ter o mesmo tamanho.</translation>
     </message>
     <message>
         <source>Pages will be cropped because they do not fit printer paper size.</source>
-        <translation>As pâginas serâo cortadas porque nâo cabem no tamanho do papel da impressora.</translation>
+        <translation>As páginas serão cortadas porque não cabem no tamanho do papel da impressora.</translation>
     </message>
     <message>
         <source>Cannot set printer margins</source>
-        <translation>Nâo â possâvel definir margens da impressora</translation>
+        <translation>Não é possível definir as margens da impressora</translation>
     </message>
     <message>
         <source>Can&apos;t create a path</source>
-        <translation>Nâo â possâvel criar um caminho</translation>
+        <translation>Não é possível criar um caminho</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Uma ou mais peâas do molde sâo maiores do que o formato de papel selecionado. Selecione um formato de papel maior.</translation>
+        <translation>Uma ou mais peças do molde são maiores do que o formato de papel selecionado. Selecione um formato de papel maior.</translation>
     </message>
 </context>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Copiar atalhos para a ârea de transferância</translation>
+        <translation>Copiar atalhos para a área de transferência</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
@@ -7337,7 +7279,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Open Individual</source>
-        <translation>Individual aberto</translation>
+        <translation>Abrir indivíduo</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -7385,7 +7327,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Saâda</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -7405,7 +7347,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Encontrar anterior</translation>
+        <translation>Localizar anterior</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -7413,7 +7355,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Encontre o prâximo</translation>
+        <translation>Localizar próximo</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -7432,7 +7374,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Check all</source>
-        <translation>Verifique tudo</translation>
+        <translation>Marcar tudo</translation>
     </message>
     <message>
         <source>Uncheck all</source>
@@ -7441,12 +7383,12 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Direct Height</source>
         <comment>Measurement section</comment>
-        <translation>Altura Direta</translation>
+        <translation>Altura direta</translation>
     </message>
     <message>
         <source>Direct Width</source>
         <comment>Measurement section</comment>
-        <translation>Largura Direta</translation>
+        <translation>Largura direta</translation>
     </message>
     <message>
         <source>Indentation</source>
@@ -7456,22 +7398,22 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Hand</source>
         <comment>Measurement section</comment>
-        <translation>Mâo</translation>
+        <translation>Mão</translation>
     </message>
     <message>
         <source>Foot</source>
         <comment>Measurement section</comment>
-        <translation>Pâ</translation>
+        <translation>Pé</translation>
     </message>
     <message>
         <source>Head</source>
         <comment>Measurement section</comment>
-        <translation>Cabeâa</translation>
+        <translation>Cabeça</translation>
     </message>
     <message>
         <source>Circumference and Arc</source>
         <comment>Measurement section</comment>
-        <translation>Circunferância e Arco</translation>
+        <translation>Circunferência e arco</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -7491,12 +7433,12 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Balance</source>
         <comment>Measurement section</comment>
-        <translation>Equilâbrio</translation>
+        <translation>Equilíbrio</translation>
     </message>
     <message>
         <source>Arm</source>
         <comment>Measurement section</comment>
-        <translation>Braâo</translation>
+        <translation>Braço</translation>
     </message>
     <message>
         <source>Leg</source>
@@ -7506,17 +7448,17 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Crotch and Rise</source>
         <comment>Measurement section</comment>
-        <translation>Virilha e Ascensâo</translation>
+        <translation>Virilha e gancho</translation>
     </message>
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Homens e Alfaiataria</translation>
+        <translation>Masculino &amp; alfaiataria</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
         <comment>Measurement section</comment>
-        <translation>Histârico e Especialidade</translation>
+        <translation>Histórico &amp; especialidade</translation>
     </message>
     <message>
         <source>Patternmaking measurements</source>
@@ -7528,34 +7470,34 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Nâo â possâvel encontrar a medição &apos;%1&apos;</translation>
+        <translation>Não é possível encontrar a medida &apos;%1&apos;</translation>
     </message>
     <message>
         <source>The measurement name is empty!</source>
-        <translation>O nome da medição estâ vazio!</translation>
+        <translation>O nome da medida está vazio!</translation>
     </message>
 </context>
 <context>
     <name>MouseCoordinates</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation>Formulário</translation>
     </message>
     <message>
         <source> XPos:</source>
-        <translation> Posiçães X:</translation>
+        <translation> Posição X:</translation>
     </message>
     <message>
         <source>xpos</source>
-        <translation>xpos</translation>
+        <translation>posx</translation>
     </message>
     <message>
         <source>YPos:</source>
-        <translation>Posiçães Y:</translation>
+        <translation>PosY:</translation>
     </message>
     <message>
         <source>ypos</source>
-        <translation>vocâs</translation>
+        <translation>posy</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -7570,11 +7512,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
-        <translation>mova o primeiro râtulo de dardo</translation>
+        <translation>mover o primeiro rótulo do pence</translation>
     </message>
     <message>
         <source>move the second dart label</source>
-        <translation>mova o segundo râtulo de dardo</translation>
+        <translation>mover o segundo rótulo do pence</translation>
     </message>
 </context>
 <context>
@@ -7588,21 +7530,21 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>MoveLabel</name>
     <message>
         <source>move point label</source>
-        <translation>mover râtulo de ponto</translation>
+        <translation>mover rótulo de ponto</translation>
     </message>
 </context>
 <context>
     <name>MoveOperationLabel</name>
     <message>
         <source>move point label</source>
-        <translation>mover râtulo de ponto</translation>
+        <translation>mover rótulo de ponto</translation>
     </message>
 </context>
 <context>
     <name>MoveSPoint</name>
     <message>
         <source>move single point</source>
-        <translation>mover ponto ânico</translation>
+        <translation>mover ponto único</translation>
     </message>
 </context>
 <context>
@@ -7647,7 +7589,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centimetros</translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -7659,7 +7601,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
 </context>
 <context>
@@ -7670,11 +7612,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Legal</source>
-        <translation>Jurâdico</translation>
+        <translation>Ofício</translation>
     </message>
     <message>
         <source>Tabloid</source>
-        <translation>Tablâide</translation>
+        <translation>Tablóide</translation>
     </message>
     <message>
         <source>ANSI C</source>
@@ -7690,23 +7632,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Roll 24in</source>
-        <translation>Rolo 24pol</translation>
+        <translation>Rolo 24in</translation>
     </message>
     <message>
         <source>Roll 30in</source>
-        <translation>Rolo 30pol</translation>
+        <translation>Rolo 30in</translation>
     </message>
     <message>
         <source>Roll 36in</source>
-        <translation>Rolo 36pol</translation>
+        <translation>Rolo 36in</translation>
     </message>
     <message>
         <source>Roll 42in</source>
-        <translation>Rolo 42pol</translation>
+        <translation>Rolo 42in</translation>
     </message>
     <message>
         <source>Roll 44in</source>
-        <translation>Rolo 44pol</translation>
+        <translation>Rolo 44in</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -7717,7 +7659,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Ferramenta de peâa de padrâo</translation>
+        <translation>Ferramenta de peça do molde</translation>
     </message>
     <message>
         <source>Properties </source>
@@ -7729,11 +7671,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Seam Allowance </source>
-        <translation>Tolerância de costura </translation>
+        <translation>Margem de costura </translation>
     </message>
     <message>
         <source>Labels </source>
-        <translation>Etiquetas </translation>
+        <translation>Rótulos </translation>
     </message>
     <message>
         <source>Anchors </source>
@@ -7741,7 +7683,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Grainline </source>
-        <translation>Linhas de grâos </translation>
+        <translation>Linha do fio </translation>
     </message>
     <message>
         <source>Notches </source>
@@ -7749,23 +7691,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Nome da peâa:</translation>
+        <translation>Nome da peça:</translation>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>PadrâoPeâa</translation>
+        <translation>PeçaMolde</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
-        <translation>O nome nâo pode estar vazio</translation>
+        <translation>O nome não pode ficar vazio</translation>
     </message>
     <message>
         <source>Letter:</source>
-        <translation>Carta:</translation>
+        <translation>Letra:</translation>
     </message>
     <message>
         <source>Letter of pattern piece</source>
-        <translation>Letra da peâa padrâo</translation>
+        <translation>Letra da peça do molde</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -7773,11 +7715,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Placement:</source>
-        <translation>Colocação:</translation>
+        <translation>Posicionamento:</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>em dobra</translation>
+        <translation>na dobra</translation>
     </message>
     <message>
         <source>Fold position:</source>
@@ -7789,7 +7731,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Up/Down</source>
-        <translation>Para cima/para baixo</translation>
+        <translation>Cima/Baixo</translation>
     </message>
     <message>
         <source>Left/Right</source>
@@ -7805,11 +7747,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Certo</translation>
+        <translation>Direita</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>rotação:</translation>
+        <translation>Rotação:</translation>
     </message>
     <message>
         <source>None</source>
@@ -7833,7 +7775,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Tilt:</source>
-        <translation>Inclinar:</translation>
+        <translation>Inclinação:</translation>
     </message>
     <message>
         <source>Annotation:</source>
@@ -7841,7 +7783,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>A text field to add comments</source>
-        <translation>Um campo de texto para adicionar comentârios</translation>
+        <translation>Um campo de texto para adicionar comentários</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -7849,7 +7791,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>Proibir que a peâa seja espelhada em um layout.</translation>
+        <translation>Impedir que a peça seja espelhada em um layout.</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -7861,7 +7803,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Fill:</source>
-        <translation>Preencher:</translation>
+        <translation>Preenchimento:</translation>
     </message>
     <message>
         <source>Main path</source>
@@ -7869,31 +7811,31 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>All objects in path should follow in clockwise direction.</source>
-        <translation>Todos os objetos no caminho devem seguir no sentido horârio.</translation>
+        <translation>Todos os objetos no caminho devem seguir no sentido horário.</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Mover linha para o topo da lista</translation>
+        <translation>Mover a linha para o topo da lista</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Mover linha uma linha para cima</translation>
+        <translation>Mover a linha uma posição para cima</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Mover linha uma linha para baixo</translation>
+        <translation>Mover a linha uma posição para baixo</translation>
     </message>
     <message>
         <source>Molve row to botton of list</source>
-        <translation>Mover linha para o final da lista</translation>
+        <translation>Mover a linha para o final da lista</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Status:</translation>
+        <translation>Estado:</translation>
     </message>
     <message>
         <source>Ready!</source>
-        <translation>Preparar!</translation>
+        <translation>Pronto!</translation>
     </message>
     <message>
         <source>Internal paths</source>
@@ -7905,7 +7847,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Built in</source>
-        <translation>Construâdo em</translation>
+        <translation>Integrado</translation>
     </message>
     <message>
         <source>Hide the main path if the seam allowance is enabled</source>
@@ -7913,11 +7855,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Automâtico</translation>
+        <translation>Automático</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Padrâo</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -7929,19 +7871,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Mago de fârmulas</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Câlculo</translation>
+        <translation>Cálculo</translation>
     </message>
     <message>
         <source>Nodes</source>
-        <translation>Nâs</translation>
+        <translation>Nós</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation>Nâ:</translation>
+        <translation>Nó:</translation>
     </message>
     <message>
         <source>Before:</source>
@@ -7949,11 +7891,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation>Retornar â largura padrâo</translation>
+        <translation>Restaurar largura padrão</translation>
     </message>
     <message>
         <source>Use Default</source>
-        <translation>Usar Padrâo</translation>
+        <translation>Usar padrão</translation>
     </message>
     <message>
         <source>After:</source>
@@ -7981,11 +7923,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Piece label</source>
-        <translation>Etiqueta da peâa</translation>
+        <translation>Rótulo da peça</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Editar râtulo do padrâo</translation>
+        <translation>Editar rótulo do molde</translation>
     </message>
     <message>
         <source>Edit template</source>
@@ -7993,7 +7935,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Mostrar etiqueta da peâa</translation>
+        <translation>Mostrar rótulo da peça</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -8005,15 +7947,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern label</source>
-        <translation>Etiqueta do padrâo</translation>
+        <translation>Rótulo do molde</translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Mostrar râtulo do padrâo</translation>
+        <translation>Mostrar rótulo do molde</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Mostrar linha de grâos</translation>
+        <translation>Mostrar linha do fio</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -8053,7 +7995,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>V Internal </source>
-        <translation>V Interno </translation>
+        <translation>V interno </translation>
     </message>
     <message>
         <source>V External</source>
@@ -8085,7 +8027,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Intersecção</translation>
+        <translation>Interseção</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -8097,23 +8039,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Redefinir o comprimento do entalhe para o padrâo.</translation>
+        <translation>Redefinir o comprimento do entalhe para o padrão.</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Redefinir o entalhe com o padrâo.</translation>
+        <translation>Redefinir a largura do entalhe para o padrão.</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Redefinir o ângulo do entalhe para o padrâo.</translation>
+        <translation>Redefinir o ângulo do entalhe para o padrão.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Contar:</translation>
+        <translation>Contagem:</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
-        <translation>Pressione OK para criar a peâa do molde</translation>
+        <translation>Pressione OK para criar a peça do molde</translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -8121,19 +8063,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Duplicate</source>
-        <translation>Duplicado</translation>
+        <translation>Duplicar</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Entalhe</translation>
+        <translation>EntalheT</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>DESENTUPIR</translation>
+        <translation>EntalheU</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>Vinterno</translation>
+        <translation>VInterno</translation>
     </message>
     <message>
         <source>VExternal</source>
@@ -8141,7 +8083,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation>Excluâdo</translation>
+        <translation>Excluído</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -8153,7 +8095,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
-        <translation>Erro. Nâo â possâvel salvar o caminho da peâa.</translation>
+        <translation>Erro. Não é possível salvar o caminho da peça.</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
@@ -8201,31 +8143,31 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Editar largura da margem de costura apâs</translation>
+        <translation>Editar largura da margem de costura após</translation>
     </message>
     <message>
         <source>Grainline</source>
-        <translation>Linha de grâos</translation>
+        <translation>Linha do fio</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation>Vocâ precisa de mais pontos!</translation>
+        <translation>Você precisa de mais pontos!</translation>
     </message>
     <message>
         <source>You must choose points in a clockwise direction!</source>
-        <translation>Vocâ deve escolher pontos no sentido horârio!</translation>
+        <translation>Você deve escolher pontos no sentido horário!</translation>
     </message>
     <message>
         <source>First point cannot be same as last point!</source>
-        <translation>O primeiro ponto nâo pode ser igual ao âltimo!</translation>
+        <translation>O primeiro ponto não pode ser igual ao último!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Vocâ tem pontos em dobro!</translation>
+        <translation>Existem pontos duplicados!</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Cada ponto no caminho deve ser ânico!</translation>
+        <translation>Cada ponto no caminho deve ser único!</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -8245,15 +8187,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Just front</source>
-        <translation>Apenas na frente</translation>
+        <translation>Somente frente</translation>
     </message>
     <message>
         <source>Just rear</source>
-        <translation>Apenas traseiro</translation>
+        <translation>Somente traseiro</translation>
     </message>
     <message>
         <source>Show notch on the cut line.</source>
-        <translation>Mostre o entalhe na linha de corte.</translation>
+        <translation>Mostrar entalhe na linha de corte.</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
@@ -8261,7 +8203,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show notch on the seam line.</source>
-        <translation>Mostre o entalhe na linha de costura.</translation>
+        <translation>Mostrar entalhe na linha de costura.</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
@@ -8297,11 +8239,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Flipping:</source>
-        <translation>Inversâo:</translation>
+        <translation>Inversão:</translation>
     </message>
     <message>
         <source>Forbid</source>
-        <translation>Proibir</translation>
+        <translation>Proibido</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -8313,52 +8255,52 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Bottom right:</source>
-        <translation>Embaixo â direita:</translation>
+        <translation>Canto inferior direito:</translation>
     </message>
     <message>
         <source>Top:</source>
-        <translation>Principal:</translation>
+        <translation>Superior:</translation>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Fundo:</translation>
+        <translation>Inferior:</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation>Contar</translation>
+        <translation>Contagem</translation>
     </message>
     <message>
         <source>Length can&apos;t be less than length of 2 arrows</source>
-        <translation>Lungimea nu poate fi mai mică decât lungimea a 2 săgeți</translation>
+        <translation>O comprimento não pode ser menor que o de 2 setas</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translatorcomment>Pressionar &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da peça.</translatorcomment>
-        <translation></translation>
+        <translation>Pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da peça.</translation>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Selecionar os objectos da trajetória principal no sentido dos ponteiros do relógio, Utilizar &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva, ou &lt;b&gt;CTRL&lt;/b&gt; para manter a direção da curva.</translation>
+        <translation>Selecione os objetos do caminho principal no sentido horário. Use &lt;b&gt;SHIFT&lt;/b&gt; para inverter a direção da curva, ou &lt;b&gt;CTRL&lt;/b&gt; para manter a direção da curva.</translation>
     </message>
     <message>
         <source>Show Cut Line Notch</source>
-        <translation>Mostrar pique da linha de corte</translation>
+        <translation>Mostrar entalhe da linha de corte</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>
-        <translation>Mostrar pique da linha de costura</translation>
+        <translation>Mostrar entalhe da linha de costura</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
-        <translation>Definir como pique padrão</translation>
+        <translation>Definir como entalhe padrão</translation>
     </message>
     <message>
         <source>Edit Notch</source>
-        <translation>Editar pique</translation>
+        <translation>Editar entalhe</translation>
     </message>
     <message>
         <source>Remove Notch</source>
-        <translation>Remover pique</translation>
+        <translation>Remover entalhe</translation>
     </message>
 </context>
 <context>
@@ -8369,39 +8311,39 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>move pattern piece label</source>
-        <translation>mover etiqueta da peâa do padrâo</translation>
+        <translation>mover etiqueta da peça do molde</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>redimensionar etiqueta da peâa do padrâo</translation>
+        <translation>redimensionar etiqueta da peça do molde</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>girar etiqueta da peâa do padrâo</translation>
+        <translation>girar etiqueta da peça do molde</translation>
     </message>
     <message>
         <source>move pattern info label</source>
-        <translation>mover râtulo de informação do padrâo</translation>
+        <translation>mover etiqueta de informações do molde</translation>
     </message>
     <message>
         <source>resize pattern info label</source>
-        <translation>redimensionar râtulo de informação do padrâo</translation>
+        <translation>redimensionar etiqueta de informações do molde</translation>
     </message>
     <message>
         <source>rotate pattern info label</source>
-        <translation>girar râtulo de informação do padrâo</translation>
+        <translation>girar etiqueta de informações do molde</translation>
     </message>
     <message>
         <source>move grainline</source>
-        <translation>mover linha de grâos</translation>
+        <translation>mover linha do fio</translation>
     </message>
     <message>
         <source>resize grainline</source>
-        <translation>redimensionar linha de grâos</translation>
+        <translation>Redimensionar linha de grão</translation>
     </message>
     <message>
         <source>rotate grainline</source>
-        <translation>girar linha de grâos</translation>
+        <translation>Girar linha de grão</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8409,23 +8351,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Peâa de Padrâo de Bloqueio</translation>
+        <translation>Bloquear peça do molde</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Incluir no Layout</translation>
+        <translation>Incluir no layout</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Proibir a inversâo</translation>
+        <translation>Proibir inversão</translation>
     </message>
     <message>
         <source>Raise to top</source>
-        <translation>Elevar ao topo</translation>
+        <translation>Trazer para o topo</translation>
     </message>
     <message>
         <source>Lower to bottom</source>
-        <translation>De baixo para cima</translation>
+        <translation>Enviar para o fundo</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
@@ -8437,15 +8379,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show Grainline</source>
-        <translation>Mostrar linha de grâos</translation>
+        <translation>Mostrar linha do fio</translation>
     </message>
     <message>
         <source>Show Pattern Label</source>
-        <translation>Mostrar etiqueta do padrâo</translation>
+        <translation>Mostrar rótulo do molde</translation>
     </message>
     <message>
         <source>Show Piece Label</source>
-        <translation>Mostrar etiqueta da peâa</translation>
+        <translation>Mostrar rótulo da peça</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8457,7 +8399,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Forbid Flipping changed: </source>
-        <translation>Proibir o Flipping mudou: </translation>
+        <translation>A opção &apos;Proibir inversão&apos; foi alterada: </translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -8473,7 +8415,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Esconder</translation>
+        <translation>Ocultar</translation>
     </message>
     <message>
         <source>Show</source>
@@ -8485,43 +8427,43 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Seam allowance visibility changed: </source>
-        <translation>Seam allowance visibility changed: </translation>
+        <translation>A visibilidade da margem de costura foi alterada: </translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Mostrar linha de grâos</translation>
+        <translation>Mostrar linha do fio</translation>
     </message>
     <message>
         <source>Grainline visibility changed: </source>
-        <translation>Visibilidade da linha de grão alterada: </translation>
+        <translation>Visibilidade do fio do tecido alterada: </translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Mostrar râtulo do padrâo</translation>
+        <translation>Mostrar rótulo do molde</translation>
     </message>
     <message>
         <source>Pattern label visibility changed: </source>
-        <translation>A visibilidade da etiqueta do padrão foi alterada: </translation>
+        <translation>A visibilidade do rótulo do molde foi alterada: </translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Mostrar etiqueta da peâa</translation>
+        <translation>Mostrar rótulo da peça</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>A visibilidade da etiqueta da peça foi alterada: </translation>
+        <translation>A visibilidade do rótulo da peça foi alterada: </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Nome da peâa:</translation>
+        <translation>Nome da peça:</translation>
     </message>
     <message>
         <source>Rename Pattern Piece</source>
-        <translation>Renomear peâa de padrâo</translation>
+        <translation>Renomear peça do molde</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>Renomear peâa padrâo</translation>
+        <translation>Renomear peça do molde</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
@@ -8529,19 +8471,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation>Atualizar ângulo do Nâ</translation>
+        <translation>Atualizar ângulo do nó</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation>Atualizar Notch</translation>
+        <translation>Atualizar entalhe</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation>Excluir Nâ</translation>
+        <translation>Excluir nó</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation>Excluir nâ</translation>
+        <translation>Excluir nó</translation>
     </message>
 </context>
 <context>
@@ -8560,11 +8502,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Redefinir a caneta atual para os padrâes</translation>
+        <translation>Redefinir a caneta atual para os padrões</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation>Salvar predefinição de caneta atual</translation>
+        <translation>Salvar predefinição da caneta atual</translation>
     </message>
 </context>
 <context>
@@ -8575,7 +8517,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation>Sâlido</translation>
+        <translation>Sólido</translation>
     </message>
     <message>
         <source>Density 1</source>
@@ -8615,11 +8557,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation>Cruzar</translation>
+        <translation>Cruz</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation>Diagonal para trâs</translation>
+        <translation>Diagonal para trás</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
@@ -8642,47 +8584,47 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Include all pieces</source>
-        <translation>Incluir todas as peâas</translation>
+        <translation>Incluir todas as peças</translation>
     </message>
     <message>
         <source>Exclude all pieces</source>
-        <translation>Excluir todas as peâas</translation>
+        <translation>Excluir todas as peças</translation>
     </message>
     <message>
         <source>Invert included pieces</source>
-        <translation>Inverter peâas incluâdas</translation>
+        <translation>Inverter peças incluídas</translation>
     </message>
     <message>
         <source>Lock all pieces</source>
-        <translation>Bloqueie todas as peâas</translation>
+        <translation>Bloquear todas as peças</translation>
     </message>
     <message>
         <source>Unlock all pieces</source>
-        <translation>Desbloqueie todas as peâas</translation>
+        <translation>Desbloquear todas as peças</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
-        <translation>Inverter peâas bloqueadas</translation>
+        <translation>Inverter peças bloqueadas</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>Alternar inclusâo de peâa de padrâo no layout</translation>
+        <translation>Alternar inclusão da peça do molde no layout</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation>Selecione a cor</translation>
+        <translation>Selecionar cor</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation>Editar propriedades da peâa do padrâo</translation>
+        <translation>Editar propriedades da peça do molde</translation>
     </message>
     <message>
         <source>Included</source>
-        <translation>Incluâdo</translation>
+        <translation>Incluído</translation>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation>A peâa do molde estâ incluâda no layout</translation>
+        <translation>A peça do molde está incluída no layout</translation>
     </message>
     <message>
         <source>Locked</source>
@@ -8690,7 +8632,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
-        <translation>A peâa do molde estâ bloqueada</translation>
+        <translation>A peça do molde está bloqueada</translation>
     </message>
     <message>
         <source>Color</source>
@@ -8698,23 +8640,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation>Cor da peâa do molde</translation>
+        <translation>Cor da peça do molde</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Pedaâo</translation>
+        <translation>Peça</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation>Letra de peâa de molde</translation>
+        <translation>Letra da peça do molde</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation>Nome da peâa do padrâo</translation>
+        <translation>Nome da peça do molde</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation>Bloqueio de alternância na peâa do padrâo</translation>
+        <translation>Alternar bloqueio da peça do molde</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
@@ -8722,14 +8664,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation>Clique duas vezes para abrir a caixa de diâlogo de propriedades da peâa do padrâo</translation>
+        <translation>Clique duas vezes para abrir a caixa de diálogo de propriedades da peça do molde</translation>
     </message>
 </context>
 <context>
     <name>PointIntersectXYDialog</name>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Ponto - intersecção XY</translation>
+        <translation>Ponto - interseção XY</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -8737,11 +8679,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>1st point:</source>
-        <translation>1â ponto:</translation>
+        <translation>1º ponto:</translation>
     </message>
     <message>
         <source>2nd point:</source>
-        <translation>2â ponto:</translation>
+        <translation>2º ponto:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -8765,7 +8707,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome ânico</translation>
+        <translation>Nome único</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -8788,7 +8730,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Linguagem GUI:</translation>
+        <translation>Idioma da interface:</translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8796,7 +8738,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
-        <translation>A unidade padrâo foi atualizada e serâ usada como padrâo para o prâximo padrâo que vocâ criar.</translation>
+        <translation>A unidade padrão foi atualizada e será usada como padrão no próximo molde que você criar.</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -8816,7 +8758,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Count step:</source>
-        <translation>Contagem de passos:</translation>
+        <translation>Quantidade de passos:</translation>
     </message>
     <message>
         <source> (0 - no limit)</source>
@@ -8824,35 +8766,35 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
-        <translation>Avisos de edição de padrâes</translation>
+        <translation>Avisos de edição de moldes</translation>
     </message>
     <message>
         <source>Confirm Item Delete</source>
-        <translation>Confirmar exclusâo do item</translation>
+        <translation>Confirmar exclusão do item</translation>
     </message>
     <message>
         <source>Confirm Format Rewriting</source>
-        <translation>Confirmar reescrita de formato</translation>
+        <translation>Confirmar reescrita do formato</translation>
     </message>
     <message>
         <source>Operations Default Suffix</source>
-        <translation>Sufixo padrâo de operaçães</translation>
+        <translation>Sufixo padrão de operações</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Espelho por sufixo de eixo:</translation>
+        <translation>Sufixo para espelhar por eixo:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Espelho por sufixo de linha:</translation>
+        <translation>Sufixo para espelhar por linha:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
-        <translation>Mover sufixo:</translation>
+        <translation>Sufixo para mover:</translation>
     </message>
     <message>
         <source>Rotate suffix:</source>
-        <translation>Girar sufixo:</translation>
+        <translation>Sufixo para girar:</translation>
     </message>
     <message>
         <source>File Handling</source>
@@ -8860,15 +8802,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Backups</source>
-        <translation>Câpias de seguranâa</translation>
+        <translation>Cópias de segurança</translation>
     </message>
     <message>
         <source>Create backup file when converting</source>
-        <translation>Crie um arquivo de backup ao converter</translation>
+        <translation>Criar arquivo de backup ao converter</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
-        <translation>Habilitar salvamento automâtico</translation>
+        <translation>Habilitar salvamento automático</translation>
     </message>
     <message>
         <source> min</source>
@@ -8876,7 +8818,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Every </source>
-        <translation>Todos </translation>
+        <translation>A cada </translation>
     </message>
     <message>
         <source>Export Format</source>
@@ -8884,15 +8826,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Include mode type in filename</source>
-        <translation>Incluir tipo de modo no nome do arquivo</translation>
+        <translation>Incluir tipo do modo no nome do arquivo</translation>
     </message>
     <message>
         <source>Save last used</source>
-        <translation>Salvar âltimo usado</translation>
+        <translation>Salvar o último usado</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation>Padrâo:</translation>
+        <translation>Padrão:</translation>
     </message>
     <message>
         <source>None</source>
@@ -8900,11 +8842,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Selection sound</source>
-        <translation>Seleção de som</translation>
+        <translation>Som de seleção</translation>
     </message>
     <message>
         <source>Sound:</source>
@@ -8912,15 +8854,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Designer Info</source>
-        <translation>informação do Designer</translation>
+        <translation>Informações do designer</translation>
     </message>
     <message>
         <source>Company / Designer Info</source>
-        <translation>informação da empresa/designer</translation>
+        <translation>Informações da empresa/designer</translation>
     </message>
     <message>
         <source>Company / Designer:</source>
-        <translation>Empresa / Designer:</translation>
+        <translation>Empresa / designer:</translation>
     </message>
     <message>
         <source>Contact:</source>
@@ -8928,7 +8870,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Endereâo:</translation>
+        <translation>Endereço:</translation>
     </message>
     <message>
         <source>City:</source>
@@ -8944,7 +8886,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Paâs :</translation>
+        <translation>País:</translation>
     </message>
     <message>
         <source>Telephone:</source>
@@ -8968,11 +8910,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Email format is not valid.</source>
-        <translation>O formato de e-mail nâo â vâlido.</translation>
+        <translation>O formato do e-mail não é válido.</translation>
     </message>
     <message>
         <source>Startup</source>
-        <translation>Comece</translation>
+        <translation>Inicialização</translation>
     </message>
     <message>
         <source>Welcome</source>
@@ -8980,7 +8922,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation>Nâo mostrar tela de boas-vindas</translation>
+        <translation>Não mostrar a tela de boas-vindas</translation>
     </message>
     <message>
         <source>Point name text:</source>
@@ -8988,7 +8930,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Separador Local:</translation>
+        <translation>Local do separador:</translation>
     </message>
     <message>
         <source>Default</source>
@@ -8996,7 +8938,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema do Usuário</translation>
+        <translation>Sistema do usuário</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -9008,19 +8950,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separador de Grupo</translation>
+        <translation>Separador de grupo</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Ponto Decimal</translation>
+        <translation>Separador decimal</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Sinal Negativo</translation>
+        <translation>Sinal negativo</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Sinal Positivo</translation>
+        <translation>Sinal positivo</translation>
     </message>
     <message>
         <source>Max number of backups:</source>
@@ -9028,11 +8970,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source> per file</source>
-        <translation> Por arquivo</translation>
+        <translation> por arquivo</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Aparância</translation>
+        <translation>Aparência</translation>
     </message>
     <message>
         <source>Theme:</source>
@@ -9043,7 +8985,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>PreferencesGraphicsViewPage</name>
     <message>
         <source>Appearance</source>
-        <translation>Aparância</translation>
+        <translation>Aparência</translation>
     </message>
     <message>
         <source>Toolbars</source>
@@ -9051,7 +8993,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
-        <translation>O râtulo de texto aparece abaixo do âcone (recomendado para iniciantes)</translation>
+        <translation>O rótulo de texto aparece abaixo do ícone (recomendado para iniciantes)</translation>
     </message>
     <message>
         <source>Show tool toolbars</source>
@@ -9063,7 +9005,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Apontar</translation>
+        <translation>Ponto</translation>
     </message>
     <message>
         <source>Line</source>
@@ -9079,11 +9021,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operaçães</translation>
+        <translation>Operações</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Pedaâo</translation>
+        <translation>Peça</translation>
     </message>
     <message>
         <source>Details</source>
@@ -9095,7 +9037,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Graphical output</source>
-        <translation>Saâda grâfica</translation>
+        <translation>Saída gráfica</translation>
     </message>
     <message>
         <source>Use anti-aliasing</source>
@@ -9107,7 +9049,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Râtulo</translation>
+        <translation>Rótulo</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -9119,7 +9061,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>The quick brown fox jumps over the lazy dog</source>
-        <translation>A râpida raposa marrom salta sobre o câo preguiâoso</translation>
+        <translation>A rápida raposa marrom pula sobre o cão preguiçoso</translation>
     </message>
     <message>
         <source>Point Names</source>
@@ -9127,7 +9069,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>GUI</source>
-        <translation>Interface grâfica do usuârio</translation>
+        <translation>Interface gráfica do usuário</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -9135,7 +9077,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
-        <translation>Zoom elâstico</translation>
+        <translation>Zoom por seleção</translation>
     </message>
     <message>
         <source>Positive:</source>
@@ -9147,11 +9089,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation>Padrâo:</translation>
+        <translation>Padrão:</translation>
     </message>
     <message>
         <source>Hover</source>
-        <translation>Passe o mouse</translation>
+        <translation>Ao passar o mouse</translation>
     </message>
     <message>
         <source>Drawing</source>
@@ -9159,7 +9101,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Origem do Eixo</translation>
+        <translation>Origem do eixo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -9167,15 +9109,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Primary:</source>
-        <translation>Primârio:</translation>
+        <translation>Primário:</translation>
     </message>
     <message>
         <source>Secondary:</source>
-        <translation>Secundârio:</translation>
+        <translation>Secundário:</translation>
     </message>
     <message>
         <source>Tertiary:</source>
-        <translation>Terciârio:</translation>
+        <translation>Terciário:</translation>
     </message>
     <message>
         <source>Navigation</source>
@@ -9224,11 +9166,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Zoom</source>
-        <translation>Ampliar</translation>
+        <translation>Zoom</translation>
     </message>
     <message>
         <source>Use CTRL modifier</source>
-        <translation>Use o modificador CTRL</translation>
+        <translation>Usar o modificador Ctrl</translation>
     </message>
     <message>
         <source>Behavior</source>
@@ -9236,7 +9178,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Constraints</source>
-        <translation>Restriçães</translation>
+        <translation>Restrições</translation>
     </message>
     <message>
         <source>Angle Step:</source>
@@ -9248,11 +9190,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Zoom to selected with double click</source>
-        <translation>Ampliar para selecionado com clique duplo</translation>
+        <translation>Dar zoom no selecionado com duplo clique</translation>
     </message>
     <message>
         <source>Pan active while Space key is pressed</source>
-        <translation>Panorâmica ativa enquanto a tecla Espaâo â pressionada</translation>
+        <translation>Pan ativo enquanto a tecla Espaço estiver pressionada</translation>
     </message>
     <message>
         <source>Export</source>
@@ -9268,15 +9210,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Always use current pen</source>
-        <translation>Use sempre uma caneta atual</translation>
+        <translation>Usar sempre a caneta atual</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation>Diâlogos</translation>
+        <translation>Diálogos</translation>
     </message>
     <message>
         <source>Open on second monitor if available</source>
-        <translation>Abra no segundo monitor, se disponâvel</translation>
+        <translation>Abrir no segundo monitor, se disponível</translation>
     </message>
     <message>
         <source>Position</source>
@@ -9296,7 +9238,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Bottom left</source>
-        <translation>Embaixo â esquerda</translation>
+        <translation>Canto inferior esquerdo</translation>
     </message>
     <message>
         <source>Bottom right</source>
@@ -9304,7 +9246,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Offset</source>
-        <translation>Desvio</translation>
+        <translation>Deslocamento</translation>
     </message>
     <message>
         <source>X Offset:</source>
@@ -9316,7 +9258,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
-        <translation>Mostrar apenas espessuras de linha ISO em caixas suspensas</translation>
+        <translation>Mostrar apenas espessuras de linha ISO em menus suspensos</translation>
     </message>
     <message>
         <source>Workspace</source>
@@ -9332,18 +9274,18 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Fórmula de limpeza automática</translation>
+        <translation>Limpar fórmula automaticamente</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
-        <translation>Use caixas de diálogo nativas</translation>
+        <translation>Usar caixas de diálogo nativas</translation>
     </message>
 </context>
 <context>
     <name>PreferencesPathPage</name>
     <message>
         <source>Paths that Seamly2D uses</source>
-        <translation>Caminhos que o Seamly2D usa</translation>
+        <translation>Caminhos usados pelo Seamly2D</translation>
     </message>
     <message>
         <source>Type</source>
@@ -9363,19 +9305,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Open Directory</source>
-        <translation>Diretârio aberto</translation>
+        <translation>Abrir diretório</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Minhas Medidas Individuais</translation>
+        <translation>Minhas medidas individuais</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Minhas Medidas Multisize</translation>
+        <translation>Minhas medidas Multisize</translation>
     </message>
     <message>
         <source>My Images</source>
-        <translation>Minhas Imagens</translation>
+        <translation>Minhas imagens</translation>
     </message>
     <message>
         <source>My Backups</source>
@@ -9383,34 +9325,34 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>My Patterns</source>
-        <translation>Meus Padrâes</translation>
+        <translation>Meus moldes</translation>
     </message>
     <message>
         <source>My Layouts</source>
-        <translation>Meus Layouts</translation>
+        <translation>Meus layouts</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Meus Modelos</translation>
+        <translation>Meus modelos</translation>
     </message>
     <message>
         <source>My Label Templates</source>
-        <translation>Meus modelos de etiquetas</translation>
+        <translation>Meus modelos de rótulos</translation>
     </message>
 </context>
 <context>
     <name>PreferencesPatternPage</name>
     <message>
         <source>Forbid flipping</source>
-        <translation>Proibir a inversâo</translation>
+        <translation>Proibir inversão</translation>
     </message>
     <message>
         <source>By default forbid flipping for all new created workpieces</source>
-        <translation>Por padrâo, proâba a inversâo para todas as novas peâas de trabalho criadas</translation>
+        <translation>Por padrão, proibir a inversão em todas as novas peças de trabalho criadas</translation>
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
-        <translation>Por padrâo, ocultar o caminho principal se a margem de costura estiver habilitada</translation>
+        <translation>Por padrão, ocultar o caminho principal se a margem de costura estiver habilitada</translation>
     </message>
     <message>
         <source>Seam allowance</source>
@@ -9418,7 +9360,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Default value:</source>
-        <translation>Valor padrâo:</translation>
+        <translation>Valor padrão:</translation>
     </message>
     <message>
         <source>Date:</source>
@@ -9430,11 +9372,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>Tempo:</translation>
+        <translation>Hora:</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Peâa de Padrâo</translation>
+        <translation>Peça de molde</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9446,7 +9388,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Faâa um entalhe na margem de costura e na linha de costura.</translation>
+        <translation>Mostrar entalhe na margem de costura e na linha de costura.</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -9466,11 +9408,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linhas de grâos</translation>
+        <translation>Linhas do fio</translation>
     </message>
     <message>
         <source>Show grainlines</source>
-        <translation>Mostrar linhas de grâos</translation>
+        <translation>Mostrar linhas do fio</translation>
     </message>
     <message>
         <source>Lineweight:</source>
@@ -9506,11 +9448,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiquetas</translation>
+        <translation>Rótulos</translation>
     </message>
     <message>
         <source>Label data (date/time format)</source>
-        <translation>Dados do râtulo (formato de data/hora)</translation>
+        <translation>Dados do rótulo (formato de data/hora)</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -9526,11 +9468,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>V Interno</translation>
+        <translation>V interno</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V Externo</translation>
+        <translation>V externo</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -9546,11 +9488,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show pattern labels</source>
-        <translation>Mostrar râtulos de padrâes</translation>
+        <translation>Mostrar rótulos do molde</translation>
     </message>
     <message>
         <source>Show piece labels</source>
-        <translation>Mostrar etiquetas das peâas</translation>
+        <translation>Mostrar rótulos das peças</translation>
     </message>
     <message>
         <source>Width</source>
@@ -9566,15 +9508,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation>Etiqueta do padrâo:</translation>
+        <translation>Rótulo do molde:</translation>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>Etiqueta da peâa:</translation>
+        <translation>Rótulo da peça:</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Modelo de etiqueta</translation>
+        <translation>Modelo de rótulo</translation>
     </message>
     <message>
         <source>Import template</source>
@@ -9602,7 +9544,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Arrow length:</source>
-        <translation>Comprimento da flecha:</translation>
+        <translation>Comprimento da seta:</translation>
     </message>
     <message>
         <source> px</source>
@@ -9613,14 +9555,14 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>QCoreApplication</name>
     <message>
         <source>Based on Qt %1 (%2, %3 bit)</source>
-        <translation>Baseado em Qt %1 (%2, %3 bits)</translation>
+        <translation>Baseado no Qt %1 (%2, %3 bits)</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Create new pattern piece to start working.</source>
-        <translation>Crie um novo molde para comeâar a trabalhar.</translation>
+        <translation>Crie uma nova peça do molde para começar a trabalhar.</translation>
     </message>
     <message>
         <source>Property</source>
@@ -9634,35 +9576,35 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>add node</source>
-        <translation>adicionar nâ</translation>
+        <translation>adicionar nó</translation>
     </message>
     <message>
         <source>Changes applied.</source>
-        <translation>Alteraçães aplicadas.</translation>
+        <translation>Alterações aplicadas.</translation>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Nome de tag incorreto &apos;%1&apos;.</translation>
+        <translation>Nome da tag incorreto &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Can&apos;t convert toUInt parameter</source>
-        <translation>Nâo â possâvel converter para parâmetro UInt</translation>
+        <translation>Não é possível converter o parâmetro para UInt</translation>
     </message>
     <message>
         <source>Can&apos;t convert toBool parameter</source>
-        <translation>Nâo â possâvel converter para parâmetro Bool</translation>
+        <translation>Não é possível converter o parâmetro para Bool</translation>
     </message>
     <message>
         <source>Got empty parameter</source>
-        <translation>Obteve parâmetro vazio</translation>
+        <translation>Parâmetro vazio</translation>
     </message>
     <message>
         <source>Can&apos;t convert toDouble parameter</source>
-        <translation>Nâo â possâvel converter para parâmetro Double</translation>
+        <translation>Não é possível converter o parâmetro para Double</translation>
     </message>
     <message>
         <source>Got wrong parameter id. Need only id &gt; 0.</source>
-        <translation>Obteve id de parâmetro errado. Precisa apenas de id &gt; 0.</translation>
+        <translation>ID de parâmetro inválido. Deve ser &gt; 0.</translation>
     </message>
     <message>
         <source>Fabric</source>
@@ -9670,11 +9612,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Resina</translation>
+        <translation>Forro</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Interfaceamento</translation>
+        <translation>Entretela</translation>
     </message>
     <message>
         <source>Interlining</source>
@@ -9686,35 +9628,35 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translation>em dobra</translation>
+        <translation>na dobra</translation>
     </message>
     <message>
         <source>Union piece</source>
-        <translation>Peâa de uniâo</translation>
+        <translation>peça de união</translation>
     </message>
     <message>
         <source>move piece</source>
-        <translation>mover peâa</translation>
+        <translation>mover peça</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Linha sâlida</translation>
+        <translation>Linha contínua</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Traâo</translation>
+        <translation>Tracejado</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Ponto</translation>
+        <translation>Pontilhado</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Traâo Ponto</translation>
+        <translation>Tracejado Ponto</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Traâo Ponto Ponto</translation>
+        <translation>Tracejado Ponto Ponto</translation>
     </message>
     <message>
         <source>No Pen</source>
@@ -9722,11 +9664,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Avanâar (do ponto inicial)</translation>
+        <translation>Avançar (a partir do ponto inicial)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Para trâs (do ponto final)</translation>
+        <translation>Recuar (a partir do ponto final)</translation>
     </message>
     <message>
         <source>Images</source>
@@ -9738,11 +9680,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
-        <translation>Não é possível estender o caminho interno &apos;%1&apos; ponto inicial para a linha de corte.</translation>
+        <translation>Não é possível estender o ponto inicial do caminho interno &apos;%1&apos; até a linha de corte.</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
-        <translation>Não é possível estender o ponto final do caminho interno &apos;%1&apos; para a linha de corte.</translation>
+        <translation>Não é possível estender o ponto final do caminho interno &apos;%1&apos; até a linha de corte.</translation>
     </message>
     <message>
         <source>%1</source>
@@ -9758,12 +9700,12 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>too few arguments for function sum.</source>
         <comment>parser error message</comment>
-        <translation>poucos argumentos para a função sum.</translation>
+        <translation>argumentos insuficientes para a função sum.</translation>
     </message>
     <message>
         <source>too few arguments for function min.</source>
         <comment>parser error message</comment>
-        <translation>poucos argumentos para a função min.</translation>
+        <translation>argumentos insuficientes para a função min.</translation>
     </message>
 </context>
 <context>
@@ -9781,37 +9723,37 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Invalid function-, variable- or constant name: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Nome de função, variâvel ou constante invâlido: &quot;$TOK$&quot;.</translation>
+        <translation>Nome de função, variável ou constante inválido: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid binary operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Identificador de operador binârio invâlido: &quot;$TOK$&quot;.</translation>
+        <translation>Identificador de operador binário inválido: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid infix operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Identificador de operador infixo invâlido: &quot;$TOK$&quot;.</translation>
+        <translation>Identificador de operador infixo inválido: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid postfix operator identifier: &quot;$TOK$&quot;.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>Identificador de operador postfix invâlido: &quot;$TOK$&quot;.</translation>
+        <translation>Identificador de operador posfixo inválido: &quot;$TOK$&quot;.</translation>
     </message>
     <message>
         <source>Invalid pointer to callback function.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Ponteiro invâlido para função de retorno de chamada.</translation>
+        <translation>Ponteiro inválido para função de retorno de chamada.</translation>
     </message>
     <message>
         <source>Expression is empty.</source>
         <comment>Math parser error messages.</comment>
-        <translation>A expressâo estâ vazia.</translation>
+        <translation>A expressão está vazia.</translation>
     </message>
     <message>
         <source>Invalid pointer to variable.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Ponteiro invâlido para variâvel.</translation>
+        <translation>Ponteiro inválido para variável.</translation>
     </message>
     <message>
         <source>Unexpected operator &quot;$TOK$&quot; found at position $POS$</source>
@@ -9821,7 +9763,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Unexpected end of expression at position $POS$</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Fim inesperado da expressâo na posição $POS$</translation>
+        <translation>Fim inesperado da expressão na posição $POS$</translation>
     </message>
     <message>
         <source>Unexpected argument separator at position $POS$</source>
@@ -9831,7 +9773,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Unexpected parenthesis &quot;$TOK$&quot; at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Parânteses inesperados &quot;$TOK$&quot; na posição $POS$</translation>
+        <translation>Parêntese inesperado &quot;$TOK$&quot; na posição $POS$</translation>
     </message>
     <message>
         <source>Unexpected function &quot;$TOK$&quot; at position $POS$</source>
@@ -9846,7 +9788,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Unexpected variable &quot;$TOK$&quot; found at position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Variâvel inesperada &quot;$TOK$&quot; encontrada na posição $POS$</translation>
+        <translation>Variável inesperada &quot;$TOK$&quot; encontrada na posição $POS$</translation>
     </message>
     <message>
         <source>Function arguments used without a function (position: $POS$)</source>
@@ -9856,27 +9798,27 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Missing parenthesis</source>
         <comment>Math parser error messages.</comment>
-        <translation>Parânteses ausentes</translation>
+        <translation>Parêntese ausente</translation>
     </message>
     <message>
         <source>Too many parameters for function &quot;$TOK$&quot; at expression position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Muitos parâmetros para a função &quot;$TOK$&quot; na posição de expressâo $POS$</translation>
+        <translation>Muitos parâmetros para a função &quot;$TOK$&quot; na posição da expressão $POS$</translation>
     </message>
     <message>
         <source>Too few parameters for function &quot;$TOK$&quot; at expression position $POS$</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot; and $POS$</comment>
-        <translation>Poucos parâmetros para a função &quot;$TOK$&quot; na posição de expressâo $POS$</translation>
+        <translation>Poucos parâmetros para a função &quot;$TOK$&quot; na posição da expressão $POS$</translation>
     </message>
     <message>
         <source>Divide by zero</source>
         <comment>Math parser error messages.</comment>
-        <translation>Dividir por zero</translation>
+        <translation>Divisão por zero</translation>
     </message>
     <message>
         <source>Domain error</source>
         <comment>Math parser error messages.</comment>
-        <translation>Erro de domânio</translation>
+        <translation>Erro de domínio</translation>
     </message>
     <message>
         <source>Name conflict</source>
@@ -9886,12 +9828,12 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Invalid value for operator priority (must be greater or equal to zero).</source>
         <comment>Math parser error messages.</comment>
-        <translation>Valor invâlido para prioridade do operador (deve ser maior ou igual a zero).</translation>
+        <translation>Valor inválido para prioridade do operador (deve ser maior ou igual a zero).</translation>
     </message>
     <message>
         <source>user defined binary operator &quot;$TOK$&quot; conflicts with a built in operator.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
-        <translation>O operador binârio definido pelo usuârio &quot;$TOK$&quot; entra em conflito com um operador interno.</translation>
+        <translation>O operador binário definido pelo usuário &quot;$TOK$&quot; entra em conflito com um operador interno.</translation>
     </message>
     <message>
         <source>Unexpected string token found at position $POS$.</source>
@@ -9901,17 +9843,17 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Unterminated string starting at position $POS$.</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>String nâo terminada comeâando na posição $POS$.</translation>
+        <translation>String não terminada começando na posição $POS$.</translation>
     </message>
     <message>
         <source>String function called with a non string type of argument.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Função string chamada com um argumento do tipo nâo string.</translation>
+        <translation>Função de string chamada com um argumento de tipo não string.</translation>
     </message>
     <message>
         <source>String value used where a numerical argument is expected.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Valor de string usado quando um argumento numârico â esperado.</translation>
+        <translation>Valor string usado onde um argumento numérico é esperado.</translation>
     </message>
     <message>
         <source>No suitable overload for operator &quot;$TOK$&quot; at position $POS$.</source>
@@ -9921,17 +9863,17 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>Function result is a string.</source>
         <comment>Math parser error messages.</comment>
-        <translation>O resultado da função â uma string.</translation>
+        <translation>O resultado da função é uma string.</translation>
     </message>
     <message>
         <source>Parser error.</source>
         <comment>Math parser error messages.</comment>
-        <translation>Erro do analisador.</translation>
+        <translation>Erro de análise.</translation>
     </message>
     <message>
         <source>Decimal separator is identic to function argument separator.</source>
         <comment>Math parser error messages.</comment>
-        <translation>O separador decimal â idântico ao separador de argumentos da função.</translation>
+        <translation>O separador decimal é idêntico ao separador de argumentos da função.</translation>
     </message>
     <message>
         <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
@@ -9941,12 +9883,12 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <message>
         <source>If-then-else operator is missing an else clause</source>
         <comment>Math parser error messages. Do not translate operator name.</comment>
-        <translation>O operador if-then-else nâo possui uma clâusula else</translation>
+        <translation>O operador if-then-else está sem cláusula else</translation>
     </message>
     <message>
         <source>Misplaced colon at position $POS$</source>
         <comment>Math parser error messages. Left untouched $POS$</comment>
-        <translation>Dois pontos mal posicionados na posição $POS$</translation>
+        <translation>Dois-pontos fora de lugar na posição $POS$</translation>
     </message>
 </context>
 <context>
@@ -9960,54 +9902,54 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
-        <translation>renomear peâa padrâo</translation>
+        <translation>renomear peça do molde</translation>
     </message>
 </context>
 <context>
     <name>ResizeHandlesItem</name>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation>Pressione &lt;b&gt;CTRL&lt;/b&gt; para dimensionar em torno do centro - &lt;b&gt; Proporção de aspecto bloqueada &lt;/b&gt;</translation>
+        <translation>Pressione &lt;b&gt;CTRL&lt;/b&gt; para redimensionar a partir do centro - &lt;b&gt; proporção bloqueada &lt;/b&gt;</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation>Pressione &lt;b&gt;CTRL&lt;/b&gt; para dimensionar ao redor do centro, &lt;b&gt;SHIFT&lt;/b&gt; para dimensionar uniformemente.</translation>
+        <translation>Pressione &lt;b&gt;CTRL&lt;/b&gt; para dimensionar em torno do centro, &lt;b&gt;SHIFT&lt;/b&gt; para dimensionar uniformemente.</translation>
     </message>
 </context>
 <context>
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation>opção salvar detalhes</translation>
+        <translation>salvar opções da peça</translation>
     </message>
 </context>
 <context>
     <name>SavePiecePathOptions</name>
     <message>
         <source>save path options</source>
-        <translation>Opções de salvar caminho</translation>
+        <translation>salvar opções de caminho</translation>
     </message>
 </context>
 <context>
     <name>SaveToolOptions</name>
     <message>
         <source>save tool option</source>
-        <translation>opção de ferramenta de salvamento</translation>
+        <translation>salvar opção da ferramenta</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesConfigurationPage</name>
     <message>
         <source>Language</source>
-        <translation>Linguagem</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Linguagem GUI:</translation>
+        <translation>Idioma da interface:</translation>
     </message>
     <message>
         <source>Pattern making system</source>
-        <translation>Sistema de criação de padrâes</translation>
+        <translation>Sistema de criação de moldes</translation>
     </message>
     <message>
         <source>System:</source>
@@ -10035,11 +9977,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
-        <translation>O texto aparece abaixo do âcone (recomendado para iniciantes).</translation>
+        <translation>O texto aparece abaixo do ícone (recomendado para iniciantes).</translation>
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Altura e tamanho padrâo</translation>
+        <translation>Altura e tamanho padrão</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -10051,15 +9993,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Startup</source>
-        <translation>Comece</translation>
+        <translation>Inicialização</translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation>Nâo mostrar tela de boas-vindas</translation>
+        <translation>Não mostrar tela de boas-vindas</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Separador Local:</translation>
+        <translation>Localidade do separador:</translation>
     </message>
     <message>
         <source>Default</source>
@@ -10067,7 +10009,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema do Usuário</translation>
+        <translation>Sistema do usuário</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -10079,19 +10021,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separador de Grupo</translation>
+        <translation>Separador de grupo</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Ponto Decimal</translation>
+        <translation>Separador decimal</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Sinal Negativo</translation>
+        <translation>Sinal negativo</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Sinal Positivo</translation>
+        <translation>Sinal positivo</translation>
     </message>
     <message>
         <source>Welcome</source>
@@ -10099,7 +10041,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Aparância</translation>
+        <translation>Aparência</translation>
     </message>
     <message>
         <source>Theme:</source>
@@ -10111,7 +10053,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Dialogs</source>
-        <translation>Diâlogos</translation>
+        <translation>Diálogos</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
@@ -10130,7 +10072,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Padrâo</translation>
+        <translation>Padrão</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -10138,27 +10080,27 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Open Directory</source>
-        <translation>Diretârio aberto</translation>
+        <translation>Abrir diretório</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Minhas Medidas Individuais</translation>
+        <translation>Minhas medidas individuais</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>Minhas Medidas Multisize</translation>
+        <translation>Minhas medidas Multisize</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>Meus Modelos</translation>
+        <translation>Meus modelos</translation>
     </message>
     <message>
         <source>Paths that SeamlyME uses</source>
-        <translation>Caminhos que o SeamlyME usa</translation>
+        <translation>Caminhos usados pelo SeamlyME</translation>
     </message>
     <message>
         <source>My Body Scans</source>
-        <translation>Meus exames corporais</translation>
+        <translation>Meus escaneamentos corporais</translation>
     </message>
 </context>
 <context>
@@ -10173,11 +10115,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>3D Look users</source>
-        <translation>Usuârios do 3D Look</translation>
+        <translation>Usuários do 3D Look</translation>
     </message>
     <message>
         <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
-        <translation>Para utilizar uma digitalização corporal 3D Look, o ficheiro tem de ser convertido para o formato SeamlyME. </translation>
+        <translation>Para utilizar um escaneamento corporal do 3D Look, o arquivo precisa ser convertido para o formato do SeamlyME. </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
@@ -10185,11 +10127,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
-        <translation>Vocâ receberâ um e-mail com o arquivo convertido, que poderâ ser carregado no SeamlyME normalmente.</translation>
+        <translation>Você receberá um e-mail com o arquivo convertido, que você poderá então carregar no SeamlyME normalmente.</translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Selecione suas unidades preferidas, separador decimal e idioma. (Vocâ pode alterâ-los mais tarde.)</translation>
+        <translation>Selecione suas unidades preferidas, o separador decimal e o idioma. (Você pode alterá-los mais tarde.)</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -10197,11 +10139,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Define as unidades padrâo para um novo arquivo de medição.</translation>
+        <translation>Define as unidades padrão para um novo arquivo de medidas.</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Linguagem GUI:</translation>
+        <translation>Idioma da interface:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
@@ -10209,15 +10151,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation>Nâo mostrar novamente</translation>
+        <translation>Não mostrar novamente</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centâmetros</translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -10225,11 +10167,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quando marcada, a janela de boas-vindas não será exibida. Você pode alterar essa configuração nas preferências do SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quando marcada, a janela de boas‑vindas não será exibida. Você pode alterar essa configuração nas preferências do SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Separador Local:</translation>
+        <translation>Localidade do separador:</translation>
     </message>
     <message>
         <source>Default</source>
@@ -10237,7 +10179,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema do Usuário</translation>
+        <translation>Sistema do usuário</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -10249,23 +10191,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Linguagem</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separador de Grupo</translation>
+        <translation>Separador de grupo</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Ponto Decimal</translation>
+        <translation>Ponto decimal</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Sinal Negativo</translation>
+        <translation>Sinal negativo</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Sinal Positivo</translation>
+        <translation>Sinal positivo</translation>
     </message>
     <message>
         <source>Theme:</source>
@@ -10288,23 +10230,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Define as unidades padrâo para um novo arquivo de medição.</translation>
+        <translation>Define as unidades padrão para um novo arquivo de medidas.</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Linguagem GUI:</translation>
+        <translation>Idioma da interface:</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation>Nâo mostrar novamente</translation>
+        <translation>Não mostrar novamente</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Centâmetros</translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Milâmetros</translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -10316,7 +10258,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation>Selecione suas unidades preferidas, separador decimal, idioma e som de seleção. (Vocâ pode alterâ-los mais tarde.)</translation>
+        <translation>Selecione suas unidades preferidas, o separador decimal, o idioma e o som de seleção. (Você pode alterá-los mais tarde.)</translation>
     </message>
     <message>
         <source>Sound:</source>
@@ -10324,15 +10266,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Sets the node selection click  sound.</source>
-        <translation>Define o som de clique de seleção de nâ.</translation>
+        <translation>Define o som de clique ao selecionar nós.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quando marcada, a janela de boas-vindas não será exibida. Você pode alterar essa configuração nas preferências do Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Quando marcada, a janela de boas‑vindas não será exibida. Você pode alterar essa configuração nas preferências do Seamly2D.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Separator Locale:</source>
-        <translation>Separador Local:</translation>
+        <translation>Localidade do separador:</translation>
     </message>
     <message>
         <source>Default</source>
@@ -10340,7 +10282,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>User&apos;s System</source>
-        <translation>Sistema do Usuário</translation>
+        <translation>Sistema do usuário</translation>
     </message>
     <message>
         <source>Locale</source>
@@ -10352,23 +10294,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Linguagem</translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Separador de Grupo</translation>
+        <translation>Separador de grupo</translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Ponto Decimal</translation>
+        <translation>Ponto decimal</translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Sinal Negativo</translation>
+        <translation>Sinal negativo</translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Sinal Positivo</translation>
+        <translation>Sinal positivo</translation>
     </message>
     <message>
         <source>Theme:</source>
@@ -10379,18 +10321,18 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>SetPieceColor</name>
     <message>
         <source>Change piece color</source>
-        <translation>Alterar cor da peâa</translation>
+        <translation>Alterar cor da peça</translation>
     </message>
     <message>
         <source>Piece color changed: </source>
-        <translation>A cor da peça mudou: </translation>
+        <translation>Cor da peça alterada: </translation>
     </message>
 </context>
 <context>
     <name>ShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Copiar atalhos para a ârea de transferância</translation>
+        <translation>Copiar atalhos para a área de transferência</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
@@ -10402,7 +10344,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Seamly2D Shortcuts</source>
-        <translation>Atalhos Seamly2D</translation>
+        <translation>Atalhos do Seamly2D</translation>
     </message>
     <message>
         <source>File</source>
@@ -10458,15 +10400,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation>Preferâncias de Padrâo</translation>
+        <translation>Preferências do molde</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
-        <translation>Ctrl+Shift+Vârgula</translation>
+        <translation>Ctrl+Shift+Vírgula</translation>
     </message>
     <message>
         <source>Document Information</source>
-        <translation>informação do documento</translation>
+        <translation>Informações do documento</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -10474,7 +10416,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Saâda</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -10506,7 +10448,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation>Modo de Rascunho</translation>
+        <translation>Modo de rascunho</translation>
     </message>
     <message>
         <source>Shift+D</source>
@@ -10514,11 +10456,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation>Modo de peâa</translation>
+        <translation>Modo de peça</translation>
     </message>
     <message>
         <source>Layout Mode</source>
-        <translation>Modo de Layout</translation>
+        <translation>Modo de layout</translation>
     </message>
     <message>
         <source>Shift+L</source>
@@ -10534,7 +10476,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Diminuir o zoom</translation>
+        <translation>Reduzir</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -10546,7 +10488,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Zoom para apontar</translation>
+        <translation>Zoom para o ponto</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -10554,7 +10496,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Serve para todos</translation>
+        <translation>Ajustar tudo</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -10574,7 +10516,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Ârea</translation>
+        <translation>Área</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -10582,11 +10524,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Frigideira</translation>
+        <translation>Deslocar</translation>
     </message>
     <message>
         <source>Show Name Text</source>
-        <translation>Mostrar nome Texto</translation>
+        <translation>Mostrar texto do nome</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
@@ -10598,7 +10540,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Diminuir tamanho do texto</translation>
+        <translation>Diminuir o tamanho do texto</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -10606,19 +10548,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Usar Cor da Ferramenta</translation>
+        <translation>Usar cor da ferramenta</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Estrutura de arame</translation>
+        <translation>Aramado</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Pontos de controle de curva</translation>
+        <translation>Pontos de controle da curva</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Origem do Eixo</translation>
+        <translation>Origem do eixo</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
@@ -10626,11 +10568,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Linhas de grâos</translation>
+        <translation>Linhas de fio</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Etiquetas</translation>
+        <translation>Rótulos</translation>
     </message>
     <message>
         <source>Measurements</source>
@@ -10638,7 +10580,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
-        <translation>Abra o SeamlyMe</translation>
+        <translation>Abrir SeamlyMe</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -10646,7 +10588,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Variables Table</source>
-        <translation>Tabela de Variâveis</translation>
+        <translation>Tabela de variáveis</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -10654,7 +10596,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Export Variables Table  to CSV</source>
-        <translation>Exportar tabela de variâveis para CSV</translation>
+        <translation>Exportar tabela de variáveis para CSV</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -10678,7 +10620,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Apontar</translation>
+        <translation>Ponto</translation>
     </message>
     <message>
         <source>Length and Angle</source>
@@ -10686,7 +10628,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>On-line</translation>
+        <translation>Na linha</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
@@ -10698,31 +10640,31 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Comprimento da linha</translation>
+        <translation>Comprimento até a linha</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>intersecção de arco e linha</translation>
+        <translation>Interseção entre arco e linha</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>intersecção do eixo e do triângulo</translation>
+        <translation>Interseção entre eixo e triângulo</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>intersecção XY</translation>
+        <translation>Interseção XY</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>intersecção de reta e perpendicular</translation>
+        <translation>Interseção entre linha e perpendicular</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>intersecção de linha e eixo</translation>
+        <translation>Interseção entre linha e eixo</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
-        <translation>Ponto mâdio on-line</translation>
+        <translation>Ponto médio na linha</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -10738,7 +10680,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Ponto - Linhas de intersecção</translation>
+        <translation>Ponto - interseção de linhas</translation>
     </message>
     <message>
         <source>Curves</source>
@@ -10746,7 +10688,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Curva - Interativo</translation>
+        <translation>Curva - interativa</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -10754,7 +10696,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interativo</translation>
+        <translation>Spline - interativa</translation>
     </message>
     <message>
         <source>Alt+S</source>
@@ -10762,7 +10704,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Curva - Fixa</translation>
+        <translation>Curva - fixa</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
@@ -10770,7 +10712,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline - Fixo</translation>
+        <translation>Spline - fixa</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
@@ -10778,15 +10720,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Ponto - Na Curva</translation>
+        <translation>Ponto - na curva</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
-        <translation>Ponto - Em Spline	</translation>
+        <translation>Ponto - na spline	</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Ponto - intersecção de Curvas</translation>
+        <translation>Ponto - interseção de curvas</translation>
     </message>
     <message>
         <source>Arcs</source>
@@ -10794,7 +10736,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Arc - Radius and Angle</source>
-        <translation>Arco - Raio e ângulo</translation>
+        <translation>Arco - raio e ângulo</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -10802,7 +10744,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - Raio e Comprimento</translation>
+        <translation>Arco - raio e comprimento</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -10810,19 +10752,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Ponto - Em Arco</translation>
+        <translation>Ponto - no arco</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis</source>
-        <translation>Ponto - intersecção Arco e Eixo</translation>
+        <translation>Ponto - interseção entre arco e eixo</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Ponto - Arcos de intersecção</translation>
+        <translation>Ponto - interseção de arcos</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Ponto - intersecção de Cârculos</translation>
+        <translation>Ponto - interseção de círculos</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -10830,15 +10772,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation></translation>
+        <translation>Ponto - interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Ponto - intersecção Arco e Tangente</translation>
+        <translation>Ponto - interseção entre arco e tangente</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
-        <translation>Arco elâptico</translation>
+        <translation>Arco elíptico</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -10846,7 +10788,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operaçães</translation>
+        <translation>Operações</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
@@ -10854,15 +10796,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>rotação</translation>
+        <translation>Rotação</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Espelho por Linha</translation>
+        <translation>Espelhar por linha</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Espelho por eixo</translation>
+        <translation>Espelhar por eixo</translation>
     </message>
     <message>
         <source>Move</source>
@@ -10874,7 +10816,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Dardos Verdadeiros</translation>
+        <translation>Pences reais</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
@@ -10894,11 +10836,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Peâa de Padrâo</translation>
+        <translation>Peça de molde</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nova peâa de padrâo</translation>
+        <translation>Nova peça de molde</translation>
     </message>
     <message>
         <source>Anchor Point</source>
@@ -10910,11 +10852,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Edit Properties</source>
-        <translation>Editar Propriedades</translation>
+        <translation>Editar propriedades</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation>Bloqueio de alternância</translation>
+        <translation>Alternar bloqueio</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10922,23 +10864,23 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Incluir no Layout</translation>
+        <translation>Incluir no layout</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Proibir a inversâo</translation>
+        <translation>Proibir espelhamento</translation>
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation>Elevar ao topo</translation>
+        <translation>Trazer para o topo</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
-        <translation>Ctrl+Inâcio</translation>
+        <translation>Ctrl+Início</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation>De baixo para cima</translation>
+        <translation>Enviar para o fundo</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -10962,27 +10904,27 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Unir peâas</translation>
+        <translation>Unir peças</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Peâas de exportação</translation>
+        <translation>Exportar peças</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Disposição</translation>
+        <translation>Layout</translation>
     </message>
     <message>
         <source>New Layout</source>
-        <translation>Novo Layout</translation>
+        <translation>Novo layout</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Layout de exportação</translation>
+        <translation>Exportar layout</translation>
     </message>
     <message>
         <source>Last Tool</source>
-        <translation>Âltima ferramenta</translation>
+        <translation>Última ferramenta</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
@@ -10990,7 +10932,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>History</source>
-        <translation>Histâria</translation>
+        <translation>Histórico</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -10998,7 +10940,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Utilitârios</translation>
+        <translation>Utilitários</translation>
     </message>
     <message>
         <source>Calculator</source>
@@ -11010,7 +10952,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Grâfico Decimal</translation>
+        <translation>Tabela decimal</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -11034,11 +10976,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Inserir nâs</translation>
+        <translation>Inserir nós</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Ampliar 100%</translation>
+        <translation>Zoom 100%</translation>
     </message>
     <message>
         <source>Ctrl+9</source>
@@ -11054,45 +10996,158 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Prâximo bloco de rascunho</translation>
+        <translation>Próximo bloco de rascunho</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
+    </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Navegação em diálogos</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Menu suspenso</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Mover o foco para o menu suspenso.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Seta para cima / seta para baixo</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Percorrer os itens quando o menu suspenso estiver aberto ou fechado.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + seta para baixo ou F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translatorcomment>Abrir a lista suspensa.</translatorcomment>
+        <translation>Abra a lista suspensa.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter ou Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Selecionar o item atualmente destacado e fechar a lista.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Fechar a lista sem alterar a seleção.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Teclas de letras (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Digite as primeiras letras do nome de um item para ir diretamente a esse item na lista.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Barra de abas</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Mover o foco para a barra de abas.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Seta para a esquerda / para a direita</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Mover a seleção entre abas adjacentes.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Botão</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Barra de espaço</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Para acionar o botão com foco.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Ação padrão se o botão estiver definido como padrão na janela de diálogo.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lista</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Mover o foco para a lista.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Move a seleção para o item anterior ou para o próximo na lista.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Teclas Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Vai diretamente para o primeiro ou último item da lista.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
     </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
     <message>
         <source>toggle the first dart visibility</source>
-        <translation>alternar a visibilidade do primeiro dardo</translation>
+        <translation>Alternar a visibilidade do primeiro dardo</translation>
     </message>
     <message>
         <source>toggle the second dart visibility</source>
-        <translation>alternar a visibilidade do segundo dardo</translation>
+        <translation>Alternar a visibilidade do segundo dardo</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoDialog</name>
     <message>
         <source>Document Information</source>
-        <translation>informação do documento</translation>
+        <translation>Informações do documento</translation>
     </message>
     <message>
         <source>Copy info to clipboard</source>
-        <translation>Copiar informação para a ârea de transferância</translation>
+        <translation>Copiar informações para a área de transferência</translation>
     </message>
     <message>
         <source>Export info as PDF</source>
-        <translation>Exportar informação como PDF</translation>
+        <translation>Exportar informações como PDF</translation>
     </message>
     <message>
         <source>Send info to the Printer</source>
-        <translation>Enviar informação para a impressora</translation>
+        <translation>Enviar informações para a impressora</translation>
     </message>
     <message>
         <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;estilo da tabela=tamanho da fonte:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Empresa: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Cliente: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Nome do padrâo:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Nâmero do padrâo: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Versâo: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Unidades: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Medidas:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Descrição: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notas: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Imagem: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Empresa:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Cliente:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Nome do molde:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Número do molde:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Versão:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Unidades:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Medidas:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Descrição: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notas:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Imagem:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
         <source>Info files</source>
@@ -11111,21 +11166,21 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     <name>ShowOperationPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>visibilidade do ponto de alternância</translation>
+        <translation>Alternar a visibilidade do ponto</translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>visibilidade do ponto de alternância</translation>
+        <translation>Alternar a visibilidade do ponto</translation>
     </message>
 </context>
 <context>
     <name>TMainWindow</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Select New for creation measurement file.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Selecione Novo para criar arquivo de medição.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Selecione Novo para criar um arquivo de medição.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name</source>
@@ -11229,15 +11284,15 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Base height value</source>
-        <translation>Valor da altura da base</translation>
+        <translation>Valor da altura base</translation>
     </message>
     <message>
         <source>Given name:</source>
-        <translation>Nome dado:</translation>
+        <translation>Primeiro nome:</translation>
     </message>
     <message>
         <source>Family name:</source>
-        <translation>Nome de famâlia:</translation>
+        <translation>Sobrenome:</translation>
     </message>
     <message>
         <source>Birth date:</source>
@@ -11273,11 +11328,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Gradation</source>
-        <translation>gradação</translation>
+        <translation>Gradação</translation>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Aberto individual...</translation>
+        <translation>Abrir individual...</translation>
     </message>
     <message>
         <source>Save</source>
@@ -11301,11 +11356,11 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Add known</source>
-        <translation>Adicionar conhecido</translation>
+        <translation>Adicionar medição conhecida</translation>
     </message>
     <message>
         <source>Add custom</source>
-        <translation>Adicionar personalizado</translation>
+        <translation>Adicionar medição personalizada</translation>
     </message>
     <message>
         <source>Read only</source>
@@ -11317,7 +11372,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Show information about all known measurement</source>
-        <translation>Mostrar informação sobre todas as medições conhecidas</translation>
+        <translation>Mostrar informações sobre todas as medições conhecidas</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -11325,19 +11380,19 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>untitled %1</source>
-        <translation>sem tâtulo %1</translation>
+        <translation>sem título %1</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Este arquivo jâ foi aberto em outra janela.</translation>
+        <translation>Este arquivo já está aberto em outra janela.</translation>
     </message>
     <message>
         <source>File error.</source>
-        <translation>Erro de arquivo.</translation>
+        <translation>Erro no arquivo.</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Nâo foi possâvel salvar o arquivo</translation>
+        <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -11365,7 +11420,7 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Individual measurements</source>
-        <translation>Medidas individuais</translation>
+        <translation>Medições individuais</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -11373,13 +11428,13 @@ Prima enter para o adicionar temporariamente à lista.</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Alteraçães nâo salvas</translation>
+        <translation>Alterações não salvas</translation>
     </message>
     <message>
         <source>Measurements have been modified.
 Do you want to save your changes?</source>
-        <translation>As medidas foram alteradas.
-Pretende guardar as suas alterações?</translation>
+        <translation>As medições foram modificadas.
+Deseja salvar suas alterações?</translation>
     </message>
     <message>
         <source>Empty field</source>
@@ -11391,11 +11446,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Import from a pattern</source>
-        <translation>Importar de um padrâo</translation>
+        <translation>Importar de um molde</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
-        <translation>Unidade de padrâo:</translation>
+        <translation>Unidade do molde:</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -11403,7 +11458,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation>Encontrar Anterior</translation>
+        <translation>Localizar anterior</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -11411,7 +11466,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation>Encontre o prâximo</translation>
+        <translation>Localizar próximo</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -11419,11 +11474,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window.</source>
-        <translation>Falha ao bloquear. Este arquivo jâ foi aberto em outra janela.</translation>
+        <translation>Falha ao bloquear o arquivo. Este arquivo já está aberto em outra janela.</translation>
     </message>
     <message>
         <source>File contains invalid known measurement(s).</source>
-        <translation>O arquivo contâm medições conhecidas invâlidas.</translation>
+        <translation>O arquivo contém medições conhecidas inválidas.</translation>
     </message>
     <message>
         <source>File has unknown format.</source>
@@ -11435,23 +11490,23 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; doesn&apos;t exist!</source>
-        <translation>O arquivo &apos;%1&apos; nâo existe!</translation>
+        <translation>O arquivo &apos;%1&apos; não existe!</translation>
     </message>
     <message>
         <source>The name of known measurement forbidden to change.</source>
-        <translation>O nome da medição conhecida â proibido de alterar.</translation>
+        <translation>É proibido alterar o nome da medição conhecida.</translation>
     </message>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;.</source>
-        <translation>Nâo â possâvel encontrar a medição &apos;%1&apos;.</translation>
+        <translation>Não foi possível encontrar a medição &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>The full name of known measurement forbidden to change.</source>
-        <translation>O nome completo da medição conhecida â proibido de alterar.</translation>
+        <translation>É proibido alterar o nome completo da medição conhecida.</translation>
     </message>
     <message>
         <source>Function Wizard</source>
-        <translation>Assistente de função</translation>
+        <translation>Assistente de fórmulas</translation>
     </message>
     <message>
         <source>Move measurement top</source>
@@ -11473,16 +11528,16 @@ Pretende guardar as suas alterações?</translation>
     <message>
         <source>male</source>
         <comment>gender</comment>
-        <translation>macho</translation>
+        <translation>masculino</translation>
     </message>
     <message>
         <source>female</source>
         <comment>gender</comment>
-        <translation>fâmea</translation>
+        <translation>feminino</translation>
     </message>
     <message>
         <source>Gender:</source>
-        <translation>Gânero:</translation>
+        <translation>Gênero:</translation>
     </message>
     <message>
         <source>PM system:</source>
@@ -11514,19 +11569,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>Buscar</translation>
+        <translation>Pesquisar</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula</source>
-        <translation>Nome da medição em uma fârmula</translation>
+        <translation>Nome da medição em uma fórmula</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula.</source>
-        <translation>Nome da medida em uma fârmula.</translation>
+        <translation>Nome da medição em uma fórmula.</translation>
     </message>
     <message>
         <source>Measurement&apos;s human-readable name.</source>
-        <translation>Nome legâvel por humanos da medição.</translation>
+        <translation>Nome legível da medição.</translation>
     </message>
     <message>
         <source>Save...</source>
@@ -11534,7 +11589,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nâo salvar</translation>
+        <translation>Não salvar</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -11542,11 +11597,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>O arquivo de bloqueio nâo pâde ser criado por falta de permissâes.</translation>
+        <translation>O arquivo de bloqueio não pôde ser criado por falta de permissões.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravaçâo do arquivo de bloqueio.</translation>
+        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravação do arquivo de bloqueio.</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -11554,7 +11609,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Show in Finder</source>
-        <translation>Mostrar no Localizador</translation>
+        <translation>Mostrar no Finder</translation>
     </message>
     <message>
         <source>Customer&apos;s name</source>
@@ -11566,7 +11621,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Customer&apos;s email address</source>
-        <translation>Endereâo de e-mail do cliente</translation>
+        <translation>Endereço de e-mail do cliente</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -11582,19 +11637,19 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>The measurements document has no write permissions.</source>
-        <translation>O documento de medições nâo tem permissâes de gravaçâo.</translation>
+        <translation>O documento de medições não tem permissões de gravação.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Nâo â possâvel definir permissâes para %1 como gravâveis.</translation>
+        <translation>Não foi possível definir as permissões de %1 como graváveis.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation>Nâo foi possâvel salvar o arquivo.</translation>
+        <translation>Não foi possível salvar o arquivo.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation>Nâo foi possâvel salvar o arquivo</translation>
+        <translation>Não foi possível salvar o arquivo</translation>
     </message>
     <message>
         <source>read only</source>
@@ -11602,11 +11657,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation>Medidas multitamanho</translation>
+        <translation>Medições multitamanho</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Resultado inválido. Valor é infinito ou não é um número. Por favor, verifique seus cálculos.</translation>
+        <translation>Resultado inválido. O valor é infinito ou NaN. Por favor, verifique seus cálculos.</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -11614,11 +11669,11 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Open multisize ...</source>
-        <translation>Abra vârios tamanhos...</translation>
+        <translation>Abrir medições multitamanho...</translation>
     </message>
     <message>
         <source>Export from multisize measurements is not supported.</source>
-        <translation>A exportação de medições de vârios tamanhos nâo â suportada.</translation>
+        <translation>A exportação de medições multitamanho não é suportada.</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -11634,7 +11689,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Saâda</translation>
+        <translation>Sair</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -11662,7 +11717,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Falha ao bloquear. Este arquivo jâ foi aberto em outra janela. Espere colisâes ao executar 2 câpias do programa.</translation>
+        <translation>Falha ao bloquear. Este arquivo já está aberto em outra janela. Espere colisões ao executar 2 cópias do programa.</translation>
     </message>
     <message>
         <source>Print</source>
@@ -11674,7 +11729,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Nâmero</translation>
+        <translation>Número</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -11682,7 +11737,7 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation>Copiar para ârea de transferância</translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
     <message>
         <source>Open template ...</source>
@@ -11694,27 +11749,27 @@ Pretende guardar as suas alterações?</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation>Arquivos de padrâes</translation>
+        <translation>Arquivos de molde</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Este arquivo jâ foi aberto em outra janela. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>Este arquivo já está aberto em outra janela. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>O arquivo de bloqueio nâo pâde ser criado, por falta de permissâes. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>O arquivo de bloqueio não pôde ser criado por falta de permissões. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravaçâo do arquivo de bloqueio. Ignore se quiser continuar (nâo recomendado, pode causar corrupção de dados).</translation>
+        <translation>Ocorreu um erro desconhecido, por exemplo, uma partição cheia impediu a gravação do arquivo de bloqueio. Ignore se quiser continuar (não recomendado, pode causar corrupção de dados).</translation>
     </message>
     <message>
         <source>Import body scan as</source>
-        <translation>Importar varredura corporal como</translation>
+        <translation>Importar digitalização corporal como</translation>
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation>medição 3D</translation>
+        <translation>Medição 3D</translation>
     </message>
     <message>
         <source>3D Look</source>
@@ -11723,14 +11778,14 @@ Pretende guardar as suas alterações?</translation>
     <message>
         <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
 </source>
-        <translation>Para utilizar uma digitalização corporal 3DLook, o ficheiro tem de ser convertido para o formato SeamlyME.
+        <translation>Para utilizar uma digitalização corporal 3DLook, o arquivo precisa ser convertido para o formato SeamlyME.
 </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
 </source>
-        <translation>Anexe o seu ficheiro 3DLook a um e-mail e envie-o para convert@seamly.io.
+        <translation>Anexe o seu arquivo 3DLook a um e-mail e envie para convert@seamly.io.
 
 </translation>
     </message>
@@ -11739,7 +11794,7 @@ Pretende guardar as suas alterações?</translation>
 load in SeamlyME as usual.
 
 </source>
-        <translation>Receberá um e-mail com o ficheiro convertido, que poderá depois
+        <translation>Você receberá um e-mail com o arquivo convertido, que poderá então
 carregar no SeamlyME como de costume.
 
 </translation>
@@ -11750,11 +11805,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Maiúsculas e minúsculas</translation>
+        <translation>Diferenciar maiúsculas de minúsculas</translation>
     </message>
     <message>
         <source>Search by full word</source>
-        <translation>Pesquise por palavra completa</translation>
+        <translation>Pesquisar por palavra completa</translation>
     </message>
     <message>
         <source>Seach by regular expression</source>
@@ -11769,11 +11824,11 @@ carregar no SeamlyME como de costume.
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Peâa na lista de layout</translation>
+        <translation>Peça na lista de layout</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Incluir a peça na disposição alterada: </translation>
+        <translation>Alteração: incluir peça no layout: </translation>
     </message>
     <message>
         <source>Include</source>
@@ -11788,11 +11843,11 @@ carregar no SeamlyME como de costume.
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>Bloqueio de peâa de padrâo</translation>
+        <translation>Bloqueio da peça do molde</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
-        <translation>Fechadura da peça trocada: </translation>
+        <translation>Bloqueio da peça alterado: </translation>
     </message>
     <message>
         <source>Locked</source>
@@ -11823,11 +11878,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Ponto mais â esquerda</translation>
+        <translation>Ponto mais à esquerda</translation>
     </message>
     <message>
         <source>Rightmost point</source>
-        <translation>Ponto mais â direita</translation>
+        <translation>Ponto mais à direita</translation>
     </message>
     <message>
         <source>Vertical axis</source>
@@ -11846,11 +11901,11 @@ carregar no SeamlyME como de costume.
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
-        <translation>Ferramenta de uniâo</translation>
+        <translation>Ferramenta de união</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vocâ realmente quer unir detalhes?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Deseja realmente unir os detalhes?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select the first point</source>
@@ -11858,7 +11913,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
-        <translation>A peâa do molde deve ter pelo menos dois pontos e trâs objetos</translation>
+        <translation>A peça do molde deve ter pelo menos dois pontos e três objetos</translation>
     </message>
     <message>
         <source>Select a second point</source>
@@ -11866,11 +11921,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Select a unique point</source>
-        <translation>Selecione um ponto ânico</translation>
+        <translation>Selecione um ponto único</translation>
     </message>
     <message>
         <source>Select a piece</source>
-        <translation>Selecione uma peâa</translation>
+        <translation>Selecione uma peça</translation>
     </message>
     <message>
         <source>Select a point on edge</source>
@@ -11881,29 +11936,29 @@ carregar no SeamlyME como de costume.
     <name>UnionTool</name>
     <message>
         <source>union pieces</source>
-        <translation>peâas de uniâo</translation>
+        <translation>unir peças</translation>
     </message>
 </context>
 <context>
     <name>Utils::CheckableMessageBox</name>
     <message>
         <source>Do not ask again</source>
-        <translation>Nâo pergunte novamente</translation>
+        <translation>Não perguntar novamente</translation>
     </message>
     <message>
         <source>Do not &amp;ask again</source>
-        <translation>Nâo &amp;pergunte novamente</translation>
+        <translation>Não &amp;pergunte novamente</translation>
     </message>
     <message>
         <source>Do not &amp;show again</source>
-        <translation>Nâo &amp;mostrar novamente</translation>
+        <translation>Não &amp;mostrar novamente</translation>
     </message>
 </context>
 <context>
     <name>VAbstractConverter</name>
     <message>
         <source>Couldn&apos;t get version information.</source>
-        <translation>Nâo foi possâvel obter informação sobre a versâo.</translation>
+        <translation>Não foi possível obter informações sobre a versão.</translation>
     </message>
     <message>
         <source>Too many tags &lt;%1&gt; in file.</source>
@@ -11911,27 +11966,27 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Version &quot;%1&quot; invalid.</source>
-        <translation>Versâo &quot;%1&quot; invâlida.</translation>
+        <translation>Versão &quot;%1&quot; inválida.</translation>
     </message>
     <message>
         <source>Version &quot;0.0.0&quot; invalid.</source>
-        <translation>Versâo &quot;0.0.0&quot; invâlida.</translation>
+        <translation>Versão &quot;0.0.0&quot; inválida.</translation>
     </message>
     <message>
         <source>Invalid version. Minimum supported version is %1</source>
-        <translation>Versâo invâlida. A versâo mânima suportada â %1</translation>
+        <translation>Versão inválida. A versão mínima suportada é %1</translation>
     </message>
     <message>
         <source>Invalid version. Maximum supported version is %1</source>
-        <translation>Versâo invâlida. A versâo mâxima suportada â %1</translation>
+        <translation>Versão inválida. A versão máxima suportada é %1</translation>
     </message>
     <message>
         <source>Error no unique id.</source>
-        <translation>Erro: nenhum ID exclusivo.</translation>
+        <translation>Erro: nenhum ID único.</translation>
     </message>
     <message>
         <source>Could not change version.</source>
-        <translation>Nâo foi possâvel alterar a versâo.</translation>
+        <translation>Não foi possível alterar a versão.</translation>
     </message>
     <message>
         <source>Error creating a backup copy: %1.</source>
@@ -11939,18 +11994,18 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
-        <translation>Versão inesperada&quot;%1&quot;.</translation>
+        <translation>Versão inesperada &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Error Opening a temp file: %1.</source>
-        <translation>Erro ao abrir um arquivo temporârio: %1.</translation>
+        <translation>Erro ao abrir um arquivo temporário: %1.</translation>
     </message>
 </context>
 <context>
     <name>VAbstractCubicBezierPath</name>
     <message>
         <source>Can&apos;t cut this spline</source>
-        <translation>Nâo â possâvel cortar esta spline</translation>
+        <translation>Não é possível cortar esta spline</translation>
     </message>
 </context>
 <context>
@@ -11961,11 +12016,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation>Este arquivo estâ usando a versâo de formato anterior v%1. A atual â v%2. Salvar o arquivo com esta versâo do aplicativo atualizarâ a versâo do formato para este arquivo. Isso pode impedir que vocâ consiga abrir o arquivo com versâes mais antigas do aplicativo. Vocâ realmente quer continuar?</translation>
+        <translation>Este arquivo está usando a versão de formato anterior v%1. A atual é v%2. Salvar o arquivo com esta versão do aplicativo atualizará a versão do formato deste arquivo. Isso pode impedir que você consiga abrir o arquivo com versões mais antigas do aplicativo. Deseja realmente continuar?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
-        <translation>Valores separados por vârgula</translation>
+        <translation>Valores separados por vírgula</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -11987,11 +12042,11 @@ carregar no SeamlyME como de costume.
     <name>VAbstractPattern</name>
     <message>
         <source>Can&apos;t find tool in table.</source>
-        <translation>Nâo â possâvel encontrar a ferramenta na tabela.</translation>
+        <translation>Não foi possível encontrar a ferramenta na tabela.</translation>
     </message>
     <message>
         <source>Error creating or updating group</source>
-        <translation>Erro ao criar ou atualizar grupo</translation>
+        <translation>Erro ao criar ou atualizar o grupo</translation>
     </message>
     <message>
         <source>New group</source>
@@ -12006,7 +12061,7 @@ carregar no SeamlyME como de costume.
     <name>VAbstractPieceData</name>
     <message>
         <source>Piece</source>
-        <translation>Pedaâo</translation>
+        <translation>Peça</translation>
     </message>
 </context>
 <context>
@@ -12024,15 +12079,15 @@ carregar no SeamlyME como de costume.
     <name>VAbstractTool</name>
     <message>
         <source>Confirm deletion</source>
-        <translation>Confirmar exclusâo</translation>
+        <translation>Confirmar exclusão</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Vocâ realmente quer excluir?</translation>
+        <translation>Deseja realmente excluir?</translation>
     </message>
     <message>
         <source>Edit wrong formula</source>
-        <translation>Editar fârmula errada</translation>
+        <translation>Editar fórmula incorreta</translation>
     </message>
     <message>
         <source>Green</source>
@@ -12060,11 +12115,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Salmâo Claro</translation>
+        <translation>Salmão claro</translation>
     </message>
     <message>
         <source>Goldenrod</source>
-        <translation>Verga-de-ouro</translation>
+        <translation>Amarelo dourado</translation>
     </message>
     <message>
         <source>Orange</source>
@@ -12072,7 +12127,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Deep Pink</source>
-        <translation>Rosa profundo</translation>
+        <translation>Rosa intenso</translation>
     </message>
     <message>
         <source>Violet</source>
@@ -12084,7 +12139,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Medium Sea Green</source>
-        <translation>Verde Mar Mâdio</translation>
+        <translation>Verde-mar médio</translation>
     </message>
     <message>
         <source>Lime</source>
@@ -12092,11 +12147,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Deep Sky Blue</source>
-        <translation>Câu Azul Profundo</translation>
+        <translation>Azul céu profundo</translation>
     </message>
     <message>
         <source>Corn Flower Blue</source>
-        <translation>Flor de milho azul</translation>
+        <translation>Azul flor-de-milho</translation>
     </message>
     <message>
         <source>Black</source>
@@ -12104,23 +12159,23 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Gold</source>
-        <translation>Ouro</translation>
+        <translation>Dourado</translation>
     </message>
     <message>
         <source>Forest Green</source>
-        <translation>Verde Floresta</translation>
+        <translation>Verde-floresta</translation>
     </message>
     <message>
         <source>Lawn Green</source>
-        <translation>Gramado Verde</translation>
+        <translation>Verde gramado</translation>
     </message>
     <message>
         <source>Lime Green</source>
-        <translation>Verde limâo</translation>
+        <translation>Verde-limão</translation>
     </message>
     <message>
         <source>Green Yellow</source>
-        <translation>Verde Amarelo</translation>
+        <translation>Verde-amarelo</translation>
     </message>
     <message>
         <source>Sandy Brown</source>
@@ -12128,11 +12183,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Orange Red</source>
-        <translation>Laranja Vermelho</translation>
+        <translation>Laranja avermelhado</translation>
     </message>
     <message>
         <source>Maroon</source>
-        <translation>Marrom</translation>
+        <translation>Bordô</translation>
     </message>
     <message>
         <source>Pink</source>
@@ -12144,15 +12199,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Blue Violet</source>
-        <translation>Azul Violeta</translation>
+        <translation>Azul violeta</translation>
     </message>
     <message>
         <source>Medium Violet Red</source>
-        <translation>Vermelho Violeta Mâdio</translation>
+        <translation>Vermelho violeta médio</translation>
     </message>
     <message>
         <source>Indigo</source>
-        <translation>Ândigo</translation>
+        <translation>Índigo</translation>
     </message>
     <message>
         <source>Purple</source>
@@ -12168,19 +12223,19 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Medium Turquoise</source>
-        <translation>Turquesa Mâdio</translation>
+        <translation>Turquesa médio</translation>
     </message>
     <message>
         <source>Powder Blue</source>
-        <translation>Azul Pâ</translation>
+        <translation>Azul pó</translation>
     </message>
     <message>
         <source>Light Sky Blue</source>
-        <translation>Azul-celeste claro</translation>
+        <translation>Azul celeste claro</translation>
     </message>
     <message>
         <source>Navy</source>
-        <translation>Marinha</translation>
+        <translation>Azul marinho</translation>
     </message>
     <message>
         <source>Magenta</source>
@@ -12188,7 +12243,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Dark Slate Grey</source>
-        <translation>Cinza Ardâsia Escuro</translation>
+        <translation>Cinza ardósia escuro</translation>
     </message>
     <message>
         <source>Grey</source>
@@ -12200,7 +12255,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Dark Sea Green</source>
-        <translation>Verde Mar Escuro</translation>
+        <translation>Verde-mar escuro</translation>
     </message>
     <message>
         <source>Light Grey</source>
@@ -12208,7 +12263,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Light Steel Blue</source>
-        <translation>Azul Aâo Claro</translation>
+        <translation>Azul aço claro</translation>
     </message>
     <message>
         <source>Thistle</source>
@@ -12220,7 +12275,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>White Smoke</source>
-        <translation>Fumaâa Branca</translation>
+        <translation>Fumaça branca</translation>
     </message>
     <message>
         <source>White</source>
@@ -12232,15 +12287,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Cadet Blue</source>
-        <translation>Cadete Azul</translation>
+        <translation>Azul cadete</translation>
     </message>
     <message>
         <source>Dark Khaki</source>
-        <translation>Câqui escuro</translation>
+        <translation>Caqui escuro</translation>
     </message>
     <message>
         <source>Tan</source>
-        <translation>bronzeado</translation>
+        <translation>Bronzeado</translation>
     </message>
     <message>
         <source>Beige</source>
@@ -12251,19 +12306,19 @@ carregar no SeamlyME como de costume.
     <name>VCommandLine</name>
     <message>
         <source>Path to custom measure file (export mode).</source>
-        <translation>Caminho para o arquivo de medida personalizado (modo de exportação).</translation>
+        <translation>Caminho para o arquivo de medidas personalizado (modo de exportação).</translation>
     </message>
     <message>
         <source>The measure file</source>
-        <translation>O arquivo de medida</translation>
+        <translation>O arquivo de medidas</translation>
     </message>
     <message>
         <source>Format number</source>
-        <translation>Formato numârico</translation>
+        <translation>Formato numérico</translation>
     </message>
     <message>
         <source>Template number</source>
-        <translation>Nâmero do modelo</translation>
+        <translation>Número do modelo</translation>
     </message>
     <message>
         <source>The page width</source>
@@ -12279,11 +12334,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Auto crop unused length (export mode).</source>
-        <translation>Corte automâtico do comprimento nâo utilizado (modo de exportação).</translation>
+        <translation>Corte automático do comprimento não utilizado (modo de exportação).</translation>
     </message>
     <message>
         <source>Layout units (as paper&apos;s one except px, export mode).</source>
-        <translation>Unidades de layout (como a do papel, exceto px, modo de exportação).</translation>
+        <translation>Unidades do layout (como as do papel, exceto px, modo de exportação).</translation>
     </message>
     <message>
         <source>The unit</source>
@@ -12291,7 +12346,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>The gap width</source>
-        <translation>A largura da lacuna</translation>
+        <translation>A largura do espaçamento</translation>
     </message>
     <message>
         <source>Grouping type</source>
@@ -12299,43 +12354,43 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Cannot use pageformat and page explicit size/units together.</source>
-        <translation>Nâo â possâvel usar formato de pâgina e tamanho/unidades explâcitos de pâgina juntos.</translation>
+        <translation>Não é possível usar pageformat e o tamanho/unidades explícitos da página ao mesmo tempo.</translation>
     </message>
     <message>
         <source>Page height, width, units must be used all 3 at once.</source>
-        <translation>Altura da pâgina, largura e unidades devem ser usadas todas as trâs ao mesmo tempo.</translation>
+        <translation>Altura, largura e unidades da página devem ser usadas todas as três ao mesmo tempo.</translation>
     </message>
     <message>
         <source>Invalid rotation value. That must be one of predefined values.</source>
-        <translation>Valor de rotação invâlido. Deve ser um dos valores predefinidos.</translation>
+        <translation>Valor de rotação inválido. Deve ser um dos valores predefinidos.</translation>
     </message>
     <message>
         <source>Unknown page templated selected.</source>
-        <translation>Modelo de pâgina desconhecido selecionado.</translation>
+        <translation>Modelo de página desconhecido selecionado.</translation>
     </message>
     <message>
         <source>Unsupported paper units.</source>
-        <translation>Unidades de papel nâo suportadas.</translation>
+        <translation>Unidades de papel não suportadas.</translation>
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Unidades de layout nâo suportadas.</translation>
+        <translation>Unidades de layout não suportadas.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
-        <translation>As Opções de exportação podem ser usadas apenas com um ânico arquivo de entrada.</translation>
+        <translation>As opções de exportação podem ser usadas apenas com um único arquivo de entrada.</translation>
     </message>
     <message>
         <source>Test option can be used with single input file only.</source>
-        <translation>A opção de teste pode ser usada apenas com um ânico arquivo de entrada.</translation>
+        <translation>A opção de teste pode ser usada apenas com um único arquivo de entrada.</translation>
     </message>
     <message>
         <source>The base filename of exported layout files. Use it to enable console export mode.</source>
-        <translation>O nome de arquivo base dos arquivos de layout exportados. Use-o para habilitar o modo de exportação do console.</translation>
+        <translation>O nome base dos arquivos de layout exportados. Use-o para habilitar o modo de exportação via console.</translation>
     </message>
     <message>
         <source>The base filename of layout files</source>
-        <translation>O nome do arquivo base dos arquivos de layout</translation>
+        <translation>O nome base dos arquivos de layout</translation>
     </message>
     <message>
         <source>The destination folder</source>
@@ -12351,119 +12406,119 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Page width in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Largura da pâgina em unidades atuais, como 12,0 (nâo pode ser usado com &quot;%1&quot;, modo de exportação).</translation>
+        <translation>Largura da página nas unidades atuais, como 12.0 (não pode ser usado com &quot;%1&quot;, modo de exportação).</translation>
     </message>
     <message>
         <source>Page height in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
-        <translation>Altura da pâgina em unidades atuais, como 12,0 (nâo pode ser usado com &quot;%1&quot;, modo de exportação).</translation>
+        <translation>Altura da página nas unidades atuais, como 12.0 (não pode ser usado com &quot;%1&quot;, modo de exportação).</translation>
     </message>
     <message>
         <source>Invalid gradation size value.</source>
-        <translation>Valor de tamanho de gradação invâlido.</translation>
+        <translation>Valor de tamanho de gradação inválido.</translation>
     </message>
     <message>
         <source>Invalid gradation height value.</source>
-        <translation>Valor de altura de gradação invâlido.</translation>
+        <translation>Valor de altura de gradação inválido.</translation>
     </message>
     <message>
         <source>Gap width must be used together with shift units.</source>
-        <translation>A largura do vâo deve ser usada junto com as unidades de deslocamento.</translation>
+        <translation>A largura do vão deve ser usada em conjunto com as unidades de deslocamento.</translation>
     </message>
     <message>
         <source>Left margin must be used together with page units.</source>
-        <translation>A margem esquerda deve ser usada junto com as unidades de pâgina.</translation>
+        <translation>A margem esquerda deve ser usada em conjunto com as unidades de página.</translation>
     </message>
     <message>
         <source>Right margin must be used together with page units.</source>
-        <translation>A margem direita deve ser usada junto com as unidades de pâgina.</translation>
+        <translation>A margem direita deve ser usada em conjunto com as unidades de página.</translation>
     </message>
     <message>
         <source>Top margin must be used together with page units.</source>
-        <translation>A margem superior deve ser usada junto com as unidades de pâgina.</translation>
+        <translation>A margem superior deve ser usada em conjunto com as unidades de página.</translation>
     </message>
     <message>
         <source>Bottom margin must be used together with page units.</source>
-        <translation>A margem inferior deve ser usada junto com as unidades de pâgina.</translation>
+        <translation>A margem inferior deve ser usada em conjunto com as unidades de página.</translation>
     </message>
     <message>
         <source>The path to output destination folder. By default the directory at which the application was started.</source>
-        <translation>O caminho para a pasta de destino de saâda. Por padrâo, o diretârio no qual o aplicativo foi iniciado.</translation>
+        <translation>O caminho para a pasta de destino de saída. Por padrão, o diretório no qual o aplicativo foi iniciado.</translation>
     </message>
     <message>
         <source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
-        <translation>Unidades de medida de altura/largura da pâgina (nâo pode ser usado com &quot;%1&quot;, modo de exportação). Valores vâlidos: %2.</translation>
+        <translation>Unidades de medida de altura/largura da página (não podem ser usadas com &quot;%1&quot;, modo de exportação). Valores válidos: %2.</translation>
     </message>
     <message>
         <source>Ignore margins printing (export mode). Disable value keys: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Set all margins to 0.</source>
-        <translation>Ignorar impressâo de margens (modo de exportação). Desabilitar chaves de valor: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Definir todas as margens para 0.</translation>
+        <translation>Ignorar impressão de margens (modo de exportação). Desabilitar chaves de valor: &quot;%1&quot;, &quot;%2&quot;, &quot;%3&quot;, &quot;%4&quot;. Definir todas as margens para 0.</translation>
     </message>
     <message>
         <source>Page left margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Margem esquerda da pâgina em unidades atuais como 3.0 (modo de exportação). Se nâo for definido, serâ usado o valor da impressora padrâo. Ou 0 se nenhuma impressora for encontrada. O valor serâ ignorado se a chave &quot;%1&quot; for usada.</translation>
+        <translation>Margem esquerda da página em unidades atuais, como 3.0 (modo de exportação). Se não for definida, será usado o valor da impressora padrão, ou 0 se nenhuma impressora for encontrada. O valor será ignorado se a chave &quot;%1&quot; for usada.</translation>
     </message>
     <message>
         <source>Page right margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Margem direita da pâgina em unidades atuais como 3.0 (modo de exportação). Se nâo for definido, serâ usado o valor da impressora padrâo. Ou 0 se nenhuma impressora for encontrada. O valor serâ ignorado se a chave &quot;%1&quot; for usada.</translation>
+        <translation>Margem direita da página em unidades atuais, como 3.0 (modo de exportação). Se não for definida, será usado o valor da impressora padrão, ou 0 se nenhuma impressora for encontrada. O valor será ignorado se a chave &quot;%1&quot; for usada.</translation>
     </message>
     <message>
         <source>Page top margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Margem superior da pâgina em unidades atuais como 3.0 (modo de exportação). Se nâo for definido, serâ usado o valor da impressora padrâo. Ou 0 se nenhuma impressora for encontrada. O valor serâ ignorado se a chave &quot;%1&quot; for usada.</translation>
+        <translation>Margem superior da página em unidades atuais, como 3.0 (modo de exportação). Se não for definida, será usado o valor da impressora padrão, ou 0 se nenhuma impressora for encontrada. O valor será ignorado se a chave &quot;%1&quot; for usada.</translation>
     </message>
     <message>
         <source>Page bottom margin in current units like 3.0 (export mode). If not set will be used value from default printer. Or 0 if none printers was found. Value will be ignored if key &quot;%1&quot; is used.</source>
-        <translation>Margem inferior da pâgina em unidades atuais como 3.0 (modo de exportação). Se nâo for definido, serâ usado o valor da impressora padrâo. Ou 0 se nenhuma impressora for encontrada. O valor serâ ignorado se a chave &quot;%1&quot; for usada.</translation>
+        <translation>Margem inferior da página em unidades atuais, como 3.0 (modo de exportação). Se não for definida, será usado o valor da impressora padrão, ou 0 se nenhuma impressora for encontrada. O valor será ignorado se a chave &quot;%1&quot; for usada.</translation>
     </message>
     <message>
         <source>Rotation in degrees (one of predefined, export mode). Default value is 180. 0 is no-rotate. Valid values: %1. Each value show how many times details will be rotated. For example 180 mean two times (360/180=2) by 180 degree.</source>
-        <translation>rotação em graus (um dos modos predefinidos, exportação). O valor padrâo â 180. 0 â sem rotação. Valores vâlidos: %1. Cada valor mostra quantas vezes os detalhes serâo girados. Por exemplo, 180 significa duas vezes (360/180=2) por 180 graus.</translation>
+        <translation>Rotação em graus (um dos valores predefinidos, modo de exportação). O valor padrão é 180. 0 = sem rotação. Valores válidos: %1. Cada valor indica quantas vezes os detalhes serão rotacionados. Por exemplo, 180 significa duas vezes (360/180=2) por 180 graus.</translation>
     </message>
     <message>
         <source>Unite pages if possible (export mode). Maximum value limited by QImage that supports only a maximum of 32768x32768 px images.</source>
-        <translation>Una pâginas se possâvel (modo de exportação). Valor mâximo limitado por QImage que suporta apenas um mâximo de imagens de 32768x32768 px.</translation>
+        <translation>Unir páginas se possível (modo de exportação). O valor máximo é limitado pelo QImage, que suporta imagens de no máximo 32768x32768 px.</translation>
     </message>
     <message>
         <source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
-        <translation>Salvar comprimento da folha se definido (modo de exportação). A opção diz ao programa para usar o mâximo possâvel de largura da folha. A qualidade de um layout pode ser pior quando esta opção foi usada.</translation>
+        <translation>Salvar o comprimento da folha, se definido (modo de exportação). A opção indica ao programa para usar o máximo possível da largura da folha. A qualidade do layout pode ficar pior quando esta opção é usada.</translation>
     </message>
     <message>
         <source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
-        <translation>A largura do vâo do layout x2, medida em unidades de layout (modo de exportação). Defina a distância entre detalhes e um detalhe e uma folha.</translation>
+        <translation>A largura do vão do layout x2, medida em unidades de layout (modo de exportação). Define a distância entre os detalhes e entre um detalhe e a folha.</translation>
     </message>
     <message>
         <source>Sets layout groupping cases (export mode): %1.</source>
-        <translation>Define casos de agrupamento de layout (modo de exportação): %1.</translation>
+        <translation>Define casos de agrupamento do layout (modo de exportação): %1.</translation>
     </message>
     <message>
         <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
-        <translation>Execute o programa em modo de teste. O programa neste modo carrega um ânico arquivo de padrâo e sai silenciosamente sem mostrar a janela principal. A chave tem prioridade antes da chave &apos;%1&apos;.</translation>
+        <translation>Execute o programa no modo de teste. Nesse modo, o programa carrega um único arquivo de molde e sai silenciosamente sem mostrar a janela principal. A chave tem prioridade sobre a chave &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
-        <translation>Comprimento do layout Shift/Offset medido em unidades de layout (modo de exportação). A opção mostra quantos pontos ao longo da borda serâo usados na criação de um layout.</translation>
+        <translation>Comprimento Shift/Offset do layout medido em unidades de layout (modo de exportação). A opção indica quantos pontos ao longo da borda serão usados na criação do layout.</translation>
     </message>
     <message>
         <source>Shift/Offset length</source>
-        <translation>Comprimento de deslocamento/deslocamento</translation>
+        <translation>Comprimento Shift/Offset</translation>
     </message>
     <message>
         <source>Shift/Offset length must be used together with shift units.</source>
-        <translation>O comprimento de deslocamento/deslocamento deve ser usado junto com as unidades de deslocamento.</translation>
+        <translation>O comprimento Shift/Offset deve ser usado em conjunto com as unidades de deslocamento.</translation>
     </message>
     <message>
         <source>Number corresponding to output format (default = 0, export mode):</source>
-        <translation>Nâmero correspondente ao formato de saâda (padrâo = 0, modo de exportação):</translation>
+        <translation>Número correspondente ao formato de saída (padrão = 0, modo de exportação):</translation>
     </message>
     <message>
         <source>Number corresponding to page template (default = 0, export mode):</source>
-        <translation>Nâmero correspondente ao modelo de pâgina (padrâo = 0, modo de exportação):</translation>
+        <translation>Número correspondente ao modelo de página (padrão = 0, modo de exportação):</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Desabilite o dimensionamento de alto dpi. Chame esta opção se tiver problemas com o dimensionamento (por padrâo, o dimensionamento estâ habilitado). Como alternativa, vocâ pode usar a variâvel de ambiente %1.</translation>
+        <translation>Desative o dimensionamento de alto DPI. Use esta opção se tiver problemas com o dimensionamento (por padrão, o dimensionamento está habilitado). Como alternativa, você pode usar a variável de ambiente %1.</translation>
     </message>
     <message>
         <source>Export dxf in binary form.</source>
-        <translation>Exportar dxf em formato binârio.</translation>
+        <translation>Exportar DXF em formato binário.</translation>
     </message>
     <message>
         <source>Export text as paths.</source>
@@ -12471,23 +12526,23 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>Exportar somente detalhes. Exportar detalhes conforme eles estâo posicionados no modo de detalhes. Quaisquer Opções relacionadas ao layout serâo ignoradas.</translation>
+        <translation>Exportar apenas detalhes. Exportar os detalhes conforme posicionados no modo de detalhes. Quaisquer opções relacionadas ao layout serão ignoradas.</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Defina o valor de tamanho de um arquivo de padrâo, que foi aberto com medições de vârios tamanhos (modo de exportação). Valores vâlidos: %1cm.</translation>
+        <translation>Defina o valor de tamanho de um arquivo de molde que foi aberto com medições multitamanho (modo de exportação). Valores válidos: %1cm.</translation>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Defina o valor de altura de um arquivo de padrâo, que foi aberto com medições de vârios tamanhos (modo de exportação). Valores vâlidos: %1cm.</translation>
+        <translation>Defina o valor de altura de um arquivo de molde que foi aberto com medições multitamanho (modo de exportação). Valores válidos: %1cm.</translation>
     </message>
     <message>
         <source>Seamly2D open source patternmaking program.</source>
-        <translation>Programa de criação de padrões de código aberto Seamly2D.</translation>
+        <translation>Seamly2D, programa de criação de moldes de código aberto.</translation>
     </message>
     <message>
         <source>Seamly2D pattern file (.sm2d)</source>
-        <translation>Arquivo de padrão Seamly2D (.sm2d)</translation>
+        <translation>Arquivo de molde do Seamly2D (.sm2d)</translation>
     </message>
     <message>
         <source>The page height</source>
@@ -12514,7 +12569,7 @@ carregar no SeamlyME como de costume.
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>Medidas</translation>
+        <translation>medidas</translation>
     </message>
     <message>
         <source>individual</source>
@@ -12549,23 +12604,23 @@ carregar no SeamlyME como de costume.
     <name>VContainer</name>
     <message>
         <source>Can&apos;t find object</source>
-        <translation>Nâo â possâvel encontrar o objeto</translation>
+        <translation>Não é possível encontrar o objeto</translation>
     </message>
     <message>
         <source>Can&apos;t cast object</source>
-        <translation>Nâo â possâvel lanâar objeto</translation>
+        <translation>Não é possível converter o objeto</translation>
     </message>
     <message>
         <source>Can&apos;t find object. Type mismatch.</source>
-        <translation>Nâo â possâvel encontrar o objeto. Tipo incompatâvel.</translation>
+        <translation>Não é possível encontrar o objeto. Tipo incompatível.</translation>
     </message>
     <message>
         <source>Number of free id exhausted.</source>
-        <translation>Nâmero de IDs livres esgotado.</translation>
+        <translation>Número de IDs livres esgotado.</translation>
     </message>
     <message>
         <source>Can&apos;t create a curve with type &apos;%1&apos;</source>
-        <translation>Nâo â possâvel criar uma curva com o tipo &apos;%1&apos;</translation>
+        <translation>Não é possível criar uma curva com o tipo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Can&apos;t find object: </source>
@@ -12573,30 +12628,30 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Can&apos;t find piece: </source>
-        <translation>Não consigo encontrar a peça: </translation>
+        <translation>Não é possível encontrar a peça: </translation>
     </message>
     <message>
         <source>Can&apos;t find path: </source>
-        <translation>Não consigo encontrar o caminho: </translation>
+        <translation>Não é possível encontrar o caminho: </translation>
     </message>
     <message>
         <source>Can&apos;t find object Id: </source>
-        <translation>Não é possível encontrar o ID do objeto: </translation>
+        <translation>Não é possível encontrar o id do objeto: </translation>
     </message>
     <message>
         <source>Can&apos;t cast object.</source>
-        <translation>Nâo â possâvel conjurar objeto.</translation>
+        <translation>Não é possível converter o objeto.</translation>
     </message>
 </context>
 <context>
     <name>VCubicBezierPath</name>
     <message>
         <source>Not enough points to create the spline.</source>
-        <translation>Nâo hâ pontos suficientes para criar a spline.</translation>
+        <translation>Não há pontos suficientes para criar a spline.</translation>
     </message>
     <message>
         <source>This spline does not exist.</source>
-        <translation>Esta spline nâo existe.</translation>
+        <translation>Esta spline não existe.</translation>
     </message>
 </context>
 <context>
@@ -12604,30 +12659,30 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Não é possível abrir o ficheiro %1:
+        <translation>Não é possível abrir o arquivo %1:
 %2.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
 %2.</source>
-        <translation>Não é possível abrir o ficheiro de esquema %1:
+        <translation>Não é possível abrir o arquivo de esquema %1:
 %2.</translation>
     </message>
     <message>
         <source>Parsing error file %3 in line %1 column %2</source>
-        <translation>Erro de anâlise do arquivo %3 na linha %1 coluna %2</translation>
+        <translation>Erro de análise no arquivo %3 na linha %1, coluna %2</translation>
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Nâo foi possâvel obter o nâ</translation>
+        <translation>Não foi possível obter o nó</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
-        <translation>Este id nâo â ânico.</translation>
+        <translation>Este id não é único.</translation>
     </message>
     <message>
         <source>Fail to write Canonical XML.</source>
-        <translation>Falha ao escrever XML canânico.</translation>
+        <translation>Falha ao escrever XML canônico.</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
@@ -12639,12 +12694,12 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Validation error file %1</source>
-        <translation>Arquivo de erro de validação %1</translation>
+        <translation>Erro de validação no arquivo %1</translation>
     </message>
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation>Não é possível abrir o arquivo de padrão %1:
+        <translation>Não é possível abrir o arquivo de molde %1:
 %2.</translation>
     </message>
 </context>
@@ -12664,7 +12719,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Add Group Object</source>
-        <translation>Adicionar objeto de grupo</translation>
+        <translation>Adicionar Objeto de Grupo</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
@@ -12680,7 +12735,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ElArc_</translation>
+        <translation>ArcoEl_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -12688,11 +12743,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Caminho Spl_</translation>
+        <translation>CaminhoSpl_</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Câpia</translation>
+        <translation>Copiar</translation>
     </message>
     <message>
         <source>Length</source>
@@ -12704,7 +12759,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>AngleLine_</source>
-        <translation>LinhaÂngulo_</translation>
+        <translation>LinhaDeAngulo_</translation>
     </message>
     <message>
         <source>Move Group Object</source>
@@ -12737,14 +12792,14 @@ carregar no SeamlyME como de costume.
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Fârmula:</translation>
+        <translation>Fórmula:</translation>
     </message>
 </context>
 <context>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>A peâa %1 nâo tem forma.</translation>
+        <translation>A peça %1 não tem forma.</translation>
     </message>
 </context>
 <context>
@@ -12763,7 +12818,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Intersection</source>
-        <translation>Intersecção</translation>
+        <translation>Interseção</translation>
     </message>
     <message>
         <source>First edge symmetry</source>
@@ -12775,11 +12830,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation>Primeira aresta ângulo reto</translation>
+        <translation>Ângulo reto da primeira aresta</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation>Segunda aresta ângulo reto</translation>
+        <translation>Ângulo reto da segunda aresta</translation>
     </message>
     <message>
         <source>Type</source>
@@ -12791,11 +12846,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>TNotch</source>
-        <translation>Entalhe</translation>
+        <translation>EntalheT</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>DESENTUPIR</translation>
+        <translation>EntalheU</translation>
     </message>
     <message>
         <source>VInternal</source>
@@ -12827,11 +12882,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Count</source>
-        <translation>Contar</translation>
+        <translation>Contagem</translation>
     </message>
     <message>
         <source>Excluded</source>
-        <translation>Excluâdo</translation>
+        <translation>Excluído</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -12839,23 +12894,23 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Show Cut Line Notch</source>
-        <translation>Mostrar pique da linha de corte</translation>
+        <translation>Mostrar entalhe da linha de corte</translation>
     </message>
     <message>
         <source>Show Seam Line Notch</source>
-        <translation>Mostrar pique da linha de costura</translation>
+        <translation>Mostrar entalhe da linha de costura</translation>
     </message>
     <message>
         <source>Make Default Notch</source>
-        <translation>Definir como pique padrão</translation>
+        <translation>Definir como entalhe padrão</translation>
     </message>
     <message>
         <source>Edit Notch</source>
-        <translation>Editar pique</translation>
+        <translation>Editar entalhe</translation>
     </message>
     <message>
         <source>Remove Notch</source>
-        <translation>Remover pique</translation>
+        <translation>Remover entalhe</translation>
     </message>
 </context>
 <context>
@@ -12873,7 +12928,7 @@ carregar no SeamlyME como de costume.
     <name>VPE::VFileEditWidget</name>
     <message>
         <source>Directory</source>
-        <translation>Diretârio</translation>
+        <translation>Diretório</translation>
     </message>
     <message>
         <source>Open File</source>
@@ -12888,15 +12943,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error can&apos;t convert value.</source>
-        <translation>Erro: nâo â possâvel converter valor.</translation>
+        <translation>Erro: não é possível converter o valor.</translation>
     </message>
     <message>
         <source>Error empty parameter.</source>
-        <translation>Erro de parâmetro vazio.</translation>
+        <translation>Erro: parâmetro vazio.</translation>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation>Erro id errado.</translation>
+        <translation>Erro: ID incorreto.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
@@ -12904,11 +12959,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating single point</source>
-        <translation>Erro ao criar ou atualizar ponto ânico</translation>
+        <translation>Erro ao criar ou atualizar ponto único</translation>
     </message>
     <message>
         <source>Error creating or updating point of end line</source>
-        <translation>Erro ao criar ou atualizar ponto de linha final</translation>
+        <translation>Erro ao criar ou atualizar ponto de extremidade da linha</translation>
     </message>
     <message>
         <source>Error creating or updating point along line</source>
@@ -12916,15 +12971,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating point of shoulder</source>
-        <translation>Erro ao criar ou atualizar ponto de ombro</translation>
+        <translation>Erro ao criar ou atualizar ponto do ombro</translation>
     </message>
     <message>
         <source>Error creating or updating point of normal</source>
-        <translation>Erro ao criar ou atualizar ponto de normalidade</translation>
+        <translation>Erro ao criar ou atualizar ponto da normal</translation>
     </message>
     <message>
         <source>Error creating or updating point of bisector</source>
-        <translation>Erro ao criar ou atualizar ponto de bissetriz</translation>
+        <translation>Erro ao criar ou atualizar ponto da bissetriz</translation>
     </message>
     <message>
         <source>Error creating or updating point of contact</source>
@@ -12948,7 +13003,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating cut spline path point</source>
-        <translation>Erro ao criar ou atualizar ponto de caminho de spline de corte</translation>
+        <translation>Erro ao criar ou atualizar ponto do caminho da spline de corte</translation>
     </message>
     <message>
         <source>Error creating or updating cut arc point</source>
@@ -12956,11 +13011,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating point of intersection line and axis</source>
-        <translation>Erro ao criar ou atualizar ponto de intersecção de linha e eixo</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção entre linha e eixo</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection curve and axis</source>
-        <translation>Erro ao criar ou atualizar curva de ponto de intersecção e eixo</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção entre curva e eixo</translation>
     </message>
     <message>
         <source>Error creating or updating line</source>
@@ -12980,7 +13035,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating modeling curve path</source>
-        <translation>Erro ao criar ou atualizar o caminho da curva de modelagem</translation>
+        <translation>Erro ao criar ou atualizar caminho da curva de modelagem</translation>
     </message>
     <message>
         <source>Error creating or updating simple arc</source>
@@ -12992,23 +13047,23 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
-        <translation>Erro ao criar ou atualizar arcos de ponto de intersecção</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção de arcos</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection circles</source>
-        <translation>Erro ao criar ou atualizar cârculos de ponto de intersecção</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção de círculos</translation>
     </message>
     <message>
         <source>Error creating or updating point from circle and tangent</source>
-        <translation>Erro ao criar ou atualizar ponto do cârculo e tangente</translation>
+        <translation>Erro ao criar ou atualizar ponto a partir de círculo e tangente</translation>
     </message>
     <message>
         <source>Error creating or updating point from arc and tangent</source>
-        <translation>Erro ao criar ou atualizar ponto do arco e tangente</translation>
+        <translation>Erro ao criar ou atualizar ponto a partir de arco e tangente</translation>
     </message>
     <message>
         <source>Error creating or updating true darts</source>
-        <translation>Erro ao criar ou atualizar dardos verdadeiros</translation>
+        <translation>Erro ao criar ou atualizar pinças verdadeiras</translation>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
@@ -13028,15 +13083,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Tipo de ferramentas desconhecidas &apos;%1&apos;.</translation>
+        <translation>Tipo de ferramenta desconhecido &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error not unique id.</source>
-        <translation>Erro: ID nâo exclusivo.</translation>
+        <translation>Erro: ID não exclusivo.</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection curves</source>
-        <translation>Erro ao criar ou atualizar curvas de ponto de intersecção</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção de curvas</translation>
     </message>
     <message>
         <source>Error creating or updating simple interactive spline</source>
@@ -13048,11 +13103,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating cubic bezier curve</source>
-        <translation>Erro ao criar ou atualizar a curva de Bâzier câbica</translation>
+        <translation>Erro ao criar ou atualizar curva de Bézier cúbica</translation>
     </message>
     <message>
         <source>Error creating or updating cubic bezier path curve</source>
-        <translation>Erro ao criar ou atualizar curva de caminho de Bâzier câbica</translation>
+        <translation>Erro ao criar ou atualizar curva de caminho de Bézier cúbica</translation>
     </message>
     <message>
         <source>Error creating or updating operation of rotation</source>
@@ -13064,23 +13119,23 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
-        <translation>Erro na criação ou atualização da operação de deslocação</translation>
+        <translation>Erro ao criar ou atualizar operação de deslocamento</translation>
     </message>
     <message>
         <source>Error creating or updating point of line intersection</source>
-        <translation>Erro ao criar ou atualizar ponto de intersecção de linha</translation>
+        <translation>Erro ao criar ou atualizar ponto de interseção de linha</translation>
     </message>
     <message>
         <source>Error creating or updating simple elliptical arc</source>
-        <translation>Erro ao criar ou atualizar arco elâptico simples</translation>
+        <translation>Erro ao criar ou atualizar arco elíptico simples</translation>
     </message>
     <message>
         <source>Unknown elliptical arc type &apos;%1&apos;.</source>
-        <translation>Tipo de arco elâptico desconhecido &apos;%1&apos;.</translation>
+        <translation>Tipo de arco elíptico desconhecido &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating modeling elliptical arc</source>
-        <translation>Erro ao criar ou atualizar modelagem de arco elâptico</translation>
+        <translation>Erro ao criar ou atualizar modelagem de arco elíptico</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -13088,11 +13143,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating a piece path</source>
-        <translation>Erro ao criar ou atualizar um caminho de peâa</translation>
+        <translation>Erro ao criar ou atualizar o caminho da peça</translation>
     </message>
     <message>
         <source>Error creating or updating anchor point</source>
-        <translation>Erro ao criar ou atualizar ponto de ancoragem</translation>
+        <translation>Erro ao criar ou atualizar o ponto de ancoragem</translation>
     </message>
     <message>
         <source>Error creating or updating Intersect XY tool</source>
@@ -13100,15 +13155,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Error creating or updating operation of mirror by line</source>
-        <translation>Erro ao criar ou atualizar operação de espelho por linha</translation>
+        <translation>Erro ao criar ou atualizar a operação de espelhamento por linha</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by axis</source>
-        <translation>Erro ao criar ou atualizar operação de espelho por eixo</translation>
+        <translation>Erro ao criar ou atualizar a operação de espelhamento por eixo</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Pedaâo</translation>
+        <translation>Peça</translation>
     </message>
     <message>
         <source>white</source>
@@ -13116,15 +13171,15 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>nobrush</source>
-        <translation>sem escova</translation>
+        <translation>Sem pincel</translation>
     </message>
     <message>
         <source>Error creating or updating piece</source>
-        <translation>Erro ao criar ou atualizar peâa</translation>
+        <translation>Erro ao criar ou atualizar a peça</translation>
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation>Erro ao criar ou atualizar peâas de uniâo</translation>
+        <translation>Erro ao criar ou atualizar a união de peças</translation>
     </message>
     <message>
         <source>Image_name</source>
@@ -13143,7 +13198,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Page %1 of %2</source>
-        <translation>Pâgina %1 de %2</translation>
+        <translation>Página %1 de %2</translation>
     </message>
     <message>
         <source>Sheet %1 of %2</source>
@@ -13154,7 +13209,7 @@ carregar no SeamlyME como de costume.
     <name>VSettings</name>
     <message>
         <source>patterns</source>
-        <translation>padrâes</translation>
+        <translation>moldes</translation>
     </message>
     <message>
         <source>layouts</source>
@@ -13165,11 +13220,11 @@ carregar no SeamlyME como de costume.
     <name>VSplinePath</name>
     <message>
         <source>Not enough points to create the spline.</source>
-        <translation>Nâo hâ pontos suficientes para criar a spline.</translation>
+        <translation>Não há pontos suficientes para criar a spline.</translation>
     </message>
     <message>
         <source>This spline does not exist.</source>
-        <translation>Esta spline nâo existe.</translation>
+        <translation>Esta spline não existe.</translation>
     </message>
 </context>
 <context>
@@ -13207,7 +13262,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etiqueta</translation>
+        <translation>      Rótulo</translation>
     </message>
 </context>
 <context>
@@ -13252,11 +13307,11 @@ carregar no SeamlyME como de costume.
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Não é possível criar um ponto de intersecção %1 do ponto %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve para curvar %3 com um ângulo de eixo de %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Utilizar o ponto de origem como suporte até o padrão ser corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não é possível criar o ponto de interseção %1 a partir do ponto %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;na curva %3 com um ângulo de eixo de %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um marcador provisório até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Ponto de intersecção da curva e do eixo</translation>
+        <translation>Ponto de interseção entre curva e eixo</translation>
     </message>
 </context>
 <context>
@@ -13283,7 +13338,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>label</source>
-        <translation>râtulo</translation>
+        <translation>rótulo</translation>
     </message>
 </context>
 <context>
@@ -13298,7 +13353,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>label</source>
-        <translation>râtulo</translation>
+        <translation>rótulo</translation>
     </message>
 </context>
 <context>
@@ -13313,7 +13368,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>label</source>
-        <translation>râtulo</translation>
+        <translation>rótulo</translation>
     </message>
 </context>
 <context>
@@ -13343,7 +13398,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Etiqueta</translation>
+        <translation>      Rótulo</translation>
     </message>
 </context>
 <context>
@@ -13395,11 +13450,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linha e Eixo&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não é possível encontrar o ponto de interseção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linha e eixo&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>intersecção de linha e eixo</translation>
+        <translation>Interseção entre linha e eixo</translation>
     </message>
 </context>
 <context>
@@ -13428,11 +13483,11 @@ carregar no SeamlyME como de costume.
     <name>VToolMirrorByLine</name>
     <message>
         <source>First line point</source>
-        <translation>Ponto de primeira linha</translation>
+        <translation>Primeiro ponto da linha</translation>
     </message>
     <message>
         <source>Second line point</source>
-        <translation>Ponto de segunda linha</translation>
+        <translation>Segundo ponto da linha</translation>
     </message>
 </context>
 <context>
@@ -13466,7 +13521,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>True darts</source>
-        <translation>Dardos verdadeiros</translation>
+        <translation>Dardos reais</translation>
     </message>
     <message>
         <source>Base point:</source>
@@ -13514,11 +13569,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point 1 label:</source>
-        <translation>Etiqueta do ponto 1:</translation>
+        <translation>Rótulo do ponto 1:</translation>
     </message>
     <message>
         <source>Point 2 label:</source>
-        <translation>Etiqueta do ponto 2:</translation>
+        <translation>Rótulo do ponto 2:</translation>
     </message>
     <message>
         <source>First base point:</source>
@@ -13530,7 +13585,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>First dart point:</source>
-        <translation>Primeiro ponto de dardo:</translation>
+        <translation>Primeiro ponto do dardo:</translation>
     </message>
     <message>
         <source>Arc:</source>
@@ -13546,7 +13601,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Segundo ponto de linha:</translation>
+        <translation>Segundo ponto da linha:</translation>
     </message>
     <message>
         <source>Center of arc:</source>
@@ -13562,7 +13617,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Take:</source>
-        <translation>Pegar:</translation>
+        <translation>Selecione:</translation>
     </message>
     <message>
         <source>First curve:</source>
@@ -13578,7 +13633,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Circle radius:</source>
-        <translation>Raio do cârculo:</translation>
+        <translation>Raio do círculo:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -13630,11 +13685,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Ponto - intersecção XY</translation>
+        <translation>Ponto - interseção XY</translation>
     </message>
     <message>
         <source>Rotation</source>
-        <translation>rotação</translation>
+        <translation>Rotação</translation>
     </message>
     <message>
         <source>Rotation point:</source>
@@ -13646,11 +13701,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Espelho por Linha</translation>
+        <translation>Espelhar por linha</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Espelho por eixo</translation>
+        <translation>Espelhar por eixo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -13662,7 +13717,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Ponto - Comprimento e ângulo</translation>
+        <translation>Ponto - comprimento e ângulo</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -13678,43 +13733,43 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Ponto - On-line</translation>
+        <translation>Ponto - na linha</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Arco - Raio e ângulos</translation>
+        <translation>Arco - raio e ângulos</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - Raio e Comprimento</translation>
+        <translation>Arco - raio e comprimento</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Ponto - Na Bissetriz</translation>
+        <translation>Ponto - na bissetriz</translation>
     </message>
     <message>
         <source>Second dart point:</source>
-        <translation>Segundo ponto de dardo:</translation>
+        <translation>Segundo ponto do dardo:</translation>
     </message>
     <message>
         <source>Third dart point:</source>
-        <translation>Terceiro ponto de dardo:</translation>
+        <translation>Terceiro ponto do dardo:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Ponto - Em Arco</translation>
+        <translation>Ponto - no arco</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Ponto - Na Curva</translation>
+        <translation>Ponto - na curva</translation>
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Ponto - Em Spline</translation>
+        <translation>Ponto - na spline</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Ponto - intersecção de reta e perpendicular</translation>
+        <translation>Ponto - interseção entre linha e reta perpendicular</translation>
     </message>
     <message>
         <source>Line</source>
@@ -13722,7 +13777,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Ponto - Linhas de intersecção</translation>
+        <translation>Ponto - interseção entre linhas</translation>
     </message>
     <message>
         <source>First line</source>
@@ -13734,35 +13789,35 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Ponto - Na Perpendicular</translation>
+        <translation>Ponto - na perpendicular</translation>
     </message>
     <message>
         <source>Rotation:</source>
-        <translation>rotação:</translation>
+        <translation>Rotação:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Ponto - intersecção Arco e Linha</translation>
+        <translation>Ponto - interseção entre arco e linha</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>1â ponto da linha:</translation>
+        <translation>1º ponto da linha:</translation>
     </message>
     <message>
         <source>2nd line point:</source>
-        <translation>2â ponto da linha:</translation>
+        <translation>2º ponto da linha:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Ponto - Arcos de intersecção</translation>
+        <translation>Ponto - interseção entre arcos</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Ponto - intersecção de Cârculos</translation>
+        <translation>Ponto - interseção de círculos</translation>
     </message>
     <message>
         <source>First circle:</source>
-        <translation>Primeiro cârculo:</translation>
+        <translation>Primeiro círculo:</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -13770,11 +13825,11 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Second circle:</source>
-        <translation>Segundo cârculo:</translation>
+        <translation>Segundo círculo:</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Ponto - intersecção de Curvas</translation>
+        <translation>Ponto - interseção entre curvas</translation>
     </message>
     <message>
         <source>Vertical take:</source>
@@ -13786,55 +13841,55 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation></translation>
+        <translation>Ponto - interseção entre círculo e tangente</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Ponto - intersecção Arco e Tangente</translation>
+        <translation>Ponto - interseção entre arco e tangente</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Ponto - Comprimento da Linha</translation>
+        <translation>Ponto - comprimento até linha</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Curva - Interativo</translation>
+        <translation>Curva - interativa</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Curva - Fixa</translation>
+        <translation>Curva - fixa</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interativo</translation>
+        <translation>Spline - interativa</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline - Fixo</translation>
+        <translation>Spline - fixa</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Ponto - intersecção Eixo e Triângulo</translation>
+        <translation>Ponto - interseção entre eixo e triângulo</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>1â ponto do eixo:</translation>
+        <translation>1º ponto do eixo:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>2â ponto do eixo:</translation>
+        <translation>2º ponto do eixo:</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis</source>
-        <translation>Ponto - intersecção de Linha e Eixo</translation>
+        <translation>Ponto - interseção entre linha e eixo</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Ponto - intersecção entre curva e eixo</translation>
+        <translation>Ponto - interseção entre curva e eixo</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Arco - Elâptico</translation>
+        <translation>Arco - elíptico</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -13850,7 +13905,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Line_</source>
-        <translation>Linha_</translation>
+        <translation>Line_</translation>
     </message>
     <message>
         <source>Center point</source>
@@ -13905,11 +13960,11 @@ carregar no SeamlyME como de costume.
     <name>VToolPointFromArcAndTangent</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 e Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não é possível encontrar o ponto de interseção %1 de&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 e Tangente&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>intersecção de arco e tangente</translation>
+        <translation>Interseção entre arco e tangente</translation>
     </message>
 </context>
 <context>
@@ -13931,22 +13986,22 @@ carregar no SeamlyME como de costume.
     <name>VToolPointOfIntersectionArcs</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 dos arcos&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não é possível encontrar o ponto de interseção %1 dos arcos&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Arcos de intersecção de Pontos</translation>
+        <translation>Ponto de interseção de arcos</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionCurves</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Nâo â possâvel encontrar o ponto de intersecção %1 das curvas&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaâo reservado atâ que o padrâo seja corrigido.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Não é possível encontrar o ponto de interseção %1 das curvas&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Usando o ponto de origem como um espaço reservado até que o molde seja corrigido.</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Curvas de intersecção de pontos</translation>
+        <translation>Ponto de interseção de curvas</translation>
     </message>
 </context>
 <context>
@@ -13990,7 +14045,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Fundamentals of Garment Design</source>
         <comment>Book name</comment>
-        <translation>Fundamentos do Design de Vestuârio</translation>
+        <translation>Fundamentos do design de vestuário</translation>
     </message>
     <message>
         <source>Barnfield and Richard</source>
@@ -14005,22 +14060,22 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Pattern Making Primer</source>
         <comment>Book name</comment>
-        <translation>Primer para criação de padrâes</translation>
+        <translation>Introdução à modelagem</translation>
     </message>
     <message>
         <source>Friendship/Women</source>
         <comment>System name</comment>
-        <translation>Amizade/Mulheres</translation>
+        <translation>Friendship/Mulheres</translation>
     </message>
     <message>
         <source>Elizabeth Friendship</source>
         <comment>Author name</comment>
-        <translation>Amizade Elizabeth</translation>
+        <translation>Elizabeth Friendship</translation>
     </message>
     <message>
         <source>Creating Historical Clothes - Pattern Cutting from the 16th to the 19th Centuries</source>
         <comment>Book name</comment>
-        <translation>criação de roupas histâricas - Corte de moldes dos sâculos XVI a XIX</translation>
+        <translation>Criando roupas históricas - corte de moldes dos séculos XVI ao XIX</translation>
     </message>
     <message>
         <source>Morris, K.</source>
@@ -14035,7 +14090,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Sewing Lingerie that Fits</source>
         <comment>Book name</comment>
-        <translation>Costurando lingerie que se ajuste</translation>
+        <translation>Costurando lingerie que veste bem</translation>
     </message>
     <message>
         <source>Castro</source>
@@ -14050,7 +14105,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Patternmaking in Practic</source>
         <comment>Book name</comment>
-        <translation>Modelagem na prâtica</translation>
+        <translation>Modelagem na prática</translation>
     </message>
     <message>
         <source>Kim &amp; Uh</source>
@@ -14065,12 +14120,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Apparel Making in Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Confecção de vestuârio em design de moda</translation>
+        <translation>Confecção de vestuário em design de moda</translation>
     </message>
     <message>
         <source>Waugh</source>
         <comment>System name</comment>
-        <translation>Rir</translation>
+        <translation>Waugh</translation>
     </message>
     <message>
         <source>Norah Waugh</source>
@@ -14080,7 +14135,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Corsets and Crinolines</source>
         <comment>Book name</comment>
-        <translation>Corpetes e Crinolinas</translation>
+        <translation>Corpetes e crinolinas</translation>
     </message>
     <message>
         <source>Grimble</source>
@@ -14095,12 +14150,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Fashions of the Gilded Age</source>
         <comment>Book name</comment>
-        <translation>Modas da Era Dourada</translation>
+        <translation>Modas da era dourada</translation>
     </message>
     <message>
         <source>Thornton&apos;s International System</source>
         <comment>System name</comment>
-        <translation>Sistema Internacional de Thornton</translation>
+        <translation>Sistema internacional de Thornton</translation>
     </message>
     <message>
         <source>ed. R. L. Shep</source>
@@ -14110,12 +14165,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>The Great War: Styles and Patterns of the 1910s</source>
         <comment>Book name</comment>
-        <translation>A Grande Guerra: Estilos e Padrâes da Dâcada de 1910</translation>
+        <translation>A Grande Guerra: estilos e moldes da década de 1910</translation>
     </message>
     <message>
         <source>Hillhouse &amp; Mansfield</source>
         <comment>System name</comment>
-        <translation>Casa na colina e Mansfield</translation>
+        <translation>Hillhouse &amp; Mansfield</translation>
     </message>
     <message>
         <source>Marion S. Hillhouse and Evelyn A. Mansfield</source>
@@ -14125,7 +14180,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Dress Design: Draping and Flat Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Design de vestidos: drapeados e modelagem plana</translation>
+        <translation>Design de vestidos: drapeado e modelagem plana</translation>
     </message>
     <message>
         <source>Pivnick</source>
@@ -14140,42 +14195,42 @@ carregar no SeamlyME como de costume.
     <message>
         <source>How to Design Beautiful Clothes: Designing and Pattern Making</source>
         <comment>Book name</comment>
-        <translation>Como Desenhar Roupas Bonitas: Design e Modelagem</translation>
+        <translation>Como desenhar roupas bonitas: desenho e modelagem</translation>
     </message>
     <message>
         <source>Minister &amp; Son</source>
         <comment>System name</comment>
-        <translation>Ministro e Filho</translation>
+        <translation>Minister &amp; Son</translation>
     </message>
     <message>
         <source>Edward Minister &amp; Son, ed. R. L. Shep</source>
         <comment>Author name</comment>
-        <translation>Edward Ministro &amp; Filho, ed. RL Shep</translation>
+        <translation>Edward Minister &amp; Son, ed. R. L. Shep</translation>
     </message>
     <message>
         <source>The Complete Guide to Practical Cutting (1853)</source>
         <comment>Book name</comment>
-        <translation>O guia completo para corte prâtico (1853)</translation>
+        <translation>O guia completo para corte prático (1853)</translation>
     </message>
     <message>
         <source>Strickland</source>
         <comment>System name</comment>
-        <translation>Stricklândia</translation>
+        <translation>Strickland</translation>
     </message>
     <message>
         <source>Gertrude Strickland</source>
         <comment>Author name</comment>
-        <translation>Gertrudes Strickland (Portuguâs)</translation>
+        <translation>Gertrude Strickland</translation>
     </message>
     <message>
         <source>A Tailoring Manual</source>
         <comment>Book name</comment>
-        <translation>Um Manual de Alfaiataria</translation>
+        <translation>Manual de alfaiataria</translation>
     </message>
     <message>
         <source>Loh &amp; Lewis</source>
         <comment>System name</comment>
-        <translation>Loh e Lewis</translation>
+        <translation>Loh &amp; Lewis</translation>
     </message>
     <message>
         <source>May Loh and Diehl Lewis</source>
@@ -14185,32 +14240,32 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Patternless Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Design de moda sem padrâes</translation>
+        <translation>Design de moda sem moldes</translation>
     </message>
     <message>
         <source>Morris, F. R.</source>
         <comment>System name</comment>
-        <translation>Morris, Franâa.</translation>
+        <translation>Morris, F. R.</translation>
     </message>
     <message>
         <source>F. R. Morris</source>
         <comment>Author name</comment>
-        <translation>FR Morris</translation>
+        <translation>F. R. Morris</translation>
     </message>
     <message>
         <source>Ladies Garment Cutting and Making</source>
         <comment>Book name</comment>
-        <translation>Corte e confecção de roupas femininas</translation>
+        <translation>Corte e confecção de vestuário feminino</translation>
     </message>
     <message>
         <source>Mason</source>
         <comment>System name</comment>
-        <translation>Pedreiro</translation>
+        <translation>Mason</translation>
     </message>
     <message>
         <source>Gertrude Mason</source>
         <comment>Author name</comment>
-        <translation>Gertrudes Mason</translation>
+        <translation>Gertrude Mason</translation>
     </message>
     <message>
         <source>Gertrude Mason&apos;s Patternmaking Book</source>
@@ -14235,32 +14290,32 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Master Designer</source>
         <comment>System name</comment>
-        <translation>Designer Mestre</translation>
+        <translation>Master Designer</translation>
     </message>
     <message>
         <source>The Master Designer (Chicago, IL)</source>
         <comment>Author name</comment>
-        <translation>O Designer Mestre (Chicago, IL)</translation>
+        <translation>The Master Designer (Chicago, IL)</translation>
     </message>
     <message>
         <source>Master Designer&apos;s System of Designing, Cutting and Grading</source>
         <comment>Book name</comment>
-        <translation>Sistema de Design, Corte e Classificação do Master Designer</translation>
+        <translation>Sistema do Master Designer para desenho, corte e graduação</translation>
     </message>
     <message>
         <source>Kopp</source>
         <comment>System name</comment>
-        <translation>Copo</translation>
+        <translation>Kopp</translation>
     </message>
     <message>
         <source>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</source>
         <comment>Author name</comment>
-        <translation>Ernestine Kopp, Vittorina Rolfo, Bâatrice Zelin, Lee Gross</translation>
+        <translation>Ernestine Kopp, Vittorina Rolfo, Beatrice Zelin, Lee Gross</translation>
     </message>
     <message>
         <source>How to Draft Basic Patterns</source>
         <comment>Book name</comment>
-        <translation>Como elaborar padrâes bâsicos</translation>
+        <translation>Como elaborar moldes básicos</translation>
     </message>
     <message>
         <source>Ekern</source>
@@ -14275,7 +14330,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Slacks Cut-to-Fit for Your Figure</source>
         <comment>Book name</comment>
-        <translation>Calâas cortadas sob medida para sua figura</translation>
+        <translation>Calças cortadas sob medida para sua figura</translation>
     </message>
     <message>
         <source>Doyle</source>
@@ -14290,7 +14345,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Sarah&apos;s Key to Pattern Drafting</source>
         <comment>Book name</comment>
-        <translation>A chave de Sarah para a elaboração de padrâes</translation>
+        <translation>A chave de Sarah para elaboração de moldes</translation>
     </message>
     <message>
         <source>Shelton</source>
@@ -14305,22 +14360,22 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Design and Sew Jeans</source>
         <comment>Book name</comment>
-        <translation>Desenhar e Costurar Jeans</translation>
+        <translation>Desenhar e costurar jeans</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>System name</comment>
-        <translation>Boutique de Senhoras</translation>
+        <translation>Lady Boutique</translation>
     </message>
     <message>
         <source>Lady Boutique</source>
         <comment>Author name</comment>
-        <translation>Boutique de Senhoras</translation>
+        <translation>Lady Boutique</translation>
     </message>
     <message>
         <source>Lady Boutique magazine (Japan)</source>
         <comment>Book name</comment>
-        <translation>Revista Lady Boutique (Japâo)</translation>
+        <translation>Revista Lady Boutique (Japão)</translation>
     </message>
     <message>
         <source>Rohr</source>
@@ -14330,17 +14385,17 @@ carregar no SeamlyME como de costume.
     <message>
         <source>M. Rohr</source>
         <comment>Author name</comment>
-        <translation>Sr. Rohr</translation>
+        <translation>M. Rohr</translation>
     </message>
     <message>
         <source>Pattern Drafting and Grading: Women&apos;s nd Misses&apos; Garment Design</source>
         <comment>Book name</comment>
-        <translation>Elaboração e classificação de padrâes: design de vestuârio feminino e feminino</translation>
+        <translation>Elaboração e graduação de moldes: design de vestuário feminino e para misses</translation>
     </message>
     <message>
         <source>Moore</source>
         <comment>System name</comment>
-        <translation>Moura</translation>
+        <translation>Moore</translation>
     </message>
     <message>
         <source>Dorothy Moore</source>
@@ -14350,12 +14405,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Dorothy Moore&apos;s Pattern Drafting and Dressmaking</source>
         <comment>Book name</comment>
-        <translation>Desenho de moldes e costura de Dorothy Moore</translation>
+        <translation>Elaboração de moldes e costura de Dorothy Moore</translation>
     </message>
     <message>
         <source>Abling</source>
         <comment>System name</comment>
-        <translation>Habilitação</translation>
+        <translation>Abling</translation>
     </message>
     <message>
         <source>Bina Abling</source>
@@ -14365,7 +14420,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Integrating Draping, Drafting and Drawing</source>
         <comment>Book name</comment>
-        <translation>Integrando Drapeado, Desenho e Desenho</translation>
+        <translation>Integrando drapeado, elaboração de moldes e desenho</translation>
     </message>
     <message>
         <source>Fukomoto</source>
@@ -14380,22 +14435,22 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Scientific Pattern Drafting as taught at Style Center School of Costume Design, Dressmaking and Millinery</source>
         <comment>Book name</comment>
-        <translation>Desenho de padrâes cientâficos conforme ensinado na Escola de Design de Trajes, Costura e Chapelaria do Style Center</translation>
+        <translation>Elaboração científica de moldes conforme ensinada na Style Center School of Costume Design, Dressmaking and Millinery</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>System name</comment>
-        <translation>Costura Internacional</translation>
+        <translation>Dressmaking International</translation>
     </message>
     <message>
         <source>Dressmaking International</source>
         <comment>Author name</comment>
-        <translation>Costura Internacional</translation>
+        <translation>Dressmaking International</translation>
     </message>
     <message>
         <source>Dressmaking International magazine (Japan)</source>
         <comment>Book name</comment>
-        <translation>Revista Dressmaking International (Japâo)</translation>
+        <translation>Revista Dressmaking International (Japão)</translation>
     </message>
     <message>
         <source>Erwin</source>
@@ -14410,7 +14465,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Practical Dress Design</source>
         <comment>Book name</comment>
-        <translation>Design de Vestido Prâtico</translation>
+        <translation>Design prático de vestidos</translation>
     </message>
     <message>
         <source>Gough</source>
@@ -14420,12 +14475,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>E. L. G. Gough</source>
         <comment>Author name</comment>
-        <translation>ELG Gough</translation>
+        <translation>E. L. G. Gough</translation>
     </message>
     <message>
         <source>Principles of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>Princâpios de corte de vestuârio</translation>
+        <translation>Princípios de corte de vestuário</translation>
     </message>
     <message>
         <source>Allemong</source>
@@ -14440,7 +14495,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>Corte Europeu</translation>
+        <translation>Corte europeu</translation>
     </message>
     <message>
         <source>McCunn</source>
@@ -14455,7 +14510,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>How to Make Your Own Sewing Patterns</source>
         <comment>Book name</comment>
-        <translation>Como Fazer Sua Própria Modelagem</translation>
+        <translation>Como fazer seus próprios moldes de costura</translation>
     </message>
     <message>
         <source>Zarapkar</source>
@@ -14465,12 +14520,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Shri K. R. Zarapkar and Shri Arvind K. Zarapkar</source>
         <comment>Author name</comment>
-        <translation>Shri KR Zarapkar e Shri Arvind K. Zarapkar</translation>
+        <translation>Shri K. R. Zarapkar e Shri Arvind K. Zarapkar</translation>
     </message>
     <message>
         <source>Zarapkar System of Cutting</source>
         <comment>Book name</comment>
-        <translation>Sistema de corte Zarapkar</translation>
+        <translation>Sistema Zarapkar de corte</translation>
     </message>
     <message>
         <source>Kunick</source>
@@ -14485,7 +14540,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Sizing, Pattern Construction and Grading for Women&apos;s and Children&apos;s Garments</source>
         <comment>Book name</comment>
-        <translation>Dimensionamento, construção de padrâes e classificação para roupas femininas e infantis</translation>
+        <translation>Dimensionamento, construção de moldes e gradação para roupas femininas e infantis</translation>
     </message>
     <message>
         <source>Handford</source>
@@ -14500,7 +14555,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Professional Patternmaking for Designers: Women&apos;s Wear, Men&apos;s Casual Wear</source>
         <comment>Book name</comment>
-        <translation>Modelagem profissional para designers: moda feminina, moda casual masculina</translation>
+        <translation>Modelagem profissional para designers: vestuário feminino, vestuário casual masculino</translation>
     </message>
     <message>
         <source>Davis</source>
@@ -14510,12 +14565,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>R. I. Davis</source>
         <comment>Author name</comment>
-        <translation>RI Davis</translation>
+        <translation>R. I. Davis</translation>
     </message>
     <message>
         <source>Men&apos;s 17th &amp; 18th Century Costume, Cut &amp; Fashion</source>
         <comment>Book name</comment>
-        <translation>Trajes, cortes e moda masculina dos sâculos XVII e XVIII</translation>
+        <translation>Trajes, corte e moda masculina dos séculos XVII e XVIII</translation>
     </message>
     <message>
         <source>MacLochlainn</source>
@@ -14530,12 +14585,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>The Victorian Tailor: An Introduction to Period Tailoring</source>
         <comment>Book name</comment>
-        <translation>O alfaiate vitoriano: uma introdução â alfaiataria de âpoca</translation>
+        <translation>O alfaiate vitoriano: uma introdução à alfaiataria de época</translation>
     </message>
     <message>
         <source>Joseph-Armstrong</source>
         <comment>System name</comment>
-        <translation>Josâ-Armstrong</translation>
+        <translation>Joseph-Armstrong</translation>
     </message>
     <message>
         <source>Helen Joseph-Armstrong</source>
@@ -14545,22 +14600,22 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Patternmaking for Fashion Design</source>
         <comment>Book name</comment>
-        <translation>Modelagem para Design de Moda</translation>
+        <translation>Modelagem para design de moda</translation>
     </message>
     <message>
         <source>Supreme System</source>
         <comment>System name</comment>
-        <translation>Sistema Supremo</translation>
+        <translation>Supreme System</translation>
     </message>
     <message>
         <source>Frederick T. Croonberg</source>
         <comment>Author name</comment>
-        <translation>Frederico T. Croonberg</translation>
+        <translation>Frederick T. Croonberg</translation>
     </message>
     <message>
         <source>The Blue Book of Men&apos;s Tailoring, Grand Edition of Supreme System for Producing Mens Garments (1907)</source>
         <comment>Book name</comment>
-        <translation>O Livro Azul da Alfaiataria Masculina, Grande Edição do Sistema Supremo para Produção de Vestuârio Masculino (1907)</translation>
+        <translation>O Livro Azul da Alfaiataria Masculina, grande edição do Supreme System para produção de vestuário masculino (1907)</translation>
     </message>
     <message>
         <source>Sugino</source>
@@ -14575,22 +14630,22 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Pattern Drafting Vols. I, II, III (Japan)</source>
         <comment>Book name</comment>
-        <translation>Pattern Drafting Vols. I, II, III (Japâo)</translation>
+        <translation>Pattern Drafting Vols. I, II, III (Japão)</translation>
     </message>
     <message>
         <source>Centre Point System</source>
         <comment>System name</comment>
-        <translation>Sistema de ponto central</translation>
+        <translation>Centre Point System</translation>
     </message>
     <message>
         <source>Louis Devere</source>
         <comment>Author name</comment>
-        <translation>Luâs Devere</translation>
+        <translation>Louis Devere</translation>
     </message>
     <message>
         <source>The Handbook of Practical Cutting on the Centre Point System</source>
         <comment>Book name</comment>
-        <translation>Manual de corte prâtico no sistema de ponto central</translation>
+        <translation>Manual de corte prático no Centre Point System</translation>
     </message>
     <message>
         <source>Aldrich/Men</source>
@@ -14605,7 +14660,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Metric Pattern Cutting for Menswear</source>
         <comment>Book name</comment>
-        <translation>Corte de padrâes mâtricos para moda masculina</translation>
+        <translation>Corte de moldes métricos para vestuário masculino</translation>
     </message>
     <message>
         <source>Aldrich/Women</source>
@@ -14615,7 +14670,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Metric Pattern Cutting for Women&apos;s Wear</source>
         <comment>Book name</comment>
-        <translation>Corte de padrâes mâtricos para vestuârio feminino</translation>
+        <translation>Corte de moldes métricos para vestuário feminino</translation>
     </message>
     <message>
         <source>Kershaw</source>
@@ -14630,7 +14685,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Patternmaking for Menswear</source>
         <comment>Book name</comment>
-        <translation>Modelagem para Moda Masculina</translation>
+        <translation>Modelagem para vestuário masculino</translation>
     </message>
     <message>
         <source>Gilewska</source>
@@ -14645,12 +14700,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Pattern-Drafting for Fashion: The Basics</source>
         <comment>Book name</comment>
-        <translation>Modelagem para Moda: O Bâsico</translation>
+        <translation>Modelagem para moda: o básico</translation>
     </message>
     <message>
         <source>Lo</source>
         <comment>System name</comment>
-        <translation>Eis</translation>
+        <translation>Lo</translation>
     </message>
     <message>
         <source>Dennic Chunman Lo</source>
@@ -14660,12 +14715,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Pattern Cutting</source>
         <comment>Book name</comment>
-        <translation>Corte de padrâes</translation>
+        <translation>Corte de moldes</translation>
     </message>
     <message>
         <source>Bray</source>
         <comment>System name</comment>
-        <translation>Zurro</translation>
+        <translation>Bray</translation>
     </message>
     <message>
         <source>Natalie Bray</source>
@@ -14675,7 +14730,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Dress Pattern Designing: The Basic Principles of Cut and Fit</source>
         <comment>Book name</comment>
-        <translation>Design de moldes de vestido: os princâpios bâsicos de corte e ajuste</translation>
+        <translation>Modelagem de vestidos: os princípios básicos de corte e caimento</translation>
     </message>
     <message>
         <source>Knowles/Men</source>
@@ -14690,32 +14745,32 @@ carregar no SeamlyME como de costume.
     <message>
         <source>The Practical Guide to Patternmaking for Fashion Designers: Menswear</source>
         <comment>Book name</comment>
-        <translation>O Guia Prâtico de Modelagem para Designers de Moda: Moda Masculina</translation>
+        <translation>O guia prático de modelagem para designers de moda: vestuário masculino</translation>
     </message>
     <message>
         <source>Friendship/Men</source>
         <comment>System name</comment>
-        <translation>Amizade/Homens</translation>
+        <translation>Friendship/Homens</translation>
     </message>
     <message>
         <source>Pattern Cutting for Men&apos;s Costume</source>
         <comment>Book name</comment>
-        <translation>Corte de molde para traje masculino</translation>
+        <translation>Corte de moldes para traje masculino</translation>
     </message>
     <message>
         <source>Brown</source>
         <comment>System name</comment>
-        <translation>Marrom</translation>
+        <translation>Brown</translation>
     </message>
     <message>
         <source>P. Clement Brown</source>
         <comment>Author name</comment>
-        <translation>P. Clemente Brown</translation>
+        <translation>P. Clement Brown</translation>
     </message>
     <message>
         <source>Art in Dress</source>
         <comment>Book name</comment>
-        <translation>Arte no Vestido</translation>
+        <translation>Arte no vestuário</translation>
     </message>
     <message>
         <source>Mitchell</source>
@@ -14725,12 +14780,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Jno. J. Mitchell</source>
         <comment>Author name</comment>
-        <translation>Jnâ J. Mitchell</translation>
+        <translation>Jno. J. Mitchell</translation>
     </message>
     <message>
         <source>&quot;Standard&quot; Work on Cutting (Men&apos;s Garments) 1886: The Art and Science of Garment Cutting</source>
         <comment>Book name</comment>
-        <translation>Trabalho &quot;padrâo&quot; sobre corte (vestuârio masculino) 1886: A arte e a ciância do corte de vestuârio</translation>
+        <translation>Obra &quot;Standard&quot; sobre corte (vestuário masculino) 1886: a arte e a ciência do corte de vestuário</translation>
     </message>
     <message>
         <source>GOST 17917-86</source>
@@ -14740,27 +14795,27 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Ministry of consumer industry of the USSR</source>
         <comment>Author name</comment>
-        <translation>Ministârio da indâstria de consumo da URSS</translation>
+        <translation>Ministério da Indústria de Consumo da URSS</translation>
     </message>
     <message>
         <source>Standard figure boys</source>
         <comment>Book name</comment>
-        <translation>Figura padrâo meninos</translation>
+        <translation>Figura padrão — meninos</translation>
     </message>
     <message>
         <source>Eddy</source>
         <comment>System name</comment>
-        <translation>Redemoinho</translation>
+        <translation>Eddy</translation>
     </message>
     <message>
         <source>Josephine F. Eddy and Elizabeth C. B. Wiley</source>
         <comment>Author name</comment>
-        <translation>Josephine F. Eddy e Elizabeth CB Wiley</translation>
+        <translation>Josephine F. Eddy e Elizabeth C. B. Wiley</translation>
     </message>
     <message>
         <source>Pattern and Dress Design</source>
         <comment>Book name</comment>
-        <translation>Padrâo e Design de Vestidos</translation>
+        <translation>Modelagem e design de vestidos</translation>
     </message>
     <message>
         <source>Knowles/Women</source>
@@ -14770,17 +14825,17 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
         <comment>Book name</comment>
-        <translation>Guia prâtico de modelagem para designers de moda: juniores, misses e mulheres</translation>
+        <translation>Guia prático de modelagem para designers de moda: juniores, misses e mulheres</translation>
     </message>
     <message>
         <source>American Garment Cutter</source>
         <comment>System name</comment>
-        <translation>Cortador de roupas americano</translation>
+        <translation>American Garment Cutter</translation>
     </message>
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>nenhum</translation>
+        <translation>Nenhum</translation>
     </message>
     <message>
         <source>Seamly2D team</source>
@@ -14790,7 +14845,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
-        <translation>Padrâo interno do Seamly2D</translation>
+        <translation>Padrão interno do Seamly2D</translation>
     </message>
     <message>
         <source>cm</source>
@@ -14845,12 +14900,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C1ComprimentoSplPath</translation>
+        <translation>C1ComprimentoCaminhoSpl</translation>
     </message>
     <message>
         <source>C2LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>C2ComprimentoSplPath</translation>
+        <translation>C2ComprimentoCaminhoSpl</translation>
     </message>
     <message>
         <source>CurrentSeamAllowance</source>
@@ -14860,7 +14915,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>date</source>
         <comment>placeholder</comment>
-        <translation>data</translation>
+        <translation>date</translation>
     </message>
     <message>
         <source>time</source>
@@ -14870,17 +14925,17 @@ carregar no SeamlyME como de costume.
     <message>
         <source>patternName</source>
         <comment>placeholder</comment>
-        <translation>Nome do padrâo</translation>
+        <translation>NomeMolde</translation>
     </message>
     <message>
         <source>patternNumber</source>
         <comment>placeholder</comment>
-        <translation>Nâmero do padrâo</translation>
+        <translation>NúmeroMolde</translation>
     </message>
     <message>
         <source>author</source>
         <comment>placeholder</comment>
-        <translation>autor</translation>
+        <translation>author</translation>
     </message>
     <message>
         <source>customer</source>
@@ -14890,7 +14945,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>pExt</source>
         <comment>placeholder</comment>
-        <translation>extensâo</translation>
+        <translation>pExtensão</translation>
     </message>
     <message>
         <source>pFileName</source>
@@ -14925,7 +14980,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>pRotation</source>
         <comment>placeholder</comment>
-        <translation>protação</translation>
+        <translation>pRotação</translation>
     </message>
     <message>
         <source>pTilt</source>
@@ -14950,12 +15005,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>mFabric</source>
         <comment>placeholder</comment>
-        <translation>Tecido m</translation>
+        <translation>mTecido</translation>
     </message>
     <message>
         <source>mLining</source>
         <comment>placeholder</comment>
-        <translation>mLinagem</translation>
+        <translation>mForro</translation>
     </message>
     <message>
         <source>mInterfacing</source>
@@ -14965,7 +15020,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>mInterlining</source>
         <comment>placeholder</comment>
-        <translation>Entretela</translation>
+        <translation>mEntretela</translation>
     </message>
     <message>
         <source>wCut</source>
@@ -14975,7 +15030,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>wOnFold</source>
         <comment>placeholder</comment>
-        <translation>wOnFold</translation>
+        <translation>wNaDobra</translation>
     </message>
     <message>
         <source>M_</source>
@@ -14985,12 +15040,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Variable_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Variâvel_</translation>
+        <translation>Variable_</translation>
     </message>
     <message>
         <source>Line_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Linha_</translation>
+        <translation>Line_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
@@ -15005,7 +15060,7 @@ carregar no SeamlyME como de costume.
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>ElArc_</translation>
+        <translation>ArcoEl_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -15020,12 +15075,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Radius1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Raio1ElArc_</translation>
+        <translation>Raio1ArcoElíptico_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Raio2ElArc_</translation>
+        <translation>Raio2ArcoElíptico_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
@@ -15040,12 +15095,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Angle1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Ângulo1ElArc_</translation>
+        <translation>Ângulo1ArcoElíptico_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Ângulo2ElArc_</translation>
+        <translation>Ângulo2ArcoElíptico_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
@@ -15060,12 +15115,12 @@ carregar no SeamlyME como de costume.
     <message>
         <source>C1LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C1ComprimentoEspl_</translation>
+        <translation>C1ComprimentoSpl_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>C2ComprimentoEspl_</translation>
+        <translation>C2ComprimentoSpl_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -15325,39 +15380,39 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;Curva de intersecção e eixo&lt;/b&gt;: ângulo = %1°, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta </translation>
+        <translation>&lt;b&gt;Interseção entre curva e eixo&lt;/b&gt;: ângulo = %1°, Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da ferramenta </translation>
     </message>
 </context>
 <context>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Comprimento e ângulo do ponto:&lt;/b&gt; ângulo = %1°, comprimento = %2%3, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta</translation>
+        <translation>&lt;b&gt;Ponto por comprimento e ângulo&lt;/b&gt;: ângulo = %1°, comprimento = %2%3; Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da ferramenta</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Linha de intersecção e eixo:&lt;/b&gt; ângulo = %1°, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta</translation>
+        <translation>&lt;b&gt;Interseção entre linha e eixo&lt;/b&gt;: ângulo = %1°, Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação da ferramenta</translation>
     </message>
 </context>
 <context>
     <name>VisToolMove</name>
     <message>
         <source>Length = %1%2, angle = %3°, &lt;b&gt;Shift&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish selecting a position</source>
-        <translation>Comprimento = %1%2, ângulo = %3°, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, &lt;b&gt;Clique do rato&lt;/b&gt; - terminar a seleção de uma posição</translation>
+        <translation>Comprimento = %1%2, ângulo = %3°, Segure &lt;b&gt;Shift&lt;/b&gt; para restringir o ângulo, &lt;b&gt;Clique do mouse&lt;/b&gt; - concluir a seleção de uma posição</translation>
     </message>
     <message>
         <source>Length = %1%2, angle = %3°, rotation angle = %4° Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle,&lt;b&gt;CTRL&lt;/b&gt; - change rotation origin point, &lt;b&gt;Mouse click&lt;/b&gt; - finish creating</source>
-        <translation>Comprimento = %1%2, ângulo = %3°, ângulo de rotação = %4° , Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo,&lt;b&gt;CTRL&lt;/b&gt; - alterar o ponto de origem da rotação, &lt;b&gt;Clique do rato&lt;/b&gt; - terminar a criação</translation>
+        <translation>Comprimento = %1%2, ângulo = %3°, ângulo de rotação = %4° Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, &lt;b&gt;CTRL&lt;/b&gt; - alterar o ponto de origem da rotação, &lt;b&gt;Mouse click&lt;/b&gt; - concluir a criação</translation>
     </message>
 </context>
 <context>
     <name>VisToolRotation</name>
     <message>
         <source>Rotating angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish creation</source>
-        <translation>Ângulo de rotação = %1°, Manter &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, prima &lt;b&gt;ENTER&lt;/b&gt; para terminar a criação da ferramenta</translation>
+        <translation>Ângulo de rotação = %1°, Segure &lt;b&gt;SHIFT&lt;/b&gt; para restringir o ângulo, &lt;b&gt;Mouse click&lt;/b&gt; - concluir a criação</translation>
     </message>
 </context>
 <context>
@@ -15371,11 +15426,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     <name>VisToolSplinePath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
-        <translation>&lt;b&gt;Traçado de Curva&lt;/b&gt;: selecione três ou mais pontos</translation>
+        <translation>&lt;b&gt;Caminho curvo&lt;/b&gt;: selecione três ou mais pontos</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Caminho curvo&lt;/b&gt;: selecione trâs ou mais pontos, pressione &lt;b&gt;ENTER&lt;/b&gt; para finalizar a criação da ferramenta</translation>
+        <translation>&lt;b&gt;Caminho curvo&lt;/b&gt;: selecione três ou mais pontos, pressione &lt;b&gt;ENTER&lt;/b&gt; para finalizar a criação da ferramenta</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
@@ -15414,7 +15469,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Erro crâtico</translation>
+        <translation>Erro crítico</translation>
     </message>
     <message>
         <source>Fatal Error</source>
@@ -15449,7 +15504,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Erro crâtico</translation>
+        <translation>Erro crítico</translation>
     </message>
     <message>
         <source>Fatal Error</source>
