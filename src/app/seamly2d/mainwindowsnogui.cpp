@@ -909,9 +909,22 @@ void MainWindowsNoGUI::exportSVG(const QString &name, QGraphicsRectItem *paper, 
 
     for (int piece = 0; piece < pieces.size(); piece++)
     {
-        QGraphicsScene *scene = new VMainGraphicsScene();
-        scene->addItem(pieces.at(piece));
-        svgGenerator.addSvgFromScene(scene, pieces.at(piece));
+        QGraphicsItem *pieceItem = pieces.at(piece);
+        // QGraphicsScene::addItem() reparents the item away from whatever scene it was
+        // in - here that's the live Layout scene the piece is still shown in after export.
+        // Remember it so we can put the piece back once its temporary render scene is done
+        // with it, instead of leaving the Layout canvas with its pieces silently removed.
+        QGraphicsScene *originalScene = pieceItem->scene();
+
+        QScopedPointer<QGraphicsScene> scene(new VMainGraphicsScene());
+        scene->addItem(pieceItem);
+        svgGenerator.addSvgFromScene(scene.data(), pieceItem);
+
+        scene->removeItem(pieceItem);
+        if (originalScene != nullptr)
+        {
+            originalScene->addItem(pieceItem);
+        }
     }
 
     svgGenerator.generate();
