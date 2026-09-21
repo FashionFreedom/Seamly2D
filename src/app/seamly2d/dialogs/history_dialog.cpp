@@ -448,9 +448,14 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             {
                 rowData.icon   = ":/toolicon/32x32/spline.png";
                 rowData.name   = getName(toolId);
+                // A "simple" spline (see VPattern::ParseToolSpline) has no length1/length2 -
+                // it's shaped by kAsm1/kAsm2 instead - so unlike angle1/angle2 these two are
+                // optional and need the same "0" fallback the parser itself uses, or
+                // GetParametrString() throws VExceptionEmptyParameter and the History dialog
+                // can't be opened at all for a pattern containing one.
                 rowData.length = QString("%1\n%2")
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QString()))
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QString()));
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QStringLiteral("0")))
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QStringLiteral("0")));
                 rowData.angle  = QString("%1\n%2")
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
