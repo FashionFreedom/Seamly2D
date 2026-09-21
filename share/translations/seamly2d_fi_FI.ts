@@ -3402,7 +3402,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
-        <translation>Suodata muuttujaluettelo avainsanan mukaan</translation>
+        <translation>Suodata muuttujalista avainsanan mukaan</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
@@ -4434,7 +4434,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>block</source>
-        <translation>lohko</translation>
+        <translation>pala</translation>
     </message>
     <message>
         <source>Radius / Length</source>
@@ -4997,7 +4997,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>Palaluettelo on tyhjä!</translation>
+        <translation>Palalista on tyhjä!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
@@ -6070,7 +6070,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnoslohkot ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava ainakin yksi kaavapala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnospalat ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava ainakin yksi kaavapala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -7152,7 +7152,7 @@ Haluatko tallentaa muutokset?</translation>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
         <translation>Uusien pisteiden perusnimi.
-Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translation>
+Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7184,7 +7184,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Delete Draft Block</source>
-        <translation>Poista luonnoslohko</translation>
+        <translation>Poista luonnospala</translation>
     </message>
     <message>
         <source>Del</source>
@@ -7196,7 +7196,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Are you sure you want to delete basepoint and current draft block?</source>
-        <translation>Haluatko varmasti poistaa peruspisteen ja nykyisen luonnoslohkon?</translation>
+        <translation>Haluatko varmasti poistaa peruspisteen ja nykyisen luonnospalan?</translation>
     </message>
 </context>
 <context>
@@ -11034,7 +11034,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Up / Down Arrow</source>
-        <translation>Nuoli ylös / alas</translation>
+        <translation>Ylös / Alas -nuoli</translation>
     </message>
     <message>
         <source>Cycle through items when the drop-down is closed or open.</source>
@@ -11054,7 +11054,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Select the currently highlighted item and close the list.</source>
-        <translation>Valitse tällä hetkellä korostettu kohde ja sulje valikko.</translation>
+        <translation>Valitse tällä hetkellä korostettu kohde ja sulje lista.</translation>
     </message>
     <message>
         <source>Escape</source>
@@ -11062,7 +11062,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Close the list without changing the selection.</source>
-        <translation>Sulje valikko muuttamatta valintaa.</translation>
+        <translation>Sulje lista muuttamatta valintaa.</translation>
     </message>
     <message>
         <source>Letter Keys (A-Z)</source>
@@ -11070,7 +11070,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Type the first letters of an item name to jump directly to that item in the list.</source>
-        <translation>Kirjoita kohteen nimen ensimmäiset kirjaimet hypätäksesi suoraan kyseiseen kohteeseen luettelossa.</translation>
+        <translation>Kirjoita kohteen nimen ensimmäiset kirjaimet hypätäksesi suoraan kyseiseen kohteeseen listassa.</translation>
     </message>
     <message>
         <source>Tab Bar</source>
@@ -11106,15 +11106,15 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>List</source>
-        <translation>Luettelo</translation>
+        <translation>Lista</translation>
     </message>
     <message>
         <source>Move focus to the list.</source>
-        <translation>Siirrä kohdistus luetteloon.</translation>
+        <translation>Siirrä kohdistus listaan.</translation>
     </message>
     <message>
         <source>Moves the selection to the previous or next item in the list.</source>
-        <translation>Siirtää valinnan luettelon edelliseen tai seuraavaan kohteeseen.</translation>
+        <translation>Siirtää valinnan listan edelliseen tai seuraavaan kohteeseen.</translation>
     </message>
     <message>
         <source>Home / End Keys</source>
@@ -11122,7 +11122,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     </message>
     <message>
         <source>Jumps directly to the first or last item in the list.</source>
-        <translation>Hyppää suoraan luettelon ensimmäiseen tai viimeiseen kohteeseen.</translation>
+        <translation>Hyppää suoraan listan ensimmäiseen tai viimeiseen kohteeseen.</translation>
     </message>
     <message>
         <source>Page Up / Page Down</source>
@@ -11837,7 +11837,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Pala asetteluluettelossa</translation>
+        <translation>Pala asettelulistassa</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
