@@ -69,14 +69,14 @@ public:
         : index(NULL_ID)
         , formula(QString())
         , formulaOk(false)
-        , data(VContainer(nullptr, nullptr))
+        , data(nullptr)
     {}
 
     CustomVariableData(VContainer *data, quint32 index, const QString &formula, bool ok)
         : index(index)
         , formula(formula)
         , formulaOk(ok)
-        , data(*data)
+        , data(data)
     {}
 
     CustomVariableData(const CustomVariableData &variable)
@@ -90,10 +90,15 @@ public:
     virtual  ~CustomVariableData();
 
     /** @brief id each variable have unique identificator */
-    quint32    index;
-    QString    formula;
-    bool       formulaOk;
-    VContainer data;
+    quint32     index;
+    QString     formula;
+    bool        formulaOk;
+    // Points at the pattern's live container - NOT a copy. A copy taken while parsing <variables>
+    // (which comes before the draft block in the file) would freeze on that early, incomplete
+    // state forever, since VContainer's copy-on-write detaches the copy the moment the real
+    // container is next mutated - silently hiding every point/line added afterward from formula
+    // evaluation.
+    VContainer *data;
 
 private:
     CustomVariableData &operator=(const CustomVariableData &) Q_DECL_EQ_DELETE;
