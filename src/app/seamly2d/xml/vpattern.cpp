@@ -867,12 +867,6 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         VPiece piece;
         const quint32 id = getParameterId(domElement);
         piece.SetName(GetParametrString(domElement, AttrName, tr("Piece")));
-        // tr() here would translate the fallback into the user's locale (e.g. "nobrush" -> "kein
-        // Pinsel" under de_DE), while VAbstractTool::fills()/colors() only ever match the
-        // untranslated English constants below - a piece whose <piece> tag predates the fill/color
-        // attributes (no attribute to read, so the fallback is used) then makes
-        // PatternPieceTool::RefreshGeometry() cast QStringList::indexOf()'s -1 "not found" to
-        // Qt::BrushStyle, which crashes QBrush::init(). See issue #1711.
         piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, ColorWhite));
         piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, FillNone));
         piece.setIsLocked(getParameterBool(domElement, AttrPieceLocked, falseStr));
