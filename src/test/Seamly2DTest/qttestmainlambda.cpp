@@ -69,6 +69,7 @@
 #include "tst_vabstractcurve.h"
 #include "tst_vcubicbezierpath.h"
 #include "tst_vgobject.h"
+#include "tst_vcontainer.h"
 #include "tst_vsplinepath.h"
 #include "tst_vpointf.h"
 #include "tst_readval.h"
@@ -177,6 +178,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VAbstractCurve());
     ASSERT_TEST(new TST_VCubicBezierPath());
     ASSERT_TEST(new TST_VGObject());
+    ASSERT_TEST(new TST_VContainer());
     ASSERT_TEST(new TST_VPointF());
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
