@@ -5,6 +5,7 @@ HEADERS += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.h \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_arc_line_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
@@ -20,7 +21,6 @@ HEADERS += \
     $$PWD/drawTools/toolcurve/vtoolspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.h \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.h \
@@ -67,6 +67,7 @@ SOURCES += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.cpp \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_arc_line_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
@@ -82,7 +83,6 @@ SOURCES += \
     $$PWD/drawTools/toolcurve/vtoolspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.cpp \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.cpp \
