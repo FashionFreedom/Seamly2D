@@ -71,6 +71,7 @@
 #include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRect>
+#include <QSet>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QScopedPointer>
@@ -92,6 +93,7 @@
 
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
+#include "../ifc/xml/vtoolrecord.h"
 #include "../qmuparser/qmudef.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vgeometry/vpointf.h"
@@ -254,6 +256,46 @@ void DialogTool::fillComboBoxPiecesList(QComboBox *box, const QVector<quint32> &
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief toolIdsAfterCursor ids of the tools that come after the history cursor. Only relevant while a new tool
+/// is being created with the cursor set, so the tool can't reference objects that don't exist yet at that position.
+//---------------------------------------------------------------------------------------------------------------------
+QSet<quint32> DialogTool::toolIdsAfterCursor() const
+{
+    QSet<quint32> future_tool_ids;
+    VAbstractPattern *doc = qApp->getCurrentDocument();
+    if (toolId != NULL_ID || doc == nullptr || doc->getCursorId() == NULL_ID)
+    {
+        return future_tool_ids;
+    }
+
+    const QVector<VToolRecord> *history = doc->getHistory();
+    bool after_cursor = false;
+    for (const VToolRecord &record : *history)
+    {
+        if (after_cursor)
+        {
+            future_tool_ids.insert(record.getId());
+        }
+        else if (record.getId() == doc->getCursorId())
+        {
+            after_cursor = true;
+        }
+    }
+    return future_tool_ids;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool DialogTool::isAfterCursor(const QSet<quint32> &future_tool_ids, quint32 id, const QSharedPointer<VGObject> &obj) const
+{
+    if (future_tool_ids.isEmpty())
+    {
+        return false;
+    }
+    const quint32 owner_id = obj->getIdTool() != NULL_ID ? obj->getIdTool() : id;
+    return future_tool_ids.contains(owner_id);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief fillComboBoxPoints fill comboBox list of points
  * @param box comboBox
@@ -276,11 +318,12 @@ void DialogTool::fillComboBoxSplines(QComboBox *box) const
     box->blockSignals(true);
 
     const auto objs = data->DataGObjects();
+    const QSet<quint32> future_tool_ids = toolIdsAfterCursor();
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     QMap<QString, quint32> list;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
-        if (i.key() != toolId)
+        if (i.key() != toolId && !isAfterCursor(future_tool_ids, i.key(), i.value()))
         {
             if (IsSpline(i.value()))
             {
@@ -300,11 +343,12 @@ void DialogTool::fillComboBoxSplinesPath(QComboBox *box) const
     box->blockSignals(true);
 
     const auto objs = data->DataGObjects();
+    const QSet<quint32> future_tool_ids = toolIdsAfterCursor();
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     QMap<QString, quint32> list;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
-        if (i.key() != toolId)
+        if (i.key() != toolId && !isAfterCursor(future_tool_ids, i.key(), i.value()))
         {
             if (IsSplinePath(i.value()))
             {
@@ -322,11 +366,12 @@ void DialogTool::fillComboBoxCurves(QComboBox *box) const
 {
     SCASSERT(box != nullptr)
     const auto objs = data->DataGObjects();
+    const QSet<quint32> future_tool_ids = toolIdsAfterCursor();
     QMap<QString, quint32> list;
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
-        if (i.key() != toolId)
+        if (i.key() != toolId && !isAfterCursor(future_tool_ids, i.key(), i.value()))
         {
             QSharedPointer<VGObject> obj = i.value();
             if ((obj->getType() == GOType::Arc
@@ -1480,10 +1525,15 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
     box->blockSignals(true);
 
     const QHash<quint32, QSharedPointer<VGObject> > *objs = data->DataGObjects();
+    const QSet<quint32> future_tool_ids = toolIdsAfterCursor();
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     QMap<QString, quint32> list;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
+        if (isAfterCursor(future_tool_ids, i.key(), i.value()))
+        {
+            continue;
+        }
         if (rule == FillComboBox::NoChildren)
         {
             if (i.key() != toolId && i.value()->getIdTool() != toolId && i.key() != ch1 && i.key() != ch2)
