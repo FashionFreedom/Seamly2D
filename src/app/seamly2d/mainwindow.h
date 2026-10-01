@@ -175,6 +175,7 @@ private slots:
     void MouseMove(const QPointF &scenePos);
     void Clear();
     void patternChangesWereSaved(bool saved);
+    void disableFutureTools(quint32 cursor_id);
     void LastUsedTool();
     void fullParseFile();
     void setGuiEnabled(bool enabled);
@@ -303,6 +304,9 @@ private:
     bool                              m_exportFinalMeasurements;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<HistoryDialog>           historyDialog;
+    /// @brief ids of tools disabled because the history cursor puts them chronologically after the
+    /// insertion point - see disableFutureTools().
+    QVector<quint32>                  m_disabled_tool_ids;
 
     QComboBox                        *font_combo_box;
     QComboBox                        *font_size_combo_box;
