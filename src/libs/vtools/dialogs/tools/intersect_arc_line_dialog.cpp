@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogpointofcontact.cpp
+//  @file   intersect_arc_line_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
@@ -47,7 +47,7 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#include "dialogpointofcontact.h"
+#include "intersect_arc_line_dialog.h"
 
 #include <QColor>
 #include <QComboBox>
@@ -62,22 +62,23 @@
 
 #include "../vpatterndb/vtranslatevars.h"
 #include "../../visualization/visualization.h"
-#include "../../visualization/line/vistoolpointofcontact.h"
+#include "../../visualization/line/intersect_arc_line_visual.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
-#include "ui_dialogpointofcontact.h"
+
+#include "ui_intersect_arc_line_dialog.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief DialogPointOfContact create dialog
+/// @brief IntersectArcLineDialog create dialog
 /// @param data container with data
 /// @param parent parent widget
 //---------------------------------------------------------------------------------------------------------------------
-DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32 &toolId, QWidget *parent)
+IntersectArcLineDialog::IntersectArcLineDialog(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
-    , ui(new Ui::DialogPointOfContact)
+    , ui(new Ui::IntersectArcLineDialog)
     , radius(QString())
 {
     ui->setupUi(this);
@@ -102,32 +103,32 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
     fillComboBoxPoints(ui->comboBoxSecondPoint);
     fillComboBoxPoints(ui->comboBoxCenter);
 
-    connect(ui->toolButtonExprRadius, &QPushButton::clicked,        this, &DialogPointOfContact::FXRadius);
-    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogPointOfContact::NamePointChanged);
-    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogPointOfContact::FormulaTextChanged);
-    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxCenter,       &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
+    connect(ui->toolButtonExprRadius, &QPushButton::clicked,        this, &IntersectArcLineDialog::FXRadius);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &IntersectArcLineDialog::NamePointChanged);
+    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &IntersectArcLineDialog::FormulaTextChanged);
+    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &IntersectArcLineDialog::PointNameChanged);
+    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &IntersectArcLineDialog::PointNameChanged);
+    connect(ui->comboBoxCenter,       &QComboBox::currentTextChanged, this, &IntersectArcLineDialog::PointNameChanged);
 
-    vis = new VisToolPointOfContact(data);
+    vis = new IntersectArcLineVisual(data);
 
     ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogPointOfContact::~DialogPointOfContact()
+IntersectArcLineDialog::~IntersectArcLineDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::FormulaTextChanged()
+void IntersectArcLineDialog::FormulaTextChanged()
 {
     this->FormulaChangedPlainText();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::PointNameChanged()
+void IntersectArcLineDialog::PointNameChanged()
 {
     QSet<quint32> set;
     set.insert(getCurrentObjectId(ui->comboBoxFirstPoint));
@@ -152,7 +153,7 @@ void DialogPointOfContact::PointNameChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::FXRadius()
+void IntersectArcLineDialog::FXRadius()
 {
     EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, ToolDialog, this);
     dialog->setWindowTitle(tr("Edit radius"));
@@ -166,9 +167,9 @@ void DialogPointOfContact::FXRadius()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::ShowVisualization()
+void IntersectArcLineDialog::ShowVisualization()
 {
-    AddVisualization<VisToolPointOfContact>();
+    AddVisualization<IntersectArcLineVisual>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -176,13 +177,13 @@ void DialogPointOfContact::ShowVisualization()
 /// @param id id of point or detail
 /// @param type type of object
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::ChosenObject(quint32 id, const SceneObject &type)
+void IntersectArcLineDialog::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)
         {
-            VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+            IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
             SCASSERT(line != nullptr)
 
             switch (number)
@@ -232,13 +233,13 @@ void DialogPointOfContact::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::SaveData()
+void IntersectArcLineDialog::SaveData()
 {
     pointName = ui->lineEditNamePoint->text();
     radius = ui->plainTextEditFormula->toPlainText();
     radius.replace("\n", " ");
 
-    VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+    IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
     SCASSERT(line != nullptr)
 
     line->setObject1Id(GetFirstPoint());
@@ -249,7 +250,7 @@ void DialogPointOfContact::SaveData()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::closeEvent(QCloseEvent *event)
+void IntersectArcLineDialog::closeEvent(QCloseEvent *event)
 {
     ui->plainTextEditFormula->blockSignals(true);
     DialogTool::closeEvent(event);
@@ -259,11 +260,11 @@ void DialogPointOfContact::closeEvent(QCloseEvent *event)
 /// @brief SetSecondPoint set id second point
 /// @param value id
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::SetSecondPoint(const quint32 &value)
+void IntersectArcLineDialog::SetSecondPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
 
-    VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+    IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
     SCASSERT(line != nullptr)
     line->setLineP2Id(value);
 }
@@ -272,11 +273,11 @@ void DialogPointOfContact::SetSecondPoint(const quint32 &value)
 /// @brief SetFirstPoint set id first point
 /// @param value id
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::SetFirstPoint(const quint32 &value)
+void IntersectArcLineDialog::SetFirstPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
 
-    VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+    IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
     SCASSERT(line != nullptr)
     line->setObject1Id(value);
 }
@@ -285,11 +286,11 @@ void DialogPointOfContact::SetFirstPoint(const quint32 &value)
 /// @brief SetCenter set id of center point
 /// @param value id
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::setCenter(const quint32 &value)
+void IntersectArcLineDialog::setCenter(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxCenter, value);
 
-    VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+    IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
     SCASSERT(line != nullptr)
     line->setRadiusId(value);
 }
@@ -298,12 +299,12 @@ void DialogPointOfContact::setCenter(const quint32 &value)
 /// @brief setRadius set formula radius of arc
 /// @param value formula
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::setRadius(const QString &value)
+void IntersectArcLineDialog::setRadius(const QString &value)
 {
     radius = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->plainTextEditFormula->setPlainText(radius);
 
-    VisToolPointOfContact *line = qobject_cast<VisToolPointOfContact *>(vis);
+    IntersectArcLineVisual *line = qobject_cast<IntersectArcLineVisual *>(vis);
     SCASSERT(line != nullptr)
     line->setRadius(radius);
 }
@@ -312,7 +313,7 @@ void DialogPointOfContact::setRadius(const QString &value)
 /// @brief SetPointName set name of point
 /// @param value name
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointOfContact::SetPointName(const QString &value)
+void IntersectArcLineDialog::SetPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
@@ -322,7 +323,7 @@ void DialogPointOfContact::SetPointName(const QString &value)
 /// @brief getRadius return formula radius of arc
 /// @return formula
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogPointOfContact::getRadius() const
+QString IntersectArcLineDialog::getRadius() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
@@ -331,7 +332,7 @@ QString DialogPointOfContact::getRadius() const
 /// @brief GetCenter return id of center point
 /// @return id
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPointOfContact::getCenter() const
+quint32 IntersectArcLineDialog::getCenter() const
 {
     return getCurrentObjectId(ui->comboBoxCenter);
 }
@@ -340,7 +341,7 @@ quint32 DialogPointOfContact::getCenter() const
 /// @brief GetFirstPoint return id first point
 /// @return id
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPointOfContact::GetFirstPoint() const
+quint32 IntersectArcLineDialog::GetFirstPoint() const
 {
     return getCurrentObjectId(ui->comboBoxFirstPoint);
 }
@@ -349,7 +350,7 @@ quint32 DialogPointOfContact::GetFirstPoint() const
 /// @brief GetSecondPoint return id second point
 /// @return id
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPointOfContact::GetSecondPoint() const
+quint32 IntersectArcLineDialog::GetSecondPoint() const
 {
     return getCurrentObjectId(ui->comboBoxSecondPoint);
 }

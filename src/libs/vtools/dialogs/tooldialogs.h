@@ -62,7 +62,7 @@
 #include "tools/dialogline.h"
 #include "tools/dialoglineintersect.h"
 #include "tools/dialognormal.h"
-#include "tools/dialogpointofcontact.h"
+#include "tools/intersect_arc_line_dialog.h"
 #include "tools/dialogshoulderpoint.h"
 #include "tools/dialogsinglepoint.h"
 #include "tools/dialogspline.h"

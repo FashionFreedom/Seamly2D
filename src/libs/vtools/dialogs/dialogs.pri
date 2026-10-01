@@ -22,7 +22,6 @@ HEADERS += \
     $$PWD/tools/dialoglineintersectaxis.h \
     $$PWD/tools/dialognormal.h \
     $$PWD/tools/dialogpointfromarcandtangent.h \
-    $$PWD/tools/dialogpointofcontact.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
     $$PWD/tools/dialogshoulderpoint.h \
     $$PWD/tools/dialogsinglepoint.h \
@@ -42,6 +41,7 @@ HEADERS += \
     $$PWD/tools/dialogellipticalarc.h \
     $$PWD/tools/editgroup_dialog.h \
     $$PWD/tools/insert_nodes_dialog.h \
+    $$PWD/tools/intersect_arc_line_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
     $$PWD/tools/piece/internal_path_dialog.h \
@@ -69,7 +69,6 @@ SOURCES += \
     $$PWD/tools/dialoglineintersectaxis.cpp \
     $$PWD/tools/dialognormal.cpp \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
-    $$PWD/tools/dialogpointofcontact.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
     $$PWD/tools/dialogsinglepoint.cpp \
@@ -89,6 +88,7 @@ SOURCES += \
     $$PWD/tools/dialogellipticalarc.cpp \
     $$PWD/tools/editgroup_dialog.cpp \
     $$PWD/tools/insert_nodes_dialog.cpp \
+    $$PWD/tools/intersect_arc_line_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
     $$PWD/tools/piece/internal_path_dialog.cpp \
@@ -116,7 +116,6 @@ FORMS += \
     $$PWD/tools/dialoglineintersectaxis.ui \
     $$PWD/tools/dialognormal.ui \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
-    $$PWD/tools/dialogpointofcontact.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
     $$PWD/tools/dialogsinglepoint.ui \
@@ -135,6 +134,7 @@ FORMS += \
     $$PWD/tools/dialogellipticalarc.ui \
     $$PWD/tools/editgroup_dialog.ui \
     $$PWD/tools/insert_nodes_dialog.ui \
+    $$PWD/tools/intersect_arc_line_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
     $$PWD/tools/piece/internal_path_dialog.ui \

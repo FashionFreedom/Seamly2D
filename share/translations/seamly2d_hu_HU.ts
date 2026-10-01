@@ -2297,7 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Point - Intersect Arc and Line</source>
         <translation>Pont - Ív és egyenes metszéspontja</translation>
@@ -13979,7 +13979,7 @@ Menti a módosításokat?</translation>
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Hossz</translation>
