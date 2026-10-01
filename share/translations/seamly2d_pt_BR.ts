@@ -194,15 +194,15 @@
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Adicionar um novo grupo â lista</translation>
+        <translation>Adicionar um novo grupo à lista</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Nome Existe</translation>
+        <translation>O nome já existe</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>A ação nâo pode ser concluâda porque o nome do grupo jâ existe.</translation>
+        <translation>A ação não pode ser concluída porque o nome do grupo já existe.</translation>
     </message>
 </context>
 <context>
@@ -2282,7 +2282,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Selecione o centro do arco</translation>
@@ -13968,7 +13968,7 @@ carregar no SeamlyME como de costume.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Comprimento</translation>

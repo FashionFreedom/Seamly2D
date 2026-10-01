@@ -449,8 +449,8 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 rowData.icon   = ":/toolicon/32x32/spline.png";
                 rowData.name   = getName(toolId);
                 rowData.length = QString("%1\n%2")
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QString()))
-                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QString()));
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength1, QStringLiteral("0")))
+                                   .arg(m_doc->GetParametrString(domElement, AttrLength2, QStringLiteral("0")));
                 rowData.angle  = QString("%1\n%2")
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle1, QString()))
                                    .arg(m_doc->GetParametrString(domElement, AttrAngle2, QString()));
@@ -505,7 +505,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 break;
             }
 
-            case Tool::PointOfContact:
+            case Tool::IntersectArcLine:
                 rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
                 rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")

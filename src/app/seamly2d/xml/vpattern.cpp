@@ -867,8 +867,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         VPiece piece;
         const quint32 id = getParameterId(domElement);
         piece.SetName(GetParametrString(domElement, AttrName, tr("Piece")));
-        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, tr("white")));
-        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, tr("nobrush")));
+        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, ColorWhite));
+        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, FillNone));
         piece.setIsLocked(getParameterBool(domElement, AttrPieceLocked, falseStr));
 
         piece.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
@@ -1167,7 +1167,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << VToolNormal::ToolType                     /*4*/
                                        << VToolBisector::ToolType                   /*5*/
                                        << VToolLineIntersect::ToolType              /*6*/
-                                       << VToolPointOfContact::ToolType             /*7*/
+                                       << IntersectArcLineTool::ToolType             /*7*/
                                        << VNodePoint::ToolType                      /*8*/
                                        << VToolHeight::ToolType                     /*9*/
                                        << VToolTriangle::ToolType                   /*10*/
@@ -1207,8 +1207,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 6: //VToolLineIntersect::ToolType
             ParseToolLineIntersect(scene, domElement, parse);
             break;
-        case 7: //VToolPointOfContact::ToolType
-            ParseToolPointOfContact(scene, domElement, parse);
+        case 7: //IntersectArcLineTool::ToolType
+            ParseToolIntersectArcLine(scene, domElement, parse);
             break;
         case 8: //VNodePoint::ToolType
             ParseNodePoint(domElement, parse);
@@ -1698,7 +1698,7 @@ void VPattern::ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomEleme
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
+void VPattern::ParseToolIntersectArcLine(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
 {
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
@@ -1718,7 +1718,7 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
 
-        VToolPointOfContact::Create(id, f, center, firstPointId, secondPointId, name, mx, my, showPointName, scene, this,
+        IntersectArcLineTool::Create(id, f, center, firstPointId, secondPointId, name, mx, my, showPointName, scene, this,
                                     data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != radius)
@@ -4181,7 +4181,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                     break;
                 case Tool::BasePoint:
                 case Tool::LineIntersect:
-                case Tool::PointOfContact:
+                case Tool::IntersectArcLine:
                 case Tool::Triangle:
                 case Tool::PointOfIntersection:
                 case Tool::CutArc:

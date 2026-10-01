@@ -3,6 +3,7 @@
 
 HEADERS += \
     $$PWD/line/anchorpoint_visual.h \
+    $$PWD/line/intersect_arc_line_visual.h \
     $$PWD/line/intersect_circles_visual.h \
     $$PWD/line/intersect_circletangent_visual.h \
     $$PWD/line/operation/vistoolmirrorbyaxis.h \
@@ -21,7 +22,6 @@ HEADERS += \
     $$PWD/line/vistoolnormal.h \
     $$PWD/line/vistoolheight.h \
     $$PWD/line/vistooltriangle.h \
-    $$PWD/line/vistoolpointofcontact.h \
     $$PWD/line/vistoollineintersect.h \
     $$PWD/line/vistoollineintersectaxis.h \
     $$PWD/line/vistooltruedarts.h \
@@ -46,6 +46,7 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/line/anchorpoint_visual.cpp \
+    $$PWD/line/intersect_arc_line_visual.cpp \
     $$PWD/line/intersect_circles_visual.cpp \
     $$PWD/line/intersect_circletangent_visual.cpp \
     $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
@@ -64,7 +65,6 @@ SOURCES += \
     $$PWD/line/vistoolnormal.cpp \
     $$PWD/line/vistoolheight.cpp \
     $$PWD/line/vistooltriangle.cpp \
-    $$PWD/line/vistoolpointofcontact.cpp \
     $$PWD/line/vistoollineintersect.cpp \
     $$PWD/line/vistoollineintersectaxis.cpp \
     $$PWD/line/vistooltruedarts.cpp \

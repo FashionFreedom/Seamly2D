@@ -208,26 +208,29 @@ jobs:
             release-file: Seamly2D-win-arm64.zip
 
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout code
+        uses: actions/checkout@v7
 
-      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Setup MSVC Developer Command Prompt
+        uses: TheMrMilchmann/setup-msvc-dev@v4.1.0
         with:
           arch: ${{ matrix.msvc-arch }}
 
-      - uses: jurplel/install-qt-action@v4
+      - name: Install Qt6 w/ qtmultimedia
+        uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           arch: ${{ matrix.qt-arch }}
           cache: true
           modules: qtmultimedia
-          aqtsource: git+https://github.com/miurahr/aqtinstall.git  # Remove once aqtinstall 3.4.0 is released, see https://github.com/miurahr/aqtinstall/issues/1007
+          aqtsource: git+https://github.com/miurahr/aqtinstall.git  # TODO: Remove once aqtinstall 3.4.0 is released, see https://github.com/miurahr/aqtinstall/issues/1007
 
-      - name: update version
+      - name: Update version
         shell: bash
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make seamly2d.exe and seamlyme.exe
+      - name: qmake/make seamly2d.exe and seamlyme.exe
         run: |
           ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests
           nmake
@@ -294,7 +297,8 @@ jobs:
           cd windows-build
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
 
-      - uses: actions/upload-artifact@v7
+      - name: Upload windows artifacts
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}
