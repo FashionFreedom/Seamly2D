@@ -407,7 +407,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             case Tool::LineIntersect:
             case Tool::BasePoint:
             case Tool::EndLine:
-            case Tool::PointOfContact:
+            case Tool::IntersectArcLine:
             case Tool::Height:
             case Tool::Triangle:
             case Tool::PointOfIntersection:

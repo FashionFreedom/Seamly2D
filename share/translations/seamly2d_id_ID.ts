@@ -2297,7 +2297,7 @@ p, li { spasi: pra-bungkus; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>pilih titik tengah dari busur</translation>
@@ -13981,7 +13981,7 @@ unggah ke SeamlyME seperti biasa.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>panjang</translation>

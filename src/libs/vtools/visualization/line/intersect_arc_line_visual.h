@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogpointofcontact.cpp
+//  @file   intersect_arc_line_visual.h
 //  @author Douglas S Caskey
-//  @date   14 Aug, 2024
+//  @date   25 Srp, 2026
 //
 //  @copyright
 //  Copyright (C) 2017 - 2026 Seamly, LLC
@@ -23,12 +23,12 @@
 //---------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogpointofcontact.cpp
+//  @file   vistoolpointofcontact.h
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
-//  @date   15 Nov, 2013
+//  @date   14 Aug, 2014
 //
 //  @copyright
-//  Copyright (C) 2013 Valentina project.
+//  Copyright (C) 2014 Valentina project.
 //  This source code is part of the Valentina project, a pattern making
 //  program, whose allow create and modeling patterns of clothing.
 //  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
@@ -47,61 +47,45 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOGPOINTOFCONTACT_H
-#define DIALOGPOINTOFCONTACT_H
+
+#ifndef INTERSECT_ARC_LINE_VISUAL_H
+#define INTERSECT_ARC_LINE_VISUAL_H
 
 #include <qcompilerdetection.h>
+#include <QGraphicsItem>
 #include <QMetaObject>
 #include <QObject>
 #include <QString>
 #include <QtGlobal>
 
 #include "../vmisc/def.h"
-#include "dialogtool.h"
-#include "ui_dialogpointofcontact.h"
+#include "visline.h"
 
-namespace Ui
-{
-    class DialogPointOfContact;
-}
-
-class DialogPointOfContact : public DialogTool
+class IntersectArcLineVisual : public VisLine
 {
     Q_OBJECT
 public:
-                   DialogPointOfContact(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual       ~DialogPointOfContact() override;
+    explicit              IntersectArcLineVisual(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual              ~IntersectArcLineVisual() = default;
 
-    void           SetPointName(const QString &value);
-
-    QString        getRadius() const;
-    void           setRadius(const QString &value);
-
-    quint32        getCenter() const;
-    void           setCenter(const quint32 &value);
-
-    quint32        GetFirstPoint() const;
-    void           SetFirstPoint(const quint32 &value);
-
-    quint32        GetSecondPoint() const;
-    void           SetSecondPoint(const quint32 &value);
-
-public slots:
-    virtual void   ChosenObject(quint32 id, const SceneObject &type) override;
-    void           FormulaTextChanged(); /// @brief FormulaTextChanged when formula text changes for validation and calc
-    virtual void   PointNameChanged() override;
-    void           FXRadius();
-
-protected:
-    virtual void   ShowVisualization() override;
-    virtual void   SaveData() override; /// @brief SaveData Put dialog data in local variables
-    virtual void   closeEvent(QCloseEvent *event) override;
+    virtual void          RefreshGeometry() override;
+    void                  setLineP2Id(const quint32 &value);
+    void                  setRadiusId(const quint32 &value);
+    void                  setRadius(const QString &expression);
+    virtual int           type() const override {return Type;}
+    enum                  {Type = UserType + static_cast<int>(Vis::ToolIntersectArcLine)};
 
 private:
-    Q_DISABLE_COPY(DialogPointOfContact)
+    Q_DISABLE_COPY(IntersectArcLineVisual)
+    quint32               m_line_point2_id;
+    quint32               m_radius_id;
+    VScaledEllipse       *m_point;
+    VScaledEllipse       *m_line_point1;
+    VScaledEllipse       *m_line_point2;
+    VScaledEllipse       *m_arc_point;
+    QGraphicsEllipseItem *m_circle;
+    qreal                 m_radius;
 
-    Ui::DialogPointOfContact *ui; /// @brief ui keeps information about user interface
-    QString        radius;        /// @brief radius radius of arc 
 };
 
-#endif // DIALOGPOINTOFCONTACT_H
+#endif // INTERSECT_ARC_LINE_VISUAL_H
