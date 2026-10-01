@@ -27,6 +27,7 @@
 #include "expandingtextedit.h"
 
 #include <QTextCursor>
+#include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
 ExpandingTextEdit::ExpandingTextEdit(QWidget *parent)
@@ -47,9 +48,14 @@ void ExpandingTextEdit::focusInEvent(QFocusEvent *e)
         setFixedHeight(75);
     }
 
-    QTextCursor cursor = textCursor();
-    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
-    setTextCursor(cursor);
+    // Defer the cursor movement so it doesn't collide with Qt's
+    // internal mouse-tracking and context menu initialization.
+    QTimer::singleShot(0, this, [this]()
+    {
+        QTextCursor cursor = textCursor();
+        cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
+        setTextCursor(cursor);
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
