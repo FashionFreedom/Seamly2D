@@ -73,7 +73,7 @@ class VToolOptionsPropertyBrowser;
 class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
-class DialogVariables;
+class VariablesDialog;
 class FinalMeasurementsDialog;
 class DialogTool;
 class HistoryDialog;
@@ -299,7 +299,7 @@ private:
     bool                              m_changes;        /// @brief m_changes true if measurement file was changed.
     bool                              patternReadOnly;
 
-    QPointer<DialogVariables>         dialogTable;
+    QPointer<VariablesDialog>         dialogTable;
     QPointer<FinalMeasurementsDialog> finalMeasurementsDialog;
     bool                              m_exportFinalMeasurements;
     QSharedPointer<DialogTool>        dialogTool;

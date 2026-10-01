@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogvariables.h
+//  @file   variables_dialog.h
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
 //
@@ -50,8 +50,8 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOG_VARIABLES_H
-#define DIALOG_VARIABLES_H
+#ifndef VARIABLES_DIALOG_H
+#define VARIABLES_DIALOG_H
 
 #include "../vtools/dialogs/tools/dialogtool.h"
 #include "../xml/vpattern.h"
@@ -59,23 +59,24 @@
 
 #include <QPair>
 #include <QList>
+#include <QTableWidget>
 
 class VIndividualMeasurements;
 
 namespace Ui
 {
-    class DialogVariables;
+    class VariablesDialog;
 }
 
 /**
- * @brief The DialogVariables class show Variables dialog. Tables of all variables in program will be here.
+ * @brief The VariablesDialog class show Variables dialog. Tables of all variables in program will be here.
  */
-class DialogVariables : public DialogTool
+class VariablesDialog : public DialogTool
 {
     Q_OBJECT
 public:
-                                     DialogVariables(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
-    virtual                         ~DialogVariables() override;
+                                     VariablesDialog(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
+    virtual                         ~VariablesDialog() override;
 
 signals:
     void                             updateProperties();
@@ -88,46 +89,37 @@ protected:
     virtual void                     resizeEvent(QResizeEvent *event) override;
 
 private slots:
-    void                             showCustomVariableDetails();
+    void                             showCustomVariables();
     void                             filterVariables(const QString &filterString);
-    void                             addCustomVariable();
-    void                             removeCustomVariable();
+    void                             addVariable();
+    void                             removeVariable();
     void                             moveUp();
     void                             moveDown();
-    void                             saveCustomVariableName(const QString &text);
-    void                             saveCustomVariableDescription();
-    void                             saveCustomVariableFormula();
-    void                             Fx();
+    void                             saveVariableName(const QString &text);
+    void                             saveDescription();
+    void                             saveVariableFormula();
+    void                             editFormula();
     void                             FullUpdateFromFile();
     void                             refreshPattern();
 
 private:
-    Q_DISABLE_COPY(DialogVariables)
+    Q_DISABLE_COPY(VariablesDialog)
 
-    /** @brief ui keeps information about user interface */
-    Ui::DialogVariables             *ui;
+    Ui::VariablesDialog             *ui;    /// @brief ui keeps information about user interface
+    VContainer                      *m_data;  /// @brief m_data container with data
+    VPattern                        *m_doc;   /// @brief m_doc dom document container
+    bool                             m_has_changes;
 
-    /** @brief data container with data */
-    VContainer                      *data; // need because we must change data //-V703
+    QVector<QPair<QString, QString>> m_rename_list;
 
-    /** @brief doc dom document container */
-    VPattern                        *doc;
-
-    int                              formulaBaseHeight;
-
-    bool                             hasChanges;
-
-    QVector<QPair<QString, QString>> renameList;
-
-    QList<QSharedPointer<QTableWidget>> tableList;
-    bool                             isSorted;
-    bool                             isFiltered;
-
+    QList<QSharedPointer<QTableWidget>> m_table_list;
+    bool                             m_is_sorted;
+    bool                             m_is_filtered;
 
     template <typename T>
     void                             fillTable(const QMap<QString, T> &varTable, QTableWidget *table);
 
-    void                             fillCustomVariables(bool freshCall = false);
+    void                             fillCustomVariables(bool fresh_call = false);
     void                             fillLineLengths();
     void                             fillLineAngles();
     void                             fillCurveLengths();
@@ -144,7 +136,7 @@ private:
     QString                          getCustomVariableName() const;
     QString                          clearCustomVariableName(const QString &name) const;
 
-    bool                             evalVariableFormula(const QString &formula, bool fromUser,
+    bool                             evalVariableFormula(const QString &formula, bool from_user,
                                                           VContainer *data, QLabel *label);
     void                             setMoveControls();
     void                             enablePieces(bool enabled);
@@ -153,7 +145,7 @@ private:
 
     bool                             variableUsed(const QString &name) const;
 
-    void                             renameCache(const QString &name, const QString &newName);
+    void                             renameCache(const QString &name, const QString &new_name);
 };
 
-#endif // DIALOG_VARIABLES_H
+#endif // VARIABLES_DIALOG_H

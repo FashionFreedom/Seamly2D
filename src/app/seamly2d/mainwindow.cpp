@@ -6505,10 +6505,10 @@ void MainWindow::createActions()
     {
         if (checked)
         {
-            dialogTable = new DialogVariables(pattern, doc, this);
-            connect(dialogTable.data(), &DialogVariables::updateProperties, toolProperties,
+            dialogTable = new VariablesDialog(pattern, doc, this);
+            connect(dialogTable.data(), &VariablesDialog::updateProperties, toolProperties,
                     &VToolOptionsPropertyBrowser::refreshOptions);
-            connect(dialogTable.data(), &DialogVariables::DialogClosed, this, [this]()
+            connect(dialogTable.data(), &VariablesDialog::DialogClosed, this, [this]()
             {
                 ui->table_Action->setChecked(false);
                 if (dialogTable != nullptr)

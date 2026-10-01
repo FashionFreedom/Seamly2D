@@ -3081,7 +3081,7 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Değişkenler</translation>

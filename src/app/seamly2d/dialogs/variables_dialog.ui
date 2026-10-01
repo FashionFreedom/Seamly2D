@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogVariables</class>
- <widget class="QDialog" name="DialogVariables">
+ <class>VariablesDialog</class>
+ <widget class="QDialog" name="VariablesDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>775</width>
-    <height>535</height>
+    <height>550</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>750</width>
-    <height>535</height>
+    <height>550</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -62,7 +62,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="filter_LineEdit">
+      <widget class="QLineEdit" name="filter_line_edit">
        <property name="placeholderText">
         <string>Filter list by keyword</string>
        </property>
@@ -74,7 +74,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tab_widget">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
        <horstretch>1</horstretch>
@@ -103,7 +103,7 @@
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
-         <widget class="QTableWidget" name="variables_TableWidget">
+         <widget class="QTableWidget" name="variables_tablewidget">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -191,7 +191,7 @@
             <number>6</number>
            </property>
            <item>
-            <widget class="QToolButton" name="toolButtonUp">
+            <widget class="QToolButton" name="up_toolbutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -208,7 +208,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QToolButton" name="toolButtonDown">
+            <widget class="QToolButton" name="down_toolbutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -237,31 +237,8 @@
              </property>
             </spacer>
            </item>
-           <item>
-            <widget class="QToolButton" name="formula_ToolButton">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="toolTip">
-              <string>Formula wizard</string>
-             </property>
-             <property name="text">
-              <string notr="true">...</string>
-             </property>
-             <property name="icon">
-              <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
-               <normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>16</width>
-               <height>16</height>
-              </size>
-             </property>
-            </widget>
-           </item>
            <item alignment="Qt::AlignRight">
-            <widget class="QToolButton" name="addCustomVariable_ToolButton">
+            <widget class="QToolButton" name="add_variable_toolbutton">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -281,7 +258,7 @@
             </widget>
            </item>
            <item alignment="Qt::AlignLeft">
-            <widget class="QToolButton" name="removeCustomVariable_ToolButton">
+            <widget class="QToolButton" name="remove_variable_toolbutton">
              <property name="enabled">
               <bool>false</bool>
              </property>
@@ -319,7 +296,7 @@
            <string>Details</string>
           </property>
           <layout class="QFormLayout" name="formLayout">
-           <item row="1" column="0">
+           <item row="0" column="0">
             <widget class="QLabel" name="name_Label">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -347,17 +324,40 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="name_LineEdit">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="placeholderText">
-              <string>Unique variable name</string>
-             </property>
-            </widget>
+           <item row="0" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <item>
+              <widget class="QLineEdit" name="name_line_edit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Unique variable name</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>30</width>
+                 <height>22</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </item>
-           <item row="3" column="0">
+           <item row="1" column="0">
             <widget class="QLabel" name="labelCalculated">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -385,14 +385,14 @@
              </property>
             </widget>
            </item>
-           <item row="3" column="1">
-            <widget class="QLabel" name="calculatedValue_Label">
+           <item row="1" column="1">
+            <widget class="QLabel" name="calculation_label">
              <property name="text">
               <string notr="true"/>
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
+           <item row="2" column="0">
             <widget class="QLabel" name="formula_Label">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -420,10 +420,10 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
-            <layout class="QHBoxLayout" name="horizontalLayoutValue">
+           <item row="2" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
-              <widget class="QPlainTextEdit" name="formula_PlainTextEdit">
+              <widget class="ClearablePlainTextEdit" name="formula_plaintextedit">
                <property name="enabled">
                 <bool>false</bool>
                </property>
@@ -453,9 +453,62 @@
                </property>
               </widget>
              </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <item>
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QToolButton" name="formula_toolbutton">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>Formula wizard</string>
+                 </property>
+                 <property name="text">
+                  <string notr="true">...</string>
+                 </property>
+                 <property name="icon">
+                  <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+                   <normaloff>:/icon/24x24/fx.png</normaloff>:/icon/24x24/fx.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>16</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="verticalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
             </layout>
            </item>
-           <item row="6" column="0">
+           <item row="3" column="0">
             <widget class="QLabel" name="description_Label">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -483,39 +536,67 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="1">
-            <widget class="QPlainTextEdit" name="description_PlainTextEdit">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>1</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>50</height>
-              </size>
-             </property>
-            </widget>
+           <item row="3" column="1">
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="ClearablePlainTextEdit" name="description_plaintextedit">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>1</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>50</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <spacer name="horizontalSpacer_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeType">
+                    <enum>QSizePolicy::Fixed</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>25</width>
+                   <height>13</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </item>
-           <item row="8" column="1">
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item row="9" column="1">
+           <item row="5" column="1">
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <item>
               <spacer name="horizontalSpacer_3">
@@ -531,7 +612,7 @@
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="refresh_PushButton">
+              <widget class="QPushButton" name="refresh_pushbutton">
                <property name="toolTip">
                 <string>Refresh a pattern with all changes you made</string>
                </property>
@@ -560,7 +641,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QTableWidget" name="lineLengths_TableWidget">
+        <widget class="QTableWidget" name="line_lengths_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -608,7 +689,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
-        <widget class="QTableWidget" name="lineAngles_TableWidget">
+        <widget class="QTableWidget" name="line_angles_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -656,7 +737,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
-        <widget class="QTableWidget" name="curveLengths_TableWidget">
+        <widget class="QTableWidget" name="curve_lengths_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -704,7 +785,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="0">
-        <widget class="QTableWidget" name="curveAngles_TableWidget">
+        <widget class="QTableWidget" name="curve_angles_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -752,7 +833,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QTableWidget" name="controlPointLengths_TableWidget">
+        <widget class="QTableWidget" name="handle_lengths_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -800,7 +881,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="0" column="0">
-        <widget class="QTableWidget" name="arcRadiuses_TableWidget">
+        <widget class="QTableWidget" name="arc_radii_tablewidget">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -847,12 +928,19 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ClearablePlainTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>clearable_plain_textedit.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
-  <tabstop>variables_TableWidget</tabstop>
-  <tabstop>addCustomVariable_ToolButton</tabstop>
-  <tabstop>removeCustomVariable_ToolButton</tabstop>
-  <tabstop>lineLengths_TableWidget</tabstop>
-  <tabstop>curveLengths_TableWidget</tabstop>
+  <tabstop>variables_tablewidget</tabstop>
+  <tabstop>add_variable_toolbutton</tabstop>
+  <tabstop>remove_variable_toolbutton</tabstop>
+  <tabstop>line_lengths_tablewidget</tabstop>
+  <tabstop>curve_lengths_tablewidget</tabstop>
  </tabstops>
  <resources>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
