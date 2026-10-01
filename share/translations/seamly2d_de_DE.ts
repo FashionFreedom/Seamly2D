@@ -3066,7 +3066,7 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variablen</translation>

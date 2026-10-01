@@ -3081,7 +3081,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Muuttujat</translation>

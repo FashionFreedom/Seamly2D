@@ -4,6 +4,7 @@
 SOURCES += \
     $$PWD/calculator/button.cpp \
     $$PWD/calculator/calculator.cpp \
+    $$PWD/clearable_plain_textedit.cpp \
     $$PWD/color_combobox.cpp \
     $$PWD/expandingtextedit.cpp \
     $$PWD/export_format_combobox.cpp \
@@ -41,6 +42,7 @@ SOURCES += \
 HEADERS += \
     $$PWD/calculator/button.h \
     $$PWD/calculator/calculator.h \
+    $$PWD/clearable_plain_textedit.h \
     $$PWD/color_combobox.h \
     $$PWD/expandingtextedit.h \
     $$PWD/export_format_combobox.h \
