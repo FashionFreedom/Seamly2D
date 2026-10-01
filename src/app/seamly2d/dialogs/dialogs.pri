@@ -12,7 +12,6 @@ HEADERS += \
     $$PWD/export_progress_dialog.h \
     $$PWD/layoutsettings_dialog.h \
     $$PWD/dialoglayoutprogress.h \
-    $$PWD/dialogvariables.h \
     $$PWD/export_layout_dialog.h \
     $$PWD/groups_widget.h \
     $$PWD/history_dialog.h \
@@ -25,6 +24,7 @@ HEADERS += \
     $$PWD/configpages/preferencespathpage.h \
     $$PWD/configpages/preferencesgraphicsviewpage.h \
     $$PWD/dialogdatetimeformats.h \
+    $$PWD/variables_dialog.h \
     $$PWD/welcome_dialog.h
 
 SOURCES += \
@@ -37,7 +37,6 @@ SOURCES += \
     $$PWD/export_progress_dialog.cpp \
     $$PWD/layoutsettings_dialog.cpp \
     $$PWD/dialoglayoutprogress.cpp \
-    $$PWD/dialogvariables.cpp \
     $$PWD/export_layout_dialog.cpp \
     $$PWD/groups_widget.cpp \
     $$PWD/history_dialog.cpp \
@@ -50,6 +49,7 @@ SOURCES += \
     $$PWD/configpages/preferencespathpage.cpp \
     $$PWD/configpages/preferencesgraphicsviewpage.cpp \
     $$PWD/dialogdatetimeformats.cpp \
+    $$PWD/variables_dialog.cpp \
     $$PWD/welcome_dialog.cpp
 
 FORMS += \
@@ -59,7 +59,6 @@ FORMS += \
     $$PWD/dialogpatternproperties.ui \
     $$PWD/dialognewpattern.ui \
     $$PWD/dialoglayoutprogress.ui \
-    $$PWD/dialogvariables.ui \
     $$PWD/export_layout_dialog.ui \
     $$PWD/export_progress_dialog.ui \
     $$PWD/groups_widget.ui \
@@ -74,4 +73,5 @@ FORMS += \
     $$PWD/configpages/preferencespathpage.ui \
     $$PWD/configpages/preferencesgraphicsviewpage.ui \
     $$PWD/dialogdatetimeformats.ui \
+    $$PWD/variables_dialog.ui \
     $$PWD/welcome_dialog.ui

@@ -3141,7 +3141,7 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variabel</translation>

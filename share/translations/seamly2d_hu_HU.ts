@@ -3141,7 +3141,7 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Változók</translation>

@@ -3141,7 +3141,7 @@ Spróbuj cofnąć ostatnią operację lub naprawić uszkodzoną formułę.</tran
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Zmienne</translation>

@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogvariables.h
+//  @file   variables_dialog.h
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
 //
@@ -50,8 +50,8 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOG_VARIABLES_H
-#define DIALOG_VARIABLES_H
+#ifndef VARIABLES_DIALOG_H
+#define VARIABLES_DIALOG_H
 
 #include "../vtools/dialogs/tools/dialogtool.h"
 #include "../xml/vpattern.h"
@@ -59,23 +59,24 @@
 
 #include <QPair>
 #include <QList>
+#include <QTableWidget>
 
 class VIndividualMeasurements;
 
 namespace Ui
 {
-    class DialogVariables;
+    class VariablesDialog;
 }
 
 /**
- * @brief The DialogVariables class show Variables dialog. Tables of all variables in program will be here.
+ * @brief The VariablesDialog class show Variables dialog. Tables of all variables in program will be here.
  */
-class DialogVariables : public DialogTool
+class VariablesDialog : public DialogTool
 {
     Q_OBJECT
 public:
-                                     DialogVariables(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
-    virtual                         ~DialogVariables() override;
+                                     VariablesDialog(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
+    virtual                         ~VariablesDialog() override;
 
 signals:
     void                             updateProperties();
@@ -102,27 +103,21 @@ private slots:
     void                             refreshPattern();
 
 private:
-    Q_DISABLE_COPY(DialogVariables)
+    Q_DISABLE_COPY(VariablesDialog)
 
-    /** @brief ui keeps information about user interface */
-    Ui::DialogVariables             *ui;
+    Ui::VariablesDialog             *ui;    /// @brief ui keeps information about user interface
+    VContainer                      *m_data;  /// @brief m_data container with data
+    VPattern                        *m_doc;   /// @brief m_doc dom document container
+    QTableWidget                    *m_backup_table;
+    QString                          m_reset_formula;
+    QString                          m_reset_description;
+    bool                             m_has_changes;
 
-    /** @brief data container with data */
-    VContainer                      *data; // need because we must change data //-V703
+    QVector<QPair<QString, QString>> m_rename_list;
 
-    /** @brief doc dom document container */
-    VPattern                        *doc;
-
-    int                              formulaBaseHeight;
-
-    bool                             hasChanges;
-
-    QVector<QPair<QString, QString>> renameList;
-
-    QList<QSharedPointer<QTableWidget>> tableList;
-    bool                             isSorted;
-    bool                             isFiltered;
-
+    QList<QSharedPointer<QTableWidget>> m_table_list;
+    bool                             m_is_sorted;
+    bool                             m_is_filtered;
 
     template <typename T>
     void                             fillTable(const QMap<QString, T> &varTable, QTableWidget *table);
@@ -154,6 +149,14 @@ private:
     bool                             variableUsed(const QString &name) const;
 
     void                             renameCache(const QString &name, const QString &newName);
+
+    void                             clearFormula();
+    void                             resetFormula();
+    void                             clearDescription();
+    void                             resetDescription();
+
+    void                             copyTable(const QTableWidget* source, QTableWidget* target);
+    void                             undoButtonClicked();
 };
 
-#endif // DIALOG_VARIABLES_H
+#endif // VARIABLES_DIALOG_H

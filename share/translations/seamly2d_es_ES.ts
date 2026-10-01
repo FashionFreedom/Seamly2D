@@ -3159,7 +3159,7 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variables</translation>
