@@ -183,12 +183,12 @@ VToolLine * VToolLine::Create(const quint32 &_id, const quint32 &firstPoint, con
     if (typeCreation == Source::FromGui)
     {
         id = VContainer::getNextId();
-        data->AddLine(firstPoint, secondPoint);
+        data->AddLine(firstPoint, secondPoint, id);
     }
     else
     {
         VContainer::UpdateId(id);
-        data->AddLine(firstPoint, secondPoint);
+        data->AddLine(firstPoint, secondPoint, id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -261,7 +261,8 @@ bool VToolLine::isUsedInFormula() const
 {
     const QString line_name = QString("%1_%2").arg(FirstPointName(), SecondPointName());
 
-    return doc->isVariableUsed(QStringList() << line_ + line_name << angleLine_ + line_name);
+    return doc->isVariableUsed(QStringList() << line_ + line_name << angleLine_ + line_name,
+                               &(VAbstractTool::data));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

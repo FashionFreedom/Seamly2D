@@ -81,7 +81,8 @@ public:
     static VToolNormal *Create(const quint32 _id, QString &formula, quint32 firstPointId,
                                quint32 secondPointId, const QString &typeLine, const QString &lineWeight,
                                const QString &lineColor,
-                               const QString &pointName, const qreal angle, qreal mx, qreal my, bool showPointName,
+                               const QString &pointName, const qreal angle, quint32 line_id, qreal mx, qreal my,
+                               bool showPointName,
                                VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                const Document &parse,
                                const Source &typeCreation);
@@ -103,6 +104,8 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual quint32      getCopyLengthLineId() const override {return m_line_id;}
+    virtual quint32      getCopyAngleLineId() const override {return m_line_id;}
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -114,11 +117,12 @@ private:
 
     /** @brief secondPointId id second line point. */
     quint32              secondPointId;
+    quint32              m_line_id; /** @brief m_line_id persisted id of this tool's line. See issue #1678. */
 
     VToolNormal(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
                 const QString &lineWeight, const QString &lineColor,
                 const QString &formula, const qreal &angle, const quint32 &firstPointId, const quint32 &secondPointId,
-                const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                const quint32 &line_id, const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLNORMAL_H

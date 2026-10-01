@@ -81,6 +81,11 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vmath.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/formulaidtranslator.h"
+#include "../vpatterndb/patternformulatokens.h"
+
+using namespace FormulaIdTranslator;
+using namespace PatternFormulaTokens;
 #include "../vwidgets/vcontrolpointspline.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../../vabstracttool.h"
@@ -239,7 +244,7 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
                                  const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
                                  const Source &typeCreation, bool autoSmooth,
-                                 int lengthMode, const QString &targetLength)
+                                 int lengthMode, QString &targetLength)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -263,8 +268,7 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
     qreal targetPx = 0.0;
     if (hasTarget)
     {
-        QString tl = targetLength;
-        targetPx = qApp->toPixel(CheckFormula(_id, tl, data));
+        targetPx = qApp->toPixel(CheckFormula(_id, targetLength, data));
     }
 
     if (autoSmooth && hasTarget && targetPx > 0.0)
@@ -386,7 +390,7 @@ void VToolSpline::controlPointPositionChanged(const qint32 &splineIndex, const S
     const QSharedPointer<VSpline> spline = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     const VSpline spl = correctedSpline(*spline, position, pos);
 
-    MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, m_id);
+    MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, &(this->VAbstractTool::data), m_id);
     connect(moveSpl, &MoveSpline::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveSpl);
 }
@@ -424,7 +428,8 @@ void VToolSpline::ReadToolAttributes(const QDomElement &domElement)
 {
     m_autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
     m_lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
-    m_targetLength = domElement.attribute(AttrLength, QString());
+    m_targetLength = formulaIdsToNames(domElement.attribute(AttrLength, QString()),
+                                       idTokenToNameMap(&(this->VAbstractTool::data)));
 }
 
 // @brief RemoveReferens decrement value of reference.
@@ -574,7 +579,7 @@ void VToolSpline::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 
         VSpline spl = VSpline(spline->GetP1(), p2, p3, spline->GetP4());
 
-        MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, m_id);
+        MoveSpline *moveSpl = new MoveSpline(doc, spline.data(), spl, &(this->VAbstractTool::data), m_id);
         connect(moveSpl, &MoveSpline::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
         qApp->getUndoStack()->push(moveSpl);
 
@@ -716,13 +721,14 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
 {
     SCASSERT(doc != nullptr)
 
+    const QHash<QString, QString> name_to_id_token = nameToIdTokenMap(&(this->VAbstractTool::data));
     doc->SetAttribute(domElement, AttrType,    ToolType);
     doc->SetAttribute(domElement, AttrPoint1,  spl.GetP1().id());
     doc->SetAttribute(domElement, AttrPoint4,  spl.GetP4().id());
-    doc->SetAttribute(domElement, AttrAngle1,  spl.GetStartAngleFormula());
-    doc->SetAttribute(domElement, AttrAngle2,  spl.GetEndAngleFormula());
-    doc->SetAttribute(domElement, AttrLength1, spl.GetC1LengthFormula());
-    doc->SetAttribute(domElement, AttrLength2, spl.GetC2LengthFormula());
+    doc->SetAttribute(domElement, AttrAngle1, formulaNamesToIds(spl.GetStartAngleFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrAngle2, formulaNamesToIds(spl.GetEndAngleFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrLength1, formulaNamesToIds(spl.GetC1LengthFormula(), name_to_id_token));
+    doc->SetAttribute(domElement, AttrLength2, formulaNamesToIds(spl.GetC2LengthFormula(), name_to_id_token));
 
     if (spl.GetDuplicate() > 0)
     {
@@ -773,7 +779,7 @@ void VToolSpline::SetSplineAttributes(QDomElement &domElement, const VSpline &sp
     // Off and back On does not lose the user's entered value.
     if (!m_targetLength.isEmpty())
     {
-        doc->SetAttribute(domElement, AttrLength, m_targetLength);
+        doc->SetAttribute(domElement, AttrLength, formulaNamesToIds(m_targetLength, name_to_id_token));
     }
     else
     {

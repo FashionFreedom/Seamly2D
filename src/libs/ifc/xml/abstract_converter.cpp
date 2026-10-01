@@ -359,7 +359,7 @@ void VAbstractConverter::Save()
 {
     try
     {
-        TestUniqueId();
+        Q_UNUSED(TestUniqueId())
     }
     catch (const VExceptionWrongId &error)
     {

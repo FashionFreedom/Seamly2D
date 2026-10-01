@@ -307,5 +307,17 @@ void VAbstractCubicBezierPath::CreateName()
             }
         }
     }
+    else
+    {
+        // A path spline with no points yet - a freshly created, not-yet-configured tool, or one that
+        // was saved to disk in that state (see issue #1678) - has no point names to build a name
+        // from. Falling back to an empty name here means this object's composite length/angle
+        // variables (VContainer::AddCurve()) get registered under an empty display name too, and a
+        // second such object collides with the first on that empty name instead of on a real one.
+        // The curve's own persisted id is the only thing guaranteed to exist and be stable regardless
+        // of how many points it has, so use that instead - this needs id(), not the fully-formed
+        // point-based name, precisely because there are no points to name it from.
+        name = splPath + QLatin1Char('_') + QString::number(id());
+    }
     setName(name);
 }

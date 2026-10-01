@@ -177,6 +177,10 @@ unix|win32: LIBS += -L$$OUT_PWD/../../libs/ifc/$${DESTDIR}/ -lifc
 INCLUDEPATH += $$PWD/../../libs/ifc
 DEPENDPATH += $$PWD/../../libs/ifc
 
+# Re-list VPatternDB: ifc now calls into it directly (PatternFormulaTokens), and GNU ld only
+# scans each static library once, at the point it appears on the link line.
+unix|win32: LIBS += -L$$OUT_PWD/../../libs/vpatterndb/$${DESTDIR} -lvpatterndb
+
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/ifc/$${DESTDIR}/ifc.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/ifc/$${DESTDIR}/libifc.a
 

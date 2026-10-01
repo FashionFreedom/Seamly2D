@@ -77,6 +77,7 @@ public:
 
     static VToolCutSpline *Create(const quint32 _id, const QString &pointName, QString &direction,
                                   QString &formula, const QString &lineColor, const quint32 &splineId,
+                                  quint32 segment1_id, quint32 segment2_id,
                                   qreal mx, qreal my, bool showPointName,
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                   const Document &parse, const Source &typeCreation);
@@ -102,7 +103,8 @@ private:
 
                           VToolCutSpline(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                          QString &direction, const QString &formula, const QString &lineColor,
-                                         const quint32 &splineId, const Source &typeCreation,
+                                         const quint32 &splineId, const quint32 &segment1_id,
+                                         const quint32 &segment2_id, const Source &typeCreation,
                                          QGraphicsItem * parent = nullptr);
 };
 
