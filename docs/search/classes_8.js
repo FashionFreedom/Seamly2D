@@ -22,10 +22,13 @@ var searchData=
   ['internalpathdialog_19',['InternalPathDialog',['../d9/d71/classInternalPathDialog.html',1,'']]],
   ['internalpathtool_20',['InternalPathTool',['../d9/d3f/classInternalPathTool.html',1,'']]],
   ['internalpathvisual_21',['InternalPathVisual',['../dc/dee/classInternalPathVisual.html',1,'']]],
-  ['intersectcirclesdialog_22',['IntersectCirclesDialog',['../d0/d09/classIntersectCirclesDialog.html',1,'']]],
-  ['intersectcirclestool_23',['IntersectCirclesTool',['../dc/d9f/classIntersectCirclesTool.html',1,'']]],
-  ['intersectcirclesvisual_24',['IntersectCirclesVisual',['../dd/d25/classIntersectCirclesVisual.html',1,'']]],
-  ['intersectcircletangentdialog_25',['IntersectCircleTangentDialog',['../dc/dfe/classIntersectCircleTangentDialog.html',1,'']]],
-  ['intersectcircletangenttool_26',['IntersectCircleTangentTool',['../d9/d63/classIntersectCircleTangentTool.html',1,'']]],
-  ['intersectcircletangentvisual_27',['IntersectCircleTangentVisual',['../d7/d8f/classIntersectCircleTangentVisual.html',1,'']]]
+  ['intersectarclinedialog_22',['IntersectArcLineDialog',['../d3/dfc/classIntersectArcLineDialog.html',1,'']]],
+  ['intersectarclinetool_23',['IntersectArcLineTool',['../d6/d01/classIntersectArcLineTool.html',1,'']]],
+  ['intersectarclinevisual_24',['IntersectArcLineVisual',['../d8/d06/classIntersectArcLineVisual.html',1,'']]],
+  ['intersectcirclesdialog_25',['IntersectCirclesDialog',['../d0/d09/classIntersectCirclesDialog.html',1,'']]],
+  ['intersectcirclestool_26',['IntersectCirclesTool',['../dc/d9f/classIntersectCirclesTool.html',1,'']]],
+  ['intersectcirclesvisual_27',['IntersectCirclesVisual',['../dd/d25/classIntersectCirclesVisual.html',1,'']]],
+  ['intersectcircletangentdialog_28',['IntersectCircleTangentDialog',['../dc/dfe/classIntersectCircleTangentDialog.html',1,'']]],
+  ['intersectcircletangenttool_29',['IntersectCircleTangentTool',['../d9/d63/classIntersectCircleTangentTool.html',1,'']]],
+  ['intersectcircletangentvisual_30',['IntersectCircleTangentVisual',['../d7/d8f/classIntersectCircleTangentVisual.html',1,'']]]
 ];

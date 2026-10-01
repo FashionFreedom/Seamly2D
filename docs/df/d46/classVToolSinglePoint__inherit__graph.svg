@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1978;
+var viewWidth = 2090;
 var viewHeight = 2853;
 var sectionId = 'dynsection-0';
 </script>
@@ -58,41 +58,41 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="The VToolSinglePoint class parent for all tools what create points.">
-<polygon fill="#999999" stroke="#666666" points="908.5,-771.5 908.5,-1147.5 1078.5,-1147.5 1078.5,-771.5 908.5,-771.5"/>
-<text text-anchor="middle" x="993.5" y="-1135.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolSinglePoint</text>
-<polyline fill="none" stroke="#666666" points="908.5,-1128.5 1078.5,-1128.5 "/>
-<text text-anchor="middle" x="993.5" y="-1116.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="908.5,-1109.5 1078.5,-1109.5 "/>
-<text text-anchor="start" x="916.5" y="-1097.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolSinglePoint()</text>
-<text text-anchor="start" x="916.5" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolSinglePoint()</text>
-<text text-anchor="start" x="916.5" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="916.5" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ name()</text>
-<text text-anchor="start" x="916.5" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setName()</text>
-<text text-anchor="start" x="916.5" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetEnabled()</text>
-<text text-anchor="start" x="916.5" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
-<text text-anchor="start" x="916.5" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
-<text text-anchor="start" x="916.5" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNameVisiblity()</text>
-<text text-anchor="start" x="916.5" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNamePosition()</text>
-<text text-anchor="start" x="916.5" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointnameChangedPosition()</text>
-<text text-anchor="start" x="916.5" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="916.5" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
-<text text-anchor="start" x="916.5" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointChosen()</text>
-<text text-anchor="start" x="916.5" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointSelected()</text>
-<text text-anchor="start" x="916.5" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="916.5" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
-<text text-anchor="start" x="916.5" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
-<text text-anchor="start" x="916.5" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowTextHover()</text>
-<text text-anchor="start" x="916.5" y="-888.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowTextSelectable()</text>
-<text text-anchor="start" x="916.5" y="-877.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolSelectionType()</text>
-<text text-anchor="start" x="916.5" y="-866.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
-<text text-anchor="start" x="916.5" y="-855.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNamePosition()</text>
-<text text-anchor="start" x="916.5" y="-844.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
-<text text-anchor="start" x="916.5" y="-833.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
-<text text-anchor="start" x="916.5" y="-822.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="916.5" y="-811.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
-<text text-anchor="start" x="916.5" y="-800.5" font-family="Helvetica,sans-Serif" font-size="10.00"># keyReleaseEvent()</text>
-<text text-anchor="start" x="916.5" y="-789.5" font-family="Helvetica,sans-Serif" font-size="10.00"># contextMenuEvent()</text>
-<text text-anchor="start" x="916.5" y="-778.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<polygon fill="#999999" stroke="#666666" points="913.5,-771.5 913.5,-1147.5 1083.5,-1147.5 1083.5,-771.5 913.5,-771.5"/>
+<text text-anchor="middle" x="998.5" y="-1135.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolSinglePoint</text>
+<polyline fill="none" stroke="#666666" points="913.5,-1128.5 1083.5,-1128.5 "/>
+<text text-anchor="middle" x="998.5" y="-1116.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="913.5,-1109.5 1083.5,-1109.5 "/>
+<text text-anchor="start" x="921.5" y="-1097.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolSinglePoint()</text>
+<text text-anchor="start" x="921.5" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolSinglePoint()</text>
+<text text-anchor="start" x="921.5" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="921.5" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ name()</text>
+<text text-anchor="start" x="921.5" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setName()</text>
+<text text-anchor="start" x="921.5" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetEnabled()</text>
+<text text-anchor="start" x="921.5" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
+<text text-anchor="start" x="921.5" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
+<text text-anchor="start" x="921.5" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNameVisiblity()</text>
+<text text-anchor="start" x="921.5" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNamePosition()</text>
+<text text-anchor="start" x="921.5" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointnameChangedPosition()</text>
+<text text-anchor="start" x="921.5" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="921.5" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
+<text text-anchor="start" x="921.5" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointChosen()</text>
+<text text-anchor="start" x="921.5" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointSelected()</text>
+<text text-anchor="start" x="921.5" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="921.5" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
+<text text-anchor="start" x="921.5" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
+<text text-anchor="start" x="921.5" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowTextHover()</text>
+<text text-anchor="start" x="921.5" y="-888.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowTextSelectable()</text>
+<text text-anchor="start" x="921.5" y="-877.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolSelectionType()</text>
+<text text-anchor="start" x="921.5" y="-866.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
+<text text-anchor="start" x="921.5" y="-855.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNamePosition()</text>
+<text text-anchor="start" x="921.5" y="-844.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
+<text text-anchor="start" x="921.5" y="-833.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
+<text text-anchor="start" x="921.5" y="-822.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="921.5" y="-811.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
+<text text-anchor="start" x="921.5" y="-800.5" font-family="Helvetica,sans-Serif" font-size="10.00"># keyReleaseEvent()</text>
+<text text-anchor="start" x="921.5" y="-789.5" font-family="Helvetica,sans-Serif" font-size="10.00"># contextMenuEvent()</text>
+<text text-anchor="start" x="921.5" y="-778.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
 </a>
 </g>
 </g>
@@ -135,361 +135,361 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M898.48,-943.99C702.91,-912.45 264.25,-832.6 151.5,-735 140.4,-725.39 130.79,-713.96 122.49,-701.57"/>
-<polygon fill="none" stroke="#63b8ff" points="898.03,-947.46 908.46,-945.59 899.14,-940.55 898.03,-947.46"/>
+<path fill="none" stroke="#63b8ff" d="M903.29,-944.12C706.74,-912.76 265.02,-833.12 151.5,-735 140.39,-725.4 130.78,-713.98 122.47,-701.59"/>
+<polygon fill="none" stroke="#63b8ff" points="902.89,-947.6 913.31,-945.71 903.98,-940.69 902.89,-947.6"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d9/d63/classIntersectCircleTangentTool.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="161,-375 161,-718 320,-718 320,-375 161,-375"/>
-<text text-anchor="middle" x="240.5" y="-706" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCircleTangentTool</text>
-<polyline fill="none" stroke="#666666" points="161,-699 320,-699 "/>
-<text text-anchor="start" x="169" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="169" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleCenterId</text>
-<text text-anchor="start" x="169" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
-<text text-anchor="start" x="169" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleRadius</text>
-<text text-anchor="start" x="169" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="161,-636 320,-636 "/>
-<text text-anchor="start" x="169" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="169" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="169" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
-<text text-anchor="start" x="169" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ CircleCenterPointName()</text>
-<text text-anchor="start" x="169" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
-<text text-anchor="start" x="169" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
-<text text-anchor="start" x="169" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleCenterId()</text>
-<text text-anchor="start" x="169" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleCenterId()</text>
-<text text-anchor="start" x="169" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleRadius()</text>
-<text text-anchor="start" x="169" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleRadius()</text>
-<text text-anchor="start" x="169" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="169" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<g id="a_node12"><a xlink:href="../../d6/d01/classIntersectArcLineTool.html" target="_top" xlink:title="The IntersectArcLineTool class tool for creation point intersection arc ad line.">
+<polygon fill="white" stroke="#666666" points="161,-364 161,-729 298,-729 298,-364 161,-364"/>
+<text text-anchor="middle" x="229.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectArcLineTool</text>
+<polyline fill="none" stroke="#666666" points="161,-710 298,-710 "/>
+<text text-anchor="start" x="169" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="169" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcRadius</text>
+<text text-anchor="start" x="169" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; center</text>
+<text text-anchor="start" x="169" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
+<text text-anchor="start" x="169" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
+<polyline fill="none" stroke="#666666" points="161,-647 298,-647 "/>
+<text text-anchor="start" x="169" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="169" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="169" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcCenterPointName()</text>
+<text text-anchor="start" x="169" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
+<text text-anchor="start" x="169" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
+<text text-anchor="start" x="169" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcRadius()</text>
+<text text-anchor="start" x="169" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcRadius()</text>
+<text text-anchor="start" x="169" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
+<text text-anchor="start" x="169" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
+<text text-anchor="start" x="169" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
+<text text-anchor="start" x="169" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
+<text text-anchor="start" x="169" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
+<text text-anchor="start" x="169" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
 <text text-anchor="start" x="169" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="169" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="169" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
 <text text-anchor="start" x="169" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="169" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="169" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
 <text text-anchor="start" x="169" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
 <text text-anchor="start" x="169" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
 <text text-anchor="start" x="169" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
 <text text-anchor="start" x="169" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
 <text text-anchor="start" x="169" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="169" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="169" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCircleTangentTool()</text>
+<text text-anchor="start" x="169" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="169" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="169" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectArcLineTool()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="#63b8ff" d="M898.02,-949.96C757.26,-932.67 493.03,-881.68 328.5,-735 322.73,-729.86 317.31,-724.25 312.22,-718.3"/>
-<polygon fill="none" stroke="#63b8ff" points="898,-953.48 908.35,-951.19 898.83,-946.53 898,-953.48"/>
+<path fill="none" stroke="#63b8ff" d="M903.11,-952.62C756.76,-938.7 476.04,-891.92 306.5,-735 303.66,-732.37 300.92,-729.62 298.28,-726.77"/>
+<polygon fill="none" stroke="#63b8ff" points="903.13,-956.14 913.41,-953.57 903.77,-949.17 903.13,-956.14"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
-<g id="a_node13"><a xlink:href="../../dc/d9f/classIntersectCirclesTool.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="338,-358.5 338,-734.5 523,-734.5 523,-358.5 338,-358.5"/>
-<text text-anchor="middle" x="430.5" y="-722.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesTool</text>
-<polyline fill="none" stroke="#666666" points="338,-715.5 523,-715.5 "/>
-<text text-anchor="start" x="346" y="-703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="346" y="-692.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleCenterId</text>
-<text text-anchor="start" x="346" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleCenterId</text>
-<text text-anchor="start" x="346" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleRadius</text>
-<text text-anchor="start" x="346" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleRadius</text>
-<text text-anchor="start" x="346" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="338,-641.5 523,-641.5 "/>
-<text text-anchor="start" x="346" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="346" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="346" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstCircleCenterPointName()</text>
-<text text-anchor="start" x="346" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondCircleCenterPointName()</text>
-<text text-anchor="start" x="346" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
-<text text-anchor="start" x="346" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
-<text text-anchor="start" x="346" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
-<text text-anchor="start" x="346" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
-<text text-anchor="start" x="346" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
-<text text-anchor="start" x="346" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
-<text text-anchor="start" x="346" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
-<text text-anchor="start" x="346" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
-<text text-anchor="start" x="346" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="346" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="346" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="346" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="346" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="346" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="346" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="346" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="346" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="346" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="346" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="346" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="346" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCirclesTool()</text>
+<g id="a_node13"><a xlink:href="../../d9/d63/classIntersectCircleTangentTool.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="316,-375 316,-718 475,-718 475,-375 316,-375"/>
+<text text-anchor="middle" x="395.5" y="-706" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCircleTangentTool</text>
+<polyline fill="none" stroke="#666666" points="316,-699 475,-699 "/>
+<text text-anchor="start" x="324" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="324" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleCenterId</text>
+<text text-anchor="start" x="324" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
+<text text-anchor="start" x="324" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleRadius</text>
+<text text-anchor="start" x="324" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="316,-636 475,-636 "/>
+<text text-anchor="start" x="324" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="324" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="324" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
+<text text-anchor="start" x="324" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ CircleCenterPointName()</text>
+<text text-anchor="start" x="324" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
+<text text-anchor="start" x="324" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
+<text text-anchor="start" x="324" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleCenterId()</text>
+<text text-anchor="start" x="324" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleCenterId()</text>
+<text text-anchor="start" x="324" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleRadius()</text>
+<text text-anchor="start" x="324" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleRadius()</text>
+<text text-anchor="start" x="324" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="324" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="324" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="324" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="324" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="324" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="324" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="324" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="324" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="324" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="324" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="324" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="324" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCircleTangentTool()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge12" class="edge">
 <title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="#63b8ff" d="M898.66,-931.93C797.37,-899.51 637.18,-836.18 531.5,-735 528.7,-732.32 525.95,-729.54 523.27,-726.67"/>
-<polygon fill="none" stroke="#63b8ff" points="897.68,-935.29 908.27,-934.97 899.79,-928.61 897.68,-935.29"/>
+<path fill="none" stroke="#63b8ff" d="M903.18,-938.8C790.19,-911.02 602.28,-850.34 483.5,-735 478.08,-729.74 472.96,-724.08 468.13,-718.12"/>
+<polygon fill="none" stroke="#63b8ff" points="902.66,-942.27 913.2,-941.22 904.31,-935.47 902.66,-942.27"/>
 </g>
 <!-- Node14 -->
 <g id="node14" class="node">
 <title>Node14</title>
-<g id="a_node14"><a xlink:href="../../de/ddd/classVToolBasePoint.html" target="_top" xlink:title="The VToolBasePoint class tool for creation pattern base point. Only base point can move....">
-<polygon fill="white" stroke="#666666" points="541,-391.5 541,-701.5 676,-701.5 676,-391.5 541,-391.5"/>
-<text text-anchor="middle" x="608.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint</text>
-<polyline fill="none" stroke="#666666" points="541,-682.5 676,-682.5 "/>
-<text text-anchor="start" x="549" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="549" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; draftBlockName</text>
-<polyline fill="none" stroke="#666666" points="541,-652.5 676,-652.5 "/>
-<text text-anchor="start" x="549" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolBasePoint()</text>
-<text text-anchor="start" x="549" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="549" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="549" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="549" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointPos()</text>
-<text text-anchor="start" x="549" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointPos()</text>
-<text text-anchor="start" x="549" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="549" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="549" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
-<text text-anchor="start" x="549" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
-<text text-anchor="start" x="549" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
-<text text-anchor="start" x="549" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
-<text text-anchor="start" x="549" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="549" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="549" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
-<text text-anchor="start" x="549" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
-<text text-anchor="start" x="549" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
-<text text-anchor="start" x="549" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="549" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="549" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="549" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="549" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="549" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolBasePoint()</text>
+<g id="a_node14"><a xlink:href="../../dc/d9f/classIntersectCirclesTool.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="493,-358.5 493,-734.5 678,-734.5 678,-358.5 493,-358.5"/>
+<text text-anchor="middle" x="585.5" y="-722.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesTool</text>
+<polyline fill="none" stroke="#666666" points="493,-715.5 678,-715.5 "/>
+<text text-anchor="start" x="501" y="-703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="501" y="-692.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleCenterId</text>
+<text text-anchor="start" x="501" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleCenterId</text>
+<text text-anchor="start" x="501" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleRadius</text>
+<text text-anchor="start" x="501" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleRadius</text>
+<text text-anchor="start" x="501" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="493,-641.5 678,-641.5 "/>
+<text text-anchor="start" x="501" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="501" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="501" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstCircleCenterPointName()</text>
+<text text-anchor="start" x="501" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondCircleCenterPointName()</text>
+<text text-anchor="start" x="501" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
+<text text-anchor="start" x="501" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
+<text text-anchor="start" x="501" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
+<text text-anchor="start" x="501" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
+<text text-anchor="start" x="501" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
+<text text-anchor="start" x="501" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
+<text text-anchor="start" x="501" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
+<text text-anchor="start" x="501" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
+<text text-anchor="start" x="501" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="501" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="501" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="501" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="501" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="501" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="501" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="501" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="501" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="501" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="501" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="501" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="501" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCirclesTool()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node14 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node14</title>
-<path fill="none" stroke="#63b8ff" d="M899.33,-908.98C832.06,-869.55 743.54,-808.81 685.5,-735 677.45,-724.77 670.12,-713.57 663.47,-701.91"/>
-<polygon fill="none" stroke="#63b8ff" points="897.86,-912.17 908.26,-914.16 901.37,-906.12 897.86,-912.17"/>
+<path fill="none" stroke="#63b8ff" d="M904.33,-906.76C837.41,-866.51 748.74,-805.73 686.5,-735 683.69,-731.81 680.93,-728.52 678.22,-725.16"/>
+<polygon fill="none" stroke="#63b8ff" points="902.82,-909.94 913.2,-912.05 906.41,-903.92 902.82,-909.94"/>
 </g>
 <!-- Node15 -->
 <g id="node15" class="node">
 <title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d0/d8a/classVToolCut.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="694.5,-408 694.5,-685 838.5,-685 838.5,-408 694.5,-408"/>
-<text text-anchor="middle" x="766.5" y="-673" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCut</text>
-<polyline fill="none" stroke="#666666" points="694.5,-666 838.5,-666 "/>
-<text text-anchor="start" x="702.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
-<text text-anchor="start" x="702.5" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00"># formula</text>
-<text text-anchor="start" x="702.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
-<text text-anchor="start" x="702.5" y="-621" font-family="Helvetica,sans-Serif" font-size="10.00"># curveCutId</text>
-<text text-anchor="start" x="702.5" y="-610" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
-<polyline fill="none" stroke="#666666" points="694.5,-603 838.5,-603 "/>
-<text text-anchor="start" x="702.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolCut()</text>
-<text text-anchor="start" x="702.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="702.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="702.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
-<text text-anchor="start" x="702.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
-<text text-anchor="start" x="702.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
-<text text-anchor="start" x="702.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
-<text text-anchor="start" x="702.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveCutId()</text>
-<text text-anchor="start" x="702.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveCutId()</text>
-<text text-anchor="start" x="702.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
-<text text-anchor="start" x="702.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
-<text text-anchor="start" x="702.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="702.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
-<text text-anchor="start" x="702.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="702.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
-<text text-anchor="start" x="702.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="702.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
+<g id="a_node15"><a xlink:href="../../de/ddd/classVToolBasePoint.html" target="_top" xlink:title="The VToolBasePoint class tool for creation pattern base point. Only base point can move....">
+<polygon fill="white" stroke="#666666" points="696,-391.5 696,-701.5 831,-701.5 831,-391.5 696,-391.5"/>
+<text text-anchor="middle" x="763.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint</text>
+<polyline fill="none" stroke="#666666" points="696,-682.5 831,-682.5 "/>
+<text text-anchor="start" x="704" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="704" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; draftBlockName</text>
+<polyline fill="none" stroke="#666666" points="696,-652.5 831,-652.5 "/>
+<text text-anchor="start" x="704" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolBasePoint()</text>
+<text text-anchor="start" x="704" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="704" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="704" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="704" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointPos()</text>
+<text text-anchor="start" x="704" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointPos()</text>
+<text text-anchor="start" x="704" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="704" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="704" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
+<text text-anchor="start" x="704" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
+<text text-anchor="start" x="704" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
+<text text-anchor="start" x="704" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
+<text text-anchor="start" x="704" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="704" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="704" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
+<text text-anchor="start" x="704" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
+<text text-anchor="start" x="704" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
+<text text-anchor="start" x="704" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="704" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="704" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="704" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="704" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="704" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolBasePoint()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node15 -->
 <g id="edge14" class="edge">
 <title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="#63b8ff" d="M902.67,-827.6C883.47,-797.75 864.03,-765.75 847.5,-735 838.98,-719.15 830.65,-702.21 822.78,-685.25"/>
-<polygon fill="none" stroke="#63b8ff" points="899.98,-829.88 908.35,-836.38 905.86,-826.08 899.98,-829.88"/>
+<path fill="none" stroke="#63b8ff" d="M907.45,-840.26C884.06,-807.16 860.02,-770.51 840.5,-735 834.65,-724.36 828.98,-713.18 823.55,-701.81"/>
+<polygon fill="none" stroke="#63b8ff" points="904.73,-842.47 913.38,-848.59 910.44,-838.41 904.73,-842.47"/>
 </g>
-<!-- Node19 -->
-<g id="node19" class="node">
-<title>Node19</title>
-<g id="a_node19"><a xlink:href="../../d3/dac/classVToolLineIntersect.html" target="_top" xlink:title="The VToolLineIntersect class help find point intersection lines.">
-<polygon fill="white" stroke="#666666" points="856.5,-364 856.5,-729 984.5,-729 984.5,-364 856.5,-364"/>
-<text text-anchor="middle" x="920.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLineIntersect</text>
-<polyline fill="none" stroke="#666666" points="856.5,-710 984.5,-710 "/>
-<text text-anchor="start" x="864.5" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="864.5" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1Line1</text>
-<text text-anchor="start" x="864.5" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line1</text>
-<text text-anchor="start" x="864.5" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1Line2</text>
-<text text-anchor="start" x="864.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line2</text>
-<polyline fill="none" stroke="#666666" points="856.5,-647 984.5,-647 "/>
-<text text-anchor="start" x="864.5" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="864.5" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="864.5" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line1P1Name()</text>
-<text text-anchor="start" x="864.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line1P2Name()</text>
-<text text-anchor="start" x="864.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line2P1Name()</text>
-<text text-anchor="start" x="864.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line2P2Name()</text>
-<text text-anchor="start" x="864.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Line1()</text>
-<text text-anchor="start" x="864.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1Line1()</text>
-<text text-anchor="start" x="864.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line1()</text>
-<text text-anchor="start" x="864.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line1()</text>
-<text text-anchor="start" x="864.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Line2()</text>
-<text text-anchor="start" x="864.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1Line2()</text>
-<text text-anchor="start" x="864.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line2()</text>
-<text text-anchor="start" x="864.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line2()</text>
-<text text-anchor="start" x="864.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="864.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="864.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="864.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="864.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="864.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="864.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="864.5" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="864.5" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="864.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="864.5" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolLineIntersect()</text>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="../../d0/d8a/classVToolCut.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="849.5,-408 849.5,-685 993.5,-685 993.5,-408 849.5,-408"/>
+<text text-anchor="middle" x="921.5" y="-673" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCut</text>
+<polyline fill="none" stroke="#666666" points="849.5,-666 993.5,-666 "/>
+<text text-anchor="start" x="857.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00"># m_direction</text>
+<text text-anchor="start" x="857.5" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00"># formula</text>
+<text text-anchor="start" x="857.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
+<text text-anchor="start" x="857.5" y="-621" font-family="Helvetica,sans-Serif" font-size="10.00"># curveCutId</text>
+<text text-anchor="start" x="857.5" y="-610" font-family="Helvetica,sans-Serif" font-size="10.00"># m_piecesMode</text>
+<polyline fill="none" stroke="#666666" points="849.5,-603 993.5,-603 "/>
+<text text-anchor="start" x="857.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolCut()</text>
+<text text-anchor="start" x="857.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="857.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="857.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormula()</text>
+<text text-anchor="start" x="857.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
+<text text-anchor="start" x="857.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
+<text text-anchor="start" x="857.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
+<text text-anchor="start" x="857.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveCutId()</text>
+<text text-anchor="start" x="857.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveCutId()</text>
+<text text-anchor="start" x="857.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDirection()</text>
+<text text-anchor="start" x="857.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDirection()</text>
+<text text-anchor="start" x="857.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="857.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
+<text text-anchor="start" x="857.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="857.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="857.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="857.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowToolVisualization()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node19 -->
-<g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="#63b8ff" d="M958.51,-761.49C956.6,-750.76 954.69,-739.99 952.79,-729.31"/>
-<polygon fill="none" stroke="#63b8ff" points="955.06,-762.11 960.26,-771.34 961.95,-760.88 955.06,-762.11"/>
+<!-- Node1&#45;&gt;Node16 -->
+<g id="edge15" class="edge">
+<title>Node1&#45;&gt;Node16</title>
+<path fill="none" stroke="#63b8ff" d="M961.59,-761.46C956.75,-735.65 951.88,-709.66 947.28,-685.12"/>
+<polygon fill="none" stroke="#63b8ff" points="958.15,-762.16 963.44,-771.34 965.03,-760.87 958.15,-762.16"/>
 </g>
 <!-- Node20 -->
 <g id="node20" class="node">
 <title>Node20</title>
-<g id="a_node20"><a xlink:href="../../dc/d1d/classVToolLinePoint.html" target="_top" xlink:title="The VToolLinePoint class parent for all tools what create point with line.">
-<polygon fill="white" stroke="#666666" points="1002.5,-386 1002.5,-707 1132.5,-707 1132.5,-386 1002.5,-386"/>
-<text text-anchor="middle" x="1067.5" y="-695" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLinePoint</text>
-<polyline fill="none" stroke="#666666" points="1002.5,-688 1132.5,-688 "/>
-<text text-anchor="start" x="1010.5" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00"># formulaLength</text>
-<text text-anchor="start" x="1010.5" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00"># angle</text>
-<text text-anchor="start" x="1010.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00"># basePointId</text>
-<text text-anchor="start" x="1010.5" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00"># mainLine</text>
-<text text-anchor="start" x="1010.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
-<polyline fill="none" stroke="#666666" points="1002.5,-625 1132.5,-625 "/>
-<text text-anchor="start" x="1010.5" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolLinePoint()</text>
-<text text-anchor="start" x="1010.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolLinePoint()</text>
-<text text-anchor="start" x="1010.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1010.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="1010.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaLength()</text>
-<text text-anchor="start" x="1010.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaLength()</text>
-<text text-anchor="start" x="1010.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ BasePointName()</text>
-<text text-anchor="start" x="1010.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointId()</text>
-<text text-anchor="start" x="1010.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointId()</text>
-<text text-anchor="start" x="1010.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAngle()</text>
-<text text-anchor="start" x="1010.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAngle()</text>
-<text text-anchor="start" x="1010.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
-<text text-anchor="start" x="1010.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
-<text text-anchor="start" x="1010.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="1010.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="1010.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
-<text text-anchor="start" x="1010.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1010.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1010.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="1010.5" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
-<text text-anchor="start" x="1010.5" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<g id="a_node20"><a xlink:href="../../d3/dac/classVToolLineIntersect.html" target="_top" xlink:title="The VToolLineIntersect class help find point intersection lines.">
+<polygon fill="white" stroke="#666666" points="1011.5,-364 1011.5,-729 1139.5,-729 1139.5,-364 1011.5,-364"/>
+<text text-anchor="middle" x="1075.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLineIntersect</text>
+<polyline fill="none" stroke="#666666" points="1011.5,-710 1139.5,-710 "/>
+<text text-anchor="start" x="1019.5" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1019.5" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1Line1</text>
+<text text-anchor="start" x="1019.5" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line1</text>
+<text text-anchor="start" x="1019.5" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1Line2</text>
+<text text-anchor="start" x="1019.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line2</text>
+<polyline fill="none" stroke="#666666" points="1011.5,-647 1139.5,-647 "/>
+<text text-anchor="start" x="1019.5" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1019.5" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1019.5" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line1P1Name()</text>
+<text text-anchor="start" x="1019.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line1P2Name()</text>
+<text text-anchor="start" x="1019.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line2P1Name()</text>
+<text text-anchor="start" x="1019.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ Line2P2Name()</text>
+<text text-anchor="start" x="1019.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Line1()</text>
+<text text-anchor="start" x="1019.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1Line1()</text>
+<text text-anchor="start" x="1019.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line1()</text>
+<text text-anchor="start" x="1019.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line1()</text>
+<text text-anchor="start" x="1019.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Line2()</text>
+<text text-anchor="start" x="1019.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1Line2()</text>
+<text text-anchor="start" x="1019.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line2()</text>
+<text text-anchor="start" x="1019.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line2()</text>
+<text text-anchor="start" x="1019.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1019.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1019.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1019.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1019.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1019.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1019.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1019.5" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1019.5" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="1019.5" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1019.5" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolLineIntersect()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge19" class="edge">
 <title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="#63b8ff" d="M1029.01,-761.29C1032.27,-743.19 1035.54,-724.99 1038.73,-707.28"/>
-<polygon fill="none" stroke="#63b8ff" points="1025.53,-760.88 1027.2,-771.34 1032.41,-762.12 1025.53,-760.88"/>
+<path fill="none" stroke="#63b8ff" d="M1035.41,-761.49C1037.42,-750.76 1039.44,-739.99 1041.44,-729.31"/>
+<polygon fill="none" stroke="#63b8ff" points="1031.97,-760.87 1033.56,-771.34 1038.85,-762.16 1031.97,-760.87"/>
 </g>
-<!-- Node29 -->
-<g id="node29" class="node">
-<title>Node29</title>
-<g id="a_node29"><a xlink:href="../../d5/de4/classVToolPointFromArcAndTangent.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1151,-391.5 1151,-701.5 1330,-701.5 1330,-391.5 1151,-391.5"/>
-<text text-anchor="middle" x="1240.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolPointFromArcAndTangent</text>
-<polyline fill="none" stroke="#666666" points="1151,-682.5 1330,-682.5 "/>
-<text text-anchor="start" x="1159" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1159" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcId</text>
-<text text-anchor="start" x="1159" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
-<text text-anchor="start" x="1159" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="1151,-630.5 1330,-630.5 "/>
-<text text-anchor="start" x="1159" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1159" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1159" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
-<text text-anchor="start" x="1159" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcName()</text>
-<text text-anchor="start" x="1159" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
-<text text-anchor="start" x="1159" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
-<text text-anchor="start" x="1159" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetArcId()</text>
-<text text-anchor="start" x="1159" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetArcId()</text>
-<text text-anchor="start" x="1159" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="1159" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="1159" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1159" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1159" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1159" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1159" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1159" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1159" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1159" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1159" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1159" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1159" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolPointFromArcAndTangent()</text>
+<!-- Node21 -->
+<g id="node21" class="node">
+<title>Node21</title>
+<g id="a_node21"><a xlink:href="../../dc/d1d/classVToolLinePoint.html" target="_top" xlink:title="The VToolLinePoint class parent for all tools what create point with line.">
+<polygon fill="white" stroke="#666666" points="1157.5,-386 1157.5,-707 1287.5,-707 1287.5,-386 1157.5,-386"/>
+<text text-anchor="middle" x="1222.5" y="-695" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLinePoint</text>
+<polyline fill="none" stroke="#666666" points="1157.5,-688 1287.5,-688 "/>
+<text text-anchor="start" x="1165.5" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00"># formulaLength</text>
+<text text-anchor="start" x="1165.5" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00"># angle</text>
+<text text-anchor="start" x="1165.5" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00"># basePointId</text>
+<text text-anchor="start" x="1165.5" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00"># mainLine</text>
+<text text-anchor="start" x="1165.5" y="-632" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
+<polyline fill="none" stroke="#666666" points="1157.5,-625 1287.5,-625 "/>
+<text text-anchor="start" x="1165.5" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolLinePoint()</text>
+<text text-anchor="start" x="1165.5" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolLinePoint()</text>
+<text text-anchor="start" x="1165.5" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1165.5" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="1165.5" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaLength()</text>
+<text text-anchor="start" x="1165.5" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaLength()</text>
+<text text-anchor="start" x="1165.5" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ BasePointName()</text>
+<text text-anchor="start" x="1165.5" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointId()</text>
+<text text-anchor="start" x="1165.5" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointId()</text>
+<text text-anchor="start" x="1165.5" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetAngle()</text>
+<text text-anchor="start" x="1165.5" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetAngle()</text>
+<text text-anchor="start" x="1165.5" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
+<text text-anchor="start" x="1165.5" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
+<text text-anchor="start" x="1165.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="1165.5" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="1165.5" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="1165.5" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1165.5" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1165.5" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="1165.5" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
+<text text-anchor="start" x="1165.5" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node29 -->
-<g id="edge28" class="edge">
-<title>Node1&#45;&gt;Node29</title>
-<path fill="none" stroke="#63b8ff" d="M1084.42,-825.89C1103.82,-796.32 1123.78,-764.87 1141.5,-735 1147.88,-724.24 1154.32,-713.02 1160.68,-701.67"/>
-<polygon fill="none" stroke="#63b8ff" points="1081.27,-824.31 1078.69,-834.59 1087.11,-828.16 1081.27,-824.31"/>
+<!-- Node1&#45;&gt;Node21 -->
+<g id="edge20" class="edge">
+<title>Node1&#45;&gt;Node21</title>
+<path fill="none" stroke="#63b8ff" d="M1089.17,-833.61C1110.03,-802.22 1131.15,-768.04 1148.5,-735 1153.22,-726.01 1157.82,-716.66 1162.26,-707.13"/>
+<polygon fill="none" stroke="#63b8ff" points="1086.24,-831.7 1083.59,-841.96 1092.06,-835.59 1086.24,-831.7"/>
 </g>
 <!-- Node30 -->
 <g id="node30" class="node">
 <title>Node30</title>
-<g id="a_node30"><a xlink:href="../../d1/da5/classVToolPointOfContact.html" target="_top" xlink:title="The VToolPointOfContact class tool for creation point intersection arc ad line.">
-<polygon fill="white" stroke="#666666" points="1348,-364 1348,-729 1485,-729 1485,-364 1348,-364"/>
-<text text-anchor="middle" x="1416.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">VToolPointOfContact</text>
-<polyline fill="none" stroke="#666666" points="1348,-710 1485,-710 "/>
-<text text-anchor="start" x="1356" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1356" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcRadius</text>
-<text text-anchor="start" x="1356" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; center</text>
-<text text-anchor="start" x="1356" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
-<text text-anchor="start" x="1356" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
-<polyline fill="none" stroke="#666666" points="1348,-647 1485,-647 "/>
-<text text-anchor="start" x="1356" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1356" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1356" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcCenterPointName()</text>
-<text text-anchor="start" x="1356" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
-<text text-anchor="start" x="1356" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
-<text text-anchor="start" x="1356" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcRadius()</text>
-<text text-anchor="start" x="1356" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcRadius()</text>
-<text text-anchor="start" x="1356" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
-<text text-anchor="start" x="1356" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
-<text text-anchor="start" x="1356" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
-<text text-anchor="start" x="1356" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
-<text text-anchor="start" x="1356" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
-<text text-anchor="start" x="1356" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
-<text text-anchor="start" x="1356" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1356" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1356" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1356" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1356" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1356" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1356" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1356" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1356" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1356" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="1356" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1356" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolPointOfContact()</text>
+<g id="a_node30"><a xlink:href="../../d5/de4/classVToolPointFromArcAndTangent.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1306,-391.5 1306,-701.5 1485,-701.5 1485,-391.5 1306,-391.5"/>
+<text text-anchor="middle" x="1395.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolPointFromArcAndTangent</text>
+<polyline fill="none" stroke="#666666" points="1306,-682.5 1485,-682.5 "/>
+<text text-anchor="start" x="1314" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1314" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcId</text>
+<text text-anchor="start" x="1314" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
+<text text-anchor="start" x="1314" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="1306,-630.5 1485,-630.5 "/>
+<text text-anchor="start" x="1314" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1314" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1314" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
+<text text-anchor="start" x="1314" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcName()</text>
+<text text-anchor="start" x="1314" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
+<text text-anchor="start" x="1314" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
+<text text-anchor="start" x="1314" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetArcId()</text>
+<text text-anchor="start" x="1314" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetArcId()</text>
+<text text-anchor="start" x="1314" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="1314" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="1314" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1314" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1314" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1314" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1314" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1314" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1314" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1314" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1314" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1314" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1314" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolPointFromArcAndTangent()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node30 -->
 <g id="edge29" class="edge">
 <title>Node1&#45;&gt;Node30</title>
-<path fill="none" stroke="#63b8ff" d="M1087.95,-917.27C1164.75,-879.57 1271.2,-817.18 1339.5,-735 1342.42,-731.48 1345.25,-727.84 1347.98,-724.09"/>
-<polygon fill="none" stroke="#63b8ff" points="1086.21,-914.23 1078.74,-921.75 1089.27,-920.53 1086.21,-914.23"/>
+<path fill="none" stroke="#63b8ff" d="M1092.48,-903.51C1155.91,-862.94 1238.36,-803.12 1296.5,-735 1305.34,-724.64 1313.7,-713.36 1321.52,-701.64"/>
+<polygon fill="none" stroke="#63b8ff" points="1090.22,-900.8 1083.66,-909.11 1093.97,-906.71 1090.22,-900.8"/>
 </g>
 <!-- Node31 -->
 <g id="node31" class="node">
@@ -527,8 +527,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node31 -->
 <g id="edge30" class="edge">
 <title>Node1&#45;&gt;Node31</title>
-<path fill="none" stroke="#63b8ff" d="M1088.61,-937.49C1198.79,-908.77 1379.83,-847.49 1494.5,-735 1509.13,-720.65 1521.61,-703.39 1532.17,-685.23"/>
-<polygon fill="none" stroke="#63b8ff" points="1087.65,-934.12 1078.83,-940 1089.39,-940.9 1087.65,-934.12"/>
+<path fill="none" stroke="#63b8ff" d="M1093.61,-936.98C1202.79,-907.92 1381.32,-846.45 1494.5,-735 1509.1,-720.62 1521.57,-703.35 1532.12,-685.18"/>
+<polygon fill="none" stroke="#63b8ff" points="1092.71,-933.6 1083.92,-939.53 1094.48,-940.37 1092.71,-933.6"/>
 </g>
 <!-- Node32 -->
 <g id="node32" class="node">
@@ -574,8 +574,8 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node32 -->
 <g id="edge31" class="edge">
 <title>Node1&#45;&gt;Node32</title>
-<path fill="none" stroke="#63b8ff" d="M1088.82,-951.39C1232.21,-935.87 1504.28,-887.06 1670.5,-735 1673.77,-732.01 1676.91,-728.86 1679.94,-725.58"/>
-<polygon fill="none" stroke="#63b8ff" points="1088.3,-947.92 1078.72,-952.45 1089.03,-954.89 1088.3,-947.92"/>
+<path fill="none" stroke="#63b8ff" d="M1093.7,-951.12C1236.2,-935.26 1505.78,-886.03 1670.5,-735 1673.77,-732 1676.91,-728.85 1679.93,-725.57"/>
+<polygon fill="none" stroke="#63b8ff" points="1093.23,-947.65 1083.66,-952.2 1093.98,-954.61 1093.23,-947.65"/>
 </g>
 <!-- Node33 -->
 <g id="node33" class="node">
@@ -621,271 +621,271 @@ var sectionId = 'dynsection-0';
 <!-- Node1&#45;&gt;Node33 -->
 <g id="edge32" class="edge">
 <title>Node1&#45;&gt;Node33</title>
-<path fill="none" stroke="#63b8ff" d="M1088.8,-944.17C1284.33,-913.05 1721.81,-834.04 1832.5,-735 1835.62,-732.2 1838.62,-729.26 1841.48,-726.18"/>
-<polygon fill="none" stroke="#63b8ff" points="1088.15,-940.73 1078.82,-945.75 1089.25,-947.64 1088.15,-940.73"/>
+<path fill="none" stroke="#63b8ff" d="M1093.6,-944.04C1288.16,-912.73 1722.57,-833.51 1832.5,-735 1835.62,-732.2 1838.61,-729.26 1841.47,-726.18"/>
+<polygon fill="none" stroke="#63b8ff" points="1092.99,-940.59 1083.67,-945.63 1094.1,-947.5 1092.99,-940.59"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../da/da4/classVAbstractPoint.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="827.5,-1228.5 827.5,-1373.5 989.5,-1373.5 989.5,-1228.5 827.5,-1228.5"/>
-<text text-anchor="middle" x="908.5" y="-1361.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPoint</text>
-<polyline fill="none" stroke="#666666" points="827.5,-1354.5 989.5,-1354.5 "/>
-<text text-anchor="middle" x="908.5" y="-1342.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="827.5,-1335.5 989.5,-1335.5 "/>
-<text text-anchor="start" x="835.5" y="-1323.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPoint()</text>
-<text text-anchor="start" x="835.5" y="-1312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPoint()</text>
-<text text-anchor="start" x="835.5" y="-1301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
-<text text-anchor="start" x="835.5" y="-1290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowToolVisualization()</text>
-<text text-anchor="start" x="835.5" y="-1279.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
-<text text-anchor="start" x="835.5" y="-1268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deletePoint()</text>
-<text text-anchor="start" x="835.5" y="-1257.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetPointName()</text>
-<text text-anchor="start" x="835.5" y="-1246.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNamePosition()</text>
-<text text-anchor="start" x="835.5" y="-1235.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitToolConnections()</text>
+<polygon fill="white" stroke="#666666" points="832.5,-1228.5 832.5,-1373.5 994.5,-1373.5 994.5,-1228.5 832.5,-1228.5"/>
+<text text-anchor="middle" x="913.5" y="-1361.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPoint</text>
+<polyline fill="none" stroke="#666666" points="832.5,-1354.5 994.5,-1354.5 "/>
+<text text-anchor="middle" x="913.5" y="-1342.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="832.5,-1335.5 994.5,-1335.5 "/>
+<text text-anchor="start" x="840.5" y="-1323.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPoint()</text>
+<text text-anchor="start" x="840.5" y="-1312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPoint()</text>
+<text text-anchor="start" x="840.5" y="-1301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
+<text text-anchor="start" x="840.5" y="-1290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowToolVisualization()</text>
+<text text-anchor="start" x="840.5" y="-1279.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
+<text text-anchor="start" x="840.5" y="-1268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ deletePoint()</text>
+<text text-anchor="start" x="840.5" y="-1257.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetPointName()</text>
+<text text-anchor="start" x="840.5" y="-1246.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNamePosition()</text>
+<text text-anchor="start" x="840.5" y="-1235.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitToolConnections()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M928.87,-1218.64C934.3,-1196.93 940.41,-1172.56 946.64,-1147.67"/>
-<polygon fill="none" stroke="#63b8ff" points="925.46,-1217.86 926.42,-1228.42 932.25,-1219.57 925.46,-1217.86"/>
+<path fill="none" stroke="#63b8ff" d="M933.87,-1218.64C939.3,-1196.93 945.41,-1172.56 951.64,-1147.67"/>
+<polygon fill="none" stroke="#63b8ff" points="930.46,-1217.86 931.42,-1228.42 937.25,-1219.57 930.46,-1217.86"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="../../d2/df2/classVDrawTool.html" target="_top" xlink:title="The VDrawTool abstract class for all draw tool.">
-<polygon fill="white" stroke="#666666" points="825.5,-1454.5 825.5,-1863.5 991.5,-1863.5 991.5,-1454.5 825.5,-1454.5"/>
-<text text-anchor="middle" x="908.5" y="-1851.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDrawTool</text>
-<polyline fill="none" stroke="#666666" points="825.5,-1844.5 991.5,-1844.5 "/>
-<text text-anchor="start" x="833.5" y="-1832.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeBlockName</text>
-<text text-anchor="start" x="833.5" y="-1821.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineType</text>
-<text text-anchor="start" x="833.5" y="-1810.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeight</text>
-<polyline fill="none" stroke="#666666" points="825.5,-1803.5 991.5,-1803.5 "/>
-<text text-anchor="start" x="833.5" y="-1791.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDrawTool()</text>
-<text text-anchor="start" x="833.5" y="-1780.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDrawTool()</text>
-<text text-anchor="start" x="833.5" y="-1769.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
-<text text-anchor="start" x="833.5" y="-1758.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
-<text text-anchor="start" x="833.5" y="-1747.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
-<text text-anchor="start" x="833.5" y="-1736.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
-<text text-anchor="start" x="833.5" y="-1725.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
-<text text-anchor="start" x="833.5" y="-1714.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
-<text text-anchor="start" x="833.5" y="-1703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
-<text text-anchor="start" x="833.5" y="-1692.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ activeBlockChanged()</text>
-<text text-anchor="start" x="833.5" y="-1681.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ blockNameChanged()</text>
-<text text-anchor="start" x="833.5" y="-1670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
-<text text-anchor="start" x="833.5" y="-1659.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="833.5" y="-1648.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
-<text text-anchor="start" x="833.5" y="-1637.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToCalculation()</text>
-<text text-anchor="start" x="833.5" y="-1626.5" font-family="Helvetica,sans-Serif" font-size="10.00"># addDependence()</text>
-<text text-anchor="start" x="833.5" y="-1615.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="833.5" y="-1604.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
-<text text-anchor="start" x="833.5" y="-1593.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
-<text text-anchor="start" x="833.5" y="-1582.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOption()</text>
-<text text-anchor="start" x="833.5" y="-1571.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="833.5" y="-1560.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="833.5" y="-1549.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectDisable()</text>
-<text text-anchor="start" x="833.5" y="-1538.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadAttributes()</text>
-<text text-anchor="start" x="833.5" y="-1527.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="833.5" y="-1516.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
-<text text-anchor="start" x="833.5" y="-1505.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ContextMenu()</text>
-<text text-anchor="start" x="833.5" y="-1494.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowItem()</text>
-<text text-anchor="start" x="833.5" y="-1483.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ObjectName()</text>
-<text text-anchor="start" x="833.5" y="-1472.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitDrawToolConnections()</text>
-<text text-anchor="start" x="833.5" y="-1461.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<polygon fill="white" stroke="#666666" points="830.5,-1454.5 830.5,-1863.5 996.5,-1863.5 996.5,-1454.5 830.5,-1454.5"/>
+<text text-anchor="middle" x="913.5" y="-1851.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDrawTool</text>
+<polyline fill="none" stroke="#666666" points="830.5,-1844.5 996.5,-1844.5 "/>
+<text text-anchor="start" x="838.5" y="-1832.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeBlockName</text>
+<text text-anchor="start" x="838.5" y="-1821.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineType</text>
+<text text-anchor="start" x="838.5" y="-1810.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_lineWeight</text>
+<polyline fill="none" stroke="#666666" points="830.5,-1803.5 996.5,-1803.5 "/>
+<text text-anchor="start" x="838.5" y="-1791.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDrawTool()</text>
+<text text-anchor="start" x="838.5" y="-1780.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDrawTool()</text>
+<text text-anchor="start" x="838.5" y="-1769.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
+<text text-anchor="start" x="838.5" y="-1758.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
+<text text-anchor="start" x="838.5" y="-1747.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
+<text text-anchor="start" x="838.5" y="-1736.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
+<text text-anchor="start" x="838.5" y="-1725.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isPointNameVisible()</text>
+<text text-anchor="start" x="838.5" y="-1714.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
+<text text-anchor="start" x="838.5" y="-1703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowTool()</text>
+<text text-anchor="start" x="838.5" y="-1692.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ activeBlockChanged()</text>
+<text text-anchor="start" x="838.5" y="-1681.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ blockNameChanged()</text>
+<text text-anchor="start" x="838.5" y="-1670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
+<text text-anchor="start" x="838.5" y="-1659.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="838.5" y="-1648.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piecesMode()</text>
+<text text-anchor="start" x="838.5" y="-1637.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToCalculation()</text>
+<text text-anchor="start" x="838.5" y="-1626.5" font-family="Helvetica,sans-Serif" font-size="10.00"># addDependence()</text>
+<text text-anchor="start" x="838.5" y="-1615.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="838.5" y="-1604.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
+<text text-anchor="start" x="838.5" y="-1593.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
+<text text-anchor="start" x="838.5" y="-1582.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOption()</text>
+<text text-anchor="start" x="838.5" y="-1571.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="838.5" y="-1560.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="838.5" y="-1549.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectDisable()</text>
+<text text-anchor="start" x="838.5" y="-1538.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadAttributes()</text>
+<text text-anchor="start" x="838.5" y="-1527.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="838.5" y="-1516.5" font-family="Helvetica,sans-Serif" font-size="10.00"># updatePointNameVisibility()</text>
+<text text-anchor="start" x="838.5" y="-1505.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ContextMenu()</text>
+<text text-anchor="start" x="838.5" y="-1494.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowItem()</text>
+<text text-anchor="start" x="838.5" y="-1483.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ObjectName()</text>
+<text text-anchor="start" x="838.5" y="-1472.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitDrawToolConnections()</text>
+<text text-anchor="start" x="838.5" y="-1461.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M908.5,-1444.19C908.5,-1419.01 908.5,-1394.83 908.5,-1373.78"/>
-<polygon fill="none" stroke="#63b8ff" points="905,-1444.27 908.5,-1454.27 912,-1444.27 905,-1444.27"/>
+<path fill="none" stroke="#63b8ff" d="M913.5,-1444.19C913.5,-1419.01 913.5,-1394.83 913.5,-1373.78"/>
+<polygon fill="none" stroke="#63b8ff" points="910,-1444.27 913.5,-1454.27 917,-1444.27 910,-1444.27"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../d4/d36/classVInteractiveTool.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="830,-1900.5 830,-2023.5 987,-2023.5 987,-1900.5 830,-1900.5"/>
-<text text-anchor="middle" x="908.5" y="-2011.5" font-family="Helvetica,sans-Serif" font-size="10.00">VInteractiveTool</text>
-<polyline fill="none" stroke="#666666" points="830,-2004.5 987,-2004.5 "/>
-<text text-anchor="start" x="838" y="-1992.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_dialog</text>
-<polyline fill="none" stroke="#666666" points="830,-1985.5 987,-1985.5 "/>
-<text text-anchor="start" x="838" y="-1973.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInteractiveTool()</text>
-<text text-anchor="start" x="838" y="-1962.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VInteractiveTool()</text>
-<text text-anchor="start" x="838" y="-1951.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogLinkDestroy()</text>
-<text text-anchor="start" x="838" y="-1940.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromGuiOk()</text>
-<text text-anchor="start" x="838" y="-1929.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromGuiApply()</text>
-<text text-anchor="start" x="838" y="-1918.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setDialog()</text>
-<text text-anchor="start" x="838" y="-1907.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
+<polygon fill="white" stroke="#666666" points="835,-1900.5 835,-2023.5 992,-2023.5 992,-1900.5 835,-1900.5"/>
+<text text-anchor="middle" x="913.5" y="-2011.5" font-family="Helvetica,sans-Serif" font-size="10.00">VInteractiveTool</text>
+<polyline fill="none" stroke="#666666" points="835,-2004.5 992,-2004.5 "/>
+<text text-anchor="start" x="843" y="-1992.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_dialog</text>
+<polyline fill="none" stroke="#666666" points="835,-1985.5 992,-1985.5 "/>
+<text text-anchor="start" x="843" y="-1973.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInteractiveTool()</text>
+<text text-anchor="start" x="843" y="-1962.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VInteractiveTool()</text>
+<text text-anchor="start" x="843" y="-1951.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogLinkDestroy()</text>
+<text text-anchor="start" x="843" y="-1940.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromGuiOk()</text>
+<text text-anchor="start" x="843" y="-1929.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromGuiApply()</text>
+<text text-anchor="start" x="843" y="-1918.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setDialog()</text>
+<text text-anchor="start" x="843" y="-1907.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialogChange()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="#63b8ff" d="M908.5,-1890.37C908.5,-1881.9 908.5,-1872.95 908.5,-1863.7"/>
-<polygon fill="none" stroke="#63b8ff" points="905,-1890.45 908.5,-1900.45 912,-1890.45 905,-1890.45"/>
+<path fill="none" stroke="#63b8ff" d="M913.5,-1890.37C913.5,-1881.9 913.5,-1872.95 913.5,-1863.7"/>
+<polygon fill="none" stroke="#63b8ff" points="910,-1890.45 913.5,-1900.45 917,-1890.45 910,-1890.45"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../d4/d36/classVAbstractTool.html" target="_top" xlink:title="The VAbstractTool abstract class for all tools.">
-<polygon fill="white" stroke="#666666" points="832.5,-2060.5 832.5,-2557.5 984.5,-2557.5 984.5,-2060.5 832.5,-2060.5"/>
-<text text-anchor="middle" x="908.5" y="-2545.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractTool</text>
-<polyline fill="none" stroke="#666666" points="832.5,-2538.5 984.5,-2538.5 "/>
-<text text-anchor="start" x="840.5" y="-2526.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ m_suppressContextMenu</text>
-<text text-anchor="start" x="840.5" y="-2515.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrInUse</text>
-<text text-anchor="start" x="840.5" y="-2504.5" font-family="Helvetica,sans-Serif" font-size="10.00"># doc</text>
-<text text-anchor="start" x="840.5" y="-2493.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_id</text>
-<text text-anchor="start" x="840.5" y="-2482.5" font-family="Helvetica,sans-Serif" font-size="10.00"># vis</text>
-<text text-anchor="start" x="840.5" y="-2471.5" font-family="Helvetica,sans-Serif" font-size="10.00"># selectionType</text>
-<polyline fill="none" stroke="#666666" points="832.5,-2464.5 984.5,-2464.5 "/>
-<text text-anchor="start" x="840.5" y="-2452.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractTool()</text>
-<text text-anchor="start" x="840.5" y="-2441.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractTool()</text>
-<text text-anchor="start" x="840.5" y="-2430.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
-<text text-anchor="start" x="840.5" y="-2419.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
-<text text-anchor="start" x="840.5" y="-2408.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointsList()</text>
-<text text-anchor="start" x="840.5" y="-2397.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
-<text text-anchor="start" x="840.5" y="-2386.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="840.5" y="-2375.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNamePosition()</text>
-<text text-anchor="start" x="840.5" y="-2364.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNameVisiblity()</text>
-<text text-anchor="start" x="840.5" y="-2353.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CheckFormula()</text>
-<text text-anchor="start" x="840.5" y="-2342.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Colors()</text>
-<text text-anchor="start" x="840.5" y="-2331.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ColorsList()</text>
-<text text-anchor="start" x="840.5" y="-2320.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ supportColorsList()</text>
-<text text-anchor="start" x="840.5" y="-2309.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ backgroundColorsList()</text>
-<text text-anchor="start" x="840.5" y="-2298.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createColorIcon()</text>
-<text text-anchor="start" x="840.5" y="-2287.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ fills()</text>
-<text text-anchor="start" x="840.5" y="-2276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddRecord()</text>
-<text text-anchor="start" x="840.5" y="-2265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNodes()</text>
-<text text-anchor="start" x="840.5" y="-2254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNodes()</text>
-<text text-anchor="start" x="840.5" y="-2243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateNode()</text>
-<text text-anchor="start" x="840.5" y="-2232.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="840.5" y="-2221.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
-<text text-anchor="start" x="840.5" y="-2210.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
-<text text-anchor="start" x="840.5" y="-2199.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolSelectionType()</text>
-<text text-anchor="start" x="840.5" y="-2188.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
-<text text-anchor="start" x="840.5" y="-2177.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshDataInFile()</text>
-<text text-anchor="start" x="840.5" y="-2166.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="840.5" y="-2155.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
-<text text-anchor="start" x="840.5" y="-2144.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddVisualization()</text>
-<text text-anchor="start" x="840.5" y="-2133.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="840.5" y="-2122.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolCreation()</text>
-<text text-anchor="start" x="840.5" y="-2111.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ConfirmDeletion()</text>
-<text text-anchor="start" x="840.5" y="-2100.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddSANode()</text>
-<text text-anchor="start" x="840.5" y="-2089.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddNode()</text>
-<text text-anchor="start" x="840.5" y="-2078.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareNodes()</text>
-<text text-anchor="start" x="840.5" y="-2067.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareNode()</text>
+<polygon fill="white" stroke="#666666" points="837.5,-2060.5 837.5,-2557.5 989.5,-2557.5 989.5,-2060.5 837.5,-2060.5"/>
+<text text-anchor="middle" x="913.5" y="-2545.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractTool</text>
+<polyline fill="none" stroke="#666666" points="837.5,-2538.5 989.5,-2538.5 "/>
+<text text-anchor="start" x="845.5" y="-2526.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ m_suppressContextMenu</text>
+<text text-anchor="start" x="845.5" y="-2515.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrInUse</text>
+<text text-anchor="start" x="845.5" y="-2504.5" font-family="Helvetica,sans-Serif" font-size="10.00"># doc</text>
+<text text-anchor="start" x="845.5" y="-2493.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_id</text>
+<text text-anchor="start" x="845.5" y="-2482.5" font-family="Helvetica,sans-Serif" font-size="10.00"># vis</text>
+<text text-anchor="start" x="845.5" y="-2471.5" font-family="Helvetica,sans-Serif" font-size="10.00"># selectionType</text>
+<polyline fill="none" stroke="#666666" points="837.5,-2464.5 989.5,-2464.5 "/>
+<text text-anchor="start" x="845.5" y="-2452.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractTool()</text>
+<text text-anchor="start" x="845.5" y="-2441.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractTool()</text>
+<text text-anchor="start" x="845.5" y="-2430.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
+<text text-anchor="start" x="845.5" y="-2419.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
+<text text-anchor="start" x="845.5" y="-2408.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointsList()</text>
+<text text-anchor="start" x="845.5" y="-2397.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTagName()</text>
+<text text-anchor="start" x="845.5" y="-2386.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="845.5" y="-2375.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNamePosition()</text>
+<text text-anchor="start" x="845.5" y="-2364.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointNameVisiblity()</text>
+<text text-anchor="start" x="845.5" y="-2353.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CheckFormula()</text>
+<text text-anchor="start" x="845.5" y="-2342.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Colors()</text>
+<text text-anchor="start" x="845.5" y="-2331.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ColorsList()</text>
+<text text-anchor="start" x="845.5" y="-2320.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ supportColorsList()</text>
+<text text-anchor="start" x="845.5" y="-2309.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ backgroundColorsList()</text>
+<text text-anchor="start" x="845.5" y="-2298.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createColorIcon()</text>
+<text text-anchor="start" x="845.5" y="-2287.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ fills()</text>
+<text text-anchor="start" x="845.5" y="-2276.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddRecord()</text>
+<text text-anchor="start" x="845.5" y="-2265.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNodes()</text>
+<text text-anchor="start" x="845.5" y="-2254.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addNodes()</text>
+<text text-anchor="start" x="845.5" y="-2243.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateNode()</text>
+<text text-anchor="start" x="845.5" y="-2232.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="845.5" y="-2221.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowHover()</text>
+<text text-anchor="start" x="845.5" y="-2210.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllowSelecting()</text>
+<text text-anchor="start" x="845.5" y="-2199.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolSelectionType()</text>
+<text text-anchor="start" x="845.5" y="-2188.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
+<text text-anchor="start" x="845.5" y="-2177.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshDataInFile()</text>
+<text text-anchor="start" x="845.5" y="-2166.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="845.5" y="-2155.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
+<text text-anchor="start" x="845.5" y="-2144.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddVisualization()</text>
+<text text-anchor="start" x="845.5" y="-2133.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="845.5" y="-2122.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolCreation()</text>
+<text text-anchor="start" x="845.5" y="-2111.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ConfirmDeletion()</text>
+<text text-anchor="start" x="845.5" y="-2100.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddSANode()</text>
+<text text-anchor="start" x="845.5" y="-2089.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddNode()</text>
+<text text-anchor="start" x="845.5" y="-2078.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareNodes()</text>
+<text text-anchor="start" x="845.5" y="-2067.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareNode()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M908.5,-2050.18C908.5,-2040.85 908.5,-2031.96 908.5,-2023.67"/>
-<polygon fill="none" stroke="#63b8ff" points="905,-2050.48 908.5,-2060.48 912,-2050.48 905,-2050.48"/>
+<path fill="none" stroke="#63b8ff" d="M913.5,-2050.18C913.5,-2040.85 913.5,-2031.96 913.5,-2023.67"/>
+<polygon fill="none" stroke="#63b8ff" points="910,-2050.48 913.5,-2060.48 917,-2050.48 910,-2050.48"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d5/d68/classVDataTool.html" target="_top" xlink:title="The VDataTool class need for getting access to data container of tool.">
-<polygon fill="white" stroke="#666666" points="843,-2594.5 843,-2750.5 974,-2750.5 974,-2594.5 843,-2594.5"/>
-<text text-anchor="middle" x="908.5" y="-2738.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDataTool</text>
-<polyline fill="none" stroke="#666666" points="843,-2731.5 974,-2731.5 "/>
-<text text-anchor="start" x="851" y="-2719.5" font-family="Helvetica,sans-Serif" font-size="10.00"># data</text>
-<text text-anchor="start" x="851" y="-2708.5" font-family="Helvetica,sans-Serif" font-size="10.00"># _referens</text>
-<polyline fill="none" stroke="#666666" points="843,-2701.5 974,-2701.5 "/>
-<text text-anchor="start" x="851" y="-2689.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDataTool()</text>
-<text text-anchor="start" x="851" y="-2678.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDataTool()</text>
-<text text-anchor="start" x="851" y="-2667.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
-<text text-anchor="start" x="851" y="-2656.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
-<text text-anchor="start" x="851" y="-2645.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ referens()</text>
-<text text-anchor="start" x="851" y="-2634.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
-<text text-anchor="start" x="851" y="-2623.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ incrementReferens()</text>
-<text text-anchor="start" x="851" y="-2612.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ decrementReferens()</text>
-<text text-anchor="start" x="851" y="-2601.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
+<polygon fill="white" stroke="#666666" points="848,-2594.5 848,-2750.5 979,-2750.5 979,-2594.5 848,-2594.5"/>
+<text text-anchor="middle" x="913.5" y="-2738.5" font-family="Helvetica,sans-Serif" font-size="10.00">VDataTool</text>
+<polyline fill="none" stroke="#666666" points="848,-2731.5 979,-2731.5 "/>
+<text text-anchor="start" x="856" y="-2719.5" font-family="Helvetica,sans-Serif" font-size="10.00"># data</text>
+<text text-anchor="start" x="856" y="-2708.5" font-family="Helvetica,sans-Serif" font-size="10.00"># _referens</text>
+<polyline fill="none" stroke="#666666" points="848,-2701.5 979,-2701.5 "/>
+<text text-anchor="start" x="856" y="-2689.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VDataTool()</text>
+<text text-anchor="start" x="856" y="-2678.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VDataTool()</text>
+<text text-anchor="start" x="856" y="-2667.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getData()</text>
+<text text-anchor="start" x="856" y="-2656.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setData()</text>
+<text text-anchor="start" x="856" y="-2645.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ referens()</text>
+<text text-anchor="start" x="856" y="-2634.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isUsed()</text>
+<text text-anchor="start" x="856" y="-2623.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ incrementReferens()</text>
+<text text-anchor="start" x="856" y="-2612.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ decrementReferens()</text>
+<text text-anchor="start" x="856" y="-2601.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GroupVisibility()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M908.5,-2584.21C908.5,-2575.7 908.5,-2566.8 908.5,-2557.65"/>
-<polygon fill="none" stroke="#63b8ff" points="905,-2584.39 908.5,-2594.39 912,-2584.39 905,-2584.39"/>
+<path fill="none" stroke="#63b8ff" d="M913.5,-2584.21C913.5,-2575.7 913.5,-2566.8 913.5,-2557.65"/>
+<polygon fill="none" stroke="#63b8ff" points="910,-2584.39 913.5,-2594.39 917,-2584.39 910,-2584.39"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="880.5,-2787.5 880.5,-2844.5 936.5,-2844.5 936.5,-2787.5 880.5,-2787.5"/>
-<text text-anchor="middle" x="908.5" y="-2832.5" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
-<polyline fill="none" stroke="#666666" points="880.5,-2825.5 936.5,-2825.5 "/>
-<text text-anchor="middle" x="908.5" y="-2813.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="880.5,-2806.5 936.5,-2806.5 "/>
-<text text-anchor="middle" x="908.5" y="-2794.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#666666" points="885.5,-2787.5 885.5,-2844.5 941.5,-2844.5 941.5,-2787.5 885.5,-2787.5"/>
+<text text-anchor="middle" x="913.5" y="-2832.5" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
+<polyline fill="none" stroke="#666666" points="885.5,-2825.5 941.5,-2825.5 "/>
+<text text-anchor="middle" x="913.5" y="-2813.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="885.5,-2806.5 941.5,-2806.5 "/>
+<text text-anchor="middle" x="913.5" y="-2794.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M908.5,-2777.34C908.5,-2769.04 908.5,-2759.96 908.5,-2750.74"/>
-<polygon fill="none" stroke="#63b8ff" points="905,-2777.38 908.5,-2787.38 912,-2777.38 905,-2777.38"/>
+<path fill="none" stroke="#63b8ff" d="M913.5,-2777.34C913.5,-2769.04 913.5,-2759.96 913.5,-2750.74"/>
+<polygon fill="none" stroke="#63b8ff" points="910,-2777.38 913.5,-2787.38 917,-2777.38 910,-2777.38"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../dc/d3b/classVScenePoint.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1008,-1184.5 1008,-1417.5 1151,-1417.5 1151,-1184.5 1008,-1184.5"/>
-<text text-anchor="middle" x="1079.5" y="-1405.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScenePoint</text>
-<polyline fill="none" stroke="#666666" points="1008,-1398.5 1151,-1398.5 "/>
-<text text-anchor="start" x="1016" y="-1386.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointName</text>
-<text text-anchor="start" x="1016" y="-1375.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointLeader</text>
-<text text-anchor="start" x="1016" y="-1364.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointColor</text>
-<text text-anchor="start" x="1016" y="-1353.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_onlyPoint</text>
-<text text-anchor="start" x="1016" y="-1342.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_isHovered</text>
-<text text-anchor="start" x="1016" y="-1331.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_showPointName</text>
-<polyline fill="none" stroke="#666666" points="1008,-1324.5 1151,-1324.5 "/>
-<text text-anchor="start" x="1016" y="-1312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScenePoint()</text>
-<text text-anchor="start" x="1016" y="-1301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScenePoint()</text>
-<text text-anchor="start" x="1016" y="-1290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1016" y="-1279.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="1016" y="-1268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshPointGeometry()</text>
-<text text-anchor="start" x="1016" y="-1257.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshLeader()</text>
-<text text-anchor="start" x="1016" y="-1246.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="1016" y="-1235.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
-<text text-anchor="start" x="1016" y="-1224.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setOnlyPoint()</text>
-<text text-anchor="start" x="1016" y="-1213.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isOnlyPoint()</text>
-<text text-anchor="start" x="1016" y="-1202.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setPointColor()</text>
-<text text-anchor="start" x="1016" y="-1191.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointPen()</text>
+<polygon fill="white" stroke="#666666" points="1013,-1184.5 1013,-1417.5 1156,-1417.5 1156,-1184.5 1013,-1184.5"/>
+<text text-anchor="middle" x="1084.5" y="-1405.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScenePoint</text>
+<polyline fill="none" stroke="#666666" points="1013,-1398.5 1156,-1398.5 "/>
+<text text-anchor="start" x="1021" y="-1386.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointName</text>
+<text text-anchor="start" x="1021" y="-1375.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointLeader</text>
+<text text-anchor="start" x="1021" y="-1364.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_pointColor</text>
+<text text-anchor="start" x="1021" y="-1353.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_onlyPoint</text>
+<text text-anchor="start" x="1021" y="-1342.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_isHovered</text>
+<text text-anchor="start" x="1021" y="-1331.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_showPointName</text>
+<polyline fill="none" stroke="#666666" points="1013,-1324.5 1156,-1324.5 "/>
+<text text-anchor="start" x="1021" y="-1312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScenePoint()</text>
+<text text-anchor="start" x="1021" y="-1301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScenePoint()</text>
+<text text-anchor="start" x="1021" y="-1290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1021" y="-1279.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="1021" y="-1268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshPointGeometry()</text>
+<text text-anchor="start" x="1021" y="-1257.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshLeader()</text>
+<text text-anchor="start" x="1021" y="-1246.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="1021" y="-1235.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
+<text text-anchor="start" x="1021" y="-1224.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setOnlyPoint()</text>
+<text text-anchor="start" x="1021" y="-1213.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isOnlyPoint()</text>
+<text text-anchor="start" x="1021" y="-1202.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setPointColor()</text>
+<text text-anchor="start" x="1021" y="-1191.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointPen()</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
 <title>Node8&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M1047.67,-1174.34C1045.46,-1165.62 1043.21,-1156.73 1040.94,-1147.77"/>
-<polygon fill="none" stroke="#63b8ff" points="1044.3,-1175.28 1050.14,-1184.11 1051.08,-1173.56 1044.3,-1175.28"/>
+<path fill="none" stroke="#63b8ff" d="M1052.67,-1174.34C1050.46,-1165.62 1048.21,-1156.73 1045.94,-1147.77"/>
+<polygon fill="none" stroke="#63b8ff" points="1049.3,-1175.28 1055.14,-1184.11 1056.08,-1173.56 1049.3,-1175.28"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1018.5,-1630.5 1018.5,-1687.5 1140.5,-1687.5 1140.5,-1630.5 1018.5,-1630.5"/>
-<text text-anchor="middle" x="1079.5" y="-1675.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsEllipseItem</text>
-<polyline fill="none" stroke="#666666" points="1018.5,-1668.5 1140.5,-1668.5 "/>
-<text text-anchor="middle" x="1079.5" y="-1656.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="1018.5,-1649.5 1140.5,-1649.5 "/>
-<text text-anchor="middle" x="1079.5" y="-1637.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#666666" points="1023.5,-1630.5 1023.5,-1687.5 1145.5,-1687.5 1145.5,-1630.5 1023.5,-1630.5"/>
+<text text-anchor="middle" x="1084.5" y="-1675.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsEllipseItem</text>
+<polyline fill="none" stroke="#666666" points="1023.5,-1668.5 1145.5,-1668.5 "/>
+<text text-anchor="middle" x="1084.5" y="-1656.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="1023.5,-1649.5 1145.5,-1649.5 "/>
+<text text-anchor="middle" x="1084.5" y="-1637.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node9&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M1079.5,-1620.16C1079.5,-1572.32 1079.5,-1487.76 1079.5,-1417.83"/>
-<polygon fill="none" stroke="#63b8ff" points="1076,-1620.36 1079.5,-1630.36 1083,-1620.36 1076,-1620.36"/>
+<path fill="none" stroke="#63b8ff" d="M1084.5,-1620.16C1084.5,-1572.32 1084.5,-1487.76 1084.5,-1417.83"/>
+<polygon fill="none" stroke="#63b8ff" points="1081,-1620.36 1084.5,-1630.36 1088,-1620.36 1081,-1620.36"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
@@ -919,403 +919,403 @@ var sectionId = 'dynsection-0';
 <path fill="none" stroke="#63b8ff" d="M71.5,-381.36C71.5,-340.43 71.5,-297.79 71.5,-261.1"/>
 <polygon fill="none" stroke="#63b8ff" points="68,-381.45 71.5,-391.45 75,-381.45 68,-381.45"/>
 </g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d1/d98/classVToolCutArc.html" target="_top" xlink:title="The VToolCutArc class tool for cutting arc.">
-<polygon fill="white" stroke="#666666" points="256.5,-72 256.5,-250 384.5,-250 384.5,-72 256.5,-72"/>
-<text text-anchor="middle" x="320.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutArc</text>
-<polyline fill="none" stroke="#666666" points="256.5,-231 384.5,-231 "/>
-<text text-anchor="start" x="264.5" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<polyline fill="none" stroke="#666666" points="256.5,-212 384.5,-212 "/>
-<text text-anchor="start" x="264.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="264.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="264.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="264.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="264.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="264.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="264.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="264.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="264.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="264.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="264.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="264.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutArc()</text>
-</a>
-</g>
-</g>
-<!-- Node15&#45;&gt;Node16 -->
-<g id="edge15" class="edge">
-<title>Node15&#45;&gt;Node16</title>
-<path fill="none" stroke="#63b8ff" d="M721.43,-399.01C711.44,-383.28 699.28,-369.02 684.5,-358 580.03,-280.09 498.58,-399.08 393.5,-322 369.62,-304.48 353.36,-277.27 342.37,-250.22"/>
-<polygon fill="none" stroke="#63b8ff" points="718.61,-401.11 726.76,-407.89 724.61,-397.51 718.61,-401.11"/>
-</g>
 <!-- Node17 -->
 <g id="node17" class="node">
 <title>Node17</title>
-<g id="a_node17"><a xlink:href="../../d9/d86/classVToolCutSpline.html" target="_top" xlink:title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two.">
-<polygon fill="white" stroke="#666666" points="402.5,-66.5 402.5,-255.5 530.5,-255.5 530.5,-66.5 402.5,-66.5"/>
-<text text-anchor="middle" x="466.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutSpline</text>
-<polyline fill="none" stroke="#666666" points="402.5,-236.5 530.5,-236.5 "/>
-<text text-anchor="start" x="410.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="410.5" y="-213.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrSpline</text>
-<polyline fill="none" stroke="#666666" points="402.5,-206.5 530.5,-206.5 "/>
-<text text-anchor="start" x="410.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="410.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="410.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="410.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="410.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="410.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="410.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="410.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="410.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="410.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="410.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="410.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutSpline()</text>
+<g id="a_node17"><a xlink:href="../../d1/d98/classVToolCutArc.html" target="_top" xlink:title="The VToolCutArc class tool for cutting arc.">
+<polygon fill="white" stroke="#666666" points="411.5,-72 411.5,-250 539.5,-250 539.5,-72 411.5,-72"/>
+<text text-anchor="middle" x="475.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutArc</text>
+<polyline fill="none" stroke="#666666" points="411.5,-231 539.5,-231 "/>
+<text text-anchor="start" x="419.5" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<polyline fill="none" stroke="#666666" points="411.5,-212 539.5,-212 "/>
+<text text-anchor="start" x="419.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="419.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="419.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="419.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="419.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="419.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="419.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="419.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="419.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="419.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="419.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="419.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutArc()</text>
 </a>
 </g>
 </g>
-<!-- Node15&#45;&gt;Node17 -->
+<!-- Node16&#45;&gt;Node17 -->
 <g id="edge16" class="edge">
-<title>Node15&#45;&gt;Node17</title>
-<path fill="none" stroke="#63b8ff" d="M719.15,-399.11C709.57,-383.71 698.13,-369.5 684.5,-358 633.75,-315.18 590.58,-364.42 539.5,-322 518.71,-304.74 503.57,-280.29 492.66,-255.68"/>
-<polygon fill="none" stroke="#63b8ff" points="716.18,-400.96 724.29,-407.78 722.2,-397.39 716.18,-400.96"/>
+<title>Node16&#45;&gt;Node17</title>
+<path fill="none" stroke="#63b8ff" d="M876.43,-399.01C866.44,-383.28 854.28,-369.02 839.5,-358 735.03,-280.09 653.58,-399.08 548.5,-322 524.62,-304.48 508.36,-277.27 497.37,-250.22"/>
+<polygon fill="none" stroke="#63b8ff" points="873.61,-401.11 881.76,-407.89 879.61,-397.51 873.61,-401.11"/>
 </g>
 <!-- Node18 -->
 <g id="node18" class="node">
 <title>Node18</title>
-<g id="a_node18"><a xlink:href="../../d8/d67/classVToolCutSplinePath.html" target="_top" xlink:title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin...">
-<polygon fill="white" stroke="#666666" points="548.5,-61 548.5,-261 676.5,-261 676.5,-61 548.5,-61"/>
-<text text-anchor="middle" x="612.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutSplinePath</text>
-<polyline fill="none" stroke="#666666" points="548.5,-242 676.5,-242 "/>
-<text text-anchor="start" x="556.5" y="-230" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="556.5" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrSplinePath</text>
-<polyline fill="none" stroke="#666666" points="548.5,-212 676.5,-212 "/>
-<text text-anchor="start" x="556.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="556.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="556.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="556.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="556.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="556.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ CutSplinePath()</text>
-<text text-anchor="start" x="556.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="556.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="556.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="556.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="556.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="556.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="556.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutSplinePath()</text>
+<g id="a_node18"><a xlink:href="../../d9/d86/classVToolCutSpline.html" target="_top" xlink:title="The VToolCutSpline class for tool CutSpline. This tool find point on spline and cut spline on two.">
+<polygon fill="white" stroke="#666666" points="557.5,-66.5 557.5,-255.5 685.5,-255.5 685.5,-66.5 557.5,-66.5"/>
+<text text-anchor="middle" x="621.5" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutSpline</text>
+<polyline fill="none" stroke="#666666" points="557.5,-236.5 685.5,-236.5 "/>
+<text text-anchor="start" x="565.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="565.5" y="-213.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrSpline</text>
+<polyline fill="none" stroke="#666666" points="557.5,-206.5 685.5,-206.5 "/>
+<text text-anchor="start" x="565.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="565.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="565.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="565.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="565.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="565.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="565.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="565.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="565.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="565.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="565.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="565.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutSpline()</text>
 </a>
 </g>
 </g>
-<!-- Node15&#45;&gt;Node18 -->
+<!-- Node16&#45;&gt;Node18 -->
 <g id="edge17" class="edge">
-<title>Node15&#45;&gt;Node18</title>
-<path fill="none" stroke="#63b8ff" d="M707.44,-398.43C689.02,-352.56 669.15,-303.07 652.37,-261.29"/>
-<polygon fill="none" stroke="#63b8ff" points="704.25,-399.88 711.23,-407.86 710.75,-397.28 704.25,-399.88"/>
+<title>Node16&#45;&gt;Node18</title>
+<path fill="none" stroke="#63b8ff" d="M874.15,-399.11C864.57,-383.71 853.13,-369.5 839.5,-358 788.75,-315.18 745.58,-364.42 694.5,-322 673.71,-304.74 658.57,-280.29 647.66,-255.68"/>
+<polygon fill="none" stroke="#63b8ff" points="871.18,-400.96 879.29,-407.78 877.2,-397.39 871.18,-400.96"/>
 </g>
-<!-- Node21 -->
-<g id="node21" class="node">
-<title>Node21</title>
-<g id="a_node21"><a xlink:href="../../d2/d31/classVToolAlongLine.html" target="_top" xlink:title="The VToolAlongLine class tool for creation point along line.">
-<polygon fill="white" stroke="#666666" points="694.5,-44.5 694.5,-277.5 822.5,-277.5 822.5,-44.5 694.5,-44.5"/>
-<text text-anchor="middle" x="758.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolAlongLine</text>
-<polyline fill="none" stroke="#666666" points="694.5,-258.5 822.5,-258.5 "/>
-<text text-anchor="start" x="702.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="702.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
-<polyline fill="none" stroke="#666666" points="694.5,-228.5 822.5,-228.5 "/>
-<text text-anchor="start" x="702.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="702.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="702.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
-<text text-anchor="start" x="702.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
-<text text-anchor="start" x="702.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
-<text text-anchor="start" x="702.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="702.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="702.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="702.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="702.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="702.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="702.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="702.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="702.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="702.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="702.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolAlongLine()</text>
+<!-- Node19 -->
+<g id="node19" class="node">
+<title>Node19</title>
+<g id="a_node19"><a xlink:href="../../d8/d67/classVToolCutSplinePath.html" target="_top" xlink:title="The VToolCutSplinePath class for tool CutSplinePath. This tool find point on splinePath and cut splin...">
+<polygon fill="white" stroke="#666666" points="703.5,-61 703.5,-261 831.5,-261 831.5,-61 703.5,-61"/>
+<text text-anchor="middle" x="767.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCutSplinePath</text>
+<polyline fill="none" stroke="#666666" points="703.5,-242 831.5,-242 "/>
+<text text-anchor="start" x="711.5" y="-230" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="711.5" y="-219" font-family="Helvetica,sans-Serif" font-size="10.00">+ AttrSplinePath</text>
+<polyline fill="none" stroke="#666666" points="703.5,-212 831.5,-212 "/>
+<text text-anchor="start" x="711.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="711.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="711.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="711.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="711.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="711.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ CutSplinePath()</text>
+<text text-anchor="start" x="711.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="711.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="711.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="711.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="711.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="711.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="711.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCutSplinePath()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node21 -->
-<g id="edge20" class="edge">
-<title>Node20&#45;&gt;Node21</title>
-<path fill="none" stroke="#63b8ff" d="M1012.07,-377.32C1006.46,-370.3 1000.29,-363.8 993.5,-358 937.41,-310.1 888.82,-368.42 831.5,-322 816.79,-310.09 804.92,-294.56 795.38,-277.87"/>
-<polygon fill="none" stroke="#63b8ff" points="1009.61,-379.86 1018.4,-385.77 1015.21,-375.67 1009.61,-379.86"/>
+<!-- Node16&#45;&gt;Node19 -->
+<g id="edge18" class="edge">
+<title>Node16&#45;&gt;Node19</title>
+<path fill="none" stroke="#63b8ff" d="M862.44,-398.43C844.02,-352.56 824.15,-303.07 807.37,-261.29"/>
+<polygon fill="none" stroke="#63b8ff" points="859.25,-399.88 866.23,-407.86 865.75,-397.28 859.25,-399.88"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
 <title>Node22</title>
-<g id="a_node22"><a xlink:href="../../d6/d6b/classVToolBisector.html" target="_top" xlink:title="The VToolBisector class tool for creation bisector point.">
-<polygon fill="white" stroke="#666666" points="840.5,-17 840.5,-305 968.5,-305 968.5,-17 840.5,-17"/>
-<text text-anchor="middle" x="904.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBisector</text>
-<polyline fill="none" stroke="#666666" points="840.5,-286 968.5,-286 "/>
-<text text-anchor="start" x="848.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="848.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
-<text text-anchor="start" x="848.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; thirdPointId</text>
-<polyline fill="none" stroke="#666666" points="840.5,-245 968.5,-245 "/>
-<text text-anchor="start" x="848.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="848.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="848.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
-<text text-anchor="start" x="848.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ ThirdPointName()</text>
-<text text-anchor="start" x="848.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
-<text text-anchor="start" x="848.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
-<text text-anchor="start" x="848.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetThirdPointId()</text>
-<text text-anchor="start" x="848.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetThirdPointId()</text>
-<text text-anchor="start" x="848.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="848.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ BisectorAngle()</text>
-<text text-anchor="start" x="848.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="848.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="848.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="848.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="848.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="848.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="848.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="848.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="848.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="848.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolBisector()</text>
+<g id="a_node22"><a xlink:href="../../d2/d31/classVToolAlongLine.html" target="_top" xlink:title="The VToolAlongLine class tool for creation point along line.">
+<polygon fill="white" stroke="#666666" points="849.5,-44.5 849.5,-277.5 977.5,-277.5 977.5,-44.5 849.5,-44.5"/>
+<text text-anchor="middle" x="913.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolAlongLine</text>
+<polyline fill="none" stroke="#666666" points="849.5,-258.5 977.5,-258.5 "/>
+<text text-anchor="start" x="857.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="857.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
+<polyline fill="none" stroke="#666666" points="849.5,-228.5 977.5,-228.5 "/>
+<text text-anchor="start" x="857.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="857.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="857.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
+<text text-anchor="start" x="857.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
+<text text-anchor="start" x="857.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
+<text text-anchor="start" x="857.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="857.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="857.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="857.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="857.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="857.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="857.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="857.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="857.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="857.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="857.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolAlongLine()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node22 -->
+<!-- Node21&#45;&gt;Node22 -->
 <g id="edge21" class="edge">
-<title>Node20&#45;&gt;Node22</title>
-<path fill="none" stroke="#63b8ff" d="M1001.33,-376.67C998.71,-370.35 996.09,-364.12 993.5,-358 990.57,-351.1 980.74,-329.26 968.61,-302.53"/>
-<polygon fill="none" stroke="#63b8ff" points="998.11,-378.05 1005.17,-385.96 1004.58,-375.38 998.11,-378.05"/>
+<title>Node21&#45;&gt;Node22</title>
+<path fill="none" stroke="#63b8ff" d="M1167.07,-377.32C1161.46,-370.3 1155.29,-363.8 1148.5,-358 1092.41,-310.1 1043.82,-368.42 986.5,-322 971.79,-310.09 959.92,-294.56 950.38,-277.87"/>
+<polygon fill="none" stroke="#63b8ff" points="1164.61,-379.86 1173.4,-385.77 1170.21,-375.67 1164.61,-379.86"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="../../d6/d61/classVToolCurveIntersectAxis.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="986.5,-17 986.5,-305 1148.5,-305 1148.5,-17 986.5,-17"/>
-<text text-anchor="middle" x="1067.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCurveIntersectAxis</text>
-<polyline fill="none" stroke="#666666" points="986.5,-286 1148.5,-286 "/>
-<text text-anchor="start" x="994.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="994.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
-<text text-anchor="start" x="994.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; curveId</text>
-<polyline fill="none" stroke="#666666" points="986.5,-245 1148.5,-245 "/>
-<text text-anchor="start" x="994.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolCurveIntersectAxis()</text>
-<text text-anchor="start" x="994.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="994.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="994.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
-<text text-anchor="start" x="994.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
-<text text-anchor="start" x="994.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
-<text text-anchor="start" x="994.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveId()</text>
-<text text-anchor="start" x="994.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveId()</text>
-<text text-anchor="start" x="994.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="994.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="994.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="994.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="994.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="994.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="994.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="994.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="994.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="994.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCurveIntersectAxis()</text>
-<text text-anchor="start" x="994.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitArc()</text>
-<text text-anchor="start" x="994.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitSegments()</text>
+<g id="a_node23"><a xlink:href="../../d6/d6b/classVToolBisector.html" target="_top" xlink:title="The VToolBisector class tool for creation bisector point.">
+<polygon fill="white" stroke="#666666" points="995.5,-17 995.5,-305 1123.5,-305 1123.5,-17 995.5,-17"/>
+<text text-anchor="middle" x="1059.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBisector</text>
+<polyline fill="none" stroke="#666666" points="995.5,-286 1123.5,-286 "/>
+<text text-anchor="start" x="1003.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1003.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
+<text text-anchor="start" x="1003.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; thirdPointId</text>
+<polyline fill="none" stroke="#666666" points="995.5,-245 1123.5,-245 "/>
+<text text-anchor="start" x="1003.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1003.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1003.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
+<text text-anchor="start" x="1003.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ ThirdPointName()</text>
+<text text-anchor="start" x="1003.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
+<text text-anchor="start" x="1003.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
+<text text-anchor="start" x="1003.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetThirdPointId()</text>
+<text text-anchor="start" x="1003.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetThirdPointId()</text>
+<text text-anchor="start" x="1003.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1003.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ BisectorAngle()</text>
+<text text-anchor="start" x="1003.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1003.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1003.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1003.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1003.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1003.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1003.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1003.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1003.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1003.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolBisector()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node23 -->
+<!-- Node21&#45;&gt;Node23 -->
 <g id="edge22" class="edge">
-<title>Node20&#45;&gt;Node23</title>
-<path fill="none" stroke="#63b8ff" d="M1067.5,-375.85C1067.5,-352.3 1067.5,-328.3 1067.5,-305.29"/>
-<polygon fill="none" stroke="#63b8ff" points="1064,-375.92 1067.5,-385.92 1071,-375.92 1064,-375.92"/>
+<title>Node21&#45;&gt;Node23</title>
+<path fill="none" stroke="#63b8ff" d="M1156.33,-376.67C1153.71,-370.35 1151.09,-364.12 1148.5,-358 1145.57,-351.1 1135.74,-329.26 1123.61,-302.53"/>
+<polygon fill="none" stroke="#63b8ff" points="1153.11,-378.05 1160.17,-385.96 1159.58,-375.38 1153.11,-378.05"/>
 </g>
 <!-- Node24 -->
 <g id="node24" class="node">
 <title>Node24</title>
-<g id="a_node24"><a xlink:href="../../dc/d21/classVToolEndLine.html" target="_top" xlink:title="The VToolEndLine class tool for creation point on the line end.">
-<polygon fill="white" stroke="#666666" points="1166.5,-55.5 1166.5,-266.5 1294.5,-266.5 1294.5,-55.5 1166.5,-55.5"/>
-<text text-anchor="middle" x="1230.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolEndLine</text>
-<polyline fill="none" stroke="#666666" points="1166.5,-247.5 1294.5,-247.5 "/>
-<text text-anchor="start" x="1174.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1174.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
-<polyline fill="none" stroke="#666666" points="1166.5,-217.5 1294.5,-217.5 "/>
-<text text-anchor="start" x="1174.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolEndLine()</text>
-<text text-anchor="start" x="1174.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1174.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1174.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
-<text text-anchor="start" x="1174.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
-<text text-anchor="start" x="1174.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1174.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1174.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1174.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1174.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1174.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1174.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1174.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1174.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolEndLine()</text>
+<g id="a_node24"><a xlink:href="../../d6/d61/classVToolCurveIntersectAxis.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1141.5,-17 1141.5,-305 1303.5,-305 1303.5,-17 1141.5,-17"/>
+<text text-anchor="middle" x="1222.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolCurveIntersectAxis</text>
+<polyline fill="none" stroke="#666666" points="1141.5,-286 1303.5,-286 "/>
+<text text-anchor="start" x="1149.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1149.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
+<text text-anchor="start" x="1149.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; curveId</text>
+<polyline fill="none" stroke="#666666" points="1141.5,-245 1303.5,-245 "/>
+<text text-anchor="start" x="1149.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolCurveIntersectAxis()</text>
+<text text-anchor="start" x="1149.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1149.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1149.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
+<text text-anchor="start" x="1149.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
+<text text-anchor="start" x="1149.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurveName()</text>
+<text text-anchor="start" x="1149.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCurveId()</text>
+<text text-anchor="start" x="1149.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurveId()</text>
+<text text-anchor="start" x="1149.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1149.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1149.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1149.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1149.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1149.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1149.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1149.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1149.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1149.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolCurveIntersectAxis()</text>
+<text text-anchor="start" x="1149.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitArc()</text>
+<text text-anchor="start" x="1149.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitSegments()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node24 -->
+<!-- Node21&#45;&gt;Node24 -->
 <g id="edge23" class="edge">
-<title>Node20&#45;&gt;Node24</title>
-<path fill="none" stroke="#63b8ff" d="M1134.64,-376.69C1137.27,-370.37 1139.9,-364.13 1142.5,-358 1155.14,-328.21 1169.32,-296.11 1182.54,-266.67"/>
-<polygon fill="none" stroke="#63b8ff" points="1131.38,-375.42 1130.78,-386 1137.84,-378.1 1131.38,-375.42"/>
+<title>Node21&#45;&gt;Node24</title>
+<path fill="none" stroke="#63b8ff" d="M1222.5,-375.85C1222.5,-352.3 1222.5,-328.3 1222.5,-305.29"/>
+<polygon fill="none" stroke="#63b8ff" points="1219,-375.92 1222.5,-385.92 1226,-375.92 1219,-375.92"/>
 </g>
 <!-- Node25 -->
 <g id="node25" class="node">
 <title>Node25</title>
-<g id="a_node25"><a xlink:href="../../d7/d9e/classVToolHeight.html" target="_top" xlink:title="The VToolHeight class tool for creation point of height. Help find point of projection onto line.">
-<polygon fill="white" stroke="#666666" points="1313,-22.5 1313,-299.5 1458,-299.5 1458,-22.5 1313,-22.5"/>
-<text text-anchor="middle" x="1385.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolHeight</text>
-<polyline fill="none" stroke="#666666" points="1313,-280.5 1458,-280.5 "/>
-<text text-anchor="start" x="1321" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1321" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1LineId</text>
-<text text-anchor="start" x="1321" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2LineId</text>
-<polyline fill="none" stroke="#666666" points="1313,-239.5 1458,-239.5 "/>
-<text text-anchor="start" x="1321" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1321" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1321" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstLinePointName()</text>
-<text text-anchor="start" x="1321" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondLinePointName()</text>
-<text text-anchor="start" x="1321" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1LineId()</text>
-<text text-anchor="start" x="1321" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1LineId()</text>
-<text text-anchor="start" x="1321" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2LineId()</text>
-<text text-anchor="start" x="1321" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2LineId()</text>
-<text text-anchor="start" x="1321" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1321" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1321" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1321" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1321" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1321" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1321" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1321" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1321" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="1321" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1321" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolHeight()</text>
+<g id="a_node25"><a xlink:href="../../dc/d21/classVToolEndLine.html" target="_top" xlink:title="The VToolEndLine class tool for creation point on the line end.">
+<polygon fill="white" stroke="#666666" points="1321.5,-55.5 1321.5,-266.5 1449.5,-266.5 1449.5,-55.5 1321.5,-55.5"/>
+<text text-anchor="middle" x="1385.5" y="-254.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolEndLine</text>
+<polyline fill="none" stroke="#666666" points="1321.5,-247.5 1449.5,-247.5 "/>
+<text text-anchor="start" x="1329.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1329.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
+<polyline fill="none" stroke="#666666" points="1321.5,-217.5 1449.5,-217.5 "/>
+<text text-anchor="start" x="1329.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolEndLine()</text>
+<text text-anchor="start" x="1329.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1329.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1329.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
+<text text-anchor="start" x="1329.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
+<text text-anchor="start" x="1329.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1329.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1329.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1329.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1329.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1329.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1329.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1329.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1329.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolEndLine()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node25 -->
+<!-- Node21&#45;&gt;Node25 -->
 <g id="edge24" class="edge">
-<title>Node20&#45;&gt;Node25</title>
-<path fill="none" stroke="#63b8ff" d="M1123.85,-377.32C1129.49,-370.3 1135.69,-363.8 1142.5,-358 1198.34,-310.48 1245.51,-366.87 1303.5,-322 1311.89,-315.51 1319.5,-307.91 1326.39,-299.63"/>
-<polygon fill="none" stroke="#63b8ff" points="1120.7,-375.68 1117.48,-385.77 1126.29,-379.89 1120.7,-375.68"/>
+<title>Node21&#45;&gt;Node25</title>
+<path fill="none" stroke="#63b8ff" d="M1289.64,-376.69C1292.27,-370.37 1294.9,-364.13 1297.5,-358 1310.14,-328.21 1324.32,-296.11 1337.54,-266.67"/>
+<polygon fill="none" stroke="#63b8ff" points="1286.38,-375.42 1285.78,-386 1292.84,-378.1 1286.38,-375.42"/>
 </g>
 <!-- Node26 -->
 <g id="node26" class="node">
 <title>Node26</title>
-<g id="a_node26"><a xlink:href="../../dc/df4/classVToolLineIntersectAxis.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1476.5,-0.5 1476.5,-321.5 1630.5,-321.5 1630.5,-0.5 1476.5,-0.5"/>
-<text text-anchor="middle" x="1553.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLineIntersectAxis</text>
-<polyline fill="none" stroke="#666666" points="1476.5,-302.5 1630.5,-302.5 "/>
-<text text-anchor="start" x="1484.5" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1484.5" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
-<text text-anchor="start" x="1484.5" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
-<text text-anchor="start" x="1484.5" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
-<polyline fill="none" stroke="#666666" points="1476.5,-250.5 1630.5,-250.5 "/>
-<text text-anchor="start" x="1484.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolLineIntersectAxis()</text>
-<text text-anchor="start" x="1484.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1484.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1484.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstLinePoint()</text>
-<text text-anchor="start" x="1484.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondLinePoint()</text>
-<text text-anchor="start" x="1484.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
-<text text-anchor="start" x="1484.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
-<text text-anchor="start" x="1484.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
-<text text-anchor="start" x="1484.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
-<text text-anchor="start" x="1484.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
-<text text-anchor="start" x="1484.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
-<text text-anchor="start" x="1484.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1484.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1484.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1484.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1484.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1484.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1484.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1484.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1484.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="1484.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1484.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolLineIntersectAxis()</text>
+<g id="a_node26"><a xlink:href="../../d7/d9e/classVToolHeight.html" target="_top" xlink:title="The VToolHeight class tool for creation point of height. Help find point of projection onto line.">
+<polygon fill="white" stroke="#666666" points="1468,-22.5 1468,-299.5 1613,-299.5 1613,-22.5 1468,-22.5"/>
+<text text-anchor="middle" x="1540.5" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolHeight</text>
+<polyline fill="none" stroke="#666666" points="1468,-280.5 1613,-280.5 "/>
+<text text-anchor="start" x="1476" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1476" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1LineId</text>
+<text text-anchor="start" x="1476" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2LineId</text>
+<polyline fill="none" stroke="#666666" points="1468,-239.5 1613,-239.5 "/>
+<text text-anchor="start" x="1476" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1476" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1476" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstLinePointName()</text>
+<text text-anchor="start" x="1476" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondLinePointName()</text>
+<text text-anchor="start" x="1476" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1LineId()</text>
+<text text-anchor="start" x="1476" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP1LineId()</text>
+<text text-anchor="start" x="1476" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2LineId()</text>
+<text text-anchor="start" x="1476" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2LineId()</text>
+<text text-anchor="start" x="1476" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1476" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1476" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1476" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1476" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1476" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1476" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1476" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1476" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="1476" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1476" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolHeight()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node26 -->
+<!-- Node21&#45;&gt;Node26 -->
 <g id="edge25" class="edge">
-<title>Node20&#45;&gt;Node26</title>
-<path fill="none" stroke="#63b8ff" d="M1121.97,-377.71C1128.1,-370.42 1134.92,-363.77 1142.5,-358 1258.17,-270.01 1347.06,-403.33 1467.5,-322 1470.51,-319.97 1473.41,-317.8 1476.23,-315.51"/>
-<polygon fill="none" stroke="#63b8ff" points="1119,-375.83 1115.59,-385.86 1124.51,-380.15 1119,-375.83"/>
+<title>Node21&#45;&gt;Node26</title>
+<path fill="none" stroke="#63b8ff" d="M1278.85,-377.32C1284.49,-370.3 1290.69,-363.8 1297.5,-358 1353.34,-310.48 1400.51,-366.87 1458.5,-322 1466.89,-315.51 1474.5,-307.91 1481.39,-299.63"/>
+<polygon fill="none" stroke="#63b8ff" points="1275.7,-375.68 1272.48,-385.77 1281.29,-379.89 1275.7,-375.68"/>
 </g>
 <!-- Node27 -->
 <g id="node27" class="node">
 <title>Node27</title>
-<g id="a_node27"><a xlink:href="../../d5/d3b/classVToolNormal.html" target="_top" xlink:title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line.">
-<polygon fill="white" stroke="#666666" points="1648.5,-44.5 1648.5,-277.5 1776.5,-277.5 1776.5,-44.5 1648.5,-44.5"/>
-<text text-anchor="middle" x="1712.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolNormal</text>
-<polyline fill="none" stroke="#666666" points="1648.5,-258.5 1776.5,-258.5 "/>
-<text text-anchor="start" x="1656.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1656.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
-<polyline fill="none" stroke="#666666" points="1648.5,-228.5 1776.5,-228.5 "/>
-<text text-anchor="start" x="1656.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1656.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1656.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
-<text text-anchor="start" x="1656.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
-<text text-anchor="start" x="1656.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
-<text text-anchor="start" x="1656.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1656.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1656.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1656.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1656.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1656.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1656.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1656.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1656.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1656.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1656.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolNormal()</text>
+<g id="a_node27"><a xlink:href="../../dc/df4/classVToolLineIntersectAxis.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1631.5,-0.5 1631.5,-321.5 1785.5,-321.5 1785.5,-0.5 1631.5,-0.5"/>
+<text text-anchor="middle" x="1708.5" y="-309.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolLineIntersectAxis</text>
+<polyline fill="none" stroke="#666666" points="1631.5,-302.5 1785.5,-302.5 "/>
+<text text-anchor="start" x="1639.5" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1639.5" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaAngle</text>
+<text text-anchor="start" x="1639.5" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
+<text text-anchor="start" x="1639.5" y="-257.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
+<polyline fill="none" stroke="#666666" points="1631.5,-250.5 1785.5,-250.5 "/>
+<text text-anchor="start" x="1639.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolLineIntersectAxis()</text>
+<text text-anchor="start" x="1639.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1639.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1639.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstLinePoint()</text>
+<text text-anchor="start" x="1639.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondLinePoint()</text>
+<text text-anchor="start" x="1639.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormulaAngle()</text>
+<text text-anchor="start" x="1639.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFormulaAngle()</text>
+<text text-anchor="start" x="1639.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
+<text text-anchor="start" x="1639.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
+<text text-anchor="start" x="1639.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
+<text text-anchor="start" x="1639.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
+<text text-anchor="start" x="1639.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1639.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1639.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1639.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1639.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1639.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1639.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1639.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1639.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="1639.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1639.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolLineIntersectAxis()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node27 -->
+<!-- Node21&#45;&gt;Node27 -->
 <g id="edge26" class="edge">
-<title>Node20&#45;&gt;Node27</title>
-<path fill="none" stroke="#63b8ff" d="M1121.46,-377.66C1127.72,-370.34 1134.71,-363.7 1142.5,-358 1231.89,-292.65 1548.58,-385.21 1639.5,-322 1655.67,-310.76 1668.33,-295.02 1678.21,-277.78"/>
-<polygon fill="none" stroke="#63b8ff" points="1118.43,-375.84 1114.95,-385.85 1123.91,-380.2 1118.43,-375.84"/>
+<title>Node21&#45;&gt;Node27</title>
+<path fill="none" stroke="#63b8ff" d="M1276.97,-377.71C1283.1,-370.42 1289.92,-363.77 1297.5,-358 1413.17,-270.01 1502.06,-403.33 1622.5,-322 1625.51,-319.97 1628.41,-317.8 1631.23,-315.51"/>
+<polygon fill="none" stroke="#63b8ff" points="1274,-375.83 1270.59,-385.86 1279.51,-380.15 1274,-375.83"/>
 </g>
 <!-- Node28 -->
 <g id="node28" class="node">
 <title>Node28</title>
-<g id="a_node28"><a xlink:href="../../db/d3d/classVToolShoulderPoint.html" target="_top" xlink:title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati...">
-<polygon fill="white" stroke="#666666" points="1794.5,-17 1794.5,-305 1926.5,-305 1926.5,-17 1794.5,-17"/>
-<text text-anchor="middle" x="1860.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolShoulderPoint</text>
-<polyline fill="none" stroke="#666666" points="1794.5,-286 1926.5,-286 "/>
-<text text-anchor="start" x="1802.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="1802.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line</text>
-<text text-anchor="start" x="1802.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pShoulder</text>
-<polyline fill="none" stroke="#666666" points="1794.5,-245 1926.5,-245 "/>
-<text text-anchor="start" x="1802.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="1802.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="1802.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
-<text text-anchor="start" x="1802.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShoulderPointName()</text>
-<text text-anchor="start" x="1802.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line()</text>
-<text text-anchor="start" x="1802.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line()</text>
-<text text-anchor="start" x="1802.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPShoulder()</text>
-<text text-anchor="start" x="1802.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPShoulder()</text>
-<text text-anchor="start" x="1802.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="1802.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="1802.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1802.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="1802.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="1802.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="1802.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="1802.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="1802.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="1802.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="1802.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="1802.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolShoulderPoint()</text>
+<g id="a_node28"><a xlink:href="../../d5/d3b/classVToolNormal.html" target="_top" xlink:title="The VToolNormal class tool for creation point on normal. Normal begin from first point of line.">
+<polygon fill="white" stroke="#666666" points="1803.5,-44.5 1803.5,-277.5 1931.5,-277.5 1931.5,-44.5 1803.5,-44.5"/>
+<text text-anchor="middle" x="1867.5" y="-265.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolNormal</text>
+<polyline fill="none" stroke="#666666" points="1803.5,-258.5 1931.5,-258.5 "/>
+<text text-anchor="start" x="1811.5" y="-246.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1811.5" y="-235.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
+<polyline fill="none" stroke="#666666" points="1803.5,-228.5 1931.5,-228.5 "/>
+<text text-anchor="start" x="1811.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1811.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1811.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
+<text text-anchor="start" x="1811.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
+<text text-anchor="start" x="1811.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
+<text text-anchor="start" x="1811.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1811.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1811.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1811.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1811.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1811.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1811.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1811.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1811.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1811.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1811.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolNormal()</text>
 </a>
 </g>
 </g>
-<!-- Node20&#45;&gt;Node28 -->
+<!-- Node21&#45;&gt;Node28 -->
 <g id="edge27" class="edge">
-<title>Node20&#45;&gt;Node28</title>
-<path fill="none" stroke="#63b8ff" d="M1121.35,-377.5C1127.64,-370.23 1134.66,-363.63 1142.5,-358 1258.72,-274.48 1666.92,-402.12 1785.5,-322 1792.62,-317.19 1799.08,-311.52 1804.93,-305.23"/>
-<polygon fill="none" stroke="#63b8ff" points="1118.34,-375.67 1114.81,-385.66 1123.8,-380.05 1118.34,-375.67"/>
+<title>Node21&#45;&gt;Node28</title>
+<path fill="none" stroke="#63b8ff" d="M1276.46,-377.66C1282.72,-370.34 1289.71,-363.7 1297.5,-358 1386.89,-292.65 1703.58,-385.21 1794.5,-322 1810.67,-310.76 1823.33,-295.02 1833.21,-277.78"/>
+<polygon fill="none" stroke="#63b8ff" points="1273.43,-375.84 1269.95,-385.85 1278.91,-380.2 1273.43,-375.84"/>
+</g>
+<!-- Node29 -->
+<g id="node29" class="node">
+<title>Node29</title>
+<g id="a_node29"><a xlink:href="../../db/d3d/classVToolShoulderPoint.html" target="_top" xlink:title="The VToolShoulderPoint class tool for creation of point Length to Line. This tool for special situati...">
+<polygon fill="white" stroke="#666666" points="1949.5,-17 1949.5,-305 2081.5,-305 2081.5,-17 1949.5,-17"/>
+<text text-anchor="middle" x="2015.5" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">VToolShoulderPoint</text>
+<polyline fill="none" stroke="#666666" points="1949.5,-286 2081.5,-286 "/>
+<text text-anchor="start" x="1957.5" y="-274" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="1957.5" y="-263" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2Line</text>
+<text text-anchor="start" x="1957.5" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pShoulder</text>
+<polyline fill="none" stroke="#666666" points="1949.5,-245 2081.5,-245 "/>
+<text text-anchor="start" x="1957.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="1957.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="1957.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
+<text text-anchor="start" x="1957.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShoulderPointName()</text>
+<text text-anchor="start" x="1957.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Line()</text>
+<text text-anchor="start" x="1957.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetP2Line()</text>
+<text text-anchor="start" x="1957.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPShoulder()</text>
+<text text-anchor="start" x="1957.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPShoulder()</text>
+<text text-anchor="start" x="1957.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="1957.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="1957.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1957.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="1957.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="1957.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="1957.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="1957.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="1957.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="1957.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="1957.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="1957.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolShoulderPoint()</text>
+</a>
+</g>
+</g>
+<!-- Node21&#45;&gt;Node29 -->
+<g id="edge28" class="edge">
+<title>Node21&#45;&gt;Node29</title>
+<path fill="none" stroke="#63b8ff" d="M1276.35,-377.5C1282.64,-370.23 1289.66,-363.63 1297.5,-358 1413.72,-274.48 1821.92,-402.12 1940.5,-322 1947.62,-317.19 1954.08,-311.52 1959.93,-305.23"/>
+<polygon fill="none" stroke="#63b8ff" points="1273.34,-375.67 1269.81,-385.66 1278.8,-380.05 1273.34,-375.67"/>
 </g>
 </g>
 </svg>

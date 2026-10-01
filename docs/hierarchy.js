@@ -352,7 +352,6 @@ var hierarchy =
         [ "DialogMove", "d0/df1/classDialogMove.html", null ],
         [ "DialogNormal", "de/d67/classDialogNormal.html", null ],
         [ "DialogPointFromArcAndTangent", "d0/da0/classDialogPointFromArcAndTangent.html", null ],
-        [ "DialogPointOfContact", "dd/d08/classDialogPointOfContact.html", null ],
         [ "DialogPointOfIntersectionArcs", "dd/d0c/classDialogPointOfIntersectionArcs.html", null ],
         [ "DialogPointOfIntersectionCurves", "da/d11/classDialogPointOfIntersectionCurves.html", null ],
         [ "DialogRotation", "d5/dc7/classDialogRotation.html", null ],
@@ -368,6 +367,7 @@ var hierarchy =
         [ "HistoryDialog", "d1/d42/classHistoryDialog.html", null ],
         [ "InsertNodesDialog", "d6/d55/classInsertNodesDialog.html", null ],
         [ "InternalPathDialog", "d9/d71/classInternalPathDialog.html", null ],
+        [ "IntersectArcLineDialog", "d3/dfc/classIntersectArcLineDialog.html", null ],
         [ "IntersectCircleTangentDialog", "dc/dfe/classIntersectCircleTangentDialog.html", null ],
         [ "IntersectCirclesDialog", "d0/d09/classIntersectCirclesDialog.html", null ],
         [ "PatternPieceDialog", "d5/d41/classPatternPieceDialog.html", null ],
@@ -434,6 +434,7 @@ var hierarchy =
           [ "DoubleLinePointTool", "d0/db5/classDoubleLinePointTool.html", [
             [ "PointIntersectXYTool", "df/d11/classPointIntersectXYTool.html", null ]
           ] ],
+          [ "IntersectArcLineTool", "d6/d01/classIntersectArcLineTool.html", null ],
           [ "IntersectCircleTangentTool", "d9/d63/classIntersectCircleTangentTool.html", null ],
           [ "IntersectCirclesTool", "dc/d9f/classIntersectCirclesTool.html", null ],
           [ "VToolBasePoint", "de/ddd/classVToolBasePoint.html", null ],
@@ -454,7 +455,6 @@ var hierarchy =
             [ "VToolShoulderPoint", "db/d3d/classVToolShoulderPoint.html", null ]
           ] ],
           [ "VToolPointFromArcAndTangent", "d5/de4/classVToolPointFromArcAndTangent.html", null ],
-          [ "VToolPointOfContact", "d1/da5/classVToolPointOfContact.html", null ],
           [ "VToolPointOfIntersectionArcs", "d4/d0f/classVToolPointOfIntersectionArcs.html", null ],
           [ "VToolPointOfIntersectionCurves", "d5/d68/classVToolPointOfIntersectionCurves.html", null ],
           [ "VToolTriangle", "dd/df1/classVToolTriangle.html", null ]
@@ -478,6 +478,7 @@ var hierarchy =
       [ "VScaledLine", "dd/da2/classVScaledLine.html", [
         [ "VisLine", "de/d0e/classVisLine.html", [
           [ "AnchorPointVisual", "d8/d3d/classAnchorPointVisual.html", null ],
+          [ "IntersectArcLineVisual", "d8/d06/classIntersectArcLineVisual.html", null ],
           [ "IntersectCircleTangentVisual", "d7/d8f/classIntersectCircleTangentVisual.html", null ],
           [ "IntersectCirclesVisual", "dd/d25/classIntersectCirclesVisual.html", null ],
           [ "PointIntersectXYVisual", "d3/d38/classPointIntersectXYVisual.html", null ],
@@ -497,7 +498,6 @@ var hierarchy =
           [ "VisToolLineIntersectAxis", "d9/deb/classVisToolLineIntersectAxis.html", null ],
           [ "VisToolNormal", "de/d5c/classVisToolNormal.html", null ],
           [ "VisToolPointFromArcAndTangent", "d9/d72/classVisToolPointFromArcAndTangent.html", null ],
-          [ "VisToolPointOfContact", "d3/d92/classVisToolPointOfContact.html", null ],
           [ "VisToolPointOfIntersectionArcs", "da/de3/classVisToolPointOfIntersectionArcs.html", null ],
           [ "VisToolShoulderPoint", "d7/df0/classVisToolShoulderPoint.html", null ],
           [ "VisToolTriangle", "d9/d01/classVisToolTriangle.html", null ],

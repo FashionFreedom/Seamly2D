@@ -2,6 +2,8 @@ var dir_5ff6313fb1eb62eb1cfa56811329b781 =
 [
     [ "toolcut", "dir_3391c9b572ec71162c91f706b45a44a5.html", "dir_3391c9b572ec71162c91f706b45a44a5" ],
     [ "toollinepoint", "dir_b6fb1c363ebcce29e0827d6b296a4944.html", "dir_b6fb1c363ebcce29e0827d6b296a4944" ],
+    [ "intersect_arc_line_tool.cpp", "d9/d3d/intersect__arc__line__tool_8cpp.html", null ],
+    [ "intersect_arc_line_tool.h", "d3/dd8/intersect__arc__line__tool_8h.html", "d3/dd8/intersect__arc__line__tool_8h" ],
     [ "intersect_circles_tool.cpp", "db/d41/intersect__circles__tool_8cpp.html", null ],
     [ "intersect_circles_tool.h", "d8/dd6/intersect__circles__tool_8h.html", "d8/dd6/intersect__circles__tool_8h" ],
     [ "intersect_circletangent_tool.cpp", "d0/dbe/intersect__circletangent__tool_8cpp.html", null ],
@@ -14,8 +16,6 @@ var dir_5ff6313fb1eb62eb1cfa56811329b781 =
     [ "vtoollineintersect.h", "d9/d65/vtoollineintersect_8h.html", "d9/d65/vtoollineintersect_8h" ],
     [ "vtoolpointfromarcandtangent.cpp", "d5/d77/vtoolpointfromarcandtangent_8cpp.html", null ],
     [ "vtoolpointfromarcandtangent.h", "de/db2/vtoolpointfromarcandtangent_8h.html", "de/db2/vtoolpointfromarcandtangent_8h" ],
-    [ "vtoolpointofcontact.cpp", "d0/dad/vtoolpointofcontact_8cpp.html", null ],
-    [ "vtoolpointofcontact.h", "d0/d90/vtoolpointofcontact_8h.html", "d0/d90/vtoolpointofcontact_8h" ],
     [ "vtoolpointofintersectionarcs.cpp", "dc/dfe/vtoolpointofintersectionarcs_8cpp.html", null ],
     [ "vtoolpointofintersectionarcs.h", "dd/d11/vtoolpointofintersectionarcs_8h.html", "dd/d11/vtoolpointofintersectionarcs_8h" ],
     [ "vtoolpointofintersectioncurves.cpp", "da/de1/vtoolpointofintersectioncurves_8cpp.html", null ],
