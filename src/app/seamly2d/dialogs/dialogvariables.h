@@ -91,6 +91,7 @@ private slots:
     void                             showCustomVariableDetails();
     void                             filterVariables(const QString &filterString);
     void                             addCustomVariable();
+    void                             importCustomVariables();
     void                             removeCustomVariable();
     void                             moveUp();
     void                             moveDown();

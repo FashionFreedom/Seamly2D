@@ -52,6 +52,7 @@
 
 #include "dialogvariables.h"
 #include "ui_dialogvariables.h"
+#include "dialogvariablesimport.h"
 #include "../vwidgets/vwidgetpopup.h"
 #include "../vmisc/vsettings.h"
 #include "../qmuparser/qmudef.h"
@@ -63,16 +64,134 @@
 #include <QFileDialog>
 #include <QDir>
 #include <QGuiApplication>
+#include <QHeaderView>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QDialogButtonBox>
+#include <QHBoxLayout>
 #include <QTabBar>
 #include <QTableWidget>
 #include <QScreen>
 #include <QSettings>
+#include <QPlainTextEdit>
+#include <QPushButton>
+#include <QSet>
 #include <QTableWidgetItem>
+#include <QToolButton>
+#include <QVBoxLayout>
 #include <QtNumeric>
 
 #define DIALOG_MAX_FORMULA_HEIGHT 64
+
+namespace
+{
+using DialogVariablesImport::ImportedVariable;
+using DialogVariablesImport::cNumber;
+using DialogVariablesImport::parseImportedVariables;
+using DialogVariablesImport::parseUnit;
+using DialogVariablesImport::unitConvertVariableName;
+
+class DialogImportCustomVariables : public QDialog
+{
+public:
+    DialogImportCustomVariables(VContainer *data, QWidget *parent)
+        : QDialog(parent)
+        , m_data(data)
+        , m_textEdit(new QPlainTextEdit(this))
+        , m_preview(new QTableWidget(this))
+        , m_buttonBox(new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this))
+    {
+        setWindowTitle(QObject::tr("Import Custom Variables"));
+        resize(760, 520);
+
+        QPushButton *fileButton = new QPushButton(QObject::tr("Open CSV File"), this);
+        connect(fileButton, &QPushButton::clicked, this, [this]()
+        {
+            const QString fileName = QFileDialog::getOpenFileName(this, QObject::tr("Open CSV File"), QDir::homePath(),
+                                                                  QObject::tr("CSV files (*.csv);;All files (*.*)"));
+            if (fileName.isEmpty())
+            {
+                return;
+            }
+
+            QString text;
+            QString error;
+            if (!DialogVariablesImport::readImportTextFile(fileName, &text, &error))
+            {
+                QMessageBox::warning(this, QObject::tr("Import Custom Variables"),
+                                     QObject::tr("Cannot read file %1. %2")
+                                     .arg(QDir::toNativeSeparators(fileName), error));
+                return;
+            }
+            m_textEdit->setPlainText(text);
+        });
+
+        m_textEdit->setPlaceholderText(QObject::tr("Paste CSV here. Supported format:\nName, Formula, Description."));
+        m_preview->setColumnCount(4);
+        m_preview->setHorizontalHeaderLabels(QStringList() << QObject::tr("Name") << QObject::tr("Formula")
+                                                           << QObject::tr("Description") << QObject::tr("Status"));
+        m_preview->horizontalHeader()->setStretchLastSection(true);
+        m_preview->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        m_preview->setSelectionBehavior(QAbstractItemView::SelectRows);
+
+        QHBoxLayout *topLayout = new QHBoxLayout();
+        topLayout->addWidget(fileButton);
+        topLayout->addStretch();
+
+        QVBoxLayout *layout = new QVBoxLayout(this);
+        layout->addLayout(topLayout);
+        layout->addWidget(m_textEdit, 1);
+        layout->addWidget(m_preview, 1);
+        layout->addWidget(m_buttonBox);
+
+        connect(m_textEdit, &QPlainTextEdit::textChanged, this, &DialogImportCustomVariables::refreshPreview);
+        connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+        connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+        refreshPreview();
+    }
+
+    QList<ImportedVariable> variables() const
+    {
+        return m_variables;
+    }
+
+    QSet<QString> convertVariables() const
+    {
+        return m_convertVariables;
+    }
+
+private:
+    void refreshPreview()
+    {
+        m_variables = parseImportedVariables(m_textEdit->toPlainText(), m_data, qApp->patternUnit(), &m_convertVariables);
+        int validCount = 0;
+
+        m_preview->setRowCount(m_variables.size());
+        for (int row = 0; row < m_variables.size(); ++row)
+        {
+            const ImportedVariable &variable = m_variables.at(row);
+            m_preview->setItem(row, 0, new QTableWidgetItem(variable.name));
+            m_preview->setItem(row, 1, new QTableWidgetItem(variable.formula));
+            m_preview->setItem(row, 2, new QTableWidgetItem(variable.description));
+            m_preview->setItem(row, 3, new QTableWidgetItem(variable.status));
+
+            if (variable.valid)
+            {
+                ++validCount;
+            }
+        }
+        m_preview->resizeColumnsToContents();
+        m_buttonBox->button(QDialogButtonBox::Ok)->setEnabled(validCount > 0 && validCount == m_variables.size());
+    }
+
+    VContainer *m_data;
+    QPlainTextEdit *m_textEdit;
+    QTableWidget *m_preview;
+    QDialogButtonBox *m_buttonBox;
+    QList<ImportedVariable> m_variables;
+    QSet<QString> m_convertVariables;
+};
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief DialogVariables create dialog
@@ -138,7 +257,8 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     connect(ui->variables_TableWidget, &QTableWidget::itemSelectionChanged, this,
             &DialogVariables::showCustomVariableDetails);
 
-    connect(ui->addCustomVariable_ToolButton, &QPushButton::clicked, this, &DialogVariables::addCustomVariable);
+    connect(ui->addCustomVariable_ToolButton, &QToolButton::clicked, this, &DialogVariables::addCustomVariable);
+    connect(ui->importCustomVariables_ToolButton, &QToolButton::clicked, this, &DialogVariables::importCustomVariables);
     connect(ui->removeCustomVariable_ToolButton, &QToolButton::clicked, this, &DialogVariables::removeCustomVariable);
     connect(ui->toolButtonUp, &QToolButton::clicked, this, &DialogVariables::moveUp);
     connect(ui->toolButtonDown, &QToolButton::clicked, this, &DialogVariables::moveDown);
@@ -656,6 +776,87 @@ void DialogVariables::addCustomVariable()
     localUpdateTree();
 
     ui->variables_TableWidget->selectRow(currentRow);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief importCustomVariables import custom variables from pasted or loaded CSV text.
+//---------------------------------------------------------------------------------------------------------------------
+void DialogVariables::importCustomVariables()
+{
+    DialogImportCustomVariables dialog(data, this);
+    if (dialog.exec() != QDialog::Accepted)
+    {
+        return;
+    }
+
+    const QList<ImportedVariable> variables = dialog.variables();
+    if (variables.isEmpty())
+    {
+        return;
+    }
+
+    const QMap<QString, QSharedPointer<CustomVariable>> existing = data->variablesData();
+    const QSet<QString> convertVariables = dialog.convertVariables();
+    QStringList convertNames = convertVariables.values();
+    convertNames.sort();
+
+    for (const QString &convertName : convertNames)
+    {
+        if (existing.contains(convertName))
+        {
+            continue;
+        }
+
+        Unit from = Unit::Cm;
+        Unit to = Unit::Cm;
+        const QString displayName = convertName.mid(CustomIncrSign.length());
+        const QStringList parts = displayName.split(QLatin1String("to"));
+        if (parts.size() == 2 && parseUnit(parts.at(0), &from) && parseUnit(parts.at(1), &to))
+        {
+            doc->addEmptyCustomVariable(convertName);
+            doc->setVariableFormula(convertName, cNumber(UnitConvertor(1, from, to)));
+            doc->setVariableDescription(convertName, tr("CSV unit conversion factor %1 to %2.")
+                                        .arg(UnitsToStr(from), UnitsToStr(to)));
+        }
+    }
+
+    const int moveLimit = existing.size() + convertNames.size() + variables.size();
+    for (int i = convertNames.size() - 1; i >= 0; --i)
+    {
+        const QString &convertName = convertNames.at(i);
+        for (int move = 0; move < moveLimit; ++move)
+        {
+            doc->moveVariableUp(convertName);
+        }
+    }
+
+    if (!convertNames.isEmpty())
+    {
+        localUpdateTree();
+    }
+
+    for (const ImportedVariable &variable : variables)
+    {
+        if (!variable.valid)
+        {
+            continue;
+        }
+
+        if (!existing.contains(variable.name))
+        {
+            doc->addEmptyCustomVariable(variable.name);
+        }
+        doc->setVariableFormula(variable.name, variable.formula);
+        doc->setVariableDescription(variable.name, variable.description);
+    }
+
+    hasChanges = true;
+    localUpdateTree();
+
+    if (ui->variables_TableWidget->rowCount() > 0)
+    {
+        ui->variables_TableWidget->selectRow(0);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
