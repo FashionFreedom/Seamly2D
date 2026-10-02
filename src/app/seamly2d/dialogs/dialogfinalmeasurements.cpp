@@ -529,6 +529,7 @@ void DialogFinalMeasurements::selectIndex(int index)
     {
         table->clearSelection();
         table->setCurrentCell(-1, -1);
+        showMeasurementDetails();
         return;
     }
     table->selectRow(row);
