@@ -41,6 +41,7 @@
 #include <QRegularExpressionValidator>
 #include <QScreen>
 #include <QTableWidgetItem>
+#include <QTimer>
 
 namespace
 {
@@ -369,6 +370,13 @@ void DialogFinalMeasurements::saveFormulaFromEditor(const VFormula &formula)
     ui->formula_PlainTextEdit->blockSignals(true);
     ui->formula_PlainTextEdit->setPlainText(formula.GetFormula(FormulaType::ToUser));
     ui->formula_PlainTextEdit->blockSignals(false);
+
+    // The formula wizard is parented to the main window, which gets activated when the wizard closes.
+    QTimer::singleShot(0, this, [this]()
+    {
+        raise();
+        activateWindow();
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -532,6 +540,7 @@ void DialogFinalMeasurements::enableDetails(bool enabled)
 {
     ui->name_LineEdit->setEnabled(enabled);
     ui->formulaEditor_Widget->setEnabled(enabled);
+    m_formulaEditor->setVisible(enabled);
     ui->formula_PlainTextEdit->setEnabled(enabled);
     ui->description_PlainTextEdit->setEnabled(enabled);
 }
