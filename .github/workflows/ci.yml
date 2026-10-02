@@ -35,7 +35,6 @@ jobs:
 
   linux-test:
     if: github.event_name == 'pull_request'
-    timeout-minutes: 60
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-22.04
 
@@ -157,8 +156,8 @@ jobs:
       - name: setup signing and notarization
         env:
           KEYCHAIN_FILE: ~/seamly2d.keychain
-          APPLE_SIGN_IDENTITY: ${{ github.event_name != 'pull_request' && secrets.apple_sign_identity || '' }}
-        if: ${{ github.event_name != 'pull_request' && env.APPLE_SIGN_IDENTITY != '' }}
+          APPLE_SIGN_IDENTITY: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && secrets.apple_sign_identity || '' }}
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && env.APPLE_SIGN_IDENTITY != '' }}
         run: |
           security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
           security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
@@ -177,11 +176,11 @@ jobs:
 
       - name: make Seamly2D for macos
         env:
-          APPLE_SIGN_IDENTITY: ${{ github.event_name != 'pull_request' && secrets.apple_sign_identity || '' }}
+          APPLE_SIGN_IDENTITY: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && secrets.apple_sign_identity || '' }}
         run: |
           # see https://github.com/actions/runner-images/issues/7522
           echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
-          # Signing is restricted to non-PR runs with signing secrets available.
+          # Publish and sign are limited to scheduled and manual runs on the develop branch.
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
           else
@@ -196,15 +195,10 @@ jobs:
           if-no-files-found: error
 
   windows:
-    # linux-test is skipped for non-PR runs; allow those normal builds explicitly.
-    if: >-
-      always() && !cancelled() && needs.version.result == 'success' &&
-      (github.event_name != 'pull_request' ||
-       (github.event.pull_request.user.login != 'weblate' &&
-        needs.linux-test.result == 'success'))
+    if:  github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Windows Build'
     runs-on: windows-2022
-    needs: [version]
+    needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
     strategy:
@@ -266,9 +260,9 @@ jobs:
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing is restricted to non-PR runs with signing secrets available.
-        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Publish and sign are limited to scheduled and manual runs on the develop branch.
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
@@ -276,9 +270,9 @@ jobs:
       - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing is restricted to non-PR runs with signing secrets available.
-        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Publish and sign are limited to scheduled and manual runs on the develop branch.
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
 
       - name: Set up Java (for signing)
         uses: actions/setup-java@v5
@@ -288,9 +282,9 @@ jobs:
 
       - name: Sign executables
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing is restricted to non-PR runs with signing secrets available.
-        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Publish and sign are limited to scheduled and manual runs on the develop branch.
+        if: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
         shell: bash
         run: |
           java -jar .github/workflows/signing/jsign.jar \
@@ -382,6 +376,7 @@ jobs:
   publish:
     permissions:
       contents: write
+    # Publish and sign are limited to scheduled and manual runs on the develop branch.
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
     needs: [version, linux, macos, windows]
