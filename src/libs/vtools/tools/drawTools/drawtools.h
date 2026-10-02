@@ -73,7 +73,7 @@
 #include "toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h"
 #include "toolpoint/toolsinglepoint/vtoollineintersect.h"
 #include "toolpoint/toolsinglepoint/intersect_arc_line_tool.h"
-#include "toolpoint/toolsinglepoint/vtoolbasepoint.h"
+#include "toolpoint/toolsinglepoint/basepoint_tool.h"
 #include "toolpoint/toolsinglepoint/vtooltriangle.h"
 #include "toolpoint/toolsinglepoint/point_intersectxy_tool.h"
 #include "toolpoint/toolsinglepoint/vtoolpointofintersectionarcs.h"
