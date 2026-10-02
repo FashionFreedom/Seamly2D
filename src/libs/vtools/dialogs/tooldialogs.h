@@ -64,7 +64,7 @@
 #include "tools/dialognormal.h"
 #include "tools/intersect_arc_line_dialog.h"
 #include "tools/dialogshoulderpoint.h"
-#include "tools/dialogsinglepoint.h"
+#include "tools/basepoint_dialog.h"
 #include "tools/dialogspline.h"
 #include "tools/dialogcubicbezier.h"
 #include "tools/dialogsplinepath.h"

@@ -369,7 +369,7 @@ quint32 VPattern::getActiveBasePoint()
             const QDomElement domElement = domNode.toElement();
             if (domElement.isNull() == false)
             {
-                if (domElement.tagName() == TagPoint && domElement.attribute(AttrType, "") == VToolBasePoint::ToolType)
+                if (domElement.tagName() == TagPoint && domElement.attribute(AttrType, "") == BasePointTool::ToolType)
                 {
                     return getParameterId(domElement);
                 }
@@ -1160,7 +1160,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
     Q_ASSERT_X(not type.isEmpty(), Q_FUNC_INFO, "type of point is empty");
 
-    QStringList points = QStringList() << VToolBasePoint::ToolType                  /*0*/
+    QStringList points = QStringList() << BasePointTool::ToolType                  /*0*/
                                        << VToolEndLine::ToolType                    /*1*/
                                        << VToolAlongLine::ToolType                  /*2*/
                                        << VToolShoulderPoint::ToolType              /*3*/
@@ -1186,7 +1186,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << AnchorPointTool::ToolType;                /*23*/
     switch (points.indexOf(type))
     {
-        case 0: //VToolBasePoint::ToolType
+        case 0: //BasePointTool::ToolType
             ParseToolBasePoint(scene, domElement, parse);
             break;
         case 1: //VToolEndLine::ToolType
@@ -1396,7 +1396,7 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
-    VToolBasePoint *spoint = nullptr;
+    BasePointTool *spoint = nullptr;
     try
     {
         quint32 id = 0;
@@ -1411,7 +1411,7 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
 
         VPointF *point = new VPointF(x, y, name, mx, my);
         point->setShowPointName(showPointName);
-        spoint = VToolBasePoint::Create(id, m_activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
+        spoint = BasePointTool::Create(id, m_activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {

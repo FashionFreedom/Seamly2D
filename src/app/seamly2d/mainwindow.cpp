@@ -389,7 +389,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
     const QPointF startPosition = draftBlockStartPosition();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
-    auto spoint = VToolBasePoint::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
+    auto spoint = BasePointTool::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
                                         Source::FromGui);
     ui->view->itemClicked(spoint);
 

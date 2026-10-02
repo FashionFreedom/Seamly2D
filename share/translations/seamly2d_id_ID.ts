@@ -2614,7 +2614,7 @@ p, li { spasi: pra-bungkus; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Koordinat pada lembar</translation>
@@ -13310,7 +13310,7 @@ unggah ke SeamlyME seperti biasa.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Nama</translation>
