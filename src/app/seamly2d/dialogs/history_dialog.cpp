@@ -510,7 +510,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
                 break;
             }
 
-            case Tool::PointOfContact:
+            case Tool::IntersectArcLine:
                 rowData.icon = ":/toolicon/32x32/point_intersect_arc_line.png";
                 rowData.name = getName(toolId);
                 rowData.tool = tr("Point Intersect Arc with center %1 & Line %2_%3")

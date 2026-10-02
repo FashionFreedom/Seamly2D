@@ -205,7 +205,7 @@ private:
     void changeDataToolLine(VPE::VProperty *property);
     void changeDataToolLineIntersect(VPE::VProperty *property);
     void changeDataToolNormal(VPE::VProperty *property);
-    void changeDataToolPointOfContact(VPE::VProperty *property);
+    void changeDataToolIntersectArcLine(VPE::VProperty *property);
     void changeDataToolPointOfIntersection(VPE::VProperty *property);
     void changeDataToolPointOfIntersectionArcs(VPE::VProperty *property);
     void changeDataToolPointOfIntersectionCircles(VPE::VProperty *property);
@@ -240,7 +240,7 @@ private:
     void showOptionsToolLine(QGraphicsItem *item);
     void showOptionsToolLineIntersect(QGraphicsItem *item);
     void showOptionsToolNormal(QGraphicsItem *item);
-    void showOptionsToolPointOfContact(QGraphicsItem *item);
+    void showOptionsToolIntersectArcLine(QGraphicsItem *item);
     void showOptionsToolPointOfIntersection(QGraphicsItem *item);
     void showOptionsToolPointOfIntersectionArcs(QGraphicsItem *item);
     void showOptionsToolPointOfIntersectionCircles(QGraphicsItem *item);
@@ -275,7 +275,7 @@ private:
     void updateOptionsToolLine();
     void updateOptionsToolLineIntersect();
     void updateOptionsToolNormal();
-    void updateOptionsToolPointOfContact();
+    void updateOptionsToolIntersectArcLine();
     void updateOptionsToolPointOfIntersection();
     void updateOptionsToolPointOfIntersectionArcs();
     void updateOptionsToolPointOfIntersectionCircles();
