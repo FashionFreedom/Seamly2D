@@ -69,21 +69,8 @@ jobs:
         run: |
           xvfb-run -a make check
 
-  pr-integration-build:
-    name: 'PR Integration Test Build'
-    # Preserve Weblate's existing no-artifact translation update process.
-    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'weblate'
-    needs: [version, linux-test]
-    permissions:
-      contents: read
-    uses: ./.github/workflows/pr-integration-build.yml
-    with:
-      version_number: ${{ needs.version.outputs.version_number }}
-      qt_version: '6.11.1'
-    # Never inherit signing or release secrets into a PR build.
-
   linux:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-22.04
     needs: version
@@ -92,6 +79,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: install appimage dependencies
         run: |
@@ -139,7 +128,7 @@ jobs:
 
 
   macos:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'macOS: Build'
     runs-on: macos-26
     needs: version
@@ -148,6 +137,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: install build dependencies
         run: |
@@ -166,8 +157,8 @@ jobs:
       - name: setup signing and notarization
         env:
           KEYCHAIN_FILE: ~/seamly2d.keychain
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
-        if: ${{ env.APPLE_SIGN_IDENTITY }}
+          APPLE_SIGN_IDENTITY: ${{ github.event_name != 'pull_request' && secrets.apple_sign_identity || '' }}
+        if: ${{ github.event_name != 'pull_request' && env.APPLE_SIGN_IDENTITY != '' }}
         run: |
           security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
           security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
@@ -186,11 +177,11 @@ jobs:
 
       - name: make Seamly2D for macos
         env:
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+          APPLE_SIGN_IDENTITY: ${{ github.event_name != 'pull_request' && secrets.apple_sign_identity || '' }}
         run: |
           # see https://github.com/actions/runner-images/issues/7522
           echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
-          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+          # Signing is restricted to non-PR runs with signing secrets available.
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
           else
@@ -205,10 +196,15 @@ jobs:
           if-no-files-found: error
 
   windows:
-    if: github.event_name != 'pull_request'
+    # linux-test is skipped for non-PR runs; allow those normal builds explicitly.
+    if: >-
+      always() && !cancelled() && needs.version.result == 'success' &&
+      (github.event_name != 'pull_request' ||
+       (github.event.pull_request.user.login != 'weblate' &&
+        needs.linux-test.result == 'success'))
     name: 'Windows Build'
     runs-on: windows-2022
-    needs: version
+    needs: [version, linux-test]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
     strategy:
@@ -226,6 +222,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Setup MSVC Developer Command Prompt
         uses: TheMrMilchmann/setup-msvc-dev@v4.1.0
@@ -268,9 +266,9 @@ jobs:
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Signing is restricted to non-PR runs with signing secrets available.
+        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
@@ -278,9 +276,9 @@ jobs:
       - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Signing is restricted to non-PR runs with signing secrets available.
+        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
 
       - name: Set up Java (for signing)
         uses: actions/setup-java@v5
@@ -290,9 +288,9 @@ jobs:
 
       - name: Sign executables
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
-        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ github.event_name != 'pull_request' && secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
+        # Signing is restricted to non-PR runs with signing secrets available.
+        if: ${{ github.event_name != 'pull_request' && env.SEAMLY_SIGNING_PROJECT_ID != '' }}
         shell: bash
         run: |
           java -jar .github/workflows/signing/jsign.jar \
@@ -308,17 +306,78 @@ jobs:
         run: |
           Get-AuthenticodeSignature windows-build\Seamly2D-installer.exe
 
-      - name: pack installer file into .zip
+      - name: Include PR testing instructions and build details
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          BUILD_ARCH: ${{ matrix.msvc-arch }}
         run: |
-          cd windows-build
-          C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
+          $ErrorActionPreference = 'Stop'
+          $builtSha = (git rev-parse HEAD).Trim()
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $runUrl = "$env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID"
+          Copy-Item .github\workflows\PR_INTEGRATION_TESTING.md windows-build\TESTING.md
+          Copy-Item src\app\share\samples windows-build\samples -Recurse
+          @"
+          UNSIGNED SEAMLY PR TEST BUILD — NOT A PRODUCTION RELEASE
+          PR: #$env:PR_NUMBER
+          PR head SHA: $env:PR_HEAD_SHA
+          PR base SHA: $env:PR_BASE_SHA
+          Built PR merge SHA: $builtSha
+          Version: $env:VERSION_NUMBER
+          Architecture: $env:BUILD_ARCH
+          Workflow run: $runUrl
+          Run attempt: $env:GITHUB_RUN_ATTEMPT
+          Built UTC: $([DateTime]::UtcNow.ToString('o'))
+
+          Test on a separate computer or VM using copies of sample files.
+          The standard installer may replace an existing installation and share settings.
+          Record these build details, OS/version, results, and screenshots in the PR.
+          "@ | Set-Content windows-build\BUILD-INFO.txt -Encoding utf8
+          $hash = (Get-FileHash windows-build\Seamly2D-installer.exe -Algorithm SHA256).Hash
+          "$hash  Seamly2D-installer.exe" | Set-Content windows-build\SHA256SUMS.txt -Encoding ascii
+
+      - name: pack installer file into .zip
+        shell: pwsh
+        env:
+          BUILD_EVENT: ${{ github.event_name }}
+          RELEASE_FILE: ${{ matrix.release-file }}
+        run: |
+          Set-Location windows-build
+          $files = @('Seamly2D-installer.exe')
+          if ($env:BUILD_EVENT -eq 'pull_request') {
+            $files += @('TESTING.md', 'BUILD-INFO.txt', 'SHA256SUMS.txt', 'samples')
+          }
+          & 'C:\Program Files\7-Zip\7z.exe' a $env:RELEASE_FILE @files
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Upload windows artifacts
+        id: upload-windows
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}
           if-no-files-found: error
+
+      - name: Explain how to test the PR installer
+        if: github.event_name == 'pull_request'
+        shell: pwsh
+        env:
+          ARTIFACT_URL: ${{ steps.upload-windows.outputs.artifact-url }}
+          ARTIFACT_NAME: ${{ matrix.release-file }}
+        run: |
+          @"
+          ## PR integration testing: $env:ARTIFACT_NAME
+          [Download this unsigned Windows test build]($env:ARTIFACT_URL).
+          GitHub sign-in and repository read access are required.
+          Extract the artifact ZIP, then the installer ZIP inside it.
+          Read BUILD-INFO.txt and TESTING.md; use a separate test computer or VM.
+          Post results, build details, OS/version, and screenshots in the PR.
+          A successful build does not mean human integration testing passed.
+          "@ >> $env:GITHUB_STEP_SUMMARY
 
   publish:
     permissions:

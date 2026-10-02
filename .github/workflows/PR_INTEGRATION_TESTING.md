@@ -2,52 +2,53 @@
 
 ## Before merge
 
-For every PR, CI runs Linux unit tests. For non-Weblate PRs, it then calls
-`pr-integration-build.yml` to build one unsigned Windows x64 installer.
-Weblate PRs do not create build artifacts and retain their existing automated
-translation-update process. The
-installer is an Actions artifact, not a GitHub Release or pre-release.
-The Linux tests and installer use GitHub's same PR merge revision so testing
-covers the proposed changes combined with the target branch.
+The existing CI workflow builds Linux AppImage, macOS, and Windows x64 / ARM64
+artifacts for non-Weblate PRs, alongside Linux unit tests. Windows packaging
+waits for the Linux tests to succeed. The existing Windows installer ZIPs now
+include testing instructions, samples, and build details. No separate Windows
+integration build is needed.
 
-The Windows build follows the existing CI qmake/nmake, windeployqt-prepared
-binary directories, and NSIS packaging steps. The application version remains
-numeric. PR identity is in the artifact name and BUILD-INFO.txt, not the About
-dialog. There is no signing, release publishing, or inherited repository secret
-in the reusable PR workflow. It uses a GitHub-hosted runner and read-only token.
-Fork PRs may need a maintainer to approve the workflow run before it starts.
+Tests and builds use GitHub's default PR merge revision: the proposed changes
+combined with the target branch. BUILD-INFO.txt records the PR head and base
+commits, actual built merge commit, numeric version, architecture, run URL,
+attempt, and build time. PR identity is recorded in that file, not in the
+application About dialog. Windows and macOS PR signing is explicitly disabled.
 
-## Download the test build
+Weblate PRs retain Linux tests, no packaging artifacts, and the existing
+automated translation approval/merge process.
+
+## Download and test
 
 1. Open the PR's Checks tab and follow the CI run, or open Actions > CI.
-2. Wait for `Linux: Run unit tests` and the Windows integration build to pass.
-3. Open the workflow summary and download the artifact named
-   `Seamly2D-PR-<number>-<head SHA>-windows-x64-run-<run ID>-attempt-<attempt>`.
-   The Windows job summary also includes a download link. GitHub sign-in and
-   repository read access are required; artifacts expire after 14 days.
-4. Extract the ZIP. It contains `Seamly2D-PR-test-installer.exe`,
-   `BUILD-INFO.txt`, `SHA256SUMS.txt`, `TESTING.md`, and sample files.
-5. Use a disposable Windows VM or separate test computer. This uses the normal
-   NSIS installer and may replace an existing Seamly installation or share
-   settings. It does not install as an isolated PR-specific application.
+2. Confirm the Linux unit tests and the relevant platform build passed.
+3. Download `Seamly2D-windows.zip` for Windows x64 or `Seamly2D-win-arm64.zip`
+   for Windows ARM64 from that PR run. The corresponding Windows job summary
+   also includes a download link. GitHub sign-in and repository read access
+   are required. Existing artifact retention settings apply.
+4. Extract the Actions artifact ZIP and then the installer ZIP within it.
+   The inner ZIP contains `Seamly2D-installer.exe`, `BUILD-INFO.txt`,
+   `SHA256SUMS.txt`, `TESTING.md`, and `samples`.
+5. Use a disposable VM or separate test computer. The normal NSIS installer may
+   replace an existing installation or share application settings; it is not a
+   side-by-side PR installer. Use the installer matching your CPU architecture.
 6. Test copies of `samples/patterns` with their associated measurement files.
-   Keep source patterns and production work separate from the test copies.
+   Keep source patterns and production work separate from test copies.
 
-Windows may warn because this is an unsigned build. Review the source changes
-and workflow before running it. A checksum identifies the downloaded installer;
-it does not certify that the code is safe or correct.
+Unsigned installers may show Windows security warnings. Review the changes and
+workflow before running them. The checksum identifies the installer bytes;
+it does not certify correctness. For platform-specific changes, also exercise
+that platform using the Linux and macOS artifacts or a local build.
 
 ## Record the integration result
 
 Post a PR comment containing:
 
-- Tester and date; Windows edition, version, and architecture.
-- PR head SHA, built PR merge SHA, version, run URL, and attempt from BUILD-INFO.txt.
-- Sample filenames, measurement files used, and the steps performed.
-- Screenshots showing the corrected behavior in the running application.
-- Results for the workflow below, unexpected behavior, and reproduction steps.
-- An explicit PASS or FAIL. Explain any not-applicable step rather than silently
-  skipping it. A new commit or base update requires a fresh build and review.
+- Tester/date and OS edition, version, and architecture.
+- Build details from BUILD-INFO.txt, including PR head SHA and built merge SHA.
+- Sample and measurement filenames used, test steps, and screenshots showing
+  the corrected behavior in the running application.
+- An explicit PASS or FAIL, unexpected behavior, and reproduction steps.
+- Reasons for any not-applicable steps.
 
 Exercise the reported fix and the surrounding CAD workflow:
 
@@ -57,19 +58,16 @@ Exercise the reported fix and the surrounding CAD workflow:
 - Create a piece and edit existing pieces.
 - Generate a layout and export it to relevant formats.
 - Save under a new filename, close, reopen, and compare geometry and pieces.
-- Confirm that formulas, measurements, and dependencies persist correctly and
-  that there are no unexpected geometry changes, crashes, or lost work.
-- Test SeamlyMe if the PR changes measurement handling or shared code.
+- Verify formulas, measurements, and dependencies persist correctly, without
+  unexpected geometry changes, crashes, or lost work.
+- Test SeamlyMe when measurement handling or shared code changes.
 
-A green build or checked box is not proof of successful human testing. For code changes, a
-maintainer must inspect the evidence and approve the current PR revision.
-Eligible Weblate translation PRs retain the existing automated approval and
-merge process; they are an exception to this human testing requirement.
-Windows testing alone does not validate platform-specific behavior on macOS,
-Linux, or Windows ARM64. For changes affecting those platforms, build and test
-on the affected platforms before approval.
+A successful build or checked box does not establish that human testing passed.
+For code changes, a maintainer must review testing evidence for the current
+revision before approval. New commits or base updates require fresh testing.
+Eligible Weblate translation PRs retain their automated approval exception.
 
-## Configure GitHub merge protection (one-time maintainer setup)
+## Configure merge protection (one-time maintainer setup)
 
 YAML cannot configure repository merge rules. In Settings > Rules > Rulesets
 (or Settings > Branches > Branch protection rules), protect `develop` and any
@@ -78,66 +76,58 @@ other merge target:
 1. Require a pull request and at least one approving review.
 2. Dismiss stale approvals after new commits; require approval of the most
    recent reviewable push by someone other than its author.
-3. Require status checks. After this workflow has run successfully, select
-   `Linux: Run unit tests` and the Windows integration build check. The latter
-   may appear as `PR Integration Test Build / Windows x64: Integration Test Build`;
-   use the exact name GitHub offers for the completed run, not a guessed job ID.
-4. Require the branch to be up to date before merging, to test against current
-   target-branch code. Update the PR branch and retest if the base has changed.
+3. After CI runs successfully, select the existing Linux unit test, Linux
+   AppImage, macOS, and Windows matrix checks as required checks. Use the actual
+   check names GitHub offers. Remove any required check for the deleted
+   `PR Integration Test Build` workflow, if previously configured.
+4. Require the branch to be up to date before merging, so testing covers current
+   target-branch code. Update the branch and retest after base changes.
 5. Apply rules to administrators where appropriate and limit bypass permissions.
 
-The PR checklist documents evidence; it does not itself block merging. For code changes, the
-required approving review is the human integration gate. Reviewers must
-withhold approval until the current artifact has passed testing.
+The checklist documents evidence; required reviews enforce the human gate for
+code changes. The Weblate packaging jobs are explicitly skipped, preserving
+its no-artifact process. Do not replace these job-level exclusions with a
+workflow-level path filter that would leave required checks pending.
 
-The existing Weblate workflow is preserved unchanged. It automatically approves
-and enables auto-merge only for non-draft PRs by `weblate` from the same
-repository, after checking that every changed path is under `share/translations/`
-and has a `.ts` or `.pro` extension. These PRs retain their existing automated
-translation-update path and are an exception to the human integration gate.
-Linux tests must still pass before auto-merge can complete. The integration
-build job is explicitly skipped for Weblate, so it creates no artifact.
-This author-based exclusion matches the previous CI behavior; the separate
-auto-merge workflow must still reject changes outside its allowed paths. Repository
-review rules must permit the existing automation's approval; code-owner review
-or other additional review requirements may still block automatic merging.
+The original Weblate workflow approves only eligible same-repository,
+non-draft PRs by `weblate` after checking that all changed paths are under
+`share/translations/` and end with `.ts` or `.pro`. Its approval must be accepted
+by repository rules for automatic merging to remain available. Additional
+code-owner or review requirements may still block it. The `.pro` allowance is
+part of the original configuration, not a guarantee of translation-only content.
 
-The current Weblate path check includes translation project `.pro` files as well
-as `.ts` files; it is not a guarantee of translation-content-only changes.
-Do not extend this exception to other PR authors or source/workflow paths.
+## Apply the reviewer revision locally
 
-## Install these changes in the local repository
-
-1. In PowerShell, start from the intended base branch in
-   `C:\Users\susan\Projects\seamly2d`. Run `git status` and commit or stash
-   existing work before continuing.
-2. Create a branch: `git switch -c ci/pr-integration-build`.
+1. In `C:\Users\susan\Projects\seamly2d`, run `git status` and preserve any
+   unrelated work before switching branches.
+2. Switch to the existing branch: `git switch improve-pr-process`.
 3. Extract the supplied ZIP into a temporary folder. Copy its `.github` folder
-   into the repository root, merging folders and replacing the changed files.
-4. Review `git diff --stat` and `git diff`.
-5. Stage only the five files below, commit, and push:
+   into the repository root, merging folders and replacing changed files.
+4. Delete the previous `.github/workflows/pr-integration-build.yml` locally:
+   it was removed from this version of the archive, but copying a ZIP does not
+   delete files already present in your repository. If tracked, use
+   `git rm .github/workflows/pr-integration-build.yml`.
+5. Review `git diff --stat` and `git diff`, then stage the revised files:
 
 ```powershell
-git add .github/workflows/ci.yml .github/workflows/pr-integration-build.yml .github/workflows/PR_INTEGRATION_TESTING.md .github/workflows/README_WORKFLOWS.md .github/PULL_REQUEST_TEMPLATE.md
-git commit -m "ci: build PR integration test installer after Linux tests"
-git push -u origin ci/pr-integration-build
+git add .github/workflows/ci.yml .github/workflows/PR_INTEGRATION_TESTING.md .github/workflows/README_WORKFLOWS.md .github/PULL_REQUEST_TEMPLATE.md
+git commit -m "ci: reuse Windows PR artifacts and restore multiplatform builds"
+git push origin improve-pr-process
 ```
 
-6. Open a PR targeting `develop`. Both workflow files are included in the PR,
-   so its own CI can exercise the new workflow before merge.
-7. Download and test the installer; then configure the required checks using
-   their actual completed check names and arrange a maintainer review.
+`git rm` stages the removed workflow. If it was never tracked, remove it through
+Explorer instead. The existing PR updates when you push this branch.
 
 ## Validation limits
 
-The supplied `.github` archive was enough to reuse the existing build commands,
-but did not include the application source, `scripts/version.sh`, or the NSIS
-script. The full Windows build and installer must be verified on GitHub. The
-first run should confirm the Qt download, dependency deployment, installer
-creation, installation, application launch, and sample-file handling.
+The uploaded `.github` archive supplies the existing build commands, but does
+not contain application source, `scripts/version.sh`, or the NSIS script.
+Static validation covers workflow structure and conditions. GitHub CI must
+verify full builds and installer behavior. Test both the PR run and normal
+non-PR runs; the Windows job explicitly handles skipped Linux tests on non-PR
+runs so scheduled/manual builds still execute.
 
 ## References
 
-- Reusable workflows: https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows
-- Artifact downloads: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/download-workflow-artifacts
+- Artifacts: https://docs.github.com/en/actions/concepts/workflows-and-actions/workflow-artifacts
 - Merge protection: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches

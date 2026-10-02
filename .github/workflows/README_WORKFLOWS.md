@@ -5,57 +5,51 @@
 Triggers: pull requests, pushes to `develop` and `feat-*`, Monday 01:30 UTC
 schedule, and manual dispatch.
 
-- **Pull requests:** Linux build/unit tests, then one unsigned Windows x64
-  integration-test installer via `pr-integration-build.yml`. All PR authors,
-  except Weblate, follow this build path. Weblate runs Linux tests without
-  creating integration-test artifacts.
-- **Push, schedule, manual:** existing Linux AppImage, macOS, and Windows x64 / 
-  ARM64 builds. The existing signing steps run when their secrets are available.
+- **Pull requests:** Linux unit tests plus the existing Linux AppImage, macOS,
+  Windows x64, and Windows ARM64 builds. The Windows matrix waits for Linux tests
+  to pass. Linux and macOS packaging retain their existing dependency on version
+  creation and may run alongside the tests.
+- **PR Windows artifacts:** the existing installer ZIPs additionally contain
+  sample files, integration-testing instructions, build details, and a SHA256
+  checksum. There is no separate integration-build workflow or duplicate build.
+- **Weblate:** Linux tests only, with the original automatic approval/merge
+  workflow preserved. No packaging jobs or build artifacts are created for
+  Weblate PRs.
+- **Push, schedule, manual:** existing multiplatform builds. The normal installer
+  ZIP contents and artifact names are preserved for these runs.
+- **Signing:** macOS and Windows signing run only for non-PR events when secrets
+  are available. PR builds remain unsigned even when submitted from the same
+  repository.
 - **Publish:** scheduled/manual runs on `develop` create the normal weekly
-  release after all platform builds succeed. Pushes upload build artifacts;
-  they do not create GitHub pre-releases.
+  release after all platform builds succeed. Pushes upload artifacts; they do
+  not create GitHub pre-releases.
 - **Documentation:** push, schedule, and manual runs deploy Doxygen to `gh-pages`.
-- **Permissions:** default `contents: read`; only release publishing and
-  documentation deployment receive `contents: write`.
+- **Permissions:** default `contents: read`; publishing and documentation jobs
+  receive `contents: write`.
 
-## PR integration-test build (`pr-integration-build.yml`)
+## Human integration testing
 
-For non-Weblate PRs, this reusable workflow is called by CI after both version creation and Linux
-unit tests succeed. It cannot be run independently. It builds the same PR merge
-revision used by the Linux tests, with the existing Windows x64 build/NSIS steps.
-It receives no inherited secrets and does not sign, publish, tag, or approve a PR.
+Download the existing `Seamly2D-windows.zip` artifact for x64 or
+`Seamly2D-win-arm64.zip` for ARM64 from the PR's CI run. The Windows job summary
+also provides a link. Extract the artifact archive and then the installer ZIP.
+Read BUILD-INFO.txt and TESTING.md before testing. GitHub sign-in and repository
+read access are required.
 
-One Actions artifact contains the installer, samples, test instructions, source
-revision details, and an installer SHA256 checksum. Its name identifies the PR,
-head commit, run, and attempt. Retention is 14 days. Download from the CI run's
-Artifacts section or the Windows job summary (GitHub sign-in required).
-
-See [PR_INTEGRATION_TESTING.md](PR_INTEGRATION_TESTING.md) for the complete test
-procedure, local installation instructions for these workflow changes, and
-required branch-protection setup. The PR template records testing evidence;
-required reviews enforce the human approval gate for code changes. Eligible
-Weblate translation PRs retain their existing automated approval exception.
+See [PR_INTEGRATION_TESTING.md](PR_INTEGRATION_TESTING.md) for test procedures,
+branch-protection setup, and instructions for applying these changes. Required
+reviews enforce human testing for code changes; eligible Weblate PRs retain
+existing automated approval as an exception.
 
 ## Weblate (`auto-merge-weblate.yml`)
 
-The original workflow is preserved unchanged. For eligible same-repository
-non-draft PRs by `weblate`, it checks for `.ts` / `.pro` changes under
-`share/translations/`, automatically approves, and enables auto-merge.
-These PRs are an exception to the human integration requirement; required CI
-checks still apply. Repository rules must allow the existing automated review
-to satisfy approval requirements for this process to stay fully automatic.
-This workflow uses `pull_request_target` only for PR metadata/API operations
-and does not check out or execute PR code.
+This workflow is preserved unchanged. For eligible same-repository non-draft
+PRs by `weblate`, it checks for `.ts` / `.pro` changes under `share/translations/`,
+automatically approves, and enables auto-merge. Required checks still apply;
+repository review rules must allow the existing automation to satisfy approval
+requirements. This workflow only uses PR metadata/API operations and does not
+check out or execute PR code.
 
-## Signing and platform coverage
+## Signing references
 
-PR installers are unsigned and use the normal installer, which may replace an
-existing installation. Use a disposable VM or test computer. PR workflow edits
-do not change the normal release signing implementation.
-
-Windows x64 integration testing reduces PR build cost but does not establish
-macOS, Linux, or Windows ARM64 compatibility. Contributors must test affected
-platforms for platform-specific changes.
-
-Existing signing references: [CODE_SIGNING.md](CODE_SIGNING.md) and
+[CODE_SIGNING.md](CODE_SIGNING.md) and
 [signing/SECRETS_SETUP.md](signing/SECRETS_SETUP.md).

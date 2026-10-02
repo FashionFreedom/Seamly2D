@@ -5,11 +5,11 @@ Describe the problem, resulting behavior, and related issue.
 ## Automated validation
 
 - [ ] Linux unit tests passed.
-- [ ] Windows x64 PR integration-test artifact built successfully.
+- [ ] Linux AppImage, macOS, and Windows matrix builds passed.
 
 ## Integration testing (before approval)
 
-Use the artifact and instructions in
+Use the existing Windows installer artifact and instructions in
 [PR_INTEGRATION_TESTING.md](workflows/PR_INTEGRATION_TESTING.md).
 Test copies of the samples in `src/app/share/samples/patterns`.
 Record results in a PR comment if testing happens after opening this PR.
