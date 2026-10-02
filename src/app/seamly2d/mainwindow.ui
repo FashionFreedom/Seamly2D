@@ -220,7 +220,7 @@
      <addaction name="pointAlongPerpendicular_Action"/>
      <addaction name="bisector_Action"/>
      <addaction name="pointOnShoulder_Action"/>
-     <addaction name="pointOfContact_Action"/>
+     <addaction name="intersect_arc_line_action"/>
      <addaction name="triangle_Action"/>
      <addaction name="pointIntersectXY_Action"/>
      <addaction name="perpendicularPoint_Action"/>
@@ -639,7 +639,7 @@
    <addaction name="pointAlongPerpendicular_Action"/>
    <addaction name="bisector_Action"/>
    <addaction name="pointOnShoulder_Action"/>
-   <addaction name="pointOfContact_Action"/>
+   <addaction name="intersect_arc_line_action"/>
    <addaction name="triangle_Action"/>
    <addaction name="pointIntersectXY_Action"/>
    <addaction name="perpendicularPoint_Action"/>
@@ -1027,7 +1027,7 @@
                 </widget>
                </item>
                <item row="7" column="1">
-                <widget class="QToolButton" name="pointOfContact_ToolButton">
+                <widget class="QToolButton" name="intersect_arc_line_toolbutton">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -3185,7 +3185,7 @@
     <string notr="true">P, S</string>
    </property>
   </action>
-  <action name="pointOfContact_Action">
+  <action name="intersect_arc_line_action">
    <property name="enabled">
     <bool>false</bool>
    </property>

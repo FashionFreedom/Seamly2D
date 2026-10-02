@@ -2297,7 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Point - Intersect Arc and Line</source>
         <translation>Pont - Ív és egyenes metszéspontja</translation>
@@ -2614,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Base Point</source>
         <translation>Alappont</translation>
@@ -13308,7 +13308,7 @@ Menti a módosításokat?</translation>
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Név</translation>
@@ -13979,7 +13979,7 @@ Menti a módosításokat?</translation>
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Hossz</translation>

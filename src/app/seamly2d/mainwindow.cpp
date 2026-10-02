@@ -390,7 +390,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
     const QPointF startPosition = draftBlockStartPosition();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
-    auto spoint = VToolBasePoint::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
+    auto spoint = BasePointTool::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
                                         Source::FromGui);
     ui->view->itemClicked(spoint);
 
@@ -1177,19 +1177,19 @@ void MainWindow::handleShoulderPointTool(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handlePointOfContactTool handler for pointOfContact tool.
+ * @brief handleIntersectArcLineTool handler for pointOfContact tool.
  * @param checked true - button checked.
  */
-void MainWindow::handlePointOfContactTool(bool checked)
+void MainWindow::handleIntersectArcLineTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointOfContact>
+    SetToolButtonWithApply<IntersectArcLineDialog>
     (
-        checked, Tool::PointOfContact,
+        checked, Tool::IntersectArcLine,
         ":/cursor/point_intersect_arc_line_cursor.png",
         tr("<b>Tool::Point - Intersect Arc and Line:</b> Select first point of line"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointOfContact>,
-        &MainWindow::ApplyDrawDialog<VToolPointOfContact>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectArcLineTool>,
+        &MainWindow::ApplyDrawDialog<IntersectArcLineTool>
     );
 }
 
@@ -3015,22 +3015,22 @@ void MainWindow::initializeToolButtons()
 
     connect(ui->pointAtDistanceAngle_ToolButton, &QToolButton::clicked,
             this, &MainWindow::handlePointAtDistanceAngleTool);
-    connect(ui->line_ToolButton,           &QToolButton::clicked, this, &MainWindow::handleLineTool);
-    connect(ui->alongLine_ToolButton,      &QToolButton::clicked, this, &MainWindow::handleAlongLineTool);
-    connect(ui->shoulderPoint_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleShoulderPointTool);
-    connect(ui->normal_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleNormalTool);
-    connect(ui->bisector_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleBisectorTool);
-    connect(ui->lineIntersect_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleLineIntersectTool);
-    connect(ui->curve_ToolButton,          &QToolButton::clicked, this, &MainWindow::handleCurveTool);
-    connect(ui->curveWithCPs_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
-    connect(ui->arc_ToolButton,            &QToolButton::clicked, this, &MainWindow::handleArcTool);
-    connect(ui->spline_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleSplineTool);
-    connect(ui->splineWithCPs_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleSplineWithControlPointsTool);
-    connect(ui->pointOfContact_ToolButton, &QToolButton::clicked, this, &MainWindow::handlePointOfContactTool);
-    connect(ui->addPatternPiece_ToolButton,&QToolButton::clicked, this, &MainWindow::handlePatternPieceTool);
-    connect(ui->internalPath_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleInternalPathTool);
-    connect(ui->height_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleHeightTool);
-    connect(ui->triangle_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleTriangleTool);
+    connect(ui->line_ToolButton,                &QToolButton::clicked, this, &MainWindow::handleLineTool);
+    connect(ui->alongLine_ToolButton,           &QToolButton::clicked, this, &MainWindow::handleAlongLineTool);
+    connect(ui->shoulderPoint_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleShoulderPointTool);
+    connect(ui->normal_ToolButton,              &QToolButton::clicked, this, &MainWindow::handleNormalTool);
+    connect(ui->bisector_ToolButton,            &QToolButton::clicked, this, &MainWindow::handleBisectorTool);
+    connect(ui->lineIntersect_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleLineIntersectTool);
+    connect(ui->curve_ToolButton,               &QToolButton::clicked, this, &MainWindow::handleCurveTool);
+    connect(ui->curveWithCPs_ToolButton,        &QToolButton::clicked, this, &MainWindow::handleCurveWithControlPointsTool);
+    connect(ui->arc_ToolButton,                 &QToolButton::clicked, this, &MainWindow::handleArcTool);
+    connect(ui->spline_ToolButton,              &QToolButton::clicked, this, &MainWindow::handleSplineTool);
+    connect(ui->splineWithCPs_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleSplineWithControlPointsTool);
+    connect(ui->intersect_arc_line_toolbutton,  &QToolButton::clicked, this, &MainWindow::handleIntersectArcLineTool);
+    connect(ui->addPatternPiece_ToolButton,     &QToolButton::clicked, this, &MainWindow::handlePatternPieceTool);
+    connect(ui->internalPath_ToolButton,        &QToolButton::clicked, this, &MainWindow::handleInternalPathTool);
+    connect(ui->height_ToolButton,              &QToolButton::clicked, this, &MainWindow::handleHeightTool);
+    connect(ui->triangle_ToolButton,            &QToolButton::clicked, this, &MainWindow::handleTriangleTool);
     connect(ui->pointIntersectXY_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointIntersectXYTool);
     connect(ui->pointAlongCurve_ToolButton,     &QToolButton::clicked, this, &MainWindow::handlePointAlongCurveTool);
     connect(ui->pointAlongSpline_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointAlongSplineTool);
@@ -3079,7 +3079,7 @@ void MainWindow::handlePointsMenu()
     QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("On Perpendicular") + "\tO, P");
     QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("On Bisector") + "\tO, B");
     QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Length to Line") + "\tP, S");
-    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_intersect_arc_line.png"),       tr("Intersect Arc and Line") + "\tA, L");
+    QAction *action_IntersectArcLine      = menu.addAction(QIcon(":/toolicon/32x32/point_intersect_arc_line.png"),       tr("Intersect Arc and Line") + "\tA, L");
     QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Intersect Axis and Triangle") + "\tX, T");
     QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tX, Y");
     QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersect Line and Perpendicular") + "\tL, P");
@@ -3127,11 +3127,11 @@ void MainWindow::handlePointsMenu()
         ui->shoulderPoint_ToolButton->setChecked(true);
         handleShoulderPointTool(true);
     }
-    else if (selectedAction == action_PointOfContact)
+    else if (selectedAction == action_IntersectArcLine)
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
-        ui->pointOfContact_ToolButton->setChecked(true);
-        handlePointOfContactTool(true);
+        ui->intersect_arc_line_toolbutton->setChecked(true);
+        handleIntersectArcLineTool(true);
     }
     else if (selectedAction == action_Triangle)
     {
@@ -3637,8 +3637,8 @@ void MainWindow::CancelTool()
         case Tool::CubicBezierPath:
             ui->splineWithCPs_ToolButton->setChecked(false);
             break;
-        case Tool::PointOfContact:
-            ui->pointOfContact_ToolButton->setChecked(false);
+        case Tool::IntersectArcLine:
+            ui->intersect_arc_line_toolbutton->setChecked(false);
             break;
         case Tool::Piece:
             ui->addPatternPiece_ToolButton->setChecked(false);
@@ -5127,7 +5127,7 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->normal_ToolButton->setEnabled(draftTools);
     ui->bisector_ToolButton->setEnabled(draftTools);
     ui->shoulderPoint_ToolButton->setEnabled(draftTools);
-    ui->pointOfContact_ToolButton->setEnabled(draftTools);
+    ui->intersect_arc_line_toolbutton->setEnabled(draftTools);
     ui->triangle_ToolButton->setEnabled(draftTools);
     ui->pointIntersectXY_ToolButton->setEnabled(draftTools);
     ui->height_ToolButton->setEnabled(draftTools);
@@ -5204,7 +5204,7 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->pointAlongPerpendicular_Action->setEnabled(draftTools);
     ui->bisector_Action->setEnabled(draftTools);
     ui->pointOnShoulder_Action->setEnabled(draftTools);
-    ui->pointOfContact_Action->setEnabled(draftTools);
+    ui->intersect_arc_line_action->setEnabled(draftTools);
     ui->triangle_Action->setEnabled(draftTools);
     ui->pointIntersectXY_Action->setEnabled(draftTools);
     ui->perpendicularPoint_Action->setEnabled(draftTools);
@@ -5726,9 +5726,9 @@ void MainWindow::LastUsedTool()
             ui->splineWithCPs_ToolButton->setChecked(true);
             handleSplineWithControlPointsTool(true);
             break;
-        case Tool::PointOfContact:
-            ui->pointOfContact_ToolButton->setChecked(true);
-            handlePointOfContactTool(true);
+        case Tool::IntersectArcLine:
+            ui->intersect_arc_line_toolbutton->setChecked(true);
+            handleIntersectArcLineTool(true);
             break;
         case Tool::Piece:
             ui->addPatternPiece_ToolButton->setChecked(true);
@@ -6104,11 +6104,11 @@ void MainWindow::createActions()
         ui->shoulderPoint_ToolButton->setChecked(true);
         handleShoulderPointTool(true);
     });
-    connect(ui->pointOfContact_Action, &QAction::triggered, this, [this]
+    connect(ui->intersect_arc_line_action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
-        ui->pointOfContact_ToolButton->setChecked(true);
-        handlePointOfContactTool(true);
+        ui->intersect_arc_line_toolbutton->setChecked(true);
+        handleIntersectArcLineTool(true);
     });
     connect(ui->triangle_Action, &QAction::triggered, this, [this]
     {

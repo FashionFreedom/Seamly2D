@@ -1,55 +1,53 @@
-/***************************************************************************
- **  @file   vtoolpointofcontact.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   intersect_arc_line_tool.cpp
+//  @author Douglas S Caskey
+//  @date   17 Sep, 2023
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **  @file   vtoolpointofcontact.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   vtoolpointofcontact.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   15 Nov, 2013
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-#include "vtoolpointofcontact.h"
+#include "intersect_arc_line_tool.h"
 
 #include <QLineF>
 #include <QMessageLogger>
@@ -58,10 +56,10 @@
 #include <QtDebug>
 #include <new>
 
-#include "../../../../dialogs/tools/dialogpointofcontact.h"
+#include "../../../../dialogs/tools/intersect_arc_line_dialog.h"
 #include "../../../../dialogs/tools/dialogtool.h"
 #include "../../../../visualization/visualization.h"
-#include "../../../../visualization/line/vistoolpointofcontact.h"
+#include "../../../../visualization/line/intersect_arc_line_visual.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../ifc/ifcdef.h"
@@ -79,11 +77,11 @@
 
 template <class T> class QSharedPointer;
 
-const QString VToolPointOfContact::ToolType = QStringLiteral("pointOfContact");
+const QString IntersectArcLineTool::ToolType = QStringLiteral("pointOfContact");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VToolPointOfContact constructor.
+ * @brief IntersectArcLineTool constructor.
  * @param doc dom document container.
  * @param data container with variables.
  * @param id object id in container.
@@ -94,7 +92,7 @@ const QString VToolPointOfContact::ToolType = QStringLiteral("pointOfContact");
  * @param typeCreation way we create this tool.
  * @param parent parent object.
  */
-VToolPointOfContact::VToolPointOfContact(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+IntersectArcLineTool::IntersectArcLineTool(VAbstractPattern *doc, VContainer *data, const quint32 &id,
                                          const QString &radius, const quint32 &center,
                                          const quint32 &firstPointId, const quint32 &secondPointId,
                                          const Source &typeCreation, QGraphicsItem *parent)
@@ -111,10 +109,10 @@ VToolPointOfContact::VToolPointOfContact(VAbstractPattern *doc, VContainer *data
 /**
  * @brief setDialog set dialog when user want change tool option.
  */
-void VToolPointOfContact::setDialog()
+void IntersectArcLineTool::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointOfContact> dialogTool = m_dialog.objectCast<DialogPointOfContact>();
+    QSharedPointer<IntersectArcLineDialog> dialogTool = m_dialog.objectCast<IntersectArcLineDialog>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->setRadius(arcRadius);
@@ -133,7 +131,7 @@ void VToolPointOfContact::setDialog()
  * @param secondPoint second line point.
  * @return point intersection.
  */
-QPointF VToolPointOfContact::FindPoint(const qreal &radius, const QPointF &center, const QPointF &firstPoint,
+QPointF IntersectArcLineTool::FindPoint(const qreal &radius, const QPointF &center, const QPointF &firstPoint,
                                        const QPointF &secondPoint)
 {
     QPointF p1, p2;
@@ -188,18 +186,18 @@ QPointF VToolPointOfContact::FindPoint(const qreal &radius, const QPointF &cente
  * @param doc dom document container.
  * @param data container with variables.
  */
-VToolPointOfContact* VToolPointOfContact::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
+IntersectArcLineTool* IntersectArcLineTool::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                                  VAbstractPattern *doc, VContainer *data)
 {
     SCASSERT(not dialog.isNull())
-    QSharedPointer<DialogPointOfContact> dialogTool = dialog.objectCast<DialogPointOfContact>();
+    QSharedPointer<IntersectArcLineDialog> dialogTool = dialog.objectCast<IntersectArcLineDialog>();
     SCASSERT(not dialogTool.isNull())
     QString radius = dialogTool->getRadius();
     const quint32 center = dialogTool->getCenter();
     const quint32 firstPointId = dialogTool->GetFirstPoint();
     const quint32 secondPointId = dialogTool->GetSecondPoint();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfContact *point = Create(0, radius, center, firstPointId, secondPointId, pointName, 5, 10, true, scene, doc,
+    IntersectArcLineTool *point = Create(0, radius, center, firstPointId, secondPointId, pointName, 5, 10, true, scene, doc,
                                         data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -225,7 +223,7 @@ VToolPointOfContact* VToolPointOfContact::Create(QSharedPointer<DialogTool> dial
  * @param parse parser file mode.
  * @param typeCreation way we create this tool.
  */
-VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &radius, const quint32 &center,
+IntersectArcLineTool* IntersectArcLineTool::Create(const quint32 _id, QString &radius, const quint32 &center,
                                                  const quint32 &firstPointId, const quint32 &secondPointId,
                                                  const QString &pointName, qreal mx, qreal my, bool showPointName,
                                                  VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
@@ -237,7 +235,7 @@ VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &rad
 
     const qreal result = CheckFormula(_id, radius, data);
 
-    QPointF fPoint = VToolPointOfContact::FindPoint(qApp->toPixel(result), static_cast<QPointF>(*centerP),
+    QPointF fPoint = IntersectArcLineTool::FindPoint(qApp->toPixel(result), static_cast<QPointF>(*centerP),
                                                     static_cast<QPointF>(*firstP), static_cast<QPointF>(*secondP));
     quint32 id =  _id;
 
@@ -265,8 +263,8 @@ VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &rad
 
     if (parse == Document::FullParse)
     {
-        VDrawTool::AddRecord(id, Tool::PointOfContact, doc);
-        VToolPointOfContact *point = new VToolPointOfContact(doc, data, id, radius, center,
+        VDrawTool::AddRecord(id, Tool::IntersectArcLine, doc);
+        IntersectArcLineTool *point = new IntersectArcLineTool(doc, data, id, radius, center,
                                                              firstPointId, secondPointId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -280,19 +278,19 @@ VToolPointOfContact* VToolPointOfContact::Create(const quint32 _id, QString &rad
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfContact::ArcCenterPointName() const
+QString IntersectArcLineTool::ArcCenterPointName() const
 {
     return VAbstractTool::data.GetGObject(center)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfContact::FirstPointName() const
+QString IntersectArcLineTool::FirstPointName() const
 {
     return VAbstractTool::data.GetGObject(firstPointId)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfContact::SecondPointName() const
+QString IntersectArcLineTool::SecondPointName() const
 {
     return VAbstractTool::data.GetGObject(secondPointId)->name();
 }
@@ -302,11 +300,11 @@ QString VToolPointOfContact::SecondPointName() const
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolPointOfContact::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
+void IntersectArcLineTool::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogPointOfContact>(event, id);
+        ContextMenu<IntersectArcLineDialog>(event, id);
     }
     catch(const VExceptionToolWasDeleted &error)
     {
@@ -319,7 +317,7 @@ void VToolPointOfContact::showContextMenu(QGraphicsSceneContextMenuEvent *event,
 /**
  * @brief RemoveReferens decrement value of reference.
  */
-void VToolPointOfContact::RemoveReferens()
+void IntersectArcLineTool::RemoveReferens()
 {
     const auto c = VAbstractTool::data.GetGObject(center);
     const auto firstPoint = VAbstractTool::data.GetGObject(firstPointId);
@@ -334,10 +332,10 @@ void VToolPointOfContact::RemoveReferens()
 /**
  * @brief SaveDialog save options into file after change in dialog.
  */
-void VToolPointOfContact::SaveDialog(QDomElement &domElement)
+void IntersectArcLineTool::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointOfContact> dialogTool = m_dialog.objectCast<DialogPointOfContact>();
+    QSharedPointer<IntersectArcLineDialog> dialogTool = m_dialog.objectCast<IntersectArcLineDialog>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrRadius, dialogTool->getRadius());
@@ -347,7 +345,7 @@ void VToolPointOfContact::SaveDialog(QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
+void IntersectArcLineTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VToolSinglePoint::SaveOptions(tag, obj);
 
@@ -359,7 +357,7 @@ void VToolPointOfContact::SaveOptions(QDomElement &tag, QSharedPointer<VGObject>
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::ReadToolAttributes(const QDomElement &domElement)
+void IntersectArcLineTool::ReadToolAttributes(const QDomElement &domElement)
 {
     arcRadius = doc->GetParametrString(domElement, AttrRadius, "");
     center = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
@@ -368,11 +366,11 @@ void VToolPointOfContact::ReadToolAttributes(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::SetVisualization()
+void IntersectArcLineTool::SetVisualization()
 {
     if (not vis.isNull())
     {
-        VisToolPointOfContact *visual = qobject_cast<VisToolPointOfContact *>(vis);
+        IntersectArcLineVisual *visual = qobject_cast<IntersectArcLineVisual *>(vis);
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(firstPointId);
@@ -384,7 +382,7 @@ void VToolPointOfContact::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfContact::makeToolTip() const
+QString IntersectArcLineTool::makeToolTip() const
 {
     const QSharedPointer<VPointF> p1 = VAbstractTool::data.GeometricObject<VPointF>(firstPointId);
     const QSharedPointer<VPointF> p2 = VAbstractTool::data.GeometricObject<VPointF>(secondPointId);
@@ -418,13 +416,13 @@ QString VToolPointOfContact::makeToolTip() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfContact::GetSecondPointId() const
+quint32 IntersectArcLineTool::GetSecondPointId() const
 {
     return secondPointId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::SetSecondPointId(const quint32 &value)
+void IntersectArcLineTool::SetSecondPointId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -436,19 +434,19 @@ void VToolPointOfContact::SetSecondPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::ShowVisualization(bool show)
+void IntersectArcLineTool::ShowVisualization(bool show)
 {
-    ShowToolVisualization<VisToolPointOfContact>(show);
+    ShowToolVisualization<IntersectArcLineVisual>(show);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfContact::GetFirstPointId() const
+quint32 IntersectArcLineTool::GetFirstPointId() const
 {
     return firstPointId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::SetFirstPointId(const quint32 &value)
+void IntersectArcLineTool::SetFirstPointId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -460,13 +458,13 @@ void VToolPointOfContact::SetFirstPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfContact::getCenter() const
+quint32 IntersectArcLineTool::getCenter() const
 {
     return center;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::setCenter(const quint32 &value)
+void IntersectArcLineTool::setCenter(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -478,7 +476,7 @@ void VToolPointOfContact::setCenter(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VFormula VToolPointOfContact::getArcRadius() const
+VFormula IntersectArcLineTool::getArcRadius() const
 {
     VFormula radius(arcRadius, this->getData());
     radius.setCheckZero(true);
@@ -489,7 +487,7 @@ VFormula VToolPointOfContact::getArcRadius() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfContact::setArcRadius(const VFormula &value)
+void IntersectArcLineTool::setArcRadius(const VFormula &value)
 {
     if (value.error() == false)
     {

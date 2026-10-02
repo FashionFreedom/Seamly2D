@@ -2336,12 +2336,12 @@
     <message>
         <source>bustpoint_to_bustpoint_halter</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>ponto_busto_para_ponto_busto_halter</translation>
+        <translation>ponto_busto_para_ponto_busto_pela_nuca</translation>
     </message>
     <message>
         <source>Bustpoint to Bustpoint Halter</source>
         <comment>Full measurement name.</comment>
-        <translation>Ponto do busto a ponto do busto, halter</translation>
+        <translation>Ponto do busto a ponto do busto, pela nuca</translation>
     </message>
     <message>
         <source>From Bustpoint around Neck Back down to other Bustpoint.</source>
@@ -3281,12 +3281,12 @@
     <message>
         <source>waist_to_waist_halter</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>cintura_para_cintura_halter</translation>
+        <translation>cintura_para_cintura_pela_nuca</translation>
     </message>
     <message>
         <source>Waist to Waist Halter, around Neck Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Cintura a cintura halter, contornando a nuca</translation>
+        <translation>Cintura a cintura, contornando a nuca</translation>
     </message>
     <message>
         <source>From Waist level around Neck Back to Waist level.</source>
