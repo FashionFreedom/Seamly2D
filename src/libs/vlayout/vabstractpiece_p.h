@@ -69,7 +69,7 @@ public:
     VAbstractPieceData()
         : m_name(tr("Piece"))
         , m_color("white")
-        , m_fill()
+        ,  m_fill("nobrush")
         , m_pieceLock(false)
         , m_forbidFlipping(false)
         , m_seamAllowance(false)
