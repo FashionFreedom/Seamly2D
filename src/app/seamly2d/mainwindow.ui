@@ -321,6 +321,7 @@
      <addaction name="importImage_Action"/>
     </widget>
     <addaction name="newDraft_Action"/>
+    <addaction name="duplicateDraft_Action"/>
     <addaction name="renameDraft_Action"/>
     <addaction name="delete_draft_action"/>
     <addaction name="separator"/>
@@ -2825,6 +2826,27 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Shift+N</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="duplicateDraft_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/draw.png</normaloff>:/icon/32x32/draw.png</iconset>
+   </property>
+   <property name="text">
+    <string>Duplicate Draft Block</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy the current draft block into a new draft block (Ctrl+D)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+D</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>

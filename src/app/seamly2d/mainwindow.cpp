@@ -89,6 +89,7 @@
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/tools/nodeDetails/anchorpoint_tool.h"
 #include "../vtools/tools/nodeDetails/internal_path_tool.h"
+#include "../vtools/undocommands/add_draftblock.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/rename_draftblock.h"
 #include "../vtools/undocommands/delete_draftblock.h"
@@ -419,6 +420,59 @@ void MainWindow::addDraftBlock(const QString &blockName)
 
     // Update the groups dock.
     groupsWidget->updateGroups();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief duplicateDraftBlock Create a copy of the current draft block.
+///
+/// The copy holds the same tools as the draft block it was made from, but with objects of its own, so that it can be
+/// reworked without touching the block it was copied from. It is placed beside the existing draft blocks.
+
+void MainWindow::duplicateDraftBlock()
+{
+    if (draftBlockComboBox->count() == 0)
+    {
+        return;
+    }
+
+    const QString activeDraftBlock = doc->getActiveDraftBlockName();
+    const QString draftBlockName = createDraftBlockName(tr("%1 copy").arg(activeDraftBlock));
+    if (draftBlockName.isEmpty())
+    {
+        qCDebug(vMainWindow, "Duplicating the draft block was canceled.");
+        return;
+    }
+
+    emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection.
+
+    QMap<quint32, quint32> idMap;
+    const QDomElement block = doc->duplicateDraftBlock(activeDraftBlock, draftBlockName, draftBlockStartPosition(),
+                                                       idMap);
+    if (block.isNull())
+    {
+        qCWarning(vMainWindow, "Error duplicating draft block %s.", qUtf8Printable(activeDraftBlock));
+        QMessageBox::critical(this, tr("Duplicate Draft Block"),
+                              tr("Could not duplicate the draft block %1.").arg(activeDraftBlock), QMessageBox::Ok);
+        return;
+    }
+
+    AddDraftBlock *command = new AddDraftBlock(block, doc, draftBlockName);
+    connect(command, &AddDraftBlock::ClearScene, doc, &VAbstractPattern::ClearScene);
+    connect(command, &AddDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
+    qApp->getUndoStack()->push(command);
+
+    // The first redo of the command only asks for a lite parse, the tools of the copy still have to be created.
+    doc->NeedFullParsing();
+
+    // Now that the objects of the copy exist, its formulas can be made to use them instead of the source objects.
+    if (doc->renameDuplicatedObjects(activeDraftBlock, draftBlockName, idMap))
+    {
+        doc->NeedFullParsing();
+    }
+
+    changeDraftBlockGlobally(draftBlockName);
+    setWidgetsEnabled(true);
+    ui->view->zoomToFit();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4415,6 +4469,7 @@ void MainWindow::Clear()
     ui->pieceMode_Action->setEnabled(false);
     ui->layoutMode_Action->setEnabled(false);
     ui->newDraft_Action->setEnabled(false);
+    ui->duplicateDraft_Action->setEnabled(false);
     ui->renameDraft_Action->setEnabled(false);
     ui->delete_draft_action->setEnabled(false);
 
@@ -4777,6 +4832,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
+    ui->duplicateDraft_Action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 0));
     ui->renameDraft_Action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 0));
     ui->delete_draft_action->setEnabled(enable && draftStage && (doc->draftBlockCount() > 1));
 
@@ -6006,6 +6062,8 @@ void MainWindow::createActions()
 
         addDraftBlock(draftBlockName);
     });
+
+    connect(ui->duplicateDraft_Action, &QAction::triggered, this, &MainWindow::duplicateDraftBlock);
 
     connect(ui->delete_draft_action, &QAction::triggered, this,&MainWindow::deleteDraftBlock);
 
