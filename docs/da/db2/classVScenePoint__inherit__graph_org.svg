@@ -189,225 +189,225 @@
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d0/db5/classDoubleLinePointTool.html" target="_top" xlink:title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines.">
-<polygon fill="white" stroke="#666666" points="0,-391.5 0,-701.5 143,-701.5 143,-391.5 0,-391.5"/>
-<text text-anchor="middle" x="71.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoubleLinePointTool</text>
-<polyline fill="none" stroke="#666666" points="0,-682.5 143,-682.5 "/>
-<text text-anchor="start" x="8" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00"># firstPointId</text>
-<text text-anchor="start" x="8" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00"># secondPointId</text>
-<text text-anchor="start" x="8" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00"># firstLine</text>
-<text text-anchor="start" x="8" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00"># secondLine</text>
-<text text-anchor="start" x="8" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
-<polyline fill="none" stroke="#666666" points="0,-619.5 143,-619.5 "/>
-<text text-anchor="start" x="8" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleLinePointTool()</text>
-<text text-anchor="start" x="8" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DoubleLinePointTool()</text>
-<text text-anchor="start" x="8" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="8" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="8" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ point1Name()</text>
-<text text-anchor="start" x="8" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ point2Name()</text>
-<text text-anchor="start" x="8" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPointId()</text>
-<text text-anchor="start" x="8" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPointId()</text>
-<text text-anchor="start" x="8" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPointId()</text>
-<text text-anchor="start" x="8" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPointId()</text>
-<text text-anchor="start" x="8" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
-<text text-anchor="start" x="8" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
-<text text-anchor="start" x="8" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
-<text text-anchor="start" x="8" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="8" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
-<text text-anchor="start" x="8" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="8" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="8" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="8" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
-<text text-anchor="start" x="8" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<g id="a_node6"><a xlink:href="../../d2/d5d/classBasePointTool.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="0,-391.5 0,-701.5 135,-701.5 135,-391.5 0,-391.5"/>
+<text text-anchor="middle" x="67.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasePointTool</text>
+<polyline fill="none" stroke="#666666" points="0,-682.5 135,-682.5 "/>
+<text text-anchor="start" x="8" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="8" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_draft_block_name</text>
+<polyline fill="none" stroke="#666666" points="0,-652.5 135,-652.5 "/>
+<text text-anchor="start" x="8" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~BasePointTool()</text>
+<text text-anchor="start" x="8" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="8" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="8" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="8" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointPos()</text>
+<text text-anchor="start" x="8" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointPos()</text>
+<text text-anchor="start" x="8" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="8" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="8" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
+<text text-anchor="start" x="8" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
+<text text-anchor="start" x="8" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
+<text text-anchor="start" x="8" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
+<text text-anchor="start" x="8" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="8" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="8" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
+<text text-anchor="start" x="8" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
+<text text-anchor="start" x="8" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
+<text text-anchor="start" x="8" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="8" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="8" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="8" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="8" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="8" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; BasePointTool()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M905.07,-771.37C904.88,-771.25 904.69,-771.12 904.5,-771 764.09,-679.62 289.04,-830.65 151.5,-735 138.57,-726.01 127.72,-714.48 118.61,-701.56"/>
-<polygon fill="none" stroke="#63b8ff" points="903.21,-774.35 913.37,-777.34 907.29,-768.66 903.21,-774.35"/>
+<path fill="none" stroke="#63b8ff" d="M905.07,-771.37C904.88,-771.25 904.69,-771.12 904.5,-771 762.58,-678.69 281.63,-832.88 143.5,-735 130.89,-726.06 120.37,-714.66 111.59,-701.9"/>
+<polygon fill="none" stroke="#63b8ff" points="903.21,-774.35 913.38,-777.34 907.29,-768.66 903.21,-774.35"/>
 </g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d6/d01/classIntersectArcLineTool.html" target="_top" xlink:title="The IntersectArcLineTool class tool for creation point intersection arc ad line.">
-<polygon fill="white" stroke="#666666" points="161,-364 161,-729 298,-729 298,-364 161,-364"/>
-<text text-anchor="middle" x="229.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectArcLineTool</text>
-<polyline fill="none" stroke="#666666" points="161,-710 298,-710 "/>
-<text text-anchor="start" x="169" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="169" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcRadius</text>
-<text text-anchor="start" x="169" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; center</text>
-<text text-anchor="start" x="169" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
-<text text-anchor="start" x="169" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
-<polyline fill="none" stroke="#666666" points="161,-647 298,-647 "/>
-<text text-anchor="start" x="169" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="169" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="169" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcCenterPointName()</text>
-<text text-anchor="start" x="169" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
-<text text-anchor="start" x="169" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
-<text text-anchor="start" x="169" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcRadius()</text>
-<text text-anchor="start" x="169" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcRadius()</text>
-<text text-anchor="start" x="169" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
-<text text-anchor="start" x="169" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
-<text text-anchor="start" x="169" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
-<text text-anchor="start" x="169" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
-<text text-anchor="start" x="169" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
-<text text-anchor="start" x="169" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
-<text text-anchor="start" x="169" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="169" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="169" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="169" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="169" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="169" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="169" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="169" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="169" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="169" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="169" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="169" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectArcLineTool()</text>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="../../d0/db5/classDoubleLinePointTool.html" target="_top" xlink:title="The DoubleLinePointTool class parent for all tools what creates a point with 2 lines.">
+<polygon fill="white" stroke="#666666" points="153,-391.5 153,-701.5 296,-701.5 296,-391.5 153,-391.5"/>
+<text text-anchor="middle" x="224.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoubleLinePointTool</text>
+<polyline fill="none" stroke="#666666" points="153,-682.5 296,-682.5 "/>
+<text text-anchor="start" x="161" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00"># firstPointId</text>
+<text text-anchor="start" x="161" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00"># secondPointId</text>
+<text text-anchor="start" x="161" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00"># firstLine</text>
+<text text-anchor="start" x="161" y="-637.5" font-family="Helvetica,sans-Serif" font-size="10.00"># secondLine</text>
+<text text-anchor="start" x="161" y="-626.5" font-family="Helvetica,sans-Serif" font-size="10.00"># lineColor</text>
+<polyline fill="none" stroke="#666666" points="153,-619.5 296,-619.5 "/>
+<text text-anchor="start" x="161" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DoubleLinePointTool()</text>
+<text text-anchor="start" x="161" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DoubleLinePointTool()</text>
+<text text-anchor="start" x="161" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="161" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="161" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ point1Name()</text>
+<text text-anchor="start" x="161" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ point2Name()</text>
+<text text-anchor="start" x="161" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPointId()</text>
+<text text-anchor="start" x="161" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPointId()</text>
+<text text-anchor="start" x="161" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPointId()</text>
+<text text-anchor="start" x="161" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPointId()</text>
+<text text-anchor="start" x="161" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
+<text text-anchor="start" x="161" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
+<text text-anchor="start" x="161" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Disable()</text>
+<text text-anchor="start" x="161" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
+<text text-anchor="start" x="161" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RefreshGeometry()</text>
+<text text-anchor="start" x="161" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="161" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="161" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
+<text text-anchor="start" x="161" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
+<text text-anchor="start" x="161" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node5&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M905.07,-771.38C904.88,-771.25 904.69,-771.13 904.5,-771 793.37,-697.7 414.8,-812.42 306.5,-735 303.64,-732.95 300.88,-730.78 298.23,-728.49"/>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<path fill="none" stroke="#63b8ff" d="M905.07,-771.38C904.88,-771.25 904.69,-771.13 904.5,-771 792.99,-697.46 413.7,-811.93 304.5,-735 291.77,-726.03 281.05,-714.61 272.03,-701.84"/>
 <polygon fill="none" stroke="#63b8ff" points="903.19,-774.34 913.34,-777.39 907.31,-768.68 903.19,-774.34"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d9/d63/classIntersectCircleTangentTool.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="316,-375 316,-718 475,-718 475,-375 316,-375"/>
-<text text-anchor="middle" x="395.5" y="-706" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCircleTangentTool</text>
-<polyline fill="none" stroke="#666666" points="316,-699 475,-699 "/>
-<text text-anchor="start" x="324" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="324" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleCenterId</text>
-<text text-anchor="start" x="324" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
-<text text-anchor="start" x="324" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleRadius</text>
-<text text-anchor="start" x="324" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="316,-636 475,-636 "/>
-<text text-anchor="start" x="324" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="324" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="324" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
-<text text-anchor="start" x="324" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ CircleCenterPointName()</text>
-<text text-anchor="start" x="324" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
-<text text-anchor="start" x="324" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
-<text text-anchor="start" x="324" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleCenterId()</text>
-<text text-anchor="start" x="324" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleCenterId()</text>
-<text text-anchor="start" x="324" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleRadius()</text>
-<text text-anchor="start" x="324" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleRadius()</text>
-<text text-anchor="start" x="324" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="324" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="324" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="324" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="324" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="324" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="324" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="324" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="324" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="324" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="324" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="324" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="324" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCircleTangentTool()</text>
+<g id="a_node9"><a xlink:href="../../d6/d01/classIntersectArcLineTool.html" target="_top" xlink:title="The IntersectArcLineTool class tool for creation point intersection arc ad line.">
+<polygon fill="white" stroke="#666666" points="314,-364 314,-729 451,-729 451,-364 314,-364"/>
+<text text-anchor="middle" x="382.5" y="-717" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectArcLineTool</text>
+<polyline fill="none" stroke="#666666" points="314,-710 451,-710 "/>
+<text text-anchor="start" x="322" y="-698" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="322" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; arcRadius</text>
+<text text-anchor="start" x="322" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; center</text>
+<text text-anchor="start" x="322" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstPointId</text>
+<text text-anchor="start" x="322" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondPointId</text>
+<polyline fill="none" stroke="#666666" points="314,-647 451,-647 "/>
+<text text-anchor="start" x="322" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="322" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="322" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ ArcCenterPointName()</text>
+<text text-anchor="start" x="322" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstPointName()</text>
+<text text-anchor="start" x="322" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondPointName()</text>
+<text text-anchor="start" x="322" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ getArcRadius()</text>
+<text text-anchor="start" x="322" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ setArcRadius()</text>
+<text text-anchor="start" x="322" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ getCenter()</text>
+<text text-anchor="start" x="322" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCenter()</text>
+<text text-anchor="start" x="322" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstPointId()</text>
+<text text-anchor="start" x="322" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstPointId()</text>
+<text text-anchor="start" x="322" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondPointId()</text>
+<text text-anchor="start" x="322" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondPointId()</text>
+<text text-anchor="start" x="322" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="322" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="322" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="322" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="322" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="322" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="322" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="322" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="322" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="322" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
+<text text-anchor="start" x="322" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="322" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectArcLineTool()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node5&#45;&gt;Node9</title>
-<path fill="none" stroke="#63b8ff" d="M905.06,-771.38C904.88,-771.26 904.69,-771.13 904.5,-771 826.78,-718.32 560.54,-788.69 483.5,-735 476.42,-730.07 469.89,-724.41 463.88,-718.21"/>
-<polygon fill="none" stroke="#63b8ff" points="903.16,-774.33 913.27,-777.5 907.34,-768.72 903.16,-774.33"/>
+<path fill="none" stroke="#63b8ff" d="M905.06,-771.38C904.88,-771.26 904.69,-771.13 904.5,-771 822.25,-715.52 539.61,-793.52 459.5,-735 456.66,-732.92 453.92,-730.72 451.29,-728.41"/>
+<polygon fill="none" stroke="#63b8ff" points="903.16,-774.33 913.28,-777.48 907.33,-768.71 903.16,-774.33"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../dc/d9f/classIntersectCirclesTool.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="493,-358.5 493,-734.5 678,-734.5 678,-358.5 493,-358.5"/>
-<text text-anchor="middle" x="585.5" y="-722.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesTool</text>
-<polyline fill="none" stroke="#666666" points="493,-715.5 678,-715.5 "/>
-<text text-anchor="start" x="501" y="-703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="501" y="-692.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleCenterId</text>
-<text text-anchor="start" x="501" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleCenterId</text>
-<text text-anchor="start" x="501" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleRadius</text>
-<text text-anchor="start" x="501" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleRadius</text>
-<text text-anchor="start" x="501" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
-<polyline fill="none" stroke="#666666" points="493,-641.5 678,-641.5 "/>
-<text text-anchor="start" x="501" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="501" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="501" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstCircleCenterPointName()</text>
-<text text-anchor="start" x="501" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondCircleCenterPointName()</text>
-<text text-anchor="start" x="501" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
-<text text-anchor="start" x="501" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
-<text text-anchor="start" x="501" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
-<text text-anchor="start" x="501" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
-<text text-anchor="start" x="501" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
-<text text-anchor="start" x="501" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
-<text text-anchor="start" x="501" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
-<text text-anchor="start" x="501" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
-<text text-anchor="start" x="501" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="501" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="501" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="501" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="501" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="501" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
-<text text-anchor="start" x="501" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="501" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="501" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="501" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="501" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="501" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="501" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCirclesTool()</text>
+<g id="a_node10"><a xlink:href="../../d9/d63/classIntersectCircleTangentTool.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="469,-375 469,-718 628,-718 628,-375 469,-375"/>
+<text text-anchor="middle" x="548.5" y="-706" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCircleTangentTool</text>
+<polyline fill="none" stroke="#666666" points="469,-699 628,-699 "/>
+<text text-anchor="start" x="477" y="-687" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="477" y="-676" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleCenterId</text>
+<text text-anchor="start" x="477" y="-665" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; tangentPointId</text>
+<text text-anchor="start" x="477" y="-654" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circleRadius</text>
+<text text-anchor="start" x="477" y="-643" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="469,-636 628,-636 "/>
+<text text-anchor="start" x="477" y="-624" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="477" y="-613" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="477" y="-602" font-family="Helvetica,sans-Serif" font-size="10.00">+ TangentPointName()</text>
+<text text-anchor="start" x="477" y="-591" font-family="Helvetica,sans-Serif" font-size="10.00">+ CircleCenterPointName()</text>
+<text text-anchor="start" x="477" y="-580" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetTangentPointId()</text>
+<text text-anchor="start" x="477" y="-569" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetTangentPointId()</text>
+<text text-anchor="start" x="477" y="-558" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleCenterId()</text>
+<text text-anchor="start" x="477" y="-547" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleCenterId()</text>
+<text text-anchor="start" x="477" y="-536" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCircleRadius()</text>
+<text text-anchor="start" x="477" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetCircleRadius()</text>
+<text text-anchor="start" x="477" y="-514" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="477" y="-503" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="477" y="-492" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="477" y="-481" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="477" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="477" y="-459" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="477" y="-448" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="477" y="-437" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="477" y="-426" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="477" y="-415" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="477" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="477" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="477" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCircleTangentTool()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node5&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M905.65,-771.86C905.27,-771.57 904.88,-771.28 904.5,-771 825.43,-712.76 766.41,-792.07 686.5,-735 683.64,-732.96 680.86,-730.81 678.14,-728.57"/>
-<polygon fill="none" stroke="#63b8ff" points="903.48,-774.6 913.45,-778.18 907.89,-769.16 903.48,-774.6"/>
+<path fill="none" stroke="#63b8ff" d="M905.05,-771.4C904.87,-771.26 904.69,-771.13 904.5,-771 806.67,-701.19 733.41,-806.07 636.5,-735 629.69,-730 623.38,-724.34 617.55,-718.18"/>
+<polygon fill="none" stroke="#63b8ff" points="903.09,-774.31 913.13,-777.7 907.4,-768.79 903.09,-774.31"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../de/ddd/classVToolBasePoint.html" target="_top" xlink:title="The VToolBasePoint class tool for creation pattern base point. Only base point can move....">
-<polygon fill="white" stroke="#666666" points="696,-391.5 696,-701.5 831,-701.5 831,-391.5 696,-391.5"/>
-<text text-anchor="middle" x="763.5" y="-689.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolBasePoint</text>
-<polyline fill="none" stroke="#666666" points="696,-682.5 831,-682.5 "/>
-<text text-anchor="start" x="704" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<text text-anchor="start" x="704" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; draftBlockName</text>
-<polyline fill="none" stroke="#666666" points="696,-652.5 831,-652.5 "/>
-<text text-anchor="start" x="704" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VToolBasePoint()</text>
-<text text-anchor="start" x="704" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="704" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="704" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="704" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasePointPos()</text>
-<text text-anchor="start" x="704" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBasePointPos()</text>
-<text text-anchor="start" x="704" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="704" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FullUpdateFromFile()</text>
-<text text-anchor="start" x="704" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableToolMove()</text>
-<text text-anchor="start" x="704" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"># AddToFile()</text>
-<text text-anchor="start" x="704" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00"># itemChange()</text>
-<text text-anchor="start" x="704" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00"># deleteTool()</text>
-<text text-anchor="start" x="704" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="704" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverEnterEvent()</text>
-<text text-anchor="start" x="704" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00"># hoverLeaveEvent()</text>
-<text text-anchor="start" x="704" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
-<text text-anchor="start" x="704" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
-<text text-anchor="start" x="704" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="704" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="704" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="704" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># makeToolTip()</text>
-<text text-anchor="start" x="704" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="704" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; VToolBasePoint()</text>
+<g id="a_node11"><a xlink:href="../../dc/d9f/classIntersectCirclesTool.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="646,-358.5 646,-734.5 831,-734.5 831,-358.5 646,-358.5"/>
+<text text-anchor="middle" x="738.5" y="-722.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesTool</text>
+<polyline fill="none" stroke="#666666" points="646,-715.5 831,-715.5 "/>
+<text text-anchor="start" x="654" y="-703.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<text text-anchor="start" x="654" y="-692.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleCenterId</text>
+<text text-anchor="start" x="654" y="-681.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleCenterId</text>
+<text text-anchor="start" x="654" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; firstCircleRadius</text>
+<text text-anchor="start" x="654" y="-659.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; secondCircleRadius</text>
+<text text-anchor="start" x="654" y="-648.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; crossPoint</text>
+<polyline fill="none" stroke="#666666" points="646,-641.5 831,-641.5 "/>
+<text text-anchor="start" x="654" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="654" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="654" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FirstCircleCenterPointName()</text>
+<text text-anchor="start" x="654" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SecondCircleCenterPointName()</text>
+<text text-anchor="start" x="654" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
+<text text-anchor="start" x="654" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
+<text text-anchor="start" x="654" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
+<text text-anchor="start" x="654" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
+<text text-anchor="start" x="654" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
+<text text-anchor="start" x="654" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
+<text text-anchor="start" x="654" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
+<text text-anchor="start" x="654" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
+<text text-anchor="start" x="654" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="654" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="654" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="654" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="654" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="654" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindPoint()</text>
+<text text-anchor="start" x="654" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="654" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="654" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="654" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="654" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="654" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="654" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IntersectCirclesTool()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node5&#45;&gt;Node11</title>
-<path fill="none" stroke="#63b8ff" d="M906.47,-773.09C905.82,-772.39 905.16,-771.69 904.5,-771 881.98,-747.38 862.12,-759.45 840.5,-735 831.53,-724.85 823.51,-713.51 816.36,-701.57"/>
+<path fill="none" stroke="#63b8ff" d="M906.47,-773.09C905.82,-772.39 905.16,-771.69 904.5,-771 881.98,-747.38 863.41,-758.24 840.5,-735 837.38,-731.83 834.32,-728.55 831.34,-725.17"/>
 <polygon fill="none" stroke="#63b8ff" points="904.06,-775.66 913.32,-780.82 909.3,-771.01 904.06,-775.66"/>
 </g>
 <!-- Node12 -->
@@ -714,37 +714,37 @@
 <path fill="none" stroke="#63b8ff" d="M1093.45,-943.98C1287.71,-912.57 1721.48,-833.17 1831.5,-735 1834.89,-731.97 1838.14,-728.77 1841.23,-725.41"/>
 <polygon fill="none" stroke="#63b8ff" points="1092.86,-940.53 1083.54,-945.58 1093.97,-947.44 1092.86,-940.53"/>
 </g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="../../df/d11/classPointIntersectXYTool.html" target="_top" xlink:title="The PointIntersectXYTool class tool for creation point intersection two lines.">
-<polygon fill="white" stroke="#666666" points="6,-61 6,-261 137,-261 137,-61 6,-61"/>
-<text text-anchor="middle" x="71.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">PointIntersectXYTool</text>
-<polyline fill="none" stroke="#666666" points="6,-242 137,-242 "/>
-<text text-anchor="start" x="14" y="-230" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
-<polyline fill="none" stroke="#666666" points="6,-223 137,-223 "/>
-<text text-anchor="start" x="14" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
-<text text-anchor="start" x="14" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="14" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ firstPointName()</text>
-<text text-anchor="start" x="14" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ secondPointName()</text>
-<text text-anchor="start" x="14" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
-<text text-anchor="start" x="14" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="14" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
-<text text-anchor="start" x="14" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
-<text text-anchor="start" x="14" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
-<text text-anchor="start" x="14" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
-<text text-anchor="start" x="14" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
-<text text-anchor="start" x="14" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
-<text text-anchor="start" x="14" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
-<text text-anchor="start" x="14" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PointIntersectXYTool()</text>
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="../../df/d11/classPointIntersectXYTool.html" target="_top" xlink:title="The PointIntersectXYTool class tool for creation point intersection two lines.">
+<polygon fill="white" stroke="#666666" points="159,-61 159,-261 290,-261 290,-61 159,-61"/>
+<text text-anchor="middle" x="224.5" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">PointIntersectXYTool</text>
+<polyline fill="none" stroke="#666666" points="159,-242 290,-242 "/>
+<text text-anchor="start" x="167" y="-230" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToolType</text>
+<polyline fill="none" stroke="#666666" points="159,-223 290,-223 "/>
+<text text-anchor="start" x="167" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDialog()</text>
+<text text-anchor="start" x="167" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="167" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">+ firstPointName()</text>
+<text text-anchor="start" x="167" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">+ secondPointName()</text>
+<text text-anchor="start" x="167" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowVisualization()</text>
+<text text-anchor="start" x="167" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="167" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ Create()</text>
+<text text-anchor="start" x="167" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveReferens()</text>
+<text text-anchor="start" x="167" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveDialog()</text>
+<text text-anchor="start" x="167" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveOptions()</text>
+<text text-anchor="start" x="167" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"># ReadToolAttributes()</text>
+<text text-anchor="start" x="167" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVisualization()</text>
+<text text-anchor="start" x="167" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00"># showContextMenu()</text>
+<text text-anchor="start" x="167" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PointIntersectXYTool()</text>
 </a>
 </g>
 </g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="#63b8ff" d="M71.5,-381.36C71.5,-340.43 71.5,-297.79 71.5,-261.1"/>
-<polygon fill="none" stroke="#63b8ff" points="68,-381.45 71.5,-391.45 75,-381.45 68,-381.45"/>
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge7" class="edge">
+<title>Node7&#45;&gt;Node8</title>
+<path fill="none" stroke="#63b8ff" d="M224.5,-381.36C224.5,-340.43 224.5,-297.79 224.5,-261.1"/>
+<polygon fill="none" stroke="#63b8ff" points="221,-381.45 224.5,-391.45 228,-381.45 221,-381.45"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">

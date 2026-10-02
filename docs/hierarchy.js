@@ -331,6 +331,7 @@ var hierarchy =
       [ "DialogTool", "d2/d7b/classDialogTool.html", [
         [ "AddToGroupDialog", "d1/dde/classAddToGroupDialog.html", null ],
         [ "AnchorPointDialog", "d6/dfc/classAnchorPointDialog.html", null ],
+        [ "BasePointDialog", "d7/d42/classBasePointDialog.html", null ],
         [ "DialogAlongLine", "dd/d63/classDialogAlongLine.html", null ],
         [ "DialogArc", "db/d4d/classDialogArc.html", null ],
         [ "DialogArcWithLength", "d3/d84/classDialogArcWithLength.html", null ],
@@ -356,7 +357,6 @@ var hierarchy =
         [ "DialogPointOfIntersectionCurves", "da/d11/classDialogPointOfIntersectionCurves.html", null ],
         [ "DialogRotation", "d5/dc7/classDialogRotation.html", null ],
         [ "DialogShoulderPoint", "d1/dd5/classDialogShoulderPoint.html", null ],
-        [ "DialogSinglePoint", "d5/d44/classDialogSinglePoint.html", null ],
         [ "DialogSpline", "de/d10/classDialogSpline.html", null ],
         [ "DialogSplinePath", "df/d5e/classDialogSplinePath.html", null ],
         [ "DialogTriangle", "d1/d40/classDialogTriangle.html", null ],
@@ -431,13 +431,13 @@ var hierarchy =
         [ "VNodePoint", "d6/d7a/classVNodePoint.html", null ],
         [ "VSimplePoint", "d1/d6b/classVSimplePoint.html", null ],
         [ "VToolSinglePoint", "da/dbc/classVToolSinglePoint.html", [
+          [ "BasePointTool", "d2/d5d/classBasePointTool.html", null ],
           [ "DoubleLinePointTool", "d0/db5/classDoubleLinePointTool.html", [
             [ "PointIntersectXYTool", "df/d11/classPointIntersectXYTool.html", null ]
           ] ],
           [ "IntersectArcLineTool", "d6/d01/classIntersectArcLineTool.html", null ],
           [ "IntersectCircleTangentTool", "d9/d63/classIntersectCircleTangentTool.html", null ],
           [ "IntersectCirclesTool", "dc/d9f/classIntersectCirclesTool.html", null ],
-          [ "VToolBasePoint", "de/ddd/classVToolBasePoint.html", null ],
           [ "VToolCut", "d0/d8a/classVToolCut.html", [
             [ "VToolCutArc", "d1/d98/classVToolCutArc.html", null ],
             [ "VToolCutSpline", "d9/d86/classVToolCutSpline.html", null ],
