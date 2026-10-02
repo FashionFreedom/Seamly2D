@@ -362,7 +362,7 @@ macx{
         # we need --force as seamlyme is already signed, but we need to resign it
         QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
-        QMAKE_POST_LINK += codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }
 }
 
@@ -372,5 +372,5 @@ win32-msvc{
 }
 win32-arm64-msvc{
     qtPrepareTool(WINDEPLOYQT, windeployqt)
-    QMAKE_POST_LINK += $$WINDEPLOYQT --qtpaths $$shell_path($$[QT_INSTALL_BINS]/qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
+    QMAKE_POST_LINK += $$WINDEPLOYQT --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
 }

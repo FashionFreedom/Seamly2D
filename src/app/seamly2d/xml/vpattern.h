@@ -108,7 +108,7 @@ public:
     QStringList    GetCurrentAlphabet() const;
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const override;
-    virtual QString GenerateSuffix(const QString &type) const override;
+    virtual QString generateSuffix(const QString &type) const override;
 
     bool IsDefCustom() const;
     void SetDefCustom(bool value);
@@ -201,7 +201,7 @@ private:
     void ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
     void ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
     void ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
-    void ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
+    void ParseToolIntersectArcLine(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
     void ParseNodePoint(const QDomElement &domElement, const Document &parse);
     void ParseAnchorPoint(const QDomElement &domElement, const Document &parse);
     void ParseToolHeight(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);

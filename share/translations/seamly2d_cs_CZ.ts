@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs">
+<TS version="2.1" language="cs_CZ">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Název:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Přidat novou skupinu do seznamu</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Jméno existuje</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Akci nelze dokončit, protože název skupiny již existuje.</translation>
     </message>
 </context>
 <context>
@@ -498,10 +510,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Vybrat druhý bod čáry</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Chyba</translation>
@@ -680,10 +684,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Upravit poloměr</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Vybrat druhý bod úhlu</translation>
@@ -917,6 +913,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Tloušťka čáry:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Průvodce vzorci</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Vzorec délky oblouku křivky (použije se při vyplnění pole)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Upravit délku křivky</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Délka nemůže být záporná</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Vybrat bod osy</translation>
@@ -1043,10 +1095,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Upravit délku</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Upravit délku</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Upravit délku</translation>
@@ -1303,10 +1343,6 @@ p, li { white-space: pre-wrap; }
         <translation>Výpočet</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávou&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Poloměr2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Upravit úhel</translation>
@@ -1696,10 +1728,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>První bod čáry</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Vybrat druhý bod čáry</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Vybrat bod středu oblouku</translation>
@@ -2513,10 +2533,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Vybrat první bod čáry</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Souřadnice na listu</translation>
@@ -2687,10 +2703,6 @@ p, li { white-space: pre-wrap; }
         <translation>Hodnota</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávou&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Upravit úhel prvního kontrolního bodu</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation>Geometrie</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Vzorec délky oblouku křivky (použije se při vyplnění pole)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Upravit délku křivky</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2792,10 +2852,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Hodnota</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávou&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3430,6 +3486,10 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     <message>
         <source>Lineweight:</source>
         <translation>Tloušťka čáry:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Skupina</translation>
     </message>
 </context>
 <context>
@@ -5004,10 +5064,6 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
         <translation>Hodnota</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávou&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Výpočet</translation>
     </message>
@@ -5088,10 +5144,6 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
     <message>
         <source>Formula wizard</source>
         <translation>Průvodce vzorci</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávou&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7128,6 +7180,22 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Chyba při vytváření záložní kopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Smazat blok konceptu</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Vymazat</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Potvrdit smazání</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Opravdu chcete smazat základní bod a aktuální blok konceptu?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8011,10 +8079,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Duplikát</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Zářez</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8229,6 +8293,26 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Vyberte objekty hlavní cesty ve směru hodinových ručiček. Pomocí klávesy &lt;b&gt;SHIFT&lt;/b&gt; obraťte směr křivky nebo klávesou &lt;b&gt;CTRL&lt;/b&gt; zachovejte směr křivky.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Zobrazit nástřih střihové čáry</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Zobrazit nástřih švové čáry</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Nastavit jako výchozí nástřih</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Upravit nástřih</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Odstranit nástřih</translation>
     </message>
 </context>
 <context>
@@ -8769,38 +8853,6 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Žádný</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Milimetry</translation>
     </message>
@@ -8931,6 +8983,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source> per file</source>
         <translation> na soubor</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Vzhled</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Téma:</translation>
     </message>
 </context>
 <context>
@@ -9227,6 +9287,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Automatické vymazání vzorce</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Používejte nativní dialogová okna</translation>
     </message>
 </context>
 <context>
@@ -9983,6 +10047,30 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Vítejte</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Vzhled</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Téma:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Míry</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogy</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Používejte nativní dialogová okna</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10050,7 +10138,7 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Přiložte soubor 3DLook k e-mailu a odešlete jej na adresu convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Obdržíte e-mail s převedeným souborem, který pak můžete jako obvykle načíst do SeamlyME.</translation>
     </message>
     <message>
@@ -10132,6 +10220,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Téma:</translation>
     </message>
 </context>
 <context>
@@ -10231,6 +10323,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Pozitivní signál</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Téma:</translation>
     </message>
 </context>
 <context>
@@ -10918,6 +11014,118 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Dialogová navigace</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Rozbalovací seznam</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tabulátor</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Přesunout zaměření na rozbalovací seznam.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Šipka nahoru / dolů</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Procházet položky, když je rozbalovací seznam zavřený nebo otevřený.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Šipka dolů nebo F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Otevřít rozbalovací seznam.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter nebo Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Vybrat aktuálně zvýrazněnou položku a zavřít seznam.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Zavřít seznam bez změny výběru.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Písmena (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Napsat první písmena názvu položky pro přímý skok na tuto položku v seznamu.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Lišta karet</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Přesunout zaměření na lištu karet.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Šipka vlevo a vpravo</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Přesunout výběr mezi sousedními kartami.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Tlačítko</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Mezerník</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Spustit zaměřené tlačítko.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Výchozí akce, pokud je tlačítko nastaveno jako výchozí v dialogovém okně.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Seznam</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Přesunout zaměření na seznam.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Přesune výběr na předchozí nebo následující položku v seznamu.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Klávesy Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Skočit přímo na první nebo poslední položku v seznamu.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Stránka nahoru / Stránka dolů</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11363,14 +11571,6 @@ Chcete změny uložit?</translation>
         <translation>Diagram měření</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Neznámý rozměr&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Neznámý rozměr&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
@@ -11601,7 +11801,7 @@ Chcete změny uložit?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11625,6 +11825,10 @@ SeamlyME jako obvykle.
     <message>
         <source>Seach by regular expression</source>
         <translation>vyhledávání podle regulárního výrazu</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Míry na zakázku</translation>
     </message>
 </context>
 <context>
@@ -12644,16 +12848,8 @@ SeamlyME jako obvykle.
         <translation>Druhá hrana, pravý úhel</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Zářez</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Typ</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Žádný</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12706,6 +12902,26 @@ SeamlyME jako obvykle.
     <message>
         <source>Delete</source>
         <translation>Smazat</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Zobrazit nástřih střihové čáry</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Zobrazit nástřih švové čáry</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Nastavit jako výchozí nástřih</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Upravit nástřih</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Odstranit nástřih</translation>
     </message>
 </context>
 <context>
@@ -13092,7 +13308,7 @@ SeamlyME jako obvykle.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Název</translation>
@@ -13710,6 +13926,46 @@ SeamlyME jako obvykle.
         <source>Direction:</source>
         <translation>Směr:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Volby</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Hladká křivka:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ano</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Upravit délku:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Vypnuto</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Konec</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Obojí</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Délka křivky:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13723,7 +13979,7 @@ SeamlyME jako obvykle.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Délka</translation>

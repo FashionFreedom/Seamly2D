@@ -1,56 +1,57 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   database_dialog.h
+//  @author Douglas S Caskey
+//  @date   3 Sep, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   dialogmdatabase.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   26 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialogmdatabase.h
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   26 Jul, 2015
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2015 Valentina project
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOGMDATABASE_H
-#define DIALOGMDATABASE_H
+#ifndef DATABASE_DIALOG_H
+#define DATABASE_DIALOG_H
 
 #include <QDialog>
 
@@ -73,7 +74,6 @@ public:
     void                 retranslateGroups();
 
     QStringList          getNewMeasurementNames() const;
-    static QString       imageUrl(const QString &number);
 
 protected:
     virtual void         changeEvent(QEvent* event) override;
@@ -88,9 +88,13 @@ private slots:
 private:
     Q_DISABLE_COPY(MeasurementDatabaseDialog)
     Ui::DialogMDataBase *ui;
-    bool                 selectMode;
-    QStringList          measurements;
-    QStringList          newMeasurements;
+    bool                 m_selectMode;
+    QStringList          m_measurements;
+    QStringList          m_newMeasurements;
+    QString              m_currentSvgPath;   // Stores the current "://diagrams/..." path
+    QString              m_currentNumber;    // Stores the current measurement number (e.g. "L13")
+    QString              m_currentName;      // Stores the translated name text
+    QString              m_currentDescription; 
 
     const QString groupAText = "A. " + MeasurementDatabaseDialog::tr("Direct Height", "Measurement section");
     const QString groupBText = "B. " + MeasurementDatabaseDialog::tr("Direct Width", "Measurement section");
@@ -110,23 +114,23 @@ private:
     const QString groupPText = "P. " + MeasurementDatabaseDialog::tr("Historical & Specialty", "Measurement section");
     const QString groupQText = "Q. " + MeasurementDatabaseDialog::tr("Patternmaking measurements", "Measurement section");
 
-    QTreeWidgetItem     *groupA;
-    QTreeWidgetItem     *groupB;
-    QTreeWidgetItem     *groupC;
-    QTreeWidgetItem     *groupD;
-    QTreeWidgetItem     *groupE;
-    QTreeWidgetItem     *groupF;
-    QTreeWidgetItem     *groupG;
-    QTreeWidgetItem     *groupH;
-    QTreeWidgetItem     *groupI;
-    QTreeWidgetItem     *groupJ;
-    QTreeWidgetItem     *groupK;
-    QTreeWidgetItem     *groupL;
-    QTreeWidgetItem     *groupM;
-    QTreeWidgetItem     *groupN;
-    QTreeWidgetItem     *groupO;
-    QTreeWidgetItem     *groupP;
-    QTreeWidgetItem     *groupQ;
+    QTreeWidgetItem     *m_groupA;
+    QTreeWidgetItem     *m_groupB;
+    QTreeWidgetItem     *m_groupC;
+    QTreeWidgetItem     *m_groupD;
+    QTreeWidgetItem     *m_groupE;
+    QTreeWidgetItem     *m_groupF;
+    QTreeWidgetItem     *m_groupG;
+    QTreeWidgetItem     *m_groupH;
+    QTreeWidgetItem     *m_groupI;
+    QTreeWidgetItem     *m_groupJ;
+    QTreeWidgetItem     *m_groupK;
+    QTreeWidgetItem     *m_groupL;
+    QTreeWidgetItem     *m_groupM;
+    QTreeWidgetItem     *m_groupN;
+    QTreeWidgetItem     *m_groupO;
+    QTreeWidgetItem     *m_groupP;
+    QTreeWidgetItem     *m_groupQ;
 
     void                 initDataBase(const QStringList &measurements = QStringList());
     void                 initGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
@@ -148,6 +152,7 @@ private:
 
     void                changeCheckState(QTreeWidgetItem *group, Qt::CheckState state);
     Qt::CheckState      globalCheckState() const;
+    void                renderScaledDiagram();
 };
 
-#endif // DIALOGMDATABASE_H
+#endif // DATABASE_DIALOG_H

@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>762</width>
-    <height>467</height>
+    <height>492</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -934,14 +934,22 @@ border-radius: 4px;
   </customwidget>
  </customwidgets>
  <tabstops>
-  <tabstop>path_LineEdit</tabstop>
-  <tabstop>browse_PushButton</tabstop>
   <tabstop>binaryDXF_CheckBox</tabstop>
   <tabstop>textAsPaths_Checkbox</tabstop>
+  <tabstop>path_LineEdit</tabstop>
+  <tabstop>browse_PushButton</tabstop>
+  <tabstop>format_ComboBox</tabstop>
+  <tabstop>filename_LineEdit</tabstop>
+  <tabstop>quality_Slider</tabstop>
+  <tabstop>percent_SpinBox</tabstop>
+  <tabstop>exportFiles_ListWidget</tabstop>
+  <tabstop>selectAll_CheckBox</tabstop>
+  <tabstop>sizes_ListWidget</tabstop>
   <tabstop>leftField_DoubleSpinBox</tabstop>
-  <tabstop>topField_DoubleSpinBox</tabstop>
   <tabstop>rightField_DoubleSpinBox</tabstop>
+  <tabstop>topField_DoubleSpinBox</tabstop>
   <tabstop>bottomField_DoubleSpinBox</tabstop>
+  <tabstop>templates_ComboBox</tabstop>
   <tabstop>portrait_ToolButton</tabstop>
   <tabstop>landscape_ToolButton</tabstop>
  </tabstops>

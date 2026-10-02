@@ -116,7 +116,7 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     ui->rotation_PlainTextEdit->installEventFilter(this);
     ui->rotation_PlainTextEdit->setToolTip(makeAngleTooltip());
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMoveSuffix()));
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->generateSuffix(qApp->Settings()->getMoveSuffix()));
 
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogMove::evaluateAngle);
@@ -150,6 +150,8 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     vis = new VisToolMove(data);
 
     setOriginPointId(NULL_ID);
+
+    ui->angle_PlainTextEdit->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -173,8 +175,6 @@ void DialogMove::SetAngle(const QString &value)
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
     operation->SetAngle(angleFormula);
-
-    MoveCursorToEnd(ui->angle_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -192,8 +192,6 @@ void DialogMove::SetLength(const QString &value)
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
     operation->SetLength(lengthFormula);
-
-    MoveCursorToEnd(ui->length_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -211,8 +209,6 @@ void DialogMove::setRotation(const QString &value)
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
     operation->setRotation(rotationFormula);
-
-    MoveCursorToEnd(ui->rotation_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -318,7 +314,6 @@ void DialogMove::ShowDialog(bool click)
             SetAngle(operation->Angle());
             SetLength(operation->Length());
             setRotation(operation->Rotation());
-            setModal(true);
             emit ToolTip("");
             angleTimer->start();
             lengthTimer->start();

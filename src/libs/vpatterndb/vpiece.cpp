@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -55,6 +55,7 @@
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/varc.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 #include <QSharedPointer>
 #include <QDebug>
@@ -169,7 +170,7 @@ void VPiece::SetPath(const VPiecePath &path)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> VPiece::MainPathPoints(const VContainer *data) const
+QVector<QPointF> VPiece::mainPathPoints(const VContainer *data) const
 {
     QVector<QPointF> points = GetPath().PathPoints(data);
     points = CheckLoops(CorrectEquidistantPoints(points));//A path can contains loops
@@ -177,18 +178,18 @@ QVector<QPointF> VPiece::MainPathPoints(const VContainer *data) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VPointF> VPiece::MainPathNodePoints(const VContainer *data, bool showExcluded) const
+QVector<VPointF> VPiece::mainPathNodePoints(const VContainer *data, bool showExcluded) const
 {
     return GetPath().PathNodePoints(data, showExcluded);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
+QVector<QPointF> VPiece::seamAllowancePoints(const VContainer *data) const
 {
     SCASSERT(data != nullptr);
 
 
-    if (!IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (!hasSeamAllowance() || hasSeamAllowanceBuiltIn())
     {
         return QVector<QPointF>();
     }
@@ -222,7 +223,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
                         insertingCSA = true;
 
                         const VPiecePath path = data->getPiecePath(records.at(recordIndex).path);
-                        QVector<VSAPoint> r = path.SeamAllowancePoints(data, width, records.at(recordIndex).reverse);
+                        QVector<VSAPoint> r = path.seamAllowancePoints(data, width, records.at(recordIndex).reverse);
 
                         for (int j = 0; j < r.size(); ++j)
                         {
@@ -271,13 +272,13 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
 
 QVector<QPointF> VPiece::cutPathPoints(const VContainer *data) const
 {
-    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && !hasSeamAllowanceBuiltIn())
     {
-        return SeamAllowancePoints(data);
+        return seamAllowancePoints(data);
     }
     else
     {
-        return MainPathPoints(data);
+        return mainPathPoints(data);
     }
 }
 
@@ -310,9 +311,9 @@ QVector<QLineF> VPiece::createNotchLines(const VContainer *data, const QVector<Q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPainterPath VPiece::MainPathPath(const VContainer *data) const
+QPainterPath VPiece::mainPath(const VContainer *data) const
 {
-    const QVector<QPointF> points = MainPathPoints(data);
+    const QVector<QPointF> points = mainPathPoints(data);
     QPainterPath path;
 
     if (!points.isEmpty())
@@ -330,18 +331,18 @@ QPainterPath VPiece::MainPathPath(const VContainer *data) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPainterPath VPiece::SeamAllowancePath(const VContainer *data) const
+QPainterPath VPiece::seamAllowancePath(const VContainer *data) const
 {
-    return SeamAllowancePath(SeamAllowancePoints(data));
+    return seamAllowancePath(seamAllowancePoints(data));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPainterPath VPiece::SeamAllowancePath(const QVector<QPointF> &points) const
+QPainterPath VPiece::seamAllowancePath(const QVector<QPointF> &points) const
 {
     QPainterPath ekv;
 
     // seam allowence
-    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && !hasSeamAllowanceBuiltIn())
     {
         if (!points.isEmpty())
         {
@@ -365,7 +366,7 @@ QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPoint
     QPainterPath path;
 
     // seam allowence
-    if (IsSeamAllowance())
+    if (hasSeamAllowance())
     {
         if (!notches.isEmpty())
         {
@@ -389,7 +390,7 @@ bool VPiece::isInLayout() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPiece::SetInLayout(bool inLayout)
+void VPiece::setInLayout(bool inLayout)
 {
     d->m_inLayout = inLayout;
 }
@@ -486,12 +487,12 @@ void VPiece::setAnchors(const QVector<quint32> &anchors)
     d->m_anchors = anchors;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief MissingNodes find missing nodes in piece. When we deleted object in piece and return this piece need
 ///  understand, what nodes need make invisible.
 /// @param piece changed piece.
 /// @return  list with missing nodes.
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 QVector<quint32> VPiece::MissingNodes(const VPiece &piece) const
 {
     return d->m_path.MissingNodes(piece.GetPath());
@@ -533,19 +534,19 @@ void VPiece::SetPatternPieceData(const VPieceLabelData &data)
     d->m_ppData = data;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns full access to the pattern piece data object
 /// @return pattern piece data object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VPieceLabelData &VPiece::GetPatternPieceData()
 {
     return d->m_ppData;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the read only reference to the pattern piece data object
 /// @return pattern piece data object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VPieceLabelData &VPiece::GetPatternPieceData() const
 {
     return d->m_ppData;
@@ -557,37 +558,37 @@ void VPiece::SetPatternInfo(const VPatternLabelData &info)
     d->m_piPatternInfo = info;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns full access to the pattern info geometry object
 /// @return pattern info geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VPatternLabelData &VPiece::GetPatternInfo()
 {
     return d->m_piPatternInfo;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief Returns the read only reference to the pattern info geometry object
 /// @return pattern info geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VPatternLabelData &VPiece::GetPatternInfo() const
 {
     return d->m_piPatternInfo;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief VDetail::GetGrainlineGeometry full access to the grainline geometry object
 /// @return reference to grainline geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 VGrainlineData &VPiece::GetGrainlineGeometry()
 {
     return d->m_glGrainline;
 }
 
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief VDetail::GetGrainlineGeometry returns the read-only reference to the grainline geometry object
 /// @return reference to grainline geometry object
-//******************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
 const VGrainlineData &VPiece::GetGrainlineGeometry() const
 {
     return d->m_glGrainline;
@@ -599,8 +600,7 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
     SCASSERT(data != nullptr)
 
     QVector<VPieceNode> united = d->m_path.getNodes();
-
-    if (IsSeamAllowance() && IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && hasSeamAllowanceBuiltIn())
     {
         return united;
     }
@@ -637,8 +637,9 @@ QVector<VPieceNode> VPiece::GetUnitedPath(const VContainer *data) const
                     customNodes[j].SetReverse(!customNodes.at(j).GetReverse());
                 }
 
-                // If seam allowance is built in main path user will not see a notch provided by piece path
-                if (IsSeamAllowanceBuiltIn())
+                // If seam allowance is built in or seam allowance hidden
+                // user will not see a notch provided by piece path.
+                if (hasSeamAllowanceBuiltIn())
                 {
                     customNodes[j].setNotch(false);
                 }
@@ -902,7 +903,7 @@ bool VPiece::isNotchVisible(const QVector<VPieceNode> &path, int notchIndex) con
         return false;
     }
 
-    if (IsSeamAllowance() && IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && hasSeamAllowanceBuiltIn())
     {
         return true;
     }
@@ -958,11 +959,11 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
         return QVector<QLineF>(); // Something wrong
     }
 
-    const QVector<QPointF> mainPathPoints = MainPathPoints(data);
-    if (!IsSeamAllowanceBuiltIn())
+    const QVector<QPointF> main_path_points = mainPathPoints(data);
+    if (!hasSeamAllowanceBuiltIn())
     {
         QVector<QLineF> lines;
-        if (path.at(notchIndex).showNotch())
+        if (path.at(notchIndex).showNotch() && qApp->Settings()->showSeamAllowances())
         {
             lines += createSeamAllowanceNotch(path, previousSAPoint, notchSAPoint,  nextSAPoint,
                                               data, notchIndex, pathPoints);
@@ -972,14 +973,22 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
                 && path.at(notchIndex).getNotchSubType() != NotchSubType::Intersection
                 && path.at(notchIndex).showSeamlineNotch())
         {
-            lines += createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data,
-                                          notchIndex, mainPathPoints);
+            lines += createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint,
+                                          data, notchIndex, main_path_points);
         }
         return lines;
     }
     else
     {
-        return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex, mainPathPoints);
+        if (path.at(notchIndex).showNotch())
+        {
+            return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint,
+                                        data, notchIndex, main_path_points);
+        }
+        else
+        {
+            return QVector<QLineF>();
+        }
     }
 }
 
@@ -1032,7 +1041,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
     else if (node.getNotchSubType() == NotchSubType::Intersection)
     {
         QVector<QPointF> seamPoints;
-        pathPoints.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = pathPoints;
+        pathPoints.isEmpty() ? seamPoints = seamAllowancePoints(data) : seamPoints = pathPoints;
 
         {
             // After notch

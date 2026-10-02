@@ -55,6 +55,8 @@
 #include <QApplication>
 #include <QDate>
 #include <QDir>
+#include <QColorDialog>
+#include <QFileDialog>
 #include <QFont>
 #include <QtGlobal>
 #include <QLocale>
@@ -91,6 +93,7 @@ const QString settingConfigurationFax                    = QStringLiteral("graph
 const QString settingConfigurationEmail                  = QStringLiteral("graphicsview/email");
 const QString settingConfigurationWebsite                = QStringLiteral("graphicsview/website");
 
+const QString settingConfigurationAppTheme               = QStringLiteral("configuration/appTheme");
 const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 
@@ -127,6 +130,7 @@ const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graph
 const QString settingGraphicsAutoClearFx                 = QStringLiteral("graphicsview/autoClearFx");
 
 const QString settingGraphicsViewDialogPosition          = QStringLiteral("graphicsview/dialogPosition");
+const QString settingGraphicsUseNativeDialogs            = QStringLiteral("graphicsview/useNativeDialogs");
 const QString settingGraphicsUseSecondMonitor            = QStringLiteral("graphicsview/useSecondMonitor");
 const QString settingGraphicsViewXOffset                 = QStringLiteral("graphicsview/xOffset");
 const QString settingGraphicsViewYOffset                 = QStringLiteral("graphicsview/yOffset");
@@ -511,7 +515,7 @@ void VCommonSettings::setBodyScansPath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLabelTemplatePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -529,7 +533,7 @@ void VCommonSettings::SetPathLabelTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultImageFilePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -565,7 +569,7 @@ void VCommonSettings::setBackupFilePath(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPatternTemplate() const
 {
-    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
+    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "/default_pattern_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -577,13 +581,25 @@ void VCommonSettings::setDefaultPatternTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPieceTemplate() const
 {
-    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "default_piece_label.xml").toString();
+    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "/default_piece_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setDefaultPieceTemplate(const QString &value)
 {
     setValue(settingDefaultPieceTemplate, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getAppTheme() const
+{
+    return value(settingConfigurationAppTheme, 0).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAppTheme(const int &value)
+{
+    setValue(settingConfigurationAppTheme, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -948,6 +964,40 @@ bool VCommonSettings::getShowLayoutToolBar() const
 void VCommonSettings::setShowLayoutToolBar(const bool &value)
 {
     setValue(settingGraphicsViewShowLayoutToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useNativeDialogs() const
+{
+    return value(settingGraphicsUseNativeDialogs, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseNativeDialogs(const bool &value)
+{
+    setValue(settingGraphicsUseNativeDialogs, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFileDialog::Options VCommonSettings::getUseNativeFileDialogs() const
+{
+    QFileDialog::Options options = QFileDialog::Options();
+    if (!value(settingGraphicsUseNativeDialogs, true).toBool())
+    {
+        options = QFileDialog::DontUseNativeDialog;
+    }
+    return options;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QColorDialog::ColorDialogOptions VCommonSettings::getUseNativeColorDialogs() const
+{
+    QColorDialog::ColorDialogOptions options = QColorDialog::ColorDialogOptions();
+    if (!value(settingGraphicsUseNativeDialogs, true).toBool())
+    {
+        options = QColorDialog::DontUseNativeDialog;
+    }
+    return options;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

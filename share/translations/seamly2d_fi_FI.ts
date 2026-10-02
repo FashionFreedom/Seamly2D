@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi">
+<TS version="2.1" language="fi_FI">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Nimi:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Lisää uusi ryhmä listaan</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nimi on olemassa</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Toimintoa ei voida suorittaa loppuun, koska ryhmän nimi on jo olemassa.</translation>
     </message>
 </context>
 <context>
@@ -498,10 +510,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Valitse suoran toinen piste</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Virhe</translation>
@@ -680,10 +684,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Muokkaa sädettä</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Valiste kulman toinen piste</translation>
@@ -917,6 +913,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Viivanleveys:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kaavavelho</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Käyrän kaaren pituuden laskelma (käytetään, jos kenttä on täytetty)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Muokkaa käyrän pituutta</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Pituus ei voi olla negatiivinen</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Valitse akselipiste</translation>
@@ -1043,10 +1095,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Muokkaa pituutta</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta viesti-ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Muokkaa pituutta</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Muokkaa pituutta</translation>
@@ -1303,10 +1343,6 @@ p, li { white-space: pre-wrap; }
         <translation>Laskelma</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Säde2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Muokkaa kulmaa</translation>
@@ -1696,10 +1728,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Suoran ensimmäinen piste</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Valitse kaaren keskipiste</translation>
@@ -2513,10 +2533,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Valitse suoran ensimmäinen piste</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Arkin koordinaatit</translation>
@@ -2683,10 +2699,6 @@ p, li { white-space: pre-wrap; }
         <translation>Arvo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Muokkaa ensimmäisen kontrollipisteen kulmaa</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { white-space: pre-wrap; }
         <source>Color:</source>
         <translation>Väri:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Käyrän kaaren pituuden laskelma (käytetään, jos kenttä on täytetty)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Muokkaa käyrän pituutta</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2788,10 +2848,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3346,7 +3402,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
-        <translation>Suodata muuttujaluettelo avainsanan mukaan</translation>
+        <translation>Suodata muuttujalista avainsanan mukaan</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
@@ -3430,6 +3486,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Ryhmä</translation>
     </message>
 </context>
 <context>
@@ -4374,7 +4434,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>block</source>
-        <translation>lohko</translation>
+        <translation>pala</translation>
     </message>
     <message>
         <source>Radius / Length</source>
@@ -4937,7 +4997,7 @@ Haluatko ladata sen?</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>Palaluettelo on tyhjä!</translation>
+        <translation>Palalista on tyhjä!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
@@ -5004,10 +5064,6 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     <message>
         <source>Value</source>
         <translation>Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -5090,10 +5146,6 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     <message>
         <source>Formula wizard</source>
         <translation>Kaavavelho</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -6018,7 +6070,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnoslohkot ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava ainakin yksi kaavapala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Luonnoslohkojen käsittelytila. Nämä luonnospalat ovat perusta siirtymiselle seuraavaan vaiheeseen &quot;Kappaletila&quot;. Ennen kuin voit ottaa käyttöön &quot;Palatilan&quot;, sinun on luotava ainakin yksi kaavapala.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -7100,7 +7152,7 @@ Haluatko tallentaa muutokset?</translation>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
         <translation>Uusien pisteiden perusnimi.
-Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translation>
+Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7129,6 +7181,22 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Error creating a backup copy: %1.</source>
         <translation>Virhe luotaessa varmuuskopiota: %1.</translation>
+    </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Poista luonnospala</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Vahvista poistaminen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Haluatko varmasti poistaa peruspisteen ja nykyisen luonnospalan?</translation>
     </message>
 </context>
 <context>
@@ -8013,10 +8081,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Kopio</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Hakki</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>THakki</translation>
     </message>
@@ -8231,6 +8295,26 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Valitse pääpolun objektit myötäpäivään. Käytä &lt;b&gt;SHIFT&lt;/b&gt;-näppäintä kääntääksesi käyrän suunnan tai &lt;b&gt;CTRL&lt;/b&gt;-näppäintä säilyttääksesi käyrän suunnan.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Näytä leikkuulinjan hakki</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Näytä saumalinjan hakki</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Aseta oletushakiksi</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Muokkaa hakkia</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Poista hakki</translation>
     </message>
 </context>
 <context>
@@ -8771,38 +8855,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Millimetrit</translation>
     </message>
@@ -8933,6 +8985,14 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source> per file</source>
         <translation> tiedostoa kohden</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Ulkoasu</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>
@@ -9229,6 +9289,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Auto clear formula</source>
         <translation>Tyhjennä matemaattinenkaava automaattisesti</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Käytä järjestelmän omia valintaikkunoita</translation>
     </message>
 </context>
 <context>
@@ -9985,6 +10049,30 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Tervetuloa</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Ulkoasu</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Teema:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Mitat</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Valintaikkunat</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Käytä järjestelmän omia valintaikkunoita</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10052,7 +10140,7 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Liitä 3DLook-tiedostosi sähköpostiviestiin ja lähetä se osoitteeseen convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Saat sähköpostin, jossa on muunnetut tiedostot. Voit sitten ladata ne SeamlyME:hen normaalisti.</translation>
     </message>
     <message>
@@ -10134,6 +10222,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>
@@ -10233,6 +10325,10 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
     <message>
         <source>Positive Sign</source>
         <translation>Positiivinen merkki</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Teema:</translation>
     </message>
 </context>
 <context>
@@ -10920,6 +11016,118 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <source>Export PDF</source>
         <translation>Vie PDF-tiedosto</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Dialogi-navigointi</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Pudotusvalikko</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Siirrä kohdistus pudotusvalikkoon.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Ylös / Alas -nuoli</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Selaa kohteita, kun pudotusvalikko on suljettu tai avattu.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Nuoli alas tai F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Avaa pudotusvalikko.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter tai Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Valitse tällä hetkellä korostettu kohde ja sulje lista.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Sulje lista muuttamatta valintaa.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Kirjainnäppäimet (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Kirjoita kohteen nimen ensimmäiset kirjaimet hypätäksesi suoraan kyseiseen kohteeseen listassa.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Välilehtipalkki</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Siirrä kohdistus välilehtipalkkiin.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Nuoli vasemmalle ja oikealle</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Siirrä valintaa vierekkäisten välilehtien välillä.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Painike</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Välilyönti</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Aktivoi kohdistettu painike.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Oletustoiminto, jos painike on asetettu oletuspainikkeeksi dialogi-ikkunassa.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lista</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Siirrä kohdistus listaan.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Siirtää valinnan listan edelliseen tai seuraavaan kohteeseen.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End -näppäimet</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Hyppää suoraan listan ensimmäiseen tai viimeiseen kohteeseen.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11224,10 +11432,6 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
         <translation>Mittauskaavio</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Tuntematon mittayksikkö&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Open individual ...</source>
         <translation>Avaa yksilöllinen...</translation>
     </message>
@@ -11414,12 +11618,12 @@ Lisää se väliaikaisesti luetteloon painamalla Enter-näppäintä.</translatio
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
-        <translation>Saat sähköpostin, jossa on muunnetut tiedostot. Voit sitten ladata
-tiedoston SeamlyME:hen normaalisti.
+        <translation>Saat sähköpostin, jossa on muunnetut tiedostot,
+jotka voit ladata SeamlyME:hen normaalisti.
 
 </translation>
     </message>
@@ -11490,10 +11694,6 @@ tiedoston SeamlyME:hen normaalisti.
     <message>
         <source>This file already opened in another window.</source>
         <translation>Tämä tiedosto on jo avattu toiseen ikkunaan.</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Tuntematon mittayksikkö&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>The name of known measurement forbidden to change.</source>
@@ -11628,12 +11828,16 @@ Haluatko tallentaa muutokset?</translation>
         <source>Value:</source>
         <translation>Arvo:</translation>
     </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Räätälöitymitta</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Pala asetteluluettelossa</translation>
+        <translation>Pala asettelulistassa</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
@@ -12646,16 +12850,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Toisen reunan oikea kulma</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Hakki</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tyyppi</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Ei mitään</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12708,6 +12904,26 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Delete</source>
         <translation>Poista</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Näytä leikkuulinjan hakki</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Näytä saumalinjan hakki</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Aseta oletushakiksi</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Muokkaa hakkia</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Poista hakki</translation>
     </message>
 </context>
 <context>
@@ -13094,7 +13310,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Nimi</translation>
@@ -13712,6 +13928,46 @@ Haluatko tallentaa muutokset?</translation>
         <source>Line_</source>
         <translation>Suora_</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Valinnat</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Tasainen kaari:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ei</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Kyllä</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Säädä pituus:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Pois</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Alku</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Loppu</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Molemmat</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Käyrän pituus:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13725,7 +13981,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Pituus</translation>

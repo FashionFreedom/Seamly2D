@@ -172,7 +172,7 @@ bool VPE::VPropertyModel::setData (const QModelIndex& index, const QVariant& val
     {
         bool tmpHasChanged = tmpProperty->setData(value, role);
         if (tmpProperty->getUpdateParent() && tmpHasChanged)
-        {   // If neccessary, update the parent as well
+        {   // If necessary, update the parent as well
             QModelIndex tmpParentIndex = parent(index);
             emit dataChanged(tmpParentIndex, tmpParentIndex);
         }

@@ -530,12 +530,6 @@
      <property name="focusPolicy">
       <enum>Qt::NoFocus</enum>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QHeaderView::section {
-	background-color: rgb(227, 227, 227);
-    border: 1px solid black;
-}</string>
-     </property>
      <property name="frameShadow">
       <enum>QFrame::Sunken</enum>
      </property>
@@ -661,8 +655,8 @@
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -102,6 +102,8 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
     connect(ui->opacity_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::opacityChanged);
     connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &ImageDialog::dialogApply);
+
+    ui->name_LineEdit->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

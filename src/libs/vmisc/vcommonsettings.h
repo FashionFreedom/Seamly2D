@@ -54,6 +54,8 @@
 #define VCOMMONSETTINGS_H
 
 #include <QByteArray>
+#include <QColorDialog>
+#include <QFileDialog>
 #include <QMetaObject>
 #include <QObject>
 #include <QSettings>
@@ -113,6 +115,9 @@ public:
 
     QString              getDefaultPieceTemplate() const;
     void                 setDefaultPieceTemplate(const QString &text);
+
+    int                  getAppTheme() const;
+    void                 setAppTheme(const int &value);
 
     bool                 getShowWelcome() const;
     void                 setShowWelcome(const bool &value);
@@ -200,6 +205,11 @@ public:
 
     bool                 getShowLayoutToolBar() const;
     void                 setShowLayoutToolBar(const bool &value);
+
+    bool                 useNativeDialogs() const;
+    void                 setUseNativeDialogs(const bool &value);
+    QFileDialog::Options getUseNativeFileDialogs() const;
+    QColorDialog::ColorDialogOptions getUseNativeColorDialogs() const;
 
     bool                 useSecondMonitor() const;
     void                 setUseSecondMonitor(const bool &value);

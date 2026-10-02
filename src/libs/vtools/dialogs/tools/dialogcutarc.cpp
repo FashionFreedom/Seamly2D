@@ -75,7 +75,6 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogCutArc)
     , formula(QString())
-    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -89,7 +88,6 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
     initializeOkCancelApply(ui);
@@ -110,9 +108,10 @@ DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogCutArc::FXLength);
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogCutArc::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogCutArc::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogCutArc::DeployFormulaTextEdit);
 
     vis = new VisToolCutArc(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -142,12 +141,6 @@ void DialogCutArc::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogCutArc::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 DialogCutArc::~DialogCutArc()
 {
     delete ui;
@@ -168,7 +161,6 @@ void DialogCutArc::ChosenObject(quint32 id, const SceneObject &type)
             {
                 vis->VisualMode(id);
                 prepare = true;
-                this->setModal(true);
                 this->show();
             }
         }
@@ -218,18 +210,11 @@ void DialogCutArc::setArcId(const quint32 &value)
 void DialogCutArc::SetFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(formula);
 
     VisToolCutArc *path = qobject_cast<VisToolCutArc *>(vis);
     SCASSERT(path != nullptr)
     path->setLength(formula);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

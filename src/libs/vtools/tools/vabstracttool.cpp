@@ -261,7 +261,7 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 void VAbstractTool::deleteTool(bool ask)
 {
     qCDebug(vTool, "Deleting abstract tool.");
-    if (_referens == 0)
+    if (not isUsed())
     {
         qCDebug(vTool, "No children.");
         qApp->getSceneView()->itemClicked(nullptr);

@@ -74,9 +74,9 @@ void PatternPieceVisual::RefreshGeometry()
 
     if (m_piece.GetPath().nodeCount() > 0)
     {
-        DrawPath(this, m_piece.MainPathPath(Visualization::data), mainColor, Qt::SolidLine, Qt::RoundCap);
+        DrawPath(this, m_piece.mainPath(Visualization::data), mainColor, Qt::SolidLine, Qt::RoundCap);
 
-        const QVector<VPointF> nodes = m_piece.MainPathNodePoints(Visualization::data);
+        const QVector<VPointF> nodes = m_piece.mainPathNodePoints(Visualization::data);
 
         for (int i = 0; i < nodes.size(); ++i)
         {

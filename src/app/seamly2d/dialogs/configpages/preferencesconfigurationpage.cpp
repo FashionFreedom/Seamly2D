@@ -1,57 +1,58 @@
-//  @file   preferencesconfigurationpage.cpp
-//  @author Douglas S Caskey
-//  @date   26 Oct, 2023
-//
-//  @brief
-//  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2024 Seamly2D project
-//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-//
-//  Seamly2D is free software: you can redistribute it and/or modify
-//  it under the terms of the GNU General Public License as published by
-//  the Free Software Foundation, either version 3 of the License, or
-//  (at your option) any later version.
-//
-//  Seamly2D is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//  GNU General Public License for more details.
-//
-//  You should have received a copy of the GNU General Public License
-//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
+///  @file   preferencesconfigurationpage.cpp
+///  @author Douglas S Caskey
+///  @date   26 Oct, 2023
+///
+///  @brief
+///  @copyright
+///  This source code is part of the Seamly2D project, a pattern making
+///  program to create and model patterns of clothing.
+///  Copyright (C) 2017-2026 Seamly2D project
+///  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+///  Seamly2D is free software: you can redistribute it and/or modify
+///  it under the terms of the GNU General Public License as published by
+///  the Free Software Foundation, either version 3 of the License, or
+///  (at your option) any later version.
+///
+///  Seamly2D is distributed in the hope that it will be useful,
+///  but WITHOUT ANY WARRANTY; without even the implied warranty of
+///  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+///  GNU General Public License for more details.
+///
+///  You should have received a copy of the GNU General Public License
+///  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
 
-/************************************************************************
- **
- **  @file   preferencesconfigurationpage.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 4, 2017
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentina project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Valentina project
- **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
- **
- **  Valentina is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Valentina is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+///---------------------------------------------------------------------------------------------------------------------
+///  @file   preferencesconfigurationpage.cpp
+///  @author Roman Telezhynskyi <dismine(at)gmail.com>
+///  @date   12 4, 2017
+///
+///  @brief
+///  @copyright
+///  This source code is part of the Valentina project, a pattern making
+///  program, whose allow create and modeling patterns of clothing.
+///  Copyright (C) 2017 Valentina project
+///  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+///
+///  Valentina is free software: you can redistribute it and/or modify
+///  it under the terms of the GNU General Public License as published by
+///  the Free Software Foundation, either version 3 of the License, or
+///  (at your option) any later version.
+///
+///  Valentina is distributed in the hope that it will be useful,
+///  but WITHOUT ANY WARRANTY; without even the implied warranty of
+///  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+///  GNU General Public License for more details.
+///
+///  You should have received a copy of the GNU General Public License
+///  along with Valentina.  if not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
 
 #include "preferencesconfigurationpage.h"
 #include "ui_preferencesconfigurationpage.h"
+
 #include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vwidgets/export_format_combobox.h"
@@ -63,12 +64,14 @@
 #include <QRegularExpressionValidator>
 #include <QSoundEffect>
 #include <QString>
+#include <QStringList>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
 PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PreferencesConfigurationPage)
+    , m_themeChanged(false)
     , m_langChanged(false)
     , m_unitChanged(false)
     , m_labelLangChanged(false)
@@ -125,8 +128,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
-    ui->moveSuffix_ComboBox->addItem(tr("_M"), "_M");
-    ui->moveSuffix_ComboBox->addItem(tr("_MOV"), "_MOV");
+    ui->moveSuffix_ComboBox->addItem("_m", "_m");
+    ui->moveSuffix_ComboBox->addItem("_M", "_M");
+    ui->moveSuffix_ComboBox->addItem("_MOV", "_MOV");
     index = ui->moveSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMoveSuffix());
     if (index != -1)
     {
@@ -137,8 +141,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_moveSuffixChanged = true;
     });
     ui->rotateSuffix_ComboBox->addItem(tr("None"), "");
-    ui->rotateSuffix_ComboBox->addItem(tr("_R"), "_R");
-    ui->rotateSuffix_ComboBox->addItem(tr("_ROT"), "_ROT");
+    ui->rotateSuffix_ComboBox->addItem("_r", "_r");
+    ui->rotateSuffix_ComboBox->addItem("_R", "_R");
+    ui->rotateSuffix_ComboBox->addItem("_ROT", "_ROT");
     index = ui->rotateSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getRotateSuffix());
     if (index != -1)
     {
@@ -150,8 +155,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     ui->mirrorByAxisSuffix_ComboBox->addItem(tr("None"), "");
-    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MA"), "_MA");
-    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MBA"), "_MBA");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_ma", "_ma");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_MA", "_MA");
+    ui->mirrorByAxisSuffix_ComboBox->addItem("_MBA", "_MBA");
     index = ui->mirrorByAxisSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByAxisSuffix());
     if (index != -1)
     {
@@ -163,8 +169,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     ui->mirrorByLineSuffix_ComboBox->addItem(tr("None"), "");
-    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MB"), "_MB");
-    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MBL"), "_MBL");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_ml", "_ml");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_ML", "_ML");
+    ui->mirrorByLineSuffix_ComboBox->addItem("_MBL", "_MBL");
     index = ui->mirrorByLineSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByLineSuffix());
     if (index != -1)
     {
@@ -222,6 +229,29 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Startup
+    // Theme
+    ui->theme_ComboBox->addItem("Fusion Light", 0);
+    ui->theme_ComboBox->addItem("Fusion Dark", 1);
+    ui->theme_ComboBox->addItem("Fusion Twilight", 2);
+    ui->theme_ComboBox->addItem("System", 3);
+
+#if defined(Q_OS_WIN)
+    ui->theme_ComboBox->addItem("Classic", 4);
+    ui->theme_ComboBox->addItem("Windows11", 5);
+#endif
+
+    // set default theme
+    const int themeIndex = ui->theme_ComboBox->findData(qApp->Seamly2DSettings()->getAppTheme());
+    if (themeIndex != -1)
+    {
+        ui->theme_ComboBox->setCurrentIndex(themeIndex);
+    }
+
+    connect(ui->theme_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_themeChanged = true;
+    });
+
     ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
 
     // Language
@@ -341,6 +371,14 @@ void PreferencesConfigurationPage::apply()
     else
     {
         settings->setOsSeparator(true);
+    }
+
+    if (m_themeChanged)
+    {
+        int theme = qvariant_cast<int>(ui->theme_ComboBox->currentData());
+        settings->setAppTheme(theme);
+        qApp->setTheme();
+        m_themeChanged = false;
     }
 
     if (m_langChanged)

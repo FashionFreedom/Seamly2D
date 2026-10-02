@@ -1,5 +1,5 @@
-//-----------------------------------------------------------------------------
-//  @file   dialogsinglepoint.cpp
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   basepoint_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogsinglepoint.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 Nov, 2013
@@ -45,9 +45,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-#include "dialogsinglepoint.h"
+#include "basepoint_dialog.h"
 
 #include <QDoubleSpinBox>
 #include <QLineEdit>
@@ -55,17 +55,17 @@
 #include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
 #include "dialogtool.h"
-#include "ui_dialogsinglepoint.h"
+#include "ui_basepoint_dialog.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogSinglePoint create dialog
- * @param data container with data
- * @param parent parent widget
- */
-DialogSinglePoint::DialogSinglePoint(const VContainer *data, const quint32 &toolId, QWidget *parent)
+/// @brief BasePointDialog create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
+BasePointDialog::BasePointDialog(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
-    , ui(new Ui::DialogSinglePoint), point(QPointF())
+    , ui(new Ui::BasePointDialog)
+    , m_point(QPointF())
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -88,11 +88,10 @@ DialogSinglePoint::DialogSinglePoint(const VContainer *data, const quint32 &tool
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief mousePress get mouse position
- * @param scenePos position of cursor
- */
-void DialogSinglePoint::mousePress(const QPointF &scenePos)
+/// @brief mousePress get mouse position
+/// @param scenePos position of cursor
+//---------------------------------------------------------------------------------------------------------------------
+void BasePointDialog::mousePress(const QPointF &scenePos)
 {
     if (isInitialized == false)
     {
@@ -108,22 +107,21 @@ void DialogSinglePoint::mousePress(const QPointF &scenePos)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSinglePoint::SaveData()
+void BasePointDialog::SaveData()
 {
-    point = QPointF(qApp->toPixel(ui->doubleSpinBoxX->value()), qApp->toPixel(ui->doubleSpinBoxY->value()));
+    m_point = QPointF(qApp->toPixel(ui->doubleSpinBoxX->value()), qApp->toPixel(ui->doubleSpinBoxY->value()));
     pointName = ui->lineEditName->text();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setData set name and point
- * @param name name of point
- * @param point data for point
- */
-void DialogSinglePoint::SetData(const QString &name, const QPointF &point)
+/// @brief setData set name and point
+/// @param name name of point
+/// @param point data for point
+//---------------------------------------------------------------------------------------------------------------------
+void BasePointDialog::SetData(const QString &name, const QPointF &point)
 {
     pointName = name;
-    this->point = point;
+    m_point = point;
     isInitialized = true;
     ui->lineEditName->setText(name);
     ui->doubleSpinBoxX->setValue(qApp->fromPixel(point.x()));
@@ -131,17 +129,16 @@ void DialogSinglePoint::SetData(const QString &name, const QPointF &point)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogSinglePoint::~DialogSinglePoint()
+BasePointDialog::~BasePointDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getPoint return point
- * @return point
- */
-QPointF DialogSinglePoint::GetPoint() const
+/// @brief getPoint return point
+/// @return m_point
+//---------------------------------------------------------------------------------------------------------------------
+QPointF BasePointDialog::GetPoint() const
 {
-    return point;
+    return m_point;
 }

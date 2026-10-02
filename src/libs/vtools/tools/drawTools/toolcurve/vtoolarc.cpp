@@ -171,8 +171,8 @@ VToolArc* VToolArc::Create(const quint32 _id, const quint32 &center, QString &ra
 
     calcRadius = qApp->toPixel(CheckFormula(_id, radius, data));
 
-    calcF1 = CheckFormula(_id, f1, data);
-    calcF2 = CheckFormula(_id, f2, data);
+    calcF1 = normalize(CheckFormula(_id, f1, data), 0.0, 360.0);
+    calcF2 = normalize(CheckFormula(_id, f2, data), 0.0, 360.0);
 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VArc *arc = new VArc(c, calcRadius, radius, calcF1, f1, calcF2, f2 );

@@ -51,6 +51,7 @@
 #include <limits.h>
 #include <qiterator.h>
 #include <qnumeric.h>
+#include <QByteArray>
 #include <QCloseEvent>
 #include <QComboBox>
 #include <QDoubleSpinBox>
@@ -58,6 +59,7 @@
 #include <QGuiApplication>
 #include <QHash>
 #include <QIcon>
+#include <QItemSelectionModel>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QLineEdit>
@@ -66,6 +68,7 @@
 #include <QPalette>
 #include <QPixmap>
 #include <QPlainTextEdit>
+#include <QProcessEnvironment>
 #include <QPushButton>
 #include <QRect>
 #include <QRegularExpression>
@@ -77,9 +80,12 @@
 #include <QSize>
 #include <QTextCursor>
 #include <QTimer>
+#include <QToolButton>
 #include <QWidget>
 #include <Qt>
 #include <QtDebug>
+#include <QtMath>
+#include <algorithm>
 #include <new>
 #include <QBuffer>
 #include <QFont>
@@ -91,6 +97,7 @@
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vgobject.h"
+#include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/calculator.h"
@@ -207,27 +214,28 @@ void DialogTool::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showEvent handle when window show
- * @param event event
- */
+/// @brief showEvent handle when window show
+/// @param event event
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTool::showEvent(QShowEvent *event)
 {
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
+    QDialog::showEvent(event);
+
+    if (event->spontaneous())
     {
         return;
     }
+
     if (isInitialized)
     {
         return;
     }
-    // do your init stuff here
 
     setMaximumSize(size());
     setMinimumSize(size());
 
-    isInitialized = true;//first show windows are held
+    isInitialized = true;
+
     ShowVisualization();
 }
 
@@ -437,15 +445,6 @@ void DialogTool::changeCurrentData(QComboBox *box, const QVariant &value) const
         box->setCurrentIndex(index);
         box->blockSignals(false);
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogTool::MoveCursorToEnd(QPlainTextEdit *plainTextEdit) const
-{
-    SCASSERT(plainTextEdit != nullptr)
-    QTextCursor cursor = plainTextEdit->textCursor();
-    cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
-    plainTextEdit->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -870,13 +869,12 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                 {
                     if (postfix == degreeSymbol)
                     {
-                        result = normalize(result, 0, 360);
+                        result = normalize(result, 0.0, 360.0);
                     }
                     label->setText(qApp->LocaleToString(result) + " " +postfix);
                     flag = true;
                     ChangeColor(labelEditFormula, okColor);
                     label->setToolTip(tr("Result Value"));
-                    emit ToolTip("");
                 }
             }
         }
@@ -896,17 +894,6 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
     }
     CheckState(); // Disable Ok and Apply buttons if something wrong.
     return result;
-}
-
-// Normalizes any number to an arbitrary range
-// by assuming the range wraps around when going below min or above max
-qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end )
-{
-  const qreal range       = end - start   ;   //
-  const qreal offsetValue = value - start ;   // value relative to 0
-
-  return ( offsetValue - ( floor( offsetValue / range ) * range ) ) + start ;
-  // + start to reset back to start of original range
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1316,59 +1303,134 @@ QString DialogTool::getPointName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+// Returns the selected items sorted by row, including the anchor item (the right clicked or current
+// row) when it is not part of the selection. Falls back to the current item when nothing is selected.
+QList<QListWidgetItem *> DialogTool::selectedRowItems(QListWidget *list, QListWidgetItem *anchor)
+{
+    SCASSERT(list != nullptr)
+    QList<QListWidgetItem *> items = list->selectedItems();
+    if (anchor != nullptr && !items.contains(anchor))
+    {
+        items.append(anchor);
+    }
+    if (items.isEmpty() && list->currentItem() != nullptr)
+    {
+        items.append(list->currentItem());
+    }
+    std::sort(items.begin(), items.end(), [list](QListWidgetItem *a, QListWidgetItem *b)
+    {
+        return list->row(a) < list->row(b);
+    });
+    return items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// Reselects the moved items and keeps the current item on one of them so consecutive moves work.
+static void restoreSelection(QListWidget *list, const QList<QListWidgetItem *> &items, QListWidgetItem *current)
+{
+    list->clearSelection();
+    for (QListWidgetItem *item : items)
+    {
+        item->setSelected(true);
+    }
+    if (!items.contains(current))
+    {
+        current = items.first();
+    }
+    list->setCurrentItem(current, QItemSelectionModel::NoUpdate);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogTool::moveListRowTop(QListWidget *list)
 {
     SCASSERT(list != nullptr)
-    const int currentIndex = list->currentRow();
-    if (QListWidgetItem *currentItem = list->takeItem(currentIndex))
+    const QList<QListWidgetItem *> items = selectedRowItems(list);
+    if (items.isEmpty())
     {
-        list->insertItem(0, currentItem);
-        list->setCurrentRow(0);
+        return;
     }
+    QListWidgetItem *current = list->currentItem();
+    for (QListWidgetItem *item : items)
+    {
+        list->takeItem(list->row(item));
+    }
+    for (int i = 0; i < items.size(); ++i)
+    {
+        list->insertItem(i, items.at(i));
+    }
+    restoreSelection(list, items, current);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::moveListRowUp(QListWidget *list)
 {
     SCASSERT(list != nullptr)
-    int currentIndex = list->currentRow();
-    if (QListWidgetItem *currentItem = list->takeItem(currentIndex--))
+    const QList<QListWidgetItem *> items = selectedRowItems(list);
+    if (items.isEmpty() || list->row(items.first()) == 0)
     {
-        if (currentIndex < 0)
-        {
-            currentIndex = 0;
-        }
-        list->insertItem(currentIndex, currentItem);
-        list->setCurrentRow(currentIndex);
+        return;
     }
+    QListWidgetItem *current = list->currentItem();
+    for (QListWidgetItem *item : items)
+    {
+        const int row = list->row(item);
+        list->takeItem(row);
+        list->insertItem(row - 1, item);
+    }
+    restoreSelection(list, items, current);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::moveListRowDown(QListWidget *list)
 {
     SCASSERT(list != nullptr)
-    int currentIndex = list->currentRow();
-    if (QListWidgetItem *currentItem = list->takeItem(currentIndex++))
+    const QList<QListWidgetItem *> items = selectedRowItems(list);
+    if (items.isEmpty() || list->row(items.last()) == list->count() - 1)
     {
-        if (currentIndex > list->count())
-        {
-            currentIndex = list->count();
-        }
-        list->insertItem(currentIndex, currentItem);
-        list->setCurrentRow(currentIndex);
+        return;
     }
+    QListWidgetItem *current = list->currentItem();
+    for (int i = items.size() - 1; i >= 0; --i)
+    {
+        const int row = list->row(items.at(i));
+        list->takeItem(row);
+        list->insertItem(row + 1, items.at(i));
+    }
+    restoreSelection(list, items, current);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::moveListRowBottom(QListWidget *list)
 {
     SCASSERT(list != nullptr)
-    const int currentIndex = list->currentRow();
-    if (QListWidgetItem *currentItem = list->takeItem(currentIndex))
+    const QList<QListWidgetItem *> items = selectedRowItems(list);
+    if (items.isEmpty())
     {
-        list->insertItem(list->count(), currentItem);
-        list->setCurrentRow(list->count()-1);
+        return;
     }
+    QListWidgetItem *current = list->currentItem();
+    for (QListWidgetItem *item : items)
+    {
+        list->takeItem(list->row(item));
+        list->insertItem(list->count(), item);
+    }
+    restoreSelection(list, items, current);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::setMoveButtonState(QListWidget *list, QToolButton *top, QToolButton *up,
+                                    QToolButton *down, QToolButton *bottom)
+{
+    SCASSERT(list != nullptr)
+    const QList<QListWidgetItem *> items = selectedRowItems(list);
+    const bool has_selection = list->count() > 1 && !items.isEmpty();
+    const bool can_move_up   = has_selection && list->row(items.first()) > 0;
+    const bool can_move_down = has_selection && list->row(items.last()) < list->count() - 1;
+
+    top->setEnabled(can_move_up);
+    up->setEnabled(can_move_up);
+    down->setEnabled(can_move_down);
+    bottom->setEnabled(can_move_down);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1455,10 +1517,10 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
 // This method sets the screen position of dialogs based on the user preference setting
 //
 // @details
-//  - Get dialog prefered possition from settings.
+//  - Get dialog preferred position from settings.
 //  - Determine geometry of screen and dialog.
-//  - Move dialog to prefered screen position with margin applied.
-//  - Positions include Top left, Top right, Center, Bottom Left, and Botton right corner of screen.
+//  - Move dialog to preferred screen position with margin applied.
+//  - Positions include Top left, Top right, Center, Bottom Left, and Bottom right corner of screen.
 void  DialogTool::setDialogPosition()
 {
     int position = qApp->Settings()->getDialogPosition();

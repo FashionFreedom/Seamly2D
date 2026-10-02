@@ -3,7 +3,6 @@
 
 SOURCES += \
     $$PWD/plugins/direction_property.cpp \
-    $$PWD/plugins/expandingtextedit.cpp \
     $$PWD/plugins/lineweight_property.cpp \
     $$PWD/plugins/plaintext_property.cpp \
     $$PWD/vproperty.cpp \
@@ -40,7 +39,6 @@ SOURCES += \
 
 HEADERS +=\
     $$PWD/plugins/direction_property.h \
-    $$PWD/plugins/expandingtextedit.h \
     $$PWD/plugins/lineweight_property.h \
     $$PWD/plugins/plaintext_property.h \
     $$PWD/vpropertyfactorymanager_p.h \

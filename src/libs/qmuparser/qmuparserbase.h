@@ -446,7 +446,7 @@ inline bool QmuParserBase::HasBuiltInOprt() const
 /**
  * @brief Return the number of results on the calculation stack.
  *
- * If the expression contains comma seperated subexpressions (i.e. "sin(y), x+y"). There mey be more than one return
+ * If the expression contains comma separated subexpressions (i.e. "sin(y), x+y"). There may be more than one return
  * value. This function returns the number of available results.
  */
 // cppcheck-suppress unusedFunction

@@ -81,6 +81,7 @@
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "visoperation.h"
 #include "../vmisc/logging.h"
+#include "../vtools/tools/drawTools/operation/vtoolmove.h"
 
 Q_LOGGING_CATEGORY(visTool, "vistool")
 
@@ -159,7 +160,7 @@ void VisToolMove::RefreshGeometry()
             m_origin = Visualization::data->GeometricObject<VPointF>(object1Id)->toQPointF();
             DrawPoint(rotationOriginPointItem, m_origin, supportColor2);
             line   = VGObject::BuildLine(m_origin, length, angle);
-            m_rotationPoint = line.p2();
+            m_rotationPoint = VToolMove::findRotationOrigin(objects, Visualization::data, length, angle, object1Id);
             originPointItem->setVisible(false);
         }
         else

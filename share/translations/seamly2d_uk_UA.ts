@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="uk_UA">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Όνομα:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Προσθήκη νέας ομάδας στη λίστα</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Το όνομα υπάρχει</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Η ενέργεια δεν μπορεί να ολοκληρωθεί επειδή το όνομα της ομάδας υπάρχει ήδη.</translation>
     </message>
 </context>
 <context>
@@ -498,10 +510,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Виберіть другу точку лінії</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Помилка</translation>
@@ -680,10 +684,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Редагувати радіус</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Виберіть другу точку кута</translation>
@@ -917,6 +913,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редагувати довжину кривої</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Помилка</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Довжина не може мати від&apos;ємне значення</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Виберіть точку осі</translation>
@@ -1043,10 +1095,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Редагувати довжину</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Редагувати довжину</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Редагувати довжину</translation>
@@ -1303,10 +1343,6 @@ p, li { white-space: pre-wrap; }
         <translation>Розрахунок</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Радіус2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Редагувати кут</translation>
@@ -1696,10 +1728,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Перша точка лінії</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Виберіть другу точку лінії</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Виберіть точку центру дуги</translation>
@@ -2513,10 +2533,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Виберість першу точку лінії</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Координати на листі</translation>
@@ -2687,10 +2703,6 @@ p, li { white-space: pre-wrap; }
         <translation>Значення</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Редагувати кут першої контрольної точки</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation>Γεωμετρία</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Редагувати довжину кривої</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2792,10 +2852,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Значення</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3432,6 +3488,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Група</translation>
     </message>
 </context>
 <context>
@@ -5008,10 +5068,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Значення</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Εμφάνιση πλήρους υπολογισμού στο πλαίσιο μηνύματος&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Rozrahunok</translation>
     </message>
@@ -5092,10 +5148,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     <message>
         <source>Formula wizard</source>
         <translation>Οδηγός τύπων</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Εμφάνιση πλήρους υπολογισμού στο πλαίσιο μηνύματος&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7131,6 +7183,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Помилка створення резервної копії: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Видалити блок чернетки</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Διαγραφή</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Підтвердити видалення</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Ви впевнені, що хочете видалити базову точку та поточний блок чернетки?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8014,10 +8082,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Διπλότυπο</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Надсічка</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8232,6 +8296,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Показати надсічку лінії розкрою</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Показати надсічку лінії шва</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Зробити надсічкою за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Редагувати надсічку</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Вилучити надсічку</translation>
     </message>
 </context>
 <context>
@@ -8772,38 +8856,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Κανένα</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Χιλιοστά</translation>
     </message>
@@ -8934,6 +8986,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> за файл</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Тема:</translation>
     </message>
 </context>
 <context>
@@ -9230,6 +9290,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Auto clear formula</source>
         <translation>Автоматичне очищення формули</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Використовуйте вбудовані діалогові вікна</translation>
     </message>
 </context>
 <context>
@@ -9986,6 +10050,30 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Καλώς ήρθατε</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Тема:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>вимірювань</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Διάλογοι</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Використовуйте вбудовані діалогові вікна</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10053,7 +10141,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>Επισυνάψτε το αρχείο 3DLook σε ένα email και στείλτε το στη διεύθυνση convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Θα λάβετε ένα email με το αρχείο που έχει μετατραπεί, το οποίο μπορείτε στη συνέχεια να φορτώσετε στο SeamlyME ως συνήθως.</translation>
     </message>
     <message>
@@ -10135,6 +10223,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Тема:</translation>
     </message>
 </context>
 <context>
@@ -10234,6 +10326,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Positive Sign</source>
         <translation>Θετικό Πρόσημο</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Тема:</translation>
     </message>
 </context>
 <context>
@@ -10921,6 +11017,118 @@ Press enter to temporarily add it to the list.</source>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Навігація в діалогових вікнах</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Выпадаючий список</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Табуляція</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Перемістити фокус на випадаючий список.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Стрілка вгору / вниз</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Циклічний перебір елементів, коли випадаючий список закритий або відкритий.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Стрілка вниз або F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Відкрити випадаючий список.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter або Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Вибрати поточний виділений елемент і закрити список.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Закрити список без зміни вибору.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Буквені клавіші (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Введіть перші літери назви елемента, щоб перейти безпосередньо до цього елемента в списку.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Панель вкладок</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Перемістити фокус на панель вкладок.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Стрілка вліво і вправо</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Перемістити виділення між сусідніми вкладками.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Кнопка</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Пробіл</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Активувати вибрану кнопку.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Дія за замовчуванням, якщо кнопка задана як кнопка за замовчуванням у діалоговому вікні.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Список</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Перемістити фокус на список.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Переміщує виділення на попередній або наступний елемент у списку.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Клавіші Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Перехід безпосередньо до першого або останнього елемента в списку.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11366,14 +11574,6 @@ Do you want to save your changes?</source>
         <translation>Діаграма мірок</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Невідома мірка&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Невідома мірка&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Про Qt</translation>
     </message>
@@ -11604,7 +11804,7 @@ Do you want to save your changes?</source>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11628,6 +11828,10 @@ load in SeamlyME as usual.
     <message>
         <source>Seach by regular expression</source>
         <translation>Пошук за регулярним виразом</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Індивідуальні заміри</translation>
     </message>
 </context>
 <context>
@@ -12646,16 +12850,8 @@ load in SeamlyME as usual.
         <translation>Δεύτερη ακμή ορθή γωνία</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Надсічка</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Συμβουλή</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Κανένα</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12708,6 +12904,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Видалити</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Показати надсічку лінії розкрою</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Показати надсічку лінії шва</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Зробити надсічкою за замовчуванням</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Редагувати надсічку</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Вилучити надсічку</translation>
     </message>
 </context>
 <context>
@@ -13094,7 +13310,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>όνομα</translation>
@@ -13712,6 +13928,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation>Κατεύθυνση:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Παραμετρίες</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Згладжена крива:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Ні</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Так</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Налаштування довжини:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Вимкнено</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Початок</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Кінець</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Προσδοκία</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Довжина кривої:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13725,7 +13981,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Довжина</translation>

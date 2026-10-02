@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es">
+<TS version="2.1" language="es_ES">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Nombre:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Agregar un nuevo grupo a la lista</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>El nombre ya existe</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>La acción no se puede completar porque el nombre del grupo ya existe.</translation>
     </message>
 </context>
 <context>
@@ -516,10 +528,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Seleccione segundo punto de línea</translation>
     </message>
@@ -602,10 +610,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Error</translation>
@@ -698,10 +702,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Editar radio</translation>
     </message>
@@ -788,10 +788,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Seleccione segundo punto de ángulo</translation>
@@ -935,6 +931,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Grosor de línea:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opciones</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curva suave:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustar la longitud:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Apagado</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Inicio</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambos</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longitud de curva:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistente de fórmulas</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Fórmula de longitud de arco de curva (se aplica si el campo está completo)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editar longitud de curva</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Error</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Longitud no puede ser negativa</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -985,10 +1041,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Seleccione punto del eje</translation>
@@ -1061,10 +1113,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editar largo</translation>
     </message>
@@ -1136,10 +1184,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editar largo</translation>
     </message>
@@ -1210,10 +1254,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Editar largo</translation>
@@ -1321,10 +1361,6 @@ p, li { white-space: pre-wrap; }
         <translation>Cálculo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en la caja de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Radio2:</translation>
     </message>
@@ -1415,10 +1451,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Editar ángulo</translation>
@@ -1714,10 +1746,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Primer punto de línea</translation>
     </message>
@@ -2004,10 +2032,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Seleccionar segundo punto de línea</translation>
     </message>
@@ -2291,11 +2315,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Seleccionar punto del centro del arco</translation>
@@ -2531,10 +2551,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Seleccione primer punto de línea</translation>
     </message>
@@ -2616,7 +2632,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Coordenadas en la hoja</translation>
@@ -2705,10 +2721,6 @@ p, li { white-space: pre-wrap; }
         <translation>Valor</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Editar ángulo del primer punto de control</translation>
     </message>
@@ -2760,6 +2772,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation>Geometría</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opciones</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curva suave:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustar la longitud:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Apagado</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Inicio</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambos</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longitud de curva:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Fórmula de longitud de arco de curva (se aplica si el campo está completo)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editar longitud de curva</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2810,10 +2870,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Valor</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar cálculo total en una caja de mensajes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3448,6 +3504,10 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     <message>
         <source>Lineweight:</source>
         <translation>Grosor de línea:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grupo></translation>
     </message>
 </context>
 <context>
@@ -5026,10 +5086,6 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
         <translation>Valor</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en el cuadro de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Cálculo</translation>
     </message>
@@ -5110,10 +5166,6 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     <message>
         <source>Formula wizard</source>
         <translation>Asistente de fórmula</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en el cuadro de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7149,6 +7201,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation>Error al crear una copia de seguridad: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Eliminar bloque de borrador</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Suprimir</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmar eliminación</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>¿Está seguro de que desea eliminar el punto base y el bloque de borrador actual?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8053,10 +8121,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Duplicado</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Piquete</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Piquete T</translation>
     </message>
@@ -8267,6 +8331,26 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
         <translation>Presione la tecla &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la pieza.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar piquete de línea de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar piquete de línea de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Establecer como piquete predeterminado</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar piquete</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Eliminar piquete</translation>
     </message>
 </context>
 <context>
@@ -8808,38 +8892,6 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>milímetros</translation>
     </message>
@@ -8970,6 +9022,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source> per file</source>
         <translation> por archivo</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -9267,6 +9327,10 @@ actualización:</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Fórmula de borrado automático</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizar cuadros de diálogo nativos</translation>
     </message>
 </context>
 <context>
@@ -10024,6 +10088,30 @@ actualización:</translation>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Apariencia</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Medidas</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diálogos</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizar cuadros de diálogo nativos</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10091,7 +10179,7 @@ actualización:</translation>
         <translation>Adjunte su archivo 3DLook a un correo electrónico y envíelo a convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Recibirá un correo electrónico con el archivo convertido, que podrá cargar en SeamlyME como de costumbre.</translation>
     </message>
     <message>
@@ -10173,6 +10261,10 @@ actualización:</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10272,6 +10364,10 @@ actualización:</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Signo Positivo</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10959,6 +11055,118 @@ actualización:</translation>
         <source>Ctrl+PgDown</source>
         <translation>Control+Av Pág</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Navegación por diálogos</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Cuadro desplegable</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Pestaña</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Mover el foco al cuadro desplegable.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Flecha arriba / abajo</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Desplazarse por los elementos cuando el cuadro desplegable está cerrado o abierto.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Flecha abajo o F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Abrir la lista desplegable.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter o Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Seleccionar el elemento actualmente resaltado y cerrar la lista.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Cerrar la lista sin cambiar la selección.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Teclas de letras (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Escribir las primeras letras del nombre de un elemento para saltar directamente a ese elemento en la lista.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Barra de pestañas</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Mover el foco a la barra de pestañas.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Flecha izquierda y derecha</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Mover la selección entre pestañas adyacentes.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Botón de comando</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Barra espaciadora</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Activar el botón que tiene el foco.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Acción predeterminada si el botón está configurado como el botón por defecto en una ventana de diálogo.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lista</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Mover el foco a la lista.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Mueve la selección al elemento anterior o siguiente de la lista.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Teclas Inicio / Fin</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Saltar directamente al primer o último elemento de la lista.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Re Pág / Av Pág</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11402,14 +11610,6 @@ Do you want to save your changes?</source>
         <translation>Diagrama de la medida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Medida desconocida&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Medida desconocida&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Sobre Qt</translation>
     </message>
@@ -11634,7 +11834,7 @@ Do you want to save your changes?</source>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11667,6 +11867,10 @@ load in SeamlyME as usual.
     <message>
         <source>Full name:</source>
         <translation>Nombre completo:</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Medida personalizada</translation>
     </message>
 </context>
 <context>
@@ -12686,16 +12890,8 @@ load in SeamlyME as usual.
         <translation>Segundo arista ángulo recto</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Piquete</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tipo</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Ninguno</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12748,6 +12944,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Eliminar</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Mostrar piquete de línea de corte</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Mostrar piquete de línea de costura</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Establecer como piquete predeterminado</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Editar piquete</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Eliminar piquete</translation>
     </message>
 </context>
 <context>
@@ -13134,7 +13350,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Nombre</translation>
@@ -13752,6 +13968,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation>Dirección:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opciones</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curva suave:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>No</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Sí</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustar la longitud:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Apagado</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Inicio</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Fin</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambos</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Longitud de curva:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13765,7 +14021,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Longitud</translation>

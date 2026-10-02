@@ -439,7 +439,7 @@ bool VLayoutPaper::saveResult(const VBestSquare &bestResult, const VLayoutPiece 
     {
         VLayoutPiece workDetail = piece;
         workDetail.setTransform(bestResult.Transform());// Don't forget set transform
-        workDetail.SetMirror(bestResult.isMirror());
+        workDetail.setMirror (bestResult.isMirror());
         const QVector<QPointF> newGContour = d->globalContour.UniteWithContour(workDetail, bestResult.GContourEdge(),
                                                                                bestResult.pieceEdge(),
                                                                                bestResult.Type());

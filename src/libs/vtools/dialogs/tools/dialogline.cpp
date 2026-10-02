@@ -1,9 +1,10 @@
+//---------------------------------------------------------------------------------------------------------------------
 // @file   dialogline.cpp
 // @author Douglas S Caskey
 // @date   26 Jun, 2024
 //
 // @copyright
-// Copyright (C) 2017 - 2024 Seamly, LLC
+// Copyright (C) 2017 - 2026 Seamly, LLC
 // https://github.com/fashionfreedom/seamly2d
 //
 // @brief
@@ -19,8 +20,9 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogline.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   November 15, 2013
@@ -43,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialogline.h"
 
@@ -62,11 +64,10 @@
 #include "ui_dialogline.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogLine create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogLine create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogLine)
@@ -122,10 +123,9 @@ DialogLine::~DialogLine()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setSecondPoint set id second point
- * @param value id
- */
+/// @brief setSecondPoint set id second point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setSecondPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
@@ -136,10 +136,9 @@ void DialogLine::setSecondPoint(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineName set the name of the line
- * @param value id
- */
+/// @brief setLineName set the name of the line
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setLineName()
 {
     ui->name_LineEdit->setText(tr("Line_") + ui->comboBoxFirstPoint->currentText() +
@@ -147,20 +146,18 @@ void DialogLine::setLineName()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineType return type of line
- * @return type
- */
+/// @brief getLineType return type of line
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogLine::getLineType() const
 {
     return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineType set type of line
- * @param value type
- */
+/// @brief setLineType set type of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setLineType(const QString &value)
 {
     changeCurrentData(ui->lineType_ComboBox, value);
@@ -168,20 +165,18 @@ void DialogLine::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogLine::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -201,10 +196,9 @@ void DialogLine::setLineColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setFirstPoint set id first point
- * @param value id
- */
+/// @brief setFirstPoint set id first point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::setFirstPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
@@ -257,11 +251,10 @@ void DialogLine::SaveData()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogLine::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -299,20 +292,18 @@ void DialogLine::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getFirstPoint return id first point
- * @return id
- */
+/// @brief getFirstPoint return id first point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogLine::getFirstPoint() const
 {
     return qvariant_cast<quint32>(ui->comboBoxFirstPoint->currentData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getSecondPoint return id second point
- * @return id
- */
+/// @brief getSecondPoint return id second point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogLine::getSecondPoint() const
 {
     return qvariant_cast<quint32>(ui->comboBoxSecondPoint->currentData());

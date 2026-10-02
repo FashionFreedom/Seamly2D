@@ -94,10 +94,6 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     , ui(new Ui::DialogSplinePath)
     , path()
     , newDuplicate(-1)
-    , formulaBaseHeightAngle1(0)
-    , formulaBaseHeightAngle2(0)
-    , formulaBaseHeightLength1(0)
-    , formulaBaseHeightLength2(0)
     , flagAngle1()
     , flagAngle2()
     , flagLength1()
@@ -111,11 +107,6 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     setDialogPosition();
 
     plainTextEditFormula = ui->plainTextEditAngle1F;
-
-    formulaBaseHeightAngle1 = ui->plainTextEditAngle1F->height();
-    formulaBaseHeightAngle2 = ui->plainTextEditAngle2F->height();
-    formulaBaseHeightLength1 = ui->plainTextEditLength1F->height();
-    formulaBaseHeightLength2 = ui->plainTextEditLength2F->height();
 
     ui->plainTextEditAngle1F->installEventFilter(this);
     ui->plainTextEditAngle1F->setToolTip(makeAngleTooltip());
@@ -162,15 +153,10 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     connect(ui->toolButtonExprLength1, &QPushButton::clicked, this, &DialogSplinePath::FXLength1);
     connect(ui->toolButtonExprLength2, &QPushButton::clicked, this, &DialogSplinePath::FXLength2);
 
-    connect(ui->plainTextEditAngle1F, &QPlainTextEdit::textChanged, this, &DialogSplinePath::Angle1Changed);
-    connect(ui->plainTextEditAngle2F, &QPlainTextEdit::textChanged, this, &DialogSplinePath::Angle2Changed);
+    connect(ui->plainTextEditAngle1F,  &QPlainTextEdit::textChanged, this, &DialogSplinePath::Angle1Changed);
+    connect(ui->plainTextEditAngle2F,  &QPlainTextEdit::textChanged, this, &DialogSplinePath::Angle2Changed);
     connect(ui->plainTextEditLength1F, &QPlainTextEdit::textChanged, this, &DialogSplinePath::Length1Changed);
     connect(ui->plainTextEditLength2F, &QPlainTextEdit::textChanged, this, &DialogSplinePath::Length2Changed);
-
-    connect(ui->pushButtonGrowAngle1, &QPushButton::clicked, this, &DialogSplinePath::DeployAngle1TextEdit);
-    connect(ui->pushButtonGrowAngle2, &QPushButton::clicked, this, &DialogSplinePath::DeployAngle2TextEdit);
-    connect(ui->pushButtonGrowLength1, &QPushButton::clicked, this, &DialogSplinePath::DeployLength1TextEdit);
-    connect(ui->pushButtonGrowLength2, &QPushButton::clicked, this, &DialogSplinePath::DeployLength2TextEdit);
 
     vis = new VisToolSplinePath(data);
     auto path = qobject_cast<VisToolSplinePath *>(vis);
@@ -180,6 +166,8 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     SCASSERT(scene != nullptr)
     connect(scene, &VMainGraphicsScene::MouseLeftPressed, path, &VisToolSplinePath::MouseLeftPressed);
     connect(scene, &VMainGraphicsScene::MouseLeftReleased, path, &VisToolSplinePath::MouseLeftReleased);
+
+    ui->plainTextEditLength1F->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -354,42 +342,6 @@ void DialogSplinePath::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::DeployAngle1TextEdit()
-{
-    DeployFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
-    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
-    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
-    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::DeployAngle2TextEdit()
-{
-    DeployFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
-    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
-    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
-    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::DeployLength1TextEdit()
-{
-    DeployFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
-    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
-    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
-    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::DeployLength2TextEdit()
-{
-    DeployFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
-    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
-    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
-    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::Angle1Changed()
 {
     const int row = ui->listWidget->currentRow();
@@ -557,13 +509,7 @@ void DialogSplinePath::FXAngle1()
     if (dialog->exec() == QDialog::Accepted)
     {
         angle1F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (angle1F.length() > 80)
-        {
-            DeployAngle1TextEdit();
-        }
         ui->plainTextEditAngle1F->setPlainText(angle1F);
-        MoveCursorToEnd(ui->plainTextEditAngle1F);
     }
     delete dialog;
 }
@@ -582,13 +528,7 @@ void DialogSplinePath::FXAngle2()
     if (dialog->exec() == QDialog::Accepted)
     {
         angle2F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (angle2F.length() > 80)
-        {
-            DeployAngle1TextEdit();
-        }
         ui->plainTextEditAngle2F->setPlainText(angle2F);
-        MoveCursorToEnd(ui->plainTextEditAngle2F);
     }
     delete dialog;
 }
@@ -607,13 +547,7 @@ void DialogSplinePath::FXLength1()
     if (dialog->exec() == QDialog::Accepted)
     {
         length1F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (length1F.length() > 80)
-        {
-            DeployLength1TextEdit();
-        }
         ui->plainTextEditLength1F->setPlainText(length1F);
-        MoveCursorToEnd(ui->plainTextEditLength1F);
     }
     delete dialog;
 }
@@ -632,13 +566,7 @@ void DialogSplinePath::FXLength2()
     if (dialog->exec() == QDialog::Accepted)
     {
         length2F = qApp->translateVariables()->FormulaToUser(dialog->GetFormula(), qApp->Settings()->getOsSeparator());
-        // increase height if needed.
-        if (length2F.length() > 80)
-        {
-            DeployLength2TextEdit();
-        }
         ui->plainTextEditLength2F->setPlainText(length2F);
-        MoveCursorToEnd(ui->plainTextEditLength2F);
     }
     delete dialog;
 }
@@ -702,7 +630,7 @@ void DialogSplinePath::EvalLength1()
         ui->labelResultLength1->setText(tr("Error") + QLatin1String(" (") + postfix + QLatin1String(")"));
         ui->labelResultLength1->setToolTip(tr("Length can't be negative"));
 
-        CheckState();
+        this->CheckState();
     }
 
     QListWidgetItem *item = ui->listWidget->item(row);
@@ -733,7 +661,7 @@ void DialogSplinePath::EvalLength2()
         ui->labelResultLength2->setText(tr("Error") + QLatin1String(" (") + postfix + QLatin1String(")"));
         ui->labelResultLength2->setToolTip(tr("Length can't be negative"));
 
-        CheckState();
+        this->CheckState();
     }
 
     QListWidgetItem *item = ui->listWidget->item(row);
@@ -811,7 +739,7 @@ void DialogSplinePath::currentPointChanged(int index)
     }
     ChangeColor(ui->labelName, color);
     ChangeColor(ui->labelPoint, color);
-    CheckState();
+    this->CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -896,7 +824,6 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
         ui->plainTextEditAngle1F->blockSignals(true);
         ui->plainTextEditAngle1F->setPlainText(notUsed);
         ui->plainTextEditAngle1F->setEnabled(false);
-        ui->pushButtonGrowAngle1->setEnabled(false);
         ui->plainTextEditAngle1F->blockSignals(false);
 
         ui->toolButtonExprLength1->setEnabled(false);
@@ -906,7 +833,6 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
         ui->plainTextEditLength1F->blockSignals(true);
         ui->plainTextEditLength1F->setPlainText(notUsed);
         ui->plainTextEditLength1F->setEnabled(false);
-        ui->pushButtonGrowLength1->setEnabled(false);
         ui->plainTextEditLength1F->blockSignals(false);
 
         ui->plainTextEditAngle2F->setEnabled(true);
@@ -935,7 +861,6 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
         ui->plainTextEditAngle2F->blockSignals(true);
         ui->plainTextEditAngle2F->setPlainText(notUsed);
         ui->plainTextEditAngle2F->setEnabled(false);
-        ui->pushButtonGrowAngle2->setEnabled(false);
         ui->plainTextEditAngle2F->blockSignals(false);
 
         ui->toolButtonExprLength2->setEnabled(false);
@@ -945,7 +870,6 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
         ui->plainTextEditLength2F->blockSignals(true);
         ui->plainTextEditLength2F->setPlainText(notUsed);
         ui->plainTextEditLength2F->setEnabled(false);
-        ui->pushButtonGrowLength2->setEnabled(false);
         ui->plainTextEditLength2F->blockSignals(false);
 
         ui->plainTextEditAngle1F->setEnabled(true);
@@ -967,11 +891,6 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
     }
     else
     {
-        ui->pushButtonGrowAngle1->setEnabled(true);
-        ui->pushButtonGrowAngle2->setEnabled(true);
-        ui->pushButtonGrowLength1->setEnabled(true);
-        ui->pushButtonGrowLength2->setEnabled(true);
-
         ui->toolButtonExprAngle1->setEnabled(true);
         ui->toolButtonExprLength1->setEnabled(true);
         ui->toolButtonExprAngle2->setEnabled(true);
@@ -1069,22 +988,4 @@ void DialogSplinePath::ShowPointIssue(const QString &pName)
     {
        item->setText(pName + QLatin1String("(!)"));
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height)
-{
-    SCASSERT(textEdit != nullptr)
-    SCASSERT(pushButton != nullptr)
-
-    const QTextCursor cursor = textEdit->textCursor();
-
-    setMaximumWidth(260);
-    textEdit->setFixedHeight(height);
-    pushButton->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
-    setUpdatesEnabled(false);
-    repaint();
-    setUpdatesEnabled(true);
-    textEdit->setFocus();
-    textEdit->setTextCursor(cursor);
 }

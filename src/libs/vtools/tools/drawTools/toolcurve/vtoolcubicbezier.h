@@ -75,9 +75,12 @@ public:
 
     static VToolCubicBezier *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                     VAbstractPattern *doc, VContainer *data);
-    static VToolCubicBezier *Create(const quint32 _id, VCubicBezier *spline, VMainGraphicsScene *scene,
-                                    VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                    const Source &typeCreation);
+    static VToolCubicBezier *Create(const quint32 _id, VCubicBezier *spline,
+                                    bool autoSmooth, int lengthMode,
+                                    const QString &targetLength,
+                                    VMainGraphicsScene *scene,
+                                    VAbstractPattern *doc, VContainer *data,
+                                    const Document &parse, const Source &typeCreation);
                                     
     static const QString ToolType;
     virtual int          type() const override {return Type;}
@@ -91,6 +94,15 @@ public:
     VCubicBezier         getSpline()const;
     void                 setSpline(const VCubicBezier &spl);
 
+    bool                 GetAutoSmooth() const;
+    void                 SetAutoSmooth(bool value);
+
+    QString              GetTargetLength() const;
+    void                 SetTargetLength(const QString &value);
+
+    int                  GetLengthMode() const;
+    void                 SetLengthMode(int value);
+
     virtual void         ShowVisualization(bool show) override;
 
 
@@ -98,6 +110,7 @@ protected slots:
     virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) override;
 
 protected:
+    virtual void         ReadToolAttributes(const QDomElement &domElement) override;
     virtual void         RemoveReferens() override;
     virtual void         SaveDialog(QDomElement &domElement) override;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
@@ -108,7 +121,15 @@ private:
     Q_DISABLE_COPY(VToolCubicBezier)
 
                          VToolCubicBezier(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                          const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                                          bool autoSmooth, int lengthMode,
+                                          const QString &targetLength,
+                                          const Source &typeCreation, QGraphicsItem *parent = nullptr);
+
+    bool                 m_autoSmooth;
+    int                  m_lengthMode;
+    QString              m_targetLength;
+    quint32              m_p2Id;
+    quint32              m_p3Id;
 
     void                 SetSplineAttributes(QDomElement &domElement, const VCubicBezier &spl);
 };

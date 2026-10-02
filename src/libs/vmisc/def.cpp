@@ -32,6 +32,7 @@
 
 #include "vabstractapplication.h"
 
+#include <qnumeric.h>
 #include <QApplication>
 #include <QChar>
 #include <QColor>
@@ -52,8 +53,12 @@
 #include <QPrinterInfo>
 #include <QProcess>
 #include <QRgb>
+#include <QSortFilterProxyModel>
+#include <QStandardItemModel>
+#include <QStandardItem>
 #include <QString>
 #include <QtDebug>
+#include <QtMath>
 #include <QPixmapCache>
 #include <QGraphicsItem>
 #include <QDesktopServices>
@@ -343,6 +348,22 @@ QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &from, const Unit &
     return QMarginsF(left, top, right, bottom);
 }
 
+// Normalizes any number to an arbitrary range
+// by assuming the range wraps around when going below min or above max
+qreal normalize(const qreal value, const qreal start, const qreal end)
+{
+    // check if value is not start && is evenly divisble by end value
+    if (qFabs(value) != start && std::fmod(qFabs(value), end) < 1e-9)
+    {
+        return end;
+    }
+
+    const qreal range       = end - start   ;   //
+    const qreal offsetValue = value - start ;   // value relative to 0
+
+    // add start to reset back to start of original range
+    return (offsetValue - (floor(offsetValue / range) * range)) + start ;
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 QStringList SupportedLocales()
@@ -366,9 +387,89 @@ QStringList SupportedLocales()
                                               << QStringLiteral("pt_BR")
                                               << QStringLiteral("el_GR")
                                               << QStringLiteral("en_GB")
-                                              << QStringLiteral("tr_TR");
+                                              << QStringLiteral("tr_TR")
+                                              << QStringLiteral("pl_PL")
+                                              << QStringLiteral("hu_HU");
     return locales;
 }
+
+QPalette lightPalette()
+{
+    QPalette palette;
+    palette.setColor(QPalette::Window, QColor(240, 240, 240)); // A common light background color
+    palette.setColor(QPalette::WindowText,Qt::black);
+    palette.setColor(QPalette::Base, Qt::white);
+    palette.setColor(QPalette::AlternateBase, QColor(230, 230, 230));
+    palette.setColor(QPalette::ToolTipBase,Qt::white);
+    palette.setColor(QPalette::ToolTipText,  Qt::black);
+    palette.setColor(QPalette::Text, Qt::black);
+    palette.setColor(QPalette::Button, QColor(240, 240, 240));
+    palette.setColor(QPalette::ButtonText, Qt::black);
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Link, QColor(42, 130, 218));
+    palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+    return palette;
+}
+
+QPalette darkPalette()
+{
+    QPalette palette;
+    palette.setColor(QPalette::Window, QColor(53, 53, 53)); // A common light background color
+    palette.setColor(QPalette::WindowText, Qt::white);
+    palette.setColor(QPalette::Base, QColor(25, 25, 25));
+    palette.setColor(QPalette::AlternateBase, QColor(53, 53, 53));
+    palette.setColor(QPalette::ToolTipBase, Qt::white);
+    palette.setColor(QPalette::ToolTipText, Qt::black);
+    palette.setColor(QPalette::Text, Qt::white);
+    palette.setColor(QPalette::Button, QColor(53, 53, 53));
+    palette.setColor(QPalette::ButtonText, Qt::white);
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Link, QColor(42, 130, 218));
+    palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
+    palette.setColor(QPalette::HighlightedText, Qt::black);
+    return palette;
+}
+
+QPalette twilightPalette()
+{
+    QPalette palette;
+    // Breeze  Twilight inspired dark colors
+    palette.setColor(QPalette::Window, QColor(49, 77, 127));         // Flat Dark Blue
+    palette.setColor(QPalette::WindowText, QColor(230, 230, 230));   // Light Gray for text
+    palette.setColor(QPalette::Base, QColor(30, 30, 30));
+    palette.setColor(QPalette::AlternateBase, QColor(78, 112, 147)); // Kashmir Blue
+    palette.setColor(QPalette::ToolTipBase, QColor(230, 230, 230));  // Light Gray for text
+    palette.setColor(QPalette::ToolTipText, QColor(49, 77, 127));    // Flat Dark Blue
+    palette.setColor(QPalette::Text,QColor(230, 230, 230));          // Light Gray for text
+    palette.setColor(QPalette::Button, QColor(78, 112, 147));        // Kashmir Blue
+    palette.setColor(QPalette::ButtonText, Qt::white);
+    palette.setColor(QPalette::BrightText, Qt::red);
+    palette.setColor(QPalette::Highlight, QColor(155, 111, 110));    // Dark Rose Gold accent
+    palette.setColor(QPalette::HighlightedText, Qt::white);
+    return palette;
+}
+
+/*
+// Base colors (Dark Blue/Grey)
+QColor background = QColor(49, 77, 127); // Flat Dark Blue [2]
+QColor text = Qt::white;
+QColor window = QColor(30, 30, 40); // Darker tone
+QColor highlight = QColor(128, 100, 160); // Accent
+
+twilight.setColor(QPalette::Window, window);
+twilight.setColor(QPalette::WindowText, text);
+twilight.setColor(QPalette::Base, QColor(25, 25, 35));
+twilight.setColor(QPalette::AlternateBase, background);
+twilight.setColor(QPalette::ToolTipBase, text);
+twilight.setColor(QPalette::ToolTipText, window);
+twilight.setColor(QPalette::Text, text);
+twilight.setColor(QPalette::Button, background);
+twilight.setColor(QPalette::ButtonText, text);
+twilight.setColor(QPalette::BrightText, Qt::red);
+twilight.setColor(QPalette::Highlight, highlight);
+twilight.setColor(QPalette::HighlightedText, Qt::white);
+*/
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -814,6 +915,11 @@ void InitLanguages(QComboBox *combobox)
 
         QLocale loc = QLocale(locale);
         QString lang = loc.nativeLanguageName();
+        if (!lang.isEmpty())
+        {
+            lang[0] = lang[0].toUpper();
+        }
+
         QString country = QLocale::countryToString(loc.country());
         if (country == QLatin1String("Czechia"))
         {
@@ -824,6 +930,31 @@ void InitLanguages(QComboBox *combobox)
         combobox->addItem(ico, lang, locale);
     }
 
+    // Sort items in the combobox
+    // Create a standard item model that can hold icons and data
+    QStandardItemModel *sourceModel = new QStandardItemModel(combobox);
+
+    // Transfer text, icons, and user data from the combobox to the new model
+    for (int i = 0; i < combobox->count(); ++i)
+    {
+        QStandardItem *item = new QStandardItem();
+
+        item->setText(combobox->itemText(i));
+        item->setIcon(combobox->itemIcon(i));
+        item->setData(combobox->itemData(i), Qt::UserRole); // Preserves locale data
+
+        sourceModel->appendRow(item);
+    }
+
+    // Set up and sort the proxy model
+    QSortFilterProxyModel *proxyModel = new QSortFilterProxyModel(combobox);
+    proxyModel->setSourceModel(sourceModel);
+    proxyModel->setSortCaseSensitivity(Qt::CaseInsensitive);
+    proxyModel->sort(0, Qt::AscendingOrder);
+
+    // Assign the sorted proxy model to combobox
+    combobox->setModel(proxyModel);
+
     if (combobox->count() == 0 || !englishUS)
     {
         // English language is internal and doens't have own *.qm file.
@@ -832,7 +963,7 @@ void InitLanguages(QComboBox *combobox)
         combobox->addItem(ico, lang, en_US);
     }
 
-    // set default translators and language checked
+    // Set default translators and language checked
     qint32 index = combobox->findData(qApp->Settings()->getLocale());
     if (index != -1)
     {

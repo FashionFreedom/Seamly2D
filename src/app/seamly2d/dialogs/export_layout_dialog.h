@@ -120,7 +120,8 @@ private:
     int                     m_count;
     bool                    m_isInitialized;
     Draw                    m_mode;
-    QPushButton            *m_SaveButton;
+    QPushButton            *m_saveButton;
+    QColor                  m_foreGroundColor;
 
     void                    removeFormatFromList(LayoutExportFormat format);
 

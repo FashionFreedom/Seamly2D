@@ -369,7 +369,7 @@ quint32 VPattern::getActiveBasePoint()
             const QDomElement domElement = domNode.toElement();
             if (domElement.isNull() == false)
             {
-                if (domElement.tagName() == TagPoint && domElement.attribute(AttrType, "") == VToolBasePoint::ToolType)
+                if (domElement.tagName() == TagPoint && domElement.attribute(AttrType, "") == BasePointTool::ToolType)
                 {
                     return getParameterId(domElement);
                 }
@@ -867,8 +867,8 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
         VPiece piece;
         const quint32 id = getParameterId(domElement);
         piece.SetName(GetParametrString(domElement, AttrName, tr("Piece")));
-        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, tr("white")));
-        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, tr("nobrush")));
+        piece.setColor(GetParametrString(domElement, PatternPieceTool::AttrPieceColor, ColorWhite));
+        piece.setFill(GetParametrString(domElement, PatternPieceTool::AttrPieceFill, FillNone));
         piece.setIsLocked(getParameterBool(domElement, AttrPieceLocked, falseStr));
 
         piece.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
@@ -880,7 +880,7 @@ void VPattern::parsePieceElement(QDomElement &domElement, const Document &parse)
                                                        falseStr));
         piece.SetForbidFlipping(getParameterBool(domElement, PatternPieceTool::AttrForbidFlipping,
                                            QString().setNum(qApp->Seamly2DSettings()->getForbidPieceFlipping())));
-        piece.SetInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
+        piece.setInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
         piece.SetUnited(getParameterBool(domElement, PatternPieceTool::AttrUnited, falseStr));
 
         const QString width = GetParametrString(domElement, AttrWidth, "0.0");
@@ -1160,14 +1160,14 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
     Q_ASSERT_X(not type.isEmpty(), Q_FUNC_INFO, "type of point is empty");
 
-    QStringList points = QStringList() << VToolBasePoint::ToolType                  /*0*/
+    QStringList points = QStringList() << BasePointTool::ToolType                  /*0*/
                                        << VToolEndLine::ToolType                    /*1*/
                                        << VToolAlongLine::ToolType                  /*2*/
                                        << VToolShoulderPoint::ToolType              /*3*/
                                        << VToolNormal::ToolType                     /*4*/
                                        << VToolBisector::ToolType                   /*5*/
                                        << VToolLineIntersect::ToolType              /*6*/
-                                       << VToolPointOfContact::ToolType             /*7*/
+                                       << IntersectArcLineTool::ToolType             /*7*/
                                        << VNodePoint::ToolType                      /*8*/
                                        << VToolHeight::ToolType                     /*9*/
                                        << VToolTriangle::ToolType                   /*10*/
@@ -1186,7 +1186,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << AnchorPointTool::ToolType;                /*23*/
     switch (points.indexOf(type))
     {
-        case 0: //VToolBasePoint::ToolType
+        case 0: //BasePointTool::ToolType
             ParseToolBasePoint(scene, domElement, parse);
             break;
         case 1: //VToolEndLine::ToolType
@@ -1207,8 +1207,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 6: //VToolLineIntersect::ToolType
             ParseToolLineIntersect(scene, domElement, parse);
             break;
-        case 7: //VToolPointOfContact::ToolType
-            ParseToolPointOfContact(scene, domElement, parse);
+        case 7: //IntersectArcLineTool::ToolType
+            ParseToolIntersectArcLine(scene, domElement, parse);
             break;
         case 8: //VNodePoint::ToolType
             ParseNodePoint(domElement, parse);
@@ -1396,7 +1396,7 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
-    VToolBasePoint *spoint = nullptr;
+    BasePointTool *spoint = nullptr;
     try
     {
         quint32 id = 0;
@@ -1411,7 +1411,7 @@ void VPattern::ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &
 
         VPointF *point = new VPointF(x, y, name, mx, my);
         point->setShowPointName(showPointName);
-        spoint = VToolBasePoint::Create(id, m_activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
+        spoint = BasePointTool::Create(id, m_activeDraftBlock, point, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {
@@ -1698,7 +1698,7 @@ void VPattern::ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomEleme
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
+void VPattern::ParseToolIntersectArcLine(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
 {
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
@@ -1718,7 +1718,7 @@ void VPattern::ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &d
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
 
-        VToolPointOfContact::Create(id, f, center, firstPointId, secondPointId, name, mx, my, showPointName, scene, this,
+        IntersectArcLineTool::Create(id, f, center, firstPointId, secondPointId, name, mx, my, showPointName, scene, this,
                                     data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != radius)
@@ -2215,8 +2215,8 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (c1R != c1Radius || c2R != c2Radius)
         {
-            SetAttribute(domElement, AttrC1Center, c1R);
-            SetAttribute(domElement, AttrC2Center, c2R);
+            SetAttribute(domElement, AttrC1Radius, c1R);
+            SetAttribute(domElement, AttrC2Radius, c2R);
             modified = true;
             haveLiteChange();
         }
@@ -2290,7 +2290,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (cR != cRadius)
         {
-            SetAttribute(domElement, AttrCCenter, cR);
+            SetAttribute(domElement, AttrCRadius, cR);
             modified = true;
             haveLiteChange();
         }
@@ -2454,8 +2454,13 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         const QString lineWeight = GetParametrString(domElement, AttrLineWeight, DefaultLineWeight);
         const quint32 duplicate  = GetParametrUInt(domElement,   AttrDuplicate,  "0");
 
+        const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
+
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle,
-                                               lineWeight, scene, this, data, parse, Source::FromFile);
+                                               lineWeight, scene, this, data, parse, Source::FromFile,
+                                               autoSmooth, lengthMode, targetLength);
 
         if (spl != nullptr)
         {
@@ -2524,7 +2529,11 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
         spline->SetPenStyle(penStyle);
         spline->setLineWeight(lineWeight);
 
-        VToolCubicBezier::Create(id, spline, scene, this, data, parse, Source::FromFile);
+        const bool autoSmooth = (domElement.attribute(AttrAutoSmooth) == QStringLiteral("true"));
+        const int lengthMode = domElement.attribute(AttrLengthMode, QStringLiteral("0")).toInt();
+        const QString targetLength = domElement.attribute(AttrLength, QString());
+
+        VToolCubicBezier::Create(id, spline, autoSmooth, lengthMode, targetLength, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &error)
     {
@@ -3194,9 +3203,9 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (a != angle || len != length || rot != rotation)
         {
-            SetAttribute(domElement, AttrAngle, angle);
-            SetAttribute(domElement, AttrLength, length);
-            SetAttribute(domElement, AttrRotationAngle, rotation);
+            SetAttribute(domElement, AttrAngle, a);
+            SetAttribute(domElement, AttrLength, len);
+            SetAttribute(domElement, AttrRotationAngle, rot);
             modified = true;
             haveLiteChange();
         }
@@ -3851,15 +3860,24 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPattern::GenerateSuffix(const QString &type) const
+QString VPattern::generateSuffix(const QString &type) const
 {
-    const QString suffixBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex())).toLower();
+    QString suffixBase;
+    if (!type.isEmpty())
+    {
+        suffixBase = type;
+    }
+    else
+    {
+        suffixBase = QString("_%1").arg(GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex())).toLower());
+    }
+
     const QStringList uniqueNames = VContainer::AllUniqueNames();
     qint32 num = 1;
     QString suffix;
     for (;;)
     {
-        suffix = QString("_%1%2%3").arg(suffixBase).arg(num).arg(type);
+        suffix = QString("%1%2").arg(suffixBase).arg(num);
 
         for (int i=0; i < uniqueNames.size(); ++i)
         {
@@ -4163,7 +4181,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                     break;
                 case Tool::BasePoint:
                 case Tool::LineIntersect:
-                case Tool::PointOfContact:
+                case Tool::IntersectArcLine:
                 case Tool::Triangle:
                 case Tool::PointOfIntersection:
                 case Tool::CutArc:

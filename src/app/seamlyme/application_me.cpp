@@ -1,3 +1,4 @@
+//-----------------------------------------------------------------------------
 //  @file   application_2d.cpp
 //  @author Douglas S Caskey
 //  @date   7 Mar, 2024
@@ -6,7 +7,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2025 Seamly2D project
+//  Copyright (C) 2017-2026 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -21,6 +22,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 //  @file   vapplication.h
@@ -56,6 +58,7 @@
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
+#include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vsysexits.h"
 #include "../vmisc/diagnostic.h"
@@ -73,8 +76,9 @@
 #include <iostream>
 #include <QGridLayout>
 #include <QSpacerItem>
-#include <QThread>
 #include <QStandardPaths>
+#include <QStyleHints>
+#include <QThread>
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
@@ -90,6 +94,15 @@ QT_WARNING_POP
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     Q_UNUSED(context)
+
+    // Qt's Wayland plugin warns on every focus change when the compositor sends a text input leave
+    // event for a surface it isn't tracking. The plugin carries on as normal after logging it, so
+    // it is noise. Drop it instead of logging it and popping up a dialog on every interaction.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QWaylandTextInputv3"))
+            && msg.contains(QStringLiteral("surface 0x0")))
+    {
+        return;
+    }
 
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("::connect")))
@@ -256,7 +269,7 @@ ApplicationME::ApplicationME(int &argc, char **argv)
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_ME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
-    setOrganizationDomain(VER_COMPANYDOMAIN_STR);
+    setOrganizationDomain(VER_COMPANYDOMAIN);
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
 
@@ -284,6 +297,62 @@ ApplicationME::~ApplicationME()
     {
         delete m_dataBase;
     }
+}
+
+void ApplicationME::setTheme()
+{
+    QPalette palette;
+    int theme = seamlyMeSettings()->getAppTheme();
+
+    if (theme == 3)
+    {
+        // Get system mode (theme)
+        Qt::ColorScheme scheme = styleHints()->colorScheme();
+
+        if (scheme == Qt::ColorScheme::Light)
+        {
+            theme = 0;
+        }
+        else if (scheme == Qt::ColorScheme::Dark)
+        {
+            theme = 1;
+        }
+    }
+
+    switch (theme)
+    {
+        case 0:
+        {
+            setStyle("Fusion");
+            palette = lightPalette();
+            break;
+        }
+        case 1:
+        {
+            setStyle("Fusion");
+            palette = darkPalette();
+            break;
+        }
+        case 2:
+        {
+            setStyle("Fusion");
+            palette = twilightPalette();
+            break;
+        }
+        case 4:
+        {
+            setStyle("windowsvista");
+            palette = lightPalette();
+            break;
+        }
+        case 5:
+        {
+            setStyle("Windows11");
+            palette = darkPalette();
+            break;
+        }
+    }
+    setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -402,6 +471,8 @@ void ApplicationME::initOptions()
     qInstallMessageHandler(noisyFailureMsgHandler);
 
     openSettings();
+    setTheme();
+
     VSeamlyMeSettings *settings = seamlyMeSettings();
     QDir().mkpath(settings->getDefaultTemplatePath());
     QDir().mkpath(settings->getDefaultIndividualSizePath());

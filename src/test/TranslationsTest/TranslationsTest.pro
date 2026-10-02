@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += testlib widgets xml printsupport
+QT       += testlib widgets xml printsupport 
 
 QT       -= gui
 

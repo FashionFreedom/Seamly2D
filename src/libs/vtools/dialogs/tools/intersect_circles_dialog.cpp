@@ -138,6 +138,8 @@ IntersectCirclesDialog::IntersectCirclesDialog(const VContainer *data, const qui
             &IntersectCirclesDialog::Circle2RadiusChanged);
 
     vis = new IntersectCirclesVisual(data);
+
+    ui->plainTextEditCircle1Radius->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -201,8 +203,6 @@ void IntersectCirclesDialog::SetFirstCircleRadius(const QString &value)
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setC1Radius(formula);
-
-    MoveCursorToEnd(ui->plainTextEditCircle1Radius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -221,8 +221,6 @@ void IntersectCirclesDialog::SetSecondCircleRadius(const QString &value)
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setC2Radius(formula);
-
-    MoveCursorToEnd(ui->plainTextEditCircle2Radius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -273,7 +271,6 @@ void IntersectCirclesDialog::ChosenObject(quint32 id, const SceneObject &type)
                             point->setObject2Id(id);
                             point->RefreshGeometry();
                             prepare = true;
-                            this->setModal(true);
                             this->show();
                         }
                     }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="en_US">
+<TS version="2.1" language="tr_TR">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Adı:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Listeye yeni bir grup ekle</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>İsim Mevcut</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Grup adı zaten mevcut olduğundan eylem tamamlanamıyor.</translation>
     </message>
 </context>
 <context>
@@ -498,10 +510,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Çizginin ikinci noktasını seçin</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Hata</translation>
@@ -680,10 +684,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Yarıçapı düzenle</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Açının ikinci noktasını seçin</translation>
@@ -917,6 +913,66 @@ p, li { boşluk: ön sarma; }
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formül sihirbazı</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Eğri yay uzunluğu formülü (alan doldurulduğunda uygulanır)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Eğri uzunluğunu düzenle</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Uzunluk negatif olamaz</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Eksen noktasını seçin</translation>
@@ -1043,10 +1095,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Uzunluğu düzenle</translation>
@@ -1303,10 +1343,6 @@ p, li { boşluk: ön sarma; }
         <translation>Hesaplama</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Yarıçap2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { boşluk: ön sarma; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Açıyı düzenle</translation>
@@ -1696,10 +1728,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Satırın ilk noktası</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Çizginin ikinci noktasını seçin</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { boşluk: ön sarma; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Yayın merkezinin noktasını seçin</translation>
@@ -2513,10 +2533,6 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Çizginin ilk noktasını seç</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { boşluk: ön sarma; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Sayfadaki koordinatlar</translation>
@@ -2687,10 +2703,6 @@ p, li { boşluk: ön sarma; }
         <translation>Değer</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>İlk kontrol noktası açısını düzenle</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { boşluk: ön sarma; }
         <source>Geometry</source>
         <translation>Geometri</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Eğri yay uzunluğu formülü (alan doldurulduğunda uygulanır)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Eğri uzunluğunu düzenle</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2792,10 +2852,6 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Value</source>
         <translation>Değer</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3430,6 +3486,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     <message>
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>
@@ -5006,10 +5066,6 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
         <translation>Değer</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Hesaplama</translation>
     </message>
@@ -5090,10 +5146,6 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
     <message>
         <source>Formula wizard</source>
         <translation>Formül sihirbazı</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mesaj kutusunda tam hesaplamayı göster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7130,6 +7182,22 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Yedek kopyası oluşturulurken hata oluştu: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Taslak bloğunu sil</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Silmeyi onayla</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Taban noktasını ve mevcut taslak bloğunu silmek istediğinizden emin misiniz?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8013,10 +8081,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Çoğalt</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Çentik</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>T Çentik</translation>
     </message>
@@ -8231,6 +8295,26 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Ana yol nesnelerini saat yönünde seçin. Eğri yönünü tersine çevirmek için &lt;b&gt;SHIFT&lt;/b&gt;&apos;i veya eğri yönünü korumak için &lt;b&gt;CTRL&lt;/b&gt;&apos;yi kullanın.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kesim Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Dikiş Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Varsayılan Çentik Yap</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Çentiği Düzenle</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Çentiği Kaldır</translation>
     </message>
 </context>
 <context>
@@ -8771,38 +8855,6 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Hiçbiri</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ÇÜRÜK</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Milimetre</translation>
     </message>
@@ -8933,6 +8985,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source> per file</source>
         <translation> dosya başına</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Görünüm</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -9229,6 +9289,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Otomatik temizleme formülü</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
     </message>
 </context>
 <context>
@@ -9985,6 +10049,30 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Hoş Geldiniz</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Görünüm</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Ölçümler</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Diyaloglar</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Yerel diyalog pencerelerini kullanın</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10052,7 +10140,7 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>3DLook dosyanızı bir e-postaya ekleyin ve convert@seamly.io adresine gönderin.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Dönüştürülen dosyanın bulunduğu bir e-posta alacaksınız, ardından dosyayı her zamanki gibi SeamlyME&apos;ye yükleyebilirsiniz.</translation>
     </message>
     <message>
@@ -10134,6 +10222,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10233,6 +10325,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Olumlu Işaret</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10920,6 +11016,119 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgAşağı</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>İletişim Kutusu Gezinmesi</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Açılır Kutu</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Sekme</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Odağı açılır kutuya taşıyın.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Yukarı / Aşağı Ok</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Açılır kutu kapalı veya açıkken öğeler arasında gezinin.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Aşağı Ok veya F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Açılır listeyi açın.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter veya Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Şu anda vurgulanan öğeyi seçin mudu ve listeyi kapatın.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Seçimi değiştirmeden listeyi kapatın.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Harf Tuşları (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Listede doğrudan o öğeye atlamak için bir öğe adının ilk harflerini yazın.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Sekme Çubuğu</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Odağı sekme çubuğuna taşıyın.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Sol ve Sağ Ok</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Seçimi bitişik sekmeler arasında taşıyın.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translatorcomment>Komut Düğmesi</translatorcomment>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Ara Çubuğu</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Odaklanmış komut düğmesini tetiklemek için.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Komut düğmesi bir iletişim penceresinde varsayılan düğme olarak ayarlanmışsa varsayılan eylem.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Liste</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Odağı listeye taşıyın.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Seçimi listedeki önceki veya sonraki öğeye taşır.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End Tuşları</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Listede doğrudan ilk veya son öğeye atlar.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11365,14 +11574,6 @@ Do you want to save your changes?</translation>
         <translation>Ölçüm diyagramı</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Bilinmeyen ölçüm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Bilinmeyen ölçüm&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Qt Hakkında</translation>
     </message>
@@ -11603,7 +11804,7 @@ Do you want to save your changes?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11626,6 +11827,10 @@ load in SeamlyME as usual.
     <message>
         <source>Seach by regular expression</source>
         <translation>Düzenli ifadeye göre ara</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Özel ölçü</translation>
     </message>
 </context>
 <context>
@@ -12645,16 +12850,8 @@ load in SeamlyME as usual.
         <translation>İkinci kenar dik açı</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Çentik</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tür</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Hiçbiri</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12707,6 +12904,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Sil</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kesim Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Dikiş Çizgisi Çentiğini Göster</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Varsayılan Çentik Yap</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Çentiği Düzenle</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Çentiği Kaldır</translation>
     </message>
 </context>
 <context>
@@ -13093,7 +13310,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>İsim</translation>
@@ -13711,6 +13928,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation>Yön:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Seçenekler</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Pürüzsüz eğri:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Hayır</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Evet</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Uzunluğu ayarla:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Kapalı</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Başlangıç</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Bitiş</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Her ikisi de</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Eğri uzunluğu:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13724,7 +13981,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Uzunluk</translation>

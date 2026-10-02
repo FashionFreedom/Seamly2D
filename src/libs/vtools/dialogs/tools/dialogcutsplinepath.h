@@ -47,7 +47,6 @@
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 //-----------------------------------------------------------------------------
 
-
 #ifndef DIALOGCUTSPLINEPATH_H
 #define DIALOGCUTSPLINEPATH_H
 
@@ -91,9 +90,6 @@ public:
 
 public slots:
     virtual void ChosenObject(quint32 id, const SceneObject &type) override;
-
-    /// @brief DeployFormulaTextEdit grow or shrink formula input.
-    void         DeployFormulaTextEdit();
     void         FXLength();
 
 protected:
@@ -104,15 +100,8 @@ protected:
 
 private:
     Q_DISABLE_COPY(DialogCutSplinePath)
-
-    /// @brief ui keeps information about user interface.
-    Ui::DialogCutSplinePath *ui;
-
-    /// @brief formula string with formula.
-    QString      formula;
-
-    /// @brief formulaBaseHeight base height defined by dialogui.
-    int          formulaBaseHeight;
+    Ui::DialogCutSplinePath *ui;  /// @brief ui keeps information about user interface.
+    QString      formula;         /// @brief formula string with formula.
 };
 
 #endif // DIALOGCUTSPLINEPATH_H

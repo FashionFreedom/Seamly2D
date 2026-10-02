@@ -78,16 +78,19 @@ void VisToolEllipticalArc::setRadius2(const QString &expression)
 void VisToolEllipticalArc::setF1(const QString &expression)
 {
     f1 = FindVal(expression, Visualization::data->DataVariables());
+    f1 = normalize(f1, 0.0, 360.0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolEllipticalArc::setF2(const QString &expression)
 {
     f2 = FindVal(expression, Visualization::data->DataVariables());
+    f2 = normalize(f2, 0.0, 360.0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolEllipticalArc::setRotationAngle(const QString &expression)
 {
     rotationAngle = FindVal(expression, Visualization::data->DataVariables());
+    rotationAngle = normalize(rotationAngle, 0.0, 360.0);
 }

@@ -99,10 +99,12 @@ void VisToolArc::setRadius(const QString &expression)
 void VisToolArc::setF1(const QString &expression)
 {
     f1 = FindVal(expression, Visualization::data->DataVariables());
+    f1 = normalize(f1, 0.0, 360.0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolArc::setF2(const QString &expression)
 {
     f2 = FindVal(expression, Visualization::data->DataVariables());
+    f2 = normalize(f2, 0.0, 360.0);
 }

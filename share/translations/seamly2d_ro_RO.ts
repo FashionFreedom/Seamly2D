@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Nume:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Adăugați un grup nou la listă</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Numele există</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Acțiunea nu poate fi finalizată deoarece numele grupului există deja.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -498,10 +510,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selectați al doilea punct al liniei</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Eroare</translation>
@@ -680,10 +684,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Editare raza</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Alege al doilea punct de unghi</translation>
@@ -917,6 +913,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Groime linie:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistent Formulă</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formula lungimii arcului de curbă (se aplică dacă câmpul este completat)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editare lungime curbă</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Lungimea nu poate fi negativă</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Alege punctul de axă</translation>
@@ -1043,10 +1095,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editare lungime</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Editare lungime</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Editare lungime</translation>
@@ -1303,10 +1343,6 @@ p, li { white-space: pre-wrap; }
         <translation>Calculează</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în mesaj box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Radius2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Editează unghiul</translation>
@@ -1696,10 +1728,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Primul punct al liniei</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selectați al doilea punct al liniei</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Selectează punctul de centru pentru curbură</translation>
@@ -2513,10 +2533,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Alege primul punct al liniei</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Coordinate pe foaie</translation>
@@ -2687,10 +2703,6 @@ p, li { white-space: pre-wrap; }
         <translation>Valoare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în mesaj box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Editați unghiul primului punct de control</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation>Geometrie</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formula lungimii arcului de curbă (se aplică dacă câmpul este completat)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Editare lungime curbă</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2792,10 +2852,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Valoare</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în mesaj box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3432,6 +3488,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     <message>
         <source>Lineweight:</source>
         <translation>Groime linie:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>
@@ -5008,10 +5068,6 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
         <translation>Valoare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în mesaj box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Calculează</translation>
     </message>
@@ -5092,10 +5148,6 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
     <message>
         <source>Formula wizard</source>
         <translation>Formula Asistenta</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în mesaj box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7132,6 +7184,22 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Eroare la crearea unei copii rezervate: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Șterge blocul de schiță</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Șterge</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Confirmă ștergerea</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Sigur doriți să ștergeți punctul de bază și blocul de schiță curent?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8015,10 +8083,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Duplicat</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Cresătură</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>TNotch</translation>
     </message>
@@ -8233,6 +8297,26 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selectați obiectele principale ale căii în sensul acelor de ceasornic. Folosiți &lt;b&gt;SHIFT&lt;/b&gt; pentru a inversa direcția curbei sau &lt;b&gt;CTRL&lt;/b&gt; pentru a păstra direcția curbei.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Arată crestătura liniei de tăiere</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Arată crestătura liniei de coasere</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Setează ca și crestătură implicită</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ediztează crestătura</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Elimină crestătura</translation>
     </message>
 </context>
 <context>
@@ -8773,38 +8857,6 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Niciunul</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Milimetri</translation>
     </message>
@@ -8935,6 +8987,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source> per file</source>
         <translation> pe fișier</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspect</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Temă:</translation>
     </message>
 </context>
 <context>
@@ -9231,6 +9291,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Formula cu auto-claritate</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
     </message>
 </context>
 <context>
@@ -9987,6 +10051,30 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bun venit</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Aspect</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Temă:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Măsurători</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialoguri</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Utilizați ferestrele de dialog native</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10054,7 +10142,7 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Atașați fișierul 3DLook la un e-mail și trimiteți-l la convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Veți primi un e-mail cu fișierul convertit, pe care îl puteți încărca apoi în SeamlyME ca de obicei.</translation>
     </message>
     <message>
@@ -10136,6 +10224,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Temă:</translation>
     </message>
 </context>
 <context>
@@ -10235,6 +10327,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Semn Pozitiv</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Temă:</translation>
     </message>
 </context>
 <context>
@@ -10922,6 +11018,118 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+Pagină în jos</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Navigare în caseta de dialog</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Casă derulantă</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tabula</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Mută focalizarea pe caseta derulantă.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Săgeată sus / jos</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Treci prin elemente când caseta derulantă este închisă sau deschisă.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Săgeată jos sau F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Deschide lista derulantă.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter sau Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Selectează elementul evidențiat în prezent și închide lista.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Închide lista fără a modifica selecția.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Taste cu litere (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Tastați primele litere ale numelui unui element pentru a sări direct la acel element din listă.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Bară de file</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Mută focalizarea pe bara de file.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Săgeată stânga și dreapta</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Mută selecția între filele adiacente.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Buton de comandă</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Bara de spațiu</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Pentru a declanșa butonul de comandă focalizat.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Acțiune implicită dacă butonul de comandă este setat ca buton implicit într-o fereastră de dialog.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Listă</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Mută focalizarea pe listă.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Mută selecția la elementul anterior sau următor din listă.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Tastele Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Sare direct la primul sau ultimul element din listă.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11359,14 +11567,6 @@ Doriți să salvați modificările?</translation>
         <translation>Diagramă de măsurare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Măsurătoare necunoscută&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Măsurătoare necunoscută&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Despre Qt</translation>
     </message>
@@ -11601,7 +11801,7 @@ Doriți să salvați modificările?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11628,6 +11828,10 @@ load in SeamlyME as usual.
     <message>
         <source>Value:</source>
         <translation>Valoare:</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Măsurătoare personalizată</translation>
     </message>
 </context>
 <context>
@@ -12647,16 +12851,8 @@ load in SeamlyME as usual.
         <translation>Unghi drept la a doua muchie</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Cresătură</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tip</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Niciunul</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12709,6 +12905,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Șterge</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Arată crestătura liniei de tăiere</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Arată crestătura liniei de coasere</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Setează ca și crestătură implicită</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ediztează crestătura</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Elimină crestătura</translation>
     </message>
 </context>
 <context>
@@ -13095,7 +13311,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Număr</translation>
@@ -13713,6 +13929,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation>Indicație:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opțiuni</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Curbă netedă:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nu</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Da</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Ajustare lungime:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Dezactivat</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Sfârșit</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Ambele</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Lungime curbă:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13726,7 +13982,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Lungime</translation>

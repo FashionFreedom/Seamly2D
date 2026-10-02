@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -69,6 +69,8 @@ struct NotchData
     qreal        offset {};
     int          count {};
     bool         isNotch {};
+    bool         showCutline {};
+    bool         showSeamline {};
 };
 
 class VPieceData;
@@ -103,21 +105,21 @@ public:
     VPiecePath              &GetPath();
     void                     SetPath(const VPiecePath &path);
 
-    QVector<QPointF>         MainPathPoints(const VContainer *data) const;
-    QVector<VPointF>         MainPathNodePoints(const VContainer *data, bool showExcluded = false) const;
-    QVector<QPointF>         SeamAllowancePoints(const VContainer *data) const;
+    QVector<QPointF>         mainPathPoints(const VContainer *data) const;
+    QVector<VPointF>         mainPathNodePoints(const VContainer *data, bool showExcluded = false) const;
+    QVector<QPointF>         seamAllowancePoints(const VContainer *data) const;
     QVector<QPointF>         cutPathPoints(const VContainer *data) const;
     QVector<QLineF>          createNotchLines(const VContainer *data,
                                               const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
-    QPainterPath             MainPathPath(const VContainer *data) const;
-    QPainterPath             SeamAllowancePath(const VContainer *data) const;
-    QPainterPath             SeamAllowancePath(const QVector<QPointF> &points) const;
+    QPainterPath             mainPath(const VContainer *data) const;
+    QPainterPath             seamAllowancePath(const VContainer *data) const;
+    QPainterPath             seamAllowancePath(const QVector<QPointF> &points) const;
     QPainterPath             getNotchesPath(const VContainer *data,
                                            const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
     bool                     isInLayout() const;
-    void                     SetInLayout(bool inLayout);
+    void                     setInLayout(bool inLayout);
 
     bool                     isLocked() const;
     void                     setIsLocked(bool isLocked);

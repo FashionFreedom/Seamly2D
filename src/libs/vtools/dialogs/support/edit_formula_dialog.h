@@ -118,6 +118,7 @@ protected:
     virtual void closeEvent(QCloseEvent *event) override;
     virtual void showEvent( QShowEvent *event ) override;
     virtual void resizeEvent(QResizeEvent *event) override;
+    bool         eventFilter(QObject *watched, QEvent *event);
 
 private slots:
     void         filterVariables(const QString &filter);

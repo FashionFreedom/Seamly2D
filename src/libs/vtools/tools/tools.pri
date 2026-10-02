@@ -5,6 +5,8 @@ HEADERS += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.h \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/basepoint_tool.h \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_arc_line_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
@@ -18,9 +20,7 @@ HEADERS += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.h \
     $$PWD/drawTools/toolcurve/vtoolsplinepath.h \
     $$PWD/drawTools/toolcurve/vtoolspline.h \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.h \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.h \
@@ -67,6 +67,8 @@ SOURCES += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.cpp \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/basepoint_tool.cpp \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_arc_line_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
@@ -80,9 +82,7 @@ SOURCES += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.cpp \
     $$PWD/drawTools/toolcurve/vtoolsplinepath.cpp \
     $$PWD/drawTools/toolcurve/vtoolspline.cpp \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.cpp \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.cpp \

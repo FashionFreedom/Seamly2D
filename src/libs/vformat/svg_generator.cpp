@@ -30,6 +30,7 @@
 #include "svg_generator.h"
 #include <QFile>
 #include <QDebug>
+#include <QFont>
 #include <QSvgGenerator>
 #include <QGraphicsItem>
 #include <QPainter>
@@ -204,9 +205,12 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
     svgGenerator.setDescription(QString());
     svgGenerator.setResolution(m_resolution);
 
+    QFont appFont; 
+    appFont.setPointSize(8);
+
     QPainter painter;
     painter.begin(&svgGenerator);
-    painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
+    painter.setFont(appFont);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setBrush ( QBrush ( Qt::NoBrush ) );
     scene->render(&painter, m_paper->rect(), m_paper->rect(), Qt::IgnoreAspectRatio);

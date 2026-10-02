@@ -111,6 +111,7 @@ public:
     virtual void     setLineWeight(const QString &value);
 
     virtual bool     isPointNameVisible(quint32 id) const;
+    virtual bool     isUsed() const override;
 
 signals:
     void             ChangedToolSelection(bool selected, quint32 object, quint32 tool);
@@ -251,7 +252,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     {
         if (ref == Referens::Follow)
         {
-            if (_referens > 0)
+            if (isUsed())
             {
                 qCDebug(vTool, "Delete disabled. Tool has children.");
                 actionDelete->setEnabled(false);
@@ -355,7 +356,6 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         qCDebug(vTool, "Show options.");
         qApp->getSceneView()->itemClicked(nullptr);
         m_dialog = QSharedPointer<Dialog>(new Dialog(getData(), m_id, qApp->getMainWindow()));
-        m_dialog->setModal(true);
 
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &VDrawTool::FullUpdateFromGuiOk);
         connect(m_dialog.data(), &DialogTool::DialogApplied, this, &VDrawTool::FullUpdateFromGuiApply);
@@ -407,7 +407,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
             case Tool::LineIntersect:
             case Tool::BasePoint:
             case Tool::EndLine:
-            case Tool::PointOfContact:
+            case Tool::IntersectArcLine:
             case Tool::Height:
             case Tool::Triangle:
             case Tool::PointOfIntersection:

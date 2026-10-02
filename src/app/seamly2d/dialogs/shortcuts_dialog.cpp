@@ -1,30 +1,28 @@
-/************************************************************************
- **
- **  @file   shortcuts_dialog.h
- **  @author DSCaskey <dscaskey@gmail.com>
-**  @date   21 Oct, 2023
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+// ---------------------------------------------------------------------------------------------------------------------
+//  @file   shortcuts_dialog.h
+//  @author DSCaskey <dscaskey@gmail.com>
+//  @date   21 Oct, 2023
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+// ---------------------------------------------------------------------------------------------------------------------
 
 #include "shortcuts_dialog.h"
 #include "ui_shortcuts_dialog.h"
@@ -36,6 +34,7 @@
 #include <QGuiApplication>
 #include <QTextDocument>
 #include <QPageLayout>
+#include <QPalette>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QPrintDialog>
@@ -55,6 +54,22 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    // Extract the hex colors safely from the application palette
+    QString bgColor = qApp->palette().color(QPalette::Base).name();
+    QString textColor = qApp->palette().color(QPalette::Text).name();
+
+    // Target the QTextBrowser layout hierarchy using a safe stylesheet string
+    QString style = QString(
+        "QTextBrowser {"
+        "  background-color: %1;"
+        "  color: %2;"
+        "  border: none;" // Optional: cleans up dark mode borders
+        "}"
+    ).arg(bgColor).arg(textColor);
+
+    // Set the stylesheet on the widget directly
+    ui->shortcuts_TextBrowser->setStyleSheet(style);
 
     const QString file = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
@@ -346,8 +361,67 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Help"))                                            //1
                                  .arg(tr("Keyboard Shortcuts")).arg(QString("K"));           //2 & 3
 
+
+    const QString drop_down = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%><b>%2</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%3       </td><td>%4</td></tr>"
+                                        "<tr><td width = 50%>%5       </td><td>%6</td></tr>"
+                                        "<tr><td width = 50%>%7       </td><td>%8</td></tr>"
+                                        "<tr><td width = 50%>%9       </td><td>%10</td></tr>"
+                                        "<tr><td width = 50%>%11      </td><td>%12</td></tr>"
+                                        "<tr><td width = 50%>%13      </td><td>%14</td></tr>"
+                                      "</table>")
+        .arg(tr("Dialog Navigation"))                                                                                               //1
+        .arg(tr("Drop Down Box"))                                                                                                   //2
+        .arg(tr("Tab")).arg(tr("Move focus to the drop-down."))                                                                     //3 & 4
+        .arg(tr("Up / Down Arrow")).arg(tr("Cycle through items when the drop-down is closed or open."))                            //5 & 6
+        .arg(tr("Alt + Down Arrow or F4")).arg(tr("Open the drop-down list."))                                                      //7 & 8
+        .arg(tr("Enter or Return")).arg(tr("Select the currently highlighted item and close the list."))                            //9 & 10
+        .arg(tr("Escape")).arg(tr("Close the list without changing the selection."))                                                //11 &12
+        .arg(tr("Letter Keys (A-Z)")).arg(tr("Type the first letters of an item name to jump directly to that item in the list.")); //13 & 14
+
+
+    const QString tab_bar = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                        "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                        "<tr></tr>"
+                                      "</table>")
+        .arg(tr("Tab Bar"))                                                                    //1
+        .arg(tr("Tab")).arg(tr("Move focus the tab bar."))                                     //2 & 3
+        .arg(tr("Left and Right Arrow")).arg(tr("Move the selection between adjacent tabs.")); //4 & 5
+
+    const QString push_button = QString("<table style=font-size:11pt; font-weight:600>"
+                                        "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                        "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                        "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                        "<tr><td width = 50%>%6       </td><td>%7</td></tr>"
+                                      "</table>")
+        .arg(tr("Push Button"))                                                                                                     //1
+        .arg(tr("Tab")).arg(tr("Move focus to the drop-down."))                                                                     //2 & 3
+        .arg(tr("Spacebar")).arg(tr("To trigger the focused push button."))                                                         //4 & 5
+        .arg(tr("Enter or Return")).arg(tr("Default action if the push button is set as the default button in a dialog window."));  //6 & 7
+
+
+    const QString list_widget = QString("<table style=font-size:11pt; font-weight:600>"
+                                            "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                            "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
+                                            "<tr><td width = 50%>%4       </td><td>%5</td></tr>"
+                                            "<tr><td width = 50%>%6       </td><td>%7</td></tr>"
+                                            "<tr><td width = 50%>%8       </td><td>%9</td></tr>"
+                                            "<tr><td width = 50%>%10      </td><td>%11</td></tr>"
+                                        "</table>")
+        .arg(tr("List"))                                                                                                            //1
+        .arg(tr("Tab")).arg(tr("Move focus to the list."))                                                                          //2 & 3
+        .arg(tr("Up / Down Arrow")).arg(tr("Moves the selection to the previous or next item in the list."))                        //4 & 5
+        .arg(tr("Home / End Keys")).arg(tr("Jumps directly to the first or last item in the list."))                                //6 & 7
+        .arg(tr("Page Up / Page Down")).arg(tr("Select the currently highlighted item and close the list."))                        //8 & 9
+        .arg(tr("Letter Keys (A-Z)")).arg(tr("Type the first letters of an item name to jump directly to that item in the list.")); //10 & 11
+
     ui->shortcuts_TextBrowser->setHtml(file + edit + view + measurements + tools + points + line + curves +
-                                       arcs + operations + images + pattern + details + layout + history + utilities + help);
+                                       arcs + operations + images + pattern + details + layout + history +
+                                       utilities + help + drop_down + tab_bar + push_button + list_widget);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
@@ -404,7 +478,8 @@ void ShortcutsDialog::sendToPrinter()
 void ShortcutsDialog::exportPdf()
 {
     QString filename = QFileDialog::getSaveFileName(nullptr, tr("Export PDF"), QString(),
-                                                    "*.pdf", nullptr, FILEDIALOG_OPTIONS);
+                                                    "*.pdf", nullptr,
+                                                    qApp->Seamly2DSettings()->getUseNativeFileDialogs());
 
     if (QFileInfo(filename).suffix().isEmpty())
     {

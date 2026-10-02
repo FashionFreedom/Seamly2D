@@ -1865,6 +1865,65 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief isVariableUsed check if any of the variables is referenced by a formula in the pattern.
+/// @param variable_names names of the variables to look for.
+/// @return true if at least one formula uses one of the variables.
+//---------------------------------------------------------------------------------------------------------------------
+
+bool VAbstractPattern::isVariableUsed(const QStringList &variable_names) const
+{
+    QStringList names = variable_names;
+    names.removeAll(QString());
+
+    if (names.isEmpty())
+    {
+        return false;
+    }
+
+    const QVector<VFormulaField> expressions = ListExpressions();
+    for (int i = 0; i < expressions.size(); ++i)
+    {
+        // Cheap pre-check. Parsing every formula in the pattern is expensive.
+        bool found = false;
+        for (int j = 0; j < names.size(); ++j)
+        {
+            if (expressions.at(i).expression.indexOf(names.at(j)) != -1)
+            {
+                found = true;
+                break;
+            }
+        }
+
+        if (not found)
+        {
+            continue;
+        }
+
+        try
+        {
+            QScopedPointer<qmu::QmuTokenParser> cal(new qmu::QmuTokenParser(expressions.at(i).expression, false,
+                                                                            false));
+
+            // Tokens (variables, measurements)
+            const QList<QString> tokens = cal->GetTokens().values();
+            for (int j = 0; j < names.size(); ++j)
+            {
+                if (tokens.contains(names.at(j)))
+                {
+                    return true;
+                }
+            }
+        }
+        catch (const qmu::QmuParserError &)
+        {
+            // Do nothing. Because we not sure if used. A formula is broken.
+        }
+    }
+
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QVector<VFormulaField> VAbstractPattern::ListPointExpressions() const
 {
     // Check if new tool doesn't bring new attribute with a formula.

@@ -220,7 +220,7 @@
      <addaction name="pointAlongPerpendicular_Action"/>
      <addaction name="bisector_Action"/>
      <addaction name="pointOnShoulder_Action"/>
-     <addaction name="pointOfContact_Action"/>
+     <addaction name="intersect_arc_line_action"/>
      <addaction name="triangle_Action"/>
      <addaction name="pointIntersectXY_Action"/>
      <addaction name="perpendicularPoint_Action"/>
@@ -322,6 +322,7 @@
     </widget>
     <addaction name="newDraft_Action"/>
     <addaction name="renameDraft_Action"/>
+    <addaction name="delete_draft_action"/>
     <addaction name="separator"/>
     <addaction name="points_Menu"/>
     <addaction name="lines_Menu"/>
@@ -637,7 +638,7 @@
    <addaction name="pointAlongPerpendicular_Action"/>
    <addaction name="bisector_Action"/>
    <addaction name="pointOnShoulder_Action"/>
-   <addaction name="pointOfContact_Action"/>
+   <addaction name="intersect_arc_line_action"/>
    <addaction name="triangle_Action"/>
    <addaction name="pointIntersectXY_Action"/>
    <addaction name="perpendicularPoint_Action"/>
@@ -1025,7 +1026,7 @@
                 </widget>
                </item>
                <item row="7" column="1">
-                <widget class="QToolButton" name="pointOfContact_ToolButton">
+                <widget class="QToolButton" name="intersect_arc_line_toolbutton">
                  <property name="enabled">
                   <bool>false</bool>
                  </property>
@@ -3162,7 +3163,7 @@
     <string notr="true">P, S</string>
    </property>
   </action>
-  <action name="pointOfContact_Action">
+  <action name="intersect_arc_line_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4837,6 +4838,18 @@
     <string notr="true">Ctrl+PgDown</string>
    </property>
   </action>
+  <action name="delete_draft_action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/16x16/actions/edit-delete.png</normaloff>:/icons/win.icon.theme/16x16/actions/edit-delete.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete Draft Block</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -4848,8 +4861,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

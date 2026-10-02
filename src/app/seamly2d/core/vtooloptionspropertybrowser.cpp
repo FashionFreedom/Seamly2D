@@ -121,7 +121,7 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 
     switch (item->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             showOptionsToolSinglePoint(item);
             break;
         case VToolEndLine::Type:
@@ -160,8 +160,8 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
         case VToolNormal::Type:
             showOptionsToolNormal(item);
             break;
-        case VToolPointOfContact::Type:
-            showOptionsToolPointOfContact(item);
+        case IntersectArcLineTool::Type:
+            showOptionsToolIntersectArcLine(item);
             break;
         case PointIntersectXYTool::Type:
             showOptionsToolPointOfIntersection(item);
@@ -248,7 +248,7 @@ void VToolOptionsPropertyBrowser::updateOptions()
 
     switch (currentItem->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             updateOptionsToolSinglePoint();
             break;
         case VToolEndLine::Type:
@@ -287,8 +287,8 @@ void VToolOptionsPropertyBrowser::updateOptions()
         case VToolNormal::Type:
             updateOptionsToolNormal();
             break;
-        case VToolPointOfContact::Type:
-            updateOptionsToolPointOfContact();
+        case IntersectArcLineTool::Type:
+            updateOptionsToolIntersectArcLine();
             break;
         case PointIntersectXYTool::Type:
             updateOptionsToolPointOfIntersection();
@@ -393,7 +393,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
 
     switch (currentItem->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             changeDataToolSinglePoint(prop);
             break;
         case VToolEndLine::Type:
@@ -432,8 +432,8 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         case VToolNormal::Type:
             changeDataToolNormal(prop);
             break;
-        case VToolPointOfContact::Type:
-            changeDataToolPointOfContact(prop);
+        case IntersectArcLineTool::Type:
+            changeDataToolIntersectArcLine(prop);
             break;
         case PointIntersectXYTool::Type:
             changeDataToolPointOfIntersection(prop);
@@ -637,6 +637,16 @@ void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, 
     label->setValue("");
     label->setPropertyType(VPE::Property::Label);
     addProperty(label, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyEnum(const QString &propertyName, const QStringList &options,
+                                                   int currentIndex, const QString &propertyAttribute)
+{
+    VPE::VEnumProperty *property = new VPE::VEnumProperty(propertyName);
+    property->setLiterals(options);
+    property->setValue(currentIndex);
+    addProperty(property, propertyAttribute);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1137,12 +1147,12 @@ void VToolOptionsPropertyBrowser::changeDataToolSinglePoint(VPE::VProperty *prop
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(currentItem);
     SCASSERT(tool != nullptr)
     switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            setPointName<VToolBasePoint>(value.toString());
+            setPointName<BasePointTool>(value.toString());
             break;
         case 1: // QLatin1String("Coordinates")
             tool->SetBasePointPos(value.toPointF());
@@ -1644,14 +1654,14 @@ void VToolOptionsPropertyBrowser::changeDataToolNormal(VPE::VProperty *property)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::changeDataToolPointOfContact(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolIntersectArcLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
+    IntersectArcLineTool *tool = qgraphicsitem_cast<IntersectArcLineTool *>(currentItem);
     SCASSERT(tool != nullptr)
     switch (propertiesList().indexOf(id))
     {
@@ -1659,7 +1669,7 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfContact(VPE::VProperty *p
             tool->setArcRadius(value.value<VFormula>());
             break;
         case 0: // AttrName
-            setPointName<VToolPointOfContact>(value.toString());
+            setPointName<IntersectArcLineTool>(value.toString());
             break;
         case 11: // AttrCenter
             tool->setCenter(value.toInt());
@@ -1733,12 +1743,6 @@ void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionArcs(VPE::VPr
             setCirclesCrossPoint<VToolPointOfIntersectionArcs>(value);
             break;
         }
-        case 47: // AttrFirstArc
-            tool->SetFirstArcId(value.toInt());
-            break;
-        case 48: // AttrSecondArc
-            tool->SetSecondArcId(value.toInt());
-            break;
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2002,6 +2006,38 @@ void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
         case 60: // AttrLineWeight
             tool->setLineWeight(value.toString());
             break;
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
+            break;
+        }
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2056,6 +2092,38 @@ void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *prop
             spline.SetP4(point);
             tool->setSpline(spline);
             break;
+        case 4: // AttrLength — curve length formula
+        {
+            const VFormula f = value.value<VFormula>();
+            if (!f.error())
+            {
+                // Raise the mode BEFORE persisting the length. The length attribute is
+                // only written when lengthMode > 0, and each setter triggers a LiteParse
+                // round-trip that would otherwise reset m_targetLength back to empty.
+                if (tool->GetLengthMode() == 0)
+                {
+                    tool->SetLengthMode(3);
+                    if (idToProperty.contains(AttrLengthMode))
+                    {
+                        idToProperty[AttrLengthMode]->setValue(3);
+                    }
+                }
+                tool->SetTargetLength(f.GetFormula(FormulaType::FromUser));
+            }
+            break;
+        }
+        case 63: // AttrAutoSmooth
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetAutoSmooth(enumVal.toInt() == 1);
+            break;
+        }
+        case 64: // AttrLengthMode (not yet functional)
+        {
+            const QVariant enumVal = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
+            tool->SetLengthMode(enumVal.toInt());
+            break;
+        }
         default:
             qWarning() << "Unknown property type. id = "<<id;
             break;
@@ -2404,7 +2472,7 @@ void VToolOptionsPropertyBrowser::changeDataToolEllipticalArc(VPE::VProperty *pr
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::showOptionsToolSinglePoint(QGraphicsItem *item)
 {
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(item);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(item);
     tool->ShowVisualization(true);
     formView->setTitle(tr("Base point"));
 
@@ -2681,9 +2749,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolNormal(QGraphicsItem *item)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::showOptionsToolPointOfContact(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolIntersectArcLine(QGraphicsItem *item)
 {
-    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(item);
+    IntersectArcLineTool *tool = qgraphicsitem_cast<IntersectArcLineTool *>(item);
     tool->ShowVisualization(true);
     formView->setTitle(tr("Point - Intersect Arc and Line"));
 
@@ -2724,8 +2792,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionArcs(QGraphi
 
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyObjectName(tool, tr("Name:"));
-    addObjectProperty(tool, tool->FirstArcName(), tr("First arc:"), AttrFirstArc, GOType::Arc);
-    addObjectProperty(tool, tool->SecondArcName(), tr("Second arc:"), AttrSecondArc, GOType::Arc);
+    addPropertyParentPointName(tool->FirstArcName(), tr("First arc:"), AttrFirstArc);
+    addPropertyParentPointName(tool->SecondArcName(), tr("Second arc:"), AttrSecondArc);
     addPropertyCrossPoint(tool, tr("Take:"));
 }
 
@@ -2859,6 +2927,18 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     angle2.setPostfix(degreeSymbol);
     addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -2879,6 +2959,18 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
     addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
     addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+
+    addPropertyLabel(tr("Options"), AttrName);
+    addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
+                    tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
+    addPropertyEnum(tr("Adjust length:"), {tr("Off"), tr("Start"), tr("End"), tr("Both")},
+                    tool->GetLengthMode(), AttrLengthMode);
+
+    VFormula curveLen(tool->GetTargetLength(), tool->getData());
+    curveLen.setCheckZero(false);
+    curveLen.setToolId(tool->getId());
+    curveLen.setPostfix(UnitsToStr(qApp->patternUnit()));
+    addPropertyFormula(tr("Curve length:"), curveLen, AttrLength);
 
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
@@ -3065,7 +3157,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolEllipticalArc(QGraphicsItem *it
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::updateOptionsToolSinglePoint()
 {
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(currentItem);
     idToProperty[AttrName]->setValue(tool->name());
     idToProperty[QLatin1String("Coordinates")]->setValue(tool->GetBasePointPos());
 }
@@ -3538,9 +3630,9 @@ void VToolOptionsPropertyBrowser::updateOptionsToolNormal()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::updateOptionsToolPointOfContact()
+void VToolOptionsPropertyBrowser::updateOptionsToolIntersectArcLine()
 {
-    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
+    IntersectArcLineTool *tool = qgraphicsitem_cast<IntersectArcLineTool *>(currentItem);
 
     QVariant valueFormula;
     valueFormula.setValue(tool->getArcRadius());
@@ -3609,18 +3701,8 @@ void VToolOptionsPropertyBrowser::updateOptionsToolPointOfIntersectionArcs()
 
     idToProperty[AttrName]->setValue(tool->name());
     idToProperty[AttrCrossPoint]->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
-                                                                               tool->FirstArcName());
-        idToProperty[AttrFirstArc]->setValue(index);
-    }
-
-    {
-        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
-                                                                               tool->SecondArcName());
-        idToProperty[AttrSecondArc]->setValue(index);
-    }
+    idToProperty[AttrFirstArc]->setValue(tool->FirstArcName());
+    idToProperty[AttrSecondArc]->setValue(tool->SecondArcName());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3830,6 +3912,16 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
         const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
         idToProperty[AttrLineWeight]->setValue(index);
     }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3874,6 +3966,16 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
                                                                                spl.GetP4().name());
         idToProperty[AttrPoint4]->setValue(index);
+    }
+
+    if (idToProperty.contains(AttrAutoSmooth))
+    {
+        idToProperty[AttrAutoSmooth]->setValue(tool->GetAutoSmooth() ? 1 : 0);
+    }
+
+    if (idToProperty.contains(AttrLengthMode))
+    {
+        idToProperty[AttrLengthMode]->setValue(tool->GetLengthMode());
     }
 }
 
@@ -4223,6 +4325,8 @@ QStringList VToolOptionsPropertyBrowser::propertiesList() const
                                             << AttrPenStyle                       /* 59 */
                                             << AttrLineWeight                     /* 60 */
                                             << AttrObjName                        /* 61 */
-                                            << AttrDirection;                     /* 62 */
+                                            << AttrDirection                      /* 62 */
+                                            << AttrAutoSmooth                     /* 63 */
+                                            << AttrLengthMode;                    /* 64 */
     return attr;
 }

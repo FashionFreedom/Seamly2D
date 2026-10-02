@@ -74,6 +74,11 @@ VisToolCubicBezier::VisToolCubicBezier(const VContainer *data, QGraphicsItem *pa
       object2Id(NULL_ID),
       object3Id(NULL_ID),
       object4Id(NULL_ID),
+      m_showPointsSet(false),
+      m_showP1(),
+      m_showP2(),
+      m_showP3(),
+      m_showP4(),
       point1(nullptr),
       point2(nullptr),
       point3(nullptr),
@@ -93,6 +98,27 @@ VisToolCubicBezier::VisToolCubicBezier(const VContainer *data, QGraphicsItem *pa
 //---------------------------------------------------------------------------------------------------------------------
 void VisToolCubicBezier::RefreshGeometry()
 {
+    // Show mode: draw the final computed geometry directly from the 4 stored points.
+    // This is the single source of truth — Hobby, force-length or any future modifier
+    // simply produces different control-point positions, no extra visualization code.
+    if (mode == Mode::Show && m_showPointsSet)
+    {
+        const VPointF sp1(m_showP1);
+        const VPointF sp2(m_showP2);
+        const VPointF sp3(m_showP3);
+        const VPointF sp4(m_showP4);
+        const VCubicBezier spline(sp1, sp2, sp3, sp4);
+        DrawPath(this, spline.GetPath(), spline.DirectionArrows(), mainColor, lineStyle,
+                 lineWeight, Qt::RoundCap);
+        DrawPoint(point1, m_showP1, supportColor);
+        DrawPoint(point2, m_showP2, mainColor);
+        DrawPoint(point3, m_showP3, mainColor);
+        DrawPoint(point4, m_showP4, supportColor);
+        DrawLine(helpLine1, QLineF(m_showP1, m_showP2), mainColor, lineWeight, Qt::DashLine);
+        DrawLine(helpLine2, QLineF(m_showP4, m_showP3), mainColor, lineWeight, Qt::DashLine);
+        return;
+    }
+
     if (object1Id > NULL_ID)
     {
         const auto first = Visualization::data->GeometricObject<VPointF>(object1Id);
@@ -160,4 +186,15 @@ void VisToolCubicBezier::setObject3Id(const quint32 &value)
 void VisToolCubicBezier::setObject4Id(const quint32 &value)
 {
     object4Id = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolCubicBezier::setShowPoints(const QPointF &p1, const QPointF &p2,
+                                       const QPointF &p3, const QPointF &p4)
+{
+    m_showP1 = p1;
+    m_showP2 = p2;
+    m_showP3 = p3;
+    m_showP4 = p4;
+    m_showPointsSet = true;
 }

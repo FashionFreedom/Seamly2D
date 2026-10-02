@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogendline.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogendline.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 Nov, 2013
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialogendline.h"
 
@@ -77,18 +77,15 @@
 #include "ui_dialogendline.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogEndLine create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogEndLine create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogEndLine::DialogEndLine(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogEndLine)
     , formulaLength()
     , formulaAngle()
-    , formulaBaseHeight(0)
-    , formulaBaseHeightAngle(0)
     , m_firstRelease(false)
 {
     ui->setupUi(this);
@@ -103,8 +100,6 @@ DialogEndLine::DialogEndLine(const VContainer *data, const quint32 &toolId, QWid
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
-    this->formulaBaseHeightAngle = ui->plainTextEditAngle->height();
 
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditAngle->installEventFilter(this);
@@ -142,18 +137,16 @@ DialogEndLine::DialogEndLine(const VContainer *data, const quint32 &toolId, QWid
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogEndLine::FormulaTextChanged);
     connect(ui->plainTextEditAngle, &QPlainTextEdit::textChanged, this, &DialogEndLine::AngleTextChanged);
 
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogEndLine::DeployFormulaTextEdit);
-    connect(ui->pushButtonGrowLengthAngle, &QPushButton::clicked, this, &DialogEndLine::DeployAngleTextEdit);
-
     connect(timerFormula, &QTimer::timeout, this, &DialogEndLine::EvalAngle);
 
     vis = new VisToolEndLine(data);
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief EvalAngle calculate value of angle
- */
+/// @brief EvalAngle calculate value of angle
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::EvalAngle()
 {
     labelEditFormula = ui->labelEditAngle;
@@ -173,18 +166,6 @@ void DialogEndLine::AngleTextChanged()
     labelEditFormula = ui->labelEditAngle;
     formulaValueChanged(flagError, ui->plainTextEditAngle, timerFormula, degreeSymbol);
     labelEditFormula = ui->labelEditFormula;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogEndLine::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogEndLine::DeployAngleTextEdit()
-{
-    DeployFormula(ui->plainTextEditAngle, ui->pushButtonGrowLengthAngle, formulaBaseHeightAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -216,11 +197,10 @@ void DialogEndLine::FXLength()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -240,10 +220,9 @@ void DialogEndLine::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::SetPointName(const QString &value)
 {
     pointName = value;
@@ -251,10 +230,9 @@ void DialogEndLine::SetPointName(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineType set type of line
- * @param value type
- */
+/// @brief setLineType set type of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::setLineType(const QString &value)
 {
     changeCurrentData(ui->lineType_ComboBox, value);
@@ -262,20 +240,18 @@ void DialogEndLine::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEndLine::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -283,56 +259,37 @@ void DialogEndLine::setLineWeight(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFormula set string of formula
- * @param value formula
- */
+/// @brief SetFormula set string of formula
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::SetFormula(const QString &value)
 {
     formulaLength = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
-    // of this PlainTextEdit to change 80 to this value
-    if (formulaLength.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(formulaLength);
 
     VisToolEndLine *line = qobject_cast<VisToolEndLine *>(vis);
     SCASSERT(line != nullptr)
     line->setLength(formulaLength);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetAngle set angle of line
- * @param value angle in degree
- */
+/// @brief SetAngle set angle of line
+/// @param value angle in degree
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::SetAngle(const QString &value)
 {
     formulaAngle = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
-    // of this PlainTextEdit to change 80 to this value
-    if (formulaAngle.length() > 80)
-    {
-        this->DeployAngleTextEdit();
-    }
     ui->plainTextEditAngle->setPlainText(formulaAngle);
 
     VisToolEndLine *line = qobject_cast<VisToolEndLine *>(vis);
     SCASSERT(line != nullptr)
     line->SetAngle(formulaAngle);
-
-    MoveCursorToEnd(ui->plainTextEditAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetBasePointId set id base point of line
- * @param value id
- */
+/// @brief SetBasePointId set id base point of line
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::SetBasePointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxBasePoint, value);
@@ -343,20 +300,18 @@ void DialogEndLine::SetBasePointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineColor get the color of line
- * @param value type
- */
+/// @brief getLineColor get the color of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogEndLine::getLineColor() const
 {
     return getComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
-/**
- * @brief setLineColor set color of the line
- * @param value type
- */
+/// @brief setLineColor set color of the line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::setLineColor(const QString &value)
 {
@@ -364,10 +319,9 @@ void DialogEndLine::setLineColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogEndLine::ShowDialog show dialog after finish working with visual part
- * @param click true if need show dialog after click mouse
- */
+/// @brief DialogEndLine::ShowDialog show dialog after finish working with visual part
+/// @param click true if need show dialog after click mouse
+//---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::ShowDialog(bool click)
 {
     if (prepare)
@@ -394,7 +348,6 @@ void DialogEndLine::ShowDialog(bool click)
                 return;
             }
         }
-        this->setModal(true);
 
         VisToolEndLine *line = qobject_cast<VisToolEndLine *>(vis);
         SCASSERT(line != nullptr)
@@ -450,40 +403,36 @@ DialogEndLine::~DialogEndLine()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineType return type of line
- * @return type
- */
+/// @brief getLineType return type of line
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEndLine::getLineType() const
 {
     return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFormula return string of formula
- * @return formula
- */
+/// @brief GetFormula return string of formula
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEndLine::GetFormula() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formulaLength, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetAngle return formula angle of line
- * @return angle formula
- */
+/// @brief GetAngle return formula angle of line
+/// @return angle formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogEndLine::GetAngle() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formulaAngle, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetBasePointId return id base point of line
- * @return id
- */
+/// @brief GetBasePointId return id base point of line
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogEndLine::GetBasePointId() const
 {
     return getCurrentObjectId(ui->comboBoxBasePoint);

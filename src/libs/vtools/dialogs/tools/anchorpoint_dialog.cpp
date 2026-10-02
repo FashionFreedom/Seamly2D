@@ -156,7 +156,6 @@ void AnchorPointDialog::ChosenObject(quint32 id, const SceneObject &type)
                 vis->VisualMode(id);
                 CheckPoint();
                 prepare = true;
-                this->setModal(true);
                 this->show();
             }
         }

@@ -60,7 +60,9 @@ LANGUAGES += \
     zh_CN \
     pt_BR \
     el_GR \
-    tr_TR
+    tr_TR \
+    pl_PL \
+    hu_HU
 
 for(lang, LANGUAGES) {
     TRANSLATIONS += seamly2d_$${lang}.ts

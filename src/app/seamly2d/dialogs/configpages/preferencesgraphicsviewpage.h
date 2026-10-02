@@ -29,6 +29,7 @@
 
 #include <QWidget>
 #include <QComboBox>
+#include <QLabel>
 
 namespace Ui
 {
@@ -54,6 +55,11 @@ private:
     Ui::PreferencesGraphicsViewPage  *ui;
 
     void                              setIndex(QComboBox *box, const QString &text);
+    void                              setupFontComboBox(QComboBox *combo_box, QLabel *label, const QFont &initial_font,
+                                                        QComboBox *size_combo_box = nullptr, int fixed_size = 0);
+
+    int                               getTargetSize(QComboBox * size_combo_box, int fixed_size, int fallback_size);
+
 };
 
 #endif // PREFERENCES_GRAPHICSVIEWPAGE_H

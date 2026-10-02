@@ -9,14 +9,14 @@ on:
   push:
     branches:
     - develop
-    - test
+    - 'feat-*'
   pull_request:
 
 permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.5.3' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.11.1' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: jurplel/install-qt-action@v4
         with:
@@ -67,43 +67,37 @@ jobs:
           xvfb-run -a make check
 
   linux:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Linux: Build AppImage'
-    runs-on: ubuntu-latest
-    container:
-      image: debian/eol:bullseye  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
-      options: --device /dev/fuse --privileged
+    runs-on: ubuntu-22.04
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: install appimage dependencies
         run: |
-          apt update && apt install -y libfuse2 fuse wget file
-          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
-          chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
-          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo apt update && sudo apt install -y libfuse2
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
 
       - name: install build dependencies
         run: |
-          apt update
+          sudo apt update
           # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
           # install libxerces for xml manipulation
-          # install libcups2 for print support, libxrandr2 for multimedia
-          # install python3-pip for jurplel/install-qt-action
-          apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev python3-pip libcups2 libxrandr2
+          sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxerces-c-dev
 
       - uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          install-deps: nosudo
-          setup-python: false
           modules: qtmultimedia
-          
+
       - name: update version
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
@@ -115,28 +109,29 @@ jobs:
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
-          
+
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
           if-no-files-found: error
- 
+
 
   macos:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'macOS: Build'
-    runs-on: macos-latest
+    runs-on: macos-26
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: install build dependencies
         run: |
@@ -187,15 +182,16 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
           if-no-files-found: error
 
   windows:
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Windows Build'
-    runs-on: windows-latest
+    runs-on: windows-2022
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -203,36 +199,40 @@ jobs:
       matrix:
         include:
           - msvc-arch: x64
-            qt-arch: win64_msvc2019_64
-            qmake-spec: win32-msvc
+            qt-arch: win64_msvc2022_64
+            qmake: qmake
             release-file: Seamly2D-windows.zip
           - msvc-arch: amd64_arm64
-            qt-arch: win64_msvc2019_arm64
-            qmake-spec: win32-arm64-msvc
+            qt-arch: win64_msvc2022_arm64_cross_compiled
+            qmake: host-qmake
             release-file: Seamly2D-win-arm64.zip
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v7
 
-      - uses: ilammy/msvc-dev-cmd@v1
+      - name: Setup MSVC Developer Command Prompt
+        uses: TheMrMilchmann/setup-msvc-dev@v4.1.0
         with:
           arch: ${{ matrix.msvc-arch }}
 
-      - uses: jurplel/install-qt-action@v4
+      - name: Install Qt6 w/ qtmultimedia
+        uses: jurplel/install-qt-action@v4
         with:
           version: ${{ env.QT_VERSION }}
           arch: ${{ matrix.qt-arch }}
           cache: true
           modules: qtmultimedia
+          aqtsource: git+https://github.com/miurahr/aqtinstall.git  # TODO: Remove once aqtinstall 3.4.0 is released, see https://github.com/miurahr/aqtinstall/issues/1007
 
-      - name: update version
+      - name: Update version
         shell: bash
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make seamly2d.exe and seamlyme.exe
+      - name: qmake/make seamly2d.exe and seamlyme.exe
         run: |
-          qmake Seamly2D.pro -spec ${{ matrix.qmake-spec }} -config release CONFIG+=noTests
+          ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: install NSIS
@@ -297,7 +297,8 @@ jobs:
           cd windows-build
           C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
 
-      - uses: actions/upload-artifact@v6
+      - name: Upload windows artifacts
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}
@@ -311,16 +312,16 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-windows.zip
-      - uses: actions/download-artifact@v7
+      - uses: actions/download-artifact@v8
         with:
           name: Seamly2D-win-arm64.zip
       - uses: softprops/action-gh-release@v3

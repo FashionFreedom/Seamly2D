@@ -128,7 +128,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QFrame" name="frame">
+      <widget class="QFrame" name="diagram_Frame">
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
@@ -149,20 +149,50 @@
          <number>6</number>
         </property>
         <item>
-         <widget class="QTextEdit" name="textEdit">
+         <widget class="QLabel" name="diagram_Label">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
+          <property name="text">
+           <string notr="true"/>
           </property>
-          <property name="frameShadow">
-           <enum>QFrame::Sunken</enum>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
           </property>
-          <property name="readOnly">
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="caption_Label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">Caaption</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="description_Label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">Description</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
            <bool>true</bool>
           </property>
          </widget>
@@ -189,7 +219,6 @@
  </widget>
  <tabstops>
   <tabstop>treeWidget</tabstop>
-  <tabstop>textEdit</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>

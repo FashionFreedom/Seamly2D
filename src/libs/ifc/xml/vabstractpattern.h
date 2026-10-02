@@ -120,6 +120,7 @@ public:
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
     QVector<VFormulaField>         listVariableExpressions() const;
+    bool                           isVariableUsed(const QStringList &variable_names) const;
 
     virtual void                   CreateEmptyFile()=0;
 
@@ -149,7 +150,7 @@ public:
 
     virtual QStringList            GetCurrentAlphabet() const=0;
     virtual QString                GenerateLabel(const LabelType &type, const QString &reservedName = QString())const=0;
-    virtual QString                GenerateSuffix(const QString &type) const=0;
+    virtual QString                generateSuffix(const QString &type) const=0;
 
     virtual void                   UpdateToolData(const quint32 &id, VContainer *data)=0;
 

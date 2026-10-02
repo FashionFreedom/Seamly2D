@@ -35,6 +35,7 @@
 #include <QColorDialog>
 #include <QFileDialog>
 #include <QLineF>
+#include <QPalette>
 #include <QString>
 #include <QStringList>
 #include <Qt>
@@ -45,19 +46,6 @@
 #ifdef Q_OS_WIN
     #include <windows.h>
 #endif /* Q_OS_WIN */
-
-/*
- * Platform-dependent native dialog options.
- * On Windows, use non-native dialogs (DontUseNativeDialog) for better consistency.
- * On Linux and macOS, use native dialogs for a more native look and feel.
- */
-#ifdef Q_OS_WIN
-    const QFileDialog::Options  FILEDIALOG_OPTIONS  = QFileDialog::DontUseNativeDialog;
-    const QColorDialog::ColorDialogOptions COLORDIALOG_OPTIONS = QColorDialog::DontUseNativeDialog;
-#else
-    const QFileDialog::Options  FILEDIALOG_OPTIONS  = QFileDialog::Options();
-    const QColorDialog::ColorDialogOptions COLORDIALOG_OPTIONS = QColorDialog::ColorDialogOptions();
-#endif
 
 #include "debugbreak.h"
 
@@ -84,6 +72,16 @@ enum DialogSource : quint16
     ToolDialog        = 511, // 0000 0001 1111 1111
     VariableDialog    = 259, // 0000 0001 0000 0011
     MeasurementDialog = 257  // 0000 0001 0000 0001
+};
+
+enum class AppTheme
+{
+    LightFusion = 0,
+    DarkFusion,
+    TwilightFusion,
+    System,
+    classic,
+    Windows11
 };
 
 enum class Position : char
@@ -299,7 +297,7 @@ enum class Tool : ToolVisHolderType
     SplinePath,
     CubicBezierPath,
     CutSplinePath,
-    PointOfContact,
+    IntersectArcLine,
     Piece,
     InternalPath,
     NodePoint,
@@ -354,7 +352,7 @@ enum class Vis : ToolVisHolderType
     ToolLine,
     ToolLineIntersect,
     ToolNormal,
-    ToolPointOfContact,
+    ToolIntersectArcLine,
     ToolPointOfIntersection,
     ToolPointOfIntersectionArcs,
     ToolPointOfIntersectionCircles,
@@ -587,8 +585,14 @@ Q_REQUIRED_RESULT double FromPixel(double pix, const Unit &unit);
 Q_REQUIRED_RESULT qreal UnitConvertor(qreal value, const Unit &from, const Unit &to);
 Q_REQUIRED_RESULT QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &from, const Unit &to);
 
+qreal normalize(const qreal value, const qreal start, const qreal end);
+
 void InitLanguages(QComboBox *combobox);
 Q_REQUIRED_RESULT QStringList SupportedLocales();
+
+QPalette  lightPalette();
+QPalette  darkPalette();
+QPalette  twilightPalette();
 
 QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
@@ -778,6 +782,5 @@ inline QList<T> convertToList(const C<T> &set)
 {
     return QList<T>(set.begin(), set.end());
 }
-
 
 #endif // DEF_H

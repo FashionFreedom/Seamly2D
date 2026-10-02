@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="id">
+<TS version="2.1" language="id_ID">
 <context>
     <name>About2DAppDialog</name>
     <message>
@@ -191,6 +191,18 @@
     <message>
         <source>Name:</source>
         <translation>Nama:</translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Tambahkan grup baru ke dalam daftar</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Nama Ada</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>Tindakan tidak dapat diselesaikan karena nama grup sudah ada.</translation>
     </message>
 </context>
 <context>
@@ -498,10 +510,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Pilih titik kedua dari garis</translation>
     </message>
@@ -584,10 +592,6 @@ p, li { spasi: pra-bungkus; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Kesalahan</translation>
@@ -680,10 +684,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Mengedit radius</translation>
     </message>
@@ -770,10 +770,6 @@ p, li { spasi: pra-bungkus; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Pilih titik kedua dari sudut</translation>
@@ -917,6 +913,66 @@ p, li { spasi: pra-bungkus; }
         <source>Lineweight:</source>
         <translation>Ketebalan garis:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation> Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Penyihir rumus</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Rumus panjang busur kurva (diterapkan jika kolom diisi)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Ubah panjang kurva</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>Panjangnya tidak bisa negatif</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -967,10 +1023,6 @@ p, li { spasi: pra-bungkus; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>pilih titik sumbu</translation>
@@ -1043,10 +1095,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Edit panjang</translation>
     </message>
@@ -1118,10 +1166,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Edit panjang</translation>
     </message>
@@ -1192,10 +1236,6 @@ p, li { spasi: pra-bungkus; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Edit panjang</translation>
@@ -1303,10 +1343,6 @@ p, li { spasi: pra-bungkus; }
         <translation>Perhitungan</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan lengkap dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Radius2:</translation>
     </message>
@@ -1397,10 +1433,6 @@ p, li { spasi: pra-bungkus; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Edit sudut</translation>
@@ -1696,10 +1728,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Titik pertama dari baris</translation>
     </message>
@@ -1986,10 +2014,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Pilih titik kedua dari garis</translation>
     </message>
@@ -2273,11 +2297,7 @@ p, li { spasi: pra-bungkus; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>pilih titik tengah dari busur</translation>
@@ -2513,10 +2533,6 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Pilih titik pertama garis</translation>
     </message>
@@ -2598,7 +2614,7 @@ p, li { spasi: pra-bungkus; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Koordinat pada lembar</translation>
@@ -2687,10 +2703,6 @@ p, li { spasi: pra-bungkus; }
         <translation>Nilai</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan lengkap dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Edit sudut titik kontrol pertama</translation>
     </message>
@@ -2742,6 +2754,54 @@ p, li { spasi: pra-bungkus; }
         <source>Geometry</source>
         <translation>Geometri</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation> Rumus panjang busur kurva (diterapkan jika kolom diisi)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Ubah panjang kurva</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2792,10 +2852,6 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Value</source>
         <translation>Nilai</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan lengkap dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3430,6 +3486,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     <message>
         <source>Lineweight:</source>
         <translation>Ketebalan garis:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Grup</translation>
     </message>
 </context>
 <context>
@@ -5006,10 +5066,6 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
         <translation>Nilai</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan lengkap dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Perhitungan</translation>
     </message>
@@ -5090,10 +5146,6 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
     <message>
         <source>Formula wizard</source>
         <translation>Penyihir rumus</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan lengkap dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7130,6 +7182,22 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Gagal membuat salinan cadangan: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Hapus blok draf</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Hapus</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Konfirmasi hapus</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Apakah Anda yakin ingin menghapus titik acuan dan blok draf saat ini?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8013,10 +8081,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Duplikat</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Takik</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>Takik</translation>
     </message>
@@ -8231,6 +8295,26 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Pilih objek jalur utama searah jarum jam, Gunakan &lt;b&gt;SHIFT&lt;/b&gt; untuk membalikkan arah lengkung, atau &lt;b&gt;CTRL&lt;/b&gt; untuk mempertahankan arah lengkung.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Tampilkan Takikan Garis Potong</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Tampilkan Takikan Garis Kampuh</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Jadikan Takikan Standar</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ubah Takikan</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Hapus Takikan</translation>
     </message>
 </context>
 <context>
@@ -8771,38 +8855,6 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Tidak ada</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_ M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_MEMBASUH</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Milimeter</translation>
     </message>
@@ -8933,6 +8985,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source> per file</source>
         <translation>per berkas</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Penampilan</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -9229,6 +9289,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Rumus pembersihan otomatis</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gunakan kotak dialog bawaan</translation>
     </message>
 </context>
 <context>
@@ -9985,6 +10049,30 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Selamat datang</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Penampilan</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>pengukuran</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialog</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gunakan kotak dialog bawaan</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10052,7 +10140,7 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Lampirkan file 3DLook Anda ke email dan kirim ke convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Anda akan menerima email berisi berkas yang dikonversi, yang kemudian dapat Anda unggah ke SeamlyME seperti biasa.</translation>
     </message>
     <message>
@@ -10134,6 +10222,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10233,6 +10325,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Tanda positif</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Tema:</translation>
     </message>
 </context>
 <context>
@@ -10920,6 +11016,118 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgBawah</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Navigasi Dialog</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Kotak Drop-Down</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Pindahkan fokus ke drop-down.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Panah Atas / Bawah</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Siklus melalui item ketika drop-down tertutup atau terbuka.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Panah Bawah atau F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Buka daftar drop-down.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter atau Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Pilih item yang saat ini disorot dan tutup daftar.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Tutup daftar tanpa mengubah pilihan.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Tombol Huruf (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Ketik huruf pertama dari nama item untuk melompat langsung ke item tersebut dalam daftar.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Bilah Tab</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Pindahkan fokus ke bilah tab.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Panah Kiri dan Kanan</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Pindahkan pilihan di antara tab yang berdekatan.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Tombol Tekan</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Spasi</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Untuk memicu tombol tekan yang difokuskan.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Tindakan default jika tombol tekan diatur sebagai tombol default di jendela dialog.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Daftar</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Pindahkan fokus ke daftar.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Memindahkan pilihan ke item sebelumnya atau berikutnya dalam daftar.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Tombol Home / End</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Melompat langsung ke item pertama atau terakhir dalam daftar.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11361,14 +11569,6 @@ Apakah Anda ingin menyimpan perubahan Anda?</translation>
         <translation>Diagram pengukuran</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Pengukuran tidak diketahui&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Pengukuran tidak diketahui&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Tentang Qt</translation>
     </message>
@@ -11603,7 +11803,7 @@ Apakah Anda ingin menyimpan perubahan Anda?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11627,6 +11827,10 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Seach by regular expression</source>
         <translation>Pencarian dengan ekspresi reguler</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Ukuran khusus</translation>
     </message>
 </context>
 <context>
@@ -12646,16 +12850,8 @@ unggah ke SeamlyME seperti biasa.
         <translation>Sudut siku-siku tepi kedua</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Takik</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Jenis</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Tidak ada</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12708,6 +12904,26 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Delete</source>
         <translation>hapus</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Tampilkan Takikan Garis Potong</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Tampilkan Takikan Garis Kampuh</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Jadikan Takikan Standar</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Ubah Takikan</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Hapus Takikan</translation>
     </message>
 </context>
 <context>
@@ -13094,7 +13310,7 @@ unggah ke SeamlyME seperti biasa.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Nama</translation>
@@ -13712,6 +13928,46 @@ unggah ke SeamlyME seperti biasa.
         <source>Direction:</source>
         <translation>Arah:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>pilihan</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Kurva halus:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Tidak</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ya</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Sesuaikan panjang:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Mati</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Mulai</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Selesai</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Keduanya</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Panjang kurva:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13725,7 +13981,7 @@ unggah ke SeamlyME seperti biasa.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>panjang</translation>

@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -483,10 +495,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -569,10 +577,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Error</source>
         <translation type="unfinished"></translation>
@@ -665,10 +669,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation type="unfinished"></translation>
     </message>
@@ -755,10 +755,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation type="unfinished"></translation>
@@ -902,6 +898,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">אפשרויות</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -952,10 +1008,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation type="unfinished"></translation>
@@ -1028,10 +1080,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1103,10 +1151,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1177,10 +1221,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation type="unfinished"></translation>
@@ -1288,10 +1328,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1382,10 +1418,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation type="unfinished"></translation>
@@ -1681,10 +1713,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>נקודה ראשונה בשורה</translation>
     </message>
@@ -1971,10 +1999,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2258,11 +2282,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation type="unfinished"></translation>
@@ -2498,10 +2518,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>לבחור נקודה ראשונה</translation>
     </message>
@@ -2583,7 +2599,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation type="unfinished"></translation>
@@ -2672,10 +2688,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2727,6 +2739,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">אפשרויות</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2776,10 +2836,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3413,6 +3469,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4975,10 +5035,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5058,10 +5114,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7094,6 +7146,22 @@ Press enter to temporarily add it to the list.</source>
         <source>Error creating a backup copy: %1.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7977,10 +8045,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8194,6 +8258,26 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8735,38 +8819,6 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8896,6 +8948,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> per file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9192,6 +9252,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Auto clear formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9949,6 +10013,30 @@ Press enter to temporarily add it to the list.</source>
         <source>Positive Sign</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10016,7 +10104,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10097,6 +10185,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10196,6 +10288,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10884,6 +10980,118 @@ Press enter to temporarily add it to the list.</source>
         <source>Ctrl+PgDown</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11320,14 +11528,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11559,7 +11759,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11583,6 +11783,10 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12600,15 +12804,7 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12662,6 +12858,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation type="unfinished">למחוק</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13048,7 +13264,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation type="unfinished"></translation>
@@ -13666,6 +13882,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">אפשרויות</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13679,7 +13935,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation type="unfinished">אורך</translation>

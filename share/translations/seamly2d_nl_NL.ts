@@ -192,6 +192,18 @@
         <source>Name:</source>
         <translation>Naam:</translation>
     </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation>Een nieuwe groep toevoegen aan de lijst</translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation>Naam Bestaat</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation>De actie kan niet worden voltooid omdat de groepsnaam al bestaat.</translation>
+    </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
@@ -483,10 +495,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selecteer tweede punt van lijn</translation>
     </message>
@@ -569,10 +577,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Fout</translation>
@@ -665,10 +669,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation>Verander straal</translation>
     </message>
@@ -755,10 +755,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogBisector</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select second point of angle</source>
         <translation>Selecteer tweede punt van lijn</translation>
@@ -902,6 +898,66 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formule wizard</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule voor booglengte van curve (toegepast als veld is ingevuld)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Curvelengte bewerken</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation>De lengte kan niet negatief zijn</translation>
+    </message>
 </context>
 <context>
     <name>DialogCubicBezierPath</name>
@@ -952,10 +1008,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCurveIntersectAxis</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Select axis point</source>
         <translation>Selecteer as punt</translation>
@@ -1028,10 +1080,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Verander de lengte</translation>
     </message>
@@ -1103,10 +1151,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit length</source>
         <translation>Verander de lengte</translation>
     </message>
@@ -1177,10 +1221,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogCutSplinePath</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit length</source>
         <translation>Verander de lengte</translation>
@@ -1288,10 +1328,6 @@ p, li { white-space: pre-wrap; }
         <translation>Berekening</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Laat hele berekening zien in berichtenbox&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Radius2:</source>
         <translation>Straal2:</translation>
     </message>
@@ -1382,10 +1418,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogEndLine</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichtenbox &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
     <message>
         <source>Edit angle</source>
         <translation>Verander de hoek</translation>
@@ -1681,10 +1713,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Eerste punt van de lijn</translation>
     </message>
@@ -1971,10 +1999,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toont volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selecteer tweede punt van lijn</translation>
     </message>
@@ -2258,11 +2282,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
         <translation>Selecteer middelste punt van boog</translation>
@@ -2498,10 +2518,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Selecteer eerste punt van lijn</translation>
     </message>
@@ -2583,7 +2599,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Coordinaten op het blad</translation>
@@ -2672,10 +2688,6 @@ p, li { white-space: pre-wrap; }
         <translation>Waarde</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichten venster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Edit first control point angle</source>
         <translation>Verander eerste controle punt van hoek</translation>
     </message>
@@ -2727,6 +2739,54 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation>Geometrie</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
+    </message>
+    <message>
+        <source>Curve arc length formula (applied if filled)</source>
+        <translation>Formule voor booglengte van curve (toegepast als veld is ingevuld)</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation>Curvelengte bewerken</translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
@@ -2777,10 +2837,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Waarde</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichten venster&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -3415,6 +3471,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Groep</translation>
     </message>
 </context>
 <context>
@@ -4989,10 +5049,6 @@ Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige g
         <translation>Waarde</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichtvak&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Berekening</translation>
     </message>
@@ -5073,10 +5129,6 @@ Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige g
     <message>
         <source>Formula wizard</source>
         <translation>Formule wizard</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in mededeling&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7113,6 +7165,22 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Error creating a backup copy: %1.</source>
         <translation>Fout bij het maken van een back-upkopie: %1.</translation>
     </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation>Conceptblok verwijderen</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation>Del</translation>
+    </message>
+    <message>
+        <source>Confirm Delete</source>
+        <translation>Verwijdering bevestigen</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation>Weet u zeker dat u het basispunt en het huidige conceptblok wilt verwijderen?</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7996,10 +8064,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Dubbel</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Pasmarkering</translation>
-    </message>
-    <message>
         <source>TNotch</source>
         <translation>T Pasmarkering</translation>
     </message>
@@ -8214,6 +8278,26 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
         <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren.</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kniplynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Naadlynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als standaardkeep instellen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Keep bewerken</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Keep verwijderen</translation>
     </message>
 </context>
 <context>
@@ -8754,38 +8838,6 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Geen</translation>
     </message>
     <message>
-        <source>_M</source>
-        <translation>_M</translation>
-    </message>
-    <message>
-        <source>_MOV</source>
-        <translation>_MOV</translation>
-    </message>
-    <message>
-        <source>_R</source>
-        <translation>_R</translation>
-    </message>
-    <message>
-        <source>_ROT</source>
-        <translation>_ROT</translation>
-    </message>
-    <message>
-        <source>_MA</source>
-        <translation>_MA</translation>
-    </message>
-    <message>
-        <source>_MBA</source>
-        <translation>_MBA</translation>
-    </message>
-    <message>
-        <source>_MB</source>
-        <translation>_MB</translation>
-    </message>
-    <message>
-        <source>_MBL</source>
-        <translation>_MBL</translation>
-    </message>
-    <message>
         <source>Millimeters</source>
         <translation>Millimeters</translation>
     </message>
@@ -8916,6 +8968,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source> per file</source>
         <translation> per bestand</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Voorkomen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Thema:</translation>
     </message>
 </context>
 <context>
@@ -9212,6 +9272,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Formule automatisch wissen</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
     </message>
 </context>
 <context>
@@ -9968,6 +10032,30 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
     </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Appearance</source>
+        <translation>Voorkomen</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Thema:</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation>Maten</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Dialogen</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation>Gebruik standaarddialoogvensters</translation>
+    </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
@@ -10035,7 +10123,7 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.</translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
         <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.</translation>
     </message>
     <message>
@@ -10117,6 +10205,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Thema:</translation>
     </message>
 </context>
 <context>
@@ -10216,6 +10308,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Positive Sign</source>
         <translation>Positief Teken</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation>Thema:</translation>
     </message>
 </context>
 <context>
@@ -10903,6 +10999,118 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
     </message>
+    <message>
+        <source>Dialog Navigation</source>
+        <translation>Dialoogvensternavigatie</translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation>Keuzelijst met invoervak</translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation>Tab</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation>Verplaats de focus naar de keuzelijst.</translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation>Pijl omhoog / omlaag</translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation>Blader door items wanneer de keuzelijst gesloten of geopend is.</translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation>Alt + Pijl omlaag of F4</translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation>Open de keuzelijst.</translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation>Enter of Return</translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation>Selecteer het momenteel gemarkeerde item en sluit de lijst.</translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation>Escape</translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation>Sluit de lijst zonder de selectie te wijzigen.</translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation>Lettertoetsen (A-Z)</translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation>Typ de eerste letters van een itemnaam om direct naar dat item in de lijst te springen.</translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation>Tabbladbalk</translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation>Verplaats de focus naar de tabbladbalk.</translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation>Pijl links en rechts</translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation>Verplaats de selectie tussen aangrenzende tabbladen.</translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation>Drukknop</translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation>Spatiebalk</translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation>Activeer de gefocuste drukknop.</translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation>Standaardactie als de drukknop is ingesteld als de standaardknop in een dialoogvenster.</translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation>Lijst</translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation>Verplaats de focus naar de lijst.</translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation>Verplaatst de selectie naar het vorige os volgende item in de lijst.</translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation>Home / End-toetsen</translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation>Springt direct naar het eerste of laatste item in de lijst.</translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation>Page Up / Page Down</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -11348,14 +11556,6 @@ Wil je deze veranderingen opslaan?</translation>
         <translation>Maten diagram</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Onbekende meting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Onbekende meting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>About Qt</source>
         <translation>Over Qt</translation>
     </message>
@@ -11586,7 +11786,7 @@ Wil je deze veranderingen opslaan?</translation>
 </translation>
     </message>
     <message>
-        <source>You will recieve an email with the converted file, which you can then
+        <source>You will receive an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
@@ -11609,6 +11809,10 @@ load in SeamlyME as usual.
     <message>
         <source>Seach by regular expression</source>
         <translation>Zoeken op reguliere expressie</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation>Maatwerk</translation>
     </message>
 </context>
 <context>
@@ -12628,16 +12832,8 @@ load in SeamlyME as usual.
         <translation>Tweede rand rechte hoek</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation>Inkeping</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Type</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Geen</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -12690,6 +12886,26 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Verwijderen</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation>Kniplynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation>Naadlynkeep tonen</translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation>Als standaardkeep instellen</translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation>Keep bewerken</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation>Keep verwijderen</translation>
     </message>
 </context>
 <context>
@@ -13076,7 +13292,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Naam</translation>
@@ -13694,6 +13910,46 @@ load in SeamlyME as usual.
         <source>Direction:</source>
         <translation>Richting:</translation>
     </message>
+    <message>
+        <source>Options</source>
+        <translation>Opties</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation>Vloeiende curve:</translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation>Nee</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation>Ja</translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation>Lengte aanpassen:</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation>Uitgeschakeld</translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation>Start</translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation>Einde</translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation>Beide</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation>Curvelengte:</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
@@ -13707,7 +13963,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Lengte</translation>

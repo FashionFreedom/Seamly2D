@@ -1,33 +1,51 @@
-/**************************************************************************
- **
- **  @file   intersect_circletangent_dialog.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   3 6, 2015
- **
- **  @author Douglas S. Caskey
- **  @date   7.16.2022
- **
- **  @copyright
- **  Copyright (C) 2013-2022 Seamly2D project.
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published
- **  by the Free Software Foundation, either version 3 of the License,
- **  or (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   intersect_circletangent_dialog.cpp
+//  @author Douglas S Caskey
+//  @date   16 Jul, 2022
+//
+//  @copyright
+//  Copyright (C) 2017 - 2026 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   dialogendline.cpp
+//  @author Roman Telezhynskyi <dismine(at)gmail.com>
+//  @date   3 Jun, 2015
+//
+//  @copyright
+//  Copyright (C) 2013 Valentina project.
+//  This source code is part of the Valentina project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+//
+//  Valentina is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published
+//  by the Free Software Foundation, either version 3 of the License,
+//  or (at your option) any later version.
+//
+//  Valentina is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #ifndef INTERSECT_CIRCLETANGENT_DIALOG_H
 #define INTERSECT_CIRCLETANGENT_DIALOG_H
@@ -73,18 +91,13 @@ public:
 public slots:
     virtual void      ChosenObject(quint32 id, const SceneObject &type) override;
     void              PointChanged();
-
-    void              DeployCircleRadiusTextEdit();
     void              CircleRadiusChanged();
     void              FXCircleRadius();
     void              EvalCircleRadius();
 
 protected:
     virtual void      ShowVisualization() override;
-    /**
-     * @brief SaveData Put dialog data in local variables
-     */
-    virtual void      SaveData() override;
+    virtual void      SaveData() override; /// @brief SaveData Put dialog data in local variables
     virtual void      closeEvent(QCloseEvent *event) override;
     virtual void      CheckState() final;
 
@@ -94,9 +107,8 @@ private:
     Ui::IntersectCircleTangentDialog *ui;
 
     bool             flagCircleRadius;
-    QTimer           *timerCircleRadius;
+    QTimer          *timerCircleRadius;
     QString          circleRadius;
-    int              formulaBaseHeightCircleRadius;
 };
 
 #endif // INTERSECT_CIRCLETANGENT_DIALOG_H

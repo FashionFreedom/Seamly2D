@@ -1,3 +1,4 @@
+//---------------------------------------------------------------------------------------------------------------------
 // @file   dialogarcwithlength.cpp
 // @author Douglas S Caskey
 // @date   26 Jun, 2024
@@ -18,7 +19,8 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.\
+//---------------------------------------------------------------------------------------------------------------------
 
 /************************************************************************
  **
@@ -83,9 +85,6 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     , radius(QString())
     , f1(QString())
     , length(QString())
-    , formulaBaseHeightRadius(0)
-    , formulaBaseHeightF1(0)
-    , formulaBaseHeightLength(0)
     , angleF1(INT_MIN)
     , m_arc()
     , m_Id()
@@ -101,9 +100,6 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     m_Id  = data->getId() + 1;
 
     plainTextEditFormula = ui->plainTextEditRadius;
-    this->formulaBaseHeightLength = ui->plainTextEditRadius->height();
-    this->formulaBaseHeightF1 = ui->plainTextEditF1->height();
-    this->formulaBaseHeightLength = ui->plainTextEditLength->height();
 
     ui->plainTextEditRadius->installEventFilter(this);
     ui->plainTextEditF1->installEventFilter(this);
@@ -157,15 +153,13 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     connect(ui->plainTextEditF1,     &QPlainTextEdit::textChanged, this, &DialogArcWithLength::F1Changed);
     connect(ui->plainTextEditLength, &QPlainTextEdit::textChanged, this, &DialogArcWithLength::LengthChanged);
 
-    connect(ui->pushButtonGrowLengthRadius,    &QPushButton::clicked, this, &DialogArcWithLength::DeployRadiusTextEdit);
-    connect(ui->pushButtonGrowLengthF1,        &QPushButton::clicked, this, &DialogArcWithLength::DeployF1TextEdit);
-    connect(ui->pushButtonGrowLengthArcLength, &QPushButton::clicked, this, &DialogArcWithLength::DeployLengthTextEdit);
-
     connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArcWithLength::pointNameChanged);
 
     ui->plainTextEditRadius->setFocus();
 
     vis = new VisToolArcWithLength(data);
+
+    ui->plainTextEditRadius->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -210,18 +204,11 @@ QString DialogArcWithLength::GetRadius() const
 void DialogArcWithLength::SetRadius(const QString &value)
 {
     radius = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (radius.length() > 80)
-    {
-        this->DeployRadiusTextEdit();
-    }
     ui->plainTextEditRadius->setPlainText(radius);
 
     VisToolArcWithLength *path = qobject_cast<VisToolArcWithLength *>(vis);
     SCASSERT(path != nullptr)
     path->setRadius(radius);
-
-    MoveCursorToEnd(ui->plainTextEditRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -233,18 +220,11 @@ QString DialogArcWithLength::GetF1() const
 void DialogArcWithLength::SetF1(const QString &value)
 {
     f1 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (f1.length() > 80)
-    {
-        this->DeployF1TextEdit();
-    }
     ui->plainTextEditF1->setPlainText(f1);
 
     VisToolArcWithLength *path = qobject_cast<VisToolArcWithLength *>(vis);
     SCASSERT(path != nullptr)
     path->setF1(f1);
-
-    MoveCursorToEnd(ui->plainTextEditF1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -257,18 +237,11 @@ QString DialogArcWithLength::GetLength() const
 void DialogArcWithLength::SetLength(const QString &value)
 {
     length = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (length.length() > 80)
-    {
-        this->DeployLengthTextEdit();
-    }
     ui->plainTextEditLength->setPlainText(length);
 
     VisToolArcWithLength *path = qobject_cast<VisToolArcWithLength *>(vis);
     SCASSERT(path != nullptr)
     path->setLength(radius);
-
-    MoveCursorToEnd(ui->plainTextEditLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -326,29 +299,10 @@ void DialogArcWithLength::ChosenObject(quint32 id, const SceneObject &type)
             {
                 vis->VisualMode(id);
                 prepare = true;
-                this->setModal(true);
                 this->show();
             }
         }
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArcWithLength::DeployRadiusTextEdit()
-{
-    DeployFormula(ui->plainTextEditRadius, ui->pushButtonGrowLengthArcLength, formulaBaseHeightRadius);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArcWithLength::DeployF1TextEdit()
-{
-    DeployFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogArcWithLength::DeployLengthTextEdit()
-{
-    DeployFormula(ui->plainTextEditLength, ui->pushButtonGrowLengthArcLength, formulaBaseHeightLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   intersect_circletangent_dialog.cpp
 //  @author Douglas S Caskey
 //  @date   16 Jul, 2022
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialogendline.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   3 Jun, 2015
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "intersect_circletangent_dialog.h"
 #include "ui_intersect_circletangent_dialog.h"
@@ -79,7 +79,6 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     , flagCircleRadius(false)
     , timerCircleRadius(nullptr)
     , circleRadius()
-    , formulaBaseHeightCircleRadius(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -94,7 +93,6 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     labelEditNamePoint = ui->labelEditNamePoint;
 
     plainTextEditFormula = ui->plainTextEditRadius;
-    this->formulaBaseHeightCircleRadius = ui->plainTextEditRadius->height();
 
     ui->plainTextEditRadius->installEventFilter(this);
 
@@ -120,10 +118,10 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     connect(ui->plainTextEditRadius, &QPlainTextEdit::textChanged, this,
             &IntersectCircleTangentDialog::CircleRadiusChanged);
 
-    connect(ui->pushButtonGrowRadius, &QPushButton::clicked, this,
-            &IntersectCircleTangentDialog::DeployCircleRadiusTextEdit);
 
     vis = new IntersectCircleTangentVisual(data);
+
+    ui->plainTextEditRadius->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -166,18 +164,11 @@ QString IntersectCircleTangentDialog::GetCircleRadius() const
 void IntersectCircleTangentDialog::SetCircleRadius(const QString &value)
 {
     const QString formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployCircleRadiusTextEdit();
-    }
     ui->plainTextEditRadius->setPlainText(formula);
 
     IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setCRadius(formula);
-
-    MoveCursorToEnd(ui->plainTextEditRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -244,7 +235,6 @@ void IntersectCircleTangentDialog::ChosenObject(quint32 id, const SceneObject &t
                             point->setObject2Id(id);
                             point->RefreshGeometry();
                             prepare = true;
-                            this->setModal(true);
                             this->show();
                         }
                     }
@@ -273,12 +263,6 @@ void IntersectCircleTangentDialog::PointChanged()
     ChangeColor(ui->labelCircleCenter, color);
     ChangeColor(ui->labelTangentPoint, color);
     CheckState();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void IntersectCircleTangentDialog::DeployCircleRadiusTextEdit()
-{
-    DeployFormula(ui->plainTextEditRadius, ui->pushButtonGrowRadius, formulaBaseHeightCircleRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

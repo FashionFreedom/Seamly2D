@@ -7,7 +7,7 @@
 //  @copyright
 //  This source code is part of the Seamly2D project, a pattern making
 //  program to create and model patterns of clothing.
-//  Copyright (C) 2017-2025 Seamly2D project
+//  Copyright (C) 2017-2026 Seamly2D project
 //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 //
 //  Seamly2D is free software: you can redistribute it and/or modify
@@ -59,6 +59,7 @@
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
+#include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vmath.h"
 #include "../qmuparser/qmuparsererror.h"
@@ -73,6 +74,7 @@
 #include <QTemporaryFile>
 #include <QFile>
 #include <QStandardPaths>
+#include <QStyleHints>
 #include <QMessageBox>
 #include <QThread>
 #include <QDateTime>
@@ -91,6 +93,15 @@ constexpr auto DAYS_TO_KEEP_LOGS = 3;
 //---------------------------------------------------------------------------------------------------------------------
 inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
+    // Qt's Wayland plugin warns on every focus change when the compositor sends a text input leave
+    // event for a surface it isn't tracking. The plugin carries on as normal after logging it, so
+    // it is noise. Drop it instead of logging it and popping up a dialog on every interaction.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QWaylandTextInputv3"))
+            && msg.contains(QStringLiteral("surface 0x0")))
+    {
+        return;
+    }
+
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("::connect")))
     {
@@ -277,11 +288,12 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
-    setOrganizationDomain(VER_COMPANYDOMAIN_STR);
+    setOrganizationDomain(VER_COMPANYDOMAIN);
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
 
     openSettings();
+    setTheme();
 
     // making sure will create new instance...just in case we will ever do 2 objects of Application2D
     VCommandLine::Reset();
@@ -297,6 +309,62 @@ Application2D::~Application2D()
     qInstallMessageHandler(nullptr); // Restore the message handler
     delete m_trVars;
     VCommandLine::Reset();
+}
+
+void Application2D::setTheme()
+{
+    QPalette palette;
+    int  theme =Seamly2DSettings()->getAppTheme();
+
+    if (theme == 3)
+    {
+        // Get system mode (theme)
+        Qt::ColorScheme scheme = styleHints()->colorScheme();
+
+        if (scheme == Qt::ColorScheme::Light)
+        {
+            theme = 0;
+        }
+        else if (scheme == Qt::ColorScheme::Dark)
+        {
+            theme = 1;
+        }
+    }
+
+    switch (theme)
+    {
+        case 0:
+        {
+            setStyle("Fusion");
+            palette = lightPalette();
+            break;
+        }
+        case 1:
+        {
+            setStyle("Fusion");
+            palette = darkPalette();
+            break;
+        }
+        case 2:
+        {
+            setStyle("Fusion");
+            palette = twilightPalette();
+            break;
+        }
+        case 4:
+        {
+            setStyle("windowsvista");
+            palette = lightPalette();
+            break;
+        }
+        case 5:
+        {
+            setStyle("Windows11");
+            palette = darkPalette();
+            break;
+        }
+    }
+    setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialognormal.cpp
 //  @author Douglas S Caskey
 //  @date   14 Aug, 2024
 //
 //  @copyright
-//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,9 +20,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   dialognormal.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 Nov, 2013
@@ -45,7 +45,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "dialognormal.h"
 
@@ -72,16 +72,14 @@
 #include "ui_dialognormal.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief DialogNormal create dialog
- * @param data container with data
- * @param parent parent widget
- */
+/// @brief DialogNormal create dialog
+/// @param data container with data
+/// @param parent parent widget
+//---------------------------------------------------------------------------------------------------------------------
 DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent), ui(new Ui::DialogNormal)
     , formula(QString())
     , angle(0)
-    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -95,7 +93,6 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
     ui->doubleSpinBoxAngle->setToolTip(makeAngleTooltip());
@@ -128,7 +125,6 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogNormal::FXLength);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogNormal::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,   this, &DialogNormal::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked,          this, &DialogNormal::DeployFormulaTextEdit);
     connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogNormal::PointNameChanged);
     connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogNormal::PointNameChanged);
 
@@ -141,6 +137,8 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
         setLineType(LineTypeDashLine);
         setLineWeight(DefaultLineWeight);
     }
+
+    ui->plainTextEditFormula->setFocus();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -189,23 +187,16 @@ void DialogNormal::ShowVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogNormal::DeployFormulaTextEdit()
-{
-    DeployFormula(ui->plainTextEditFormula, ui->pushButtonGrowLength, formulaBaseHeight);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 DialogNormal::~DialogNormal()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
- * @param id id of point or detail
- * @param type type of object
- */
+/// @brief ChosenObject gets id and type of selected object. Save right data and ignore wrong.
+/// @param id id of point or detail
+/// @param type type of object
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
@@ -232,7 +223,6 @@ void DialogNormal::ChosenObject(quint32 id, const SceneObject &type)
                             line->setObject2Id(id);
                             line->RefreshGeometry();
                             prepare = true;
-                            this->setModal(true);
                             this->show();
                         }
                     }
@@ -272,10 +262,9 @@ void DialogNormal::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetSecondPointId set id of second point
- * @param value id
- */
+/// @brief SetSecondPointId set id of second point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::SetSecondPointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
@@ -286,10 +275,9 @@ void DialogNormal::SetSecondPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFirstPointId set id of first point
- * @param value id
- */
+/// @brief SetFirstPointId set id of first point
+/// @param value id
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::SetFirstPointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
@@ -300,10 +288,9 @@ void DialogNormal::SetFirstPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetAngle set aditional angle of normal
- * @param value angle in degree
- */
+/// @brief SetAngle set aditional angle of normal
+/// @param value angle in degree
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::SetAngle(const qreal &value)
 {
     angle = value;
@@ -315,42 +302,32 @@ void DialogNormal::SetAngle(const qreal &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetFormula set string of formula
- * @param value formula
- */
+/// @brief SetFormula set string of formula
+/// @param value formula
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::SetFormula(const QString &value)
 {
     formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployFormulaTextEdit();
-    }
     ui->plainTextEditFormula->setPlainText(formula);
 
     VisToolNormal *line = qobject_cast<VisToolNormal *>(vis);
     SCASSERT(line != nullptr)
     line->setLength(formula);
-
-    MoveCursorToEnd(ui->plainTextEditFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineType return type of line
- * @return type
- */
+/// @brief getLineType return type of line
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogNormal::getLineType() const
 {
     return getComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineType set type of line
- * @param value type
- */
+/// @brief setLineType set type of line
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::setLineType(const QString &value)
 {
     changeCurrentData(ui->lineType_ComboBox, value);
@@ -358,20 +335,18 @@ void DialogNormal::setLineType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief getLineWeight return weight of the lines
- * @return type
- */
+/// @brief getLineWeight return weight of the lines
+/// @return type
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogNormal::getLineWeight() const
 {
         return getComboBoxCurrentData(ui->lineWeight_ComboBox, DefaultLineWeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setLineWeight set weight of the lines
- * @param value type
- */
+/// @brief setLineWeight set weight of the lines
+/// @param value type
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::setLineWeight(const QString &value)
 {
     changeCurrentData(ui->lineWeight_ComboBox, value);
@@ -391,10 +366,9 @@ void DialogNormal::setLineColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetPointName set name of point
- * @param value name
- */
+/// @brief SetPointName set name of point
+/// @param value name
+//---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::SetPointName(const QString &value)
 {
     pointName = value;
@@ -402,40 +376,36 @@ void DialogNormal::SetPointName(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFormula return string of formula
- * @return formula
- */
+/// @brief GetFormula return string of formula
+/// @return formula
+//---------------------------------------------------------------------------------------------------------------------
 QString DialogNormal::GetFormula() const
 {
     return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetAngle return aditional angle of normal
- * @return angle in degree
- */
+/// @brief GetAngle return aditional angle of normal
+/// @return angle in degree
+//---------------------------------------------------------------------------------------------------------------------
 qreal DialogNormal::GetAngle() const
 {
     return angle;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetFirstPointId return id of first point
- * @return id
- */
+/// @brief GetFirstPointId return id of first point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogNormal::GetFirstPointId() const
 {
     return getCurrentObjectId(ui->comboBoxFirstPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetSecondPointId return id of second point
- * @return id
- */
+/// @brief GetSecondPointId return id of second point
+/// @return id
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogNormal::GetSecondPointId() const
 {
     return getCurrentObjectId(ui->comboBoxSecondPoint);

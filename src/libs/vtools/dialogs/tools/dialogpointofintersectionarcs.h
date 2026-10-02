@@ -88,7 +88,6 @@ public:
 
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) override;
-    virtual void   ArcChanged();
 
 protected:
     virtual void   ShowVisualization() override;
@@ -101,6 +100,12 @@ private:
     Q_DISABLE_COPY(DialogPointOfIntersectionArcs)
 
     Ui::DialogPointOfIntersectionArcs *ui;
+
+    /** @brief firstArcId id of the first arc chosen at creation */
+    quint32        firstArcId;
+
+    /** @brief secondArcId id of the second arc chosen at creation */
+    quint32        secondArcId;
 };
 
 #endif // DIALOGPOINTOFINTERSECTIONARCS_H

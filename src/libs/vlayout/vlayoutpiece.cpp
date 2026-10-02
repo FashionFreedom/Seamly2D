@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -84,7 +84,7 @@ static const int ObjectName = 0;
 namespace
 {
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLayoutPiecePath> ConvertInternalPaths(const VPiece &piece, const VContainer *pattern, const bool isCut)
+QVector<VLayoutPiecePath> convertInternalPaths (const VPiece &piece, const VContainer *pattern, const bool isCut)
 {
     SCASSERT(pattern != nullptr)
 
@@ -280,7 +280,7 @@ bool findGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool IsItemContained(const QRectF &parentBoundingRect, const QVector<QPointF> &shape, qreal &dX, qreal &dY)
+bool isItemContained (const QRectF &parentBoundingRect, const QVector<QPointF> &shape, qreal &dX, qreal &dY)
 {
     dX = 0;
     dY = 0;
@@ -328,11 +328,11 @@ bool IsItemContained(const QRectF &parentBoundingRect, const QVector<QPointF> &s
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> CorrectPosition(const QRectF &parentBoundingRect, QVector<QPointF> points)
+QVector<QPointF> correctPosition (const QRectF &parentBoundingRect, QVector<QPointF> points)
 {
     qreal dX = 0;
     qreal dY = 0;
-    if (!IsItemContained(parentBoundingRect, points, dX, dY))
+    if (!isItemContained (parentBoundingRect, points, dX, dY))
     {
         for (int i =0; i < points.size(); ++i)
         {
@@ -343,7 +343,7 @@ QVector<QPointF> CorrectPosition(const QRectF &parentBoundingRect, QVector<QPoin
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
+QVector<VSAPoint> prepareAllowance (const QVector<QPointF> &points)
 {
     QVector<VSAPoint> allowancePoints;
     for(int i = 0; i < points.size(); ++i)
@@ -354,13 +354,13 @@ QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief VLayoutPiece::RotatePoint rotates a point around the center for given angle
+/// @brief VLayoutPiece::rotatePoint  rotates a point around the center for given angle
 /// @param ptCenter center around which the point is rotated
 /// @param pt point, which is rotated around the center
 /// @param rotationAngle angle of rotation
 /// @return position of point pt after rotating it around the center for rotation radians
 //---------------------------------------------------------------------------------------------------------------------
-QPointF RotatePoint(const QPointF &ptCenter, const QPointF& pt, qreal rotationAngle)
+QPointF rotatePoint (const QPointF &ptCenter, const QPointF& pt, qreal rotationAngle)
 {
     QPointF ptDest;
     QPointF ptRel = pt - ptCenter;
@@ -371,7 +371,7 @@ QPointF RotatePoint(const QPointF &ptCenter, const QPointF& pt, qreal rotationAn
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManager &tm)
+QStringList getLabelText (const QVector<QPointF> &labelShape, const VTextManager &tm)
 {
     QStringList text;
     if (labelShape.count() > 2)
@@ -429,14 +429,13 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
 
     layoutPiece.SetMx(piece.GetMx());
     layoutPiece.SetMy(piece.GetMy());
-
-    layoutPiece.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
-    layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
-                               piece.IsSeamAllowanceBuiltIn());
-    layoutPiece.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
-    layoutPiece.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
+    layoutPiece.setMainPathPoints(piece.mainPathPoints(pattern), piece.isHideSeamLine());
+    layoutPiece.setSeamAllowancePoints(piece.seamAllowancePoints(pattern),
+                                       piece.hasSeamAllowance(),
+                                       piece.hasSeamAllowanceBuiltIn());
+    layoutPiece.setInternalPaths(convertInternalPaths (piece, pattern, false));
+    layoutPiece.setCutoutPaths(convertInternalPaths (piece, pattern, true));
     layoutPiece.setNotches(piece.createNotchLines(pattern));
-
     layoutPiece.SetName(piece.GetName());
 
     // Very important to set main path first!
@@ -445,19 +444,22 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
         throw VException (tr("Piece %1 doesn't have shape.").arg(piece.GetName()));
     }
 
+    // Disable piece labels in exports and layouts
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
     if (pieceLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
-        layoutPiece.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.setPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
+    // Disable pattern labels in exports and layouts
     const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
     if (patternLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
-        layoutPiece.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.setPatternText(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
+    // Disable grainlines in exports and layouts
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
     if (grainlineGeom.IsVisible() & qApp->Settings()->showGrainlines())
     {
@@ -478,7 +480,7 @@ QVector<QPointF> VLayoutPiece::getContourPoints() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath)
+void VLayoutPiece::setMainPathPoints(const QVector<QPointF> &points, bool hideMainPath)
 {
     d->contour = RemoveDublicates(points, false);
     setHideSeamLine(hideMainPath);
@@ -486,7 +488,7 @@ void VLayoutPiece::SetCountourPoints(const QVector<QPointF> &points, bool hideMa
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-QVector<QPointF> VLayoutPiece::GetSeamAllowancePoints() const
+QVector<QPointF> VLayoutPiece::getSeamAllowancePoints() const
 {
     return Map(d->seamAllowance);
 }
@@ -503,7 +505,7 @@ void VLayoutPiece::setSeamAllowancePoints(const QVector<QPointF> &points, bool s
         {
             d->seamAllowance = RemoveDublicates(d->seamAllowance, false);
         }
-        else if (!IsSeamAllowanceBuiltIn())
+        else if (!hasSeamAllowanceBuiltIn())
         {
             qWarning() << "Seam allowance is empty.";
             SetSeamAllowance(false);
@@ -518,7 +520,7 @@ QVector<QPointF> VLayoutPiece::getLayoutAllowancePoints() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF VLayoutPiece::GetPieceTextPosition() const
+QPointF VLayoutPiece::getPieceTextPosition() const
 {
     if (d->pieceLabel.count() > 2)
     {
@@ -531,13 +533,13 @@ QPointF VLayoutPiece::GetPieceTextPosition() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VLayoutPiece::GetPieceText() const
+QStringList VLayoutPiece::getPieceText() const
 {
-    return PieceLabelText(d->pieceLabel, d->m_tmPiece);
+    return getLabelText (d->pieceLabel, d->m_tmPiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& data, const QFont &font,
+void VLayoutPiece::setPieceText(const QString& qsName, const VPieceLabelData& data, const QFont &font,
                                 const VContainer *pattern)
 {
     QPointF ptPos;
@@ -560,11 +562,11 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
 
     for (int i = 0; i < v.count(); ++i)
     {
-        v[i] = RotatePoint(ptCenter, v.at(i), rotationAngle);
+        v[i] = rotatePoint (ptCenter, v.at(i), rotationAngle);
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->pieceLabel = CorrectPosition(item->boundingRect(), v);
+    d->pieceLabel = correctPosition (item->boundingRect(), v);
 
     // generate text
     d->m_tmPiece.setFont(font);
@@ -577,7 +579,7 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF VLayoutPiece::GetPatternTextPosition() const
+QPointF VLayoutPiece::getPatternTextPosition() const
 {
     if (d->patternInfo.count() > 2)
     {
@@ -590,13 +592,13 @@ QPointF VLayoutPiece::GetPatternTextPosition() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VLayoutPiece::GetPatternText() const
+QStringList VLayoutPiece::getPatternText() const
 {
-    return PieceLabelText(d->patternInfo, d->m_tmPattern);
+    return getLabelText (d->patternInfo, d->m_tmPattern);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelData& data, const QFont &font,
+void VLayoutPiece::setPatternText(VAbstractPattern* pDoc, const VPatternLabelData& data, const QFont &font,
                                   const VContainer *pattern)
 {
     QPointF ptPos;
@@ -618,10 +620,10 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
     const QPointF ptCenter(ptPos.x() + labelWidth/2, ptPos.y() + labelHeight/2);
     for (int i = 0; i < v.count(); ++i)
     {
-        v[i] = RotatePoint(ptCenter, v.at(i), rotationAngle);
+        v[i] = rotatePoint (ptCenter, v.at(i), rotationAngle);
     }
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->patternInfo = CorrectPosition(item->boundingRect(), v);
+    d->patternInfo = correctPosition (item->boundingRect(), v);
 
     // Generate text
     d->m_tmPattern.setFont(font);
@@ -673,7 +675,7 @@ void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pa
     path << pt2;
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->grainlinePoints = CorrectPosition(item->boundingRect(), path);
+    d->grainlinePoints = correctPosition (item->boundingRect(), path);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -797,9 +799,9 @@ int VLayoutPiece::LayoutEdgeByPoint(const QPointF &p1) const
 QRectF VLayoutPiece::pieceBoundingRect() const
 {
     QVector<QPointF> points;
-    if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
     {
-        points = GetSeamAllowancePoints();
+        points = getSeamAllowancePoints();
     }
     else
     {
@@ -830,7 +832,7 @@ bool VLayoutPiece::isNull() const
 {
     if (d->contour.isEmpty() == false && d->layoutWidth > 0)
     {
-        if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn() && d->seamAllowance.isEmpty() == false)
+        if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn() && d->seamAllowance.isEmpty() == false)
         {
             return false;
         }
@@ -864,9 +866,9 @@ void VLayoutPiece::SetLayoutAllowancePoints()
 {
     if (d->layoutWidth > 0)
     {
-        if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+        if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
         {
-            d->layoutAllowance = Equidistant(PrepareAllowance(GetSeamAllowancePoints()), d->layoutWidth);
+            d->layoutAllowance = Equidistant(prepareAllowance (getSeamAllowancePoints()), d->layoutWidth);
             if (d->layoutAllowance.isEmpty() == false)
             {
                 d->layoutAllowance.removeLast();
@@ -874,7 +876,7 @@ void VLayoutPiece::SetLayoutAllowancePoints()
         }
         else
         {
-            d->layoutAllowance = Equidistant(PrepareAllowance(getContourPoints()), d->layoutWidth);
+            d->layoutAllowance = Equidistant(prepareAllowance (getContourPoints()), d->layoutWidth);
             if (d->layoutAllowance.isEmpty() == false)
             {
                 d->layoutAllowance.removeLast();
@@ -896,14 +898,14 @@ QVector<QLineF> VLayoutPiece::getNotches() const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::setNotches(const QVector<QLineF> &notches)
 {
-    if (IsSeamAllowance())
+    if (hasSeamAllowance())
     {
         d->notches = notches;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QVector<QPointF> > VLayoutPiece::InternalPathsForCut(bool cut) const
+QVector<QVector<QPointF> > VLayoutPiece::internalPathsForCut (bool cut) const
 {
     QVector<QVector<QPointF> > paths;
 
@@ -972,7 +974,7 @@ QPainterPath VLayoutPiece::createMainPath() const
     // contour
     QVector<QPointF> points = getContourPoints();
 
-    if (!isHideSeamLine() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (!isHideSeamLine() || not hasSeamAllowance() || hasSeamAllowanceBuiltIn())
     {
         path.moveTo(points.at(0));
         for (qint32 i = 1; i < points.count(); ++i)
@@ -990,12 +992,12 @@ QPainterPath VLayoutPiece::createAllowancePath() const
     QPainterPath path;
 
     // seam allowance
-    if (IsSeamAllowance())
+    if (hasSeamAllowance())
     {
-        if (!IsSeamAllowanceBuiltIn())
+        if (!hasSeamAllowanceBuiltIn())
         {
             // Draw seam allowance
-            QVector<QPointF>points = GetSeamAllowancePoints();
+            QVector<QPointF>points = getSeamAllowancePoints();
 
             if (points.last().toPoint() != points.first().toPoint())
             {
@@ -1233,7 +1235,7 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QPointF> VLayoutPiece::piecePath() const
 {
-    if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && not hasSeamAllowanceBuiltIn())
     {
         return d->seamAllowance;
     }
@@ -1249,7 +1251,7 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
     QColor  color;
     QString lineType;
     qreal   lineWeight;
-    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    if (hasSeamAllowance() && !hasSeamAllowanceBuiltIn())
     {
         color      = QColor(qApp->Settings()->getDefaultSeamColor());
         lineType   = qApp->Settings()->getDefaultSeamLinetype();
@@ -1271,14 +1273,17 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
 //---------------------------------------------------------------------------------------------------------------------
 void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
 {
-    QColor  color      = QColor(qApp->Settings()->getDefaultCutColor());
-    QString lineType   = qApp->Settings()->getDefaultCutLinetype();
-    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+    if (qApp->Settings()->showSeamAllowances())
+    {
+        QColor  color      = QColor(qApp->Settings()->getDefaultCutColor());
+        QString lineType   = qApp->Settings()->getDefaultCutLinetype();
+        qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
-    QGraphicsPathItem *item = new QGraphicsPathItem(parent);
-    item->setData(ObjectName, QString("cutline"));
-    item->setPath(createAllowancePath());
-    item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+        QGraphicsPathItem *item = new QGraphicsPathItem(parent);
+        item->setData(ObjectName, QString("cutline"));
+        item->setPath(createAllowancePath());
+        item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1321,7 +1326,7 @@ bool VLayoutPiece::isMirror() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetMirror(bool value)
+void VLayoutPiece::setMirror (bool value)
 {
     d->mirror = value;
 }

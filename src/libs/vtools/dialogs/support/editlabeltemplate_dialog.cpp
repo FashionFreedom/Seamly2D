@@ -51,6 +51,7 @@
 #include "editlabeltemplate_dialog.h"
 #include "ui_editlabeltemplate_dialog.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vformat/vlabeltemplate.h"
 #include "../ifc/xml/vlabeltemplateconverter.h"
 #include "../ifc/xml/vabstractpattern.h"
@@ -321,7 +322,7 @@ void EditLabelTemplateDialog::ExportTemplate()
 
     QString fileName = QFileDialog::getSaveFileName(this, tr("Export label template"),
                                                     dir + QLatin1String("/") + tr("template") + QLatin1String(".xml"),
-                                                    filters, nullptr, FILEDIALOG_OPTIONS);
+                                                    filters, nullptr, qApp->Settings()->getUseNativeFileDialogs());
 
     auto RemoveTempDir = [usedNotExistedDir, dir]()
     {
@@ -382,7 +383,7 @@ void EditLabelTemplateDialog::ImportTemplate()
     QString filter(tr("Label template") + QLatin1String("(*.xml)"));
     const QString fileName = QFileDialog::getOpenFileName(this, tr("Import template"),
                                                           qApp->Settings()->getLabelTemplatePath(), filter, nullptr,
-                                                          FILEDIALOG_OPTIONS);
+                                                          qApp->Settings()->getUseNativeFileDialogs());
     if (fileName.isEmpty())
     {
         return;
@@ -483,7 +484,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
         ++i;
     }
 
-    // Insert sorted items into popup menu. 
+    // Insert sorted items into popup menu.
     auto j = sortedItems.constBegin();
     while (j != sortedItems.constEnd())
     {

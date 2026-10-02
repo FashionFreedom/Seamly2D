@@ -4,9 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  This source code is part of the Seamly2D project, a pattern making
-//  program to create and model patterns of clothing.
-//  Copyright (C) 2017 - 2025 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -21,7 +19,7 @@
 //  GNU General Public License for more details.
 //
 //  You should have received a copy of the GNU General Public License
-//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -302,8 +300,8 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     customSeamAllowanceChanged(0);
 
     ui->forbidFlipping_CheckBox->setChecked(piece.IsForbidFlipping());
-    ui->seams_CheckBox->setChecked(piece.IsSeamAllowance());
-    ui->builtIn_CheckBox->setChecked(piece.IsSeamAllowanceBuiltIn());
+    ui->seams_CheckBox->setChecked(piece.hasSeamAllowance());
+    ui->builtIn_CheckBox->setChecked(piece.hasSeamAllowanceBuiltIn());
     ui->pieceName_LineEdit->setText(piece.GetName());
     setPieceColor(piece.getColor());
     setPieceFill(piece.getFill());
@@ -432,7 +430,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             }
             else
             {
-                QVector<QPointF> points = CreatePiece().MainPathPoints(data);
+                QVector<QPointF> points = CreatePiece().mainPathPoints(data);
                 const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(id);
                 QVector<QPointF> curvePoints = curve->getPoints();
                 points.append(curvePoints);
@@ -619,97 +617,127 @@ bool PatternPieceDialog::eventFilter(QObject *object, QEvent *event)
 
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
 
+            switch (keyEvent->key())
+            {
+                case Qt::Key_Up:
+                case Qt::Key_Down:
+                case Qt::Key_Left:
+                case Qt::Key_Right:
+                case Qt::Key_Home:
+                case Qt::Key_End:
+                case Qt::Key_PageUp:
+                case Qt::Key_PageDown:
+                    return false; // let the list widget handle navigation and range selection
+                default:
+                    break;
+            }
+            if (keyEvent->matches(QKeySequence::SelectAll))
+            {
+                return false; // let the list widget handle select all
+            }
+
             if (keyEvent->key() == Qt::Key_Delete)
             {
-                delete rowItem;
+                qDeleteAll(selectedRowItems(list, rowItem)); // deleting an item also removes it from the list
+                validateObjects(isMainPathValid());
+                nodeListChanged();
+                return true; // items are gone - do not fall through
             }
             if (keyEvent->modifiers() & Qt::ControlModifier)
             {
+                const QList<QListWidgetItem *> items = selectedRowItems(list, rowItem);
+                const VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
+
                 switch (keyEvent->key())
                 {
                     case Qt::Key_R:
                     {
-                        reverseNode(rowItem);
+                        if (rowNode.GetTypeTool() != Tool::NodePoint) // a point cannot anchor the reverse state
+                        {
+                            const bool reverse = !rowNode.GetReverse();
+                            for (QListWidgetItem *item : items)
+                            {
+                                reverseNode(item, reverse); // skips point nodes
+                            }
+                        }
                         break;
                     }
                     case Qt::Key_D:
                     {
-                        duplicateNode(rowItem);
+                        for (QListWidgetItem *item : items)
+                        {
+                            duplicateNode(item); // skips point nodes
+                        }
                         break;
                     }
                     case Qt::Key_E:
                     {
-                        excludeNode(rowItem);
+                        const bool exclude = !rowNode.isExcluded();
+                        for (QListWidgetItem *item : items)
+                        {
+                            excludeNode(item, exclude);
+                        }
                         break;
                     }
                 }
             }
             else if (keyEvent->modifiers() & Qt::ShiftModifier)
             {
-                VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
-                NotchType notchType = rowNode.getNotchType();
-                NotchSubType notchSubType = rowNode.getNotchSubType();
-                int notchCount = rowNode.getNotchCount();
-
-                switch (keyEvent->key())
+                const QList<QListWidgetItem *> items = selectedRowItems(list, rowItem);
+                for (QListWidgetItem *item : items)
                 {
-                    case Qt::Key_N:
+                    VPieceNode node = qvariant_cast<VPieceNode>(item->data(Qt::UserRole));
+                    if (node.GetTypeTool() != Tool::NodePoint)
                     {
-                        setNotch(rowItem, false, NotchType::Slit, notchSubType, notchCount);
-                        break;
+                        continue;
                     }
-                    case Qt::Key_S:
+
+                    bool showCutline          = node.showNotch();
+                    bool showSeamline         = node.showSeamlineNotch();
+                    NotchType notchType       = node.getNotchType();
+                    NotchSubType notchSubType = node.getNotchSubType();
+                    qreal notchLength         = node.getNotchLength();
+                    qreal notchWidth          = node.getNotchWidth();
+                    int notchCount            = node.getNotchCount();
+
+                    switch (keyEvent->key())
                     {
-                        setNotch(rowItem, true, NotchType::Slit, notchSubType, notchCount);
-                        break;
+                        case Qt::Key_S:
+                            notchType = NotchType::Slit;
+                            break;
+                        case Qt::Key_T:
+                            notchType = NotchType::TNotch;
+                            break;
+                        case Qt::Key_U:
+                            notchType = NotchType::UNotch;
+                            break;
+                        case Qt::Key_I:
+                            notchType = NotchType::VInternal;
+                            break;
+                        case Qt::Key_E:
+                            notchType = NotchType::VExternal;
+                            break;
+                        case Qt::Key_C:
+                            notchType = NotchType::Castle;
+                            break;
+                        case Qt::Key_D:
+                            notchType = NotchType::Diamond;
+                            break;
+                        case Qt::Key_F:
+                            notchSubType = NotchSubType::Straightforward;
+                            break;
+                        case Qt::Key_B:
+                            notchSubType = NotchSubType::Bisector;
+                            break;
+                        case Qt::Key_X:
+                            notchSubType = NotchSubType::Intersection;
+                            break;
+                        default:
+                            continue; // not a notch shortcut
                     }
-                    case Qt::Key_T:
-                    {
-                        setNotch(rowItem, true, NotchType::TNotch, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_U:
-                    {
-                        setNotch(rowItem, true, NotchType::UNotch, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_I:
-                    {
-                        setNotch(rowItem, true, NotchType::VInternal, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_E:
-                    {
-                        setNotch(rowItem, true, NotchType::VExternal, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_C:
-                    {
-                        setNotch(rowItem, true, NotchType::Castle, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_D:
-                    {
-                        setNotch(rowItem, true, NotchType::Diamond, notchSubType, notchCount);
-                        break;
-                    }
-                    case Qt::Key_F:
-                    {
-                        setNotch(rowItem, true, notchType, NotchSubType::Straightforward, notchCount);
-                        break;
-                    }
-                    case Qt::Key_B:
-                    {
-                        setNotch(rowItem, true, notchType, NotchSubType::Bisector, notchCount);
-                        break;
-                    }
-                    case Qt::Key_X:
-                    {
-                        setNotch(rowItem, true, notchType, NotchSubType::Intersection, notchCount);
-                        break;
-                    }
-                    default:
-                        break;
+
+                    setNotch(item, true, showCutline, showSeamline, notchType,
+                             notchSubType, notchLength, notchWidth, notchCount);
                 }
             }
             validateObjects(isMainPathValid());
@@ -791,7 +819,8 @@ void PatternPieceDialog::pieceNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::pieceColorChanged()
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), COLORDIALOG_OPTIONS);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"),
+                                                qApp->Settings()->getUseNativeColorDialogs());
 
     if (color.isValid())
     {
@@ -810,27 +839,42 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
         return;
     }
 
+    const VPiece piece = CreatePiece();
+    bool isBuiltInSA    = piece.hasSeamAllowanceBuiltIn();
+    bool isHideSeamline = piece.isHideSeamLine();
+
     QListWidgetItem *rowItem = ui->mainPath_ListWidget->item(row);
     SCASSERT(rowItem != nullptr);
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
+    // Create a state-aware icon
+    QIcon checkIcon;
+    // Icons used when the item is checked or NOT checked
+    checkIcon.addFile("://icon/32x32/visible_off.png", QSize(), QIcon::Normal, QIcon::Off);
+    checkIcon.addFile("://icon/32x32/visible_on.png", QSize(), QIcon::Normal, QIcon::On);
+
+    // Icons used when the item IS disabled
+    checkIcon.addFile("://icon/32x32/visible_hover.png", QSize(), QIcon::Disabled, QIcon::On);
+    checkIcon.addFile("://icon/32x32/visible_hover.png", QSize(), QIcon::Disabled, QIcon::Off);
+
+
     // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
     QScopedPointer<QMenu> menu(new QMenu(ui->mainPath_ListWidget));
-    NodeInfo info;
-    NotchType notchType = rowNode.getNotchType();
-    NotchSubType notchSubType = rowNode.getNotchSubType();
-    int notchCount = rowNode.getNotchCount();
-    bool isNotch = false;
 
-    QAction *actionNotch     = nullptr;
-    QAction *actionNone      = nullptr;
-    QAction *actionSlit      = nullptr;
-    QAction *actionTNotch    = nullptr;
-    QAction *actionUNotch    = nullptr;
-    QAction *actionVInternal = nullptr;
-    QAction *actionVExternal = nullptr;
-    QAction *actionCastle    = nullptr;
-    QAction *actionDiamond   = nullptr;
+    QAction *actionShowCutNotch   = nullptr;
+    QAction *actionShowSeamNotch  = nullptr;
+
+    QAction *actionDefaultNotch = nullptr;
+    QAction *actionRemoveNotch  = nullptr;
+
+    QAction *actionNotch        = nullptr;
+    QAction *actionSlit         = nullptr;
+    QAction *actionTNotch       = nullptr;
+    QAction *actionUNotch       = nullptr;
+    QAction *actionVInternal    = nullptr;
+    QAction *actionVExternal    = nullptr;
+    QAction *actionCastle       = nullptr;
+    QAction *actionDiamond      = nullptr;
 
     QAction *actionStraightforward = nullptr;
     QAction *actionBisector        = nullptr;
@@ -853,13 +897,23 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     }
     else
     {
-        QMenu *notchMenu = menu->addMenu(tr("Notch"));
+        actionShowCutNotch = menu->addAction(checkIcon, tr("Show Cut Line Notch"));
+        actionShowCutNotch->setCheckable(true);
+        actionShowCutNotch->setChecked(rowNode.showNotch() && rowNode.isNotch());
+        actionShowCutNotch->setEnabled(rowNode.isNotch());
+
+        actionShowSeamNotch = menu->addAction(checkIcon, tr("Show Seam Line Notch"));
+        actionShowSeamNotch->setCheckable(true);
+        actionShowSeamNotch->setChecked(rowNode.showSeamlineNotch() && rowNode.isNotch());
+        actionShowSeamNotch->setEnabled(rowNode.isNotch() && !isBuiltInSA && !isHideSeamline);
+
+        actionDefaultNotch = menu->addAction(tr("Make Default Notch"));
+
+        QMenu *notchMenu = menu->addMenu(tr("Edit Notch"));
         actionNotch = notchMenu->menuAction();
-        actionNotch->setCheckable(true);
-        actionNotch->setChecked(rowNode.isNotch());
+        notchMenu->setEnabled(rowNode.isNotch());
 
         QMenu *notchTypeMenu = notchMenu->addMenu(tr("Type"));
-        actionNone      = notchTypeMenu->addAction( tr("None") + QStringLiteral("\tShift + N"));
         actionSlit      = notchTypeMenu->addAction(QIcon("://icon/24x24/slit_notch.png"),       tr("Slit") + QStringLiteral("\tShift + S"));
         actionTNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/t_notch.png"),          tr("TNotch") + QStringLiteral("\tShift + T"));
         actionUNotch    = notchTypeMenu->addAction(QIcon("://icon/24x24/u_notch.png"),          tr("UNotch") + QStringLiteral("\tShift + U"));
@@ -877,7 +931,13 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
         action1Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("1"));
         action2Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("2"));
         action3Notch = notchCountMenu->addAction(QIcon(), QStringLiteral("3"));
-}
+
+        actionRemoveNotch = menu->addAction(tr("Remove Notch"));
+
+        QAction *separator = new QAction(this);
+        separator->setSeparator(true);
+        menu->addAction(separator);
+    }
 
     QAction *actionExcluded = menu->addAction(tr("Excluded") + QStringLiteral("\tCtrl + E"));
     actionExcluded->setCheckable(true);
@@ -886,96 +946,167 @@ void PatternPieceDialog::showMainPathContextMenu(const QPoint &pos)
     QAction *actionDelete = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Delete") + QStringLiteral("\tDel"));
 
     QAction *selectedAction = menu->exec(ui->mainPath_ListWidget->viewport()->mapToGlobal(pos));
+    if (selectedAction == nullptr)
+    {
+        return; // menu dismissed - on curve rows the notch actions are null and would falsely match below
+    }
+
+    const QList<QListWidgetItem *> items = selectedRowItems(ui->mainPath_ListWidget, rowItem);
+
     if (selectedAction == actionDelete)
     {
-        delete ui->mainPath_ListWidget->item(row);
+        qDeleteAll(items); // deleting an item also removes it from the list
+        validateObjects(isMainPathValid());
+        nodeListChanged();
+        return; // items are gone - do not fall through
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
-        reverseNode(rowItem);
+        const bool reverse = !rowNode.GetReverse();
+        for (QListWidgetItem *item : items)
+        {
+            reverseNode(item, reverse); // skips point nodes
+        }
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionDuplicate)
     {
-        duplicateNode(rowItem);
+        for (QListWidgetItem *item : items)
+        {
+            duplicateNode(item); // skips point nodes
+        }
     }
     else if (selectedAction == actionExcluded)
     {
-        excludeNode(rowItem);
+        const bool exclude = !rowNode.isExcluded();
+        for (QListWidgetItem *item : items)
+        {
+            excludeNode(item, exclude);
+        }
     }
-    else
+    else // notch actions - apply to every selected point node, keeping its other notch settings
     {
-        if (selectedAction == actionNone)
-        {
-            isNotch = false;
-            notchType = NotchType::Slit;
-        }
-        else if (selectedAction == actionSlit)
-        {
-            isNotch = true;
-            notchType = NotchType::Slit;
-        }
-        else if (selectedAction == actionTNotch)
-        {
-            isNotch = true;
-            notchType = NotchType::TNotch;
-        }
-        else if (selectedAction == actionUNotch)
-        {
-            isNotch = true;
-            notchType = NotchType::UNotch;
-        }
-        else if (selectedAction == actionVInternal)
-        {
-            isNotch = true;
-            notchType = NotchType::VInternal;
-        }
-        else if (selectedAction == actionVExternal)
-        {
-            isNotch = true;
-            notchType = NotchType::VExternal;
-        }
-        else if (selectedAction == actionCastle)
-        {
-            isNotch = true;
-            notchType = NotchType::Castle;
-        }
-        else if (selectedAction == actionDiamond)
-        {
-            isNotch = true;
-            notchType = NotchType::Diamond;
-        }
-        else if (selectedAction == actionStraightforward)
-        {
-            isNotch = true;
-            notchSubType = NotchSubType::Straightforward;
-        }
-        else if (selectedAction == actionBisector)
-        {
-            isNotch = true;
-            notchSubType = NotchSubType::Bisector;
-        }
-        else if (selectedAction == actionIntersection)
-        {
-            isNotch = true;
-            notchSubType = NotchSubType::Intersection;
-        }
-        else if (selectedAction == action1Notch)
-        {
-            isNotch = true;
-            notchCount = 1;
-        }
-        else if (selectedAction == action2Notch)
-        {
-            isNotch = true;
-            notchCount = 2;
-        }
-        else if (selectedAction == action3Notch)
-        {
-            isNotch = true;
-            notchCount = 3;
-        }
+        const bool newShowCutline  = !rowNode.showNotch();
+        const bool newShowSeamline = !rowNode.showSeamlineNotch();
 
-        setNotch(rowItem, isNotch, notchType, notchSubType, notchCount);
+        for (QListWidgetItem *item : items)
+        {
+            VPieceNode node = qvariant_cast<VPieceNode>(item->data(Qt::UserRole));
+            if (node.GetTypeTool() != Tool::NodePoint)
+            {
+                continue;
+            }
+
+            NotchType notchType       = node.getNotchType();
+            NotchSubType notchSubType = node.getNotchSubType();
+            qreal notchLength         = node.getNotchLength();
+            qreal notchWidth          = node.getNotchWidth();
+            int notchCount            = node.getNotchCount();
+            bool isNotch              = node.isNotch();
+            bool showCutline          = node.showNotch();
+            bool showSeamline         = node.showSeamlineNotch();
+
+            if (selectedAction == actionShowCutNotch)
+            {
+                if (!isNotch)
+                {
+                    continue; // only meaningful on nodes that have a notch
+                }
+                showCutline = newShowCutline;
+            }
+            else if (selectedAction == actionShowSeamNotch)
+            {
+                if (!isNotch)
+                {
+                    continue;
+                }
+                showSeamline = newShowSeamline;
+            }
+            else if (selectedAction == actionDefaultNotch)
+            {
+                notchType    = stringToNotchType(qApp->Settings()->getDefaultNotchType());
+                notchSubType = NotchSubType::Straightforward;
+                notchLength  = qApp->Settings()->getDefaultNotchLength();
+                notchWidth   = qApp->Settings()->getDefaultNotchWidth();
+                notchCount   = 1;
+                isNotch      = true;
+                showCutline  = qApp->Settings()->showSeamAllowanceNotch();
+                showSeamline = qApp->Settings()->showSeamlineNotch();
+            }
+            else if (selectedAction == actionSlit)
+            {
+                isNotch = true;
+                notchType = NotchType::Slit;
+            }
+            else if (selectedAction == actionTNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::TNotch;
+            }
+            else if (selectedAction == actionUNotch)
+            {
+                isNotch = true;
+                notchType = NotchType::UNotch;
+            }
+            else if (selectedAction == actionVInternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VInternal;
+            }
+            else if (selectedAction == actionVExternal)
+            {
+                isNotch = true;
+                notchType = NotchType::VExternal;
+            }
+            else if (selectedAction == actionCastle)
+            {
+                isNotch = true;
+                notchType = NotchType::Castle;
+            }
+            else if (selectedAction == actionDiamond)
+            {
+                isNotch = true;
+                notchType = NotchType::Diamond;
+            }
+            else if (selectedAction == actionStraightforward)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Straightforward;
+            }
+            else if (selectedAction == actionBisector)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Bisector;
+            }
+            else if (selectedAction == actionIntersection)
+            {
+                isNotch = true;
+                notchSubType = NotchSubType::Intersection;
+            }
+            else if (selectedAction == action1Notch)
+            {
+                isNotch = true;
+                notchCount = 1;
+            }
+            else if (selectedAction == action2Notch)
+            {
+                isNotch = true;
+                notchCount = 2;
+            }
+            else if (selectedAction == action3Notch)
+            {
+                isNotch = true;
+                notchCount = 3;
+            }
+            else if (selectedAction == actionRemoveNotch)
+            {
+                isNotch      = false;
+                showCutline  = true;
+                showSeamline = true;
+            }
+
+            setNotch(item, isNotch, showCutline, showSeamline, notchType,
+                     notchSubType, notchLength, notchWidth, notchCount);
+        }
     }
 
     validateObjects(isMainPathValid());
@@ -1027,7 +1158,6 @@ void PatternPieceDialog::showCustomSAContextMenu(const QPoint &pos)
             dialog->setSeamAllowanceWidthFormula(getSeamAllowanceWidthFormula());
         }
         m_dialog = dialog;
-        m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
         m_dialog->show();
     }
@@ -1064,7 +1194,6 @@ void PatternPieceDialog::showInternalPathsContextMenu(const QPoint &pos)
         dialog->setPiecePath(data->getPiecePath(pathId));
         dialog->setPieceId(toolId);
         m_dialog = dialog;
-        m_dialog->setModal(true);
         connect(m_dialog.data(), &DialogTool::DialogClosed, this, &PatternPieceDialog::pathDialogClosed);
         m_dialog->show();
     }
@@ -1166,7 +1295,6 @@ void PatternPieceDialog::nodeChanged(int index)
             w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
 
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
-            MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
             // Seam allowance after node
             ui->afterWidthFormula_PlainTextEdit->setEnabled(true);
@@ -1177,7 +1305,6 @@ void PatternPieceDialog::nodeChanged(int index)
             w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
 
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
-            MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
             //Angle type
             ui->angle_ComboBox->setEnabled(true);
@@ -1616,7 +1743,7 @@ void PatternPieceDialog::showSeamlineNotchChanged(int state)
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
-            rowNode.setShowSeamlineNotch(state);
+            rowNode.setShowSeamlineNotch(state && !ui->builtIn_CheckBox->isChecked());
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
 
             nodeListChanged();
@@ -2509,7 +2636,7 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.SetName(ui->pieceName_LineEdit->text());
     piece.setColor(getPieceColor());
     piece.setFill(getPieceFill());
-    piece.SetInLayout(isInLayout());
+    piece.setInLayout(isInLayout());
     piece.setIsLocked(getPieceLock());
     piece.SetMx(m_mx);
     piece.SetMy(m_my);
@@ -2697,7 +2824,7 @@ bool PatternPieceDialog::isMainPathValid() const
 {
     QString warning = DialogWarningIcon();
 
-    if(CreatePiece().MainPathPoints(data).count() < 3)
+    if(CreatePiece().mainPathPoints(data).count() < 3)
     {
         warning += tr("You need more points!");
         ui->status_Label->setText(warning);
@@ -2744,7 +2871,7 @@ void PatternPieceDialog::validateObjects(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 bool PatternPieceDialog::isMainPathClockwise() const
 {
-    const QVector<QPointF> points = CreatePiece().MainPathPoints(data);
+    const QVector<QPointF> points = CreatePiece().mainPathPoints(data);
     return VPiece::isClockwise(points);
 }
 
@@ -3392,8 +3519,6 @@ void PatternPieceDialog::setSeamAllowanceWidthFormula(const QString &formula)
     SCASSERT(path != nullptr)
     const VPiece p = CreatePiece();
     path->SetPiece(p);
-
-    MoveCursorToEnd(ui->widthFormula_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3442,8 +3567,6 @@ void PatternPieceDialog::setGrainlineAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->rotationFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->rotationFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3456,8 +3579,6 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->lengthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->lengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3470,8 +3591,6 @@ void PatternPieceDialog::setGrainlineArrowLength(QString lengthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->arrowlLengthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->arrowlLengthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3484,8 +3603,6 @@ void PatternPieceDialog::setPieceLabelWidth(QString widthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelWidthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelWidthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3498,8 +3615,6 @@ void PatternPieceDialog::setPieceLabelHeight(QString heightFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelHeightFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelHeightFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3512,8 +3627,6 @@ void PatternPieceDialog::setPieceLabelAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelAngleFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->pieceLabelAngleFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3526,8 +3639,6 @@ void PatternPieceDialog::setPatternLabelWidth(QString widthFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelWidthFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelWidthFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3540,8 +3651,6 @@ void PatternPieceDialog::setPatternLabelHeight(QString heightFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelHeightFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelHeightFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3554,8 +3663,6 @@ void PatternPieceDialog::setPatternLabelAngle(QString angleFormula)
 
     const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelAngleFormula_LineEdit->setPlainText(formula);
-
-    MoveCursorToEnd(ui->patternLabelAngleFormula_LineEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3585,31 +3692,8 @@ void PatternPieceDialog::showAnchorPoints()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setMoveExclusions()
 {
-    ui->moveTop_ToolButton->setEnabled(false);
-    ui->moveUp_ToolButton->setEnabled(false);
-    ui->moveDown_ToolButton->setEnabled(false);
-    ui->moveBottom_ToolButton->setEnabled(false);
-
-    if (ui->mainPath_ListWidget->count() > 1)
-    {
-        if (ui->mainPath_ListWidget->currentRow() == 0)
-        {
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-        else if (ui->mainPath_ListWidget->currentRow() == ui->mainPath_ListWidget->count() - 1)
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-        }
-        else
-        {
-            ui->moveTop_ToolButton->setEnabled(true);
-            ui->moveUp_ToolButton->setEnabled(true);
-            ui->moveDown_ToolButton->setEnabled(true);
-            ui->moveBottom_ToolButton->setEnabled(true);
-        }
-    }
+    setMoveButtonState(ui->mainPath_ListWidget, ui->moveTop_ToolButton, ui->moveUp_ToolButton,
+                       ui->moveDown_ToolButton, ui->moveBottom_ToolButton);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3635,15 +3719,16 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief Reverses the selected node points if the node is a curve.
+/// @brief Sets the reverse state of the node if the node is a curve.
 /// @param rowItem list widget item of the selected row.
+/// @param reverse new reverse state.
 //---------------------------------------------------------------------------------------------------------------------
- void PatternPieceDialog::reverseNode(QListWidgetItem *rowItem)
+ void PatternPieceDialog::reverseNode(QListWidgetItem *rowItem, bool reverse)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
     if (rowNode.GetTypeTool() != Tool::NodePoint)
     {
-        rowNode.SetReverse(!rowNode.GetReverse());
+        rowNode.SetReverse(reverse);
         NodeInfo info;
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
@@ -3667,14 +3752,15 @@ QString PatternPieceDialog::createPieceName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief Toggles the exclude state of the selected node.
+/// @brief Sets the exclude state of the node.
 /// @param rowItem list widget item of the selected row.
+/// @param exclude new exclude state.
 //---------------------------------------------------------------------------------------------------------------------
- void PatternPieceDialog::excludeNode(QListWidgetItem *rowItem)
+ void PatternPieceDialog::excludeNode(QListWidgetItem *rowItem, bool exclude)
 {
     NodeInfo info;
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
-    rowNode.SetExcluded(!rowNode.isExcluded());
+    rowNode.SetExcluded(exclude);
     info = getNodeInfo(rowNode, true);
     rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
     rowItem->setIcon(QIcon(info.icon));
@@ -3687,15 +3773,20 @@ QString PatternPieceDialog::createPieceName() const
 /// @param rowItem list widget item of the selected row.
 /// @param notchType of the selected submenu item.
 //---------------------------------------------------------------------------------------------------------------------
-void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
-                                  NotchSubType notchSubType, int count)
+void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, bool showCutline, bool showSeamline,
+                                  NotchType notchType, NotchSubType notchSubType, qreal notchLength,
+                                  qreal notchWidth, int count)
 {
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
     if (rowNode.GetTypeTool() == Tool::NodePoint)
     {
         rowNode.setNotch(isNotch);
+        rowNode.setShowNotch(showCutline);
+        rowNode.setShowSeamlineNotch(showSeamline);
         rowNode.setNotchType(notchType);
         rowNode.setNotchSubType(notchSubType);
+        rowNode.setNotchLength(notchLength);
+        rowNode.setNotchWidth(notchWidth);
         rowNode.setNotchCount(count);
         NodeInfo info;
         info = getNodeInfo(rowNode, true);

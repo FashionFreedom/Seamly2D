@@ -26,6 +26,9 @@
   <property name="toolTip">
    <string>Anchor Point tool</string>
   </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QFormLayout" name="formLayout">

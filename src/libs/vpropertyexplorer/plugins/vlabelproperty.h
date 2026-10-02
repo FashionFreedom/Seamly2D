@@ -88,6 +88,9 @@ public:
     //! Gets the data from the widget
     virtual QVariant     getEditorData(const QWidget *editor) const override;
 
+    //! Sets the data in the widget
+    virtual bool         setEditorData(QWidget *editor) override;
+
     //! Sets the settings.
     virtual void         setSetting(const QString &key, const QVariant &value) override;
 

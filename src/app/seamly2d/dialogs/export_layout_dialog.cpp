@@ -77,7 +77,8 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     , m_count(count)
     , m_isInitialized(false)
     , m_mode(mode)
-    , m_SaveButton(nullptr)
+    , m_saveButton(nullptr)
+    , m_foreGroundColor()
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -85,12 +86,16 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->path_LineEdit->setClearButtonEnabled(true);
     ui->filename_LineEdit->setClearButtonEnabled(true);
 
+    // Need to save foreground textcolor.
+    QPalette palette = ui->path_LineEdit->palette();
+    m_foreGroundColor = palette.text().color();
+
     qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
-    SCASSERT(m_SaveButton != nullptr)
-    m_SaveButton->setEnabled(false);
-    m_SaveButton->setText(tr("Export"));
+    m_saveButton = ui->buttonBox->button(QDialogButtonBox::Save);
+    SCASSERT(m_saveButton != nullptr)
+    m_saveButton->setEnabled(false);
+    m_saveButton->setText(tr("Export"));
 
     ui->filename_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(fileNameRegExp), this));
 
@@ -161,7 +166,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
         ui->textAsPaths_Checkbox->setVisible(false);
     }
 
-    connect(m_SaveButton, &QPushButton::clicked, this, &ExportLayoutDialog::save);
+    connect(m_saveButton, &QPushButton::clicked, this, &ExportLayoutDialog::save);
     connect(ui->filename_LineEdit, &QLineEdit::textChanged, this, &ExportLayoutDialog::showExportFiles);
     connect(ui->format_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &ExportLayoutDialog::showExportFiles);
@@ -180,7 +185,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
         const QString dir = QFileDialog::getExistingDirectory(this, tr("Select folder"), dirPath,
                                                               QFileDialog::ShowDirsOnly
                                                               | QFileDialog::DontResolveSymlinks
-                                                              | FILEDIALOG_OPTIONS);
+                                                              | qApp->Seamly2DSettings()->getUseNativeFileDialogs());
         if (!dir.isEmpty())
         {// If the paths are equal the slot will not be called, we will do this manually
             dir == ui->path_LineEdit->text() ? pathChanged(dir) : ui->path_LineEdit->setText(dir);
@@ -602,12 +607,12 @@ void ExportLayoutDialog::pathChanged(const QString &text)
     dir.setPath(text);
     if (dir.exists(text))
     {
-        m_SaveButton->setEnabled(true);
-        palette.setColor(ui->path_LineEdit->foregroundRole(), Qt::black);
+        m_saveButton->setEnabled(true);
+        palette.setColor(ui->path_LineEdit->foregroundRole(), m_foreGroundColor);
     }
     else
     {
-        m_SaveButton->setEnabled(false);
+        m_saveButton->setEnabled(false);
         palette.setColor(ui->path_LineEdit->foregroundRole(), Qt::red);
     }
 

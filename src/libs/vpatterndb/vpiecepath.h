@@ -118,7 +118,7 @@ public:
 
     QVector<QPointF>    PathPoints(const VContainer *data, const QVector<QPointF> &path = QVector<QPointF>()) const;
     QVector<VPointF>    PathNodePoints(const VContainer *data, bool showExcluded = true) const;
-    QVector<VSAPoint>   SeamAllowancePoints(const VContainer *data, qreal width, bool reverse) const;
+    QVector<VSAPoint>   seamAllowancePoints(const VContainer *data, qreal width, bool reverse) const;
 
     QPainterPath        PainterPath(const VContainer *data, const QVector<QPointF> &cutPath) const;
 
