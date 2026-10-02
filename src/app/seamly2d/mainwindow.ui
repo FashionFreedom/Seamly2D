@@ -134,8 +134,9 @@
     <addaction name="loadIndividual_Action"/>
     <addaction name="loadMultisize_Action"/>
     <addaction name="table_Action"/>
-    <addaction name="finalMeasurements_Action"/>
     <addaction name="exportVariablesToCSV_Action"/>
+    <addaction name="finalMeasurements_Action"/>
+    <addaction name="exportFinalMeasurementsToCSV_Action"/>
    </widget>
    <widget class="QMenu" name="history_Menu">
     <property name="title">
@@ -4082,6 +4083,14 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+E</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="exportFinalMeasurementsToCSV_Action">
+   <property name="text">
+    <string>Export Final Measurements to CSV</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>

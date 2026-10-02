@@ -178,6 +178,7 @@ MainWindow::MainWindow(QWidget *parent)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogFinalMeasurements(nullptr)
+    , m_exportFinalMeasurements(false)
     , dialogTool()
     , historyDialog(nullptr)
     , font_combo_box(nullptr)
@@ -2022,6 +2023,12 @@ void MainWindow::PrepareSceneList()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
 {
+    if (m_exportFinalMeasurements)
+    {
+        exportFinalMeasurementsToCSVData(fileName, dialog);
+        return;
+    }
+
     QxtCsvModel csv;
 
     csv.insertColumn(0);
@@ -2083,6 +2090,60 @@ void MainWindow::handleExportToCSV()
         file = QFileInfo(filePath).baseName();
     }
     exportToCSV(file);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleExportFinalMeasurementsToCSV()
+{
+    QString file = tr("untitled");
+    if(!qApp->getFilePath().isEmpty())
+    {
+        file = QFileInfo(qApp->getFilePath()).baseName();
+    }
+    file += QLatin1String("_final_measurements");
+
+    m_exportFinalMeasurements = true;
+    exportToCSV(file);
+    m_exportFinalMeasurements = false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::exportFinalMeasurementsToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
+{
+    QxtCsvModel csv;
+
+    csv.insertColumn(0);
+    csv.insertColumn(1);
+    csv.insertColumn(2);
+    csv.insertColumn(3);
+
+    if (dialog.WithHeader())
+    {
+        csv.setHeaderText(0, tr("Name"));
+        csv.setHeaderText(1, tr("The calculated value"));
+        csv.setHeaderText(2, tr("Formula"));
+        csv.setHeaderText(3, tr("Description"));
+    }
+
+    const VContainer evalData = DialogFinalMeasurements::evaluationData(pattern, doc);
+    const QVector<VFinalMeasurement> measurements = doc->getFinalMeasurements();
+    for (int row = 0; row < measurements.size(); ++row)
+    {
+        const VFinalMeasurement &measurement = measurements.at(row);
+
+        VFormula formula(measurement.formula, &evalData);
+        formula.setCheckZero(false);
+        formula.Eval();
+
+        csv.insertRow(row);
+        csv.setText(row, 0, measurement.name);
+        csv.setText(row, 1, formula.error() ? formula.getStringValue()
+                                            : qApp->LocaleToString(formula.getDoubleValue()));
+        csv.setText(row, 2, formula.GetFormula(FormulaType::ToUser));
+        csv.setText(row, 3, measurement.description);
+    }
+
+    csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), dialog.SelectedEncoding());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6389,6 +6450,8 @@ void MainWindow::createActions()
         }
     });
     connect(ui->exportVariablesToCSV_Action, &QAction::triggered, this, &MainWindow::handleExportToCSV);
+    connect(ui->exportFinalMeasurementsToCSV_Action, &QAction::triggered, this,
+            &MainWindow::handleExportFinalMeasurementsToCSV);
 
     //History menu
     connect(ui->history_Action, &QAction::triggered, this, [this](bool checked)

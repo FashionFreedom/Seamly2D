@@ -104,7 +104,7 @@ DialogFinalMeasurements::DialogFinalMeasurements(VContainer *data, VPattern *doc
     connect(m_doc, &VPattern::FullUpdateFromFile, this, &DialogFinalMeasurements::fullUpdateFromFile);
     connect(m_doc, &VPattern::patternClosed,      this, [this](){ close(); });
 
-    updateEvalData();
+    m_evalData = evaluationData(data, m_doc);
     fillTable();
     ui->measurements_TableWidget->sortByColumn(-1, Qt::AscendingOrder);
     selectIndex(m_measurements.isEmpty() ? -1 : 0);
@@ -385,19 +385,21 @@ void DialogFinalMeasurements::fullUpdateFromFile()
     const int index = currentIndex();
 
     m_measurements = m_doc->getFinalMeasurements();
-    updateEvalData();
+    m_evalData = evaluationData(&m_evalData, m_doc);
     fillTable();
     selectIndex(m_measurements.isEmpty() ? -1 : qBound(0, index, m_measurements.size() - 1));
     showMeasurementDetails();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief updateEvalData copies the data of the last tool in the pattern history, so formulas have access to every
-/// object of the pattern: line lengths and angles, curve lengths and angles, custom variables, measurements, etc.
+/// @brief evaluationData returns a copy of the data of the last tool in the pattern history, so formulas have access
+/// to every object of the pattern: line lengths and angles, curve lengths and angles, custom variables, measurements,
+/// etc. Falls back to @p data when the history has no tool.
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::updateEvalData()
+VContainer DialogFinalMeasurements::evaluationData(const VContainer *data, VPattern *doc)
 {
-    const QVector<VToolRecord> *history = m_doc->getHistory();
+    VContainer evalData(*data);
+    const QVector<VToolRecord> *history = doc->getHistory();
     for (int i = history->size() - 1; i >= 0; --i)
     {
         try
@@ -405,7 +407,7 @@ void DialogFinalMeasurements::updateEvalData()
             const VDataTool *tool = VAbstractPattern::getTool(history->at(i).getId());
             if (tool != nullptr)
             {
-                m_evalData = tool->getData();
+                evalData = tool->getData();
                 break;
             }
         }
@@ -415,8 +417,9 @@ void DialogFinalMeasurements::updateEvalData()
         }
     }
 
-    m_evalData.RemoveVariable(currentLength);
-    m_evalData.RemoveVariable(currentSeamAllowance);
+    evalData.RemoveVariable(currentLength);
+    evalData.RemoveVariable(currentSeamAllowance);
+    return evalData;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

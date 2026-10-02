@@ -167,6 +167,8 @@ protected:
     virtual void PrepareSceneList() override;
     virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) final;
     void         handleExportToCSV();
+    void         handleExportFinalMeasurementsToCSV();
+    void         exportFinalMeasurementsToCSVData(const QString &fileName, const DialogExportToCSV &dialog);
 
 private slots:
     void zoomScaleChanged(qreal scale);
@@ -298,6 +300,7 @@ private:
 
     QPointer<DialogVariables>         dialogTable;
     QPointer<DialogFinalMeasurements> dialogFinalMeasurements;
+    bool                              m_exportFinalMeasurements;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<HistoryDialog>           historyDialog;
 

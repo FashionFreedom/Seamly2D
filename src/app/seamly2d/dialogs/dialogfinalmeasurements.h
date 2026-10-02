@@ -47,6 +47,8 @@ public:
                              DialogFinalMeasurements(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
     virtual                 ~DialogFinalMeasurements();
 
+    static VContainer        evaluationData(const VContainer *data, VPattern *doc);
+
 signals:
     void                     dialogClosed();
 
@@ -79,7 +81,6 @@ private:
     VFormulaPropertyEditor      *m_formulaEditor;
     bool                         m_isInitialized;
 
-    void                     updateEvalData();
     void                     fillTable();
     void                     updateRow(int index);
     int                      rowForIndex(int index) const;
