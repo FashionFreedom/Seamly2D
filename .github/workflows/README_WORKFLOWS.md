@@ -7,7 +7,8 @@ schedule, and manual dispatch.
 
 - **Pull requests:** Linux build/unit tests, then one unsigned Windows x64
   integration-test installer via `pr-integration-build.yml`. All PR authors,
-  including Weblate, follow the same build path.
+  except Weblate, follow this build path. Weblate runs Linux tests without
+  creating integration-test artifacts.
 - **Push, schedule, manual:** existing Linux AppImage, macOS, and Windows x64 / 
   ARM64 builds. The existing signing steps run when their secrets are available.
 - **Publish:** scheduled/manual runs on `develop` create the normal weekly
@@ -19,7 +20,7 @@ schedule, and manual dispatch.
 
 ## PR integration-test build (`pr-integration-build.yml`)
 
-This reusable workflow is called by CI after both version creation and Linux
+For non-Weblate PRs, this reusable workflow is called by CI after both version creation and Linux
 unit tests succeed. It cannot be run independently. It builds the same PR merge
 revision used by the Linux tests, with the existing Windows x64 build/NSIS steps.
 It receives no inherited secrets and does not sign, publish, tag, or approve a PR.
@@ -32,15 +33,19 @@ Artifacts section or the Windows job summary (GitHub sign-in required).
 See [PR_INTEGRATION_TESTING.md](PR_INTEGRATION_TESTING.md) for the complete test
 procedure, local installation instructions for these workflow changes, and
 required branch-protection setup. The PR template records testing evidence;
-required reviews enforce the human approval gate.
+required reviews enforce the human approval gate for code changes. Eligible
+Weblate translation PRs retain their existing automated approval exception.
 
 ## Weblate (`auto-merge-weblate.yml`)
 
-For eligible same-repository translation PRs, verifies the changed paths and
-enables auto-merge. It no longer auto-approves PRs. Required checks and human
-reviews must be enforced with repository merge rules. This workflow uses
-`pull_request_target` only for PR metadata/API operations and does not check out
-or execute PR code.
+The original workflow is preserved unchanged. For eligible same-repository
+non-draft PRs by `weblate`, it checks for `.ts` / `.pro` changes under
+`share/translations/`, automatically approves, and enables auto-merge.
+These PRs are an exception to the human integration requirement; required CI
+checks still apply. Repository rules must allow the existing automated review
+to satisfy approval requirements for this process to stay fully automatic.
+This workflow uses `pull_request_target` only for PR metadata/API operations
+and does not check out or execute PR code.
 
 ## Signing and platform coverage
 

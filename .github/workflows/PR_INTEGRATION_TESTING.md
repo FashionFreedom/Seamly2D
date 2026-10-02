@@ -2,8 +2,10 @@
 
 ## Before merge
 
-For every PR, CI runs Linux unit tests and then calls
-`pr-integration-build.yml` to build one unsigned Windows x64 installer. The
+For every PR, CI runs Linux unit tests. For non-Weblate PRs, it then calls
+`pr-integration-build.yml` to build one unsigned Windows x64 installer.
+Weblate PRs do not create build artifacts and retain their existing automated
+translation-update process. The
 installer is an Actions artifact, not a GitHub Release or pre-release.
 The Linux tests and installer use GitHub's same PR merge revision so testing
 covers the proposed changes combined with the target branch.
@@ -59,8 +61,10 @@ Exercise the reported fix and the surrounding CAD workflow:
   that there are no unexpected geometry changes, crashes, or lost work.
 - Test SeamlyMe if the PR changes measurement handling or shared code.
 
-A green build or checked box is not proof of successful human testing. A
+A green build or checked box is not proof of successful human testing. For code changes, a
 maintainer must inspect the evidence and approve the current PR revision.
+Eligible Weblate translation PRs retain the existing automated approval and
+merge process; they are an exception to this human testing requirement.
 Windows testing alone does not validate platform-specific behavior on macOS,
 Linux, or Windows ARM64. For changes affecting those platforms, build and test
 on the affected platforms before approval.
@@ -82,14 +86,25 @@ other merge target:
    target-branch code. Update the PR branch and retest if the base has changed.
 5. Apply rules to administrators where appropriate and limit bypass permissions.
 
-The PR checklist documents evidence; it does not itself block merging. The
+The PR checklist documents evidence; it does not itself block merging. For code changes, the
 required approving review is the human integration gate. Reviewers must
 withhold approval until the current artifact has passed testing.
 
-The existing Weblate workflow still enables auto-merge for eligible translation
-PRs, but no longer submits an automatic approving review. With these merge rules,
-it waits for required checks and a human approval. Without branch protection,
-auto-merge does not establish an integration-testing gate.
+The existing Weblate workflow is preserved unchanged. It automatically approves
+and enables auto-merge only for non-draft PRs by `weblate` from the same
+repository, after checking that every changed path is under `share/translations/`
+and has a `.ts` or `.pro` extension. These PRs retain their existing automated
+translation-update path and are an exception to the human integration gate.
+Linux tests must still pass before auto-merge can complete. The integration
+build job is explicitly skipped for Weblate, so it creates no artifact.
+This author-based exclusion matches the previous CI behavior; the separate
+auto-merge workflow must still reject changes outside its allowed paths. Repository
+review rules must permit the existing automation's approval; code-owner review
+or other additional review requirements may still block automatic merging.
+
+The current Weblate path check includes translation project `.pro` files as well
+as `.ts` files; it is not a guarantee of translation-content-only changes.
+Do not extend this exception to other PR authors or source/workflow paths.
 
 ## Install these changes in the local repository
 
@@ -100,10 +115,10 @@ auto-merge does not establish an integration-testing gate.
 3. Extract the supplied ZIP into a temporary folder. Copy its `.github` folder
    into the repository root, merging folders and replacing the changed files.
 4. Review `git diff --stat` and `git diff`.
-5. Stage only the six files below, commit, and push:
+5. Stage only the five files below, commit, and push:
 
 ```powershell
-git add .github/workflows/ci.yml .github/workflows/pr-integration-build.yml .github/workflows/PR_INTEGRATION_TESTING.md .github/workflows/README_WORKFLOWS.md .github/workflows/auto-merge-weblate.yml .github/PULL_REQUEST_TEMPLATE.md
+git add .github/workflows/ci.yml .github/workflows/pr-integration-build.yml .github/workflows/PR_INTEGRATION_TESTING.md .github/workflows/README_WORKFLOWS.md .github/PULL_REQUEST_TEMPLATE.md
 git commit -m "ci: build PR integration test installer after Linux tests"
 git push -u origin ci/pr-integration-build
 ```

@@ -16,7 +16,7 @@ permissions:
 jobs:
   windows-integration-build:
     name: 'Windows x64: Integration Test Build'
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'weblate'
     runs-on: windows-2022
     timeout-minutes: 60
     env:

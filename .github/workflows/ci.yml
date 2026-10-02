@@ -71,7 +71,8 @@ jobs:
 
   pr-integration-build:
     name: 'PR Integration Test Build'
-    if: github.event_name == 'pull_request'
+    # Preserve Weblate's existing no-artifact translation update process.
+    if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'weblate'
     needs: [version, linux-test]
     permissions:
       contents: read

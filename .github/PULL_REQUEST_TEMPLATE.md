@@ -40,4 +40,6 @@ Result: PASS / FAIL / NOT YET TESTED
 Not-applicable steps and reasons:
 
 New commits or target-branch updates require a new build and integration review.
-A maintainer approves only after reviewing testing evidence for the current build.
+For code changes, a maintainer approves only after reviewing testing evidence
+for the current build. Eligible Weblate translation PRs retain their existing
+automated approval/merge process and are exempt from human integration review.
