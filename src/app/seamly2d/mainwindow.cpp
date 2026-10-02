@@ -177,6 +177,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_changes(false)
     , patternReadOnly(false)
     , dialogTable(nullptr)
+    , dialogFinalMeasurements(nullptr)
     , dialogTool()
     , historyDialog(nullptr)
     , font_combo_box(nullptr)
@@ -4443,6 +4444,7 @@ void MainWindow::Clear()
     //disable history menu actions
     ui->history_Action->setEnabled(false);
     ui->table_Action->setEnabled(false);
+    ui->finalMeasurements_Action->setEnabled(false);
 
     ui->lastTool_Action->setEnabled(false);
     ui->increaseSize_Action->setEnabled(false);
@@ -4493,6 +4495,10 @@ void MainWindow::FileClosedCorrect()
     if (dialogTable)
     {
         dialogTable->close();
+    }
+    if (dialogFinalMeasurements)
+    {
+        dialogFinalMeasurements->close();
     }
     if (historyDialog)
     {
@@ -4785,6 +4791,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
     ui->loadMultisize_Action->setEnabled(enable && designStage);
     ui->unloadMeasurements_Action->setEnabled(enable && designStage);
     ui->table_Action->setEnabled(enable && designStage);
+    ui->finalMeasurements_Action->setEnabled(enable && designStage);
 
     //enable history menu actions
     ui->history_Action->setEnabled(enable && draftStage);
@@ -6357,6 +6364,28 @@ void MainWindow::createActions()
         {
             ui->table_Action->setChecked(true);
             dialogTable->activateWindow();
+        }
+    });
+
+    connect(ui->finalMeasurements_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        if (checked)
+        {
+            dialogFinalMeasurements = new DialogFinalMeasurements(pattern, doc, this);
+            connect(dialogFinalMeasurements.data(), &DialogFinalMeasurements::dialogClosed, this, [this]()
+            {
+                ui->finalMeasurements_Action->setChecked(false);
+                if (dialogFinalMeasurements != nullptr)
+                {
+                    dialogFinalMeasurements->deleteLater();
+                }
+            });
+            dialogFinalMeasurements->show();
+        }
+        else
+        {
+            ui->finalMeasurements_Action->setChecked(true);
+            dialogFinalMeasurements->activateWindow();
         }
     });
     connect(ui->exportVariablesToCSV_Action, &QAction::triggered, this, &MainWindow::handleExportToCSV);

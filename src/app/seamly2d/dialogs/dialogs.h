@@ -54,6 +54,7 @@
 
 #include "history_dialog.h"
 #include "dialogvariables.h"
+#include "dialogfinalmeasurements.h"
 #include "dialogpatternproperties.h"
 #include "dialognewpattern.h"
 #include "about2d_dialog.h"
