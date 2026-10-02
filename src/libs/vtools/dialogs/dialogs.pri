@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/tooldialogs.h \
     $$PWD/tools/addtogroup_dialog.h \
     $$PWD/tools/anchorpoint_dialog.h \
+    $$PWD/tools/basepoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
     $$PWD/tools/dialogarc.h \
     $$PWD/tools/dialogarcwithlength.h \
@@ -24,7 +25,6 @@ HEADERS += \
     $$PWD/tools/dialogpointfromarcandtangent.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
     $$PWD/tools/dialogshoulderpoint.h \
-    $$PWD/tools/dialogsinglepoint.h \
     $$PWD/tools/dialogspline.h \
     $$PWD/tools/dialogsplinepath.h \
     $$PWD/tools/dialogtool.h \
@@ -54,6 +54,7 @@ SOURCES += \
     $$PWD/support/editlabeltemplate_dialog.cpp \
     $$PWD/tools/addtogroup_dialog.cpp \
     $$PWD/tools/anchorpoint_dialog.cpp \
+    $$PWD/tools/basepoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
     $$PWD/tools/dialogarcwithlength.cpp \
@@ -71,7 +72,6 @@ SOURCES += \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
-    $$PWD/tools/dialogsinglepoint.cpp \
     $$PWD/tools/dialogspline.cpp \
     $$PWD/tools/dialogsplinepath.cpp \
     $$PWD/tools/dialogtool.cpp \
@@ -101,6 +101,7 @@ FORMS += \
     $$PWD/support/editlabeltemplate_dialog.ui \
     $$PWD/tools/addtogroup_dialog.ui \
     $$PWD/tools/anchorpoint_dialog.ui \
+    $$PWD/tools/basepoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \
     $$PWD/tools/dialogarcwithlength.ui \
@@ -118,7 +119,6 @@ FORMS += \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
-    $$PWD/tools/dialogsinglepoint.ui \
     $$PWD/tools/dialogspline.ui \
     $$PWD/tools/dialogsplinepath.ui \
     $$PWD/tools/dialogtriangle.ui \

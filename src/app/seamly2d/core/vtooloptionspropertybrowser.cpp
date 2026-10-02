@@ -121,7 +121,7 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 
     switch (item->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             showOptionsToolSinglePoint(item);
             break;
         case VToolEndLine::Type:
@@ -248,7 +248,7 @@ void VToolOptionsPropertyBrowser::updateOptions()
 
     switch (currentItem->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             updateOptionsToolSinglePoint();
             break;
         case VToolEndLine::Type:
@@ -393,7 +393,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
 
     switch (currentItem->type())
     {
-        case VToolBasePoint::Type:
+        case BasePointTool::Type:
             changeDataToolSinglePoint(prop);
             break;
         case VToolEndLine::Type:
@@ -1147,12 +1147,12 @@ void VToolOptionsPropertyBrowser::changeDataToolSinglePoint(VPE::VProperty *prop
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(currentItem);
     SCASSERT(tool != nullptr)
     switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            setPointName<VToolBasePoint>(value.toString());
+            setPointName<BasePointTool>(value.toString());
             break;
         case 1: // QLatin1String("Coordinates")
             tool->SetBasePointPos(value.toPointF());
@@ -2472,7 +2472,7 @@ void VToolOptionsPropertyBrowser::changeDataToolEllipticalArc(VPE::VProperty *pr
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::showOptionsToolSinglePoint(QGraphicsItem *item)
 {
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(item);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(item);
     tool->ShowVisualization(true);
     formView->setTitle(tr("Base point"));
 
@@ -3157,7 +3157,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolEllipticalArc(QGraphicsItem *it
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::updateOptionsToolSinglePoint()
 {
-    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    BasePointTool *tool = qgraphicsitem_cast<BasePointTool *>(currentItem);
     idToProperty[AttrName]->setValue(tool->name());
     idToProperty[QLatin1String("Coordinates")]->setValue(tool->GetBasePointPos());
 }
