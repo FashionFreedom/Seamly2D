@@ -147,16 +147,7 @@ void SaveToolOptions::undo()
     if (domElement.isElement())
     {
         domElement.parentNode().replaceChild(oldXml, domElement);
-
-        if (referencesChanged(oldXml, newXml))
-        {
-            // A referenced object changed. Only a full parse rebuilds the reference counters. See issue #1521.
-            emit NeedFullParsing();
-        }
-        else
-        {
-            emit NeedLiteParsing(Document::LiteParse);
-        }
+        emit NeedLiteParsing(Document::LiteParse);
     }
     else
     {
@@ -174,16 +165,7 @@ void SaveToolOptions::redo()
     if (domElement.isElement())
     {
         domElement.parentNode().replaceChild(newXml, domElement);
-
-        if (referencesChanged(oldXml, newXml))
-        {
-            // A referenced object changed. Only a full parse rebuilds the reference counters. See issue #1521.
-            emit NeedFullParsing();
-        }
-        else
-        {
-            emit NeedLiteParsing(Document::LiteParse);
-        }
+        emit NeedLiteParsing(Document::LiteParse);
     }
     else
     {

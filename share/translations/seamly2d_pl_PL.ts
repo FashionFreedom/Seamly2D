@@ -2297,7 +2297,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogPointOfContact</name>
+    <name>IntersectArcLineDialog</name>
     <message>
         <source>Point - Intersect Arc and Line</source>
         <translation>Punkt – Przecięcie łuku i linii</translation>
@@ -2614,7 +2614,7 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogSinglePoint</name>
+    <name>BasePointDialog</name>
     <message>
         <source>Base Point</source>
         <translation>Punkt bazowy</translation>
@@ -13309,7 +13309,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
 </context>
 <context>
-    <name>VToolBasePoint</name>
+    <name>BasePointTool</name>
     <message>
         <source>Name</source>
         <translation>Imię</translation>
@@ -13980,7 +13980,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
 </context>
 <context>
-    <name>VToolPointOfContact</name>
+    <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
         <translation>Długość</translation>

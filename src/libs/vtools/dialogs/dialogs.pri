@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/tooldialogs.h \
     $$PWD/tools/addtogroup_dialog.h \
     $$PWD/tools/anchorpoint_dialog.h \
+    $$PWD/tools/basepoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
     $$PWD/tools/dialogarc.h \
     $$PWD/tools/dialogarcwithlength.h \
@@ -22,10 +23,8 @@ HEADERS += \
     $$PWD/tools/dialoglineintersectaxis.h \
     $$PWD/tools/dialognormal.h \
     $$PWD/tools/dialogpointfromarcandtangent.h \
-    $$PWD/tools/dialogpointofcontact.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
     $$PWD/tools/dialogshoulderpoint.h \
-    $$PWD/tools/dialogsinglepoint.h \
     $$PWD/tools/dialogspline.h \
     $$PWD/tools/dialogsplinepath.h \
     $$PWD/tools/dialogtool.h \
@@ -42,6 +41,7 @@ HEADERS += \
     $$PWD/tools/dialogellipticalarc.h \
     $$PWD/tools/editgroup_dialog.h \
     $$PWD/tools/insert_nodes_dialog.h \
+    $$PWD/tools/intersect_arc_line_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
     $$PWD/tools/piece/internal_path_dialog.h \
@@ -54,6 +54,7 @@ SOURCES += \
     $$PWD/support/editlabeltemplate_dialog.cpp \
     $$PWD/tools/addtogroup_dialog.cpp \
     $$PWD/tools/anchorpoint_dialog.cpp \
+    $$PWD/tools/basepoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
     $$PWD/tools/dialogarcwithlength.cpp \
@@ -69,10 +70,8 @@ SOURCES += \
     $$PWD/tools/dialoglineintersectaxis.cpp \
     $$PWD/tools/dialognormal.cpp \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
-    $$PWD/tools/dialogpointofcontact.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
-    $$PWD/tools/dialogsinglepoint.cpp \
     $$PWD/tools/dialogspline.cpp \
     $$PWD/tools/dialogsplinepath.cpp \
     $$PWD/tools/dialogtool.cpp \
@@ -89,6 +88,7 @@ SOURCES += \
     $$PWD/tools/dialogellipticalarc.cpp \
     $$PWD/tools/editgroup_dialog.cpp \
     $$PWD/tools/insert_nodes_dialog.cpp \
+    $$PWD/tools/intersect_arc_line_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
     $$PWD/tools/piece/internal_path_dialog.cpp \
@@ -101,6 +101,7 @@ FORMS += \
     $$PWD/support/editlabeltemplate_dialog.ui \
     $$PWD/tools/addtogroup_dialog.ui \
     $$PWD/tools/anchorpoint_dialog.ui \
+    $$PWD/tools/basepoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \
     $$PWD/tools/dialogarcwithlength.ui \
@@ -116,10 +117,8 @@ FORMS += \
     $$PWD/tools/dialoglineintersectaxis.ui \
     $$PWD/tools/dialognormal.ui \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
-    $$PWD/tools/dialogpointofcontact.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
-    $$PWD/tools/dialogsinglepoint.ui \
     $$PWD/tools/dialogspline.ui \
     $$PWD/tools/dialogsplinepath.ui \
     $$PWD/tools/dialogtriangle.ui \
@@ -135,6 +134,7 @@ FORMS += \
     $$PWD/tools/dialogellipticalarc.ui \
     $$PWD/tools/editgroup_dialog.ui \
     $$PWD/tools/insert_nodes_dialog.ui \
+    $$PWD/tools/intersect_arc_line_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
     $$PWD/tools/piece/internal_path_dialog.ui \

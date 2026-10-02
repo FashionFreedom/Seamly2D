@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <!--Pattern created with Seamly2D v2026.9.14.145 (https://seamly.io).-->
+    <version>0.7.4</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <patternName>All tools test</patternName>
+    <patternNumber>1001</patternNumber>
+    <company>Seamly</company>
+    <customer>Test</customer>
+    <patternLabel dateFormat="MM-dd-yyyy" timeFormat="hh:mm:ss">
+        <line alignment="4" bold="true" italic="false" sfIncrement="4" text="%author%"/>
+        <line alignment="4" bold="false" italic="false" sfIncrement="2" text="%patternName%"/>
+        <line alignment="4" bold="false" italic="false" sfIncrement="0" text="%patternNumber%"/>
+        <line alignment="4" bold="false" italic="true" sfIncrement="0" text="%customer%"/>
+        <line alignment="4" bold="false" italic="true" sfIncrement="0" text="%date%"/>
+    </patternLabel>
+    <measurements/>
+    <variables/>
+    <draftBlock name="Draft block 1">
+        <calculation>
+            <point id="1" mx="0.132292" my="0.264583" name="A" showPointName="true" type="single" x="0.79375" y="1.05833"/>
+            <point angle="0" basePoint="1" id="2" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A1" showPointName="true" type="endLine"/>
+            <point angle="180" basePoint="1" id="3" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A2" showPointName="true" type="endLine"/>
+            <point angle="90" basePoint="1" id="4" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="-1.33429" my="-0.332913" name="A3" showPointName="true" type="endLine"/>
+            <point angle="180" basePoint="3" id="5" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A4" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="2" id="6" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A5" showPointName="true" type="endLine"/>
+            <point firstPoint="1" id="7" length="CurrentLength/2" lineColor="black" lineType="none" lineWeight="0.35" mx="0.132292" my="0.264583" name="A6" secondPoint="4" showPointName="true" type="alongLine"/>
+            <point angle="0" firstPoint="5" id="8" length="Line_A_A3" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="-1.34937" my="-0.343959" name="A7" secondPoint="3" showPointName="true" type="normal"/>
+            <point angle="180" firstPoint="6" id="9" length="10" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A8" secondPoint="2" showPointName="true" type="normal"/>
+            <point firstPoint="8" id="10" length="10" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A9" secondPoint="5" showPointName="true" thirdPoint="3" type="bisector"/>
+            <point id="11" length="10" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A10" p1Line="2" p2Line="7" pShoulder="1" showPointName="true" type="shoulder"/>
+            <point angle="90" basePoint="9" id="12" length="5" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A11" showPointName="true" type="endLine"/>
+            <point axisP1="1" axisP2="12" firstPoint="6" id="13" mx="0.132292" my="0.264583" name="A12" secondPoint="4" showPointName="true" type="triangle"/>
+            <point firstPoint="3" id="14" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A13" secondPoint="11" showPointName="true" type="intersectXY"/>
+            <point basePoint="2" id="15" lineColor="black" lineType="dashLine" lineWeight="0.35" mx="0.132292" my="0.264583" name="A14" p1Line="4" p2Line="9" showPointName="true" type="height"/>
+            <point angle="90" basePoint="10" id="16" lineColor="black" lineType="dotLine" lineWeight="1" mx="-1.24354" my="0.449791" name="A15" p1Line="8" p2Line="4" showPointName="true" type="lineIntersectAxis"/>
+            <line firstPoint="4" id="17" lineColor="black" lineType="dotLine" lineWeight="1" secondPoint="15"/>
+            <point id="18" mx="0.132292" my="0.264583" name="A16" p1Line1="15" p1Line2="2" p2Line1="6" p2Line2="9" showPointName="true" type="lineIntersect"/>
+            <spline angle1="73.4846" angle2="109.115" color="black" id="19" length1="3.7168" length2="3.85425" lineWeight="1" penStyle="dotLine" point1="4" point4="15" type="simpleInteractive"/>
+            <spline angle1="90.8502" angle2="112.068" autoSmooth="true" color="black" id="20" length="12" length1="2.43393" length2="2.65011" lengthMode="3" lineWeight="1" penStyle="dotLine" point1="15" point4="9" type="simpleInteractive"/>
+            <spline color="black" id="21" lineWeight="1" penStyle="dotLine" type="pathInteractive">
+                <pathPoint angle1="217.996" angle2="37.996" length1="0" length2="2.49694" pSpline="8"/>
+                <pathPoint angle1="145.013" angle2="325.013" length1="2.01811" length2="1.6741" pSpline="16"/>
+                <pathPoint angle1="195.405" angle2="15.4047" length1="3.64283" length2="1.08331" pSpline="4"/>
+            </spline>
+            <spline color="black" id="22" lineWeight="1" penStyle="dotLine" point1="1" point2="3" point3="14" point4="14" type="cubicBezier"/>
+            <spline autoSmooth="true" color="black" id="23" length="17" lengthMode="3" lineWeight="1" penStyle="dotLine" point1="1" point2="2" point3="15" point4="15" type="cubicBezier"/>
+            <spline color="black" id="24" lineWeight="1" penStyle="dotLine" type="cubicBezierPath">
+                <pathPoint pSpline="8"/>
+                <pathPoint pSpline="5"/>
+                <pathPoint pSpline="3"/>
+                <pathPoint pSpline="1"/>
+                <pathPoint pSpline="2"/>
+                <pathPoint pSpline="2"/>
+                <pathPoint pSpline="6"/>
+            </spline>
+            <point direction="forward" id="25" length="5" lineColor="black" mx="0.132292" my="0.264583" name="A17" showPointName="true" spline="19" type="cutSpline"/>
+            <point direction="forward" id="26" length="10" lineColor="black" mx="0.132292" my="0.264583" name="A18" showPointName="true" splinePath="21" type="cutSplinePath"/>
+            <spline angle1="311.432" angle2="171.778" color="black" id="27" length1="3.82381" length2="6.28415" lineWeight="1" penStyle="dotLine" point1="4" point4="6" type="simpleInteractive"/>
+            <point curve1="27" curve2="23" hCrossPoint="1" id="28" mx="0.132292" my="0.264583" name="A19" showPointName="true" type="pointOfIntersectionCurves" vCrossPoint="1"/>
+            <point angle="117.15" basePoint="6" curve="20" id="29" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A20" showPointName="true" type="curveIntersectAxis"/>
+            <point angle="270" basePoint="5" id="32" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A21" showPointName="true" type="endLine"/>
+            <point angle="270" basePoint="3" id="33" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A22" showPointName="true" type="endLine"/>
+            <arc angle1="0" angle2="360" center="32" color="black" id="34" lineWeight="1" penStyle="dotLine" radius="6" type="simple"/>
+            <arc angle1="0" angle2="360" center="33" color="black" id="35" lineWeight="1" penStyle="dotLine" radius="6" type="simple"/>
+            <point angle="270" basePoint="2" id="36" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A23" showPointName="true" type="endLine"/>
+            <point angle="270" basePoint="6" id="37" length="10" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A24" showPointName="true" type="endLine"/>
+            <arc angle1="9" center="36" color="black" id="38" length="16" lineWeight="1" penStyle="dotLine" radius="6" type="arcWithLength"/>
+            <point arc="38" direction="forward" id="39" length="5" lineColor="black" mx="0.132292" my="0.264583" name="A25" showPointName="true" type="cutArc"/>
+            <point angle="45" basePoint="33" curve="35" id="42" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A26" showPointName="true" type="curveIntersectAxis"/>
+            <point crossPoint="1" firstArc="34" id="45" mx="0.132292" my="0.264583" name="A27" secondArc="35" showPointName="true" type="pointOfIntersectionArcs"/>
+            <point c1Center="36" c1Radius="7" c2Center="37" c2Radius="7" crossPoint="1" id="46" mx="0.132292" my="0.264583" name="A28" showPointName="true" type="pointOfIntersectionCircles"/>
+            <point cCenter="37" cRadius="6" crossPoint="2" id="47" mx="0.132292" my="0.264583" name="A29" showPointName="true" tangent="6" type="pointFromCircleAndTangent"/>
+            <point arc="38" crossPoint="1" id="48" mx="0.132292" my="0.264583" name="A30" showPointName="true" tangent="2" type="pointFromArcAndTangent"/>
+            <point angle="270" basePoint="1" id="49" length="5" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A31" showPointName="true" type="endLine"/>
+            <elArc angle1="0" angle2="360" center="49" color="black" id="50" lineWeight="1" penStyle="dotLine" radius1="2" radius2="3" rotationAngle="0" type="simple"/>
+            <operation angle="270" center="5" id="53" suffix="_r1" type="rotation">
+                <source>
+                    <item alias="" color="black" idObject="34" lineType="solidLine"/>
+                    <item alias="" color="black" idObject="32" lineType="solidLine"/>
+                    <item alias="" color="black" idObject="35" lineType="solidLine"/>
+                </source>
+                <destination>
+                    <item idObject="54"/>
+                    <item idObject="55" mx="0.132292" my="0.264583" showPointName="true"/>
+                    <item idObject="56"/>
+                </destination>
+            </operation>
+            <operation id="57" p1Line="36" p2Line="37" suffix="_ml1" type="flippingByLine">
+                <source>
+                    <item alias="" color="black" idObject="38" lineType="solidLine"/>
+                </source>
+                <destination>
+                    <item idObject="58"/>
+                </destination>
+            </operation>
+            <operation axisType="1" center="37" id="59" suffix="_ma1" type="flippingByAxis">
+                <source>
+                    <item alias="" color="black" idObject="38" lineType="solidLine"/>
+                    <item alias="" color="black" idObject="58" lineType="solidLine"/>
+                </source>
+                <destination>
+                    <item idObject="60"/>
+                    <item idObject="61"/>
+                </destination>
+            </operation>
+            <operation angle="343.68" center="0" id="62" length="17.8107" rotationAngle="90.0001" suffix="_m1" type="moving">
+                <source>
+                    <item alias="" color="black" idObject="20" lineType="solidLine"/>
+                </source>
+                <destination>
+                    <item idObject="63"/>
+                </destination>
+            </operation>
+            <point angle="180" basePoint="2" id="64" length="1.5" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A32" showPointName="true" type="endLine"/>
+            <point angle="0" basePoint="2" id="65" length="1.5" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="A33" showPointName="true" type="endLine"/>
+            <point baseLineP1="1" baseLineP2="6" dartP1="64" dartP2="15" dartP3="65" id="66" mx1="0.132292" mx2="0.132292" my1="0.264583" my2="0.264583" name1="A34" name2="A35" point1="67" point2="68" showPointName1="true" showPointName2="true" type="trueDarts"/>
+            <point angle="59.2975" basePoint="1" id="76" length="9.97073" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="Anchor1" showPointName="true" type="endLine"/>
+            <point angle="26.091" basePoint="1" id="77" length="6.02268" lineColor="black" lineType="dotLine" lineWeight="1" mx="0.132292" my="0.264583" name="Anchor2" showPointName="true" type="endLine"/>
+            <point center="9" firstPoint="6" id="81" mx="0.132292" my="0.264583" name="A36" radius="4" secondPoint="12" showPointName="true" type="pointOfContact"/>
+        </calculation>
+        <modeling>
+            <point id="69" idObject="1" inUse="true" mx="-0.9525" my="-0.423334" showPointName="true" type="modeling"/>
+            <point id="70" idObject="4" inUse="true" mx="-1.33429" my="-0.332913" showPointName="true" type="modeling"/>
+            <spline id="71" idObject="19" inUse="true" type="modelingSpline"/>
+            <point id="72" idObject="15" inUse="true" mx="0.555625" my="-0.502709" showPointName="true" type="modeling"/>
+            <point id="73" idObject="2" inUse="true" mx="0.555625" my="-0.370417" showPointName="true" type="modeling"/>
+            <point id="78" idObject="76" inUse="true" type="anchor"/>
+            <point id="79" idObject="77" inUse="true" type="anchor"/>
+            <point id="80" idObject="25" inUse="true" mx="0.132292" my="0.264583" showPointName="true" type="modeling"/>
+        </modeling>
+        <pieces>
+            <piece color="#ffffff" fill="nobrush" forbidFlipping="false" hideMainPath="false" id="74" inLayout="true" locked="false" mx="0" my="0" name="PatternPiece" seamAllowance="true" united="false" version="2" width="0.25">
+                <data annotation="" centerAnchor="79" foldPosition="Undefined" fontSize="0" height="Line_A_A1 / 3" letter="A" mx="256.772" my="-237.816" onFold="false" orientation="Undefined" quantity="1" rotation="0" rotationWay="None" tilt="None" visible="true" width="Line_A_A1 / 3">
+                    <line alignment="4" bold="true" italic="false" sfIncrement="6" text="%pLetter%"/>
+                    <line alignment="4" bold="true" italic="false" sfIncrement="2" text="%pName%"/>
+                    <line alignment="4" bold="false" italic="false" sfIncrement="0" text="%mFabric%, %wCut% %pQuantity%"/>
+                </data>
+                <patternInfo centerAnchor="78" fontSize="0" height="Line_A_A1 / 3" mx="67.7953" my="-237.816" rotation="0" visible="true" width="Line_A_A1 / 3"/>
+                <grainline arrowLength="1.27" arrows="0" length="Line_A_A3 / 2" mx="77.976" my="-81.108" rotation="90" visible="true"/>
+                <nodes>
+                    <node before="Line_A_A3 / 12" idObject="69" type="NodePoint"/>
+                    <node idObject="70" type="NodePoint"/>
+                    <node idObject="71" reverse="0" type="NodeSpline"/>
+                    <node idObject="80" notch="true" notchAngle="0" notchCount="1" notchLength="0.25" notchSubtype="straightforward" notchType="vExternal" notchWidth="0.25" showNotch="true" showSecondNotch="false" type="NodePoint"/>
+                    <node idObject="71" reverse="0" type="NodeSpline"/>
+                    <node idObject="72" type="NodePoint"/>
+                    <node after="Line_A_A3 / 12" idObject="73" type="NodePoint"/>
+                </nodes>
+                <anchors>
+                    <record>78</record>
+                    <record>79</record>
+                </anchors>
+            </piece>
+        </pieces>
+        <groups>
+            <group groupColor="black" id="51" lineType="solidLine" lineWeight="0.13" locked="false" name="Gruup 1" visible="true">
+                <item object="32" tool="32"/>
+                <item object="33" tool="33"/>
+                <item object="34" tool="34"/>
+                <item object="35" tool="35"/>
+                <item object="42" tool="42"/>
+                <item object="45" tool="45"/>
+            </group>
+            <group groupColor="darkviolet" id="52" lineType="solidLine" lineWeight="0.13" locked="false" name="Group 2" visible="true">
+                <item object="8" tool="8"/>
+                <item object="10" tool="10"/>
+                <item object="11" tool="11"/>
+                <item object="14" tool="14"/>
+                <item object="16" tool="16"/>
+                <item object="21" tool="21"/>
+                <item object="22" tool="22"/>
+                <item object="24" tool="24"/>
+                <item object="26" tool="26"/>
+            </group>
+        </groups>
+        <images>
+            <image aspectRatio="false" basepoint="0" height="192" id="75" locked="false" name="seamly_logo_192" opacity="100" order="-100" rotation="0" src="D:/Github/Seamly2D/src/libs/vmisc/share/resources/icon/logos/seamly_logo_192.png" units="cm" visible="true" width="192" xOffset="0" xPos="0" yOffset="0" yPos="0"/>
+        </images>
+    </draftBlock>
+</pattern>
