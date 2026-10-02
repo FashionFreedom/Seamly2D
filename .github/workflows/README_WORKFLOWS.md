@@ -1,54 +1,56 @@
 # Seamly2D GitHub Workflows Overview
 
-## Automated Workflows
+## CI (`ci.yml`)
 
-### [CI](ci.yml) - Main Continuous Integration Workflow
-**Triggers**: Pull requests, pushes to develop, scheduled releases (Mondays 01:30 UTC), manual dispatch
+Triggers: pull requests, pushes to `develop` and `feat-*`, Monday 01:30 UTC
+schedule, and manual dispatch.
 
-**Features**:
-- **Tests**: Builds all platforms on pull requests with downloadable artifacts and Linux unit tests
-- **Pre-Releases**: Automatic prereleases when PRs are merged to develop branch
-- **Releases**: Scheduled weekly releases with date-based versioning (vYYYY.MM.DD.HHMM)
-- **Code Signing**: Integrated Windows and Mac code signing for develop branch
-  - Signs both 64-bit and 32-bit Windows executables
-  - Signs and notarizes Mac builds
-  - Uses Google Cloud KMS with CloudHSM for secure signing
-  - Uses Mac Developer ID certificate and private key and notarize API key in secrets
+- **Pull requests:** Linux build/unit tests, then one unsigned Windows x64
+  integration-test installer via `pr-integration-build.yml`. All PR authors,
+  including Weblate, follow the same build path.
+- **Push, schedule, manual:** existing Linux AppImage, macOS, and Windows x64 / 
+  ARM64 builds. The existing signing steps run when their secrets are available.
+- **Publish:** scheduled/manual runs on `develop` create the normal weekly
+  release after all platform builds succeed. Pushes upload build artifacts;
+  they do not create GitHub pre-releases.
+- **Documentation:** push, schedule, and manual runs deploy Doxygen to `gh-pages`.
+- **Permissions:** default `contents: read`; only release publishing and
+  documentation deployment receive `contents: write`.
 
-**Builds**: Linux AppImage, Windows 64-bit/32-bit installers (.exe/.zip), macOS (.dmg/.zip)
+## PR integration-test build (`pr-integration-build.yml`)
 
-## Code Signing Workflow
+This reusable workflow is called by CI after both version creation and Linux
+unit tests succeed. It cannot be run independently. It builds the same PR merge
+revision used by the Linux tests, with the existing Windows x64 build/NSIS steps.
+It receives no inherited secrets and does not sign, publish, tag, or approve a PR.
 
-### Integrated Signing Process
-The main CI workflow includes integrated code signing for Windows and Mac executables.
+One Actions artifact contains the installer, samples, test instructions, source
+revision details, and an installer SHA256 checksum. Its name identifies the PR,
+head commit, run, and attempt. Retention is 14 days. Download from the CI run's
+Artifacts section or the Windows job summary (GitHub sign-in required).
 
-### Signing Requirements
-- **Branch**: Only runs on `develop` branch
-- **Secrets**: Requires Google Cloud KMS secrets and Mac Developer ID certificate and notarize API key configured
+See [PR_INTEGRATION_TESTING.md](PR_INTEGRATION_TESTING.md) for the complete test
+procedure, local installation instructions for these workflow changes, and
+required branch-protection setup. The PR template records testing evidence;
+required reviews enforce the human approval gate.
 
-## Emergency Procedures
+## Weblate (`auto-merge-weblate.yml`)
 
-### Skip Code Signing (Emergency Override)
-When signing infrastructure fails (certificate expiration, KMS issues, etc.):
+For eligible same-repository translation PRs, verifies the changed paths and
+enables auto-merge. It no longer auto-approves PRs. Required checks and human
+reviews must be enforced with repository merge rules. This workflow uses
+`pull_request_target` only for PR metadata/API operations and does not check out
+or execute PR code.
 
-1. Go to repository **Settings** → **Secrets and variables** → **Actions**
-2. Remove the **Secret** `SEAMLY_SIGNING_PROJECT_ID` for windows and `APPLE_SIGN_IDENTITY` for mac
-3. Push to `develop` branch to trigger workflow
-4. Workflow will:
-   - ✅ Build Windows 64-bit and 32-bit executables
-   - 📦 Release unsigned executables with warnings
+## Signing and platform coverage
 
-**⚠️ Warning**: Unsigned executables will trigger security warnings and should only be used for testing or emergency releases.
+PR installers are unsigned and use the normal installer, which may replace an
+existing installation. Use a disposable VM or test computer. PR workflow edits
+do not change the normal release signing implementation.
 
-### Re-enable Code Signing
-To restore normal signing after emergency:
+Windows x64 integration testing reduces PR build cost but does not establish
+macOS, Linux, or Windows ARM64 compatibility. Contributors must test affected
+platforms for platform-specific changes.
 
-1. Add the **Secrets** back in
-2. Push to `develop` branch
-3. Normal signing workflow will resume with approval required
-
-## External Github Actions
-- [Install Qt](https://github.com/marketplace/actions/install-qt). Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-18.04, macos-latest, windows-2022) consistently. Internally it uses the [aqtinstall](https://github.com/miurahr/aqtinstall/) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.
-- [Enable Developer Command Prompt](https://github.com/marketplace/actions/enable-developer-command-prompt) Referenced as `ilammy/msvc-dev-cmd`, sets up the command line environment on the windows-2022 runner (`PATH` and such) to expose Microsoft Visual C++.
-- [softprops/action-gh-release](https://github.com/marketplace/actions/gh-release). Referenced as `softprops/action-gh-release`, creates a release and uploads all artifacts to that release.
-- [Nullsoft Scriptable Install System](https://nsis.sourceforge.io/Main_Page) Not an action, but NSIS for short, builds the Windows installer using the [seamly2d-installer.nsi](/dist/seamly2d-installer.nsi) script file. As of this moment, the script includes steps for setting up a start menu group and configuration necessary to provide an uninstaller.
+Existing signing references: [CODE_SIGNING.md](CODE_SIGNING.md) and
+[signing/SECRETS_SETUP.md](signing/SECRETS_SETUP.md).

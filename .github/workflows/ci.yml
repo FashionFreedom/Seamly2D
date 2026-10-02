@@ -1,6 +1,6 @@
 name: CI
 
-# for a description, see README.md in this folder
+# For a description, see README_WORKFLOWS.md in this folder
 
 on:
   schedule:
@@ -13,7 +13,7 @@ on:
   pull_request:
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   QT_VERSION: '6.11.1' # quotes required or YAML parser will interpret as float
@@ -26,7 +26,7 @@ jobs:
       version_number: ${{ steps.create-version.outputs.version_number }}
 
     # The version number is YYYY.MM.DD.hhmm to create simple, easy-to-read "rolling release" versioning
-    # for pull requests before merge keep a static version number
+    # PR artifacts also record their exact source revision and run ID.
     steps:
       - name: create version number
         id: create-version
@@ -35,11 +35,14 @@ jobs:
 
   linux-test:
     if: github.event_name == 'pull_request'
+    timeout-minutes: 60
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - uses: jurplel/install-qt-action@v4
         with:
@@ -66,8 +69,20 @@ jobs:
         run: |
           xvfb-run -a make check
 
+  pr-integration-build:
+    name: 'PR Integration Test Build'
+    if: github.event_name == 'pull_request'
+    needs: [version, linux-test]
+    permissions:
+      contents: read
+    uses: ./.github/workflows/pr-integration-build.yml
+    with:
+      version_number: ${{ needs.version.outputs.version_number }}
+      qt_version: '6.11.1'
+    # Never inherit signing or release secrets into a PR build.
+
   linux:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    if: github.event_name != 'pull_request'
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-22.04
     needs: version
@@ -123,7 +138,7 @@ jobs:
 
 
   macos:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    if: github.event_name != 'pull_request'
     name: 'macOS: Build'
     runs-on: macos-26
     needs: version
@@ -189,7 +204,7 @@ jobs:
           if-no-files-found: error
 
   windows:
-    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    if: github.event_name != 'pull_request'
     name: 'Windows Build'
     runs-on: windows-2022
     needs: version
@@ -305,6 +320,8 @@ jobs:
           if-no-files-found: error
 
   publish:
+    permissions:
+      contents: write
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
     needs: [version, linux, macos, windows]
@@ -338,6 +355,8 @@ jobs:
             Seamly2D-win-arm64.zip
 
   document:
+    permissions:
+      contents: write
     # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     runs-on: ubuntu-latest
