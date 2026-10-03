@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>图纸上的坐标</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>坐标</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>基点</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>独特的名字</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>选择唯一的名称.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>X坐标:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Y坐标:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>姓名:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { 空白:预换行； }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>选择圆弧中心点</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>选择直线的第二个点</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>编辑半径</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>半径:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>公式向导</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>价值</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>打算</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>圆弧中心:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>点 - 弧与线相交</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>选择</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>独特的名字</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>选择唯一的名称.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>第 1 行点:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>第二条线点</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>几何学</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>姓名:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { 空白:预换行； }
     <message>
         <source>Lineweight:</source>
         <translation>线宽:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>姓名:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>图纸上的坐标</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>坐标</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>基点</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>选择</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>独特的名字</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>选择唯一的名称.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>X坐标:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Y坐标:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3903,6 +3843,77 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>最终测量</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>筛选:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>按关键字过滤列表</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>描述</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>公式</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>向上移动最终测量</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>向下移动最终测量</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>添加最终测量</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>删除最终测量</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>细节</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>姓名:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>唯一最终测量名称</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>价值:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>公式:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>描述:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5036,6 +5047,88 @@ Seamly2D 是一款免费（开源）软件。
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>选择圆弧中心点</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>选择直线的第二个点</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>编辑半径</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>半径:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>公式向导</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>打算</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>圆弧中心:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>点 - 弧与线相交</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>选择</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>独特的名字</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>选择唯一的名称.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>第 1 行点:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>第二条线点</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>几何学</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>姓名:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>长度</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>角度</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6145,6 +6238,14 @@ Do you want to save your changes?</source>
         <translation>用于插入或修改图像的工具.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>最终测量</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>列表与编辑最终测量</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>曲线上的点 (O, C)</translation>
     </message>
@@ -6227,6 +6328,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Variables to CSV</source>
         <translation>将变量导出到 CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>导出最终测量为 CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6451,6 +6556,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Draft Block:</source>
         <translation>样板:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>描述</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11873,45 +11982,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>第二点</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>最高点</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>最低点</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>最左边的点</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>最右边的点</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>垂直轴</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>水平轴</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Line_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13180,14 +13250,6 @@ load in SeamlyME as usual.
         <translation>裁片</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>白色的</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>诺刷</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>创建或更新裁片时出错</translation>
     </message>
@@ -13308,13 +13370,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>弧 - 半径和长度</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>姓名</translation>
     </message>
 </context>
 <context>
@@ -13722,6 +13777,38 @@ load in SeamlyME as usual.
         <translation>选择</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>第一点</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>第二点</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>最高点</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>最低点</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>最左边的点</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>最右边的点</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>垂直轴</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>水平轴</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>坐标</translation>
     </message>
@@ -13979,21 +14066,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>圆弧与切线相交</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>长度</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>角度</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>姓名</translation>
     </message>
 </context>
 <context>
