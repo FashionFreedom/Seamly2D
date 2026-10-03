@@ -1,6 +1,7 @@
 var vabstractpattern_8h =
 [
     [ "VFormulaField", "d6/d15/structVFormulaField.html", "d6/d15/structVFormulaField" ],
+    [ "VFinalMeasurement", "da/dc5/structVFinalMeasurement.html", "da/dc5/structVFinalMeasurement" ],
     [ "GroupAttributes", "d8/d6b/structGroupAttributes.html", "d8/d6b/structGroupAttributes" ],
     [ "VAbstractPattern", "d8/dba/classVAbstractPattern.html", "d8/dba/classVAbstractPattern" ],
     [ "AxisType", "d0/d89/vabstractpattern_8h.html#ac0eaf9908bdb2df95232be5bf4c7263e", [

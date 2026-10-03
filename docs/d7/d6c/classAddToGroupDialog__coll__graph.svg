@@ -342,9 +342,9 @@ var sectionId = 'dynsection-1';
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../d8/dba/classVAbstractPattern.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="262,-1481.5 262,-2319.5 424,-2319.5 424,-1481.5 262,-1481.5"/>
-<text text-anchor="middle" x="343" y="-2307.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPattern</text>
-<polyline fill="none" stroke="#666666" points="262,-2300.5 424,-2300.5 "/>
+<polygon fill="white" stroke="#666666" points="262,-1481.5 262,-2319.5 462,-2319.5 462,-1481.5 262,-1481.5"/>
+<text text-anchor="middle" x="362" y="-2307.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPattern</text>
+<polyline fill="none" stroke="#666666" points="262,-2300.5 462,-2300.5 "/>
 <text text-anchor="start" x="270" y="-2288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPattern</text>
 <text text-anchor="start" x="270" y="-2277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagCalculation</text>
 <text text-anchor="start" x="270" y="-2266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagModeling</text>
@@ -355,7 +355,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="270" y="-2211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="270" y="-2200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
 <text text-anchor="start" x="270" y="-2189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
-<text text-anchor="start" x="270" y="-2178.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 148 more...</text>
+<text text-anchor="start" x="270" y="-2178.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 150 more...</text>
 <text text-anchor="start" x="270" y="-2167.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_activeDraftBlock</text>
 <text text-anchor="start" x="270" y="-2156.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
 <text text-anchor="start" x="270" y="-2145.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
@@ -369,18 +369,18 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="270" y="-2057.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modified</text>
 <text text-anchor="start" x="270" y="-2046.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelLines</text>
 <text text-anchor="start" x="270" y="-2035.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelWasChanged</text>
-<polyline fill="none" stroke="#666666" points="262,-2028.5 424,-2028.5 "/>
+<polyline fill="none" stroke="#666666" points="262,-2028.5 462,-2028.5 "/>
 <text text-anchor="start" x="270" y="-2016.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPattern()</text>
 <text text-anchor="start" x="270" y="-2005.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
 <text text-anchor="start" x="270" y="-1994.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="270" y="-1983.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
 <text text-anchor="start" x="270" y="-1972.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
-<text text-anchor="start" x="270" y="-1961.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsed()</text>
-<text text-anchor="start" x="270" y="-1950.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
-<text text-anchor="start" x="270" y="-1939.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
-<text text-anchor="start" x="270" y="-1928.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
-<text text-anchor="start" x="270" y="-1917.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
-<text text-anchor="start" x="270" y="-1906.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 99 more...</text>
+<text text-anchor="start" x="270" y="-1961.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listFinalMeasurementExpressions()</text>
+<text text-anchor="start" x="270" y="-1950.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFinalMeasurements()</text>
+<text text-anchor="start" x="270" y="-1939.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFinalMeasurements()</text>
+<text text-anchor="start" x="270" y="-1928.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsed()</text>
+<text text-anchor="start" x="270" y="-1917.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
+<text text-anchor="start" x="270" y="-1906.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 102 more...</text>
 <text text-anchor="start" x="270" y="-1895.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
 <text text-anchor="start" x="270" y="-1884.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
 <text text-anchor="start" x="270" y="-1873.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>
@@ -425,22 +425,22 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge9" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M219.63,-2560.55C226.54,-2514.64 238.85,-2435.02 251,-2367 254.51,-2347.33 258.19,-2327.22 261.96,-2306.91"/>
-<polygon fill="none" stroke="#63b8ff" points="216.14,-2560.24 218.11,-2570.65 223.06,-2561.28 216.14,-2560.24"/>
+<path fill="none" stroke="#63b8ff" d="M219.13,-2560.85C225.58,-2514.91 237.49,-2434.96 251,-2367 254.48,-2349.48 258.17,-2331.62 261.99,-2313.6"/>
+<polygon fill="none" stroke="#63b8ff" points="215.63,-2560.55 217.72,-2570.94 222.57,-2561.52 215.63,-2560.55"/>
 </g>
 <!-- Node8&#45;&gt;Node1 -->
 <g id="edge15" class="edge">
 <title>Node8&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M329.28,-1481.3C323.6,-1302.28 317.16,-1090.9 312,-900 304.67,-628.56 297.79,-306.9 294.7,-157.71"/>
-<polygon fill="none" stroke="#404040" points="294.7,-157.54 290.58,-151.63 294.45,-145.54 298.58,-151.46 294.7,-157.54"/>
+<path fill="none" stroke="#404040" d="M338.56,-1481.39C329.18,-1302.38 318.97,-1090.99 312,-900 302.09,-628.64 296.45,-306.94 294.18,-157.73"/>
+<polygon fill="none" stroke="#404040" points="294.18,-157.56 290.09,-151.62 294,-145.56 298.09,-151.5 294.18,-157.56"/>
 <text text-anchor="middle" x="333" y="-921" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_doc</text>
 </g>
 <!-- Node8&#45;&gt;Node5 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node5</title>
-<path fill="none" stroke="#404040" d="M261.94,-1526.42C258.59,-1511.08 255.26,-1495.89 252,-1481 249.46,-1469.4 246.85,-1457.55 244.22,-1445.57"/>
-<polygon fill="none" stroke="#404040" points="244.16,-1445.28 238.96,-1440.28 241.58,-1433.56 246.77,-1438.56 244.16,-1445.28"/>
-<text text-anchor="middle" x="261.5" y="-1455" font-family="Helvetica,sans-Serif" font-size="10.00"> #doc</text>
+<path fill="none" stroke="#404040" d="M262,-1511.99C257.91,-1495.45 253.89,-1479.06 250,-1463 248.61,-1457.28 247.22,-1451.49 245.82,-1445.65"/>
+<polygon fill="none" stroke="#404040" points="245.73,-1445.27 240.45,-1440.37 242.94,-1433.6 248.23,-1438.51 245.73,-1445.27"/>
+<text text-anchor="middle" x="264.5" y="-1455" font-family="Helvetica,sans-Serif" font-size="10.00"> #doc</text>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -495,8 +495,8 @@ var sectionId = 'dynsection-1';
 <!-- Node9&#45;&gt;Node8 -->
 <g id="edge10" class="edge">
 <title>Node9&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M340.39,-2357.12C340.46,-2344.85 340.53,-2332.39 340.6,-2319.8"/>
-<polygon fill="none" stroke="#63b8ff" points="336.88,-2357.36 340.33,-2367.38 343.88,-2357.4 336.88,-2357.36"/>
+<path fill="none" stroke="#63b8ff" d="M346.97,-2357.12C347.37,-2344.85 347.78,-2332.39 348.2,-2319.8"/>
+<polygon fill="none" stroke="#63b8ff" points="343.46,-2357.27 346.63,-2367.38 350.45,-2357.5 343.46,-2357.27"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
@@ -553,9 +553,9 @@ var sectionId = 'dynsection-1';
 <!-- Node12&#45;&gt;Node8 -->
 <g id="edge13" class="edge">
 <title>Node12&#45;&gt;Node8</title>
-<path fill="none" stroke="#404040" d="M511.99,-2570.75C497.32,-2512.62 461.83,-2372.09 427.14,-2234.72"/>
-<polygon fill="none" stroke="#404040" points="427.05,-2234.35 421.7,-2229.52 424.11,-2222.72 429.46,-2227.56 427.05,-2234.35"/>
-<text text-anchor="middle" x="493.5" y="-2341" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_imageMap</text>
+<path fill="none" stroke="#404040" d="M512.75,-2570.75C502.75,-2526.38 481.94,-2433.97 458.89,-2331.62"/>
+<polygon fill="none" stroke="#404040" points="458.85,-2331.45 453.63,-2326.48 456.21,-2319.74 461.43,-2324.72 458.85,-2331.45"/>
+<text text-anchor="middle" x="500.5" y="-2341" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_imageMap</text>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
@@ -573,8 +573,8 @@ var sectionId = 'dynsection-1';
 <!-- Node13&#45;&gt;Node8 -->
 <g id="edge14" class="edge">
 <title>Node13&#45;&gt;Node8</title>
-<path fill="none" stroke="#404040" d="M696.03,-2570.9C679.87,-2526.96 646.19,-2438.77 611,-2367 556.05,-2254.94 485.3,-2132.81 430.3,-2041.78"/>
-<polygon fill="none" stroke="#404040" points="430.22,-2041.66 423.69,-2038.6 424.01,-2031.39 430.54,-2034.45 430.22,-2041.66"/>
+<path fill="none" stroke="#404040" d="M695.63,-2570.67C679.06,-2526.79 644.98,-2439.12 611,-2367 567.17,-2273.97 513.93,-2173.07 467.95,-2089.07"/>
+<polygon fill="none" stroke="#404040" points="467.86,-2088.91 461.47,-2085.57 462.09,-2078.38 468.48,-2081.72 467.86,-2088.91"/>
 <text text-anchor="middle" x="616" y="-2341" font-family="Helvetica,sans-Serif" font-size="10.00"> #tools</text>
 </g>
 <!-- Node14 -->

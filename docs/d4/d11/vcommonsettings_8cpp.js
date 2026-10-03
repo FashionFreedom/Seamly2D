@@ -67,6 +67,7 @@ var vcommonsettings_8cpp =
     [ "settingDefaultSeamColor", "d4/d11/vcommonsettings_8cpp.html#a64dfd8ccbb6d651df875eb2451f935ec", null ],
     [ "settingDefaultSeamLinetype", "d4/d11/vcommonsettings_8cpp.html#a95410c62996f20af900ded259f6bcf85", null ],
     [ "settingDefaultSeamLineweight", "d4/d11/vcommonsettings_8cpp.html#af14a8ecc441c26719187f051ae5e125e", null ],
+    [ "settingFinalMeasurementsDialogSize", "d4/d11/vcommonsettings_8cpp.html#ac6926e77720cf71a937776a137e5fc56", null ],
     [ "settingFormulaWizardDialogSize", "d4/d11/vcommonsettings_8cpp.html#a3626c906e3056df28acffca3092cee5c", null ],
     [ "settingGeneralGeometry", "d4/d11/vcommonsettings_8cpp.html#aa21a3fe114f6683c21568ce8b564fa5e", null ],
     [ "settingGeneralRecentFileList", "d4/d11/vcommonsettings_8cpp.html#abedf4f48654eb9c75fa82f0441125377", null ],

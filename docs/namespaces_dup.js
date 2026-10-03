@@ -6,6 +6,14 @@ var namespaces_dup =
     [ "anonymous_namespace{dialogtool.cpp}", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html", [
       [ "RowId", "d3/d7d/namespaceanonymous__namespace_02dialogtool_8cpp_03.html#ac2e003f541cb5afc14468f3b6945ef46", null ]
     ] ],
+    [ "anonymous_namespace{final_measurements_dialog.cpp}", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html", [
+      [ "FinalMeasurementsColumn", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html#abffc2170fe4c141929d35bc6fb77cacf", [
+        [ "ColumnName", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html#abffc2170fe4c141929d35bc6fb77cacfaff45a60f56b4804411ebb0d1282e28a3", null ],
+        [ "ColumnDescription", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html#abffc2170fe4c141929d35bc6fb77cacfa10486310fa083cac3b928c279c42dd15", null ],
+        [ "ColumnValue", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html#abffc2170fe4c141929d35bc6fb77cacfa9664a34b168799a494b128ce6cfe6ada", null ],
+        [ "ColumnFormula", "d2/d05/namespaceanonymous__namespace_02final__measurements__dialog_8cpp_03.html#abffc2170fe4c141929d35bc6fb77cacfa89ea6eb942de94eda1acff3c986ff797", null ]
+      ] ]
+    ] ],
     [ "anonymous_namespace{internal_path_dialog.cpp}", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html", [
       [ "cutLinePath", "df/de6/namespaceanonymous__namespace_02internal__path__dialog_8cpp_03.html#a394f1f735699f1b1d0e822cf8d3af1d3", null ]
     ] ],
@@ -109,6 +117,7 @@ var namespaces_dup =
       [ "settingDefaultSeamColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a64dfd8ccbb6d651df875eb2451f935ec", null ],
       [ "settingDefaultSeamLinetype", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a95410c62996f20af900ded259f6bcf85", null ],
       [ "settingDefaultSeamLineweight", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af14a8ecc441c26719187f051ae5e125e", null ],
+      [ "settingFinalMeasurementsDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ac6926e77720cf71a937776a137e5fc56", null ],
       [ "settingFormulaWizardDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a3626c906e3056df28acffca3092cee5c", null ],
       [ "settingGeneralGeometry", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aa21a3fe114f6683c21568ce8b564fa5e", null ],
       [ "settingGeneralRecentFileList", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#abedf4f48654eb9c75fa82f0441125377", null ],

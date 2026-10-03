@@ -26,6 +26,8 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "export_layout_dialog.h", "d1/d8e/export__layout__dialog_8h.html", "d1/d8e/export__layout__dialog_8h" ],
     [ "export_progress_dialog.cpp", "db/d07/export__progress__dialog_8cpp.html", null ],
     [ "export_progress_dialog.h", "d3/d79/export__progress__dialog_8h.html", "d3/d79/export__progress__dialog_8h" ],
+    [ "final_measurements_dialog.cpp", "d8/d90/final__measurements__dialog_8cpp.html", "d8/d90/final__measurements__dialog_8cpp" ],
+    [ "final_measurements_dialog.h", "d7/da9/final__measurements__dialog_8h.html", "d7/da9/final__measurements__dialog_8h" ],
     [ "groups_widget.cpp", "db/d5c/groups__widget_8cpp.html", null ],
     [ "groups_widget.h", "df/da7/groups__widget_8h.html", "df/da7/groups__widget_8h" ],
     [ "history_dialog.cpp", "d5/d6c/history__dialog_8cpp.html", null ],

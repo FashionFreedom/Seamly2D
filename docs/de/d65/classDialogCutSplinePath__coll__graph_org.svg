@@ -304,9 +304,9 @@
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../d8/dba/classVAbstractPattern.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="268,-1559.5 268,-2397.5 430,-2397.5 430,-1559.5 268,-1559.5"/>
-<text text-anchor="middle" x="349" y="-2385.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPattern</text>
-<polyline fill="none" stroke="#666666" points="268,-2378.5 430,-2378.5 "/>
+<polygon fill="white" stroke="#666666" points="268,-1559.5 268,-2397.5 468,-2397.5 468,-1559.5 268,-1559.5"/>
+<text text-anchor="middle" x="368" y="-2385.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPattern</text>
+<polyline fill="none" stroke="#666666" points="268,-2378.5 468,-2378.5 "/>
 <text text-anchor="start" x="276" y="-2366.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagPattern</text>
 <text text-anchor="start" x="276" y="-2355.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagCalculation</text>
 <text text-anchor="start" x="276" y="-2344.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagModeling</text>
@@ -317,7 +317,7 @@
 <text text-anchor="start" x="276" y="-2289.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="276" y="-2278.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
 <text text-anchor="start" x="276" y="-2267.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
-<text text-anchor="start" x="276" y="-2256.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 148 more...</text>
+<text text-anchor="start" x="276" y="-2256.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 150 more...</text>
 <text text-anchor="start" x="276" y="-2245.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_activeDraftBlock</text>
 <text text-anchor="start" x="276" y="-2234.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
 <text text-anchor="start" x="276" y="-2223.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineWeight</text>
@@ -331,18 +331,18 @@
 <text text-anchor="start" x="276" y="-2135.5" font-family="Helvetica,sans-Serif" font-size="10.00"># modified</text>
 <text text-anchor="start" x="276" y="-2124.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelLines</text>
 <text text-anchor="start" x="276" y="-2113.5" font-family="Helvetica,sans-Serif" font-size="10.00"># patternLabelWasChanged</text>
-<polyline fill="none" stroke="#666666" points="268,-2106.5 430,-2106.5 "/>
+<polyline fill="none" stroke="#666666" points="268,-2106.5 468,-2106.5 "/>
 <text text-anchor="start" x="276" y="-2094.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPattern()</text>
 <text text-anchor="start" x="276" y="-2083.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
 <text text-anchor="start" x="276" y="-2072.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="276" y="-2061.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
 <text text-anchor="start" x="276" y="-2050.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
-<text text-anchor="start" x="276" y="-2039.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsed()</text>
-<text text-anchor="start" x="276" y="-2028.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
-<text text-anchor="start" x="276" y="-2017.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
-<text text-anchor="start" x="276" y="-2006.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
-<text text-anchor="start" x="276" y="-1995.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ draftBlockNameExists()</text>
-<text text-anchor="start" x="276" y="-1984.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 99 more...</text>
+<text text-anchor="start" x="276" y="-2039.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listFinalMeasurementExpressions()</text>
+<text text-anchor="start" x="276" y="-2028.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFinalMeasurements()</text>
+<text text-anchor="start" x="276" y="-2017.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFinalMeasurements()</text>
+<text text-anchor="start" x="276" y="-2006.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isVariableUsed()</text>
+<text text-anchor="start" x="276" y="-1995.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
+<text text-anchor="start" x="276" y="-1984.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 102 more...</text>
 <text text-anchor="start" x="276" y="-1973.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTool()</text>
 <text text-anchor="start" x="276" y="-1962.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AddTool()</text>
 <text text-anchor="start" x="276" y="-1951.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RemoveTool()</text>
@@ -387,15 +387,15 @@
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge9" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M220.45,-2638.91C227.24,-2593.03 239.46,-2513.15 252,-2445 257.02,-2417.7 262.4,-2389.54 267.95,-2361.22"/>
-<polygon fill="none" stroke="#63b8ff" points="216.96,-2638.59 218.97,-2648.99 223.89,-2639.6 216.96,-2638.59"/>
+<path fill="none" stroke="#63b8ff" d="M220.01,-2638.82C226.35,-2592.86 238.14,-2512.89 252,-2445 256.96,-2420.72 262.33,-2395.8 267.95,-2370.71"/>
+<polygon fill="none" stroke="#63b8ff" points="216.52,-2638.54 218.63,-2648.92 223.45,-2639.49 216.52,-2638.54"/>
 </g>
 <!-- Node8&#45;&gt;Node5 -->
 <g id="edge8" class="edge">
 <title>Node8&#45;&gt;Node5</title>
-<path fill="none" stroke="#404040" d="M267.94,-1602.95C264.61,-1588.1 261.28,-1573.41 258,-1559 255.37,-1547.48 252.67,-1535.7 249.91,-1523.81"/>
-<polygon fill="none" stroke="#404040" points="249.86,-1523.57 244.61,-1518.63 247.15,-1511.89 252.4,-1516.83 249.86,-1523.57"/>
-<text text-anchor="middle" x="267.5" y="-1533" font-family="Helvetica,sans-Serif" font-size="10.00"> #doc</text>
+<path fill="none" stroke="#404040" d="M267.97,-1581.84C263,-1562.18 258.07,-1542.69 253.25,-1523.63"/>
+<polygon fill="none" stroke="#404040" points="253.2,-1523.45 247.86,-1518.61 250.26,-1511.81 255.61,-1516.65 253.2,-1523.45"/>
+<text text-anchor="middle" x="272.5" y="-1533" font-family="Helvetica,sans-Serif" font-size="10.00"> #doc</text>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -450,8 +450,8 @@
 <!-- Node9&#45;&gt;Node8 -->
 <g id="edge10" class="edge">
 <title>Node9&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M343.12,-2435.12C343.28,-2422.85 343.44,-2410.39 343.6,-2397.8"/>
-<polygon fill="none" stroke="#63b8ff" points="339.61,-2435.33 342.98,-2445.38 346.61,-2435.42 339.61,-2435.33"/>
+<path fill="none" stroke="#63b8ff" d="M349.7,-2435.12C350.19,-2422.85 350.69,-2410.39 351.2,-2397.8"/>
+<polygon fill="none" stroke="#63b8ff" points="346.19,-2435.24 349.28,-2445.38 353.18,-2435.53 346.19,-2435.24"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
@@ -508,9 +508,9 @@
 <!-- Node12&#45;&gt;Node8 -->
 <g id="edge13" class="edge">
 <title>Node12&#45;&gt;Node8</title>
-<path fill="none" stroke="#404040" d="M513.19,-2648.75C499.23,-2591.85 465.9,-2456 432.89,-2321.44"/>
-<polygon fill="none" stroke="#404040" points="432.87,-2321.34 427.55,-2316.47 430.01,-2309.68 435.32,-2314.56 432.87,-2321.34"/>
-<text text-anchor="middle" x="497.5" y="-2419" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_imageMap</text>
+<path fill="none" stroke="#404040" d="M513.95,-2648.75C504.27,-2604.38 484.12,-2511.97 461.8,-2409.62"/>
+<polygon fill="none" stroke="#404040" points="461.77,-2409.47 456.58,-2404.46 459.21,-2397.74 464.4,-2402.75 461.77,-2409.47"/>
+<text text-anchor="middle" x="504.5" y="-2419" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_imageMap</text>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
@@ -528,8 +528,8 @@
 <!-- Node13&#45;&gt;Node8 -->
 <g id="edge14" class="edge">
 <title>Node13&#45;&gt;Node8</title>
-<path fill="none" stroke="#404040" d="M696.97,-2648.93C680.71,-2605.04 646.9,-2516.91 612,-2445 558.34,-2334.44 489.84,-2213.73 436.2,-2122.94"/>
-<polygon fill="none" stroke="#404040" points="436.18,-2122.9 429.68,-2119.78 430.07,-2112.58 436.56,-2115.7 436.18,-2122.9"/>
+<path fill="none" stroke="#404040" d="M696.56,-2648.7C679.88,-2604.87 645.67,-2517.26 612,-2445 569.45,-2353.69 518.22,-2254.56 473.71,-2171.34"/>
+<polygon fill="none" stroke="#404040" points="473.7,-2171.33 467.34,-2167.93 468.03,-2160.75 474.39,-2164.15 473.7,-2171.33"/>
 <text text-anchor="middle" x="618" y="-2419" font-family="Helvetica,sans-Serif" font-size="10.00"> #tools</text>
 </g>
 </g>
