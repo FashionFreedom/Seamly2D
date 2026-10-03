@@ -64,6 +64,7 @@
 #include <QStringList>
 #include <QTypeInfo>
 #include <QtGlobal>
+#include <functional>
 #include <new>
 
 #include "../vmisc/def.h"
@@ -219,7 +220,7 @@ QT_WARNING_POP
  * - void Clear();
  * - void ClearForFullParse();
  * - void ClearGObjects();
- * - void ClearCalculationGObjects();
+ * - void ClearCalculationGObjects(const QString &block_name, const std::function<QString(quint32)> &draft_block_for_tool);
  * - void ClearVariables(const VarType &type = VarType::Unknown);
  * - static void ClearUniqueNames();
  * - static void clearUniqueVariableNames();
@@ -315,7 +316,8 @@ public:
     void               Clear();
     void               ClearForFullParse();
     void               ClearGObjects();
-    void               ClearCalculationGObjects();
+    void               ClearCalculationGObjects(const QString &block_name,
+                                                 const std::function<QString(quint32)> &draft_block_for_tool);
     void               ClearVariables(const VarType &type = VarType::Unknown);
     static void        ClearUniqueNames();
     static void        clearUniqueVariableNames();

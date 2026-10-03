@@ -66,10 +66,14 @@
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
+#include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/exception/vexceptionundo.h"
 #include "../ifc/xml/individual_size_converter.h"
 #include "../ifc/xml/multi_size_converter.h"
 #include "../ifc/xml/vpatternconverter.h"
+#include "../ifc/xml/vtoolrecord.h"
+#include "../vtools/tools/vdatatool.h"
+#include <QGraphicsItem>
 #include "../tools/images/image_tool.h"
 #include "../vformat/measurements.h"
 #include "../vgeometry/vspline.h"
@@ -237,6 +241,7 @@ MainWindow::MainWindow(QWidget *parent)
         connect(doc, &VPattern::UndoCommand,     this, &MainWindow::fullParseFile);
         connect(doc, &VPattern::setGuiEnabled,   this, &MainWindow::setGuiEnabled);
         connect(doc, &VPattern::setStatusMessage, this, &MainWindow::setStatusMessage);
+        connect(doc, &VPattern::ChangedCursor,   this, &MainWindow::disableFutureTools);
 
         // After a pattern is parsed show draft block scene if any draft blocks exist
         // AND the View->Draft menu item is checked.
@@ -933,8 +938,10 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     }
     handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
-    // If insert not to the end of file call lite parse
-    if (doc->getCursorId() > NULL_ID)
+    // If cursor not at the bottom of the table call lite parse. vtool is null when the dialog
+    // was cancelled without ever applying - nothing was created, so there's no tool id to move
+    // the cursor to and no new node to lite-parse.
+    if (vtool != nullptr && doc->getCursorId() > NULL_ID)
     {
         const quint32 &toolId = vtool->getId();
         doc->LiteParseTree(Document::LiteParse);
@@ -2846,7 +2853,8 @@ void MainWindow::basePointChanged()
     }
     else
     {
-        base_point_combo_box->setStyleSheet("QComboBox {color: black;}");
+        // Force any child line edit to dynamically pull from the current app palette
+        base_point_combo_box->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
 
         if (!text.isEmpty() && text != tr("Default"))
         {
@@ -3853,6 +3861,11 @@ void MainWindow::setSceneBackgroundColor()
     QColor color = QColor(qApp->Seamly2DSettings()->getBackgroundColor());
     draftScene->setBackgroundBrush(color);
     pieceScene->setBackgroundBrush(color);
+    layout_scene->setBackgroundBrush(color);
+    for (auto *scene : scenes)
+    {
+        scene->setBackgroundBrush(color);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4174,7 +4187,7 @@ void MainWindow::showLayoutMode(bool checked)
             return;
         }
 
-        currentScene = tempSceneLayout;
+        currentScene = layout_scene;
         emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
 
@@ -4995,6 +5008,71 @@ void MainWindow::patternChangesWereSaved(bool saved)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
+ * @brief disableFutureTools disable the tools that come chronologically after the history cursor, so
+ * the user can't reference an object a tool being inserted there wouldn't actually be able to see yet.
+ * @param cursor_id the tool id the cursor now sits on, or NULL_ID if no cursor is active.
+ */
+void MainWindow::disableFutureTools(quint32 cursor_id)
+{
+    for (auto id : qAsConst(m_disabled_tool_ids))
+    {
+        try
+        {
+            if (auto *item = dynamic_cast<QGraphicsItem *>(VAbstractPattern::getTool(id)))
+            {
+                item->setEnabled(true);
+                item->setOpacity(1);
+            }
+        }
+        catch (const VExceptionBadId &error)
+        {
+            Q_UNUSED(error)
+        }
+    }
+    m_disabled_tool_ids.clear();
+
+    if (cursor_id == NULL_ID)
+    {
+        return;
+    }
+
+    QVector<VToolRecord> *history = doc->getHistory();
+    qint32 cursor_index = -1;
+    for (qint32 i = 0; i < history->size(); ++i)
+    {
+        if (history->at(i).getId() == cursor_id)
+        {
+            cursor_index = i;
+            break;
+        }
+    }
+
+    if (cursor_index == -1)
+    {
+        return;
+    }
+
+    for (qint32 i = cursor_index + 1; i < history->size(); ++i)
+    {
+        const quint32 id = history->at(i).getId();
+        try
+        {
+            if (auto *item = dynamic_cast<QGraphicsItem *>(VAbstractPattern::getTool(id)))
+            {
+                item->setEnabled(false);
+                item->setOpacity(0.35);
+                m_disabled_tool_ids.append(id);
+            }
+        }
+        catch (const VExceptionBadId &error)
+        {
+            Q_UNUSED(error)
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
  * @brief ChangedSize change new size value.
  * @param index index of the selected item.
  */
@@ -5284,7 +5362,7 @@ void MainWindow::setToolsEnabled(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetLayoutModeActions()
 {
-    const bool enabled = not scenes.isEmpty();
+    const bool enabled = !scenes.isEmpty();
 
     ui->exportLayout_ToolButton->setEnabled(enabled);
     ui->exportAs_Action->setEnabled(enabled);
@@ -6460,6 +6538,8 @@ void MainWindow::createActions()
         {
             historyDialog = new HistoryDialog(pattern, doc, this);
             connect(this, &MainWindow::RefreshHistory, historyDialog.data(), &HistoryDialog::updateHistory);
+            connect(historyDialog.data(), &HistoryDialog::cursorPositionChanged,
+                    this, &MainWindow::disableFutureTools);
             connect(historyDialog.data(), &HistoryDialog::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
@@ -6976,7 +7056,7 @@ void MainWindow::showLayoutPages(int index)
 {
     if (index < 0 || index >= scenes.size())
     {
-        ui->view->setScene(tempSceneLayout);
+        ui->view->setScene(layout_scene);
     }
     else
     {
