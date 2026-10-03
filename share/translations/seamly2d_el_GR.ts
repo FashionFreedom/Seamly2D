@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Συντεταγμένες της σελίδας</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Συντεταγμένες</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Βασικό σημείο</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Μοναδικό όνομα</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Συντεταγμένη Χ:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Συντεταγμένη Υ:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Επιλέξτε το κεντρικό σημείο του τόξου</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Επιλέξτε το δεύτερο σημείο της γραμμής</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Επεξεργασία ακτίνας</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Ακτίνα:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Βοηθός φόρμουλας</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Τιμή</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Υπολογισμός</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Κέντρο του κύκλου:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Σημείο 1ης γραμμής:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>Σημείο 2ης γραμμής</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Πάχος γραμμής:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Συντεταγμένες της σελίδας</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Συντεταγμένες</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Βασικό σημείο</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Συντεταγμένη Χ:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Συντεταγμένη Υ:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3905,6 +3845,77 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Τελικές μετρήσεις</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Φίλτρο:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Λίστα Φιλτράρισμα με λέξη κλειδί</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Τιμή</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Φόρμουλα</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation> Μετακίνηση τελικής μέτρησης επάνω</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Μετακίνηση τελικής μέτρησης κάτω</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Προσθήκη τελικής μέτρησης</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Αφαίρεση τελικής μέτρησης</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Λεπτομέρειες</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Μοναδικό όνομα τελικής μέτρησης</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Τιμή:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Φόρμουλα:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Περιγραφή:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5038,6 +5049,88 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Επιλέξτε το κεντρικό σημείο του τόξου</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Επιλέξτε το δεύτερο σημείο της γραμμής</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Επεξεργασία ακτίνας</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Ακτίνα:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Βοηθός φόρμουλας</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Τιμή</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Υπολογισμός</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Κέντρο του κύκλου:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Μοναδικό όνομα</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Σημείο 1ης γραμμής:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>Σημείο 2ης γραμμής</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Γεωμετρία</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Μήκος</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Γωνία</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6147,6 +6240,14 @@ Do you want to save your changes?</source>
         <translation>Εργαλεία για την εισαγωγή ή την τροποποίηση εικόνων.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Τελικές μετρήσεις</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Λίστα και επεξεργασία τελικών μετρήσεων</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Σημείο στην καμπύλη (O, C)</translation>
     </message>
@@ -6229,6 +6330,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Εξαγωγή μεταβλητών σε CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Εξαγωγή τελικών μετρήσεων σε CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6453,6 +6558,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Draft Block:</source>
         <translation>Μπλοκ προσχέδιου:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11874,45 +11983,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Πρώτο σημείο</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Δεύτερο σημείο</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Ψηλότερο σημείο</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Χαμηλότερο σημείο</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Σημείο στην αριστερή ακρη</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Σημείο στη δεξιά άκρη</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Κάθετος άξονας</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Οριζόντιος άξονας</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Γραμμή_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13181,14 +13251,6 @@ load in SeamlyME as usual.
         <translation>Κομμάτι</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>λευκό</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>χωρίς βούρτσα</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση του κομματιού</translation>
     </message>
@@ -13309,13 +13371,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Τόξο - Ακτίνα και Μήκος</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Όνομα</translation>
     </message>
 </context>
 <context>
@@ -13727,6 +13782,38 @@ load in SeamlyME as usual.
         <translation>Επιλογή</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Πρώτο σημείο</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Δεύτερο σημείο</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Ψηλότερο σημείο</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Χαμηλότερο σημείο</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Σημείο στην αριστερή ακρη</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Σημείο στη δεξιά άκρη</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Κάθετος άξονας</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Οριζόντιος άξονας</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Συντεταγμένες</translation>
     </message>
@@ -13980,21 +14067,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Τομή Τόξου και Εφαπτομένης</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Μήκος</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Γωνία</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Όνομα</translation>
     </message>
 </context>
 <context>

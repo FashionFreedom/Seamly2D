@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Base Point</source>
+        <translation>Alappont</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Kiválasztás</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Név:</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Egyedi név</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Válassz egyedi nevet.</translation>
+    </message>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Koordináták a lapon</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Koordináták</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>X koordináta:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Y koordináta:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Pont - Ív és egyenes metszéspontja</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Kiválasztás</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Név:</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Egyedi név</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Válassz egyedi nevet.</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Ív középpontja:</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>1. sor pontja:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>2. vonalpont</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometria</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Sugár:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Érték</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Számítás</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Sugár szerkesztése</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Válassza ki a vonal második pontját</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Ívközéppont kiválasztása</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Point - Intersect Arcs</source>
@@ -2611,45 +2590,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select second point of line</source>
         <translation>Válassza ki a vonal második pontját</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Base Point</source>
-        <translation>Alappont</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Kiválasztás</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Név:</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Egyedi név</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Válassz egyedi nevet.</translation>
-    </message>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Koordináták a lapon</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Koordináták</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>X koordináta:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Y koordináta:</translation>
     </message>
 </context>
 <context>
@@ -3903,6 +3843,77 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Végső mérések</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Szűrő:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Lista szűrése kulcsszó szerint</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Leírás</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Képlet</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Végső mérés mozgatása felfelé</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Végső mérés mozgatása lefelé</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Végső mérés hozzáadása</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Végső mérés eltávolítása</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Részletek</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Név:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Egyedi végső mérés név</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Érték:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Képlet:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Leírás:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Error</source>
@@ -5035,6 +5046,88 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Pont - Ív és egyenes metszéspontja</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Kiválasztás</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Név:</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Egyedi név</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Válassz egyedi nevet.</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Ív középpontja:</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>1. sor pontja:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>2. vonalpont</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Sugár:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Képletvarázsló</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Számítás</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Sugár szerkesztése</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Válassza ki a vonal második pontját</translation>
+    </message>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Ívközéppont kiválasztása</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Hossz</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Szög</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
@@ -5882,6 +5975,14 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Egyéni és belső változókról tartalmaz információkat</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Végső mérések</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Végső mérések listázása és szerkesztése</translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mód szabásmintadarabok elrendezésének létrehozására. Ez a mód akkor érhető el, ha legalább egy szabásmintadarabot létrehoztak „Darab módban&quot;. Az elrendezés exportálható a kívánt fájlformátumba, és menthető.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -6272,6 +6373,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     <message>
         <source>Export Variables to CSV</source>
         <translation>Változók exportálása CSV-be</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Végső mérések exportálása CSV-be</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6772,6 +6877,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     <message>
         <source>untitled</source>
         <translation>cím nélküli</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Leírás</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -11870,45 +11979,6 @@ Menti a módosításokat?</translation>
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>Line_</source>
-        <translation>Sor_</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation>Első pont</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Második pont</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Legmagasabb pont</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Legalacsonyabb pont</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>A legbaloldalibb pont</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Jobboldali legszélső pont</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Függőleges tengely</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Vízszintes tengely</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -12981,14 +13051,6 @@ Menti a módosításokat?</translation>
         <translation>Darab</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>fehér</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>nobrush</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Hiba történt a darab létrehozása vagy frissítése során</translation>
     </message>
@@ -13308,13 +13370,6 @@ Menti a módosításokat?</translation>
     </message>
 </context>
 <context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Név</translation>
-    </message>
-</context>
-<context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
@@ -13529,6 +13584,38 @@ Menti a módosításokat?</translation>
     <message>
         <source>Center point</source>
         <translation>Középpont</translation>
+    </message>
+    <message>
+        <source>First point</source>
+        <translation>Első pont</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Második pont</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Legmagasabb pont</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Legalacsonyabb pont</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>A legbaloldalibb pont</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Jobboldali legszélső pont</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Függőleges tengely</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Vízszintes tengely</translation>
     </message>
     <message>
         <source>Base point</source>
@@ -13976,21 +14063,6 @@ Menti a módosításokat?</translation>
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Ív és érintő metszéspontja</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Hossz</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Szög</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Név</translation>
     </message>
 </context>
 <context>
