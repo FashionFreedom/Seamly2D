@@ -95,6 +95,8 @@ signals:
     // @param enable true enable selection, false disable selection
     void                    showHistoryTool(quint32 id, bool enable);
 
+    void                    cursorPositionChanged(quint32 cursor_id);
+
 protected:
     virtual void            closeEvent ( QCloseEvent * event ) override;
     virtual void            changeEvent(QEvent* event) override;
