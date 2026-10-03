@@ -73,6 +73,7 @@ var classMainWindowsNoGUI =
     [ "isNoScaling", "de/d1a/classMainWindowsNoGUI.html#a295f36e2e7ab10facb0a23081db20756", null ],
     [ "isTiled", "de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6", null ],
     [ "isUnitePages", "de/d1a/classMainWindowsNoGUI.html#a394c68e77d1f8c07712525ca10ad9d1b", null ],
+    [ "layout_scene", "de/d1a/classMainWindowsNoGUI.html#a3e8a896aa48852f692602a9681d421ce", null ],
     [ "layoutPrinterName", "de/d1a/classMainWindowsNoGUI.html#a87f47e2f197a491747849be6954bb18c", null ],
     [ "margins", "de/d1a/classMainWindowsNoGUI.html#ab663f823013c37df2c5562ccced1cae8", null ],
     [ "papers", "de/d1a/classMainWindowsNoGUI.html#a5beca5f0d20a7e4adeb4c0590c13ab6e", null ],
@@ -84,6 +85,5 @@ var classMainWindowsNoGUI =
     [ "redoAction", "de/d1a/classMainWindowsNoGUI.html#ad695679ff6186ab66b71a79e9469e178", null ],
     [ "scenes", "de/d1a/classMainWindowsNoGUI.html#ac710c5b0988a0f9e12523620a7f66d80", null ],
     [ "shadows", "de/d1a/classMainWindowsNoGUI.html#a4c0f1d2b5e02ce25f7dbbd0c8fe963e1", null ],
-    [ "tempSceneLayout", "de/d1a/classMainWindowsNoGUI.html#a0c0046df4a904bc3dab821315203b13f", null ],
     [ "undoAction", "de/d1a/classMainWindowsNoGUI.html#aad38a28c45cbba0bd89053d8430cf1d8", null ]
 ];
