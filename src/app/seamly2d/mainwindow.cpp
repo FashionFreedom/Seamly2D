@@ -2846,7 +2846,8 @@ void MainWindow::basePointChanged()
     }
     else
     {
-        base_point_combo_box->setStyleSheet("QComboBox {color: black;}");
+        // Force any child line edit to dynamically pull from the current app palette
+        base_point_combo_box->setStyleSheet("QComboBox QLineEdit { color: palette(text); background: palette(base); }");
 
         if (!text.isEmpty() && text != tr("Default"))
         {
@@ -3853,6 +3854,11 @@ void MainWindow::setSceneBackgroundColor()
     QColor color = QColor(qApp->Seamly2DSettings()->getBackgroundColor());
     draftScene->setBackgroundBrush(color);
     pieceScene->setBackgroundBrush(color);
+    layout_scene->setBackgroundBrush(color);
+    for (auto *scene : scenes)
+    {
+        scene->setBackgroundBrush(color);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4174,7 +4180,7 @@ void MainWindow::showLayoutMode(bool checked)
             return;
         }
 
-        currentScene = tempSceneLayout;
+        currentScene = layout_scene;
         emit ui->view->itemClicked(nullptr);  // Clear Property Editor with non valid tool selection
         ui->view->setScene(currentScene);
 
@@ -5284,7 +5290,7 @@ void MainWindow::setToolsEnabled(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetLayoutModeActions()
 {
-    const bool enabled = not scenes.isEmpty();
+    const bool enabled = !scenes.isEmpty();
 
     ui->exportLayout_ToolButton->setEnabled(enabled);
     ui->exportAs_Action->setEnabled(enabled);
@@ -6976,7 +6982,7 @@ void MainWindow::showLayoutPages(int index)
 {
     if (index < 0 || index >= scenes.size())
     {
-        ui->view->setScene(tempSceneLayout);
+        ui->view->setScene(layout_scene);
     }
     else
     {

@@ -118,7 +118,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
     : VAbstractMainWindow(parent),
       pieceList(),
       currentScene(nullptr),
-      tempSceneLayout(nullptr),
+      layout_scene(nullptr),
       pattern(new VContainer(qApp->translateVariables(), qApp->patternUnitP())),
       doc(nullptr),
       papers(),
@@ -150,7 +150,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
 //---------------------------------------------------------------------------------------------------------------------
 MainWindowsNoGUI::~MainWindowsNoGUI()
 {
-    delete tempSceneLayout;
+    delete layout_scene;
     delete pattern;
 }
 
@@ -548,7 +548,7 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
     painter.setFont(appFont);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setPen(QPen(Qt::black, widthMainLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
 
     int count = 0;
     QSharedPointer<QVector<PosterData>> poster;
@@ -798,8 +798,7 @@ QVector<VLayoutPiece> MainWindowsNoGUI::preparePiecesForLayout(const QHash<quint
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::InitTempLayoutScene()
 {
-    tempSceneLayout = new VMainGraphicsScene();
-    tempSceneLayout->setBackgroundBrush( QBrush(QColor(Qt::gray), Qt::SolidPattern) );
+    layout_scene = new VMainGraphicsScene();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -824,7 +823,7 @@ QIcon MainWindowsNoGUI::ScenePreview(int i) const
             painter.setFont(appFont);
             painter.setRenderHint(QPainter::Antialiasing, true);
             painter.setPen(QPen(Qt::black, widthMainLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            painter.setBrush ( QBrush ( Qt::NoBrush ) );
+            painter.setBrush (QBrush (Qt::NoBrush));
             scenes.at(i)->render(&painter, r, r, Qt::IgnoreAspectRatio);
             painter.end();
         }
@@ -875,7 +874,8 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
     for (int i=0; i<papers.size(); ++i)
     {
         QGraphicsScene *scene = new VMainGraphicsScene();
-        scene->setBackgroundBrush(QBrush(QColor(Qt::gray), Qt::SolidPattern));
+        QColor color = QColor(qApp->Seamly2DSettings()->getBackgroundColor());
+        scene->setBackgroundBrush(color);
         scene->addItem(shadows.at(i));
         scene->addItem(papers.at(i));
 
@@ -942,7 +942,7 @@ void MainWindowsNoGUI::exportPNG(const QString &fileName,  QGraphicsScene *scene
     QPainter painter(&image);
     painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
     scene->render(&painter);
     image.save(fileName, "PNG", qApp->Seamly2DSettings()->getExportQuality());
 }
@@ -959,7 +959,7 @@ void MainWindowsNoGUI::exportTIF(const QString &fileName,  QGraphicsScene *scene
     QPainter painter(&image);
     painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
     scene->render(&painter);
 
     QImageWriter writer;
@@ -981,7 +981,7 @@ void MainWindowsNoGUI::exportJPG(const QString &fileName,  QGraphicsScene *scene
     QPainter painter(&image);
     painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
     scene->render(&painter);
     image.save(fileName, "JPG", qApp->Seamly2DSettings()->getExportQuality());
 }
@@ -998,7 +998,7 @@ void MainWindowsNoGUI::exportBMP(const QString &fileName,  QGraphicsScene *scene
     QPainter painter(&image);
     painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
     scene->render(&painter);
     image.save(fileName, "BMP", qApp->Seamly2DSettings()->getExportQuality());
 }
@@ -1015,7 +1015,7 @@ void MainWindowsNoGUI::exportPPM(const QString &fileName,  QGraphicsScene *scene
     QPainter painter(&image);
     painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush (Qt::NoBrush));
     scene->render(&painter);
     image.save(fileName, "PPM", qApp->Seamly2DSettings()->getExportQuality());
 }
@@ -1099,12 +1099,12 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
 
     printer.setOutputFileName(name);
     printer.setResolution(static_cast<int>(PrintDPI));
-    PrintPages( &printer );
+    PrintPages(&printer);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief exportEPS( save layout to eps file.
+ * @brief exportEPS save layout to eps file.
  * @param fileName name layout file.
  */
 void MainWindowsNoGUI::exportEPS(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene,
@@ -1379,10 +1379,10 @@ void MainWindowsNoGUI::LayoutPrint()
     }
 
     SetPrinterSettings(printer.data(), PrintType::PrintNative);
-    QPrintDialog dialog(printer.data(), this );
+    QPrintDialog dialog(printer.data(), this);
     // If only user couldn't change page margins we could use method setMinMax();
     dialog.setOption(QPrintDialog::PrintCurrentPage, false);
-    if ( dialog.exec() == QDialog::Accepted )
+    if (dialog.exec() == QDialog::Accepted)
     {
         printer->setResolution(static_cast<int>(PrintDPI));
         PrintPages(printer.data());
@@ -1423,11 +1423,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     else
     {
         VSettings *settings = qApp->Seamly2DSettings();
-        QSizeF size = QSizeF(
-            settings->getTiledPDFPaperWidth(Unit::Mm),
-            settings->getTiledPDFPaperHeight(Unit::Mm)
-
-            );
+        QSizeF size = QSizeF(settings->getTiledPDFPaperWidth(Unit::Mm), settings->getTiledPDFPaperHeight(Unit::Mm));
         const QPageSize pSZ = FindQPrinterPageSize(size);
         printer->setPageSize(pSZ);
         // no need to take custom into account, because custom isn't a format option for tiled pdf.
@@ -1525,7 +1521,7 @@ bool MainWindowsNoGUI::IsLayoutGrayscale() const
             image.fill(Qt::white);
             QPainter painter(&image);
             painter.setPen(QPen(Qt::black, widthMainLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-            painter.setBrush ( QBrush ( Qt::NoBrush ) );
+            painter.setBrush (QBrush (Qt::NoBrush));
             scenes.at(i)->render(&painter, target, paper->rect(), Qt::KeepAspectRatio);
             painter.end();
 
@@ -1651,9 +1647,9 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
             .arg(ExportLayoutDialog::exportFormatSuffix(dialog.format())); //4
 
             QBrush *brush = new QBrush();
-            brush->setColor( QColor( Qt::white ) );
+            brush->setColor(QColor(Qt::white));
             QGraphicsScene *scene = scenes.at(i);
-            scene->setBackgroundBrush( *brush );
+            scene->setBackgroundBrush(*brush);
             shadows[i]->setVisible(false);
             paper->setPen(QPen(QBrush(Qt::white, Qt::NoBrush), 0.1, Qt::NoPen));
 
@@ -1743,9 +1739,9 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
                     break;
             }
             paper->setPen(QPen(Qt::black, 1));
-            brush->setColor( QColor( Qt::gray ) );
-            brush->setStyle( Qt::SolidPattern );
-            scenes[i]->setBackgroundBrush( *brush );
+            brush->setColor(QColor(Qt::gray));
+            brush->setStyle(Qt::SolidPattern);
+            scenes[i]->setBackgroundBrush(*brush);
             shadows[i]->setVisible(true);
             delete brush;
         }
