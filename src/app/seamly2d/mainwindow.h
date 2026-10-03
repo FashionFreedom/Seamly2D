@@ -74,6 +74,7 @@ class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
+class FinalMeasurementsDialog;
 class DialogTool;
 class HistoryDialog;
 class CalculatorDialog;
@@ -166,6 +167,8 @@ protected:
     virtual void PrepareSceneList() override;
     virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) final;
     void         handleExportToCSV();
+    void         handleExportFinalMeasurementsToCSV();
+    void         exportFinalMeasurementsToCSVData(const QString &fileName, const DialogExportToCSV &dialog);
 
 private slots:
     void zoomScaleChanged(qreal scale);
@@ -296,6 +299,8 @@ private:
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
+    QPointer<FinalMeasurementsDialog> finalMeasurementsDialog;
+    bool                              m_exportFinalMeasurements;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<HistoryDialog>           historyDialog;
 

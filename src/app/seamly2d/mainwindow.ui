@@ -135,6 +135,8 @@
     <addaction name="loadMultisize_Action"/>
     <addaction name="table_Action"/>
     <addaction name="exportVariablesToCSV_Action"/>
+    <addaction name="finalMeasurements_Action"/>
+    <addaction name="exportFinalMeasurementsToCSV_Action"/>
    </widget>
    <widget class="QMenu" name="history_Menu">
     <property name="title">
@@ -2875,6 +2877,27 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
+  <action name="finalMeasurements_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/table.png</normaloff>:/icon/32x32/table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Final measurements</string>
+   </property>
+   <property name="toolTip">
+    <string>List and edit final measurements</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
   <action name="history_Action">
    <property name="checkable">
     <bool>true</bool>
@@ -4060,6 +4083,14 @@
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+E</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="exportFinalMeasurementsToCSV_Action">
+   <property name="text">
+    <string>Export Final Measurements to CSV</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
