@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Sayfadaki koordinatlar</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Koordinatlar</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Temel Nokta</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Seçim</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Benzersiz ad</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Benzersiz bir ad seçin.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>X koordinatı:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Y koordinatı:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Adı:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { boşluk: ön sarma; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Yayın merkezinin noktasını seçin</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Çizginin ikinci noktasını seçin</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Yarıçapı düzenle</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Yarıçap:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formül sihirbazı</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Değer</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Hesaplama</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Yayın merkezi:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Nokta - Yay ve Doğruyu Kesiştir</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Seçim</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Benzersiz ad</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Benzersiz bir ad seçin.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>1. satır noktası:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>2. satır noktası</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometri</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Adı:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { boşluk: ön sarma; }
     <message>
         <source>Lineweight:</source>
         <translation>Çizgi ağırlığı:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Adı:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Sayfadaki koordinatlar</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Koordinatlar</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Temel Nokta</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Seçim</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Benzersiz ad</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Benzersiz bir ad seçin.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>X koordinatı:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Y koordinatı:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3903,6 +3843,77 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Son ölçümler</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtre:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Listeyi anahtar sözcüğe göre filtrele</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formül</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Son ölçümü yukarı taşı</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Son ölçümü aşağı taşı</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Son ölçüm ekle</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Son ölçümü kaldır</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Ayrıntılar</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Adı:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Benzersiz son ölçüm adı</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Değer:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formül:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Açıklama:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5036,6 +5047,88 @@ Program, TASARIM, SATILABİLİRLİK VE BELİRLİ BİR AMACA UYGUNLUK GARANTİSİ
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Yayın merkezinin noktasını seçin</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Çizginin ikinci noktasını seçin</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Yarıçapı düzenle</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Yarıçap:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formül sihirbazı</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Hesaplama</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Yayın merkezi:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Nokta - Yay ve Doğruyu Kesiştir</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Seçim</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Benzersiz ad</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Benzersiz bir ad seçin.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>1. satır noktası:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>2. satır noktası</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Adı:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Uzunluk</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Açı</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6145,6 +6238,14 @@ Do you want to save your changes?</translation>
         <translation>Resimleri ekleme veya değiştirme araçları.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Son ölçümler</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Son ölçümleri listele ve düzenle</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Eğri Üzerindeki Nokta (O, C)</translation>
     </message>
@@ -6227,6 +6328,10 @@ Do you want to save your changes?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Değişkenleri CSV&apos;ye Aktar</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Son ölçümleri CSV olarak dışa aktar</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6451,6 +6556,10 @@ Do you want to save your changes?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Taslak Bloğu:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Açıklama</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11872,45 +11981,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>İlk nokta</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>İkinci nokta</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>En yüksek nokta</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>En düşük nokta</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>En soldaki nokta</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>En sağdaki nokta</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Dikey eksen</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Yatay eksen</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Çizgi_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13179,14 +13249,6 @@ load in SeamlyME as usual.
         <translation>Parça</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>beyaz</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>fırçasız</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Parça oluşturma veya güncelleme hatası</translation>
     </message>
@@ -13307,13 +13369,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Yay - Yarıçap ve Uzunluk</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>İsim</translation>
     </message>
 </context>
 <context>
@@ -13725,6 +13780,38 @@ load in SeamlyME as usual.
         <translation>Seçim</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>İlk nokta</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>İkinci nokta</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>En yüksek nokta</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>En düşük nokta</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>En soldaki nokta</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>En sağdaki nokta</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Dikey eksen</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Yatay eksen</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Koordinatlar</translation>
     </message>
@@ -13978,21 +14065,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Yay ve Tanjantı Kesiştir</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Uzunluk</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Açı</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>İsim</translation>
     </message>
 </context>
 <context>
