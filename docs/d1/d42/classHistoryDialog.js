@@ -9,6 +9,7 @@ var classHistoryDialog =
     [ "closeEvent", "d1/d42/classHistoryDialog.html#a178863d999229d6cde015677f723750b", null ],
     [ "copyToClipboard", "d1/d42/classHistoryDialog.html#adf70d197c8be0e3ec11aaa93ba943d54", null ],
     [ "cursorChanged", "d1/d42/classHistoryDialog.html#a54a109da508652aa688c09ba4faed450", null ],
+    [ "cursorPositionChanged", "d1/d42/classHistoryDialog.html#af63fcfd5f682e67127bae782ed3a1afb", null ],
     [ "cursorRow", "d1/d42/classHistoryDialog.html#aa5f00566eff226515c1c918bfb280190", null ],
     [ "DialogAccepted", "d1/d42/classHistoryDialog.html#a54537dd3940bd74ecc849e4d5d15ff9c", null ],
     [ "eventFilter", "d1/d42/classHistoryDialog.html#a12f5f6f6367c572d0956842fa5452dd7", null ],
