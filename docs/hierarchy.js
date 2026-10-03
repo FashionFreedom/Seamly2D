@@ -665,6 +665,7 @@ var hierarchy =
       [ "TST_TSTranslation", "d9/dd4/classTST__TSTranslation.html", null ],
       [ "TST_VArc", "df/daf/classTST__VArc.html", null ],
       [ "TST_VCommandLine", "d0/dcb/classTST__VCommandLine.html", null ],
+      [ "TST_VContainer", "d8/d36/classTST__VContainer.html", null ],
       [ "TST_VCubicBezierPath", "de/d02/classTST__VCubicBezierPath.html", null ],
       [ "TST_VGObject", "d4/d53/classTST__VGObject.html", null ],
       [ "TST_VLockGuard", "d7/d69/classTST__VLockGuard.html", null ],

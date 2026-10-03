@@ -75,6 +75,7 @@ var classVAbstractPattern =
     [ "getPatternPieces", "d8/dba/classVAbstractPattern.html#a5626feae59a2250ab9e6eca4e0490f1e", null ],
     [ "GetPatternWasChanged", "d8/dba/classVAbstractPattern.html#a118ac5af1a3d6c9a6a51f09a735ad8c7", null ],
     [ "getTool", "d8/dba/classVAbstractPattern.html#aa4dad9c79b6f2e51c9939fd1721c1a0b", null ],
+    [ "getToolDraftBlockName", "d8/dba/classVAbstractPattern.html#a31f2eac3ab147332884bf6be86a1d120", null ],
     [ "GetVersion", "d8/dba/classVAbstractPattern.html#a803a7bda1d14671529af9234fd83f3f3", null ],
     [ "groupListByName", "d8/dba/classVAbstractPattern.html#a3272656a86be9cddacd787cf68fb236c", null ],
     [ "groupNameExists", "d8/dba/classVAbstractPattern.html#acfd14832746968dd45e6b036f5b526a4", null ],

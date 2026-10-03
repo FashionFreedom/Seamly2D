@@ -1,5 +1,7 @@
 var NAVTREEINDEX106 =
 {
+"d6/d0b/def_8cpp.html#aef3f59a3627dc21b5cfa06bf7fdde1c7":[4,0,0,1,8,5,70],
+"d6/d0b/def_8cpp.html#aefb6e31b0bee618cc6955ebc20972bc5":[4,0,0,1,8,5,105],
 "d6/d0b/def_8cpp.html#aefe6b40460d00dc478b9979427b51d25":[4,0,0,1,8,5,114],
 "d6/d0b/def_8cpp.html#af0523eb397a368f935f2dc75a79eaa8b":[4,0,0,1,8,5,83],
 "d6/d0b/def_8cpp.html#af49aeb9df96488d2b90dece1756b1d2c":[4,0,0,1,8,5,15],
@@ -19,10 +21,10 @@ var NAVTREEINDEX106 =
 "d6/d13/msvc_2include_2xercesc_2framework_2XMLDTDDescription_8hpp_source.html":[4,0,0,1,15,2,0,0,1,20],
 "d6/d13/vpropertyset_8h.html":[4,0,0,1,11,26],
 "d6/d13/vpropertyset_8h_source.html":[4,0,0,1,11,26],
-"d6/d15/structVFormulaField.html":[3,0,629],
-"d6/d15/structVFormulaField.html#a815fd1833f3496ac20ad69cef5465897":[3,0,629,1],
-"d6/d15/structVFormulaField.html#a956c5c7f4048e2077124af233083845f":[3,0,629,0],
-"d6/d15/structVFormulaField.html#ad91a1bdc8d51df07c2dcff235d2e9edf":[3,0,629,2],
+"d6/d15/structVFormulaField.html":[3,0,630],
+"d6/d15/structVFormulaField.html#a815fd1833f3496ac20ad69cef5465897":[3,0,630,1],
+"d6/d15/structVFormulaField.html#a956c5c7f4048e2077124af233083845f":[3,0,630,0],
+"d6/d15/structVFormulaField.html#ad91a1bdc8d51df07c2dcff235d2e9edf":[3,0,630,2],
 "d6/d16/mingw_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp.html":[4,0,0,1,15,1,0,0,6,72],
 "d6/d16/mingw_2include_2xercesc_2util_2UnsupportedEncodingException_8hpp_source.html":[4,0,0,1,15,1,0,0,6,72],
 "d6/d17/macx_2include_2xercesc_2util_2MsgLoaders_2InMemory_2InMemMsgLoader_8hpp.html":[4,0,0,1,15,0,0,0,6,1,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX106 =
 "d6/d1a/classMainWindow.html#ab0efcaf54da732a5a5c9a2badf4ec741":[3,0,343,214],
 "d6/d1a/classMainWindow.html#ab13069dc6f456d24fdf37ae387ddac9a":[3,0,343,205],
 "d6/d1a/classMainWindow.html#ab1ba0a358a671667e79ec0c1c20b2534":[3,0,343,160],
-"d6/d1a/classMainWindow.html#ab1d1483cff220f159430734dc4e6b03d":[3,0,343,102],
-"d6/d1a/classMainWindow.html#ab2270feda4250a465da06bd0c95f299d":[3,0,343,20],
-"d6/d1a/classMainWindow.html#ab35b2596cf2a9f22293be29054838c08":[3,0,343,76]
+"d6/d1a/classMainWindow.html#ab1d1483cff220f159430734dc4e6b03d":[3,0,343,102]
 };

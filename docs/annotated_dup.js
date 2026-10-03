@@ -595,6 +595,7 @@ var annotated_dup =
     [ "TST_VAbstractPiece", "d6/d89/classTST__VAbstractPiece.html", "d6/d89/classTST__VAbstractPiece" ],
     [ "TST_VArc", "df/daf/classTST__VArc.html", "df/daf/classTST__VArc" ],
     [ "TST_VCommandLine", "d0/dcb/classTST__VCommandLine.html", "d0/dcb/classTST__VCommandLine" ],
+    [ "TST_VContainer", "d8/d36/classTST__VContainer.html", "d8/d36/classTST__VContainer" ],
     [ "TST_VCubicBezierPath", "de/d02/classTST__VCubicBezierPath.html", "de/d02/classTST__VCubicBezierPath" ],
     [ "TST_VEllipticalArc", "d2/d9c/classTST__VEllipticalArc.html", "d2/d9c/classTST__VEllipticalArc" ],
     [ "TST_VGObject", "d4/d53/classTST__VGObject.html", "d4/d53/classTST__VGObject" ],

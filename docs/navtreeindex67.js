@@ -1,5 +1,7 @@
 var NAVTREEINDEX67 =
 {
+"d4/d11/vcommonsettings_8cpp.html#a3bf736ab8ae2283001044ca068104b2a":[4,0,0,1,8,17,141],
+"d4/d11/vcommonsettings_8cpp.html#a3c72e110e2b2c6ee2012fa2d61d1323e":[4,0,0,1,8,17,47],
 "d4/d11/vcommonsettings_8cpp.html#a3eba90d93a5512e1861186b5213ad531":[4,0,0,1,8,17,138],
 "d4/d11/vcommonsettings_8cpp.html#a400d4d80c42541aab7c2d1572ae4339e":[4,0,0,1,8,17,129],
 "d4/d11/vcommonsettings_8cpp.html#a4048016dc63639c6b0af9811199d387a":[4,0,0,1,8,17,82],
@@ -200,12 +202,12 @@ var NAVTREEINDEX67 =
 "d4/d16/msvc_2include_2xercesc_2util_2XMLDateTime_8hpp_source.html":[4,0,0,1,15,2,0,0,6,94],
 "d4/d16/namespaceanonymous__namespace_02vtextgraphicsitem_8cpp_03.html":[2,0,21],
 "d4/d16/namespaceanonymous__namespace_02vtextgraphicsitem_8cpp_03.html#ac6b26a0ea6e45c81110d6b48f997eee2":[2,0,21,0],
-"d4/d17/structWFElemStack_1_1StackElem.html":[3,0,780,0],
-"d4/d17/structWFElemStack_1_1StackElem.html#a384bfa62d0c155208bd39269887f06e5":[3,0,780,0,3],
-"d4/d17/structWFElemStack_1_1StackElem.html#a8b2afdb46d96421172fa31c69c20cb3f":[3,0,780,0,4],
-"d4/d17/structWFElemStack_1_1StackElem.html#a9c750379e2c43b37f186cf6be13ca6ce":[3,0,780,0,2],
-"d4/d17/structWFElemStack_1_1StackElem.html#ab3d9cb4ec5c8bb01ea2f457a2b65e28e":[3,0,780,0,1],
-"d4/d17/structWFElemStack_1_1StackElem.html#ae030aeb3bd80f2bf3c93fb9b79f7ded1":[3,0,780,0,0],
+"d4/d17/structWFElemStack_1_1StackElem.html":[3,0,781,0],
+"d4/d17/structWFElemStack_1_1StackElem.html#a384bfa62d0c155208bd39269887f06e5":[3,0,781,0,3],
+"d4/d17/structWFElemStack_1_1StackElem.html#a8b2afdb46d96421172fa31c69c20cb3f":[3,0,781,0,4],
+"d4/d17/structWFElemStack_1_1StackElem.html#a9c750379e2c43b37f186cf6be13ca6ce":[3,0,781,0,2],
+"d4/d17/structWFElemStack_1_1StackElem.html#ab3d9cb4ec5c8bb01ea2f457a2b65e28e":[3,0,781,0,1],
+"d4/d17/structWFElemStack_1_1StackElem.html#ae030aeb3bd80f2bf3c93fb9b79f7ded1":[3,0,781,0,0],
 "d4/d18/mingw_2include_2xercesc_2internal_2VecAttributesImpl_8hpp.html":[4,0,0,1,15,1,0,0,2,12],
 "d4/d18/mingw_2include_2xercesc_2internal_2VecAttributesImpl_8hpp_source.html":[4,0,0,1,15,1,0,0,2,12],
 "d4/d1a/classDialogCubicBezier.html":[3,0,103],
@@ -247,7 +249,5 @@ var NAVTREEINDEX67 =
 "d4/d1a/classDialogCubicBezier.html#afc9688afea0e2fe44e05ae9c3c9e3fba":[3,0,103,4],
 "d4/d1a/vundocommand_8cpp.html":[4,0,0,1,13,2,49],
 "d4/d1a/vundocommand_8cpp_source.html":[4,0,0,1,13,2,49],
-"d4/d1c/classReaderMgr.html":[3,0,434],
-"d4/d1c/classReaderMgr.html#a039b6b3e58fe098b264c7f14480de411":[3,0,434,163],
-"d4/d1c/classReaderMgr.html#a039b6b3e58fe098b264c7f14480de411":[3,0,434,162]
+"d4/d1c/classReaderMgr.html":[3,0,434]
 };

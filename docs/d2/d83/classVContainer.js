@@ -17,7 +17,7 @@ var classVContainer =
     [ "AllUniqueNames", "d2/d83/classVContainer.html#ab1207327782f49f561c9bdfac6c8d4c8", null ],
     [ "arcRadiusesData", "d2/d83/classVContainer.html#a0330c9b75cda9865431a323f46af4058", null ],
     [ "Clear", "d2/d83/classVContainer.html#a734cbfdf6f7b4f21ef303adf3af3ac21", null ],
-    [ "ClearCalculationGObjects", "d2/d83/classVContainer.html#a5971c5d060ff7f8e3ea3b4c2963b7476", null ],
+    [ "ClearCalculationGObjects", "d2/d83/classVContainer.html#a576d0f3d0c31fceec647a41e2d028451", null ],
     [ "ClearForFullParse", "d2/d83/classVContainer.html#add698bed8316b4cc17fc729c12d0ce6e", null ],
     [ "ClearGObjects", "d2/d83/classVContainer.html#a79fcff11cc02337a45d5823b6bd27fbf", null ],
     [ "ClearUniqueNames", "d2/d83/classVContainer.html#a33a7250ec0af542595c8f9a1ee1fe2c0", null ],
