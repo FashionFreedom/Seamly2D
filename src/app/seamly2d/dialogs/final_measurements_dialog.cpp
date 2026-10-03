@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogfinalmeasurements.cpp
+//  @file   final_measurements_dialog.cpp
 //
 //  @brief
 //  @copyright
@@ -22,8 +22,8 @@
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#include "dialogfinalmeasurements.h"
-#include "ui_dialogfinalmeasurements.h"
+#include "final_measurements_dialog.h"
+#include "ui_final_measurements_dialog.h"
 #include "../core/application_2d.h"
 #include "../core/vformulapropertyeditor.h"
 #include "../ifc/ifcdef.h"
@@ -55,9 +55,9 @@ enum FinalMeasurementsColumn
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogFinalMeasurements::DialogFinalMeasurements(VContainer *data, VPattern *doc, QWidget *parent)
+FinalMeasurementsDialog::FinalMeasurementsDialog(VContainer *data, VPattern *doc, QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::DialogFinalMeasurements)
+    , ui(new Ui::FinalMeasurementsDialog)
     , m_doc(doc)
     , m_evalData(*data)
     , m_measurements(doc->getFinalMeasurements())
@@ -83,25 +83,25 @@ DialogFinalMeasurements::DialogFinalMeasurements(VContainer *data, VPattern *doc
     ui->measurements_TableWidget->horizontalHeader()->setSectionResizeMode(ColumnFormula, QHeaderView::Stretch);
 
     connect(ui->measurements_TableWidget, &QTableWidget::itemSelectionChanged, this,
-            &DialogFinalMeasurements::showMeasurementDetails);
+            &FinalMeasurementsDialog::showMeasurementDetails);
     connect(ui->filter_LineEdit,           &QLineEdit::textChanged,    this,
-            &DialogFinalMeasurements::filterMeasurements);
-    connect(ui->add_ToolButton,            &QToolButton::clicked,      this, &DialogFinalMeasurements::addMeasurement);
+            &FinalMeasurementsDialog::filterMeasurements);
+    connect(ui->add_ToolButton,            &QToolButton::clicked,      this, &FinalMeasurementsDialog::addMeasurement);
     connect(ui->remove_ToolButton,         &QToolButton::clicked,      this,
-            &DialogFinalMeasurements::removeMeasurement);
-    connect(ui->moveUp_ToolButton,         &QToolButton::clicked,      this, &DialogFinalMeasurements::moveUp);
-    connect(ui->moveDown_ToolButton,       &QToolButton::clicked,      this, &DialogFinalMeasurements::moveDown);
-    connect(ui->name_LineEdit,             &QLineEdit::textEdited,     this, &DialogFinalMeasurements::validateName);
-    connect(ui->name_LineEdit,             &QLineEdit::editingFinished, this, &DialogFinalMeasurements::saveName);
+            &FinalMeasurementsDialog::removeMeasurement);
+    connect(ui->moveUp_ToolButton,         &QToolButton::clicked,      this, &FinalMeasurementsDialog::moveUp);
+    connect(ui->moveDown_ToolButton,       &QToolButton::clicked,      this, &FinalMeasurementsDialog::moveDown);
+    connect(ui->name_LineEdit,             &QLineEdit::textEdited,     this, &FinalMeasurementsDialog::validateName);
+    connect(ui->name_LineEdit,             &QLineEdit::editingFinished, this, &FinalMeasurementsDialog::saveName);
     connect(ui->description_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogFinalMeasurements::saveDescription);
-    connect(ui->formula_PlainTextEdit,     &QPlainTextEdit::textChanged, this, &DialogFinalMeasurements::saveFormula);
+            &FinalMeasurementsDialog::saveDescription);
+    connect(ui->formula_PlainTextEdit,     &QPlainTextEdit::textChanged, this, &FinalMeasurementsDialog::saveFormula);
     connect(m_formulaEditor, &VFormulaPropertyEditor::dataChangedByUser, this,
-            &DialogFinalMeasurements::saveFormulaFromEditor);
+            &FinalMeasurementsDialog::saveFormulaFromEditor);
     connect(ui->measurements_TableWidget->horizontalHeader(), &QHeaderView::sortIndicatorChanged, this,
-            &DialogFinalMeasurements::updateMoveButtons);
+            &FinalMeasurementsDialog::updateMoveButtons);
 
-    connect(m_doc, &VPattern::FullUpdateFromFile, this, &DialogFinalMeasurements::fullUpdateFromFile);
+    connect(m_doc, &VPattern::FullUpdateFromFile, this, &FinalMeasurementsDialog::fullUpdateFromFile);
     connect(m_doc, &VPattern::patternClosed,      this, [this](){ close(); });
 
     m_evalData = evaluationData(data, m_doc);
@@ -112,13 +112,13 @@ DialogFinalMeasurements::DialogFinalMeasurements(VContainer *data, VPattern *doc
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogFinalMeasurements::~DialogFinalMeasurements()
+FinalMeasurementsDialog::~FinalMeasurementsDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::closeEvent(QCloseEvent *event)
+void FinalMeasurementsDialog::closeEvent(QCloseEvent *event)
 {
     ui->name_LineEdit->blockSignals(true);
     ui->formula_PlainTextEdit->blockSignals(true);
@@ -129,7 +129,7 @@ void DialogFinalMeasurements::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::changeEvent(QEvent *event)
+void FinalMeasurementsDialog::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
@@ -140,7 +140,7 @@ void DialogFinalMeasurements::changeEvent(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::showEvent(QShowEvent *event)
+void FinalMeasurementsDialog::showEvent(QShowEvent *event)
 {
     QDialog::showEvent(event);
     if (event->spontaneous() || m_isInitialized)
@@ -158,7 +158,7 @@ void DialogFinalMeasurements::showEvent(QShowEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::resizeEvent(QResizeEvent *event)
+void FinalMeasurementsDialog::resizeEvent(QResizeEvent *event)
 {
     if (m_isInitialized)
     {
@@ -168,7 +168,7 @@ void DialogFinalMeasurements::resizeEvent(QResizeEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::showMeasurementDetails()
+void FinalMeasurementsDialog::showMeasurementDetails()
 {
     const int index = currentIndex();
     const bool hasSelection = index >= 0;
@@ -206,7 +206,7 @@ void DialogFinalMeasurements::showMeasurementDetails()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::filterMeasurements(const QString &filterString)
+void FinalMeasurementsDialog::filterMeasurements(const QString &filterString)
 {
     for (int row = 0; row < ui->measurements_TableWidget->rowCount(); ++row)
     {
@@ -221,7 +221,7 @@ void DialogFinalMeasurements::filterMeasurements(const QString &filterString)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::addMeasurement()
+void FinalMeasurementsDialog::addMeasurement()
 {
     VFinalMeasurement measurement;
     measurement.name = uniqueName();
@@ -239,7 +239,7 @@ void DialogFinalMeasurements::addMeasurement()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::removeMeasurement()
+void FinalMeasurementsDialog::removeMeasurement()
 {
     const int index = currentIndex();
     if (index < 0)
@@ -255,7 +255,7 @@ void DialogFinalMeasurements::removeMeasurement()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::moveUp()
+void FinalMeasurementsDialog::moveUp()
 {
     const int index = currentIndex();
     if (index <= 0)
@@ -271,7 +271,7 @@ void DialogFinalMeasurements::moveUp()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::moveDown()
+void FinalMeasurementsDialog::moveDown()
 {
     const int index = currentIndex();
     if (index < 0 || index >= m_measurements.size() - 1)
@@ -287,14 +287,14 @@ void DialogFinalMeasurements::moveDown()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::validateName(const QString &text)
+void FinalMeasurementsDialog::validateName(const QString &text)
 {
     const bool valid = isNameValid(text, currentIndex());
     ui->name_LineEdit->setStyleSheet(valid ? QString() : QStringLiteral("QLineEdit { color: red; }"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::saveName()
+void FinalMeasurementsDialog::saveName()
 {
     const int index = currentIndex();
     if (index < 0)
@@ -323,7 +323,7 @@ void DialogFinalMeasurements::saveName()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::saveDescription()
+void FinalMeasurementsDialog::saveDescription()
 {
     const int index = currentIndex();
     if (index < 0)
@@ -337,7 +337,7 @@ void DialogFinalMeasurements::saveDescription()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::saveFormula()
+void FinalMeasurementsDialog::saveFormula()
 {
     const int index = currentIndex();
     if (index < 0)
@@ -355,7 +355,7 @@ void DialogFinalMeasurements::saveFormula()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::saveFormulaFromEditor(const VFormula &formula)
+void FinalMeasurementsDialog::saveFormulaFromEditor(const VFormula &formula)
 {
     const int index = currentIndex();
     if (index < 0)
@@ -380,7 +380,7 @@ void DialogFinalMeasurements::saveFormulaFromEditor(const VFormula &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::fullUpdateFromFile()
+void FinalMeasurementsDialog::fullUpdateFromFile()
 {
     const int index = currentIndex();
 
@@ -396,7 +396,7 @@ void DialogFinalMeasurements::fullUpdateFromFile()
 /// to every object of the pattern: line lengths and angles, curve lengths and angles, custom variables, measurements,
 /// etc. Falls back to @p data when the history has no tool.
 //---------------------------------------------------------------------------------------------------------------------
-VContainer DialogFinalMeasurements::evaluationData(const VContainer *data, VPattern *doc)
+VContainer FinalMeasurementsDialog::evaluationData(const VContainer *data, VPattern *doc)
 {
     VContainer evalData(*data);
     const QVector<VToolRecord> *history = doc->getHistory();
@@ -423,7 +423,7 @@ VContainer DialogFinalMeasurements::evaluationData(const VContainer *data, VPatt
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::fillTable()
+void FinalMeasurementsDialog::fillTable()
 {
     QTableWidget *table = ui->measurements_TableWidget;
     const bool sortingEnabled = table->isSortingEnabled();
@@ -460,7 +460,7 @@ void DialogFinalMeasurements::fillTable()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::updateRow(int index)
+void FinalMeasurementsDialog::updateRow(int index)
 {
     const int row = rowForIndex(index);
     if (row < 0)
@@ -489,7 +489,7 @@ void DialogFinalMeasurements::updateRow(int index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int DialogFinalMeasurements::rowForIndex(int index) const
+int FinalMeasurementsDialog::rowForIndex(int index) const
 {
     const QTableWidget *table = ui->measurements_TableWidget;
     for (int row = 0; row < table->rowCount(); ++row)
@@ -504,7 +504,7 @@ int DialogFinalMeasurements::rowForIndex(int index) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int DialogFinalMeasurements::currentIndex() const
+int FinalMeasurementsDialog::currentIndex() const
 {
     const QTableWidget *table = ui->measurements_TableWidget;
     const int row = table->currentRow();
@@ -524,7 +524,7 @@ int DialogFinalMeasurements::currentIndex() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::selectIndex(int index)
+void FinalMeasurementsDialog::selectIndex(int index)
 {
     QTableWidget *table = ui->measurements_TableWidget;
     const int row = rowForIndex(index);
@@ -540,7 +540,7 @@ void DialogFinalMeasurements::selectIndex(int index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::enableDetails(bool enabled)
+void FinalMeasurementsDialog::enableDetails(bool enabled)
 {
     ui->name_LineEdit->setEnabled(enabled);
     ui->formulaEditor_Widget->setEnabled(enabled);
@@ -550,7 +550,7 @@ void DialogFinalMeasurements::enableDetails(bool enabled)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::updateMoveButtons()
+void FinalMeasurementsDialog::updateMoveButtons()
 {
     const int index = currentIndex();
     const bool isSorted = ui->measurements_TableWidget->horizontalHeader()->sortIndicatorSection() >= 0;
@@ -560,13 +560,13 @@ void DialogFinalMeasurements::updateMoveButtons()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFinalMeasurements::saveMeasurements()
+void FinalMeasurementsDialog::saveMeasurements()
 {
     m_doc->setFinalMeasurements(m_measurements);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogFinalMeasurements::isNameValid(const QString &name, int index) const
+bool FinalMeasurementsDialog::isNameValid(const QString &name, int index) const
 {
     if (name.isEmpty() || !QRegularExpression(QStringLiteral("^") + NameRegExp() + QStringLiteral("$")).match(name)
                                                                                                         .hasMatch())
@@ -590,7 +590,7 @@ bool DialogFinalMeasurements::isNameValid(const QString &name, int index) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogFinalMeasurements::uniqueName() const
+QString FinalMeasurementsDialog::uniqueName() const
 {
     int number = m_measurements.size() + 1;
     QString name;
@@ -603,7 +603,7 @@ QString DialogFinalMeasurements::uniqueName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VFormula DialogFinalMeasurements::makeFormula(const QString &formula)
+VFormula FinalMeasurementsDialog::makeFormula(const QString &formula)
 {
     VFormula result(formula, &m_evalData);
     result.setCheckZero(false);

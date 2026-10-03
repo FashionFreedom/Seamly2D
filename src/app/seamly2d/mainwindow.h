@@ -74,7 +74,7 @@ class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
-class DialogFinalMeasurements;
+class FinalMeasurementsDialog;
 class DialogTool;
 class HistoryDialog;
 class CalculatorDialog;
@@ -299,7 +299,7 @@ private:
     bool                              patternReadOnly;
 
     QPointer<DialogVariables>         dialogTable;
-    QPointer<DialogFinalMeasurements> dialogFinalMeasurements;
+    QPointer<FinalMeasurementsDialog> finalMeasurementsDialog;
     bool                              m_exportFinalMeasurements;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<HistoryDialog>           historyDialog;

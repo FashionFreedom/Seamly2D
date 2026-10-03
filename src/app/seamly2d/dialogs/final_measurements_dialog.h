@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------------------------------------------
-//  @file   dialogfinalmeasurements.h
+//  @file   final_measurements_dialog.h
 //
 //  @brief
 //  @copyright
@@ -22,8 +22,8 @@
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------------------------------------------------
 
-#ifndef DIALOG_FINAL_MEASUREMENTS_H
-#define DIALOG_FINAL_MEASUREMENTS_H
+#ifndef FINAL_MEASUREMENTS_DIALOG_H
+#define FINAL_MEASUREMENTS_DIALOG_H
 
 #include "../xml/vpattern.h"
 #include "../vpatterndb/vcontainer.h"
@@ -36,16 +36,16 @@ class VFormulaPropertyEditor;
 
 namespace Ui
 {
-    class DialogFinalMeasurements;
+    class FinalMeasurementsDialog;
 }
 
-class DialogFinalMeasurements : public QDialog
+class FinalMeasurementsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-                             DialogFinalMeasurements(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
-    virtual                 ~DialogFinalMeasurements();
+                             FinalMeasurementsDialog(VContainer *data, VPattern *doc, QWidget *parent = nullptr);
+    virtual                 ~FinalMeasurementsDialog();
 
     static VContainer        evaluationData(const VContainer *data, VPattern *doc);
 
@@ -73,8 +73,8 @@ private slots:
     void                     fullUpdateFromFile();
 
 private:
-    Q_DISABLE_COPY(DialogFinalMeasurements)
-    Ui::DialogFinalMeasurements *ui;
+    Q_DISABLE_COPY(FinalMeasurementsDialog)
+    Ui::FinalMeasurementsDialog *ui;
     VPattern                    *m_doc;
     VContainer                   m_evalData;
     QVector<VFinalMeasurement>   m_measurements;
@@ -94,4 +94,4 @@ private:
     VFormula                 makeFormula(const QString &formula);
 };
 
-#endif // DIALOG_FINAL_MEASUREMENTS_H
+#endif // FINAL_MEASUREMENTS_DIALOG_H

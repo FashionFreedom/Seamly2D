@@ -177,7 +177,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_changes(false)
     , patternReadOnly(false)
     , dialogTable(nullptr)
-    , dialogFinalMeasurements(nullptr)
+    , finalMeasurementsDialog(nullptr)
     , m_exportFinalMeasurements(false)
     , dialogTool()
     , historyDialog(nullptr)
@@ -2125,7 +2125,7 @@ void MainWindow::exportFinalMeasurementsToCSVData(const QString &fileName, const
         csv.setHeaderText(3, tr("Description"));
     }
 
-    const VContainer evalData = DialogFinalMeasurements::evaluationData(pattern, doc);
+    const VContainer evalData = FinalMeasurementsDialog::evaluationData(pattern, doc);
     const QVector<VFinalMeasurement> measurements = doc->getFinalMeasurements();
     for (int row = 0; row < measurements.size(); ++row)
     {
@@ -4557,9 +4557,9 @@ void MainWindow::FileClosedCorrect()
     {
         dialogTable->close();
     }
-    if (dialogFinalMeasurements)
+    if (finalMeasurementsDialog)
     {
-        dialogFinalMeasurements->close();
+        finalMeasurementsDialog->close();
     }
     if (historyDialog)
     {
@@ -6432,21 +6432,21 @@ void MainWindow::createActions()
     {
         if (checked)
         {
-            dialogFinalMeasurements = new DialogFinalMeasurements(pattern, doc, this);
-            connect(dialogFinalMeasurements.data(), &DialogFinalMeasurements::dialogClosed, this, [this]()
+            finalMeasurementsDialog = new FinalMeasurementsDialog(pattern, doc, this);
+            connect(finalMeasurementsDialog.data(), &FinalMeasurementsDialog::dialogClosed, this, [this]()
             {
                 ui->finalMeasurements_Action->setChecked(false);
-                if (dialogFinalMeasurements != nullptr)
+                if (finalMeasurementsDialog != nullptr)
                 {
-                    dialogFinalMeasurements->deleteLater();
+                    finalMeasurementsDialog->deleteLater();
                 }
             });
-            dialogFinalMeasurements->show();
+            finalMeasurementsDialog->show();
         }
         else
         {
             ui->finalMeasurements_Action->setChecked(true);
-            dialogFinalMeasurements->activateWindow();
+            finalMeasurementsDialog->activateWindow();
         }
     });
     connect(ui->exportVariablesToCSV_Action, &QAction::triggered, this, &MainWindow::handleExportToCSV);
