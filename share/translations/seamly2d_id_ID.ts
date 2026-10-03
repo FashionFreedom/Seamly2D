@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Koordinat pada lembar</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Koordinat</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Titik Dasar</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Pilihan</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nama yang unik</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Pilih nama yang unik.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Koordinat X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Koordinat Y:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nama:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { spasi: pra-bungkus; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>pilih titik tengah dari busur</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Pilih titik kedua dari garis</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Mengedit radius</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Radius:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Penyihir rumus</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Nilai</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Perhitungan</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Pusat busur:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Titik - Perpotongan Busur dan Garis</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Pilihan</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nama yang unik</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Pilih nama yang unik.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>titik baris ke-1:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>titik garis ke-2</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometri</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nama:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { spasi: pra-bungkus; }
     <message>
         <source>Lineweight:</source>
         <translation>Ketebalan garis:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nama:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Koordinat pada lembar</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Koordinat</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Titik Dasar</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Pilihan</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nama yang unik</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Pilih nama yang unik.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Koordinat X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Koordinat Y:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3903,6 +3843,77 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Pengukuran akhir</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Saring:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filter daftar berdasarkan kata kunci</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskripsi</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>rumus</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation> Pindahkan pengukuran akhir ke atas</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Pindahkan pengukuran akhir ke bawah</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Tambah pengukuran akhir</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Hapus pengukuran akhir</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detail</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nama:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Nama pengukuran akhir unik</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Rumus:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Deskripsi:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5036,6 +5047,88 @@ Program ini disediakan SEBAGAIMANA ADANYA TANPA JAMINAN DALAM BENTUK APA PUN, TE
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>pilih titik tengah dari busur</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Pilih titik kedua dari garis</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Mengedit radius</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Radius:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Penyihir rumus</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Perhitungan</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Pusat busur:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Titik - Perpotongan Busur dan Garis</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Pilihan</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nama yang unik</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Pilih nama yang unik.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>titik baris ke-1:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>titik garis ke-2</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nama:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>panjang</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>sudut</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6145,6 +6238,14 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Alat untuk memasukkan atau memodifikasi gambar.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Pengukuran akhir</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Daftar dan edit pengukuran akhir</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Titik pada Kurva (O, C)</translation>
     </message>
@@ -6227,6 +6328,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Ekspor Variabel ke CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Ekspor Pengukuran Akhir ke CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6451,6 +6556,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Blok Draf:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskripsi</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11872,45 +11981,6 @@ unggah ke SeamlyME seperti biasa.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>titik kedua</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Titik tertinggi</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Titik terendah</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Titik paling kiri</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Titik paling kanan</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Sumbu vertikal</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Sumbu horizontal</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Garis_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13179,14 +13249,6 @@ unggah ke SeamlyME seperti biasa.
         <translation>Potongan</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>putih</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>tanpa sikat</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Kesalahan saat membuat atau memperbarui bagian</translation>
     </message>
@@ -13307,13 +13369,6 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Busur - Jari-jari dan Panjang</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Nama</translation>
     </message>
 </context>
 <context>
@@ -13721,6 +13776,38 @@ unggah ke SeamlyME seperti biasa.
         <translation>Pilihan</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Titik pertama</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>titik kedua</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Titik tertinggi</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Titik terendah</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Titik paling kiri</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Titik paling kanan</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Sumbu vertikal</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Sumbu horizontal</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Koordinat</translation>
     </message>
@@ -13978,21 +14065,6 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Perpotongan Busur dan Garis Singgung</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>panjang</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>sudut</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nama</translation>
     </message>
 </context>
 <context>

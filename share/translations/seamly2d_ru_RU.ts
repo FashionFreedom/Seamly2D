@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Координаты на листе</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Координаты</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Базовая точка</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Выбрать</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Уникальное название</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Выберите уникальное название.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Координата X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Координата Y:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Выберите точку центра дуги</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Выберите вторую точку линии</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Редактировать радиус</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Радиус:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значение</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Расчёт</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Центр дуги:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Точка — Пересечения Дуги и Линии</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Выбрать</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Уникальное название</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Выберите уникальное название.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>1-я точка линии:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>2-ая точка линии</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Геометрия</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Название:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Толщина Линии:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Название:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Координаты на листе</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Координаты</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Базовая точка</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Выбрать</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Уникальное название</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Выберите уникальное название.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Координата X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Координата Y:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3907,6 +3847,77 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Финальные измерения</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Фильтр:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Фильтр списка по ключевому слову</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Формула</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Переместить финальное измерение вверх</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Переместить финальное измерение вниз</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Добавить финальное измерение</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Удалить финальное измерение</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Детали</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Уникальное имя финального измерения</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Значение:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Формула:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Описание:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5040,6 +5051,88 @@ Seamly2D — это бесплатное программное обеспече
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Выберите точку центра дуги</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Выберите вторую точку линии</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Редактировать радиус</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Радиус:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Расчёт</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Центр дуги:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Точка — Пересечения Дуги и Линии</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Выбрать</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Уникальное название</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Выберите уникальное название.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>1-я точка линии:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>2-ая точка линии</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Геометрия</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Длина</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Угол</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6145,6 +6238,14 @@ Do you want to save your changes?</source>
         <translation>Инструменты для вставки или изменения изображений.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Финальные измерения</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Список и редактирование финальных измерений</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Точка на кривой (O, C)</translation>
     </message>
@@ -6227,6 +6328,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Экспорт переменных в CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Экспорт финальных измерений в CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6451,6 +6556,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Draft Block:</source>
         <translation>Блок Чертежа:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11879,45 +11988,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Первая точка</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Вторая точка</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Самая высокая точка</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Самая низкая точка</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Самая левая точка</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Самая правая точка</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Вертикальные оси</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Горизонтальные оси</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Линия_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13186,14 +13256,6 @@ load in SeamlyME as usual.
         <translation>Деталь</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>Белый</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>нет кисти</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Ошибка создания или обновления детали</translation>
     </message>
@@ -13314,13 +13376,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Дуга - Радиус и Длина</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Название</translation>
     </message>
 </context>
 <context>
@@ -13732,6 +13787,38 @@ load in SeamlyME as usual.
         <translation>Выбрать</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Первая точка</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Вторая точка</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Самая высокая точка</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Самая низкая точка</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Самая левая точка</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Самая правая точка</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Вертикальная ось</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Горизонтальная ось</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Координаты</translation>
     </message>
@@ -13985,21 +14072,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Пересечение Дуги и Касательной</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Длина</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Угол</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Название</translation>
     </message>
 </context>
 <context>

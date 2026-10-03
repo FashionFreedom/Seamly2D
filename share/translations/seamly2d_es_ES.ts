@@ -367,6 +367,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Coordenadas en la hoja</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Coordenadas</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Punto básico</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selección</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nombre único</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Elija un nombre único.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Coordenada X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Coordenada Y:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nombre:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2315,73 +2361,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Seleccionar punto del centro del arco</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Selección segundo punto de línea</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Editar radio</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Radio:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Asistente de Fórmula</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valor</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Cálculo</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Centro del arco:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Punto - Intersección Arco y Línea</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selección</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nombre único</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Elija un nombre único.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Punto de primera línea:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>punto de la segunda línea</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometría</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nombre:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2625,45 +2604,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Grosor de línea:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nombre:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Coordenadas en la hoja</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Coordenadas</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Punto básico</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selección</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nombre único</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Elija un nombre único.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Coordenada X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Coordenada Y:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3507,7 +3447,7 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupo></translation>
+        <translation>Grupo&gt;</translation>
     </message>
 </context>
 <context>
@@ -3920,6 +3860,77 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
     <message>
         <source>Failed</source>
         <translation>Fallido</translation>
+    </message>
+</context>
+<context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Mediciones finales</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtrar:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Lista de filtros por palabra clave</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descripción</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Fórmula</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Mover medición final hacia arriba</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Mover medición final hacia abajo</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Añadir medición final</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Eliminar medición final</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detalles</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nombre:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Nombre único de medición final</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valor:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Fórmula:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descripción:</translation>
     </message>
 </context>
 <context>
@@ -5056,6 +5067,88 @@ El programa se proporciona TAL CUAL, SIN GARANTÍA DE NINGÚN TIPO, INCLUIDAS LA
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Seleccionar punto del centro del arco</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Selección segundo punto de línea</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Editar radio</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Radio:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistente de Fórmula</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Cálculo</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Centro del arco:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Punto - Intersección Arco y Línea</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selección</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nombre único</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Elija un nombre único.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Punto de primera línea:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>punto de la segunda línea</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometría</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nombre:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Longitud</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Ángulo</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6165,6 +6258,14 @@ Do you want to save your changes?</source>
         <translation>Herramientas para insertar o modificar imágenes.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Mediciones finales</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Listar y editar mediciones finales</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punto en Curva (O, C)</translation>
     </message>
@@ -6243,6 +6344,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Exportar Variables a formato CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Exportar mediciones finales a CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6467,6 +6572,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Draft Block:</source>
         <translation>Bolque de borrador:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descripción</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11912,45 +12021,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Primer punto</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Segundo punto</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Punto más alto</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Punto más bajo</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Punto más a la izquierda</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Punto más a la derecha</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Eje vertical</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Eje horizontal</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Línea_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13219,14 +13289,6 @@ load in SeamlyME as usual.
         <translation>Pieza</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>Blanco</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>sin cepillo</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Error al crear o actualizar la pieza</translation>
     </message>
@@ -13347,13 +13409,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Arco - Radio y Longitud</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Nombre</translation>
     </message>
 </context>
 <context>
@@ -13765,6 +13820,38 @@ load in SeamlyME as usual.
         <translation>Selección</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Primer punto</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Segundo punto</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Punto más alto</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Punto más bajo</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Punto más a la izquierda</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Punto más a la derecha</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Eje vertical</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Eje horizontal</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Coordenadas</translation>
     </message>
@@ -14018,21 +14105,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Intersección Arco y Tangente</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Longitud</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Ángulo</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nombre</translation>
     </message>
 </context>
 <context>

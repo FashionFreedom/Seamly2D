@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Base Point</source>
+        <translation>Punkt bazowy</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Wybór</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Imię:</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Unikalna nazwa</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Wybierz unikalną nazwę.</translation>
+    </message>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Współrzędne na arkuszu</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Współrzędne</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Współrzędna X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Współrzędna Y:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Imię</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt – Przecięcie łuku i linii</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Wybór</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Imię:</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Środek łuku:</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Pierwszy punkt linii:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>2. punkt linii</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometria</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Promień:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Wartość</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Kreator formuł</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Obliczanie</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Edytuj promień</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Wybierz drugi punkt linii</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Wybierz punkt środka łuku</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Point - Intersect Arcs</source>
@@ -2611,45 +2590,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select second point of line</source>
         <translation>Wybierz drugi punkt linii</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Base Point</source>
-        <translation>Punkt bazowy</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Wybór</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Imię:</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Unikalna nazwa</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Wybierz unikalną nazwę.</translation>
-    </message>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Współrzędne na arkuszu</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Współrzędne</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Współrzędna X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Współrzędna Y:</translation>
     </message>
 </context>
 <context>
@@ -3903,6 +3843,77 @@ Spróbuj cofnąć ostatnią operację lub naprawić uszkodzoną formułę.</tran
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Pomiary końcowe</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtr:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtruj listę według słowa kluczowego</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Imię</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Opis</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wartość</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formuła</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Przenieś pomiar końcowy w górę</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Przenieś pomiar końcowy w dół</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Dodaj pomiar końcowy</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Usuń pomiar końcowy</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Szczegóły</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Imię:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Unikalna nazwa pomiaru końcowego</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Wartość:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formuła:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Opis:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Error</source>
@@ -5036,6 +5047,88 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Punkt – Przecięcie łuku i linii</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Wybór</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Imię:</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Unikalna nazwa</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Wybierz unikalną nazwę.</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Środek łuku:</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Pierwszy punkt linii:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>2. punkt linii</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Promień:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wartość</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kreator formuł</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Obliczanie</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Edytuj promień</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Wybierz drugi punkt linii</translation>
+    </message>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Wybierz punkt środka łuku</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Długość</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Kąt</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Imię</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
@@ -5883,6 +5976,14 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>Zawiera informacje o zmiennych niestandardowych i wewnętrznych</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Pomiary końcowe</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Lista i edycja pomiarów końcowych</translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tryb tworzenia układu elementów wzoru. Ten tryb jest dostępny, jeśli co najmniej jeden element wzoru został utworzony w trybie&quot;Części.&quot; Układ można wyeksportować do preferowanego formatu pliku i zapisać.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -6273,6 +6374,10 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     <message>
         <source>Export Variables to CSV</source>
         <translation>Eksportuj zmienne do pliku CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Eksportuj pomiary końcowe do CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6773,6 +6878,10 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
     <message>
         <source>untitled</source>
         <translation>bez tytułu</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Opis</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -11871,45 +11980,6 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>Line_</source>
-        <translation>Linia_</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation>Pierwszy punkt</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Drugi punkt</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Najwyższy punkt</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Najniższy punkt</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Punkt najbardziej wysunięty na lewo</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Punkt najbardziej wysunięty na prawo</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Oś pionowa</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Oś pozioma</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -12982,14 +13052,6 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Kawałek</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>biały</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>bezszczotkowy</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Błąd podczas tworzenia lub aktualizowania elementu</translation>
     </message>
@@ -13309,13 +13371,6 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
 </context>
 <context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Imię</translation>
-    </message>
-</context>
-<context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
@@ -13530,6 +13585,38 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Center point</source>
         <translation>Punkt środkowy</translation>
+    </message>
+    <message>
+        <source>First point</source>
+        <translation>Pierwszy punkt</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Drugi punkt</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Najwyższy punkt</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Najniższy punkt</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Punkt najbardziej wysunięty na lewo</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Punkt najbardziej wysunięty na prawo</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Oś pionowa</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Oś pozioma</translation>
     </message>
     <message>
         <source>Base point</source>
@@ -13977,21 +14064,6 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Przecięcie łuku i stycznej</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Długość</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Kąt</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Imię</translation>
     </message>
 </context>
 <context>
