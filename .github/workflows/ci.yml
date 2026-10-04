@@ -357,7 +357,8 @@ jobs:
           if-no-files-found: error
 
       - name: Explain how to test the PR installer
-        if: github.event_name == 'pull_request'
+        # Write the summary once, for the x64 build only.
+        if: github.event_name == 'pull_request' && matrix.msvc-arch == 'x64'
         shell: pwsh
         env:
           ARTIFACT_URL: ${{ steps.upload-windows.outputs.artifact-url }}
