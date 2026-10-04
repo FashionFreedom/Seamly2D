@@ -324,6 +324,9 @@ protected:
 
 private:
     void             FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
+    QSet<quint32>    toolIdsAfterCursor() const;
+    bool             isAfterCursor(const QSet<quint32> &future_tool_ids, quint32 id,
+                                   const QSharedPointer<VGObject> &obj) const;
 
     template <typename T>
     void             PrepareList(QMap<QString, quint32> &list, quint32 id) const;

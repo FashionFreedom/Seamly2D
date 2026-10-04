@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Координати на листі</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Координати</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Базова точка</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Μοναδικό όνομα</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Συντεταγμένη Χ:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Συντεταγμένη Υ:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>όνομα</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -859,7 +905,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -990,7 +1036,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Виберіть точку центру дуги</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Виберіть другу точку лінії</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Редагувати радіус</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Радіус:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значення</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Розрахунок</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Центер дуги:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Σημείο 1ης γραμμής:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>Σημείο 2ης γραμμής</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2614,45 +2593,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Координати на листі</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Координати</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Базова точка</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Συντεταγμένη Χ:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Συντεταγμένη Υ:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-</context>
-<context>
     <name>DialogSpline</name>
     <message>
         <source>First point</source>
@@ -2684,7 +2624,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>Invalid spline</source>
@@ -2835,7 +2775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
@@ -3204,7 +3144,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Φόρμουλα:</translation>
+        <translation>Формула:</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -3364,7 +3304,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Φόρμουλα:</translation>
+        <translation>Формула:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3902,6 +3842,77 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>Failed</source>
         <translation>Не вдалося</translation>
+    </message>
+</context>
+<context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Фінальні вимірювання</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Φίλτρο:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Φιλιτροποιήστε τον κατάλογο για το κλειδί λέξης</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Фінальні вимірювання</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Φόρμουλα</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Перемістити фінальне вимірювання вгору</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Перемістити фінальне вимірювання вниз</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Додати фінальне вимірювання</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Видалити фінальне вимірювання</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Деталь</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Унікальна назва фінального вимірювання</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Значення:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Формула:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Опис:</translation>
     </message>
 </context>
 <context>
@@ -5038,6 +5049,88 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Виберіть точку центру дуги</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Виберіть другу точку лінії</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Редагувати радіус</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Радіус:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Розрахунок</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Центер дуги:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Μοναδικό όνομα</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Σημείο 1ης γραμμής:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>Σημείο 2ης γραμμής</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Γεωμετρία</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Довжина</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Κούτ</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>όνομα</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6146,6 +6239,14 @@ Do you want to save your changes?</source>
         <translation>Εργαλεία για την εισαγωγή ή την τροποποίηση εικόνων.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Фінальні вимірювання</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Список та редагування фінальних вимірювань</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Σημείο στην καμπύλη (O, C)</translation>
     </message>
@@ -6228,6 +6329,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Εξαγωγή μεταβλητών σε CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Експорт фінальних вимірювань у CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6452,6 +6557,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Draft Block:</source>
         <translation>Μπλοκ προσχέδιου:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11230,7 +11339,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -11870,45 +11979,6 @@ load in SeamlyME as usual.
     <message>
         <source>Unlocked</source>
         <translation>Ξεκλείδωτο</translation>
-    </message>
-</context>
-<context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Перша точка</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Друга точка</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Найвища σημείο</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Најнища точка</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Sama lіva point</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Σημεία δικαιωμάτων</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Verticalьna ісь</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Gorizontalьna вісь</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Лінія_</translation>
     </message>
 </context>
 <context>
@@ -12805,7 +12875,7 @@ load in SeamlyME as usual.
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Φόρμουλα:</translation>
+        <translation>Формула:</translation>
     </message>
 </context>
 <context>
@@ -13179,14 +13249,6 @@ load in SeamlyME as usual.
         <translation>Κομμάτι</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>λευκό</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>χωρίς βούρτσα</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση του κομματιού</translation>
     </message>
@@ -13307,13 +13369,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Τόξο - Ακτίνα και Μήκος</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>όνομα</translation>
     </message>
 </context>
 <context>
@@ -13650,7 +13705,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Name:</source>
-        <translation>Імя:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>C1: angle:</source>
@@ -13723,6 +13778,38 @@ load in SeamlyME as usual.
     <message>
         <source>Selection</source>
         <translation>Επιλογή</translation>
+    </message>
+    <message>
+        <source>First point</source>
+        <translation>Перша точка</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Друга точка</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Найвища точка</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Найнища точка</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Сама ліва точка</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Сама права точка</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Verticalьna ісь</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Gorizontalьna вісь</translation>
     </message>
     <message>
         <source>Coordinates</source>
@@ -13978,21 +14065,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Τομή Τόξου και Εφαπτομένης</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Довжина</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Κούτ</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>όνομα</translation>
     </message>
 </context>
 <context>

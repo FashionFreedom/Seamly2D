@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Souřadnice na listu</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Souřadnice</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Základní bod</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Výběr</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Jedinečný název</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Vyberte jedinečný název.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Souřadnice X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Souřadnice Y:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Název:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Vybrat bod středu oblouku</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Vybrat druhý bod čáry</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Upravit poloměr</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Poloměr:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Průvodce vzorci</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Hodnota</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Výpočet</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Střed oblouku:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Bod – Průsečík oblouku a přímky</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Výběr</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Jedinečný název</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Vyberte jedinečný název.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Bod prvního řádku:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>Bod 2. řádku</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Název:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Tloušťka čáry:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Název:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Souřadnice na listu</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Souřadnice</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Základní bod</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Výběr</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Jedinečný název</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Vyberte jedinečný název.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Souřadnice X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Souřadnice Y:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3903,6 +3843,77 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Finální měření</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtr:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtrovat seznam podle klíčového slova</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Vzorec</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Posunout finální měření nahoru</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Posunout finální měření dolů</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Přidat finální měření</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Odstranit finální měření</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Podrobně</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Název:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Unikátní název finálního měření</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Vzorec:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Popis:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5034,6 +5045,88 @@ Program je poskytován TAK, JAK JE, BEZ JAKÉKOLI ZÁRUKY, VČETNĚ ZÁRUKY DESI
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Vybrat bod středu oblouku</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Vybrat druhý bod čáry</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Upravit poloměr</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Poloměr:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Průvodce vzorci</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Výpočet</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Střed oblouku:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Bod – Průsečík oblouku a přímky</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Výběr</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Jedinečný název</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Vyberte jedinečný název.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Bod prvního řádku:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>Bod 2. řádku</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Název:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Délka</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Úhel</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6143,6 +6236,14 @@ Chcete uložit své změny?</translation>
         <translation>Nástroje pro vkládání nebo úpravu obrázků.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Finální měření</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Seznam a úprava finálních měření</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Bod na křivce (O, C)</translation>
     </message>
@@ -6225,6 +6326,10 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Exportovat proměnné do CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Exportovat finální měření do CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6449,6 +6554,10 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Blok konceptu:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11870,45 +11979,6 @@ SeamlyME jako obvykle.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>První bod</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Druhý bod</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Nejvyšší bod</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Nejnižší bod</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Bod úplně vlevo</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Bod úplně vpravo</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Svislá osa</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Vodorovná osa</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Čára_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13177,14 +13247,6 @@ SeamlyME jako obvykle.
         <translation>Kus</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>bílá</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>bez kartáče</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Chyba při vytváření nebo aktualizaci díla</translation>
     </message>
@@ -13305,13 +13367,6 @@ SeamlyME jako obvykle.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Oblouk – poloměr a délka</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Název</translation>
     </message>
 </context>
 <context>
@@ -13719,6 +13774,38 @@ SeamlyME jako obvykle.
         <translation>Výběr</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>První bod</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Druhý bod</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Nejvyšší bod</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Nejnižší bod</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Bod úplně vlevo</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Bod úplně vpravo</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Svislá osa</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Vodorovná osa</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Souřadnice</translation>
     </message>
@@ -13976,21 +14063,6 @@ SeamlyME jako obvykle.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Protíná oblouk a tečnu</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Délka</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Úhel</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Název</translation>
     </message>
 </context>
 <context>

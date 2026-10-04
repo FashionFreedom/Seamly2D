@@ -98,6 +98,13 @@ struct VFormulaField
     QString     attribute;
 };
 
+struct VFinalMeasurement
+{
+    QString name;
+    QString formula;
+    QString description;
+};
+
 struct GroupAttributes
 {
    QString  name;
@@ -120,6 +127,10 @@ public:
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
     QVector<VFormulaField>         listVariableExpressions() const;
+    QVector<VFormulaField>         listFinalMeasurementExpressions() const;
+
+    QVector<VFinalMeasurement>     getFinalMeasurements() const;
+    void                           setFinalMeasurements(const QVector<VFinalMeasurement> &measurements);
     bool                           isVariableUsed(const QStringList &variable_names) const;
 
     virtual void                   CreateEmptyFile()=0;
@@ -167,6 +178,7 @@ public:
 
     QVector<VToolRecord>          *getHistory();
     QVector<VToolRecord>           getBlockHistory() const;
+    QString                        getToolDraftBlockName(quint32 id) const;
     QMap<quint32, Tool>            getGroupObjHistory() const;
 
     QString                        MPath() const;
@@ -296,6 +308,8 @@ public:
     static const QString TagMeasurements;
     static const QString TagVariables;
     static const QString TagVariable;
+    static const QString TagFinalMeasurements;
+    static const QString TagFinalMeasurement;
     static const QString TagDraftBlock;
     static const QString TagGroups;
     static const QString TagGroup;

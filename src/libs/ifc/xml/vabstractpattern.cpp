@@ -96,6 +96,8 @@ const QString VAbstractPattern::TagImage                = QStringLiteral("image"
 const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
 const QString VAbstractPattern::TagVariables            = QStringLiteral("variables");
 const QString VAbstractPattern::TagVariable             = QStringLiteral("variable");
+const QString VAbstractPattern::TagFinalMeasurements    = QStringLiteral("finalMeasurements");
+const QString VAbstractPattern::TagFinalMeasurement     = QStringLiteral("finalMeasurement");
 const QString VAbstractPattern::TagDraftBlock           = QStringLiteral("draftBlock");
 const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
 const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
@@ -882,6 +884,24 @@ QVector<VToolRecord> VAbstractPattern::getBlockHistory() const
         draftBlockHistory.append(tool);
     }
     return draftBlockHistory;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getToolDraftBlockName return the draft block a tool was created in, by its history id.
+ * @param id tool id, e.g. VGObject::getIdTool() for one of its created objects.
+ * @return draft block name, or an empty string if no history entry has this id.
+ */
+QString VAbstractPattern::getToolDraftBlockName(quint32 id) const
+{
+    for (qint32 i = 0; i < m_history.size(); ++i)
+    {
+        if (m_history.at(i).getId() == id)
+        {
+            return m_history.at(i).getDraftBlockName();
+        }
+    }
+    return QString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1857,6 +1877,7 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
     list << ListElArcExpressions();
     list << ListSplineExpressions();
     list << listVariableExpressions();
+    list << listFinalMeasurementExpressions();
     list << ListOperationExpressions();
     list << ListPathExpressions();
     list << ListPieceExpressions();
@@ -2042,6 +2063,100 @@ QVector<VFormulaField> VAbstractPattern::listVariableExpressions() const
     }
 
     return expressions;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<VFormulaField> VAbstractPattern::listFinalMeasurementExpressions() const
+{
+    QVector<VFormulaField> expressions;
+    const QDomNodeList list = elementsByTagName(TagFinalMeasurement);
+    for (int i=0; i < list.size(); ++i)
+    {
+        const QDomElement dom = list.at(i).toElement();
+
+        ReadExpressionAttribute(expressions, dom, VariableFormula);
+    }
+
+    return expressions;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<VFinalMeasurement> VAbstractPattern::getFinalMeasurements() const
+{
+    QVector<VFinalMeasurement> measurements;
+    const QDomNodeList list = elementsByTagName(TagFinalMeasurement);
+    for (int i=0; i < list.size(); ++i)
+    {
+        const QDomElement dom = list.at(i).toElement();
+        if (dom.isNull())
+        {
+            continue;
+        }
+
+        VFinalMeasurement measurement;
+        measurement.name = dom.attribute(VariableName).simplified();
+        measurement.formula = dom.attribute(VariableFormula, QStringLiteral("0"));
+        measurement.description = dom.attribute(VariableDescription);
+        measurements.append(measurement);
+    }
+
+    return measurements;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setFinalMeasurements(const QVector<VFinalMeasurement> &measurements)
+{
+    QDomElement pattern = documentElement();
+    QDomElement element = pattern.firstChildElement(TagFinalMeasurements);
+
+    if (measurements.isEmpty())
+    {
+        if (!element.isNull())
+        {
+            pattern.removeChild(element);
+        }
+    }
+    else
+    {
+        if (element.isNull())
+        {
+            element = createElement(TagFinalMeasurements);
+
+            QDomElement sibling = pattern.firstChildElement(TagVariables);
+            if (sibling.isNull())
+            {
+                sibling = pattern.firstChildElement(TagMeasurements);
+            }
+
+            if (sibling.isNull())
+            {
+                pattern.insertBefore(element, pattern.firstChildElement(TagDraftBlock));
+            }
+            else
+            {
+                pattern.insertAfter(element, sibling);
+            }
+        }
+        else
+        {
+            RemoveAllChildren(element);
+        }
+
+        for (const VFinalMeasurement &measurement : measurements)
+        {
+            QDomElement tag = createElement(TagFinalMeasurement);
+            SetAttribute(tag, VariableName, measurement.name);
+            SetAttribute(tag, VariableFormula, measurement.formula);
+            if (!measurement.description.isEmpty())
+            {
+                SetAttribute(tag, VariableDescription, measurement.description);
+            }
+            element.appendChild(tag);
+        }
+    }
+
+    modified = true;
+    emit patternChanged(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Coordinaten op het blad</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Coordinaten</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Basis Punt</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selectie</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Unieke naam</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>X coordinaat:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Y coordinaat:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2282,73 +2328,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Selecteer middelste punt van boog</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Selecteer tweede punt van lijn</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Verander straal</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Straal:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formule wizard</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Waarde</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Berekening</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Midden van de boog:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Punt - Snijpunt Boog en Lijn</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Unieke naam</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Kies unieke naam.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>eerste lijnpunt:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>tweede lijnpunt</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2592,45 +2571,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Coordinaten op het blad</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Coordinaten</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Basis Punt</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Unieke naam</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Kies unieke naam.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>X coordinaat:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Y coordinaat:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3888,6 +3828,77 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Eindmetingen</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filter:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filter de lijst met een sleutelwoord</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formule</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Eindmeting omhoog verplaatsen</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Eindmeting omlaag verplaatsen</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Eindmeting toevoegen</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Eindmeting verwijderen</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Unieke naam eindmeting</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Waarde:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formule:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Beschrijving:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5019,6 +5030,88 @@ Het programma wordt geleverd in de staat waarin het zich bevindt, zonder enige g
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Selecteer middelste punt van boog</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Selecteer tweede punt van lijn</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Verander straal</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Straal:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formule wizard</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Berekening</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Midden van de boog:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Punt - Snijpunt Boog en Lijn</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selectie</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Unieke naam</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>eerste lijnpunt:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>tweede lijnpunt</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Lengte</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Hoek</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6128,6 +6221,14 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Hulpmiddelen voor het invoegen of wijzigen van afbeeldingen.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Eindmetingen</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Eindmetingen weergeven en bewerken</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punt op de curve (O, C)</translation>
     </message>
@@ -6210,6 +6311,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Exporteer Variabelen naar CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Eindmetingen exporteren naar CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6434,6 +6539,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Tekenblok:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11854,45 +11963,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Eerste punt</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Tweede punt</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Hoogste punt</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Laagste punt</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Uiterst linkerpunt</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Uiterst rechterpunt</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Verticale as</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Horizontale as</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Lijn_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13161,14 +13231,6 @@ load in SeamlyME as usual.
         <translation>Patroondeel</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>wit</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>nobrush</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Fout bij het maken of bijwerken van een patroondeel</translation>
     </message>
@@ -13289,13 +13351,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Boog - Straal en Lengte</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Naam</translation>
     </message>
 </context>
 <context>
@@ -13707,6 +13762,38 @@ load in SeamlyME as usual.
         <translation>Selectie</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Eerste punt</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Tweede punt</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Hoogste punt</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Laagste punt</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Uiterst linkerpunt</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Uiterst rechterpunt</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Verticale as</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Horizontale as</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Coordinaten</translation>
     </message>
@@ -13960,21 +14047,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Snijpunt Boog en Raaklijn</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Lengte</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Hoek</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Naam</translation>
     </message>
 </context>
 <context>
