@@ -300,40 +300,6 @@ jobs:
         run: |
           Get-AuthenticodeSignature windows-build\Seamly2D-installer.exe
 
-      - name: Include PR testing instructions and build details
-        if: github.event_name == 'pull_request'
-        shell: pwsh
-        env:
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          BUILD_ARCH: ${{ matrix.msvc-arch }}
-        run: |
-          $ErrorActionPreference = 'Stop'
-          $builtSha = (git rev-parse HEAD).Trim()
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          $runUrl = "$env:GITHUB_SERVER_URL/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID"
-          Copy-Item .github\workflows\PR_INTEGRATION_TESTING.md windows-build\TESTING.md
-          Copy-Item src\app\share\samples windows-build\samples -Recurse
-          @"
-          SEAMLY PR TEST BUILD — NOT A PRODUCTION RELEASE
-          PR: #$env:PR_NUMBER
-          PR head SHA: $env:PR_HEAD_SHA
-          PR base SHA: $env:PR_BASE_SHA
-          Built PR merge SHA: $builtSha
-          Version: $env:VERSION_NUMBER
-          Architecture: $env:BUILD_ARCH
-          Workflow run: $runUrl
-          Run attempt: $env:GITHUB_RUN_ATTEMPT
-          Built UTC: $([DateTime]::UtcNow.ToString('o'))
-
-          Test on a separate computer or VM using copies of sample files.
-          The standard installer may replace an existing installation and share settings.
-          Record these build details, OS/version, results, and screenshots in the PR.
-          "@ | Set-Content windows-build\BUILD-INFO.txt -Encoding utf8
-          $hash = (Get-FileHash windows-build\Seamly2D-installer.exe -Algorithm SHA256).Hash
-          "$hash  Seamly2D-installer.exe" | Set-Content windows-build\SHA256SUMS.txt -Encoding ascii
-
       - name: pack installer file into .zip
         shell: pwsh
         env:
@@ -367,11 +333,17 @@ jobs:
           @"
           ## PR integration testing: $env:ARTIFACT_NAME
           [Download this Windows test build]($env:ARTIFACT_URL).
-          GitHub sign-in and repository read access are required.
-          Extract the artifact ZIP, then the installer ZIP inside it.
-          Read BUILD-INFO.txt and TESTING.md; use a separate test computer or VM.
+          Extract the artifact ZIP, extract the installer ZIP inside it, run the installer
+          Before merge approval:
+          - Run the app, open patterns from src\app\share\samples\patterns
+          - Verify the fix; capture screenshots.
+          - Verify larger workflow is unaffected:
+            - Create/Edit objects: points, lines, curves, and arcs
+            - Create/Edit operations:  mirror/move/rotate/true darts 
+            - Create/Edit pieces; 
+            - Create/Export layouts.
+            - Save, close, reopen; check geometry and dependencies.
           Post results, build details, OS/version, and screenshots in the PR.
-          A successful build does not mean human integration testing passed.
           "@ >> $env:GITHUB_STEP_SUMMARY
 
   publish:
