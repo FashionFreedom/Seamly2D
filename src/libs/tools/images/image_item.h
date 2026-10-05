@@ -1,29 +1,28 @@
-/******************************************************************************
- **  @file   image_item.h
- **  @author DS Caskey
- **  @date   May 29, 2022
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+//-----------------------------------------------------------------------------
+//  @file   image_item.h
+//  @author Douglas S Caskey
+//  @date   29 May, 2022
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//-----------------------------------------------------------------------------
 
 #ifndef IMAGE_ITEM_H
 #define IMAGE_ITEM_H
@@ -44,9 +43,6 @@
 
 class ResizeHandlesItem;
 
-/**
- * @brief The ImageItem class pointer label.
- */
 class ImageItem : public QObject, public QGraphicsItem
 {
     Q_OBJECT
@@ -64,7 +60,7 @@ public:
     virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                            QWidget *widget = nullptr) override;
 
-    static constexpr qint32      maxImageZvalue = -100;
+    static constexpr qint32  max_z_value = -100;
 
     void             moveToBottom();
     void             moveToTop();
@@ -74,7 +70,7 @@ public:
 
     DraftImage       getImage();
     void             setImage(DraftImage image);
-    void             setOrigin(qreal xOrigin, qreal yOrigin);
+    void             setOrigin(qreal x_origin, qreal y_origin);
     void             updateImage();
     void             updateImageAndHandles(DraftImage image);
 
@@ -106,27 +102,27 @@ private:
     VAbstractPattern  *m_doc;
     QPointF            m_offset;
     QPointF            m_origin;
-    QRectF             m_boundingRect;
-    QRectF             m_handleRect;
-    QRectF             m_actualRect;
-    ResizeHandlesItem *m_resizeHandles;
-    Position           m_resizePosition;
-    QLineF             m_rotateLine;
-    QPolygonF          m_angleHandle;
+    QRectF             m_bounding_rect;
+    QRectF             m_handle_rect;
+    QRectF             m_actual_rect;
+    ResizeHandlesItem *m_resize_handles;
+    Position           m_resize_position;
+    QLineF             m_rotate_line;
+    QPolygonF          m_handle_angle;
     qreal              m_angle;
-    bool               m_mousePressed;
-    bool               m_isHovered;
-    SelectionType      m_selectionType;
-    bool               m_transformationMode;
+    bool               m_mouse_pressed;
+    bool               m_is_hovered;
+    SelectionType      m_selection_type;
+    bool               m_transformation_mode;
     DraftImage         m_image;
     QPixmap            m_pixmap;
-    qreal              m_pixmapWidth;
-    qreal              m_pixmapHeight;
+    qreal              m_pixmap_width;
+    qreal              m_pixmap_height;
     bool               m_selectable;
-    qreal              m_minDimension;
-    qreal              m_maxDimension;
-    bool               m_selectNewOrigin;
-    bool               m_imageWasMoved;
+    qreal              m_min_dimension;
+    qreal              m_max_dimension;
+    bool               m_select_new_origin;
+    bool               m_image_was_moved;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);
