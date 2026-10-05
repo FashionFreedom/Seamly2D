@@ -3144,7 +3144,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -3302,7 +3302,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3314,11 +3314,11 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Tyhjennä matemaattinenkaava</translation>
+        <translation>Tyhjennä matemaattinen kaava</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Palauta alkuperäinen matemaattinenkaava</translation>
+        <translation>Palauta alkuperäinen matemaattinen kaava</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
@@ -3898,7 +3898,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Unique final measurement name</source>
-        <translation>Ainutlaatuinen lopullisen mittauksen nimi</translation>
+        <translation>Yksilöllinen lopullisen mittauksen nimi</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -3906,7 +3906,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -6239,7 +6239,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Final measurements</source>
-        <translation>Lopulliset mittaukse</translation>
+        <translation>Lopulliset mittaukset</translation>
     </message>
     <message>
         <source>List and edit final measurements</source>
@@ -8291,7 +8291,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Jokaisen polun pisteen on oltava ainutlaatuinen!</translation>
+        <translation>Jokaisen polun pisteen on oltava yksilöllinen!</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -9397,7 +9397,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Tyhjennä matemaattinenkaava automaattisesti</translation>
+        <translation>Tyhjennä matemaattinen kaava automaattisesti</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
@@ -12875,7 +12875,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
 </context>
 <context>
@@ -13617,7 +13617,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Vaakasuora akseli</translation>
+        <translation>Vaakasuora-akseli</translation>
     </message>
     <message>
         <source>Base point</source>
