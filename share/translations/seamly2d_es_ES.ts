@@ -7146,8 +7146,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Herramienta::Spline - Fijo:&lt;/b&gt; Seleccione el primer punto de la spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Herramienta::Punto - En Curva:&lt;/b&gt; Seleccione el primer punto de la curva</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Herramienta::Punto - En Curva:&lt;/b&gt; Seleccione la curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
@@ -7159,7 +7159,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Intersección Curva y Eje:&lt;/b&gt; Seleccione la  curva</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Curva y Eje:&lt;/b&gt; Seleccione la curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>

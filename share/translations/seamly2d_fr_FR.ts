@@ -7150,8 +7150,8 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>&lt;b&gt;Outil::Spline - Fixe :&lt;/b&gt; Sélectionner le premier point de la spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Outil::Point - Sur la courbe :&lt;/b&gt; Sélectionner le premier point de la courbe</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Outil::Point - Sur la courbe :&lt;/b&gt; Sélectionner la courbe</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
