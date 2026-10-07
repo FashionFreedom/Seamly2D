@@ -764,7 +764,18 @@ void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bo
         item->setData(Qt::UserRole, QVariant::fromValue(node));
         item->setIcon(QIcon(info.icon));
         listWidget->addItem(item);
-        listWidget->setCurrentRow(listWidget->count()-1);
+
+        if (listWidget->count() == 1)
+        {
+            listWidget->setCurrentRow(0);
+            listWidget->clearSelection(); // Strip the selection so it doesn't open gray
+        }
+        else
+        {
+            // For subsequent items, make sure the MultiSelection mode
+            // doesn't automatically select them as they are appended
+            item->setSelected(false);
+        }
     }
 }
 
