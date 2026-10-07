@@ -57,21 +57,21 @@ var sectionId = 'dynsection-1';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="The ImageItem class pointer label.">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="222,-0.5 222,-420.5 383,-420.5 383,-0.5 222,-0.5"/>
 <text text-anchor="middle" x="302.5" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImageItem</text>
 <polyline fill="none" stroke="#666666" points="222,-401.5 383,-401.5 "/>
-<text text-anchor="start" x="230" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ maxImageZvalue</text>
+<text text-anchor="start" x="230" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ max_z_value</text>
 <text text-anchor="start" x="230" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_offset</text>
 <text text-anchor="start" x="230" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_origin</text>
-<text text-anchor="start" x="230" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_boundingRect</text>
-<text text-anchor="start" x="230" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handleRect</text>
-<text text-anchor="start" x="230" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actualRect</text>
-<text text-anchor="start" x="230" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resizePosition</text>
-<text text-anchor="start" x="230" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotateLine</text>
-<text text-anchor="start" x="230" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angleHandle</text>
+<text text-anchor="start" x="230" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_bounding_rect</text>
+<text text-anchor="start" x="230" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handle_rect</text>
+<text text-anchor="start" x="230" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actual_rect</text>
+<text text-anchor="start" x="230" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resize_position</text>
+<text text-anchor="start" x="230" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotate_line</text>
+<text text-anchor="start" x="230" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handle_angle</text>
 <text text-anchor="start" x="230" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angle</text>
-<text text-anchor="start" x="230" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mousePressed</text>
+<text text-anchor="start" x="230" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_mouse_pressed</text>
 <text text-anchor="start" x="230" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
 <polyline fill="none" stroke="#666666" points="222,-261.5 383,-261.5 "/>
 <text text-anchor="start" x="230" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImageItem()</text>
@@ -213,37 +213,37 @@ var sectionId = 'dynsection-1';
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="../../d0/de9/classResizeHandlesItem.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="109.5,-765.5 109.5,-1009.5 259.5,-1009.5 259.5,-765.5 109.5,-765.5"/>
-<text text-anchor="middle" x="184.5" y="-997.5" font-family="Helvetica,sans-Serif" font-size="10.00">ResizeHandlesItem</text>
-<polyline fill="none" stroke="#666666" points="109.5,-990.5 259.5,-990.5 "/>
-<text text-anchor="start" x="117.5" y="-978.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentRect</text>
-<text text-anchor="start" x="117.5" y="-967.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_lockAspectRatio</text>
-<text text-anchor="start" x="117.5" y="-956.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentIsLocked</text>
-<text text-anchor="start" x="117.5" y="-945.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentRotation</text>
-<text text-anchor="start" x="117.5" y="-934.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_minDimension</text>
-<text text-anchor="start" x="117.5" y="-923.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_maxDimension</text>
-<text text-anchor="start" x="117.5" y="-912.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_sizeChangedExternally</text>
-<polyline fill="none" stroke="#666666" points="109.5,-905.5 259.5,-905.5 "/>
-<text text-anchor="start" x="117.5" y="-893.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ResizeHandlesItem()</text>
-<text text-anchor="start" x="117.5" y="-882.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ResizeHandlesItem()</text>
-<text text-anchor="start" x="117.5" y="-871.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="117.5" y="-860.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ boundingRect()</text>
-<text text-anchor="start" x="117.5" y="-849.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="117.5" y="-838.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTopLeft()</text>
-<text text-anchor="start" x="117.5" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTop()</text>
-<text text-anchor="start" x="117.5" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTopRight()</text>
-<text text-anchor="start" x="117.5" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRight()</text>
-<text text-anchor="start" x="117.5" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBottomRight()</text>
-<text text-anchor="start" x="117.5" y="-783.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
-<text text-anchor="start" x="117.5" y="-772.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateHandlePositions()</text>
+<polygon fill="white" stroke="#666666" points="108.5,-765.5 108.5,-1009.5 258.5,-1009.5 258.5,-765.5 108.5,-765.5"/>
+<text text-anchor="middle" x="183.5" y="-997.5" font-family="Helvetica,sans-Serif" font-size="10.00">ResizeHandlesItem</text>
+<polyline fill="none" stroke="#666666" points="108.5,-990.5 258.5,-990.5 "/>
+<text text-anchor="start" x="116.5" y="-978.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentRect</text>
+<text text-anchor="start" x="116.5" y="-967.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_lockAspectRatio</text>
+<text text-anchor="start" x="116.5" y="-956.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentIsLocked</text>
+<text text-anchor="start" x="116.5" y="-945.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_parentRotation</text>
+<text text-anchor="start" x="116.5" y="-934.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_minDimension</text>
+<text text-anchor="start" x="116.5" y="-923.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_maxDimension</text>
+<text text-anchor="start" x="116.5" y="-912.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_sizeChangedExternally</text>
+<polyline fill="none" stroke="#666666" points="108.5,-905.5 258.5,-905.5 "/>
+<text text-anchor="start" x="116.5" y="-893.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ResizeHandlesItem()</text>
+<text text-anchor="start" x="116.5" y="-882.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~ResizeHandlesItem()</text>
+<text text-anchor="start" x="116.5" y="-871.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="116.5" y="-860.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ boundingRect()</text>
+<text text-anchor="start" x="116.5" y="-849.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="116.5" y="-838.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTopLeft()</text>
+<text text-anchor="start" x="116.5" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTop()</text>
+<text text-anchor="start" x="116.5" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTopRight()</text>
+<text text-anchor="start" x="116.5" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRight()</text>
+<text text-anchor="start" x="116.5" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBottomRight()</text>
+<text text-anchor="start" x="116.5" y="-783.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 8 more...</text>
+<text text-anchor="start" x="116.5" y="-772.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateHandlePositions()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node10 -->
 <g id="edge11" class="edge">
 <title>Node2&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M296.37,-1547.52C289.43,-1496.74 276.4,-1403.96 263.5,-1325 246.05,-1218.21 223.96,-1097.16 207.58,-1009.67"/>
-<polygon fill="none" stroke="#63b8ff" points="292.94,-1548.26 297.76,-1557.69 299.88,-1547.31 292.94,-1548.26"/>
+<path fill="none" stroke="#63b8ff" d="M296.4,-1547.51C289.48,-1496.73 276.49,-1403.94 263.5,-1325 245.93,-1218.19 223.55,-1097.14 206.93,-1009.66"/>
+<polygon fill="none" stroke="#63b8ff" points="292.97,-1548.25 297.78,-1557.69 299.9,-1547.31 292.97,-1548.25"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -261,14 +261,14 @@ var sectionId = 'dynsection-1';
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#63b8ff" d="M38.39,-1547.71C16.52,-1402.25 -48.98,-866.84 100.5,-468 126.21,-399.4 177.45,-334.68 221.89,-287.42"/>
-<polygon fill="none" stroke="#63b8ff" points="34.98,-1548.53 39.95,-1557.88 41.9,-1547.47 34.98,-1548.53"/>
+<path fill="none" stroke="#63b8ff" d="M38.32,-1547.7C16.17,-1402.21 -50.27,-866.71 99.5,-468 125.41,-399.02 177.2,-334.07 221.99,-286.79"/>
+<polygon fill="none" stroke="#63b8ff" points="34.91,-1548.53 39.9,-1557.88 41.82,-1547.46 34.91,-1548.53"/>
 </g>
 <!-- Node3&#45;&gt;Node10 -->
 <g id="edge12" class="edge">
 <title>Node3&#45;&gt;Node10</title>
-<path fill="none" stroke="#63b8ff" d="M52.08,-1547.78C72.21,-1447.52 127.73,-1171.12 160.13,-1009.82"/>
-<polygon fill="none" stroke="#63b8ff" points="48.61,-1547.25 50.07,-1557.75 55.48,-1548.63 48.61,-1547.25"/>
+<path fill="none" stroke="#63b8ff" d="M52.02,-1547.78C72.02,-1447.52 127.14,-1171.12 159.31,-1009.82"/>
+<polygon fill="none" stroke="#63b8ff" points="48.56,-1547.26 50.03,-1557.75 55.42,-1548.62 48.56,-1547.26"/>
 </g>
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
@@ -415,9 +415,9 @@ var sectionId = 'dynsection-1';
 <!-- Node10&#45;&gt;Node1 -->
 <g id="edge10" class="edge">
 <title>Node10&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M175.01,-765.15C171.01,-674.15 172.08,-547.2 197.5,-439 202.45,-417.91 209.45,-396.42 217.52,-375.48"/>
-<polygon fill="none" stroke="#404040" points="217.55,-375.4 216.03,-368.35 221.96,-364.24 223.47,-371.29 217.55,-375.4"/>
-<text text-anchor="middle" x="243" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_resizeHandles</text>
+<path fill="none" stroke="#404040" d="M172.53,-765.08C167.58,-674.05 167.67,-547.08 193.5,-439 199.16,-415.3 207.52,-391.15 217.12,-367.87"/>
+<polygon fill="none" stroke="#404040" points="217.25,-367.57 215.9,-360.48 221.93,-356.52 223.27,-363.6 217.25,-367.57"/>
+<text text-anchor="middle" x="241" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_resize_handles</text>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
@@ -436,8 +436,8 @@ var sectionId = 'dynsection-1';
 <!-- Node11&#45;&gt;Node10 -->
 <g id="edge13" class="edge">
 <title>Node11&#45;&gt;Node10</title>
-<path fill="none" stroke="#404040" d="M180.4,-1552.19C180.28,-1502.65 180.13,-1406.63 180.5,-1325 180.97,-1223.31 182.04,-1108.29 182.96,-1021.86"/>
-<polygon fill="none" stroke="#404040" points="182.96,-1021.86 179.03,-1015.82 183.09,-1009.86 187.03,-1015.9 182.96,-1021.86"/>
+<path fill="none" stroke="#404040" d="M180.43,-1552.19C180.33,-1502.65 180.22,-1406.63 180.5,-1325 180.85,-1223.31 181.66,-1108.29 182.35,-1021.86"/>
+<polygon fill="none" stroke="#404040" points="182.35,-1021.86 178.39,-1015.83 182.44,-1009.86 186.39,-1015.89 182.35,-1021.86"/>
 <text text-anchor="middle" x="222" y="-1328" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_handleItems</text>
 </g>
 <!-- Node12 -->

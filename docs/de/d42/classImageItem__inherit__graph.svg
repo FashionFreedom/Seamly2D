@@ -57,21 +57,21 @@ var sectionId = 'dynsection-0';
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
-<g id="a_node1"><a xlink:title="The ImageItem class pointer label.">
+<g id="a_node1"><a xlink:title=" ">
 <polygon fill="#999999" stroke="#666666" points="0,-0.5 0,-420.5 161,-420.5 161,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="80.5" y="-408.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImageItem</text>
 <polyline fill="none" stroke="#666666" points="0,-401.5 161,-401.5 "/>
-<text text-anchor="start" x="8" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ maxImageZvalue</text>
+<text text-anchor="start" x="8" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ max_z_value</text>
 <text text-anchor="start" x="8" y="-378.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_doc</text>
 <text text-anchor="start" x="8" y="-367.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_offset</text>
 <text text-anchor="start" x="8" y="-356.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_origin</text>
-<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_boundingRect</text>
-<text text-anchor="start" x="8" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handleRect</text>
-<text text-anchor="start" x="8" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actualRect</text>
-<text text-anchor="start" x="8" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resizeHandles</text>
-<text text-anchor="start" x="8" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resizePosition</text>
-<text text-anchor="start" x="8" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotateLine</text>
-<text text-anchor="start" x="8" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_angleHandle</text>
+<text text-anchor="start" x="8" y="-345.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_bounding_rect</text>
+<text text-anchor="start" x="8" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handle_rect</text>
+<text text-anchor="start" x="8" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_actual_rect</text>
+<text text-anchor="start" x="8" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resize_handles</text>
+<text text-anchor="start" x="8" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_resize_position</text>
+<text text-anchor="start" x="8" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_rotate_line</text>
+<text text-anchor="start" x="8" y="-279.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_handle_angle</text>
 <text text-anchor="start" x="8" y="-268.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 14 more...</text>
 <polyline fill="none" stroke="#666666" points="0,-261.5 161,-261.5 "/>
 <text text-anchor="start" x="8" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ImageItem()</text>
