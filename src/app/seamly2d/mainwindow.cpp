@@ -2620,6 +2620,7 @@ void MainWindow::initBasePointComboBox()
     base_point_combo_box->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
     base_point_combo_box->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
     base_point_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    base_point_combo_box->setMaxVisibleItems(15);
     base_point_combo_box->setCurrentIndex(0);
     base_point_combo_box->setEditable(true);
     base_point_combo_box->setInsertPolicy(QComboBox::InsertAtTop);
@@ -2720,9 +2721,26 @@ void MainWindow::initializeToolsToolBar()
     }
     m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
     m_zoomToPointComboBox->setEnabled(false);
+    m_zoomToPointComboBox->setEditable(true);
     m_zoomToPointComboBox->setToolTip(tr("Zoom to point (Ctrl + Alt + P)"));
+    m_zoomToPointComboBox->setMaxVisibleItems(15);
+    m_zoomToPointComboBox->setStyleSheet("QComboBox { combobox-popup: 0; }");
     ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
-    connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
+
+    // Triggers when the user clicks an item from the dropdown list
+    connect(m_zoomToPointComboBox, &QComboBox::activated, this, [this](int index)
+    {
+        // Explicitly grab the string text at that index and pass it to your slot
+        QString selectedText = m_zoomToPointComboBox->itemText(index);
+        zoomToPoint(selectedText);
+    });
+
+    // Triggers when the user types text and presses the 'Enter' or 'Return' key
+    connect(m_zoomToPointComboBox->lineEdit(), &QLineEdit::returnPressed, this, [this]()
+    {
+        // This calls your zoom function manually only when they finish typing
+        zoomToPoint(m_zoomToPointComboBox->currentText());
+    });
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -3014,6 +3032,7 @@ void MainWindow::zoomToPoint(const QString &pointName)
             // Reset combobox so same point can be selected again
             m_zoomToPointComboBox->blockSignals(true);
             m_zoomToPointComboBox->setCurrentIndex(-1);
+            m_zoomToPointComboBox->lineEdit()->setText(pointName);
             m_zoomToPointComboBox->blockSignals(false);
 
             return;
