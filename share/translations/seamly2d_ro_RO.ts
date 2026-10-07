@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Coordinate pe foaie</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Coordinate</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Punct de bază</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selecție</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nume unic</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Alegeți un nume unic.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>Coordonata X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Coordonata Y:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nume:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Număr</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Selectează punctul de centru pentru curbură</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Selectați al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Editare raza</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Rază:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calcul</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Centrul arcului:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Punct - Intersecție Arc și Linie</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selecție</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nume unic</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Alegeți un nume unic.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Primul punct al liniei:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>Punct pe linia a doua</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometrie</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nume:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2607,45 +2586,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Groime linie:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nume:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Coordinate pe foaie</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Coordinate</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Punct de bază</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Selecție</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Nume unic</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Alegeți un nume unic.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Coordonata X:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Coordonata Y:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3905,6 +3845,77 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     </message>
 </context>
 <context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Măsurători finale</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtru:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtrare listă după cuvânt cheie</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nume</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrie</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formulă</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Mută măsurătoarea finală în sus</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Mută măsurătoarea finală în jos</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Adaugă măsurătoare finală</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Elimină măsurătoarea finală</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detalii</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nume:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Nume unic pentru măsurătoarea finală</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formulă:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descriere:</translation>
+    </message>
+</context>
+<context>
     <name>FvUpdater</name>
     <message>
         <source>Unable to open file
@@ -5038,6 +5049,88 @@ Programul este furnizat CA ATARE, FĂRĂ NICIUN FEL DE GARANȚIE, INCLUSIV GARAN
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Selectează punctul de centru pentru curbură</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Selectați al doilea punct al liniei</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Editare raza</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Rază:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Asistent Formulă</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Calcul</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Centrul arcului:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Punct - Intersecție Arc și Linie</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Selecție</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Nume unic</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Alegeți un nume unic.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>Primul punct al liniei:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>Punct pe linia a doua</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nume:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Lungime</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Unghi</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Număr</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6147,6 +6240,14 @@ Doriți să salvați modificările?</translation>
         <translation>Instrumente pentru inserarea sau modificarea imaginilor.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Măsurători finale</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Listează și editează măsurătorile finale</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Punct pe curbă (O, C)</translation>
     </message>
@@ -6229,6 +6330,10 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Exportă variabile în CSV</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Exportă măsurătorile finale în CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6453,6 +6558,10 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Bloc de schițe:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrie</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11873,45 +11982,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>First point</source>
-        <translation>Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Cel mai înalt punct</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Punct cel mai de jos</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Punctul cel mai din stânga</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Punctul cel mai din dreapta</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Axă verticală</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Axă orizontală</translation>
-    </message>
-    <message>
-        <source>Line_</source>
-        <translation>Linie_</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -13180,14 +13250,6 @@ load in SeamlyME as usual.
         <translation>Bucată</translation>
     </message>
     <message>
-        <source>white</source>
-        <translation>alb</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>fără pensulă</translation>
-    </message>
-    <message>
         <source>Error creating or updating piece</source>
         <translation>Eroare la crearea sau actualizarea piesei</translation>
     </message>
@@ -13308,13 +13370,6 @@ load in SeamlyME as usual.
     <message>
         <source>Arc - Radius and Length</source>
         <translation>Arc - Rază și Lungime</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Număr</translation>
     </message>
 </context>
 <context>
@@ -13722,6 +13777,38 @@ load in SeamlyME as usual.
         <translation>Selecție</translation>
     </message>
     <message>
+        <source>First point</source>
+        <translation>Primul Punct</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Al doilea punct</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Cel mai înalt punct</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Punct cel mai de jos</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Punctul cel mai din stânga</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Punctul cel mai din dreapta</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Axă verticală</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Axă orizontală</translation>
+    </message>
+    <message>
         <source>Coordinates</source>
         <translation>Coordonată</translation>
     </message>
@@ -13979,21 +14066,6 @@ load in SeamlyME as usual.
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Intersecție arc și tangentă</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Lungime</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Unghi</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Număr</translation>
     </message>
 </context>
 <context>

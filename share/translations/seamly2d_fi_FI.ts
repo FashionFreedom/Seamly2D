@@ -366,6 +366,52 @@
     </message>
 </context>
 <context>
+    <name>BasePointDialog</name>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation>Arkin koordinaatit</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation>Koordinaatit</translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation>Peruspiste</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Valinta</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Yksilöllinen nimi</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Valitse yksilöllinen nimi.</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation>X-koordinaatti:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation>Y-koordinaatti:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nimi:</translation>
+    </message>
+</context>
+<context>
+    <name>BasePointTool</name>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
@@ -2297,73 +2343,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>IntersectArcLineDialog</name>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation>Valitse kaaren keskipiste</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Valitse suoran toinen piste</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Muokkaa sädettä</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Säde:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Kaavavelho</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Arvo</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Laskelma</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Kaaren keskipiste:</translation>
-    </message>
-    <message>
-        <source>Point - Intersect Arc and Line</source>
-        <translation>Piste - Kaaren ja suoran leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Valinta</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Yksilöllinen nimi</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Valitse yksilöllinen nimi.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>1. suoran piste:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>2. suoran piste</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Geometria</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nimi:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
@@ -2611,45 +2590,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation>Väri:</translation>
-    </message>
-</context>
-<context>
-    <name>BasePointDialog</name>
-    <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Arkin koordinaatit</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Koordinaatit</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation>Peruspiste</translation>
-    </message>
-    <message>
-        <source>Selection</source>
-        <translation>Valinta</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Yksilöllinen nimi</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Valitse yksilöllinen nimi.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>X-koordinaatti:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Y-koordinaatti:</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nimi:</translation>
     </message>
 </context>
 <context>
@@ -3362,7 +3302,7 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3374,11 +3314,11 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Tyhjennä matemaattinenkaava</translation>
+        <translation>Tyhjennä matemaattinen kaava</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Palauta alkuperäinen matemaattinenkaava</translation>
+        <translation>Palauta alkuperäinen matemaattinen kaava</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
@@ -3900,6 +3840,77 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     <message>
         <source>Failed</source>
         <translation>Epäonnistui</translation>
+    </message>
+</context>
+<context>
+    <name>FinalMeasurementsDialog</name>
+    <message>
+        <source>Final measurements</source>
+        <translation>Lopulliset mittaukset</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Suodata:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Suodata lista avainsanan mukaan</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Kuvaus</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Matemaattinen kaava</translation>
+    </message>
+    <message>
+        <source>Move final measurement up</source>
+        <translation>Siirrä lopullista mittausta ylös</translation>
+    </message>
+    <message>
+        <source>Move final measurement down</source>
+        <translation>Siirrä lopullista mittausta alas</translation>
+    </message>
+    <message>
+        <source>Add final measurement</source>
+        <translation>Lisää lopullinen mittaus</translation>
+    </message>
+    <message>
+        <source>Remove final measurement</source>
+        <translation>Poista lopullinen mittaus</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Yksityiskohdat</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nimi:</translation>
+    </message>
+    <message>
+        <source>Unique final measurement name</source>
+        <translation>Yksilöllinen lopullisen mittauksen nimi</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Matemaattinen kaava:</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Kuvaus:</translation>
     </message>
 </context>
 <context>
@@ -5036,6 +5047,88 @@ Ohjelma toimitetaan SELLAISENAAN ILMAN MINKÄÄNLAISTA TAKUUTA, MUKAAN LUKIEN SU
     </message>
 </context>
 <context>
+    <name>IntersectArcLineDialog</name>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation>Valitse kaaren keskipiste</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation>Valitse suoran toinen piste</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation>Muokkaa sädettä</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation>Säde:</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kaavavelho</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Laskelma</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation>Kaaren keskipiste:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation>Piste - Kaaren ja suoran leikkauspiste</translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation>Valinta</translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation>Yksilöllinen nimi</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation>Valitse yksilöllinen nimi.</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation>1. suoran piste:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation>2. suoran piste</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nimi:</translation>
+    </message>
+</context>
+<context>
+    <name>IntersectArcLineTool</name>
+    <message>
+        <source>Length</source>
+        <translation>Pituus</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Kulma</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+</context>
+<context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
@@ -6145,6 +6238,14 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Työkalut kuvien lisäämiseen tai muokkaamiseen.</translation>
     </message>
     <message>
+        <source>Final measurements</source>
+        <translation>Lopulliset mittaukset</translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation>Listaa ja muokkaa lopullisia mittauksia</translation>
+    </message>
+    <message>
         <source>Point on Curve (O, C)</source>
         <translation>Piste käyrällä (O, C)</translation>
     </message>
@@ -6227,6 +6328,10 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Export Variables to CSV</source>
         <translation>Vie muuttujat CSV-tiedostoon</translation>
+    </message>
+    <message>
+        <source>Export Final Measurements to CSV</source>
+        <translation>Vie lopulliset mittaukset CSV-muodossa</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -6451,6 +6556,10 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Draft Block:</source>
         <translation>Luonnospala:</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Kuvaus</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -8182,7 +8291,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Jokaisen polun pisteen on oltava ainutlaatuinen!</translation>
+        <translation>Jokaisen polun pisteen on oltava yksilöllinen!</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -9288,7 +9397,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Tyhjennä matemaattinenkaava automaattisesti</translation>
+        <translation>Tyhjennä matemaattinen kaava automaattisesti</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
@@ -11872,45 +11981,6 @@ Haluatko tallentaa muutokset?</translation>
     </message>
 </context>
 <context>
-    <name>Tool</name>
-    <message>
-        <source>Line_</source>
-        <translation>Viiva_</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation>Ensimmäisen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation>Toinen piste</translation>
-    </message>
-    <message>
-        <source>Highest point</source>
-        <translation>Korkein piste</translation>
-    </message>
-    <message>
-        <source>Lowest point</source>
-        <translation>Alin piste</translation>
-    </message>
-    <message>
-        <source>Leftmost point</source>
-        <translation>Vasemmanpuoleisin piste</translation>
-    </message>
-    <message>
-        <source>Rightmost point</source>
-        <translation>Oikeanpuoleisin piste</translation>
-    </message>
-    <message>
-        <source>Vertical axis</source>
-        <translation>Pysty-akseli</translation>
-    </message>
-    <message>
-        <source>Horizontal axis</source>
-        <translation>Vaaka-akseli</translation>
-    </message>
-</context>
-<context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
@@ -12805,7 +12875,7 @@ Haluatko tallentaa muutokset?</translation>
     <name>VFormulaProperty</name>
     <message>
         <source>Formula:</source>
-        <translation>Matemaattinenkaava:</translation>
+        <translation>Matemaattinen kaava:</translation>
     </message>
 </context>
 <context>
@@ -12981,14 +13051,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Piece</source>
         <translation>Pala</translation>
-    </message>
-    <message>
-        <source>white</source>
-        <translation>valkoinen</translation>
-    </message>
-    <message>
-        <source>nobrush</source>
-        <translation>eisivellintä</translation>
     </message>
     <message>
         <source>Error creating or updating piece</source>
@@ -13310,13 +13372,6 @@ Haluatko tallentaa muutokset?</translation>
     </message>
 </context>
 <context>
-    <name>BasePointTool</name>
-    <message>
-        <source>Name</source>
-        <translation>Nimi</translation>
-    </message>
-</context>
-<context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
@@ -13531,6 +13586,38 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Center point</source>
         <translation>Keskipiste</translation>
+    </message>
+    <message>
+        <source>First point</source>
+        <translation>Ensimmäinen piste</translation>
+    </message>
+    <message>
+        <source>Second point</source>
+        <translation>Toinen piste</translation>
+    </message>
+    <message>
+        <source>Highest point</source>
+        <translation>Korkein piste</translation>
+    </message>
+    <message>
+        <source>Lowest point</source>
+        <translation>Alin piste</translation>
+    </message>
+    <message>
+        <source>Leftmost point</source>
+        <translation>Vasemmanpuoleisin piste</translation>
+    </message>
+    <message>
+        <source>Rightmost point</source>
+        <translation>Oikeanpuoleisin piste</translation>
+    </message>
+    <message>
+        <source>Vertical axis</source>
+        <translation>Pystyakseli</translation>
+    </message>
+    <message>
+        <source>Horizontal axis</source>
+        <translation>Vaakasuora-akseli</translation>
     </message>
     <message>
         <source>Base point</source>
@@ -13978,21 +14065,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Intersect Arc and Tangent</source>
         <translation>Kaaren ja tangentin leikkauspiste</translation>
-    </message>
-</context>
-<context>
-    <name>IntersectArcLineTool</name>
-    <message>
-        <source>Length</source>
-        <translation>Pituus</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Kulma</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nimi</translation>
     </message>
 </context>
 <context>
