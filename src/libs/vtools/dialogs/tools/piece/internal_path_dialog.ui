@@ -181,7 +181,7 @@
           <item>
            <widget class="QListWidget" name="listWidget">
             <property name="focusPolicy">
-             <enum>Qt::TabFocus</enum>
+             <enum>Qt::StrongFocus</enum>
             </property>
             <property name="dragDropMode">
              <enum>QAbstractItemView::InternalMove</enum>
@@ -2017,7 +2017,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchType_ButtonGroup"/>
   <buttongroup name="notchSubType_ButtonGroup"/>
+  <buttongroup name="notchType_ButtonGroup"/>
  </buttongroups>
 </ui>
