@@ -7130,8 +7130,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&lt;b&gt;Työkalu::Spline - Kiinteä:&lt;/b&gt; Valitse splinen ensimmäinen piste</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Käyrällä:&lt;/b&gt; Valitse käyrän ensimmäinen piste</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Työkalu::Piste - Käyrällä:&lt;/b&gt; Valitse käyrä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

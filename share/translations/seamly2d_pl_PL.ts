@@ -6744,8 +6744,8 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>&lt;b&gt;Tool::Spline - Naprawiono:&lt;/b&gt; Wybierz pierwszy punkt krzywej</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na krzywej:&lt;/b&gt; Wybierz pierwszy punkt krzywej</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Narzędzie::Punkt - Na krzywej:&lt;/b&gt; Wybierz krzywą</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

@@ -7115,8 +7115,8 @@ Deseja salvar suas alterações?</translation>
         <translation>&lt;b&gt;Ferramenta::Spline - Fixa:&lt;/b&gt; Selecione o primeiro ponto da spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Na curva:&lt;/b&gt; Selecione o primeiro ponto da curva</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na curva:&lt;/b&gt; Selecione a curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

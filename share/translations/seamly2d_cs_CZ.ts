@@ -7128,8 +7128,8 @@ Chcete uložit své změny?</translation>
         <translation>&lt;b&gt;Nástroj::Spline – Opraveno:&lt;/b&gt; Vybrat první bod spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Nástroj::Bod - Na křivce:&lt;/b&gt; Vyberte první bod křivky</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Nástroj::Bod - Na křivce:&lt;/b&gt;Vyberte křivku</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
