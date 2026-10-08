@@ -16,6 +16,11 @@ fi
 
 VERSIONARR=(${VERSIONSTR//./ })
 
+# Strip leading zeros. C++ reads a number with a leading zero as octal ("008" fails, "010" becomes 8).
+for i in "${!VERSIONARR[@]}"; do
+	VERSIONARR[$i]=$((10#${VERSIONARR[$i]}))
+done
+
 echo "setting version to"
 echo "major: ${VERSIONARR[0]}"
 echo "minor: ${VERSIONARR[1]}"
