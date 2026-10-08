@@ -6743,8 +6743,8 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>&lt;b&gt;Eszköz::Spline - Rögzített:&lt;/b&gt; Spline első pontjának kiválasztása</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Eszköz::Pont - Görbén:&lt;/b&gt; Válassza ki a görbe első pontját</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Eszköz::Pont - Görbén:&lt;/b&gt; Görbe kiválasztása</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

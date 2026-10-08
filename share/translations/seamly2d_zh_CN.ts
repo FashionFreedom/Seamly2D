@@ -7063,23 +7063,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;工具::点 - 直线中点&lt;/b&gt;:选择第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 直线中点&lt;/b&gt;: 选择第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;工具::点 - 长度和角度&lt;/b&gt;:选择点</translation>
+        <translation>&lt;b&gt;工具::点 - 长度和角度&lt;/b&gt;: 选择点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;工具::点 - 在线:&lt;/b&gt;选择第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 在线:&lt;/b&gt; 选择第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 垂直:&lt;/b&gt;选择直线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 垂直:&lt;/b&gt; 选择直线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;工具::点 - 在平分线上:&lt;/b&gt;选择角度的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 在平分线上:&lt;/b&gt; 选择角度的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
@@ -7087,11 +7087,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 圆弧与直线相交:&lt;/b&gt;选择直线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 圆弧与直线相交:&lt;/b&gt; 选择直线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;工具::点 - 轴与三角形相交:&lt;/b&gt;选择轴的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 轴与三角形相交:&lt;/b&gt; 选择轴的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
@@ -7103,35 +7103,35 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 线与轴相交:&lt;/b&gt;选择线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 线与轴相交:&lt;/b&gt; 选择线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;工具::线:&lt;​​/b&gt;:选择第一个点</translation>
+        <translation>&lt;b&gt;工具::线:&lt;​​/b&gt;: 选择第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;工具::点 - 相交线:&lt;/b&gt;选择第一条线的第一个点</translation>
+        <translation>&lt;b&gt;工具::点 - 相交线:&lt;/b&gt; 选择第一条线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt;工具::曲线 - 交互:&lt;/b&gt;选择曲线的起点</translation>
+        <translation>&lt;b&gt;工具::曲线 - 交互:&lt;/b&gt; 选择曲线的起点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;工具::样条线 - 交互:&lt;/b&gt;选择样条线的起点</translation>
+        <translation>&lt;b&gt;工具::样条线 - 交互:&lt;/b&gt; 选择样条线的起点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;工具::曲线 - 固定:&lt;/b&gt;选择曲线的第一个点</translation>
+        <translation>&lt;b&gt;工具::曲线 - 固定:&lt;/b&gt; 选择曲线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;工具::样条线 - 固定:&lt;/b&gt;选择样条线的第一个点</translation>
+        <translation>&lt;b&gt;工具::样条线 - 固定:&lt;/b&gt; 选择样条线的第一个点</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;工具::点 - 曲线上:&lt;/b&gt;选择曲线的第一个点</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;工具::点 - 曲线上:&lt;/b&gt; 选择曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
@@ -7139,15 +7139,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;工具::点 - 相交曲线:&lt;/b&gt;选择第一条曲线</translation>
+        <translation>&lt;b&gt;工具::点 - 相交曲线:&lt;/b&gt; 选择第一条曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;工具::点 - 曲线与轴相交:&lt;/b&gt;选择曲线</translation>
+        <translation>&lt;b&gt;工具::点 - 曲线与轴相交:&lt;/b&gt; 选择曲线</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt;工具::圆弧 - 半径和角度:&lt;/b&gt;选择圆弧中心点</translation>
+        <translation>&lt;b&gt;工具::圆弧 - 半径和角度:&lt;/b&gt; 选择圆弧中心点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
@@ -7159,15 +7159,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;工具::点 - 相交弧:&lt;/b&gt;首先选择一条弧</translation>
+        <translation>&lt;b&gt;工具::点 - 相交弧:&lt;/b&gt; 首先选择一条弧</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;工具::点 - 相交圆:&lt;/b&gt;选择第一个圆中心</translation>
+        <translation>&lt;b&gt;工具::点 - 相交圆:&lt;/b&gt; 选择第一个圆中心</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;工具::点 - 圆与切线相交:&lt;/b&gt;选择切线上的点</translation>
+        <translation>&lt;b&gt;工具::点 - 圆与切线相交:&lt;/b&gt; 选择切线上的点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
@@ -7175,7 +7175,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;工具::圆弧 - 半径和长度:&lt;/b&gt;选择圆弧中心点</translation>
+        <translation>&lt;b&gt;工具::圆弧 - 半径和长度:&lt;/b&gt; 选择圆弧中心点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
