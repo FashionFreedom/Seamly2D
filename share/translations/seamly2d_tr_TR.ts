@@ -7130,8 +7130,8 @@ Do you want to save your changes?</translation>
         <translation>&lt;b&gt;Araç::Spline - Düzeltildi:&lt;/b&gt; Spline&apos;ın ilk noktasını seç</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Araç::Nokta - Eğri Üzerinde:&lt;/b&gt; Eğrinin ilk noktasını seç</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Araç::Nokta - Eğri Üzerinde:&lt;/b&gt; Eğriyi seç</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

@@ -7132,8 +7132,8 @@ Doriți să salvați modificările?</translation>
         <translation>&lt;b&gt;Tool::Spline - Remediat:&lt;/b&gt; Selectează primul punct al spline-ului</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Selectează primul punct al curbei</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Selectați curba</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>

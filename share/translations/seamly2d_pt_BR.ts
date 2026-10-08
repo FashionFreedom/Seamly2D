@@ -389,7 +389,7 @@
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>X coordinate:</source>
@@ -598,11 +598,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -859,11 +859,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1100,7 +1100,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -1163,7 +1163,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1230,11 +1230,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1301,11 +1301,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1514,11 +1514,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1608,11 +1608,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1745,11 +1745,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1816,11 +1816,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2094,7 +2094,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -2316,11 +2316,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2355,11 +2355,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2390,11 +2390,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Vertical take:</source>
@@ -2554,11 +2554,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2962,11 +2962,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>1st axis point:</source>
@@ -3029,11 +3029,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Point name 1:</source>
@@ -5035,7 +5035,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     <name>IntersectArcLineDialog</name>
     <message>
         <source>Select point of center of arc</source>
-        <translation>Selecione o centro do arco</translation>
+        <translation>Selecione o ponto central do arco</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -5075,11 +5075,11 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>1st line point:</source>
@@ -5173,7 +5173,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Escolha um nome único.</translation>
+        <translation>Escolha um nome exclusivo.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -5259,7 +5259,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
@@ -7115,8 +7115,8 @@ Deseja salvar suas alterações?</translation>
         <translation>&lt;b&gt;Ferramenta::Spline - Fixa:&lt;/b&gt; Selecione o primeiro ponto da spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Na curva:&lt;/b&gt; Selecione o primeiro ponto da curva</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na curva:&lt;/b&gt; Selecione a curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
@@ -8816,7 +8816,7 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Nome único</translation>
+        <translation>Nome exclusivo</translation>
     </message>
     <message>
         <source>Choose unique name.</source>

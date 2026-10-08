@@ -31,7 +31,9 @@ jobs:
       - name: create version number
         id: create-version
         run: |
-          echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
+          # Read the clock once. Strip leading zeros from hhmm: C++ reads "008" as an invalid octal literal.
+          read -r ymd hhmm <<< "$(date '+%Y.%-m.%-d %H%M')"
+          echo "version_number=${ymd}.$((10#${hhmm}))" >> $GITHUB_OUTPUT
 
   linux-test:
     if: github.event_name == 'pull_request'

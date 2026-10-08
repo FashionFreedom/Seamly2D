@@ -1341,7 +1341,7 @@ void MainWindow::handlePointAlongCurveTool(bool checked)
         checked,
         Tool::CutSpline,
         ":/cursor/spline_cut_point_cursor.png",
-        tr("<b>Tool::Point - On Curve:</b> Select first point of curve"),
+        tr("<b>Tool::Point - On Curve:</b> Select curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutSpline>,
         &MainWindow::ApplyDrawDialog<VToolCutSpline>
     );

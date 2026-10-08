@@ -7132,8 +7132,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Εργαλείο::Spline - Διορθώθηκε:&lt;/b&gt; Επιλογή πρώτου σημείου της spline</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε καμπύλη:&lt;/b&gt; Επιλογή πρώτου σημείου της καμπύλης</translation>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε καμπύλη:&lt;/b&gt; Επιλογή καμπύλης</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
