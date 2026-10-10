@@ -248,7 +248,7 @@ var classMainWindow =
     [ "currentBlockIndex", "d6/d1a/classMainWindow.html#ac6f37954c0724d4014098f69072584d1", null ],
     [ "currentTool", "d6/d1a/classMainWindow.html#a9dc38773443f450879ac34cc82bbed76", null ],
     [ "currentToolBoxIndex", "d6/d1a/classMainWindow.html#ad1aa67ae9659bdc20386ab251bec2567", null ],
-    [ "dialogTable", "d6/d1a/classMainWindow.html#a90651bff8bc41da0a633e2ce3f0d9a21", null ],
+    [ "dialogTable", "d6/d1a/classMainWindow.html#abaffad7d14862d1152492525fc51e2f5", null ],
     [ "dialogTool", "d6/d1a/classMainWindow.html#af1c5b2019fa93aa6518bc48d88acc2ea", null ],
     [ "draftBlockComboBox", "d6/d1a/classMainWindow.html#aed2b0dcf1a965a5059bfd011bcb55f5c", null ],
     [ "draftBlockLabel", "d6/d1a/classMainWindow.html#aede0b6b7c10d02d0c26334d1682038c0", null ],

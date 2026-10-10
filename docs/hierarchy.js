@@ -361,7 +361,6 @@ var hierarchy =
         [ "DialogSplinePath", "df/d5e/classDialogSplinePath.html", null ],
         [ "DialogTriangle", "d1/d40/classDialogTriangle.html", null ],
         [ "DialogTrueDarts", "d7/d8c/classDialogTrueDarts.html", null ],
-        [ "DialogVariables", "da/dd0/classDialogVariables.html", null ],
         [ "EditFormulaDialog", "d1/d7d/classEditFormulaDialog.html", null ],
         [ "EditGroupDialog", "d3/da7/classEditGroupDialog.html", null ],
         [ "HistoryDialog", "d1/d42/classHistoryDialog.html", null ],
@@ -372,7 +371,8 @@ var hierarchy =
         [ "IntersectCirclesDialog", "d0/d09/classIntersectCirclesDialog.html", null ],
         [ "PatternPieceDialog", "d5/d41/classPatternPieceDialog.html", null ],
         [ "PointIntersectXYDialog", "d1/d64/classPointIntersectXYDialog.html", null ],
-        [ "UnionDialog", "d0/dc3/classUnionDialog.html", null ]
+        [ "UnionDialog", "d0/dc3/classUnionDialog.html", null ],
+        [ "VariablesDialog", "d0/d09/classVariablesDialog.html", null ]
       ] ],
       [ "DialogUndo", "de/d7f/classDialogUndo.html", null ],
       [ "EditLabelTemplateDialog", "d7/df1/classEditLabelTemplateDialog.html", null ],
@@ -784,6 +784,7 @@ var hierarchy =
       [ "VObjEngine", "d3/d1d/classVObjEngine.html", null ]
     ] ],
     [ "QPlainTextEdit", null, [
+      [ "ClearablePlainTextEdit", "d6/df6/classClearablePlainTextEdit.html", null ],
       [ "ExpandingTextEdit", "db/dac/classExpandingTextEdit.html", null ]
     ] ],
     [ "QPointF", null, [

@@ -1,6 +1,8 @@
 var dir_fa16871e366acf28eec42e1eb99c66a0 =
 [
     [ "calculator", "dir_6f67c4fc059510090b39fc442429035f.html", "dir_6f67c4fc059510090b39fc442429035f" ],
+    [ "clearable_plain_textedit.cpp", "de/d1d/clearable__plain__textedit_8cpp.html", null ],
+    [ "clearable_plain_textedit.h", "dd/de4/clearable__plain__textedit_8h.html", "dd/de4/clearable__plain__textedit_8h" ],
     [ "color_combobox.cpp", "d5/d73/color__combobox_8cpp.html", null ],
     [ "color_combobox.h", "df/dce/color__combobox_8h.html", "df/dce/color__combobox_8h" ],
     [ "expandingtextedit.cpp", "dc/ddf/expandingtextedit_8cpp.html", null ],

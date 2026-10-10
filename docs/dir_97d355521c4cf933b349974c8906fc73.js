@@ -20,8 +20,6 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "dialogpreferences.cpp", "d5/dc5/dialogpreferences_8cpp.html", null ],
     [ "dialogpreferences.h", "d6/d10/dialogpreferences_8h.html", "d6/d10/dialogpreferences_8h" ],
     [ "dialogs.h", "d6/d64/dialogs_8h.html", null ],
-    [ "dialogvariables.cpp", "db/dd7/dialogvariables_8cpp.html", "db/dd7/dialogvariables_8cpp" ],
-    [ "dialogvariables.h", "de/d7c/dialogvariables_8h.html", "de/d7c/dialogvariables_8h" ],
     [ "export_layout_dialog.cpp", "dd/d54/export__layout__dialog_8cpp.html", "dd/d54/export__layout__dialog_8cpp" ],
     [ "export_layout_dialog.h", "d1/d8e/export__layout__dialog_8h.html", "d1/d8e/export__layout__dialog_8h" ],
     [ "export_progress_dialog.cpp", "db/d07/export__progress__dialog_8cpp.html", null ],
@@ -40,6 +38,8 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "shortcuts_dialog.h", "d9/d49/shortcuts__dialog_8h.html", "d9/d49/shortcuts__dialog_8h" ],
     [ "show_info_dialog.cpp", "d2/df4/show__info__dialog_8cpp.html", null ],
     [ "show_info_dialog.h", "dd/de2/show__info__dialog_8h.html", "dd/de2/show__info__dialog_8h" ],
+    [ "variables_dialog.cpp", "d4/d08/variables__dialog_8cpp.html", "d4/d08/variables__dialog_8cpp" ],
+    [ "variables_dialog.h", "da/dfb/variables__dialog_8h.html", "da/dfb/variables__dialog_8h" ],
     [ "welcome_dialog.cpp", "df/d69/welcome__dialog_8cpp.html", null ],
     [ "welcome_dialog.h", "d3/de1/welcome__dialog_8h.html", "d3/de1/welcome__dialog_8h" ]
 ];
