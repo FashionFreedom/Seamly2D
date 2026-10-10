@@ -26,7 +26,6 @@ HEADERS += \
     $$PWD/configpages/preferencespathpage.h \
     $$PWD/configpages/preferencesgraphicsviewpage.h \
     $$PWD/dialogdatetimeformats.h \
-    $$PWD/variables_dialog.h \
     $$PWD/welcome_dialog.h
 
 SOURCES += \
@@ -53,7 +52,6 @@ SOURCES += \
     $$PWD/configpages/preferencespathpage.cpp \
     $$PWD/configpages/preferencesgraphicsviewpage.cpp \
     $$PWD/dialogdatetimeformats.cpp \
-    $$PWD/variables_dialog.cpp \
     $$PWD/welcome_dialog.cpp
 
 FORMS += \
