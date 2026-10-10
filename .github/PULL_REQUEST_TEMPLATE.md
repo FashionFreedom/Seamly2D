@@ -9,12 +9,11 @@ Describe the problem, resulting behavior, and related issue.
 
 ## Integration testing (before approval)
 
-Use the existing Windows installer artifact and instructions in
-[PR_INTEGRATION_TESTING.md](workflows/PR_INTEGRATION_TESTING.md).
-Test copies of the samples in `src/app/share/samples/patterns`.
+Rebase on current `develop`, build locally, and test with copies of the samples
+in `src/app/share/samples/patterns`.
 Record results in a PR comment if testing happens after opening this PR.
 
-- [ ] Installed and launched the test build on a test computer or VM.
+- [ ] Built the PR locally and launched it.
 - [ ] Opened and modified sample patterns.
 - [ ] Created/edited points, lines, curves, and arcs.
 - [ ] Tested mirror, move, rotate, and true darts (explain any N/A).
@@ -29,9 +28,7 @@ Tester/date:
 
 OS/version/architecture:
 
-PR head SHA (from the workflow run):
-
-Workflow run URL / run attempt / version:
+Tested commit SHA / version:
 
 Sample files, steps, screenshots, and findings:
 
@@ -41,5 +38,5 @@ Not-applicable steps and reasons:
 
 New commits or target-branch updates require a new build and integration review.
 For code changes, a maintainer approves only after reviewing testing evidence
-for the current build. Eligible Weblate translation PRs retain their existing
+for the current commit. Eligible Weblate translation PRs retain their existing
 automated approval/merge process and are exempt from human integration review.

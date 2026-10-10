@@ -5,4 +5,4 @@
 - macOS and Windows builds are signed when signing secrets are available. Fork PR builds are unsigned.
 - [Weblate](auto-merge-weblate.yml): automatic approval/merge; Linux tests only, no artifacts.
 
-For testing, see [PR_INTEGRATION_TESTING.md](PR_INTEGRATION_TESTING.md).
+For integration testing, see the [PR template](../PULL_REQUEST_TEMPLATE.md).

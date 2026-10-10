@@ -1,6 +1,6 @@
 name: CI
 
-# For a description, see README_WORKFLOWS.md in this folder
+# for a description, see README.md in this folder
 
 on:
   schedule:
@@ -13,7 +13,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   QT_VERSION: '6.11.1' # quotes required or YAML parser will interpret as float
@@ -26,7 +26,7 @@ jobs:
       version_number: ${{ steps.create-version.outputs.version_number }}
 
     # The version number is YYYY.MM.DD.hhmm to create simple, easy-to-read "rolling release" versioning
-    # PR artifacts also record their exact source revision and run ID.
+    # for pull requests before merge keep a static version number
     steps:
       - name: create version number
         id: create-version
@@ -42,8 +42,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          persist-credentials: false
 
       - uses: jurplel/install-qt-action@v4
         with:
@@ -80,8 +78,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          persist-credentials: false
 
       - name: install appimage dependencies
         run: |
@@ -138,8 +134,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
-        with:
-          persist-credentials: false
 
       - name: install build dependencies
         run: |
@@ -158,8 +152,8 @@ jobs:
       - name: setup signing and notarization
         env:
           KEYCHAIN_FILE: ~/seamly2d.keychain
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity || '' }}
-        if: ${{ env.APPLE_SIGN_IDENTITY != '' }}
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        if: ${{ env.APPLE_SIGN_IDENTITY }}
         run: |
           security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
           security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
@@ -178,11 +172,11 @@ jobs:
 
       - name: make Seamly2D for macos
         env:
-          APPLE_SIGN_IDENTITY: ${{secrets.apple_sign_identity || '' }}
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
         run: |
           # see https://github.com/actions/runner-images/issues/7522
           echo killing XProtect...; sudo pkill -9 XProtect >/dev/null || true;
-          # Signing runs when signing secrets are available.
+          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
           if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
             qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
           else
@@ -197,7 +191,7 @@ jobs:
           if-no-files-found: error
 
   windows:
-    if:  github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'weblate'
     name: 'Windows Build'
     runs-on: windows-2022
     needs: version
@@ -218,8 +212,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v7
-        with:
-          persist-credentials: false
 
       - name: Setup MSVC Developer Command Prompt
         uses: TheMrMilchmann/setup-msvc-dev@v4.1.0
@@ -262,9 +254,9 @@ jobs:
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing runs when signing secrets are available.
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         with:
           credentials_json: ${{ secrets.SEAMLY_SIGNING_SA_KEY }}
           project_id: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
@@ -272,9 +264,9 @@ jobs:
       - name: Setup Google Cloud CLI (for signing)
         uses: google-github-actions/setup-gcloud@v3
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing runs when signing secrets are available.
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
 
       - name: Set up Java (for signing)
         uses: actions/setup-java@v5
@@ -284,9 +276,9 @@ jobs:
 
       - name: Sign executables
         env:
-          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID || '' }}
-        # Signing runs when signing secrets are available.
-        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID != '' }}
+          SEAMLY_SIGNING_PROJECT_ID: ${{ secrets.SEAMLY_SIGNING_PROJECT_ID }}
+        # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+        if: ${{ env.SEAMLY_SIGNING_PROJECT_ID }}
         shell: bash
         run: |
           java -jar .github/workflows/signing/jsign.jar \
@@ -303,50 +295,18 @@ jobs:
           Get-AuthenticodeSignature windows-build\Seamly2D-installer.exe
 
       - name: pack installer file into .zip
-        shell: pwsh
-        env:
-          RELEASE_FILE: ${{ matrix.release-file }}
         run: |
-          Set-Location windows-build
-          & 'C:\Program Files\7-Zip\7z.exe' a $env:RELEASE_FILE Seamly2D-installer.exe
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          cd windows-build
+          C:\"Program Files"\7-Zip\7z.exe a ${{ matrix.release-file }} Seamly2D-installer.exe
 
       - name: Upload windows artifacts
-        id: upload-windows
         uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.release-file }}
           path: windows-build/${{ matrix.release-file }}
           if-no-files-found: error
 
-      - name: Explain how to test the PR installer
-        # Write the summary once, for the x64 build only.
-        if: github.event_name == 'pull_request' && matrix.msvc-arch == 'x64'
-        shell: pwsh
-        env:
-          ARTIFACT_URL: ${{ steps.upload-windows.outputs.artifact-url }}
-          ARTIFACT_NAME: ${{ matrix.release-file }}
-        run: |
-          @"
-          ## PR integration testing: $env:ARTIFACT_NAME
-          [Download this Windows test build]($env:ARTIFACT_URL).
-          Extract the artifact ZIP, extract the installer ZIP inside it, run the installer
-          Before merge approval:
-          - Run the app, open patterns from src\app\share\samples\patterns
-          - Verify the fix; capture screenshots.
-          - Verify larger workflow is unaffected:
-            - Create/Edit objects: points, lines, curves, and arcs
-            - Create/Edit operations:  mirror/move/rotate/true darts 
-            - Create/Edit pieces; 
-            - Create/Export layouts.
-            - Save, close, reopen; check geometry and dependencies.
-          Post results, build details, OS/version, and screenshots in the PR.
-          "@ >> $env:GITHUB_STEP_SUMMARY
-
   publish:
-    permissions:
-      contents: write
-    # Publish is limited to scheduled and manual runs on the develop branch.
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref_name == 'develop'
     runs-on: ubuntu-latest
     needs: [version, linux, macos, windows]
@@ -380,8 +340,6 @@ jobs:
             Seamly2D-win-arm64.zip
 
   document:
-    permissions:
-      contents: write
     # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
     if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push')
     runs-on: ubuntu-latest
