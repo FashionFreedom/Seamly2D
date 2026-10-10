@@ -29,7 +29,7 @@ Tester/date:
 
 OS/version/architecture:
 
-PR head SHA / built PR merge SHA (from BUILD-INFO.txt):
+PR head SHA (from the workflow run):
 
 Workflow run URL / run attempt / version:
 

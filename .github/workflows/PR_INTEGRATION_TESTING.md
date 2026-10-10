@@ -1,6 +1,6 @@
 # PR testing
 
-Download your platform's artifact from the PR's CI run. Extract both ZIPs for Windows; read BUILD-INFO.txt. Use a test computer/VM and copies of sample files—the Windows installer may replace your installation.
+Download your platform's artifact from the PR's CI run. For Windows, extract both ZIPs and run the installer. Use a test computer/VM and copies of sample files—the Windows installer may replace your installation.
 
 Before approval:
 

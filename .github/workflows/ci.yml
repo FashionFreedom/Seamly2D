@@ -305,15 +305,10 @@ jobs:
       - name: pack installer file into .zip
         shell: pwsh
         env:
-          BUILD_EVENT: ${{ github.event_name }}
           RELEASE_FILE: ${{ matrix.release-file }}
         run: |
           Set-Location windows-build
-          $files = @('Seamly2D-installer.exe')
-          if ($env:BUILD_EVENT -eq 'pull_request') {
-            $files += @('TESTING.md', 'BUILD-INFO.txt', 'SHA256SUMS.txt', 'samples')
-          }
-          & 'C:\Program Files\7-Zip\7z.exe' a $env:RELEASE_FILE @files
+          & 'C:\Program Files\7-Zip\7z.exe' a $env:RELEASE_FILE Seamly2D-installer.exe
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Upload windows artifacts
