@@ -3081,7 +3081,7 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Proměnné</translation>

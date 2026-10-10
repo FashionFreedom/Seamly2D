@@ -1,31 +1,28 @@
-/******************************************************************************
- **  @file   svg_generator.cpp
- **  @author Evans PERRET
- **  @date   September 21, 2024
- **
- **  @brief
- **  Custom SVG generator to handle groups in SVGs
- **
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *****************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+//  @file   svg_generator.cpp
+//  @author Evans PERRET
+//  @date   21 Sep, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program, whose allow create and modeling patterns of clothing.
+//  Copyright (C) 2013-2026 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "svg_generator.h"
 #include <QFile>
@@ -39,116 +36,132 @@
 static const int ObjectName = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
-SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution):
-    m_paper(paper),
-    m_filepath(name),
-    m_description(description),
-    m_resolution(resolution)
+SvgGenerator::SvgGenerator(QGraphicsRectItem *paper, QString name, QString description, int resolution)
+    : m_paper(paper)
+    , m_filepath(name)
+    , m_description(description)
+    , m_resolution(resolution)
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Merge all the SVGs in the m_domList list into a single SVG
- * @return The merged SVG as a DOM document
- * @details m_domList contains DOM representations of multiple SVGs
-            Assuming each svg contains a main group containing every graphical item of the svg,
-            this function adds to the first svg of the list all the main groups of the other svgs,
-            thus creating a single svg with each svg of the list in it, every svg being in its own group.
-            This function is used in order to create svgs containing groups
- */
+/// @brief Merge all the SVGs in the m_dom_list list into a single SVG
+/// @return The merged SVG as a DOM document
+/// @details m_dom_list contains DOM representations of multiple SVGs
+///          Assuming each svg contains a main group containing every graphical item of the svg,
+///          this function adds to the first svg of the list all the main groups of the other svgs,
+///          thus creating a single svg with each svg of the list in it, every svg being in its own group.
+///          This function is used in order to create svgs containing groups
+//---------------------------------------------------------------------------------------------------------------------
 QDomDocument SvgGenerator::mergeSvgDoms()
 {
-    if (m_domList.isEmpty()) {
+    if (m_dom_list.isEmpty())
+    {
         qDebug() << "Error : the SVG list is empty";
         return QDomDocument();
     }
 
-    QDomDocument mergedSvg = m_domList.at(0).cloneNode().toDocument();
+    QDomDocument merged_svg = m_dom_list.at(0).cloneNode().toDocument();
 
-    QDomElement mergedSvgRoot = mergedSvg.documentElement();
-    if (mergedSvgRoot.tagName() != "svg") {
+    QDomElement merged_svg_root = merged_svg.documentElement();
+    if (merged_svg_root.tagName() != "svg")
+    {
         qDebug() << "Error : the first SVG does not contain a <svg> tag.";
         return QDomDocument();
     }
 
-    QDomNodeList mergedSvgGroups = mergedSvgRoot.elementsByTagName("g");
-    if (mergedSvgGroups.isEmpty()) {
+    QDomNodeList merged_svg_groups = merged_svg_root.elementsByTagName("g");
+    if (merged_svg_groups.isEmpty())
+    {
         qDebug() << "Error : the SVG does not contain a <g> tag.";
         return QDomDocument();
     }
-    mergedSvgRoot.removeChild(mergedSvgGroups.at(0));
+    merged_svg_root.removeChild(merged_svg_groups.at(0));
 
-    for (int i = 0; i < m_domList.size(); ++i) {
-        QDomDocument domSvg = m_domList.at(i);
-        QDomElement svgRoot = domSvg.documentElement();
-        if (svgRoot.tagName() != "svg") {
+    for (int i = 0; i < m_dom_list.size(); ++i)
+    {
+        QDomDocument dom_svg = m_dom_list.at(i);
+        QDomElement svg_root = dom_svg.documentElement();
+        if (svg_root.tagName() != "svg")
+        {
             qDebug() << "Error : the SVG does not contain a <svg> tag.";
             return QDomDocument();
         }
-        QDomNodeList svgGroups = svgRoot.elementsByTagName("g");
-        if (svgGroups.isEmpty()) {
+        QDomNodeList svg_groups = svg_root.elementsByTagName("g");
+        if (svg_groups.isEmpty())
+        {
             qDebug() << "Error : the SVG does not contain a <g> tag.";
             return QDomDocument();
         }
-        QDomElement mainGroup = svgGroups.at(0).toElement();
-        cleanSvg(mainGroup);
-        mergedSvgRoot.appendChild(mainGroup);
+        QDomElement main_group = svg_groups.at(0).toElement();
+        cleanSvg(main_group);
+        merged_svg_root.appendChild(main_group);
     }
 
-    return mergedSvg;
+    return merged_svg;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Remove empty groups from the SVG
- * @return void
- * @details This function removes empty unuseful groups from the exported SVG.
- *          Those empty groups were generated by Qt svg generator.
- */
-void SvgGenerator::removeEmptyGroups(QDomElement &mainGroup)
+/// @brief Remove empty groups from the SVG
+/// @return void
+/// @details This function removes empty unuseful groups from the exported SVG.
+///          Those empty groups were generated by Qt svg generator.
+//---------------------------------------------------------------------------------------------------------------------
+void SvgGenerator::removeEmptyGroups(QDomElement &main_group)
 {
-    bool svgCleaned = false;
+    bool svg_cleaned = false;
 
     //We must remove the empty groups one by one until no more empty group is found.
     //Since removing a group modifies the QDomNodeList indexation, we start over
     //the search from the beginning each time a group is removed.
-    while(!svgCleaned)
+    while(!svg_cleaned)
     {
-        svgCleaned = true;
-        QDomNodeList groups = mainGroup.elementsByTagName("g");
+        svg_cleaned = true;
+        QDomNodeList groups = main_group.elementsByTagName("g");
 
-        for (int i = 0; i < groups.size(); ++i) {
-            QDomElement group = groups.at(i).toElement();
-            if (group.childNodes().isEmpty()) {
-                if (mainGroup.removeChild(group).isNull()) {
+        for (const QDomNode &node : groups)
+        {
+            QDomElement group = node.toElement();
+            if (group.childNodes().isEmpty())
+            {
+                if (main_group.removeChild(group).isNull())
+                {
                     qDebug() << "Error : could not remove empty group";
                 }
-                svgCleaned = false;
+                svg_cleaned = false;
                 break;
             }
+        }
+
+        // If we just removed a group, restart from the beginning immediately
+        if (!svg_cleaned)
+        {
+            continue;
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Remove the M0,0 origin path from the SVG
- * @return void
- * @details This function removes tht M0,0 origin path from the SVG.
- *          If this path is not removed, the bounding box of the exported pattern piece
- *          when opened in a svg editing software can be wrong.
- */
-void SvgGenerator::removeEmptyOriginPath(QDomElement &mainGroup)
+/// @brief Remove empty paths from the SVG
+/// @return void
+/// @details This function removes the M0,0 origin path from the SVG
+///          If this path is not removed, the bounding box of the exported pattern piece
+///          when opened in a svg editing software can be wrong. Also removes any empty paths
+///          that may cause an "Invalid path data; path truncated" warnings when imported. 
+//---------------------------------------------------------------------------------------------------------------------
+void SvgGenerator::removeEmptyPaths(QDomElement &main_group)
 {
-    QDomNodeList paths = mainGroup.elementsByTagName("path");
-    for (int i = 0; i < paths.size(); ++i) {
-        QDomElement path = paths.at(i).toElement();
-        if (path.attribute("d") == "M0,0") {
-            QDomElement parentGroup = path.parentNode().toElement();
-            parentGroup.removeChild(path);
-            mainGroup.removeChild(parentGroup);
-            break;
+    QDomNodeList paths = main_group.elementsByTagName("path");
+
+    for (const QDomNode &node : paths)
+    {
+        QDomElement path = node.toElement();
+        if (path.attribute("d") == "M0,0" || path.attribute("d").trimmed().isEmpty())
+        {
+            QDomElement parent_group = path.parentNode().toElement();
+            parent_group.removeChild(path);
+            main_group.removeChild(parent_group);
+            break; // Essential for safety since the underlying DOM list shrinks!
         }
     }
 }
@@ -158,10 +171,10 @@ void SvgGenerator::removeEmptyOriginPath(QDomElement &mainGroup)
 /// @return void
 /// @details This function cleans the SVG by removing empty groups and the origin M0,0 path
 //-----------------------------------------------------------------------------
-void SvgGenerator::cleanSvg(QDomElement &mainGroup)
+void SvgGenerator::cleanSvg(QDomElement &main_group)
 {
-    removeEmptyGroups(mainGroup);
-    removeEmptyOriginPath(mainGroup);
+    removeEmptyGroups(main_group);
+    removeEmptyPaths(main_group);
 }
 
 //-----------------------------------------------------------------------------
@@ -183,52 +196,51 @@ void SvgGenerator::setAttribute(QDomElement element, const QString &attr, const 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Add a new SVG to the list of SVGs to be merged into a single SVG.
- * @param scene : the scene that must be converted to SVG.
- * @param item : graphic item that SVg is being cretaed from. Needed for IS name.
- * @return void
- * @details This function creates a SVG from the given scene and converts it into
-            a DOM that is added to the m_domList list of SVGs to be merged.
-*/
+/// @brief Add a new SVG to the list of SVGs to be merged into a single SVG.
+/// @param scene : the scene that must be converted to SVG.
+/// @param item : graphic item that SVg is being cretaed from. Needed for IS name.
+/// @return void
+/// @details This function creates a SVG from the given scene and converts it into
+///          a DOM that is added to the m_dom_list list of SVGs to be merged.
+//---------------------------------------------------------------------------------------------------------------------
 void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
 {
-    QByteArray byteArray;
-    QBuffer buffer(&byteArray);
+    QByteArray byte_array;
+    QBuffer buffer(&byte_array);
     buffer.open(QIODevice::WriteOnly);
 
-    QSvgGenerator svgGenerator;
-    svgGenerator.setOutputDevice(&buffer);
-    svgGenerator.setSize(m_paper->rect().size().toSize());
-    svgGenerator.setViewBox(m_paper->rect());
-    svgGenerator.setTitle(QString());
-    svgGenerator.setDescription(QString());
-    svgGenerator.setResolution(m_resolution);
+    QSvgGenerator svg_generator;
+    svg_generator.setOutputDevice(&buffer);
+    svg_generator.setSize(m_paper->rect().size().toSize());
+    svg_generator.setViewBox(m_paper->rect());
+    svg_generator.setTitle(QString());
+    svg_generator.setDescription(QString());
+    svg_generator.setResolution(m_resolution);
 
-    QFont appFont; 
-    appFont.setPointSize(8);
+    QFont app_font;
+    app_font.setPointSize(8);
 
     QPainter painter;
-    painter.begin(&svgGenerator);
-    painter.setFont(appFont);
+    painter.begin(&svg_generator);
+    painter.setFont(app_font);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    painter.setBrush (QBrush(Qt::NoBrush));
     scene->render(&painter, m_paper->rect(), m_paper->rect(), Qt::IgnoreAspectRatio);
     painter.end();
 
-    QDomDocument domDoc;
-    if (domDoc.setContent(byteArray))
+    QDomDocument dom_doc;
+    if (dom_doc.setContent(byte_array))
     {
         // set pattern piece name as parent group id name
         if (item != nullptr)
         {
-            QDomNodeList list = domDoc.elementsByTagName("g");
+            QDomNodeList list = dom_doc.elementsByTagName("g");
             if (!list.isEmpty())
             {
                 setAttribute(list.at(0).toElement(), "id", item->data(ObjectName).toString());
             }
         }
-        m_domList.append(domDoc);
+        m_dom_list.append(dom_doc);
     } else
     {
         qDebug() << "Error : Impossible to load the SVG content in the QDomDocument.";
@@ -239,25 +251,25 @@ void SvgGenerator::addSvgFromScene(QGraphicsScene *scene, QGraphicsItem *item)
 
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief Generate the merged SVG where each previously given scene is grouped separately.
- * @return void
- * @details This function merges the SVGs of the m_domList list and writes the result
-            in a file at the path given in the constructor.
-*/
+/// @brief Generate the merged SVG where each previously given scene is grouped separately.
+/// @return void
+/// @details This function merges the SVGs of the m_dom_list list and writes the result
+///          in a file at the path given in the constructor.
+//---------------------------------------------------------------------------------------------------------------------
 void SvgGenerator::generate()
 {
-    QDomDocument mergedSvg = mergeSvgDoms();
+    QDomDocument merged_svg = mergeSvgDoms();
 
-    QFile outputFile(m_filepath);
-    if (!outputFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    QFile output_file(m_filepath);
+    if (!output_file.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
         qDebug() << "Error : Couldn't write the output file.";
         return;
     }
 
-    QTextStream stream(&outputFile);
-    stream << mergedSvg.toString();
-    outputFile.close();
+    QTextStream stream(&output_file);
+    stream << merged_svg.toString();
+    output_file.close();
 
     qDebug() << "Merged SVG Generated!";
 }

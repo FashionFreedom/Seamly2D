@@ -3066,7 +3066,7 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variabelen</translation>

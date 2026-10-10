@@ -3081,7 +3081,7 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variabile</translation>

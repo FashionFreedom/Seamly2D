@@ -3066,7 +3066,7 @@ Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzio
     </message>
 </context>
 <context>
-    <name>DialogVariables</name>
+    <name>VariablesDialog</name>
     <message>
         <source>Variables</source>
         <translation>Variabili</translation>
