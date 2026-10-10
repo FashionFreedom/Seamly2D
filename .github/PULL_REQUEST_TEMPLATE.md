@@ -9,12 +9,15 @@ Describe the problem, resulting behavior, and related issue.
 
 ## Integration testing (before approval)
 
-Rebase on current `develop`, build locally, and test with copies of the samples
-in `src/app/share/samples/patterns`.
+Rebase on current `develop`, build locally, and test with copies of the sample files:
+
+- Patterns: `src/app/share/samples/patterns`
+- Measurements: `src/app/share/samples/measurements`
+
 Record results in a PR comment if testing happens after opening this PR.
 
 - [ ] Built the PR locally and launched it.
-- [ ] Opened and modified sample patterns.
+- [ ] Opened and modified sample patterns and measurement files.
 - [ ] Created/edited points, lines, curves, and arcs.
 - [ ] Tested mirror, move, rotate, and true darts (explain any N/A).
 - [ ] Created and edited pieces.
