@@ -6355,7 +6355,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Panorointi</translation>
+        <translation>Siirto</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
@@ -7027,7 +7027,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
-        <translation>Panoroi työalue (Z, P)</translation>
+        <translation>Siirrä työaluetta (Z, P)</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
@@ -9317,7 +9317,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Pan active while Space key is pressed</source>
-        <translation>Panorointi aktiivinen välilyöntinäppäintä painettaessa</translation>
+        <translation>Siirto on aktiivinen välilyöntinäppäintä painettaessa</translation>
     </message>
     <message>
         <source>Export</source>
@@ -10679,7 +10679,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Panoroi</translation>
+        <translation>Siirto</translation>
     </message>
     <message>
         <source>Show Name Text</source>
