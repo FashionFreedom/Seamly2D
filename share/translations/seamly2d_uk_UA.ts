@@ -9,15 +9,15 @@
     </message>
     <message>
         <source>Left to right</source>
-        <translation>Από αριστερά προς δεξιά</translation>
+        <translation>Зліва направо</translation>
     </message>
     <message>
         <source>Right to left</source>
-        <translation>Δεξιά προς αριστερά</translation>
+        <translation>Справа наліво</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Αυτόματο</translation>
+        <translation>Автоматична</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
@@ -25,103 +25,107 @@
     </message>
     <message>
         <source>About</source>
-        <translation>Σχετικά με</translation>
+        <translation>Про нас</translation>
     </message>
     <message>
         <source>Copy build data to clipboard</source>
-        <translation>Αντιγραφή δεδομένων κατασκευής στο πρόχειρο</translation>
+        <translation>Копіювати дані збірки в буфер обміну</translation>
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>Άψογα 2D</translation>
+        <translation>Плавний 2D</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation type="unfinished">Веб-сайт:</translation>
     </message>
     <message>
         <source>Version</source>
-        <translation>Έκδοση</translation>
+        <translation>Версія</translation>
     </message>
     <message>
         <source>Build date:</source>
-        <translation>Ημερομηνία κατασκευής:</translation>
+        <translation>Дата складання:</translation>
     </message>
     <message>
         <source>Qt Version:</source>
-        <translation>Έκδοση Qt:</translation>
+        <translation>Версія Qt:</translation>
     </message>
     <message>
         <source>Compiler:</source>
-        <translation>Μεταγλωττιστής:</translation>
+        <translation>Компілятор:</translation>
     </message>
     <message>
         <source>System</source>
-        <translation>Σύστημα</translation>
+        <translation>Система</translation>
     </message>
     <message>
         <source>Revision:</source>
-        <translation>Αναθεώρηση:</translation>
+        <translation>Версія:</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Έκδοση:</translation>
+        <translation>Версія:</translation>
     </message>
     <message>
         <source>Architecture</source>
-        <translation>Αρχιτεκτονική</translation>
+        <translation>Архітектура</translation>
     </message>
     <message>
         <source>OS Version:</source>
-        <translation>Έκδοση λειτουργικού συστήματος:</translation>
+        <translation>Версія ОС:</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Τοπικές ρυθμίσεις</translation>
+        <translation>Місцезнаходження</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation>Χώρα:</translation>
+        <translation>Країна:</translation>
     </message>
     <message>
         <source>Decimal point:</source>
-        <translation>Υποδιαστολή:</translation>
+        <translation>Десяткова кома:</translation>
     </message>
     <message>
         <source>Script name:</source>
-        <translation>Όνομα σεναρίου:</translation>
+        <translation>Назва скрипта:</translation>
     </message>
     <message>
         <source>System codec:</source>
-        <translation>Κωδικοποιητής συστήματος:</translation>
+        <translation>Системний кодек:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Γλώσσα:</translation>
+        <translation>Мова:</translation>
     </message>
     <message>
         <source>Text direction:</source>
-        <translation>Κατεύθυνση κειμένου:</translation>
+        <translation>Напрямок тексту:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Positive sign:</source>
-        <translation>Θετικό πρόσημο:</translation>
+        <translation>Позитивний знак:</translation>
     </message>
     <message>
         <source>Negative sign:</source>
-        <translation>Αρνητικό πρόσημο:</translation>
+        <translation>Знак мінус:</translation>
     </message>
     <message>
         <source>Application</source>
-        <translation>Εφαρμογή</translation>
+        <translation>Застосунок</translation>
     </message>
     <message>
         <source>Arguments:</source>
-        <translation>Ορίσματα:</translation>
+        <translation>Аргументи:</translation>
     </message>
     <message>
         <source>Contributors</source>
-        <translation>Συντελεστές</translation>
+        <translation>Учасники</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -129,22 +133,18 @@
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>Η λήψη του προγράμματος εγκατάστασης %p% ολοκληρώθηκε</translation>
+        <translation>Завантаження інсталятора %p% завершено</translation>
     </message>
     <message>
         <source>unknown</source>
         <translation>невідомий</translation>
-    </message>
-    <message>
-        <source>Website:</source>
-        <translation>Веб-сайт:</translation>
     </message>
 </context>
 <context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>προσθήκη προσχεδίου μπλοκ %1</translation>
+        <translation>додати блок чернетки %1</translation>
     </message>
 </context>
 <context>
@@ -158,21 +158,21 @@
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation>Προσθήκη στοιχείου στην ομάδα</translation>
+        <translation>Додати елемент до групи</translation>
     </message>
 </context>
 <context>
     <name>AddImage</name>
     <message>
         <source>add image</source>
-        <translation>προσθήκη εικόνας</translation>
+        <translation>додати зображення</translation>
     </message>
 </context>
 <context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation>προσθήκη κομματιού</translation>
+        <translation>додати елемент</translation>
     </message>
 </context>
 <context>
@@ -186,49 +186,49 @@
     <name>AddToGroupDialog</name>
     <message>
         <source>Add to Group</source>
-        <translation>Προσθήκη στην ομάδα</translation>
+        <translation>Додати до групи</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Προσθήκη νέας ομάδας στη λίστα</translation>
+        <translation type="unfinished">Додати нову групу до списку</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Το όνομα υπάρχει</translation>
+        <translation type="unfinished">Ім&apos;я існує</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>Η ενέργεια δεν μπορεί να ολοκληρωθεί επειδή το όνομα της ομάδας υπάρχει ήδη.</translation>
+        <translation type="unfinished">Дію неможливо завершити, оскільки назва групи вже існує.</translation>
     </message>
 </context>
 <context>
     <name>AnchorPointDialog</name>
     <message>
         <source>Anchor Point</source>
-        <translation>Σημείο αγκύρωσης</translation>
+        <translation>Точка опори</translation>
     </message>
     <message>
         <source>Anchor Point tool</source>
-        <translation>Εργαλείο σημείου αγκύρωσης</translation>
+        <translation>Інструмент &quot;Точка прив&apos;язки&quot;</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Σημείο:</translation>
+        <translation>Точка:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Деталь:</translation>
+        <translation>Деталі:</translation>
     </message>
 </context>
 <context>
     <name>AnchorPointTool</name>
     <message>
         <source>add anchor point</source>
-        <translation>προσθήκη σημείου αγκύρωσης</translation>
+        <translation>додати точку прив&apos;язки</translation>
     </message>
 </context>
 <context>
@@ -368,80 +368,80 @@
 <context>
     <name>BasePointDialog</name>
     <message>
-        <source>Coordinates on the sheet</source>
-        <translation>Координати на листі</translation>
-    </message>
-    <message>
-        <source>Coordinates</source>
-        <translation>Координати</translation>
-    </message>
-    <message>
         <source>Base Point</source>
-        <translation>Базова точка</translation>
+        <translation type="unfinished">Базова точка</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>X coordinate:</source>
-        <translation>Συντεταγμένη Χ:</translation>
-    </message>
-    <message>
-        <source>Y coordinate:</source>
-        <translation>Συντεταγμένη Υ:</translation>
+        <translation type="unfinished">Вибір</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished">Унікальне ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished">Виберіть унікальне ім&apos;я.</translation>
+    </message>
+    <message>
+        <source>Coordinates on the sheet</source>
+        <translation type="unfinished">Координати на листі</translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation type="unfinished">Координати</translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation type="unfinished">Координата X:</translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
+        <translation type="unfinished">Координата Y:</translation>
     </message>
 </context>
 <context>
     <name>BasePointTool</name>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CalculatorDialog</name>
     <message>
         <source>Calculator</source>
-        <translation>Αριθμομηχανή</translation>
+        <translation>Калькулятор</translation>
     </message>
 </context>
 <context>
     <name>CalculatorUtil</name>
     <message>
         <source>Backspace</source>
-        <translation>Πίσω</translation>
+        <translation>Повернення назад</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Καθαρισμός</translation>
+        <translation>Очистити</translation>
     </message>
     <message>
         <source>Clear All</source>
-        <translation>Εκκαθάριση όλων</translation>
+        <translation>Очистити все</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Αριθμομηχανή</translation>
+        <translation>Калькулятор</translation>
     </message>
 </context>
 <context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation>Δεκαδικό Διάγραμμα</translation>
+        <translation>Десяткова таблиця</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -460,14 +460,14 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 7/16 = .4375&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 9/16 = .5625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0;&quot; відступ тексту:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = 0,0625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = 0,1875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = 0,3125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; лівий край: 0 пікселів; правий край: 0 пікселів; -qt-block-indent: 0; відступ тексту: 0 пікселів;&quot;&gt;&lt;span style=&quot; font-size: 12pt;&quot;&gt; 7/16 = 0,4375&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; верхній край: 0 пікселів; нижній край: 0 пікселів; лівий край: 0 пікселів; правий край: 0 пікселів; -qt-block-indent: 0; відступ тексту: 0 пікселів;&quot;&gt;&lt;span style=&quot; font-size: 12pt;&quot;&gt; 9/16 = 0,5625&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; верхній край: 0 пікселів; нижній край: 0 пікселів; лівий край: 0 пікселів; правий край: 0 пікселів; -qt-block-indent: 0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = 0,6875&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = 0,8125&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = 0,9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -479,7 +479,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0;&quot; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = 0,125&lt;br /&gt;2/8 = 0,250&lt;br /&gt;3/8 = 0,375&lt;br /&gt;4/8 = 0,500&lt;br /&gt;5/8 = 0,625&lt;br /&gt;6/8 = 0,750&lt;br /&gt;7/8 = 0,875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -500,7 +500,7 @@ p, li { white-space: pre-wrap; }
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>διαγραφή προσχεδίου μπλοκ %1</translation>
+        <translation>видалити блок чернетки %1</translation>
     </message>
 </context>
 <context>
@@ -514,7 +514,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogAboutSeamlyMe</name>
     <message>
         <source>About SeamlyMe</source>
-        <translation>Pro SeamlyMe</translation>
+        <translation>Про SeamlyMe</translation>
     </message>
     <message>
         <source>SeamlyMe version</source>
@@ -522,15 +522,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Ρεβίζια: %1</translation>
+        <translation>Ревізія: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
-        <translation>Ця πρόγραμμα є частиною projectу Seamly2D.</translation>
+        <translation>Ця програма є частиною проекту Seamly2D.</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
-        <translation>Η λήψη του προγράμματος εγκατάστασης %p% ολοκληρώθηκε</translation>
+        <translation>Завантаження інсталятора %p% завершено</translation>
     </message>
     <message>
         <source>Check For Updates</source>
@@ -538,15 +538,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Δεν μπορώ να βρίσκω τον φραγμό για να τονίσω</translation>
+        <translation>Не можу відкрити браузер за замовчуванням</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
-        <translation>Εξαιρετικό %1 σε %2</translation>
+        <translation>Зібрано %1 в %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
-        <translation>Προσωπική σελίδα : %1</translation>
+        <translation>Веб-сайт: %1</translation>
     </message>
     <message>
         <source>unknown</source>
@@ -597,43 +597,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Σημείο - Σε Γραμμή</translation>
+        <translation>Точка - на лінії</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -700,31 +700,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Τόξο - Ακτίνα και Γωνίες</translation>
+        <translation>Дуга - радіус і кути</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -787,31 +787,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Τόξο - Ακτίνα και Μήκος</translation>
+        <translation>Дуга - радіус і довжина</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -858,43 +858,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Σημείο - Στη διχοτόμο</translation>
+        <translation>Точка - на бісектрисі</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -905,7 +905,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -922,6 +922,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Fourth point:</source>
         <translation>Четверта точка:</translation>
+    </message>
+    <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Помилка</translation>
+    </message>
+    <message>
+        <source>Length can&apos;t be negative</source>
+        <translation type="unfinished">Довжина не може мати від&apos;ємне значення</translation>
     </message>
     <message>
         <source>Select the second point of curve</source>
@@ -941,83 +953,71 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Καμπύλη - Διορθώθηκε</translation>
+        <translation>Крива – фіксована</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
-    </message>
-    <message>
-        <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Παραμετρίες</translation>
+        <translation type="unfinished">Параметри</translation>
     </message>
     <message>
         <source>Smooth curve:</source>
-        <translation>Згладжена крива:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Ні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Так</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Adjust length:</source>
-        <translation>Налаштування довжини:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Off</source>
-        <translation>Вимкнено</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Початок</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>End</source>
-        <translation>Кінець</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Προσδοκία</translation>
+        <translation type="unfinished">В обидві сторони</translation>
     </message>
     <message>
         <source>Curve length:</source>
-        <translation>Довжина кривої:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit curve length</source>
-        <translation>Редагувати довжину кривої</translation>
+        <source>Attributes</source>
+        <translation>Атрибути</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>Length can&apos;t be negative</source>
-        <translation>Довжина не може мати від&apos;ємне значення</translation>
+        <source>Lineweight:</source>
+        <translation>Вага лінії:</translation>
     </message>
 </context>
 <context>
@@ -1036,7 +1036,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
@@ -1044,27 +1044,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Σπλάιν - Σταθερό</translation>
+        <translation>Сплайн – фіксований</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Σε παρακαλώ:</translation>
+        <translation>Шлях:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
 </context>
 <context>
@@ -1099,43 +1099,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>Τομή - Καμπύλη και Άξονας</translation>
+        <translation>Перетин – крива та вісь</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1166,47 +1166,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Σημείο - Σε Τόξο</translation>
+        <translation>Точка на дузі</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Κατεύθυνση :</translation>
+        <translation>Напрямок:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Εμπρός (από το σημείο εκκίνησης)</translation>
+        <translation>Вперед (від початкової точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Πίσω (από το τελικό σημείο)</translation>
+        <translation>Назад (від кінцевої точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
@@ -1237,47 +1237,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Σημείο - Στην Καμπύλη</translation>
+        <translation>Точка на кривій</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Κατεύθυνση :</translation>
+        <translation>Напрямок:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Εμπρός (από το σημείο εκκίνησης)</translation>
+        <translation>Вперед (від початкової точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Πίσω (από το τελικό σημείο)</translation>
+        <translation>Назад (від кінцевої точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
@@ -1308,66 +1308,66 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Σημείωση - Σε αυλάκωση</translation>
+        <translation>Точка - на сплайні</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Direction :</source>
-        <translation>Κατεύθυνση :</translation>
+        <translation>Напрямок:</translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Εμπρός (από το σημείο εκκίνησης)</translation>
+        <translation>Вперед (від початкової точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Πίσω (από το τελικό σημείο)</translation>
+        <translation>Назад (від кінцевої точки)</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
 </context>
 <context>
     <name>DialogDateTimeFormats</name>
     <message>
         <source>Label date time editor</source>
-        <translation>Επεξεργαστής ημερομηνίας/ώρας ετικετών</translation>
+        <translation>Редактор дати та часу міток</translation>
     </message>
     <message>
         <source>Format:</source>
-        <translation>Μορφή:</translation>
+        <translation>Формат:</translation>
     </message>
     <message>
         <source>Insert a format</source>
-        <translation>Εισαγωγή μορφής</translation>
+        <translation>Вставити формат</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation>&lt;κενό&gt;</translation>
+        <translation>&lt;порожньо&gt;</translation>
     </message>
 </context>
 <context>
@@ -1450,31 +1450,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Τόξο - Ελλειπτικό</translation>
+        <translation>Дуга - еліптична</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1513,43 +1513,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Σημείο - Μήκος και Γωνία</translation>
+        <translation>Точка - довжина та кут</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1607,27 +1607,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Σημείο - Τομή ευθείας και κάθετης</translation>
+        <translation>Точка - перетин прямої та перпендикуляра</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1639,15 +1639,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1670,7 +1670,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Ένα ή περισσότερα κομμάτια πατρόν είναι μεγαλύτερα από τη μορφή χαρτιού που επιλέξατε. Επιλέξτε μια μεγαλύτερη μορφή χαρτιού.</translation>
+        <translation>«Один або декілька фрагментів викрійки більші за вибраний вами формат паперу. Виберіть більший формат паперу».</translation>
     </message>
 </context>
 <context>
@@ -1689,31 +1689,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Line - Between Points</source>
-        <translation>Γραμμή - Μεταξύ Σημείων</translation>
+        <translation>Лінія – між точками</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Line_</source>
@@ -1752,23 +1752,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Σημείο - Τομή Γραμμών</translation>
+        <translation>Точка - перетин ліній</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1815,27 +1815,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Intersect - Line and Axis</source>
-        <translation>Τομή - Γραμμή και Άξονας</translation>
+        <translation>Перетин – лінія та вісь</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1847,19 +1847,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -1870,7 +1870,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ME Database - Add known measurement</source>
-        <translation>Βάση δεδομένων ME - Προσθήκη γνωστών μετρήσεων</translation>
+        <translation>База даних ME – Додати відоме вимірювання</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1878,57 +1878,57 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Search</source>
-        <translation>Πόσοκ</translation>
+        <translation>Пошук</translation>
     </message>
 </context>
 <context>
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Καθρέφτης ανά άξονα</translation>
+        <translation>Дзеркало від Axis</translation>
     </message>
     <message>
         <source>Axis point:</source>
-        <translation>Θα είναι αισθητή:</translation>
+        <translation>Точка осі:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Σούφιξ:</translation>
+        <translation>Суфікс:</translation>
     </message>
     <message>
         <source>Axis type:</source>
-        <translation>Tip vіsі:</translation>
+        <translation>Тип вісі:</translation>
     </message>
     <message>
         <source>Select axis rotation point</source>
-        <translation>Επιλογή σημείου περιστροφής άξονα</translation>
+        <translation>Вибрати точку обертання осі</translation>
     </message>
     <message>
         <source>Select axis rotation point that is not part of the list of objects</source>
-        <translation>Επιλογή σημείου περιστροφής άξονα που δεν αποτελεί μέρος της λίστας αντικειμένων</translation>
+        <translation>Вибрати точку обертання осі, якої немає у списку об&apos;єктів</translation>
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation>Verticalьna ісь</translation>
+        <translation>Вертикальна вісь</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Gorizontalьna вісь</translation>
+        <translation>Горизонтальна вісь</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
 </context>
 <context>
     <name>DialogMirrorByLine</name>
     <message>
         <source>Mirror by Line</source>
-        <translation>Καθρέφτης ανά γραμμή</translation>
+        <translation>Дзеркало за лінією</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>First line point:</source>
@@ -1936,27 +1936,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Δούγκα σημείο λινії:</translation>
+        <translation>Друга точка лінії:</translation>
     </message>
     <message>
         <source>Suffix:</source>
-        <translation>Σούφιξ:</translation>
+        <translation>Суфікс:</translation>
     </message>
     <message>
         <source>Select first mirror line point</source>
-        <translation>Επιλογή σημείου γραμμής πρώτου κατοπτρισμού</translation>
+        <translation>Вибрати першу точку лінії дзеркала</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
-        <translation>Επιλογή σημείου πρώτης γραμμής κατοπτρισμού που δεν αποτελεί μέρος της λίστας αντικειμένων</translation>
+        <translation>Виберіть першу точку лінії дзеркала, яка не входить до списку об&apos;єктів</translation>
     </message>
     <message>
         <source>Select second mirror line point</source>
-        <translation>Επιλογή δεύτερου σημείου γραμμής κατοπτρισμού</translation>
+        <translation>Вибрати другу точку лінії дзеркала</translation>
     </message>
     <message>
         <source>Select second mirror line point that is not part of the list of objects</source>
-        <translation>Επιλογή δεύτερου σημείου γραμμής κατοπτρισμού που δεν αποτελεί μέρος της λίστας αντικειμένων</translation>
+        <translation>Виберіть другу точку лінії дзеркала, яка не входить до списку об&apos;єктів</translation>
     </message>
 </context>
 <context>
@@ -1999,15 +1999,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Origin Point:</source>
-        <translation>Осьова σημείο:</translation>
+        <translation>Осьова точка:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -2019,7 +2019,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit rotation</source>
-        <translation>Επεξεργασία περιστροφής</translation>
+        <translation>Редагувати обертання</translation>
     </message>
 </context>
 <context>
@@ -2050,11 +2050,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
+        <translation>Міліметри</translation>
     </message>
     <message>
         <source>Draft block name:</source>
-        <translation>Όνομα μπλοκ προσχεδίου:</translation>
+        <translation>Назва блоку чернетки:</translation>
     </message>
 </context>
 <context>
@@ -2093,31 +2093,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Σημείο - Σε κάθετο</translation>
+        <translation>Точка - на перпендикулярі</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -2125,15 +2125,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -2256,7 +2256,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>From multisize measurements</source>
-        <translation>Από μετρήσεις πολλαπλών μεγεθών</translation>
+        <translation>З багаторозмірних вимірювань</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -2264,43 +2264,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>For technical notes</source>
-        <translation>Για τεχνικές σημειώσεις</translation>
+        <translation>Для технічних приміток</translation>
     </message>
     <message>
         <source>Label data</source>
-        <translation>Δεδομένα ετικέτας</translation>
+        <translation>Дані мітки</translation>
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Πρότυπο ετικέτας:</translation>
+        <translation>Шаблон етикетки:</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Επεξεργασία ετικέτας μοτίβου</translation>
+        <translation>Редагувати мітку шаблону</translation>
     </message>
     <message>
         <source>Edit template</source>
-        <translation>Επεξεργασία προτύπου</translation>
+        <translation>Редагувати шаблон</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation>Μορφή ημερομηνίας:</translation>
+        <translation>Формат дати:</translation>
     </message>
     <message>
         <source>Time format:</source>
-        <translation>Μορφή ώρας:</translation>
+        <translation>Формат часу:</translation>
     </message>
     <message>
         <source>Save label data.</source>
-        <translation>Αποθήκευση δεδομένων ετικέτας.</translation>
+        <translation>Зберегти дані мітки.</translation>
     </message>
     <message>
         <source>Label data were changed. Do you want to save them before editing label template?</source>
-        <translation>Τα δεδομένα ετικέτας άλλαξαν. Θέλετε να τα αποθηκεύσετε πριν επεξεργαστείτε το πρότυπο ετικέτας?</translation>
+        <translation>Дані етикетки змінено. Бажаєте зберегти їх перед редагуванням шаблону етикетки?</translation>
     </message>
     <message>
         <source>Pattern preferences</source>
-        <translation>Προτιμήσεις μοτίβων</translation>
+        <translation>Налаштування шаблону</translation>
     </message>
 </context>
 <context>
@@ -2323,23 +2323,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Σημείο - Τομή Τόξου και Εφαπτομένης</translation>
+        <translation>Точка - перетин дуги та дотичної</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -2362,23 +2362,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Σημείο - Τομή Τόξων</translation>
+        <translation>Точка - перетин дуг</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -2397,31 +2397,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Σημείο - Τομή Καμπυλών</translation>
+        <translation>Точка - перетин кривих</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>Κατακόρυφη λήψη:</translation>
+        <translation>Вертикальний дубль:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>Οριζόντια λήψη:</translation>
+        <translation>Горизонтальний дубль:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -2432,7 +2432,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Application Preferences</source>
-        <translation>Προτιμήσεις εφαρμογής</translation>
+        <translation>Налаштування програми</translation>
     </message>
     <message>
         <source>General</source>
@@ -2440,11 +2440,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Διαδρομές αρχείων</translation>
+        <translation>Шляхи до файлів</translation>
     </message>
     <message>
         <source>Graphics</source>
-        <translation>Γραφικά</translation>
+        <translation>Графіка</translation>
     </message>
 </context>
 <context>
@@ -2475,30 +2475,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Rotation pt:</source>
-        <translation>Σημείο περιστροφής:</translation>
+        <translation>Точка обертання:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Select rotation point</source>
-        <translation>Επιλογή σημείου περιστροφής</translation>
+        <translation>Вибрати точку обертання</translation>
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
-        <translation>Επιλογή σημείου περιστροφής που δεν αποτελεί μέρος της λίστας αντικειμένων</translation>
+        <translation>Виберіть точку обертання, якої немає у списку об&apos;єктів</translation>
     </message>
 </context>
 <context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Βλαστιβοστі</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Configuration</source>
@@ -2506,7 +2506,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Διαδρομές αρχείων</translation>
+        <translation>Шляхи до файлів</translation>
     </message>
 </context>
 <context>
@@ -2553,43 +2553,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Σημείο - Μήκος προς Γραμμή</translation>
+        <translation>Точка - довжина до лінії</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -2624,7 +2624,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>Invalid spline</source>
@@ -2659,6 +2659,10 @@ p, li { white-space: pre-wrap; }
         <translation>Редагувати довжину другої контрольної точки</translation>
     </message>
     <message>
+        <source>Edit curve length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
@@ -2672,75 +2676,71 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Καμπύλη - Διαδραστική</translation>
+        <translation>Крива – інтерактивна</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
-    </message>
-    <message>
-        <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation>Παραμετρίες</translation>
+        <translation type="unfinished">Параметри</translation>
     </message>
     <message>
         <source>Smooth curve:</source>
-        <translation>Згладжена крива:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>No</source>
-        <translation>Ні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>Так</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Adjust length:</source>
-        <translation>Налаштування довжини:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Off</source>
-        <translation>Вимкнено</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Початок</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>End</source>
-        <translation>Кінець</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Προσδοκία</translation>
+        <translation type="unfinished">В обидві сторони</translation>
     </message>
     <message>
         <source>Curve length:</source>
-        <translation>Довжина кривої:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Curve arc length formula (applied if filled)</source>
-        <translation>Формула довжини дуги кривої (застосовується, якщо поле заповнено)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit curve length</source>
-        <translation>Редагувати довжину кривої</translation>
+        <source>Attributes</source>
+        <translation>Атрибути</translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation>Вага лінії:</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Геометрія</translation>
     </message>
 </context>
 <context>
@@ -2775,7 +2775,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>Invalid spline path</source>
@@ -2827,35 +2827,35 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Διαδραστικό</translation>
+        <translation>Сплайн – інтерактивний</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Σε παρακαλώ:</translation>
+        <translation>Шлях:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Result value</source>
-        <translation>Τιμή αποτελέσματος</translation>
+        <translation>Значення результату</translation>
     </message>
 </context>
 <context>
@@ -2906,7 +2906,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>by intersection</source>
-        <translation>шляхом перетину</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle Calculation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>by first edge symmetry</source>
@@ -2934,15 +2942,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Result Value</source>
-        <translation>Τιμή Αποτελέσματος</translation>
-    </message>
-    <message>
-        <source>Angle Calculation</source>
-        <translation>Υπολογισμός γωνίας</translation>
-    </message>
-    <message>
-        <source>Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.</source>
-        <translation>Οι γωνίες ορίζονται σε μοίρες, δηλαδή ένας πλήρης κύκλος ισούται με 360 μοίρες. Θετικές τιμές για μια γωνία σημαίνουν αριστερόστροφη κατεύθυνση, ενώ αρνητική τιμή σημαίνει δεξιόστροφη κατεύθυνση. Μηδέν μοίρες βρίσκονται στη θέση 3 η ώρα.</translation>
+        <translation>Значення результату</translation>
     </message>
 </context>
 <context>
@@ -2969,31 +2969,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Σημείο - Τομή Άξονα και Τρίγωνο</translation>
+        <translation>Точка - перетин осі та трикутника</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Σημείο 1ου άξονα:</translation>
+        <translation>Точка 1-ї осі:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Σημείο 2ου άξονα:</translation>
+        <translation>Точка 2-ї осі:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -3016,47 +3016,47 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>1st base point:</source>
-        <translation>1ο σημείο βάσης:</translation>
+        <translation>1-ша базова точка:</translation>
     </message>
     <message>
         <source>2nd base point:</source>
-        <translation>2ο σημείο βάσης:</translation>
+        <translation>2-га базова точка:</translation>
     </message>
     <message>
         <source>1st dart point:</source>
-        <translation>1ο σημείο βολής με βελάκι:</translation>
+        <translation>Перше очко для дротика:</translation>
     </message>
     <message>
         <source>2nd dart point:</source>
-        <translation>2ο σημείο βολής με βελάκι:</translation>
+        <translation>Друга точка для дротика:</translation>
     </message>
     <message>
         <source>3rd dart point:</source>
-        <translation>3ο σημείο βολής με βελάκι:</translation>
+        <translation>Третя точка дротика:</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Αληθινά Βελάκια</translation>
+        <translation>Справжні дротики</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Point name 1:</source>
-        <translation>Όνομα σημείου 1:</translation>
+        <translation>Назва точки 1:</translation>
     </message>
     <message>
         <source>Point name 2:</source>
-        <translation>Όνομα σημείου 2:</translation>
+        <translation>Назва точки 2:</translation>
     </message>
 </context>
 <context>
@@ -3066,6 +3066,11 @@ p, li { white-space: pre-wrap; }
         <translation>Зламана формула</translation>
     </message>
     <message>
+        <source>Seamly2D encountered an error while computing a formula.
+Please try to undo the latest operation or fix the broken formula.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&amp;Undo</source>
         <translation>&amp;Відмінити</translation>
     </message>
@@ -3073,181 +3078,12 @@ p, li { white-space: pre-wrap; }
         <source>&amp;Fix formula</source>
         <translation>&amp;Виправити формулу</translation>
     </message>
-    <message>
-        <source>Seamly2D encountered an error while computing a formula.
-Please try to undo the latest operation or fix the broken formula.</source>
-        <translation>У Seamly2D сталася помилка під час обчислення формули.
-Будь ласка, спробуйте скасувати останню операцію або виправити пошкоджену формулу.</translation>
-    </message>
-</context>
-<context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Μεταβλητές</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Φίλτρο:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Φιλιτροποιήστε τον κατάλογο για το κλειδί λέξης</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Προσαρμοσμένες μεταβλητές</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>όνομα</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formula</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Перемістити мірку вгору</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Перемістити мірку вниз</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Οδηγός τύπων</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Προσθήκη προσαρμοσμένης μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Κατάργηση προσαρμοσμένης μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Λεπτομέρειες</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Μοναδικό όνομα μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Значення:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Формула:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Rozrahunok</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Περιγραφή:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Ανανέωση μοτίβου με όλες τις αλλαγές που κάνατε</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Ανανέωση</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Μήκη γραμμών</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Λίνια</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Довжина</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Γραμμικές γωνίες</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Κούτ</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Μήκη καμπύλης</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Κρίβα</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Γωνίες καμπύλης</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Μήκη σημείων ελέγχου</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Ακτίνες τόξου</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Ντούγκα</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Ράντιους</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Помилка</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Порожнє поле.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Пусте поле</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Μη διπλή απόδοση.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значення</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Συντακτική ανάλυση: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Επεξεργασία μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Περιγραφή</translation>
-    </message>
 </context>
 <context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
     <message>
         <source>Length</source>
@@ -3255,52 +3091,50 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Tool</source>
-        <translation>Инструмент</translation>
+        <translation>Інструмент</translation>
     </message>
 </context>
 <context>
     <name>EditFormulaDialog</name>
     <message>
         <source>Edit formula</source>
-        <translation>Redaguati formulu</translation>
+        <translation>Редагувати формулу</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Μίρκι</translation>
+        <translation>Мірки</translation>
     </message>
     <message>
         <source>Custom Variables</source>
-        <translation>Προσαρμοσμένες
-μεταβλητές</translation>
+        <translation>Користувацькі змінні</translation>
     </message>
     <message>
         <source>Line Lengths</source>
-        <translation>Μήκη Γραμμών</translation>
+        <translation>Довжини ліній</translation>
     </message>
     <message>
         <source>Line Angles</source>
-        <translation>Γωνίες Γραμμής</translation>
+        <translation>Кути ліній</translation>
     </message>
     <message>
         <source>Curve Lengths</source>
-        <translation>Μήκη Καμπύλης</translation>
+        <translation>Довжини кривих</translation>
     </message>
     <message>
         <source>Curve Angles</source>
-        <translation>Γωνίες καμπύλης</translation>
+        <translation>Кути кривої</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Μήκη Σημείων
-Ελέγχου</translation>
+        <translation>Довжини контрольних точок</translation>
     </message>
     <message>
         <source>Arc Radii</source>
-        <translation>Ακτίνες τόξου</translation>
+        <translation>Радіуси дуг</translation>
     </message>
     <message>
         <source>Functions</source>
-        <translation>Φουνκτσії</translation>
+        <translation>Функції</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -3312,23 +3146,27 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Rozrahunok</translation>
+        <translation>Розрахунок</translation>
     </message>
     <message>
         <source>Clear formula</source>
-        <translation>Σαφής φόρμουλα</translation>
+        <translation>Чиста формула</translation>
     </message>
     <message>
         <source>Reset to original formula</source>
-        <translation>Επαναφορά στον αρχικό τύπο</translation>
+        <translation>Скинути до початкової формули</translation>
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Προσθέστε τη φόρμα</translation>
+        <translation>Вставити зміну у формулу</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Опис</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
-        <translation>Απόκρυψη μεταβλητών μέτρησης που δεν έχουν τιμή</translation>
+        <translation>Приховує змінні вимірювання, які не мають значення</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
@@ -3336,7 +3174,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
     <message>
         <source>Full name</source>
@@ -3344,23 +3182,23 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
-        <translation>Φιλτράρισμα λίστας μεταβλητών κατά λέξη-κλειδί</translation>
+        <translation>Фільтрувати список змінних за ключовим словом</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Φιλιτροποιήστε τον κατάλογο για το κλειδί λέξης</translation>
+        <translation>Фільтрувати список за ключовим словом</translation>
     </message>
     <message>
         <source>Measurement</source>
-        <translation>Μέτρηση</translation>
+        <translation>Вимірювання</translation>
     </message>
     <message>
         <source>Custom Variable</source>
-        <translation>Προσαρμοσμένη Μεταβλητή</translation>
+        <translation>Користувацька змінна</translation>
     </message>
     <message>
         <source>Line length</source>
-        <translation>Dovzhina lіnії</translation>
+        <translation>Довжина лінії</translation>
     </message>
     <message>
         <source>Curve length</source>
@@ -3372,259 +3210,255 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Arc radius</source>
-        <translation>Radіus dugi</translation>
+        <translation>Радіус дуги</translation>
     </message>
     <message>
         <source>Curve angle</source>
         <translation>Кут кривої</translation>
     </message>
     <message>
-        <source>Number</source>
-        <translation>Αριθμός</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Κορίστους</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Περιγραφή</translation>
-    </message>
-    <message>
         <source>Full Name:</source>
-        <translation>Повне Iм&apos;я:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation></translation>
+        <translation type="unfinished">Опис:</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Число</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation>Користуватикі</translation>
     </message>
 </context>
 <context>
     <name>EditGroupDialog</name>
     <message>
         <source>Add Group</source>
-        <translation>Προσθήκη ομάδας</translation>
+        <translation>Додати групу</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Unіcalьne іm&apos;я лекала</translation>
+        <translation>Унікальне ім&apos;я лекала</translation>
     </message>
     <message>
         <source>Unique group name</source>
-        <translation>Μοναδικό όνομα ομάδας</translation>
+        <translation>Унікальна назва групи</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Група</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
-        <translation>Επεξεργασία προτύπου ετικέτας</translation>
+        <translation>Редагувати шаблон етикетки</translation>
     </message>
     <message>
         <source>Clear current and begin new label</source>
-        <translation>Διαγραφή τρέχουσας ετικέτας και έναρξη νέας</translation>
+        <translation>Очистити поточну та розпочати нову мітку</translation>
     </message>
     <message>
         <source>Import from label template</source>
-        <translation>Εισαγωγή από πρότυπο ετικέτας</translation>
+        <translation>Імпорт із шаблону етикетки</translation>
     </message>
     <message>
         <source>Export label as template</source>
-        <translation>Εξαγωγή ετικέτας ως πρότυπο</translation>
+        <translation>Експортувати етикетку як шаблон</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redaguati</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <source>Bold</source>
         <comment>Font formatting</comment>
-        <translation>Έντονη</translation>
+        <translation>Сміливий</translation>
     </message>
     <message>
         <source>Italic</source>
         <comment>Font formatting</comment>
-        <translation>Πλάγια γραφή</translation>
+        <translation>Курсив</translation>
     </message>
     <message>
         <source>Aligns with the left edge</source>
-        <translation>Στοίχιση με την αριστερή άκρη</translation>
+        <translation>Вирівнювання по лівому краю</translation>
     </message>
     <message>
         <source>Centers horizontally in the available space</source>
-        <translation>Κεντράρεται οριζόντια στον διαθέσιμο χώρο</translation>
+        <translation>Центрується по горизонталі в доступному просторі</translation>
     </message>
     <message>
         <source>Aligns with the right edge</source>
-        <translation>Στοίχιση με το δεξί άκρο</translation>
+        <translation>Вирівнювання по правому краю</translation>
     </message>
     <message>
         <source>Additional font size. Use to make a line bigger.</source>
-        <translation>Επιπλέον μέγεθος γραμματοσειράς. Χρησιμοποιήστε το για να κάνετε μια γραμμή μεγαλύτερη.</translation>
+        <translation>Додатковий розмір шрифту. Використовується для збільшення рядка.</translation>
     </message>
     <message>
         <source>Text:</source>
-        <translation>Κείμενο:</translation>
+        <translation>Текст:</translation>
     </message>
     <message>
         <source>Line of text</source>
-        <translation>Γραμμή κειμένου</translation>
+        <translation>Рядок тексту</translation>
     </message>
     <message>
         <source>Insert placeholders</source>
-        <translation>Εισαγωγή θέσεων κράτησης</translation>
+        <translation>Вставити заповнювачі</translation>
     </message>
     <message>
         <source>Insert...</source>
-        <translation>Εισαγωγή...</translation>
+        <translation>Вставити...</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Προεπισκόπηση</translation>
+        <translation>Попередній перегляд</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation>&lt;κενό&gt;</translation>
+        <translation>&lt;порожньо&gt;</translation>
     </message>
     <message>
         <source>Create new template</source>
-        <translation>Δημιουργία νέου προτύπου</translation>
+        <translation>Створити новий шаблон</translation>
     </message>
     <message>
         <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation>Η δημιουργία νέου προτύπου θα αντικαταστήσει το τρέχον, θέλετε να συνεχίσετε?</translation>
+        <translation>Створення нового шаблону перезапише поточний, бажаєте продовжити?</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Πρότυπο ετικέτας</translation>
+        <translation>Шаблон етикетки</translation>
     </message>
     <message>
         <source>Export label template</source>
-        <translation>Εξαγωγή προτύπου ετικέτας</translation>
+        <translation>Експорт шаблону етикетки</translation>
     </message>
     <message>
         <source>template</source>
-        <translation>πρότυπο</translation>
+        <translation>шаблон</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation>Δεν βρίσκω αρχείο</translation>
+        <translation>Не зберегти файл</translation>
     </message>
     <message>
         <source>Import template</source>
-        <translation>Εισαγωγή προτύπου</translation>
+        <translation>Імпорт шаблону</translation>
     </message>
     <message>
         <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation>Η εισαγωγή προτύπου θα αντικαταστήσει το τρέχον, θέλετε να συνεχίσετε?</translation>
+        <translation>Імпорт шаблону перезапише поточний, продовжити?</translation>
     </message>
     <message>
         <source>File error.</source>
-        <translation>Помилка файла.</translation>
+        <translation>Помилка файлу.</translation>
     </message>
     <message>
         <source>Date</source>
-        <translation>Ημερομηνία</translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Χρόνος</translation>
+        <translation>Час</translation>
     </message>
     <message>
         <source>Pattern name</source>
-        <translation>Όνομα μοτίβου</translation>
+        <translation>Назва шаблону</translation>
     </message>
     <message>
         <source>Pattern number</source>
-        <translation>Αριθμός μοτίβου</translation>
+        <translation>Номер шаблону</translation>
     </message>
     <message>
         <source>Company name or designer name</source>
-        <translation>Επωνυμία εταιρείας ή όνομα σχεδιαστή</translation>
+        <translation>Назва компанії або ім&apos;я дизайнера</translation>
     </message>
     <message>
         <source>Customer name</source>
-        <translation>Όνομα πελάτη</translation>
-    </message>
-    <message>
-        <source>Pattern file extension</source>
-        <translation>Розширення файлу шаблону</translation>
+        <translation>Ім&apos;я клієнта</translation>
     </message>
     <message>
         <source>Pattern file name</source>
-        <translation>Όνομα αρχείου μοτίβου</translation>
-    </message>
-    <message>
-        <source>Measurements file name</source>
-        <translation>Όνομα αρχείου μετρήσεων</translation>
+        <translation>Ім&apos;я файлу шаблону</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Ροζμίρ</translation>
+        <translation>Розмір</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Ζρίστ</translation>
+        <translation>Зріст</translation>
+    </message>
+    <message>
+        <source>Pattern file extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements file name</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Measurements file extension</source>
-        <translation>Розширення файлу вимірювань</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>Γράμμα σε μορφή τεμαχίου</translation>
+        <translation>Лист-штука</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>Σχολιασμός κομματιού</translation>
+        <translation>Анотація фрагмента</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>Προσανατολισμός κομματιού</translation>
+        <translation>Орієнтація деталей</translation>
     </message>
     <message>
         <source>Piece rotation</source>
-        <translation>Περιστροφή κομματιού</translation>
+        <translation>Обертання фігури</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>Κλίση κομματιού</translation>
+        <translation>Нахил шматка</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>Θέση αναδίπλωσης κομματιού</translation>
+        <translation>Положення згину шматка</translation>
     </message>
     <message>
         <source>Piece name</source>
-        <translation>Όνομα κομματιού</translation>
+        <translation>Назва елемента</translation>
     </message>
     <message>
         <source>Quantity</source>
-        <translation>Ποσότητα</translation>
+        <translation>Кількість</translation>
     </message>
     <message>
         <source>Material: Fabric</source>
-        <translation>Υλικό: Ύφασμα</translation>
+        <translation>Матеріал: Тканина</translation>
     </message>
     <message>
         <source>Fabric</source>
@@ -3632,15 +3466,15 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Material: Lining</source>
-        <translation>Υλικό: Επένδυση</translation>
+        <translation>Матеріал: Підкладка</translation>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Подклада</translation>
+        <translation>Підклада</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>Υλικό: Дублерін</translation>
+        <translation>Матеріал: Інтерфейс</translation>
     </message>
     <message>
         <source>Interfacing</source>
@@ -3648,15 +3482,15 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Material: Interlining</source>
-        <translation>Υλικό: Εσωτερική επένδυση</translation>
+        <translation>Матеріал: флізелін</translation>
     </message>
     <message>
         <source>Interlining</source>
-        <translation>Ενδιάμεσο</translation>
+        <translation>Інтерлайн</translation>
     </message>
     <message>
         <source>Word: Cut</source>
-        <translation>Λέξη: Αποκοπή</translation>
+        <translation>Слово: Вирізати</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -3664,7 +3498,7 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Word: on fold</source>
-        <translation>Λέξη: αναδιπλούμενη</translation>
+        <translation>Слово: на згині</translation>
     </message>
     <message>
         <source>on fold</source>
@@ -3675,30 +3509,30 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <name>ExportFormatCombobox</name>
     <message>
         <source>(flat) files</source>
-        <translation>(επίπεδα) αρχεία</translation>
+        <translation>(плоскі) файли</translation>
     </message>
     <message>
         <source>files</source>
-        <translation>αρχεία</translation>
+        <translation>файли</translation>
     </message>
 </context>
 <context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translation>Εξαγωγή διάταξης</translation>
+        <translation>Експорт макета</translation>
     </message>
     <message>
         <source>Binary form</source>
-        <translation>Δυαδική μορφή</translation>
+        <translation>Бінарна форма</translation>
     </message>
     <message>
         <source>Text as paths</source>
-        <translation>Κείμενο ως διαδρομές</translation>
+        <translation>Текст як шляхи</translation>
     </message>
     <message>
         <source>Path:</source>
-        <translation>Σε παρακαλώ:</translation>
+        <translation>Шлях:</translation>
     </message>
     <message>
         <source>Destination folder</source>
@@ -3710,35 +3544,51 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Select path to destination folder</source>
-        <translation>Βιβλίο шлях до папки призначення</translation>
+        <translation>Вибрати шлях до призначення папки</translation>
     </message>
     <message>
         <source>Browse...</source>
-        <translation>Περιγνώσεις...</translation>
+        <translation>Переглянути...</translation>
     </message>
     <message>
         <source>File format:</source>
-        <translation>Διαμόρφωση αρχείου:</translation>
+        <translation>Формат файлу:</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Όνομα αρχείου:</translation>
+        <translation>Назва файлу:</translation>
     </message>
     <message>
         <source>File base name</source>
-        <translation>Базова назва αρχείο</translation>
+        <translation>Базова назва файлу</translation>
     </message>
     <message>
         <source>Quality (0-100):</source>
-        <translation>Ποιότητα (0-100):</translation>
+        <translation>Якість (0-100):</translation>
+    </message>
+    <message>
+        <source>Export Selected Sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format (tiled PDF only)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Right:</source>
-        <translation>Πράβε:</translation>
+        <translation>Правда:</translation>
     </message>
     <message>
         <source>Left:</source>
-        <translation>Λίβε:</translation>
+        <translation>Ліве:</translation>
     </message>
     <message>
         <source>Top:</source>
@@ -3746,173 +3596,157 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>Bottom:</source>
-        <translation>Νομίζω:</translation>
+        <translation>Нижнє:</translation>
     </message>
     <message>
         <source>Templates: </source>
-        <translation>Πρότυπα: </translation>
+        <translation>Шаблони: </translation>
     </message>
     <message>
         <source>Orientation: </source>
-        <translation>Προσανατολισμός: </translation>
-    </message>
-    <message>
-        <source>The base filename does not match a regular expression.</source>
-        <translation>Το βασικό αρχείο του αρχείου δεν είναι γνωστό.</translation>
-    </message>
-    <message>
-        <source>Select folder</source>
-        <translation>Βίβετε το παπκού</translation>
-    </message>
-    <message>
-        <source>Tried to use out of range format number.</source>
-        <translation>Спроба го користите значення μορφή, що виходить за межі дијапазону.</translation>
-    </message>
-    <message>
-        <source>Selected not present format.</source>
-        <translation>Βεβαιωθείτε ότι δεν είναι η μορφή.</translation>
-    </message>
-    <message>
-        <source>The destination directory doesn&apos;t exist or is not readable.</source>
-        <translation>Ο κατάλογος προορισμού δεν υπάρχει ή δεν είναι αναγνώσιμος.</translation>
-    </message>
-    <message>
-        <source>%1 already exists.</source>
-        <translation>Το %1 υπάρχει ήδη.</translation>
-    </message>
-    <message>
-        <source>%1 files with basename %2 already exist.</source>
-        <translation>Υπάρχουν ήδη %1 αρχεία με όνομα βάσης %2.</translation>
-    </message>
-    <message>
-        <source>Do you want to replace them?</source>
-        <translation>Θέλετε να τα αντικαταστήσετε?</translation>
-    </message>
-    <message>
-        <source>Confirm Export</source>
-        <translation>Επιβεβαίωση εξαγωγής</translation>
-    </message>
-    <message>
-        <source>Export files:</source>
-        <translation>Εξαγωγή αρχείων:</translation>
-    </message>
-    <message>
-        <source>Margins (tiled PDF only)</source>
-        <translation>Поля (лише PDF з плитками)</translation>
-    </message>
-    <message>
-        <source>Paper format (tiled PDF only)</source>
-        <translation>Формат паперу (лише PDF з плитками)</translation>
-    </message>
-    <message>
-        <source>Export Selected Sizes</source>
-        <translation>Експортувати вибрані розміри</translation>
-    </message>
-    <message>
-        <source>Select All</source>
-        <translation>Виберіть усі</translation>
+        <translation>Орієнтація: </translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Експорт</translation>
+        <translation type="unfinished">Експорт</translation>
+    </message>
+    <message>
+        <source>The base filename does not match a regular expression.</source>
+        <translation>Назва бази файлу не відповідає регулярному виразу.</translation>
+    </message>
+    <message>
+        <source>Select folder</source>
+        <translation>Вибрати папку</translation>
+    </message>
+    <message>
+        <source>Tried to use out of range format number.</source>
+        <translation>Спроба використати значення формату, що виходить за межі розділу.</translation>
+    </message>
+    <message>
+        <source>Selected not present format.</source>
+        <translation>Вибрано не існуючий формат.</translation>
+    </message>
+    <message>
+        <source>The destination directory doesn&apos;t exist or is not readable.</source>
+        <translation>Каталог призначення не існує або не читається.</translation>
+    </message>
+    <message>
+        <source>%1 already exists.</source>
+        <translation>%1 вже існує.</translation>
+    </message>
+    <message>
+        <source>%1 files with basename %2 already exist.</source>
+        <translation>%1 файлів з базовою назвою %2 вже існує.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace them?</source>
+        <translation>Ви хочете їх замінити?</translation>
+    </message>
+    <message>
+        <source>Confirm Export</source>
+        <translation>Підтвердити експорт</translation>
+    </message>
+    <message>
+        <source>Export files:</source>
+        <translation>Експортувати файли:</translation>
     </message>
 </context>
 <context>
     <name>ExportProgressDialog</name>
     <message>
         <source>Exporting files...</source>
-        <translation>Експорт файлів...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Файл</translation>
+        <translation type="unfinished">Файл</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Статус</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pending</source>
-        <translation>В очікуванні</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Completed</source>
-        <translation>Виконано</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Failed</source>
-        <translation>Не вдалося</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FinalMeasurementsDialog</name>
     <message>
         <source>Final measurements</source>
-        <translation>Фінальні вимірювання</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Φίλτρο:</translation>
+        <translation type="unfinished">Фільтр:</translation>
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Φιλιτροποιήστε τον κατάλογο για το κλειδί λέξης</translation>
+        <translation type="unfinished">Фільтрувати список за ключовим словом</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Фінальні вимірювання</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Description</source>
-        <translation>Περιγραφή</translation>
+        <translation type="unfinished">Опис</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Значення</translation>
+        <translation type="unfinished">Значення</translation>
     </message>
     <message>
         <source>Formula</source>
-        <translation>Φόρμουλα</translation>
+        <translation type="unfinished">Формула</translation>
     </message>
     <message>
         <source>Move final measurement up</source>
-        <translation>Перемістити фінальне вимірювання вгору</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Move final measurement down</source>
-        <translation>Перемістити фінальне вимірювання вниз</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add final measurement</source>
-        <translation>Додати фінальне вимірювання</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Remove final measurement</source>
-        <translation>Видалити фінальне вимірювання</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Деталь</translation>
+        <translation type="unfinished">Деталь</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Unique final measurement name</source>
-        <translation>Унікальна назва фінального вимірювання</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation>Значення:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Формула:</translation>
+        <translation type="unfinished">Формула:</translation>
     </message>
     <message>
         <source>Description:</source>
-        <translation>Опис:</translation>
+        <translation type="unfinished">Опис:</translation>
     </message>
 </context>
 <context>
@@ -3921,39 +3755,37 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Δεν είναι δυνατό το άνοιγμα του αρχείου
-%1
-για εγγραφή</translation>
+        <translation>Не вдається відкрити файл %1 для запису</translation>
     </message>
     <message>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Δεν είναι δυνατή η απόκτηση αποκλειστικής πρόσβασης στο αρχείο
+        <translation>Не вдається отримати ексклюзивний доступ до файлу
 %1
-Πιθανώς το αρχείο λαμβάνεται ήδη.</translation>
+Можливо, файл вже завантажується.</translation>
     </message>
     <message>
         <source>File download failed: %1.</source>
-        <translation>Η λήψη του αρχείου απέτυχε: %1.</translation>
+        <translation>Не вдалося завантажити файл: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Η λήψη ξεκίνησε, το πρόγραμμα εγκατάστασης θα ανοίξει μόλις ολοκληρωθεί η λήψη</translation>
+        <translation>Завантаження розпочато, інсталятор відкриється після завершення завантаження</translation>
     </message>
     <message>
         <source>Feed download failed: %1.</source>
-        <translation>Η λήψη της ροής δεδομένων απέτυχε: %1.</translation>
+        <translation>Не вдалося завантажити стрічку: %1.</translation>
     </message>
     <message>
         <source>No new releases available.</source>
-        <translation>Δεν υπάρχουν διαθέσιμες νέες κυκλοφορίες.</translation>
+        <translation>Нових релізів немає.</translation>
     </message>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
-        <translation>Μια νέα έκδοση %1 είναι διαθέσιμη.
-Θέλετε να την κατεβάσετε?</translation>
+        <translation>Доступний новий реліз %1.
+Ви хочете його завантажити?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -3961,74 +3793,74 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation>Πληροφορίες</translation>
+        <translation>Інформація</translation>
     </message>
 </context>
 <context>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation>Διαχειριστής ομάδας</translation>
+        <translation>Керівник групи</translation>
     </message>
     <message>
         <source>Show All Groups</source>
-        <translation>Εμφάνιση όλων των ομάδων</translation>
+        <translation>Показати всі групи</translation>
     </message>
     <message>
         <source>Hide all groups</source>
-        <translation>Απόκρυψη όλων των ομάδων</translation>
+        <translation>Приховати всі групи</translation>
     </message>
     <message>
         <source>Lock all groups</source>
-        <translation>Κλείδωμα όλων των ομάδων</translation>
+        <translation>Заблокувати всі групи</translation>
     </message>
     <message>
         <source>Unlock all groups</source>
-        <translation>Ξεκλείδωμα όλων των ομάδων</translation>
+        <translation>Розблокувати всі групи</translation>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Προσθήκη νέας ομάδας στη λίστα</translation>
+        <translation>Додати нову групу до списку</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
-        <translation>Διαγραφή ενεργής ομάδας από τη λίστα</translation>
+        <translation>Видалити активну групу зі списку</translation>
     </message>
     <message>
         <source>Edit group properties</source>
-        <translation>Επεξεργασία ιδιοτήτων ομάδας</translation>
+        <translation>Редагувати властивості групи</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation>Ομάδες</translation>
+        <translation>Групи</translation>
     </message>
     <message>
         <source>Group list</source>
-        <translation>Λίστα ομάδων</translation>
+        <translation>Список груп</translation>
     </message>
     <message>
         <source>Group object list</source>
-        <translation>Λίστα αντικειμένων ομάδας</translation>
+        <translation>Список об&apos;єктів групи</translation>
     </message>
     <message>
         <source>Objects</source>
-        <translation>Αντικείμενα</translation>
+        <translation>Об&apos;єкти</translation>
     </message>
     <message>
         <source>Double clicking zooms to object.</source>
-        <translation>Με διπλό κλικ γίνεται ζουμ στο αντικείμενο.</translation>
+        <translation>Подвійне клацання збільшує об&apos;єкт.</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Το όνομα υπάρχει</translation>
+        <translation>Ім&apos;я існує</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>Η ενέργεια δεν μπορεί να ολοκληρωθεί επειδή το όνομα της ομάδας υπάρχει ήδη.</translation>
+        <translation>Дію неможливо завершити, оскільки назва групи вже існує.</translation>
     </message>
     <message>
         <source>Edit Group</source>
-        <translation>Επεξεργασία ομάδας</translation>
+        <translation>Редагувати групу</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4036,55 +3868,55 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Show which groups in the list are visible</source>
-        <translation>Εμφάνιση των ορατών ομάδων στη λίστα</translation>
+        <translation>Показати видимі групи у списку</translation>
     </message>
     <message>
         <source>Show which groups in the list are locked</source>
-        <translation>Εμφάνιση των ομάδων στη λίστα που είναι κλειδωμένες</translation>
+        <translation>Показати, які групи у списку заблоковані</translation>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation>Εμφάνιση των ομάδων που περιέχουν αντικείμενα</translation>
+        <translation>Показати, які групи містять об&apos;єкти</translation>
     </message>
     <message>
         <source>Unknown Object</source>
-        <translation>Άγνωστο αντικείμενο</translation>
+        <translation>Невідомий об&apos;єкт</translation>
     </message>
     <message>
         <source>%1 - Base point</source>
-        <translation>%1 - Βάση σημείο</translation>
+        <translation>%1 - Базова точка</translation>
     </message>
     <message>
         <source>%1 - Point Length and Angle</source>
-        <translation>%1 - Μήκος και γωνία σημείου</translation>
+        <translation>%1 - Довжина та кут точки</translation>
     </message>
     <message>
         <source>Line %1_%2</source>
-        <translation>Γραμμή %1_%2</translation>
+        <translation>Рядок %1_%2</translation>
     </message>
     <message>
         <source>%1 - Point On Line</source>
-        <translation>%1 - Σημείο σε ευθεία γραμμή</translation>
+        <translation>%1 – Точка на лінії</translation>
     </message>
     <message>
         <source>%1 - Point Length to Line</source>
-        <translation>%1 - Μήκος σημείου έως γραμμή</translation>
+        <translation>%1 – Довжина точки до лінії</translation>
     </message>
     <message>
         <source>%1 - Point On Perpendicular</source>
-        <translation>%1 - Σημείο σε κάθετο</translation>
+        <translation>%1 - Точка на перпендикулярі</translation>
     </message>
     <message>
         <source>%1 - Point On Bisector</source>
-        <translation>%1 - Σημείο στη διχοτόμο</translation>
+        <translation>%1 - Точка на бісектрисі</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Σημειακή τομή γραμμών</translation>
+        <translation>%1 - Точка перетину ліній</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
-        <translation>%1 - Διαδραστική καμπύλη</translation>
+        <translation>%1 – Інтерактивна крива</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4092,170 +3924,170 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
-        <translation>%1 - Σταθερή καμπύλη</translation>
+        <translation>%1 – Виправлена крива</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
-        <translation>%1 - Ακτίνα και γωνίες τόξου</translation>
+        <translation>%1 - Радіус та кути дуги</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Ντούγκα_</translation>
+        <translation>Дуга_</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Length</source>
-        <translation>%1 - Ακτίνα και μήκος τόξου</translation>
+        <translation>%1 - Радіус і довжина дуги</translation>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
-        <translation>%1 - Διαδραστικό Spline</translation>
+        <translation>%1 – Інтерактивний сплайн</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Διαδρομή____</translation>
+        <translation>Шлях_сполучення</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
-        <translation>%1 - Διορθώθηκε η καμπύλη</translation>
+        <translation>%1 – Виправлено сплайн</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
-        <translation>%1 - Σημειακή τομή τόξου και γραμμής</translation>
+        <translation>%1 - Точка перетину дуги та лінії</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Σημείο τομής ευθείας και κάθετου</translation>
+        <translation>%1 - Точка перетину прямої та перпендикуляра</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
-        <translation>%1 - Σημείο τομής άξονα &amp; τριγώνου</translation>
+        <translation>%1 - Точка перетину осі та трикутника</translation>
     </message>
     <message>
         <source>%1 - Point Intersect XY</source>
-        <translation>%1 - Σημειακή τομή XY</translation>
+        <translation>%1 – Точка перетину XY</translation>
     </message>
     <message>
         <source>%1 - Point On Arc</source>
-        <translation>%1 - Σημείο σε τόξο</translation>
+        <translation>%1 - Точка на дузі</translation>
     </message>
     <message>
         <source>%1 - Point On Curve</source>
-        <translation>%1 - Σημείο στην καμπύλη</translation>
+        <translation>%1 – Точка на кривій</translation>
     </message>
     <message>
         <source>%1 - Point On Spline</source>
-        <translation>%1 - Σημείο σε καμπύλη</translation>
+        <translation>%1 - Точка на сплайні</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Σημείο τομής γραμμής και άξονα</translation>
+        <translation>%1 - Точка перетину лінії та осі</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
-        <translation>%1 - Καμπύλη και άξονας τομής σημείων</translation>
+        <translation>%1 - Точка перетину кривої та осі</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arcs</source>
-        <translation>%1 - Τόξα Σημειακής Τομής</translation>
+        <translation>%1 - Дуги перетину точок</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Σημειακή τομή κύκλων</translation>
+        <translation>%1 - Точка перетину кіл</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Καμπύλες τομής σημείων</translation>
+        <translation>%1 - Криві перетину точок</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Σημειακή τομή κύκλου &amp; εφαπτομένη</translation>
+        <translation>%1 - Точка перетину кола та дотичної</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Σημειακή τομή τόξου &amp; εφαπτομένης</translation>
+        <translation>%1 - Точка перетину дуги та дотичної</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Αληθινό βέλος %2_%3_%4</translation>
+        <translation>%1 – Справжній дротик %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
-        <translation>%1 - Ελλειπτικό τόξο</translation>
+        <translation>%1 – еліптична дуга</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ЕлДуга_</translation>
+        <translation>ЕлАрк_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
-        <translation>%1 - Περιστροφή</translation>
+        <translation>%1 - Обертання</translation>
     </message>
     <message>
         <source>%1 - Move</source>
-        <translation>%1 - Μετακίνηση</translation>
+        <translation>%1 – Перемістити</translation>
     </message>
     <message>
         <source>%1 - Mirror by Line</source>
-        <translation>%1 - Κατοπτρισμός ανά γραμμή</translation>
+        <translation>%1 – Дзеркальне відображення по лінії</translation>
     </message>
     <message>
         <source>%1 - Mirror by Axis</source>
-        <translation>%1 - Κατοπτρισμός ανά άξονα</translation>
+        <translation>%1 - Дзеркальне відображення по осі</translation>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Μετακίνηση αντικειμένου ομάδας</translation>
+        <translation>Перемістити груповий об&apos;єкт</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Κατάργηση αντικειμένου ομάδας</translation>
+        <translation>Видалити груповий об&apos;єкт</translation>
     </message>
     <message>
         <source>Group color</source>
-        <translation>Χρώμα ομάδας</translation>
+        <translation>Колір групи</translation>
     </message>
     <message>
         <source>Group name</source>
-        <translation>Όνομα ομάδας</translation>
+        <translation>Назва групи</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redaguati</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Ορατό</translation>
+        <translation>Видимий</translation>
     </message>
     <message>
         <source>Group is visible</source>
-        <translation>Η ομάδα είναι ορατή</translation>
+        <translation>Група видима</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Κλειδωμένο</translation>
+        <translation>Заблоковано</translation>
     </message>
     <message>
         <source>Group is locked</source>
-        <translation>Η ομάδα είναι κλειδωμένη</translation>
+        <translation>Групу заблоковано</translation>
     </message>
     <message>
         <source>Group has objects</source>
-        <translation>Η ομάδα έχει αντικείμενα</translation>
+        <translation>Група містить об&apos;єкти</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation>Колір</translation>
     </message>
 </context>
 <context>
     <name>HistoryDialog</name>
     <message>
         <source>History</source>
-        <translation>Ιστορία</translation>
+        <translation>Історія</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -4263,15 +4095,51 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Search text</source>
-        <translation>Αναζήτηση κειμένου</translation>
+        <translation>Пошуковий текст</translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation type="unfinished">Знайти попередній</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation type="unfinished">Знайти далі</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft Block:</source>
+        <translation type="unfinished">Чернетка блоку:</translation>
+    </message>
+    <message>
+        <source>block</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Αναγνωριστικό</translation>
+        <translation>Ідентифікатор</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Radius / Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished">Кут</translation>
     </message>
     <message>
         <source>Base Point</source>
@@ -4279,226 +4147,190 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Line_%1_%2</source>
-        <translation>Лінія_%1_%2</translation>
+        <translation>Рядок_%1_%2</translation>
     </message>
     <message>
         <source>Line from %1 to %2</source>
-        <translation>Γραμμή από %1 έως %2</translation>
+        <translation>Рядок від %1 до %2</translation>
     </message>
     <message>
         <source>Point On Line %1_%2</source>
-        <translation>Σημείο στη γραμμή %1_%2</translation>
+        <translation>Точка на лінії %1_%2</translation>
     </message>
     <message>
         <source>Point Length to Line</source>
-        <translation>Μήκος σημείου προς γραμμή</translation>
+        <translation>Довжина точки до лінії</translation>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
-        <translation>Σημείο στην κάθετο %1_%2</translation>
+        <translation>Точка на перпендикулярі %1_%2</translation>
     </message>
     <message>
         <source>Point On Bisector %1_%2_%3</source>
-        <translation>Σημείο στη διχοτόμο %1_%2_%3</translation>
+        <translation>Точка на бісектрисі %1_%2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Σημεία που τέμνουν τις ευθείες %1_%2 και %3_%4</translation>
+        <translation>Точка перетину ліній %1_%2 та %3_%4</translation>
     </message>
     <message>
         <source>Curve Interactive</source>
-        <translation>Διαδραστικό Curve</translation>
+        <translation>Інтерактивна крива</translation>
     </message>
     <message>
         <source>Curve Fixed</source>
-        <translation>Καμπύλη Σταθερή</translation>
+        <translation>Криву виправлено</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
-        <translation>Ακτίνα και γωνίες τόξου</translation>
-    </message>
-    <message>
-        <source>Spline Interactive</source>
-        <translation>Διαδραστικό Spline</translation>
-    </message>
-    <message>
-        <source>Spline Fixed</source>
-        <translation>Σύνδεση με καμπύλη σταθεροποιημένη</translation>
-    </message>
-    <message>
-        <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
-        <translation>Σημείο τομής τόξου με κέντρο %1 &amp; ευθεία %2_%3</translation>
-    </message>
-    <message>
-        <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
-        <translation>Σημείο τομής ευθείας %1_%2 &amp; κάθετης %3</translation>
-    </message>
-    <message>
-        <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Τεμή σημείου άξονα %1_%2 &amp; σημεία τριγώνου %3 και %4</translation>
-    </message>
-    <message>
-        <source>Point Intersect XY of points %1 and %2</source>
-        <translation>Τομή σημείων XY των σημείων %1 και %2</translation>
-    </message>
-    <message>
-        <source>Point On Arc</source>
-        <translation>Σημείο σε τόξο</translation>
-    </message>
-    <message>
-        <source>Point On Curve</source>
-        <translation>Σημείο στην καμπύλη</translation>
-    </message>
-    <message>
-        <source>Point On Spline</source>
-        <translation>Σημείο σε αυλάκωση</translation>
-    </message>
-    <message>
-        <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>Τομή %Point Γραμμής &amp; %1_%2 και Άξονα που διέρχεται από το σημείο %3</translation>
-    </message>
-    <message>
-        <source>Point Intersect Curve &amp; Axis through point %1</source>
-        <translation>Καμπύλη τομής σημείων &amp; άξονας που διέρχεται από το σημείο %1</translation>
-    </message>
-    <message>
-        <source>Point Intersect Arcs</source>
-        <translation>Τόξα Σημειακής Τομής</translation>
-    </message>
-    <message>
-        <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Σημειακή τομή κύκλων</translation>
-    </message>
-    <message>
-        <source>Point Intersect Curves</source>
-        <translation>Καμπύλες τομής σημείων</translation>
-    </message>
-    <message>
-        <source>Point Intersect Circle &amp; Tangent</source>
-        <translation>Σημείο τομής κύκλου και εφαπτομένης</translation>
-    </message>
-    <message>
-        <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Σημείο τομής τόξου και εφαπτομένης</translation>
-    </message>
-    <message>
-        <source>True Dart %1_%2_%3</source>
-        <translation>Αληθινό βέλος %1_%2_%3</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <translation>ЕлДуга_</translation>
-    </message>
-    <message>
-        <source>Arc Elliptical with length %1</source>
-        <translation>Ελλειπτικό τόξο με μήκος %1</translation>
-    </message>
-    <message>
-        <source>Rotation around point %1. Suffix %2</source>
-        <translation>Περιστροφή γύρω από το σημείο %1. Επίθημα %2</translation>
-    </message>
-    <message>
-        <source>Mirror by Line %1_%2. Suffix %3</source>
-        <translation>Κατοπτρισμός κατά γραμμή %1_%2. Επίθημα %3</translation>
-    </message>
-    <message>
-        <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>Κατοπτρισμός κατά άξονα μέσω %1 σημείου. Επίθημα %2</translation>
-    </message>
-    <message>
-        <source>Move - rotate around point %1. Suffix %2</source>
-        <translation>Μετακίνηση - περιστροφή γύρω από το σημείο %1. Επίθημα %2</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Περιγραφή</translation>
-    </message>
-    <message>
-        <source>Point Length and Angle from point %1</source>
-        <translation>Μήκος και γωνία σημείου από το σημείο %1</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create record.</source>
-        <translation>Δεν είναι δυνατή η δημιουργία εγγραφής.</translation>
-    </message>
-    <message>
-        <source>Find previous</source>
-        <translation>Εύρεση προηγούμενου</translation>
-    </message>
-    <message>
-        <source>Find next</source>
-        <translation>Εύρεση επόμενου</translation>
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation>Враховуючи регістр</translation>
-    </message>
-    <message>
-        <source>Search by full word</source>
-        <translation>Пошук за повним словом</translation>
-    </message>
-    <message>
-        <source>Seach by regular expression</source>
-        <translation>Пошук за регулярним виразом</translation>
-    </message>
-    <message>
-        <source>Draft Block:</source>
-        <translation>Μπλοκ προσχέδιου:</translation>
-    </message>
-    <message>
-        <source>block</source>
-        <translation>mπλοκ</translation>
-    </message>
-    <message>
-        <source>Radius / Length</source>
-        <translation>Радіус / Довжина</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Κουτ</translation>
+        <translation>Радіус та кути дуги</translation>
     </message>
     <message>
         <source>Arc with Radius, Length, and Angle</source>
-        <translation>Дуга з Радіус, Довжина, та Κουτ</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Interactive</source>
+        <translation>Інтерактивний сплайн</translation>
+    </message>
+    <message>
+        <source>Spline Fixed</source>
+        <translation>Виправлено сплайн</translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
+        <translation>Точка перетину дуги з центром %1 та лінією %2_%3</translation>
+    </message>
+    <message>
+        <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
+        <translation>Точка перетину лінії %1_%2 та перпендикуляра %3</translation>
+    </message>
+    <message>
+        <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
+        <translation>Точка перетину осі %1_%2 та точок трикутника %3 та %4</translation>
+    </message>
+    <message>
+        <source>Point Intersect XY of points %1 and %2</source>
+        <translation>Точка перетину XY точок %1 та %2</translation>
+    </message>
+    <message>
+        <source>Point On Arc</source>
+        <translation>Точка на дузі</translation>
+    </message>
+    <message>
+        <source>Point On Curve</source>
+        <translation>Точка на кривій</translation>
+    </message>
+    <message>
+        <source>Point On Spline</source>
+        <translation>Точка на сплайні</translation>
+    </message>
+    <message>
+        <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
+        <translation>%Точка перетину лінії &amp; %1_%2 та осі через точку %3</translation>
+    </message>
+    <message>
+        <source>Point Intersect Curve &amp; Axis through point %1</source>
+        <translation>Точка перетину кривої та осі через точку %1</translation>
+    </message>
+    <message>
+        <source>Point Intersect Arcs</source>
+        <translation>Точки перетинають дуги</translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation>%1 - Точка перетину кіл</translation>
+    </message>
+    <message>
+        <source>Point Intersect Curves</source>
+        <translation>Криві перетину точок</translation>
+    </message>
+    <message>
+        <source>Point Intersect Circle &amp; Tangent</source>
+        <translation>Точка перетину кола та дотичної</translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc &amp; Tangent</source>
+        <translation>Точка перетину дуги та дотичної</translation>
+    </message>
+    <message>
+        <source>True Dart %1_%2_%3</source>
+        <translation>Справжній дротик %1_%2_%3</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation>ЕлАрк_</translation>
+    </message>
+    <message>
+        <source>Arc Elliptical with length %1</source>
+        <translation>Еліптична дуга довжиною %1</translation>
+    </message>
+    <message>
+        <source>Rotation around point %1. Suffix %2</source>
+        <translation>Обертання навколо точки %1. Суфікс %2</translation>
+    </message>
+    <message>
+        <source>Mirror by Line %1_%2. Suffix %3</source>
+        <translation>Дзеркальне відображення за рядком %1_%2. Суфікс %3</translation>
+    </message>
+    <message>
+        <source>Mirror by Axis through %1 point. Suffix %2</source>
+        <translation>Дзеркальне відображення по осі через точку %1. Суфікс %2</translation>
     </message>
     <message>
         <source>Center point</source>
-        <translation>Точка центру</translation>
+        <translation type="unfinished">Точка центру</translation>
+    </message>
+    <message>
+        <source>Move - rotate around point %1. Suffix %2</source>
+        <translation>Перемістити - обертати навколо точки %1. Суфікс %2</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Опис</translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %1</source>
+        <translation>Довжина точки та кут від точки %1</translation>
+    </message>
+    <message>
+        <source>Can&apos;t create record.</source>
+        <translation>Не вдається створити запис.</translation>
     </message>
 </context>
 <context>
     <name>ImageDialog</name>
     <message>
         <source>Image Properties</source>
-        <translation>Ιδιότητες εικόνας</translation>
+        <translation>Властивості зображення</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Id:</source>
-        <translation>Αναγνωριστικό:</translation>
+        <translation>Ідентифікатор:</translation>
     </message>
     <message>
         <source>Id</source>
-        <translation>Αναγνωριστικό</translation>
+        <translation>Ідентифікатор</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Lock Image:</source>
-        <translation>Κλείδωμα εικόνας:</translation>
+        <translation>Заблокувати зображення:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Switch between px and pattern units</source>
-        <translation>Εναλλαγή μεταξύ μονάδων px και μοτίβου</translation>
+        <translation>Перемикання між одиницями пікселів та візерунка</translation>
     </message>
     <message>
         <source>Unit:</source>
@@ -4506,19 +4338,19 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>X Position:</source>
-        <translation>Θέση X:</translation>
+        <translation>Позиція X:</translation>
     </message>
     <message>
         <source>Y Position:</source>
-        <translation>Θέση Y:</translation>
+        <translation>Позиція Y:</translation>
     </message>
     <message>
         <source>Lock aspect ratio</source>
-        <translation>Κλείδωμα αναλογίας διαστάσεων</translation>
+        <translation>Зафіксувати співвідношення сторін</translation>
     </message>
     <message>
         <source>Lock Aspect:</source>
-        <translation>Κλείδωμα διαστάσεων:</translation>
+        <translation>Заблокувати аспект:</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -4526,15 +4358,15 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Ύψος:</translation>
+        <translation>Висота:</translation>
     </message>
     <message>
         <source>X Scale:</source>
-        <translation>Κλίμακα X:</translation>
+        <translation>Масштаб X:</translation>
     </message>
     <message>
         <source>Y Scale:</source>
-        <translation>Κλίμακα Y:</translation>
+        <translation>Масштаб Y:</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -4542,42 +4374,42 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Opacity:</source>
-        <translation>Αδιαφάνεια:</translation>
+        <translation>Непрозорість:</translation>
     </message>
 </context>
 <context>
     <name>ImageItem</name>
     <message>
         <source>Properties</source>
-        <translation>Ιδιότητες</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Κλείδωμα</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Order</source>
-        <translation>Παραγγελία</translation>
+        <translation>Замовлення</translation>
     </message>
     <message>
         <source>Bring to top</source>
-        <translation>Φέρτε στην κορυφή</translation>
+        <translation>Перенести на початок</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Μετακίνηση προς τα πάνω</translation>
+        <translation>Переміститися вгору</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Μετακίνηση προς τα κάτω</translation>
+        <translation>Перемістити вниз</translation>
     </message>
     <message>
         <source>Send to bottom</source>
-        <translation>Αποστολή προς τα κάτω</translation>
+        <translation>Надіслати вниз</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4585,77 +4417,77 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>&lt;b&gt;Image (%7)&lt;/b&gt;: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8</source>
-        <translation>&lt;b&gt;Εικόνα (%7)&lt;/b&gt;: Μέγεθος (%2%1, %3%1); Θέση (%4%1, %5%1); Στροφή (%6°)%8</translation>
+        <translation>&lt;b&gt;Зображення (%7)&lt;/b&gt;: Розмір (%2%1, %3%1); Положення (%4%1, %5%1); Поворот (%6°)%8</translation>
     </message>
     <message>
         <source> - &lt;b&gt;Aspect ratio locked&lt;/b&gt;</source>
-        <translation> - &lt;b&gt;Κλειδωμένη αναλογία διαστάσεων&lt;/b&gt;</translation>
+        <translation> - &lt;b&gt;Співвідношення сторін заблоковано&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Move Origin</source>
-        <translation>Μετακίνηση Προέλευσης</translation>
+        <translation>Перемістити походження</translation>
     </message>
 </context>
 <context>
     <name>ImageTool</name>
     <message>
         <source>Import Image</source>
-        <translation>Εισαγωγή εικόνας</translation>
+        <translation>Імпортувати зображення</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Δεν ήταν δυνατή η φόρτωση της εικόνας.</translation>
+        <translation>Не вдалося завантажити зображення.</translation>
     </message>
     <message>
         <source>Could not read the image.</source>
-        <translation>Δεν ήταν δυνατή η ανάγνωση της εικόνας.</translation>
+        <translation>Не вдалося прочитати зображення.</translation>
     </message>
     <message>
         <source>File may be corrupted...</source>
-        <translation>Το αρχείο ενδέχεται να είναι κατεστραμμένο...</translation>
+        <translation>Файл може бути пошкоджений...</translation>
     </message>
     <message>
         <source>Confirm deletion</source>
-        <translation>Підтвердіть видалення</translation>
+        <translation>Підтвердити видалення</translation>
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Μπορείτε να δείτε?</translation>
+        <translation>Ви дійсно хочете видалити?</translation>
     </message>
     <message>
         <source>The image &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>Δεν ήταν δυνατή η εύρεση της εικόνας &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt;. Θέλετε να ενημερώσετε την τοποθεσία του αρχείου?</translation>
+        <translation>Зображення &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; не знайдено. Бажаєте оновити розташування файлу?</translation>
     </message>
     <message>
         <source>Loading image</source>
-        <translation>Φόρτωση εικόνας</translation>
+        <translation>Завантаження зображення</translation>
     </message>
     <message>
         <source>No image was selected...</source>
-        <translation>Δεν επιλέχθηκε εικόνα...</translation>
+        <translation>Не вибрано жодного зображення...</translation>
     </message>
 </context>
 <context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Деталь:</translation>
+        <translation>Деталі:</translation>
     </message>
     <message>
         <source>Nodes:</source>
-        <translation>Κόμβοι:</translation>
+        <translation>Вузли:</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Κατάσταση:</translation>
+        <translation>Статус:</translation>
     </message>
     <message>
         <source>msg</source>
-        <translation>μήνυμα</translation>
+        <translation>повідомлення</translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -4667,35 +4499,35 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Κανένα</translation>
+        <translation>Жоден</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Σχισμή</translation>
+        <translation>Щілина</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>ТНотч</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>ЮНотч</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>Εσωτερικό</translation>
+        <translation>VInternal</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>Εξωτερικό</translation>
+        <translation>VExternal</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Κάστρο</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Διαμάντι</translation>
+        <translation>Діамант</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4703,34 +4535,34 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>No nodes selected. Press Cancel to continue</source>
-        <translation>Δεν έχουν επιλεγεί κόμβοι. Πατήστε Άκυρο για να συνεχίσετε</translation>
+        <translation>Вузли не вибрано. Натисніть &quot;Скасувати&quot;, щоб продовжити</translation>
     </message>
     <message>
         <source> was auto reversed.</source>
-        <translation> αντιστράφηκε αυτόματα.</translation>
+        <translation>було автоматично скасовано.</translation>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation> ενδέχεται να χρειαστεί να αντιστραφεί χειροκίνητα.</translation>
+        <translation>можливо, знадобиться вручну скасувати.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Εισαγωγή κόμβων</translation>
+        <translation>Вставити вузли</translation>
     </message>
 </context>
 <context>
     <name>InternalPathDialog</name>
     <message>
         <source>Internal Path Tool</source>
-        <translation>Εργαλείο εσωτερικής διαδρομής</translation>
+        <translation>Інструмент внутрішнього шляху</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation>Κοντούρ</translation>
+        <translation>Контур</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -4738,47 +4570,47 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Create name for your path</source>
-        <translation>Δημιουργία για τον εαυτό μου</translation>
+        <translation>Створіть назву для вашого контуру</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Συμβουλή:</translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Деталь:</translation>
+        <translation>Деталі:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Μετακίνηση σειράς στην κορυφή της λίστας</translation>
+        <translation>Перемістити рядок на початок списку</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Μετακίνηση γραμμής προς τα πάνω κατά μία γραμμή</translation>
+        <translation>Перемістити рядок на один рядок угору</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Μετακίνηση γραμμής προς τα κάτω κατά μία γραμμή</translation>
+        <translation>Перемістити рядок на один рядок вниз</translation>
     </message>
     <message>
         <source>Move row to bottom of list</source>
-        <translation>Μετακίνηση γραμμής στο κάτω μέρος της λίστας</translation>
+        <translation>Перемістити рядок у кінець списку</translation>
     </message>
     <message>
         <source>The path is a cut contour</source>
-        <translation>Η διαδρομή είναι ένα κομμένο περίγραμμα</translation>
+        <translation>Шлях є вирізаним контуром</translation>
     </message>
     <message>
         <source>Cut on fabric</source>
-        <translation>Κόψιμο σε ύφασμα</translation>
+        <translation>Вирізати на тканині</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Κατάσταση:</translation>
+        <translation type="unfinished">Статус:</translation>
     </message>
     <message>
         <source>Ready!</source>
@@ -4794,7 +4626,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Οδηγός τύπων</translation>
+        <translation>Майстер формул</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4802,27 +4634,27 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Rozrahunok</translation>
+        <translation>Розрахунок</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Εμφάνιση πλήρους υπολογισμού στο πλαίσιο μηνύματος&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Nodes</source>
-        <translation>Βουζλί</translation>
+        <translation>Вузли</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation>Βουζέλ:</translation>
+        <translation>Вузел:</translation>
     </message>
     <message>
         <source>Before:</source>
-        <translation>Παράδω:</translation>
+        <translation>Перед:</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation>Περιορίστε το πλάτος на замовчуванню</translation>
+        <translation>Повернутися до ширини по замовчуванню</translation>
     </message>
     <message>
         <source>Default</source>
@@ -4830,11 +4662,11 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>After:</source>
-        <translation>Λόγος:</translation>
+        <translation>Після:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Κουτ:</translation>
+        <translation>Кут:</translation>
     </message>
     <message>
         <source>Notches</source>
@@ -4842,55 +4674,55 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Προβολή:</translation>
+        <translation>Надсічка:</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Συμβουλή</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Σχισμή</translation>
+        <translation>Щілина</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Εγκοπή Τ</translation>
+        <translation>Т-подібний виріз</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Εγκοπή U</translation>
+        <translation>U-подібний виріз</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>Εσωτερικό V</translation>
+        <translation>V Внутрішній</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>Εξωτερικό V</translation>
+        <translation>Зовнішній V</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Κάστρο</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Διαμάντι</translation>
+        <translation>Діамант</translation>
     </message>
     <message>
         <source>Sub Type</source>
-        <translation>Υποτύπος</translation>
+        <translation>Підтип</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Πράια</translation>
+        <translation>Пряма</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Βίσεκτρες</translation>
+        <translation>Бісектриса</translation>
     </message>
     <message>
         <source>Select to designate the corner point as a notch</source>
-        <translation>Επιλέξτε για να ορίσετε το σημείο γωνίας ως εγκοπή</translation>
+        <translation>Виберіть, щоб позначити кутову точку як виїмку</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -4898,35 +4730,35 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Geomtery</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Επαναφορά γωνίας εγκοπής στην προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути кут виїмки до значення за замовчуванням.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Αριθμός:</translation>
+        <translation>Кількість:</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Επαναφορά εγκοπής με την προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути налаштування виїмки до заводських.</translation>
     </message>
     <message>
         <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Αυτή η επιλογή έχει ισχύ μόνο εάν η δεύτερη εγκοπή στη γραμμή ραφής είναι ενεργοποιημένη στις καθολικές προτιμήσεις. Η επιλογή βοηθά στην απενεργοποίηση της δεύτερης εγκοπής μόνο για αυτήν την εγκοπή.</translation>
+        <translation>«Цей параметр діє, лише якщо другий виріз на лінії шва ввімкнено в глобальних налаштуваннях. Цей параметр допомагає вимкнути другий виріз лише для цього вирізу».</translation>
     </message>
     <message>
         <source>Show second notch on seam line</source>
-        <translation>Εμφάνιση δεύτερης εγκοπής στη γραμμή ραφής</translation>
+        <translation>Показати другу виїмку на лінії шва</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Επαναφορά μήκους εγκοπής στην προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути довжину виїмки до значення за замовчуванням.</translation>
     </message>
     <message>
         <source> Width:</source>
-        <translation> Πλάτος:</translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -4934,7 +4766,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης, πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία της διαδρομής </translation>
+        <translation>Виберіть основні об&apos;єкти контуру. Використовуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб змінити напрямок кривої, натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення контуру</translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -4950,23 +4782,23 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Redaguanti ширину прибавки на шви</translation>
+        <translation>Редагувати ширину прибавки на шви</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Редагувати ширину прибавки на шви перед</translation>
+        <translation>Редагувати ширину приставки на шви перед</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Redaguati widthnu прибавки на шви після</translation>
+        <translation>Редагувати ширину прибавки на шви після</translation>
     </message>
     <message>
         <source>Internal path</source>
-        <translation>Διαμόρφωση εσωτερικού χώρου</translation>
+        <translation>Внутрішній контур</translation>
     </message>
     <message>
         <source>Custom seam allowance</source>
-        <translation>Користувацька прибавка на шви</translation>
+        <translation>Користувачка прибавка на шви</translation>
     </message>
     <message>
         <source>You need more points!</source>
@@ -4974,47 +4806,47 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Перша точка &lt;b&gt;χρησιμοποιείστε τα шви&lt;/b&gt; δεν μπορείτε να дорівнювати останній!</translation>
+        <translation>Перша точка &lt;b&gt;користувацької прибавки на шви&lt;/b&gt; не може дорівнювати останній!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Το σημείο δεν μπορεί να χρησιμοποιηθεί δύο φορές!</translation>
+        <translation>Одна точка не може бути використана два рази підряд!</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Кожна точка в &lt;b&gt;індивідуальний припуск на шов&lt;/b&gt;шлях повинен бути унікальним! unique!</translation>
+        <translation>Кожна точка в &lt;b&gt;користувацькій прибавці на шви&lt;/b&gt; повинна бути унікальною!</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Extend end point</source>
-        <translation>Επέκταση τελικού σημείου</translation>
+        <translation>Розширити кінцеву точку</translation>
     </message>
     <message>
         <source>Extend start point</source>
-        <translation>Επέκταση σημείου έναρξης</translation>
+        <translation>Розширити початкову точку</translation>
     </message>
     <message>
         <source>List of pieces is empty!</source>
-        <translation>Η λίστα με τα κομμάτια είναι κενή!</translation>
+        <translation>Список елементів порожній!</translation>
     </message>
     <message>
         <source>Please, select a piece to insert into!</source>
-        <translation>Παρακαλώ, επιλέξτε ένα κομμάτι για να το εισάγετε!</translation>
+        <translation>Будь ласка, виберіть елемент для вставки!</translation>
     </message>
 </context>
 <context>
@@ -5035,114 +4867,104 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Το Seamly2D είναι μια εφαρμογή για σχεδιασμό πατρόν ενδυμάτων με τη βοήθεια υπολογιστή.
-
-Το Seamly2D είναι ένα δωρεάν λογισμικό (ανοιχτού κώδικα).
-
-Όλα τα ονόματα επωνυμιών ή προϊόντων είναι εμπορικά σήματα ή σήματα κατατεθέντα των αντίστοιχων κατόχων τους.
-
-© 2017-2026 Seamly2D Project.
-
-Τμήματα αυτού του λογισμικού © 2008-2026 The Qt Company Ltd.
-
-Το πρόγραμμα παρέχεται ΩΣ ΕΧΕΙ χωρίς ΚΑΜΙΑ ΕΓΓΥΗΣΗ ΚΑΝΕΝΟΣ ΕΙΔΟΥΣ, ΣΥΜΠΕΡΙΛΑΜΒΑΝΟΜΕΝΗΣ ΤΗΣ ΕΓΓΥΗΣΗΣ ΣΧΕΔΙΑΣΜΟΥ, ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ΚΑΙ ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΣΥΓΚΕΚΡΙΜΕΝΟ ΣΚΟΠΟ.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>IntersectArcLineDialog</name>
     <message>
-        <source>Select point of center of arc</source>
-        <translation>Виберіть точку центру дуги</translation>
-    </message>
-    <message>
-        <source>Select second point of line</source>
-        <translation>Виберіть другу точку лінії</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation>Редагувати радіус</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation>Радіус:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значення</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Розрахунок</translation>
-    </message>
-    <message>
-        <source>Center of arc:</source>
-        <translation>Центер дуги:</translation>
-    </message>
-    <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
+        <translation type="unfinished">Точка - перетин дуги та прямої</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
-    </message>
-    <message>
-        <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
-    </message>
-    <message>
-        <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
-    </message>
-    <message>
-        <source>1st line point:</source>
-        <translation>Σημείο 1ης γραμμής:</translation>
-    </message>
-    <message>
-        <source>2nd line point</source>
-        <translation>Σημείο 2ης γραμμής</translation>
-    </message>
-    <message>
-        <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation type="unfinished">Вибір</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished">Унікальне ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished">Виберіть унікальне ім&apos;я.</translation>
+    </message>
+    <message>
+        <source>Center of arc:</source>
+        <translation type="unfinished">Центер дуги:</translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation type="unfinished">Точка 1-го рядка:</translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation type="unfinished">Точка 2-ї лінії</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished">Геометрія</translation>
+    </message>
+    <message>
+        <source>Radius:</source>
+        <translation type="unfinished">Радіус:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Значення</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Розрахунок</translation>
+    </message>
+    <message>
+        <source>Edit radius</source>
+        <translation type="unfinished">Редагувати радіус</translation>
+    </message>
+    <message>
+        <source>Select second point of line</source>
+        <translation type="unfinished">Виберіть другу точку лінії</translation>
+    </message>
+    <message>
+        <source>Select point of center of arc</source>
+        <translation type="unfinished">Виберіть точку центру дуги</translation>
     </message>
 </context>
 <context>
     <name>IntersectArcLineTool</name>
     <message>
         <source>Length</source>
-        <translation>Довжина</translation>
+        <translation type="unfinished">Довжина</translation>
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation type="unfinished">Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>IntersectCircleTangentDialog</name>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Βγάζω:</translation>
+        <translation>Візьміть:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -5162,7 +4984,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Rozrahunok</translation>
+        <translation>Розрахунок</translation>
     </message>
     <message>
         <source>Select a circle center</source>
@@ -5170,7 +4992,7 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Εκπαίδευση της περιοχής</translation>
+        <translation>Редагувати радіус</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5178,53 +5000,53 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Радіус δεν μπορει να ματι σημαινει</translation>
+        <translation>Радіус не може мати від&apos;ємне значення</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Σημείο - Τομή Κύκλου και Εφαπτομένης</translation>
+        <translation>Точка - перетин кола та дотичної</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
     <name>IntersectCircleTangentTool</name>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>Τομή κύκλου και εφαπτομένης</translation>
+        <translation>Перетин кола та дотичної</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Circle and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 του&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Κύκλου και της Εφαπτομένης&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Χρήση του σημείου αρχής ως δείκτης θέσης μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Кола та дотичної&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Використання початкової точки як тимчасового елемента, доки шаблон не буде виправлено.</translation>
     </message>
 </context>
 <context>
     <name>IntersectCirclesDialog</name>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Βγάζω:</translation>
+        <translation>Візьміть:</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Circle 1</source>
-        <translation>Κύκλος 1</translation>
+        <translation>Коло 1</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -5240,27 +5062,27 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Οδηγός τύπων</translation>
+        <translation>Майстер формул</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Rozrahunok</translation>
+        <translation>Розрахунок</translation>
     </message>
     <message>
         <source>Circle 2</source>
-        <translation>Κύκλος 2</translation>
+        <translation>Коло 2</translation>
     </message>
     <message>
         <source>Select second circle center</source>
-        <translation>Виберіть центри друго кола</translation>
+        <translation>Виберіть центр другого кола</translation>
     </message>
     <message>
         <source>Edit first circle radius</source>
-        <translation>Εκπαίδευση του χώρου του πρώτου αυτοκινήτου</translation>
+        <translation>Редагувати радіус першого кола</translation>
     </message>
     <message>
         <source>Edit second circle radius</source>
-        <translation>Εκπαίδευση άλλου προϊόντος</translation>
+        <translation>Редагувати радіус другого кола</translation>
     </message>
     <message>
         <source>Error</source>
@@ -5268,34 +5090,34 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
-        <translation>Радіус δεν μπορει να ματι σημαινει</translation>
+        <translation>Радіус не може мати від&apos;ємне значення</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Σημείο - Τομή κύκλων</translation>
+        <translation>Точка - перетин кіл</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
     <name>IntersectCirclesTool</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Circles&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 των κύκλων&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Χρήση του σημείου αρχής ως placeholder μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1 кіл&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Використання початкової точки як тимчасового ланцюжка, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Point Intersect Circles</source>
-        <translation>Κύκλοι που Τομεύουν Σημεία</translation>
+        <translation>Точки перетину кіл</translation>
     </message>
 </context>
 <context>
@@ -5394,9 +5216,9 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-	Три групи: великі, середні, малі = 0;
-	Дві групи: великі, маленькі = 1;
-	За зменшенням площі = 2</translation>
+⇥Три групи: великі, середні, малі = 0;
+⇥Дві групи: великі, маленькі = 1;
+⇥За зменшенням площі = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
@@ -5437,62 +5259,62 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
     </message>
     <message>
         <source>Text</source>
-        <translation>Κείμενο</translation>
+        <translation>Текст</translation>
     </message>
     <message>
         <source>Text will be converted to paths</source>
-        <translation>Το κείμενο θα μετατραπεί σε διαδρομές</translation>
+        <translation>Текст буде перетворено на контури</translation>
     </message>
     <message>
         <source>Export text as paths</source>
-        <translation>Εξαγωγή κειμένου ως διαδρομές</translation>
+        <translation>Експортувати текст як шляхи</translation>
     </message>
     <message>
         <source>Margins</source>
-        <translation>Περιθώρια</translation>
+        <translation>Поля</translation>
     </message>
     <message>
         <source>Ignore margins</source>
-        <translation>Παράβλεψη περιθωρίων</translation>
+        <translation>Ігнорувати поля</translation>
     </message>
     <message>
         <source>Layout print settings</source>
-        <translation>Ρυθμίσεις εκτύπωσης διάταξης</translation>
+        <translation>Налаштування друку макета</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
+        <translation>Міліметри</translation>
     </message>
     <message>
         <source>Margins go beyond printing. Apply settings anyway?</source>
-        <translation>Τα περιθώρια δεν περιορίζονται μόνο στην εκτύπωση. Εφαρμόστε τις ρυθμίσεις ούτως ή άλλως?</translation>
+        <translation>«Поля не обмежуються друком. Застосувати налаштування все одно?»</translation>
     </message>
 </context>
 <context>
     <name>LineTypeComboBox</name>
     <message>
         <source>No Pen</source>
-        <translation>Χωρίς στυλό</translation>
+        <translation>Без ручки</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Συνεχής γραμμή</translation>
+        <translation>Суцільна лінія</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Παύλα</translation>
+        <translation>Тере</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Κουκκίδα</translation>
+        <translation>Крапка</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Παύλα Κουκκίδα</translation>
+        <translation>Тропа-штрих</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Παύλα Κουκκίδα Κουκκίδα</translation>
+        <translation>Три крапка крапка</translation>
     </message>
 </context>
 <context>
@@ -5578,10 +5400,6 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Зберегти лекало</translation>
     </message>
     <message>
-        <source>Save As...</source>
-        <translation>Зберегти як...</translation>
-    </message>
-    <message>
         <source>Save not yet saved pattern</source>
         <translation>Зберегти ще не збережене лекало</translation>
     </message>
@@ -5602,12 +5420,8 @@ The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRAN
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>About Seamly2D</source>
-        <translation>Про Seamly2D</translation>
-    </message>
-    <message>
         <source>E&amp;xit</source>
-        <translation>Вихід</translation>
+        <translation>&amp;Вихід</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -5731,10 +5545,6 @@ Do you want to save your changes?</source>
         <translation>Попередній перегляд оригінальної розкладки</translation>
     </message>
     <message>
-        <source>Export Layout As...</source>
-        <translation>Експортувати макет як...</translation>
-    </message>
-    <message>
         <source>Layout mode</source>
         <translation>Режим розкладки</translation>
     </message>
@@ -5755,12 +5565,28 @@ Do you want to save your changes?</source>
         <translation>Файл мірок містить недійсні відомі мірки.</translation>
     </message>
     <message>
+        <source>Confirm Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete basepoint and current draft block?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Measurement file has unknown format.</source>
         <translation>Файл мірок має невідомий формат.</translation>
     </message>
     <message>
         <source>Measurement files types have not match.</source>
         <translation>Типи файлів мірок не співпадають.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Опис</translation>
     </message>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
@@ -5773,6 +5599,14 @@ Do you want to save your changes?</source>
     <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Файл мірок &apos;%1&apos; не вдалося знайти.</translation>
+    </message>
+    <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exporting...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Loading measurements file</source>
@@ -6004,195 +5838,215 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
-        <translation>Η εφαρμογή δεν υποστηρίζει πίνακες πολλαπλών μεγεθών με ίντσες.</translation>
+        <translation>Програма не підтримує багаторозмірні таблиці з дюймами.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
-        <translation>Δεν ήταν δυνατός ο ορισμός μεγέθους. Χρειάζεται ένα αρχείο με μετρήσεις πολλαπλών μεγεθών.</translation>
+        <translation>Не вдалося встановити розмір. Потрібен файл із вимірюваннями кількох розмірів.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. Need a file with multisize measurements.</source>
-        <translation>Δεν ήταν δυνατός ο ορισμός του ύψους. Χρειάζεται ένα αρχείο με μετρήσεις πολλαπλών μεγεθών.</translation>
+        <translation>Не вдалося встановити висоту. Потрібен файл із вимірами кількох розмірів.</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation>Προεπισκόπηση</translation>
+        <translation>Попередній перегляд</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Προβολή</translation>
+        <translation>Вигляд</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Ονόματα Σημείων</translation>
+        <translation>Назви точок</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redaguati</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <source>&amp;Tools</source>
-        <translation>&amp;Εργαλεία</translation>
+        <translation>&amp;Інструменти</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>&amp;Λειτουργίες</translation>
+        <translation>&amp;Операції</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Κομμάτι</translation>
+        <translation>Шматок</translation>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Βοηθητικά προγράμματα</translation>
+        <translation>Утиліти</translation>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation>Γραμμή εργαλείων αρχείων</translation>
+        <translation>Панель інструментів файлу</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
-        <translation>Γραμμή εργαλείων λειτουργίας</translation>
+        <translation>Панель інструментів режиму</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation>Γραμμή εργαλείων μοτίβων</translation>
+        <translation>Панель інструментів візерунка</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation>Επεξεργασία γραμμής εργαλείων</translation>
+        <translation>Редагувати панель інструментів</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Επεξεργαστής ιδιοτήτων</translation>
+        <translation>Редактор властивостей</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Σελίδες διάταξης</translation>
+        <translation>Сторінки макета</translation>
     </message>
     <message>
         <source>Group Manager</source>
-        <translation>Διαχειριστής ομάδας</translation>
+        <translation>Керівник групи</translation>
     </message>
     <message>
         <source>Zoom ToolBar</source>
-        <translation>Γραμμή εργαλείων ζουμ</translation>
+        <translation>Панель інструментів масштабування</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Γραμμή εργαλείων εργαλειοθήκης</translation>
+        <translation>Панель інструментів</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
-        <translation>Γραμμή εργαλείων σημείων</translation>
+        <translation>Панель інструментів &quot;Точки&quot;</translation>
     </message>
     <message>
         <source>Lines ToolBar</source>
-        <translation>Γραμμή εργαλείων γραμμών</translation>
+        <translation>Панель інструментів &quot;Лінії&quot;</translation>
     </message>
     <message>
         <source>Curves ToolBar</source>
-        <translation>Γραμμή εργαλείων καμπυλών</translation>
+        <translation>Панель інструментів &quot;Криві&quot;</translation>
     </message>
     <message>
         <source>Arcs ToolBar</source>
-        <translation>Γραμμή εργαλείων τόξων</translation>
+        <translation>Панель інструментів Arcs</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Γραμμή Εργαλείων Λειτουργιών</translation>
+        <translation>Панель інструментів операцій</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>Γραμμή Εργαλείων Κομματιών</translation>
+        <translation>Панель інструментів &quot;Фігура&quot;</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Γραμμή Εργαλείων Λεπτομερειών</translation>
+        <translation>Панель інструментів &quot;Подробиці&quot;</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>Γραμμή εργαλείων διάταξης</translation>
+        <translation>Панель інструментів макета</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
-        <translation>Γραμμή εργαλείων ονόματος σημείου</translation>
+        <translation>Панель інструментів &quot;Назва точки&quot;</translation>
     </message>
     <message>
         <source>Toolbox</source>
-        <translation>Εργαλειοθήκη</translation>
+        <translation>Інструментальна панель</translation>
     </message>
     <message>
         <source>Line between 2 Points (Alt+L)</source>
-        <translation>Γραμμή μεταξύ 2 σημείων (Alt+L)</translation>
+        <translation>Лінія між 2 точками (Alt+L)</translation>
     </message>
     <message>
         <source>Tools for performing operations on objects</source>
-        <translation>Εργαλεία για την εκτέλεση λειτουργιών σε αντικείμενα</translation>
+        <translation>Інструменти для виконання операцій з об&apos;єктами</translation>
     </message>
     <message>
         <source>Rotate Selected Objects (R)</source>
-        <translation>Περιστροφή επιλεγμένων αντικειμένων (R)</translation>
+        <translation>Повернути вибрані об&apos;єкти (R)</translation>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Εξαγωγή μπλοκ πρόχειρου (E, D)</translation>
+        <translation>Експортувати блоки чернетки (E, D)</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
-        <translation>Εργαλεία για την προσθήκη κομματιών πατρόν.</translation>
+        <translation>Інструменти для додавання елементів викрійки.</translation>
     </message>
     <message>
         <source>Add Details</source>
-        <translation>Προσθήκη λεπτομερειών</translation>
+        <translation>Додати деталі</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>Εργαλεία για την προσθήκη λεπτομερειών σε κομμάτια πατρόν</translation>
+        <translation>Інструменти для додавання деталей до елементів викрійки</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation>Ενώστε 2 Κομμάτια (U)</translation>
+        <translation>Об&apos;єднай 2 частини (U)</translation>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>Προβολή γραμμής εργαλείων</translation>
+        <translation>Перегляд панелі інструментів</translation>
+    </message>
+    <message>
+        <source>Save As...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Draft</source>
-        <translation>Πρόχειρο</translation>
+        <translation>Чернетка</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Λειτουργία για εργασία με μπλοκ πρόχειρου τύπου. Αυτά τα μπλοκ πρόχειρου τύπου αποτελούν τη βάση για τη μετάβαση στο επόμενο στάδιο &quot;Λειτουργία Τεμαχίου&quot;. Πριν μπορέσετε να ενεργοποιήσετε τη &quot;Λειτουργία Τεμαχίου&quot;, πρέπει να δημιουργήσετε τουλάχιστον ένα κομμάτι πατρόν.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим роботи з блоками чернетки. Ці блоки чернетки є основою для переходу до наступного етапу «Режим шматка». Перш ніж ви зможете ввімкнути «Режим шматка», вам потрібно створити принаймні один елемент викрійки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Λειτουργία για εργασία με κομμάτια μοτίβου. Πριν μπορέσετε να ενεργοποιήσετε τη &quot;Λειτουργία Κομματιού&quot;, πρέπει να δημιουργήσετε τουλάχιστον ένα κομμάτι μοτίβου στη &quot;Λειτουργία Πρόχειρου&quot; της σκηνής. Τα κομμάτια μοτίβου που δημιουργούνται σε αυτήν τη σκηνή θα χρησιμοποιηθούν για τη δημιουργία μιας διάταξης. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим роботи з елементами викрійки. Перш ніж ви зможете ввімкнути «Режим елемента», вам потрібно створити принаймні один елемент викрійки на етапі «Режим чернетки». Елементи викрійки, створені на цьому етапі, будуть використані для створення макета. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Νέο μπλοκ σχεδίασης</translation>
+        <translation>Новий чернетка блоку</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>Προσθήκη νέου μπλοκ προσχεδίου (Ctrl+Shift+N)</translation>
+        <translation>Додати новий блок чернетки (Ctrl+Shift+N)</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Μετονομασία μπλοκ πρόχειρου</translation>
+        <translation>Перейменувати блок чернетки</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
-        <translation>Αλλαγή ονόματος του μπλοκ πρόχειρου</translation>
+        <translation>Змінити назву блоку чернетки</translation>
     </message>
     <message>
         <source>Variables table</source>
-        <translation>Πίνακας μεταβλητών</translation>
+        <translation>Таблиця змінних</translation>
+    </message>
+    <message>
+        <source>Final measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List and edit final measurements</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Λειτουργία για τη δημιουργία διάταξης κομματιών μοτίβου. Αυτή η λειτουργία είναι διαθέσιμη εάν τουλάχιστον ένα κομμάτι μοτίβου δημιουργήθηκε σε &quot;Λειτουργία Κομματιού&quot;. Η διάταξη μπορεί να εξαχθεί στην προτιμώμενη μορφή αρχείου και να αποθηκευτεί.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим створення макета елементів викрійки. Цей режим доступний, якщо хоча б один елемент викрійки було створено в «режимі «Елемент». Макет можна експортувати у потрібний вам формат файлу та зберегти.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Delete Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation type="unfinished">Дел</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -6200,27 +6054,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Καθρέφτης ανά γραμμή</translation>
+        <translation>Дзеркало за лінією</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Καθρέφτης ανά άξονα</translation>
+        <translation>Дзеркало від Axis</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Перемистити</translation>
+        <translation>Пере!</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Αληθινά Βελάκια</translation>
+        <translation>Справжні дротики</translation>
     </message>
     <message>
         <source>Midpoint</source>
-        <translation>Μεσαίο σημείο</translation>
+        <translation>Середина</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>Τομή XY</translation>
+        <translation>Перетин XY</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -6236,139 +6090,143 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Tools for inserting or modifying images.</source>
-        <translation>Εργαλεία για την εισαγωγή ή την τροποποίηση εικόνων.</translation>
+        <translation>Інструменти для вставки або редагування зображень.</translation>
     </message>
     <message>
-        <source>Final measurements</source>
-        <translation>Фінальні вимірювання</translation>
-    </message>
-    <message>
-        <source>List and edit final measurements</source>
-        <translation>Список та редагування фінальних вимірювань</translation>
+        <source>Arc - Elliptical</source>
+        <translation type="unfinished">Дуга - еліптична</translation>
     </message>
     <message>
         <source>Point on Curve (O, C)</source>
-        <translation>Σημείο στην καμπύλη (O, C)</translation>
+        <translation>Точка на кривій (O, C)</translation>
+    </message>
+    <message>
+        <source>About Seamly2D</source>
+        <translation>Про Seamly2D</translation>
     </message>
     <message>
         <source>Exit the Application</source>
-        <translation>Έξοδος από την εφαρμογή</translation>
+        <translation>Вихід із програми</translation>
     </message>
     <message>
         <source>Application Preferences...</source>
-        <translation>Προτιμήσεις εφαρμογής...</translation>
+        <translation>Налаштування програми...</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Προτιμήσεις μοτίβων...</translation>
+        <translation>Налаштування візерунка...</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation>Μεγέθυνση</translation>
+        <translation>Збільшити масштаб</translation>
     </message>
     <message>
         <source>In</source>
-        <translation>Εντός</translation>
+        <translation>Вхід</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
-        <translation>Μεγέθυνση (Ctrl++)</translation>
+        <translation>Збільшити масштаб (Ctrl++)</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Σμίκρυνση</translation>
+        <translation>Зменшити масштаб</translation>
     </message>
     <message>
         <source>Out</source>
-        <translation>Έξω</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
-        <translation>Σμίκρυνση (Ctrl+-)</translation>
+        <translation>Зменшити масштаб (Ctrl+-)</translation>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Ταιριάζει σε όλους</translation>
+        <translation>Підходить усім</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation>Ταιριάζει</translation>
+        <translation>Підходить</translation>
     </message>
     <message>
         <source>Report bug...</source>
-        <translation>Αναφορά σφάλματος...</translation>
+        <translation>Повідомити про помилку...</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Κλείσιμο</translation>
+        <translation>Закрити</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Συντομεύσεις</translation>
+        <translation>Скорочені шляхи</translation>
     </message>
     <message>
         <source>Last tool</source>
-        <translation>Τελευταίο εργαλείο</translation>
+        <translation>Останній інструмент</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Σημεία ελέγχου καμπύλης</translation>
+        <translation>Контрольні точки кривої</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Εναλλαγή σημείων ελέγχου και κατεύθυνσης καμπύλης (V, C)</translation>
+        <translation>Перемкнути контрольні точки та напрямок кривої (V, C)</translation>
+    </message>
+    <message>
+        <source>Export Layout As...</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Load multisize</source>
-        <translation>Φόρτωση πολλαπλών μεγεθών</translation>
+        <translation>Завантажити багаторозмірний файл</translation>
     </message>
     <message>
         <source>Open SeamlyMe measurements app (Ctrl+M)</source>
-        <translation>Άνοιγμα εφαρμογής μετρήσεων SeamlyMe (Ctrl+M)</translation>
+        <translation>Відкрити програму вимірювань SeamlyMe (Ctrl+M)</translation>
     </message>
     <message>
         <source>Export Variables to CSV</source>
-        <translation>Εξαγωγή μεταβλητών σε CSV</translation>
+        <translation>Експорт змінних у CSV</translation>
     </message>
     <message>
         <source>Export Final Measurements to CSV</source>
-        <translation>Експорт фінальних вимірювань у CSV</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation>Επιλεγμένο</translation>
+        <translation>Вибрано</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Επεξεργαστής προτύπων ετικετών...</translation>
+        <translation>Редактор шаблонів етикеток...</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation>Προηγούμενο</translation>
+        <translation>Попередній</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation>Μεγέθυνση στο προηγούμενο (Ctrl+Αριστερά)</translation>
+        <translation>Повернути до попереднього (Ctrl+ліворуч)</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Περιοχή</translation>
+        <translation>Зона</translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Τηγάνι</translation>
+        <translation>Сковорода</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation>Μεγέθυνση στο 100% (Ctrl+0)</translation>
+        <translation>Збільшити масштаб до 100 відсотків (Ctrl+0)</translation>
     </message>
     <message>
         <source>Point Tools</source>
-        <translation>Εργαλεία αιχμής</translation>
+        <translation>Інструменти для точкового різання</translation>
     </message>
     <message>
         <source>Line Tools</source>
-        <translation>Εργαλεία Γραμμής</translation>
+        <translation>Лінійні інструменти</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -6376,463 +6234,459 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Curve Tools</source>
-        <translation>Εργαλεία Καμπύλης</translation>
+        <translation>Інструменти кривих</translation>
     </message>
     <message>
         <source>Arc Tools</source>
-        <translation>Εργαλεία τόξου</translation>
+        <translation>Інструменти для дугових робіт</translation>
     </message>
     <message>
         <source>Operations Tools</source>
-        <translation>Εργαλεία Λειτουργιών</translation>
+        <translation>Інструменти операцій</translation>
     </message>
     <message>
         <source>Layout Tools</source>
-        <translation>Εργαλεία διάταξης</translation>
+        <translation>Інструменти макета</translation>
     </message>
     <message>
         <source>Piece tools</source>
-        <translation>Εργαλεία κοπής</translation>
+        <translation>Інструменти для виготовлення деталей</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Νέο κομμάτι πατρόν</translation>
+        <translation>Новий візерунок</translation>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>Νέα διάταξη εκτύπωσης</translation>
+        <translation>Новий макет друку</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Εξαγωγή διάταξης</translation>
+        <translation>Експорт макета</translation>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation>Σημείο αγκύρωσης</translation>
+        <translation>Точка опори</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Εσωτερική Διαδρομή</translation>
+        <translation>Внутрішній шлях</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Εισαγωγή κόμβων</translation>
+        <translation>Вставити вузли</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Ενώστε τα Κομμάτια</translation>
+        <translation>Об&apos;єднай шматки</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Εξαγωγή τεμαχίων</translation>
+        <translation>Експорт частин</translation>
     </message>
     <message>
         <source>Detail tools</source>
-        <translation>Εργαλεία λεπτομερειών</translation>
+        <translation>Інструменти для обробки деталей</translation>
     </message>
     <message>
         <source>Point Name Text</source>
-        <translation>Κείμενο ονόματος σημείου</translation>
+        <translation>Текст назви точки</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
-        <translation>Αύξηση μεγέθους κειμένου</translation>
+        <translation>Збільшити розмір тексту</translation>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
-        <translation>Αύξηση μεγέθους κειμένου (Ctrl+])</translation>
+        <translation>Збільшити розмір тексту (Ctrl+])</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Μείωση μεγέθους κειμένου</translation>
+        <translation>Зменшити розмір тексту</translation>
     </message>
     <message>
         <source>Decrease Text Size (Ctrl+[)</source>
-        <translation>Μείωση μεγέθους κειμένου (Ctrl+[)</translation>
+        <translation>Зменшити розмір тексту (Ctrl+[)</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Χρήση χρώματος εργαλείου</translation>
+        <translation>Використати колір інструмента</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation>Χρήση χρώματος εργαλείου (T)</translation>
+        <translation>Використати колір інструмента (T)</translation>
     </message>
     <message>
         <source>Axis Origin </source>
-        <translation>Προέλευση Άξονα </translation>
+        <translation>Початок координат осі</translation>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
-        <translation>Εναλλαγή Αρχής Άξονα (V, A)</translation>
+        <translation>Перемкнути початок осі (V, A)</translation>
     </message>
     <message>
         <source>Wireframe Mode</source>
-        <translation>Λειτουργία Wireframe</translation>
+        <translation>Режим каркасної структури</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
-        <translation>Εναλλαγή λειτουργίας Wireframe (V, W)</translation>
+        <translation>Перемкнути режим каркасу (V, W)</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Γραμμές κόκκων</translation>
+        <translation>Зернові лінії</translation>
     </message>
     <message>
         <source>Toggle Grainlines (V, G)</source>
-        <translation>Εναλλαγή Grainlines (V, G)</translation>
+        <translation>Переключити лінії зернистості (V, G)</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Μίτκι</translation>
+        <translation>Мітки</translation>
     </message>
     <message>
         <source>Toggle Labels (V, L)</source>
-        <translation>Εναλλαγή ετικετών (V, L)</translation>
+        <translation>Перемкнути мітки (V, L)</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Αριθμομηχανή</translation>
+        <translation>Калькулятор</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Δεκαδικό Διάγραμμα</translation>
+        <translation>Десяткова таблиця</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Εξαγωγή μπλοκ πρόχειρου</translation>
+        <translation>Експортувати блоки чернетки</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Εξαγωγή</translation>
+        <translation>Експорт</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Επιτρεπόμενο όριο ραφής</translation>
+        <translation>Припуск на шов</translation>
     </message>
     <message>
         <source>Document Info...</source>
-        <translation>Πληροφορίες Εγγράφου...</translation>
+        <translation>Інформація про документ...</translation>
     </message>
     <message>
         <source>Document Info</source>
-        <translation>Πληροφορίες Εγγράφου</translation>
+        <translation>Інформація про документ</translation>
     </message>
     <message>
         <source>Display document Info</source>
-        <translation>Εμφάνιση πληροφοριών εγγράφου</translation>
+        <translation>Відобразити інформацію про документ</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
-        <translation>Το αρχείο μετρήσεων δεν περιλαμβάνει όλες τις απαιτούμενες μετρήσεις.</translation>
+        <translation>«Файл вимірювань не містить усіх необхідних вимірювань».</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Tool::Operations - Δημιουργία ομάδας:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία ομάδας </translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Створити групу:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення групи</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Περιστροφή:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Обертання:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення по лінії:&lt;/b&gt; Виберіть один або кілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення за віссю:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Μετακίνηση:&lt;/b&gt; Επιλογή ενός ή περισσότερων αντικειμένων - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, Πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Переміщення:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
-        <translation>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Επιλέξτε το πρώτο σημείο της γραμμής βάσης</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - TrueDarts:&lt;/b&gt; Виберіть першу точку базової лінії</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
-        <translation>Δεν ήταν δυνατή η φόρτωση της εικόνας.</translation>
+        <translation>Не вдалося завантажити зображення.</translation>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Μπλοκ προσχέδιου:</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Περιγραφή</translation>
+        <translation>Чернетка блоку:</translation>
     </message>
     <message>
         <source>Rotate</source>
-        <translation>Περιστροφή</translation>
+        <translation>Повернути</translation>
     </message>
     <message>
         <source>Add AnchorPoint</source>
-        <translation>Προσθήκη σημείου αγκύρωσης</translation>
+        <translation>Додати точку прив&apos;язки</translation>
     </message>
     <message>
         <source>Create Internal Path</source>
-        <translation>Δημιουργία εσωτερικής διαδρομής</translation>
+        <translation>Створити внутрішній шлях</translation>
     </message>
     <message>
         <source>Insert Nodes in Path</source>
-        <translation>Εισαγωγή κόμβων στη διαδρομή</translation>
+        <translation>Вставити вузли в шлях</translation>
     </message>
     <message>
         <source>Union Tool</source>
-        <translation>Εργαλείο Ένωσης</translation>
+        <translation>Інструмент для з&apos;єднання</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Εξαγωγή κομματιών μοτίβου</translation>
+        <translation>Експорт елементів викрійки</translation>
     </message>
     <message>
         <source>Import Image</source>
-        <translation>Εισαγωγή εικόνας</translation>
+        <translation>Імпортувати зображення</translation>
     </message>
     <message>
         <source>Piece mode</source>
-        <translation>Λειτουργία τεμαχίου</translation>
+        <translation>Режим фігур</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>Δεν μπορείτε να χρησιμοποιήσετε τη λειτουργία Τεμαχίου ακόμα. Παρακαλώ, δημιουργήστε τουλάχιστον ένα κομμάτι πατρόν.</translation>
+        <translation>«Ви ще не можете використовувати режим «Шматку». Будь ласка, створіть хоча б один шматок викрійки.»</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Τεμάχια Μοτίβου</translation>
+        <translation>Елементи візерунка</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Δεν μπορείτε να χρησιμοποιήσετε ακόμα τη λειτουργία διάταξης. Παρακαλώ, δημιουργήστε τουλάχιστον ένα κομμάτι πατρόν.</translation>
+        <translation>«Ви ще не можете використовувати режим макета. Будь ласка, створіть хоча б один елемент викрійки».</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Δεν μπορείτε να χρησιμοποιήσετε τη λειτουργία διάταξης ακόμα. Παρακαλώ, συμπεριλάβετε τουλάχιστον ένα κομμάτι μοτίβου στη διάταξη.</translation>
+        <translation>Ви ще не можете використовувати режим макета. Будь ласка, додайте принаймні один елемент викрійки до макета.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Draft block.</source>
-        <translation>Μπλοκάρισμα προσχεδίου.</translation>
+        <translation>Чернетка блоку.</translation>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation>Το όνομα υπάρχει</translation>
+        <translation>Ім&apos;я існує</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>Η ενέργεια δεν μπορεί να ολοκληρωθεί επειδή το όνομα του μπλοκ πρόχειρου υπάρχει ήδη.</translation>
+        <translation>Дію неможливо завершити, оскільки назва блоку чернетки вже існує.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>Δεν έχετε κομμάτια για εξαγωγή. Παρακαλώ, συμπεριλάβετε τουλάχιστον ένα κομμάτι στη διάταξη.</translation>
+        <translation>У вас немає елементів для експорту. Будь ласка, додайте хоча б один елемент до макета.</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>Εξαγωγή τεμαχίων</translation>
+        <translation>Експорт частин</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Δεν είναι δυνατή η εξαγωγή τεμαχίων.</translation>
+        <translation>Не вдається експортувати частини.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Tool::Piece - Προσθήκη νέου κομματιού μοτίβου:&lt;/b&gt; Επιλογή κύριας διαδρομής αντικειμένων δεξιόστροφα.</translation>
+        <translation>&lt;b&gt;Інструмент::Елемент – Додати новий елемент візерунка:&lt;/b&gt; Вибрати основний шлях об’єктів за годинниковою стрілкою.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation>&lt;b&gt;Εργαλείο::Κομμάτι - Προσθήκη σημείου αγκύρωσης:&lt;/b&gt; Επιλογή σημείου αγκύρωσης</translation>
+        <translation>&lt;b&gt;Інструмент::Елемент – Додати опорну точку:&lt;/b&gt; Вибрати опорну точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt;Tool::Piece - Εσωτερική διαδρομή:&lt;/b&gt; Επιλέξτε αντικείμενα διαδρομής, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Елемент - Внутрішній контур:&lt;/b&gt; Виберіть об&apos;єкти контуру, використовуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб змінити напрямок кривої</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Piece - Εισαγωγή κόμβων:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+        <translation>&lt;b&gt;Інструмент::Елемент - Вставка вузлів:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;Εργαλείο::Λεπτομέρειες - Ένωση:&lt;/b&gt; Επιλογή κομματιού μοτίβου</translation>
+        <translation>&lt;b&gt;Інструмент::Деталі - Об&apos;єднання:&lt;/b&gt; Вибрати елемент візерунка</translation>
     </message>
     <message>
         <source>Draft block %1</source>
-        <translation>Προσχεδιακό μπλοκ %1</translation>
+        <translation>Чернетка блоку %1</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Πρόχειρο μπλοκ %1</translation>
+        <translation>Чернетка блоку %1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
-        <translation>Σημείο - Στη Διχοτόμο (O, B)</translation>
+        <translation>Точка - на бісектрисі (O, B)</translation>
     </message>
     <message>
         <source>Point - Length to Line (P, S)</source>
-        <translation>Σημείο - Μήκος προς Γραμμή (P, S)</translation>
+        <translation>Точка - Довжина до лінії (P, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line (A, L)</source>
-        <translation>Σημείο - Τομή Τόξου και Γραμμής (A, L)</translation>
+        <translation>Точка - перетин дуги та прямої (A, L)</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
-        <translation>Σημείο - Τομή Άξονα και Τρίγωνο (X, T)</translation>
+        <translation>Точка - перетин осі та трикутника (X, T)</translation>
     </message>
     <message>
         <source>Point - Intersect XY (X, Y)</source>
-        <translation>Σημείο - Τομή XY (X, Y)</translation>
+        <translation>Точка - перетин XY (X, Y)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
-        <translation>Σημείο - Τομή ευθείας και κάθετης (L, P)</translation>
+        <translation>Точка - перетин прямої та перпендикуляра (L, P)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
-        <translation>Σημείο - Τομή Γραμμής και Άξονα (L, X)</translation>
+        <translation>Точка - перетин лінії та осі (L, X)</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
-        <translation>Σημείο - Σε κάθετο (O, P)</translation>
+        <translation>Точка - на перпендикулярі (O, P)</translation>
     </message>
     <message>
         <source>Point - Length and Angle (L, A)</source>
-        <translation>Σημείο - Μήκος και Γωνία (L, A)</translation>
+        <translation>Точка - довжина та кут (L, A)</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
-        <translation>Σημείο - Σε ευθεία (O, L)</translation>
+        <translation>Точка - на лінії (O, L)</translation>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
-        <translation>Σημείο - Μέσο σημείο σε γραμμή (Shift+O, Shift+L)</translation>
+        <translation>Точка - середина лінії (Shift+O, Shift+L)</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
-        <translation>Σημείο - Τομή Ευθειών (I, L)</translation>
+        <translation>Точка - Лінії перетину (I, L)</translation>
     </message>
     <message>
         <source>Curve - Interactive (Alt+C)</source>
-        <translation>Καμπύλη - Διαδραστική (Alt+C)</translation>
+        <translation>Крива – інтерактивна (Alt+C)</translation>
     </message>
     <message>
         <source>Spline - Interactive (Alt+S)</source>
-        <translation>Spline - Διαδραστικό (Alt+S)</translation>
+        <translation>Сплайн – інтерактивний (Alt+S)</translation>
     </message>
     <message>
         <source>Curve - Fixed (Alt+Shift+C)</source>
-        <translation>Καμπύλη - Σταθερή (Alt+Shift+C)</translation>
+        <translation>Крива – Фіксована (Alt+Shift+C)</translation>
     </message>
     <message>
         <source>Spline - Fixed (Alt+Shift+S)</source>
-        <translation>Σπλάιν - Σταθερό (Alt+Shift+S)</translation>
+        <translation>Сплайн – фіксований (Alt+Shift+S)</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
-        <translation>Σημείο - Σε Σφήνα (O, S)</translation>
+        <translation>Точка - на сплайні (O, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Curves (I, C)</source>
-        <translation>Σημείο - Τομή Καμπυλών (I, C)</translation>
+        <translation>Точка - перетин кривих (I, C)</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis (C, X)</source>
-        <translation>Σημείο - Τομή Καμπύλης και Άξονα (C, X)</translation>
+        <translation>Точка - перетин кривої та осі (C, X)</translation>
     </message>
     <message>
         <source>Point - On Curve (O, C)</source>
-        <translation>Σημείο - Στην Καμπύλη (O, C)</translation>
+        <translation>Точка - на кривій (O, C)</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles (Alt+A)</source>
-        <translation>Τόξο - Ακτίνα και Γωνίες (Alt+A)</translation>
+        <translation>Дуга - Радіус та Кути (Alt+A)</translation>
     </message>
     <message>
         <source>Point - On Arc (O, A)</source>
-        <translation>Σημείο - Σε Τόξο (O, A)</translation>
+        <translation>Точка - на дузі (O, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis (A, X)</source>
-        <translation>Σημείο - Τομή Τόξου και Άξονα (A, X)</translation>
+        <translation>Точка - перетин дуги та осі (A, X)</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs (I, A)</source>
-        <translation>Σημείο - Τομή Τόξων (I, A)</translation>
+        <translation>Точка - перетин дуг (I, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Σημείο - Τομή Κύκλων (Shift+I, Shift+C)</translation>
+        <translation>Точка - Перетин кіл (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
-        <translation>Σημείο - Τομή Κύκλου και Εφαπτομένης (C, T)</translation>
+        <translation>Точка - перетин кола та дотичної (C, T)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent (A, T)</source>
-        <translation>Σημείο - Τομή Τόξου και Εφαπτομένης (A, T)</translation>
+        <translation>Точка - перетин дуги та дотичної (A, T)</translation>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Τόξο - Ακτίνα και Μήκος (Alt+Shift+A)</translation>
+        <translation>Дуга - радіус і довжина (Alt+Shift+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
-        <translation>Τόξο - Ελλειπτικό (Alt+E)</translation>
+        <translation>Дуга – еліптична (Alt+E)</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Κατοπτρισμός αντικειμένων ανά γραμμή (M, L)</translation>
+        <translation>Дзеркальне відображення об&apos;єктів лінією (M, L)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Κατοπτρισμός αντικειμένων ανά άξονα (M, A)</translation>
+        <translation>Дзеркальне відображення об&apos;єктів за віссю (M, A)</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
-        <translation>Μετακίνηση αντικειμένων (Alt+M)</translation>
+        <translation>Перемістити об&apos;єкти (Alt+M)</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
-        <translation>Αληθινά Βελάκια (T, D)</translation>
+        <translation>Справжні дротики (T, D)</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
-        <translation>Προσθήκη νέου κομματιού μοτίβου (N, P)</translation>
+        <translation>Додати новий елемент викрійки (N, P)</translation>
     </message>
     <message>
         <source>Add Anchor Point (A, P)</source>
-        <translation>Προσθήκη σημείου αγκύρωσης (A, P)</translation>
+        <translation>Додати точку прив&apos;язки (A, P)</translation>
     </message>
     <message>
         <source>Insert Nodes (I, N)</source>
-        <translation>Εισαγωγή κόμβων (I, N)</translation>
+        <translation>Вставити вузли (I, N)</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
-        <translation>Προσθήκη εσωτερικής διαδρομής (I, P)</translation>
+        <translation>Додати внутрішній шлях (I, P)</translation>
     </message>
     <message>
         <source>Import Image (Alt + I)</source>
-        <translation>Εισαγωγή εικόνας (Alt + I)</translation>
+        <translation>Імпортувати зображення (Alt + I)</translation>
     </message>
     <message>
         <source>Export Pieces (E, P)</source>
-        <translation>Εξαγωγή Τεμαχίων (E, P)</translation>
+        <translation>Експорт частин (E, P)</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>Νέα διάταξη εκτύπωσης (Β, Α)</translation>
+        <translation>Новий макет друку (N, L)</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>Εξαγωγή διάταξης (E, L)</translation>
+        <translation>Експорт макета (E, L)</translation>
     </message>
     <message>
         <source>Contains information about custom and internal variables</source>
-        <translation>Περιέχει πληροφορίες σχετικά με προσαρμοσμένες και εσωτερικές μεταβλητές</translation>
+        <translation>Містить інформацію про користувацькі та внутрішні змінні</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6840,11 +6694,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Elliptical</source>
-        <translation>Ελλειπτικό</translation>
-    </message>
-    <message>
-        <source>Arc - Elliptical</source>
-        <translation>Τόξο - Ελλειπτικό</translation>
+        <translation>Еліптичний</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -6852,7 +6702,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Midpoint on Line</source>
-        <translation>Μέσο σημείο στη γραμμή</translation>
+        <translation>Середина на лінії</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -6860,55 +6710,55 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>On Line</source>
-        <translation>Στο διαδίκτυο</translation>
+        <translation>Онлайн</translation>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Μήκος και Γωνία</translation>
+        <translation>Довжина та кут</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Σε κάθετο</translation>
+        <translation>На перпендикулярі</translation>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>Στη διχοτόμο</translation>
+        <translation>На бісектрисі</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Μήκος προς γραμμή</translation>
+        <translation>Довжина до лінії</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
-        <translation>Τομή Τόξου και Γραμμής</translation>
+        <translation>Перетин дуги та лінії</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Τομή άξονα και τριγώνου</translation>
+        <translation>Перетин осі та трикутника</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Τομή ευθείας και κάθετης</translation>
+        <translation>Перетин прямої та перпендикуляра</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Τομή ευθείας και άξονα</translation>
+        <translation>Перетин лінії та осі</translation>
     </message>
     <message>
         <source>Intersect Lines</source>
-        <translation>Τεμνόμενες Γραμμές</translation>
+        <translation>Перетин ліній</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Καμπύλη - Διαδραστική</translation>
+        <translation>Крива – інтерактивна</translation>
     </message>
     <message>
         <source>Point on Curve</source>
-        <translation>Σημείο στην καμπύλη</translation>
+        <translation>Точка на кривій</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Καμπύλη - Διορθώθηκε</translation>
+        <translation>Крива – фіксована</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
@@ -6916,19 +6766,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Διαδραστικό</translation>
+        <translation>Сплайн – інтерактивний</translation>
     </message>
     <message>
         <source>Point on Spline</source>
-        <translation>Σημείο σε Spline</translation>
+        <translation>Точка на сплайні</translation>
     </message>
     <message>
         <source>Point on Spline (O, S)</source>
-        <translation>Σημείο σε Spline (O, S)</translation>
+        <translation>Точка на сплайні (O, S)</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Σπλάιν - Σταθερό</translation>
+        <translation>Сплайн – фіксований</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
@@ -6936,51 +6786,51 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Curves</source>
-        <translation>Καμπύλες τομής</translation>
+        <translation>Перетин кривих</translation>
     </message>
     <message>
         <source>Intersect Curve and Axis</source>
-        <translation>Τομή καμπύλης και άξονα</translation>
+        <translation>Перетин кривої та осі</translation>
     </message>
     <message>
         <source>Radius and Angles</source>
-        <translation>Ακτίνα και Γωνίες</translation>
+        <translation>Радіус та кути</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Τόξο - Ακτίνα και Γωνίες</translation>
+        <translation>Дуга - радіус і кути</translation>
     </message>
     <message>
         <source>Point on Arc</source>
-        <translation>Σημείο στο Τόξο</translation>
+        <translation>Точка на дузі</translation>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
-        <translation>Σημείο στο Τόξο (O, A)</translation>
+        <translation>Точка на дузі (O, A)</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis</source>
-        <translation>Τεμνόμενο τόξο και άξονα</translation>
+        <translation>Перетин дуги та осі</translation>
     </message>
     <message>
         <source>Intersect Arc and Axis (A, X)</source>
-        <translation>Τεμνόμενο Τόξο και Άξονα (A, X)</translation>
+        <translation>Перетин дуги та осі (A, X)</translation>
     </message>
     <message>
         <source>Intersect Arcs</source>
-        <translation>Τεμνόμενα Τόξα</translation>
+        <translation>Дуги перетину</translation>
     </message>
     <message>
         <source>Intersect Arcs (I, A)</source>
-        <translation>Τεμνόμενα Τόξα (I, A)</translation>
+        <translation>Перетин дуг (I, A)</translation>
     </message>
     <message>
         <source>Intersect Circles</source>
-        <translation>Τεμνόμενοι κύκλοι</translation>
+        <translation>Перетин кіл</translation>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Τεμνία κύκλων (Shift+I, Shift+C)</translation>
+        <translation>Перетин кіл (Shift+I, Shift+C)</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -6988,27 +6838,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>Τομή κύκλου και εφαπτομένης</translation>
+        <translation>Перетин кола та дотичної</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent (C, T)</source>
-        <translation>Τομή κύκλου και εφαπτομένης (C, T)</translation>
+        <translation>Перетин кола та дотичної (C, T)</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Τομή Τόξου και Εφαπτομένης</translation>
+        <translation>Перетин дуги та дотичної</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent (A, T)</source>
-        <translation>Τομή Τόξου και Εφαπτομένης (A, T)</translation>
+        <translation>Перетин дуги та дотичної (A, T)</translation>
     </message>
     <message>
         <source>Radius and Length</source>
-        <translation>Ακτίνα και Μήκος</translation>
+        <translation>Радіус і довжина</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Τόξο - Ακτίνα και Μήκος</translation>
+        <translation>Дуга - радіус і довжина</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -7016,31 +6866,31 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
-        <translation>Ενεργοποίηση εργαλείου που χρησιμοποιήθηκε τελευταία φορά (Ctrl+Shift+L)</translation>
+        <translation>Активувати останній використаний інструмент (Ctrl+Shift+L)</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
-        <translation>Μεγέθυνση στην επιλεγμένη (Ctrl+Δεξιά)</translation>
+        <translation>Збільшити масштаб до вибраного (Ctrl+вправо)</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Μεγέθυνση στην επιλεγμένη περιοχή (Ctrl+A)</translation>
+        <translation>Збільшити масштаб до вибраної області (Ctrl+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
-        <translation>Περιοχή εργασίας Pan (Z, P)</translation>
+        <translation>Робоча область панорамування (Z, P)</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>Δημιουργία νέας διάταξης εκτύπωσης (N, L)</translation>
+        <translation>Створити новий макет друку (N, L)</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (V, P)</source>
-        <translation>Κείμενο ονόματος σημείου εναλλαγής (V, P)</translation>
+        <translation>Текст назви точки перемикання (V, P)</translation>
     </message>
     <message>
         <source>Images tools</source>
-        <translation>Εργαλεία εικόνων</translation>
+        <translation>Інструменти для роботи з зображеннями</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -7048,139 +6898,135 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Align</source>
-        <translation>Ευθυγράμμιση</translation>
+        <translation>Вирівняти</translation>
     </message>
     <message>
         <source>Lock</source>
-        <translation>Κλείδωμα</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Ζουμ στο σημείο (Ctrl + Alt + P)</translation>
+        <translation>Масштабувати до точки (Ctrl + Alt + P)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
-        <translation>Παρακαλώ δώστε επιπλέον μετρήσεις: %1</translation>
+        <translation>Будь ласка, надайте додаткові вимірювання: %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Μέσο σημείο σε γραμμή&lt;/b&gt;: Επιλογή πρώτου σημείου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Середина лінії&lt;/b&gt;: Вибрати першу точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Μήκος και Γωνία&lt;/b&gt;: Επιλογή σημείου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Довжина та кут&lt;/b&gt;: Вибрати точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Στη γραμμή:&lt;/b&gt; Επιλογή πρώτου σημείου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - На лінії:&lt;/b&gt; Вибрати першу точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε κάθετο:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перпендикулярно:&lt;/b&gt; Вибрати першу точку лінії</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Στη διχοτόμο:&lt;/b&gt; Επιλογή πρώτου σημείου γωνίας</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - На бісектрисі:&lt;/b&gt; Вибрати першу точку кута</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Μήκος προς Γραμμή:&lt;/b&gt; Επιλογή σημείου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Довжина до лінії:&lt;/b&gt; Вибрати точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή τόξου και γραμμής:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин дуги та лінії:&lt;/b&gt; Вибрати першу точку лінії</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή άξονα και τριγώνου:&lt;/b&gt; Επιλογή πρώτου σημείου άξονα</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин осі та трикутника:&lt;/b&gt; Вибрати першу точку осі</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή XY&lt;/b&gt; Επιλογή σημείου για τιμή X (κάθετη)</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин XY&lt;/b&gt; Вибрати точку для значення X (вертикальне)</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή ευθείας και κάθετης:&lt;/b&gt; Επιλογή σημείου βάσης</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин лінії та перпендикуляра:&lt;/b&gt; Вибір базової точки</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμής και Άξονα:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин лінії та осі:&lt;/b&gt; Вибрати першу точку лінії</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Εργαλείο::Γραμμή:&lt;/b&gt;:Επιλογή πρώτου σημείου</translation>
+        <translation>&lt;b&gt;Інструмент::Лінія:&lt;/b&gt;:Вибрати першу точку</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμών:&lt;/b&gt; Επιλογή πρώτου σημείου της πρώτης γραμμής</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин ліній:&lt;/b&gt; Вибрати першу точку першої лінії</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Καμπύλη - Διαδραστικό:&lt;/b&gt; Επιλογή σημείου έναρξης καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Крива – Інтерактивна:&lt;/b&gt; Вибір початкової точки кривої</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Εργαλείο::Spline - Διαδραστικό:&lt;/b&gt; Επιλογή σημείου έναρξης της spline</translation>
+        <translation>&lt;b&gt;Інструмент::Сплайн – Інтерактивний:&lt;/b&gt; Вибір початкової точки сплайна</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Καμπύλη - Διορθώθηκε:&lt;/b&gt; Επιλογή πρώτου σημείου καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Крива – Виправлено:&lt;/b&gt; Вибрати першу точку кривої</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Εργαλείο::Spline - Διορθώθηκε:&lt;/b&gt; Επιλογή πρώτου σημείου της spline</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε καμπύλη:&lt;/b&gt; Επιλογή καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Сплайн – Виправлено:&lt;/b&gt; Вибрати першу точку сплайна</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε Spline:&lt;/b&gt; Επιλογή spline</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - На сплайні:&lt;/b&gt; Вибрати сплайн</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή καμπυλών:&lt;/b&gt; Επιλογή πρώτης καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин кривих:&lt;/b&gt; Вибрати першу криву</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή καμπύλης και άξονα:&lt;/b&gt; Επιλογή καμπύλης</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин кривої та осі:&lt;/b&gt; Вибрати криву</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Τόξο - Ακτίνα και Γωνίες:&lt;/b&gt; Επιλογή σημείου κέντρου τόξου</translation>
+        <translation>&lt;b&gt;Інструмент::Дуга - Радіус і кути:&lt;/b&gt; Вибрати точку центру дуги</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε Τόξο:&lt;/b&gt; Επιλογή τόξου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - На дузі:&lt;/b&gt; Вибрати дугу</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Τόξου και Άξονα:&lt;/b&gt; Επιλογή Τόξου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин дуги та осі:&lt;/b&gt; Вибрати дугу</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Τόξων:&lt;/b&gt; Επιλέξτε πρώτα ένα τόξο</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин дуг:&lt;/b&gt; Спочатку виберіть дугу</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή κύκλων:&lt;/b&gt; Επιλογή κέντρου πρώτου κύκλου</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин кіл:&lt;/b&gt; Вибрати центр першого кола</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή κύκλου και εφαπτομένης:&lt;/b&gt; Επιλογή σημείου στην εφαπτομένη</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин кола та дотичної:&lt;/b&gt; Вибрати точку на дотичній</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή τόξου και εφαπτομένης:&lt;/b&gt; Επιλογή σημείου στην εφαπτομένη</translation>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин дуги та дотичної:&lt;/b&gt; Вибрати точку на дотичній</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Τόξο - Ακτίνα και Μήκος:&lt;/b&gt; Επιλογή σημείου του κέντρου του τόξου</translation>
+        <translation>&lt;b&gt;Інструмент::Дуга - Радіус і довжина:&lt;/b&gt; Виберіть точку центру дуги</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;Εργαλείο::Τόξο - Ελλειπτικό:&lt;/b&gt; Επιλογή σημείου κέντρου ελλειπτικού τόξου</translation>
+        <translation>&lt;b&gt;Інструмент::Дуга - Еліптична:&lt;/b&gt; Вибрати точку центру еліптичної дуги</translation>
     </message>
     <message>
         <source>Images</source>
@@ -7188,71 +7034,71 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Ζουμ στο σημείο</translation>
+        <translation>Збільшити масштаб до точки</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Σημείο:</translation>
+        <translation>Точка:</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>Τομή Τόξου και Γραμμής</translation>
+        <translation>Перетин дуги та лінії</translation>
     </message>
     <message>
         <source>Intersect Curve &amp; Axis</source>
-        <translation>Τομή Καμπύλης &amp; Άξονα</translation>
+        <translation>Перетин кривої та осі</translation>
     </message>
     <message>
         <source>Add Objects to Group (G)</source>
-        <translation>Προσθήκη αντικειμένων στην ομάδα (G)</translation>
+        <translation>Додати об&apos;єкти до групи (G)</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Προσθήκη αντικειμένων σε ομάδα</translation>
+        <translation>Додати об&apos;єкти до групи</translation>
     </message>
     <message>
         <source>Add Group Objects</source>
-        <translation>Προσθήκη αντικειμένων ομάδας</translation>
+        <translation>Додати об&apos;єкти групи</translation>
     </message>
     <message>
         <source>Group is Locked. Unlock to add objects</source>
-        <translation>Η ομάδα είναι κλειδωμένη. Ξεκλειδώστε την για να προσθέσετε αντικείμενα</translation>
+        <translation>Групу заблоковано. Розблокуйте, щоб додати об&apos;єкти</translation>
     </message>
     <message>
         <source>Can not save file.</source>
-        <translation>Δεν είναι δυνατή η αποθήκευση του αρχείου.</translation>
+        <translation>Не вдається зберегти файл.</translation>
     </message>
     <message>
         <source>Pattern is read only.</source>
-        <translation>Το μοτίβο είναι μόνο για ανάγνωση.</translation>
+        <translation>Шаблон доступний лише для читання.</translation>
     </message>
     <message>
         <source>Failed to lock. File with this name is opened in another window.</source>
-        <translation>Αποτυχία κλειδώματος. Το αρχείο με αυτό το όνομα έχει ανοιχτεί σε άλλο παράθυρο.</translation>
+        <translation>Не вдалося заблокувати. Файл із цим іменем відкрито в іншому вікні.</translation>
     </message>
     <message>
         <source>untitled</source>
-        <translation>без ιмені</translation>
+        <translation>без імені</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Αποτυχία κλειδώματος. Αυτό το αρχείο έχει ήδη ανοιχτεί σε άλλο παράθυρο. Αναμένονται συγκρούσεις κατά την εκτέλεση 2 αντιγράφων του προγράμματος.</translation>
+        <translation>Не вдалося заблокувати. Цей файл вже відкрито в іншому вікні. Очікуйте колізії під час запуску 2 копій програми.</translation>
     </message>
     <message>
         <source>Pen Toolbar</source>
-        <translation>Γραμμή εργαλείων πένας</translation>
+        <translation>Панель інструментів пера</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Γραμμές εργαλείων</translation>
+        <translation>Панелі інструментів</translation>
     </message>
     <message>
         <source>File exception.</source>
-        <translation>Εξαίρεση αρχείου.</translation>
+        <translation>Виняток файлу.</translation>
     </message>
     <message>
         <source>Export exception.</source>
-        <translation>Εξαίρεση εξαγωγής.</translation>
+        <translation>Виняток експорту.</translation>
     </message>
     <message>
         <source>pattern</source>
@@ -7261,8 +7107,8 @@ Do you want to save your changes?</source>
     <message>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
-        <translation>Βασικό όνομα που χρησιμοποιείται για νέα σημεία.
-Πατήστε enter για να το προσθέσετε προσωρινά στη λίστα.</translation>
+        <translation>Базова назва, що використовується для нових точок.
+Натисніть Enter, щоб тимчасово додати її до списку.</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7270,43 +7116,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+9)</source>
-        <translation>Ζουμ για να χωρέσει σε όλα (Ctrl+9)</translation>
+        <translation>Масштабувати, щоб вмістити все (Ctrl+9)</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Ζουμ 100%</translation>
+        <translation>Збільшити на 100%</translation>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Προηγούμενο μπλοκ προσχέδιου</translation>
+        <translation>Попередній чернетка блоку</translation>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Επόμενο μπλοκάρισμα στο προσχέδιο</translation>
-    </message>
-    <message>
-        <source>Exporting...</source>
-        <translation>Експорт...</translation>
-    </message>
-    <message>
-        <source>Error creating a backup copy: %1.</source>
-        <translation>Помилка створення резервної копії: %1.</translation>
-    </message>
-    <message>
-        <source>Delete Draft Block</source>
-        <translation>Видалити блок чернетки</translation>
-    </message>
-    <message>
-        <source>Del</source>
-        <translation>Διαγραφή</translation>
-    </message>
-    <message>
-        <source>Confirm Delete</source>
-        <translation>Підтвердити видалення</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to delete basepoint and current draft block?</source>
-        <translation>Ви впевнені, що хочете видалити базову точку та поточний блок чернетки?</translation>
+        <translation>Наступний чернетка блоку</translation>
     </message>
 </context>
 <context>
@@ -7365,38 +7187,38 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Can&apos;t create a path</source>
-        <translation>Δεν είναι δυνατή η δημιουργία διαδρομής</translation>
+        <translation>Не вдається створити шлях</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Ένα ή περισσότερα κομμάτια πατρόν είναι μεγαλύτερα από τη μορφή χαρτιού που επιλέξατε. Επιλέξτε μια μεγαλύτερη μορφή χαρτιού.</translation>
+        <translation>«Один або декілька фрагментів викрійки більші за вибраний вами формат паперу. Виберіть більший формат паперу».</translation>
     </message>
 </context>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Αντιγραφή συντομεύσεων στο πρόχειρο</translation>
+        <translation>Копіювати ярлики в буфер обміну</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Εξαγωγή συντομεύσεων ως PDF</translation>
+        <translation>Експортувати ярлики у форматі PDF</translation>
     </message>
     <message>
         <source>Send shortcuts to the printer</source>
-        <translation>Αποστολή συντομεύσεων στον εκτυπωτή</translation>
+        <translation>Надіслати ярлики на принтер</translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Εξαγωγή PDF</translation>
+        <translation>Експорт PDF</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Αρχείο</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Νέος</translation>
+        <translation>Новий</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -7404,7 +7226,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Open Individual</source>
-        <translation>Ανοιχτό Άτομο</translation>
+        <translation>Відкритий індивідуальний</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -7412,7 +7234,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Open Multisize</source>
-        <translation>Ανοιχτό Πολλαπλό Μέγεθος</translation>
+        <translation>Відкрити мультирозмір</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -7420,7 +7242,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Print</source>
-        <translation>Παιδί</translation>
+        <translation>Друк</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -7444,7 +7266,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Εξαγωγή στο CSV</translation>
+        <translation>Експортувати до CSV</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -7452,7 +7274,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Έξοδος</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -7464,15 +7286,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
-        <translation>Συντομεύσεις πληκτρολογίου</translation>
+        <translation>Комбінації клавіш</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
-        <translation>Συντομεύσεις SeamlyMe</translation>
+        <translation>Ярлики SeamlyMe</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Εύρεση προηγούμενου</translation>
+        <translation>Знайти попередній</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -7480,7 +7302,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Εύρεση επόμενου</translation>
+        <translation>Знайти далі</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -7495,25 +7317,25 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Expand All</source>
-        <translation>Rozkriti vsі</translation>
+        <translation>Розкрити всі</translation>
     </message>
     <message>
         <source>Check all</source>
-        <translation>Δείτε όλα</translation>
+        <translation>Відмітити все</translation>
     </message>
     <message>
         <source>Uncheck all</source>
-        <translation>Зняти виділення со усіх</translation>
+        <translation>Зняти видалення з усіх</translation>
     </message>
     <message>
         <source>Direct Height</source>
         <comment>Measurement section</comment>
-        <translation>Βισότα</translation>
+        <translation>Вісота</translation>
     </message>
     <message>
         <source>Direct Width</source>
         <comment>Measurement section</comment>
-        <translation>Σιρίνα</translation>
+        <translation>Ширина</translation>
     </message>
     <message>
         <source>Indentation</source>
@@ -7523,22 +7345,22 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Hand</source>
         <comment>Measurement section</comment>
-        <translation>Κίστι</translation>
+        <translation>Кість</translation>
     </message>
     <message>
         <source>Foot</source>
         <comment>Measurement section</comment>
-        <translation>Στόπα</translation>
+        <translation>Стоп</translation>
     </message>
     <message>
         <source>Head</source>
         <comment>Measurement section</comment>
-        <translation>Γκόλοβα</translation>
+        <translation>Голова</translation>
     </message>
     <message>
         <source>Circumference and Arc</source>
         <comment>Measurement section</comment>
-        <translation>Obhvati ι napіvobhvati</translation>
+        <translation>Обхвати і напівобхвати</translation>
     </message>
     <message>
         <source>Vertical</source>
@@ -7553,22 +7375,22 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Bust</source>
         <comment>Measurement section</comment>
-        <translation>Ο Θεός</translation>
+        <translation>Грудь</translation>
     </message>
     <message>
         <source>Balance</source>
         <comment>Measurement section</comment>
-        <translation>Ισορροπίες</translation>
+        <translation>Баланс</translation>
     </message>
     <message>
         <source>Arm</source>
         <comment>Measurement section</comment>
-        <translation>Ρούκα</translation>
+        <translation>Рука</translation>
     </message>
     <message>
         <source>Leg</source>
         <comment>Measurement section</comment>
-        <translation>Νόγκα</translation>
+        <translation>Нога</translation>
     </message>
     <message>
         <source>Crotch and Rise</source>
@@ -7583,7 +7405,7 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Historical &amp; Specialty</source>
         <comment>Measurement section</comment>
-        <translation>Ιστορία είναι ειδικός</translation>
+        <translation>Історичні і спеціальні</translation>
     </message>
     <message>
         <source>Patternmaking measurements</source>
@@ -7606,11 +7428,11 @@ Press enter to temporarily add it to the list.</source>
     <name>MouseCoordinates</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source> XPos:</source>
-        <translation> XPos:</translation>
+        <translation>XPos:</translation>
     </message>
     <message>
         <source>xpos</source>
@@ -7618,11 +7440,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>YPos:</source>
-        <translation>ΥΘέσεις:</translation>
+        <translation>Позиція Y:</translation>
     </message>
     <message>
         <source>ypos</source>
-        <translation>ύπος</translation>
+        <translation>йпос</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -7630,7 +7452,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>units</source>
-        <translation>μονάδες</translation>
+        <translation>одиниці</translation>
     </message>
 </context>
 <context>
@@ -7648,7 +7470,7 @@ Press enter to temporarily add it to the list.</source>
     <name>MoveGroupItem</name>
     <message>
         <source>Move group item</source>
-        <translation>Μετακίνηση στοιχείου ομάδας</translation>
+        <translation>Перемістити елемент групи</translation>
     </message>
 </context>
 <context>
@@ -7662,7 +7484,7 @@ Press enter to temporarily add it to the list.</source>
     <name>MoveOperationLabel</name>
     <message>
         <source>move point label</source>
-        <translation>Περιλαμβάνονται τα σημεία</translation>
+        <translation>перепубликуйте мітку точки</translation>
     </message>
 </context>
 <context>
@@ -7722,26 +7544,26 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Multisize</source>
-        <translation>Πολλαπλών μεγεθών</translation>
+        <translation>Багаторозмірний</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
+        <translation>Міліметри</translation>
     </message>
 </context>
 <context>
     <name>PageFormatCombobox</name>
     <message>
         <source>Letter</source>
-        <translation>Λίστα</translation>
+        <translation>Лист</translation>
     </message>
     <message>
         <source>Legal</source>
-        <translation>Νόμιμα</translation>
+        <translation>Юридичний</translation>
     </message>
     <message>
         <source>Tabloid</source>
-        <translation>Ταμπλόιντ</translation>
+        <translation>Таблоїд</translation>
     </message>
     <message>
         <source>ANSI C</source>
@@ -7757,15 +7579,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Roll 24in</source>
-        <translation>Rulon 24 dюйми</translation>
+        <translation>Рулон 24 дюйми</translation>
     </message>
     <message>
         <source>Roll 30in</source>
-        <translation>Rulon 30 dюймів</translation>
+        <translation>Рулон 30 дюймів</translation>
     </message>
     <message>
         <source>Roll 36in</source>
-        <translation>Rulon 36 dюймів</translation>
+        <translation>Рулон 36 дюймів</translation>
     </message>
     <message>
         <source>Roll 42in</source>
@@ -7777,58 +7599,58 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Κορίστους</translation>
+        <translation>Користуватикі</translation>
     </message>
 </context>
 <context>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Εργαλείο Κομματιού Μοτίβου</translation>
+        <translation>Інструмент для створення візерунків</translation>
     </message>
     <message>
         <source>Properties </source>
-        <translation>Ιδιότητες </translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Paths </source>
-        <translation>Μονοπάτια </translation>
+        <translation>Шляхи</translation>
     </message>
     <message>
         <source>Seam Allowance </source>
-        <translation>Επιτρεπόμενο όριο ραφής </translation>
+        <translation>Припуск на шов</translation>
     </message>
     <message>
         <source>Labels </source>
-        <translation>Ετικέτες </translation>
+        <translation>Мітки</translation>
     </message>
     <message>
         <source>Anchors </source>
-        <translation>Άγκυρες </translation>
+        <translation>Якорі</translation>
     </message>
     <message>
         <source>Grainline </source>
-        <translation>Γραμμή κόκκων </translation>
+        <translation>Зернова лінія</translation>
     </message>
     <message>
         <source>Notches </source>
-        <translation>Εγκοπές </translation>
+        <translation>Насічки</translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Όνομα κομματιού:</translation>
+        <translation>Назва елемента:</translation>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>Κομμάτι μοτίβου</translation>
+        <translation>Елемент візерунка</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
-        <translation>Δεν μπορώ να πέσω</translation>
+        <translation>Ім&apos;я не може бути пустим</translation>
     </message>
     <message>
         <source>Letter:</source>
-        <translation>Λιτέρα:</translation>
+        <translation>Літера:</translation>
     </message>
     <message>
         <source>Letter of pattern piece</source>
@@ -7836,7 +7658,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Quantity:</source>
-        <translation>Ποσότητα:</translation>
+        <translation>Кількість:</translation>
     </message>
     <message>
         <source>Placement:</source>
@@ -7848,31 +7670,31 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Fold position:</source>
-        <translation>Θέση δίπλωσης:</translation>
+        <translation>Положення згину:</translation>
     </message>
     <message>
         <source>Undefined</source>
-        <translation>Απροσδιόριστο</translation>
+        <translation>Не визначено</translation>
     </message>
     <message>
         <source>Up/Down</source>
-        <translation>Πάνω/Κάτω</translation>
+        <translation>Вгору/Вниз</translation>
     </message>
     <message>
         <source>Left/Right</source>
-        <translation>Αριστερά/Δεξιά</translation>
+        <translation>Лівий/Правий</translation>
     </message>
     <message>
         <source>Orientation:</source>
-        <translation>Προσανατολισμός:</translation>
+        <translation>Орієнтація:</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation>Αριστερά</translation>
+        <translation>Ліворуч</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation>Σωστά</translation>
+        <translation>Правильно</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -7880,55 +7702,55 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Κανένα</translation>
+        <translation>Жоден</translation>
     </message>
     <message>
         <source>1-Way</source>
-        <translation>Μονόδρομος</translation>
+        <translation>Односторонній рух</translation>
     </message>
     <message>
         <source>2-Way</source>
-        <translation>Αμφίδρομη</translation>
+        <translation>Двосторонній</translation>
     </message>
     <message>
         <source>4-Way</source>
-        <translation>4-Way</translation>
+        <translation>Чотиристоронній</translation>
     </message>
     <message>
         <source>Any</source>
-        <translation>Οποιοδήποτε</translation>
+        <translation>Будь-який</translation>
     </message>
     <message>
         <source>Tilt:</source>
-        <translation>Κλίση:</translation>
+        <translation>Нахил:</translation>
     </message>
     <message>
         <source>Annotation:</source>
-        <translation>Σχόλιο:</translation>
+        <translation>Анотація:</translation>
     </message>
     <message>
         <source>A text field to add comments</source>
-        <translation>Ένα πεδίο κειμένου για την προσθήκη σχολίων</translation>
+        <translation>Текстове поле для додавання коментарів</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>Αποθήκευση λεπτομερειών στη συλλογή.</translation>
+        <translation>Заборонити відображення деталей у розкладці.</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>hex Value</source>
-        <translation>δεκαεξαδική τιμή</translation>
+        <translation>шістнадцяткове значення</translation>
     </message>
     <message>
         <source>Fill:</source>
-        <translation>Συμπλήρωση:</translation>
+        <translation>Заповнити:</translation>
     </message>
     <message>
         <source>Main path</source>
@@ -7936,27 +7758,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>All objects in path should follow in clockwise direction.</source>
-        <translation>Όλα τα αντικείμενα στη δομή του οργάνου ελέγχουν για το γυμναστήριο.</translation>
+        <translation>Всі об&apos;єкти в контурі повинні слідувати за годинниковою стрілкою.</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Μετακίνηση σειράς στην κορυφή της λίστας</translation>
+        <translation>Перемістити рядок на початок списку</translation>
     </message>
     <message>
         <source>Move row up one row</source>
-        <translation>Μετακίνηση γραμμής προς τα πάνω κατά μία γραμμή</translation>
+        <translation>Перемістити рядок на один рядок угору</translation>
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Μετακίνηση γραμμής προς τα κάτω κατά μία γραμμή</translation>
+        <translation>Перемістити рядок на один рядок вниз</translation>
     </message>
     <message>
         <source>Molve row to botton of list</source>
-        <translation>Μετακίνηση γραμμής στο κάτω μέρος της λίστας</translation>
+        <translation>Перемістити рядок у кінець списку</translation>
     </message>
     <message>
         <source>Status:</source>
-        <translation>Κατάσταση:</translation>
+        <translation>Статус:</translation>
     </message>
     <message>
         <source>Ready!</source>
@@ -7968,7 +7790,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>The seam allowance is part of main path</source>
-        <translation>Прибавка на шви є частиною βασική δομή</translation>
+        <translation>Прибавка на шви є частиною основного контуру</translation>
     </message>
     <message>
         <source>Built in</source>
@@ -7976,11 +7798,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Hide the main path if the seam allowance is enabled</source>
-        <translation>Hovati golovniy contur якщо прибавка на шви була увімкнута</translation>
+        <translation>Ховати головний контур, якщо прибавка на шви була увімкнута</translation>
     </message>
     <message>
         <source>Automatic</source>
-        <translation>Αυτόματο</translation>
+        <translation>Автоматична</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7996,91 +7818,91 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Οδηγός τύπων</translation>
+        <translation>Майстер формул</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Rozrahunok</translation>
+        <translation>Розрахунок</translation>
     </message>
     <message>
         <source>Nodes</source>
-        <translation>Βουζλί</translation>
+        <translation>Вузли</translation>
     </message>
     <message>
         <source>Node:</source>
-        <translation>Βουζέλ:</translation>
+        <translation>Вузел:</translation>
     </message>
     <message>
         <source>Before:</source>
-        <translation>Παράδω:</translation>
+        <translation>Перед:</translation>
     </message>
     <message>
         <source>Return to default width</source>
-        <translation>Περιορίστε το πλάτος на замовчуванню</translation>
+        <translation>Повернутися до ширини по замовчуванню</translation>
     </message>
     <message>
         <source>Use Default</source>
-        <translation>Χρήση προεπιλογής</translation>
+        <translation>Використовувати за замовчуванням</translation>
     </message>
     <message>
         <source>After:</source>
-        <translation>Λόγος:</translation>
+        <translation>Після:</translation>
     </message>
     <message>
         <source>Angle:</source>
-        <translation>Κουτ:</translation>
+        <translation>Кут:</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Κορίστους</translation>
+        <translation>Користуватикі</translation>
     </message>
     <message>
         <source>Start point:</source>
-        <translation>Στράρτοβα σημείο:</translation>
+        <translation>Стартова точка:</translation>
     </message>
     <message>
         <source>End point:</source>
-        <translation>Κінцева σημείο:</translation>
+        <translation>Кінцева точка:</translation>
     </message>
     <message>
         <source>Include as:</source>
-        <translation>Δείτε το:</translation>
+        <translation>Вставити як:</translation>
     </message>
     <message>
         <source>Piece label</source>
-        <translation>Ετικέτα τεμαχίου</translation>
+        <translation>Етикетка елемента</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
-        <translation>Επεξεργασία ετικέτας μοτίβου</translation>
+        <translation>Редагувати мітку шаблону</translation>
     </message>
     <message>
         <source>Edit template</source>
-        <translation>Επεξεργασία προτύπου</translation>
+        <translation>Редагувати шаблон</translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Εμφάνιση ετικέτας κομματιού</translation>
+        <translation>Показати етикетку елемента</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Ύψος:</translation>
+        <translation>Висота:</translation>
     </message>
     <message>
         <source>Anchor points</source>
-        <translation>Σημεία αγκύρωσης</translation>
+        <translation>Точки опори</translation>
     </message>
     <message>
         <source>Pattern label</source>
-        <translation>Ετικέτα μοτίβου</translation>
+        <translation>Мітка візерунка</translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Εμφάνιση ετικέτας μοτίβου</translation>
+        <translation>Показати мітку шаблону</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Show grainline</translation>
+        <translation>Показати зернистість</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -8088,67 +7910,67 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Arrows</source>
-        <translation>Βέλη</translation>
+        <translation>Стріли</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Συμβουλή:</translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Notch:</source>
-        <translation>Προβολή:</translation>
+        <translation>Надсічка:</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Συμβουλή</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Σχισμή</translation>
+        <translation>Щілина</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Εγκοπή Τ</translation>
+        <translation>Т-подібний виріз</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Εγκοπή U</translation>
+        <translation>U-подібний виріз</translation>
     </message>
     <message>
         <source>V Internal </source>
-        <translation>Εσωτερικό V </translation>
+        <translation>V Внутрішній</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>Εξωτερικό V</translation>
+        <translation>Зовнішній V</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Κάστρο</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Διαμάντι</translation>
+        <translation>Діамант</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation>Υποτύπος</translation>
+        <translation>Підтип</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Πράια</translation>
+        <translation>Пряма</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Βίσεκτρες</translation>
+        <translation>Бісектриса</translation>
     </message>
     <message>
         <source>Select to designate a corner point as a notch</source>
-        <translation>Επιλέξτε για να ορίσετε ένα σημείο γωνίας ως εγκοπή</translation>
+        <translation>Виберіть, щоб позначити кутову точку як виїмку</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -8156,31 +7978,31 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source> Width:</source>
-        <translation> Πλάτος:</translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Επαναφορά μήκους εγκοπής στην προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути довжину виїмки до значення за замовчуванням.</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Επαναφορά εγκοπής με την προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути налаштування виїмки до заводських.</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
-        <translation>Επαναφορά γωνίας εγκοπής στην προεπιλεγμένη τιμή.</translation>
+        <translation>Скинути кут виїмки до значення за замовчуванням.</translation>
     </message>
     <message>
         <source>Count:</source>
-        <translation>Αριθμός:</translation>
+        <translation>Кількість:</translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
-        <translation>Πατήστε OK για να δημιουργήσετε το κομμάτι του πατρόν</translation>
+        <translation>Натисніть OK, щоб створити елемент викрійки</translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -8188,23 +8010,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Duplicate</source>
-        <translation>Διπλότυπο</translation>
+        <translation>Дублікат</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>ТНотч</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>ЮНотч</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>Εσωτερικό</translation>
+        <translation>VInternal</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>Εξωτερικό</translation>
+        <translation>VExternal</translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -8216,19 +8042,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Options</source>
-        <translation>Παραμετρίες</translation>
+        <translation>Параметри</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
-        <translation>Помилка.</translation>
+        <translation>Помилка. Не зберегти контур деталей.</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
         <translation>Безкінечний/не визначений результат</translation>
     </message>
     <message>
+        <source>Length can&apos;t be less than length of 2 arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Length should be positive</source>
-        <translation>Довжина повинна додатнє значення</translation>
+        <translation>Довжина має додаткове значення</translation>
     </message>
     <message>
         <source>Error</source>
@@ -8236,23 +8066,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation>Συντακτική ανάλυση: %1</translation>
+        <translation>Помилка синтаксичного аналізу: %1</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Redaguati довжину</translation>
+        <translation>Редагувати довжину</translation>
     </message>
     <message>
         <source>Edit angle</source>
-        <translation>Redaguati kut</translation>
+        <translation>Редагувати кут</translation>
     </message>
     <message>
         <source>Edit height</source>
-        <translation>Redaguati visotu</translation>
+        <translation>Редагувати висоту</translation>
     </message>
     <message>
         <source>Edit width</source>
-        <translation>Προσφέρετε το μήκος</translation>
+        <translation>Редагувати ширину</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
@@ -8260,19 +8090,43 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Redaguanti ширину прибавки на шви</translation>
+        <translation>Редагувати ширину прибавки на шви</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Редагувати ширину прибавки на шви перед</translation>
+        <translation>Редагувати ширину приставки на шви перед</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Redaguati widthnu прибавки на шви після</translation>
+        <translation>Редагувати ширину прибавки на шви після</translation>
     </message>
     <message>
         <source>Grainline</source>
         <translation>Нитка основи</translation>
+    </message>
+    <message>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>You need more points!</source>
@@ -8280,23 +8134,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>You must choose points in a clockwise direction!</source>
-        <translation>Πρέπει να επιλέξετε σημεία δεξιόστροφα!</translation>
+        <translation>Ви повинні вибирати точки за годинниковою стрілкою!</translation>
     </message>
     <message>
         <source>First point cannot be same as last point!</source>
-        <translation>Το πρώτο σημείο δεν μπορεί να είναι το ίδιο με το τελευταίο σημείο!</translation>
+        <translation>Перша точка не може бути такою ж, як остання!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Το σημείο δεν μπορεί να χρησιμοποιηθεί δύο φορές!</translation>
+        <translation>Одна точка не може бути використана два рази підряд!</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Кожна точка на шляху має бути унікальною!</translation>
+        <translation>Кожна точка в контурі повинна бути унікальною!</translation>
     </message>
     <message>
         <source>Empty</source>
-        <translation>Πούστο</translation>
+        <translation>Пусто</translation>
     </message>
     <message>
         <source>main path</source>
@@ -8304,11 +8158,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>custom seam allowance</source>
-        <translation>χρησιμοποιείστε την εφαρμογή</translation>
+        <translation>користувачка прибавка на шви</translation>
     </message>
     <message>
         <source>Both</source>
-        <translation>Προσδοκία</translation>
+        <translation>В обидві сторони</translation>
     </message>
     <message>
         <source>Just front</source>
@@ -8320,55 +8174,55 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show notch on the cut line.</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή κοπής.</translation>
+        <translation>Показати виїмку на лінії розрізу.</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή κοπής</translation>
+        <translation>Показати виріз на лінії розрізу</translation>
     </message>
     <message>
         <source>Show notch on the seam line.</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή ραφής.</translation>
+        <translation>Показати виїмку на лінії шва.</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή ραφής</translation>
+        <translation>Показати виїмку на лінії шва</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
-        <translation>Εμφάνιση γραμμής κοπής</translation>
+        <translation>Показати лінію розрізу</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Απόκρυψη γραμμής ραφής</translation>
+        <translation>Приховати лінію шва</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Επιτρεπόμενο όριο ραφής</translation>
+        <translation>Припуск на шов</translation>
     </message>
     <message>
         <source>Paths</source>
-        <translation>Σλάχι</translation>
+        <translation>Шляхи</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Ιδιότητες</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Μίτκι</translation>
+        <translation>Мітки</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation>Επιλογή χρώματος</translation>
+        <translation>Виберіть колір</translation>
     </message>
     <message>
         <source>Flipping:</source>
-        <translation>Αναστροφή:</translation>
+        <translation>Перевертання:</translation>
     </message>
     <message>
         <source>Forbid</source>
-        <translation>Απαγόρευση</translation>
+        <translation>Заборонити</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -8376,7 +8230,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Top left:</source>
-        <translation>Πάνω αριστερά:</translation>
+        <translation>Вгорі ліворуч:</translation>
     </message>
     <message>
         <source>Bottom right:</source>
@@ -8392,39 +8246,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Count</source>
-        <translation>Αριθμός</translation>
-    </message>
-    <message>
-        <source>Length can&apos;t be less than length of 2 arrows</source>
-        <translation>Довжина не може бути меншою за довжину двох стріл</translation>
-    </message>
-    <message>
-        <source>Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation.</source>
-        <translation>Πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία κομματιών.</translation>
-    </message>
-    <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction.</source>
-        <translation>Επιλέξτε αντικείμενα κύριας διαδρομής δεξιόστροφα, χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να αντιστρέψετε την κατεύθυνση της καμπύλης ή το &lt;b&gt;CTRL&lt;/b&gt; για να διατηρήσετε την κατεύθυνση της καμπύλης.</translation>
-    </message>
-    <message>
-        <source>Show Cut Line Notch</source>
-        <translation>Показати надсічку лінії розкрою</translation>
-    </message>
-    <message>
-        <source>Show Seam Line Notch</source>
-        <translation>Показати надсічку лінії шва</translation>
-    </message>
-    <message>
-        <source>Make Default Notch</source>
-        <translation>Зробити надсічкою за замовчуванням</translation>
-    </message>
-    <message>
-        <source>Edit Notch</source>
-        <translation>Редагувати надсічку</translation>
-    </message>
-    <message>
-        <source>Remove Notch</source>
-        <translation>Вилучити надсічку</translation>
+        <translation>Графік</translation>
     </message>
 </context>
 <context>
@@ -8435,35 +8257,35 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>move pattern piece label</source>
-        <translation>Перемістити мітку деталі</translation>
+        <translation>пере Публикуй мітку деталі</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>συγχρονισμός λεπτομερειών</translation>
+        <translation>змінити розмір мітки деталі</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>повернути мітку λεπτομερή</translation>
+        <translation>повернути мітку деталі</translation>
     </message>
     <message>
         <source>move pattern info label</source>
-        <translation>Перемістити мітку деталі</translation>
+        <translation>пере Публикуй мітку деталі</translation>
     </message>
     <message>
         <source>resize pattern info label</source>
-        <translation>συγχρονισμός λεπτομερειών</translation>
+        <translation>змінити розмір мітки деталі</translation>
     </message>
     <message>
         <source>rotate pattern info label</source>
-        <translation>повернути мітку λεπτομερή</translation>
+        <translation>повернути мітку деталі</translation>
     </message>
     <message>
         <source>move grainline</source>
-        <translation>перемістити нитку основи</translation>
+        <translation>пере Публикуй нитку основи</translation>
     </message>
     <message>
         <source>resize grainline</source>
-        <translation>μίχνουν ροζ νιτσάκια</translation>
+        <translation>змінити розмір нитки основи</translation>
     </message>
     <message>
         <source>rotate grainline</source>
@@ -8471,51 +8293,51 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Ιδιότητες</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Κομμάτι μοτίβου κλειδώματος</translation>
+        <translation>Елемент візерунка замка</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Συμπερίληψη στη διάταξη</translation>
+        <translation>Включити до макета</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Απαγόρευση αναστροφής</translation>
+        <translation>Заборонити перегортання</translation>
     </message>
     <message>
         <source>Raise to top</source>
-        <translation>Ανύψωση προς τα πάνω</translation>
+        <translation>Підняти вгору</translation>
     </message>
     <message>
         <source>Lower to bottom</source>
-        <translation>Από κάτω προς τα κάτω</translation>
+        <translation>Знизу донизу</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Απόκρυψη γραμμής ραφής</translation>
+        <translation>Приховати лінію шва</translation>
     </message>
     <message>
         <source>Show Seam Allowance</source>
-        <translation>Εμφάνιση επιτρεπόμενου ορίου ραφής</translation>
+        <translation>Показати припуск на шов</translation>
     </message>
     <message>
         <source>Show Grainline</source>
-        <translation>Εμφάνιση γραμμής κόκκων</translation>
+        <translation>Показати лінію зерна</translation>
     </message>
     <message>
         <source>Show Pattern Label</source>
-        <translation>Εμφάνιση ετικέτας μοτίβου</translation>
+        <translation>Показати мітку шаблону</translation>
     </message>
     <message>
         <source>Show Piece Label</source>
-        <translation>Εμφάνιση ετικέτας κομματιού</translation>
+        <translation>Показати етикетку елемента</translation>
     </message>
     <message>
         <source>Rename...</source>
-        <translation>Μετονομασία...</translation>
+        <translation>Перейменувати...</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -8523,323 +8345,323 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Forbid Flipping changed: </source>
-        <translation>Η απαγόρευση αναστροφής άλλαξε: </translation>
+        <translation>Заборона перегортання змінена: </translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Ενεργοποιημένο</translation>
+        <translation>Увімкнено</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>ΑμεΑ</translation>
+        <translation>Вимкнено</translation>
     </message>
     <message>
         <source>Seam line visibility changed: </source>
-        <translation>Η ορατότητα της γραμμής ραφής άλλαξε: </translation>
+        <translation>Видимість лінії шва змінена: </translation>
     </message>
     <message>
         <source>Hide</source>
-        <translation>Απόκρυψη</translation>
+        <translation>Приховати</translation>
     </message>
     <message>
         <source>Show</source>
-        <translation>Εμφάνιση</translation>
+        <translation>Показати</translation>
     </message>
     <message>
         <source>Show seam allowance</source>
-        <translation>Εμφάνιση περιθωρίου ραφής</translation>
+        <translation>Показати припуск на шов</translation>
     </message>
     <message>
         <source>Seam allowance visibility changed: </source>
-        <translation>Η ορατότητα του περιθωρίου ραφής άλλαξε: </translation>
+        <translation>Змінено видимість припуску на шов:</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Show grainline</translation>
+        <translation>Показати зернистість</translation>
     </message>
     <message>
         <source>Grainline visibility changed: </source>
-        <translation>Η ορατότητα της γραμμής των κόκκων άλλαξε: </translation>
+        <translation>Видимість лінії зерен змінилася: </translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Εμφάνιση ετικέτας μοτίβου</translation>
+        <translation>Показати мітку шаблону</translation>
     </message>
     <message>
         <source>Pattern label visibility changed: </source>
-        <translation>Η ορατότητα της ετικέτας μοτίβου άλλαξε: </translation>
+        <translation>Видимість мітки шаблону змінено: </translation>
     </message>
     <message>
         <source>Show piece label</source>
-        <translation>Εμφάνιση ετικέτας κομματιού</translation>
+        <translation>Показати етикетку елемента</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>Η ορατότητα της ετικέτας του τεμαχίου άλλαξε: </translation>
+        <translation>Видимість мітки елемента змінено: </translation>
     </message>
     <message>
         <source>Piece name:</source>
-        <translation>Όνομα κομματιού:</translation>
+        <translation>Назва елемента:</translation>
     </message>
     <message>
         <source>Rename Pattern Piece</source>
-        <translation>Μετονομασία κομματιού μοτίβου</translation>
+        <translation>Перейменувати елемент викрійки</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>Μετονομασία κομματιού μοτίβου</translation>
+        <translation>Перейменувати елемент викрійки</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
-        <translation>Το κομμάτι μετονομάστηκε σε: </translation>
+        <translation>Елемент перейменовано на: </translation>
     </message>
     <message>
         <source>Update Node Angle</source>
-        <translation>Ενημέρωση γωνίας κόμβου</translation>
+        <translation>Оновити кут вузла</translation>
     </message>
     <message>
         <source>Update Notch</source>
-        <translation>Ενημέρωση εγκοπής</translation>
+        <translation>Оновлення виїмки</translation>
     </message>
     <message>
         <source>Exclude Node</source>
-        <translation>Εξαίρεση κόμβου</translation>
+        <translation>Виключити вузол</translation>
     </message>
     <message>
         <source>Delete Node</source>
-        <translation>Διαγραφή κόμβου</translation>
+        <translation>Видалити вузол</translation>
     </message>
 </context>
 <context>
     <name>PenToolBar</name>
     <message>
         <source>Current line color</source>
-        <translation>Τρέχον χρώμα γραμμής</translation>
+        <translation>Поточний колір лінії</translation>
     </message>
     <message>
         <source>Current line type</source>
-        <translation>Τρέχων τύπος γραμμής</translation>
+        <translation>Поточний тип лінії</translation>
     </message>
     <message>
         <source>Current line weight</source>
-        <translation>Τρέχον βάρος γραμμής</translation>
+        <translation>Поточна товщина лінії</translation>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Επαναφορά τρέχουσας πένας στις προεπιλογές</translation>
+        <translation>Скинути поточне перо до налаштувань за замовчуванням</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation>Αποθήκευση τρέχουσας προεπιλογής πένας</translation>
+        <translation>Зберегти поточний пресет пера</translation>
     </message>
 </context>
 <context>
     <name>PieceFillComboBox</name>
     <message>
         <source>No Fill</source>
-        <translation>Χωρίς γέμισμα</translation>
+        <translation>Без заповнення</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation>Στερεό</translation>
+        <translation>Суцільний</translation>
     </message>
     <message>
         <source>Density 1</source>
-        <translation>Πυκνότητα 1</translation>
+        <translation>Щільність 1</translation>
     </message>
     <message>
         <source>Density 2</source>
-        <translation>Πυκνότητα 2</translation>
+        <translation>Щільність 2</translation>
     </message>
     <message>
         <source>Density 3</source>
-        <translation>Πυκνότητα 3</translation>
+        <translation>Щільність 3</translation>
     </message>
     <message>
         <source>Density 4</source>
-        <translation>Πυκνότητα 4</translation>
+        <translation>Щільність 4</translation>
     </message>
     <message>
         <source>Density 5</source>
-        <translation>Πυκνότητα 5</translation>
+        <translation>Щільність 5</translation>
     </message>
     <message>
         <source>Density 6</source>
-        <translation>Πυκνότητα 6</translation>
+        <translation>Щільність 6</translation>
     </message>
     <message>
         <source>Density 7</source>
-        <translation>Πυκνότητα 7</translation>
+        <translation>Щільність 7</translation>
     </message>
     <message>
         <source>Horizontal Line</source>
-        <translation>Οριζόντια Γραμμή</translation>
+        <translation>Горизонтальна лінія</translation>
     </message>
     <message>
         <source>Vertical Line</source>
-        <translation>Κατακόρυφη Γραμμή</translation>
+        <translation>Вертикальна лінія</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation>Σταυρός</translation>
+        <translation>Хрест</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation>Πίσω διαγώνιος</translation>
+        <translation>Зворотна діагональ</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation>Εμπρός διαγώνιος</translation>
+        <translation>Передня діагональ</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
-        <translation>Διαγώνιος Σταυρός</translation>
+        <translation>Діагональний хрест</translation>
     </message>
 </context>
 <context>
     <name>PiecesWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Είμαι</translation>
+        <translation>Я</translation>
     </message>
     <message>
         <source>Include all pieces</source>
-        <translation>Συμπερίληψη όλων των κομματιών</translation>
+        <translation>Включити всі частини</translation>
     </message>
     <message>
         <source>Exclude all pieces</source>
-        <translation>Εξαιρέστε όλα τα κομμάτια</translation>
+        <translation>Виключити всі частини</translation>
     </message>
     <message>
         <source>Invert included pieces</source>
-        <translation>Αντιστροφή των συμπεριλαμβανόμενων τεμαχίων</translation>
+        <translation>Інвертувати включені частини</translation>
     </message>
     <message>
         <source>Lock all pieces</source>
-        <translation>Κλείδωμα όλων των κομματιών</translation>
+        <translation>Заблокувати всі частини</translation>
     </message>
     <message>
         <source>Unlock all pieces</source>
-        <translation>Ξεκλείδωσε όλα τα κομμάτια</translation>
+        <translation>Розблокувати всі частини</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
-        <translation>Αντιστροφή κλειδωμένων κομματιών</translation>
+        <translation>Інвертувати заблоковані частини</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>Ενεργοποίηση/Ενεργοποίηση συμπερίληψης κομματιού μοτίβου στη διάταξη</translation>
+        <translation>Увімкнути/вимкнути включення елемента викрійки в макет</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation>Επιλογή χρώματος</translation>
+        <translation>Виберіть колір</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation>Επεξεργασία ιδιοτήτων κομματιού μοτίβου</translation>
+        <translation>Редагувати властивості елемента візерунка</translation>
     </message>
     <message>
         <source>Included</source>
-        <translation>Περιλαμβάνεται</translation>
+        <translation>Включено</translation>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation>Το κομμάτι του μοτίβου περιλαμβάνεται στη διάταξη</translation>
+        <translation>Елемент викрійки включено до макета</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Κλειδωμένο</translation>
+        <translation>Заблоковано</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
-        <translation>Το κομμάτι του μοτίβου είναι κλειδωμένο</translation>
+        <translation>Елемент викрійки заблоковано</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation>Колір</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation>Χρώμα κομματιού μοτίβου</translation>
+        <translation>Колір елемента візерунка</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Κομμάτι</translation>
+        <translation>Шматок</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation>Γράμμα σε σχήμα μοτίβου</translation>
+        <translation>Літера з візерунка</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation>Όνομα κομματιού μοτίβου</translation>
+        <translation>Назва елемента викрійки</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation>Ενεργοποίηση κλειδώματος στο κομμάτι πατρόν</translation>
+        <translation>Увімкнути/вимкнути блокування на елементі викрійки</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
-        <translation>Με διπλό κλικ ανοίγει ο επιλογέας χρώματος</translation>
+        <translation>Подвійне клацання відкриває селектор кольору</translation>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation>Με διπλό κλικ ανοίγει το παράθυρο διαλόγου ιδιοτήτων κομματιού μοτίβου</translation>
+        <translation>Подвійне клацання відкриває діалогове вікно властивостей елемента візерунка</translation>
     </message>
 </context>
 <context>
     <name>PointIntersectXYDialog</name>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Σημείο - Τομή XY</translation>
+        <translation>Точка - перетин XY</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>1st point:</source>
-        <translation>1ο σημείο:</translation>
+        <translation>1-й пункт:</translation>
     </message>
     <message>
         <source>2nd point:</source>
-        <translation>2ο σημείο:</translation>
+        <translation>2-й пункт:</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Select point for Y value (horizontal)</source>
-        <translation>Viberítь tochku on gorizontalі</translation>
+        <translation>Виберіть точку на горизонталі</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Μοναδικό όνομα</translation>
+        <translation>Унікальне ім&apos;я</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Επιλέξτε μοναδικό όνομα.</translation>
+        <translation>Виберіть унікальне ім&apos;я.</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
 </context>
 <context>
@@ -8849,12 +8671,32 @@ Press enter to temporarily add it to the list.</source>
         <translation>Інтервал:</translation>
     </message>
     <message>
+        <source>Appearance</source>
+        <translation type="unfinished">Зовнішній вигляд</translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
         <source>GUI language:</source>
         <translation>Мова інтерфейсу:</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По замовчуванню</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8873,8 +8715,32 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюйми</translation>
     </message>
     <message>
+        <source>Locale</source>
+        <translation type="unfinished">Місцезнаходження</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Editing</source>
-        <translation>Επεξεργασία</translation>
+        <translation>Редагування</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -8882,278 +8748,234 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Count step:</source>
-        <translation>Βήμα μέτρησης:</translation>
+        <translation>Крок підрахунку:</translation>
     </message>
     <message>
         <source> (0 - no limit)</source>
-        <translation> (0 - χωρίς όριο)</translation>
+        <translation>(0 – без обмежень)</translation>
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
-        <translation>Προειδοποιήσεις επεξεργασίας μοτίβων</translation>
+        <translation>Попередження щодо редагування шаблону</translation>
     </message>
     <message>
         <source>Confirm Item Delete</source>
-        <translation>Επιβεβαίωση διαγραφής στοιχείου</translation>
+        <translation>Підтвердити видалення елемента</translation>
     </message>
     <message>
         <source>Confirm Format Rewriting</source>
-        <translation>Επιβεβαίωση Επανεγγραφής Μορφής</translation>
+        <translation>Підтвердити перезапис формату</translation>
     </message>
     <message>
         <source>Operations Default Suffix</source>
-        <translation>Προεπιλεγμένο επίθημα λειτουργιών</translation>
+        <translation>Суфікс операцій за замовчуванням</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Κατοπτρισμός κατά επίθημα άξονα:</translation>
+        <translation>Дзеркальне відображення за суфіксом осі:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Επίθημα κατοπτρισμού ανά γραμμή:</translation>
+        <translation>Дзеркальне відображення за суфіксом рядка:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
-        <translation>Μετακίνηση επιθήματος:</translation>
+        <translation>Суфікс переміщення:</translation>
     </message>
     <message>
         <source>Rotate suffix:</source>
-        <translation>Εναλλαγή επιθήματος:</translation>
+        <translation>Повернути суфікс:</translation>
     </message>
     <message>
         <source>File Handling</source>
-        <translation>Χειρισμός αρχείων</translation>
+        <translation>Обробка файлів</translation>
     </message>
     <message>
         <source>Backups</source>
-        <translation>Αντίγραφα ασφαλείας</translation>
+        <translation>Резервні копії</translation>
     </message>
     <message>
         <source>Create backup file when converting</source>
-        <translation>Δημιουργία αντιγράφου ασφαλείας αρχείου κατά τη μετατροπή</translation>
-    </message>
-    <message>
-        <source>Enable Autosave</source>
-        <translation>Ενεργοποίηση αυτόματης αποθήκευσης</translation>
-    </message>
-    <message>
-        <source> min</source>
-        <translation> λεπτά</translation>
-    </message>
-    <message>
-        <source>Every </source>
-        <translation>Κάθε </translation>
-    </message>
-    <message>
-        <source>Export Format</source>
-        <translation>Μορφή εξαγωγής</translation>
-    </message>
-    <message>
-        <source>Include mode type in filename</source>
-        <translation>Συμπερίληψη τύπου λειτουργίας στο όνομα αρχείου</translation>
-    </message>
-    <message>
-        <source>Save last used</source>
-        <translation>Αποθήκευση τελευταίας χρήσης</translation>
-    </message>
-    <message>
-        <source>Default:</source>
-        <translation>Προεπιλογή:</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation>Κανένα</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
-    </message>
-    <message>
-        <source>Selection sound</source>
-        <translation>Ήχος επιλογής</translation>
-    </message>
-    <message>
-        <source>Sound:</source>
-        <translation>Ήχος:</translation>
-    </message>
-    <message>
-        <source>Designer Info</source>
-        <translation>Πληροφορίες Σχεδιαστή</translation>
-    </message>
-    <message>
-        <source>Company / Designer Info</source>
-        <translation>Πληροφορίες Εταιρείας / Σχεδιαστή</translation>
-    </message>
-    <message>
-        <source>Company / Designer:</source>
-        <translation>Εταιρεία / Σχεδιαστής:</translation>
-    </message>
-    <message>
-        <source>Contact:</source>
-        <translation>Επικοινωνία:</translation>
-    </message>
-    <message>
-        <source>Address:</source>
-        <translation>Διεύθυνση:</translation>
-    </message>
-    <message>
-        <source>City:</source>
-        <translation>Πόλη:</translation>
-    </message>
-    <message>
-        <source>State:</source>
-        <translation>Κρατότητα:</translation>
-    </message>
-    <message>
-        <source>Zipcode:</source>
-        <translation>Ταχυδρομικός Κώδικας:</translation>
-    </message>
-    <message>
-        <source>Country:</source>
-        <translation>Χώρα:</translation>
-    </message>
-    <message>
-        <source>Telephone:</source>
-        <translation>Τηλέφωνο:</translation>
-    </message>
-    <message>
-        <source>Fax:</source>
-        <translation>Φαξ:</translation>
-    </message>
-    <message>
-        <source>Email:</source>
-        <translation>Ηλεκτρονικό ταχυδρομείο:</translation>
-    </message>
-    <message>
-        <source>Website:</source>
-        <translation>Ιστότοπος:</translation>
-    </message>
-    <message>
-        <source>Email verification</source>
-        <translation>Επαλήθευση email</translation>
-    </message>
-    <message>
-        <source>Email format is not valid.</source>
-        <translation>Η μορφή email δεν είναι έγκυρη.</translation>
-    </message>
-    <message>
-        <source>Startup</source>
-        <translation>Εκκίνηση</translation>
-    </message>
-    <message>
-        <source>Welcome</source>
-        <translation>Καλώς ήρθατε</translation>
-    </message>
-    <message>
-        <source>Do not show welcome screen</source>
-        <translation>Μην εμφανίζεται η οθόνη υποδοχής</translation>
-    </message>
-    <message>
-        <source>Point name text:</source>
-        <translation>Κείμενο ονόματος σημείου:</translation>
-    </message>
-    <message>
-        <source>Separator Locale:</source>
-        <translation>Роздільник Локаль:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>По замовчуванню</translation>
-    </message>
-    <message>
-        <source>User&apos;s System</source>
-        <translation>Система користувача</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Τοπικές ρυθμίσεις</translation>
-    </message>
-    <message>
-        <source>Country</source>
-        <translation>Χώρα</translation>
-    </message>
-    <message>
-        <source>Group Separator</source>
-        <translation>Роздільник Груп</translation>
-    </message>
-    <message>
-        <source>Decimal Point</source>
-        <translation>Υποδιαστολή</translation>
-    </message>
-    <message>
-        <source>Negative Sign</source>
-        <translation>Αρνητικό Πρόσημο</translation>
-    </message>
-    <message>
-        <source>Positive Sign</source>
-        <translation>Θετικό Πρόσημο</translation>
+        <translation>Створити резервну копію файлу під час конвертації</translation>
     </message>
     <message>
         <source>Max number of backups:</source>
-        <translation>Максимальна кількість резервних копій:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source> per file</source>
-        <translation> за файл</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Appearance</source>
-        <translation>Εμφάνιση</translation>
+        <source>Enable Autosave</source>
+        <translation>Увімкнути автозбереження</translation>
     </message>
     <message>
-        <source>Theme:</source>
-        <translation>Тема:</translation>
+        <source> min</source>
+        <translation> хв</translation>
+    </message>
+    <message>
+        <source>Every </source>
+        <translation>Кожен</translation>
+    </message>
+    <message>
+        <source>Export Format</source>
+        <translation>Формат експорту</translation>
+    </message>
+    <message>
+        <source>Include mode type in filename</source>
+        <translation>Включити тип режиму в ім&apos;я файлу</translation>
+    </message>
+    <message>
+        <source>Save last used</source>
+        <translation>Зберегти останнє використання</translation>
+    </message>
+    <message>
+        <source>Default:</source>
+        <translation>За замовчуванням:</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Жоден</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Міліметри</translation>
+    </message>
+    <message>
+        <source>Selection sound</source>
+        <translation>Звук вибору</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation>Інформація про дизайнера</translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation>Інформація про компанію / дизайнера</translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation>Компанія / Розробник:</translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation>Контакт:</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Адреса:</translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation>Місто:</translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation>Штат:</translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation>Поштовий індекс:</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation>Країна:</translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation>Телефон:</translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation>Факс:</translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation>Електронна адреса:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Веб-сайт:</translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation>Підтвердження електронної пошти</translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation>Формат електронної пошти недійсний.</translation>
+    </message>
+    <message>
+        <source>Startup</source>
+        <translation>Автозапуск</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Ласкаво просимо</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Не показувати екран привітання</translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation>Текст назви точки:</translation>
     </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
     <message>
         <source>Appearance</source>
-        <translation>Εμφάνιση</translation>
+        <translation>Зовнішній вигляд</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Γραμμές εργαλείων</translation>
+        <translation>Панелі інструментів</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
-        <translation>Η ετικέτα κειμένου εμφανίζεται κάτω από το εικονίδιο (συνιστάται για αρχάριους)</translation>
+        <translation>Текстова мітка відображається під значком (рекомендовано для початківців)</translation>
     </message>
     <message>
         <source>Show tool toolbars</source>
-        <translation>Εμφάνιση γραμμών εργαλείων εργαλείων</translation>
+        <translation>Показати панелі інструментів</translation>
     </message>
     <message>
         <source>ToolBox</source>
-        <translation>Εργαλειοθήκη</translation>
+        <translation>Інструментальна панель</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Πότσα</translation>
+        <translation>Точка</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Λίνια</translation>
+        <translation>Лінія</translation>
     </message>
     <message>
         <source>Curve</source>
-        <translation>Κρίβα</translation>
+        <translation>Крива</translation>
     </message>
     <message>
         <source>Arc</source>
-        <translation>Ντούγκα</translation>
+        <translation>Дуга</translation>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operaciї</translation>
+        <translation>Операції</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Κομμάτι</translation>
+        <translation>Шматок</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Λεπτομέρειες</translation>
+        <translation>Деталь</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -9161,99 +8983,107 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Graphical output</source>
-        <translation>Γραφική εικόνα</translation>
+        <translation>Графічний вивід</translation>
     </message>
     <message>
         <source>Use anti-aliasing</source>
-        <translation>Χρήση εξομάλυνσης</translation>
+        <translation>Використовувати згладжування</translation>
     </message>
     <message>
         <source>Fonts</source>
-        <translation>Γραμματοσειρές</translation>
+        <translation>Шрифти</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation>Ετικέτα</translation>
+        <translation>Мітка</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Γραμματοσειρά:</translation>
+        <translation>Шрифт:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Rozmіr:</translation>
+        <translation>Розмір:</translation>
     </message>
     <message>
         <source>The quick brown fox jumps over the lazy dog</source>
-        <translation>Η γρήγορη καφέ αλεπού πηδάει πάνω από τον τεμπέλη σκύλο</translation>
+        <translation>«Швидка бура лисиця перестрибує через лінивого собаку»</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Ονόματα Σημείων</translation>
+        <translation>Назви точок</translation>
     </message>
     <message>
         <source>GUI</source>
-        <translation>Γραφικό Περιβάλλον Χρήστη</translation>
+        <translation>Графічний інтерфейс</translation>
     </message>
     <message>
         <source>Colors</source>
-        <translation>Χρώματα</translation>
+        <translation>Кольори</translation>
+    </message>
+    <message>
+        <source>Workspace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
-        <translation>Λαστιχάκι Zoom</translation>
+        <translation>Гумка для збільшення</translation>
     </message>
     <message>
         <source>Positive:</source>
-        <translation>Θετικό:</translation>
+        <translation>Позитивно:</translation>
     </message>
     <message>
         <source>Negative:</source>
-        <translation>Αρνητικό:</translation>
+        <translation>Негативно:</translation>
     </message>
     <message>
         <source>Default:</source>
-        <translation>Προεπιλογή:</translation>
+        <translation>За замовчуванням:</translation>
     </message>
     <message>
         <source>Hover</source>
-        <translation>Τοποθέτηση του δείκτη του ποντικιού</translation>
+        <translation>Навішування</translation>
     </message>
     <message>
         <source>Drawing</source>
-        <translation>Σχέδιο</translation>
+        <translation>Малювання</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Προέλευση Άξονα</translation>
+        <translation>Початок координат осі</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>Primary:</source>
-        <translation>Κύριο:</translation>
+        <translation>Основний:</translation>
     </message>
     <message>
         <source>Secondary:</source>
-        <translation>Δευτερεύον:</translation>
+        <translation>Додатковий:</translation>
     </message>
     <message>
         <source>Tertiary:</source>
-        <translation>Τριτογενές:</translation>
+        <translation>Третинний:</translation>
     </message>
     <message>
         <source>Navigation</source>
-        <translation>Πλοήγηση</translation>
+        <translation>Навігація</translation>
     </message>
     <message>
         <source>Scrollbars</source>
-        <translation>Γραμμές κύλισης</translation>
+        <translation>Смуги прокручування</translation>
     </message>
     <message>
         <source>Show Scrollbars</source>
-        <translation>Εμφάνιση γραμμών κύλισης</translation>
+        <translation>Показати смуги прокручування</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -9261,148 +9091,140 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation> пікселів</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation>Διάρκεια:</translation>
+        <translation>Тривалість:</translation>
     </message>
     <message>
         <source>Scrolling animation duration</source>
-        <translation>Διάρκεια κινούμενης εικόνας κύλισης</translation>
+        <translation>Тривалість анімації прокручування</translation>
     </message>
     <message>
         <source> ms</source>
         <comment>milliseconds</comment>
-        <translation> ms</translation>
+        <translation> мс</translation>
     </message>
     <message>
         <source>Update interval:</source>
-        <translation>Διάστημα ενημέρωσης:</translation>
+        <translation>Інтервал оновлення:</translation>
     </message>
     <message>
         <source>Time in milliseconds between each animation update</source>
-        <translation>Χρόνος σε χιλιοστά του δευτερολέπτου μεταξύ κάθε ενημέρωσης κινούμενης εικόνας</translation>
+        <translation>Час у мілісекундах між кожним оновленням анімації</translation>
     </message>
     <message>
         <source>Speed:</source>
-        <translation>Ταχύτητα:</translation>
-    </message>
-    <message>
-        <source>Zoom</source>
-        <translation>Ζουμ</translation>
-    </message>
-    <message>
-        <source>Use CTRL modifier</source>
-        <translation>Χρήση τροποποιητή CTRL</translation>
-    </message>
-    <message>
-        <source>Behavior</source>
-        <translation>Συμπεριφορά</translation>
-    </message>
-    <message>
-        <source>Constraints</source>
-        <translation>Περιορισμοί</translation>
-    </message>
-    <message>
-        <source>Angle Step:</source>
-        <translation>Βήμα γωνίας:</translation>
-    </message>
-    <message>
-        <source> deg</source>
-        <translation> βαθμός</translation>
-    </message>
-    <message>
-        <source>Zoom to selected with double click</source>
-        <translation>Μεγέθυνση στην επιλεγμένη περιοχή με διπλό κλικ</translation>
-    </message>
-    <message>
-        <source>Pan active while Space key is pressed</source>
-        <translation>Η μετατόπιση είναι ενεργή ενώ πατιέται το πλήκτρο Space</translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation>Εξαγωγή</translation>
-    </message>
-    <message>
-        <source>Quality:</source>
-        <translation>Ποιότητα:</translation>
-    </message>
-    <message>
-        <source>Pen</source>
-        <translation>Στυλό</translation>
-    </message>
-    <message>
-        <source>Always use current pen</source>
-        <translation>Να χρησιμοποιείτε πάντα τρέχουσα πένα</translation>
-    </message>
-    <message>
-        <source>Dialogs</source>
-        <translation>Διάλογοι</translation>
-    </message>
-    <message>
-        <source>Open on second monitor if available</source>
-        <translation>Άνοιγμα σε δεύτερη οθόνη, εάν είναι διαθέσιμο</translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation>Θέση</translation>
-    </message>
-    <message>
-        <source>Top left</source>
-        <translation>Πάνω αριστερά</translation>
-    </message>
-    <message>
-        <source>Top right</source>
-        <translation>Πάνω δεξιά</translation>
-    </message>
-    <message>
-        <source>Center</source>
-        <translation>Κέντρο</translation>
-    </message>
-    <message>
-        <source>Bottom left</source>
-        <translation>Κάτω αριστερά</translation>
-    </message>
-    <message>
-        <source>Bottom right</source>
-        <translation>Κάτω δεξιά</translation>
-    </message>
-    <message>
-        <source>Offset</source>
-        <translation>Μετατόπιση</translation>
-    </message>
-    <message>
-        <source>X Offset:</source>
-        <translation>Μετατόπιση X:</translation>
-    </message>
-    <message>
-        <source>Y Offset:</source>
-        <translation>Μετατόπιση Y:</translation>
-    </message>
-    <message>
-        <source>Show only ISO line weights in drop down boxes</source>
-        <translation>Εμφάνιση μόνο των βαρών γραμμών ISO στα αναπτυσσόμενα πλαίσια</translation>
-    </message>
-    <message>
-        <source>Workspace</source>
-        <translation>Робочий простір</translation>
-    </message>
-    <message>
-        <source>Background:</source>
-        <translation>Передумова:</translation>
+        <translation>Швидкість:</translation>
     </message>
     <message>
         <source>Formula Editor</source>
-        <translation>Редактор формул</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Auto clear formula</source>
-        <translation>Автоматичне очищення формули</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom</source>
+        <translation>Збільшити</translation>
+    </message>
+    <message>
+        <source>Use CTRL modifier</source>
+        <translation>Використовувати модифікатор CTRL</translation>
+    </message>
+    <message>
+        <source>Behavior</source>
+        <translation>Поведінка</translation>
+    </message>
+    <message>
+        <source>Constraints</source>
+        <translation>Обмеження</translation>
+    </message>
+    <message>
+        <source>Angle Step:</source>
+        <translation>Крок кута:</translation>
+    </message>
+    <message>
+        <source> deg</source>
+        <translation>градус</translation>
+    </message>
+    <message>
+        <source>Zoom to selected with double click</source>
+        <translation>Збільшити масштаб до вибраного подвійним клацанням</translation>
+    </message>
+    <message>
+        <source>Pan active while Space key is pressed</source>
+        <translation>Панорамування активне, поки натиснуто клавішу пробілу</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Експорт</translation>
+    </message>
+    <message>
+        <source>Quality:</source>
+        <translation>Якість:</translation>
+    </message>
+    <message>
+        <source>Pen</source>
+        <translation>Ручка</translation>
+    </message>
+    <message>
+        <source>Always use current pen</source>
+        <translation>Завжди використовувати поточну ручку</translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation>Діалоги</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
-        <translation>Використовуйте вбудовані діалогові вікна</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open on second monitor if available</source>
+        <translation>Відкрити на другому моніторі, якщо доступно</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>Позиція</translation>
+    </message>
+    <message>
+        <source>Top left</source>
+        <translation>Вгорі ліворуч</translation>
+    </message>
+    <message>
+        <source>Top right</source>
+        <translation>Угорі праворуч</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>Центр</translation>
+    </message>
+    <message>
+        <source>Bottom left</source>
+        <translation>Внизу ліворуч</translation>
+    </message>
+    <message>
+        <source>Bottom right</source>
+        <translation>Внизу праворуч</translation>
+    </message>
+    <message>
+        <source>Offset</source>
+        <translation>Зсув</translation>
+    </message>
+    <message>
+        <source>X Offset:</source>
+        <translation>Зсув X:</translation>
+    </message>
+    <message>
+        <source>Y Offset:</source>
+        <translation>Зсув по осі Y:</translation>
+    </message>
+    <message>
+        <source>Show only ISO line weights in drop down boxes</source>
+        <translation>Показувати лише товщину ліній ISO у випадаючих списках</translation>
     </message>
 </context>
 <context>
@@ -9441,11 +9263,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>My Images</source>
-        <translation>Οι εικόνες μου</translation>
+        <translation>Мої зображення</translation>
     </message>
     <message>
         <source>My Backups</source>
-        <translation>Τα αντίγραφα ασφαλείας μου</translation>
+        <translation>Мої резервні копії</translation>
     </message>
     <message>
         <source>My Patterns</source>
@@ -9461,7 +9283,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>My Label Templates</source>
-        <translation>Τα πρότυπα ετικετών μου</translation>
+        <translation>Мої шаблони етикеток</translation>
     </message>
 </context>
 <context>
@@ -9484,27 +9306,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Default value:</source>
-        <translation>Προεπιλεγμένη τιμή:</translation>
+        <translation>Значення за замовчуванням:</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Ημερομηνία:</translation>
+        <translation>Дата:</translation>
     </message>
     <message>
         <source>Edit formats</source>
-        <translation>Επεξεργασία μορφών</translation>
+        <translation>Редагувати формати</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>Ώρα:</translation>
+        <translation>Час:</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Κομμάτι πατρόν</translation>
+        <translation>Елемент візерунка</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Ιδιότητες</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Notches</source>
@@ -9512,15 +9334,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation>Εμφάνιση εγκοπής τόσο στο περιθώριο ραφής όσο και στη γραμμή ραφής.</translation>
+        <translation>Показати виїмку як на припуску на шов, так і на лінії шва.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Συμβουλή:</translation>
+        <translation>Тип:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Χρώμα:</translation>
+        <translation>Колір:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -9532,15 +9354,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Γραμμές κόκκων</translation>
+        <translation>Зернові лінії</translation>
     </message>
     <message>
         <source>Show grainlines</source>
-        <translation>Εμφάνιση γραμμών κόκκων</translation>
+        <translation>Показати лінії волокон</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>x 3</source>
@@ -9548,83 +9370,83 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Paths</source>
-        <translation>Σλάχι</translation>
+        <translation>Шляхи</translation>
     </message>
     <message>
         <source>Seam Line</source>
-        <translation>Γραμμή ραφής</translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Лінія шва</translation>
     </message>
     <message>
         <source>Lineweight</source>
-        <translation>Πάχος γραμμής</translation>
+        <translation>Вага лінії</translation>
     </message>
     <message>
         <source>Cut Line</source>
-        <translation>Γραμμή κοπής</translation>
+        <translation>Лінія розрізу</translation>
     </message>
     <message>
         <source>Cutouts</source>
-        <translation>Κοψίματα</translation>
+        <translation>Вирізки</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Μίτκι</translation>
+        <translation>Мітки</translation>
     </message>
     <message>
         <source>Label data (date/time format)</source>
-        <translation>Δεδομένα ετικέτας (μορφή ημερομηνίας/ώρας)</translation>
+        <translation>Дані мітки (формат дати/часу)</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Σχισμή</translation>
+        <translation>Щілина</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>Εγκοπή Τ</translation>
+        <translation>Т-подібний виріз</translation>
     </message>
     <message>
         <source>U Notch</source>
-        <translation>Εγκοπή U</translation>
+        <translation>U-подібний виріз</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>Εσωτερικό V</translation>
+        <translation>V Внутрішній</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>Εξωτερικό V</translation>
+        <translation>Зовнішній V</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Κάστρο</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Διαμάντι</translation>
+        <translation>Діамант</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation type="unfinished">Тип лінії:</translation>
     </message>
     <message>
         <source>Show pattern labels</source>
-        <translation>Εμφάνιση ετικετών μοτίβων</translation>
+        <translation>Показати мітки візерунків</translation>
     </message>
     <message>
         <source>Show piece labels</source>
-        <translation>Εμφάνιση ετικετών κομματιών</translation>
+        <translation>Показати мітки елементів</translation>
     </message>
     <message>
         <source>Width</source>
-        <translation>Σιρίνα</translation>
+        <translation>Ширина</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Ζρίστ</translation>
+        <translation>Зріст</translation>
     </message>
     <message>
         <source>Templates</source>
@@ -9632,47 +9454,47 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation>Ετικέτα μοτίβου:</translation>
+        <translation>Мітка шаблону:</translation>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>Ετικέτα τεμαχίου:</translation>
+        <translation>Мітка деталі:</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Πρότυπο ετικέτας</translation>
+        <translation>Шаблон етикетки</translation>
     </message>
     <message>
         <source>Import template</source>
-        <translation>Εισαγωγή προτύπου</translation>
+        <translation>Імпорт шаблону</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή κοπής</translation>
+        <translation>Показати виріз на лінії розрізу</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Εμφάνιση εγκοπής στη γραμμή ραφής</translation>
+        <translation>Показати виїмку на лінії шва</translation>
     </message>
     <message>
         <source>Internals</source>
-        <translation>Εσωτερικά</translation>
+        <translation>Внутрішні механізми</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
-        <translation>Εμφάνιση γραμμής κοπής</translation>
+        <translation>Показати лінію розрізу</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
-        <translation>Απόκρυψη γραμμής ραφής</translation>
+        <translation>Приховати лінію шва</translation>
     </message>
     <message>
         <source>Arrow length:</source>
-        <translation>Μήκος βέλους:</translation>
+        <translation>Довжина стріли:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation> px</translation>
+        <translation> пікселів</translation>
     </message>
 </context>
 <context>
@@ -9687,6 +9509,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Create new pattern piece to start working.</source>
         <translation>Створіть нове креслення для початку роботи.</translation>
+    </message>
+    <message>
+        <source>inch</source>
+        <translation>дюйми</translation>
     </message>
     <message>
         <source>Property</source>
@@ -9736,7 +9562,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Lining</source>
-        <translation>Подклада</translation>
+        <translation>Підклада</translation>
     </message>
     <message>
         <source>Interfacing</source>
@@ -9744,7 +9570,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Interlining</source>
-        <translation>Ενδιάμεσο</translation>
+        <translation>Інтерлайн</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -9756,43 +9582,47 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Union piece</source>
-        <translation>Κομμάτι Ένωσης</translation>
+        <translation>Союзний виріб</translation>
     </message>
     <message>
         <source>move piece</source>
-        <translation>κομμάτι κίνησης</translation>
+        <translation>перемістити фігуру</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Συνεχής γραμμή</translation>
+        <translation>Суцільна лінія</translation>
     </message>
     <message>
         <source>Dash</source>
-        <translation>Παύλα</translation>
+        <translation>Тере</translation>
     </message>
     <message>
         <source>Dot</source>
-        <translation>Κουκκίδα</translation>
+        <translation>Крапка</translation>
     </message>
     <message>
         <source>Dash Dot</source>
-        <translation>Παύλα Κουκκίδα</translation>
+        <translation>Тропа-штрих</translation>
     </message>
     <message>
         <source>Dash Dot Dot</source>
-        <translation>Παύλα Κουκκίδα Κουκκίδα</translation>
+        <translation>Три крапка крапка</translation>
     </message>
     <message>
         <source>No Pen</source>
-        <translation>Χωρίς στυλό</translation>
+        <translation>Без ручки</translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation> %1 </translation>
     </message>
     <message>
         <source>Forward (from start point)</source>
-        <translation>Εμπρός (από το σημείο εκκίνησης)</translation>
+        <translation>Вперед (від початкової точки)</translation>
     </message>
     <message>
         <source>Backward (from end point)</source>
-        <translation>Πίσω (από το τελικό σημείο)</translation>
+        <translation>Назад (від кінцевої точки)</translation>
     </message>
     <message>
         <source>Images</source>
@@ -9800,23 +9630,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Open Image File</source>
-        <translation>Άνοιγμα αρχείου εικόνας</translation>
+        <translation>Відкрити файл зображення</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; start point to cut line.</source>
-        <translation>Δεν είναι δυνατή η επέκταση του σημείου έναρξης της εσωτερικής διαδρομής &apos;%1&apos; στη γραμμή αποκοπής.</translation>
+        <translation>Неможливо продовжити початкову точку внутрішнього шляху &apos;%1&apos; до лінії розрізу.</translation>
     </message>
     <message>
         <source>Can not extend internal path &apos;%1&apos; end point to cut line.</source>
-        <translation>Δεν είναι δυνατή η επέκταση της εσωτερικής διαδρομής &apos;%1&apos; στο τελικό σημείο της γραμμής κοπής.</translation>
-    </message>
-    <message>
-        <source>%1</source>
-        <translation>%1</translation>
-    </message>
-    <message>
-        <source>inch</source>
-        <translation>дюйм</translation>
+        <translation>Неможливо продовжити кінцеву точку внутрішнього шляху &apos;%1&apos; до лінії розрізу.</translation>
     </message>
 </context>
 <context>
@@ -10019,32 +9841,32 @@ Press enter to temporarily add it to the list.</source>
     <name>RemoveGroupItem</name>
     <message>
         <source>Delete group item</source>
-        <translation>Διαγραφή στοιχείου ομάδας</translation>
+        <translation>Видалити елемент групи</translation>
     </message>
 </context>
 <context>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
-        <translation>перейменувати лекало</translation>
+        <translation>переменувати лекало</translation>
     </message>
 </context>
 <context>
     <name>ResizeHandlesItem</name>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
-        <translation>Πατήστε &lt;b&gt;CTRL&lt;/b&gt; για να κάνετε κλιμάκωση γύρω από το κέντρο - &lt;b&gt; Η αναλογία διαστάσεων είναι κλειδωμένη &lt;/b&gt;</translation>
+        <translation>Натисніть &lt;b&gt;CTRL&lt;/b&gt; для масштабування навколо центру - &lt;b&gt; Співвідношення сторін заблоковано &lt;/b&gt;</translation>
     </message>
     <message>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
-        <translation>Πατήστε &lt;b&gt;CTRL&lt;/b&gt; για να κάνετε κλιμάκωση γύρω από το κέντρο, &lt;b&gt;SHIFT&lt;/b&gt; για ομοιόμορφη κλιμάκωση.</translation>
+        <translation>Натисніть &lt;b&gt;CTRL&lt;/b&gt; для масштабування навколо центру, &lt;b&gt;SHIFT&lt;/b&gt; для рівномірного масштабування.</translation>
     </message>
 </context>
 <context>
     <name>SavePieceOptions</name>
     <message>
         <source>save piece options</source>
-        <translation>αποθήκευση επιλογών κομματιού</translation>
+        <translation>зберегти параметри фігури</translation>
     </message>
 </context>
 <context>
@@ -10065,31 +9887,55 @@ Press enter to temporarily add it to the list.</source>
     <name>SeamlyMePreferencesConfigurationPage</name>
     <message>
         <source>Language</source>
-        <translation>Μόβα</translation>
+        <translation>Мова</translation>
     </message>
     <message>
         <source>GUI language:</source>
         <translation>Мова інтерфейсу:</translation>
     </message>
     <message>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По замовчуванню</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dialogs</source>
+        <translation type="unfinished">Діалоги</translation>
+    </message>
+    <message>
+        <source>Use native dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Мірки</translation>
+    </message>
+    <message>
         <source>Pattern making system</source>
-        <translation>Система створення викрійок</translation>
+        <translation>Система створення вікрійок</translation>
     </message>
     <message>
         <source>System:</source>
-        <translation>Σύστημα:</translation>
+        <translation>Система:</translation>
     </message>
     <message>
         <source>Author:</source>
-        <translation>Συγγραφέας:</translation>
+        <translation>Автор:</translation>
     </message>
     <message>
         <source>Book:</source>
-        <translation>Βιβλίο:</translation>
+        <translation>Книга:</translation>
     </message>
     <message>
         <source>Measurements editing</source>
-        <translation>Redaguvannya мірок</translation>
+        <translation>Редагування мірок</translation>
     </message>
     <message>
         <source>Reset warnings</source>
@@ -10100,99 +9946,75 @@ Press enter to temporarily add it to the list.</source>
         <translation>Панель інструментів</translation>
     </message>
     <message>
-        <source>The text appears under the icon (recommended for beginners).</source>
-        <translation>Текст відображається під іконкою (προτεινόμενη για νέα νέα).</translation>
-    </message>
-    <message>
-        <source>Default height and size</source>
-        <translation>Standartniy zrіst і rosmіr</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Βίσοτα:</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Rozmіr:</translation>
-    </message>
-    <message>
-        <source>Startup</source>
-        <translation>Εκκίνηση</translation>
-    </message>
-    <message>
-        <source>Do not show welcome screen</source>
-        <translation>Μην εμφανίζεται η οθόνη υποδοχής</translation>
-    </message>
-    <message>
-        <source>Separator Locale:</source>
-        <translation>Роздільник Локаль:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>По замовчуванню</translation>
-    </message>
-    <message>
-        <source>User&apos;s System</source>
-        <translation>Система користувача</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Τοπικές ρυθμίσεις</translation>
-    </message>
-    <message>
-        <source>Country</source>
-        <translation>Χώρα</translation>
-    </message>
-    <message>
-        <source>Group Separator</source>
-        <translation>Роздільник Груп</translation>
-    </message>
-    <message>
-        <source>Decimal Point</source>
-        <translation>Υποδιαστολή</translation>
-    </message>
-    <message>
-        <source>Negative Sign</source>
-        <translation>Αρνητικό Πρόσημο</translation>
-    </message>
-    <message>
-        <source>Positive Sign</source>
-        <translation>Θετικό Πρόσημο</translation>
-    </message>
-    <message>
         <source>Welcome</source>
-        <translation>Καλώς ήρθατε</translation>
+        <translation type="unfinished">Ласкаво просимо</translation>
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Εμφάνιση</translation>
+        <translation type="unfinished">Зовнішній вигляд</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation>Тема:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Measurements</source>
-        <translation>вимірювань</translation>
+        <source>The text appears under the icon (recommended for beginners).</source>
+        <translation>Текст відображатися під іконкою (рекомендується для новачків).</translation>
     </message>
     <message>
-        <source>Dialogs</source>
-        <translation>Διάλογοι</translation>
+        <source>Default height and size</source>
+        <translation>Стандартний зріст і розмір</translation>
     </message>
     <message>
-        <source>Use native dialogs</source>
-        <translation>Використовуйте вбудовані діалогові вікна</translation>
+        <source>Height:</source>
+        <translation>Висота:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation>Розмір:</translation>
+    </message>
+    <message>
+        <source>Startup</source>
+        <translation>Автозапуск</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Не показувати екран привітання</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished">Місцезнаходження</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
     <message>
         <source>Type</source>
-        <translation>Συμβουλή</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Path</source>
-        <translation>Κοντούρ</translation>
+        <translation>Контур</translation>
     </message>
     <message>
         <source>Default</source>
@@ -10200,15 +10022,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redaguati</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <source>Open Directory</source>
-        <translation>Προσδιορισμός διευθυντής</translation>
+        <translation>Відкрити директорію</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>Μοї іndivіdualьnі мірки</translation>
+        <translation>Мої індивідуальні мірки</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
@@ -10220,42 +10042,54 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Paths that SeamlyME uses</source>
-        <translation>Διαδρομές που χρησιμοποιεί το SeamlyME</translation>
+        <translation>Шляхи, які використовує SeamlyME</translation>
     </message>
     <message>
         <source>My Body Scans</source>
-        <translation>Οι σαρώσεις του σώματός μου</translation>
+        <translation>«Сканування мого тіла»</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMeWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation>Καλώς ήρθατε</translation>
+        <translation>Ласкаво просимо</translation>
     </message>
     <message>
         <source>Welcome to SeamlyME</source>
-        <translation>Καλώς ήρθατε στο SeamlyME</translation>
+        <translation>Ласкаво просимо до SeamlyME</translation>
     </message>
     <message>
         <source>3D Look users</source>
-        <translation>Χρήστες τρισδιάστατης εμφάνισης</translation>
+        <translation>Користувачі 3D-вигляду</translation>
     </message>
     <message>
         <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
-        <translation>Για να χρησιμοποιήσετε μια σάρωση σώματος με τρισδιάστατη εμφάνιση, το αρχείο πρέπει να μετατραπεί σε μορφή SeamlyME. </translation>
+        <translation>«Щоб використовувати 3D-сканування тіла, файл потрібно конвертувати у формат SeamlyME».</translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
-        <translation>Επισυνάψτε το αρχείο 3DLook σε ένα email και στείλτε το στη διεύθυνση convert@seamly.io.</translation>
+        <translation>Додайте файл 3DLook до електронного листа та надішліть його на адресу convert@seamly.io.</translation>
     </message>
     <message>
         <source>You will receive an email with the converted file, which you can then load in SeamlyME as usual.</source>
-        <translation>Θα λάβετε ένα email με το αρχείο που έχει μετατραπεί, το οποίο μπορείτε στη συνέχεια να φορτώσετε στο SeamlyME ως συνήθως.</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По замовчуванню</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Επιλέξτε τις μονάδες που προτιμάτε, το δεκαδικό διαχωριστικό και τη γλώσσα. (Μπορείτε να τα αλλάξετε αργότερα.)</translation>
+        <translation>Будь ласка, виберіть потрібні одиниці вимірювання, десятковий роздільник і мову. (Ви можете змінити їх пізніше.)</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -10263,7 +10097,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Ορίζει τις προεπιλεγμένες μονάδες για ένα νέο αρχείο μέτρησης.</translation>
+        <translation>Встановлює одиниці вимірювання за замовчуванням для нового файлу вимірювань.</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10271,82 +10105,70 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
-        <translation>Ορίζει τη γλώσσα που χρησιμοποιείται για το SeamlyMe.</translation>
-    </message>
-    <message>
-        <source>Do not show again</source>
-        <translation>Να μην εμφανιστεί ξανά</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Σαντίμετρα</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Ντιουμί</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Якщо позначено, вікно привітання не відображатиметься.  Ви можете змінити цей параметр у налаштуваннях SeamlyMe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Separator Locale:</source>
-        <translation>Роздільник Локаль:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>По замовчуванню</translation>
-    </message>
-    <message>
-        <source>User&apos;s System</source>
-        <translation>Система користувача</translation>
-    </message>
-    <message>
-        <source>Locale</source>
-        <translation>Τοπικές ρυθμίσεις</translation>
-    </message>
-    <message>
-        <source>Country</source>
-        <translation>Χώρα</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation>Γλώσσα</translation>
-    </message>
-    <message>
-        <source>Group Separator</source>
-        <translation>Роздільник Груп</translation>
-    </message>
-    <message>
-        <source>Decimal Point</source>
-        <translation>Υποδιαστολή</translation>
-    </message>
-    <message>
-        <source>Negative Sign</source>
-        <translation>Αρνητικό Πρόσημο</translation>
-    </message>
-    <message>
-        <source>Positive Sign</source>
-        <translation>Θετικό Πρόσημο</translation>
+        <translation>Встановлює мову, що використовується для SeamlyMe.</translation>
     </message>
     <message>
         <source>Theme:</source>
-        <translation>Тема:</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed. You can change this setting in the SeamlyMe preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Більше не показувати</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Сантиметри</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Міліметри</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Дюйми</translation>
+    </message>
+    <message>
+        <source>Locale</source>
+        <translation type="unfinished">Місцезнаходження</translation>
+    </message>
+    <message>
+        <source>Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Мова</translation>
+    </message>
+    <message>
+        <source>Group Separator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Negative Sign</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Positive Sign</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation>Καλώς ήρθατε</translation>
+        <translation>Ласкаво просимо</translation>
     </message>
     <message>
         <source>Welcome to Seamly2D</source>
-        <translation>Καλώς ήρθατε στο Seamly2D</translation>
+        <translation>Ласкаво просимо до Seamly2D</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -10354,7 +10176,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation>Ορίζει τις προεπιλεγμένες μονάδες για ένα νέο αρχείο μέτρησης.</translation>
+        <translation>Встановлює одиниці вимірювання за замовчуванням для нового файлу вимірювань.</translation>
+    </message>
+    <message>
+        <source>Separator Locale:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По замовчуванню</translation>
+    </message>
+    <message>
+        <source>User&apos;s System</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Theme:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -10362,121 +10204,101 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation>Να μην εμφανιστεί ξανά</translation>
+        <translation>Більше не показувати</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation>Σαντίμετρα</translation>
+        <translation>Сантиметри</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation>Χιλιοστά</translation>
+        <translation>Міліметри</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation>Ντιουμί</translation>
-    </message>
-    <message>
-        <source>Sets the language used for Seamly2D.</source>
-        <translation>Ορίζει τη γλώσσα που χρησιμοποιείται για το Seamly2D.</translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
-        <translation>Επιλέξτε τις μονάδες που προτιμάτε, το δεκαδικό διαχωριστικό, τη γλώσσα και τον ήχο επιλογής. (Μπορείτε να τα αλλάξετε αργότερα.)</translation>
-    </message>
-    <message>
-        <source>Sound:</source>
-        <translation>Ήχος:</translation>
-    </message>
-    <message>
-        <source>Sets the node selection click  sound.</source>
-        <translation>Ορίζει τον ήχο κλικ επιλογής κόμβου.</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When checked the Welcome window will not be displayed.  You can change this setting in the Seamly2D preferences.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Якщо позначено, вікно привітання не відображатиметься.  Ви можете змінити цей параметр у налаштуваннях Seamly2D..&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Separator Locale:</source>
-        <translation>Роздільник Локаль:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>По замовчуванню</translation>
-    </message>
-    <message>
-        <source>User&apos;s System</source>
-        <translation>Система користувача</translation>
+        <translation>Дюйми</translation>
     </message>
     <message>
         <source>Locale</source>
-        <translation>Τοπικές ρυθμίσεις</translation>
+        <translation type="unfinished">Місцезнаходження</translation>
     </message>
     <message>
         <source>Country</source>
-        <translation>Χώρα</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Γλώσσα</translation>
+        <translation type="unfinished">Мова</translation>
     </message>
     <message>
         <source>Group Separator</source>
-        <translation>Роздільник Груп</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Decimal Point</source>
-        <translation>Υποδιαστολή</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Negative Sign</source>
-        <translation>Αρνητικό Πρόσημο</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Positive Sign</source>
-        <translation>Θετικό Πρόσημο</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Theme:</source>
-        <translation>Тема:</translation>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Встановлює мову, що використовується для Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Будь ласка, виберіть потрібні одиниці вимірювання, десятковий роздільник, мову та звук вибору. (Ви можете змінити їх пізніше.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Встановлює звук клацання вибору вузла.</translation>
     </message>
 </context>
 <context>
     <name>SetPieceColor</name>
     <message>
         <source>Change piece color</source>
-        <translation>Αλλαγή χρώματος κομματιού</translation>
+        <translation>Змінити колір фігури</translation>
     </message>
     <message>
         <source>Piece color changed: </source>
-        <translation>Το χρώμα του κομματιού άλλαξε: </translation>
+        <translation>Колір фігури змінено: </translation>
     </message>
 </context>
 <context>
     <name>ShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Αντιγραφή συντομεύσεων στο πρόχειρο</translation>
+        <translation>Копіювати ярлики в буфер обміну</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
-        <translation>Εξαγωγή συντομεύσεων ως PDF</translation>
+        <translation>Експортувати ярлики у форматі PDF</translation>
     </message>
     <message>
         <source>Send shortcuts to the Printer</source>
-        <translation>Αποστολή συντομεύσεων στον εκτυπωτή</translation>
+        <translation>Надіслати ярлики на принтер</translation>
     </message>
     <message>
         <source>Seamly2D Shortcuts</source>
-        <translation>Συντομεύσεις Seamly2D</translation>
+        <translation>Ярлики Seamly2D</translation>
     </message>
     <message>
         <source>File</source>
-        <translation>Αρχείο</translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <source>New</source>
-        <translation>Νέος</translation>
+        <translation>Новий</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -10484,7 +10306,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Open</source>
-        <translation>Βίντεο</translation>
+        <translation>Відкрити</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -10492,7 +10314,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Close</source>
-        <translation>Κλείσιμο</translation>
+        <translation>Закрити</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
@@ -10516,7 +10338,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Print</source>
-        <translation>Παιδί</translation>
+        <translation>Друк</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -10524,15 +10346,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation>Προτιμήσεις μοτίβων</translation>
+        <translation>Налаштування шаблону</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
-        <translation>Ctrl+Shift+Κόμμα</translation>
+        <translation>Ctrl+Shift+кома</translation>
     </message>
     <message>
         <source>Document Information</source>
-        <translation>Πληροφορίες Εγγράφου</translation>
+        <translation>Інформація про документ</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -10540,7 +10362,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Έξοδος</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -10548,7 +10370,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Redaguati</translation>
+        <translation>Редагувати</translation>
     </message>
     <message>
         <source>Undo</source>
@@ -10560,7 +10382,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Redo</source>
-        <translation>Επανάληψη</translation>
+        <translation>Повторити</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -10568,11 +10390,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>View</source>
-        <translation>Προβολή</translation>
+        <translation>Вигляд</translation>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation>Λειτουργία Πρόχειρου</translation>
+        <translation>Режим чернетки</translation>
     </message>
     <message>
         <source>Shift+D</source>
@@ -10580,11 +10402,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation>Λειτουργία Τεμαχίου</translation>
+        <translation>Режим фігур</translation>
     </message>
     <message>
         <source>Layout Mode</source>
-        <translation>Λειτουργία διάταξης</translation>
+        <translation>Режим макета</translation>
     </message>
     <message>
         <source>Shift+L</source>
@@ -10592,7 +10414,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation>Μεγέθυνση</translation>
+        <translation>Збільшити масштаб</translation>
     </message>
     <message>
         <source>Ctrl++</source>
@@ -10600,7 +10422,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation>Σμίκρυνση</translation>
+        <translation>Зменшити масштаб</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -10612,7 +10434,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Zoom to Point</source>
-        <translation>Ζουμ στο σημείο</translation>
+        <translation>Збільшити масштаб до точки</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -10620,27 +10442,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Ταιριάζει σε όλους</translation>
+        <translation>Підходить усім</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation>Προηγούμενο</translation>
+        <translation>Попередній</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
-        <translation>Ctrl+Αριστερά</translation>
+        <translation>Ctrl+ліворуч</translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation>Επιλεγμένο</translation>
+        <translation>Вибрано</translation>
     </message>
     <message>
         <source>Ctrl+Right</source>
-        <translation>Ctrl+Δεξιά</translation>
+        <translation>Ctrl+Стрілка вправо</translation>
     </message>
     <message>
         <source>Area</source>
-        <translation>Περιοχή</translation>
+        <translation>Зона</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -10648,15 +10470,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Τηγάνι</translation>
+        <translation>Сковорода</translation>
     </message>
     <message>
         <source>Show Name Text</source>
-        <translation>Εμφάνιση κειμένου ονόματος</translation>
+        <translation>Показати текст імені</translation>
     </message>
     <message>
         <source>Increase Text Size</source>
-        <translation>Αύξηση μεγέθους κειμένου</translation>
+        <translation>Збільшити розмір тексту</translation>
     </message>
     <message>
         <source>Ctrl+]</source>
@@ -10664,7 +10486,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Decrease Text Size</source>
-        <translation>Μείωση μεγέθους κειμένου</translation>
+        <translation>Зменшити розмір тексту</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -10672,39 +10494,39 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Χρήση χρώματος εργαλείου</translation>
+        <translation>Використати колір інструмента</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Πλαίσιο καλωδίων</translation>
+        <translation>Каркас</translation>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Σημεία ελέγχου καμπύλης</translation>
+        <translation>Контрольні точки кривої</translation>
     </message>
     <message>
         <source>Axis Origin</source>
-        <translation>Προέλευση Άξονα</translation>
+        <translation>Початок координат осі</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation>Επιτρεπόμενο όριο ραφής</translation>
+        <translation>Припуск на шов</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Γραμμές κόκκων</translation>
+        <translation>Зернові лінії</translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation>Μίτκι</translation>
+        <translation>Мітки</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Μίρκι</translation>
+        <translation>Мірки</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
-        <translation>Βίξτε το SeamlyMe</translation>
+        <translation>Відкрити SeamlyMe</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
@@ -10712,7 +10534,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Variables Table</source>
-        <translation>Πίνακας Μεταβλητών</translation>
+        <translation>Таблиця змінних</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -10720,7 +10542,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export Variables Table  to CSV</source>
-        <translation>Εξαγωγή πίνακα μεταβλητών σε CSV</translation>
+        <translation>Експортувати таблицю змінних у CSV</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -10728,11 +10550,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Tools</source>
-        <translation>Εργαλεία</translation>
+        <translation>Інструменти</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Νέο μπλοκ σχεδίασης</translation>
+        <translation>Новий чернетка блоку</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
@@ -10740,55 +10562,55 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Μετονομασία μπλοκ πρόχειρου</translation>
+        <translation>Перейменувати блок чернетки</translation>
     </message>
     <message>
         <source>Point</source>
-        <translation>Πότσα</translation>
+        <translation>Точка</translation>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Μήκος και Γωνία</translation>
+        <translation>Довжина та кут</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>Στο διαδίκτυο</translation>
+        <translation>Онлайн</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Σε κάθετο</translation>
+        <translation>На перпендикулярі</translation>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>Στη διχοτόμο</translation>
+        <translation>На бісектрисі</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Μήκος προς γραμμή</translation>
+        <translation>Довжина до лінії</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
-        <translation>Τομή Τόξου και Γραμμής</translation>
+        <translation>Перетин дуги та лінії</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Τομή άξονα και τριγώνου</translation>
+        <translation>Перетин осі та трикутника</translation>
     </message>
     <message>
         <source>Intersect XY</source>
-        <translation>Τομή XY</translation>
+        <translation>Перетин XY</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Τομή ευθείας και κάθετης</translation>
+        <translation>Перетин прямої та перпендикуляра</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Τομή ευθείας και άξονα</translation>
+        <translation>Перетин лінії та осі</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
-        <translation>Μεσαίο σημείο σε λειτουργία</translation>
+        <translation>Середина на лінії</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -10796,7 +10618,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Line</source>
-        <translation>Λίνια</translation>
+        <translation>Лінія</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -10804,15 +10626,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Σημείο - Τομή Γραμμών</translation>
+        <translation>Точка - перетин ліній</translation>
     </message>
     <message>
         <source>Curves</source>
-        <translation>Καμπύλες</translation>
+        <translation>Криві</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Καμπύλη - Διαδραστική</translation>
+        <translation>Крива – інтерактивна</translation>
     </message>
     <message>
         <source>Alt+C</source>
@@ -10820,7 +10642,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Διαδραστικό</translation>
+        <translation>Сплайн – інтерактивний</translation>
     </message>
     <message>
         <source>Alt+S</source>
@@ -10828,7 +10650,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Καμπύλη - Διορθώθηκε</translation>
+        <translation>Крива – фіксована</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
@@ -10836,7 +10658,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Σπλάιν - Σταθερό</translation>
+        <translation>Сплайн – фіксований</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
@@ -10844,23 +10666,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Σημείο - Στην Καμπύλη</translation>
+        <translation>Точка на кривій</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
-        <translation>Σημείωση - Σε Spline	</translation>
+        <translation>Точка - на сплайні</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Σημείο - Τομή Καμπυλών</translation>
+        <translation>Точка - перетин кривих</translation>
     </message>
     <message>
         <source>Arcs</source>
-        <translation>Τόξα</translation>
+        <translation>Дуги</translation>
     </message>
     <message>
         <source>Arc - Radius and Angle</source>
-        <translation>Τόξο - Ακτίνα και Γωνία</translation>
+        <translation>Дуга - радіус і кут</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -10868,7 +10690,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Τόξο - Ακτίνα και Μήκος</translation>
+        <translation>Дуга - радіус і довжина</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -10876,19 +10698,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Σημείο - Σε Τόξο</translation>
+        <translation>Точка на дузі</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis</source>
-        <translation>Σημείο - Τομή Τόξου και Άξονα</translation>
+        <translation>Точка - перетин дуги та осі</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Σημείο - Τομή Τόξων</translation>
+        <translation>Точка - перетин дуг</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Σημείο - Τομή κύκλων</translation>
+        <translation>Точка - перетин кіл</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -10896,15 +10718,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Σημείο - Τομή Κύκλου και Εφαπτομένης</translation>
+        <translation>Точка - перетин кола та дотичної</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Σημείο - Τομή Τόξου και Εφαπτομένης</translation>
+        <translation>Точка - перетин дуги та дотичної</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
-        <translation>Ελλειπτικό Τόξο</translation>
+        <translation>Еліптична дуга</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -10912,11 +10734,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Operations</source>
-        <translation>Operaciї</translation>
+        <translation>Операції</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Προσθήκη αντικειμένων σε ομάδα</translation>
+        <translation>Додати об&apos;єкти до групи</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -10924,15 +10746,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Καθρέφτης ανά γραμμή</translation>
+        <translation>Дзеркало за лінією</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Καθρέφτης ανά άξονα</translation>
+        <translation>Дзеркало від Axis</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Перемистити</translation>
+        <translation>Пере!</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -10940,11 +10762,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Αληθινά Βελάκια</translation>
+        <translation>Справжні дротики</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Εξαγωγή μπλοκ πρόχειρου</translation>
+        <translation>Експортувати блоки чернетки</translation>
     </message>
     <message>
         <source>Images</source>
@@ -10952,7 +10774,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Import Image</source>
-        <translation>Εισαγωγή εικόνας</translation>
+        <translation>Імпортувати зображення</translation>
     </message>
     <message>
         <source>Alt + I</source>
@@ -10960,27 +10782,27 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Κομμάτι πατρόν</translation>
+        <translation>Елемент візерунка</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Νέο κομμάτι πατρόν</translation>
+        <translation>Новий візерунок</translation>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation>Σημείο αγκύρωσης</translation>
+        <translation>Точка опори</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Εσωτερική Διαδρομή</translation>
+        <translation>Внутрішній шлях</translation>
     </message>
     <message>
         <source>Edit Properties</source>
-        <translation>Επεξεργασία ιδιοτήτων</translation>
+        <translation>Редагувати властивості</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation>Εναλλαγή κλειδώματος</translation>
+        <translation>Увімкнути/вимкнути блокування</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10988,23 +10810,23 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Συμπερίληψη στη διάταξη</translation>
+        <translation>Включити до макета</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Απαγόρευση αναστροφής</translation>
+        <translation>Заборонити перегортання</translation>
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation>Ανύψωση στην κορυφή</translation>
+        <translation>Підняти на вершину</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
-        <translation>Ctrl+Αρχική</translation>
+        <translation>Ctrl+Home</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation>Από κάτω προς τα κάτω</translation>
+        <translation>Знизу донизу</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -11020,19 +10842,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Del</source>
-        <translation>Διαγραφή</translation>
+        <translation>Дел</translation>
     </message>
     <message>
         <source>Details</source>
-        <translation>Λεπτομέρειες</translation>
+        <translation>Деталь</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Ενώστε τα Κομμάτια</translation>
+        <translation>Об&apos;єднай шматки</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Εξαγωγή τεμαχίων</translation>
+        <translation>Експорт частин</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -11040,15 +10862,15 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>New Layout</source>
-        <translation>Νέα διάταξη</translation>
+        <translation>Новий макет</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Εξαγωγή διάταξης</translation>
+        <translation>Експорт макета</translation>
     </message>
     <message>
         <source>Last Tool</source>
-        <translation>Τελευταίο εργαλείο</translation>
+        <translation>Останній інструмент</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
@@ -11056,7 +10878,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>History</source>
-        <translation>Ιστορία</translation>
+        <translation>Історія</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -11064,11 +10886,11 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Utilities</source>
-        <translation>Βοηθητικά προγράμματα</translation>
+        <translation>Утиліти</translation>
     </message>
     <message>
         <source>Calculator</source>
-        <translation>Αριθμομηχανή</translation>
+        <translation>Калькулятор</translation>
     </message>
     <message>
         <source>Ctrl+Shift+C</source>
@@ -11076,7 +10898,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Δεκαδικό Διάγραμμα</translation>
+        <translation>Десяткова таблиця</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -11088,23 +10910,135 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Keyboard Shortcuts</source>
-        <translation>Συντομεύσεις πληκτρολογίου</translation>
+        <translation>Комбінації клавіш</translation>
     </message>
     <message>
         <source>Shift+P</source>
         <translation>Shift+P</translation>
     </message>
     <message>
+        <source>Dialog Navigation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Drop Down Box</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab</source>
+        <translation type="unfinished">Табуляція</translation>
+    </message>
+    <message>
+        <source>Move focus to the drop-down.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Up / Down Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cycle through items when the drop-down is closed or open.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt + Down Arrow or F4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open the drop-down list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enter or Return</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the currently highlighted item and close the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Escape</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the list without changing the selection.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letter Keys (A-Z)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tab Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move focus the tab bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left and Right Arrow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move the selection between adjacent tabs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Push Button</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spacebar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To trigger the focused push button.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default action if the push button is set as the default button in a dialog window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move focus to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Moves the selection to the previous or next item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home / End Keys</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Jumps directly to the first or last item in the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Page Up / Page Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Export PDF</source>
-        <translation>Εξαγωγή PDF</translation>
+        <translation>Експорт PDF</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Εισαγωγή κόμβων</translation>
+        <translation>Вставити вузли</translation>
     </message>
     <message>
         <source>Zoom 100%</source>
-        <translation>Ζουμ 100%</translation>
+        <translation>Збільшити на 100%</translation>
     </message>
     <message>
         <source>Ctrl+9</source>
@@ -11112,7 +11046,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Previous Draft Block</source>
-        <translation>Προηγούμενο μπλοκ προσχέδιου</translation>
+        <translation>Попередній чернетка блоку</translation>
     </message>
     <message>
         <source>Ctrl+PgUp</source>
@@ -11120,183 +11054,71 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Next Draft Block</source>
-        <translation>Επόμενο μπλοκάρισμα στο προσχέδιο</translation>
+        <translation>Наступний чернетка блоку</translation>
     </message>
     <message>
         <source>Ctrl+PgDown</source>
         <translation>Ctrl+PgDown</translation>
-    </message>
-    <message>
-        <source>Dialog Navigation</source>
-        <translation>Навігація в діалогових вікнах</translation>
-    </message>
-    <message>
-        <source>Drop Down Box</source>
-        <translation>Выпадаючий список</translation>
-    </message>
-    <message>
-        <source>Tab</source>
-        <translation>Табуляція</translation>
-    </message>
-    <message>
-        <source>Move focus to the drop-down.</source>
-        <translation>Перемістити фокус на випадаючий список.</translation>
-    </message>
-    <message>
-        <source>Up / Down Arrow</source>
-        <translation>Стрілка вгору / вниз</translation>
-    </message>
-    <message>
-        <source>Cycle through items when the drop-down is closed or open.</source>
-        <translation>Циклічний перебір елементів, коли випадаючий список закритий або відкритий.</translation>
-    </message>
-    <message>
-        <source>Alt + Down Arrow or F4</source>
-        <translation>Alt + Стрілка вниз або F4</translation>
-    </message>
-    <message>
-        <source>Open the drop-down list.</source>
-        <translation>Відкрити випадаючий список.</translation>
-    </message>
-    <message>
-        <source>Enter or Return</source>
-        <translation>Enter або Return</translation>
-    </message>
-    <message>
-        <source>Select the currently highlighted item and close the list.</source>
-        <translation>Вибрати поточний виділений елемент і закрити список.</translation>
-    </message>
-    <message>
-        <source>Escape</source>
-        <translation>Escape</translation>
-    </message>
-    <message>
-        <source>Close the list without changing the selection.</source>
-        <translation>Закрити список без зміни вибору.</translation>
-    </message>
-    <message>
-        <source>Letter Keys (A-Z)</source>
-        <translation>Буквені клавіші (A-Z)</translation>
-    </message>
-    <message>
-        <source>Type the first letters of an item name to jump directly to that item in the list.</source>
-        <translation>Введіть перші літери назви елемента, щоб перейти безпосередньо до цього елемента в списку.</translation>
-    </message>
-    <message>
-        <source>Tab Bar</source>
-        <translation>Панель вкладок</translation>
-    </message>
-    <message>
-        <source>Move focus the tab bar.</source>
-        <translation>Перемістити фокус на панель вкладок.</translation>
-    </message>
-    <message>
-        <source>Left and Right Arrow</source>
-        <translation>Стрілка вліво і вправо</translation>
-    </message>
-    <message>
-        <source>Move the selection between adjacent tabs.</source>
-        <translation>Перемістити виділення між сусідніми вкладками.</translation>
-    </message>
-    <message>
-        <source>Push Button</source>
-        <translation>Кнопка</translation>
-    </message>
-    <message>
-        <source>Spacebar</source>
-        <translation>Пробіл</translation>
-    </message>
-    <message>
-        <source>To trigger the focused push button.</source>
-        <translation>Активувати вибрану кнопку.</translation>
-    </message>
-    <message>
-        <source>Default action if the push button is set as the default button in a dialog window.</source>
-        <translation>Дія за замовчуванням, якщо кнопка задана як кнопка за замовчуванням у діалоговому вікні.</translation>
-    </message>
-    <message>
-        <source>List</source>
-        <translation>Список</translation>
-    </message>
-    <message>
-        <source>Move focus to the list.</source>
-        <translation>Перемістити фокус на список.</translation>
-    </message>
-    <message>
-        <source>Moves the selection to the previous or next item in the list.</source>
-        <translation>Переміщує виділення на попередній або наступний елемент у списку.</translation>
-    </message>
-    <message>
-        <source>Home / End Keys</source>
-        <translation>Клавіші Home / End</translation>
-    </message>
-    <message>
-        <source>Jumps directly to the first or last item in the list.</source>
-        <translation>Перехід безпосередньо до першого або останнього елемента в списку.</translation>
-    </message>
-    <message>
-        <source>Page Up / Page Down</source>
-        <translation>Page Up / Page Down</translation>
     </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
     <message>
         <source>toggle the first dart visibility</source>
-        <translation>εναλλαγή ορατότητας πρώτου βέλους</translation>
+        <translation>перемикання видимості першої дротики</translation>
     </message>
     <message>
         <source>toggle the second dart visibility</source>
-        <translation>εναλλαγή ορατότητας δεύτερου βέλους</translation>
+        <translation>перемикання видимості другої дротики</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoDialog</name>
     <message>
         <source>Document Information</source>
-        <translation>Πληροφορίες Εγγράφου</translation>
+        <translation>Інформація про документ</translation>
     </message>
     <message>
         <source>Copy info to clipboard</source>
-        <translation>Αντιγραφή πληροφοριών στο πρόχειρο</translation>
+        <translation>Копіювати інформацію в буфер обміну</translation>
     </message>
     <message>
         <source>Export info as PDF</source>
-        <translation>Εξαγωγή πληροφοριών ως PDF</translation>
+        <translation>Експортувати інформацію у форматі PDF</translation>
     </message>
     <message>
         <source>Send info to the Printer</source>
-        <translation>Αποστολή πληροφοριών στον εκτυπωτή</translation>
+        <translation>Надіслати інформацію на принтер</translation>
     </message>
     <message>
         <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Εταιρεία: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Πελάτης: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Όνομα μοτίβου:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Αριθμός μοτίβου: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Έκδοση: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Μονάδες: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = δεξιά&gt;&lt;b&gt;Μετρήσεις:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = δεξιά&gt;&lt;b&gt;Περιγραφή: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = δεξιά&gt;&lt;b&gt;Σημειώσεις: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = δεξιά&gt;&lt;b&gt;Εικόνα: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
+        <translation>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Компанія: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Клієнт: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Назва шаблону:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Номер шаблону: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Версія: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Одиниці виміру: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = праворуч&gt;&lt;b&gt;Розміри:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Опис: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Примітки: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Зображення: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
         <source>Info files</source>
-        <translation>Αρχεία πληροφοριών</translation>
+        <translation>Інформаційні файли</translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Εξαγωγή PDF</translation>
+        <translation>Експорт PDF</translation>
     </message>
     <message>
         <source>_info</source>
-        <translation>_info</translation>
+        <translation>_інформація</translation>
     </message>
 </context>
 <context>
     <name>ShowOperationPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>ορατότητα σημείου εναλλαγής</translation>
+        <translation>видимість точки перемикання</translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>ορατότητα σημείου εναλλαγής</translation>
+        <translation>видимість точки перемикання</translation>
     </message>
 </context>
 <context>
@@ -11308,14 +11130,6 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Name</source>
         <translation>Позначення</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значення</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Значення:</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -11339,7 +11153,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>Formula:</source>
@@ -11372,6 +11186,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Full name:</source>
         <translation>Повне ім&apos;я:</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Information</source>
@@ -11444,6 +11262,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Measurements</source>
         <translation>Мірки</translation>
+    </message>
+    <message>
+        <source>Seach by regular expression</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search by full word</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Menu</source>
@@ -11562,6 +11392,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Empty field</source>
         <translation>Пусте поле</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -11759,6 +11593,13 @@ Do you want to save your changes?</source>
         <translation>Всі файли</translation>
     </message>
     <message>
+        <source>You will receive an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The measurements document has no write permissions.</source>
         <translation>Документ мірок не має прав на запис.</translation>
     </message>
@@ -11773,6 +11614,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Could not save the file</source>
         <translation>Не вдалося зберегти файл</translation>
+    </message>
+    <message>
+        <source>Custom measurement</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>read only</source>
@@ -11792,11 +11637,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Open multisize ...</source>
-        <translation>Άνοιγμα πολλαπλών μεγεθών ...</translation>
+        <translation>Відкрити багаторозмірний ...</translation>
     </message>
     <message>
         <source>Export from multisize measurements is not supported.</source>
-        <translation>Η εξαγωγή από μετρήσεις πολλαπλών μεγεθών δεν υποστηρίζεται.</translation>
+        <translation>Експорт з вимірювань кількох розмірів не підтримується.</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
@@ -11812,7 +11657,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Έξοδος</translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -11828,23 +11673,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+,</source>
-        <translation>Ctrl+,</translation>
+        <translation>Ctrl+</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation>Συντομεύσεις</translation>
+        <translation>Скорочені шляхи</translation>
     </message>
     <message>
         <source>K</source>
-        <translation>Κ</translation>
+        <translation> К </translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Αποτυχία κλειδώματος. Αυτό το αρχείο έχει ήδη ανοιχτεί σε άλλο παράθυρο. Αναμένονται συγκρούσεις κατά την εκτέλεση 2 αντιγράφων του προγράμματος.</translation>
+        <translation>Не вдалося заблокувати. Цей файл вже відкрито в іншому вікні. Очікуйте колізії під час запуску 2 копій програми.</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Παιδί</translation>
+        <translation>Друк</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -11852,7 +11697,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Number</source>
-        <translation>Αριθμός</translation>
+        <translation>Число</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -11860,7 +11705,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation>Αντιγραφή στο πρόχειρο</translation>
+        <translation>Копіювати в буфер обміну</translation>
     </message>
     <message>
         <source>Open template ...</source>
@@ -11888,116 +11733,90 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import body scan as</source>
-        <translation>Εισαγωγή σάρωσης σώματος ως</translation>
+        <translation>Імпортувати сканування тіла як</translation>
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation>Μέτρηση 3D</translation>
+        <translation>3D-вимірювання</translation>
     </message>
     <message>
         <source>3D Look</source>
-        <translation>Τρισδιάστατη εμφάνιση</translation>
+        <translation>3D-вигляд</translation>
     </message>
     <message>
         <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
 </source>
-        <translation>Για να χρησιμοποιήσετε μια σάρωση σώματος 3DLook, το αρχείο πρέπει να μετατραπεί σε μορφή SeamlyME.
+        <translation>Щоб використовувати сканування тіла 3DLook, файл потрібно конвертувати у формат SeamlyME.
 </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
 </source>
-        <translation>Επισυνάψτε το αρχείο 3DLook σε ένα email και στείλτε το στη διεύθυνση convert@seamly.io.
-
-</translation>
-    </message>
-    <message>
-        <source>You will receive an email with the converted file, which you can then
-load in SeamlyME as usual.
-
-</source>
-        <translation>Θα λάβετε ένα email με το αρχείο που έχει μετατραπεί, το οποίο μπορείτε στη συνέχεια να
-φορτώσετε στο SeamlyME ως συνήθως.
+        <translation>Додайте файл 3DLook до електронного листа та надішліть його на адресу convert@seamly.io.
 
 </translation>
     </message>
     <message>
         <source>Convert 3DLook file:</source>
-        <translation>Μετατροπή αρχείου 3DLook:</translation>
-    </message>
-    <message>
-        <source>Case sensitive</source>
-        <translation>Враховуючи регістр</translation>
-    </message>
-    <message>
-        <source>Search by full word</source>
-        <translation>Пошук за повним словом</translation>
-    </message>
-    <message>
-        <source>Seach by regular expression</source>
-        <translation>Пошук за регулярним виразом</translation>
-    </message>
-    <message>
-        <source>Custom measurement</source>
-        <translation>Індивідуальні заміри</translation>
+        <translation>Конвертувати файл 3DLook:</translation>
     </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Τμήμα στη λίστα διάταξης</translation>
+        <translation>Елемент у списку макетів</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Η συμπερίληψη του κομματιού στη διάταξη άλλαξε: </translation>
+        <translation>Змінено макет елемента &quot;Включити елемент&quot;:</translation>
     </message>
     <message>
         <source>Include</source>
-        <translation>Συμπερίληψη</translation>
+        <translation>Включити</translation>
     </message>
     <message>
         <source>Exclude</source>
-        <translation>Εξαίρεση</translation>
+        <translation>Виключити</translation>
     </message>
 </context>
 <context>
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>Κλείδωμα με μοτίβο</translation>
+        <translation>Замок візерунка</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
-        <translation>Αλλαγή κλειδώματος κομματιού: </translation>
+        <translation>Фіксацію елемента змінено: </translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation>Κλειδωμένο</translation>
+        <translation>Заблоковано</translation>
     </message>
     <message>
         <source>Unlocked</source>
-        <translation>Ξεκλείδωτο</translation>
+        <translation>Розблоковано</translation>
     </message>
 </context>
 <context>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
-        <translation>Инструмент об&apos;єднання</translation>
+        <translation>Інструмент об&apos;єднання</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Чи ви праводі хочете об&apos;єднати λεπτομέρειες?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Чи ви справді хочете об&apos;єднати деталі?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select the first point</source>
-        <translation>Επιλέξτε το πρώτο σημείο</translation>
+        <translation>Виберіть першу точку</translation>
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
-        <translation>Το κομμάτι του μοτίβου θα πρέπει να έχει τουλάχιστον δύο σημεία και τρία αντικείμενα</translation>
+        <translation>Елемент візерунка повинен мати щонайменше дві точки та три об&apos;єкти</translation>
     </message>
     <message>
         <source>Select a second point</source>
@@ -12005,11 +11824,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Select a unique point</source>
-        <translation>Viberіtь унікальну точку</translation>
+        <translation>Виберіть унікальну точку</translation>
     </message>
     <message>
         <source>Select a piece</source>
-        <translation>Επιλέξτε ένα κομμάτι</translation>
+        <translation>Виберіть фрагмент</translation>
     </message>
     <message>
         <source>Select a point on edge</source>
@@ -12020,7 +11839,7 @@ load in SeamlyME as usual.
     <name>UnionTool</name>
     <message>
         <source>union pieces</source>
-        <translation>κομμάτια ένωσης</translation>
+        <translation>спільні елементи</translation>
     </message>
 </context>
 <context>
@@ -12057,6 +11876,10 @@ load in SeamlyME as usual.
         <translation>Версія &quot;0.0.0&quot; не дійсне.</translation>
     </message>
     <message>
+        <source>Error creating a backup copy: %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Invalid version. Minimum supported version is %1</source>
         <translation>Не правильна весрія. Мінімально підтримувана %1</translation>
     </message>
@@ -12071,10 +11894,6 @@ load in SeamlyME as usual.
     <message>
         <source>Could not change version.</source>
         <translation>Не давлося змінити версію.</translation>
-    </message>
-    <message>
-        <source>Error creating a backup copy: %1.</source>
-        <translation>Помилка створення резервної копії: %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
@@ -12096,26 +11915,26 @@ load in SeamlyME as usual.
     <name>VAbstractMainWindow</name>
     <message>
         <source>Confirm format rewriting</source>
-        <translation>Επιβεβαίωση επανεγγραφής μορφής</translation>
+        <translation>Підтвердити перезапис формату</translation>
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation>Αυτό το αρχείο χρησιμοποιεί την προηγούμενη έκδοση μορφής v%1. Η τρέχουσα είναι v%2. Η αποθήκευση του αρχείου με αυτήν την έκδοση εφαρμογής θα ενημερώσει την έκδοση μορφής για αυτό το αρχείο. Αυτό μπορεί να σας εμποδίσει να ανοίξετε το αρχείο με παλαιότερες εκδόσεις εφαρμογής. Θέλετε πραγματικά να συνεχίσετε?</translation>
+        <translation>Цей файл використовує попередню версію формату v%1. Поточна версія — v%2. Збереження файлу з цією версією програми оновить версію формату для цього файлу. Це може перешкодити вам відкрити файл зі старішими версіями програми. Ви дійсно хочете продовжити?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
-        <translation>Τιμές διαχωρισμένες με κόμμα</translation>
+        <translation>Значення, розділені комами</translation>
     </message>
     <message>
         <source>Export to CSV</source>
-        <translation>Εξαγωγή στο CSV</translation>
+        <translation>Експортувати до CSV</translation>
     </message>
 </context>
 <context>
     <name>VAbstractOperation</name>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
     <message>
         <source>Length</source>
@@ -12138,14 +11957,14 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>New group 2</source>
-        <translation>Νέα ομάδα 2</translation>
+        <translation>Нова група 2</translation>
     </message>
 </context>
 <context>
     <name>VAbstractPieceData</name>
     <message>
         <source>Piece</source>
-        <translation>Κομμάτι</translation>
+        <translation>Шматок</translation>
     </message>
 </context>
 <context>
@@ -12156,7 +11975,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -12175,215 +11994,215 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Green</source>
-        <translation>Πράσινο</translation>
+        <translation>Зелений</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation>Μπλε</translation>
+        <translation>Синій</translation>
     </message>
     <message>
         <source>Dark Red</source>
-        <translation>Σκούρο κόκκινο</translation>
+        <translation>Темно-червоний</translation>
     </message>
     <message>
         <source>Dark Green</source>
-        <translation>Σκούρο πράσινο</translation>
+        <translation>Темно-зелений</translation>
     </message>
     <message>
         <source>Dark Blue</source>
-        <translation>Σκούρο μπλε</translation>
+        <translation>Темно-синій</translation>
     </message>
     <message>
         <source>Yellow</source>
-        <translation>Κίτρινο</translation>
+        <translation>Жовтий</translation>
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Ελαφρύς Σολομός</translation>
+        <translation>Світлий лосось</translation>
     </message>
     <message>
         <source>Goldenrod</source>
-        <translation>Χρυσόβεργα</translation>
+        <translation>Золотарник</translation>
     </message>
     <message>
         <source>Orange</source>
-        <translation>Πορτοκαλί</translation>
+        <translation>Помаранчевий</translation>
     </message>
     <message>
         <source>Deep Pink</source>
-        <translation>Βαθύ Ροζ</translation>
+        <translation>Насичений рожевий</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation>Βιολετί</translation>
+        <translation>Фіолетовий</translation>
     </message>
     <message>
         <source>Dark Violet</source>
-        <translation>Σκούρο βιολετί</translation>
+        <translation>Темно-фіолетовий</translation>
     </message>
     <message>
         <source>Medium Sea Green</source>
-        <translation>Μεσαίο Θαλασσί Πράσινο</translation>
+        <translation>Середній морський зелений</translation>
     </message>
     <message>
         <source>Lime</source>
-        <translation>Λάιμ</translation>
+        <translation>Лайм</translation>
     </message>
     <message>
         <source>Deep Sky Blue</source>
-        <translation>Βαθύ γαλάζιο του ουρανού</translation>
+        <translation>Глибокий небесно-блакитний</translation>
     </message>
     <message>
         <source>Corn Flower Blue</source>
-        <translation>Μπλε άνθος καλαμποκιού</translation>
+        <translation>Кукурудзяна квітка синя</translation>
     </message>
     <message>
         <source>Black</source>
-        <translation>Μαύρο</translation>
+        <translation>Чорний</translation>
     </message>
     <message>
         <source>Gold</source>
-        <translation>Χρυσός</translation>
+        <translation>Золото</translation>
     </message>
     <message>
         <source>Forest Green</source>
-        <translation>Πράσινο Δάσος</translation>
+        <translation>Лісова зелень</translation>
     </message>
     <message>
         <source>Lawn Green</source>
-        <translation>Πράσινο γκαζόν</translation>
+        <translation>Газон зелений</translation>
     </message>
     <message>
         <source>Lime Green</source>
-        <translation>Λαχανί πράσινο</translation>
+        <translation>Саймово-зелений</translation>
     </message>
     <message>
         <source>Green Yellow</source>
-        <translation>Πράσινο Κίτρινο</translation>
+        <translation>Зелено-жовтий</translation>
     </message>
     <message>
         <source>Sandy Brown</source>
-        <translation>Σάντι Μπράουν</translation>
+        <translation>Піщано-коричневий</translation>
     </message>
     <message>
         <source>Orange Red</source>
-        <translation>Πορτοκαλί Κόκκινο</translation>
+        <translation>Помаранчево-червоний</translation>
     </message>
     <message>
         <source>Maroon</source>
-        <translation>Μαύρο-καφέ</translation>
+        <translation>Бордовий</translation>
     </message>
     <message>
         <source>Pink</source>
-        <translation>Ροζ</translation>
+        <translation>Рожевий</translation>
     </message>
     <message>
         <source>Hot Pink</source>
-        <translation>Καυτό Ροζ</translation>
+        <translation>Яскраво-рожевий</translation>
     </message>
     <message>
         <source>Blue Violet</source>
-        <translation>Μπλε βιολετί</translation>
+        <translation>Синя фіалка</translation>
     </message>
     <message>
         <source>Medium Violet Red</source>
-        <translation>Μεσαίο βιολετί κόκκινο</translation>
+        <translation>Середній фіолетово-червоний</translation>
     </message>
     <message>
         <source>Indigo</source>
-        <translation>Ίντιγκο</translation>
+        <translation>Індиго</translation>
     </message>
     <message>
         <source>Purple</source>
-        <translation>Μωβ</translation>
+        <translation>Фіолетовий</translation>
     </message>
     <message>
         <source>Plum</source>
-        <translation>Δαμάσκηνο</translation>
+        <translation>Слива</translation>
     </message>
     <message>
         <source>Turquoise</source>
-        <translation>Τυρκουάζ</translation>
+        <translation>Бірюзовий</translation>
     </message>
     <message>
         <source>Medium Turquoise</source>
-        <translation>Μεσαίο Τυρκουάζ</translation>
+        <translation>Середній бірюзовий</translation>
     </message>
     <message>
         <source>Powder Blue</source>
-        <translation>Μπλε πούδρας</translation>
+        <translation>Пудровий синій</translation>
     </message>
     <message>
         <source>Light Sky Blue</source>
-        <translation>Ανοιχτό γαλάζιο</translation>
+        <translation>Світло-блакитний</translation>
     </message>
     <message>
         <source>Navy</source>
-        <translation>Ναυτικό</translation>
+        <translation>Військово-морський флот</translation>
     </message>
     <message>
         <source>Magenta</source>
-        <translation>Ματζέντα</translation>
+        <translation>Пурпуровий</translation>
     </message>
     <message>
         <source>Dark Slate Grey</source>
-        <translation>Σκούρο γκρι σχιστόλιθου</translation>
+        <translation>Темно-сірий сланцевий</translation>
     </message>
     <message>
         <source>Grey</source>
-        <translation>Γκρι</translation>
+        <translation>Сірий</translation>
     </message>
     <message>
         <source>Gainsboro</source>
-        <translation>Γκέινσμπορο</translation>
+        <translation>Гейнсборо</translation>
     </message>
     <message>
         <source>Dark Sea Green</source>
-        <translation>Σκούρο Θαλασσί Πράσινο</translation>
+        <translation>Темно-зелений морської хвилі</translation>
     </message>
     <message>
         <source>Light Grey</source>
-        <translation>Ανοιχτό γκρι</translation>
+        <translation>Світло-сірий</translation>
     </message>
     <message>
         <source>Light Steel Blue</source>
-        <translation>Ανοιχτό μπλε ατσάλι</translation>
-    </message>
-    <message>
-        <source>Thistle</source>
-        <translation>Γαϊδουράγκαθο</translation>
-    </message>
-    <message>
-        <source>Silver</source>
-        <translation>Ασημένιο</translation>
-    </message>
-    <message>
-        <source>White Smoke</source>
-        <translation>Λευκός Καπνός</translation>
-    </message>
-    <message>
-        <source>White</source>
-        <translation>Λευκό</translation>
-    </message>
-    <message>
-        <source>Dark Grey</source>
-        <translation>Σκούρο γκρι</translation>
-    </message>
-    <message>
-        <source>Cadet Blue</source>
-        <translation>Μπλε Cadet</translation>
-    </message>
-    <message>
-        <source>Dark Khaki</source>
-        <translation>Σκούρο Χακί</translation>
-    </message>
-    <message>
-        <source>Tan</source>
-        <translation>Μαύρο</translation>
+        <translation>Світло-сталевий синій</translation>
     </message>
     <message>
         <source>Beige</source>
-        <translation>Бежевий</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Thistle</source>
+        <translation>Чортополох</translation>
+    </message>
+    <message>
+        <source>Silver</source>
+        <translation>Срібло</translation>
+    </message>
+    <message>
+        <source>White Smoke</source>
+        <translation>Білий дим</translation>
+    </message>
+    <message>
+        <source>White</source>
+        <translation>Білий</translation>
+    </message>
+    <message>
+        <source>Dark Grey</source>
+        <translation>Темно-сірий</translation>
+    </message>
+    <message>
+        <source>Cadet Blue</source>
+        <translation>Кадетський синій</translation>
+    </message>
+    <message>
+        <source>Dark Khaki</source>
+        <translation>Темний хакі</translation>
+    </message>
+    <message>
+        <source>Tan</source>
+        <translation>Засмага</translation>
     </message>
 </context>
 <context>
@@ -12409,8 +12228,28 @@ load in SeamlyME as usual.
         <translation>Ширина аркушу</translation>
     </message>
     <message>
+        <source>The page height</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The measure unit</source>
         <translation>Одиниця вимірюванния мірок</translation>
+    </message>
+    <message>
+        <source>The left margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The right margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The bottom margin</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle</source>
@@ -12529,6 +12368,14 @@ load in SeamlyME as usual.
         <translation>Шлях до папки призначення виводу. За замовчуванням, це каталог, в якому була запущена програма.</translation>
     </message>
     <message>
+        <source>Seamly2D open source patternmaking program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seamly2D pattern file (.sm2d)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Page height/width measure units (cannot be used with &quot;%1&quot;, export mode). Valid values: %2.</source>
         <translation>Одиниці вимірювання висоти та ширини сторінки (неможливо використовувати разом з &quot;%1&quot;, режим експорту). Допустимі значення: %2.</translation>
     </message>
@@ -12602,51 +12449,23 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Export dxf in binary form.</source>
-        <translation>Εξαγωγή dxf σε δυαδική μορφή.</translation>
+        <translation>Експортувати dxf у двійковому форматі.</translation>
     </message>
     <message>
         <source>Export text as paths.</source>
-        <translation>Εξαγωγή κειμένου ως διαδρομές.</translation>
+        <translation>Експортувати текст як шляхи.</translation>
     </message>
     <message>
         <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>Εξαγωγή μόνο λεπτομερειών. Εξαγωγή λεπτομερειών όπως αυτές τοποθετήθηκαν στη λειτουργία λεπτομερειών. Οποιεσδήποτε επιλογές που σχετίζονται με τη διάταξη θα αγνοηθούν.</translation>
+        <translation>Експортувати лише деталі. Експортувати деталі так, як вони були розташовані в режимі деталей. Будь-які параметри, пов&apos;язані з макетом, будуть проігноровані.</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Ορίστε την τιμή μεγέθους ενός αρχείου μοτίβου, το οποίο ανοίχτηκε με μετρήσεις πολλαπλών μεγεθών (λειτουργία εξαγωγής). Έγκυρες τιμές: %1cm.</translation>
+        <translation>Встановити значення розміру файлу візерунка, який було відкрито з вимірюваннями кількох розмірів (режим експорту). Дійсні значення: %1см.</translation>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Ορίστε την τιμή ύψους σε ένα αρχείο μοτίβου, το οποίο άνοιξε με μετρήσεις πολλαπλών μεγεθών (λειτουργία εξαγωγής). Έγκυρες τιμές: %1cm.</translation>
-    </message>
-    <message>
-        <source>Seamly2D open source patternmaking program.</source>
-        <translation>Seamly2D з відкритим вихідним кодом.</translation>
-    </message>
-    <message>
-        <source>Seamly2D pattern file (.sm2d)</source>
-        <translation>Файл шаблону Seamly2D (.sm2d)</translation>
-    </message>
-    <message>
-        <source>The page height</source>
-        <translation>Висота сторінки</translation>
-    </message>
-    <message>
-        <source>The left margin</source>
-        <translation>Ліве поле</translation>
-    </message>
-    <message>
-        <source>The right margin</source>
-        <translation>Праве поле</translation>
-    </message>
-    <message>
-        <source>The top margin</source>
-        <translation>Верхнє поле</translation>
-    </message>
-    <message>
-        <source>The bottom margin</source>
-        <translation>Нижнє поле</translation>
+        <translation>Встановити значення висоти файлу візерунка, який було відкрито з багаторозмірними вимірюваннями (режим експорту). Дійсні значення: %1 см.</translation>
     </message>
 </context>
 <context>
@@ -12669,19 +12488,19 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>images</source>
-        <translation>εικόνες</translation>
+        <translation>зображення</translation>
     </message>
     <message>
         <source>label templates</source>
-        <translation>πρότυπα ετικετών</translation>
+        <translation>шаблони етикеток</translation>
     </message>
     <message>
         <source>backups</source>
-        <translation>αντίγραφα ασφαλείας</translation>
+        <translation>резервні копії</translation>
     </message>
     <message>
         <source>bodyscans</source>
-        <translation>σάρωση σώματος</translation>
+        <translation>сканування тіла</translation>
     </message>
 </context>
 <context>
@@ -12708,23 +12527,23 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Can&apos;t find object: </source>
-        <translation>Δεν είναι δυνατή η εύρεση του αντικειμένου: </translation>
+        <translation>Не вдається знайти об&apos;єкт: </translation>
     </message>
     <message>
         <source>Can&apos;t find piece: </source>
-        <translation>Δεν είναι δυνατή η εύρεση του κομματιού: </translation>
+        <translation>Не можу знайти фрагмент: </translation>
     </message>
     <message>
         <source>Can&apos;t find path: </source>
-        <translation>Δεν είναι δυνατή η εύρεση της διαδρομής: </translation>
+        <translation>Не вдається знайти шлях: </translation>
     </message>
     <message>
         <source>Can&apos;t find object Id: </source>
-        <translation>Δεν είναι δυνατή η εύρεση του αναγνωριστικού αντικειμένου: </translation>
+        <translation>Не вдається знайти ідентифікатор об&apos;єкта: </translation>
     </message>
     <message>
         <source>Can&apos;t cast object.</source>
-        <translation>Δεν είναι δυνατή η μετάδοση αντικειμένου.</translation>
+        <translation>Не вдається перетворити об&apos;єкт.</translation>
     </message>
 </context>
 <context>
@@ -12768,22 +12587,21 @@ load in SeamlyME as usual.
         <translation>Не вдалося записати канонічний XML.</translation>
     </message>
     <message>
-        <source>&lt;empty&gt;</source>
-        <translation>&lt;κενό&gt;</translation>
-    </message>
-    <message>
         <source>Couldn&apos;t load schema</source>
-        <translation>Не вдалося завантажити схему</translation>
-    </message>
-    <message>
-        <source>Validation error file %1</source>
-        <translation>Файл помилки перевірки %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Can&apos;t open pattern file %1:
 %2.</source>
-        <translation>Не вдається відкрити файл візерунка %1:
-%2.</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Validation error file %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;empty&gt;</source>
+        <translation>&lt;порожньо&gt;</translation>
     </message>
 </context>
 <context>
@@ -12794,19 +12612,31 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Properties</source>
-        <translation>Ιδιότητες</translation>
+        <translation>Властивості</translation>
     </message>
     <message>
         <source>Show Point Name</source>
-        <translation>Εμφάνιση ονόματος σημείου</translation>
+        <translation>Показати назву точки</translation>
+    </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation type="unfinished">Перемістити груповий об&apos;єкт</translation>
+    </message>
+    <message>
+        <source>From </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> to </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Add Group Object</source>
-        <translation>Προσθήκη αντικειμένου ομάδας</translation>
+        <translation>Додати груповий об&apos;єкт</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Κατάργηση αντικειμένου ομάδας</translation>
+        <translation>Видалити груповий об&apos;єкт</translation>
     </message>
     <message>
         <source>Line_</source>
@@ -12814,11 +12644,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Ντούγκα_</translation>
+        <translation>Дуга_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation>ЕлДуга_</translation>
+        <translation>ЕлАрк_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -12826,11 +12656,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Διαδρομή____</translation>
+        <translation>Шлях_сполучення</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Αντιγραφή</translation>
+        <translation>Копія</translation>
     </message>
     <message>
         <source>Length</source>
@@ -12838,23 +12668,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>AngleLine_</source>
         <translation>КутЛінії_</translation>
-    </message>
-    <message>
-        <source>Move Group Object</source>
-        <translation>Μετακίνηση αντικειμένου ομάδας</translation>
-    </message>
-    <message>
-        <source>From </source>
-        <translation>Від </translation>
-    </message>
-    <message>
-        <source> to </source>
-        <translation> до </translation>
     </message>
 </context>
 <context>
@@ -12889,15 +12707,15 @@ load in SeamlyME as usual.
     <name>VNodePoint</name>
     <message>
         <source>Show Point Name</source>
-        <translation>Εμφάνιση ονόματος σημείου</translation>
+        <translation>Показати назву точки</translation>
     </message>
     <message>
         <source>Seam Allowance Angle</source>
-        <translation>Γωνία επιτρεπόμενης ραφής</translation>
+        <translation>Кут припуску на шов</translation>
     </message>
     <message>
         <source>By length</source>
-        <translation>Κατά μήκος</translation>
+        <translation>За довжиною</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -12905,67 +12723,87 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>First edge symmetry</source>
-        <translation>Συμμετρία πρώτης ακμής</translation>
+        <translation>Симетрія першого ребра</translation>
     </message>
     <message>
         <source>Second edge symmetry</source>
-        <translation>Συμμετρία δεύτερης ακμής</translation>
+        <translation>Симетрія другого ребра</translation>
     </message>
     <message>
         <source>First edge right angle</source>
-        <translation>Πρώτη ορθή γωνία ακμής</translation>
+        <translation>Перший край прямий кут</translation>
     </message>
     <message>
         <source>Second edge right angle</source>
-        <translation>Δεύτερη ακμή ορθή γωνία</translation>
+        <translation>Друге ребро під прямим кутом</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Συμβουλή</translation>
+        <translation>Тип</translation>
+    </message>
+    <message>
+        <source>Show Cut Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Line Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make Default Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Notch</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Notch</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>Σχισμή</translation>
+        <translation>Щілина</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>TNotch</translation>
+        <translation>ТНотч</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>UNotch</translation>
+        <translation>ЮНотч</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>Εσωτερικό</translation>
+        <translation>VInternal</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>Εξωτερικό</translation>
+        <translation>VExternal</translation>
     </message>
     <message>
         <source>Castle</source>
-        <translation>Κάστρο</translation>
+        <translation>Замок</translation>
     </message>
     <message>
         <source>Diamond</source>
-        <translation>Διαμάντι</translation>
+        <translation>Діамант</translation>
     </message>
     <message>
         <source>Subtype</source>
-        <translation>Υποτύπος</translation>
+        <translation>Підтип</translation>
     </message>
     <message>
         <source>Straightforward</source>
-        <translation>Πράια</translation>
+        <translation>Пряма</translation>
     </message>
     <message>
         <source>Bisector</source>
-        <translation>Βίσεκτρες</translation>
+        <translation>Бісектриса</translation>
     </message>
     <message>
         <source>Count</source>
-        <translation>Αριθμός</translation>
+        <translation>Графік</translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -12974,26 +12812,6 @@ load in SeamlyME as usual.
     <message>
         <source>Delete</source>
         <translation>Видалити</translation>
-    </message>
-    <message>
-        <source>Show Cut Line Notch</source>
-        <translation>Показати надсічку лінії розкрою</translation>
-    </message>
-    <message>
-        <source>Show Seam Line Notch</source>
-        <translation>Показати надсічку лінії шва</translation>
-    </message>
-    <message>
-        <source>Make Default Notch</source>
-        <translation>Зробити надсічкою за замовчуванням</translation>
-    </message>
-    <message>
-        <source>Edit Notch</source>
-        <translation>Редагувати надсічку</translation>
-    </message>
-    <message>
-        <source>Remove Notch</source>
-        <translation>Вилучити надсічку</translation>
     </message>
 </context>
 <context>
@@ -13230,39 +13048,39 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Error creating or updating anchor point</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση του σημείου αγκύρωσης</translation>
+        <translation>Помилка створення або оновлення точки прив&apos;язки</translation>
     </message>
     <message>
         <source>Error creating or updating Intersect XY tool</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση του εργαλείου Intersect XY</translation>
+        <translation>Помилка створення або оновлення інструмента Intersect XY</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by line</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση της λειτουργίας του κατοπτρισμού ανά γραμμή</translation>
+        <translation>Помилка створення або оновлення операції дзеркала по рядку</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by axis</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση της λειτουργίας του κατοπτρισμού ανά άξονα</translation>
+        <translation>Помилка створення або оновлення операції дзеркалювання за віссю</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation>Κομμάτι</translation>
+        <translation>Шматок</translation>
     </message>
     <message>
         <source>Error creating or updating piece</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση του κομματιού</translation>
+        <translation>Помилка створення або оновлення елемента</translation>
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation>Σφάλμα κατά τη δημιουργία ή την ενημέρωση των κομματιών ένωσης</translation>
+        <translation>Помилка створення або оновлення об&apos;єднувальних елементів</translation>
     </message>
     <message>
         <source>Image_name</source>
-        <translation>Όνομα_εικόνας</translation>
+        <translation>Назва_зображення</translation>
     </message>
     <message>
         <source>Piece path doesn&apos;t contain nodes</source>
-        <translation>Η διαδρομή του κομματιού δεν περιέχει κόμβους</translation>
+        <translation>Шлях фрагмента не містить вузлів</translation>
     </message>
 </context>
 <context>
@@ -13310,163 +13128,163 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
     <name>VToolArc</name>
     <message>
         <source>Start angle</source>
-        <translation>Αρχική γωνία</translation>
+        <translation>Початковий кут</translation>
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Μήκος</translation>
+        <translation>Довжина</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Ακτίνα</translation>
+        <translation>Радіус</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Τελική γωνία</translation>
+        <translation>Кінець кута</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Ετικέτα</translation>
+        <translation>Мітка</translation>
     </message>
 </context>
 <context>
     <name>VToolArcWithLength</name>
     <message>
         <source>Start angle</source>
-        <translation>Αρχική γωνία</translation>
+        <translation>Початковий кут</translation>
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Μήκος</translation>
+        <translation>Довжина</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>     Ακτίνα</translation>
+        <translation>Радіус</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Τελική γωνία</translation>
+        <translation>Кінець кута</translation>
     </message>
     <message>
         <source>      Name</source>
-        <translation>      Όνομα</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <source>      Tool</source>
-        <translation>      Εργαλείο</translation>
+        <translation>Інструмент</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Τόξο - Ακτίνα και Μήκος</translation>
+        <translation>Дуга - радіус і довжина</translation>
     </message>
 </context>
 <context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η δημιουργία σημείου τομής %1 από το σημείο %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;στην καμπύλη %3 με γωνία άξονα %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Χρήση σημείου αρχής ως placeholder μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Неможливо створити точку перетину %1 з точки %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;з кривою %3 з кутом осі %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Використання початкової точки як тимчасового ланцюжка, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Σημείο τομής καμπύλης και άξονα</translation>
+        <translation>Точка перетину кривої та осі</translation>
     </message>
 </context>
 <context>
     <name>VToolCutArc</name>
     <message>
         <source>Arc</source>
-        <translation>Ντούγκα</translation>
+        <translation>Дуга</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>μήκος</translation>
+        <translation>довжина</translation>
     </message>
     <message>
         <source>start angle</source>
-        <translation>αρχική γωνία</translation>
+        <translation>кут початку</translation>
     </message>
     <message>
         <source>end angle</source>
-        <translation>τελική γωνία</translation>
+        <translation>кінцевий кут</translation>
     </message>
     <message>
         <source>radius</source>
-        <translation>ακτίνα</translation>
+        <translation>радіус</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>ετικέτα</translation>
+        <translation>мітка</translation>
     </message>
 </context>
 <context>
     <name>VToolCutSpline</name>
     <message>
         <source>Curve</source>
-        <translation>Κρίβα</translation>
+        <translation>Крива</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>μήκος</translation>
+        <translation>довжина</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>ετικέτα</translation>
+        <translation>мітка</translation>
     </message>
 </context>
 <context>
     <name>VToolCutSplinePath</name>
     <message>
         <source>Curve</source>
-        <translation>Κρίβα</translation>
+        <translation>Крива</translation>
     </message>
     <message>
         <source>length</source>
-        <translation>μήκος</translation>
+        <translation>довжина</translation>
     </message>
     <message>
         <source>label</source>
-        <translation>ετικέτα</translation>
+        <translation>мітка</translation>
     </message>
 </context>
 <context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
     <message>
         <source>Start angle</source>
-        <translation>Αρχική γωνία</translation>
+        <translation>Початковий кут</translation>
     </message>
     <message>
         <source>     Length</source>
-        <translation>     Μήκος</translation>
+        <translation>Довжина</translation>
     </message>
     <message>
         <source>    Radius</source>
-        <translation>    Ακτίνα</translation>
+        <translation>Радіус</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>  Τελική γωνία</translation>
+        <translation>Кінець кута</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>      Ετικέτα</translation>
+        <translation>Мітка</translation>
     </message>
 </context>
 <context>
@@ -13477,11 +13295,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -13492,14 +13310,14 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
 </context>
 <context>
     <name>VToolLineIntersect</name>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -13510,19 +13328,19 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 της&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Γραμμής και του Άξονα&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Χρήση του σημείου αρχής ως δείκτης θέσης μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Лінії та осі&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Використання початкової точки як тимчасового заповнювача, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Τομή ευθείας και άξονα</translation>
+        <translation>Перетин лінії та осі</translation>
     </message>
 </context>
 <context>
@@ -13533,29 +13351,29 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
     <name>VToolMirrorByAxis</name>
     <message>
         <source>Origin point</source>
-        <translation>Σημείο προέλευσης</translation>
+        <translation>Точка відправлення</translation>
     </message>
 </context>
 <context>
     <name>VToolMirrorByLine</name>
     <message>
         <source>First line point</source>
-        <translation>Persha point lіnії</translation>
+        <translation>Перша точка лінії</translation>
     </message>
     <message>
         <source>Second line point</source>
-        <translation>Druga point lіnії</translation>
+        <translation>Друга точка лінії</translation>
     </message>
 </context>
 <context>
@@ -13566,7 +13384,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Length</source>
@@ -13574,11 +13392,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Rotation point</source>
-        <translation>Σημείο περιστροφής</translation>
+        <translation>Точка обертання</translation>
     </message>
     <message>
         <source>Rotation angle</source>
-        <translation>Γωνία περιστροφής</translation>
+        <translation>Кут повороту</translation>
     </message>
 </context>
 <context>
@@ -13705,7 +13523,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Name:</source>
-        <translation>Όνομα:</translation>
+        <translation>Імя:</translation>
     </message>
     <message>
         <source>C1: angle:</source>
@@ -13749,11 +13567,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Τύπος γραμμής:</translation>
+        <translation>Тип лінії:</translation>
     </message>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Σημείο - Τομή XY</translation>
+        <translation>Точка - перетин XY</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -13761,135 +13579,135 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Rotation point:</source>
-        <translation>Σημείο περιστροφής:</translation>
+        <translation>Точка обертання:</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation>Перемистити</translation>
+        <translation>Пере!</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Καθρέφτης ανά γραμμή</translation>
+        <translation>Дзеркало за лінією</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Καθρέφτης ανά άξονα</translation>
+        <translation>Дзеркало від Axis</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Επιλογή</translation>
+        <translation>Вибір</translation>
     </message>
     <message>
         <source>First point</source>
-        <translation>Перша точка</translation>
+        <translation type="unfinished">Перша точка</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation>Друга точка</translation>
+        <translation type="unfinished">Друга точка</translation>
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Найвища точка</translation>
+        <translation type="unfinished">Найвища точка</translation>
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Найнища точка</translation>
+        <translation type="unfinished">Найнища точка</translation>
     </message>
     <message>
         <source>Leftmost point</source>
-        <translation>Сама ліва точка</translation>
+        <translation type="unfinished">Сама ліва точка</translation>
     </message>
     <message>
         <source>Rightmost point</source>
-        <translation>Сама права точка</translation>
+        <translation type="unfinished">Сама права точка</translation>
     </message>
     <message>
         <source>Vertical axis</source>
-        <translation>Verticalьna ісь</translation>
+        <translation type="unfinished">Вертикальна вісь</translation>
     </message>
     <message>
         <source>Horizontal axis</source>
-        <translation>Gorizontalьna вісь</translation>
+        <translation type="unfinished">Горизонтальна вісь</translation>
     </message>
     <message>
         <source>Coordinates</source>
-        <translation>Coordinati</translation>
+        <translation>Координати</translation>
     </message>
     <message>
         <source>Point - Length and Angle</source>
-        <translation>Σημείο - Μήκος και Γωνία</translation>
+        <translation>Точка - довжина та кут</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Γεωμετρία</translation>
+        <translation>Геометрія</translation>
     </message>
     <message>
         <source>Attributes</source>
-        <translation>Χαρακτηριστικά</translation>
+        <translation>Атрибути</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation>Πάχος γραμμής:</translation>
+        <translation>Вага лінії:</translation>
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Σημείο - Σε Γραμμή</translation>
+        <translation>Точка - на лінії</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Τόξο - Ακτίνα και Γωνίες</translation>
+        <translation>Дуга - радіус і кути</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Τόξο - Ακτίνα και Μήκος</translation>
+        <translation>Дуга - радіус і довжина</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Σημείο - Στη διχοτόμο</translation>
+        <translation>Точка - на бісектрисі</translation>
     </message>
     <message>
         <source>Second dart point:</source>
-        <translation>Друга точка виточки:</translation>
+        <translation>Друга точка віточки:</translation>
     </message>
     <message>
         <source>Third dart point:</source>
-        <translation>Третя точка виточки:</translation>
+        <translation>Третя точка виточок:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Σημείο - Σε Τόξο</translation>
+        <translation>Точка на дузі</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Σημείο - Στην Καμπύλη</translation>
+        <translation>Точка на кривій</translation>
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Σημείωση - Σε αυλάκωση</translation>
+        <translation>Точка - на сплайні</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Σημείο - Τομή ευθείας και κάθετης</translation>
+        <translation>Точка - перетин прямої та перпендикуляра</translation>
     </message>
     <message>
         <source>Line</source>
-        <translation>Λίνια</translation>
+        <translation>Лінія</translation>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Σημείο - Τομή Γραμμών</translation>
+        <translation>Точка - перетин ліній</translation>
     </message>
     <message>
         <source>First line</source>
-        <translation>Перша линія</translation>
+        <translation>Перша лінія</translation>
     </message>
     <message>
         <source>Second line</source>
-        <translation>Druga lіnія</translation>
+        <translation>Друга лінія</translation>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Σημείο - Σε κάθετο</translation>
+        <translation>Точка - на перпендикулярі</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -13897,27 +13715,27 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Σημείο - Τομή Τόξου και Γραμμής</translation>
+        <translation>Точка - перетин дуги та прямої</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>Σημείο 1ης γραμμής:</translation>
+        <translation>Точка 1-го рядка:</translation>
     </message>
     <message>
         <source>2nd line point:</source>
-        <translation>Σημείο 2ης γραμμής:</translation>
+        <translation>Точка 2-го рядка:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Σημείο - Τομή Τόξων</translation>
+        <translation>Точка - перетин дуг</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Σημείο - Τομή κύκλων</translation>
+        <translation>Точка - перетин кіл</translation>
     </message>
     <message>
         <source>First circle:</source>
-        <translation>Πρώτος κύκλος:</translation>
+        <translation>Перше коло:</translation>
     </message>
     <message>
         <source>Center:</source>
@@ -13925,75 +13743,115 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Second circle:</source>
-        <translation>Δεύτερος κύκλος:</translation>
+        <translation>Друге коло:</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Σημείο - Τομή Καμπυλών</translation>
+        <translation>Точка - перетин кривих</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>Κατακόρυφη λήψη:</translation>
+        <translation>Вертикальний дубль:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>Οριζόντια λήψη:</translation>
+        <translation>Горизонтальний дубль:</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Σημείο - Τομή Κύκλου και Εφαπτομένης</translation>
+        <translation>Точка - перетин кола та дотичної</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Σημείο - Τομή Τόξου και Εφαπτομένης</translation>
+        <translation>Точка - перетин дуги та дотичної</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Σημείο - Μήκος προς Γραμμή</translation>
+        <translation>Точка - довжина до лінії</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
-        <translation>Καμπύλη - Διαδραστική</translation>
+        <translation>Крива – інтерактивна</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Параметри</translation>
+    </message>
+    <message>
+        <source>Smooth curve:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished">В обидві сторони</translation>
+    </message>
+    <message>
+        <source>Curve length:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Καμπύλη - Διορθώθηκε</translation>
+        <translation>Крива – фіксована</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Διαδραστικό</translation>
+        <translation>Сплайн – інтерактивний</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Σπλάιν - Σταθερό</translation>
+        <translation>Сплайн – фіксований</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Σημείο - Τομή Άξονα και Τρίγωνο</translation>
+        <translation>Точка - перетин осі та трикутника</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Σημείο 1ου άξονα:</translation>
+        <translation>Точка 1-ї осі:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Σημείο 2ου άξονα:</translation>
+        <translation>Точка 2-ї осі:</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis</source>
-        <translation>Σημείο - Τομή Γραμμής και Άξονα</translation>
+        <translation>Точка - перетин прямої та осі</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Σημείο - Τομή Καμπύλης και Άξονα</translation>
+        <translation>Точка - перетин кривої та осі</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Τόξο - Ελλειπτικό</translation>
+        <translation>Дуга - еліптична</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation>Ντούγκα_</translation>
+        <translation>Дуга_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -14001,7 +13859,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>SplPath_</source>
-        <translation>Διαδρομή____</translation>
+        <translation>Шлях_сполучення</translation>
     </message>
     <message>
         <source>Line_</source>
@@ -14013,91 +13871,51 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Direction:</source>
-        <translation>Κατεύθυνση:</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation>Παραμετρίες</translation>
-    </message>
-    <message>
-        <source>Smooth curve:</source>
-        <translation>Згладжена крива:</translation>
-    </message>
-    <message>
-        <source>No</source>
-        <translation>Ні</translation>
-    </message>
-    <message>
-        <source>Yes</source>
-        <translation>Так</translation>
-    </message>
-    <message>
-        <source>Adjust length:</source>
-        <translation>Налаштування довжини:</translation>
-    </message>
-    <message>
-        <source>Off</source>
-        <translation>Вимкнено</translation>
-    </message>
-    <message>
-        <source>Start</source>
-        <translation>Початок</translation>
-    </message>
-    <message>
-        <source>End</source>
-        <translation>Кінець</translation>
-    </message>
-    <message>
-        <source>Both</source>
-        <translation>Προσδοκία</translation>
-    </message>
-    <message>
-        <source>Curve length:</source>
-        <translation>Довжина кривої:</translation>
+        <translation>Напрямок:</translation>
     </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 του&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 και της εφαπτομένης&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Χρήση του σημείου αρχής ως δείκτης θέσης μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1 з&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 та дотичної&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Використання початкової точки як тимчасового елемента, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Τομή Τόξου και Εφαπτομένης</translation>
+        <translation>Перетин дуги та дотичної</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionArcs</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 των τόξων&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Χρήση του σημείου αρχής ως placeholder μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1 дуг&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Використання початкової точки як тимчасового заповнювача, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Τόξα Σημειακής Τομής</translation>
+        <translation>Точки перетинають дуги</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionCurves</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Δεν είναι δυνατή η εύρεση του σημείου τομής %1 των καμπυλών&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Χρήση του σημείου αρχής ως placeholder μέχρι να διορθωθεί το μοτίβο.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Не вдається знайти точку перетину %1 кривих&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Використання початкової точки як тимчасового заповнювача, доки шаблон не буде виправлено.</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Καμπύλες τομής σημείων</translation>
+        <translation>Криві перетину точок</translation>
     </message>
 </context>
 <context>
     <name>VToolRotation</name>
     <message>
         <source>  Origin point</source>
-        <translation>  Σημείο προέλευσης</translation>
+        <translation>Точка походження</translation>
     </message>
     <message>
         <source>Rotation angle</source>
-        <translation>Γωνία περιστροφής</translation>
+        <translation>Кут повороту</translation>
     </message>
 </context>
 <context>
@@ -14108,11 +13926,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Angle</source>
-        <translation>Κούτ</translation>
+        <translation>Кут</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>όνομα</translation>
+        <translation>ім&apos;я</translation>
     </message>
 </context>
 <context>
@@ -14935,17 +14753,17 @@ load in SeamlyME as usual.
     <message>
         <source>cm</source>
         <comment>centimeter</comment>
-        <translation>cm</translation>
+        <translation>см</translation>
     </message>
     <message>
         <source>mm</source>
         <comment>millimeter</comment>
-        <translation>mm</translation>
+        <translation>мм</translation>
     </message>
     <message>
         <source>in</source>
         <comment>inch</comment>
-        <translation>in</translation>
+        <translation>дюйм</translation>
     </message>
     <message>
         <source>SplPath</source>
@@ -14975,12 +14793,12 @@ load in SeamlyME as usual.
     <message>
         <source>size</source>
         <comment>placeholder</comment>
-        <translation>Розмір</translation>
+        <translation>Сг</translation>
     </message>
     <message>
         <source>height</source>
         <comment>placeholder</comment>
-        <translation>Зріст</translation>
+        <translation>Р</translation>
     </message>
     <message>
         <source>C1LengthSplPath</source>
@@ -15000,32 +14818,32 @@ load in SeamlyME as usual.
     <message>
         <source>date</source>
         <comment>placeholder</comment>
-        <translation>ημερομηνία</translation>
+        <translation>дата</translation>
     </message>
     <message>
         <source>time</source>
         <comment>placeholder</comment>
-        <translation>χρόνος</translation>
+        <translation>час</translation>
     </message>
     <message>
         <source>patternName</source>
         <comment>placeholder</comment>
-        <translation>Όνομαπροτύπου</translation>
+        <translation>Назва шаблону</translation>
     </message>
     <message>
         <source>patternNumber</source>
         <comment>placeholder</comment>
-        <translation>Αριθμός προτύπου</translation>
+        <translation>Номер шаблону</translation>
     </message>
     <message>
         <source>author</source>
         <comment>placeholder</comment>
-        <translation>συγγραφέας</translation>
+        <translation>автор</translation>
     </message>
     <message>
         <source>customer</source>
         <comment>placeholder</comment>
-        <translation>πελάτης</translation>
+        <translation>клієнт</translation>
     </message>
     <message>
         <source>pExt</source>
@@ -15035,12 +14853,12 @@ load in SeamlyME as usual.
     <message>
         <source>pFileName</source>
         <comment>placeholder</comment>
-        <translation>ΌνομαΑρχείουp</translation>
+        <translation>Ім&apos;я файлу p</translation>
     </message>
     <message>
         <source>mFileName</source>
         <comment>placeholder</comment>
-        <translation>ΌνομαΑρχείουm</translation>
+        <translation>Назва mFile</translation>
     </message>
     <message>
         <source>mExt</source>
@@ -15050,22 +14868,22 @@ load in SeamlyME as usual.
     <message>
         <source>pLetter</source>
         <comment>placeholder</comment>
-        <translation>Γράμμα p</translation>
+        <translation>pLetter</translation>
     </message>
     <message>
         <source>pAnnotation</source>
         <comment>placeholder</comment>
-        <translation>Σημείωση p</translation>
+        <translation>pАнотація</translation>
     </message>
     <message>
         <source>pOrientation</source>
         <comment>placeholder</comment>
-        <translation>Προσανατολισμός</translation>
+        <translation>pОрієнтація</translation>
     </message>
     <message>
         <source>pRotation</source>
         <comment>placeholder</comment>
-        <translation>Περιστροφή p</translation>
+        <translation>pRotation</translation>
     </message>
     <message>
         <source>pTilt</source>
@@ -15075,42 +14893,42 @@ load in SeamlyME as usual.
     <message>
         <source>pFoldPosition</source>
         <comment>placeholder</comment>
-        <translation>pFoldPosition</translation>
+        <translation>pПоложення згортання</translation>
     </message>
     <message>
         <source>pName</source>
         <comment>placeholder</comment>
-        <translation>όνομα p</translation>
+        <translation>pName</translation>
     </message>
     <message>
         <source>pQuantity</source>
         <comment>placeholder</comment>
-        <translation>pΠοσότητα</translation>
+        <translation>pКількість</translation>
     </message>
     <message>
         <source>mFabric</source>
         <comment>placeholder</comment>
-        <translation>mFabric</translation>
+        <translation>mТканина</translation>
     </message>
     <message>
         <source>mLining</source>
         <comment>placeholder</comment>
-        <translation>Επένδυση m</translation>
+        <translation>мілінійка</translation>
     </message>
     <message>
         <source>mInterfacing</source>
         <comment>placeholder</comment>
-        <translation>Дублерін m</translation>
+        <translation>mІнтерфейс</translation>
     </message>
     <message>
         <source>mInterlining</source>
         <comment>placeholder</comment>
-        <translation>μέσω διασύνδεσης</translation>
+        <translation>м&apos;який інтерлайн</translation>
     </message>
     <message>
         <source>wCut</source>
         <comment>placeholder</comment>
-        <translation>wCut</translation>
+        <translation>Вирізати</translation>
     </message>
     <message>
         <source>wOnFold</source>
@@ -15120,12 +14938,12 @@ load in SeamlyME as usual.
     <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Μ_</translation>
+        <translation>М_</translation>
     </message>
     <message>
         <source>Variable_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Μεταβλητή_</translation>
+        <translation>Змінна_</translation>
     </message>
     <message>
         <source>Line_</source>
@@ -15140,12 +14958,12 @@ load in SeamlyME as usual.
     <message>
         <source>Arc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Ντούγκα_</translation>
+        <translation>Дуга_</translation>
     </message>
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>ЕлДуга_</translation>
+        <translation>ЕлАрк_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -15160,12 +14978,12 @@ load in SeamlyME as usual.
     <message>
         <source>Radius1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Ακτίνα1ElArc_</translation>
+        <translation>Радіус1ElArc_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Ακτίνα2ElArc_</translation>
+        <translation>Радіус2ElArc_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
@@ -15180,12 +14998,12 @@ load in SeamlyME as usual.
     <message>
         <source>Angle1ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Γωνία1ΕλΑρκ_</translation>
+        <translation>Кут1ElArc_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation>Γωνία2ΕλΑρκ_</translation>
+        <translation>Кут2ElArc_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
@@ -15212,7 +15030,7 @@ load in SeamlyME as usual.
         <comment>Converts degrees to radians
 Usage: degTorad(angle θ in degrees) → returns an angle in radians
 Example: degTorad(180) = 3.14159</comment>
-        <translation>degTorad</translation>
+        <translation>дегТорад</translation>
     </message>
     <message>
         <source>radTodeg</source>
@@ -15226,7 +15044,7 @@ Example: radTodeg(3.14159) = 180</comment>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians) → returns a number between -1 and 1
 Example: sin(90) = 0.893997</comment>
-        <translation>sin</translation>
+        <translation>гріх</translation>
     </message>
     <message>
         <source>cos</source>
@@ -15240,70 +15058,70 @@ Example: cos(1) = 0.540302</comment>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)
 Example: tan(1) = 1.55741</comment>
-        <translation>tan</translation>
+        <translation>засмага</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
 Usage: asin(x between -1 and 1) → returns an angle in radians
 Example: asin(-1) = -1.5708</comment>
-        <translation>asin</translation>
+        <translation>асін</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>Inverse cosine function working with radians
 Usage: acos(x between -1 and 1) → returns an angle in radians
 Example: acos(0.1) = 1.47063</comment>
-        <translation>acos</translation>
+        <translation>акос</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>Inverse tangent function working with radians
 Usage: atan(x) → returns an angle in radians
 Example: atan(1) = 0.78538</comment>
-        <translation>atan</translation>
+        <translation>атан</translation>
     </message>
     <message>
         <source>sinh</source>
         <comment>Hyperbolic sine function
 Usage: sinh(θ)
 Example: sinh(1) = 1.1752</comment>
-        <translation>sinh</translation>
+        <translation>сінх</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>Hyperbolic cosine
 Usage: cosh(θ) → returns a number greater than or equal to 1
 Example: cosh(0) = 1</comment>
-        <translation>cosh</translation>
+        <translation>кош</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>Hyperbolic tangent function
 Usage: tanh(θ) → returns a number between -1 and 1 (excluded)
 Example: tanh(1) = 0.761594</comment>
-        <translation>tanh</translation>
+        <translation>танх</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>Inverse Hyperbolic sine function
 Usage: asinh(x)
 Example: asinh(90) = 5.19299</comment>
-        <translation>asinh</translation>
+        <translation>асінх</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>Inverse Hyperbolic cosine function
 Usage: acosh(x greater than or equal to 1)
 Example: acosh(2) = 1.31696</comment>
-        <translation>acosh</translation>
+        <translation>Акош</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>Inverse Hyperbolic tangent function
 Usage: atanh(x between -1 and 1 (excluded))
 Example: atanh(0,99) = 2.64665</comment>
-        <translation>atanh</translation>
+        <translation>атань</translation>
     </message>
     <message>
         <source>sinD</source>
@@ -15324,7 +15142,7 @@ Example: cosD(180) = -1</comment>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)
 Example: tanD(45) = 1</comment>
-        <translation>tanD</translation>
+        <translation>танД</translation>
     </message>
     <message>
         <source>asinD</source>
@@ -15345,7 +15163,7 @@ Example: acosD(-1) = 180</comment>
         <comment>Inverse tangent function working with degrees
 Usage: atanD(x) → returns an angle in degrees
 Example: atanD(1) = 45</comment>
-        <translation>atanD</translation>
+        <translation>атанД</translation>
     </message>
     <message>
         <source>log2</source>
@@ -15366,77 +15184,77 @@ Example: log10(10) = 1</comment>
         <comment>Logarithm to the base 10
 Usage: log(x greater than 0)
 Example: log(10) = 1</comment>
-        <translation>log</translation>
+        <translation>журнал</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x greater than 0)
 Example: ln(10) = 2.30259</comment>
-        <translation>ln</translation>
+        <translation>внутрішній</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>e raised to the power of x where e = 2.718
 Usage: exp(x) → returns a positive number
 Example: exp(2) = 7.38906</comment>
-        <translation>exp</translation>
+        <translation>експ</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x greater than or equal to 0) → returns a positive number
 Example: sqrt(4) = 2</comment>
-        <translation>sqrt</translation>
+        <translation>квадрат</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x) → returns -1, 0 or 1
 Example: sign(-3) = -1</comment>
-        <translation>sign</translation>
+        <translation>знак</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(x) → returns an integer number
 Example: rint(2.3) = 2</comment>
-        <translation>rint</translation>
+        <translation>відбиток</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x) → returns a positive number
 Example: abs(-5) = 5</comment>
-        <translation>abs</translation>
+        <translation>прес</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)
 Example: min(2;3;4) = 2</comment>
-        <translation>min</translation>
+        <translation>хв</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)
 Example: max(2;3;4) = 4</comment>
-        <translation>max</translation>
+        <translation>максимум</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)
 Example: sum(2;3;4) = 9</comment>
-        <translation>sum</translation>
+        <translation>сума</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)
 Example: avg(2;3;4) = 3</comment>
-        <translation>avg</translation>
+        <translation>середній</translation>
     </message>
     <message>
         <source>fmod</source>
@@ -15444,6 +15262,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation type="unfinished">Змінні</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation type="unfinished">Фільтр:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation type="unfinished">Фільтрувати список за ключовим словом</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation type="unfinished">Користувацькі змінні</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Опис</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Значення</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation type="unfinished">Формула</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation type="unfinished">Додати користувацьку змінну</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation type="unfinished">Видалити користувацьку змінну</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished">Деталь</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation type="unfinished">Унікальна назва змінної</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation type="unfinished">Формула:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Розрахунок</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation type="unfinished">Опис:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation type="unfinished">Оновити візерунок з усіма внесеними змінами</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation type="unfinished">Оновити</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation type="unfinished">Довжини ліній</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="unfinished">Лінія</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation type="unfinished">Довжина</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation type="unfinished">Кути ліній</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation type="unfinished">Кут</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation type="unfinished">Довжини кривих</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation type="unfinished">Крива</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation type="unfinished">Кути кривої</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation type="unfinished">Довжини контрольних точок</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation type="unfinished">Радіуси дуг</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation type="unfinished">Дуга</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation type="unfinished">Радіус</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Помилка</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation type="unfinished">Порожнє поле.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation type="unfinished">Пусте поле</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation type="unfinished">Помилка синтаксичного аналізу: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation type="unfinished">Редагувати змінну</translation>
     </message>
 </context>
 <context>
@@ -15458,53 +15439,53 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Καμπύλη διαδρομή&lt;/b&gt;: επιλέξτε επτά ή περισσότερα σημεία, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία εργαλείου</translation>
+        <translation>&lt;b&gt;Кривоподібний шлях&lt;/b&gt;: виберіть сім або більше точок, натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення інструмента</translation>
     </message>
 </context>
 <context>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;Καμπύλη και άξονας τομής&lt;/b&gt;: γωνία = %1°, Κρατήστε πατημένο το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία, Πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία του εργαλείου </translation>
+        <translation>&lt;b&gt;Крива перетину та вісь&lt;/b&gt;: кут = %1°, Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут, Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення інструмента</translation>
     </message>
 </context>
 <context>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Μήκος και Γωνία Σημείου&lt;/b&gt;: γωνία = %1°, μήκος = %2%3; Κρατήστε πατημένο το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία, πατήστε το &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία του εργαλείου</translation>
+        <translation>&lt;b&gt;Довжина та кут точки&lt;/b&gt;: кут = %1°, довжина = %2%3; Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут, натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення інструмента</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Γραμμή τομής και άξονας&lt;/b&gt;: γωνία = %1°, Κρατήστε πατημένο το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία, Πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία του εργαλείου</translation>
+        <translation>&lt;b&gt;Лінія перетину та вісь&lt;/b&gt;: кут = %1°, Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут, Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення інструмента</translation>
     </message>
 </context>
 <context>
     <name>VisToolMove</name>
     <message>
         <source>Length = %1%2, angle = %3°, &lt;b&gt;Shift&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish selecting a position</source>
-        <translation>Μήκος = %1%2, γωνία = %3°, &lt;b&gt;Shift&lt;/b&gt; για περιορισμό γωνίας, &lt;b&gt;Κλικ ποντικιού&lt;/b&gt; - ολοκλήρωση επιλογής θέσης</translation>
+        <translation>Довжина = %1%2, кут = %3°, &lt;b&gt;Shift&lt;/b&gt; для обмеження кута, &lt;b&gt;Клацніть мишею&lt;/b&gt; - завершіть вибір позиції</translation>
     </message>
     <message>
         <source>Length = %1%2, angle = %3°, rotation angle = %4° Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle,&lt;b&gt;CTRL&lt;/b&gt; - change rotation origin point, &lt;b&gt;Mouse click&lt;/b&gt; - finish creating</source>
-        <translation>Μήκος = %1%2, γωνία = %3°, γωνία περιστροφής = %4° Κρατήστε πατημένο το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία,&lt;b&gt;CTRL&lt;/b&gt; - αλλαγή του σημείου προέλευσης της περιστροφής, &lt;b&gt;κλικ με το ποντίκι&lt;/b&gt; - ολοκλήρωση της δημιουργίας</translation>
+        <translation>Довжина = %1%2, кут = %3°, кут повороту = %4°. Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут,&lt;b&gt;CTRL&lt;/b&gt; - змінити точку початку повороту, &lt;b&gt;Клацніть мишею&lt;/b&gt; - завершити створення</translation>
     </message>
 </context>
 <context>
     <name>VisToolRotation</name>
     <message>
         <source>Rotating angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish creation</source>
-        <translation>Γωνία περιστροφής = %1°, Κρατήστε πατημένο το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία, &lt;b&gt;Κλικ με το ποντίκι&lt;/b&gt; - ολοκλήρωση δημιουργίας</translation>
+        <translation>Кут повороту = %1°, Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут, &lt;b&gt;Клацніть мишею&lt;/b&gt; - завершити створення</translation>
     </message>
 </context>
 <context>
     <name>VisToolSpline</name>
     <message>
         <source>Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Πατήστε παρατεταμένα το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία</translation>
+        <translation>Утримуйте &lt;b&gt;SHIFT&lt;/b&gt;, щоб обмежити кут</translation>
     </message>
 </context>
 <context>
@@ -15515,11 +15496,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Καμπύλη διαδρομή&lt;/b&gt;: επιλέξτε τρία ή περισσότερα σημεία, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία εργαλείου</translation>
+        <translation>&lt;b&gt;Кривоподібний шлях&lt;/b&gt;: виберіть три або більше точок, натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб завершити створення інструмента</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Χρησιμοποιήστε το &lt;b&gt;SHIFT&lt;/b&gt; για να περιορίσετε τη γωνία</translation>
+        <translation>Використовуйте &lt;b&gt;SHIFT&lt;/b&gt; для обмеження кута</translation>
     </message>
 </context>
 <context>
@@ -15554,11 +15535,11 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Κρίσιμο σφάλμα</translation>
+        <translation>Критична помилка</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Μοιραίο σφάλμα</translation>
+        <translation>Фатальна помилка</translation>
     </message>
 </context>
 <context>
@@ -15589,15 +15570,15 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>Κρίσιμο σφάλμα</translation>
+        <translation>Критична помилка</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>Μοιραίο σφάλμα</translation>
+        <translation>Фатальна помилка</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Πληροφορίες</translation>
+        <translation>Інформація</translation>
     </message>
 </context>
 </TS>
