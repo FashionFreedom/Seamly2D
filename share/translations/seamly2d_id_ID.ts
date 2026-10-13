@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>2D yang mulus</translation>
+        <translation>Seamly 2D</translation>
     </message>
     <message>
         <source>Version</source>
