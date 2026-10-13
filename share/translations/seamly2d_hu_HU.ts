@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Seamly 2D</source>
-        <translation>Varratmentes 2D</translation>
+        <translation>Seamly 2D</translation>
     </message>
     <message>
         <source>Version:</source>
