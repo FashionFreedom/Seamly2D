@@ -63,7 +63,6 @@ public:
 private slots:
     void ClearLoop();
     void Issue620();
-    void missingNodes();
 
 private:
     Q_DISABLE_COPY(TST_VPiece)

@@ -30,6 +30,7 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiece.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vpatterndb/vpiecepath.h"
 #include "../vtools/tools/nodeDetails/vnodepoint.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 #include "../vtools/undocommands/savepieceoptions.h"
@@ -206,6 +207,37 @@ void TST_NodePointReferences::removeNodesAfterLoad()
         QCOMPARE(tool->referens(), removed ? 0u : 1u);
         QCOMPARE(tool->isVisible(), !removed);
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief missingNodes checks that nodes dropped from a path are reported even when the node count is unchanged
+//---------------------------------------------------------------------------------------------------------------------
+void TST_NodePointReferences::missingNodes()
+{
+    const auto make_path = [](const QVector<quint32> &ids)
+    {
+        QVector<VPieceNode> nodes;
+        for (quint32 id : ids)
+        {
+            nodes.append(VPieceNode(id, Tool::NodePoint));
+        }
+        VPiecePath path;
+        path.setNodes(nodes);
+        return path;
+    };
+
+    const VPiecePath old_path = make_path({1, 2, 3, 4, 5});
+    const VPiecePath new_path = make_path({1, 2, 6, 7, 8});
+    const QVector<quint32> expected {3, 4, 5};
+
+    QCOMPARE(old_path.MissingNodes(new_path), expected);
+
+    VPiece old_piece;
+    old_piece.SetPath(old_path);
+    VPiece new_piece;
+    new_piece.SetPath(new_path);
+
+    QCOMPARE(old_piece.MissingNodes(new_piece), expected);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
