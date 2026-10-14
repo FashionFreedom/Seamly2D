@@ -205,7 +205,7 @@ private:
 
     void                  initializeNodes(const VPiece &piece, VMainGraphicsScene *scene);
     static void           initializeNode(const VPieceNode &node, VMainGraphicsScene *scene, VContainer *data,
-                                   VAbstractPattern *doc, PatternPieceTool *parent);
+                                   VAbstractPattern *doc, PatternPieceTool *parent, bool increment_references = true);
 
     static QVector<VPieceNode>   removeDuplicateNodePoints(const VPiece &piece, const QVector<VPieceNode> &nodes, VContainer *data);
 
