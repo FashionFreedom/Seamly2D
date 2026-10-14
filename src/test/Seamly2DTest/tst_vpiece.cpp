@@ -275,3 +275,34 @@ void TST_VPiece::Issue620()
     // Begin comparison
     Comparison(pointsEkv, origPoints);
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief missingNodes checks that nodes dropped from a path are reported even when the node count is unchanged
+//---------------------------------------------------------------------------------------------------------------------
+void TST_VPiece::missingNodes()
+{
+    const auto make_path = [](const QVector<quint32> &ids)
+    {
+        QVector<VPieceNode> nodes;
+        for (quint32 id : ids)
+        {
+            nodes.append(VPieceNode(id, Tool::NodePoint));
+        }
+        VPiecePath path;
+        path.setNodes(nodes);
+        return path;
+    };
+
+    const VPiecePath old_path = make_path({1, 2, 3, 4, 5});
+    const VPiecePath new_path = make_path({1, 2, 6, 7, 8});
+    const QVector<quint32> expected {3, 4, 5};
+
+    QCOMPARE(old_path.MissingNodes(new_path), expected);
+
+    VPiece old_piece;
+    old_piece.SetPath(old_path);
+    VPiece new_piece;
+    new_piece.SetPath(new_path);
+
+    QCOMPARE(old_piece.MissingNodes(new_piece), expected);
+}

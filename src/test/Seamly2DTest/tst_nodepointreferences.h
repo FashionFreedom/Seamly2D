@@ -43,8 +43,6 @@ private slots:
     void init();
     void cleanup();
     void removeNodesAfterLoad();
-    void removeNodesAfterInsertNodes();
-    void swapNodeWithSameNodeCount();
 
 private:
     Q_DISABLE_COPY(TST_NodePointReferences)
