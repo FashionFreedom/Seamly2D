@@ -65,11 +65,6 @@ namespace
 {
 QVector<quint32> PieceMissingNodes(const QVector<quint32> &piece1Nodes, const QVector<quint32> &piece2Nodes)
 {
-    if (piece1Nodes.size() == piece2Nodes.size()) //-V807
-    {
-        return QVector<quint32>();
-    }
-
     QSet<quint32> set1;
     for (qint32 i = 0; i < piece1Nodes.size(); ++i)
     {
