@@ -1958,6 +1958,7 @@ void MainWindow::changeEvent(QEvent *event)
         redoAction->setText(tr("&Redo"));
         setStatusMessage(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
+        m_zoom_to_object_combobox->setToolTip(tr("Zoom to Object (Ctrl + Alt + O)"));
 
         updateWindowTitle();
         initPenToolBar();
