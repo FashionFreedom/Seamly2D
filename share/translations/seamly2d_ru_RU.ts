@@ -3081,169 +3081,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Переменные</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Фильтр:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Фильтр списка по ключевому слову</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Пользовательские переменные</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Имя</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Формула</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Переместить мерку выше</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Переместить мерку ниже</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Мастер формул</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Добавить пользовательскую переменную</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Удалить пользовательскую переменную</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Детали</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Название:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Выберите уникальное название</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Значение:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Формула:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Расчёт</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Описание:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Обновите выкройку со всеми внесенными вами изменениями</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Обновить</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Длины линий</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Линия</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Длина</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Углы линий</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Угол</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Длина кривой</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Кривая</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Углы кривой</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Длина между контрольными точками</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Радиусы Дуги</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Дуга</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Радиус</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Ошибка</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Пустое поле.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Пустое поле</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Недопустимый результат. Значение бесконечность или нечисленное. Пожалуйста, проверьте расчеты.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Значение</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Ошибка синтаксического анализа: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Редактировать переменную</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Описание</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6562,6 +6399,10 @@ Do you want to save your changes?</source>
         <translation>Описание</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Объект:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Вращение</translation>
     </message>
@@ -7054,8 +6895,12 @@ Do you want to save your changes?</source>
         <translation>Блокировка</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Приблизить к точке (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Объект</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Приблизить к объекту (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7186,12 +7031,8 @@ Do you want to save your changes?</source>
         <translation>Изображения</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Зум до точки</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Точка:</translation>
+        <source>Zoom to Object</source>
+        <translation>Приблизить к объекту</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10617,12 +10458,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Зум до точки</translation>
+        <source>Zoom to Object</source>
+        <translation>Приблизить к объекту</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15456,6 +15297,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Переменные</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Фильтр:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Фильтр списка по ключевому слову</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Пользовательские переменные</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Имя</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Формула</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Переместить мерку выше</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Переместить мерку ниже</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Мастер формул</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Добавить пользовательскую переменную</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Удалить пользовательскую переменную</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Детали</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Название:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Выберите уникальное название</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Значение:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Формула:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Расчёт</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Описание:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Обновите выкройку со всеми внесенными вами изменениями</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Обновить</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Длины линий</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Линия</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Длина</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Углы линий</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Угол</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Длина кривой</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Кривая</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Углы кривой</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Длина между контрольными точками</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Радиусы Дуги</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Дуга</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Радиус</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Ошибка</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Пустое поле.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Пустое поле</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Недопустимый результат. Значение бесконечность или нечисленное. Пожалуйста, проверьте расчеты.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Ошибка синтаксического анализа: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Редактировать переменную</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Описание</translation>
     </message>
 </context>
 <context>
