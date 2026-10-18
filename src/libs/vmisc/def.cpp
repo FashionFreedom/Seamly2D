@@ -433,6 +433,8 @@ QPalette darkPalette()
 
 const QString darkWorkspaceColor = QStringLiteral("#2b2b2b");
 
+/// @brief darkestPalette app palette of the Fusion Darkest theme.
+/// @return palette darker than Fusion Dark, with soft grey text instead of pure white.
 QPalette darkestPalette()
 {
     QPalette palette;

@@ -1539,7 +1539,8 @@ void PatternPieceTool::RefreshGeometry()
     if (!piece.isHideSeamLine() || !piece.hasSeamAllowance() || piece.hasSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
-        m_allowanceFill->setBrush(QBrush(adaptColor(QColor(qApp->Settings()->getDefaultCutColor())), Qt::Dense7Pattern));
+        m_allowanceFill->setBrush(QBrush(adaptColor(QColor(qApp->Settings()->getDefaultCutColor())),
+                                         Qt::Dense7Pattern));
     }
     else
     {
