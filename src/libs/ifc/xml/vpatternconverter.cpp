@@ -249,14 +249,11 @@ VPatternConverter::VPatternConverter(const QString &fileName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief fixGroupsOrder move groups in front of images in each draft block.
- *
- * Some releases wrote groups after images, which the schema doesn't allow, so the file couldn't be opened.
- * See #1213 and #1773.
- *
- * @return true if a draft block was repaired.
- */
+/// @brief fixGroupsOrder move groups in front of images in each draft block.
+///
+/// Some releases wrote groups after images, which the schema doesn't allow, so the file couldn't be opened.
+///
+/// @return true if a draft block was repaired.
 bool VPatternConverter::fixGroupsOrder()
 {
     bool fixed = false;

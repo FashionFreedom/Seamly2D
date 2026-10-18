@@ -115,7 +115,7 @@ private:
     Q_DISABLE_COPY(VAbstractConverter)
 
     QTemporaryFile  m_tmpFile;
-    const QString   m_originalFileName;
+    const QString   m_original_file_name;
 
     static void     ValidateVersion(const QString &version);
     void            saveBackupFile() const;
