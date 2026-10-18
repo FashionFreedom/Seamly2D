@@ -91,6 +91,7 @@ protected:
     void            ValidateInputFile(const QString &currentSchema) const;
     Q_NORETURN void InvalidVersion(int ver) const;
     void            Save();
+    void            saveRepairedCopy();
     void            setVersion(const QString &version);
 
     virtual int     minVer() const =0;
@@ -114,6 +115,7 @@ private:
     Q_DISABLE_COPY(VAbstractConverter)
 
     QTemporaryFile  m_tmpFile;
+    const QString   m_originalFileName;
 
     static void     ValidateVersion(const QString &version);
     void            saveBackupFile() const;

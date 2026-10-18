@@ -94,6 +94,8 @@ private:
     Q_DISABLE_COPY(VPatternConverter)
     static const QString PatternMinVerStr;
 
+    bool          fixGroupsOrder();
+
     void          toVersion0_1_1();
     void          toVersion0_1_2();
     void          toVersion0_1_3();
