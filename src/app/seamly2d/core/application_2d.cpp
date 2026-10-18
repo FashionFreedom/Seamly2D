@@ -734,7 +734,8 @@ bool Application2D::event(QEvent *event)
 #if defined(Q_OS_MAC)
         case QEvent::ApplicationActivate:
         {
-            if (mainWindow && not mainWindow->isMinimized())
+            // Console mode (export / test) keeps the window hidden even if the app gets activated
+            if (mainWindow && not mainWindow->isMinimized() && isGUIMode())
             {
                 mainWindow->show();
             }
