@@ -61,6 +61,10 @@
 #include "../vpatterndb/vpiecenode.h"
 #include "../vmisc/vsysexits.h"
 
+#if defined(Q_OS_MAC)
+#include "core/macos_dock.h"
+#endif
+
 #include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QProcess>
@@ -114,6 +118,15 @@ int main(int argc, char *argv[])
 
     // Create the application instance
     Application2D app(argc, argv);
+
+#if defined(Q_OS_MAC)
+    // Info.plist starts the app without a Dock icon, only GUI mode gets one
+    if (Application2D::isGUIMode())
+    {
+        showDockIcon();
+    }
+#endif
+
     // Initialize application options
     app.initOptions();
 

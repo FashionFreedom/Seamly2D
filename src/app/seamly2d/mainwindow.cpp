@@ -277,8 +277,12 @@ MainWindow::MainWindow(QWidget *parent)
         initializeModesToolBar();
 
         // Initialize tool buttons and show the main window maximized.
+        // Keep the window hidden in console mode (export / test).
         initializeToolButtons();
-        showMaximized();
+        if (Application2D::isGUIMode())
+        {
+            showMaximized();
+        }
 
         initPenToolBar();
 
