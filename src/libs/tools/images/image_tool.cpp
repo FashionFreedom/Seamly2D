@@ -183,7 +183,9 @@ void  ImageTool::addImage()
         qCDebug(vImageTool, "Can't read image");
         if (Application2D::isGUIMode())
         {
-            QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+            QMessageBox::critical(nullptr, tr("Import Image"),
+                                  tr("Could not read the image.") + "\n" + tr("File may be corrupted..."),
+                                  QMessageBox::Ok);
         }
         return;
     }
