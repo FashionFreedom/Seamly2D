@@ -1279,6 +1279,9 @@ void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
                 {
                     if(QGraphicsSimpleTextItem *textItem = qgraphicsitem_cast<QGraphicsSimpleTextItem *>(item))
                     {
+                        // With a pen Qt draws the text as outlines, which bypasses VDxfEngine::drawTextItem
+                        // and leaves the placeholder in the dxf as glyphs. Without a pen it is drawn as text.
+                        textItem->setPen(Qt::NoPen);
                         textItem->setText(textItem->text() + placeholder);
                     }
                 }
@@ -1315,6 +1318,7 @@ void MainWindowsNoGUI::RestoreTextAfterDXF(const QString &placeholder,
                         QString text = textItem->text();
                         text.replace(placeholder, "");
                         textItem->setText(text);
+                        textItem->setPen(QPen(textItem->brush().color())); // As set in VLayoutPiece::createLabelItem
                     }
                 }
             }
