@@ -1304,7 +1304,7 @@ void MainWindowsNoGUI::RestoreTextAfterDXF(const QString &placeholder,
         const QList<QGraphicsItem *> &paperItems = pieces.at(i);
         for (int j = 0; j < paperItems.size(); ++j)
         {
-            QList<QGraphicsItem *> pieceChildren = paperItems.at(i)->childItems();
+            QList<QGraphicsItem *> pieceChildren = paperItems.at(j)->childItems();
             for (int k = 0; k < pieceChildren.size(); ++k)
             {
                 QGraphicsItem *item = pieceChildren.at(k);
