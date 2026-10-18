@@ -2383,7 +2383,17 @@ QDomElement VAbstractPattern::createGroups()
         if (groups.isNull())
         {
             groups = createElement(TagGroups);
-            draftBlock.appendChild(groups);
+
+            // The schema requires groups before images. Blocks made before Nov 2024 have neither tag, see #1773.
+            const QDomElement images = draftBlock.firstChildElement(TagDraftImages);
+            if (images.isNull())
+            {
+                draftBlock.appendChild(groups);
+            }
+            else
+            {
+                draftBlock.insertBefore(groups, images);
+            }
         }
 
         return groups;

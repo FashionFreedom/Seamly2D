@@ -78,6 +78,7 @@ VAbstractConverter::VAbstractConverter(const QString &fileName)
     , m_ver(0x0)
     , m_convertedFileName(fileName)
     , m_tmpFile()
+    , m_originalFileName(fileName)
 {
     setXMLContent(m_convertedFileName);// Throw an exception on error
     m_ver = GetVersion(getVersionStr());
@@ -224,7 +225,7 @@ void VAbstractConverter::saveBackupFile() const
     if (qApp->Settings()->getConvertBackupEnabled())
     {
         QString error;
-        const QFileInfo info(removeBakExtension(m_convertedFileName));
+        const QFileInfo info(removeBakExtension(m_originalFileName));
         QString baseFileName = info.baseName();
 
         // replace any spaces in filename with underscore to pevent
@@ -240,7 +241,7 @@ void VAbstractConverter::saveBackupFile() const
         QString timestamp = QDateTime::currentDateTime().toString("ddMMyyyy-hhmmss");
         backupFileName = QString("%1/%2_%3%4.%5").arg(path, baseFileName, timestamp, "(backup)", info.completeSuffix());
 
-        if (!SafeCopy(m_convertedFileName, backupFileName, error))
+        if (!SafeCopy(m_originalFileName, backupFileName, error))
         {
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
@@ -352,6 +353,24 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
     }
 
     ValidateXML(schema, m_convertedFileName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief saveRepairedCopy write the document, repaired in memory, to the temp file and use it from now on.
+ *
+ * Validation reads the file from disk, so a repair has to be saved before ValidateInputFile.
+ * The original file is left untouched.
+ */
+void VAbstractConverter::saveRepairedCopy()
+{
+    if (!m_tmpFile.open())
+    {
+        const QString errorMsg(tr("Error Opening a temp file: %1.").arg(m_tmpFile.errorString()));
+        throw VException(errorMsg);
+    }
+    m_convertedFileName = m_tmpFile.fileName();
+    Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
