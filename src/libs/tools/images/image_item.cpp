@@ -247,9 +247,9 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     if (!m_image.locked && m_is_hovered)
     {
         painter->save();
-        QColor color = QColor(qApp->Settings()->getTertiarySupportColor());
+        QColor color = adaptColor(QColor(qApp->Settings()->getTertiarySupportColor()));
         color.setAlpha(20);
-        painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
+        painter->setPen(QPen(adaptColor(Qt::black), 2, Qt::DashLine));
         painter->setBrush(color);
         painter->drawRect(m_bounding_rect);
         painter->restore();

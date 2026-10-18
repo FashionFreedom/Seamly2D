@@ -233,6 +233,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->theme_ComboBox->addItem("Fusion Light", 0);
     ui->theme_ComboBox->addItem("Fusion Dark", 1);
     ui->theme_ComboBox->addItem("Fusion Twilight", 2);
+    ui->theme_ComboBox->addItem("Fusion Darkest", 6);
     ui->theme_ComboBox->addItem("System", 3);
 
 #if defined(Q_OS_WIN)
@@ -250,7 +251,11 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     connect(ui->theme_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_themeChanged = true;
+        emit themeSelected(qvariant_cast<int>(ui->theme_ComboBox->currentData()));
     });
+
+    connect(ui->customizeColors_PushButton, &QPushButton::clicked,
+            this, &PreferencesConfigurationPage::customizeColorsClicked);
 
     ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
 

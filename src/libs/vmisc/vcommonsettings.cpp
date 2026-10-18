@@ -177,6 +177,7 @@ const QString settingGraphicsViewWireframe               = QStringLiteral("graph
 const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
 const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
 const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
+const QString settingGraphicsAdaptColors                 = QStringLiteral("graphicsview/adaptColors");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingSelectionSound                      = QStringLiteral("pattern/selectionSound");
@@ -2442,6 +2443,18 @@ bool VCommonSettings::getUseToolColor() const
 void VCommonSettings::setUseToolColor(bool value)
 {
     setValue(settingGraphicsUseToolColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getAdaptColors() const
+{
+    return value(settingGraphicsAdaptColors, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAdaptColors(bool value)
+{
+    setValue(settingGraphicsAdaptColors, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
