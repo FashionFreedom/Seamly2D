@@ -116,6 +116,13 @@ ImageTool::ImageTool(QObject *parent, VAbstractPattern *doc, VMainGraphicsScene 
 
     if (!fileInfo.exists())
     {
+        // Console mode (export / test) can't ask, skip the image like answering No.
+        if (!Application2D::isGUIMode())
+        {
+            qCWarning(vImageTool, "The image %s could not be found.", qUtf8Printable(image.filename));
+            return;
+        }
+
         const QString text = tr("The image <br/><br/> <b>%1</b> <br/><br/> could not be found. Do you "
                                 "want to update the file location?").arg(image.filename);
         QMessageBox::StandardButton result = QMessageBox::question(nullptr, tr("Loading image"), text,
@@ -174,7 +181,10 @@ void  ImageTool::addImage()
     if(!imageReader.canRead())
     {
         qCDebug(vImageTool, "Can't read image");
-        QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+        if (Application2D::isGUIMode())
+        {
+            QMessageBox::critical(nullptr, tr("Import Image"), tr("Could not read the image.") + "\n" + tr("File may be corrupted..."), QMessageBox::Ok);
+        }
         return;
     }
 
