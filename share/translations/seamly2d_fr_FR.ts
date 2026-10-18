@@ -8970,6 +8970,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <source>Theme:</source>
         <translation>Thème :</translation>
     </message>
+    <message>
+        <source>Customize colors...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workspace background and drawing colors (Graphics page)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9269,6 +9277,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Use native dialogs</source>
         <translation>Utiliser les boîtes de dialogue natives</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12253,6 +12269,14 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

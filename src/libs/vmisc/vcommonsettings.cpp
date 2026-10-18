@@ -2446,12 +2446,16 @@ void VCommonSettings::setUseToolColor(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief getAdaptColors whether drawing colors adapt to a dark workspace background.
+/// @return true if colors adapt, default true.
 bool VCommonSettings::getAdaptColors() const
 {
     return value(settingGraphicsAdaptColors, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief setAdaptColors set whether drawing colors adapt to a dark workspace background.
+/// @param value true to adapt colors.
 void VCommonSettings::setAdaptColors(bool value)
 {
     setValue(settingGraphicsAdaptColors, value);
