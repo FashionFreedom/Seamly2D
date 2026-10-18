@@ -62,6 +62,7 @@
 #include <Qt>
 #include <QDebug>
 
+#include "global.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
 #include "../vmisc/vcommonsettings.h"
@@ -181,7 +182,7 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
         return;
     }
 
-    QColor color  = QColor(qApp->Settings()->getDefaultLabelColor());
+    QColor color  = adaptColor(QColor(qApp->Settings()->getDefaultLabelColor()));
 
     painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
     painter->setPen(QPen(color));
@@ -221,14 +222,14 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
     if (m_mode != Mode::Normal)
     {
         // outextLineine the rectangle
-        painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
+        painter->setPen(QPen(adaptColor(Qt::black), 2, Qt::DashLine));
         painter->drawRect(boundingRect().adjusted(1, 1, -1, -1));
 
         if (m_mode != Mode::Rotate)
         {
             // draw the resize square
-            painter->setPen(Qt::black);
-            painter->setBrush(Qt::black);
+            painter->setPen(adaptColor(Qt::black));
+            painter->setBrush(adaptColor(Qt::black));
             painter->drawRect(m_rectResize.adjusted(-1, -1, -1, -1));
 
             if (m_mode == Mode::Resize)
@@ -241,8 +242,8 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
         else
         {
             // in rotate mode, draw the circle in the middle
-            painter->setPen(Qt::black);
-            painter->setBrush(Qt::black);
+            painter->setPen(adaptColor(Qt::black));
+            painter->setBrush(adaptColor(Qt::black));
             painter->drawEllipse(
                         QPointF(m_boundingRect.width()/2, m_boundingRect.height()/2),
                         rotateCircle,
@@ -250,7 +251,7 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
                         );
             if (m_boundingRect.width() > minW*3 && m_boundingRect.height() > minH*3)
             {
-                painter->setPen(QPen(Qt::black, 3));
+                painter->setPen(QPen(adaptColor(Qt::black), 3));
                 painter->setBrush(Qt::NoBrush);
                 // and then draw the arc in each of the corners
                 int top = ROTATE_RECT - ROTATE_ARC;

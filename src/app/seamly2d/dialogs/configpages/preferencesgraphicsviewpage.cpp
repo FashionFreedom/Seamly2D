@@ -95,6 +95,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Background Color
     ui->bgColor_ComboBox->setItems(VAbstractTool::backgroundColorsList());
     setIndex(ui->bgColor_ComboBox, qApp->Seamly2DSettings()->getBackgroundColor());
+    ui->adaptColors_CheckBox->setChecked(qApp->Seamly2DSettings()->getAdaptColors());
 
     // Zoom Rubberband colors
     setIndex(ui->zrbPositiveColor_ComboBox, qApp->Seamly2DSettings()->getZoomRBPositiveColor());
@@ -247,6 +248,7 @@ void PreferencesGraphicsViewPage::Apply()
     // Color preferences
     // Background color
     settings->setBackgroundColor(ui->bgColor_ComboBox->currentData().toString());
+    settings->setAdaptColors(ui->adaptColors_CheckBox->isChecked());
 
 
     // Zoom Rubberband colors
@@ -311,6 +313,27 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setPointNameSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
 }
 
+// @brief setThemeBackground follow a theme change in the Configuration page.
+// Fusion Darkest also darkens the workspace; switching away resets only that default.
+void PreferencesGraphicsViewPage::setThemeBackground(int theme)
+{
+    if (theme == 6)
+    {
+        setIndex(ui->bgColor_ComboBox, darkWorkspaceColor);
+    }
+    else if (ui->bgColor_ComboBox->currentData().toString() == darkWorkspaceColor)
+    {
+        setIndex(ui->bgColor_ComboBox, QStringLiteral("white"));
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesGraphicsViewPage::showColorsTab()
+{
+    ui->graphicsViewTabWidget->setCurrentWidget(ui->colorsTab);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void PreferencesGraphicsViewPage::setIndex(QComboBox *box, const QString &text)
 {
     int index;

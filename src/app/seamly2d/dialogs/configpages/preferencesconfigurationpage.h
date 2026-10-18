@@ -73,6 +73,10 @@ public:
 
     void         apply();
 
+signals:
+    void         themeSelected(int theme);
+    void         customizeColorsClicked();
+
 protected:
     virtual void changeEvent(QEvent* event) override;
 

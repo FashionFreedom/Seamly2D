@@ -94,6 +94,14 @@ DialogPreferences::DialogPreferences(QWidget *parent)
     ui->pages_StackedWidget->insertWidget(2, m_pathPage);
     ui->pages_StackedWidget->insertWidget(3, m_graphicsPage);
 
+    connect(m_configurePage, &PreferencesConfigurationPage::themeSelected,
+            m_graphicsPage, &PreferencesGraphicsViewPage::setThemeBackground);
+    connect(m_configurePage, &PreferencesConfigurationPage::customizeColorsClicked, this, [this]()
+    {
+        ui->contents_ListWidget->setCurrentRow(3); // Graphics page
+        m_graphicsPage->showColorsTab();
+    });
+
 
     connect(ui->contents_ListWidget, &QListWidget::currentItemChanged, this, &DialogPreferences::pageChanged);
     ui->pages_StackedWidget->setCurrentIndex(0);

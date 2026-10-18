@@ -45,6 +45,8 @@ public:
     virtual                          ~PreferencesGraphicsViewPage ();
 
     void                              Apply();
+    void                              setThemeBackground(int theme);
+    void                              showColorsTab();
 
 protected:
     void                              enableOffsets();
