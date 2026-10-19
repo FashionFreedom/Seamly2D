@@ -3066,170 +3066,6 @@ Prova ad annullare l&apos;ultima operazione o a correggere la formula non funzio
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Variabili</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Filtro:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filtra l&apos;elenco per parola chiave</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Variabili personalizzate</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nome</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formula</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Sposta la misurazione verso l&apos;alto</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Sposta la misurazione verso il basso</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Assistente di formula</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Aggiungi variabile personalizzata</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Rimuovi variabile personalizzata</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Dettagli</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nome:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Nome variabile univoco</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Valore:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Formula:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calcolo</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Descrizione:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Aggiorna un modello con tutte le modifiche apportate</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Aggiornare</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Lunghezze delle linee</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linea</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Lunghezza</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Angoli di linea</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Angolo</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Lunghezze delle curve</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Curva</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Angoli di curvatura</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Lunghezze dei punti
-di controllo</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Raggi dell&apos;arco</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Arco</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Raggio</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Errore</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Campo vuoto.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Campo vuoto</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Risultato non valido. Il valore è infinito o NaN. Controlla i tuoi calcoli.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valore</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Errore del parser: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Modifica variabile</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Descrizione</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6550,6 +6386,10 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Descrizione</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Oggetto:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Ruotare</translation>
     </message>
@@ -7042,8 +6882,12 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Serratura</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoom sul punto (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Oggetto</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Zoom sull&apos;oggetto (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7174,12 +7018,8 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Immagini</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zooma su punto</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Punto:</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoom sull&apos;oggetto</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10598,12 +10438,12 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zooma su punto</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoom sull&apos;oggetto</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15432,6 +15272,170 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Variabili</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtro:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtra l&apos;elenco per parola chiave</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Variabili personalizzate</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formula</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Sposta la misurazione verso l&apos;alto</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Sposta la misurazione verso il basso</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Assistente di formula</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Aggiungi variabile personalizzata</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Rimuovi variabile personalizzata</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Dettagli</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nome:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Nome variabile univoco</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valore:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formula:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Calcolo</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descrizione:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Aggiorna un modello con tutte le modifiche apportate</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Aggiornare</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Lunghezze delle linee</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linea</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lunghezza</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Angoli di linea</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Angolo</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Lunghezze delle curve</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Curva</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Angoli di curvatura</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Lunghezze dei punti
+di controllo</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Raggi dell&apos;arco</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Arco</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Raggio</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Errore</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Campo vuoto.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Campo vuoto</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Risultato non valido. Il valore è infinito o NaN. Controlla i tuoi calcoli.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valore</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Errore del parser: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Modifica variabile</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrizione</translation>
     </message>
 </context>
 <context>

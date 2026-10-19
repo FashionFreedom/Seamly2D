@@ -3081,169 +3081,6 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Muuttujat</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Suodata:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Suodata lista avainsanan mukaan</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Mukautetut muuttujat</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nimi</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Matemaattinen kaava</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Siirrä mittaa ylöspäin</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Siirrä mittaa alaspäin</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Kaavavelho</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Lisää mukautettu muuttuja</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Poista mukautettu muuttuja</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Yksityiskohdat</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nimi:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Yksilöllinen muuttujan nimi</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Arvo:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Matemaattinen kaava:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Laskelma</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Kuvaus:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Päivitä kaava kaikilla tekemilläsi muutoksilla</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Päivitä</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Suorien Pituudet</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Suora</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Pituus</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Suorien kulmat</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Kulma</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Käyrien Pituudet</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Käyrä</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Käyrien Kulmat</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Kontrollipisteiden pituudet</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Kaaren säteet</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Kaari</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Säde</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Virhe</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Tyhjä sarake.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Tyhjä sarake</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Virheellinen tulos. Arvo on ääretön tai NaN. Tarkista laskelmasi.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Arvo</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Jäsentämisvirhe: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Muokkaa muuttujaa</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Kuvaus</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6562,6 +6399,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Kuvaus</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Esine:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Kierrä</translation>
     </message>
@@ -7054,8 +6895,12 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Lukko</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Tarkenna pisteeseen (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Esine</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Tarkenna kohteeseen (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7186,12 +7031,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Kuvat</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Tarkenna pisteeseen</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Piste:</translation>
+        <source>Zoom to Object</source>
+        <translation>Tarkenna kohteeseen</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10638,12 +10479,12 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Tarkenna pisteeseen</translation>
+        <source>Zoom to Object</source>
+        <translation>Tarkenna kohteeseen</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15444,6 +15285,169 @@ Example: fmod(3.3;2) = 1.3</comment>
         <source>wOnFold</source>
         <comment>placeholder</comment>
         <translation>wTaitteelta</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Muuttujat</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Suodata:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Suodata lista avainsanan mukaan</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Mukautetut muuttujat</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Matemaattinen kaava</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Siirrä mittaa ylöspäin</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Siirrä mittaa alaspäin</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Kaavavelho</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Lisää mukautettu muuttuja</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Poista mukautettu muuttuja</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Yksityiskohdat</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nimi:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Yksilöllinen muuttujan nimi</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Arvo:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Matemaattinen kaava:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Laskelma</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Kuvaus:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Päivitä kaava kaikilla tekemilläsi muutoksilla</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Päivitä</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Suorien Pituudet</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Suora</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Pituus</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Suorien kulmat</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Kulma</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Käyrien Pituudet</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Käyrä</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Käyrien Kulmat</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Kontrollipisteiden pituudet</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Kaaren säteet</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Kaari</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Säde</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Tyhjä sarake.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Tyhjä sarake</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Virheellinen tulos. Arvo on ääretön tai NaN. Tarkista laskelmasi.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Jäsentämisvirhe: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Muokkaa muuttujaa</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Kuvaus</translation>
     </message>
 </context>
 <context>

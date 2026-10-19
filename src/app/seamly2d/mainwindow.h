@@ -56,6 +56,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <functional>
 #include "mainwindowsnogui.h"
 #include "core/vcmdexport.h"
 #include "../vmisc/vlockguard.h"
@@ -267,8 +268,8 @@ private slots:
     void zoomToArea(bool checked);
     void zoomPan(bool checked);
 
-    void zoomToPoint(const QString& pointName);
-    void showZoomToPointDialog();
+    void zoomToObject(const QString& object_name);
+    void showZoomToObjectDialog();
 
     void LoadIndividual();
     void LoadMultisize();
@@ -311,7 +312,7 @@ private:
     QComboBox                        *font_combo_box;
     QComboBox                        *font_size_combo_box;
     QComboBox                        *base_point_combo_box;
-    QComboBox                        *draftBlockComboBox;  /// @brief draftBlockComboBox stores names of draft blocks.
+    QComboBox                        *draft_block_combobox;  /// @brief draft_block_combobox stores names of draft blocks.
     QLabel                           *draftBlockLabel;
     qint32                            currentBlockIndex;   /// @brief currentBlockIndex  current selected draft block.
     qint32                            currentToolBoxIndex; /// @brief currentToolBoxIndex  current set of tools.
@@ -335,15 +336,15 @@ private:
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
-    GroupsWidget                     *groupsWidget;
+    GroupsWidget                     *groups_widget;
     PiecesWidget                     *piecesWidget;
     std::shared_ptr<VLockGuard<char>> m_lock;
 
-    QDoubleSpinBox                   *zoomScaleSpinBox;
+    QDoubleSpinBox                   *zoom_scale_spinbox;
 
     PenToolBar                       *m_penToolBar;        /// @brief pointer to the current pen.
     PenToolBar                       *m_penReset;
-    QComboBox                        *m_zoomToPointComboBox;
+    QComboBox                        *m_zoom_to_object_combobox;
 
     QSharedPointer<MeasurementDoc>    m_measurements;
 
@@ -430,7 +431,7 @@ private:
     QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     QString            createDraftBlockName(const QString &text);
     QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
-    void               changeDraftBlock(int index, bool zoomBestFit = true);
+    void               changeDraftBlock(int index, bool zoom_best_fit = true);
     void               EndVisualization(bool click = false);
     void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
@@ -466,9 +467,11 @@ private:
     void               updateViewToolbar();
     void               resetPanShortcuts();
 
-    QStringList        draftPointNamesList();
+    QStringList        getObjectNames(GOType target_type);
+    QStringList        filterObjectNames(const std::function<bool(const QSharedPointer<VGObject>&)> &matchesCondition);
 
-    void               updateZoomToPointComboBox(QStringList namesList);
+
+    void               updateZoomToObjectComboBox();
 
     bool               IgnoreLocking(int error, const QString &path);
 

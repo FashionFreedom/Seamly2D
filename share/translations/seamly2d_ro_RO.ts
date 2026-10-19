@@ -3081,170 +3081,6 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Variabile</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Filtru:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filtrare listă după cuvânt cheie</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Variabile personalizate</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Număr</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formulă</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Mută măsurătoarea în sus</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Mută măsurătoarea în jos</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formula Asistenta</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Adăugați o variabilă personalizată</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Eliminați variabila personalizată</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Detalii</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nume:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Nume unic de variabilă</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Valoare:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Formulă:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calculează</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Descriere:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Reîmprospătează un model cu toate modificările efectuate</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Actualizare</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Lungimi de linie</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Lungime</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Unghiuri liniare</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Unghi</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Lungimi curbe</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Curbură</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Unghiuri de curbă</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Lungimi punctelor
- de control</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Raze de arc</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Curbura</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Rază</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Eroare</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Câmp gol.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Câmp gol</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Rezultat nevalid. Valoarea este infinită sau NaN. Vă rugăm să verificați calculele.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valoare</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Eroare Parser: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Editați variabila</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Descrie</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6564,6 +6400,10 @@ Doriți să salvați modificările?</translation>
         <translation>Descrie</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Obiect:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Rotire</translation>
     </message>
@@ -7056,8 +6896,12 @@ Doriți să salvați modificările?</translation>
         <translation>Blocare</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Mărește la punct (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Obiect</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Mărește la objeto (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7188,12 +7032,8 @@ Doriți să salvați modificările?</translation>
         <translation>Imagini</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Mărește la punct</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Punct:</translation>
+        <source>Zoom to Object</source>
+        <translation>Mărește la objeto</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10612,12 +10452,12 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Mărește la punct</translation>
+        <source>Zoom to Object</source>
+        <translation>Mărește la objeto</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15445,6 +15285,170 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Variabile</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtru:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtrare listă după cuvânt cheie</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Variabile personalizate</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Număr</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formulă</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Mută măsurătoarea în sus</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Mută măsurătoarea în jos</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formula Asistenta</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Adăugați o variabilă personalizată</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Eliminați variabila personalizată</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detalii</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nume:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Nume unic de variabilă</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valoare:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formulă:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Calculează</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Descriere:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Reîmprospătează un model cu toate modificările efectuate</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Actualizare</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Lungimi de linie</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Linie</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lungime</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Unghiuri liniare</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Unghi</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Lungimi curbe</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Curbură</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Unghiuri de curbă</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Lungimi punctelor
+ de control</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Raze de arc</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Curbura</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Rază</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Eroare</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Câmp gol.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Câmp gol</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Rezultat nevalid. Valoarea este infinită sau NaN. Vă rugăm să verificați calculele.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Eroare Parser: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Editați variabila</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Descrie</translation>
     </message>
 </context>
 <context>
