@@ -3081,169 +3081,6 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Változók</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Szűrő:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Lista szűrése kulcsszó szerint</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Egyéni változók</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Név</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Leírás</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Érték</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Képlet</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Mérés mozgatása felfelé</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Mérés lejjebb mozgatása</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Képletvarázsló</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Egyéni változó hozzáadása</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Egyéni változó eltávolítása</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Részletek</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Név:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Egyedi változónév</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Érték:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Képlet:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Számítás</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Leírás:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Minta frissítése az összes elvégzett módosítással</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Frissítés</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Vonalak hossza</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Vonal</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Hossz</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Vonalszögek</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Szög</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Ívhosszak</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Görbe</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Ívszögek</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Ellenőrzőpontok hossza</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Ívsugarak</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Ív</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Sugár</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Hiba</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Üres mező.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Üres mező</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Érvénytelen eredmény. Az érték végtelen vagy NaN. Kérjük, ellenőrizze a számításokat.</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Elemző hiba: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Változó szerkesztése</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6607,8 +6444,12 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Dokumentuminformációk megjelenítése</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Nagyítás egy pontra (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Objektum</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Ránagyítás az objektumra (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Import Image</source>
@@ -6937,12 +6778,12 @@ Nyomja meg az Enter billentyűt, hogy ideiglenesen hozzáadja a listához.</tran
         <translation>Toll eszköztár</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoomolás egy pontra</translation>
+        <source>Zoom to Object</source>
+        <translation>Ránagyítás az objektumra</translation>
     </message>
     <message>
-        <source>Point:</source>
-        <translation>Pont:</translation>
+        <source>Object:</source>
+        <translation>Objektum:</translation>
     </message>
     <message>
         <source>Midpoint</source>
@@ -10637,12 +10478,12 @@ Menti a módosításokat?</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoomolás egy pontra</translation>
+        <source>Zoom to Object</source>
+        <translation>Ránagyítás az objektumra</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15442,6 +15283,169 @@ Example: fmod(3.3;2) = 1.3</comment>
         <source>C2LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>C2HosszElérésiÚt</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Változók</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Szűrő:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Lista szűrése kulcsszó szerint</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Egyéni változók</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Leírás</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Képlet</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Mérés mozgatása felfelé</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Mérés lejjebb mozgatása</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Képletvarázsló</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Egyéni változó hozzáadása</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Egyéni változó eltávolítása</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Részletek</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Név:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Egyedi változónév</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Érték:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Képlet:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Számítás</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Leírás:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Minta frissítése az összes elvégzett módosítással</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Frissítés</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Vonalak hossza</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Vonal</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Hossz</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Vonalszögek</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Szög</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Ívhosszak</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Görbe</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Ívszögek</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Ellenőrzőpontok hossza</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Ívsugarak</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Ív</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Sugár</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Üres mező.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Üres mező</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Érvénytelen eredmény. Az érték végtelen vagy NaN. Kérjük, ellenőrizze a számításokat.</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Elemző hiba: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Változó szerkesztése</translation>
     </message>
 </context>
 <context>

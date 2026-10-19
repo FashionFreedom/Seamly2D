@@ -3081,169 +3081,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>变量</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>筛选:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>按关键字过滤列表</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>自定义变量</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>姓名</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>公式</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>向上移动测量值</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>向下移动测量值</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>公式向导</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>添加自定义变量</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>删除自定义变量</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>细节</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>姓名:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>唯一的变量名称</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>价值:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>公式:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>计算</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>描述:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>使用您所做的所有更改刷新模式</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>刷新</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>线路长度</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>线</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>长度</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>线角</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>角度</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>曲线长度</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>曲线</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>曲线角度</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>控制点长度</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>圆弧半径</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>弧</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>半径</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>错误</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>空场.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>空字段</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>结果无效。值为无穷大或 NaN。请检查你的计算.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>价值</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>解析器错误:%1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>编辑变量</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>描述</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6562,6 +6399,10 @@ Do you want to save your changes?</source>
         <translation>描述</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>目的:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>旋转</translation>
     </message>
@@ -7054,8 +6895,12 @@ Do you want to save your changes?</source>
         <translation>锁</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>缩放至点（Ctrl + Alt + P）</translation>
+        <source>Object</source>
+        <translation>目的</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>缩放到对象 （Ctrl + Alt + O）</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7186,12 +7031,8 @@ Do you want to save your changes?</source>
         <translation>图片</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>缩放至点</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>点:</translation>
+        <source>Zoom to Object</source>
+        <translation>缩放到对象</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10610,12 +10451,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>缩放至点</translation>
+        <source>Zoom to Object</source>
+        <translation>缩放到对象</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15445,6 +15286,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>变量</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>筛选:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>按关键字过滤列表</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>自定义变量</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>公式</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>向上移动测量值</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>向下移动测量值</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>公式向导</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>添加自定义变量</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>删除自定义变量</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>细节</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>姓名:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>唯一的变量名称</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>价值:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>公式:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>计算</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>描述:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>使用您所做的所有更改刷新模式</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>刷新</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>线路长度</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>线</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>长度</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>线角</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>角度</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>曲线长度</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>曲线</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>曲线角度</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>控制点长度</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>圆弧半径</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>弧</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>半径</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>错误</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>空场.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>空字段</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>结果无效。值为无穷大或 NaN。请检查你的计算.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>解析器错误:%1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>编辑变量</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>描述</translation>
     </message>
 </context>
 <context>
