@@ -1,5 +1,6 @@
 var NAVTREEINDEX224 =
 {
+"dc/d12/msvc-arm64_2include_2xercesc_2util_2regx_2RegularExpression_8hpp.html":[4,0,0,1,15,3,0,0,6,3,14],
 "dc/d12/msvc-arm64_2include_2xercesc_2util_2regx_2RegularExpression_8hpp_source.html":[4,0,0,1,15,3,0,0,6,3,14],
 "dc/d12/msvc_2include_2xercesc_2dom_2impl_2DOMProcessingInstructionImpl_8hpp.html":[4,0,0,1,15,2,0,0,0,0,36],
 "dc/d12/msvc_2include_2xercesc_2dom_2impl_2DOMProcessingInstructionImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX224 =
 "dc/d20/classHandlerBase.html#a58188cb1991cc489663ad4a1e135f8cf":[3,0,286,27],
 "dc/d20/classHandlerBase.html#a5b0798e38ffc081e29e137e64ac9b12d":[3,0,286,77],
 "dc/d20/classHandlerBase.html#a5b0798e38ffc081e29e137e64ac9b12d":[3,0,286,78],
-"dc/d20/classHandlerBase.html#a5b0798e38ffc081e29e137e64ac9b12d":[3,0,286,79],
-"dc/d20/classHandlerBase.html#a5f7df4e12baac8cd33ba56ea0f49fcdc":[3,0,286,36]
+"dc/d20/classHandlerBase.html#a5b0798e38ffc081e29e137e64ac9b12d":[3,0,286,79]
 };

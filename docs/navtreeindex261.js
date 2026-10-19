@@ -1,5 +1,6 @@
 var NAVTREEINDEX261 =
 {
+"dc/dd3/classVPatternConverter.html#a30a9baac2485df7514c648f52eec2b43":[3,0,708,61],
 "dc/dd3/classVPatternConverter.html#a3864d17988224b9a79f058456de8b99c":[3,0,708,99],
 "dc/dd3/classVPatternConverter.html#a3b6e574a015bb79b2509dbd8d0cd3b10":[3,0,708,1],
 "dc/dd3/classVPatternConverter.html#a3fcc2172232f763fe9a0f6fa36d7f295":[3,0,708,67],
@@ -248,6 +249,5 @@ var NAVTREEINDEX261 =
 "dc/df1/commandoptions_8cpp.html#a3b4d1f48af9a4ca0b912fe7ac4004d2f":[4,0,0,1,8,1,24],
 "dc/df1/commandoptions_8cpp.html#a3bfa1938d584e89031ebde0b51e37225":[4,0,0,1,8,1,40],
 "dc/df1/commandoptions_8cpp.html#a3c2d93dd04b90cb92a5205eefcf45cdd":[4,0,0,1,8,1,48],
-"dc/df1/commandoptions_8cpp.html#a3c599d635073ec072b6b7869398d09a7":[4,0,0,1,8,1,2],
-"dc/df1/commandoptions_8cpp.html#a3f061133f5af94b813eeaddbf38a71db":[4,0,0,1,8,1,26]
+"dc/df1/commandoptions_8cpp.html#a3c599d635073ec072b6b7869398d09a7":[4,0,0,1,8,1,2]
 };

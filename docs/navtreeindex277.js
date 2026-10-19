@@ -1,5 +1,6 @@
 var NAVTREEINDEX277 =
 {
+"de/d0d/classXMLIBM1047Transcoder.html#a8557872793ac601cf78b65b1a3bc3037":[3,0,847,15],
 "de/d0d/classXMLIBM1047Transcoder.html#a8557872793ac601cf78b65b1a3bc3037":[3,0,847,11],
 "de/d0d/classXMLIBM1047Transcoder.html#a8557872793ac601cf78b65b1a3bc3037":[3,0,847,3],
 "de/d0d/classXMLIBM1047Transcoder.html#a88dca54de294e8661f99ba0a6d364907":[3,0,847,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX277 =
 "de/d0f/classVCommonSettings.html#a9de77ef9da2e56da63a1ed34362d25a0":[3,0,596,95],
 "de/d0f/classVCommonSettings.html#a9e2277a973a70baf041d6e633887b9fb":[3,0,596,194],
 "de/d0f/classVCommonSettings.html#aa041dc491fb0052c3b555bbd163bfefb":[3,0,596,300],
-"de/d0f/classVCommonSettings.html#aa052d5872dc6d7ec461011ddebbc5a33":[3,0,596,127],
-"de/d0f/classVCommonSettings.html#aa170f4dd70df2f922309266d454d768e":[3,0,596,164]
+"de/d0f/classVCommonSettings.html#aa052d5872dc6d7ec461011ddebbc5a33":[3,0,596,127]
 };

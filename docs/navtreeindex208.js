@@ -1,5 +1,6 @@
 var NAVTREEINDEX208 =
 {
+"db/d0d/classDGXMLScanner.html#a5c4922ea4761bd3f4ab14d39753b766b":[3,0,98,48],
 "db/d0d/classDGXMLScanner.html#a5de736327cabf7736776680617f340cb":[3,0,98,62],
 "db/d0d/classDGXMLScanner.html#a5de736327cabf7736776680617f340cb":[3,0,98,63],
 "db/d0d/classDGXMLScanner.html#a5de736327cabf7736776680617f340cb":[3,0,98,61],
@@ -248,6 +249,5 @@ var NAVTREEINDEX208 =
 "db/d27/classDTDGrammar.html#a18dc38988813ae9f4b941a7d01e12031":[3,0,245,3],
 "db/d27/classDTDGrammar.html#a18dc38988813ae9f4b941a7d01e12031":[3,0,245,0],
 "db/d27/classDTDGrammar.html#a1b1477e8cfb3c55ae76427acc63be333":[3,0,245,35],
-"db/d27/classDTDGrammar.html#a1b1477e8cfb3c55ae76427acc63be333":[3,0,245,34],
-"db/d27/classDTDGrammar.html#a1b1477e8cfb3c55ae76427acc63be333":[3,0,245,33]
+"db/d27/classDTDGrammar.html#a1b1477e8cfb3c55ae76427acc63be333":[3,0,245,34]
 };

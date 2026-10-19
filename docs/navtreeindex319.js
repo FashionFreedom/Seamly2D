@@ -1,5 +1,6 @@
 var NAVTREEINDEX319 =
 {
+"df/deb/classUnicodeRangeFactory.html#ac3fca05618a291e814e20743cb74226f":[3,0,545,11],
 "df/deb/classUnicodeRangeFactory.html#ad0958220825e722fc4f6cad160112640":[3,0,545,24],
 "df/deb/classUnicodeRangeFactory.html#ad0958220825e722fc4f6cad160112640":[3,0,545,25],
 "df/deb/classUnicodeRangeFactory.html#ad0958220825e722fc4f6cad160112640":[3,0,545,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX319 =
 "df/dfa/classRefHash2KeysTableOf.html#a32c6798c2b5c6f3d15ff24f06734bd99":[3,0,439,73],
 "df/dfa/classRefHash2KeysTableOf.html#a32c6798c2b5c6f3d15ff24f06734bd99":[3,0,439,75],
 "df/dfa/classRefHash2KeysTableOf.html#a32c6798c2b5c6f3d15ff24f06734bd99":[3,0,439,74],
-"df/dfa/classRefHash2KeysTableOf.html#a32fd984703d32ec153b4b0b78caf8a72":[3,0,439,60],
-"df/dfa/classRefHash2KeysTableOf.html#a32fd984703d32ec153b4b0b78caf8a72":[3,0,439,61]
+"df/dfa/classRefHash2KeysTableOf.html#a32fd984703d32ec153b4b0b78caf8a72":[3,0,439,60]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX312 =
 {
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a8311552884f5ced5b9c5b3c46809413c":[3,0,866,2,39],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a8311552884f5ced5b9c5b3c46809413c":[3,0,866,1,39],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a8311552884f5ced5b9c5b3c46809413c":[3,0,866,1,3],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a8311552884f5ced5b9c5b3c46809413c":[3,0,866,3,39],
@@ -248,6 +249,5 @@ var NAVTREEINDEX312 =
 "df/d69/welcome__dialog_8cpp.html":[4,0,0,0,0,1,40],
 "df/d69/welcome__dialog_8cpp_source.html":[4,0,0,0,0,1,40],
 "df/d6a/mingw_2include_2xercesc_2framework_2XMLAttDef_8hpp.html":[4,0,0,1,15,1,0,0,1,13],
-"df/d6a/mingw_2include_2xercesc_2framework_2XMLAttDef_8hpp_source.html":[4,0,0,1,15,1,0,0,1,13],
-"df/d6d/msvc-arm64_2include_2xercesc_2sax_2AttributeList_8hpp.html":[4,0,0,1,15,3,0,0,4,0]
+"df/d6a/mingw_2include_2xercesc_2framework_2XMLAttDef_8hpp_source.html":[4,0,0,1,15,1,0,0,1,13]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX164 =
 {
+"d8/d9a/classDOMEntityImpl.html#af5f5b67407f00a933924147a57b1016a":[3,0,169,112],
 "d8/d9a/classDOMEntityImpl.html#af5f5b67407f00a933924147a57b1016a":[3,0,169,113],
 "d8/d9a/classDOMEntityImpl.html#af5f5b67407f00a933924147a57b1016a":[3,0,169,114],
 "d8/d9a/classDOMEntityImpl.html#af5f5b67407f00a933924147a57b1016a":[3,0,169,115],
@@ -248,6 +249,5 @@ var NAVTREEINDEX164 =
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a5a1863ed329f6a2fd008e0bfa263eaf2":[2,0,23,9,1,15],
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a5a1863ed329f6a2fd008e0bfa263eaf2":[3,0,0,9,1,15],
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a64a07db7dcc46d5a83bfe8201368b469":[3,0,0,9,1,10],
-"d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a64a07db7dcc46d5a83bfe8201368b469":[2,0,23,9,1,10],
-"d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a65a880535cf3adc5dcb264a196a64415":[2,0,23,9,1,0]
+"d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a64a07db7dcc46d5a83bfe8201368b469":[2,0,23,9,1,10]
 };

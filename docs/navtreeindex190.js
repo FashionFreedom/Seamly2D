@@ -1,5 +1,6 @@
 var NAVTREEINDEX190 =
 {
+"d9/de7/classDOMNodeIteratorImpl.html#ab65161e0ec402605cf8762a3c2bc9972":[3,0,205,4],
 "d9/de7/classDOMNodeIteratorImpl.html#ab65161e0ec402605cf8762a3c2bc9972":[3,0,205,1],
 "d9/de7/classDOMNodeIteratorImpl.html#ac5a121986dd95c78b9bc2f0635424d3f":[3,0,205,18],
 "d9/de7/classDOMNodeIteratorImpl.html#ac5a121986dd95c78b9bc2f0635424d3f":[3,0,205,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX190 =
 "da/d05/classXMLPlatformUtils.html#a8c865f3209cf6e05712c0d1ba7d3e589":[3,0,861,52],
 "da/d05/classXMLPlatformUtils.html#a8c865f3209cf6e05712c0d1ba7d3e589":[3,0,861,53],
 "da/d05/classXMLPlatformUtils.html#a8c865f3209cf6e05712c0d1ba7d3e589":[3,0,861,54],
-"da/d05/classXMLPlatformUtils.html#a8c865f3209cf6e05712c0d1ba7d3e589":[3,0,861,55],
-"da/d05/classXMLPlatformUtils.html#a92246fafe4d841516c48b88f10d62a4a":[3,0,861,123]
+"da/d05/classXMLPlatformUtils.html#a8c865f3209cf6e05712c0d1ba7d3e589":[3,0,861,55]
 };

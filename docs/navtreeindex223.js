@@ -1,5 +1,6 @@
 var NAVTREEINDEX223 =
 {
+"dc/d03/classDOMXPathException.html#a501cfc0a5287d3c4abb059ce049c8149a8c523d61c51112439dc7ee85b1e83aba":[3,0,230,0,3],
 "dc/d03/classDOMXPathException.html#a501cfc0a5287d3c4abb059ce049c8149a8c523d61c51112439dc7ee85b1e83aba":[3,0,230,0,9],
 "dc/d03/classDOMXPathException.html#a501cfc0a5287d3c4abb059ce049c8149a8c523d61c51112439dc7ee85b1e83aba":[3,0,230,2,6],
 "dc/d03/classDOMXPathException.html#a501cfc0a5287d3c4abb059ce049c8149a8c523d61c51112439dc7ee85b1e83aba":[3,0,230,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX223 =
 "dc/d11/classHexBinaryDatatypeValidator.html#aa99edec4bb5f8c172b67cb8bd7cc49b7":[3,0,294,23],
 "dc/d11/classHexBinaryDatatypeValidator.html#aa99edec4bb5f8c172b67cb8bd7cc49b7":[3,0,294,22],
 "dc/d11/classHexBinaryDatatypeValidator.html#aa99edec4bb5f8c172b67cb8bd7cc49b7":[3,0,294,21],
-"dc/d11/classHexBinaryDatatypeValidator.html#aa99edec4bb5f8c172b67cb8bd7cc49b7":[3,0,294,20],
-"dc/d12/msvc-arm64_2include_2xercesc_2util_2regx_2RegularExpression_8hpp.html":[4,0,0,1,15,3,0,0,6,3,14]
+"dc/d11/classHexBinaryDatatypeValidator.html#aa99edec4bb5f8c172b67cb8bd7cc49b7":[3,0,294,20]
 };

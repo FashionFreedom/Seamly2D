@@ -1,5 +1,6 @@
 var NAVTREEINDEX220 =
 {
+"db/dd0/msvc_2include_2xercesc_2util_2CountedPointer_8c.html":[4,0,0,1,15,2,0,0,6,14],
 "db/dd0/msvc_2include_2xercesc_2util_2CountedPointer_8c_source.html":[4,0,0,1,15,2,0,0,6,14],
 "db/dd5/vistoolcurveintersectaxis_8cpp.html":[4,0,0,1,13,3,0,17],
 "db/dd5/vistoolcurveintersectaxis_8cpp_source.html":[4,0,0,1,13,3,0,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX220 =
 "db/de4/classDOMAttrImpl.html#a2c41d9660566341cb979efd643059190":[3,0,141,221],
 "db/de4/classDOMAttrImpl.html#a2eaf37ef47f5afb42433540e2690243d":[3,0,141,194],
 "db/de4/classDOMAttrImpl.html#a2eaf37ef47f5afb42433540e2690243d":[3,0,141,195],
-"db/de4/classDOMAttrImpl.html#a2eaf37ef47f5afb42433540e2690243d":[3,0,141,193],
-"db/de4/classDOMAttrImpl.html#a2eaf37ef47f5afb42433540e2690243d":[3,0,141,192]
+"db/de4/classDOMAttrImpl.html#a2eaf37ef47f5afb42433540e2690243d":[3,0,141,193]
 };

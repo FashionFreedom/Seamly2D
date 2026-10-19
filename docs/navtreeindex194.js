@@ -1,5 +1,6 @@
 var NAVTREEINDEX194 =
 {
+"da/d51/classBinMemOutputStream.html#aefc7e7860762387ff82a3f3393d25fa7":[3,0,42,43],
 "da/d51/macx_2include_2xercesc_2framework_2Wrapper4InputSource_8hpp.html":[4,0,0,1,15,0,0,0,1,12],
 "da/d51/macx_2include_2xercesc_2framework_2Wrapper4InputSource_8hpp_source.html":[4,0,0,1,15,0,0,0,1,12],
 "da/d53/msvc-arm64_2include_2xercesc_2dom_2impl_2DOMDeepNodeListImpl_8hpp.html":[4,0,0,1,15,3,0,0,0,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX194 =
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,0,23],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,0,10],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,2,36],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,2,49],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,1,10]
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a0958cdb56895598e994c30a1d2df0bc8":[3,0,236,2,49]
 };

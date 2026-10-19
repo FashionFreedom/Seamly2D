@@ -1,5 +1,6 @@
 var NAVTREEINDEX210 =
 {
+"db/d33/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSNotationDeclaration_8hpp.html":[4,0,0,1,15,3,0,0,1,0,21],
 "db/d33/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSNotationDeclaration_8hpp_source.html":[4,0,0,1,15,3,0,0,1,0,21],
 "db/d34/msvc_2include_2xercesc_2framework_2psvi_2XSAttributeUse_8hpp.html":[4,0,0,1,15,2,0,0,1,0,8],
 "db/d34/msvc_2include_2xercesc_2framework_2psvi_2XSAttributeUse_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX210 =
 "db/d3e/classOpFactory.html#a2d6f68aed6c37fae12eec6fa2cad424d":[3,0,381,15],
 "db/d3e/classOpFactory.html#a511987f49366bec880fc301af4a1d236":[3,0,381,41],
 "db/d3e/classOpFactory.html#a511987f49366bec880fc301af4a1d236":[3,0,381,40],
-"db/d3e/classOpFactory.html#a511987f49366bec880fc301af4a1d236":[3,0,381,42],
-"db/d3e/classOpFactory.html#a511987f49366bec880fc301af4a1d236":[3,0,381,43]
+"db/d3e/classOpFactory.html#a511987f49366bec880fc301af4a1d236":[3,0,381,42]
 };

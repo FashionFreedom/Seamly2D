@@ -69,7 +69,7 @@ var searchData=
   ['groupotext_66',['groupOText',['../d3/d63/classMeasurementDatabaseDialog.html#a99cb610e3630978b03107ab55b972db1',1,'MeasurementDatabaseDialog']]],
   ['groupptext_67',['groupPText',['../d3/d63/classMeasurementDatabaseDialog.html#a305e9c1b8f10fc890f56463b9f2b8953',1,'MeasurementDatabaseDialog']]],
   ['groupqtext_68',['groupQText',['../d3/d63/classMeasurementDatabaseDialog.html#a326f16fed6149461f5bc5f23910556e7',1,'MeasurementDatabaseDialog']]],
-  ['groupswidget_69',['groupsWidget',['../d6/d1a/classMainWindow.html#a7c35bf8e7a0125f54e1fd1f19e5931b9',1,'MainWindow']]],
+  ['groups_5fwidget_69',['groups_widget',['../d6/d1a/classMainWindow.html#a21eab9e58960d6616104fc9731ddc403',1,'MainWindow']]],
   ['gspecialstarttagcharmask_70',['gSpecialStartTagCharMask',['../dd/d58/mingw_2include_2xercesc_2util_2XMLChar_8hpp.html#a5ece601287e0f2a56d2fdaff4995fcc4',1,'gSpecialStartTagCharMask():&#160;XMLChar.hpp'],['../d8/d55/msvc-arm64_2include_2xercesc_2util_2XMLChar_8hpp.html#a5ece601287e0f2a56d2fdaff4995fcc4',1,'gSpecialStartTagCharMask():&#160;XMLChar.hpp'],['../de/d00/macx_2include_2xercesc_2util_2XMLChar_8hpp.html#a5ece601287e0f2a56d2fdaff4995fcc4',1,'gSpecialStartTagCharMask():&#160;XMLChar.hpp'],['../d6/d9a/msvc_2include_2xercesc_2util_2XMLChar_8hpp.html#a5ece601287e0f2a56d2fdaff4995fcc4',1,'gSpecialStartTagCharMask():&#160;XMLChar.hpp']]],
   ['gui_5ftext_71',['gui_text',['../d3/d99/classMeasurementVariableData.html#af2e82d7ae5502610ca9418877aade551',1,'MeasurementVariableData']]],
   ['guienabled_72',['guiEnabled',['../d6/d1a/classMainWindow.html#ab97049ecffbf746214d8625329a0cc3b',1,'MainWindow']]],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX218 =
 {
+"db/d91/classDOMLSResourceResolver.html#a143033b3ee74c82641555c2d5c460890":[3,0,193,16],
 "db/d91/classDOMLSResourceResolver.html#a58f2a0f6d38cf3da6a69ff14356100fd":[3,0,193,2],
 "db/d91/classDOMLSResourceResolver.html#a58f2a0f6d38cf3da6a69ff14356100fd":[3,0,193,5],
 "db/d91/classDOMLSResourceResolver.html#a58f2a0f6d38cf3da6a69ff14356100fd":[3,0,193,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX218 =
 "db/db6/msvc-arm64_2include_2xercesc_2validators_2datatype_2MonthDayDatatypeValidator_8hpp_source.html":[4,0,0,1,15,3,0,0,7,1,25],
 "db/db7/classXMLBufferMgr.html":[3,0,817],
 "db/db7/classXMLBufferMgr.html#a1e801b9e1c7b452541b4337421050b23":[3,0,817,9],
-"db/db7/classXMLBufferMgr.html#a1e801b9e1c7b452541b4337421050b23":[3,0,817,6],
-"db/db7/classXMLBufferMgr.html#a1e801b9e1c7b452541b4337421050b23":[3,0,817,3]
+"db/db7/classXMLBufferMgr.html#a1e801b9e1c7b452541b4337421050b23":[3,0,817,6]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX258 =
 {
+"dc/d8e/classXIncludeUtils.html#abdbd019f1b2c62111fa74e6d207d21f9":[3,0,803,4],
 "dc/d8e/classXIncludeUtils.html#abdbd019f1b2c62111fa74e6d207d21f9":[3,0,803,0],
 "dc/d8e/classXIncludeUtils.html#abdbd019f1b2c62111fa74e6d207d21f9":[3,0,803,2],
 "dc/d8e/classXIncludeUtils.html#ac838b8e048ded610fa51e64470c98270":[3,0,803,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX258 =
 "dc/d9d/classAddPiece.html#a8b9a47f660f508fd4a65b9a5bc0358d3":[3,0,16,1],
 "dc/d9d/classAddPiece.html#a96203a6c84440472aa5a53eb85501ee4":[3,0,16,3],
 "dc/d9d/classAddPiece.html#adcf12b36fdcfa75155ecbbf9ccdcde82":[3,0,16,5],
-"dc/d9d/classAddPiece.html#af4cde9d3ed0dd50bba09ac29894b7180":[3,0,16,0],
-"dc/d9d/vexception_8cpp.html":[4,0,0,1,1,0,0]
+"dc/d9d/classAddPiece.html#af4cde9d3ed0dd50bba09ac29894b7180":[3,0,16,0]
 };

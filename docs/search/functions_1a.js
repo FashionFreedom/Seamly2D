@@ -13,9 +13,8 @@ var searchData=
   ['zoomtoarea_10',['zoomToArea',['../d6/d1a/classMainWindow.html#a87c7a6c7a9c2f0aa47b24692e238ffd7',1,'MainWindow']]],
   ['zoomtoareaenabled_11',['zoomToAreaEnabled',['../da/d5d/classVMainGraphicsView.html#ac7338ab4571838613491084c62235529',1,'VMainGraphicsView']]],
   ['zoomtofit_12',['zoomToFit',['../da/d5d/classVMainGraphicsView.html#a047c488365d0cca98e3e9d762a0a1f8d',1,'VMainGraphicsView']]],
-  ['zoomtoobject_13',['zoomToObject',['../dc/d83/classGroupsWidget.html#a862e5ff08ed0d3a36235f4699061cf72',1,'GroupsWidget']]],
-  ['zoomtopoint_14',['zoomToPoint',['../d6/d1a/classMainWindow.html#a6ef53ce1b39891be5f2d11725ed9b297',1,'MainWindow']]],
-  ['zoomtoprevious_15',['zoomToPrevious',['../d6/d1a/classMainWindow.html#a8189a2693a849a3a8dce57f1ae42ffa8',1,'MainWindow']]],
-  ['zoomtorect_16',['zoomToRect',['../da/d5d/classVMainGraphicsView.html#a8aae204b4731085dd60f7ca060f7f89f',1,'VMainGraphicsView']]],
-  ['zoomtoselected_17',['zoomToSelected',['../d6/d1a/classMainWindow.html#ace47a2f2bef148b1eee71f39ddac763e',1,'MainWindow::zoomToSelected()'],['../d8/d61/classTMainWindow.html#a605ab53c785755efbaaf0ee68ab7082d',1,'TMainWindow::zoomToSelected()'],['../dc/d59/classVAbstractMainWindow.html#a3d5d5e3cf10fa4fcbc9b0009c622bf3e',1,'VAbstractMainWindow::zoomToSelected()']]]
+  ['zoomtoobject_13',['zoomToObject',['../dc/d83/classGroupsWidget.html#a862e5ff08ed0d3a36235f4699061cf72',1,'GroupsWidget::zoomToObject()'],['../d6/d1a/classMainWindow.html#a1b3cbd25e223cda9785416c81c08a51f',1,'MainWindow::zoomToObject(const QString &amp;object_name)']]],
+  ['zoomtoprevious_14',['zoomToPrevious',['../d6/d1a/classMainWindow.html#a8189a2693a849a3a8dce57f1ae42ffa8',1,'MainWindow']]],
+  ['zoomtorect_15',['zoomToRect',['../da/d5d/classVMainGraphicsView.html#a8aae204b4731085dd60f7ca060f7f89f',1,'VMainGraphicsView']]],
+  ['zoomtoselected_16',['zoomToSelected',['../d6/d1a/classMainWindow.html#ace47a2f2bef148b1eee71f39ddac763e',1,'MainWindow::zoomToSelected()'],['../d8/d61/classTMainWindow.html#a605ab53c785755efbaaf0ee68ab7082d',1,'TMainWindow::zoomToSelected()'],['../dc/d59/classVAbstractMainWindow.html#a3d5d5e3cf10fa4fcbc9b0009c622bf3e',1,'VAbstractMainWindow::zoomToSelected()']]]
 ];

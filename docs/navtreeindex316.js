@@ -1,5 +1,6 @@
 var NAVTREEINDEX316 =
 {
+"df/dac/classSAX2XMLFilter.html#aaf084b8aeab9def12a7f4e7ee0781bb8":[3,0,460,11],
 "df/dac/classSAX2XMLFilter.html#aaf084b8aeab9def12a7f4e7ee0781bb8":[3,0,460,8],
 "df/dac/classSAX2XMLFilter.html#aaf084b8aeab9def12a7f4e7ee0781bb8":[3,0,460,5],
 "df/dac/classSAX2XMLFilter.html#aca859d60d49ec19b78be980c918996dd":[3,0,460,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX316 =
 "df/db4/classXTemplateSerializer.html#af02345aeaf995f1cd2d02992e533e2bc":[3,0,926,92],
 "df/db4/classXTemplateSerializer.html#af02345aeaf995f1cd2d02992e533e2bc":[3,0,926,93],
 "df/db4/classXTemplateSerializer.html#af02345aeaf995f1cd2d02992e533e2bc":[3,0,926,94],
-"df/db4/classXTemplateSerializer.html#af02345aeaf995f1cd2d02992e533e2bc":[3,0,926,95],
-"df/db4/classXTemplateSerializer.html#af4a33e448d85409953f135bb289569db":[3,0,926,49]
+"df/db4/classXTemplateSerializer.html#af02345aeaf995f1cd2d02992e533e2bc":[3,0,926,95]
 };

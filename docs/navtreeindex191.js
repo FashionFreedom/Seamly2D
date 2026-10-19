@@ -1,5 +1,6 @@
 var NAVTREEINDEX191 =
 {
+"da/d05/classXMLPlatformUtils.html#a92246fafe4d841516c48b88f10d62a4a":[3,0,861,123],
 "da/d05/classXMLPlatformUtils.html#a92246fafe4d841516c48b88f10d62a4a":[3,0,861,122],
 "da/d05/classXMLPlatformUtils.html#a92246fafe4d841516c48b88f10d62a4a":[3,0,861,121],
 "da/d05/classXMLPlatformUtils.html#a92246fafe4d841516c48b88f10d62a4a":[3,0,861,120],
@@ -248,6 +249,5 @@ var NAVTREEINDEX191 =
 "da/d19/classXSerializable.html#aa7dcc078df8348dc665ed5bd8349d992":[3,0,907,27],
 "da/d19/classXSerializable.html#aa7dcc078df8348dc665ed5bd8349d992":[3,0,907,25],
 "da/d19/classXSerializable.html#aa7dcc078df8348dc665ed5bd8349d992":[3,0,907,26],
-"da/d19/classXSerializable.html#aa870bc334c50c64ac8ea085c2235f736":[3,0,907,2],
-"da/d19/classXSerializable.html#aa870bc334c50c64ac8ea085c2235f736":[3,0,907,5]
+"da/d19/classXSerializable.html#aa870bc334c50c64ac8ea085c2235f736":[3,0,907,2]
 };

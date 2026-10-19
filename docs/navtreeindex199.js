@@ -1,5 +1,6 @@
 var NAVTREEINDEX199 =
 {
+"da/d83/classXSMultiValueFacet.html#ae2e498dcd4632c05b78be0bf7efeaf02":[3,0,915,11],
 "da/d83/classXSMultiValueFacet.html#af060e840900692be976378460f01bbe7":[3,0,915,31],
 "da/d83/classXSMultiValueFacet.html#af060e840900692be976378460f01bbe7":[3,0,915,30],
 "da/d83/classXSMultiValueFacet.html#af060e840900692be976378460f01bbe7":[3,0,915,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX199 =
 "da/d96/classXercesXPath.html#af2a7166fdc1b715fa292f4c98d709973":[3,0,799,38],
 "da/d97/macx_2include_2xercesc_2validators_2schema_2identity_2FieldActivator_8hpp.html":[4,0,0,1,15,0,0,0,7,3,0,0],
 "da/d97/macx_2include_2xercesc_2validators_2schema_2identity_2FieldActivator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,0,0],
-"da/d99/vtoolcurveintersectaxis_8cpp.html":[4,0,0,1,13,1,0,2,1,1,6],
-"da/d99/vtoolcurveintersectaxis_8cpp_source.html":[4,0,0,1,13,1,0,2,1,1,6]
+"da/d99/vtoolcurveintersectaxis_8cpp.html":[4,0,0,1,13,1,0,2,1,1,6]
 };
