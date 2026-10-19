@@ -67,6 +67,7 @@ public:
     void setInsunits(const VarInsunits &var);
 
     bool ExportToAAMA(const QVector<VLayoutPiece> &details) const;
+    QString exportError() const;
 
 protected:
     virtual int metric(PaintDeviceMetric metric) const override;

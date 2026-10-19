@@ -1221,7 +1221,10 @@ void MainWindowsNoGUI::AAMADxfFile(const QString &name, int version, bool binary
     generator.setVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
-    generator.ExportToAAMA(pieces);
+    if (!generator.ExportToAAMA(pieces))
+    {
+        throw VException(tr("Cannot export AAMA DXF '%1': %2").arg(name, generator.exportError()));
+    }
 }
 
 QT_WARNING_POP
