@@ -58,6 +58,9 @@
 #include "../vmisc/logging.h"
 
 #include <QtTest>
+#include <QProcess>
+#include <QProcessEnvironment>
+#include <QTemporaryDir>
 
 const QString tmpTestFolder = QStringLiteral("tst_seamly2d_tmp");
 const QString tmpTestCollectionFolder = QStringLiteral("tst_seamly2d_collection_tmp");
@@ -306,6 +309,43 @@ void TST_Seamly2DCommandLine::TestOpenCollection()
     const int exit = Run(exitCode, Seamly2DPath(), arg, error);
 
     QVERIFY2(exit == exitCode, qUtf8Printable(error));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::automationDataDirectory()
+{
+    QTemporaryDir directory;
+    QVERIFY(directory.isValid());
+    QProcess process;
+    process.setWorkingDirectory(directory.path());
+    QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
+    const QString data_dir = directory.filePath("state");
+    environment.insert("SEAMLY_DATA_DIR", data_dir);
+    process.setProcessEnvironment(environment);
+    process.start(Seamly2DPath(), QStringList() << "--version");
+    QVERIFY(process.waitForFinished(30000));
+    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
+    QCOMPARE(process.exitCode(), V_EX_OK);
+    QVERIFY(QDir(data_dir + "/settings").exists());
+    QVERIFY(QDir(data_dir + "/logs/seamly2d").exists());
+
+    environment.insert("SEAMLY_DATA_DIR", "relative-state");
+    process.setProcessEnvironment(environment);
+    process.start(Seamly2DPath(), QStringList() << "--version");
+    QVERIFY(process.waitForFinished(30000));
+    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
+    QCOMPARE(process.exitCode(), V_EX_CANTCREAT);
+    QVERIFY(process.readAllStandardError().contains("SEAMLY_DATA_DIR"));
+    QVERIFY(!QDir(directory.filePath("relative-state")).exists());
+
+    QFile file(directory.filePath("file"));
+    QVERIFY(file.open(QIODevice::WriteOnly));
+    file.close();
+    environment.insert("SEAMLY_DATA_DIR", file.fileName());
+    process.setProcessEnvironment(environment);
+    process.start(Seamly2DPath(), QStringList() << "--version");
+    QVERIFY(process.waitForFinished(30000));
+    QCOMPARE(process.exitCode(), V_EX_CANTCREAT);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

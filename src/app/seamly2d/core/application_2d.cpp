@@ -530,6 +530,12 @@ QString Application2D::seamlyMeFilePath() const
 //---------------------------------------------------------------------------------------------------------------------
 QString Application2D::logDirPath() const
 {
+    const QString data_dir = qEnvironmentVariable("SEAMLY_DATA_DIR");
+    if (!data_dir.isEmpty())
+    {
+        return QDir(data_dir).filePath("logs/seamly2d");
+    }
+
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
     const QString logDirPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString(),
                                                       QStandardPaths::LocateDirectory) + "Seamly2D";

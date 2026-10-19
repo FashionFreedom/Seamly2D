@@ -430,9 +430,20 @@ QString VCommonSettings::prepareMultisizeTables(const QString &currentPath)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::defaultDataPath()
+{
+    const QString data_dir = qEnvironmentVariable("SEAMLY_DATA_DIR");
+    if (!data_dir.isEmpty())
+    {
+        return QDir::cleanPath(data_dir) + QLatin1Char('/');
+    }
+    return QDir::homePath() + QLatin1String("/seamly2d/");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultIndividualSizePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("individual");
+    return defaultDataPath() + tr("measurements") + QLatin1String("/") + tr("individual");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -453,7 +464,7 @@ void VCommonSettings::setIndividualSizePath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultMultisizePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("multisize");
+    return defaultDataPath() + tr("measurements") + QLatin1String("/") + tr("multisize");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -474,7 +485,7 @@ void VCommonSettings::setMultisizePath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultTemplatePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("templates");
+    return defaultDataPath() + tr("templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -495,7 +506,7 @@ void VCommonSettings::setTemplatePath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultBodyScansPath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("bodyscans");
+    return defaultDataPath() + tr("bodyscans");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -516,7 +527,7 @@ void VCommonSettings::setBodyScansPath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLabelTemplatePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+    return defaultDataPath() + tr("label templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -534,7 +545,7 @@ void VCommonSettings::SetPathLabelTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultImageFilePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
+    return defaultDataPath() + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -552,7 +563,7 @@ void VCommonSettings::setImageFilePath(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultBackupFilePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("backups");
+    return defaultDataPath() + tr("backups");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

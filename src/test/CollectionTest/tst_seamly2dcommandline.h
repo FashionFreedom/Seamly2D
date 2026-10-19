@@ -68,6 +68,7 @@ private slots:
     void ExportMode();
     void TestMode_data() const;
     void TestMode();
+    void automationDataDirectory();
     void TestOpenCollection_data() const;
     void TestOpenCollection();
     void cleanupTestCase();
