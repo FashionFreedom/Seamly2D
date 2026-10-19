@@ -446,6 +446,15 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
 
     // Disable piece labels in exports and layouts
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
+    layoutPiece.d->cutting_text = QStringList()
+        << QStringLiteral("Piece Name: %1").arg(piece.GetName())
+        << QStringLiteral("Quantity: %1").arg(pieceLabelData.GetQuantity());
+    if (qApp->patternType() == MeasurementsType::Multisize)
+    {
+        const qreal size_cm = UnitConvertor(VContainer::size(), *pattern->GetPatternUnit(), Unit::Cm);
+        layoutPiece.d->cutting_text.append(QStringLiteral("Size: %1").arg(QString::number(size_cm)));
+    }
+
     if (pieceLabelData.IsVisible() & qApp->Settings()->showLabels())
     {
         layoutPiece.setPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
@@ -535,7 +544,25 @@ QPointF VLayoutPiece::getPieceTextPosition() const
 //---------------------------------------------------------------------------------------------------------------------
 QStringList VLayoutPiece::getPieceText() const
 {
-    return getLabelText (d->pieceLabel, d->m_tmPiece);
+    QStringList text = d->cutting_text;
+    const QStringList label_text = getLabelText(d->pieceLabel, d->m_tmPiece);
+    for (const QString& line : label_text)
+    {
+        bool cutting_field = false;
+        for (const QString& field : d->cutting_text)
+        {
+            if (line.startsWith(field.section(QLatin1Char(':'), 0, 0) + QLatin1Char(':'), Qt::CaseInsensitive))
+            {
+                cutting_field = true;
+                break;
+            }
+        }
+        if (!cutting_field)
+        {
+            text.append(line);
+        }
+    }
+    return text;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

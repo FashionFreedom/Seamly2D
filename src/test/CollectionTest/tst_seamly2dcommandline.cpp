@@ -443,6 +443,57 @@ void TST_Seamly2DCommandLine::automationDataDirectory()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::aamaCuttingText()
+{
+    QTemporaryDir directory;
+    QVERIFY(directory.isValid());
+    QFile measurements(directory.filePath("measurements.smms"));
+    QVERIFY(measurements.open(QIODevice::WriteOnly));
+    measurements.write(R"xml(<?xml version="1.0" encoding="UTF-8"?>
+<smms><version>0.4.5</version><read-only>false</read-only><unit>cm</unit><pm_system>998</pm_system>
+<size base="50"/><height base="176"/><body-measurements>
+<m name="@width" base="20" height_increase="0" size_increase="1"/>
+</body-measurements></smms>)xml");
+    measurements.close();
+    QFile pattern(directory.filePath("cutting.sm2d"));
+    QVERIFY(pattern.open(QIODevice::WriteOnly));
+    pattern.write(R"xml(<?xml version="1.0" encoding="UTF-8"?>
+<pattern><version>0.7.5</version><unit>cm</unit><measurements>measurements.smms</measurements>
+<draftBlock name="Original cutting test"><calculation>
+<point id="1" type="single" name="A" x="0" y="0"/>
+<point id="2" type="endLine" name="B" basePoint="1" angle="0" length="@width"/>
+<point id="3" type="endLine" name="C" basePoint="2" angle="270" length="30"/>
+<point id="4" type="endLine" name="D" basePoint="3" angle="180" length="@width"/>
+</calculation><modeling>
+<point id="5" type="modeling" idObject="1"/><point id="6" type="modeling" idObject="2"/>
+<point id="7" type="modeling" idObject="3"/><point id="8" type="modeling" idObject="4"/>
+</modeling><pieces><piece id="9" name="Original rectangle" version="2" inLayout="true"
+seamAllowance="true" width="1"><data visible="false" quantity="4"/><nodes>
+<node idObject="5" type="NodePoint"/><node idObject="6" type="NodePoint"/>
+<node idObject="7" type="NodePoint"/><node idObject="8" type="NodePoint"/>
+</nodes></piece></pieces></draftBlock></pattern>)xml");
+    pattern.close();
+
+    QProcess process;
+    QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
+    environment.insert("SEAMLY_DATA_DIR", directory.filePath("state"));
+    process.setProcessEnvironment(environment);
+    process.start(Seamly2DPath(), QStringList() << "--basename" << "cutting"
+                  << "--destination" << directory.path() << "--format" << "20"
+                  << "--exportOnlyDetails" << "--gsize" << "50" << "--gheight" << "176" << pattern.fileName());
+    QVERIFY(process.waitForFinished(120000));
+    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
+    QCOMPARE(process.exitCode(), V_EX_OK);
+    QFile output(directory.filePath("cutting_pieces.dxf"));
+    QVERIFY(output.open(QIODevice::ReadOnly));
+    const QByteArray text = output.readAll().toUpper();
+    QVERIFY(text.contains("PIECE NAME: ORIGINAL RECTANGLE"));
+    QVERIFY(text.contains("QUANTITY: 4"));
+    QVERIFY(text.contains("SIZE: 50"));
+    QVERIFY(text.contains("UNITS: MM"));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
 void TST_Seamly2DCommandLine::cleanupTestCase()
 {
