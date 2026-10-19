@@ -6401,7 +6401,7 @@ Doriți să salvați modificările?</translation>
     </message>
     <message>
         <source>Object:</source>
-        <translation>Obiect</translation>
+        <translation>Obiect:</translation>
     </message>
     <message>
         <source>Rotate</source>

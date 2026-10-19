@@ -6416,7 +6416,7 @@ Voulez-vous sauvegarder les changements ?</translation>
     </message>
     <message>
         <source>Object:</source>
-        <translation>Objet: </translation>
+        <translation>Objet :</translation>
     </message>
     <message>
         <source>Rotate</source>
