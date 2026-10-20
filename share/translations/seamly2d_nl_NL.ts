@@ -3066,169 +3066,6 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Variabelen</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Filter:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filter de lijst met een sleutelwoord</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Gebruikersvariabelen</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Naam</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formule</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Verplaats maten omhoog</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Verplaats maten omlaag</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Formule wizard</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Voeg gebruikersvariabele toe</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Verwijder gebruikersvariabele</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Details</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Naam:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Unieke naam voor variabele</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Waarde:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Formule:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Berekening</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Beschrijving:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Herstel een patroon met alle veranderingen welke je gemaakt hebt</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Herstel</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Lijnlengtes</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Lijn</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Lengte</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Lijnhoeken</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Hoek</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Lengtes krommes</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Kromme</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Hoeken krommes</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Lengte controlepunten</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Boogstralen</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Boog</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Straal</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Fout</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Leeg veld.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Leeg veld</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Ongeldig resultaat. Waarde is oneindig of NaN. Controleer uw berekeningen.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Waarde</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Fout bij uitpakken: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Bewerk variabele</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Beschrijving</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6545,6 +6382,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Beschrijving</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Object:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Draaiing</translation>
     </message>
@@ -7037,8 +6878,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Slot</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoom in op punt (Ctrl+Alt+P)</translation>
+        <source>Object</source>
+        <translation>Object</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Zoomen op object (Ctrl+Alt+O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7169,12 +7014,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Afbeeldingen</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom in op Punt</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Punt:</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoomen op object</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10593,12 +10434,12 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom in op Punt</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoomen op object</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15426,6 +15267,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Variabelen</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filter:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filter de lijst met een sleutelwoord</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Gebruikersvariabelen</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formule</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Verplaats maten omhoog</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Verplaats maten omlaag</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Formule wizard</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Voeg gebruikersvariabele toe</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Verwijder gebruikersvariabele</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Details</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Naam:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Unieke naam voor variabele</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Waarde:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formule:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Berekening</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Beschrijving:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Herstel een patroon met alle veranderingen welke je gemaakt hebt</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Herstel</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Lijnlengtes</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Lijn</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Lengte</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Lijnhoeken</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Hoek</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Lengtes krommes</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Kromme</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Hoeken krommes</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Lengte controlepunten</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Boogstralen</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Boog</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Straal</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Fout</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Leeg veld.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Leeg veld</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Ongeldig resultaat. Waarde is oneindig of NaN. Controleer uw berekeningen.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Fout bij uitpakken: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Bewerk variabele</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Beschrijving</translation>
     </message>
 </context>
 <context>
