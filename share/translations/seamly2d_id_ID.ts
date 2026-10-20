@@ -3081,169 +3081,6 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Variabel</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Saring:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filter daftar berdasarkan kata kunci</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Variabel khusus</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nama</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>rumus</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Pindahkan pengukuran ke atas</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Pindahkan pengukuran ke bawah</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Penyihir rumus</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Tambahkan variabel khusus</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Hapus variabel khusus</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Detail</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nama:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Nama variabel unik</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Nilai:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Rumus:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Perhitungan</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Deskripsi:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Segarkan pola dengan semua perubahan yang Anda buat</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Segarkan</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Panjang garis</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Garis</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>panjang</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Sudut garis</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>sudut</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Panjang kurva</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>kurva</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Sudut lengkung</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Panjang titik kontrol</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Radius busur</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>busur</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Jari-jari</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Kesalahan</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Lapangan kosong.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Lapangan kosong</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Hasil tidak valid. Nilainya tak terhingga atau NaN. Harap periksa perhitungan Anda.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Nilai</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Kesalahan parser: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Edit variabel</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Deskripsi</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6562,6 +6399,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Deskripsi</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Objek:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Putar</translation>
     </message>
@@ -7054,8 +6895,12 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Kunci</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Perbesar ke titik (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Objek</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Perbesar ke Objek (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7186,12 +7031,8 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Gambar</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom ke Titik</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Titik:</translation>
+        <source>Zoom to Object</source>
+        <translation>Perbesar ke Objek</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10610,12 +10451,12 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom ke Titik</translation>
+        <source>Zoom to Object</source>
+        <translation>Perbesar ke Objek</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15444,6 +15285,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Variabel</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Saring:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filter daftar berdasarkan kata kunci</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Variabel khusus</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>rumus</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Pindahkan pengukuran ke atas</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Pindahkan pengukuran ke bawah</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Penyihir rumus</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Tambahkan variabel khusus</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Hapus variabel khusus</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Detail</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nama:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Nama variabel unik</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Nilai:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Rumus:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Perhitungan</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Deskripsi:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Segarkan pola dengan semua perubahan yang Anda buat</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Segarkan</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Panjang garis</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Garis</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>panjang</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Sudut garis</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>sudut</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Panjang kurva</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>kurva</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Sudut lengkung</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Panjang titik kontrol</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Radius busur</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>busur</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Jari-jari</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Lapangan kosong.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Lapangan kosong</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Hasil tidak valid. Nilainya tak terhingga atau NaN. Harap periksa perhitungan Anda.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Kesalahan parser: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Edit variabel</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Deskripsi</translation>
     </message>
 </context>
 <context>
