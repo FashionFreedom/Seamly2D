@@ -3081,169 +3081,6 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Μεταβλητές</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Φίλτρο:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Λίστα Φιλτράρισμα με λέξη κλειδί</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Προσαρμοσμένες μεταβλητές</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Όνομα</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Φόρμουλα</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Μετακίνηση μέτρησης προς τα πάνω</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Μετακίνηση μέτρησης προς τα κάτω</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Βοηθός φόρμουλας</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Προσθήκη προσαρμοσμένης μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Κατάργηση προσαρμοσμένης μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Λεπτομέρειες</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Όνομα:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Μοναδικό όνομα μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Τιμή:</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Φόρμουλα:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Υπολογισμός</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Περιγραφή:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Ανανέωση μοτίβου με όλες τις αλλαγές που κάνατε</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Ανανέωση</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Μήκη γραμμών</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Γραμμή</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Μήκος</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Γραμμικές γωνίες</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Γωνία</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Μήκη καμπύλης</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Καμπύλη</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Γωνίες καμπύλης</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Μήκη σημείων ελέγχου</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Ακτίνες τόξου</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Τόξο</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Ακτίνα</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Σφάλμα</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Κενό πεδίο.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Κενό πεδίο</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Μη έγκυρο αποτέλεσμα. Η τιμή είναι άπειρη ή NaN. Παρακαλώ, ελέγξτε τους υπολογισμούς σας.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Τιμή</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Σφάλμα αναλυτή: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Επεξεργασία μεταβλητής</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Περιγραφή</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6564,6 +6401,10 @@ Do you want to save your changes?</source>
         <translation>Περιγραφή</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Αντικείμενο:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Περιστροφή</translation>
     </message>
@@ -7056,8 +6897,12 @@ Do you want to save your changes?</source>
         <translation>Κλείδωμα</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Ζουμ στο σημείο (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Αντικείμενο</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Ζουμ στο αντικείμενο (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7188,12 +7033,8 @@ Do you want to save your changes?</source>
         <translation>Εικόνες</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Ζουμ στο σημείο</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Σημείο:</translation>
+        <source>Zoom to Object</source>
+        <translation>Ζουμ στο αντικείμενο</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10612,12 +10453,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Ζουμ στο σημείο</translation>
+        <source>Zoom to Object</source>
+        <translation>Ζουμ στο αντικείμενο</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15446,6 +15287,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Μεταβλητές</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Φίλτρο:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Λίστα Φιλτράρισμα με λέξη κλειδί</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Προσαρμοσμένες μεταβλητές</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Φόρμουλα</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Μετακίνηση μέτρησης προς τα πάνω</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Μετακίνηση μέτρησης προς τα κάτω</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Βοηθός φόρμουλας</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Προσθήκη προσαρμοσμένης μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Κατάργηση προσαρμοσμένης μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Λεπτομέρειες</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Όνομα:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Μοναδικό όνομα μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Τιμή:</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Φόρμουλα:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Υπολογισμός</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Περιγραφή:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Ανανέωση μοτίβου με όλες τις αλλαγές που κάνατε</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Ανανέωση</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Μήκη γραμμών</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Γραμμή</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Μήκος</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Γραμμικές γωνίες</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Γωνία</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Μήκη καμπύλης</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Καμπύλη</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Γωνίες καμπύλης</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Μήκη σημείων ελέγχου</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Ακτίνες τόξου</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Τόξο</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Ακτίνα</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Σφάλμα</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Κενό πεδίο.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Κενό πεδίο</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Μη έγκυρο αποτέλεσμα. Η τιμή είναι άπειρη ή NaN. Παρακαλώ, ελέγξτε τους υπολογισμούς σας.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Τιμή</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Σφάλμα αναλυτή: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Επεξεργασία μεταβλητής</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Περιγραφή</translation>
     </message>
 </context>
 <context>

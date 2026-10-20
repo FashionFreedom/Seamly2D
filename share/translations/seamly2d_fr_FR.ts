@@ -3097,169 +3097,6 @@ Veuillez essayer d&apos;annuler la dernière opération ou de corriger la formul
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Variables</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Filtre :</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filtrer par mot clé</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Variables personnalisées</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Nom</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Formule</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Déplacer la mesure vers le haut</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Déplacer la mesure vers le bas</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Assistant de formule</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Ajouter une variable personnalisée</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Supprimer la variable personnalisée</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Détails</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Nom :</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Nom de variable unique</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Valeur :</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Formule :</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calcul</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Description :</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Actualiser le patron avec tous les changements effectués</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Actualiser</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Longueurs des lignes</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Ligne</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Longueur</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Angles des lignes</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Angle</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Longueurs des courbes</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Courbe</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Angles des courbes</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Longueur des points de contrôle</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Rayons des arcs</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Arc</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Rayon</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Erreur</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Champ vide.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Champ vide</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Résultat non valide. La valeur est infinie ou NaN. Veuillez vérifier vos calculs.</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valeur</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Erreur de l&apos;analyseur syntaxique : %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Modifier la variable</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Description</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6578,6 +6415,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Bloc de brouillon :</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Objet :</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Roration</translation>
     </message>
@@ -6922,6 +6763,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Point sur la Courbe</translation>
     </message>
     <message>
+        <source>Object</source>
+        <translation>Objet</translation>
+    </message>
+    <message>
         <source>Import Image</source>
         <translation>Importer une image</translation>
     </message>
@@ -7074,8 +6919,8 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Verrouiller</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoom sur le point (Ctrl + Alt + P)</translation>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Zoomer sur l&apos;objet (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7210,12 +7055,8 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Description</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom sur le point</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Point :</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoomer sur l&apos;objet</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10639,12 +10480,12 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Zoom sur le point</translation>
+        <source>Zoom to Object</source>
+        <translation>Zoomer sur l&apos;objet</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15472,6 +15313,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Variables</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtre :</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtrer par mot clé</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Variables personnalisées</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Formule</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Déplacer la mesure vers le haut</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Déplacer la mesure vers le bas</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Assistant de formule</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Ajouter une variable personnalisée</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Supprimer la variable personnalisée</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Détails</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Nom :</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Nom de variable unique</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Valeur :</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Formule :</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Calcul</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Description :</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Actualiser le patron avec tous les changements effectués</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Actualiser</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Longueurs des lignes</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Ligne</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Longueur</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Angles des lignes</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Angle</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Longueurs des courbes</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Courbe</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Angles des courbes</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Longueur des points de contrôle</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Rayons des arcs</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Arc</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Rayon</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Erreur</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Champ vide.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Champ vide</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Résultat non valide. La valeur est infinie ou NaN. Veuillez vérifier vos calculs.</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valeur</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Erreur de l&apos;analyseur syntaxique : %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Modifier la variable</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Description</translation>
     </message>
 </context>
 <context>

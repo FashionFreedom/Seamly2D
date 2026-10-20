@@ -205,6 +205,12 @@
               <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
                <normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
@@ -221,6 +227,12 @@
              <property name="icon">
               <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
                <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -255,6 +267,12 @@
               <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
                <normaloff>:/icons/win.icon.theme/24x24/actions/list-add.png</normaloff>:/icons/win.icon.theme/24x24/actions/list-add.png</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item alignment="Qt::AlignLeft">
@@ -271,6 +289,12 @@
              <property name="icon">
               <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
                <normaloff>:/icons/win.icon.theme/24x24/actions/list-remove.png</normaloff>:/icons/win.icon.theme/24x24/actions/list-remove.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -349,7 +373,7 @@
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>30</width>
+                 <width>40</width>
                  <height>22</height>
                 </size>
                </property>
@@ -485,8 +509,8 @@
                  </property>
                  <property name="iconSize">
                   <size>
-                   <width>16</width>
-                   <height>16</height>
+                   <width>30</width>
+                   <height>30</height>
                   </size>
                  </property>
                 </widget>
@@ -571,7 +595,7 @@
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
-                     <width>30</width>
+                     <width>40</width>
                      <height>20</height>
                     </size>
                    </property>

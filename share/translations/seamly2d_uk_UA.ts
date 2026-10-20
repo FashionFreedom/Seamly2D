@@ -5604,6 +5604,10 @@ Do you want to save your changes?</source>
         <translation>Не вдалося синхронізувати мірки.</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>Об'єкт:</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Не вдалося оновити мірки.</translation>
     </message>
@@ -6050,6 +6054,10 @@ Do you want to save your changes?</source>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим створення макета елементів викрійки. Цей режим доступний, якщо хоча б один елемент викрійки було створено в «режимі «Елемент». Макет можна експортувати у потрібний вам формат файлу та зберегти.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Object</source>
+        <translation>Об'єкт</translation>
     </message>
     <message>
         <source>Delete Draft Block</source>
@@ -6916,8 +6924,8 @@ Do you want to save your changes?</source>
         <translation>Замок</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Масштабувати до точки (Ctrl + Alt + P)</translation>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Наблизити до об’єкта (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7044,12 +7052,8 @@ Do you want to save your changes?</source>
         <translation>Зображення</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Збільшити масштаб до точки</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Точка:</translation>
+        <source>Zoom to Object</source>
+        <translation>Наблизити до об’єкта</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10444,12 +10448,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Збільшити масштаб до точки</translation>
+        <source>Zoom to Object</source>
+        <translation>Наблизити до об’єкта</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
