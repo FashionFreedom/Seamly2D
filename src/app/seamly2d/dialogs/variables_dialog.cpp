@@ -89,6 +89,7 @@ VariablesDialog::VariablesDialog(VContainer *data, VPattern *doc, QWidget *paren
     , m_rename_list()
     , m_table_list()
     , m_is_sorted(false)
+    , m_is_filtered(false)
 {
     ui->setupUi(this);
 

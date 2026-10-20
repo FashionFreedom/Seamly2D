@@ -3081,169 +3081,6 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     </message>
 </context>
 <context>
-    <name>VariablesDialog</name>
-    <message>
-        <source>Variables</source>
-        <translation>Proměnné</translation>
-    </message>
-    <message>
-        <source>Filter:</source>
-        <translation>Filtr:</translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation>Filtrovat seznam podle klíčového slova</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation>Vlastní proměnné</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation>Název</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation>Vzorec</translation>
-    </message>
-    <message>
-        <source>Move measurement up</source>
-        <translation>Posunout měření nahoru</translation>
-    </message>
-    <message>
-        <source>Move measurement down</source>
-        <translation>Přesunout měření dolů</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation>Průvodce vzorci</translation>
-    </message>
-    <message>
-        <source>Add custom variable</source>
-        <translation>Přidat vlastní proměnnou</translation>
-    </message>
-    <message>
-        <source>Remove custom variable</source>
-        <translation>Odebrat vlastní proměnnou</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation>Podrobně</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation>Název:</translation>
-    </message>
-    <message>
-        <source>Unique variable name</source>
-        <translation>Unikátní název proměnné</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Hodnota</translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation>Vzorec:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Výpočet</translation>
-    </message>
-    <message>
-        <source>Description:</source>
-        <translation>Popis:</translation>
-    </message>
-    <message>
-        <source>Refresh a pattern with all changes you made</source>
-        <translation>Obnovit vzor se všemi provedenými změnami</translation>
-    </message>
-    <message>
-        <source>Refresh</source>
-        <translation>Obnovit</translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation>Délky čar</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation>Čára</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Délka</translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation>Úhly čáry</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Úhel</translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation>Délky křivek</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation>Křivka</translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation>Úhly křivky</translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation>Délky kontrolních bodů</translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation>Poloměry oblouků</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation>Oblouček</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation>Poloměr</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Chyba</translation>
-    </message>
-    <message>
-        <source>Empty field.</source>
-        <translation>Prázdné pole.</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation>Prázdné pole</translation>
-    </message>
-    <message>
-        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Neplatný výsledek. Hodnota je nekonečná nebo NaN. Zkontrolujte prosím své výpočty.</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation>Chyba zpracování: %1</translation>
-    </message>
-    <message>
-        <source>Edit variable</source>
-        <translation>Upravit proměnnou</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Popis</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation>Hodnota:</translation>
-    </message>
-</context>
-<context>
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
@@ -6560,6 +6397,10 @@ Chcete uložit své změny?</translation>
         <translation>Popis</translation>
     </message>
     <message>
+        <source>Object:</source>
+        <translation>objekt:</translation>
+    </message>
+    <message>
         <source>Rotate</source>
         <translation>Otočit</translation>
     </message>
@@ -7052,8 +6893,12 @@ Chcete uložit své změny?</translation>
         <translation>Zámek</translation>
     </message>
     <message>
-        <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Přiblížit k bodu (Ctrl + Alt + P)</translation>
+        <source>Object</source>
+        <translation>Objekt</translation>
+    </message>
+    <message>
+        <source>Zoom to Object (Ctrl + Alt + O)</source>
+        <translation>Přiblížit na objekt (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7184,12 +7029,8 @@ Chcete uložit své změny?</translation>
         <translation>Obrázky</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Přiblížit k bodu</translation>
-    </message>
-    <message>
-        <source>Point:</source>
-        <translation>Bod:</translation>
+        <source>Zoom to Object</source>
+        <translation>Přiblížit na objekt</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10608,12 +10449,12 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>Zoom to Point</source>
-        <translation>Přiblížit k bodu</translation>
+        <source>Zoom to Object</source>
+        <translation>Přiblížit na objekt</translation>
     </message>
     <message>
-        <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -15442,6 +15283,169 @@ Example: avg(2;3;4) = 3</comment>
 Usage: fmod(x; y)
 Example: fmod(3.3;2) = 1.3</comment>
         <translation>fmod</translation>
+    </message>
+</context>
+<context>
+    <name>VariablesDialog</name>
+    <message>
+        <source>Variables</source>
+        <translation>Proměnné</translation>
+    </message>
+    <message>
+        <source>Filter:</source>
+        <translation>Filtr:</translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation>Filtrovat seznam podle klíčového slova</translation>
+    </message>
+    <message>
+        <source>Custom variables</source>
+        <translation>Vlastní proměnné</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Formula</source>
+        <translation>Vzorec</translation>
+    </message>
+    <message>
+        <source>Move measurement up</source>
+        <translation>Posunout měření nahoru</translation>
+    </message>
+    <message>
+        <source>Move measurement down</source>
+        <translation>Přesunout měření dolů</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation>Průvodce vzorci</translation>
+    </message>
+    <message>
+        <source>Add custom variable</source>
+        <translation>Přidat vlastní proměnnou</translation>
+    </message>
+    <message>
+        <source>Remove custom variable</source>
+        <translation>Odebrat vlastní proměnnou</translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation>Podrobně</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Název:</translation>
+    </message>
+    <message>
+        <source>Unique variable name</source>
+        <translation>Unikátní název proměnné</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation>Vzorec:</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation>Výpočet</translation>
+    </message>
+    <message>
+        <source>Description:</source>
+        <translation>Popis:</translation>
+    </message>
+    <message>
+        <source>Refresh a pattern with all changes you made</source>
+        <translation>Obnovit vzor se všemi provedenými změnami</translation>
+    </message>
+    <message>
+        <source>Refresh</source>
+        <translation>Obnovit</translation>
+    </message>
+    <message>
+        <source>Line lengths</source>
+        <translation>Délky čar</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation>Čára</translation>
+    </message>
+    <message>
+        <source>Length</source>
+        <translation>Délka</translation>
+    </message>
+    <message>
+        <source>Line angles</source>
+        <translation>Úhly čáry</translation>
+    </message>
+    <message>
+        <source>Angle</source>
+        <translation>Úhel</translation>
+    </message>
+    <message>
+        <source>Curve lengths</source>
+        <translation>Délky křivek</translation>
+    </message>
+    <message>
+        <source>Curve</source>
+        <translation>Křivka</translation>
+    </message>
+    <message>
+        <source>Curve angles</source>
+        <translation>Úhly křivky</translation>
+    </message>
+    <message>
+        <source>Control point lengths</source>
+        <translation>Délky kontrolních bodů</translation>
+    </message>
+    <message>
+        <source>Arc radiuses</source>
+        <translation>Poloměry oblouků</translation>
+    </message>
+    <message>
+        <source>Arc</source>
+        <translation>Oblouček</translation>
+    </message>
+    <message>
+        <source>Radius</source>
+        <translation>Poloměr</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Chyba</translation>
+    </message>
+    <message>
+        <source>Empty field.</source>
+        <translation>Prázdné pole.</translation>
+    </message>
+    <message>
+        <source>Empty field</source>
+        <translation>Prázdné pole</translation>
+    </message>
+    <message>
+        <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
+        <translation>Neplatný výsledek. Hodnota je nekonečná nebo NaN. Zkontrolujte prosím své výpočty.</translation>
+    </message>
+    <message>
+        <source>Parser error: %1</source>
+        <translation>Chyba zpracování: %1</translation>
+    </message>
+    <message>
+        <source>Edit variable</source>
+        <translation>Upravit proměnnou</translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation>Popis</translation>
+    </message>
+    <message>
+        <source>Value:</source>
+        <translation>Hodnota:</translation>
     </message>
 </context>
 <context>

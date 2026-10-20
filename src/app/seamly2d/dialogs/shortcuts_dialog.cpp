@@ -141,7 +141,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Zoom In")).arg(tr("Ctrl++"))                       //8 & 9
                                  .arg(tr("Zoom Out")).arg(tr("Ctrl+-"))                      //10 & 11
                                  .arg(tr("Zoom 100%")).arg(tr("Ctrl+0"))                     //12 & 13
-                                 .arg(tr("Zoom to Point")).arg(tr("Ctrl+Alt+P"))             //14 & 15
+                                 .arg(tr("Zoom to Object")).arg(tr("Ctrl+Alt+O"))             //14 & 15
                                  .arg(tr("Fit All")).arg(tr("Ctrl+9"))                       //16 & 17
                                  .arg(tr("Previous")).arg(tr("Ctrl+Left"))                   //18 & 19
                                  .arg(tr("Selected")).arg(tr("Ctrl+Right"))                  //20 & 21
