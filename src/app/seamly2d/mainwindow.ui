@@ -152,7 +152,7 @@
      <property name="title">
       <string>Point Names</string>
      </property>
-     <addaction name="showPointNames_Action"/>
+     <addaction name="show_object_names_action"/>
      <addaction name="increaseSize_Action"/>
      <addaction name="decreaseSize_Action"/>
      <addaction name="useToolColor_Action"/>
@@ -161,15 +161,15 @@
     <addaction name="pieceMode_Action"/>
     <addaction name="layoutMode_Action"/>
     <addaction name="separator"/>
-    <addaction name="zoomIn_Action"/>
-    <addaction name="zoomOut_Action"/>
-    <addaction name="zoom100Percent_Action"/>
-    <addaction name="zoomToFit_Action"/>
-    <addaction name="zoomToPrevious_Action"/>
-    <addaction name="zoomToSelected_Action"/>
-    <addaction name="zoomToArea_Action"/>
-    <addaction name="zoomPan_Action"/>
-    <addaction name="zoomToPoint_Action"/>
+    <addaction name="zoom_in_action"/>
+    <addaction name="zoom_out_action"/>
+    <addaction name="zoom_100percent_action"/>
+    <addaction name="zoom_to_fit_action"/>
+    <addaction name="zoom_to_next_action"/>
+    <addaction name="zoom_to_selected_action"/>
+    <addaction name="zoom_to_area_action"/>
+    <addaction name="zoom_to_pan_action"/>
+    <addaction name="zoom_to_object_action"/>
     <addaction name="separator"/>
     <addaction name="pointNames_Menu"/>
     <addaction name="toggleWireframe_Action"/>
@@ -590,15 +590,15 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="zoomIn_Action"/>
-   <addaction name="zoomOut_Action"/>
-   <addaction name="zoom100Percent_Action"/>
-   <addaction name="zoomToFit_Action"/>
-   <addaction name="zoomToPrevious_Action"/>
-   <addaction name="zoomToSelected_Action"/>
-   <addaction name="zoomToArea_Action"/>
-   <addaction name="zoomPan_Action"/>
-   <addaction name="zoomToPoint_Action"/>
+   <addaction name="zoom_in_action"/>
+   <addaction name="zoom_out_action"/>
+   <addaction name="zoom_100percent_action"/>
+   <addaction name="zoom_to_fit_action"/>
+   <addaction name="zoom_to_next_action"/>
+   <addaction name="zoom_to_selected_action"/>
+   <addaction name="zoom_to_area_action"/>
+   <addaction name="zoom_to_pan_action"/>
+   <addaction name="zoom_to_object_action"/>
   </widget>
   <widget class="QToolBar" name="tools_ToolBox_ToolBar">
    <property name="contextMenuPolicy">
@@ -763,7 +763,7 @@
    <addaction name="newPrintLayout_Action"/>
    <addaction name="exportLayout_Action"/>
   </widget>
-  <widget class="QToolBar" name="pointName_ToolBar">
+  <widget class="QToolBar" name="object_name_toolbar">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -776,7 +776,7 @@
    <attribute name="toolBarBreak">
     <bool>true</bool>
    </attribute>
-   <addaction name="showPointNames_Action"/>
+   <addaction name="show_object_names_action"/>
    <addaction name="increaseSize_Action"/>
    <addaction name="decreaseSize_Action"/>
    <addaction name="useToolColor_Action"/>
@@ -3663,7 +3663,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="zoomIn_Action">
+  <action name="zoom_in_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -3687,7 +3687,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="zoomOut_Action">
+  <action name="zoom_out_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -3732,7 +3732,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="zoomToFit_Action">
+  <action name="zoom_to_fit_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4096,7 +4096,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="zoomToSelected_Action">
+  <action name="zoom_to_selected_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4128,7 +4128,7 @@
     <string notr="true"/>
    </property>
   </action>
-  <action name="zoomToPrevious_Action">
+  <action name="zoom_to_next_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4146,7 +4146,7 @@
     <string notr="true">Ctrl+Left</string>
    </property>
   </action>
-  <action name="zoomToArea_Action">
+  <action name="zoom_to_area_action">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -4167,7 +4167,7 @@
     <string notr="true">Ctrl+A</string>
    </property>
   </action>
-  <action name="zoomPan_Action">
+  <action name="zoom_to_pan_action">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -4188,7 +4188,7 @@
     <string notr="true">Z, P</string>
    </property>
   </action>
-  <action name="zoom100Percent_Action">
+  <action name="zoom_100percent_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -4512,7 +4512,7 @@
     <string notr="true"/>
    </property>
   </action>
-  <action name="showPointNames_Action">
+  <action name="show_object_names_action">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -4811,22 +4811,22 @@
     <string notr="true">Ctrl+I</string>
    </property>
   </action>
-  <action name="zoomToPoint_Action">
+  <action name="zoom_to_object_action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</iconset>
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_object.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_object.png</iconset>
    </property>
    <property name="text">
-    <string>Point</string>
+    <string>Object</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to point (Ctrl + Alt + P)</string>
+    <string>Zoom to Object (Ctrl + Alt + O)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+Alt+P</string>
+    <string notr="true">Ctrl+Alt+O</string>
    </property>
   </action>
   <action name="importImage_Action">
@@ -4892,8 +4892,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
