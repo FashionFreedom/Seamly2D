@@ -5605,7 +5605,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Object:</source>
-        <translation>Об'єкт:</translation>
+        <translation>Об&apos;єкт:</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6057,7 +6057,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Object</source>
-        <translation>Об'єкт</translation>
+        <translation>Об&apos;єкт</translation>
     </message>
     <message>
         <source>Delete Draft Block</source>
@@ -12637,6 +12637,50 @@ load in SeamlyME as usual.
         <translation>Показати назву точки</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Кут1Спл_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Кут2Спл_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>К1ДовжинаСпл_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>К2ДовжинаСпл_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>РадіусДуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Кут1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Кут2Дуги_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Радіус1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Радіус2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Кут1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Кут2ElArc_</translation>
+    </message>
+    <message>
         <source>Move Group Object</source>
         <translation>Перемістити груповий об&apos;єкт</translation>
     </message>
@@ -12679,14 +12723,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Копія</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Довжина</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Кут</translation>
     </message>
     <message>
         <source>AngleLine_</source>

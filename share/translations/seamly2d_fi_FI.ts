@@ -12642,14 +12642,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Kopio</translation>
     </message>
     <message>
-        <source>Length</source>
-        <translation>Pituus</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Kulma</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Poista</translation>
     </message>
@@ -12684,6 +12676,50 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>AngleLine_</source>
         <translation>SuoranKulma_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <translation>Kulma1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Kulma2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1PituusSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2PituusSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>SädeKaari_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Kulma1Kaari_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Kulma2Kaari_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Säde1ElKaari_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Säde2ElKaari_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Kulma1ElKaari_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Kulma2ElKaari_</translation>
     </message>
     <message>
         <source>Move Group Object</source>

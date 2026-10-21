@@ -12629,6 +12629,50 @@ carregar no SeamlyME como de costume.
         <translation>Mostrar nome do ponto</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Ângulo1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Ângulo2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1ComprimentoSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2ComprimentoSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RaioArco_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Ângulo1Arco_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Ângulo2Arco_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Raio1ArcoElíptico_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Raio2ArcoElíptico_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Ângulo1ArcoElíptico_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Ângulo2ArcoElíptico_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Adicionar Objeto de Grupo</translation>
     </message>
@@ -12659,14 +12703,6 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Copy</source>
         <translation>Copiar</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Comprimento</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Ângulo</translation>
     </message>
     <message>
         <source>AngleLine_</source>

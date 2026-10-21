@@ -6192,7 +6192,7 @@ Voulez-vous sauvegarder les changements ?</translation>
     </message>
     <message>
         <source>Export Final Measurements to CSV</source>
-        <translation type="unfinished">Exporter les mesures finales au format CSV</translation>
+        <translation>Exporter les mesures finales au format CSV</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -12670,6 +12670,50 @@ charger dans SeamlyME comme d&apos;habitude.
         <translation>Afficher le nom du point</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Angle1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Angle2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LengthSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LengthSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RadiusArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Angle1Arc_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Angle2Arc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Angle2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Ajouter un groupe d&apos;objets</translation>
     </message>
@@ -12680,14 +12724,6 @@ charger dans SeamlyME comme d&apos;habitude.
     <message>
         <source>Copy</source>
         <translation>Copie</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Longueur</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Angle</translation>
     </message>
     <message>
         <source>Line_</source>
