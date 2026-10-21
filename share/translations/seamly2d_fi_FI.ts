@@ -6400,7 +6400,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Object:</source>
-        <translation>Esine:</translation>
+        <translation>Objekti:</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6896,11 +6896,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Object</source>
-        <translation>Esine</translation>
+        <translation>Objekti</translation>
     </message>
     <message>
         <source>Zoom to Object (Ctrl + Alt + O)</source>
-        <translation>Tarkenna kohteeseen (Ctrl + Alt + O)</translation>
+        <translation>Tarkenna objektiin (Ctrl + Alt + O)</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
@@ -7032,7 +7032,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Zoom to Object</source>
-        <translation>Tarkenna kohteeseen</translation>
+        <translation>Tarkenna objektiin</translation>
     </message>
     <message>
         <source>Intersect Arc and Line</source>
@@ -10480,7 +10480,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Zoom to Object</source>
-        <translation>Tarkenna kohteeseen</translation>
+        <translation>Tarkenna objektiin</translation>
     </message>
     <message>
         <source>Ctrl+Alt+O</source>
@@ -15407,7 +15407,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Line lengths</source>
-        <translation>Suorien Pituudet</translation>
+        <translation>Suorien pituudet</translation>
     </message>
     <message>
         <source>Line</source>
@@ -15427,7 +15427,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Curve lengths</source>
-        <translation>Käyrien Pituudet</translation>
+        <translation>Käyrien pituudet</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -15435,7 +15435,7 @@ Example: fmod(3.3;2) = 1.3</comment>
     </message>
     <message>
         <source>Curve angles</source>
-        <translation>Käyrien Kulmat</translation>
+        <translation>Käyrien kulmat</translation>
     </message>
     <message>
         <source>Control point lengths</source>
