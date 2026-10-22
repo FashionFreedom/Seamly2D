@@ -241,7 +241,40 @@ static const QString strBottomAnchor              = QStringLiteral("bottomAnchor
 VPatternConverter::VPatternConverter(const QString &fileName)
     : VAbstractConverter(fileName)
 {
+    if (fixGroupsOrder())
+    {
+        saveRepairedCopy();
+    }
     ValidateInputFile(CurrentSchema);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief fixGroupsOrder move groups in front of images in each draft block.
+///
+/// Some releases wrote groups after images, which the schema doesn't allow, so the file couldn't be opened.
+///
+/// @return true if a draft block was repaired.
+bool VPatternConverter::fixGroupsOrder()
+{
+    bool fixed = false;
+    const QDomNodeList blocks = elementsByTagName(strDraftBlock);
+    for (int i = 0; i < blocks.size(); ++i)
+    {
+        QDomElement block = blocks.at(i).toElement();
+        const QDomElement groups = block.firstChildElement(QStringLiteral("groups"));
+        const QDomElement images = groups.previousSiblingElement(QStringLiteral("images"));
+        if (!groups.isNull() && !images.isNull())
+        {
+            block.insertBefore(groups, images);
+            fixed = true;
+        }
+    }
+
+    if (fixed)
+    {
+        qCInfo(PatternConverter, "Repaired the order of groups and images in a draft block.");
+    }
+    return fixed;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
