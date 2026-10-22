@@ -1,5 +1,6 @@
 var NAVTREEINDEX315 =
 {
+"df/d89/classSAX2XMLReader.html#afaad9a21efa3e2626e80a7045c3a39b1":[3,0,462,4],
 "df/d89/classVPE_1_1VFileEditWidget.html":[3,0,2,15],
 "df/d89/classVPE_1_1VFileEditWidget.html":[2,0,27,15],
 "df/d89/classVPE_1_1VFileEditWidget.html#a0cb0cdaf4d338fbfb99311eca0b22722":[3,0,2,15,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX315 =
 "df/dac/classSAX2XMLFilter.html#aaf012a739ae38e1e6279c1d143bdff43":[3,0,460,1],
 "df/dac/classSAX2XMLFilter.html#aaf012a739ae38e1e6279c1d143bdff43":[3,0,460,10],
 "df/dac/classSAX2XMLFilter.html#aaf012a739ae38e1e6279c1d143bdff43":[3,0,460,4],
-"df/dac/classSAX2XMLFilter.html#aaf012a739ae38e1e6279c1d143bdff43":[3,0,460,7],
-"df/dac/classSAX2XMLFilter.html#aaf084b8aeab9def12a7f4e7ee0781bb8":[3,0,460,2]
+"df/dac/classSAX2XMLFilter.html#aaf012a739ae38e1e6279c1d143bdff43":[3,0,460,7]
 };

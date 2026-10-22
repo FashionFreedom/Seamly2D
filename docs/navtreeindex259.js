@@ -1,5 +1,6 @@
 var NAVTREEINDEX259 =
 {
+"dc/d9d/classAddPiece.html#af4cde9d3ed0dd50bba09ac29894b7180":[3,0,16,0],
 "dc/d9d/vexception_8cpp.html":[4,0,0,1,1,0,0],
 "dc/d9d/vexception_8cpp_source.html":[4,0,0,1,1,0,0],
 "dc/d9e/mingw_2include_2xercesc_2util_2XMLUni_8hpp.html":[4,0,0,1,15,1,0,0,6,116],
@@ -248,6 +249,5 @@ var NAVTREEINDEX259 =
 "dc/db9/classMatch.html#a6c098e3f97389380d035b9b1827cb331":[3,0,345,51],
 "dc/db9/classMatch.html#a714fd7ad1876e27a75c1e25a835bf6e4":[3,0,345,35],
 "dc/db9/classMatch.html#a714fd7ad1876e27a75c1e25a835bf6e4":[3,0,345,34],
-"dc/db9/classMatch.html#a714fd7ad1876e27a75c1e25a835bf6e4":[3,0,345,33],
-"dc/db9/classMatch.html#a714fd7ad1876e27a75c1e25a835bf6e4":[3,0,345,32]
+"dc/db9/classMatch.html#a714fd7ad1876e27a75c1e25a835bf6e4":[3,0,345,33]
 };
