@@ -60,6 +60,10 @@
 #include "dialogs/welcome_dialog.h"
 #include "../vpatterndb/vpiecenode.h"
 
+#if defined(Q_OS_MAC)
+#include "core/macos_dock.h"
+#endif
+
 #include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QProcess>
@@ -104,8 +108,24 @@ int main(int argc, char *argv[])
     qRegisterMetaType<VPieceNode>();
     qRegisterMetaType<CustomSARecord>();
 
+#if defined(Q_OS_MAC)
+    // Qt brings every app it starts to the front, which takes focus from the user in console mode (export / test).
+    // Qt reads this again when the event loop starts, so GUI mode unsets it below to come to the front as usual.
+    qputenv("QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM", "1");
+#endif
+
     // Create the application instance
     Application2D app(argc, argv);
+
+#if defined(Q_OS_MAC)
+    // Info.plist starts the app without a Dock icon, only GUI mode gets one
+    if (Application2D::isGUIMode())
+    {
+        qunsetenv("QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM");
+        showDockIcon();
+    }
+#endif
+
     // Initialize application options
     app.initOptions();
 

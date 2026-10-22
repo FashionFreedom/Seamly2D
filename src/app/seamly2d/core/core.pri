@@ -14,3 +14,9 @@ SOURCES += \
     $$PWD/vformulapropertyeditor.cpp \
     $$PWD/vtooloptionspropertybrowser.cpp \
     $$PWD/vcmdexport.cpp
+
+macx{
+    HEADERS += $$PWD/macos_dock.h
+    OBJECTIVE_SOURCES += $$PWD/macos_dock.mm
+    LIBS += -framework AppKit
+}
