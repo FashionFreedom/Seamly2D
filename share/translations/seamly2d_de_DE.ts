@@ -12629,6 +12629,50 @@ wie gewohnt in SeamlyME laden können.
         <translation>Punktbezeichnung anzeigen</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Winkel1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Winkel2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LängeSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LängeSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RadiusBogen_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Winkel1Bogen_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Winkel2Bogen_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElBogen_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElBogen_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Winkel1ElBogen_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Winkel2ElBogen_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Gruppen Objekt hinzufügen</translation>
     </message>
@@ -12639,14 +12683,6 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Copy</source>
         <translation>Kopie</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Länge</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Winkel</translation>
     </message>
     <message>
         <source>Line_</source>

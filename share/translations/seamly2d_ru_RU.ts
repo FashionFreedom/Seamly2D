@@ -12649,6 +12649,50 @@ load in SeamlyME as usual.
         <translation>Показать Название Точки</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Угол1Спл_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Угол2Спл_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>С1ДлинаСпл_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>С2ДлинаСпл_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>РадиусДуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Угол2Дуги_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Радиус1Дуги_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Радиус2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Угол2Дуги_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Добавить Группу Объектов</translation>
     </message>
@@ -12679,14 +12723,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Копировать</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Длина</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Угол</translation>
     </message>
     <message>
         <source>AngleLine_</source>
