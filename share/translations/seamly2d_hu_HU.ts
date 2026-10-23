@@ -12640,14 +12640,6 @@ Menti a módosításokat?</translation>
         <translation>Másolat</translation>
     </message>
     <message>
-        <source>Length</source>
-        <translation>Hossz</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Szög</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Törlés</translation>
     </message>
@@ -12676,12 +12668,56 @@ Menti a módosításokat?</translation>
         <translation>Sor_</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Szög1Elosztó_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Szög2Elosztó_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1Hosszúságkülönbség_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2Hosszúságkülönbség_</translation>
+    </message>
+    <message>
         <source>Arc_</source>
         <translation>Ív_</translation>
     </message>
     <message>
+        <source>RadiusArc_</source>
+        <translation>RadiusÍv_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Szög1Ív_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Szög2Ív_</translation>
+    </message>
+    <message>
         <source>ElArc_</source>
         <translation>ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Szög1ElÍv_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Szög2ElÍv_</translation>
     </message>
     <message>
         <source>Spl_</source>

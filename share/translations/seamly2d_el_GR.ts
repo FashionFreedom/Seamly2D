@@ -12644,6 +12644,50 @@ load in SeamlyME as usual.
         <translation>Εμφάνιση ονόματος σημείου</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Γωνία1Σπλ_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Γωνία2Σπλ_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LengthΣπλ_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LengthΣπλ_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>ΑκτίναArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Γωνία1Τόξο_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Γωνία2Τόξο_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Ακτίνα1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Ακτίνα2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Γωνία1ΕλΑρκ_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Γωνία2ΕλΑρκ_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Προσθήκη αντικειμένου ομάδας</translation>
     </message>
@@ -12674,14 +12718,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Αντιγραφή</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Μήκος</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Γωνία</translation>
     </message>
     <message>
         <source>AngleLine_</source>
