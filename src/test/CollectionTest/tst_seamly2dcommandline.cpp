@@ -58,6 +58,10 @@
 #include "../vmisc/logging.h"
 
 #include <QtTest>
+#include <QProcess>
+#include <QProcessEnvironment>
+#include <QTemporaryDir>
+#include <QScopeGuard>
 
 const QString tmpTestFolder = QStringLiteral("tst_seamly2d_tmp");
 const QString tmpTestCollectionFolder = QStringLiteral("tst_seamly2d_collection_tmp");
@@ -306,6 +310,216 @@ void TST_Seamly2DCommandLine::TestOpenCollection()
     const int exit = Run(exitCode, Seamly2DPath(), arg, error);
 
     QVERIFY2(exit == exitCode, qUtf8Printable(error));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::automationDataDirectory_data() const
+{
+    QTest::addColumn<bool>("seamlyMe");
+    QTest::addColumn<QString>("scenario");
+    const QStringList scenarios = {"valid", "valid-empty", "relative", "file-root", "file-settings", "file-logs",
+                                   "readonly-settings", "readonly-logs"};
+    for (const bool seamlyMe : {false, true})
+    {
+        for (const QString &scenario : scenarios)
+        {
+            const QByteArray name = (QString(seamlyMe ? "seamlyme-" : "seamly2d-") + scenario).toUtf8();
+            QTest::newRow(name.constData()) << seamlyMe << scenario;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::automationDataDirectory()
+{
+    QFETCH(bool, seamlyMe);
+    QFETCH(QString, scenario);
+    QTemporaryDir directory;
+    QVERIFY(directory.isValid());
+    const QString dataDir = directory.filePath("state");
+    QString requested = dataDir;
+    QString protectedPath;
+    QFileDevice::Permissions originalPermissions;
+    const auto restorePermissions = qScopeGuard([&]()
+    {
+        if (!protectedPath.isEmpty())
+        {
+            QFile::setPermissions(protectedPath, originalPermissions);
+        }
+    });
+    int expected = V_EX_CANTCREAT;
+    if (scenario.startsWith("valid"))
+    {
+        expected = V_EX_OK;
+        // Exercise normal startup, settings sync, folders and logging; --version exits too early.
+        if (scenario == "valid")
+        {
+            QVERIFY(QDir().mkpath(dataDir + "/settings/Seamly2DTeam"));
+            QSettings settings(dataDir + "/settings/Seamly2DTeam/qt6_" +
+                               (seamlyMe ? "seamlyme.ini" : "seamly2d.ini"), QSettings::IniFormat);
+            settings.setValue("configuration/locale", "en_US");
+            settings.setValue("automation/sentinel", "preserved");
+            settings.sync();
+            QCOMPARE(settings.status(), QSettings::NoError);
+        }
+    }
+    else if (scenario == "relative")
+    {
+        requested = "relative-state";
+        expected = V_EX_CONFIG;
+    }
+    else if (scenario.startsWith("file-"))
+    {
+        QString target = dataDir;
+        if (scenario != "file-root")
+        {
+            QVERIFY(QDir().mkpath(dataDir));
+            target += scenario == "file-settings" ? "/settings" : "/logs";
+        }
+        QFile file(target);
+        QVERIFY(file.open(QIODevice::WriteOnly));
+        file.close();
+    }
+    else
+    {
+        protectedPath = dataDir + (scenario == "readonly-settings" ? "/settings" : "/logs/seamly2d");
+        // mkpath alone would pass because all directories already exist.
+        QVERIFY(QDir().mkpath(dataDir + "/settings/Seamly2DTeam"));
+        QVERIFY(QDir().mkpath(dataDir + "/logs/seamly2d"));
+        originalPermissions = QFileInfo(protectedPath).permissions();
+        QVERIFY(QFile::setPermissions(protectedPath, QFileDevice::ReadOwner | QFileDevice::ExeOwner));
+        QTemporaryFile probe(protectedPath + "/test-XXXXXX");
+        if (probe.open())
+        {
+            QSKIP("This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).");
+        }
+    }
+
+    QProcess process;
+    process.setWorkingDirectory(directory.path());
+    QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
+    environment.insert("SEAMLY_DATA_DIR", requested);
+    environment.insert("QT_QPA_PLATFORM", "offscreen");
+    environment.insert("LANG", "C");
+    environment.insert("LC_ALL", "C");
+    process.setProcessEnvironment(environment);
+    const QString fixture = QCoreApplication::applicationDirPath() + QDir::separator() +
+            (seamlyMe ? QString("tst_seamlyme/empty.smis") : tmpTestCollectionFolder + "/bra.sm2d");
+    process.start(seamlyMe ? SeamlyMePath() : Seamly2DPath(), QStringList() << "--test" << fixture);
+    QVERIFY2(process.waitForFinished(60000), qPrintable(process.errorString()));
+    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
+    const QByteArray errors = process.readAllStandardError();
+    QVERIFY2(process.exitCode() == expected, errors.constData());
+    if (expected != V_EX_OK)
+    {
+        QVERIFY(errors.contains("SEAMLY_DATA_DIR"));
+        QVERIFY(!QDir(directory.filePath("relative-state")).exists());
+        return;
+    }
+
+    const QStringList folders = {"templates", "measurements/individual", "measurements/multisize", "label templates"};
+    for (const QString &folder : folders)
+    {
+        QVERIFY2(QDir(dataDir + "/" + folder).exists(), qPrintable(folder));
+    }
+    if (scenario == "valid")
+    {
+        QSettings saved(dataDir + "/settings/Seamly2DTeam/qt6_" +
+                        (seamlyMe ? "seamlyme.ini" : "seamly2d.ini"), QSettings::IniFormat);
+        QCOMPARE(saved.value("automation/sentinel").toString(), QString("preserved"));
+    }
+    if (!seamlyMe)
+    {
+        QVERIFY(QDir(dataDir + "/patterns").exists());
+        QVERIFY(QDir(dataDir + "/layouts").exists());
+        QVERIFY(QDir(dataDir + "/backups").exists());
+        const QDir logs(dataDir + "/logs/seamly2d");
+        const QStringList files = logs.entryList(QStringList() << "seamly2d-pid*.log", QDir::Files);
+        QCOMPARE(files.size(), 1);
+        QFile log(logs.filePath(files.first()));
+        QVERIFY(log.open(QIODevice::ReadOnly));
+        QVERIFY(log.readAll().contains("Command-line arguments:"));
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::aamaCuttingText_data() const
+{
+    QTest::addColumn<bool>("labelsVisible");
+    QTest::addColumn<int>("format");
+    QTest::newRow("hidden-r12") << false << 20;
+    QTest::newRow("visible-r12") << true << 20;
+    QTest::newRow("hidden-ac1027") << false << 27;
+    QTest::newRow("visible-ac1027") << true << 27;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::aamaCuttingText()
+{
+    QFETCH(bool, labelsVisible);
+    QFETCH(int, format);
+    QTemporaryDir directory;
+    QVERIFY(directory.isValid());
+    QFile measurements(directory.filePath("measurements.smms"));
+    QVERIFY(measurements.open(QIODevice::WriteOnly));
+    measurements.write(R"xml(<?xml version="1.0" encoding="UTF-8"?>
+<smms><version>0.4.5</version><read-only>false</read-only><unit>cm</unit><pm_system>998</pm_system>
+<size base="50"/><height base="176"/><body-measurements>
+<m name="@width" base="20" height_increase="0" size_increase="1"/>
+</body-measurements></smms>)xml");
+    measurements.close();
+    QFile pattern(directory.filePath("cutting.sm2d"));
+    QVERIFY(pattern.open(QIODevice::WriteOnly));
+    QByteArray patternXml(R"xml(<?xml version="1.0" encoding="UTF-8"?>
+<pattern><version>0.7.5</version><unit>cm</unit><measurements>measurements.smms</measurements>
+<draftBlock name="Original cutting test"><calculation>
+<point id="1" type="single" name="A" x="0" y="0"/>
+<point id="2" type="endLine" name="B" basePoint="1" angle="0" length="@width"/>
+<point id="3" type="endLine" name="C" basePoint="2" angle="270" length="30"/>
+<point id="4" type="endLine" name="D" basePoint="3" angle="180" length="@width"/>
+</calculation><modeling>
+<point id="5" type="modeling" idObject="1"/><point id="6" type="modeling" idObject="2"/>
+<point id="7" type="modeling" idObject="3"/><point id="8" type="modeling" idObject="4"/>
+</modeling><pieces><piece id="9" name="Original rectangle" version="2" inLayout="true"
+seamAllowance="true" width="1"><data visible="LABEL_VISIBILITY" quantity="4" fontSize="10"
+mx="50" my="50" width="14" height="10">
+<line text="Quantity: 999" alignment="0" bold="false" italic="false" sfIncrement="0"/>
+<line text="Size: 999" alignment="0" bold="false" italic="false" sfIncrement="0"/>
+<line text="Piece Name: Wrong" alignment="0" bold="false" italic="false" sfIncrement="0"/>
+<line text="Keep this note" alignment="0" bold="false" italic="false" sfIncrement="0"/>
+</data><nodes>
+<node idObject="5" type="NodePoint"/><node idObject="6" type="NodePoint"/>
+<node idObject="7" type="NodePoint"/><node idObject="8" type="NodePoint"/>
+</nodes></piece></pieces></draftBlock></pattern>)xml");
+    patternXml.replace("LABEL_VISIBILITY", labelsVisible ? "true" : "false");
+    pattern.write(patternXml);
+    pattern.close();
+
+    QProcess process;
+    QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
+    environment.insert("SEAMLY_DATA_DIR", directory.filePath("state"));
+    environment.insert("QT_QPA_PLATFORM", "offscreen");
+    process.setProcessEnvironment(environment);
+    process.start(Seamly2DPath(), QStringList() << "--basename" << "cutting"
+                  << "--destination" << directory.path() << "--format" << QString::number(format)
+                  << "--exportOnlyDetails" << "--gsize" << "50" << "--gheight" << "176" << pattern.fileName());
+    QVERIFY(process.waitForFinished(120000));
+    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
+    QCOMPARE(process.exitCode(), V_EX_OK);
+    QFile output(directory.filePath("cutting_pieces.dxf"));
+    QVERIFY(output.open(QIODevice::ReadOnly));
+    const QByteArray text = output.readAll().toUpper();
+    QVERIFY(text.contains("PIECE NAME: ORIGINAL RECTANGLE"));
+    QVERIFY(text.contains("QUANTITY: 4"));
+    QVERIFY(text.contains("SIZE: 50"));
+    QVERIFY(text.contains("UNITS: MM"));
+    QCOMPARE(text.count("PIECE NAME:"), 1);
+    QCOMPARE(text.count("QUANTITY:"), 1);
+    QCOMPARE(text.count("SIZE:"), 1);
+    QVERIFY(!text.contains("QUANTITY: 999"));
+    QVERIFY(!text.contains("SIZE: 999"));
+    QVERIFY(!text.contains("PIECE NAME: WRONG"));
+    QCOMPARE(text.contains("KEEP THIS NOTE"), labelsVisible);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

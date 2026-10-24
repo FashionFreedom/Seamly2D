@@ -68,6 +68,10 @@ private slots:
     void ExportMode();
     void TestMode_data() const;
     void TestMode();
+    void automationDataDirectory_data() const;
+    void automationDataDirectory();
+    void aamaCuttingText_data() const;
+    void aamaCuttingText();
     void TestOpenCollection_data() const;
     void TestOpenCollection();
     void cleanupTestCase();
