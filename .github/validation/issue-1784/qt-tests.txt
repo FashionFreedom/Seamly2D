@@ -1,0 +1,14 @@
+********* Start testing of TST_VDxf *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (x86_64-little_endian-llp64 shared (dynamic) release build; by GCC 13.1.0), windows 11
+PASS   : TST_VDxf::initTestCase()
+PASS   : TST_VDxf::validLayers()
+PASS   : TST_VDxf::invalidPieces(empty)
+PASS   : TST_VDxf::invalidPieces(two-points)
+PASS   : TST_VDxf::invalidPieces(collinear)
+PASS   : TST_VDxf::invalidPieces(non-finite)
+PASS   : TST_VDxf::duplicateNames()
+PASS   : TST_VDxf::failedWrite()
+PASS   : TST_VDxf::emptyExport()
+PASS   : TST_VDxf::cleanupTestCase()
+Totals: 10 passed, 0 failed, 0 skipped, 0 blacklisted, 73ms
+********* Finished testing of TST_VDxf *********
