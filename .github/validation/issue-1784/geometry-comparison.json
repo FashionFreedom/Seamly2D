@@ -1,0 +1,22 @@
+[
+  {
+    "format": "r12",
+    "equal_parsed_block_geometry_and_text": true,
+    "blocks": [
+      "$MODEL_SPACE",
+      "$PAPER_SPACE",
+      "SKIRT-BACK",
+      "SKIRT-FRONT"
+    ]
+  },
+  {
+    "format": "ac1027",
+    "equal_parsed_block_geometry_and_text": true,
+    "blocks": [
+      "*Model_Space",
+      "*Paper_Space",
+      "Skirt-back",
+      "Skirt-front"
+    ]
+  }
+]
