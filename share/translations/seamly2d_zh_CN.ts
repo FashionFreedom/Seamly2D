@@ -12643,6 +12643,50 @@ load in SeamlyME as usual.
         <translation>显示点名称</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Angle1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Angle2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LengthSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LengthSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RadiusArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Angle1Arc_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Angle2Arc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Angle2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>添加组对象</translation>
     </message>
@@ -12673,14 +12717,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>复制</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>长度</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>角度</translation>
     </message>
     <message>
         <source>AngleLine_</source>

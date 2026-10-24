@@ -12642,6 +12642,50 @@ unggah ke SeamlyME seperti biasa.
         <translation>Tampilkan Nama Titik</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Sudut1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Sudut2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>PanjangC1Spl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>PanjangC2Spl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RadiusBusur_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Sudut1Busur_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Sudut2Busur_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Sudut1ElBusur_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Sudut2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Tambah Objek Grup</translation>
     </message>
@@ -12672,14 +12716,6 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Copy</source>
         <translation>Salin</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>panjang</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>sudut</translation>
     </message>
     <message>
         <source>AngleLine_</source>
