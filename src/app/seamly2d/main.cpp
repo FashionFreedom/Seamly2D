@@ -59,6 +59,7 @@
 #include "core/application_2d.h"
 #include "dialogs/welcome_dialog.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vmisc/vsysexits.h"
 
 #include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
@@ -87,6 +88,13 @@ void restoreOriginalGnomeBehavior()
 //---------------------------------------------------------------------------------------------------------------------
 int main(int argc, char *argv[])
 {
+    // Keep unattended jobs independent of the interactive user's settings.
+    const int dataDirectoryStatus = VCommonSettings::configureDataDirectory();
+    if (dataDirectoryStatus != V_EX_OK)
+    {
+        return dataDirectoryStatus;
+    }
+
     // Initialize resources for the application
     Q_INIT_RESOURCE(cursor);
     Q_INIT_RESOURCE(icon);
