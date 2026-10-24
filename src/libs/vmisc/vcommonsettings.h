@@ -82,6 +82,8 @@ public:
     static QString       PrepareStandardTemplates(const QString &currentPath);
     static QString       prepareMultisizeTables(const QString &currentPath);
 
+    static int           configureDataDirectory();
+    static QString       dataDirectory();
     static QString       defaultDataPath();
     static QString       getDefaultIndividualSizePath();
     QString              getIndividualSizePath() const;

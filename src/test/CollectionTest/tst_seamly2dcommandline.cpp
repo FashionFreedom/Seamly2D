@@ -61,6 +61,7 @@
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QTemporaryDir>
+#include <QScopeGuard>
 
 const QString tmpTestFolder = QStringLiteral("tst_seamly2d_tmp");
 const QString tmpTestCollectionFolder = QStringLiteral("tst_seamly2d_collection_tmp");
@@ -312,40 +313,133 @@ void TST_Seamly2DCommandLine::TestOpenCollection()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void TST_Seamly2DCommandLine::automationDataDirectory_data() const
+{
+    QTest::addColumn<bool>("seamlyMe");
+    QTest::addColumn<QString>("scenario");
+    const QStringList scenarios = {"valid", "valid-empty", "relative", "file-root", "file-settings", "file-logs",
+                                   "readonly-settings", "readonly-logs"};
+    for (const bool seamlyMe : {false, true})
+    {
+        for (const QString &scenario : scenarios)
+        {
+            const QByteArray name = (QString(seamlyMe ? "seamlyme-" : "seamly2d-") + scenario).toUtf8();
+            QTest::newRow(name.constData()) << seamlyMe << scenario;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void TST_Seamly2DCommandLine::automationDataDirectory()
 {
+    QFETCH(bool, seamlyMe);
+    QFETCH(QString, scenario);
     QTemporaryDir directory;
     QVERIFY(directory.isValid());
+    const QString dataDir = directory.filePath("state");
+    QString requested = dataDir;
+    QString protectedPath;
+    QFileDevice::Permissions originalPermissions;
+    const auto restorePermissions = qScopeGuard([&]()
+    {
+        if (!protectedPath.isEmpty())
+        {
+            QFile::setPermissions(protectedPath, originalPermissions);
+        }
+    });
+    int expected = V_EX_CANTCREAT;
+    if (scenario.startsWith("valid"))
+    {
+        expected = V_EX_OK;
+        // Exercise normal startup, settings sync, folders and logging; --version exits too early.
+        if (scenario == "valid")
+        {
+            QVERIFY(QDir().mkpath(dataDir + "/settings/Seamly2DTeam"));
+            QSettings settings(dataDir + "/settings/Seamly2DTeam/qt6_" +
+                               (seamlyMe ? "seamlyme.ini" : "seamly2d.ini"), QSettings::IniFormat);
+            settings.setValue("configuration/locale", "en_US");
+            settings.setValue("automation/sentinel", "preserved");
+            settings.sync();
+            QCOMPARE(settings.status(), QSettings::NoError);
+        }
+    }
+    else if (scenario == "relative")
+    {
+        requested = "relative-state";
+        expected = V_EX_CONFIG;
+    }
+    else if (scenario.startsWith("file-"))
+    {
+        QString target = dataDir;
+        if (scenario != "file-root")
+        {
+            QVERIFY(QDir().mkpath(dataDir));
+            target += scenario == "file-settings" ? "/settings" : "/logs";
+        }
+        QFile file(target);
+        QVERIFY(file.open(QIODevice::WriteOnly));
+        file.close();
+    }
+    else
+    {
+        protectedPath = dataDir + (scenario == "readonly-settings" ? "/settings" : "/logs/seamly2d");
+        // mkpath alone would pass because all directories already exist.
+        QVERIFY(QDir().mkpath(dataDir + "/settings/Seamly2DTeam"));
+        QVERIFY(QDir().mkpath(dataDir + "/logs/seamly2d"));
+        originalPermissions = QFileInfo(protectedPath).permissions();
+        QVERIFY(QFile::setPermissions(protectedPath, QFileDevice::ReadOwner | QFileDevice::ExeOwner));
+        QTemporaryFile probe(protectedPath + "/test-XXXXXX");
+        if (probe.open())
+        {
+            QSKIP("This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).");
+        }
+    }
+
     QProcess process;
     process.setWorkingDirectory(directory.path());
     QProcessEnvironment environment = QProcessEnvironment::systemEnvironment();
-    const QString data_dir = directory.filePath("state");
-    environment.insert("SEAMLY_DATA_DIR", data_dir);
+    environment.insert("SEAMLY_DATA_DIR", requested);
+    environment.insert("QT_QPA_PLATFORM", "offscreen");
+    environment.insert("LANG", "C");
+    environment.insert("LC_ALL", "C");
     process.setProcessEnvironment(environment);
-    process.start(Seamly2DPath(), QStringList() << "--version");
-    QVERIFY(process.waitForFinished(30000));
+    const QString fixture = QCoreApplication::applicationDirPath() + QDir::separator() +
+            (seamlyMe ? QString("tst_seamlyme/empty.smis") : tmpTestCollectionFolder + "/bra.sm2d");
+    process.start(seamlyMe ? SeamlyMePath() : Seamly2DPath(), QStringList() << "--test" << fixture);
+    QVERIFY2(process.waitForFinished(60000), qPrintable(process.errorString()));
     QCOMPARE(process.exitStatus(), QProcess::NormalExit);
-    QCOMPARE(process.exitCode(), V_EX_OK);
-    QVERIFY(QDir(data_dir + "/settings").exists());
-    QVERIFY(QDir(data_dir + "/logs/seamly2d").exists());
+    const QByteArray errors = process.readAllStandardError();
+    QVERIFY2(process.exitCode() == expected, errors.constData());
+    if (expected != V_EX_OK)
+    {
+        QVERIFY(errors.contains("SEAMLY_DATA_DIR"));
+        QVERIFY(!QDir(directory.filePath("relative-state")).exists());
+        return;
+    }
 
-    environment.insert("SEAMLY_DATA_DIR", "relative-state");
-    process.setProcessEnvironment(environment);
-    process.start(Seamly2DPath(), QStringList() << "--version");
-    QVERIFY(process.waitForFinished(30000));
-    QCOMPARE(process.exitStatus(), QProcess::NormalExit);
-    QCOMPARE(process.exitCode(), V_EX_CANTCREAT);
-    QVERIFY(process.readAllStandardError().contains("SEAMLY_DATA_DIR"));
-    QVERIFY(!QDir(directory.filePath("relative-state")).exists());
-
-    QFile file(directory.filePath("file"));
-    QVERIFY(file.open(QIODevice::WriteOnly));
-    file.close();
-    environment.insert("SEAMLY_DATA_DIR", file.fileName());
-    process.setProcessEnvironment(environment);
-    process.start(Seamly2DPath(), QStringList() << "--version");
-    QVERIFY(process.waitForFinished(30000));
-    QCOMPARE(process.exitCode(), V_EX_CANTCREAT);
+    const QStringList folders = {"templates", "measurements/individual", "measurements/multisize", "label templates"};
+    for (const QString &folder : folders)
+    {
+        QVERIFY2(QDir(dataDir + "/" + folder).exists(), qPrintable(folder));
+    }
+    if (scenario == "valid")
+    {
+        QSettings saved(dataDir + "/settings/Seamly2DTeam/qt6_" +
+                        (seamlyMe ? "seamlyme.ini" : "seamly2d.ini"), QSettings::IniFormat);
+        QCOMPARE(saved.value("automation/sentinel").toString(), QString("preserved"));
+    }
+    if (!seamlyMe)
+    {
+        QVERIFY(QDir(dataDir + "/patterns").exists());
+        QVERIFY(QDir(dataDir + "/layouts").exists());
+        QVERIFY(QDir(dataDir + "/backups").exists());
+        const QDir logs(dataDir + "/logs/seamly2d");
+        const QStringList files = logs.entryList(QStringList() << "seamly2d-pid*.log", QDir::Files);
+        QCOMPARE(files.size(), 1);
+        QFile log(logs.filePath(files.first()));
+        QVERIFY(log.open(QIODevice::ReadOnly));
+        QVERIFY(log.readAll().contains("Command-line arguments:"));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

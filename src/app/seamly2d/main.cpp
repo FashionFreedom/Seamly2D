@@ -62,12 +62,9 @@
 #include "../vmisc/vsysexits.h"
 
 #include <QApplication>
-#include <QDir>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QProcess>
-#include <QSettings>
 #include <QTimer>
-#include <cstdio>
 
 // Global flag to track state
 bool originalGnomeSettingWasAttached = true;
@@ -92,17 +89,10 @@ void restoreOriginalGnomeBehavior()
 int main(int argc, char *argv[])
 {
     // Keep unattended jobs independent of the interactive user's settings.
-    const QString data_dir = qEnvironmentVariable("SEAMLY_DATA_DIR");
-    if (!data_dir.isEmpty())
+    const int dataDirectoryStatus = VCommonSettings::configureDataDirectory();
+    if (dataDirectoryStatus != V_EX_OK)
     {
-        const QDir directory(data_dir);
-        if (!QDir::isAbsolutePath(data_dir) || !directory.mkpath("settings")
-            || !directory.mkpath("logs/seamly2d"))
-        {
-            std::fputs("SEAMLY_DATA_DIR must be an absolute, writable directory.\n", stderr);
-            return V_EX_CANTCREAT;
-        }
-        QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, directory.filePath("settings"));
+        return dataDirectoryStatus;
     }
 
     // Initialize resources for the application

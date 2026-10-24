@@ -57,12 +57,19 @@
 #include "application_me.h"
 #include "dialogs/me_welcome_dialog.h"
 #include "../vmisc/vseamlymesettings.h"
+#include "../vmisc/vsysexits.h"
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QTimer>
 
 int main(int argc, char *argv[])
 {
+    const int dataDirectoryStatus = VCommonSettings::configureDataDirectory();
+    if (dataDirectoryStatus != V_EX_OK)
+    {
+        return dataDirectoryStatus;
+    }
+
     Q_INIT_RESOURCE(seamlymeicon);
     Q_INIT_RESOURCE(theme);
     Q_INIT_RESOURCE(icon);

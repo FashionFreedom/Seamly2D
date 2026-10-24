@@ -64,15 +64,19 @@
 #include <QString>
 #include <QStringConverter>
 #include <QVariant>
+#include <QTemporaryFile>
 #include <QtDebug>
+#include <cstdio>
 
 #include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
+#include "../vmisc/vsysexits.h"
 #include "../vpatterndb/pmsystems.h"
 
 namespace
 {
+QString automationDataDirectory;
 const QString settingImagesPath                          = QStringLiteral("paths/images");
 const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_size_measurements");
 const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/multi_size_measurements");
@@ -430,12 +434,55 @@ QString VCommonSettings::prepareMultisizeTables(const QString &currentPath)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::configureDataDirectory()
+{
+    // Called before constructing either application, or opening any settings.
+    const QString requested = qEnvironmentVariable("SEAMLY_DATA_DIR");
+    if (requested.isEmpty())
+    {
+        return V_EX_OK;
+    }
+    if (!QDir::isAbsolutePath(requested))
+    {
+        std::fputs("SEAMLY_DATA_DIR must be an absolute directory.\n", stderr);
+        return V_EX_CONFIG;
+    }
+
+    const QDir directory(QDir::cleanPath(QDir::fromNativeSeparators(requested)));
+    const QStringList paths = {QStringLiteral("settings"), QStringLiteral("settings/Seamly2DTeam"),
+                               QStringLiteral("logs/seamly2d")};
+    for (const QString &path : paths)
+    {
+        // mkpath succeeds for an existing read-only directory. Actually write
+        // a temporary file as well; permission bits alone are unreliable on NTFS.
+        QTemporaryFile probe(directory.filePath(path + QStringLiteral("/.seamly-write-XXXXXX")));
+        if (!directory.mkpath(path) || !probe.open() || probe.write("test") != 4 || !probe.flush())
+        {
+            std::fputs("SEAMLY_DATA_DIR must contain writable settings and log directories.\n", stderr);
+            return V_EX_CANTCREAT;
+        }
+    }
+
+    automationDataDirectory = directory.absolutePath();
+    const QString settings = directory.filePath(QStringLiteral("settings"));
+    QSettings::setPath(QSettings::IniFormat, QSettings::UserScope, settings);
+    // Keep fallback lookups inside this job as well.
+    QSettings::setPath(QSettings::IniFormat, QSettings::SystemScope, settings);
+    return V_EX_OK;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::dataDirectory()
+{
+    return automationDataDirectory;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::defaultDataPath()
 {
-    const QString data_dir = qEnvironmentVariable("SEAMLY_DATA_DIR");
-    if (!data_dir.isEmpty())
+    if (!automationDataDirectory.isEmpty())
     {
-        return QDir::cleanPath(data_dir) + QLatin1Char('/');
+        return automationDataDirectory + QLatin1Char('/');
     }
     return QDir::homePath() + QLatin1String("/seamly2d/");
 }
