@@ -69,6 +69,7 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     ui->theme_ComboBox->addItem("Fusion Light", 0);
     ui->theme_ComboBox->addItem("Fusion Dark", 1);
     ui->theme_ComboBox->addItem("Fusion Twilight", 2);
+    ui->theme_ComboBox->addItem("Fusion Darkest", 6);
     ui->theme_ComboBox->addItem("System", 3);
 
 #if defined(Q_OS_WIN)
@@ -135,6 +136,15 @@ void SeamlyWelcomeDialog::apply()
     {
         int theme = qvariant_cast<int>(ui->theme_ComboBox->currentData());
         settings->setAppTheme(theme);
+        // Fusion Darkest also darkens the workspace; going back resets only that default
+        if (theme == 6)
+        {
+            settings->setBackgroundColor(darkWorkspaceColor);
+        }
+        else if (settings->getBackgroundColor() == darkWorkspaceColor)
+        {
+            settings->setBackgroundColor(QStringLiteral("white"));
+        }
         qApp->setTheme();
         m_themeChanged = false;
     }

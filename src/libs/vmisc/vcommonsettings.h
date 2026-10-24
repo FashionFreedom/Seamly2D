@@ -531,6 +531,9 @@ public:
     bool                 getUseToolColor() const;
     void                 setUseToolColor(bool value);
 
+    bool                 getAdaptColors() const;
+    void                 setAdaptColors(bool value);
+
     int                  getGuiFontSize() const;
     void                 setGuiFontSize(int value);
 
