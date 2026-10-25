@@ -63,6 +63,9 @@ const qreal widthHairLine = widthMainLine/3.0;
 // Set from the drawing area background color, see setDarkBackground. Cached because correctColor runs on every paint.
 static bool dark_background = false;
 
+// Black is shown this light on a dark background: enough to read, short of glaring white
+const float adaptedBlackLightness = 0.85f;
+
 qreal sceneScale(QGraphicsScene *scene)
 {
     qreal scale = 1;
@@ -95,24 +98,22 @@ QColor correctColor(const QGraphicsItem *item, const QColor &color)
 //---------------------------------------------------------------------------------------------------------------------
 /// @brief adaptColor color to show on the drawing area.
 ///
-/// On a dark background (and with "Adapt colors to a dark background" on) the lightness is flipped and the hue
-/// kept, so black shows light grey (not glaring white), dark colors lighter, mid colors barely change. This is how
-/// AutoCAD's black/white color works. Display only: the pattern keeps the real color for saving, printing and export.
+/// On a dark background (and with "Adapt colors to a dark background" on) black is shown as light grey so it stays
+/// visible. Every other color is painted exactly as it was chosen, so the drawing area always matches the color
+/// picker. This is the same idea as AutoCAD's black/white color, which draws white on a dark model space and prints
+/// black. Display only: the pattern keeps the real color for saving, printing and export.
 /// @param color the color stored in the pattern or settings.
 /// @return the color to paint with.
 QColor adaptColor(const QColor &color)
 {
-    if (!dark_background || !color.isValid())
+    if (!dark_background || color != QColor(Qt::black))
     {
         return color;
     }
 
-    float hue;
-    float saturation;
-    float lightness;
-    float alpha;
-    color.getHslF(&hue, &saturation, &lightness, &alpha);
-    return QColor::fromHslF(hue, saturation, 0.85f - 0.7f * lightness, alpha);
+    QColor adapted = Qt::black;
+    adapted.setHslF(0.0f, 0.0f, adaptedBlackLightness, color.alphaF());
+    return adapted;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
