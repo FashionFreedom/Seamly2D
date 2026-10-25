@@ -593,9 +593,8 @@ Q_REQUIRED_RESULT QStringList SupportedLocales();
 QPalette  lightPalette();
 QPalette  darkPalette();
 QPalette  twilightPalette();
-QPalette  darkestPalette();
 
-// Workspace background of the "Fusion Darkest" theme, also in the background color list as Charcoal
+// Dark workspace background, in the background color list as Charcoal
 extern const QString darkWorkspaceColor;
 
 QString makeHeaderName(const QString &name);
