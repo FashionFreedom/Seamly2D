@@ -283,7 +283,7 @@ void BasePointTool::deleteTool(bool ask)
     }
 
     qCDebug(vTool, "Begin deleting.");
-    DeleteDraftBlock *undo_command = new DeleteDraftBlock(doc, activeBlockName);
+    DeleteDraftBlock *undo_command = new DeleteDraftBlock(doc, m_active_block_name);
     connect(undo_command, &DeleteDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
     qApp->getUndoStack()->push(undo_command);
 

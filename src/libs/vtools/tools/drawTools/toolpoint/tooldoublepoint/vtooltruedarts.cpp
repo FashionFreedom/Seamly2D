@@ -210,11 +210,19 @@ VToolTrueDarts *VToolTrueDarts::Create(quint32 _id,
         id = VContainer::getNextId();  //Just reserve id for tool
         p1id = data->AddGObject(p1);
         p2id = data->AddGObject(p2);
+        data->AddLine(baseLineP1Id, p1id);
+        data->AddLine(p1id, dartP2Id);
+        data->AddLine(dartP2Id, p2id);
+        data->AddLine(p2id, baseLineP2Id);
     }
     else
     {
         data->UpdateGObject(p1id, p1);
         data->UpdateGObject(p2id, p2);
+        data->AddLine(baseLineP1Id, p1id);
+        data->AddLine(p1id, dartP2Id);
+        data->AddLine(dartP2Id, p2id);
+        data->AddLine(p2id, baseLineP2Id);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
