@@ -313,29 +313,6 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setPointNameSize(ui->pointNameFontSize_ComboBox->currentText().toInt());
 }
 
-/// @brief setThemeBackground follow a theme change in the Configuration page.
-///
-/// Fusion Darkest also darkens the workspace; switching away resets only that default.
-/// @param theme the selected theme id.
-void PreferencesGraphicsViewPage::setThemeBackground(int theme)
-{
-    if (theme == 6)
-    {
-        setIndex(ui->bgColor_ComboBox, darkWorkspaceColor);
-    }
-    else if (ui->bgColor_ComboBox->currentData().toString() == darkWorkspaceColor)
-    {
-        setIndex(ui->bgColor_ComboBox, QStringLiteral("white"));
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/// @brief showColorsTab open the Colors tab, used by "Customize colors..." in the Configuration page.
-void PreferencesGraphicsViewPage::showColorsTab()
-{
-    ui->graphicsViewTabWidget->setCurrentWidget(ui->colorsTab);
-}
-
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesGraphicsViewPage::setIndex(QComboBox *box, const QString &text)
 {

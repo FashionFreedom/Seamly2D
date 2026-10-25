@@ -351,12 +351,6 @@ void Application2D::setTheme()
             palette = twilightPalette();
             break;
         }
-        case 6: // Fusion Darkest, also gives the workspace a dark background
-        {
-            setStyle("Fusion");
-            palette = darkestPalette();
-            break;
-        }
         case 4:
         {
             setStyle("windowsvista");

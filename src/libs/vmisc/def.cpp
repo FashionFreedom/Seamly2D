@@ -433,28 +433,6 @@ QPalette darkPalette()
 
 const QString darkWorkspaceColor = QStringLiteral("#2b2b2b");
 
-/// @brief darkestPalette app palette of the Fusion Darkest theme.
-/// @return palette darker than Fusion Dark, with soft grey text instead of pure white.
-QPalette darkestPalette()
-{
-    QPalette palette;
-    // Darker than Fusion Dark, with soft grey text instead of pure white
-    palette.setColor(QPalette::Window, QColor(32, 32, 32));
-    palette.setColor(QPalette::WindowText, QColor(220, 220, 220));
-    palette.setColor(QPalette::Base, QColor(20, 20, 20));
-    palette.setColor(QPalette::AlternateBase, QColor(32, 32, 32));
-    palette.setColor(QPalette::ToolTipBase, QColor(220, 220, 220));
-    palette.setColor(QPalette::ToolTipText, QColor(20, 20, 20));
-    palette.setColor(QPalette::Text, QColor(220, 220, 220));
-    palette.setColor(QPalette::Button, QColor(40, 40, 40));
-    palette.setColor(QPalette::ButtonText, QColor(220, 220, 220));
-    palette.setColor(QPalette::BrightText, Qt::red);
-    palette.setColor(QPalette::Link, QColor(42, 130, 218));
-    palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
-    palette.setColor(QPalette::HighlightedText, Qt::black);
-    return palette;
-}
-
 QPalette twilightPalette()
 {
     QPalette palette;
