@@ -76,6 +76,7 @@
 #include <QGraphicsItem>
 #include "../tools/images/image_tool.h"
 #include "../vformat/measurements.h"
+#include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vspline.h"
 #include "../vmisc/customevents.h"
 #include "../vmisc/def.h"
@@ -188,7 +189,7 @@ MainWindow::MainWindow(QWidget *parent)
     , historyDialog(nullptr)
     , font_combo_box(nullptr)
     , font_size_combo_box(nullptr)
-    , draftBlockComboBox(nullptr)
+    , draft_block_combobox(nullptr)
     , draftBlockLabel(nullptr)
     , currentBlockIndex(0)
     , currentToolBoxIndex(0)
@@ -209,13 +210,13 @@ MainWindow::MainWindow(QWidget *parent)
     , gradationHeightsLabel(nullptr)
     , gradationSizesLabel(nullptr)
     , toolProperties(nullptr)
-    , groupsWidget(nullptr)
+    , groups_widget(nullptr)
     , piecesWidget(nullptr)
     , m_lock(nullptr)
-    , zoomScaleSpinBox(nullptr)
+    , zoom_scale_spinbox(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
-    , m_zoomToPointComboBox(nullptr)
+    , m_zoom_to_object_combobox(nullptr)
     , m_measurements(nullptr)
 
     // define Seamly2D main window
@@ -260,7 +261,7 @@ MainWindow::MainWindow(QWidget *parent)
         // After a pattern is parsed update the zoom-to-point combo box.
         connect(doc, &VPattern::patternParsed, this, [&]()
         {
-            this->updateZoomToPointComboBox(draftPointNamesList());
+            updateZoomToObjectComboBox();
         });
 
         qApp->setCurrentDocument(doc); // Set the applications current XML document.
@@ -378,7 +379,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
     }
 
     // Initialize scenes if this is the first draft block.
-    if (draftBlockComboBox->count() == 0)
+    if (draft_block_combobox->count() == 0)
     {
         draftScene->initializeOrigins();
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
@@ -386,8 +387,8 @@ void MainWindow::addDraftBlock(const QString &blockName)
     }
 
     // Temporarily block signals to prevent unwanted signal when adding new block name to the combo box.
-    draftBlockComboBox->blockSignals(true);
-    draftBlockComboBox->addItem(blockName);
+    draft_block_combobox->blockSignals(true);
+    draft_block_combobox->addItem(blockName);
 
     // Clear graphical objects in the pattern data container.
     pattern->ClearGObjects();
@@ -406,16 +407,16 @@ void MainWindow::addDraftBlock(const QString &blockName)
     setWidgetsEnabled(true);
 
     // Set the combo box index to the new draft block if index >-1 else set index to firstblock item 0.
-    const qint32 index = draftBlockComboBox->findText(blockName);
+    const qint32 index = draft_block_combobox->findText(blockName);
     if (index != -1)
     {
-        draftBlockComboBox->setCurrentIndex(index);
+        draft_block_combobox->setCurrentIndex(index);
     }
     else
     {
-        draftBlockComboBox->setCurrentIndex(0);
+        draft_block_combobox->setCurrentIndex(0);
     }
-    draftBlockComboBox->blockSignals(false); // Unblock signals.
+    draft_block_combobox->blockSignals(false); // Unblock signals.
 
     // Adjust the view to fit the new pattern piece.
     VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view, spoint);
@@ -426,7 +427,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
     setStatusMessage("");
 
     // Update the groups dock.
-    groupsWidget->updateGroups();
+    groups_widget->updateGroups();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -475,7 +476,7 @@ QPointF MainWindow::draftBlockStartPosition() const
     const qreal yPosStart = 40.0;
     const qreal offset = 40.0;
 
-    if (draftBlockComboBox->count() > 1)
+    if (draft_block_combobox->count() > 1)
     {
         const QRectF rect = draftScene->visibleItemsBoundingRect();
 
@@ -944,9 +945,9 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     // the cursor to and no new node to lite-parse.
     if (vtool != nullptr && doc->getCursorId() > NULL_ID)
     {
-        const quint32 &toolId = vtool->getId();
+        const quint32 &tool_id = vtool->getId();
         doc->LiteParseTree(Document::LiteParse);
-        doc->setCursorId(toolId);
+        doc->setCursorId(tool_id);
     }
     if (historyDialog)
     {
@@ -1881,41 +1882,41 @@ void MainWindow::handleNewLayout(bool checked)
  */
 void MainWindow::updateGroups()
 {
-    groupsWidget->updateGroups();
+    groups_widget->updateGroups();
 }
 
 void MainWindow::showAllGroups()
 {
-    groupsWidget->showAllGroups();
+    groups_widget->showAllGroups();
 }
 
 void MainWindow::hideAllGroups()
 {
-    groupsWidget->hideAllGroups();
+    groups_widget->hideAllGroups();
 }
 
 void MainWindow::lockAllGroups()
 {
-    groupsWidget->lockAllGroups();
+    groups_widget->lockAllGroups();
 }
 
 void MainWindow::unlockAllGroups()
 {
-    groupsWidget->unlockAllGroups();
+    groups_widget->unlockAllGroups();
 }
 
 void MainWindow::addGroupToList()
 {
-    groupsWidget->addGroupToList();
+    groups_widget->addGroupToList();
 }
 void MainWindow::deleteGroupFromList()
 {
-    groupsWidget->deleteGroupFromList();
+    groups_widget->deleteGroupFromList();
 }
 
 void MainWindow::editGroup()
 {
-    groupsWidget->editGroup();
+    groups_widget->editGroup();
 }
 
 void MainWindow::addSelectedItemsToGroup()
@@ -1958,6 +1959,7 @@ void MainWindow::changeEvent(QEvent *event)
         redoAction->setText(tr("&Redo"));
         setStatusMessage(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
+        m_zoom_to_object_combobox->setToolTip(tr("Zoom to Object (Ctrl + Alt + O)"));
 
         updateWindowTitle();
         initPenToolBar();
@@ -2007,7 +2009,7 @@ void MainWindow::CleanLayout()
     shadows.clear();
     papers.clear();
     ui->listWidget->clear();
-    groupsWidget->clear();
+    groups_widget->clear();
     piecesWidget->clear();
     SetLayoutModeActions();
 }
@@ -2556,7 +2558,7 @@ void MainWindow::initializeModesToolBar()
          font_combo_box->setFont(initial_font);
      }
 
-     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_combo_box);
+     ui->object_name_toolbar->insertWidget(ui->show_object_names_action, font_combo_box);
 
      connect(font_combo_box, &QComboBox::currentTextChanged, this, [this](const QString &family)
      {
@@ -2568,7 +2570,7 @@ void MainWindow::initializeModesToolBar()
      });
 
      font_size_combo_box = new QComboBox;
-     ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action, font_size_combo_box);
+     ui->object_name_toolbar->insertWidget(ui->show_object_names_action, font_size_combo_box);
      font_size_combo_box->setSizeAdjustPolicy(QComboBox::AdjustToContentsOnFirstShow);
 
      const QList<int> font_sizes = {
@@ -2596,7 +2598,7 @@ void MainWindow::initializeModesToolBar()
      font_size_combo_box->setEnabled(true);
 
      base_point_combo_box = new QComboBox;
-     ui->pointName_ToolBar->addWidget(base_point_combo_box);
+     ui->object_name_toolbar->addWidget(base_point_combo_box);
      initBasePointComboBox();
      base_point_combo_box->setEnabled(true);
 
@@ -2640,12 +2642,12 @@ void MainWindow::initializeDraftToolBar()
     ui->draft_ToolBar->addWidget(draftBlockLabel);
 
     // By using Qt UI Designer we can't add QComboBox to toolbar
-    draftBlockComboBox = new QComboBox;
-    ui->draft_ToolBar->addWidget(draftBlockComboBox);
-    draftBlockComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    draftBlockComboBox->setEnabled(false);
+    draft_block_combobox = new QComboBox;
+    ui->draft_ToolBar->addWidget(draft_block_combobox);
+    draft_block_combobox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    draft_block_combobox->setEnabled(false);
 
-    connect(draftBlockComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),
+    connect(draft_block_combobox, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, [this](int index){changeDraftBlock(index);});
 
     connect(ui->renameDraft_Action, &QAction::triggered, this, [this]()
@@ -2656,7 +2658,7 @@ void MainWindow::initializeDraftToolBar()
         {
             return;
         }
-        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, draftBlockComboBox);
+        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, draft_block_combobox);
         qApp->getUndoStack()->push(draftBlock);
         fullParseFile();
     });
@@ -2670,96 +2672,97 @@ void MainWindow::initializeToolsToolBar()
     QKeySequence::ZoomOut). For example "+" is Qt::Key_Plus + Qt::KeypadModifier for keypad.
     Also for me don't work Qt:CTRL and work Qt::ControlModifier.*/
 
-    QList<QKeySequence> zoomInShortcuts;
-    zoomInShortcuts.append(QKeySequence(QKeySequence::ZoomIn));
-    zoomInShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Plus, Qt::KeypadModifier));
-    ui->zoomIn_Action->setShortcuts(zoomInShortcuts);
-    connect(ui->zoomIn_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomIn);
+    QList<QKeySequence> zoom_in_shortcuts;
+    zoom_in_shortcuts.append(QKeySequence(QKeySequence::ZoomIn));
+    zoom_in_shortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Plus, Qt::KeypadModifier));
+    ui->zoom_in_action->setShortcuts(zoom_in_shortcuts);
+    connect(ui->zoom_in_action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomIn);
 
-    QList<QKeySequence> zoomOutShortcuts;
-    zoomOutShortcuts.append(QKeySequence(QKeySequence::ZoomOut));
-    zoomOutShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Minus, Qt::KeypadModifier));
-    ui->zoomOut_Action->setShortcuts(zoomOutShortcuts);
-    connect(ui->zoomOut_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomOut);
+    QList<QKeySequence> zoom_out_shortcuts;
+    zoom_out_shortcuts.append(QKeySequence(QKeySequence::ZoomOut));
+    zoom_out_shortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Minus, Qt::KeypadModifier));
+    ui->zoom_out_action->setShortcuts(zoom_out_shortcuts);
+    connect(ui->zoom_out_action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomOut);
 
-    QList<QKeySequence> zoom100PercentShortcuts;
-    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0));
-    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_0, Qt::KeypadModifier));
-    ui->zoom100Percent_Action->setShortcuts(zoom100PercentShortcuts);
-    connect(ui->zoom100Percent_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoom100Percent);
+    QList<QKeySequence> zoom_100percent_shortcuts;
+    zoom_100percent_shortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0));
+    zoom_100percent_shortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_0, Qt::KeypadModifier));
+    ui->zoom_100percent_action->setShortcuts(zoom_100percent_shortcuts);
+    connect(ui->zoom_100percent_action, &QAction::triggered, ui->view, &VMainGraphicsView::zoom100Percent);
 
-    QList<QKeySequence> zoomToFitShortcuts;
-    zoomToFitShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_9));
-    ui->zoomToFit_Action->setShortcuts(zoomToFitShortcuts);
-    connect(ui->zoomToFit_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomToFit);
+    QList<QKeySequence> zoom_to_fit_shortcuts;
+    zoom_to_fit_shortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_9));
+    ui->zoom_to_fit_action->setShortcuts(zoom_to_fit_shortcuts);
+    connect(ui->zoom_to_fit_action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomToFit);
 
-    QList<QKeySequence> zoomToSelectedShortcuts;
-    zoomToSelectedShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Right));
-    ui->zoomToSelected_Action->setShortcuts(zoomToSelectedShortcuts);
-    connect(ui->zoomToSelected_Action, &QAction::triggered, this, &MainWindow::zoomToSelected);
+    QList<QKeySequence> zoom_to_selected_shortcuts;
+    zoom_to_selected_shortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Right));
+    ui->zoom_to_selected_action->setShortcuts(zoom_to_selected_shortcuts);
+    connect(ui->zoom_to_selected_action, &QAction::triggered, this, &MainWindow::zoomToSelected);
 
-    QList<QKeySequence> zoomToPreviousShortcuts;
-    zoomToPreviousShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Left));
-    ui->zoomToPrevious_Action->setShortcuts(zoomToPreviousShortcuts);
-    connect(ui->zoomToPrevious_Action, &QAction::triggered,  this, &MainWindow::zoomToPrevious);
+    QList<QKeySequence> zoom_to_previous_shortcuts;
+    zoom_to_previous_shortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Left));
+    ui->zoom_to_next_action->setShortcuts(zoom_to_previous_shortcuts);
+    connect(ui->zoom_to_next_action, &QAction::triggered,  this, &MainWindow::zoomToPrevious);
 
-    QList<QKeySequence> zoomToAreaShortcuts;
-    zoomToAreaShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_A));
-    ui->zoomToArea_Action->setShortcuts(zoomToAreaShortcuts);
-    connect(ui->zoomToArea_Action, &QAction::toggled, this, &MainWindow::zoomToArea);
+    QList<QKeySequence> zoom_to_area_shortcuts;
+    zoom_to_area_shortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_A));
+    ui->zoom_to_area_action->setShortcuts(zoom_to_area_shortcuts);
+    connect(ui->zoom_to_area_action, &QAction::toggled, this, &MainWindow::zoomToArea);
 
     resetPanShortcuts();
-    connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
+    connect(ui->zoom_to_pan_action, &QAction::toggled, this, &MainWindow::zoomPan);
 
-    QList<QKeySequence> zoomToPointShortcuts;
-    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier | Qt::AltModifier | Qt::Key_P));
-    ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
-    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
+    QList<QKeySequence> zoom_to_object_shortcuts;
+    zoom_to_object_shortcuts.append(QKeySequence(Qt::ControlModifier | Qt::AltModifier | Qt::Key_O));
+    ui->zoom_to_object_action->setShortcuts(zoom_to_object_shortcuts);
+    connect(ui->zoom_to_object_action, &QAction::triggered, this, &MainWindow::showZoomToObjectDialog);
 
-    if (m_zoomToPointComboBox != nullptr)
+    if (m_zoom_to_object_combobox != nullptr)
     {
-        delete m_zoomToPointComboBox;
+        delete m_zoom_to_object_combobox;
     }
-    m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
-    m_zoomToPointComboBox->setEnabled(false);
-    m_zoomToPointComboBox->setEditable(true);
-    m_zoomToPointComboBox->setToolTip(tr("Zoom to point (Ctrl + Alt + P)"));
-    m_zoomToPointComboBox->setMaxVisibleItems(15);
-    m_zoomToPointComboBox->setStyleSheet("QComboBox { combobox-popup: 0; }");
-    ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
+    m_zoom_to_object_combobox = new QComboBox(ui->zoom_ToolBar);
+    m_zoom_to_object_combobox->setEnabled(false);
+    m_zoom_to_object_combobox->setEditable(true);
+    m_zoom_to_object_combobox->setToolTip(tr("Zoom to Object (Ctrl + Alt + O)"));
+    m_zoom_to_object_combobox->setMaxVisibleItems(15);
+    m_zoom_to_object_combobox->setMinimumWidth(120);
+    m_zoom_to_object_combobox->setStyleSheet("QComboBox { combobox-popup: 0; }");
+    ui->zoom_ToolBar->addWidget(m_zoom_to_object_combobox);
 
     // Triggers when the user clicks an item from the dropdown list
-    connect(m_zoomToPointComboBox, &QComboBox::activated, this, [this](int index)
+    connect(m_zoom_to_object_combobox, &QComboBox::activated, this, [this](int index)
     {
         // Explicitly grab the string text at that index and pass it to your slot
-        QString selectedText = m_zoomToPointComboBox->itemText(index);
-        zoomToPoint(selectedText);
+        QString selected_text = m_zoom_to_object_combobox->itemText(index);
+        zoomToObject(selected_text);
     });
 
     // Triggers when the user types text and presses the 'Enter' or 'Return' key
-    connect(m_zoomToPointComboBox->lineEdit(), &QLineEdit::returnPressed, this, [this]()
+    connect(m_zoom_to_object_combobox->lineEdit(), &QLineEdit::returnPressed, this, [this]()
     {
         // This calls your zoom function manually only when they finish typing
-        zoomToPoint(m_zoomToPointComboBox->currentText());
+        zoomToObject(m_zoom_to_object_combobox->currentText());
     });
 
-    if (zoomScaleSpinBox != nullptr)
+    if (zoom_scale_spinbox != nullptr)
     {
-        delete zoomScaleSpinBox;
+        delete zoom_scale_spinbox;
     }
-    zoomScaleSpinBox = new QDoubleSpinBox();
-    zoomScaleSpinBox->setDecimals(1);
-    zoomScaleSpinBox->setAlignment(Qt::AlignRight);
-    zoomScaleSpinBox->setSingleStep(1);
-    zoomScaleSpinBox->setMinimum(qFloor(VMainGraphicsView::MinScale()*1000)/10.0);
-    zoomScaleSpinBox->setMaximum(qFloor(VMainGraphicsView::MaxScale()*1000)/10.0);
-    zoomScaleSpinBox->setSuffix("%");
-    zoomScaleSpinBox->setMaximumWidth(80);
-    zoomScaleSpinBox->setKeyboardTracking(false);
-    ui->zoom_ToolBar->insertWidget(ui->zoomIn_Action,zoomScaleSpinBox);
+    zoom_scale_spinbox = new QDoubleSpinBox();
+    zoom_scale_spinbox->setDecimals(1);
+    zoom_scale_spinbox->setAlignment(Qt::AlignRight);
+    zoom_scale_spinbox->setSingleStep(1);
+    zoom_scale_spinbox->setMinimum(qFloor(VMainGraphicsView::MinScale()*1000)/10.0);
+    zoom_scale_spinbox->setMaximum(qFloor(VMainGraphicsView::MaxScale()*1000)/10.0);
+    zoom_scale_spinbox->setSuffix("%");
+    zoom_scale_spinbox->setMaximumWidth(80);
+    zoom_scale_spinbox->setKeyboardTracking(false);
+    ui->zoom_ToolBar->insertWidget(ui->zoom_in_action,zoom_scale_spinbox);
 
     zoomScaleChanged(ui->view->transform().m11());
-    connect(zoomScaleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+    connect(zoom_scale_spinbox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this,[this](double d){ui->view->zoomByScale(d/100.0);});
 
 }
@@ -2907,9 +2910,9 @@ void MainWindow::setToolBarVisibility(QToolBar *toolbar, bool visible)
 
 void MainWindow::zoomScaleChanged(qreal scale)
 {
-    zoomScaleSpinBox->blockSignals(true);
-    zoomScaleSpinBox->setValue(qFloor(scale*1000)/10.0);
-    zoomScaleSpinBox->blockSignals(false);
+    zoom_scale_spinbox->blockSignals(true);
+    zoom_scale_spinbox->setValue(qFloor(scale*1000)/10.0);
+    zoom_scale_spinbox->blockSignals(false);
     qCDebug(vMainWindow, "Value %f\n", (qreal(qFloor(scale*1000)/10.0)));
 }
 
@@ -2959,9 +2962,9 @@ void MainWindow::zoomToArea(bool checked)
 {
       ui->view->zoomToAreaEnabled(checked);
 
-      if (ui->zoomToArea_Action->isChecked())
+      if (ui->zoom_to_area_action->isChecked())
       {
-          ui->zoomPan_Action->setChecked(false);
+          ui->zoom_to_pan_action->setChecked(false);
       }
 }
 
@@ -2971,70 +2974,98 @@ void MainWindow::zoomPan(bool checked)
     ui->view->zoomPanEnabled(checked);
     if (checked)
     {
-        ui->zoomToArea_Action->setChecked(false);
+        ui->zoom_to_area_action->setChecked(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
- */
-void MainWindow::showZoomToPointDialog()
+/// @brief showZoomToObjectDialog show dialog for choosing an object and update the graphics view to focus on it.
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::showZoomToObjectDialog()
 {
-    QStringList pointNames = draftPointNamesList();
+    QStringList object_names = getObjectNames(GOType::Point);
+    object_names.append(getObjectNames(GOType::AllCurves));
 
     bool ok;
-    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, true, &ok,
+    QString object_name = QInputDialog::getItem(this, tr("Zoom to Object"), tr("Object:"), object_names, 0, true, &ok,
                                               Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
-    if (!ok || pointName.isEmpty()) return;
+    if (!ok || object_name.isEmpty()) return;
 
-    zoomToPoint(pointName);
+    zoomToObject(object_name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
- * @param pointName name of to zoom into.
- */
-void MainWindow::zoomToPoint(const QString &pointName)
+/// @brief zoomToObject show dialog for choosing an object and update the graphics view to focus on it.
+/// @param object_name name of to zoom into.
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::zoomToObject(const QString &object_name)
 {
-    const QHash<quint32, QSharedPointer<VGObject> > *objects = pattern->DataGObjects();
-    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+    const QHash<quint32, QSharedPointer<VGObject>> *objects = pattern->DataGObjects();
 
-    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
+    for (const QSharedPointer<VGObject> &object : *objects)
     {
-        QSharedPointer<VGObject> object = i.value();
-        const quint32 objectId = object->getIdObject();
-        const QString objectName = object->name();
+        const quint32 object_id = object->getIdObject();
+        const QString name      = object->name();
 
-        if (objectName == pointName)
+        if (name == object_name)
         {
-            VPointF *point = (VPointF*)object.data();
-            ui->view->zoom100Percent();
-            ui->view->centerOn(point->toQPointF());
+            quint32 tool_id = object_id;
+            bool object_valid = false;
 
-            // show point name if it's hidden
-            // TODO: Need to make this work with operation's and dart tools
-            quint32 toolId = point->getIdTool();
-            const quint32 objId = point->getIdObject();
-            if (objId != NULL_ID)
+            // Object is a Point
+            if (VPointF *point = dynamic_cast<VPointF*>(object.data()))
             {
-                toolId = objId;
+                ui->view->zoom100Percent();
+                ui->view->centerOn(point->toQPointF());
+
+                if (object_id == NULL_ID)
+                {
+                    tool_id = point->getIdTool();
+                }
+
+                // Show point name if it's hidden
+                if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(tool_id)))
+                {
+                    tool->setPointNameVisiblity(tool_id, true);
+                }
+
+                object_valid = true;
             }
-            if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId)))
+            // Object is a Curve (Spline, Arc, etc.)
+            else if (VAbstractCurve *curve = dynamic_cast<VAbstractCurve*>(object.data()))
             {
-                tool->setPointNameVisiblity(toolId, true);
+                QRectF bound_rect = curve->GetPath().boundingRect();
+                QRectF padded_rect = bound_rect.adjusted(-40, -40, 40, 40);
+                ui->view->fitInView(padded_rect, Qt::KeepAspectRatio);
+
+                if (object_id == NULL_ID)
+                {
+                    tool_id = curve->getIdTool();
+                }
+
+                object_valid = true;
             }
 
-            // show any hiden groups containing object
-            QMap<quint32,QString> groups = doc->getGroupsContainingItem(toolId, objectId, true);
-            groupsWidget->showGroups(groups);
+            if (object_valid)
+            {
+                // Show any hidden groups containing this specific item
+                QMap<quint32, QString> groups = doc->getGroupsContainingItem(tool_id, object_id, true);
+                groups_widget->showGroups(groups);
 
-            // Reset combobox so same point can be selected again
-            m_zoomToPointComboBox->blockSignals(true);
-            m_zoomToPointComboBox->setCurrentIndex(-1);
-            m_zoomToPointComboBox->lineEdit()->setText(pointName);
-            m_zoomToPointComboBox->blockSignals(false);
+                // Reset combobox selection state
+                m_zoom_to_object_combobox->blockSignals(true);
+                m_zoom_to_object_combobox->setCurrentIndex(-1);
+                m_zoom_to_object_combobox->lineEdit()->setText(object_name);
+                m_zoom_to_object_combobox->blockSignals(false);
+                m_zoom_to_object_combobox->clearFocus();
+
+                // Flash the tool highlight on the canvas for 2 seconds
+                emit doc->ShowTool(tool_id, true);
+                QTimer::singleShot(2000, this, [this, tool_id]()
+                {
+                    emit doc->ShowTool(tool_id, false);
+                });
+            }
 
             return;
         }
@@ -3597,10 +3628,10 @@ void MainWindow::CancelTool()
     currentScene->clearSelection();
     emit ui->view->itemClicked(nullptr);      // Clear Property Editor with non valid tool selection
 
-    ui->zoomPan_Action->setChecked(false);    // Disable Pan Zoom
+    ui->zoom_to_pan_action->setChecked(false);    // Disable Pan Zoom
     ui->view->zoomPanEnabled(false);
 
-    ui->zoomToArea_Action->setChecked(false); // Disable Zoom to Area
+    ui->zoom_to_area_action->setChecked(false); // Disable Zoom to Area
     ui->view->zoomToAreaEnabled(false);
 
     switch (currentTool)
@@ -3840,7 +3871,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         case Qt::Key_Space:
             if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
             {
-                ui->zoomPan_Action->setChecked(true);
+                ui->zoom_to_pan_action->setChecked(true);
             }
             break;
         default:
@@ -3861,7 +3892,7 @@ void MainWindow::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_Space:
             if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
             {
-                ui->zoomPan_Action->setChecked(false);
+                ui->zoom_to_pan_action->setChecked(false);
             }
         default:
             break;
@@ -3944,8 +3975,8 @@ void MainWindow::RestoreCurrentScene()
 //-----------------------------------------------------------------------------
 void MainWindow::changeDraftBlock(Selection selection)
 {
-    int index = draftBlockComboBox->currentIndex();
-    const int count = draftBlockComboBox->count();
+    int index = draft_block_combobox->currentIndex();
+    const int count = draft_block_combobox->count();
 
     if (index == -1 || count <= 1)
     {
@@ -3972,7 +4003,8 @@ void MainWindow::changeDraftBlock(Selection selection)
         }
     }
 
-    draftBlockComboBox->setCurrentIndex(index);
+    draft_block_combobox->setCurrentIndex(index);
+    updateZoomToObjectComboBox();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4007,7 +4039,7 @@ void MainWindow::showDraftMode(bool checked)
         RestoreCurrentScene();
 
         doc->setDraftStage(Draw::Calculation);
-        draftBlockComboBox->setCurrentIndex(currentBlockIndex); //restore current draft block
+        draft_block_combobox->setCurrentIndex(currentBlockIndex); //restore current draft block
         drawMode = true;
 
         setToolsEnabled(true);
@@ -4053,10 +4085,10 @@ void MainWindow::showPieceMode(bool checked)
 
         if(drawMode)
         {
-            currentBlockIndex = draftBlockComboBox->currentIndex();         // Save current draftf block.
+            currentBlockIndex = draft_block_combobox->currentIndex();         // Save current draftf block.
             drawMode = false;
         }
-        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1); // Need to get data about all blocks.
+        draft_block_combobox->setCurrentIndex(draft_block_combobox->count()-1); // Need to get data about all blocks.
 
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/right_to_left_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/left_to_right_arrow.png"));
@@ -4136,10 +4168,10 @@ void MainWindow::showLayoutMode(bool checked)
 
         if(drawMode)
         {
-            currentBlockIndex = draftBlockComboBox->currentIndex();//save current drfat block
+            currentBlockIndex = draft_block_combobox->currentIndex();//save current drfat block
             drawMode = false;
         }
-        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1);// Need to get data about all draft blocks
+        draft_block_combobox->setCurrentIndex(draft_block_combobox->count()-1);// Need to get data about all draft blocks
 
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/right_to_left_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/fast_forward_right_to_left_arrow.png"));
@@ -4188,7 +4220,7 @@ void MainWindow::showLayoutMode(bool checked)
             }
         }
 
-        draftBlockComboBox->setCurrentIndex(-1);// Hide pattern pieces
+        draft_block_combobox->setCurrentIndex(-1);// Hide pattern pieces
 
         qCDebug(vMainWindow, "Show layout scene");
 
@@ -4507,7 +4539,7 @@ void MainWindow::Clear()
     draftScene->clear();
     pieceScene->clear();
     handleArrowTool(true);
-    draftBlockComboBox->clear();
+    draft_block_combobox->clear();
     ui->showDraftMode->setEnabled(false);
     ui->pieceMode_Action->setEnabled(false);
     ui->layoutMode_Action->setEnabled(false);
@@ -4522,16 +4554,16 @@ void MainWindow::Clear()
     ui->nextDraftBlock_Action->setEnabled(false);
 
     // disable zoom actions until a pattern is loaded
-    zoomScaleSpinBox->setEnabled(false);
-    ui->zoomIn_Action->setEnabled(false);
-    ui->zoomOut_Action->setEnabled(false);
-    ui->zoomToFit_Action->setEnabled(false);
-    ui->zoomToSelected_Action->setEnabled(false);
-    ui->zoom100Percent_Action->setEnabled(false);
-    ui->zoomToPrevious_Action->setEnabled(false);
-    ui->zoomToArea_Action->setEnabled(false);
-    ui->zoomPan_Action->setEnabled(false);
-    ui->zoomToPoint_Action->setEnabled(false);
+    zoom_scale_spinbox->setEnabled(false);
+    ui->zoom_in_action->setEnabled(false);
+    ui->zoom_out_action->setEnabled(false);
+    ui->zoom_to_fit_action->setEnabled(false);
+    ui->zoom_to_selected_action->setEnabled(false);
+    ui->zoom_100percent_action->setEnabled(false);
+    ui->zoom_to_next_action->setEnabled(false);
+    ui->zoom_to_area_action->setEnabled(false);
+    ui->zoom_to_pan_action->setEnabled(false);
+    ui->zoom_to_object_action->setEnabled(false);
 
     //disable group actions
     ui->groups_DockWidget->setEnabled(false);
@@ -4546,7 +4578,7 @@ void MainWindow::Clear()
     ui->increaseSize_Action->setEnabled(false);
     ui->decreaseSize_Action->setEnabled(false);
     ui->useToolColor_Action->setEnabled(false);
-    ui->showPointNames_Action->setEnabled(false);
+    ui->show_object_names_action->setEnabled(false);
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
@@ -4717,35 +4749,35 @@ void MainWindow::fullParseFile()
     }
 
     QString draftBlock;
-    qint32 index = draftBlockComboBox->currentIndex();
+    qint32 index = draft_block_combobox->currentIndex();
     if (index != -1)
     {
-        draftBlock = draftBlockComboBox->itemText(index);
+        draftBlock = draft_block_combobox->itemText(index);
     }
-    draftBlockComboBox->blockSignals(true);
-    draftBlockComboBox->clear();
+    draft_block_combobox->blockSignals(true);
+    draft_block_combobox->clear();
 
     QStringList draftBlockNames = doc->getPatternPieces();
-    draftBlockComboBox->addItems(draftBlockNames);
+    draft_block_combobox->addItems(draftBlockNames);
 
     if (!drawMode)
     {
-        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1);
+        draft_block_combobox->setCurrentIndex(draft_block_combobox->count()-1);
     }
     else
     {
-        index = draftBlockComboBox->findText(draftBlock);
+        index = draft_block_combobox->findText(draftBlock);
         if (index != -1)
         {
-            draftBlockComboBox->setCurrentIndex(index);
+            draft_block_combobox->setCurrentIndex(index);
         }
     }
-    draftBlockComboBox->blockSignals(false);
+    draft_block_combobox->blockSignals(false);
     ui->patternPreferences_Action->setEnabled(true);
 
     changeDraftBlockGlobally(draftBlock);
 
-    setToolsEnabled(draftBlockComboBox->count() > 0);
+    setToolsEnabled(draft_block_combobox->count() > 0);
     piecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
@@ -4755,15 +4787,15 @@ void MainWindow::fullParseFile()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
 {
-    const qint32 index = draftBlockComboBox->findText(draftBlock);
+    const qint32 index = draft_block_combobox->findText(draftBlock);
     try
     {
         if (index != -1)
         { // -1 for not found
             changeDraftBlock(index, false);
-            draftBlockComboBox->blockSignals(true);
-            draftBlockComboBox->setCurrentIndex(index);
-            draftBlockComboBox->blockSignals(false);
+            draft_block_combobox->blockSignals(true);
+            draft_block_combobox->setCurrentIndex(index);
+            draft_block_combobox->blockSignals(false);
         }
         else
         {
@@ -4832,7 +4864,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
     const bool designStage = (draftStage || pieceStage);
     const bool layoutStage = (doc->getDraftStage() == Draw::Layout);
 
-    draftBlockComboBox->setEnabled(enable && draftStage);
+    draft_block_combobox->setEnabled(enable && draftStage);
     ui->arrow_Action->setEnabled(enable && designStage);
 
     // enable file menu actions
@@ -4850,22 +4882,22 @@ void MainWindow::setWidgetsEnabled(bool enable)
     ui->showDraftMode->setEnabled(enable);
     ui->pieceMode_Action->setEnabled(enable);
     ui->layoutMode_Action->setEnabled(enable);
-    zoomScaleSpinBox->setEnabled(enable);
-    ui->zoomIn_Action->setEnabled(enable);
-    ui->zoomOut_Action->setEnabled(enable);
-    ui->zoomToFit_Action->setEnabled(enable);
-    ui->zoomToSelected_Action->setEnabled(enable);
-    ui->zoom100Percent_Action->setEnabled(enable);
-    ui->zoomToPrevious_Action->setEnabled(enable);
-    ui->zoomToArea_Action->setEnabled(enable);
-    ui->zoomPan_Action->setEnabled(enable);
-    ui->zoomToPoint_Action->setEnabled(enable && draftStage);
-    m_zoomToPointComboBox->setEnabled(enable && draftStage);
+    zoom_scale_spinbox->setEnabled(enable);
+    ui->zoom_in_action->setEnabled(enable);
+    ui->zoom_out_action->setEnabled(enable);
+    ui->zoom_to_fit_action->setEnabled(enable);
+    ui->zoom_to_selected_action->setEnabled(enable);
+    ui->zoom_100percent_action->setEnabled(enable);
+    ui->zoom_to_next_action->setEnabled(enable);
+    ui->zoom_to_area_action->setEnabled(enable);
+    ui->zoom_to_pan_action->setEnabled(enable);
+    ui->zoom_to_object_action->setEnabled(enable && draftStage);
+    m_zoom_to_object_combobox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
     ui->useToolColor_Action->setEnabled(enable && draftStage);
-    ui->showPointNames_Action->setEnabled(enable);
+    ui->show_object_names_action->setEnabled(enable);
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
@@ -4875,7 +4907,7 @@ void MainWindow::setWidgetsEnabled(bool enable)
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
     //enable group actions
-    groupsWidget->setAddGroupEnabled(enable && draftStage);
+    groups_widget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
@@ -4971,11 +5003,11 @@ void MainWindow::UpdateSizesList(const QStringList &list)
  */
 void MainWindow::New()
 {
-    if (draftBlockComboBox->count() == 0)
+    if (draft_block_combobox->count() == 0)
     {
         // Creating a new pattern design requires creating a new draft block
         qCDebug(vMainWindow, "New Draft Block.");
-        QString draftBlockName = tr("Draft block %1").arg(draftBlockComboBox->count()+1);
+        QString draftBlockName = tr("Draft block %1").arg(draft_block_combobox->count()+1);
         qCDebug(vMainWindow, "Generated Draft Block name: %s", qUtf8Printable(draftBlockName));
 
         qCDebug(vMainWindow, "First Draft Block");
@@ -5747,7 +5779,7 @@ void MainWindow::createMenus()
     menu->addAction(ui->pieces_ToolBar->toggleViewAction());
     menu->addAction(ui->details_ToolBar->toggleViewAction());
     menu->addAction(ui->layout_ToolBar->toggleViewAction());
-    menu->addAction(ui->pointName_ToolBar->toggleViewAction());
+    menu->addAction(ui->object_name_toolbar->toggleViewAction());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5964,8 +5996,8 @@ void MainWindow::initializeDocksContain()
     initPropertyEditor();
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
-    groupsWidget = new GroupsWidget(pattern, doc, this);
-    ui->groups_DockWidget->setWidget(groupsWidget);
+    groups_widget = new GroupsWidget(pattern, doc, this);
+    ui->groups_DockWidget->setWidget(groups_widget);
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
     piecesWidget = new PiecesWidget(pattern, doc, this);
@@ -6144,7 +6176,7 @@ void MainWindow::createActions()
         upDateScenes();
     });
 
-    connect(ui->showPointNames_Action, &QAction::triggered, this, [this](bool checked)
+    connect(ui->show_object_names_action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setHidePointNames(checked);
         upDateScenes();
@@ -6160,10 +6192,10 @@ void MainWindow::createActions()
     connect(ui->newDraft_Action, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "New Draft Block.");
-        QString draftBlockName = tr("Draft Block %1").arg(draftBlockComboBox->count()+1);
+        QString draftBlockName = tr("Draft Block %1").arg(draft_block_combobox->count()+1);
         qCDebug(vMainWindow, "Generated Draft Block name: %s", qUtf8Printable(draftBlockName));
 
-        qCDebug(vMainWindow, "Draft Block count %d", draftBlockComboBox->count());
+        qCDebug(vMainWindow, "Draft Block count %d", draft_block_combobox->count());
         draftBlockName = createDraftBlockName(draftBlockName);
         qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
         if (draftBlockName.isEmpty())
@@ -6692,7 +6724,7 @@ QString MainWindow::createDraftBlockName(const QString &text)
             delete dialog;
             return QString();
         }
-        if (draftBlockComboBox->findText(draftBlockName) == -1)
+        if (draft_block_combobox->findText(draftBlockName) == -1)
         {
             break; //exit dialog
         }
@@ -6897,7 +6929,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString &customMeasu
 
         //Fit scene size to best size for first show
         zoomFirstShow();
-        updateZoomToPointComboBox(draftPointNamesList());
+        updateZoomToObjectComboBox();
 
         showDraftMode(true);
 
@@ -7910,24 +7942,25 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
+void MainWindow::changeDraftBlock(int index, bool zoom_best_fit)
 {
     if (index != -1)
     {
-        QString name = draftBlockComboBox->itemText(index);
+        QString name = draft_block_combobox->itemText(index);
         doc->changeActiveDraftBlock(name);
         doc->setCurrentData();
         emit RefreshHistory(true);
         if (drawMode)
         {
             handleArrowTool(true);
-            if (zoomBestFit)
+            if (zoom_best_fit)
             {
                 zoomToSelected();
             }
         }
         toolProperties->itemClicked(nullptr);//hide options for tool in previous pattern piece
-        groupsWidget->updateGroups();
+        groups_widget->updateGroups();
+        updateZoomToObjectComboBox();
     }
 }
 
@@ -7943,14 +7976,12 @@ void MainWindow::EndVisualization(bool click)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief zoomFirstShow Fit scene size to best size for first show
- */
+/// @brief zoomFirstShow Fit scene size to best size for first show
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::zoomFirstShow()
 {
-    /* If don't call zoomToFit() twice, after first scaling or moving pattern piece, scene change coordinate and whole
-     * pattern will be moved. Looks very ugly. It is best solution that i have now.
-     */
+    // If don't call zoomToFit() twice, after first scaling or moving pattern piece, scene change coordinate and whole
+    // pattern will be moved. Looks very ugly. It is best solution that i have now.
     if (pattern->DataPieces()->size() > 0)
     {
         showPieceMode(true);
@@ -8307,13 +8338,13 @@ void MainWindow::updateViewToolbar()
 void MainWindow::resetPanShortcuts()
 {
     QList<QKeySequence> zoomPanShortcuts;
-    zoomPanShortcuts = ui->zoomPan_Action->shortcuts();
+    zoomPanShortcuts = ui->zoom_to_pan_action->shortcuts();
     zoomPanShortcuts.removeAll(QKeySequence(Qt::Key_Space));
     if (!qApp->Seamly2DSettings()->isPanActiveSpaceKey())
     {
         zoomPanShortcuts.append(QKeySequence(Qt::Key_Space));
     }
-    ui->zoomPan_Action->setShortcuts(zoomPanShortcuts);
+    ui->zoom_to_pan_action->setShortcuts(zoomPanShortcuts);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -8384,34 +8415,79 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief draftPointNamesList gets the list of points in draft mode.
- */
-QStringList MainWindow::draftPointNamesList()
+/// @brief getObjectNames retrieves a filtered, sorted list of names for a given object type in the active block.
+/// @param target_type the geometric object type filter (e.g., GOType::Point or GOType::AllCurves).
+/// @return a sorted, unique list of matching object names.
+//---------------------------------------------------------------------------------------------------------------------
+QStringList MainWindow::getObjectNames(GOType target_type)
 {
-    QStringList pointNames;
-    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
-         item != pattern->DataGObjects()->end();
-         ++item)
+    switch (target_type)
     {
-        if (item.value()->getType() == GOType::Point && !pointNames.contains(item.value()->name()))
-            pointNames << item.value()->name();
+        case GOType::Point:
+        {
+            return filterObjectNames([](const QSharedPointer<VGObject> &object)
+            {
+                return object->getType() == GOType::Point;
+            });
+        }
+
+        case GOType::AllCurves:
+        {
+            return filterObjectNames([](const QSharedPointer<VGObject> &object)
+            {
+                return dynamic_cast<VAbstractCurve*>(object.data()) != nullptr;
+            });
+        }
+
+        default:
+        {
+            return QStringList();
+        }
     }
-    pointNames.sort();
-    pointNames.removeDuplicates();
-    return pointNames;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief updateZoomToPointComboBox updates the list of points included in the toolbar combobox.
- */
-void MainWindow::updateZoomToPointComboBox(QStringList namesList)
+/// @brief filterObjectNames helper routine to filter, sort, and remove duplicate names based on a condition predicate.
+/// @param matchesCondition a lambda expression containing the conditional logic for a specific object type.
+/// @return a sorted, unique list of object names matching the criteria.
+//---------------------------------------------------------------------------------------------------------------------
+QStringList MainWindow::filterObjectNames(const std::function<bool(const QSharedPointer<VGObject>&)> &matchesCondition)
 {
-    m_zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
-    m_zoomToPointComboBox->clear();
-    m_zoomToPointComboBox->addItems(namesList);
-    m_zoomToPointComboBox->blockSignals(false);
+    QString current_block_name = doc->getActiveDraftBlockName();
+    QStringList object_names;
+
+    for (const QSharedPointer<VGObject> &object : *pattern->DataGObjects())
+    {
+        if (matchesCondition(object))
+        {
+            QString block_name = doc->getToolDraftBlockName(object->id());
+
+            if (block_name == current_block_name)
+            {
+                object_names << object->name();
+            }
+        }
+    }
+
+    object_names.sort();
+    object_names.removeDuplicates();
+
+    return object_names;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief updateZoomToObjectComboBox updates the list of points included in the toolbar combobox.
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::updateZoomToObjectComboBox()
+{
+    QStringList object_names = getObjectNames(GOType::Point);
+    object_names.append(getObjectNames(GOType::AllCurves));
+
+    m_zoom_to_object_combobox->blockSignals(true); // prevent this UI update from zooming to the first point
+    m_zoom_to_object_combobox->clear();
+    m_zoom_to_object_combobox->addItems(object_names);
+    m_zoom_to_object_combobox->view()->setMinimumWidth(120);
+    m_zoom_to_object_combobox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
