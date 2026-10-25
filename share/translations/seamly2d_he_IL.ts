@@ -12596,6 +12596,50 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12625,14 +12669,6 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="unfinished">אורך</translation>
-    </message>
-    <message>
-        <source>Angle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

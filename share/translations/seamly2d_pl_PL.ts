@@ -12641,14 +12641,6 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Kopiuj</translation>
     </message>
     <message>
-        <source>Length</source>
-        <translation>Długość</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Kąt</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Usuń</translation>
     </message>
@@ -12677,12 +12669,56 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Linia_</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Kąt1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Kąt2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LengthSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LengthSpl_</translation>
+    </message>
+    <message>
         <source>Arc_</source>
         <translation>Łuk_</translation>
     </message>
     <message>
+        <source>RadiusArc_</source>
+        <translation>PromieńŁuku_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Kąt1Łuk_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Kąt2Łuk_</translation>
+    </message>
+    <message>
         <source>ElArc_</source>
         <translation>ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Promień1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Promień2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Kąt1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Kąt2ElArc_</translation>
     </message>
     <message>
         <source>Spl_</source>
