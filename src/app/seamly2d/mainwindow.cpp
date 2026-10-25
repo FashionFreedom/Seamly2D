@@ -7155,10 +7155,12 @@ void MainWindow::updatePreferences()
     initToolBarStyles();
     updateToolBarVisibility();
     refreshLabels();
-    resetOrigins();
     upDateScenes();
     const bool was_dark_background = isDarkBackground();
     setSceneBackgroundColor();
+    // After setSceneBackgroundColor, which is what decides whether colors adapt. The origins take their color
+    // when they are created, so rebuilding them earlier would use the previous background
+    resetOrigins();
     if (was_dark_background != isDarkBackground() && !doc->getActiveDraftBlockName().isEmpty())
     {
         // Some items take their color when they are created, rebuild them with the adapted or real colors
