@@ -12624,6 +12624,50 @@ load in SeamlyME as usual.
         <translation>Toon Puntnaam</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Hoek1Vvk_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Hoek2Vvk_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LengteVvk_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LengteVvk_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>Straalboog_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Hoek1boog_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Hoek2boog_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Angle2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Groepsobject toevoegen</translation>
     </message>
@@ -12654,14 +12698,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Kopiï¿½ren</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Lengte</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Hoek</translation>
     </message>
     <message>
         <source>AngleLine_</source>
