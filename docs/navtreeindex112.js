@@ -1,5 +1,9 @@
 var NAVTREEINDEX112 =
 {
+"d6/d6b/classVToolBisector.html#a9abaefaca71d7f8628c0b45a00955fb5":[3,0,745,4],
+"d6/d6b/classVToolBisector.html#a9c3a0602d5992c7915e4c58650b456d3":[3,0,745,1],
+"d6/d6b/classVToolBisector.html#aa822d100b3e861dfedc3344293218d2d":[3,0,745,19],
+"d6/d6b/classVToolBisector.html#ab09449fdf9f68400a22f933b82b80a85":[3,0,745,15],
 "d6/d6b/classVToolBisector.html#ac232ce754b5205dbd3fea2ab1f289c72":[3,0,745,17],
 "d6/d6b/classVToolBisector.html#ac547d7fd7f6bc696f25f0830773f7952":[3,0,745,14],
 "d6/d6b/classVToolBisector.html#ac60afef8eb73963eb0b22b7de3f2bb10":[3,0,745,7],
@@ -243,11 +247,7 @@ var NAVTREEINDEX112 =
 "d6/d7c/vabstractcubicbezier_8h.html":[4,0,0,1,6,8],
 "d6/d7c/vabstractcubicbezier_8h_source.html":[4,0,0,1,6,8],
 "d6/d7d/classDOMDocumentFragmentImpl.html":[3,0,159],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,135],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,134],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,133],
 "d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,132],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0ca1467e994e216c47a5ff171ddc3084":[3,0,159,160],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0ca1467e994e216c47a5ff171ddc3084":[3,0,159,162],
-"d6/d7d/classDOMDocumentFragmentImpl.html#a0ca1467e994e216c47a5ff171ddc3084":[3,0,159,161]
+"d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,133],
+"d6/d7d/classDOMDocumentFragmentImpl.html#a0c84f632c85e8416811fb30765474295":[3,0,159,134]
 };

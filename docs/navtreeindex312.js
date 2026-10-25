@@ -1,5 +1,12 @@
 var NAVTREEINDEX312 =
 {
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,1,30],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,3,18],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,2,18],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,3,30],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,2,30],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,2,6],
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,3,6],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,1,6],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a5f605917fe581d31a726db633c8d8953":[3,0,866,3,42],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a8311552884f5ced5b9c5b3c46809413c":[3,0,866,0,15],
@@ -181,8 +188,8 @@ var NAVTREEINDEX312 =
 "df/d5e/classDialogSplinePath.html#af686ec38bcdb52ccfeb7276c0845b5e0":[3,0,133,14],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html":[3,0,2,8],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html":[2,0,27,8],
-"df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a08f185741993de9b143cfe10fb1bf064":[3,0,2,8,0],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a08f185741993de9b143cfe10fb1bf064":[2,0,27,8,0],
+"df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a08f185741993de9b143cfe10fb1bf064":[3,0,2,8,0],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a42814501c6e58e328284e37d574e08cf":[2,0,27,8,1],
 "df/d5e/classVPE_1_1VAbstractPropertyFactory.html#a42814501c6e58e328284e37d574e08cf":[3,0,2,8,1],
 "df/d5e/classVToolSpline.html":[3,0,773],
@@ -242,12 +249,5 @@ var NAVTREEINDEX312 =
 "df/d65/mingw_2include_2xercesc_2dom_2DOMXPathNSResolver_8hpp_source.html":[4,0,0,1,15,1,0,0,0,52],
 "df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp.html":[4,0,0,1,15,2,0,0,0,0,12],
 "df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,12],
-"df/d65/msvc_2include_2xercesc_2framework_2psvi_2XSTypeDefinition_8hpp.html":[4,0,0,1,15,2,0,0,1,0,25],
-"df/d65/msvc_2include_2xercesc_2framework_2psvi_2XSTypeDefinition_8hpp_source.html":[4,0,0,1,15,2,0,0,1,0,25],
-"df/d66/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp.html":[4,0,0,1,15,3,0,0,7,3,5],
-"df/d66/msvc-arm64_2include_2xercesc_2validators_2schema_2SchemaAttDef_8hpp_source.html":[4,0,0,1,15,3,0,0,7,3,5],
-"df/d66/msvc_2include_2xercesc_2util_2XML88591Transcoder_8hpp.html":[4,0,0,1,15,2,0,0,6,87],
-"df/d66/msvc_2include_2xercesc_2util_2XML88591Transcoder_8hpp_source.html":[4,0,0,1,15,2,0,0,6,87],
-"df/d69/welcome__dialog_8cpp.html":[4,0,0,0,0,1,40],
-"df/d69/welcome__dialog_8cpp_source.html":[4,0,0,0,0,1,40]
+"df/d65/msvc_2include_2xercesc_2framework_2psvi_2XSTypeDefinition_8hpp.html":[4,0,0,1,15,2,0,0,1,0,25]
 };

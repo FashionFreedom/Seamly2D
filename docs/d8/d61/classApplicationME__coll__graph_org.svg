@@ -84,65 +84,62 @@
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="88.5,-1187.12 88.5,-1249.38 166.75,-1249.38 166.75,-1187.12 88.5,-1187.12"/>
-<text xml:space="preserve" text-anchor="middle" x="127.62" y="-1235.88" font-family="Helvetica,sans-Serif" font-size="10.00">QApplication</text>
-<polyline fill="none" stroke="#666666" points="88.5,-1228.62 166.75,-1228.62"/>
-<text xml:space="preserve" text-anchor="middle" x="127.62" y="-1215.12" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#666666" points="88.5,-1207.88 166.75,-1207.88"/>
-<text xml:space="preserve" text-anchor="middle" x="127.62" y="-1194.38" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#666666" points="101.5,-1187.12 101.5,-1249.38 179.75,-1249.38 179.75,-1187.12 101.5,-1187.12"/>
+<text xml:space="preserve" text-anchor="middle" x="140.62" y="-1235.88" font-family="Helvetica,sans-Serif" font-size="10.00">QApplication</text>
+<polyline fill="none" stroke="#666666" points="101.5,-1228.62 179.75,-1228.62"/>
+<text xml:space="preserve" text-anchor="middle" x="140.62" y="-1215.12" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#666666" points="101.5,-1207.88 179.75,-1207.88"/>
+<text xml:space="preserve" text-anchor="middle" x="140.62" y="-1194.38" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="#63b8ff" d="M120.51,-1175.49C107.66,-1086.77 89.44,-876.03 176.62,-734 240.74,-629.56 373.28,-564.61 456.17,-532.47"/>
-<polygon fill="none" stroke="#63b8ff" points="117.02,-1175.82 121.97,-1185.18 123.94,-1174.77 117.02,-1175.82"/>
+<path fill="none" stroke="#63b8ff" d="M133.58,-1175.6C120.85,-1087.11 102.73,-876.78 188.62,-734 249.64,-632.57 375.74,-567.3 456.04,-534.18"/>
+<polygon fill="none" stroke="#63b8ff" points="130.08,-1175.9 135.02,-1185.27 137,-1174.86 130.08,-1175.9"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../de/d0f/classVCommonSettings.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="185.25,-1027.75 185.25,-1408.75 364,-1408.75 364,-1027.75 185.25,-1027.75"/>
-<text xml:space="preserve" text-anchor="middle" x="274.62" y="-1395.25" font-family="Helvetica,sans-Serif" font-size="10.00">VCommonSettings</text>
-<polyline fill="none" stroke="#666666" points="185.25,-1388 364,-1388"/>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1374.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ unixStandardSharePath</text>
-<polyline fill="none" stroke="#666666" points="185.25,-1367.25 364,-1367.25"/>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1353.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCommonSettings()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1341" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCommonSettings()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1328.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndividualSizePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setIndividualSizePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1302.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMultisizePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00">+ setMultisizePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1277.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getBodyScansPath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1264.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBodyScansPath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1251.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTemplatePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1239" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTemplatePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1226.25" font-family="Helvetica,sans-Serif" font-size="10.00">and 299 more...</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1213.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SharePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1200.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ MultisizeTablesPath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1188" font-family="Helvetica,sans-Serif" font-size="10.00">+ StandardTemplatesPath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1175.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrepareStandardTemplates()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1162.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ prepareMultisizeTables()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1149.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultIndividualSize</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00">Path()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1124.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultMultisizePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultBodyScansPath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1098.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultTemplatePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1086" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultLabelTemplatePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1073.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultImageFilePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1060.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultBackupFilePath()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1047.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ PredefinedDateFormats()</text>
-<text xml:space="preserve" text-anchor="start" x="193.25" y="-1035" font-family="Helvetica,sans-Serif" font-size="10.00">+ PredefinedTimeFormats()</text>
+<polygon fill="white" stroke="#666666" points="197.62,-1046.88 197.62,-1389.62 363.62,-1389.62 363.62,-1046.88 197.62,-1046.88"/>
+<text xml:space="preserve" text-anchor="middle" x="280.62" y="-1376.12" font-family="Helvetica,sans-Serif" font-size="10.00">VCommonSettings</text>
+<polyline fill="none" stroke="#666666" points="197.62,-1368.88 363.62,-1368.88"/>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1355.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ unixStandardSharePath</text>
+<polyline fill="none" stroke="#666666" points="197.62,-1348.12 363.62,-1348.12"/>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1334.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCommonSettings()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1321.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCommonSettings()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1309.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndividualSizePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1296.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ setIndividualSizePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1283.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ getMultisizePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1270.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ setMultisizePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1258.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ getBodyScansPath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1245.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBodyScansPath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1232.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTemplatePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1219.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTemplatePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1207.12" font-family="Helvetica,sans-Serif" font-size="10.00">and 299 more...</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1194.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ SharePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1181.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ MultisizeTablesPath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1168.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ StandardTemplatesPath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1156.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrepareStandardTemplates()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1143.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ prepareMultisizeTables()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1130.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ configureDataDirectory()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1117.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ dataDirectory()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1105.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ defaultDataPath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1092.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultIndividualSize</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1079.62" font-family="Helvetica,sans-Serif" font-size="10.00">Path()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1066.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultMultisizePath()</text>
+<text xml:space="preserve" text-anchor="start" x="205.62" y="-1054.12" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node2 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M295.03,-1027.53C309.33,-936.19 333.22,-826.66 372.62,-734 391.85,-688.79 420.87,-643.36 448.69,-605.21"/>
-<polygon fill="none" stroke="#404040" points="448.45,-605.54 448.8,-598.34 455.58,-595.89 455.23,-603.09 448.45,-605.54"/>
-<text xml:space="preserve" text-anchor="middle" x="417.79" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_settings</text>
+<path fill="none" stroke="#404040" d="M295.62,-1046.48C308.21,-951.66 331.14,-833.18 372.62,-734 391.62,-688.58 420.68,-643.02 448.59,-604.84"/>
+<polygon fill="none" stroke="#404040" points="448.36,-605.15 448.71,-597.95 455.5,-595.51 455.14,-602.71 448.36,-605.15"/>
+<text xml:space="preserve" text-anchor="middle" x="417.65" y="-706.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_settings</text>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -160,7 +157,7 @@
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M32.15,-2001.4C34.12,-1947.54 42.11,-1851.96 72.62,-1776.75 84.16,-1748.32 87.58,-1738.21 112.62,-1720.5 136.4,-1703.69 155.83,-1723.86 175.62,-1702.5 248.02,-1624.37 273.44,-1508.09 280.44,-1409.17"/>
+<path fill="none" stroke="#63b8ff" d="M32.15,-2001.4C34.12,-1947.54 42.11,-1851.96 72.62,-1776.75 84.16,-1748.32 87.18,-1737.63 112.62,-1720.5 141.42,-1701.11 164.63,-1727.58 188.62,-1702.5 267.14,-1620.42 288.9,-1493.19 291.69,-1389.88"/>
 <polygon fill="none" stroke="#63b8ff" points="28.65,-2001.26 31.84,-2011.36 35.65,-2001.48 28.65,-2001.26"/>
 </g>
 <!-- Node6 -->

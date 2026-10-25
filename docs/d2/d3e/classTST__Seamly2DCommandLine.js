@@ -1,6 +1,8 @@
 var classTST__Seamly2DCommandLine =
 [
     [ "TST_Seamly2DCommandLine", "d2/d3e/classTST__Seamly2DCommandLine.html#aa66f9f7efe14fe19756b2afc68769ec0", null ],
+    [ "automationDataDirectory", "d2/d3e/classTST__Seamly2DCommandLine.html#aa0f36548c0307c606182b77aaae0fe4f", null ],
+    [ "automationDataDirectory_data", "d2/d3e/classTST__Seamly2DCommandLine.html#a2ca6c3fc42276c0e79cfe4ec195fe792", null ],
     [ "cleanupTestCase", "d2/d3e/classTST__Seamly2DCommandLine.html#a77172d8f24df5d978d4f9d601590b24d", null ],
     [ "ExportMode", "d2/d3e/classTST__Seamly2DCommandLine.html#a407fffc33f458e66f0014ae81358f48a", null ],
     [ "ExportMode_data", "d2/d3e/classTST__Seamly2DCommandLine.html#a846a9461446162bffc294ac02f26bccb", null ],
