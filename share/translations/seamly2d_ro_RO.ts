@@ -12642,6 +12642,50 @@ load in SeamlyME as usual.
         <translation>Afișați numele punctului</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Unghi1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Unghi2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1LungimeSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2LungimeSpl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>RazăArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Unghi1Arc_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Unghi2Arc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Rază1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Rază2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Unghi1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Unghi2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Adăugați un obiect de grup</translation>
     </message>
@@ -12672,14 +12716,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Copiere</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Lungime</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Unghi</translation>
     </message>
     <message>
         <source>AngleLine_</source>
