@@ -12642,6 +12642,50 @@ load in SeamlyME as usual.
         <translation>Nokta Adını Göster</translation>
     </message>
     <message>
+        <source>Angle1Spl_</source>
+        <translation>Açı1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <translation>Açı2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <translation>C1UzunlukDeğeri_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <translation>C2UzunlukDeğeri_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <translation>YarıçapYay_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <translation>Açı1Yay_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <translation>Açı2Yay_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <translation>Yarıçap1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <translation>Yarıçap2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <translation>Açı1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <translation>Açı2ElArc_</translation>
+    </message>
+    <message>
         <source>Add Group Object</source>
         <translation>Grup Nesnesi Ekle</translation>
     </message>
@@ -12672,14 +12716,6 @@ load in SeamlyME as usual.
     <message>
         <source>Copy</source>
         <translation>Kopyala</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation>Uzunluk</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation>Açı</translation>
     </message>
     <message>
         <source>AngleLine_</source>
