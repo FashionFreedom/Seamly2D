@@ -7,7 +7,7 @@ macx{
     APPLE_NOTARIZE_ISSUER_ID = $(APPLE_NOTARIZE_ISSUER_ID)
 
     seamly2ddmg.target = Seamly2D.dmg
-    seamly2ddmg.commands = hdiutil create -srcfolder $${OUT_PWD}/../src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" $$seamly2ddmg.target
+    seamly2ddmg.commands = /bin/sh $$shell_quote($$PWD/../scripts/create-dmg.sh) $$shell_quote($${OUT_PWD}/../src/app/seamly2d/bin/Seamly2D.app) Seamly2D $$seamly2ddmg.target
 
     macSign {
         seamly2ddmg.commands += && codesign --options runtime --timestamp -s $${APPLE_SIGN_IDENTITY} $$seamly2ddmg.target
@@ -17,7 +17,7 @@ macx{
 
     seamlymedmg.target = SeamlyME.dmg
     seamlymedmg.depends = seamly2ddmg  # updated by slspencer on 20260527 - serialize hdiutil to avoid "Resource busy" under make -j
-    seamlymedmg.commands = hdiutil create -fs HFS+ -srcfolder $${OUT_PWD}/../src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" $$seamlymedmg.target
+    seamlymedmg.commands = /bin/sh $$shell_quote($$PWD/../scripts/create-dmg.sh) $$shell_quote($${OUT_PWD}/../src/app/seamlyme/bin/seamlyme.app) SeamlyME $$seamlymedmg.target
 
     macSign {
         seamlymedmg.commands += && codesign --options runtime --timestamp -s $${APPLE_SIGN_IDENTITY} $$seamlymedmg.target
