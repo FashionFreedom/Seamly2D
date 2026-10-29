@@ -52,6 +52,7 @@ var def_8cpp =
     [ "cursorArrowOpenHand", "d6/d0b/def_8cpp.html#a0f35c65ac737bad188895abceeadcf48", null ],
     [ "cursorImageOrigin", "d6/d0b/def_8cpp.html#a0ed43aa25e0c560ad126c4b1bf2dd9c7", null ],
     [ "cursorResizeArrow", "d6/d0b/def_8cpp.html#ae4fa6eb3ba78af5a547e5b7d27ec6366", null ],
+    [ "darkWorkspaceColor", "d6/d0b/def_8cpp.html#a2c860b99b9a667e6c24b0b42f83fa28c", null ],
     [ "degreeSymbol", "d6/d0b/def_8cpp.html#a9d57cde0b2077de64d37157baa0e9d10", null ],
     [ "degTorad_F", "d6/d0b/def_8cpp.html#ad0679d063111d3e8aceaf2a91d243398", null ],
     [ "exp_F", "d6/d0b/def_8cpp.html#ae67530a59f92381ca67213f3c044c1a8", null ],

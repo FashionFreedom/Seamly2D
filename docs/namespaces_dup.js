@@ -125,6 +125,7 @@ var namespaces_dup =
       [ "settingGeneralRestoreFileList", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6b89610e94e02cf040d009c330b734ef", null ],
       [ "settingGeneralToolbarsState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af3454acdd594dd98d4348de6cc8643a7", null ],
       [ "settingGeneralWindowState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0696d67afde5d1eb5346a7a90c11beae", null ],
+      [ "settingGraphicsAdaptColors", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab6ab70818237bf9d6b3c66082afb8b4f", null ],
       [ "settingGraphicsAutoClearFx", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ab6d7c0132ed611b7a2c649e0e7d65771", null ],
       [ "settingGraphicsUseNativeDialogs", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ae909559fcf29f9941cfe10bffcec8932", null ],
       [ "settingGraphicsUseSecondMonitor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a2474fcf7a475730787f7dcc8c7789a6f", null ],
