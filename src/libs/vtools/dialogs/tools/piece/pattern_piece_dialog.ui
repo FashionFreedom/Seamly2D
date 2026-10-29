@@ -591,21 +591,6 @@ QListWidget::item:selected {
                   <bold>false</bold>
                  </font>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>Undefined</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Up/Down</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Left/Right</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item row="5" column="0">
@@ -650,21 +635,6 @@ QListWidget::item:selected {
                   <bold>false</bold>
                  </font>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>Undefined</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Left</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Right</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item row="6" column="0">
@@ -709,31 +679,6 @@ QListWidget::item:selected {
                   <bold>false</bold>
                  </font>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>None</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>1-Way</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>2-Way</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>4-Way</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Any</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item row="7" column="0">
@@ -778,21 +723,6 @@ QListWidget::item:selected {
                   <bold>false</bold>
                  </font>
                 </property>
-                <item>
-                 <property name="text">
-                  <string>None</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string notr="true">CW X</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string notr="true">CCW X</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item row="8" column="0">

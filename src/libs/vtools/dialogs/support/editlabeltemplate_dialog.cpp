@@ -629,10 +629,15 @@ void EditLabelTemplateDialog::SetPiece(const VPiece &piece)
     const VPieceLabelData& pieceData = piece.GetPatternPieceData();
     m_placeholders[pl_pLetter].second = pieceData.GetLetter();
     m_placeholders[pl_pAnnotation].second = pieceData.GetAnnotation();
-    m_placeholders[pl_pOrientation].second = pieceData.GetOrientation();
-    m_placeholders[pl_pRotation].second = pieceData.getRotationWay();
-    m_placeholders[pl_pTilt].second = pieceData.GetTilt();
-    m_placeholders[pl_pFoldPosition].second = pieceData.GetFoldPosition();
+    // Values are stored untranslated, with the item texts of the pattern piece dialog.
+    auto translated = [](const QString &value)
+    {
+        return QCoreApplication::translate("PatternPieceDialog", value.toUtf8().constData());
+    };
+    m_placeholders[pl_pOrientation].second = translated(pieceData.GetOrientation());
+    m_placeholders[pl_pRotation].second = translated(pieceData.getRotationWay());
+    m_placeholders[pl_pTilt].second = translated(pieceData.GetTilt());
+    m_placeholders[pl_pFoldPosition].second = translated(pieceData.GetFoldPosition());
     m_placeholders[pl_pName].second = piece.GetName();
     m_placeholders[pl_pQuantity].second = QString::number(pieceData.GetQuantity());
     if (pieceData.IsOnFold())
