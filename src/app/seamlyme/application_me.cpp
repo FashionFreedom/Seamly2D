@@ -266,6 +266,12 @@ ApplicationME::ApplicationME(int &argc, char **argv)
     , m_dataBase(QPointer<MeasurementDatabaseDialog>())
     , m_testMode(false)
 {
+
+#if defined(Q_OS_MACOS) || defined(Q_OS_MAC)
+    // Overriding the default Qt 6.7.3+ behavior where macOS hides menu icons
+    QCoreApplication::setAttribute(Qt::AA_DontShowIconsInMenus, false);
+#endif
+
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_ME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
