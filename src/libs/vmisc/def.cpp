@@ -409,7 +409,27 @@ QPalette lightPalette()
     palette.setColor(QPalette::Link, QColor(42, 130, 218));
     palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
     palette.setColor(QPalette::HighlightedText, Qt::white);
-    return palette;
+
+    // Also copy active states to Inactive so menus look normal when out of focus
+    palette.setCurrentColorGroup(QPalette::Active);
+
+    // EXPLICIT DISABLED STATE COLORS
+    QColor disabledText(140, 140, 140); // A standard neutral gray for greyed out text
+
+    // Force the greyed-out text roles for dark mode menus and controls
+    palette.setColor(QPalette::Disabled, QPalette::Text,       disabledText);
+    palette.setColor(QPalette::Disabled, QPalette::WindowText, disabledText);
+    palette.setColor(QPalette::Disabled, QPalette::ButtonText, disabledText);
+
+    // Backgrounds for disabled fields (optional, usually slightly lighter or darker gray)
+    palette.setColor(QPalette::Disabled, QPalette::Base,   QColor(225, 225, 225));
+    palette.setColor(QPalette::Disabled, QPalette::Window, QColor(225, 225, 225));
+
+    // Mute the highlight color if an item is focused/hovered while disabled
+    palette.setColor(QPalette::Disabled, QPalette::Highlight, QColor(210, 210, 210));
+    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, disabledText);
+
+return palette;
 }
 
 QPalette darkPalette()
@@ -428,6 +448,27 @@ QPalette darkPalette()
     palette.setColor(QPalette::Link, QColor(42, 130, 218));
     palette.setColor(QPalette::Highlight, QColor(42, 130, 218));
     palette.setColor(QPalette::HighlightedText, Qt::black);
+
+    // Also copy active states to Inactive so menus look normal when out of focus
+    palette.setCurrentColorGroup(QPalette::Active);
+
+    // EXPLICIT DISABLED STATE COLORS (DARK MODE)
+    // A neutral, mid-tone gray that works well over both 53,53,53 and 25,25,25
+    QColor disabledText(110, 110, 110);
+
+    // Force the greyed-out text roles for dark mode menus and controls
+    palette.setColor(QPalette::Disabled, QPalette::Text,       disabledText);
+    palette.setColor(QPalette::Disabled, QPalette::WindowText, disabledText);
+    palette.setColor(QPalette::Disabled, QPalette::ButtonText, disabledText);
+
+    // Backgrounds for disabled fields (slightly dimmer/flatter for dark mode)
+    palette.setColor(QPalette::Disabled, QPalette::Base,   QColor(35, 35, 35));
+    palette.setColor(QPalette::Disabled, QPalette::Window, QColor(45, 45, 45));
+
+    // Mute the highlight color if an item is focused/hovered while disabled
+    palette.setColor(QPalette::Disabled, QPalette::Highlight, QColor(30, 70, 110));
+    palette.setColor(QPalette::Disabled, QPalette::HighlightedText, disabledText);
+
     return palette;
 }
 
