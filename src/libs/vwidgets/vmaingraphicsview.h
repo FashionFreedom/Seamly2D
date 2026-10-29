@@ -136,7 +136,7 @@ private:
     /** @brief _numScheduledHorizontalScrollings keep number scheduled horizontal scrollings. */
     qint32                m_numScheduledHorizontalScrollings;
 
-    void                  fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view);
+    void                  fictiveSceneRect(QGraphicsView *view);
 
     bool                  startVerticalScrollings(QWheelEvent* wheel_event);
     bool                  startHorizontalScrollings(QWheelEvent* wheel_event);
@@ -165,6 +165,7 @@ public:
     void                  allowRubberBand(bool value);
     void                  zoomPanEnabled(bool value);
     void                  zoomToAreaEnabled(bool value);
+    void                  setScene(QGraphicsScene *scene);
 
     static void           NewSceneRect(QGraphicsScene *sc, QGraphicsView *view, QGraphicsItem *item = nullptr);
     static QRectF         SceneVisibleArea(QGraphicsView *view);

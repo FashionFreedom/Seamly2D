@@ -3958,6 +3958,8 @@ void MainWindow::RestoreCurrentScene()
     /*Set transform for current scene*/
     ui->view->setTransform(scene->transform());
     zoomScaleChanged(ui->view->transform().m11());
+    /*Pad the view's panning rect before restoring scroll bars, so they aren't clamped.*/
+    VMainGraphicsView::NewSceneRect(currentScene, ui->view);
     /*Set value for current scene scroll bar.*/
     QScrollBar *horScrollBar = ui->view->horizontalScrollBar();
     horScrollBar->setValue(scene->getHorScrollBar());
