@@ -843,22 +843,28 @@ void VMainGraphicsView::allowRubberBand(bool value)
     SCASSERT(sc != nullptr)
     SCASSERT(view != nullptr)
 
+    //Calculate view rect
+    const QRectF viewRect = SceneVisibleArea(view);
+
+    // Pad by half the view size so panning can move any point to the center of the view
+    const qreal marginX = viewRect.width() / 2.0;
+    const qreal marginY = viewRect.height() / 2.0;
+
     if (item == nullptr)
     {
-        //Calculate view rect
-        const QRectF viewRect = SceneVisibleArea(view);
-
         //Calculate scene rect
         VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(sc);
         SCASSERT(currentScene)
-        const QRectF itemsRect = currentScene->visibleItemsBoundingRect();
+        const QRectF itemsRect = currentScene->visibleItemsBoundingRect()
+                                     .adjusted(-marginX, -marginY, marginX, marginY);
 
         //Unite two rects
         sc->setSceneRect(itemsRect.united(viewRect));
     }
     else if (not sc->sceneRect().contains(item->sceneBoundingRect()))
     {
-        sc->setSceneRect(sc->sceneRect().united(item->sceneBoundingRect()));
+        const QRectF itemRect = item->sceneBoundingRect().adjusted(-marginX, -marginY, marginX, marginY);
+        sc->setSceneRect(sc->sceneRect().united(itemRect));
     }
 }
 
