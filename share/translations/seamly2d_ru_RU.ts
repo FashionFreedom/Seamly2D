@@ -8950,14 +8950,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation>Тема:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9052,6 +9044,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Colors</source>
         <translation>Цвета</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;На темном фоне темные линии, точки и метки отображаются светлее, чтобы они оставались видимыми (черный цвет отображается как светло-серый). Шаблон сохраняет свои исходные цвета для сохранения, печати и экспорта.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9261,11 +9257,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Адаптировать цвета под темную тему (темный фон)</translation>
     </message>
 </context>
 <context>
@@ -12101,6 +12093,10 @@ load in SeamlyME as usual.
         <translation>Сине-Фиолетовый</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Черный | Белый</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Черный</translation>
     </message>
@@ -12250,11 +12246,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Антрацит</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Графит</translation>
     </message>
 </context>
 <context>

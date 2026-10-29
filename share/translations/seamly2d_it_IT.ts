@@ -8931,14 +8931,6 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <source>Theme:</source>
         <translation>Tema:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9033,6 +9025,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Colors</source>
         <translation>Colori</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Su uno sfondo scuro, mostra le linee scure, i punti e le etichette più chiari in modo che rimangano visibili (il nero viene mostrato come grigio chiaro). Il motivo mantiene i suoi colori reali per il salvataggio, la stampa e l'esportazione.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9241,11 +9237,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta i colori a uno sfondo scuro</translation>
     </message>
 </context>
 <context>
@@ -12081,6 +12073,10 @@ caricare in SeamlyME come di consueto.
         <translation>Fiordaliso blu</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Nero | Bianco</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Nero</translation>
     </message>
@@ -12230,11 +12226,11 @@ caricare in SeamlyME come di consueto.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Antracite</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafite</translation>
     </message>
 </context>
 <context>

@@ -67,7 +67,7 @@ VScenePoint::VScenePoint(const QColor &lineColor, QGraphicsItem *parent)
     : QGraphicsEllipseItem(parent)
     , m_pointName(new VGraphicsSimpleTextItem(m_pointColor, this))
     , m_pointLeader(new VScaledLine(this))
-    , m_pointColor(QColor(correctColor(this,lineColor)))
+    , m_pointColor(QColor(adjustColorForState(this,lineColor)))
     , m_onlyPoint(false)
     , m_isHovered(false)
     , m_showPointName(true)
@@ -101,12 +101,12 @@ void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
             m_pointName->setVisible(m_showPointName);
 
             QPen leaderPen = m_pointLeader->pen();
-            QColor leaderColor = correctColor(m_pointLeader, QColor(qApp->Settings()->getPointNameColor()));
+            QColor leaderColor = adjustColorForState(m_pointLeader, QColor(qApp->Settings()->getPointNameColor()));
             leaderColor.setAlpha(128);
 
             if (qApp->Settings()->getUseToolColor())
             {
-                leaderColor = correctColor(m_pointLeader, m_pointColor);
+                leaderColor = adjustColorForState(m_pointLeader, m_pointColor);
             }
 
             leaderPen.setColor(leaderColor);
@@ -210,34 +210,34 @@ void VScenePoint::setPointPen(qreal scale)
 
     if (qApp->Settings()->getUseToolColor() || isOnlyPoint())
     {
-        setPen(QPen(correctColor(this, m_pointColor), width));
+        setPen(QPen(adjustColorForState(this, m_pointColor), width));
         if (!m_onlyPoint)
         {
             if (!qApp->Settings()->isWireframe())
             {
-               setBrush(QBrush(correctColor(this, m_pointColor), Qt::SolidPattern));
+               setBrush(QBrush(adjustColorForState(this, m_pointColor), Qt::SolidPattern));
             }
             else
             {
-               setBrush(QBrush(correctColor(this, m_pointColor), Qt::NoBrush));
+               setBrush(QBrush(adjustColorForState(this, m_pointColor), Qt::NoBrush));
             }
         }
         else
         {
-            setBrush(QBrush(correctColor(this, m_pointColor),Qt::NoBrush));
+            setBrush(QBrush(adjustColorForState(this, m_pointColor),Qt::NoBrush));
         }
     }
     else
     {
-        setPen(QPen(correctColor(this, QColor(qApp->Settings()->getPointNameColor())), width));
+        setPen(QPen(adjustColorForState(this, QColor(qApp->Settings()->getPointNameColor())), width));
 
         if (!qApp->Settings()->isWireframe())
         {
-           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
+           setBrush(QBrush(adjustColorForState(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
         }
         else
         {
-           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::NoBrush));
+           setBrush(QBrush(adjustColorForState(this, QColor(qApp->Settings()->getPointNameColor())),Qt::NoBrush));
         }
 
     }
