@@ -594,6 +594,9 @@ QPalette  lightPalette();
 QPalette  darkPalette();
 QPalette  twilightPalette();
 
+// Dark workspace background, in the background color list as Charcoal
+extern const QString darkWorkspaceColor;
+
 QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);

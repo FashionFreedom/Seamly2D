@@ -73,6 +73,7 @@ public:
 
     void         apply();
 
+
 protected:
     virtual void changeEvent(QEvent* event) override;
 

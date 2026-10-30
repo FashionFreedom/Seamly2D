@@ -82,6 +82,9 @@ public:
     static QString       PrepareStandardTemplates(const QString &currentPath);
     static QString       prepareMultisizeTables(const QString &currentPath);
 
+    static int           configureDataDirectory();
+    static QString       dataDirectory();
+    static QString       defaultDataPath();
     static QString       getDefaultIndividualSizePath();
     QString              getIndividualSizePath() const;
     void                 setIndividualSizePath(const QString &value);
@@ -530,6 +533,9 @@ public:
 
     bool                 getUseToolColor() const;
     void                 setUseToolColor(bool value);
+
+    bool                 getAdaptColors() const;
+    void                 setAdaptColors(bool value);
 
     int                  getGuiFontSize() const;
     void                 setGuiFontSize(int value);
