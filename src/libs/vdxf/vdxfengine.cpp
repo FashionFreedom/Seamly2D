@@ -783,6 +783,18 @@ void VDxfEngine::ExportAAMAText(dx_ifaceBlock *detailBlock, const VLayoutPiece &
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::ExportAAMAGlobalText(const QSharedPointer<dx_iface> &input, const QVector<VLayoutPiece> &details)
 {
+    QString unit_name = QStringLiteral("MM");
+    if (varInsunits == VarInsunits::Centimeters)
+    {
+        unit_name = QStringLiteral("CM");
+    }
+    else if (varInsunits == VarInsunits::Inches)
+    {
+        unit_name = QStringLiteral("INCH");
+    }
+    const QPointF units_pos(0, getSize().height() + ToPixel(AAMATextHeight, varInsunits));
+    input->AddEntity(AAMAText(units_pos, QStringLiteral("Units: %1").arg(unit_name), "1"));
+
     for(int i = 0; i < details.size(); ++i)
     {
         const QStringList strings = details.at(i).getPatternText();
