@@ -3911,7 +3911,7 @@ void MainWindow::setSceneBackgroundColor()
 {
     QColor color = QColor(qApp->Seamly2DSettings()->getBackgroundColor());
     // Lines, points and labels flip their lightness to stay visible on a dark background
-    setDarkBackground(qApp->Settings()->getAdaptColors() && color.lightnessF() < 0.5);
+    setDarkBackground(qApp->Settings()->isAdaptiveColorEnabled() && color.lightnessF() < 0.5);
     draftScene->setBackgroundBrush(color);
     pieceScene->setBackgroundBrush(color);
     layout_scene->setBackgroundBrush(color);

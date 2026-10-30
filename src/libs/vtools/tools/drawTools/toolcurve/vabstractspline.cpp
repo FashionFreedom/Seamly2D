@@ -117,7 +117,7 @@ void VAbstractSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     const qreal weight = ToPixel(doc->useGroupLineWeight(m_id, curve->getLineWeight()).toDouble(), Unit::Mm);
     const qreal width  = scaleWidth(m_isHovered ? weight + 4 : weight, sceneScale(scene()));
 
-    setPen(QPen(correctColor(this, doc->useGroupColor(m_id, curve->getLineColor())), width,
+    setPen(QPen(adjustColorForState(this, doc->useGroupColor(m_id, curve->getLineColor())), width,
            lineTypeToPenStyle(doc->useGroupLineType(m_id, curve->GetPenStyle())), Qt::RoundCap));
 
     auto paintSpline = [this, curve](QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)

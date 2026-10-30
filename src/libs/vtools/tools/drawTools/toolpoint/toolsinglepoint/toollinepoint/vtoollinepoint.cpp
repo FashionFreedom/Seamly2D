@@ -122,7 +122,7 @@ VToolLinePoint::~VToolLinePoint()
 void VToolLinePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPen pen = mainLine->pen();
-    pen.setColor(correctColor(this, doc->useGroupColor(m_id, lineColor)));
+    pen.setColor(adjustColorForState(this, doc->useGroupColor(m_id, lineColor)));
     pen.setStyle(lineTypeToPenStyle(doc->useGroupLineType(m_id, m_lineType)));
     pen.setWidthF(ToPixel(doc->useGroupLineWeight(m_id, m_lineWeight).toDouble(), Unit::Mm));
 

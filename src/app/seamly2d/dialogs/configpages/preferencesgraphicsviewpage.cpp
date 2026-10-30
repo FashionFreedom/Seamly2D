@@ -95,7 +95,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Background Color
     ui->bgColor_ComboBox->setItems(VAbstractTool::backgroundColorsList());
     setIndex(ui->bgColor_ComboBox, qApp->Seamly2DSettings()->getBackgroundColor());
-    ui->adaptColors_CheckBox->setChecked(qApp->Seamly2DSettings()->getAdaptColors());
+    ui->adaptColors_CheckBox->setChecked(qApp->Seamly2DSettings()->isAdaptiveColorEnabled());
 
     // Zoom Rubberband colors
     setIndex(ui->zrbPositiveColor_ComboBox, qApp->Seamly2DSettings()->getZoomRBPositiveColor());
@@ -248,7 +248,7 @@ void PreferencesGraphicsViewPage::Apply()
     // Color preferences
     // Background color
     settings->setBackgroundColor(ui->bgColor_ComboBox->currentData().toString());
-    settings->setAdaptColors(ui->adaptColors_CheckBox->isChecked());
+    settings->setAdaptiveColorEnabled(ui->adaptColors_CheckBox->isChecked());
 
 
     // Zoom Rubberband colors
