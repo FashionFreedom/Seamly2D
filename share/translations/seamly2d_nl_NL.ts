@@ -9024,7 +9024,7 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon op een donkere achtergrond donkere lijnen, punten en labels lichter zodat ze zichtbaar blijven (zwart wordt lichtgrijs). Het patroon behoudt zijn echte kleuren voor opslaan, afdrukken en exporteren.&lt;/p&gt;&lt;/body&gt;&lt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon op een donkere achtergrond donkere lijnen, punten en labels lichter zodat ze zichtbaar blijven (zwart wordt lichtgrijs). Het patroon behoudt zijn echte kleuren voor opslaan, afdrukken en exporteren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
