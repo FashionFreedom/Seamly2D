@@ -13,6 +13,7 @@ var classVPatternConverter =
     [ "downgradeToCurrentMaxVersion", "dc/dd3/classVPatternConverter.html#a7a5681e633b8c9056df91410de02245a", null ],
     [ "FixArcExpressionsToV0_2_0", "dc/dd3/classVPatternConverter.html#a441350b473a9052850bc89f8986c2159", null ],
     [ "FixCutPoint", "dc/dd3/classVPatternConverter.html#ae1d16c8130e6a346d539e3d22f9c1ed7", null ],
+    [ "fixGroupsOrder", "dc/dd3/classVPatternConverter.html#a12d451b1a8f7c209de9173aecede7631", null ],
     [ "FixIncrementInFormulaToV0_2_0", "dc/dd3/classVPatternConverter.html#acf2d9ba152756f37289d4bc983b5ceed", null ],
     [ "FixIncrementsToV0_2_0", "dc/dd3/classVPatternConverter.html#a9a86a418c59714eca87812208351f1a2", null ],
     [ "FixMeasurementInFormulaToV0_2_0", "dc/dd3/classVPatternConverter.html#a89715544d4ab483e768d0c87e44eb809", null ],

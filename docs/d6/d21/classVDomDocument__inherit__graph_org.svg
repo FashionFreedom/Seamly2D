@@ -116,12 +116,13 @@
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="../../dc/d68/classVAbstractConverter.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="468,-1257.25 468,-1638.25 660.25,-1638.25 660.25,-1257.25 468,-1257.25"/>
-<text xml:space="preserve" text-anchor="middle" x="564.12" y="-1624.75" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractConverter</text>
-<polyline fill="none" stroke="#666666" points="468,-1617.5 660.25,-1617.5"/>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1604" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1591.25" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1578.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
+<polygon fill="white" stroke="#666666" points="468,-1244.5 468,-1651 660.25,-1651 660.25,-1244.5 468,-1244.5"/>
+<text xml:space="preserve" text-anchor="middle" x="564.12" y="-1637.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractConverter</text>
+<polyline fill="none" stroke="#666666" points="468,-1630.25 660.25,-1630.25"/>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1616.75" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1604" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1591.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1578.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_original_file_name</text>
 <polyline fill="none" stroke="#666666" points="468,-1571.25 660.25,-1571.25"/>
 <text xml:space="preserve" text-anchor="start" x="476" y="-1557.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractConverter()</text>
 <text xml:space="preserve" text-anchor="start" x="476" y="-1545" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractConverter()</text>
@@ -132,28 +133,29 @@
 <text xml:space="preserve" text-anchor="start" x="476" y="-1481.25" font-family="Helvetica,sans-Serif" font-size="10.00"># ValidateInputFile()</text>
 <text xml:space="preserve" text-anchor="start" x="476" y="-1468.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InvalidVersion()</text>
 <text xml:space="preserve" text-anchor="start" x="476" y="-1455.75" font-family="Helvetica,sans-Serif" font-size="10.00"># Save()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1443" font-family="Helvetica,sans-Serif" font-size="10.00"># setVersion()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1430.25" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1417.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1404.75" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1392" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1379.25" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1366.5" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1353.75" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1341" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1328.25" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1315.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1302.75" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; saveBackupFile()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1277.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
-<text xml:space="preserve" text-anchor="start" x="476" y="-1264.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1443" font-family="Helvetica,sans-Serif" font-size="10.00"># saveRepairedCopy()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1430.25" font-family="Helvetica,sans-Serif" font-size="10.00"># setVersion()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1417.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1404.75" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1392" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1379.25" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1366.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1353.75" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1341" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1328.25" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1315.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1302.75" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1277.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; saveBackupFile()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1264.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
+<text xml:space="preserve" text-anchor="start" x="476" y="-1251.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="#63b8ff" d="M633.37,-1969.59C618.78,-1859.89 602.48,-1737.3 589.37,-1638.62"/>
+<path fill="none" stroke="#63b8ff" d="M633.39,-1969.75C619.42,-1864.72 603.89,-1747.86 591.07,-1651.47"/>
 <polygon fill="none" stroke="#63b8ff" points="629.88,-1969.9 634.66,-1979.35 636.81,-1968.98 629.88,-1969.9"/>
 </g>
 <!-- Node10 -->
@@ -313,8 +315,8 @@
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="#63b8ff" d="M570.71,-1245.44C563.08,-1144.09 535.8,-1026.9 459.12,-950.75 402.48,-894.49 344.22,-966.15 283.12,-914.75 241.5,-879.73 220.89,-820.78 210.75,-774.37"/>
-<polygon fill="none" stroke="#63b8ff" points="567.21,-1245.52 571.38,-1255.26 574.19,-1245.04 567.21,-1245.52"/>
+<path fill="none" stroke="#63b8ff" d="M569.66,-1232.83C560.75,-1134.5 532.64,-1023.76 459.12,-950.75 402.48,-894.49 344.22,-966.15 283.12,-914.75 241.5,-879.73 220.89,-820.78 210.75,-774.37"/>
+<polygon fill="none" stroke="#63b8ff" points="566.16,-1232.96 570.48,-1242.64 573.14,-1232.38 566.16,-1232.96"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
@@ -345,8 +347,8 @@
 <!-- Node4&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node4&#45;&gt;Node8</title>
-<path fill="none" stroke="#63b8ff" d="M525.06,-1245.76C506.58,-1155.25 483.28,-1047.27 459.12,-950.75 448.29,-907.45 434.98,-860.26 422.83,-818.96"/>
-<polygon fill="none" stroke="#63b8ff" points="521.62,-1246.41 527.05,-1255.51 528.48,-1245.01 521.62,-1246.41"/>
+<path fill="none" stroke="#63b8ff" d="M522.45,-1232.99C504.41,-1145.21 482.16,-1042.77 459.12,-950.75 448.29,-907.45 434.98,-860.26 422.83,-818.96"/>
+<polygon fill="none" stroke="#63b8ff" points="519,-1233.59 524.44,-1242.69 525.86,-1232.19 519,-1233.59"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -371,17 +373,17 @@
 <text xml:space="preserve" text-anchor="start" x="510" y="-719" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
 <text xml:space="preserve" text-anchor="start" x="510" y="-706.25" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
 <text xml:space="preserve" text-anchor="start" x="510" y="-693.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-680.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_1()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-668" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_2()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-655.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_3()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-642.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_4()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-629.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_0()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-617" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_1()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-604.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_2()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_3()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-578.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_4()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-566" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_5()</text>
-<text xml:space="preserve" text-anchor="start" x="510" y="-553.25" font-family="Helvetica,sans-Serif" font-size="10.00">and 76 more...</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-680.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; fixGroupsOrder()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-668" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_1()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-655.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_2()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-642.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_3()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-629.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_4()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-617" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_0()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-604.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_1()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_2()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-578.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_3()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-566" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_4()</text>
+<text xml:space="preserve" text-anchor="start" x="510" y="-553.25" font-family="Helvetica,sans-Serif" font-size="10.00">and 77 more...</text>
 <text xml:space="preserve" text-anchor="start" x="510" y="-540.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
 <text xml:space="preserve" text-anchor="start" x="510" y="-527.75" font-family="Helvetica,sans-Serif" font-size="10.00">_InV0_2_0()</text>
 <text xml:space="preserve" text-anchor="start" x="510" y="-515" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
@@ -392,8 +394,8 @@
 <!-- Node4&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node4&#45;&gt;Node9</title>
-<path fill="none" stroke="#63b8ff" d="M573.36,-1245.41C578.07,-1142.84 583.78,-1018.23 588.54,-914.59"/>
-<polygon fill="none" stroke="#63b8ff" points="569.87,-1245.19 572.91,-1255.34 576.86,-1245.51 569.87,-1245.19"/>
+<path fill="none" stroke="#63b8ff" d="M573.94,-1232.76C578.53,-1132.74 583.97,-1014.07 588.53,-914.67"/>
+<polygon fill="none" stroke="#63b8ff" points="570.45,-1232.57 573.49,-1242.72 577.44,-1232.89 570.45,-1232.57"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">

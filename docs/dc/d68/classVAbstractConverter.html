@@ -225,6 +225,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a668bef779f47938b2435c0ca592445e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a828b502d62876f9c4c2572baf6d25f07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07">Save</a> ()</td></tr>
 <tr class="separator:a828b502d62876f9c4c2572baf6d25f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3871dd0e87cde6203e8a8162be75d6c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#a3871dd0e87cde6203e8a8162be75d6c0">saveRepairedCopy</a> ()</td></tr>
+<tr class="memdesc:a3871dd0e87cde6203e8a8162be75d6c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">saveRepairedCopy write the document, repaired in memory, to the temp file and use it from now on.  <br /></td></tr>
+<tr class="separator:a3871dd0e87cde6203e8a8162be75d6c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1adcae025864358de024ca542201ab41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41">setVersion</a> (const QString &amp;version)</td></tr>
 <tr class="separator:a1adcae025864358de024ca542201ab41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea71a20c117b3636cbf26628e214e3df"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer</a> () const =0</td></tr>
@@ -287,6 +290,8 @@ Static Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:af1c2995d6e46e2df2d36f02f8fd9dbc3"><td class="memItemLeft" align="right" valign="top">QTemporaryFile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a></td></tr>
 <tr class="separator:af1c2995d6e46e2df2d36f02f8fd9dbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbed3f157bcb57e6ae5c85b2f0c0bf5"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d68/classVAbstractConverter.html#a2dbed3f157bcb57e6ae5c85b2f0c0bf5">m_original_file_name</a></td></tr>
+<tr class="separator:a2dbed3f157bcb57e6ae5c85b2f0c0bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -340,7 +345,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">76</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00155">GetVersion()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00126">getVersionStr()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00678">VDomDocument::setXMLContent()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00156">GetVersion()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00127">getVersionStr()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00678">VDomDocument::setXMLContent()</a>.</p>
 
 </div>
 </div>
@@ -395,7 +400,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#a24df9d7a90aa17fa254114276db5da1f">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#a85cee6cd14dd6af7b1b11dfa6c2bd8ca">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a353efc674be647d37d42c73ad8819d52">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#aede7396eb2b2fc6d266a1f001e6f03c1">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>.</p>
 
 </div>
 </div>
@@ -439,9 +444,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00282">282</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00283">283</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00271">CorrectionsPositions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00272">CorrectionsPositions()</a>.</p>
 
 </div>
 </div>
@@ -460,9 +465,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">90</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#a62d4e700ea692951357490678669d919">applyPatches()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#af220ec6fcf18eda86d7cbcade13cee56">downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00116">m_tmpFile</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00220">saveBackupFile()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#a62d4e700ea692951357490678669d919">applyPatches()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#af220ec6fcf18eda86d7cbcade13cee56">downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00117">m_tmpFile</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00221">saveBackupFile()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07760">MainWindow::checkPathToMeasurements()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01646">TMainWindow::ImportFromPattern()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00257">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03161">TMainWindow::LoadFromExistingFile()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06770">MainWindow::LoadPattern()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00580">MainWindow::openMeasurementFile()</a>.</p>
 
@@ -508,11 +513,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00271">271</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00272">272</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00282">BiasTokens()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00283">BiasTokens()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01933">VPatternConverter::FixIncrementInFormulaToV0_2_0()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01899">VPatternConverter::FixMeasurementInFormulaToV0_2_0()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01996">VPatternConverter::FixIncrementInFormulaToV0_2_0()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01962">VPatternConverter::FixMeasurementInFormulaToV0_2_0()</a>.</p>
 
 </div>
 </div>
@@ -541,7 +546,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#af5eb185d491c874624d61761b788ba54">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#ab936ba51271e3a21e2987b3dbc32fc83">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a14a949695956b8e394eb9513e5c34383">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#a7a5681e633b8c9056df91410de02245a">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>.</p>
 
 </div>
 </div>
@@ -560,7 +565,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00120">120</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00121">121</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>.</p>
 
@@ -594,7 +599,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#ac3bcc960df0ad57b699d4f5cbc6c72d5">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#ae443939183fa03adba2d7f0d8ba690ef">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a9036fc252a3ff5ca8ff2f19b8dfff6af">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#a014b4a455e13265a48c176f736388d82">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">ValidateInputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">ValidateInputFile()</a>.</p>
 
 </div>
 </div>
@@ -622,9 +627,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00156">156</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00202">ValidateVersion()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00203">ValidateVersion()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">VAbstractConverter()</a>.</p>
 
@@ -645,7 +650,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00114">VDomDocument::TagVersion</a>.</p>
 
@@ -677,11 +682,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">302</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00303">303</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#a2c197b70971474a4f8ecf9dcee28d496">maxVerStr()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer()</a>, and <a class="el" href="../../dc/d68/classVAbstractConverter.html#abff16c0846c1c269b3be1db226524942">minVerStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00115">VLabelTemplateConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00363">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00097">IndividualSizeConverter::getSchema()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00097">MultiSizeConverter::getSchema()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00101">VLabelTemplateConverter::getSchema()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00248">VPatternConverter::getSchema()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00115">VLabelTemplateConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00426">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00097">IndividualSizeConverter::getSchema()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00097">MultiSizeConverter::getSchema()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00101">VLabelTemplateConverter::getSchema()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00311">VPatternConverter::getSchema()</a>.</p>
 
 </div>
 </div>
@@ -710,7 +715,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#a4ddaa02ba4f066b8375074780731f150">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#afd3e30e6aa5ff12fef970c09ac225f17">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a10b90d60a4ffb200a0851b9890dbf2f9">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#a0ca02aa82e7baa8415f3892df5f46d1d">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00220">saveBackupFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00221">saveBackupFile()</a>.</p>
 
 </div>
 </div>
@@ -739,7 +744,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#ad54f3e671ea05f321ba3f6c4fbde2ce6">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#a4d3ccc2457579740f86a3b1f9e09d1a3">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#af225db679fb5755663973d83edb7b9dd">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#afcdb59f6d76cea64d28b19f45619ac04">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">InvalidVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">ValidateInputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00303">InvalidVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">ValidateInputFile()</a>.</p>
 
 </div>
 </div>
@@ -768,7 +773,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#a655f515dab7710b09e4245c05886cadd">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#a5e51b101cc105356fe4e6824383a8ac4">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a8eeeed5ede63dd1650365f750fb78781">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#a19c381efe1428c4a5dfe3065c27dd096">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">InvalidVersion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00303">InvalidVersion()</a>.</p>
 
 </div>
 </div>
@@ -797,7 +802,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#ae8c9922018898072693302d087c04dad">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#a8d5a412e46d872e700bfc9022390fad9">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a5c79c7309d4a6f90414bc205b1c5eac5">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#ada164cf764a96158a4ef23fbfca39616">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">InvalidVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">ValidateInputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00303">InvalidVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">ValidateInputFile()</a>.</p>
 
 </div>
 </div>
@@ -826,7 +831,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="../../d8/dfc/classIndividualSizeConverter.html#ad29b9978ee84021de72752a012f4f041">IndividualSizeConverter</a>, <a class="el" href="../../d6/d91/classMultiSizeConverter.html#a628c0a4721c1bfd907d6a2cde2be05c7">MultiSizeConverter</a>, <a class="el" href="../../db/d5e/classVLabelTemplateConverter.html#a4c7cb0d72a3ce9553f19e7631c396ee7">VLabelTemplateConverter</a>, and <a class="el" href="../../dc/dd3/classVPatternConverter.html#a5f16f705064ac17336c1dee6ecad1489">VPatternConverter</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00302">InvalidVersion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00303">InvalidVersion()</a>.</p>
 
 </div>
 </div>
@@ -854,9 +859,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00187">187</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00188">188</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00220">saveBackupFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00221">saveBackupFile()</a>.</p>
 
 </div>
 </div>
@@ -912,9 +917,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00263">263</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00264">264</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01933">VPatternConverter::FixIncrementInFormulaToV0_2_0()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01899">VPatternConverter::FixMeasurementInFormulaToV0_2_0()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01996">VPatternConverter::FixIncrementInFormulaToV0_2_0()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01962">VPatternConverter::FixMeasurementInFormulaToV0_2_0()</a>.</p>
 
 </div>
 </div>
@@ -941,11 +946,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00358">358</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00375">375</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00116">m_tmpFile</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00545">VDomDocument::TestUniqueId()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00117">m_tmpFile</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00545">VDomDocument::TestUniqueId()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00334">IndividualSizeConverter::convertToVer0_3_0()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00348">IndividualSizeConverter::convertToVer0_3_1()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00360">IndividualSizeConverter::convertToVer0_3_2()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00372">IndividualSizeConverter::convertToVer0_3_3()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00384">IndividualSizeConverter::convertToVer0_3_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00351">MultiSizeConverter::convertToVer0_4_0()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00366">MultiSizeConverter::convertToVer0_4_1()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00378">MultiSizeConverter::convertToVer0_4_2()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00390">MultiSizeConverter::convertToVer0_4_3()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00401">MultiSizeConverter::convertToVer0_4_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00412">MultiSizeConverter::convertToVer0_4_5()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00154">IndividualSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00160">MultiSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00128">VLabelTemplateConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00576">VPatternConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00604">VPatternConverter::toVersion0_1_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00615">VPatternConverter::toVersion0_1_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00626">VPatternConverter::toVersion0_1_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00637">VPatternConverter::toVersion0_1_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00648">VPatternConverter::toVersion0_2_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00663">VPatternConverter::toVersion0_2_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00675">VPatternConverter::toVersion0_2_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00686">VPatternConverter::toVersion0_2_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00697">VPatternConverter::toVersion0_2_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00709">VPatternConverter::toVersion0_2_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00720">VPatternConverter::toVersion0_2_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00731">VPatternConverter::toVersion0_2_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00742">VPatternConverter::toVersion0_3_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00756">VPatternConverter::toVersion0_3_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00768">VPatternConverter::toVersion0_3_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00779">VPatternConverter::toVersion0_3_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00790">VPatternConverter::toVersion0_3_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00801">VPatternConverter::toVersion0_3_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00812">VPatternConverter::toVersion0_3_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00823">VPatternConverter::toVersion0_3_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00834">VPatternConverter::toVersion0_3_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00845">VPatternConverter::toVersion0_3_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00856">VPatternConverter::toVersion0_4_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00870">VPatternConverter::toVersion0_4_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00881">VPatternConverter::toVersion0_4_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00892">VPatternConverter::toVersion0_4_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00903">VPatternConverter::toVersion0_4_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00916">VPatternConverter::toVersion0_4_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00926">VPatternConverter::toVersion0_4_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00936">VPatternConverter::toVersion0_4_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00946">VPatternConverter::toVersion0_4_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00956">VPatternConverter::toVersion0_5_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00966">VPatternConverter::toVersion0_5_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00976">VPatternConverter::toVersion0_6_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00991">VPatternConverter::toVersion0_6_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01127">VPatternConverter::toVersion0_6_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01137">VPatternConverter::toVersion0_6_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01147">VPatternConverter::toVersion0_6_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01176">VPatternConverter::toVersion0_6_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01290">VPatternConverter::toVersion0_6_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01359">VPatternConverter::toVersion0_6_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01369">VPatternConverter::toVersion0_6_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01379">VPatternConverter::toVersion0_6_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01413">VPatternConverter::toVersion0_7_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01423">VPatternConverter::toVersion0_7_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01433">VPatternConverter::toVersion0_7_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01443">VPatternConverter::toVersion0_7_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01453">VPatternConverter::toVersion0_7_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01463">VPatternConverter::toVersion0_7_5()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01473">VPatternConverter::toVersion0_7_6()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00334">IndividualSizeConverter::convertToVer0_3_0()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00348">IndividualSizeConverter::convertToVer0_3_1()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00360">IndividualSizeConverter::convertToVer0_3_2()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00372">IndividualSizeConverter::convertToVer0_3_3()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00384">IndividualSizeConverter::convertToVer0_3_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00351">MultiSizeConverter::convertToVer0_4_0()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00366">MultiSizeConverter::convertToVer0_4_1()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00378">MultiSizeConverter::convertToVer0_4_2()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00390">MultiSizeConverter::convertToVer0_4_3()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00401">MultiSizeConverter::convertToVer0_4_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00412">MultiSizeConverter::convertToVer0_4_5()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00154">IndividualSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00160">MultiSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00128">VLabelTemplateConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00639">VPatternConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00363">saveRepairedCopy()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00667">VPatternConverter::toVersion0_1_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00678">VPatternConverter::toVersion0_1_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00689">VPatternConverter::toVersion0_1_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00700">VPatternConverter::toVersion0_1_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00711">VPatternConverter::toVersion0_2_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00726">VPatternConverter::toVersion0_2_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00738">VPatternConverter::toVersion0_2_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00749">VPatternConverter::toVersion0_2_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00760">VPatternConverter::toVersion0_2_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00772">VPatternConverter::toVersion0_2_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00783">VPatternConverter::toVersion0_2_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00794">VPatternConverter::toVersion0_2_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00805">VPatternConverter::toVersion0_3_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00819">VPatternConverter::toVersion0_3_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00831">VPatternConverter::toVersion0_3_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00842">VPatternConverter::toVersion0_3_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00853">VPatternConverter::toVersion0_3_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00864">VPatternConverter::toVersion0_3_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00875">VPatternConverter::toVersion0_3_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00886">VPatternConverter::toVersion0_3_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00897">VPatternConverter::toVersion0_3_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00908">VPatternConverter::toVersion0_3_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00919">VPatternConverter::toVersion0_4_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00933">VPatternConverter::toVersion0_4_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00944">VPatternConverter::toVersion0_4_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00955">VPatternConverter::toVersion0_4_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00966">VPatternConverter::toVersion0_4_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00979">VPatternConverter::toVersion0_4_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00989">VPatternConverter::toVersion0_4_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00999">VPatternConverter::toVersion0_4_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01009">VPatternConverter::toVersion0_4_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01019">VPatternConverter::toVersion0_5_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01029">VPatternConverter::toVersion0_5_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01039">VPatternConverter::toVersion0_6_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01054">VPatternConverter::toVersion0_6_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01190">VPatternConverter::toVersion0_6_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01200">VPatternConverter::toVersion0_6_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01210">VPatternConverter::toVersion0_6_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01239">VPatternConverter::toVersion0_6_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01353">VPatternConverter::toVersion0_6_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01422">VPatternConverter::toVersion0_6_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01432">VPatternConverter::toVersion0_6_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01442">VPatternConverter::toVersion0_6_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01476">VPatternConverter::toVersion0_7_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01486">VPatternConverter::toVersion0_7_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01496">VPatternConverter::toVersion0_7_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01506">VPatternConverter::toVersion0_7_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01516">VPatternConverter::toVersion0_7_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01526">VPatternConverter::toVersion0_7_5()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01536">VPatternConverter::toVersion0_7_6()</a>.</p>
 
 </div>
 </div>
@@ -972,11 +977,43 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00220">220</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00221">221</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00187">removeBakExtension()</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00860">VDomDocument::SafeCopy()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#a1928ef00c89059485827cb4fcad04014">isReadOnly()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00118">m_original_file_name</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00188">removeBakExtension()</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00860">VDomDocument::SafeCopy()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>.</p>
+
+</div>
+</div>
+<a id="a3871dd0e87cde6203e8a8162be75d6c0" name="a3871dd0e87cde6203e8a8162be75d6c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3871dd0e87cde6203e8a8162be75d6c0">&#9670;&#160;</a></span>saveRepairedCopy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VAbstractConverter::saveRepairedCopy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>saveRepairedCopy write the document, repaired in memory, to the temp file and use it from now on. </p>
+<p>Validation reads the file from disk, so a repair has to be saved before ValidateInputFile. The original file is left untouched. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00117">m_tmpFile</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00375">Save()</a>.</p>
 
 </div>
 </div>
@@ -1004,11 +1041,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00385">385</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00402">402</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00783">VDomDocument::setTagText()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00114">VDomDocument::TagVersion</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00202">ValidateVersion()</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00783">VDomDocument::setTagText()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00114">VDomDocument::TagVersion</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00203">ValidateVersion()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00334">IndividualSizeConverter::convertToVer0_3_0()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00348">IndividualSizeConverter::convertToVer0_3_1()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00360">IndividualSizeConverter::convertToVer0_3_2()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00372">IndividualSizeConverter::convertToVer0_3_3()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00384">IndividualSizeConverter::convertToVer0_3_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00351">MultiSizeConverter::convertToVer0_4_0()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00366">MultiSizeConverter::convertToVer0_4_1()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00378">MultiSizeConverter::convertToVer0_4_2()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00390">MultiSizeConverter::convertToVer0_4_3()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00401">MultiSizeConverter::convertToVer0_4_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00412">MultiSizeConverter::convertToVer0_4_5()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00154">IndividualSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00160">MultiSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00128">VLabelTemplateConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00576">VPatternConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00604">VPatternConverter::toVersion0_1_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00615">VPatternConverter::toVersion0_1_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00626">VPatternConverter::toVersion0_1_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00637">VPatternConverter::toVersion0_1_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00648">VPatternConverter::toVersion0_2_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00663">VPatternConverter::toVersion0_2_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00675">VPatternConverter::toVersion0_2_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00686">VPatternConverter::toVersion0_2_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00697">VPatternConverter::toVersion0_2_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00709">VPatternConverter::toVersion0_2_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00720">VPatternConverter::toVersion0_2_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00731">VPatternConverter::toVersion0_2_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00742">VPatternConverter::toVersion0_3_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00756">VPatternConverter::toVersion0_3_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00768">VPatternConverter::toVersion0_3_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00779">VPatternConverter::toVersion0_3_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00790">VPatternConverter::toVersion0_3_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00801">VPatternConverter::toVersion0_3_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00812">VPatternConverter::toVersion0_3_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00823">VPatternConverter::toVersion0_3_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00834">VPatternConverter::toVersion0_3_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00845">VPatternConverter::toVersion0_3_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00856">VPatternConverter::toVersion0_4_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00870">VPatternConverter::toVersion0_4_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00881">VPatternConverter::toVersion0_4_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00892">VPatternConverter::toVersion0_4_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00903">VPatternConverter::toVersion0_4_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00916">VPatternConverter::toVersion0_4_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00926">VPatternConverter::toVersion0_4_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00936">VPatternConverter::toVersion0_4_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00946">VPatternConverter::toVersion0_4_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00956">VPatternConverter::toVersion0_5_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00966">VPatternConverter::toVersion0_5_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00976">VPatternConverter::toVersion0_6_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00991">VPatternConverter::toVersion0_6_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01127">VPatternConverter::toVersion0_6_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01137">VPatternConverter::toVersion0_6_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01147">VPatternConverter::toVersion0_6_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01176">VPatternConverter::toVersion0_6_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01290">VPatternConverter::toVersion0_6_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01359">VPatternConverter::toVersion0_6_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01369">VPatternConverter::toVersion0_6_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01379">VPatternConverter::toVersion0_6_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01413">VPatternConverter::toVersion0_7_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01423">VPatternConverter::toVersion0_7_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01433">VPatternConverter::toVersion0_7_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01443">VPatternConverter::toVersion0_7_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01453">VPatternConverter::toVersion0_7_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01463">VPatternConverter::toVersion0_7_5()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01473">VPatternConverter::toVersion0_7_6()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00334">IndividualSizeConverter::convertToVer0_3_0()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00348">IndividualSizeConverter::convertToVer0_3_1()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00360">IndividualSizeConverter::convertToVer0_3_2()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00372">IndividualSizeConverter::convertToVer0_3_3()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00384">IndividualSizeConverter::convertToVer0_3_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00351">MultiSizeConverter::convertToVer0_4_0()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00366">MultiSizeConverter::convertToVer0_4_1()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00378">MultiSizeConverter::convertToVer0_4_2()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00390">MultiSizeConverter::convertToVer0_4_3()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00401">MultiSizeConverter::convertToVer0_4_4()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00412">MultiSizeConverter::convertToVer0_4_5()</a>, <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00154">IndividualSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00160">MultiSizeConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00128">VLabelTemplateConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00639">VPatternConverter::downgradeToCurrentMaxVersion()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00667">VPatternConverter::toVersion0_1_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00678">VPatternConverter::toVersion0_1_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00689">VPatternConverter::toVersion0_1_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00700">VPatternConverter::toVersion0_1_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00711">VPatternConverter::toVersion0_2_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00726">VPatternConverter::toVersion0_2_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00738">VPatternConverter::toVersion0_2_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00749">VPatternConverter::toVersion0_2_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00760">VPatternConverter::toVersion0_2_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00772">VPatternConverter::toVersion0_2_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00783">VPatternConverter::toVersion0_2_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00794">VPatternConverter::toVersion0_2_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00805">VPatternConverter::toVersion0_3_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00819">VPatternConverter::toVersion0_3_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00831">VPatternConverter::toVersion0_3_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00842">VPatternConverter::toVersion0_3_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00853">VPatternConverter::toVersion0_3_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00864">VPatternConverter::toVersion0_3_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00875">VPatternConverter::toVersion0_3_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00886">VPatternConverter::toVersion0_3_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00897">VPatternConverter::toVersion0_3_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00908">VPatternConverter::toVersion0_3_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00919">VPatternConverter::toVersion0_4_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00933">VPatternConverter::toVersion0_4_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00944">VPatternConverter::toVersion0_4_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00955">VPatternConverter::toVersion0_4_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00966">VPatternConverter::toVersion0_4_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00979">VPatternConverter::toVersion0_4_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00989">VPatternConverter::toVersion0_4_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00999">VPatternConverter::toVersion0_4_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01009">VPatternConverter::toVersion0_4_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01019">VPatternConverter::toVersion0_5_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01029">VPatternConverter::toVersion0_5_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01039">VPatternConverter::toVersion0_6_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01054">VPatternConverter::toVersion0_6_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01190">VPatternConverter::toVersion0_6_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01200">VPatternConverter::toVersion0_6_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01210">VPatternConverter::toVersion0_6_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01239">VPatternConverter::toVersion0_6_5()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01353">VPatternConverter::toVersion0_6_6()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01422">VPatternConverter::toVersion0_6_7()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01432">VPatternConverter::toVersion0_6_8()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01442">VPatternConverter::toVersion0_6_9()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01476">VPatternConverter::toVersion0_7_0()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01486">VPatternConverter::toVersion0_7_1()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01496">VPatternConverter::toVersion0_7_2()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01506">VPatternConverter::toVersion0_7_3()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01516">VPatternConverter::toVersion0_7_4()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01526">VPatternConverter::toVersion0_7_5()</a>, and <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01536">VPatternConverter::toVersion0_7_6()</a>.</p>
 
 </div>
 </div>
@@ -1036,7 +1073,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">321</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">322</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../dc/d68/classVAbstractConverter.html#a649a2f45390390851c37feb5b4f46edc">getSchema()</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">m_convertedFileName</a>, <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">m_ver</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#ac335db2362ed6580ebddc879e55734c1">maxVer()</a>, <a class="el" href="../../dc/d68/classVAbstractConverter.html#aea71a20c117b3636cbf26628e214e3df">minVer()</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00612">VDomDocument::ValidateXML()</a>.</p>
 
@@ -1068,9 +1105,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00202">202</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00203">203</a> of file <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html">abstract_converter.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00155">GetVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00385">setVersion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00156">GetVersion()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00402">setVersion()</a>.</p>
 
 </div>
 </div>
@@ -1097,7 +1134,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00089">89</a> of file <a class="el" href="../../d0/da1/abstract__converter_8h_source.html">abstract_converter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00363">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00220">saveBackupFile()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l01967">VPatternConverter::TagMeasurementsToV0_2_0()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">VAbstractConverter()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">ValidateInputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00426">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00363">saveRepairedCopy()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l02030">VPatternConverter::TagMeasurementsToV0_2_0()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">VAbstractConverter()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">ValidateInputFile()</a>.</p>
+
+</div>
+</div>
+<a id="a2dbed3f157bcb57e6ae5c85b2f0c0bf5" name="a2dbed3f157bcb57e6ae5c85b2f0c0bf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbed3f157bcb57e6ae5c85b2f0c0bf5">&#9670;&#160;</a></span>m_original_file_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString VAbstractConverter::m_original_file_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00118">118</a> of file <a class="el" href="../../d0/da1/abstract__converter_8h_source.html">abstract_converter.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00221">saveBackupFile()</a>.</p>
 
 </div>
 </div>
@@ -1121,9 +1184,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00116">116</a> of file <a class="el" href="../../d0/da1/abstract__converter_8h_source.html">abstract_converter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00117">117</a> of file <a class="el" href="../../d0/da1/abstract__converter_8h_source.html">abstract_converter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00358">Save()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00375">Save()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00363">saveRepairedCopy()</a>.</p>
 
 </div>
 </div>
@@ -1149,7 +1212,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/da1/abstract__converter_8h_source.html#l00088">88</a> of file <a class="el" href="../../d0/da1/abstract__converter_8h_source.html">abstract_converter.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00115">VLabelTemplateConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00363">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00089">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00120">getCurrentFormatVersion()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">VAbstractConverter()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00321">ValidateInputFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d6e/individual__size__converter_8cpp_source.html#l00121">IndividualSizeConverter::applyPatches()</a>, <a class="el" href="../../d9/d94/multi__size__converter_8cpp_source.html#l00123">MultiSizeConverter::applyPatches()</a>, <a class="el" href="../../d7/d63/vlabeltemplateconverter_8cpp_source.html#l00115">VLabelTemplateConverter::applyPatches()</a>, <a class="el" href="../../d5/d2c/vpatternconverter_8cpp_source.html#l00426">VPatternConverter::applyPatches()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00090">Convert()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00121">getCurrentFormatVersion()</a>, <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00076">VAbstractConverter()</a>, and <a class="el" href="../../d0/d08/abstract__converter_8cpp_source.html#l00322">ValidateInputFile()</a>.</p>
 
 </div>
 </div>

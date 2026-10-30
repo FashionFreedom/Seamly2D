@@ -21,10 +21,12 @@ var classVAbstractConverter =
     [ "Replace", "dc/d68/classVAbstractConverter.html#a4a9fe798f769c6441cba22cad35d7f51", null ],
     [ "Save", "dc/d68/classVAbstractConverter.html#a828b502d62876f9c4c2572baf6d25f07", null ],
     [ "saveBackupFile", "dc/d68/classVAbstractConverter.html#ad4470cfd831bf3c18d490b9df48f4198", null ],
+    [ "saveRepairedCopy", "dc/d68/classVAbstractConverter.html#a3871dd0e87cde6203e8a8162be75d6c0", null ],
     [ "setVersion", "dc/d68/classVAbstractConverter.html#a1adcae025864358de024ca542201ab41", null ],
     [ "ValidateInputFile", "dc/d68/classVAbstractConverter.html#aa9bb1ef0ced9213b9edb7f57f11a89df", null ],
     [ "ValidateVersion", "dc/d68/classVAbstractConverter.html#a63b7d841ce2e60e5e0732b1504ee66ca", null ],
     [ "m_convertedFileName", "dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446", null ],
+    [ "m_original_file_name", "dc/d68/classVAbstractConverter.html#a2dbed3f157bcb57e6ae5c85b2f0c0bf5", null ],
     [ "m_tmpFile", "dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3", null ],
     [ "m_ver", "dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9", null ]
 ];
