@@ -258,14 +258,44 @@ bool VPatternConverter::fixGroupsOrder()
 {
     bool fixed = false;
     const QDomNodeList blocks = elementsByTagName(strDraftBlock);
-    for (int i = 0; i < blocks.size(); ++i)
+        for (int i = 0; i < blocks.size(); ++i)
     {
         QDomElement block = blocks.at(i).toElement();
-        const QDomElement groups = block.firstChildElement(QStringLiteral("groups"));
-        const QDomElement images = groups.previousSiblingElement(QStringLiteral("images"));
+
+        // Query elements independently from the parent block
+        const QDomElement pieces = block.firstChildElement(QStringLiteral("pieces"));
+        QDomElement groups = block.firstChildElement(QStringLiteral("groups"));
+        QDomElement images = block.firstChildElement(QStringLiteral("images"));
+
+        // Both elements exist -> ensure they are positioned as pieces -> groups -> images
         if (!groups.isNull() && !images.isNull())
         {
-            block.insertBefore(groups, images);
+            if (images.previousSiblingElement(QStringLiteral("groups")) != groups)
+            {
+                block.insertBefore(groups, images);
+                fixed = true;
+            }
+        }
+        // Groups exists, but images is missing -> create and place after groups
+        else if (!groups.isNull() && images.isNull())
+        {
+            block.insertAfter(createElement(QStringLiteral("images")), groups);
+            fixed = true;
+        }
+        // Images exists, but groups is missing -> create and place before images
+        else if (groups.isNull() && !images.isNull())
+        {
+            block.insertBefore(createElement(QStringLiteral("groups")), images);
+            fixed = true;
+        }
+        // Neither exists -> create both sequentially after pieces
+        else if (groups.isNull() && images.isNull())
+        {
+            QDomElement newGroups = createElement(QStringLiteral("groups"));
+            QDomElement newImages = createElement(QStringLiteral("images"));
+
+            block.insertAfter(newGroups, pieces);
+            block.insertAfter(newImages, newGroups);
             fixed = true;
         }
     }
