@@ -430,6 +430,8 @@ QMap<QString, QString> VAbstractTool::backgroundColorsList()
 {
     QMap<QString, QString> map;
 
+    map.insert(darkWorkspaceColor, tr("Charcoal"));
+    map.insert("#3c3f41", tr("Graphite"));
     map.insert("darkslategrey", tr("Dark Slate Grey"));
     map.insert("grey", tr("Grey"));
     map.insert("gainsboro", tr("Gainsboro"));

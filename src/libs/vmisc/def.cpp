@@ -431,6 +431,8 @@ QPalette darkPalette()
     return palette;
 }
 
+const QString darkWorkspaceColor = QStringLiteral("#2b2b2b");
+
 QPalette twilightPalette()
 {
     QPalette palette;

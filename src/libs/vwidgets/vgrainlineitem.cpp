@@ -58,6 +58,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 
+#include "global.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
 #include "../vmisc/vcommonsettings.h"
@@ -136,7 +137,7 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     }
 
     painter->save();
-    QColor color  = QColor(qApp->Settings()->getDefaultGrainlineColor());
+    QColor color  = adaptColor(QColor(qApp->Settings()->getDefaultGrainlineColor()));
     m_penWidth = ToPixel(qApp->Settings()->getDefaultGrainlineLineweight(), Unit::Mm) * 3;
     painter->setPen(QPen(color, m_penWidth, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
 
@@ -159,15 +160,15 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     if (m_mode != Mode::Normal)
     {
-        painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
+        painter->setPen(QPen(adaptColor(Qt::black), 2, Qt::DashLine));
         painter->setBrush(Qt::NoBrush);
         // bounding polygon
         painter->drawPolygon(m_boundingPoly);
 
         if (m_mode != Mode::Rotate)
         {
-            painter->setPen(QPen(Qt::black, 3));
-            painter->setBrush(Qt::black);
+            painter->setPen(QPen(adaptColor(Qt::black), 3));
+            painter->setBrush(adaptColor(Qt::black));
             updateResizeHandle();
             painter->drawPolygon(m_resizeHandle);
         }
@@ -175,7 +176,7 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
         painter->setBrush(Qt::NoBrush);
         if (m_mode == Mode::Resize)
         {
-            painter->setPen(Qt::black);
+            painter->setPen(adaptColor(Qt::black));
             painter->drawLine(m_boundingPoly.at(0), m_boundingPoly.at(2));
             painter->drawLine(m_boundingPoly.at(1), m_boundingPoly.at(3));
         }
@@ -184,7 +185,7 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
         {
             QPointF ptC = (m_boundingPoly.at(0) + m_boundingPoly.at(2))/2;
             qreal dRad =  ROTATE_CIRC_R;
-            painter->setBrush(Qt::black);
+            painter->setBrush(adaptColor(Qt::black));
             painter->drawEllipse(ptC, dRad, dRad);
 
             painter->setBrush(Qt::NoBrush);

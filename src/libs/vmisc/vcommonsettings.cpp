@@ -177,6 +177,7 @@ const QString settingGraphicsViewWireframe               = QStringLiteral("graph
 const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
 const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
 const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
+const QString settingGraphicsAdaptColors                 = QStringLiteral("graphicsview/adaptColors");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingSelectionSound                      = QStringLiteral("pattern/selectionSound");
@@ -2442,6 +2443,22 @@ bool VCommonSettings::getUseToolColor() const
 void VCommonSettings::setUseToolColor(bool value)
 {
     setValue(settingGraphicsUseToolColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getAdaptColors whether drawing colors adapt to a dark workspace background.
+/// @return true if colors adapt, default true.
+bool VCommonSettings::getAdaptColors() const
+{
+    return value(settingGraphicsAdaptColors, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setAdaptColors set whether drawing colors adapt to a dark workspace background.
+/// @param value true to adapt colors.
+void VCommonSettings::setAdaptColors(bool value)
+{
+    setValue(settingGraphicsAdaptColors, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
