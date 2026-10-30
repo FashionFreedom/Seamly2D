@@ -57,6 +57,7 @@
 #include "tst_vspline.h"
 #include "tst_nameregexp.h"
 #include "tst_vlayoutdetail.h"
+#include "tst_vdxf.h"
 #include "tst_varc.h"
 #include "tst_vellipticalarc.h"
 #include "tst_qmutokenparser.h"
@@ -168,6 +169,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VSplinePath());
     ASSERT_TEST(new TST_NameRegExp());
     ASSERT_TEST(new TST_VLayoutPiece());
+    ASSERT_TEST(new TST_VDxf());
     ASSERT_TEST(new TST_VArc());
     ASSERT_TEST(new TST_VEllipticalArc());
     ASSERT_TEST(new TST_QmuTokenParser());

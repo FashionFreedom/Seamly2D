@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<smms>
+    <version>0.4.5</version>
+    <read-only>false</read-only>
+    <notes>Original synthetic measurements authored by us. Apache-2.0. Sizes 48, 50, 52.</notes>
+    <unit>cm</unit>
+    <pm_system>998</pm_system>
+    <size base="50" />
+    <height base="176" />
+    <body-measurements>
+        <m name="@waist" base="78" height_increase="0" size_increase="4" full_name="waist" />
+        <m name="@hip" base="100" height_increase="0" size_increase="4" full_name="hip" />
+        <m name="@chest" base="96" height_increase="0" size_increase="4" full_name="chest" />
+        <m name="@skirt_length" base="60" height_increase="0" size_increase="0" full_name="skirt length" />
+        <m name="@shirt_length" base="65" height_increase="0" size_increase="0.5" full_name="shirt length" />
+        <m name="@trouser_length" base="100" height_increase="0" size_increase="0.5" full_name="trouser length" />
+        <m name="@crotch_depth" base="27" height_increase="0" size_increase="0.5" full_name="crotch depth" />
+    </body-measurements>
+</smms>

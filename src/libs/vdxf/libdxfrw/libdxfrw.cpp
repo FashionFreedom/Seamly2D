@@ -139,6 +139,12 @@ bool dxfRW::write(DRW_Interface *interface_, DRW::Version ver, bool bin){
         writer->writeString(999, comm);
     }
     DRW_Header header;
+    if (!filestr.is_open())
+    {
+        delete writer;
+        writer = nullptr;
+        return false;
+    }
     iface->writeHeader(header);
     writer->writeString(0, "SECTION");
     entCount =FIRSTHANDLE;
@@ -172,7 +178,7 @@ bool dxfRW::write(DRW_Interface *interface_, DRW::Version ver, bool bin){
     writer->writeString(0, "EOF");
     filestr.flush();
     filestr.close();
-    isOk = true;
+    isOk = !filestr.fail();
     delete writer;
     writer = nullptr;
     return isOk;
