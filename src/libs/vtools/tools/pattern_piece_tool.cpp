@@ -239,7 +239,8 @@ void PatternPieceTool::insertNodes(const QVector<VPieceNode> &nodes, quint32 pie
             PatternPieceTool *patternPiece = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(pieceId));
             SCASSERT(patternPiece != nullptr);
 
-            initializeNode(node, scene, data, doc, patternPiece);
+            // SavePieceOptions::redo increments the references of the new nodes
+            initializeNode(node, scene, data, doc, patternPiece, false);
         }
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, pieceId);
@@ -1975,7 +1976,7 @@ void PatternPieceTool::initializeNodes(const VPiece &piece, VMainGraphicsScene *
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene *scene, VContainer *data,
-                                  VAbstractPattern *doc, PatternPieceTool *parent)
+                                  VAbstractPattern *doc, PatternPieceTool *parent, bool increment_references)
 {
     SCASSERT(scene != nullptr)
     SCASSERT(data != nullptr)
@@ -2000,7 +2001,10 @@ void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene
                 tool->setParentItem(parent);
                 tool->SetParentType(ParentType::Item);
                 tool->SetExluded(node.isExcluded());
-                doc->IncrementReferens(node.GetId());
+                if (increment_references)
+                {
+                    doc->IncrementReferens(node.GetId());
+                }
             }
             tool->setVisible(!node.isExcluded()); //Hide excluded point
             break;
@@ -2009,7 +2013,10 @@ void PatternPieceTool::initializeNode(const VPieceNode &node, VMainGraphicsScene
         case (Tool::NodeElArc):
         case (Tool::NodeSpline):
         case (Tool::NodeSplinePath):
-            doc->IncrementReferens(data->GetGObject(node.GetId())->getIdTool());
+            if (increment_references)
+            {
+                doc->IncrementReferens(data->GetGObject(node.GetId())->getIdTool());
+            }
             break;
         default:
             qDebug() << "Get wrong tool type. Ignore.";
