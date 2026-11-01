@@ -155,6 +155,15 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         type = QtDebugMsg;
     }
 
+    // Qt's accessibility code warns when an assistive client (VoiceOver, Narrator, automation tools) asks an item
+    // view for an item that a model reset just removed. Qt handles it by returning no item, so don't pop up a dialog.
+    if ((type == QtWarningMsg) && (QLatin1String(context.category).startsWith(QLatin1String("qt.accessibility"))
+            || msg.startsWith(QLatin1String("QAccessible")) || msg.startsWith(QLatin1String("QCocoaAccessibility"))
+            || msg.startsWith(QLatin1String("Requested invalid tree cell"))))
+    {
+        type = QtDebugMsg;
+    }
+
     // Only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
     // a non-GUI thread, you'll have to queue the message to the GUI
