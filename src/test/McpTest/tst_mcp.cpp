@@ -192,6 +192,7 @@ private slots:
     void interactiveStdio();
     void framingAndLimits();
     void bridgeTransport();
+    void connectionStatus();
     void applicationIntegration();
     void advancedOperations_data();
     void advancedOperations();
@@ -328,6 +329,13 @@ void McpTest::bridgeTransport()
     Client client;
     QVERIFY(client.start(path));
     QVERIFY(client.initialize());
+    QVERIFY(listener.hasPendingConnections() || listener.waitForNewConnection(3000));
+    std::unique_ptr<QLocalSocket> presence(listener.nextPendingConnection());
+    QVERIFY(presence->canReadLine() || presence->waitForReadyRead(3000));
+    QCOMPARE(QJsonDocument::fromJson(presence->readLine()).object().value("method"), QJsonValue("_mcp_session"));
+    presence->write("{\"id\":0,\"result\":{"); presence->flush();
+    QTest::qWait(5);
+    presence->write("\"session\":true}}\n"); presence->flush();
     const QList<QByteArray> replies{
         "{\"id\":1,\"result\":{\"ok\":true}}\n",
         "{\"id\":1,\"error\":\"Document state changed\"}\n",
@@ -418,6 +426,51 @@ void McpTest::skillsAndResources()
     for (const auto &resource : resources) QCOMPARE(resource.toObject().value("mimeType"), QJsonValue("text/markdown"));
     auto wrong = server.handle(modernRequest("resources/read", {{"uri", "skill://seamly2d-pattern/../private"}}, extensions)).toObject();
     QCOMPARE(wrong.value("error").toObject().value("code").toInt(), -32602);
+}
+
+void McpTest::connectionStatus()
+{
+    const auto app = qEnvironmentVariable("SEAMLY_MCP_TEST_APP");
+    if (app.isEmpty()) QSKIP("Set SEAMLY_MCP_TEST_APP to run against the built Qt app.");
+    ApplicationSession session;
+    QVERIFY2(session.start(app, fixture), qPrintable(session.error));
+    const auto path = session.directory.filePath("app.sock");
+    const auto clients = [&path]()
+    {
+        QLocalSocket socket;
+        socket.connectToServer(path);
+        if (!socket.waitForConnected(1000)) return -1;
+        socket.write("{\"id\":1,\"method\":\"_mcp_status\",\"params\":{}}\n"); socket.flush();
+        QElapsedTimer timer; timer.start();
+        while (!socket.canReadLine())
+            if (timer.elapsed() >= 1000 || !socket.waitForReadyRead(1000 - static_cast<int>(timer.elapsed()))) return -1;
+        const auto status = QJsonDocument::fromJson(socket.readLine()).object().value("result").toObject();
+        return status.value("listening").toBool() ? status.value("clients").toInt(-1) : -1;
+    };
+    QTRY_COMPARE(clients(), 1);
+    // A live, idle stdio client must outlast the ordinary bridge request timeout.
+    QTest::qWait(5200);
+    QCOMPARE(clients(), 1);
+    Client second;
+    QVERIFY(second.start(path));
+    second.send(modernRequest("server/discover"));
+    QVERIFY(second.receive().contains("result"));
+    QTRY_COMPARE(clients(), 2);
+    second.process.kill(); QVERIFY(second.process.waitForFinished(3000));
+    QTRY_COMPARE(clients(), 1);
+    session.client.process.closeWriteChannel();
+    QVERIFY(session.client.process.waitForFinished(3000));
+    QTRY_COMPARE(clients(), 0);
+
+    // The toolbar's own health check must never masquerade as a connected host.
+    Client probe;
+    auto environment = QProcessEnvironment::systemEnvironment();
+    environment.insert("SEAMLY_MCP_PROBE", "1");
+    probe.process.setProcessEnvironment(environment);
+    QVERIFY(probe.start(path)); QVERIFY(probe.initialize());
+    QCOMPARE(probe.call("get_pattern_summary").value("isError"), QJsonValue(false));
+    QCOMPARE(clients(), 0);
+    probe.process.closeWriteChannel(); QVERIFY(probe.process.waitForFinished(3000));
 }
 
 void McpTest::applicationIntegration()

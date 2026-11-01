@@ -34,10 +34,18 @@ paths and reconnect the client. On Linux use `seamly2d-mcp` or the standalone
 `build/src/app/seamly2d_mcp/bin/seamly2d-mcp`. Direct development binaries depend
 on the installed Qt libraries; the deployed Mac copy uses the bundled ones.
 
-The socket parent must already exist, belong to the user, and have mode `0700`.
+The top toolbar's **MCP** button enables the bridge and checks the bundled MCP
+executable, tool discovery and a read-only document request. **Waiting** means
+the bridge is active; **Connected** means an MCP client has an open session.
+The button's own check does not count as a client. Its menu can disable MCP or
+copy the socket path. The path comes from `SEAMLY_MCP_SOCKET`, the last successful
+path, or `~/.seamly2d/mcp/app.sock`; a new default directory is created privately.
+
+For startup through `SEAMLY_MCP_SOCKET`, the socket parent must already exist,
+belong to the user, and have mode `0700`.
 Keep its full path under 100 bytes on macOS. Give separate app instances separate
-sockets. No listener starts without `SEAMLY_MCP_SOCKET`; quitting that app stops
-it. An existing socket is never removed on startup. Remove a stale socket after
+sockets. A listener starts only through `SEAMLY_MCP_SOCKET` or an explicit click
+on the MCP button; quitting that app stops it. An existing socket is never removed on startup. Remove a stale socket after
 a crash only when its app is no longer running. App and companion run as the same
 user on the same computer. Discovery works while the GUI is closed; document
 calls return a connection error until it is running.

@@ -138,6 +138,7 @@ QJsonValue McpServer::handle(const QJsonValue &request)
                 throw RpcError{-32602, "Every modern request requires protocolVersion and clientCapabilities in params._meta.", {}};
             if (versionValue.toString() != modernVersion)
                 throw RpcError{-32022, "Unsupported protocol version", {{"supported", versions()}, {"requested", versionValue}}};
+            m_modernClientReady = true;
         }
         if (notification)
         {
@@ -294,6 +295,31 @@ QJsonObject McpServer::callBridge(const QString &socketPath, const QString &meth
     }
 }
 
+void McpServer::trackConnection()
+{
+    // No timer/thread is needed: the socket lifetime follows the stdio client,
+    // including while blocking on stdin. A local UI probe must not count itself.
+    if (qEnvironmentVariableIsSet("SEAMLY_MCP_PROBE") || (m_phase != Phase::Ready && !m_modernClientReady)) return;
+    if (m_presence)
+    {
+        m_presence->waitForReadyRead(0); // Observe EOF if the GUI has restarted.
+        if (m_presence->state() == QLocalSocket::ConnectedState) return;
+        m_presence.reset();
+    }
+    auto socket = std::make_unique<QLocalSocket>();
+    socket->setReadBufferSize(4096);
+    socket->connectToServer(m_socketPath);
+    if (!socket->waitForConnected(100)) return;
+    socket->write("{\"id\":0,\"method\":\"_mcp_session\",\"params\":{}}\n");
+    if (socket->bytesToWrite() && !socket->waitForBytesWritten(100)) return;
+    QElapsedTimer timer; timer.start();
+    while (!socket->canReadLine())
+        if (timer.elapsed() >= 500 || !socket->waitForReadyRead(500 - static_cast<int>(timer.elapsed()))) return;
+    const auto reply = QJsonDocument::fromJson(socket->readLine()).object();
+    if (reply.value("result").toObject().value("session") != QJsonValue(true)) return;
+    m_presence = std::move(socket);
+}
+
 int serveMcp(McpServer &server, QFile &input, QFile &output)
 {
     while (true)
@@ -339,5 +365,6 @@ int serveMcp(McpServer &server, QFile &input, QFile &output)
         {
             return 0;
         }
+        server.trackConnection();
     }
 }

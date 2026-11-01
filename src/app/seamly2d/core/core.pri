@@ -13,6 +13,7 @@ HEADERS += \
 SOURCES += \
     $$PWD/mcp_bridge.cpp \
     $$PWD/mcp_measurements.cpp \
+    $$PWD/mcp_toolbar.cpp \
     $$PWD/application_2d.cpp \
     $$PWD/vformulaproperty.cpp \
     $$PWD/vformulapropertyeditor.cpp \

@@ -5320,6 +5320,78 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
 <context>
     <name>MainWindow</name>
     <message>
+        <source>Enable MCP</source>
+        <translation>Attiva MCP</translation>
+    </message>
+    <message>
+        <source>Verify connection</source>
+        <translation>Verifica collegamento</translation>
+    </message>
+    <message>
+        <source>Copy socket path</source>
+        <translation>Copia percorso socket</translation>
+    </message>
+    <message>
+        <source>MCP: Checking...</source>
+        <translation>MCP: Verifica...</translation>
+    </message>
+    <message>
+        <source>Checking the MCP executable and the application bridge.</source>
+        <translation>Verifica dell’eseguibile MCP e del collegamento all’applicazione.</translation>
+    </message>
+    <message>
+        <source>MCP: Error</source>
+        <translation>MCP: Errore</translation>
+    </message>
+    <message>
+        <source>MCP: Off</source>
+        <translation>MCP: Disattivato</translation>
+    </message>
+    <message>
+        <source>Click to enable MCP and check the connection.</source>
+        <translation>Fai clic per attivare MCP e verificare il collegamento.</translation>
+    </message>
+    <message>
+        <source>MCP: Connected</source>
+        <translation>MCP: Connesso</translation>
+    </message>
+    <message>
+        <source>Connected MCP clients: %1</source>
+        <translation>Client MCP collegati: %1</translation>
+    </message>
+    <message>
+        <source>MCP: Waiting</source>
+        <translation>MCP: In attesa</translation>
+    </message>
+    <message>
+        <source>MCP is active. Waiting for a client to connect.</source>
+        <translation>MCP è attivo. In attesa del collegamento di un client.</translation>
+    </message>
+    <message>
+        <source>Click to verify the connection.</source>
+        <translation>Fai clic per verificare il collegamento.</translation>
+    </message>
+    <message>
+        <source>The MCP executable was not found. Rebuild or reinstall Seamly2D.</source>
+        <translation>Eseguibile MCP non trovato. Ricompila o reinstalla Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Connection verified: %1 tools available.</source>
+        <translation>Collegamento verificato: %1 tool disponibili.</translation>
+    </message>
+    <message>
+        <source>Could not start the MCP connection check.</source>
+        <translation>Impossibile avviare la verifica del collegamento MCP.</translation>
+    </message>
+    <message>
+        <source>The MCP connection check timed out. Try again.</source>
+        <translation>La verifica del collegamento MCP è scaduta. Riprova.</translation>
+    </message>
+    <message>
+        <source>MCP verification failed. %1</source>
+        <translation>Verifica MCP non riuscita. %1</translation>
+    </message>
+    <message>
         <source>Seamly2D</source>
         <translation>Seamly2D</translation>
     </message>

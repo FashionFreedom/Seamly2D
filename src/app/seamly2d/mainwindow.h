@@ -90,6 +90,8 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+class McpBridge;
+class QProcess;
 
 struct DraftImage;
 class ImageItem;
@@ -108,6 +110,7 @@ public:
     virtual ~MainWindow() override;
 
     bool LoadPattern(const QString &fileName, const QString &customMeasureFile = QString());
+    void setMcpBridge(McpBridge *bridge);
 
 public slots:
     void processCommandLine();
@@ -286,6 +289,15 @@ private slots:
 
 private:
     friend class McpBridge;
+    void initializeMcpToolBar();
+    void updateMcpStatus();
+    void verifyMcpConnection();
+    QPointer<McpBridge> m_mcpBridge;
+    QPointer<QToolButton> m_mcpButton;
+    QPointer<QProcess> m_mcpProbe;
+    QAction *m_mcpEnabledAction = nullptr;
+    QString m_mcpProbeError;
+    QString m_mcpLastCheck;
     Q_DISABLE_COPY(MainWindow)
 
     Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.

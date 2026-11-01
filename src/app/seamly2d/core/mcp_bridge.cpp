@@ -9,6 +9,7 @@
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolendline.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "application_2d.h"
+#include "../vmisc/vsettings.h"
 
 #include <QCryptographicHash>
 #include <QBuffer>
@@ -185,11 +186,38 @@ McpBridge::McpBridge(MainWindow *window)
     connect(qApp->getUndoStack(), &QUndoStack::indexChanged, this, [this](int) { ++m_revision; });
 }
 
+McpBridge::~McpBridge() { m_window = nullptr; stop(); }
+void McpBridge::notifyStatus() { if (m_window) m_window->updateMcpStatus(); }
+bool McpBridge::startDefault()
+{
+    const auto path = qEnvironmentVariable("SEAMLY_MCP_SOCKET", qApp->Seamly2DSettings()->value("mcp/socketPath",
+        QDir::homePath() + "/.seamly2d/mcp/app.sock").toString());
+    const auto directory = QFileInfo(path).absolutePath();
+    if (!QFileInfo::exists(directory))
+    {
+        if (!QDir().mkpath(directory) || !QFile::setPermissions(directory, QFileDevice::ReadOwner | QFileDevice::WriteOwner | QFileDevice::ExeOwner))
+        {
+            m_error = QStringLiteral("Could not create the private MCP socket directory."); notifyStatus(); return false;
+        }
+    }
+    return start(path);
+}
+void McpBridge::stop()
+{
+    m_server.close();
+    m_clients.clear();
+    for (auto *socket : m_server.findChildren<QLocalSocket *>()) socket->abort();
+    m_error.clear(); notifyStatus();
+}
+
 bool McpBridge::start(const QString &socketPath)
 {
+    if (m_server.isListening()) return true;
+    m_error.clear();
 #ifndef Q_OS_UNIX
     Q_UNUSED(socketPath)
     m_error = QStringLiteral("This first version supports macOS and Linux local sockets.");
+    notifyStatus();
     return false;
 #else
     const QFileInfo directory(QFileInfo(socketPath).absolutePath());
@@ -199,6 +227,7 @@ bool McpBridge::start(const QString &socketPath)
         || directory.ownerId() != static_cast<uint>(getuid()) || (directory.permissions() & publicPermissions))
     {
         m_error = QStringLiteral("SEAMLY_MCP_SOCKET requires an absolute path inside an owned, private directory (0700).");
+        notifyStatus();
         return false;
     }
     m_server.setSocketOptions(QLocalServer::UserAccessOption);
@@ -207,9 +236,12 @@ bool McpBridge::start(const QString &socketPath)
     if (!m_server.listen(socketPath))
     {
         m_error = m_server.errorString();
+        notifyStatus();
         return false;
     }
     qInfo() << "Local MCP bridge listening at" << socketPath;
+    qApp->Seamly2DSettings()->setValue("mcp/socketPath", socketPath);
+    notifyStatus();
     return true;
 #endif
 }
@@ -239,6 +271,7 @@ void McpBridge::acceptConnections()
         connect(socket, &QLocalSocket::disconnected, this, [this, socket]()
         {
             --m_connections;
+            if (m_clients.remove(socket)) notifyStatus();
             socket->deleteLater();
         });
         auto handled = std::make_shared<bool>(false);
@@ -246,6 +279,8 @@ void McpBridge::acceptConnections()
         {
             if (*handled)
             {
+                // A presence channel stays open, but never accepts more requests.
+                if (m_clients.contains(socket) && socket->bytesAvailable()) socket->abort();
                 return;
             }
             if (socket->bytesAvailable() > maxRequestBytes)
@@ -270,9 +305,21 @@ void McpBridge::acceptConnections()
                 response.insert("id", message.value("id"));
                 require(message.value("method").isString() && message.value("params").isObject(),
                         "Expected method and params.");
-                require(!m_executing, "Another bridge operation is in progress.");
-                QScopedValueRollback<bool> executing(m_executing, true);
-                response.insert("result", execute(message.value("method").toString(), message.value("params").toObject()));
+                const auto method = message.value("method").toString();
+                if (method == "_mcp_session")
+                {
+                    require(m_clients.size() < 4, "Too many MCP clients.");
+                    m_clients.insert(socket); notifyStatus();
+                    response.insert("result", QJsonObject{{"session", true}});
+                }
+                else if (method == "_mcp_status")
+                    response.insert("result", QJsonObject{{"listening", m_server.isListening()}, {"clients", m_clients.size()}});
+                else
+                {
+                    require(!m_executing, "Another bridge operation is in progress.");
+                    QScopedValueRollback<bool> executing(m_executing, true);
+                    response.insert("result", execute(method, message.value("params").toObject()));
+                }
             }
             catch (const VException &error)
             {
@@ -291,7 +338,8 @@ void McpBridge::acceptConnections()
                 response.insert("error", QStringLiteral("The application could not complete the operation. Read state before continuing."));
             }
             socket->write(QJsonDocument(response).toJson(QJsonDocument::Compact) + '\n');
-            socket->disconnectFromServer();
+            if (m_clients.contains(socket)) socket->flush();
+            else socket->disconnectFromServer();
         };
         connect(socket, &QLocalSocket::readyRead, this, receive);
         receive();

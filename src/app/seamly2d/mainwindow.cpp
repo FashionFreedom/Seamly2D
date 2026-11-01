@@ -57,6 +57,7 @@
 #include "options.h"
 #include "version.h"
 #include "core/application_2d.h"
+#include "core/mcp_bridge.h"
 #include "core/vtooloptionspropertybrowser.h"
 #include "dialogs/dialogs.h"
 #include "dialogs/calculator_dialog.h"
@@ -275,6 +276,7 @@ MainWindow::MainWindow(QWidget *parent)
         initializeDraftToolBar();
         initializePointNameToolBar();
         initializeModesToolBar();
+        if (Application2D::isGUIMode()) initializeMcpToolBar();
 
         // Initialize tool buttons and show the main window maximized.
         // Keep the window hidden in console mode (export / test).
@@ -6757,6 +6759,12 @@ QString MainWindow::createDraftBlockName(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 MainWindow::~MainWindow()
 {
+    if (m_mcpProbe)
+    {
+        disconnect(m_mcpProbe, nullptr, this, nullptr);
+        m_mcpProbe->kill(); m_mcpProbe->waitForFinished(1000);
+    }
+    if (m_mcpBridge) m_mcpBridge->stop();
     CancelTool();
     CleanLayout();
 
