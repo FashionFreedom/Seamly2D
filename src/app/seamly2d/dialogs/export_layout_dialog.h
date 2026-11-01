@@ -83,7 +83,6 @@ public:
     QString                 modeString() const;
 
     LayoutExportFormat      format() const;
-    QString                 formatText() const;
     void                    selectFormat(LayoutExportFormat format);
 
     void                    setBinaryDXFFormat(bool binary);
