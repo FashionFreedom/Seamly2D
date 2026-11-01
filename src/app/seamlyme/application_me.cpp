@@ -304,6 +304,23 @@ void ApplicationME::setTheme()
     QPalette palette;
     int theme = seamlyMeSettings()->getAppTheme();
 
+#if defined(Q_OS_MAC) && QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    // Native window backgrounds must use the same appearance as the custom palette.
+    Qt::ColorScheme color_scheme = Qt::ColorScheme::Unknown;
+    const auto selected_theme = static_cast<AppTheme>(theme);
+    if (selected_theme == AppTheme::LightFusion || selected_theme == AppTheme::classic)
+    {
+        color_scheme = Qt::ColorScheme::Light;
+    }
+    else if (selected_theme == AppTheme::DarkFusion || selected_theme == AppTheme::TwilightFusion
+             || selected_theme == AppTheme::Windows11)
+    {
+        color_scheme = Qt::ColorScheme::Dark;
+    }
+    // Unknown removes a previous override when the system theme is selected.
+    styleHints()->setColorScheme(color_scheme);
+#endif
+
     if (theme == 3)
     {
         // Get system mode (theme)
