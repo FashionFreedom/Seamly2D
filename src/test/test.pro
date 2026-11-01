@@ -5,3 +5,5 @@ SUBDIRS = \
     Seamly2DTest \
     TranslationsTest \
     CollectionTest
+
+unix: SUBDIRS += McpTest

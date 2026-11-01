@@ -8193,6 +8193,18 @@ void MainWindow::processCommandLine()
     {
         const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->OptMeasurePath());
 
+        // Used only by the local MCP validator on its private temporary copy.
+        const QString normalizedOutput = qEnvironmentVariable("SEAMLY_MCP_NORMALIZE_OUTPUT");
+        if (loaded && cmd->IsTestModeEnabled() && !normalizedOutput.isEmpty())
+        {
+            QString error;
+            if (!QDir::isAbsolutePath(normalizedOutput) || !doc->SaveDocument(normalizedOutput, error))
+            {
+                qApp->exit(V_EX_DATAERR);
+                return;
+            }
+        }
+
         if (!loaded && not Application2D::isGUIMode())
         {
             return; // process only one input file

@@ -285,6 +285,7 @@ private slots:
     void ChangedHeight(int index);
 
 private:
+    friend class McpBridge;
     Q_DISABLE_COPY(MainWindow)
 
     Ui::MainWindow                   *ui;              /// @brief ui keeps information about user interface.

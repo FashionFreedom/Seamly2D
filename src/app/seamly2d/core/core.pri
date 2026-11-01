@@ -2,6 +2,7 @@
 # This need for correct working file translations.pro
 
 HEADERS += \
+    $$PWD/mcp_bridge.h \
     $$PWD/application_2d.h \
     $$PWD/vformulaproperty.h \
     $$PWD/vformulapropertyeditor.h \
@@ -9,6 +10,7 @@ HEADERS += \
     $$PWD/vcmdexport.h
 
 SOURCES += \
+    $$PWD/mcp_bridge.cpp \
     $$PWD/application_2d.cpp \
     $$PWD/vformulaproperty.cpp \
     $$PWD/vformulapropertyeditor.cpp \

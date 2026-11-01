@@ -1,0 +1,1126 @@
+[
+  {
+    "name": "get_pattern_summary",
+    "description": "Read document status, file, units, active draft block, counts, undo/redo and state_token. Read before edits.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_preview",
+    "description": "Read an SVG preview of the current visible scene, without changing the document.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_objects",
+    "description": "Page through available geometric objects with IDs, type, draft block and point coordinates.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "offset": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 200
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_object",
+    "description": "Read one document element, attributes, XML and calculated geometry.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_selection",
+    "description": "Read selected tools/objects in the visible scene.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_selection",
+    "description": "Select objects in the visible scene.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "maxItems": 1000
+        }
+      },
+      "required": [
+        "state_token",
+        "ids"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_view",
+    "description": "Switch Draft/Piece mode; optionally fit the drawing or set zoom and center. Does not change pattern geometry.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "draft",
+            "piece"
+          ]
+        },
+        "fit": {
+          "type": "boolean"
+        },
+        "scale": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 100
+        },
+        "x": {
+          "type": "number",
+          "minimum": -1000000000,
+          "maximum": 1000000000
+        },
+        "y": {
+          "type": "number",
+          "minimum": -1000000000,
+          "maximum": 1000000000
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_variables",
+    "description": "Read formulas and calculated values for custom variables and measurements.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "evaluate_formula",
+    "description": "Evaluate a formula without modifying the document. Internal English syntax and decimal dot.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "formula": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "formula"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_variable",
+    "description": "Create or update a custom variable (name begins #); validate dependents and add one undo operation.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 128
+        },
+        "formula": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "description": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 4096
+        }
+      },
+      "required": [
+        "state_token",
+        "name",
+        "formula"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete_variable",
+    "description": "Delete a custom variable; reject if the resulting pattern is invalid.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "state_token",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_point",
+    "description": "Create end-line point from base_point_id, length formula in document units, angle formula in counterclockwise degrees (0 right, 90 up).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "base_point_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "length": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "angle": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "state_token",
+        "name",
+        "base_point_id",
+        "length",
+        "angle"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_line",
+    "description": "Create a line between two points in the active draft block.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "first_point_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "second_point_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "state_token",
+        "first_point_id",
+        "second_point_id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_curve",
+    "description": "Create a cubic Bezier spline between endpoints, with tangent angles and control-handle length formulas.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "first_point_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "second_point_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "angle1": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "angle2": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "length1": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "length2": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "state_token",
+        "first_point_id",
+        "second_point_id",
+        "angle1",
+        "angle2",
+        "length1",
+        "length2"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_arc",
+    "description": "Create an arc from center point, radius and start/end angle formulas.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "center_id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "radius": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "angle1": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "angle2": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        }
+      },
+      "required": [
+        "state_token",
+        "center_id",
+        "radius",
+        "angle1",
+        "angle2"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_tool",
+    "description": "Append a complete XML element to an active draft-block section. Covers all persisted tool, piece, group and image types; consult schema and existing XML. Validate in an isolated process; undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "section": {
+          "type": "string",
+          "enum": [
+            "calculation",
+            "modeling",
+            "pieces",
+            "groups",
+            "images"
+          ]
+        },
+        "xml": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 262144
+        }
+      },
+      "required": [
+        "state_token",
+        "section",
+        "xml"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "update_object",
+    "description": "Update XML attributes of an element by ID; validate all dependent calculations before committing.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "attributes": {
+          "type": "object",
+          "maxProperties": 100,
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 4096
+          }
+        }
+      },
+      "required": [
+        "state_token",
+        "id",
+        "attributes"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete_object",
+    "description": "Delete an element by ID; reject invalid references or dependent formulas.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "state_token",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "new_pattern",
+    "description": "Create an unsaved pattern with its first draft block. Explicit discard_changes is needed to replace unsaved work.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "draft_block": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "cm",
+            "mm",
+            "inch"
+          ]
+        },
+        "discard_changes": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token",
+        "draft_block",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "open_pattern",
+    "description": "Open a pattern without dialogs or modifying the source file; validate and convert a temporary copy. Reject replacing unsaved work unless discard_changes=true.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "discard_changes": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token",
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "save_pattern",
+    "description": "Atomically save current pattern. Optional absolute path enables Save As; overwrite=true required for an existing different destination.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "overwrite": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "close_pattern",
+    "description": "Close the current pattern. Reject unsaved changes unless discard_changes=true.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "discard_changes": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_active_draft_block",
+    "description": "Switch active draft block.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "state_token",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "add_draft_block",
+    "description": "Add a draft block with a base point, as one undoable operation.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "point_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "x": {
+          "type": "number",
+          "minimum": -1000000000,
+          "maximum": 1000000000
+        },
+        "y": {
+          "type": "number",
+          "minimum": -1000000000,
+          "maximum": 1000000000
+        }
+      },
+      "required": [
+        "state_token",
+        "name",
+        "point_name"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "rename_draft_block",
+    "description": "Rename an existing draft block.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "new_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "state_token",
+        "name",
+        "new_name"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_pattern_xml",
+    "description": "Read full in-memory pattern XML, including pieces, groups, images, labels and metadata.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "apply_pattern_xml",
+    "description": "Validate and replace the complete pattern XML in one undoable operation. Covers all persistent pattern features including piece nodes and seam allowances. Reject DTD/entities; never save implicitly.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "xml": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4194304
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        }
+      },
+      "required": [
+        "state_token",
+        "xml"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_pattern_schema",
+    "description": "Read the authoritative current-format XSD for advanced tool/piece XML authoring.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "export_pattern",
+    "description": "Export current visible scene to SVG, PDF or PNG without dialogs. Path must be absolute; overwrite=true required if it exists.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "svg",
+            "pdf",
+            "png"
+          ]
+        },
+        "overwrite": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token",
+        "path",
+        "format"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "get_history",
+    "description": "Read undo-stack commands and index.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "undo",
+    "description": "Undo the latest application operation, including manual changes; inspect undo_text first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "redo",
+    "description": "Redo the next undone application operation; inspect redo_text first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_export_formats",
+    "description": "Read available export format IDs and supported layout-engine options.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "list_pieces",
+    "description": "Read pattern-piece IDs, names and source attributes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "export_layout",
+    "description": "Generate a layout or export pattern pieces with the existing layout engine, including DXF/AAMA/ASTM and tiled PDF. Requires pieces and an empty absolute output directory. Uses a temporary copy; live document unchanged. Read get_export_formats first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read tool; refresh after edits or stale-state errors."
+        },
+        "output_directory": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "basename": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "format": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 37
+        },
+        "pieces_only": {
+          "type": "boolean"
+        },
+        "options": {
+          "type": "object",
+          "maxProperties": 30,
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 128
+          }
+        }
+      },
+      "required": [
+        "state_token",
+        "output_directory",
+        "basename",
+        "format"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  }
+]

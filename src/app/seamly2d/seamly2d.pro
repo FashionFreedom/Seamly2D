@@ -354,13 +354,19 @@ macx{
     APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
 
+    # Updating the companion must refresh deployment even when GUI sources did
+    # not change. Copy after linking, before macdeployqt rewrites its Qt paths.
+    MCP_ADAPTER = $${OUT_PWD}/../seamly2d_mcp/bin/seamly2d-mcp
+    PRE_TARGETDEPS += $$MCP_ADAPTER
+    QMAKE_POST_LINK += $$QMAKE_COPY $$shell_quote($$MCP_ADAPTER) $$shell_quote($${OUT_PWD}/$${DESTDIR}/$${TARGET}.app/Contents/MacOS/seamly2d-mcp) &&
+
     !macSign {
         # run macdeployqt to include all qt libraries in packet
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -executable=$${OUT_PWD}/$${DESTDIR}/$${TARGET}.app/Contents/MacOS/seamly2d-mcp
     } else {
         # we need to manually sign with codesign --deep as pdftops otherwise will not get signed by macdeployqt
         # we need --force as seamlyme is already signed, but we need to resign it
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -executable=$${OUT_PWD}/$${DESTDIR}/$${TARGET}.app/Contents/MacOS/seamly2d-mcp &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }

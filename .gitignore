@@ -39,6 +39,9 @@ man/
 build/
 .vscode/*
 
+# MCP runtime sockets
+*.sock
+
 # Python bytecode cache
 __pycache__/
 *.pyc

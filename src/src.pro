@@ -13,7 +13,7 @@ noTests{ # For enable run qmake with CONFIG+=noTests
 		app \
 		test
 
-	test.depends = libs
+	test.depends = libs app
 }
 
 app.depends = libs

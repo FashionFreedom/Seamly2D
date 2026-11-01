@@ -1,0 +1,6 @@
+# Merge this table into your Codex config; replace both absolute paths.
+# The socket path must exactly match the running app's SEAMLY_MCP_SOCKET.
+[mcp_servers.seamly2d]
+command = "/Applications/Seamly2D.app/Contents/MacOS/seamly2d-mcp"
+args = ["--socket", "/absolute/path/to/Seamly2D/build/mcp-runtime/app.sock"]
+tool_timeout_sec = 90

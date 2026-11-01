@@ -86,6 +86,7 @@
 #include <QMessageBox>
 #include <QUndoStack>
 #include <QtNumeric>
+#include <cmath>
 #include <QDebug>
 #include <QFileInfo>
 
@@ -3637,6 +3638,10 @@ void VPattern::parseVariablesElement(const QDomNode &node)
                     const QString formula = GetParametrString(domElement, VariableFormula, "0");
                     bool ok = false;
                     const qreal value = EvalFormula(data, formula, &ok);
+                    if (qEnvironmentVariableIsSet("SEAMLY_MCP_VALIDATE") && (!ok || !std::isfinite(value)))
+                    {
+                        throw VException(QStringLiteral("Invalid custom variable formula: ") + name);
+                    }
 
                     data->AddVariable(name, new CustomVariable(data, name, static_cast<quint32>(index), value, formula, ok,
                                                            desc));

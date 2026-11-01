@@ -57,6 +57,7 @@
 
 #include "mainwindow.h"
 #include "core/application_2d.h"
+#include "core/mcp_bridge.h"
 #include "dialogs/welcome_dialog.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vmisc/vsysexits.h"
@@ -189,6 +190,17 @@ int main(int argc, char *argv[])
 #endif // !defined(Q_OS_MAC)
     // Set the main window for the application
     app.setMainWindow(&window);
+
+    // No listener is created unless the user explicitly enables the local bridge.
+    const QString mcpSocket = qEnvironmentVariable("SEAMLY_MCP_SOCKET");
+    if (Application2D::isGUIMode() && !mcpSocket.isEmpty())
+    {
+        auto *bridge = new McpBridge(&window);
+        if (!bridge->start(mcpSocket))
+        {
+            qWarning() << "MCP bridge disabled:" << bridge->errorString();
+        }
+    }
 
     int msec = 0;
     // Show the main window before loading the pattern if in GUI mode

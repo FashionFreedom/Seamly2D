@@ -188,12 +188,20 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 
         if (qIsInf(result) || qIsNaN(result))
         {
+            if (qEnvironmentVariableIsSet("SEAMLY_MCP_VALIDATE"))
+            {
+                throw VException(QStringLiteral("Formula must evaluate to a finite number."));
+            }
             qWarning() << "Invalid the formula value";
             return 0;
         }
     }
     catch (qmu::QmuParserError &error)
     {
+        if (qEnvironmentVariableIsSet("SEAMLY_MCP_VALIDATE"))
+        {
+            throw VException(error.GetMsg());
+        }
         qDebug() << "\nMath parser error:\n"
                    << "--------------------------------------\n"
                    << "Message:     " << error.GetMsg()  << "\n"

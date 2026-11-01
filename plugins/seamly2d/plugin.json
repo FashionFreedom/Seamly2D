@@ -1,0 +1,7 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "seamly2d",
+  "version": "0.3.0",
+  "description": "Read, draft, edit, validate and export sewing patterns in the local Seamly2D desktop app.",
+  "extensions": {"com.openai": {"requires_local_executor": true}}
+}

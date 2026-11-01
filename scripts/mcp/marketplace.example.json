@@ -1,0 +1,20 @@
+{
+  "name": "seamly-local",
+  "interface": {
+    "displayName": "Seamly2D Local"
+  },
+  "plugins": [
+    {
+      "name": "seamly2d",
+      "source": {
+        "source": "local",
+        "path": "./plugins/seamly2d"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
