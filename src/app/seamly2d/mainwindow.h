@@ -184,6 +184,7 @@ private slots:
 #if defined(Q_OS_MAC)
     void CreateMeasurements();
 #endif
+    void openSeamly3D();
     void exportLayoutAs();
     void exportPiecesAs();
     void exportDraftBlocksAs();

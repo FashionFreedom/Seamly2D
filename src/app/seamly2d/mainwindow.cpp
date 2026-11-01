@@ -5760,6 +5760,11 @@ void MainWindow::createActions()
 {
     ui->setupUi(this);
 
+    auto open3D = new QAction(tr("Open in Seamly3D…"), this);
+    open3D->setObjectName(QStringLiteral("openSeamly3D_Action"));
+    ui->file_Menu->insertAction(ui->exportAs_Action, open3D);
+    connect(open3D, &QAction::triggered, this, &MainWindow::openSeamly3D);
+
     //Files menu
     connect(ui->actionNew, &QAction::triggered, this, &MainWindow::New);
     connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::Open);

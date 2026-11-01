@@ -58,6 +58,7 @@ Section "Start Menu Shortcuts"
   CreateShortcut "$SMPROGRAMS\Seamly2D\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
   CreateShortcut "$SMPROGRAMS\Seamly2D\Seamly2D.lnk" "$INSTDIR\seamly2d.exe" "" "$INSTDIR\seamly2d.exe" 0
   CreateShortcut "$SMPROGRAMS\Seamly2D\SeamlyMe.lnk" "$INSTDIR\seamlyme.exe" "" "$INSTDIR\seamlyme.exe" 0
+  CreateShortcut "$SMPROGRAMS\Seamly2D\Seamly3D.lnk" "$INSTDIR\seamly3d.exe" "" "$INSTDIR\seamly3d.exe" 0
 
 SectionEnd
 

@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T20:02:14.278880+00:00",
+  "title": "Design System: Seamly suite",
+  "extensions": {
+    "scope": {
+      "application": "Seamly suite",
+      "sourceRoot": "src/app",
+      "applications": [
+        {
+          "name": "Seamly2D",
+          "sourceRoot": "src/app/seamly2d",
+          "surfaceBrief": ".impeccable/surfaces/seamly2d.md",
+          "visualAuthority": "Existing Qt widgets, UI files and toolicon.qrc; source inspected."
+        },
+        {
+          "name": "SeamlyMe",
+          "sourceRoot": "src/app/seamlyme",
+          "surfaceBrief": ".impeccable/surfaces/seamlyme.md",
+          "visualAuthority": "Existing Qt table/detail widgets, UI files and seamlymeicon.qrc; source inspected."
+        },
+        {
+          "name": "Seamly3D",
+          "sourceRoot": "src/app/seamly3d",
+          "surfaceBrief": ".impeccable/surfaces/seamly3d.md",
+          "visualAuthority": "Authored atelier palette, stylesheet and vectors; existing macOS review captures."
+        }
+      ],
+      "tokenScope": "All colorMeta, typographyMeta and existing authored nativeComponents describe Seamly3D only. No shared authored palette or token scale is asserted for Seamly2D or SeamlyMe.",
+      "excluded": [
+        "Mobile UI"
+      ]
+    },
+    "nativePlatform": {
+      "frameworks": [
+        "Qt Widgets",
+        "Qt Quick 3D"
+      ],
+      "palette": "Seamly2D and SeamlyMe retain existing Qt/platform styles and resource artwork. Seamly3D uses the authored adaptive atelier QPalette and stylesheet in atelier.h.",
+      "typography": "Qt/system text across the suite. Explicit workspace, section and annotation sizes and Canvas handle letters in this record apply to Seamly3D only.",
+      "componentPreviewPolicy": "Native widgets are not reproduced as HTML/CSS. Use the actual app and review captures; an HTML imitation would invent platform metrics and states.",
+      "tonalRampPolicy": "Light/dark role pairs are implemented appearances, not tonal ramps. Synthetic ramps are omitted because they are not shipped native UI tokens.",
+      "mobile": "No mobile interface is shipped."
+    },
+    "typographyMeta": {
+      "workspace-name": {
+        "displayName": "Workspace name",
+        "purpose": "Toolbar application identity."
+      },
+      "section": {
+        "displayName": "Section",
+        "purpose": "Task group hierarchy."
+      },
+      "primary-action": {
+        "displayName": "Primary action",
+        "purpose": "Assemble/Pause emphasis."
+      },
+      "viewport-label": {
+        "displayName": "Viewport label",
+        "purpose": "Selection, units and contextual guidance."
+      },
+      "handle-label": {
+        "displayName": "Handle label",
+        "purpose": "Axis identification on opaque dark backplates."
+      }
+    },
+    "nativeComponents": [
+      {
+        "name": "Workspace toolbar",
+        "source": "src/app/seamly3d/atelier.h; src/app/seamly3d/window.cpp",
+        "types": [
+          "QToolBar",
+          "QAction",
+          "QPushButton"
+        ],
+        "application": "Seamly3D",
+        "historyActions": "Compact icon-only Undo/Redo pair, labelled Edit actions and platform shortcuts; authored vector family."
+      },
+      {
+        "name": "Task inspector",
+        "source": "src/app/seamly3d/window.cpp",
+        "types": [
+          "QTabWidget",
+          "QScrollArea"
+        ],
+        "application": "Seamly3D",
+        "seamFooter": "Add or Apply/Revert and inline feedback stay pinned outside the Seams scroll area, with a one-pixel top border.",
+        "tabs": [
+          "Dress form",
+          "Pieces",
+          "Seams",
+          "Cloth"
+        ],
+        "width": "400–480 logical pixels; initial 440, split 1000/440 at 1440×900."
+      },
+      {
+        "name": "Numeric and selection inputs",
+        "source": "src/app/seamly3d/window.cpp",
+        "types": [
+          "QDoubleSpinBox",
+          "QSpinBox",
+          "QComboBox",
+          "QCheckBox",
+          "QListWidget"
+        ],
+        "application": "Seamly3D"
+      },
+      {
+        "name": "Saved seam editor and contour endpoints",
+        "source": "src/app/seamly3d/window.cpp; src/app/seamly3d/viewport.cpp; src/app/seamly3d/AssemblyView.qml; src/app/seamly3d/model.cpp",
+        "types": [
+          "QListWidget",
+          "QLineEdit",
+          "QCheckBox",
+          "QPushButton",
+          "ContourView",
+          "QPainter",
+          "Canvas"
+        ],
+        "application": "Seamly3D",
+        "layout": "Saved list bounded to 70–100 logical pixels; New/Remove, Name, Include in assembly and paired ranges scroll above a fixed action/recovery footer.",
+        "draft": "Saved-seam edits retain stable IDs. Apply validates and commits one command; Revert restores stored inputs. Save and seam/tab switches autoapply valid drafts. Invalid drafts block these transitions with inline recovery; Undo/Redo and Assemble are disabled while changed. New seam mode uses explicit Add.",
+        "guides": "A cyan/solid, B coral/dashed; palette-adaptive 2D inks, dark-cased show-through scene overlay and explicit legend. Guides follow deformed geometry, respect hidden pieces and disappear outside Seams. Original-outline endpoints use six-decimal percentage fields and segment projection on click, green/red endpoint markers and quarter-perimeter labels; equal endpoints select the full perimeter. Boundary maps and interpolated anchors preserve authored positions and undeformed lengths across mesh densities.",
+        "pause": "Persistent Include in assembly keeps names, IDs, ranges and direction while paused. Excludes constraints and ordinary sewing tubes; selected paused seams still show editing guides. Separate from viewport inspection.",
+        "persistence": "Saves v4; reads v1/v2/v3/v4. Legacy indices migrate to normalized original-outline arc fractions with deterministic identities. Stores meshSize, simulation parameters and per-piece pinTop. Changed outlines invalidate affected relationships through the import summary. Neither geometric nor physical mode establishes calibrated fit."
+      },
+      {
+        "name": "Assembly viewport",
+        "source": "src/app/seamly3d/AssemblyView.qml",
+        "types": [
+          "View3D",
+          "MouseArea",
+          "Text"
+        ],
+        "application": "Seamly3D"
+      },
+      {
+        "name": "Status and limitations",
+        "source": "src/app/seamly3d/window.cpp",
+        "types": [
+          "QStatusBar",
+          "QLabel",
+          "QToolButton",
+          "QWhatsThis"
+        ],
+        "application": "Seamly3D"
+      },
+      {
+        "name": "Scene tools and camera presets",
+        "source": "src/app/seamly3d/window.cpp",
+        "types": [
+          "QToolBar",
+          "QActionGroup",
+          "QComboBox"
+        ],
+        "application": "Seamly3D"
+      },
+      {
+        "name": "Placement handles",
+        "source": "src/app/seamly3d/AssemblyView.qml; src/app/seamly3d/viewport.cpp",
+        "types": [
+          "Canvas",
+          "MouseArea"
+        ],
+        "geometry": "World move axes; stored-Euler rotation axes.",
+        "states": "Hover thickens cased strokes; opaque letter backplates; Escape cancels drag.",
+        "application": "Seamly3D",
+        "history": "One completed drag creates one authored-input command; Escape and no-op drags create none."
+      },
+      {
+        "name": "Authored vector family",
+        "source": "src/app/seamly3d/atelier.h",
+        "types": [
+          "QIconEngine",
+          "QPainter"
+        ],
+        "grid": "24 units",
+        "stroke": "1.8 units, round caps and joins",
+        "renderedSize": "18 logical pixels in toolbars",
+        "application": "Seamly3D"
+      },
+      {
+        "name": "Drafting workspace and docks",
+        "application": "Seamly2D",
+        "source": "src/app/seamly2d/mainwindow.ui; src/app/seamly2d/mainwindow.cpp",
+        "types": [
+          "QMainWindow",
+          "QDockWidget",
+          "QToolBar",
+          "QAction"
+        ],
+        "icons": "src/app/seamly2d/share/resources/toolicon.qrc"
+      },
+      {
+        "name": "Measurement table, details and metadata",
+        "application": "SeamlyMe",
+        "source": "src/app/seamlyme/tmainwindow.ui; src/app/seamlyme/tmainwindow.cpp",
+        "types": [
+          "QTableWidget",
+          "QTabWidget",
+          "QToolBar",
+          "QDockWidget"
+        ],
+        "icons": "src/app/seamlyme/share/resources/seamlymeicon.qrc"
+      },
+      {
+        "name": "Scene pieces and inspection",
+        "application": "Seamly3D",
+        "source": "src/app/seamly3d/window.cpp; src/app/seamly3d/viewport.cpp; src/app/seamly3d/AssemblyView.qml",
+        "types": [
+          "QListWidget",
+          "QProxyStyle",
+          "QPushButton",
+          "QCheckBox"
+        ],
+        "selection": "One visible placement-piece list, synchronized with scene picking and numeric controls; hidden rows remain selectable without draggable handles.",
+        "layout": "Bounded 90–140 logical pixel list, paired Isolate selected / Show all, then Transparent selected piece.",
+        "states": "Selection and visibility are separate. Fusion-based proxy paints only the visibility indicator with atelier Base/Text roles, independently of row highlight; native item interaction remains.",
+        "keyboard": "Space toggles a focused list check; Assemble/Pause Space is scoped to the canvas and its children.",
+        "inspection": "Viewport-only visibility and per-piece transparency survive ordinary edits and undo/redo, reset on open, and do not dirty the document or change solver/export participation. Show all preserves transparency choices.",
+        "pinning": "Fix top centre during draping is an authored physical-mode input, separate from inspection. Holds the central half of the highest original edge with corners free; horizontal edges receive a midpoint even on coarse meshes, or a single highest point is pinned."
+      },
+      {
+        "name": "Project history",
+        "application": "Seamly3D",
+        "source": "src/app/seamly3d/window.cpp; src/app/seamly3d/window.h",
+        "types": [
+          "QUndoStack",
+          "QUndoCommand",
+          "QAction"
+        ],
+        "capacity": "50 session-only authored-input commands; not serialized.",
+        "commit": "Completed input edits and complete handle drags create commands; canceled/no-op edits create none. Numeric entry commits on editing completion. Geometry import is undoable.",
+        "restore": "Stop assembly, restore authored inputs and regenerate preview. Camera, selection, inspection and simulation frames stay outside history.",
+        "cleanState": "Save marks the current position clean without clearing undo. Undo away marks modified; redo back clears it. New edits after undo discard redo; opening another project clears history.",
+        "draftBoundary": "Changed saved-seam drafts disable document Undo/Redo and Assemble until Apply or Revert; a valid apply is one command.",
+        "clothInputs": "Mesh resolution, physical settings and per-piece top-centre pins are undoable authored inputs; Reset restores initial state and zero velocities."
+      },
+      {
+        "name": "Cloth resolution and physical draping",
+        "application": "Seamly3D",
+        "source": "src/app/seamly3d/window.cpp; src/app/seamly3d/model.cpp; src/app/seamly3d/clothsolver.cpp",
+        "types": [
+          "QDoubleSpinBox",
+          "QComboBox",
+          "QLabel",
+          "QFormLayout"
+        ],
+        "layout": "Fourth locally scrolling inspector tab; Mesh resolution precedes Assembly and draping using native atelier forms and wrapped notes.",
+        "controls": "Maximum edge 5–100 mm with actual vertex/triangle counts; Geometric assembly / Physical draping · experimental; Surface mass (g/m²), Stretch softness, Bend softness, Damping (1/s), Contact friction. Parameters are uncalibrated.",
+        "mesh": "Conforming adaptive subdivision with shared midpoints preserves source corners and original-outline boundary maps. Exact interpolated references avoid microscopic near-corner triangles caused by percentage rounding. No minimum-angle or aspect-ratio guarantee.",
+        "budgets": "512 combined corners/anchors per piece; 12,000 vertices/24,000 triangles per piece; 40,000 vertices/80,000 triangles per project; 32,768 stitches. Failure preserves current assembly.",
+        "backend": "CPU XPBD with SI gravity, area-weighted mass, triangle-edge stretch/shear, approximate opposite-vertex distance bending, seam constraints, sampled dress-form/floor contact, damping and approximate tangent friction. Fixed 1/60 s frame, four substeps, eight iterations per substep. Metal renders.",
+        "status": "Actual simulation clock and maximum speed, rest after one second below 2 mm/s, time limit at 20 s explicitly not convergence, and numerical-instability stop. Reset restores initial placement and zero velocities. Clock may advance slower than wall time.",
+        "limits": "Experimental; no self-collision, fabric layers, calibrated materials or fit prediction."
+      }
+    ],
+    "shadows": [],
+    "motion": [],
+    "breakpoints": [],
+    "colorMeta": {
+      "atelier-window-light": {
+        "role": "neutral",
+        "displayName": "Atelier window light"
+      },
+      "atelier-window-dark": {
+        "role": "neutral",
+        "displayName": "Atelier window dark"
+      },
+      "field-light": {
+        "role": "neutral",
+        "displayName": "Field light"
+      },
+      "field-dark": {
+        "role": "neutral",
+        "displayName": "Field dark"
+      },
+      "alternate-light": {
+        "role": "neutral",
+        "displayName": "Alternate light"
+      },
+      "alternate-dark": {
+        "role": "neutral",
+        "displayName": "Alternate dark"
+      },
+      "button-light": {
+        "role": "neutral",
+        "displayName": "Button light"
+      },
+      "button-dark": {
+        "role": "neutral",
+        "displayName": "Button dark"
+      },
+      "ink-light": {
+        "role": "neutral",
+        "displayName": "Ink light"
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink dark"
+      },
+      "accent-light": {
+        "role": "primary",
+        "displayName": "Accent light"
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Accent dark"
+      },
+      "accent-ink-light": {
+        "role": "primary",
+        "displayName": "Accent ink light"
+      },
+      "accent-ink-dark": {
+        "role": "primary",
+        "displayName": "Accent ink dark"
+      },
+      "border-light": {
+        "role": "neutral",
+        "displayName": "Border light"
+      },
+      "border-dark": {
+        "role": "neutral",
+        "displayName": "Border dark"
+      },
+      "disabled-light": {
+        "role": "neutral",
+        "displayName": "Disabled light"
+      },
+      "disabled-dark": {
+        "role": "neutral",
+        "displayName": "Disabled dark"
+      },
+      "icon-light": {
+        "role": "neutral",
+        "displayName": "Icon light"
+      },
+      "icon-dark": {
+        "role": "neutral",
+        "displayName": "Icon dark"
+      },
+      "stage": {
+        "role": "neutral",
+        "displayName": "Stage"
+      },
+      "stage-annotation": {
+        "role": "neutral",
+        "displayName": "Stage annotation"
+      },
+      "stage-units": {
+        "role": "neutral",
+        "displayName": "Stage units"
+      },
+      "linen": {
+        "role": "neutral",
+        "displayName": "Linen"
+      },
+      "axis-x": {
+        "role": "secondary",
+        "displayName": "Axis x"
+      },
+      "axis-y": {
+        "role": "secondary",
+        "displayName": "Axis y"
+      },
+      "axis-z": {
+        "role": "secondary",
+        "displayName": "Axis z"
+      },
+      "handle-backing": {
+        "role": "neutral",
+        "displayName": "Handle backing"
+      },
+      "contour-fill": {
+        "role": "neutral",
+        "displayName": "Contour fill"
+      },
+      "range-start": {
+        "role": "secondary",
+        "displayName": "Range start"
+      },
+      "range-end": {
+        "role": "secondary",
+        "displayName": "Range end"
+      },
+      "seam-a-light": {
+        "role": "secondary",
+        "displayName": "Side A light"
+      },
+      "seam-a-dark": {
+        "role": "secondary",
+        "displayName": "Side A dark / stage"
+      },
+      "seam-b-light": {
+        "role": "secondary",
+        "displayName": "Side B light"
+      },
+      "seam-b-dark": {
+        "role": "secondary",
+        "displayName": "Side B dark / stage"
+      }
+    },
+    "seamly3dVerification": {
+      "review": ".impeccable/review/physics-finish-verdict.md",
+      "disposition": "ship: two scored fixes resolved; round-one regression verification found no introduced regressions visible across all 19 corrected captures. No broader surface or solver audit, calibration, convergence or arbitrary-project stability is claimed.",
+      "initialReviewDisposition": "fix: ordinary UI physical instability and stale design record",
+      "captures": 19,
+      "captureRoot": ".impeccable/review/physics-fix/",
+      "desktop": "13 captures, 1440×900 logical, light/dark",
+      "compact": "6 captures, 1100×760 logical, light/dark",
+      "captureScale": "Retina 2×",
+      "states": "Four task tabs, continuous seam drafts and recovery, retained form/pieces/gizmos/inspection, mesh resolution and physical draping. Supplied corrected Cloth evidence shows a deformed garment at simulated 1.00 s, maximum speed 142.6 mm/s, gap 0.52 mm and strain 4.3%; this is demonstration evidence, not calibration or fit validation.",
+      "nativeTests": "build/seamly3d-physics-native-tests.txt",
+      "passed": 44,
+      "failed": 0,
+      "skipped": 0,
+      "backend": "Metal",
+      "regression": "Rounded-corner seam anchors after six-decimal percentage quantization; avoids microscopic triangles while retaining exact interpolated references."
+    }
+  },
+  "components": [],
+  "narrative": {
+    "northStar": "Precise native desktop workspaces; the precise atelier is Seamly3D-specific",
+    "overview": "The suite comprises Seamly2D parametric drafting, pieces and print layouts; SeamlyMe individual/multisize measurement editing; and Seamly3D experimental assembly preview. Preserve native Qt behavior and each product's task structure. DESIGN.md records the incumbent Qt workspaces for Seamly2D and SeamlyMe and the authored atelier for Seamly3D. All extracted atelier tokens, colors and type metadata are scoped to Seamly3D. Existing macOS review captures verify the 3D surface only; the other two applications were inspected in source in this update.",
+    "keyCharacteristics": [
+      "Native Qt text, forms, keyboard and document conventions across three desktop products.",
+      "Seamly2D graphics workspace with task-dependent commands and docks.",
+      "SeamlyMe measurement table, details, metadata and diagram.",
+      "Seamly3D atelier surfaces, vector icons and persistent scene with placement handles."
+    ],
+    "rules": [
+      {
+        "name": "The Product Scope Rule",
+        "body": "Use the matching surface brief and current source. Preserve each product's implemented controls; atelier tokens are scoped to Seamly3D.",
+        "section": "layout"
+      },
+      {
+        "name": "The Atelier Roles Rule",
+        "body": "In Seamly3D: Extend the authored light/dark palette through Qt roles and the existing style function; retain native control behaviour and permitted native checkbox/tab adaptations.",
+        "section": "colors"
+      },
+      {
+        "name": "The Semantic Colour Rule",
+        "body": "In Seamly3D: Keep geometry, contour endpoints and axis colours tied to their editing meanings, with labels or fields carrying the same information.",
+        "section": "colors"
+      },
+      {
+        "name": "The Native Type Rule",
+        "body": "Express hierarchy through the implemented system text, section emphasis and proximity; keep any font-family claim limited to what the source declares.",
+        "section": "typography"
+      },
+      {
+        "name": "The Persistent Scene Rule",
+        "body": "In Seamly3D: Keep task editing beside the scene, with local inspector scrolling and persistent toolbar/status access.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Stroke Family Rule",
+        "body": "In Seamly3D: Use the authored 24-unit vector grid with 1.8-unit round caps and joins for document, scene and task icons; retain text labels beside toolbar icons except the compact Undo/Redo pair, whose QAction text, tooltips and standard shortcuts remain available. Toolbar icons render at 18 logical pixels.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Inspection Separation Rule",
+        "body": "Keep scene visibility and transparency separate from authored project inputs; selection must remain available even when a piece is hidden.",
+        "section": "components"
+      },
+      {
+        "name": "The Authored History Rule",
+        "body": "Record completed changes to authored inputs, preserve the saved clean position, and rebuild the preview when restoring history.",
+        "section": "components"
+      },
+      {
+        "name": "The Seam Draft Recovery Rule",
+        "body": "Keep Apply/Revert and inline recovery visible outside scrolling; commit valid saved-seam drafts atomically and retain invalid drafts for correction or reversion.",
+        "section": "components"
+      },
+      {
+        "name": "The Factual Draping Rule",
+        "body": "In Seamly3D: Show actual mesh counts, simulation time, speed and stop reasons; keep geometric and physical modes explicit and never present a time limit, small gap or low motion as validated fit or convergence.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do use the matching product surface brief and incumbent source.",
+      "Do preserve Seamly2D modes and docks and SeamlyMe table, formula, gradation and read-only semantics.",
+      "In Seamly3D: Do extend the authored atelier light/dark roles while preserving Qt system fonts, control behaviour and keyboard conventions.",
+      "In Seamly3D: Do keep the model visible while task controls scroll locally.",
+      "In Seamly3D: Do use the shared round-stroke vector family with clear action labels.",
+      "In Seamly3D: Do keep direct handles, numeric units and continuous contour endpoints legible and synchronized.",
+      "In Seamly3D: Do preserve commands, selections and accessible preview limitations when extending the workspace.",
+      "Do in Seamly3D, keep visibility indicators legible independently of row selection and retain the focused list's Space-key interaction.",
+      "Do in Seamly3D, keep inspection outside authored-input history and group each completed handle drag into one command.",
+      "Do in Seamly3D, keep seam actions and inline recovery pinned while ranges scroll, and preserve solid/dashed guide identity alongside colour.",
+      "In Seamly3D: Do preserve original-outline seam references across mesh changes and show factual experimental draping status."
+    ],
+    "donts": [
+      "Don't treat Seamly3D tokens or captures as implemented or verified Seamly2D/SeamlyMe design.",
+      "In Seamly3D: Don't replace the native workspace with web card stacks, fabricated window chrome or display typography.",
+      "In Seamly3D: Don't substitute bitmap document artwork or glyph icons for the authored vector family.",
+      "In Seamly3D: Don't treat panel colours or permitted native checkbox/tab colours as fixed brand tokens.",
+      "In Seamly3D: Don't infer mobile layouts or calibrated garment-fit claims from this desktop preview."
+    ]
+  }
+}

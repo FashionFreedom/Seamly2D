@@ -24,3 +24,13 @@ HEADERS  += \
 # Main forms
 FORMS    += \
         $$PWD/mainwindow.ui
+
+# Shared, dependency-free assembly exchange model.
+SOURCES += $$PWD/seamly3d_export.cpp $$PWD/../seamly3d/model.cpp
+HEADERS += $$PWD/../seamly3d/model.h
+
+SOURCES += $$PWD/../seamly3d/dressform.cpp
+HEADERS += $$PWD/../seamly3d/dressform.h
+
+SOURCES += $$PWD/../seamly3d/clothsolver.cpp
+HEADERS += $$PWD/../seamly3d/clothsolver.h

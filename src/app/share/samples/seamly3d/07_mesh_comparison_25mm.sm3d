@@ -1,0 +1,121 @@
+{
+  "format": "seamly3d",
+  "version": 4,
+  "units": "mm",
+  "source": "Synthetic demo: two panels on the dress form",
+  "meshSize": 25,
+  "simulation": {
+    "physical": true,
+    "density": 200,
+    "stretchCompliance": 1e-06,
+    "bendCompliance": 0.01,
+    "damping": 2,
+    "friction": 0.4
+  },
+  "dressForm": {
+    "enabled": true,
+    "contact": true,
+    "stand": true,
+    "bust": 920,
+    "waist": 720,
+    "hips": 960,
+    "neck": 360,
+    "shoulders": 380,
+    "height": 760,
+    "clearance": 3
+  },
+  "pieces": [
+    {
+      "id": "front",
+      "name": "Front panel",
+      "outline": [
+        [
+          -225,
+          300
+        ],
+        [
+          225,
+          300
+        ],
+        [
+          225,
+          -300
+        ],
+        [
+          -225,
+          -300
+        ]
+      ],
+      "translation": [
+        0,
+        34.4,
+        182.2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "pinTop": true
+    },
+    {
+      "id": "back",
+      "name": "Back panel",
+      "outline": [
+        [
+          -225,
+          300
+        ],
+        [
+          225,
+          300
+        ],
+        [
+          225,
+          -300
+        ],
+        [
+          -225,
+          -300
+        ]
+      ],
+      "translation": [
+        0,
+        34.4,
+        -182.2
+      ],
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "pinTop": true
+    }
+  ],
+  "seams": [
+    {
+      "id": "right",
+      "name": "Right side",
+      "a": "front",
+      "b": "back",
+      "startA": 0.21428571428571427,
+      "endA": 0.5,
+      "startB": 0.7142857142857143,
+      "endB": 0,
+      "reverse": true,
+      "enabled": true
+    },
+    {
+      "id": "left",
+      "name": "Left side",
+      "a": "front",
+      "b": "back",
+      "startA": 0.7142857142857143,
+      "endA": 0,
+      "startB": 0.21428571428571427,
+      "endB": 0.5,
+      "reverse": true,
+      "enabled": true
+    }
+  ]
+}

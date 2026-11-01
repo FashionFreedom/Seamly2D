@@ -1,0 +1,901 @@
+{
+  "all_loaded_meshed_finite_without_instability": true,
+  "results": [
+    {
+      "file": "01_dress_form.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": false,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": null,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": null,
+          "requested_steps": 60,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": null,
+          "requested_steps": 300,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": null,
+          "requested_steps": 2400,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        }
+      ],
+      "triangles": 0,
+      "vertices": 0,
+      "wall_ms": 0,
+      "sha256": "e213840710609b2cc3df1b12988d08742754f86f20729ae9cf7718d5b7f27b34"
+    },
+    {
+      "file": "02_free_fall.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": 200,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 51.09147644042969,
+          "maximum_speed_mm_s": 980.958878993988,
+          "mean_edge_strain": 1.2382864952087403e-07,
+          "minimum_y_mm": 148.9085235595703,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 699,
+          "maximum_speed_mm_s": 0.0015172865914792055,
+          "mean_edge_strain": 1.257658004760742e-07,
+          "minimum_y_mm": -499,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 699,
+          "maximum_speed_mm_s": 0.0015172865914792055,
+          "mean_edge_strain": 1.3008713722229005e-07,
+          "minimum_y_mm": -499,
+          "requested_steps": 180,
+          "simulated_seconds": 1.3833333333333333,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 699,
+          "maximum_speed_mm_s": 0.0015172865914792055,
+          "mean_edge_strain": 1.3008713722229005e-07,
+          "minimum_y_mm": -499,
+          "requested_steps": 1200,
+          "simulated_seconds": 1.3833333333333333,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 256,
+      "vertices": 145,
+      "wall_ms": 31,
+      "sha256": "fa4110f5730bdfa592770e86b29fc418641137751772c1fe077625006c7fa324"
+    },
+    {
+      "file": "03_suspended_panel.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": 100,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 48.61781311035156,
+          "maximum_speed_mm_s": 985.3525161743164,
+          "mean_edge_strain": 0.004856121323224324,
+          "minimum_y_mm": 52.33755874633789,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 552.2600708007812,
+          "maximum_speed_mm_s": 677.4202585220337,
+          "mean_edge_strain": 0.007130021118183634,
+          "minimum_y_mm": -308.60479736328125,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 581.7420043945312,
+          "maximum_speed_mm_s": 38.994718343019485,
+          "mean_edge_strain": 0.00671472503289358,
+          "minimum_y_mm": -309.2822570800781,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 580.3052978515625,
+          "maximum_speed_mm_s": 0.35268854117020965,
+          "mean_edge_strain": 0.0066926962793318195,
+          "minimum_y_mm": -309.368408203125,
+          "requested_steps": 1200,
+          "simulated_seconds": 6.033333333333317,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 1408,
+      "vertices": 737,
+      "wall_ms": 689,
+      "sha256": "4d911ae8a719e3632d5f38c7f4bf91c3d0927cfe01e7e22b874c6569120322cc"
+    },
+    {
+      "file": "04_geometric_pouch.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 15,
+      "physical": false,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 70,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": -53.89917755126953,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.21682531750676307,
+          "maximum_displacement_mm": 40.92283630371094,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0.020304304361343384,
+          "minimum_y_mm": -47.03787612915039,
+          "requested_steps": 60,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.01681445241609419,
+          "maximum_displacement_mm": 41.120819091796875,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0.002735483807486457,
+          "minimum_y_mm": -46.98516845703125,
+          "requested_steps": 300,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.0004433285060010596,
+          "maximum_displacement_mm": 41.42436981201172,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 6.648310132928797e-05,
+          "minimum_y_mm": -46.75426483154297,
+          "requested_steps": 2400,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        }
+      ],
+      "triangles": 960,
+      "vertices": 522,
+      "wall_ms": 58,
+      "sha256": "4c7f3503a36697357cd93f2205b6c6a2d16646814a73ea113f2493300d0f6829"
+    },
+    {
+      "file": "05_dress_form_draping.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 35,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 364.3999938964844,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.1298011560909084e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.44759576531621287,
+          "maximum_displacement_mm": 217.45175170898438,
+          "maximum_speed_mm_s": 1447.7591514587402,
+          "mean_edge_strain": 0.05195330421292717,
+          "minimum_y_mm": -198.11483764648438,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.46262677584117656,
+          "maximum_displacement_mm": 210.85426330566406,
+          "maximum_speed_mm_s": 82.0460096001625,
+          "mean_edge_strain": 0.0511765447267092,
+          "minimum_y_mm": -240.95436096191406,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.4624399321659586,
+          "maximum_displacement_mm": 210.86669921875,
+          "maximum_speed_mm_s": 2.5458030868321657,
+          "mean_edge_strain": 0.051242473418188224,
+          "minimum_y_mm": -241.09194946289062,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.46244014922822735,
+          "maximum_displacement_mm": 210.86676025390625,
+          "maximum_speed_mm_s": 0.20690125529654324,
+          "mean_edge_strain": 0.05124229657886133,
+          "minimum_y_mm": -241.0906982421875,
+          "requested_steps": 1200,
+          "simulated_seconds": 4.116666666666657,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 3840,
+      "vertices": 2018,
+      "wall_ms": 2281,
+      "sha256": "550f64e0bf590588c84a556558308f14d10f6097cc49f335591b0ddc1e9b4c38"
+    },
+    {
+      "file": "06_mesh_comparison_50mm.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 50,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 364.3999938964844,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.3579283991167622e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.9960352933355545,
+          "maximum_displacement_mm": 207.0717315673828,
+          "maximum_speed_mm_s": 2231.242895126343,
+          "mean_edge_strain": 0.044839325090569836,
+          "minimum_y_mm": -225.4043731689453,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.9537331099104799,
+          "maximum_displacement_mm": 203.06967163085938,
+          "maximum_speed_mm_s": 39.227817207574844,
+          "mean_edge_strain": 0.04308863242547358,
+          "minimum_y_mm": -235.0272216796875,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.9535200661882229,
+          "maximum_displacement_mm": 203.06968688964844,
+          "maximum_speed_mm_s": 0.5216306308284402,
+          "mean_edge_strain": 0.043088127708723466,
+          "minimum_y_mm": -235.00697326660156,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.9535196738520776,
+          "maximum_displacement_mm": 203.06973266601562,
+          "maximum_speed_mm_s": 0.34232038888148963,
+          "mean_edge_strain": 0.04308808087221076,
+          "minimum_y_mm": -235.00697326660156,
+          "requested_steps": 1200,
+          "simulated_seconds": 3.133333333333327,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 1280,
+      "vertices": 706,
+      "wall_ms": 582,
+      "sha256": "b3a7f21c7002be21009f8992f3ef0afe247a5e6876e4604621e69fecdbd6f5b1"
+    },
+    {
+      "file": "07_mesh_comparison_25mm.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 364.3999938964844,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.3114853960568788e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.5110418447544361,
+          "maximum_displacement_mm": 246.49578857421875,
+          "maximum_speed_mm_s": 1532.0314168930054,
+          "mean_edge_strain": 0.053948906242664234,
+          "minimum_y_mm": -199.92506408691406,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.36008378519498363,
+          "maximum_displacement_mm": 202.6325225830078,
+          "maximum_speed_mm_s": 106.24467581510544,
+          "mean_edge_strain": 0.04300587772407004,
+          "minimum_y_mm": -246.4061279296875,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.35994106620202276,
+          "maximum_displacement_mm": 202.30331420898438,
+          "maximum_speed_mm_s": 2.7354126796126366,
+          "mean_edge_strain": 0.04279787446082127,
+          "minimum_y_mm": -245.99610900878906,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.3599405003823904,
+          "maximum_displacement_mm": 202.30084228515625,
+          "maximum_speed_mm_s": 0.14720325998496264,
+          "mean_edge_strain": 0.04279665665731567,
+          "minimum_y_mm": -245.99545288085938,
+          "requested_steps": 1200,
+          "simulated_seconds": 4.233333333333324,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 5120,
+      "vertices": 2690,
+      "wall_ms": 3023,
+      "sha256": "6a6a411acae83b0282faa97984321e97303417d4cdac7da82d864fa300250f0a"
+    },
+    {
+      "file": "08_paused_seam.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 35,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 364.3999938964844,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.1298011560909084e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.27181074726276594,
+          "maximum_displacement_mm": 469.6199645996094,
+          "maximum_speed_mm_s": 5031.482696533203,
+          "mean_edge_strain": 0.05227662450913849,
+          "minimum_y_mm": -218.35366821289062,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.4030044952228369,
+          "maximum_displacement_mm": 211.35256958007812,
+          "maximum_speed_mm_s": 1845.0239896774292,
+          "mean_edge_strain": 0.02359614022523979,
+          "minimum_y_mm": -271.4142150878906,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.4040160557188624,
+          "maximum_displacement_mm": 211.2510223388672,
+          "maximum_speed_mm_s": 84.0422511100769,
+          "mean_edge_strain": 0.023154864158949566,
+          "minimum_y_mm": -282.3930969238281,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.4042123470784283,
+          "maximum_displacement_mm": 211.25962829589844,
+          "maximum_speed_mm_s": 0.5680714966729283,
+          "mean_edge_strain": 0.023054508797702242,
+          "minimum_y_mm": -281.8120422363281,
+          "requested_steps": 1200,
+          "simulated_seconds": 7.749999999999978,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 3840,
+      "vertices": 2018,
+      "wall_ms": 3641,
+      "sha256": "01f3e0c03ee355272085862d40543b17ab29d1d6e4ec36ba4e27eb03b3947d44"
+    },
+    {
+      "file": "09_four_flared_panels.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 35,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 40.794913878807655,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": -376.7438049316406,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.042203931142187054,
+          "maximum_displacement_mm": 99.8141098022461,
+          "maximum_speed_mm_s": 1175.8114099502563,
+          "mean_edge_strain": 0.025855898186211337,
+          "minimum_y_mm": -364.8521423339844,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.04292744726745486,
+          "maximum_displacement_mm": 64.67134094238281,
+          "maximum_speed_mm_s": 150.58770775794983,
+          "mean_edge_strain": 0.023672210096747956,
+          "minimum_y_mm": -375.3186950683594,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.04198612371940796,
+          "maximum_displacement_mm": 64.65260314941406,
+          "maximum_speed_mm_s": 11.840790510177612,
+          "mean_edge_strain": 0.023684290418692674,
+          "minimum_y_mm": -374.9314880371094,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.0420801044635412,
+          "maximum_displacement_mm": 64.65081787109375,
+          "maximum_speed_mm_s": 0.7098540081642568,
+          "mean_edge_strain": 0.02369160148628515,
+          "minimum_y_mm": -375.01531982421875,
+          "requested_steps": 1200,
+          "simulated_seconds": 5.416666666666653,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 2176,
+      "vertices": 1204,
+      "wall_ms": 1444,
+      "sha256": "d009905482d127938a32cda39547e030f24050b22b2abcc514cdc41078b0aa7f"
+    },
+    {
+      "file": "10_concave_outline.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0,
+          "minimum_y_mm": 120,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 53.1783447265625,
+          "maximum_speed_mm_s": 1083.0222368240356,
+          "mean_edge_strain": 0.0037737303155953262,
+          "minimum_y_mm": 71.6744155883789,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 335.6126708984375,
+          "maximum_speed_mm_s": 1093.9786434173584,
+          "mean_edge_strain": 0.004874228892092249,
+          "minimum_y_mm": -156.9759063720703,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 437.40283203125,
+          "maximum_speed_mm_s": 100.80214589834213,
+          "mean_edge_strain": 0.005161645954585506,
+          "minimum_y_mm": -188.7525177001953,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0,
+          "maximum_displacement_mm": 444.5013427734375,
+          "maximum_speed_mm_s": 0.3902871685568243,
+          "mean_edge_strain": 0.005168486858215135,
+          "minimum_y_mm": -188.44766235351562,
+          "requested_steps": 1200,
+          "simulated_seconds": 7.416666666666646,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 496,
+      "vertices": 279,
+      "wall_ms": 288,
+      "sha256": "434ef4dfc6402562930b2bbe8f71684f84855b0c0f018cf87e47a21569a4e117"
+    },
+    {
+      "file": "11_STRESS_wrong_direction.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 35,
+      "physical": false,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 433.9300496954667,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.2088186886845802e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 7.419637504376863,
+          "maximum_displacement_mm": 354.8912353515625,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0.1267242974975482,
+          "minimum_y_mm": -243.6744384765625,
+          "requested_steps": 60,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 1.7457480233554776,
+          "maximum_displacement_mm": 361.6760559082031,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0.0490780157752994,
+          "minimum_y_mm": -234.26055908203125,
+          "requested_steps": 300,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.3470386579926861,
+          "maximum_displacement_mm": 369.87774658203125,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 0.01260693637388093,
+          "minimum_y_mm": -119.68040466308594,
+          "requested_steps": 2400,
+          "simulated_seconds": 0,
+          "status": "Geometric assembly",
+          "stopped": false
+        }
+      ],
+      "triangles": 3072,
+      "vertices": 1634,
+      "wall_ms": 364,
+      "sha256": "662abf8755995cb7e82fc1628baee613cfa66d1af5d591a1ae356b0024964e05"
+    },
+    {
+      "file": "12_endpoints_near_corners.sm3d",
+      "loaded_and_meshed": true,
+      "mesh_mm": 25,
+      "physical": true,
+      "snapshots": [
+        {
+          "finite": true,
+          "gap_mm": 364.4013671875,
+          "maximum_displacement_mm": 0,
+          "maximum_speed_mm_s": 0,
+          "mean_edge_strain": 1.3114853960568788e-08,
+          "minimum_y_mm": -265.6000061035156,
+          "requested_steps": 0,
+          "simulated_seconds": 0,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.8384039745265,
+          "maximum_displacement_mm": 249.05772399902344,
+          "maximum_speed_mm_s": 1869.8276281356812,
+          "mean_edge_strain": 0.05447989269388748,
+          "minimum_y_mm": -197.55844116210938,
+          "requested_steps": 6,
+          "simulated_seconds": 0.09999999999999999,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.6943732557395449,
+          "maximum_displacement_mm": 203.2857208251953,
+          "maximum_speed_mm_s": 112.01030761003494,
+          "mean_edge_strain": 0.043362148258774005,
+          "minimum_y_mm": -246.2460174560547,
+          "requested_steps": 60,
+          "simulated_seconds": 1.0000000000000013,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.6925188840041585,
+          "maximum_displacement_mm": 202.98867797851562,
+          "maximum_speed_mm_s": 1.5244721435010433,
+          "mean_edge_strain": 0.04318926501713815,
+          "minimum_y_mm": -245.76454162597656,
+          "requested_steps": 180,
+          "simulated_seconds": 2.9999999999999942,
+          "status": "Draping",
+          "stopped": false
+        },
+        {
+          "finite": true,
+          "gap_mm": 0.6925212593951773,
+          "maximum_displacement_mm": 202.98561096191406,
+          "maximum_speed_mm_s": 0.43666374403983355,
+          "mean_edge_strain": 0.0431884926759073,
+          "minimum_y_mm": -245.76268005371094,
+          "requested_steps": 1200,
+          "simulated_seconds": 3.8333333333333246,
+          "status": "At rest (motion threshold)",
+          "stopped": true
+        }
+      ],
+      "triangles": 5120,
+      "vertices": 2690,
+      "wall_ms": 2773,
+      "sha256": "1c9f6ef5cbe581c362df7d75a8f675728020f7a2f93bc961845ddf35fbf075f8"
+    }
+  ],
+  "environment": "macOS arm64, Seamly3D v4 model from workspace branch feat/seamly3d",
+  "step_semantics": "physical: fixed 1/60 s frames; geometric: constraint iterations; stops may occur before requested step count",
+  "native_metal_captures": [
+    {
+      "file": "01_dress_form.sm3d",
+      "steps": 0,
+      "exit_code": 0
+    },
+    {
+      "file": "02_free_fall.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "03_suspended_panel.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "04_geometric_pouch.sm3d",
+      "steps": 300,
+      "exit_code": 0
+    },
+    {
+      "file": "05_dress_form_draping.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "06_mesh_comparison_50mm.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "07_mesh_comparison_25mm.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "08_paused_seam.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "09_four_flared_panels.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "10_concave_outline.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    },
+    {
+      "file": "11_STRESS_wrong_direction.sm3d",
+      "steps": 300,
+      "exit_code": 0
+    },
+    {
+      "file": "12_endpoints_near_corners.sm3d",
+      "steps": 60,
+      "exit_code": 0
+    }
+  ],
+  "english_translation": {
+    "simulation_inputs_unchanged": true,
+    "note": "Filenames and source/piece/seam labels translated to English. Solver checkpoint data remains valid: every simulation input was compared against the previous fixture. All twelve renamed projects were reopened and rendered with Metal; the included previews were regenerated with English labels."
+  }
+}

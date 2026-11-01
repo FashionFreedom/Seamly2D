@@ -1,0 +1,211 @@
+{
+  "format": "seamly3d",
+  "version": 4,
+  "units": "mm",
+  "source": "Synthetic demo: four flared panels, not a validated sewing pattern",
+  "meshSize": 35,
+  "simulation": {
+    "physical": true,
+    "density": 200,
+    "stretchCompliance": 1e-06,
+    "bendCompliance": 0.01,
+    "damping": 2,
+    "friction": 0.4
+  },
+  "dressForm": {
+    "enabled": true,
+    "contact": true,
+    "stand": true,
+    "bust": 920,
+    "waist": 720,
+    "hips": 960,
+    "neck": 360,
+    "shoulders": 380,
+    "height": 760,
+    "clearance": 3
+  },
+  "pieces": [
+    {
+      "id": "panel-0",
+      "name": "Front · flared panel",
+      "outline": [
+        [
+          -100,
+          200
+        ],
+        [
+          100,
+          200
+        ],
+        [
+          180,
+          -200
+        ],
+        [
+          -180,
+          -200
+        ]
+      ],
+      "translation": [
+        0.0,
+        -200,
+        165.0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "pinTop": true
+    },
+    {
+      "id": "panel-1",
+      "name": "Right · flared panel",
+      "outline": [
+        [
+          -100,
+          200
+        ],
+        [
+          100,
+          200
+        ],
+        [
+          180,
+          -200
+        ],
+        [
+          -180,
+          -200
+        ]
+      ],
+      "translation": [
+        165.0,
+        -200,
+        1.0103336092965664e-14
+      ],
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "pinTop": true
+    },
+    {
+      "id": "panel-2",
+      "name": "Back · flared panel",
+      "outline": [
+        [
+          -100,
+          200
+        ],
+        [
+          100,
+          200
+        ],
+        [
+          180,
+          -200
+        ],
+        [
+          -180,
+          -200
+        ]
+      ],
+      "translation": [
+        2.0206672185931328e-14,
+        -200,
+        -165.0
+      ],
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "pinTop": true
+    },
+    {
+      "id": "panel-3",
+      "name": "Left · flared panel",
+      "outline": [
+        [
+          -100,
+          200
+        ],
+        [
+          100,
+          200
+        ],
+        [
+          180,
+          -200
+        ],
+        [
+          -180,
+          -200
+        ]
+      ],
+      "translation": [
+        -165.0,
+        -200,
+        -3.031000827889699e-14
+      ],
+      "rotation": [
+        0,
+        270,
+        0
+      ],
+      "pinTop": true
+    }
+  ],
+  "seams": [
+    {
+      "id": "side-0",
+      "name": "Join 1",
+      "a": "panel-0",
+      "b": "panel-1",
+      "startA": 0.1453654103266168,
+      "endA": 0.4418538358693533,
+      "startB": 0.7035115744572635,
+      "endB": 0,
+      "reverse": true,
+      "enabled": true
+    },
+    {
+      "id": "side-1",
+      "name": "Join 2",
+      "a": "panel-1",
+      "b": "panel-2",
+      "startA": 0.1453654103266168,
+      "endA": 0.4418538358693533,
+      "startB": 0.7035115744572635,
+      "endB": 0,
+      "reverse": true,
+      "enabled": true
+    },
+    {
+      "id": "side-2",
+      "name": "Join 3",
+      "a": "panel-2",
+      "b": "panel-3",
+      "startA": 0.1453654103266168,
+      "endA": 0.4418538358693533,
+      "startB": 0.7035115744572635,
+      "endB": 0,
+      "reverse": true,
+      "enabled": true
+    },
+    {
+      "id": "side-3",
+      "name": "Join 4",
+      "a": "panel-3",
+      "b": "panel-0",
+      "startA": 0.1453654103266168,
+      "endA": 0.4418538358693533,
+      "startB": 0.7035115744572635,
+      "endB": 0,
+      "reverse": true,
+      "enabled": true
+    }
+  ]
+}

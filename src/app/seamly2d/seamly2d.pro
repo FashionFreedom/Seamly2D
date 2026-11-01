@@ -156,6 +156,12 @@ unix{
         seamlyme.path = $$MACOS_DIR
         seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$${MACOS_DIR}/seamlyme
 
+        # Keep the companion's Qt Quick frameworks and QML imports together.
+        seamly3d.path = Contents/Helpers
+        seamly3d.files += $${OUT_PWD}/../seamly3d/$${DESTDIR}/seamly3d.app
+        PRE_TARGETDEPS += $${OUT_PWD}/../seamly3d/$${DESTDIR}/seamly3d.app/$${MACOS_DIR}/seamly3d \
+                          $$PWD/../../../dist/macx/seamly2d/qt.conf
+
         # Utility pdftops need for saving a layout image to PS and EPS formats.
         xpdf.path = $$MACOS_DIR
         xpdf.files += $${PWD}/../../../dist/macx/bin64/pdftops
@@ -164,6 +170,9 @@ unix{
         ICON = ../../../dist/seamly2d.icns
 
         QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/info.plist
+
+        qt_configuration.path = $$RESOURCES_DIR
+        qt_configuration.files = $$PWD/../../../dist/macx/seamly2d/qt.conf
 
         # Copy to bundle multisize measurements files
         multisize.path = $${RESOURCES_DIR}/tables/multisize
@@ -183,10 +192,12 @@ unix{
         icns_resources.files += $$PWD/../../../dist/macx/2d_file.icns
 
         QMAKE_BUNDLE_DATA += \
+            qt_configuration \
             templates \
             multisize \
             label \
             seamlyme \
+            seamly3d \
             xpdf \
             icns_resources
     }
@@ -356,11 +367,13 @@ macx{
 
     !macSign {
         # run macdeployqt to include all qt libraries in packet
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += DYLD_FRAMEWORK_PATH=$$shell_quote($$[QT_INSTALL_LIBS]) $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -libpath=$$[QT_INSTALL_LIBS] -no-codesign && \
+            codesign --force --deep --sign - $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app && \
+            codesign --verify --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     } else {
         # we need to manually sign with codesign --deep as pdftops otherwise will not get signed by macdeployqt
         # we need --force as seamlyme is already signed, but we need to resign it
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += DYLD_FRAMEWORK_PATH=$$shell_quote($$[QT_INSTALL_LIBS]) $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -libpath=$$[QT_INSTALL_LIBS] -no-codesign &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }

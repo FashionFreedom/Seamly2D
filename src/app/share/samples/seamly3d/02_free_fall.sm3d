@@ -1,0 +1,63 @@
+{
+  "format": "seamly3d",
+  "version": 4,
+  "units": "mm",
+  "source": "Synthetic demo: free fall and floor contact",
+  "meshSize": 25,
+  "simulation": {
+    "physical": true,
+    "density": 200,
+    "stretchCompliance": 1e-06,
+    "bendCompliance": 0.01,
+    "damping": 0,
+    "friction": 0.4
+  },
+  "dressForm": {
+    "enabled": false,
+    "contact": true,
+    "stand": true,
+    "bust": 920,
+    "waist": 720,
+    "hips": 960,
+    "neck": 360,
+    "shoulders": 380,
+    "height": 760,
+    "clearance": 3
+  },
+  "pieces": [
+    {
+      "id": "sheet",
+      "name": "Free panel 200 × 200 mm",
+      "outline": [
+        [
+          -100,
+          100
+        ],
+        [
+          100,
+          100
+        ],
+        [
+          100,
+          -100
+        ],
+        [
+          -100,
+          -100
+        ]
+      ],
+      "translation": [
+        0,
+        200,
+        0
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "pinTop": false
+    }
+  ],
+  "seams": []
+}

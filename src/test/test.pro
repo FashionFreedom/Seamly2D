@@ -4,4 +4,5 @@ SUBDIRS = \
     ParserTest \
     Seamly2DTest \
     TranslationsTest \
-    CollectionTest
+    CollectionTest \
+    Seamly3DTest

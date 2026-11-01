@@ -1,0 +1,141 @@
+{
+  "format": "seamly3d",
+  "version": 4,
+  "units": "mm",
+  "source": "Synthetic demo: open pouch, geometric assembly",
+  "meshSize": 15,
+  "simulation": {
+    "physical": false,
+    "density": 200,
+    "stretchCompliance": 1e-06,
+    "bendCompliance": 0.01,
+    "damping": 2,
+    "friction": 0.4
+  },
+  "dressForm": {
+    "enabled": false,
+    "contact": true,
+    "stand": true,
+    "bust": 920,
+    "waist": 720,
+    "hips": 960,
+    "neck": 360,
+    "shoulders": 380,
+    "height": 760,
+    "clearance": 3
+  },
+  "pieces": [
+    {
+      "id": "front",
+      "name": "Pouch front",
+      "outline": [
+        [
+          -45,
+          50
+        ],
+        [
+          45,
+          50
+        ],
+        [
+          55,
+          30
+        ],
+        [
+          55,
+          -35
+        ],
+        [
+          35,
+          -55
+        ],
+        [
+          -35,
+          -55
+        ],
+        [
+          -55,
+          -35
+        ],
+        [
+          -55,
+          30
+        ]
+      ],
+      "translation": [
+        0,
+        0,
+        35
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "pinTop": false
+    },
+    {
+      "id": "back",
+      "name": "Pouch back",
+      "outline": [
+        [
+          -45,
+          50
+        ],
+        [
+          45,
+          50
+        ],
+        [
+          55,
+          30
+        ],
+        [
+          55,
+          -35
+        ],
+        [
+          35,
+          -55
+        ],
+        [
+          -35,
+          -55
+        ],
+        [
+          -55,
+          -35
+        ],
+        [
+          -55,
+          30
+        ]
+      ],
+      "translation": [
+        0,
+        0,
+        -35
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "pinTop": false
+    }
+  ],
+  "seams": [
+    {
+      "id": "sides",
+      "name": "Sides and bottom, open top",
+      "a": "front",
+      "b": "back",
+      "startA": 0.23000849122262326,
+      "endA": 0,
+      "startB": 0.23000849122262326,
+      "endB": 0,
+      "reverse": false,
+      "enabled": true
+    }
+  ]
+}

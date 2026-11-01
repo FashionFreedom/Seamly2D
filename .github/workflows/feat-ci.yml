@@ -41,7 +41,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qtmultimedia
+          modules: qtmultimedia qtquick3d qtshadertools qtquicktimeline
 
       - name: linux-test - install build dependencies
         run: |
@@ -95,7 +95,7 @@ jobs:
           cache: true
           install-deps: nosudo
           setup-python: false
-          modules: qtmultimedia
+          modules: qtmultimedia qtquick3d qtshadertools qtquicktimeline
 
       - name: appimage - update version
         run: |
@@ -103,6 +103,7 @@ jobs:
 
       - name: appimage - build Seamly2D appimage
         env:
+          QML_SOURCES_PATHS: ${{ github.workspace }}/src/app/seamly3d
           OUTPUT: Seamly2D-x86_64.AppImage
         run: |
           qmake -config release CONFIG+=noTests
@@ -142,7 +143,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qtmultimedia
+          modules: qtmultimedia qtquick3d qtshadertools qtquicktimeline
 
       - name: macOS - update version
         run: |
@@ -195,7 +196,7 @@ jobs:
           version: ${{ env.QT_VERSION }}
           arch: ${{ matrix.qt-arch }}
           cache: true
-          modules: qtmultimedia
+          modules: qtmultimedia qtquick3d qtshadertools qtquicktimeline
 
       - name: windows - update version
         shell: bash
@@ -215,6 +216,7 @@ jobs:
           mkdir windows-build
           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination windows-build -Recurse
           Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination windows-build -Recurse -Force
+          Copy-Item -Path 'src\app\seamly3d\bin\*' -Destination windows-build -Recurse -Force
           Copy-Item -Path dist\seamly2d-installer.nsi -Destination windows-build
           cd windows-build
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
