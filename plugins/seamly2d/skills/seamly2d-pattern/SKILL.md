@@ -19,8 +19,20 @@ edits, so inspect `get_history` before changing unrelated work.
 
 Prefer dedicated point, line, curve, arc and variable tools for ordinary drafting.
 Use object IDs from reads; IDs and names are different. For other tool types,
-pieces, seam allowances, internal paths, groups, images or metadata, read
+internal paths, groups, images or metadata, read
 [advanced editing](references/advanced.md). Keep dependency order in calculations.
+
+Use `create_piece`, `get_piece`, `update_piece`, `delete_piece` and
+`set_seam_allowance` for pieces and margins. Contours reference calculation IDs;
+per-node margins reference modeling `node_id`s from `get_piece`.
+
+Read `get_measurements_file` before `write_measurements_file`; existing files
+require their latest `file_token` and `overwrite=true`. File writes persist and
+are not undone by pattern undo. Linking/detaching tables and `set_gradation` are
+undoable pattern edits. Gradation size/height arguments are in centimetres;
+measurement values and file base dimensions use the table's unit. Close a table
+in SeamlyMe before writing it if locked. See the advanced reference for details.
+If status reports `needs_sync`, read and reattach the table before drawing edits.
 
 Verify the resulting objects/formulas and requested dimensions using the MCP
 read tools. Save/export only to the user's intended destination. Replacing unsaved work or overwriting a different existing

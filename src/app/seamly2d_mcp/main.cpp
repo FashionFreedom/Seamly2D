@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
     QCoreApplication::setApplicationName(QStringLiteral("seamly2d-mcp"));
-    QCoreApplication::setApplicationVersion(QStringLiteral("0.3.0"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("0.4.0"));
     QCommandLineParser parser;
     parser.setApplicationDescription(QStringLiteral("Local Seamly2D MCP stdio adapter. Requires the enabled application bridge."));
     parser.addHelpOption();

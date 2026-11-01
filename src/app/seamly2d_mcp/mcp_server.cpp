@@ -21,7 +21,7 @@ const QString skillUri = QStringLiteral("skill://seamly2d-pattern/SKILL.md");
 const QString instructions = QStringLiteral("Control the explicitly enabled local Seamly2D app. Read summary before edits and pass its latest state_token. Never blindly retry an edit after timeout: read state. Undo/redo includes manual edits. Use dedicated tools for common geometry; use validated create_tool/apply_pattern_xml for other persisted pattern features. Read the pattern skill for advanced edits. Save/export only to intended paths.");
 struct RpcError { int code; QString message; QJsonObject data; };
 struct ApplicationError : std::runtime_error { using std::runtime_error::runtime_error; };
-QJsonObject serverInfo() { return {{"name", "seamly2d"}, {"version", "0.3.0"}}; }
+QJsonObject serverInfo() { return {{"name", "seamly2d"}, {"version", "0.4.0"}}; }
 QJsonArray versions() { return {"2026-07-28", "2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"}; }
 QByteArray asset(const QString &name)
 {

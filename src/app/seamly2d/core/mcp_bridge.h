@@ -29,6 +29,7 @@ private:
     void acceptConnections();
     QJsonObject execute(const QString &method, const QJsonObject &arguments);
     QString stateToken() const;
+    QString measurementsPath() const;
     QByteArray validateDocument(const QByteArray &xml, const QString &origin, bool allowConversion = false) const;
     void restoreDocument(const QByteArray &xml, const QString &activeBlock);
     void commitDocument(const QByteArray &xml, const QString &label);

@@ -1122,5 +1122,541 @@
       "idempotentHint": false,
       "openWorldHint": true
     }
+  },
+  {
+    "name": "get_measurements_status",
+    "description": "Read attached measurement path/type, file token, active gradation and allowed sizes/heights. Gradation sizes/heights are in cm.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "required": [],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_measurements_file",
+    "description": "Read a .smis/.smms file and calculated entries without changing its source. Returns file_token. Optional evaluation size/height use file units.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "size": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1000000
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "write_measurements_file",
+    "description": "Create or update a native measurement file. Existing files require file_token and overwrite=true; respect SeamlyMe locks. Prevalidate attached pattern and reload after a successful write. File edits are not pattern undo operations.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "file_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest file_token from reading this measurement file."
+        },
+        "overwrite": {
+          "type": "boolean"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "individual",
+            "multisize"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "enum": [
+            "cm",
+            "mm",
+            "inch"
+          ]
+        },
+        "base_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2000
+        },
+        "base_height": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3000
+        },
+        "measurements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              },
+              "formula": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "base": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 1000000
+              },
+              "size_increase": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 1000000
+              },
+              "height_increase": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 1000000
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 4096
+              },
+              "full_name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 256
+        },
+        "remove": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "state_token",
+        "path",
+        "measurements"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "attach_measurements",
+    "description": "Attach a native measurement file by absolute path and latest file_token; validate dependencies and make the link change undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "file_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest file_token from reading this measurement file."
+        }
+      },
+      "required": [
+        "state_token",
+        "path",
+        "file_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "detach_measurements",
+    "description": "Detach measurements as one undoable change; reject if formulas still need them.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        }
+      },
+      "required": [
+        "state_token"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_gradation",
+    "description": "Select and persist active multisize size/height in cm, validate geometry, and support undo/redo. Read allowed values first.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "size": {
+          "type": "integer",
+          "minimum": 22,
+          "maximum": 72
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 50,
+          "maximum": 200
+        }
+      },
+      "required": [
+        "state_token",
+        "size",
+        "height"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "get_piece",
+    "description": "Read piece properties, contour nodes with source object IDs, seam-allowance formulas and calculated outlines in document units.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "create_piece",
+    "description": "Create a piece from ordered calculation point/curve IDs in the active draft block; allocate modeling nodes automatically. Undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "object_id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "reverse": {
+                "type": "boolean"
+              },
+              "excluded": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "object_id"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 256
+        },
+        "in_layout": {
+          "type": "boolean"
+        },
+        "seam_allowance": {
+          "type": "boolean"
+        },
+        "width": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "forbid_flipping": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token",
+        "name",
+        "nodes"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "update_piece",
+    "description": "Update piece name, layout/flipping/lock flags or ordered contour; automatically allocate modeling nodes and validate dependencies. Undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "object_id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "reverse": {
+                "type": "boolean"
+              },
+              "excluded": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "object_id"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 256
+        },
+        "in_layout": {
+          "type": "boolean"
+        },
+        "forbid_flipping": {
+          "type": "boolean"
+        },
+        "locked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state_token",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "delete_piece",
+    "description": "Delete a piece and remove its unshared contour modeling nodes, preserving construction geometry. Undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "state_token",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
+  },
+  {
+    "name": "set_seam_allowance",
+    "description": "Set piece seam allowance enabled/built-in flags, global width formula and optional per-node before/after widths. Widths use document units; validate before commit; undoable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "state_token": {
+          "type": "string",
+          "minLength": 64,
+          "maxLength": 64,
+          "description": "Latest state_token from a read."
+        },
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "built_in": {
+          "type": "boolean"
+        },
+        "width": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1024
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "node_id": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2147483647
+              },
+              "before": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              },
+              "after": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 1024
+              }
+            },
+            "required": [
+              "node_id"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "state_token",
+        "id"
+      ],
+      "additionalProperties": false
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": false
+    }
   }
 ]

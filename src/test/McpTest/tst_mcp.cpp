@@ -10,6 +10,7 @@
 #include <QLibraryInfo>
 #include <QLocalServer>
 #include <QLocalSocket>
+#include <QLockFile>
 #include <QProcess>
 #include <QProcessEnvironment>
 #include <QTemporaryDir>
@@ -194,6 +195,10 @@ private slots:
     void applicationIntegration();
     void advancedOperations_data();
     void advancedOperations();
+    void measurementFiles_data();
+    void measurementFiles();
+    void piecesAndSeamAllowances_data();
+    void piecesAndSeamAllowances();
     void modernProtocol();
     void skillsAndResources();
 };
@@ -713,6 +718,230 @@ void McpTest::advancedOperations()
     QFile original(session.patternPath);
     QVERIFY(original.open(QIODevice::ReadOnly));
     QCOMPARE(original.readAll(), document);
+}
+
+void McpTest::measurementFiles_data()
+{
+    QTest::addColumn<QString>("unit"); QTest::addColumn<bool>("multi"); QTest::addColumn<QString>("patternUnit");
+    QTest::newRow("individual-cm") << QString("cm") << false << QString("cm");
+    QTest::newRow("individual-mm") << QString("mm") << false << QString("cm");
+    QTest::newRow("individual-inch") << QString("inch") << false << QString("cm");
+    QTest::newRow("multisize-cm") << QString("cm") << true << QString("cm");
+    QTest::newRow("multisize-mm") << QString("mm") << true << QString("cm");
+    QTest::newRow("multisize-cm-mm-pattern") << QString("cm") << true << QString("mm");
+    QTest::newRow("multisize-mm-mm-pattern") << QString("mm") << true << QString("mm");
+}
+
+void McpTest::measurementFiles()
+{
+    const auto app = qEnvironmentVariable("SEAMLY_MCP_TEST_APP");
+    if (app.isEmpty()) QSKIP("Set SEAMLY_MCP_TEST_APP to run against the built Qt app.");
+    QFETCH(QString, unit); QFETCH(bool, multi); QFETCH(QString, patternUnit);
+    ApplicationSession session;
+    auto model = fixture; model.replace("<unit>cm</unit>", "<unit>" + patternUnit.toUtf8() + "</unit>");
+    QVERIFY2(session.start(app, model), qPrintable(session.error));
+    auto &client = session.client;
+    const auto data = [](const QJsonObject &reply) { return reply.value("structuredContent").toObject(); };
+    const auto success = [](const QJsonObject &reply) { return reply.value("isError") == QJsonValue(false); };
+    const auto currentToken = [&]() { return data(client.call("get_pattern_summary")).value("state_token"); };
+    const auto edit = [&](const QString &name, QJsonObject args = {}) { args.insert("state_token", currentToken()); return client.call(name, args); };
+    const auto path = session.directory.filePath(multi ? "body.smms" : "body.smis");
+    const double factor = unit == "mm" ? 10 : unit == "inch" ? 1 / 2.54 : 1;
+    const auto entries = [&](double waist)
+    {
+        return multi ? QJsonArray{QJsonObject{{"name", "@waist"}, {"base", waist * factor}, {"size_increase", 4 * factor}, {"height_increase", 2 * factor}},
+                                  QJsonObject{{"name", "@half"}, {"base", waist * factor / 2}}}
+                     : QJsonArray{QJsonObject{{"name", "@waist"}, {"formula", QString::number(waist * factor, 'g', 17)}},
+                                  QJsonObject{{"name", "@half"}, {"formula", "@waist/2"}}};
+    };
+    QJsonObject create{{"path", path}, {"type", multi ? "multisize" : "individual"}, {"unit", unit}, {"measurements", entries(80)}};
+    if (multi) { create.insert("base_size", 44 * factor); create.insert("base_height", 176 * factor); }
+    auto reply = edit("write_measurements_file", create);
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QCOMPARE(data(reply).value("undoable"), QJsonValue(false));
+    const auto readBytes = [&]() { QFile file(path); if (!file.open(QIODevice::ReadOnly)) return QByteArray{}; return file.readAll(); };
+    const auto original = readBytes(); QVERIFY(!original.isEmpty());
+    reply = client.call("get_measurements_file", {{"path", path}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    auto fileToken = data(reply).value("file_token");
+    QCOMPARE(data(reply).value("measurements").toArray().size(), 2);
+    QVERIFY(std::abs(data(reply).value("measurements").toArray().at(0).toObject().value("value").toDouble() - 80 * factor) < 1e-7);
+    QCOMPARE(readBytes(), original);
+    QJsonObject update{{"path", path}, {"overwrite", true}, {"file_token", QString(64, 'a')}, {"measurements", entries(100)}};
+    QCOMPARE(edit("write_measurements_file", update).value("isError"), QJsonValue(true));
+    QCOMPARE(readBytes(), original);
+    update.insert("file_token", fileToken);
+    {
+        const auto lockPath = QFileInfo(path).dir().filePath("." + QFileInfo(path).fileName() + ".locked");
+        QLockFile lock(lockPath); lock.setStaleLockTime(0); QVERIFY(lock.tryLock());
+        QCOMPARE(edit("write_measurements_file", update).value("isError"), QJsonValue(true));
+        QCOMPARE(readBytes(), original);
+    }
+    reply = edit("attach_measurements", {{"path", path}, {"file_token", fileToken}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QCOMPARE(data(reply).value("type"), QJsonValue(multi ? "multisize" : "individual"));
+    QCOMPARE(readBytes(), original);
+    reply = edit("create_point", {{"name", "Measured"}, {"base_point_id", 1}, {"length", "@waist/2"}, {"angle", "0"}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    const int pointId = data(reply).value("object").toObject().value("id").toInt();
+    const auto pointX = [&]() { return data(client.call("get_object", {{"id", pointId}})).value("geometry").toObject().value("x").toDouble(); };
+    const auto expectedX = [&](double waistCm) { return 10 + waistCm * (patternUnit == "mm" ? 10 : 1) / 2; };
+    QVERIFY(std::abs(pointX() - expectedX(80)) < 1e-7);
+    if (multi)
+    {
+        QCOMPARE(data(client.call("get_measurements_status")).value("active_size"), QJsonValue(44));
+        reply = edit("set_gradation", {{"size", 46}, {"height", 182}});
+        QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+        QCOMPARE(data(reply).value("active_size"), QJsonValue(46));
+        QCOMPARE(data(reply).value("active_height"), QJsonValue(182));
+        QVERIFY(std::abs(pointX() - expectedX(86)) < 1e-7);
+        QCOMPARE(edit("set_gradation", {{"size", 45}, {"height", 182}}).value("isError"), QJsonValue(true));
+        QVERIFY(success(edit("undo"))); QVERIFY(std::abs(pointX() - expectedX(80)) < 1e-7);
+        QVERIFY(success(edit("redo"))); QVERIFY(std::abs(pointX() - expectedX(86)) < 1e-7);
+    }
+    else QCOMPARE(edit("set_gradation", {{"size", 46}, {"height", 182}}).value("isError"), QJsonValue(true));
+    const auto historyIndex = data(client.call("get_history")).value("index");
+    reply = edit("write_measurements_file", update);
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QCOMPARE(data(client.call("get_history")).value("index"), historyIndex);
+    QCOMPARE(data(client.call("get_measurements_status")).value("needs_sync"), QJsonValue(false));
+    QVERIFY(std::abs(pointX() - expectedX(multi ? 106 : 100)) < 1e-7);
+    fileToken = data(reply).value("file_token");
+    auto edited = readBytes(); QVERIFY(edited != original);
+    QCOMPARE(edit("write_measurements_file", update).value("isError"), QJsonValue(true));
+    update.insert("file_token", fileToken); update.insert("measurements", QJsonArray{}); update.insert("remove", QJsonArray{"@waist"});
+    QCOMPARE(edit("write_measurements_file", update).value("isError"), QJsonValue(true));
+    QCOMPARE(readBytes(), edited);
+    if (!multi)
+    {
+        update.remove("remove"); update.insert("measurements", QJsonArray{QJsonObject{{"name", "@waist"}, {"formula", "undefined_measurement"}}});
+        QCOMPARE(edit("write_measurements_file", update).value("isError"), QJsonValue(true));
+        QCOMPARE(readBytes(), edited);
+    }
+    {
+        QFile external(path); QVERIFY(external.open(QIODevice::Append)); QCOMPARE(external.write("\n"), 1); external.close();
+        edited += '\n';
+        QTRY_COMPARE_WITH_TIMEOUT(data(client.call("get_measurements_status")).value("needs_sync"), QJsonValue(true), 3000);
+        const auto stale = edit("create_point", {{"name", "Unsynced"}, {"base_point_id", 1}, {"length", "1"}, {"angle", "0"}});
+        QVERIFY(stale.value("isError").toBool());
+        QVERIFY(stale.value("content").toArray().at(0).toObject().value("text").toString().contains("changed externally"));
+        const auto freshToken = data(client.call("get_measurements_file", {{"path", path}})).value("file_token");
+        reply = edit("attach_measurements", {{"path", path}, {"file_token", freshToken}});
+        QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+        QCOMPARE(data(reply).value("needs_sync"), QJsonValue(false));
+        QCOMPARE(readBytes(), edited);
+    }
+    const auto saved = session.directory.filePath("measured.sm2d");
+    QVERIFY(success(edit("save_pattern", {{"path", saved}})));
+    QVERIFY(success(edit("close_pattern")));
+    reply = edit("open_pattern", {{"path", saved}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY(std::abs(pointX() - expectedX(multi ? 106 : 100)) < 1e-7);
+    QCOMPARE(readBytes(), edited);
+    if (multi)
+    {
+        QFile savedFile(saved); QVERIFY(savedFile.open(QIODevice::ReadOnly));
+        ApplicationSession reopened;
+        QVERIFY(QFile::copy(path, reopened.directory.filePath(QFileInfo(path).fileName())));
+        QVERIFY2(reopened.start(app, savedFile.readAll()), qPrintable(reopened.error));
+        const auto statusReply = reopened.client.call("get_measurements_status");
+        QVERIFY2(success(statusReply), qPrintable(QString::fromUtf8(QJsonDocument(statusReply).toJson()) + QString::fromUtf8(reopened.application.process.readAllStandardError())));
+        const auto status = data(statusReply);
+        QCOMPARE(status.value("active_size"), QJsonValue(46));
+        QCOMPARE(status.value("active_height"), QJsonValue(182));
+        const auto geometry = data(reopened.client.call("get_object", {{"id", pointId}})).value("geometry").toObject();
+        QVERIFY(std::abs(geometry.value("x").toDouble() - expectedX(106)) < 1e-7);
+    }
+    QCOMPARE(edit("detach_measurements").value("isError"), QJsonValue(true));
+    QVERIFY(success(edit("delete_object", {{"id", pointId}})));
+    QVERIFY(success(edit("detach_measurements")));
+    QCOMPARE(data(client.call("get_measurements_status")).value("attached"), QJsonValue(false));
+    QVERIFY(success(edit("undo")));
+    QCOMPARE(data(client.call("get_measurements_status")).value("attached"), QJsonValue(true));
+}
+
+void McpTest::piecesAndSeamAllowances_data()
+{
+    QTest::addColumn<QString>("unit"); QTest::addColumn<bool>("curve");
+    QTest::newRow("cm-points") << QString("cm") << false;
+    QTest::newRow("mm-points") << QString("mm") << false;
+    QTest::newRow("cm-curve") << QString("cm") << true;
+    QTest::newRow("mm-curve") << QString("mm") << true;
+}
+
+void McpTest::piecesAndSeamAllowances()
+{
+    const auto app = qEnvironmentVariable("SEAMLY_MCP_TEST_APP");
+    if (app.isEmpty()) QSKIP("Set SEAMLY_MCP_TEST_APP to run against the built Qt app.");
+    QFETCH(QString, unit); QFETCH(bool, curve);
+    ApplicationSession session; QVERIFY2(session.start(app, fixture), qPrintable(session.error));
+    auto &client = session.client;
+    const auto data = [](const QJsonObject &reply) { return reply.value("structuredContent").toObject(); };
+    const auto success = [](const QJsonObject &reply) { return reply.value("isError") == QJsonValue(false); };
+    const auto edit = [&](const QString &name, QJsonObject args = {})
+    { args.insert("state_token", data(client.call("get_pattern_summary")).value("state_token")); return client.call(name, args); };
+    QVERIFY(success(edit("new_pattern", {{"draft_block", "Panel"}, {"unit", unit}})));
+    const auto point = [&](const QString &name, int base, const QString &length, const QString &angle)
+    { return data(edit("create_point", {{"name", name}, {"base_point_id", base}, {"length", length}, {"angle", angle}})).value("object").toObject().value("id").toInt(); };
+    const int b = point("B", 1, "10", "0"), c = point("C", b, "20", "270"), d = point("D", 1, "20", "270");
+    QVERIFY(b > 1 && c > b && d > c);
+    QJsonArray contour{QJsonObject{{"object_id", 1}}, QJsonObject{{"object_id", b}}};
+    if (curve)
+    {
+        auto reply = edit("create_curve", {{"first_point_id", b}, {"second_point_id", c}, {"angle1", "270"}, {"angle2", "90"}, {"length1", "6"}, {"length2", "6"}});
+        QVERIFY(success(reply));
+        int spline = 0;
+        for (const auto &object : data(client.call("list_objects")).value("objects").toArray())
+            if (object.toObject().value("type") == QJsonValue("spline")) spline = object.toObject().value("id").toInt();
+        QVERIFY(spline > 0); contour.append(QJsonObject{{"object_id", spline}});
+    }
+    contour.append(QJsonObject{{"object_id", c}}); contour.append(QJsonObject{{"object_id", d}});
+    const int constructionCount = data(client.call("get_pattern_summary")).value("object_count").toInt();
+    auto reply = edit("create_piece", {{"name", "Panel"}, {"nodes", contour}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    const int piece = data(reply).value("id").toInt(); QVERIFY(piece > 0);
+    const auto area = [&](const QJsonObject &result, const QString &path) { return data(result).value(path).toObject().value("area").toDouble(); };
+    QVERIFY(std::abs(area(reply, "main_path") - 200) < 1e-5);
+    QCOMPARE(data(reply).value("nodes").toArray().size(), contour.size());
+    reply = edit("set_seam_allowance", {{"id", piece}, {"enabled", true}, {"width", "1"}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY(std::abs(area(reply, "seam_allowance_path") - 264) < 1e-5);
+    const int node = data(reply).value("nodes").toArray().at(0).toObject().value("node_id").toInt();
+    reply = edit("set_seam_allowance", {{"id", piece}, {"nodes", QJsonArray{QJsonObject{{"node_id", node}, {"before", "CurrentSeamAllowance*2"}, {"after", "2"}}}}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QCOMPARE(data(reply).value("nodes").toArray().at(0).toObject().value("before"), QJsonValue("CurrentSeamAllowance*2"));
+    const auto unchanged = data(client.call("get_pattern_summary")).value("state_token");
+    QCOMPARE(edit("set_seam_allowance", {{"id", piece}, {"width", "-1"}}).value("isError"), QJsonValue(true));
+    QCOMPARE(edit("set_seam_allowance", {{"id", piece}, {"width", "unknown_formula"}}).value("isError"), QJsonValue(true));
+    QCOMPARE(edit("update_piece", {{"id", piece}, {"nodes", QJsonArray{QJsonObject{{"object_id", 99999}}, QJsonObject{{"object_id", 1}}}}}).value("isError"), QJsonValue(true));
+    QCOMPARE(data(client.call("get_pattern_summary")).value("state_token"), unchanged);
+    const QJsonArray triangle{QJsonObject{{"object_id", 1}}, QJsonObject{{"object_id", b}}, QJsonObject{{"object_id", c}}};
+    reply = edit("update_piece", {{"id", piece}, {"name", "Front"}, {"nodes", triangle}, {"in_layout", false}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY(std::abs(area(reply, "main_path") - 100) < 1e-5);
+    QVERIFY(success(edit("undo")));
+    QVERIFY(std::abs(area(client.call("get_piece", {{"id", piece}}), "main_path") - 200) < 1e-5);
+    QVERIFY(success(edit("redo")));
+    reply = edit("create_piece", {{"name", "Other"}, {"nodes", triangle}});
+    QVERIFY(success(reply)); const int other = data(reply).value("id").toInt();
+    QVERIFY(success(edit("delete_piece", {{"id", other}})));
+    reply = edit("update_piece", {{"id", piece}, {"in_layout", true}}); QVERIFY(success(reply));
+    const auto saved = session.directory.filePath("piece.sm2d");
+    QVERIFY(success(edit("save_pattern", {{"path", saved}})));
+    QVERIFY(success(edit("close_pattern")));
+    QVERIFY(success(edit("open_pattern", {{"path", saved}})));
+    reply = client.call("get_piece", {{"id", piece}}); QVERIFY(success(reply));
+    QCOMPARE(data(reply).value("attributes").toObject().value("name"), QJsonValue("Front"));
+    QVERIFY(std::abs(area(reply, "main_path") - 100) < 1e-5);
+    reply = edit("export_layout", {{"output_directory", session.directory.filePath("pieces")}, {"basename", "panel"}, {"format", 0}, {"pieces_only", true}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY(!data(reply).value("files").toArray().isEmpty());
+    QVERIFY(success(edit("delete_piece", {{"id", piece}})));
+    QCOMPARE(data(client.call("get_pattern_summary")).value("piece_count"), QJsonValue(0));
+    QCOMPARE(data(client.call("get_pattern_summary")).value("object_count"), QJsonValue(constructionCount));
+    QVERIFY(success(edit("undo")));
+    QVERIFY(std::abs(area(client.call("get_piece", {{"id", piece}}), "main_path") - 100) < 1e-5);
+    QVERIFY(success(edit("redo")));
 }
 
 QTEST_GUILESS_MAIN(McpTest)

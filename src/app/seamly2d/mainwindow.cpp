@@ -688,6 +688,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     try
     {
         qApp->setPatternType(m_measurements->Type());
+        if (m_measurements->Type() == MeasurementsType::Multisize)
+        {
+            VContainer::setSize(UnitConvertor(m_measurements->BaseSize(), m_measurements->measurementUnits(), *pattern->GetPatternUnit()));
+            VContainer::setHeight(UnitConvertor(m_measurements->BaseHeight(), m_measurements->measurementUnits(), *pattern->GetPatternUnit()));
+        }
         initializeStatusToolBar();
 
         pattern->ClearVariables(VarType::Measurement);
@@ -708,13 +713,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     if (m_measurements->Type() == MeasurementsType::Multisize)
     {
-        VContainer::setSize(UnitConvertor(m_measurements->BaseSize(), m_measurements->measurementUnits(),
-                                          *m_measurements->GetData()->GetPatternUnit()));
-
         qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
-
-        VContainer::setHeight(UnitConvertor(m_measurements->BaseHeight(), m_measurements->measurementUnits(),
-                                            *m_measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
         emit doc->updatePatternLabel();
@@ -5202,7 +5201,7 @@ void MainWindow::ChangedHeight(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetDefaultHeight()
 {
-    const QString defHeight = QString().setNum(doc->GetDefCustomHeight());
+    const QString defHeight = QString::number(UnitConvertor(doc->GetDefCustomHeight(), Unit::Cm, qApp->patternUnit()));
     int index = gradationHeights->findText(defHeight);
     if (index != -1)
     {
@@ -5222,7 +5221,7 @@ void MainWindow::SetDefaultHeight()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::SetDefaultSize()
 {
-    const QString defSize = QString().setNum(doc->GetDefCustomSize());
+    const QString defSize = QString::number(UnitConvertor(doc->GetDefCustomSize(), Unit::Cm, qApp->patternUnit()));
     int index = gradationSizes->findText(defSize);
     if (index != -1)
     {
@@ -8222,6 +8221,11 @@ void MainWindow::processCommandLine()
             if (cmd->IsSetGradationHeight())
             {
                 hSetted = setHeight(cmd->OptGradationHeight());
+            }
+            if (qEnvironmentVariableIsSet("SEAMLY_MCP_VALIDATE") && (!sSetted || !hSetted))
+            {
+                qApp->exit(V_EX_DATAERR);
+                return;
             }
         }
 

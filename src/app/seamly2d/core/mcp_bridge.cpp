@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "mcp_bridge.h"
+#include "mcp_measurements.h"
 
 #include "../mainwindow.h"
 #include "../xml/vpattern.h"
@@ -14,6 +15,7 @@
 #include <QComboBox>
 #include <QDomDocument>
 #include <QPainter>
+#include <QPolygonF>
 #include <QPdfWriter>
 #include <QProcess>
 #include <QProcessEnvironment>
@@ -23,10 +25,12 @@
 #include <QTemporaryDir>
 #include <QUndoCommand>
 #include "../vpatterndb/variables/custom_variable.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../ifc/xml/vpatternconverter.h"
 #include "../ifc/exception/vexception.h"
 #include <QDir>
 #include <QFileInfo>
+#include <QFileSystemWatcher>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonParseError>
@@ -153,6 +157,23 @@ private:
     QByteArray m_before, m_after;
     std::function<void(const QByteArray &)> m_restore;
     bool m_first = true;
+};
+
+class PauseMeasurementWatch
+{
+public:
+    explicit PauseMeasurementWatch(QFileSystemWatcher *watcher) : m_watcher(watcher)
+    {
+        if (m_watcher) { m_paths = m_watcher->files(); if (!m_paths.isEmpty()) m_watcher->removePaths(m_paths); }
+    }
+    ~PauseMeasurementWatch()
+    {
+        if (m_watcher) for (const auto &path : m_paths)
+            if (QFileInfo::exists(path) && !m_watcher->files().contains(path)) m_watcher->addPath(path);
+    }
+private:
+    QFileSystemWatcher *m_watcher;
+    QStringList m_paths;
 };
 
 }
@@ -285,9 +306,23 @@ QString McpBridge::stateToken() const
     state += QByteArray::number(qApp->getUndoStack()->index());
     state += QByteArray::number(m_revision);
     state += QByteArray::number(m_window->doc->getCursorId());
+    state += QByteArray::number(VContainer::size(), 'g', 17) + ':' + QByteArray::number(VContainer::height(), 'g', 17);
+    if (!m_window->doc->MPath().isEmpty())
+    {
+        QFile measurements(measurementsPath());
+        state += measurements.open(QIODevice::ReadOnly)
+            ? QCryptographicHash::hash(measurements.read(4 * 1024 * 1024 + 1), QCryptographicHash::Sha256)
+            : QByteArray("measurements-unavailable");
+    }
     return QString::fromLatin1(QCryptographicHash::hash(state, QCryptographicHash::Sha256).toHex());
 }
 
+QString McpBridge::measurementsPath() const
+{
+    const auto path = m_window->doc->MPath();
+    if (path.isEmpty() || QDir::isAbsolutePath(path)) return path;
+    return QFileInfo(qApp->getFilePath()).dir().absoluteFilePath(path);
+}
 
 QByteArray McpBridge::validateDocument(const QByteArray &xml, const QString &origin, bool allowConversion) const
 {
@@ -297,12 +332,23 @@ QByteArray McpBridge::validateDocument(const QByteArray &xml, const QString &ori
     QTemporaryDir directory;
     require(directory.isValid(), "Could not create validation workspace.");
     auto measurement = candidate.documentElement().firstChildElement("measurements");
-    if (!measurement.text().isEmpty() && !QDir::isAbsolutePath(measurement.text()))
+    QString measurementSource = measurement.text();
+    bool multisize = false;
+    if (!measurementSource.isEmpty())
     {
-        require(!origin.isEmpty(), "A new document must use an absolute measurements path.");
-        const auto absolute = QFileInfo(origin).dir().absoluteFilePath(measurement.text());
+        if (!QDir::isAbsolutePath(measurementSource))
+        {
+            require(!origin.isEmpty(), "A new document must use an absolute measurements path.");
+            measurementSource = QFileInfo(origin).dir().absoluteFilePath(measurementSource);
+        }
+        const auto table = McpMeasurements::inspect(McpMeasurements::readBytes(measurementSource));
+        multisize = table.info.value("type") == QJsonValue("multisize");
+        const auto copyPath = directory.filePath(table.info.value("type") == QJsonValue("multisize") ? "measurements.smms" : "measurements.smis");
+        QFile copy(copyPath);
+        require(copy.open(QIODevice::WriteOnly) && copy.write(table.xml) == table.xml.size(), "Could not stage linked measurements.");
+        copy.close();
         VDomDocument::RemoveAllChildren(measurement);
-        measurement.appendChild(candidate.createTextNode(absolute));
+        measurement.appendChild(candidate.createTextNode(copyPath));
     }
     // Keep image references valid when validating the private copy elsewhere.
     const auto images = candidate.elementsByTagName("image");
@@ -332,7 +378,15 @@ QByteArray McpBridge::validateDocument(const QByteArray &xml, const QString &ori
     QProcess process;
     process.setProcessEnvironment(env);
     process.setProcessChannelMode(QProcess::MergedChannels);
-    process.start(QCoreApplication::applicationFilePath(), {"--test", path});
+    QStringList args{"--test"};
+    const auto gradation = candidate.documentElement().firstChildElement("gradation");
+    if (multisize && gradation.attribute("custom") == "true")
+    {
+        if (gradation.hasAttribute("defSize")) args << "--gsize" << gradation.attribute("defSize");
+        if (gradation.hasAttribute("defHeight")) args << "--gheight" << gradation.attribute("defHeight");
+    }
+    args << path;
+    process.start(QCoreApplication::applicationFilePath(), args);
     require(process.waitForStarted(5000), "Could not start isolated pattern validation.");
     if (!process.waitForFinished(20000))
     {
@@ -343,12 +397,18 @@ QByteArray McpBridge::validateDocument(const QByteArray &xml, const QString &ori
         throw std::runtime_error((QStringLiteral("Pattern validation failed: ") + QString::fromUtf8(process.readAll()).left(6000)).toStdString());
     QFile normalized(output);
     require(normalized.open(QIODevice::ReadOnly), "Validator produced no normalized pattern.");
-    const auto result = normalized.readAll();
-    return result;
+    auto result = parseXml(normalized.readAll());
+    if (!measurementSource.isEmpty())
+    {
+        auto node = result.documentElement().firstChildElement("measurements");
+        VDomDocument::RemoveAllChildren(node); node.appendChild(result.createTextNode(measurementSource));
+    }
+    return result.toByteArray();
 }
 
 void McpBridge::restoreDocument(const QByteArray &xml, const QString &activeBlock)
 {
+    if (!m_window->m_watcher->files().isEmpty()) m_window->m_watcher->removePaths(m_window->m_watcher->files());
     QTemporaryDir directory;
     QFile file(directory.filePath("snapshot.sm2d"));
     require(directory.isValid() && file.open(QIODevice::WriteOnly), "Could not restore pattern snapshot.");
@@ -360,7 +420,12 @@ void McpBridge::restoreDocument(const QByteArray &xml, const QString &activeBloc
     if (!measurements.isEmpty())
     {
         const auto path = QDir::isAbsolutePath(measurements) ? measurements : QFileInfo(qApp->getFilePath()).dir().absoluteFilePath(measurements);
-        require(m_window->loadMeasurements(path), "Could not load validated measurements.");
+        const auto table = McpMeasurements::inspect(McpMeasurements::readBytes(path));
+        const auto copyPath = directory.filePath(table.info.value("type") == QJsonValue("multisize") ? "measurements.smms" : "measurements.smis");
+        QFile copy(copyPath);
+        require(copy.open(QIODevice::WriteOnly) && copy.write(table.xml) == table.xml.size(), "Could not stage linked measurements."); copy.close();
+        require(m_window->loadMeasurements(copyPath), "Could not load validated measurements.");
+        m_window->m_watcher->addPath(path);
     }
     else
     {
@@ -375,6 +440,8 @@ void McpBridge::restoreDocument(const QByteArray &xml, const QString &activeBloc
     if (!blocks.isEmpty()) m_window->changeDraftBlockGlobally(blocks.contains(activeBlock) ? activeBlock : blocks.first());
     m_window->doc->SetModified(true);
     m_window->doc->haveLiteChange();
+    m_window->m_changes = false;
+    m_window->updateWindowTitle();
     ++m_revision;
 }
 
@@ -427,6 +494,67 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
             if (element.parentNode().nodeName() == "pieces") pieces.append(QJsonObject{{"id", element.attribute("id").toInt()}, {"name", element.attribute("name")}, {"attributes", attributesJson(element)}});
         }
         return {{"state_token", token}, {"pieces", pieces}};
+    }
+    if (method == "get_measurements_file" || method == "get_measurements_status")
+    {
+        const bool attached = method == "get_measurements_status";
+        const auto path = attached ? measurementsPath() : arguments.value("path").toString();
+        QJsonObject result{{"state_token", token}, {"path", path}, {"attached", !measurementsPath().isEmpty()}, {"needs_sync", m_window->m_changes}};
+        if (attached && path.isEmpty()) return result;
+        require(QDir::isAbsolutePath(path), "Measurements require an absolute file path.");
+        const auto bytes = McpMeasurements::readBytes(path);
+        auto table = McpMeasurements::inspect(bytes, arguments.value("size").toDouble(-1), arguments.value("height").toDouble(-1));
+        if (attached && table.info.value("type") == QJsonValue("multisize"))
+        {
+            const auto unit = StrToUnits(table.info.value("unit").toString());
+            table = McpMeasurements::inspect(bytes, UnitConvertor(VContainer::size(), qApp->patternUnit(), unit),
+                UnitConvertor(VContainer::height(), qApp->patternUnit(), unit));
+            result.insert("gradation_unit", "cm");
+            result.insert("active_size", UnitConvertor(VContainer::size(), qApp->patternUnit(), Unit::Cm));
+            result.insert("active_height", UnitConvertor(VContainer::height(), qApp->patternUnit(), Unit::Cm));
+            result.insert("allowed_sizes", QJsonArray::fromStringList(MeasurementVariable::ListSizes(doc->GetGradationSizes(), Unit::Cm)));
+            result.insert("allowed_heights", QJsonArray::fromStringList(MeasurementVariable::ListHeights(doc->GetGradationHeights(), Unit::Cm)));
+        }
+        for (auto it = table.info.begin(); it != table.info.end(); ++it) result.insert(it.key(), it.value());
+        result.insert("file_token", McpMeasurements::token(path, bytes));
+        return result;
+    }
+    if (method == "get_piece")
+    {
+        const auto id = static_cast<quint32>(arguments.value("id").toInt());
+        require(data->DataPieces()->contains(id), "Unknown piece ID.");
+        const auto element = elementWithId(*doc, id);
+        const auto piece = data->DataPieces()->value(id);
+        VContainer geometryData(*data);
+        geometryData.AddVariable(currentSeamAllowance, new CustomVariable(&geometryData, currentSeamAllowance, 0,
+            piece.GetSAWidth(), QString::number(piece.GetSAWidth(), 'g', 17), true));
+        QJsonArray nodes;
+        for (auto node = element.firstChildElement("nodes").firstChildElement("node"); !node.isNull(); node = node.nextSiblingElement("node"))
+        {
+            auto row = attributesJson(node);
+            const auto model = elementWithId(*doc, node.attribute("idObject").toUInt());
+            row.insert("node_id", node.attribute("idObject").toInt()); row.insert("object_id", model.attribute("idObject").toInt());
+            nodes.append(row);
+        }
+        const auto outline = [](const QVector<QPointF> &points)
+        {
+            require(points.size() <= 10000, "Piece outline exceeds the read limit.");
+            QJsonArray result; qreal area = 0;
+            for (int i = 0; i < points.size(); ++i)
+            {
+                const auto a = points.at(i), b = points.at((i + 1) % points.size());
+                area += a.x() * b.y() - b.x() * a.y();
+                result.append(QJsonObject{{"x", qApp->fromPixel(a.x())}, {"y", qApp->fromPixel(a.y())}});
+            }
+            const auto bounds = QPolygonF(points).boundingRect();
+            const auto factor = qApp->fromPixel(1);
+            return QJsonObject{{"points", result}, {"area", std::abs(area) * factor * factor / 2},
+                {"bounds", QJsonObject{{"x", qApp->fromPixel(bounds.x())}, {"y", qApp->fromPixel(bounds.y())},
+                    {"width", qApp->fromPixel(bounds.width())}, {"height", qApp->fromPixel(bounds.height())}}}};
+        };
+        return {{"state_token", token}, {"id", static_cast<double>(id)}, {"attributes", attributesJson(element)},
+            {"nodes", nodes}, {"main_path", outline(piece.mainPathPoints(data))},
+            {"seam_allowance_path", outline(piece.seamAllowancePoints(&geometryData))}};
     }
     if (method == "get_pattern_xml") return {{"state_token", token}, {"xml", doc->toString()}};
     if (method == "get_history")
@@ -512,6 +640,49 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
     require(arguments.value("state_token").isString() && arguments.value("state_token").toString() == token,
             "Document state changed. Read get_pattern_summary and review the current state before retrying.");
     require(m_window->currentTool == Tool::Arrow && m_window->dialogTool.isNull(), "Finish the active drawing tool before modifying the pattern.");
+    if (method == "write_measurements_file")
+    {
+        const auto path = arguments.value("path").toString();
+        require(QDir::isAbsolutePath(path) && !QFileInfo(path).isSymLink(), "Use an absolute measurement path, not a symlink.");
+        const bool exists = QFileInfo::exists(path);
+        require(!exists || QFileInfo(path).isWritable(), "Measurement file is not writable.");
+        VLockGuard<char> lock(path); require(lock.IsLocked(), "Measurement file is locked; close it in SeamlyMe before editing.");
+        const auto original = exists ? McpMeasurements::readBytes(path) : QByteArray{};
+        require(!exists || (arguments.value("overwrite").toBool() && arguments.value("file_token") == QJsonValue(McpMeasurements::token(path, original))),
+            "Existing measurements require overwrite=true and the latest file_token.");
+        require(exists || !arguments.contains("file_token"), "Measurement file disappeared; read state before creating it again.");
+        const auto table = McpMeasurements::prepare(original, arguments);
+        require(QFileInfo(path).suffix() == (table.info.value("type") == QJsonValue("multisize") ? "smms" : "smis"), "File extension must match the measurement type.");
+        const bool active = !measurementsPath().isEmpty() && QFileInfo(measurementsPath()).canonicalFilePath() == QFileInfo(path).canonicalFilePath();
+        const auto snapshot = doc->toByteArray(); const auto block = doc->getActiveDraftBlockName();
+        if (active)
+        {
+            require(!m_window->patternReadOnly && !doc->isReadOnly(), "The attached pattern is read-only.");
+            QTemporaryDir directory; require(directory.isValid(), "Could not stage measurement edit.");
+            QFile copy(directory.filePath(QFileInfo(path).fileName()));
+            require(copy.open(QIODevice::WriteOnly) && copy.write(table.xml) == table.xml.size(), "Could not stage measurement edit."); copy.close();
+            auto candidate = parseXml(snapshot); auto node = candidate.documentElement().firstChildElement("measurements");
+            VDomDocument::RemoveAllChildren(node); node.appendChild(candidate.createTextNode(copy.fileName()));
+            validateDocument(candidate.toByteArray(), qApp->getFilePath());
+        }
+        const auto save = [&](const QByteArray &bytes)
+        {
+            QSaveFile file(path);
+            require(file.open(QIODevice::WriteOnly) && file.write(bytes) == bytes.size() && file.commit(), "Could not atomically save measurements.");
+        };
+        require(!exists || McpMeasurements::readBytes(path) == original, "Measurements changed during validation; read again.");
+        PauseMeasurementWatch watch(active ? m_window->m_watcher : nullptr);
+        save(table.xml);
+        if (active)
+        {
+            try { restoreDocument(snapshot, block); }
+            catch (...) { save(original); restoreDocument(snapshot, block); throw; }
+        }
+        ++m_revision;
+        auto result = table.info; result.insert("state_token", stateToken()); result.insert("path", path);
+        result.insert("file_token", McpMeasurements::token(path, table.xml)); result.insert("undoable", false);
+        return result;
+    }
     if (method == "new_pattern" || method == "open_pattern" || method == "close_pattern")
     {
         require(!modified || arguments.value("discard_changes").toBool(), "Unsaved changes exist. Save first or explicitly set discard_changes=true.");
@@ -608,6 +779,11 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
         const auto supported = execute("get_export_formats", {});
         const auto values = supported.value("value_options").toArray(), flags = supported.value("flag_options").toArray();
         auto options = arguments.value("options").toObject();
+        if (qApp->patternType() == MeasurementsType::Multisize)
+        {
+            if (!options.contains("gsize")) options.insert("gsize", QString::number(qRound(UnitConvertor(VContainer::size(), qApp->patternUnit(), Unit::Cm))));
+            if (!options.contains("gheight")) options.insert("gheight", QString::number(qRound(UnitConvertor(VContainer::height(), qApp->patternUnit(), Unit::Cm))));
+        }
         // The legacy CLI requires all four explicit margins when pageunits is
         // specified, even with ignoremargins. Supply deterministic zero defaults.
         if (options.contains("pageunits")) for (const auto &margin : {"lmargin", "rmargin", "tmargin", "bmargin"})
@@ -683,7 +859,10 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
         if (method == "undo") stack->undo(); else stack->redo();
         return summary();
     }
-    require(qApp->getSceneView()->scene() == m_window->draftScene, "Switch to Draft mode first.");
+    const bool pieceEdit = method == "create_piece" || method == "update_piece" || method == "delete_piece" || method == "set_seam_allowance";
+    const bool measurementEdit = method == "attach_measurements" || method == "detach_measurements" || method == "set_gradation";
+    require(!m_window->m_changes || measurementEdit, "Measurements changed externally; read and reattach the table to refresh the pattern first.");
+    require(pieceEdit || measurementEdit || qApp->getSceneView()->scene() == m_window->draftScene, "Switch to Draft mode first.");
     if (method != "create_point")
     {
         auto candidate = parseXml(doc->toByteArray()); auto root = candidate.documentElement();
@@ -691,7 +870,168 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
         for (auto block = root.firstChildElement("draftBlock"); !block.isNull(); block = block.nextSiblingElement("draftBlock"))
             if (block.attribute("name") == doc->getActiveDraftBlockName()) active = block;
         QString nextActive;
-        if (method == "apply_pattern_xml") candidate = parseXml(arguments.value("xml").toString().toUtf8());
+        quint32 editedPiece = 0;
+        if (measurementEdit)
+        {
+            auto measurement = root.firstChildElement("measurements");
+            const auto setGradation = [&](int size, int height)
+            {
+                auto gradation = root.firstChildElement("gradation");
+                if (gradation.isNull())
+                {
+                    gradation = candidate.createElement("gradation");
+                    QDomElement previous;
+                    for (auto node = root.firstChildElement(); !node.isNull(); node = node.nextSiblingElement())
+                    {
+                        if (QStringList{"version", "unit", "image", "description", "notes"}.contains(node.tagName())) previous = node;
+                        else break;
+                    }
+                    root.insertAfter(gradation, previous);
+                    for (const auto &tag : {"heights", "sizes"}) { auto child = candidate.createElement(tag); child.setAttribute("all", "true"); gradation.appendChild(child); }
+                }
+                gradation.setAttribute("custom", "true"); gradation.setAttribute("defSize", size); gradation.setAttribute("defHeight", height);
+            };
+            if (method == "attach_measurements")
+            {
+                const auto path = arguments.value("path").toString(); require(QDir::isAbsolutePath(path), "Use an absolute measurements path.");
+                const auto bytes = McpMeasurements::readBytes(path);
+                require(arguments.value("file_token") == QJsonValue(McpMeasurements::token(path, bytes)), "Measurement file changed; read it again.");
+                const auto table = McpMeasurements::inspect(bytes);
+                VDomDocument::RemoveAllChildren(measurement); measurement.appendChild(candidate.createTextNode(path));
+                if (table.info.value("type") == QJsonValue("multisize"))
+                {
+                    const auto unit = StrToUnits(table.info.value("unit").toString());
+                    const bool sameTable = qApp->patternType() == MeasurementsType::Multisize && !measurementsPath().isEmpty()
+                        && QFileInfo(measurementsPath()).canonicalFilePath() == QFileInfo(path).canonicalFilePath();
+                    setGradation(qRound(sameTable ? UnitConvertor(VContainer::size(), qApp->patternUnit(), Unit::Cm)
+                        : UnitConvertor(table.info.value("base_size").toDouble(), unit, Unit::Cm)),
+                        qRound(sameTable ? UnitConvertor(VContainer::height(), qApp->patternUnit(), Unit::Cm)
+                        : UnitConvertor(table.info.value("base_height").toDouble(), unit, Unit::Cm)));
+                }
+                else root.removeChild(root.firstChildElement("gradation"));
+            }
+            else if (method == "detach_measurements")
+            {
+                VDomDocument::RemoveAllChildren(measurement); root.removeChild(root.firstChildElement("gradation"));
+            }
+            else
+            {
+                require(qApp->patternType() == MeasurementsType::Multisize, "Attach multisize measurements before selecting gradation.");
+                const int size = arguments.value("size").toInt(), height = arguments.value("height").toInt();
+                require(MeasurementVariable::ListSizes(doc->GetGradationSizes(), Unit::Cm).contains(QString::number(size))
+                    && MeasurementVariable::ListHeights(doc->GetGradationHeights(), Unit::Cm).contains(QString::number(height)), "Size/height is not enabled for this pattern.");
+                setGradation(size, height);
+            }
+        }
+        else if (pieceEdit)
+        {
+            QDomElement piece;
+            if (method == "create_piece")
+            {
+                piece = candidate.createElement("piece"); piece.setAttribute("id", freshId(candidate)); piece.setAttribute("version", "2");
+                piece.setAttribute("name", arguments.value("name").toString()); piece.setAttribute("mx", "0"); piece.setAttribute("my", "0");
+                piece.setAttribute("inLayout", arguments.value("in_layout").toBool(true) ? "true" : "false");
+                piece.setAttribute("seamAllowance", arguments.value("seam_allowance").toBool() ? "true" : "false");
+                piece.setAttribute("width", arguments.value("width").toString("0"));
+                active.firstChildElement("pieces").appendChild(piece);
+            }
+            else
+            {
+                piece = elementWithId(candidate, static_cast<quint32>(arguments.value("id").toInt()));
+                require(!piece.isNull() && piece.tagName() == "piece" && piece.parentNode().nodeName() == "pieces", "Unknown piece ID.");
+                active = piece.parentNode().parentNode().toElement();
+            }
+            editedPiece = piece.attribute("id").toUInt();
+            QSet<quint32> oldNodes;
+            if (method == "delete_piece" || arguments.contains("nodes") && method == "update_piece")
+                for (auto node = piece.firstChildElement("nodes").firstChildElement("node"); !node.isNull(); node = node.nextSiblingElement("node")) oldNodes.insert(node.attribute("idObject").toUInt());
+            if (method == "delete_piece") piece.parentNode().removeChild(piece);
+            else if (method == "set_seam_allowance")
+            {
+                if (arguments.contains("enabled")) piece.setAttribute("seamAllowance", arguments.value("enabled").toBool() ? "true" : "false");
+                if (arguments.contains("built_in")) piece.setAttribute("seamAllowanceBuiltIn", arguments.value("built_in").toBool() ? "true" : "false");
+                if (arguments.contains("width")) piece.setAttribute("width", arguments.value("width").toString());
+                Calculator widthCalculator;
+                const auto currentWidth = widthCalculator.EvalFormula(data->DataVariables(), piece.attribute("width", "0"));
+                require(std::isfinite(currentWidth) && currentWidth >= 0, "Seam allowance width must be finite and non-negative.");
+                VContainer formulaData(*data);
+                formulaData.AddVariable(currentSeamAllowance, new CustomVariable(&formulaData, currentSeamAllowance, 0,
+                    currentWidth, QString::number(currentWidth, 'g', 17), true));
+                for (const auto &entry : arguments.value("nodes").toArray())
+                {
+                    const auto row = entry.toObject(); QDomElement target;
+                    for (auto node = piece.firstChildElement("nodes").firstChildElement("node"); !node.isNull(); node = node.nextSiblingElement("node"))
+                        if (node.attribute("idObject").toInt() == row.value("node_id").toInt()) target = node;
+                    require(!target.isNull(), "Seam-allowance node does not belong to this piece.");
+                    for (const auto &key : {"before", "after"}) if (row.contains(key))
+                    {
+                        Calculator calculator; const auto value = calculator.EvalFormula(formulaData.DataVariables(), row.value(key).toString());
+                        require(std::isfinite(value) && value >= 0, "Node seam allowance must be finite and non-negative.");
+                        target.setAttribute(key, row.value(key).toString());
+                    }
+                }
+            }
+            else
+            {
+                for (const auto &key : {"name", "in_layout", "forbid_flipping", "locked"}) if (arguments.contains(key))
+                {
+                    const QString attribute = QString(key) == "in_layout" ? "inLayout" : QString(key) == "forbid_flipping" ? "forbidFlipping" : key;
+                    piece.setAttribute(attribute, QString(key) == "name" ? arguments.value(key).toString() : arguments.value(key).toBool() ? "true" : "false");
+                }
+                if (arguments.contains("nodes"))
+                {
+                    const auto input = arguments.value("nodes").toArray(); require(input.size() >= 2, "A piece needs an ordered contour.");
+                    auto nodes = candidate.createElement("nodes"); quint32 next = freshId(candidate); QSet<quint32> points; bool curves = false;
+                    for (const auto &entry : input)
+                    {
+                        const auto row = entry.toObject(); const auto id = static_cast<quint32>(row.value("object_id").toInt());
+                        require(objects->contains(id), "Unknown contour object."); const auto object = objects->value(id);
+                        require(object->getMode() == Draw::Calculation && doc->getToolDraftBlockName(object->getIdTool()) == active.attribute("name"), "Contour objects must belong to this draft block's construction.");
+                        QString tag, type, nodeType;
+                        switch (object->getType())
+                        {
+                            case GOType::Point: tag = "point"; type = "modeling"; nodeType = "NodePoint"; points.insert(id); break;
+                            case GOType::Arc: tag = "arc"; type = "modeling"; nodeType = "NodeArc"; break;
+                            case GOType::EllipticalArc: tag = "elArc"; type = "modeling"; nodeType = "NodeElArc"; break;
+                            case GOType::Spline: case GOType::CubicBezier: tag = "spline"; type = "modelingSpline"; nodeType = "NodeSpline"; break;
+                            case GOType::SplinePath: case GOType::CubicBezierPath: tag = "spline"; type = "modelingPath"; nodeType = "NodeSplinePath"; break;
+                            default: throw std::runtime_error("Unsupported piece contour object.");
+                        }
+                        curves |= object->getType() != GOType::Point;
+                        require(next < 2147483647, "Pattern exhausted the supported ID range.");
+                        auto model = candidate.createElement(tag); model.setAttribute("id", next); model.setAttribute("idObject", id);
+                        model.setAttribute("type", type); model.setAttribute("inUse", "true");
+                        if (object->getType() == GOType::Point) { model.setAttribute("mx", "0"); model.setAttribute("my", "0"); }
+                        active.firstChildElement("modeling").appendChild(model);
+                        auto node = candidate.createElement("node"); node.setAttribute("idObject", next++); node.setAttribute("type", nodeType);
+                        node.setAttribute("reverse", row.value("reverse").toBool() ? "1" : "0"); node.setAttribute("excluded", row.value("excluded").toBool() ? "true" : "false"); nodes.appendChild(node);
+                    }
+                    require(curves || points.size() >= 3, "A point-only contour needs at least three distinct points.");
+                    const auto old = piece.firstChildElement("nodes");
+                    if (old.isNull()) piece.appendChild(nodes); else piece.replaceChild(nodes, old);
+                }
+            }
+            if (method != "delete_piece")
+            {
+                Calculator calculator; const auto width = calculator.EvalFormula(data->DataVariables(), piece.attribute("width", "0"));
+                require(std::isfinite(width) && width >= 0, "Seam allowance width must be finite and non-negative.");
+            }
+            // Retain shared nodes; remove only nodes with no other XML references.
+            for (auto id : oldNodes)
+            {
+                auto model = elementWithId(candidate, id); if (model.parentNode().nodeName() != "modeling") continue;
+                bool referenced = false;
+                std::function<void(const QDomNode &)> scan = [&](const QDomNode &node)
+                {
+                    const auto element = node.toElement(); const auto attrs = element.attributes();
+                    for (int i = 0; i < attrs.size(); ++i) if (attrs.item(i).nodeName() != "id" && attrs.item(i).nodeValue().toUInt() == id) referenced = true;
+                    if (element.tagName() == "record" && element.text().toUInt() == id) referenced = true;
+                    for (auto child = node.firstChild(); !child.isNull() && !referenced; child = child.nextSibling()) scan(child);
+                };
+                scan(candidate); if (!referenced) model.parentNode().removeChild(model);
+            }
+        }
+        else if (method == "apply_pattern_xml") candidate = parseXml(arguments.value("xml").toString().toUtf8());
         else if (method == "set_variable" || method == "delete_variable")
         {
             const auto name = arguments.value("name").toString(); require(name.startsWith('#') && QRegularExpression(NameRegExp()).match(name.mid(1)).hasMatch(), "Custom variable names begin with # and use valid identifiers.");
@@ -773,6 +1113,8 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
         const auto label = arguments.value("label").toString(QStringLiteral("MCP: ") + method);
         commitDocument(candidate.toByteArray(), label);
         if (!nextActive.isEmpty()) m_window->changeDraftBlockGlobally(nextActive);
+        if (editedPiece && method != "delete_piece") return execute("get_piece", {{"id", static_cast<double>(editedPiece)}});
+        if (measurementEdit) return execute("get_measurements_status", {});
         return summary();
     }
     const auto nameValue = arguments.value("name");

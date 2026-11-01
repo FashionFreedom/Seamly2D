@@ -3,6 +3,7 @@
 
 HEADERS += \
     $$PWD/mcp_bridge.h \
+    $$PWD/mcp_measurements.h \
     $$PWD/application_2d.h \
     $$PWD/vformulaproperty.h \
     $$PWD/vformulapropertyeditor.h \
@@ -11,6 +12,7 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/mcp_bridge.cpp \
+    $$PWD/mcp_measurements.cpp \
     $$PWD/application_2d.cpp \
     $$PWD/vformulaproperty.cpp \
     $$PWD/vformulapropertyeditor.cpp \

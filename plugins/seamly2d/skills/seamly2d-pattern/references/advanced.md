@@ -53,3 +53,44 @@ path. `export_pattern` renders the visible scene to SVG/PDF/PNG. For actual piec
 exports or nesting, use `get_export_formats` and `export_layout`; it runs the
 existing engine on a temporary snapshot and publishes files to an empty output
 directory. `pieces_only` skips nesting. Inspect the result before printing.
+
+## Measurement tables and sizes
+
+Use `get_measurements_file` to obtain entries, units and a file token. The file
+can be individual (`.smis`, formula strings) or multisize (`.smms`, base values
+and increments). Custom names start with `@`. `write_measurements_file` upserts
+named entries and removes names listed in `remove`; it preserves the remaining
+entries and personal metadata. Existing files require their latest `file_token`
+and `overwrite=true`, in addition to the current pattern `state_token`. Writes
+are atomic and refuse SeamlyMe locks, read-only tables, broken dependencies and
+invalid formulas. Creating a table requires its `type`/`unit` and, for multisize,
+`base_size`/`base_height` in file units. It does not open SeamlyMe's editor.
+
+File writes persist immediately and cannot be reversed with pattern undo.
+Editing the attached file first validates the new table against the current
+pattern, then reloads its geometry. `attach_measurements` takes the read file's
+path/token; `detach_measurements` refuses to break formulas. Both are undoable.
+`get_measurements_status` reports the table and active/allowed gradations.
+When `needs_sync` is true after an external edit, read its latest file token and
+attach the table again before drafting; this refreshes the live calculation.
+`set_gradation` selects and persists size/height in cm and supports undo/redo.
+Read the file unit separately when supplying measurement values or file evaluation
+dimensions. Export defaults to the active size/height.
+
+## Pieces and margins
+
+Prefer `create_piece` over XML: supply the name and an ordered `nodes` array of
+calculation point/curve `object_id`s, with optional `reverse`/`excluded` flags.
+The tool creates modeling nodes and globally unique IDs. Use `update_piece` for
+name, layout/flipping/lock flags or a replacement contour, and `delete_piece` to
+remove a piece while keeping construction geometry. Unshared contour modeling
+nodes are cleaned up; shared references are preserved.
+
+`get_piece` reports nodes, attributes and calculated main/seam-allowance outlines,
+areas and bounds in document units (areas in squared units). `set_seam_allowance`
+sets enabled/built-in flags and the global width formula. Its optional `nodes`
+array takes modeling `node_id`s from `get_piece` plus `before`/`after` formulas;
+these are distinct from source calculation IDs. `CurrentSeamAllowance` refers to
+the current global width in these formulas. Widths must be finite and non-negative.
+These operations validate the pattern and participate in undo/redo. Inspect the
+outline and export a copy before printing.

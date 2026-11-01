@@ -76,7 +76,7 @@ from activating it through a host's skill-loading mechanism.
 
 ## Tools
 
-The server exposes **35 tools**. `tools/list` is the authoritative catalog with
+The server exposes **46 tools**. `tools/list` is the authoritative catalog with
 input schemas and read/write annotations. Codex invokes these tools directly;
 results are returned as structured data.
 
@@ -85,6 +85,8 @@ results are returned as structured data.
 | Inspect | `get_pattern_summary`, `list_objects`, `get_object`, `get_selection`, `get_preview`, `list_pieces`, `get_history` |
 | Documents | `new_pattern`, `open_pattern`, `save_pattern`, `close_pattern`, `get_pattern_xml`, `apply_pattern_xml`, `get_pattern_schema` |
 | Draft blocks | `add_draft_block`, `rename_draft_block`, `set_active_draft_block` |
+| Measurement files / sizes | `get_measurements_status`, `get_measurements_file`, `write_measurements_file`, `attach_measurements`, `detach_measurements`, `set_gradation` |
+| Pieces / seam allowance | `get_piece`, `create_piece`, `update_piece`, `delete_piece`, `set_seam_allowance` |
 | Variables | `list_variables`, `evaluate_formula`, `set_variable`, `delete_variable` |
 | Drawing | `create_point`, `create_line`, `create_curve`, `create_arc`, `create_tool`, `update_object`, `delete_object` |
 | View/history | `set_selection`, `set_view`, `undo`, `redo` |
@@ -110,7 +112,7 @@ or script execution tool.
 
 ## Advanced model features
 
-The dedicated geometry tools cover common drafting. `create_tool` accepts a
+The dedicated geometry and piece tools cover common drafting. `create_tool` accepts a
 complete XML element for a calculation/modeling/pieces/groups/images section.
 `update_object` edits attributes by ID. `get_pattern_schema` serves the app's
 current XSD, and `get_object` includes source XML. Use these for other supported
@@ -138,9 +140,52 @@ uses the normal converter on the temporary copy and does not rewrite the source.
 Files that the app itself cannot parse/convert are rejected.
 
 The skill's [advanced reference](../../plugins/seamly2d/skills/seamly2d-pattern/references/advanced.md)
-explains this workflow. Editing a pattern is distinct from editing a linked
-SeamlyMe measurement file: use an appropriate existing measurement file and
-change the pattern's measurements reference when needed.
+explains the advanced XML workflow.
+
+## Measurement files and gradation
+
+`get_measurements_file` reads individual `.smis` and multisize `.smms` files with
+the native SeamlyMe format/converters and returns calculated entries plus a
+`file_token`. Old formats are converted on private copies. Reading, attaching and
+validating a pattern do not normalize or rewrite the source measurement file.
+
+`write_measurements_file` creates files or updates/removes named entries.
+Individual entries use `formula`; multisize entries use `base`, `size_increase`
+and `height_increase`. Names use native standard identifiers or an `@` prefix
+for custom measurements. A new file requires `type` and `unit`; multisize files
+also require `base_size` and `base_height` in file units. Existing files require
+both `overwrite=true` and their latest `file_token`. Files locked by SeamlyMe
+must be closed there first. Read-only tables and invalid/non-finite formulas are
+rejected. An edit to the currently attached file is validated against the pattern
+before publication and reloads its geometry after the atomic write.
+
+Measurement-file writes persist immediately and are **not** pattern undo commands.
+`attach_measurements`, `detach_measurements` and `set_gradation` are undoable
+pattern edits. Attach takes the path and latest file token; detaching refuses to
+break formulas. `get_measurements_status` reports the attached table, enabled
+sizes/heights and current selection. `set_gradation` selects and persists a size
+and height in **centimetres**, independently of the pattern/file units; file-entry
+values and optional `get_measurements_file` evaluation dimensions use file units.
+Layout exports default to the active selection unless `gsize`/`gheight` are supplied.
+The saved selection is also restored by normal app startup in cm/mm patterns.
+External table edits set `needs_sync`; read and attach the table again to refresh
+the calculation before drawing. MCP file writes reload it directly.
+
+## Pieces and seam allowances
+
+`create_piece` takes an ordered `nodes` array of `{ "object_id": ... }` references
+to calculation points or curves in the active draft block, with optional
+`reverse`/`excluded` flags. It creates modeling nodes and IDs automatically.
+`update_piece` replaces the contour or changes name/layout/flipping/lock flags.
+`delete_piece` removes the piece and unshared modeling nodes while retaining
+construction geometry. These changes are validated and undoable.
+
+`get_piece` returns source attributes, contour nodes with both source object IDs
+and modeling `node_id`s, and calculated outlines/areas in document units (areas
+in squared document units). `set_seam_allowance` sets `enabled`, `built_in` and
+`width`, plus optional per-node `before`/`after` formulas keyed by those `node_id`s.
+Formulas can use `CurrentSeamAllowance` for the current global width. Inspect the
+resulting outline before exporting pieces.
 
 ## Export and layout
 
@@ -186,7 +231,7 @@ SEAMLY_MCP_TEST_APP="$PWD/build/src/app/seamly2d/bin/Seamly2D.app/Contents/MacOS
   ./build/src/test/McpTest/bin/McpTest
 ```
 
-Without `SEAMLY_MCP_TEST_APP`, the GUI integration case is skipped. Without
+Without `SEAMLY_MCP_TEST_APP`, the GUI integration cases are skipped. Without
 `SEAMLY_MCP_TEST_SERVER`, the tests use the standalone development companion.
 Tests need permission to bind a local socket. They use temporary documents,
 settings and private sockets, and terminate only their own processes. On macOS,
@@ -200,3 +245,9 @@ Five additional integration cases verify mirror by line and axis, move/rotation
 and true darts against known coordinates, including edits, invalid references,
 generated-object reads, subsequent tool IDs, undo/redo and save/reopen. The Linux
 CI supplies the app/companion paths so these cases run instead of being skipped.
+
+Additional integration cases cover individual measurements in cm/mm/inches,
+multisize tables in cm/mm, gradation with cm/mm patterns, protected file writes,
+active-file recalculation and save/reopen. Piece cases cover point/curve contours,
+modeling-node allocation/cleanup, global and per-node seam allowances, undo/redo,
+geometry/area checks and SVG piece export in cm/mm.
