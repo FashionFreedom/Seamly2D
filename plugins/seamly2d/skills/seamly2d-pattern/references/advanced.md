@@ -13,12 +13,34 @@ consult the schema, examples already in the document and the app's source when
 necessary. The schema constrains structure; parsing also validates references.
 
 `update_object` changes attributes by ID and `delete_object` removes an element.
+Generated geometry has a separate object ID. `get_object` returns its geometry
+and the owner's XML; use its `element_id` when updating/deleting the owning tool.
 These operations reject changes that leave invalid references or formulas.
 For nested edits, coordinated deletions, labels, final measurements, piece
 properties or batch changes, use `apply_pattern_xml` with a complete document.
 It validates a temporary copy in an isolated Seamly2D process and commits as one
 undoable operation. DTD and entity declarations are rejected. A successful edit
 does not save the file. Use a meaningful `label` to identify a batch in history.
+
+## Mirror, move, rotate and true darts
+
+Create these with `create_tool` in `calculation`, then edit the owning element
+with `update_object`. The native app performs their geometry calculations.
+
+| Construction | XML type | Main attributes |
+| --- | --- | --- |
+| Rotate | `operation` / `rotation` | `center`, `angle`, `suffix` |
+| Move and optionally rotate | `operation` / `moving` | `angle`, `length`, `rotationAngle`, `center`, `suffix` |
+| Mirror about a line | `operation` / `flippingByLine` | `p1Line`, `p2Line`, `suffix` |
+| Mirror about an axis | `operation` / `flippingByAxis` | `center`, `axisType` (`1` vertical, `2` horizontal), `suffix` |
+| True darts | `point` / `trueDarts` | `baseLineP1`, `baseLineP2`, `dartP1`, `dartP2` (apex), `dartP3`, `point1`, `point2`, `name1`, `name2` |
+
+Each operation needs matching `source` and `destination` lists of `item`
+elements, with an `idObject` on every item. Source IDs identify existing objects;
+destination IDs reserve fresh generated objects. A true-darts tool reserves two
+output IDs in `point1`/`point2`. All generated IDs must be unique across the
+document, including other operation outputs. Inspect the complete XML before
+allocating them. Check the resulting coordinates and formulas before saving.
 
 Custom variables begin with `#`. Measurement values come from the linked
 measurement file: changing the root `measurements` path through a validated

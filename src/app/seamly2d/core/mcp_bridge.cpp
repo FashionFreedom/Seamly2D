@@ -118,7 +118,10 @@ quint32 freshId(const QDomNode &parent)
     std::function<void(const QDomNode &)> visit = [&](const QDomNode &node)
     {
         const auto element = node.toElement();
-        maximum = qMax(maximum, element.attribute("id").toUInt());
+        // Operation outputs use idObject; double-point outputs use point1/point2.
+        // These IDs share the geometry namespace with ordinary tool IDs.
+        for (const auto &attribute : {"id", "idObject", "point1", "point2"})
+            maximum = qMax(maximum, element.attribute(attribute).toUInt());
         for (auto child = node.firstChild(); !child.isNull(); child = child.nextSibling()) visit(child);
     };
     visit(parent);
@@ -456,10 +459,13 @@ QJsonObject McpBridge::execute(const QString &method, const QJsonObject &argumen
     if (method == "get_object")
     {
         const auto id = static_cast<quint32>(integerArgument(arguments, "id", 0, 2147483647));
-        const auto element = elementWithId(*doc, id);
+        auto element = elementWithId(*doc, id);
+        if (element.isNull() && objects->contains(id))
+            element = elementWithId(*doc, objects->value(id)->getIdTool());
         require(!element.isNull(), "Unknown document element ID.");
         QDomDocument fragment; fragment.appendChild(fragment.importNode(element, true));
-        QJsonObject result{{"state_token", token}, {"id", static_cast<double>(id)}, {"tag", element.tagName()},
+        QJsonObject result{{"state_token", token}, {"id", static_cast<double>(id)},
+                           {"element_id", element.attribute("id").toInt()}, {"tag", element.tagName()},
                            {"attributes", attributesJson(element)}, {"xml", fragment.toString()}};
         if (objects->contains(id)) result.insert("geometry", objectJson(id, objects->value(id)));
         return result;

@@ -117,6 +117,12 @@ current XSD, and `get_object` includes source XML. Use these for other supported
 construction tools, pieces and their nodes, internal paths, seam allowances,
 labels, groups or images.
 
+Mirror by line/axis, move (with optional rotation), rotation and true darts are
+available through `create_tool` and `update_object`. Generated objects have their
+own IDs; `get_object` returns the owning XML tool in `element_id`. Use that ID to
+edit the operation rather than one of its generated outputs. See the skill's
+advanced reference for the XML types and required output IDs.
+
 `apply_pattern_xml` handles coordinated/nested edits and all persistent pattern
 metadata as a single undoable transaction. Read the full current XML, modify it,
 and submit it with its state token and a meaningful `label`. Follow dependency
@@ -190,3 +196,7 @@ that GUI process; the companion retains its normal deployed framework paths.
 Tests cover legacy/modern protocol isolation, schema validation, resource and
 skill integrity, framing, geometry, variable errors, stale state, transactional
 edits, mixed native/snapshot undo/redo, block changes, file operations and export.
+Five additional integration cases verify mirror by line and axis, move/rotation
+and true darts against known coordinates, including edits, invalid references,
+generated-object reads, subsequent tool IDs, undo/redo and save/reopen. The Linux
+CI supplies the app/companion paths so these cases run instead of being skipped.

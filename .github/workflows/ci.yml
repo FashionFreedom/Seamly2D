@@ -67,6 +67,9 @@ jobs:
           sudo apt install -y xvfb gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-0
 
       - name: run Seamly2D tests
+        env:
+          SEAMLY_MCP_TEST_APP: ${{ github.workspace }}/src/app/seamly2d/bin/seamly2d
+          SEAMLY_MCP_TEST_SERVER: ${{ github.workspace }}/src/app/seamly2d_mcp/bin/seamly2d-mcp
         run: |
           xvfb-run -a make check
 

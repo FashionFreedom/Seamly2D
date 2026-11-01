@@ -60,7 +60,7 @@
   },
   {
     "name": "get_object",
-    "description": "Read one document element, attributes, XML and calculated geometry.",
+    "description": "Read a document or generated geometry ID with attributes, XML and geometry. element_id identifies the owning XML tool for update/delete; generated outputs share their owner's XML.",
     "inputSchema": {
       "type": "object",
       "properties": {

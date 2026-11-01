@@ -14,6 +14,7 @@
 #include <QProcessEnvironment>
 #include <QTemporaryDir>
 #include <QTest>
+#include <cmath>
 #include <memory>
 #include <stdexcept>
 
@@ -117,6 +118,54 @@ public:
     }
 };
 
+class ApplicationSession
+{
+public:
+    QTemporaryDir directory{QStringLiteral("/tmp/smcp-XXXXXX")};
+    Client application, client;
+    QString patternPath, error;
+
+    bool start(const QString &app, const QByteArray &xml)
+    {
+        if (!directory.isValid()) return fail("Could not create test workspace.");
+        patternPath = directory.filePath("test.sm2d");
+        QFile pattern(patternPath);
+        if (!pattern.open(QIODevice::WriteOnly) || pattern.write(xml) != xml.size())
+            return fail("Could not write test pattern.");
+        pattern.close();
+        if (!QDir(directory.path()).mkpath("state/settings/Seamly2DTeam")) return fail("Could not create test settings.");
+        QFile settings(directory.filePath("state/settings/Seamly2DTeam/qt6_seamly2d.ini"));
+        if (!settings.open(QIODevice::WriteOnly)) return fail("Could not write test settings.");
+        settings.write("[configuration]\nshowWelcome=true\nlocale=en_US\nautosave=false\n");
+        settings.close();
+        const auto socket = directory.filePath("app.sock");
+        auto environment = QProcessEnvironment::systemEnvironment();
+        environment.insert("SEAMLY_DATA_DIR", directory.filePath("state"));
+        environment.insert("SEAMLY_MCP_SOCKET", socket);
+        environment.insert("QT_QPA_PLATFORM", "offscreen");
+        environment.insert("QT_LOGGING_RULES", "*.warning=false");
+#ifdef Q_OS_MAC
+        // Supply offscreen only to the GUI; exercise the companion's deployed frameworks.
+        if (!environment.contains("DYLD_FRAMEWORK_PATH"))
+            environment.insert("DYLD_FRAMEWORK_PATH", QLibraryInfo::path(QLibraryInfo::LibrariesPath));
+        if (!environment.contains("QT_QPA_PLATFORM_PLUGIN_PATH"))
+            environment.insert("QT_QPA_PLATFORM_PLUGIN_PATH", QLibraryInfo::path(QLibraryInfo::PluginsPath) + "/platforms");
+#endif
+        application.process.setProcessEnvironment(environment);
+        application.process.start(app, {patternPath});
+        if (!application.process.waitForStarted(3000)) return fail(application.process.errorString());
+        QElapsedTimer timer; timer.start();
+        while (!QFile::exists(socket) && application.process.state() != QProcess::NotRunning && timer.elapsed() < 15000)
+            QTest::qWait(20);
+        if (!QFile::exists(socket)) return fail(QString::fromUtf8(application.process.readAllStandardError()));
+        if (!client.start(socket)) return fail(client.process.errorString());
+        if (!client.initialize()) return fail("MCP initialization failed.");
+        return true;
+    }
+private:
+    bool fail(const QString &message) { error = message; return false; }
+};
+
 const QByteArray fixture = R"(<?xml version="1.0" encoding="UTF-8"?>
 <pattern>
   <version>0.7.6</version><unit>cm</unit><description/><notes/><measurements/>
@@ -143,6 +192,8 @@ private slots:
     void framingAndLimits();
     void bridgeTransport();
     void applicationIntegration();
+    void advancedOperations_data();
+    void advancedOperations();
     void modernProtocol();
     void skillsAndResources();
 };
@@ -371,47 +422,11 @@ void McpTest::applicationIntegration()
     {
         QSKIP("Set SEAMLY_MCP_TEST_APP to run against the built Qt app.");
     }
-    QTemporaryDir directory(QStringLiteral("/tmp/smcp-XXXXXX"));
-    QVERIFY(directory.isValid());
-    const QString patternPath = directory.filePath(QStringLiteral("test.sm2d"));
-    QFile pattern(patternPath);
-    QVERIFY(pattern.open(QIODevice::WriteOnly));
-    QCOMPARE(pattern.write(fixture), fixture.size());
-    pattern.close();
-    QVERIFY(QDir(directory.path()).mkpath(QStringLiteral("state/settings/Seamly2DTeam")));
-    QFile settings(directory.filePath(QStringLiteral("state/settings/Seamly2DTeam/qt6_seamly2d.ini")));
-    QVERIFY(settings.open(QIODevice::WriteOnly));
-    settings.write("[configuration]\nshowWelcome=true\nlocale=en_US\nautosave=false\n");
-    settings.close();
-    const QString path = directory.filePath(QStringLiteral("app.sock"));
-    auto environment = QProcessEnvironment::systemEnvironment();
-    environment.insert(QStringLiteral("SEAMLY_DATA_DIR"), directory.filePath(QStringLiteral("state")));
-    environment.insert(QStringLiteral("SEAMLY_MCP_SOCKET"), path);
-    environment.insert(QStringLiteral("QT_QPA_PLATFORM"), QStringLiteral("offscreen"));
-    environment.insert(QStringLiteral("QT_LOGGING_RULES"), QStringLiteral("*.warning=false"));
-#ifdef Q_OS_MAC
-    // Deployed bundles usually contain only Cocoa. Use this test build's Qt
-    // installation for the offscreen GUI process, without changing the native
-    // MCP process's environment (so its bundled framework paths are tested).
-    if (!environment.contains(QStringLiteral("DYLD_FRAMEWORK_PATH")))
-    {
-        environment.insert(QStringLiteral("DYLD_FRAMEWORK_PATH"), QLibraryInfo::path(QLibraryInfo::LibrariesPath));
-    }
-    if (!environment.contains(QStringLiteral("QT_QPA_PLATFORM_PLUGIN_PATH")))
-    {
-        environment.insert(QStringLiteral("QT_QPA_PLATFORM_PLUGIN_PATH"),
-                           QLibraryInfo::path(QLibraryInfo::PluginsPath) + QStringLiteral("/platforms"));
-    }
-#endif
-    Client application;
-    application.process.setProcessEnvironment(environment);
-    application.process.start(app, {patternPath});
-    QVERIFY(application.process.waitForStarted(3000));
-    QTRY_VERIFY_WITH_TIMEOUT(QFile::exists(path) || application.process.state() == QProcess::NotRunning, 15000);
-    QVERIFY2(QFile::exists(path), application.process.readAllStandardError().constData());
-    Client client;
-    QVERIFY(client.start(path));
-    QVERIFY(client.initialize());
+    ApplicationSession session;
+    QVERIFY2(session.start(app, fixture), qPrintable(session.error));
+    auto &directory = session.directory;
+    auto &client = session.client;
+    QFile pattern(session.patternPath);
     const auto data = [](const QJsonObject &reply) { return reply.value("structuredContent").toObject(); };
     auto summary = data(client.call(QStringLiteral("get_pattern_summary")));
     QCOMPARE(summary.value("active_draft_block").toString(), QStringLiteral("MCP test"));
@@ -553,6 +568,151 @@ void McpTest::applicationIntegration()
     QVERIFY(pattern.open(QIODevice::ReadOnly));
     QCOMPARE(pattern.readAll(), fixture);
 
+}
+
+void McpTest::advancedOperations_data()
+{
+    QTest::addColumn<QString>("xml");
+    QTest::addColumn<QJsonObject>("attributes");
+    QTest::addColumn<QJsonArray>("createdPoints");
+    QTest::addColumn<QJsonArray>("editedPoints");
+    const auto points = [](double x1, double y1, double x2, double y2)
+    {
+        return QJsonArray{QJsonObject{{"id", 11}, {"x", x1}, {"y", y1}},
+                          QJsonObject{{"id", 12}, {"x", x2}, {"y", y2}}};
+    };
+    const QString operation = "<operation id=\"10\" suffix=\"_copy\" %1>"
+        "<source><item idObject=\"2\"/><item idObject=\"3\"/></source>"
+        "<destination><item idObject=\"11\" mx=\"1\" my=\"1\"/><item idObject=\"12\" mx=\"1\" my=\"1\"/></destination>"
+        "</operation>";
+    QTest::newRow("rotate") << operation.arg("type=\"rotation\" center=\"1\" angle=\"90\"")
+        << QJsonObject{{"angle", "180"}} << points(0, -10, 10, -10) << points(-10, 0, -10, -10);
+    // Also cover the explicit rotation origin when combining move and rotate.
+    QTest::newRow("move") << operation.arg("type=\"moving\" center=\"1\" angle=\"0\" length=\"5\" rotationAngle=\"0\"")
+        << QJsonObject{{"rotationAngle", "90"}} << points(15, 0, 15, 10) << points(0, -15, 10, -15);
+    QTest::newRow("mirror-line") << operation.arg("type=\"flippingByLine\" p1Line=\"1\" p2Line=\"4\"")
+        << QJsonObject{{"p2Line", "2"}} << points(-10, 0, -10, 10) << points(10, 0, 10, -10);
+    QTest::newRow("mirror-axis") << operation.arg("type=\"flippingByAxis\" center=\"1\" axisType=\"1\"")
+        << QJsonObject{{"axisType", "2"}} << points(-10, 0, -10, 10) << points(10, 0, 10, -10);
+    // A symmetric dart around (5,5) with legs at (4,0) and (6,0).
+    // Closing it against the horizontal seam gives rational intersections;
+    // changing the right seam endpoint to (10,10) gives the second pair.
+    QTest::newRow("true-darts") << QString("<point id=\"10\" type=\"trueDarts\" baseLineP1=\"1\" baseLineP2=\"2\" "
+        "dartP1=\"6\" dartP2=\"5\" dartP3=\"7\" point1=\"11\" point2=\"12\" "
+        "name1=\"DartLeft\" name2=\"DartRight\" mx1=\"1\" my1=\"1\" mx2=\"1\" my2=\"1\"/>")
+        << QJsonObject{{"baseLineP2", "3"}}
+        << points(50.0 / 13, -10.0 / 13, 80.0 / 13, -10.0 / 13)
+        << points(60.0 / 13, 40.0 / 13, 70.0 / 13, 40.0 / 13);
+}
+
+void McpTest::advancedOperations()
+{
+    const auto app = qEnvironmentVariable("SEAMLY_MCP_TEST_APP");
+    if (app.isEmpty()) QSKIP("Set SEAMLY_MCP_TEST_APP to run against the built Qt app.");
+    QFETCH(QString, xml);
+    QFETCH(QJsonObject, attributes);
+    QFETCH(QJsonArray, createdPoints);
+    QFETCH(QJsonArray, editedPoints);
+    const QByteArray document = R"(<pattern><version>0.7.6</version><unit>cm</unit>
+<description/><notes/><measurements/><variables/><draftBlock name="Operations"><calculation>
+<point id="1" type="single" name="A" x="0" y="0" mx="1" my="1"/>
+<point id="2" type="endLine" name="B" basePoint="1" angle="0" length="10" lineType="solidLine" mx="1" my="1"/>
+<point id="3" type="endLine" name="C" basePoint="2" angle="270" length="10" lineType="solidLine" mx="1" my="1"/>
+<point id="4" type="endLine" name="D" basePoint="1" angle="270" length="10" lineType="solidLine" mx="1" my="1"/>
+<point id="5" type="endLine" name="Apex" basePoint="1" angle="315" length="7.0710678118654755" lineType="solidLine" mx="1" my="1"/>
+<point id="6" type="endLine" name="Left" basePoint="1" angle="0" length="4" lineType="solidLine" mx="1" my="1"/>
+<point id="7" type="endLine" name="Right" basePoint="1" angle="0" length="6" lineType="solidLine" mx="1" my="1"/>
+</calculation><modeling/><pieces/><groups/><images/></draftBlock></pattern>
+)";
+    ApplicationSession session;
+    QVERIFY2(session.start(app, document), qPrintable(session.error));
+    auto &client = session.client;
+    const auto data = [](const QJsonObject &reply) { return reply.value("structuredContent").toObject(); };
+    const auto edit = [&](const QString &name, QJsonObject args = {})
+    {
+        args.insert("state_token", data(client.call("get_pattern_summary")).value("state_token"));
+        return client.call(name, args);
+    };
+    const auto success = [](const QJsonObject &reply) { return reply.value("isError") == QJsonValue(false); };
+    QString diagnostic;
+    const auto checkPoints = [&](const QJsonArray &expected)
+    {
+        const auto reply = client.call("list_objects");
+        if (!success(reply)) { diagnostic = QString::fromUtf8(QJsonDocument(reply).toJson()); return false; }
+        const auto objects = data(reply).value("objects").toArray();
+        for (const auto &entry : expected)
+        {
+            const auto point = entry.toObject();
+            bool found = false;
+            for (const auto &object : objects)
+            {
+                const auto actual = object.toObject();
+                if (actual.value("id") != point.value("id")) continue;
+                found = actual.value("type") == QJsonValue("point") && actual.value("x").isDouble() && actual.value("y").isDouble()
+                    && std::abs(actual.value("x").toDouble() - point.value("x").toDouble()) < 1e-7
+                    && std::abs(actual.value("y").toDouble() - point.value("y").toDouble()) < 1e-7;
+                diagnostic = "Expected " + QString::fromUtf8(QJsonDocument(point).toJson(QJsonDocument::Compact))
+                    + "; got " + QString::fromUtf8(QJsonDocument(actual).toJson(QJsonDocument::Compact));
+                break;
+            }
+            if (!found) return false;
+        }
+        return true;
+    };
+    auto reply = edit("create_tool", {{"section", "calculation"}, {"xml", xml}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY2(checkPoints(createdPoints), qPrintable(diagnostic));
+    // Generated points have their own IDs but share the operation's XML element.
+    reply = client.call("get_object", {{"id", 11}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QCOMPARE(data(reply).value("element_id"), QJsonValue(10));
+    QCOMPARE(data(reply).value("geometry").toObject().value("tool_id"), QJsonValue(10));
+
+    const auto beforeInvalid = data(client.call("get_pattern_summary")).value("state_token");
+    auto invalid = attributes;
+    invalid.insert(xml.startsWith("<operation") ? "center" : "dartP2", "99999");
+    if (xml.contains("flippingByLine")) invalid = {{"p1Line", "99999"}};
+    QCOMPARE(edit("update_object", {{"id", 10}, {"attributes", invalid}}).value("isError"), QJsonValue(true));
+    QCOMPARE(data(client.call("get_pattern_summary")).value("state_token"), beforeInvalid);
+    QVERIFY2(checkPoints(createdPoints), qPrintable(diagnostic));
+    reply = edit("update_object", {{"id", 10}, {"attributes", attributes}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    QVERIFY(success(edit("undo")));
+    QVERIFY2(checkPoints(createdPoints), qPrintable(diagnostic));
+    QVERIFY(success(edit("redo")));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+
+    // A subsequent XML tool must not reuse either generated object's ID.
+    reply = edit("create_arc", {{"center_id", 1}, {"radius", "2"}, {"angle1", "0"}, {"angle2", "90"}});
+    QVERIFY2(success(reply), qPrintable(QString::fromUtf8(QJsonDocument(reply).toJson())));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    int arcId = 0;
+    for (const auto &object : data(client.call("list_objects")).value("objects").toArray())
+        if (object.toObject().value("type") == QJsonValue("arc")) arcId = object.toObject().value("id").toInt();
+    QVERIFY(arcId > 12);
+    QVERIFY(success(edit("delete_object", {{"id", arcId}})));
+    QVERIFY(success(edit("undo")));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    QVERIFY(success(edit("redo")));
+    QVERIFY(success(edit("undo")));
+    QVERIFY(success(edit("undo")));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    QVERIFY(success(edit("undo")));
+    QVERIFY(success(edit("undo")));
+    QCOMPARE(data(client.call("get_pattern_summary")).value("object_count"), QJsonValue(7));
+    QVERIFY(success(edit("redo")));
+    QVERIFY2(checkPoints(createdPoints), qPrintable(diagnostic));
+    QVERIFY(success(edit("redo")));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    const auto saved = session.directory.filePath("operations.sm2d");
+    QVERIFY(success(edit("save_pattern", {{"path", saved}})));
+    QVERIFY(success(edit("close_pattern")));
+    QVERIFY(success(edit("open_pattern", {{"path", saved}})));
+    QVERIFY2(checkPoints(editedPoints), qPrintable(diagnostic));
+    QFile original(session.patternPath);
+    QVERIFY(original.open(QIODevice::ReadOnly));
+    QCOMPARE(original.readAll(), document);
 }
 
 QTEST_GUILESS_MAIN(McpTest)
