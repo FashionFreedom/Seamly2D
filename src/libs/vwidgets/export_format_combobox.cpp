@@ -316,9 +316,12 @@ void ExportFormatCombobox::updateExportFormat(int index)
 
 void ExportFormatCombobox::setCurrentToDefault()
 {
-    QString format = qApp->Settings()->getExportFormat();
+    const QString format = qApp->Settings()->getExportFormat();
 
-    int index = findText(format);
+    bool ok = false;
+    const int value = format.toInt(&ok);
+    // Older versions stored the translated item text.
+    int index = ok ? findData(value) : findText(format);
     if (index != -1)
     {
         setCurrentIndex(index);
