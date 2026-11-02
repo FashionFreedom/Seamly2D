@@ -205,6 +205,8 @@ COLLECTION_FILES += \
     share/maleshirt/male_shirt.smis \
     share/trousers/trousers.sm2d \
     share/trousers/trousers.smis \
+    share/trousers/trousers_v0_6_8.sm2d \
+    share/trousers/trousers_v0_6_8.smis \
     share/steampunk_trousers/steampunk_trousers.sm2d \
     share/steampunk_trousers/steampunk_trousers.smis \
     share/imk_zhaketa/razmernye_priznaki_dlya_zhenskogo_zhaketa.smis \
