@@ -60,6 +60,12 @@ const qreal defPointRadiusPixel = (2./*mm*/ / 25.4) * PrintDPI;
 const qreal widthMainLine = (1.2/*mm*/ / 25.4) * PrintDPI;
 const qreal widthHairLine = widthMainLine/3.0;
 
+// Set from the drawing area background color, see setDarkBackground. Cached because correctColor runs on every paint.
+static bool dark_background = false;
+
+// Black is shown this light on a dark background: enough to read, short of glaring white
+const float adaptedBlackLightness = 0.85f;
+
 qreal sceneScale(QGraphicsScene *scene)
 {
     qreal scale = 1;
@@ -81,14 +87,49 @@ QColor correctColor(const QGraphicsItem *item, const QColor &color)
 {
     SCASSERT(item != nullptr)
 
-    if (item->isEnabled())
-    {
-        return color;
-    }
-    else
+    if (!item->isEnabled())
     {
         return Qt::gray;
     }
+
+    return adaptColor(color);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief adaptColor color to show on the drawing area.
+///
+/// On a dark background (and with "Adapt colors to a dark background" on) black is shown as light grey so it stays
+/// visible. Every other color is painted exactly as it was chosen, so the drawing area always matches the color
+/// picker. This is the same idea as AutoCAD's black/white color, which draws white on a dark model space and prints
+/// black. Display only: the pattern keeps the real color for saving, printing and export.
+/// @param color the color stored in the pattern or settings.
+/// @return the color to paint with.
+QColor adaptColor(const QColor &color)
+{
+    if (!dark_background || color != QColor(Qt::black))
+    {
+        return color;
+    }
+
+    QColor adapted = Qt::black;
+    adapted.setHslF(0.0f, 0.0f, adaptedBlackLightness, color.alphaF());
+    return adapted;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setDarkBackground turns the lightness flip in adaptColor on or off.
+/// @param dark true when colors should adapt to a dark drawing area background.
+void setDarkBackground(bool dark)
+{
+    dark_background = dark;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief isDarkBackground whether adaptColor currently flips lightness.
+/// @return true when colors adapt to a dark drawing area background.
+bool isDarkBackground()
+{
+    return dark_background;
 }
 
 // @brief pointRect finds the bounding rect of a point with a given radius.

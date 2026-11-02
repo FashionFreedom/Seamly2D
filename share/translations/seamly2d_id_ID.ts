@@ -8944,6 +8944,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <source>Theme:</source>
         <translation>Tema:</translation>
     </message>
+    <message>
+        <source>Customize colors...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Workspace background and drawing colors (Graphics page)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9243,6 +9251,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Gunakan kotak dialog bawaan</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12224,6 +12240,14 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Beige</source>
         <translation>Krem</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
