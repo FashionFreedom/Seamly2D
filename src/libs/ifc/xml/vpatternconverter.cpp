@@ -241,7 +241,9 @@ static const QString strBottomAnchor              = QStringLiteral("bottomAnchor
 VPatternConverter::VPatternConverter(const QString &fileName)
     : VAbstractConverter(fileName)
 {
-    if (fixGroupsOrder())
+    // The images tag exists from 0.7.1. An older file is validated against its own schema first,
+    // so its draft blocks get the groups and images tags in toVersion0_7_1(), during the conversion.
+    if (m_ver >= CONVERTER_VERSION_CHECK(0, 7, 1) && fixGroupsOrder())
     {
         saveRepairedCopy();
     }
@@ -1489,6 +1491,7 @@ void VPatternConverter::toVersion0_7_1()
     Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 7, 1),
                       "Time to refactor the code.");
     setVersion(QStringLiteral("0.7.1"));
+    fixGroupsOrder();
     Save();
 }
 
