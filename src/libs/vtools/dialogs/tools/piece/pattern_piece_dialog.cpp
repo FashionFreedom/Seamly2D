@@ -318,10 +318,10 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     m_oldData = piece.GetPatternPieceData();
     ui->letter_LineEdit->setText(m_oldData.GetLetter());
     ui->annotation_LineEdit->setText(m_oldData.GetAnnotation());
-    ui->orientation_ComboBox->setCurrentText(m_oldData.GetOrientation());
-    ui->rotation_ComboBox->setCurrentText(m_oldData.getRotationWay());
-    ui->tilt_ComboBox->setCurrentText(m_oldData.GetTilt());
-    ui->foldPosition_ComboBox->setCurrentText(m_oldData.GetFoldPosition());
+    setCurrentText(ui->orientation_ComboBox, m_oldData.GetOrientation());
+    setCurrentText(ui->rotation_ComboBox, m_oldData.getRotationWay());
+    setCurrentText(ui->tilt_ComboBox, m_oldData.GetTilt());
+    setCurrentText(ui->foldPosition_ComboBox, m_oldData.GetFoldPosition());
 
     ui->quantity_SpinBox->setValue(m_oldData.GetQuantity());
     ui->fold_CheckBox->setChecked(m_oldData.IsOnFold());
@@ -2645,10 +2645,10 @@ VPiece PatternPieceDialog::CreatePiece() const
     piece.GetPatternPieceData() = m_oldData;
     piece.GetPatternPieceData().SetLetter(ui->letter_LineEdit->text());
     piece.GetPatternPieceData().SetAnnotation(ui->annotation_LineEdit->text());
-    piece.GetPatternPieceData().SetOrientation(ui->orientation_ComboBox->currentText());
-    piece.GetPatternPieceData().SetRotationWay(ui->rotation_ComboBox->currentText());
-    piece.GetPatternPieceData().SetTilt(ui->tilt_ComboBox->currentText());
-    piece.GetPatternPieceData().SetFoldPosition(ui->foldPosition_ComboBox->currentText());
+    piece.GetPatternPieceData().SetOrientation(ui->orientation_ComboBox->currentData().toString());
+    piece.GetPatternPieceData().SetRotationWay(ui->rotation_ComboBox->currentData().toString());
+    piece.GetPatternPieceData().SetTilt(ui->tilt_ComboBox->currentData().toString());
+    piece.GetPatternPieceData().SetFoldPosition(ui->foldPosition_ComboBox->currentData().toString());
     piece.GetPatternPieceData().SetQuantity(ui->quantity_SpinBox->value());
     piece.GetPatternPieceData().SetOnFold(ui->fold_CheckBox->isChecked());
     piece.GetPatternPieceData().SetLabelTemplate(m_pieceLabelLines);
@@ -3264,6 +3264,25 @@ void PatternPieceDialog::initializeLabelsTab()
     initAnchorPoint(ui->pieceLabelTopLeftAnchor_ComboBox);
     initAnchorPoint(ui->pieceLabelBottomRightAnchor_ComboBox);
 
+    // Item data is the untranslated text, which is what the pattern file stores.
+    ui->orientation_ComboBox->addItem(tr("Undefined"), QStringLiteral("Undefined"));
+    ui->orientation_ComboBox->addItem(tr("Left"), QStringLiteral("Left"));
+    ui->orientation_ComboBox->addItem(tr("Right"), QStringLiteral("Right"));
+
+    ui->rotation_ComboBox->addItem(tr("None"), QStringLiteral("None"));
+    ui->rotation_ComboBox->addItem(tr("1-Way"), QStringLiteral("1-Way"));
+    ui->rotation_ComboBox->addItem(tr("2-Way"), QStringLiteral("2-Way"));
+    ui->rotation_ComboBox->addItem(tr("4-Way"), QStringLiteral("4-Way"));
+    ui->rotation_ComboBox->addItem(tr("Any"), QStringLiteral("Any"));
+
+    ui->tilt_ComboBox->addItem(tr("None"), QStringLiteral("None"));
+    ui->tilt_ComboBox->addItem(QStringLiteral("CW X"), QStringLiteral("CW X"));
+    ui->tilt_ComboBox->addItem(QStringLiteral("CCW X"), QStringLiteral("CCW X"));
+
+    ui->foldPosition_ComboBox->addItem(tr("Undefined"), QStringLiteral("Undefined"));
+    ui->foldPosition_ComboBox->addItem(tr("Up/Down"), QStringLiteral("Up/Down"));
+    ui->foldPosition_ComboBox->addItem(tr("Left/Right"), QStringLiteral("Left/Right"));
+
     connect(ui->pieceLabelTopLeftAnchor_ComboBox, &QComboBox::currentTextChanged,
             this, &PatternPieceDialog::pieceLabelAnchorChanged);
 
@@ -3796,18 +3815,25 @@ void PatternPieceDialog::setNotch(QListWidgetItem *rowItem, bool isNotch, bool s
     }
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setCurrentText selects the item whose data or text is the stored value. Unknown values, such as free text
+/// from older files, are added as an item so saving keeps them.
+/// @param box combo box to select in.
+/// @param text stored value.
 void PatternPieceDialog::setCurrentText(QComboBox *box, const QString &text) const
 {
     SCASSERT(box != nullptr)
-    const qint32 index = box->findText(text);
-    if (index != -1)
+    qint32 index = box->findData(text);
+    if (index == -1)
     {
-        box->setCurrentIndex(index);
+        index = box->findText(text);
     }
-    else
+    if (index == -1 && !text.isEmpty())
     {
-        box->setCurrentIndex(0);
+        box->addItem(text, text);
+        index = box->count() - 1;
     }
+    box->setCurrentIndex(qMax(index, 0));
 }
 
 qreal PatternPieceDialog::getFormulaValue(QPlainTextEdit *text) const
