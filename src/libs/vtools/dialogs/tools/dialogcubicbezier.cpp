@@ -178,7 +178,8 @@ void DialogCubicBezier::SetLengthMode(int value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezier::GetTargetLength() const
 {
-    return ui->plainTextEditCurveLength->toPlainText().trimmed();
+    return qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditCurveLength->toPlainText().trimmed(),
+                                                          qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

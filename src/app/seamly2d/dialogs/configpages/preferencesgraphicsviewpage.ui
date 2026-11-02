@@ -1527,6 +1527,22 @@
               </property>
              </widget>
             </item>
+            <item row="1" column="1">
+             <widget class="QCheckBox" name="adaptColors_CheckBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="toolTip">
+               <string>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</string>
+              </property>
+              <property name="text">
+               <string>Adapt colors to a dark background</string>
+              </property>
+             </widget>
+            </item>
            </layout>
           </item>
          </layout>
