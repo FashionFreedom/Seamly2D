@@ -145,10 +145,15 @@ void InitPiecePlaceholders(QMap<QString, QString> &placeholders, const QString &
 {
     placeholders[pl_pLetter] = data.GetLetter();
     placeholders[pl_pAnnotation] = data.GetAnnotation();
-    placeholders[pl_pOrientation] = data.GetOrientation();
-    placeholders[pl_pRotation] = data.getRotationWay();
-    placeholders[pl_pTilt] = data.GetTilt();
-    placeholders[pl_pFoldPosition] = data.GetFoldPosition();
+    // Values are stored untranslated, with the item texts of the pattern piece dialog.
+    auto translated = [](const QString &value)
+    {
+        return QCoreApplication::translate("PatternPieceDialog", value.toUtf8().constData());
+    };
+    placeholders[pl_pOrientation] = translated(data.GetOrientation());
+    placeholders[pl_pRotation] = translated(data.getRotationWay());
+    placeholders[pl_pTilt] = translated(data.GetTilt());
+    placeholders[pl_pFoldPosition] = translated(data.GetFoldPosition());
     placeholders[pl_pName] = name;
     placeholders[pl_pQuantity] = QString::number(data.GetQuantity());
 
