@@ -4,6 +4,9 @@
 <dict>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<!-- Start without a Dock icon; GUI mode turns it on in main.cpp, console mode (export / test) stays hidden -->
+	<key>LSUIElement</key>
+	<true/>
 	<key>CFBundleIconFile</key>
 	<string>@ICON@</string>
 	<key>CFBundlePackageType</key>

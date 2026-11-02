@@ -72,6 +72,7 @@
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QGraphicsScene>
+#include <QIcon>
 #include <QMessageBox>
 #include <QProcess>
 #include <QToolButton>
@@ -1291,14 +1292,13 @@ void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief MainWindowsNoGUI::RestoreTextAfterDXF restore QGraphicsSimpleTextItem items after export to flat dxf.
- *
- * Because QPaintEngine::drawTextItem doesn't pass whole string per time we mark end of each string by adding special
- * placeholder. This method remove it.
- *
- * @param placeholder placeholder that will be removed from each QGraphicsSimpleTextItem item's text string.
- */
+/// @brief MainWindowsNoGUI::RestoreTextAfterDXF restore QGraphicsSimpleTextItem items after export to flat dxf.
+///
+/// Because QPaintEngine::drawTextItem doesn't pass whole string per time we mark end of each string by adding special
+/// placeholder. This method remove it.
+///
+/// @param placeholder placeholder that will be removed from each QGraphicsSimpleTextItem item's text string.
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::RestoreTextAfterDXF(const QString &placeholder,
                                            const QList<QList<QGraphicsItem *> > &pieces) const
 {
@@ -1352,8 +1352,32 @@ void MainWindowsNoGUI::PrintPreview()
 
     SetPrinterSettings(printer.data(), PrintType::PrintPreview);
     printer->setResolution(static_cast<int>(PrintDPI));
-    // display print preview dialog
+
     QPrintPreviewDialog preview(printer.data());
+
+    // Need to fix a bad svg icon in some Linux distros
+    // Locate the internal toolbar compiled inside the dialog
+    QList<QToolBar *> toolbars = preview.findChildren<QToolBar *>();
+
+    if (!toolbars.isEmpty())
+    {
+        QToolBar *mainToolbar = toolbars.first();
+
+        // Loop through the actions to find the Printer button
+        // On modern Qt versions, it's safer to check the objectName or toolTip
+        // than relying on a hardcoded index position.
+        for (QAction *action : mainToolbar->actions())
+        {
+            if (action->toolTip().contains("Print") || action->objectName().contains("print"))
+            {
+
+                // Swap it with your own safe asset compiled into your resource file (.qrc)
+                action->setIcon(QIcon(":/icon/32x32/printer_icon.png"));
+                break;
+            }
+        }
+    }
+
     connect(&preview, &QPrintPreviewDialog::paintRequested, this, &MainWindowsNoGUI::PrintPages);
     preview.exec();
 }

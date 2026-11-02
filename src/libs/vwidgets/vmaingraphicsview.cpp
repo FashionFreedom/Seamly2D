@@ -50,6 +50,7 @@
  *************************************************************************/
 
 #include "vmaingraphicsview.h"
+#include "global.h"
 
 #include <QApplication>
 #include <QCursor>
@@ -731,11 +732,11 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
           {
               if ( (endPoint.x() < startPoint.x()) || (endPoint.y() < startPoint.y()) )
               {
-                setRubberBandColor(rubberBand, qApp->Settings()->getZoomRBNegativeColor());
+                setRubberBandColor(rubberBand, adaptColor(QColor(qApp->Settings()->getZoomRBNegativeColor())));
               }
               else
               {
-                setRubberBandColor(rubberBand, qApp->Settings()->getZoomRBPositiveColor());
+                setRubberBandColor(rubberBand, adaptColor(QColor(qApp->Settings()->getZoomRBPositiveColor())));
               }
               isRubberBandColorSet = true;
           }
