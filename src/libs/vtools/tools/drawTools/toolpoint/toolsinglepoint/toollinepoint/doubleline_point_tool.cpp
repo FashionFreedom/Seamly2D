@@ -107,7 +107,7 @@ DoubleLinePointTool::~DoubleLinePointTool()
 void DoubleLinePointTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPen pen = firstLine->pen();
-    pen.setColor(correctColor(this, lineColor));
+    pen.setColor(adjustColorForState(this, lineColor));
     pen.setStyle(lineTypeToPenStyle(m_lineType));
     pen.setWidthF(ToPixel(m_lineWeight.toDouble(), Unit::Mm)); 
 

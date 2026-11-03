@@ -8944,14 +8944,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation>主题:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9046,6 +9038,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Colors</source>
         <translation>颜色</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在深色背景上，将深色线条、点和标签显示得更浅，以便保持可见（黑色显示为浅灰色). 图案在保存、打印和导出时保留其实际颜色.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9254,11 +9250,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>适配深色背景</translation>
     </message>
 </context>
 <context>
@@ -12095,6 +12087,10 @@ load in SeamlyME as usual.
         <translation>矢车菊蓝</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>黑色 | 白色</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>黑色的</translation>
     </message>
@@ -12244,11 +12240,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>深炭灰</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>石墨色</translation>
     </message>
 </context>
 <context>

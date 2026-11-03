@@ -8944,14 +8944,6 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <source>Theme:</source>
         <translation>Teema:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9046,6 +9038,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Colors</source>
         <translation>Värit</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tumman taustan päällä tummat viivat, pisteet ja etiketit näytetään vaaleampina, jotta ne pysyvät näkyvissä (musta näkyy vaaleanharmaana). Kuvio säilyttää todelliset värinsä tallennusta, tulostusta ja vientiä varten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9254,11 +9250,7 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mukauta värit tummalle taustalle</translation>
     </message>
 </context>
 <context>
@@ -12094,6 +12086,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Sininen maissinkukka</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Musta | Valkoinen</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Musta</translation>
     </message>
@@ -12243,11 +12239,11 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Hiili</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafiitti</translation>
     </message>
 </context>
 <context>
