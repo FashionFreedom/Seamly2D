@@ -142,7 +142,7 @@ QString InternalPathTool::getTagName() const
 void InternalPathTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     const VPiecePath path = VAbstractTool::data.getPiecePath(m_id);
-    QColor color          = correctColor(this, QColor(path.getLineColor()));
+    QColor color          = adjustColorForState(this, QColor(path.getLineColor()));
     Qt::PenStyle lineType = path.getLineType();
     qreal lineWeight      = ToPixel(path.getLineWeight().toDouble(), Unit::Mm);
     this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())), lineType, Qt::RoundCap, Qt::RoundJoin));
