@@ -212,7 +212,7 @@ void VSimpleCurve::ScalePenWidth()
     }
 
     width = scaleWidth(width, sceneScale(scene()));
-    setPen(QPen(correctColor(this, qApp->getCurrentDocument()->useGroupColor(id, m_curve->getLineColor())),
+    setPen(QPen(adjustColorForState(this, qApp->getCurrentDocument()->useGroupColor(id, m_curve->getLineColor())),
                 width,
                 lineTypeToPenStyle(qApp->getCurrentDocument()->useGroupLineType(id, m_curve->GetPenStyle()))));
 }
