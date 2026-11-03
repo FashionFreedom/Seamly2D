@@ -8946,14 +8946,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation>Θέμα:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9048,6 +9040,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Colors</source>
         <translation>Χρώματα</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Σε σκούρο φόντο, εμφανίστε τις σκούρες γραμμές, τα σημεία και τις ετικέτες πιο ανοιχτά, ώστε να παραμένουν ορατά (το μαύρο εμφανίζεται ως ανοιχτό γκρι). Το μοτίβο διατηρεί τα πραγματικά του χρώματα για αποθήκευση, εκτύπωση και εξαγωγή.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9256,11 +9252,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμογή χρωμάτων σε σκούρο φόντο</translation>
     </message>
 </context>
 <context>
@@ -12096,6 +12088,10 @@ load in SeamlyME as usual.
         <translation>Μπλε άνθος καλαμποκιού</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Μαύρο | Λευκό</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Μαύρο</translation>
     </message>
@@ -12245,11 +12241,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Ανθρακί</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραφίτης</translation>
     </message>
 </context>
 <context>
