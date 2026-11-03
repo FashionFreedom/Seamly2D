@@ -8944,14 +8944,6 @@ Czy chcesz zapisać zmiany?</translation>
         <source>Theme:</source>
         <translation>Motyw:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9098,6 +9090,10 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Background:</source>
         <translation>Tło:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Na ciemnym tle pokazuj ciemne linie, punkty i etykiety jako jaśniejsze, aby pozostały widoczne (czarny wyświetla się jako jasnoszary). Wzór zachowuje swoje rzeczywiste kolory podczas zapisywania, drukowania i eksportu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9254,11 +9250,7 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostosuj kolory do ciemnego tła</translation>
     </message>
 </context>
 <context>
@@ -12093,6 +12085,10 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Kwiat kukurydzy niebieski</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Czarny | Biały</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Czarny</translation>
     </message>
@@ -12242,11 +12238,11 @@ Czy chcesz zapisać zmiany?</translation>
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Antracyt</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafit</translation>
     </message>
 </context>
 <context>
