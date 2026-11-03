@@ -155,6 +155,15 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         type = QtDebugMsg;
     }
 
+    // Qt's accessibility code warns when an assistive client (VoiceOver, Narrator, automation tools) asks an item
+    // view for an item that a model reset just removed. Qt handles it by returning no item, so don't pop up a dialog.
+    if ((type == QtWarningMsg) && (QLatin1String(context.category).startsWith(QLatin1String("qt.accessibility"))
+            || msg.startsWith(QLatin1String("QAccessible")) || msg.startsWith(QLatin1String("QCocoaAccessibility"))
+            || msg.startsWith(QLatin1String("Requested invalid tree cell"))))
+    {
+        type = QtDebugMsg;
+    }
+  
     // Qt's font database warns when a requested font family is not installed and it has to search the aliases for a
     // substitute. The text still renders with the fallback, so log it without a dialog.
     if ((type == QtWarningMsg) && msg.contains(QStringLiteral("Populating font family aliases")))
