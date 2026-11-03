@@ -142,7 +142,7 @@ void VMainGraphicsScene::initializeOrigins()
 {
     origins.clear();
 
-    QColor orginColor = (QColor(qApp->Settings()->getAxisOrginColor()));
+    QColor orginColor = adaptColor(QColor(qApp->Settings()->getAxisOrginColor()));
     QPen originsPen(orginColor, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
     QBrush axisTextBrush(orginColor);
     const qreal arrowAngle = 35.0;

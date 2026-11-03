@@ -9040,6 +9040,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>颜色</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在深色背景上，将深色线条、点和标签显示得更浅，以便保持可见（黑色显示为浅灰色). 图案在保存、打印和导出时保留其实际颜色.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>变焦橡皮筋</translation>
     </message>
@@ -9243,6 +9247,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Use native dialogs</source>
         <translation>使用原生对话框</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>适配深色背景</translation>
     </message>
 </context>
 <context>
@@ -12079,6 +12087,10 @@ load in SeamlyME as usual.
         <translation>矢车菊蓝</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>黑色 | 白色</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>黑色的</translation>
     </message>
@@ -12225,6 +12237,14 @@ load in SeamlyME as usual.
     <message>
         <source>Beige</source>
         <translation>浅褐色的</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>深炭灰</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>石墨色</translation>
     </message>
 </context>
 <context>

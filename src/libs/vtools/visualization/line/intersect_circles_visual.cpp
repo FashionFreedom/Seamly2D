@@ -40,6 +40,7 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../visualization.h"
+#include "../vwidgets/global.h"
 
 #include <QGraphicsEllipseItem>
 #include <QPen>
@@ -60,8 +61,8 @@ IntersectCirclesVisual::IntersectCirclesVisual(const VContainer *data, QGraphics
     , c2Center(nullptr)
     , c1Path(nullptr)
     , c2Path(nullptr)
-    , m_secondrySupportColor(QColor(qApp->Settings()->getSecondarySupportColor()))
-    , m_tertiarySupportColor(QColor(qApp->Settings()->getTertiarySupportColor()))
+    , m_secondrySupportColor(adaptColor(QColor(qApp->Settings()->getSecondarySupportColor())))
+    , m_tertiarySupportColor(adaptColor(QColor(qApp->Settings()->getTertiarySupportColor())))
 {
     this->setPen(QPen(Qt::NoPen)); // don't use parent this time
 

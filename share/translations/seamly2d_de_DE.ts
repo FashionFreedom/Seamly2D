@@ -9024,6 +9024,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Farben</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Zeigen Sie auf einem dunklen Hintergrund dunkle Linien, Punkte und Beschriftungen heller an, damit sie sichtbar bleiben (Schwarz wird als Hellgrau angezeigt). Das Muster behält seine echten Farben beim Speichern, Drucken und Exportieren bei.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Zoom Gummiband</translation>
     </message>
@@ -9227,6 +9231,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Use native dialogs</source>
         <translation>Native Dialogfelder verwenden</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Farben an einen dunklen Hintergrund anpassen</translation>
     </message>
 </context>
 <context>
@@ -12062,6 +12070,10 @@ wie gewohnt in SeamlyME laden können.
         <translation>Kornblumenblau</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Schwarz | Weiß</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Schwarz</translation>
     </message>
@@ -12210,6 +12222,14 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Kohle</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Graphit</translation>
     </message>
 </context>
 <context>

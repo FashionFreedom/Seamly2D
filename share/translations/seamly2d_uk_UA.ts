@@ -9045,6 +9045,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Фон:</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; На темному фоні темні лінії, точки та мітки відображаються світлішими, щоб вони залишалися видимими (чорний відображається як світло-сірий). Шаблон зберігає свої справжні кольори для збереження, друку та експорту.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Гумка для збільшення</translation>
     </message>
@@ -9240,6 +9244,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show only ISO line weights in drop down boxes</source>
         <translation>Показувати лише товщину ліній ISO у випадаючих списках</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Адаптувати кольори до темного фону</translation>
     </message>
 </context>
 <context>
@@ -12074,6 +12082,10 @@ load in SeamlyME as usual.
         <translation>Кукурудзяна квітка синя</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Чорний | Білий</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Чорний</translation>
     </message>
@@ -12220,6 +12232,14 @@ load in SeamlyME as usual.
     <message>
         <source>Tan</source>
         <translation>Засмага</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Антрацит</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Графіт</translation>
     </message>
 </context>
 <context>
