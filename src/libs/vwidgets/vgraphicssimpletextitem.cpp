@@ -365,13 +365,13 @@ QColor VGraphicsSimpleTextItem::getTextBrushColor()
 {
     if (qApp->Settings()->getUseToolColor())
     {
-        QColor textColor = correctColor(this, m_textColor);
+        QColor textColor = adjustColorForState(this, m_textColor);
         textColor.setAlpha(224);
         return textColor;
     }
     else
     {
-        QColor textColor = correctColor(this, QColor(qApp->Settings()->getPointNameColor()));
+        QColor textColor = adjustColorForState(this, QColor(qApp->Settings()->getPointNameColor()));
         textColor.setAlpha(224);
         return textColor;
     }

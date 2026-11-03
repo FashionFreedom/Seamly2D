@@ -8981,14 +8981,6 @@ Press enter to temporarily add it to the list.</source>
         <source>Theme:</source>
         <translation>Tema:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9083,6 +9075,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Colors</source>
         <translation>Colores</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;En un fondo oscuro, se muestran las líneas oscuras, los puntos y las etiquetas más claros para que sigan siendo visibles (el negro se muestra como gris claro). El patrón conserva sus colores reales para guardar, imprimir y exportar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9292,11 +9288,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adaptar colores a un fondo oscuro</translation>
     </message>
 </context>
 <context>
@@ -12134,6 +12126,10 @@ load in SeamlyME as usual.
         <translation>Azul aciano</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Negro | Blanco</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Negro</translation>
     </message>
@@ -12283,11 +12279,11 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Antracita</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafito</translation>
     </message>
 </context>
 <context>
