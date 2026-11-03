@@ -1,5 +1,6 @@
 var NAVTREEINDEX267 =
 {
+"dd/d17/msvc_2include_2xercesc_2util_2regx_2StringToken_8hpp_source.html":[4,0,0,1,15,2,0,0,6,3,18],
 "dd/d1d/macx_2include_2xercesc_2framework_2XMLRecognizer_8hpp.html":[4,0,0,1,15,0,0,0,1,32],
 "dd/d1d/macx_2include_2xercesc_2framework_2XMLRecognizer_8hpp_source.html":[4,0,0,1,15,0,0,0,1,32],
 "dd/d20/classRenameDraftBlock.html":[3,0,454],
@@ -248,6 +249,5 @@ var NAVTREEINDEX267 =
 "dd/d44/classDOMLSOutputImpl.html#a79482a848a335c1bab8fc79aa843496b":[3,0,189,4],
 "dd/d44/classDOMLSOutputImpl.html#a79482a848a335c1bab8fc79aa843496b":[3,0,189,1],
 "dd/d44/classDOMLSOutputImpl.html#a79482a848a335c1bab8fc79aa843496b":[3,0,189,10],
-"dd/d44/classDOMLSOutputImpl.html#a7b482edbf43a0fa645c108eae14aabd7":[3,0,189,31],
-"dd/d44/classDOMLSOutputImpl.html#a7b482edbf43a0fa645c108eae14aabd7":[3,0,189,30]
+"dd/d44/classDOMLSOutputImpl.html#a7b482edbf43a0fa645c108eae14aabd7":[3,0,189,31]
 };

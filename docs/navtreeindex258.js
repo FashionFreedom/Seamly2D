@@ -1,5 +1,6 @@
 var NAVTREEINDEX258 =
 {
+"dc/d8e/classXIncludeUtils.html#a470280247b48ea4c1b66f9a80b37a9c2":[3,0,803,79],
 "dc/d8e/classXIncludeUtils.html#a48f079351b6fb08e81a302f8910919f0":[3,0,803,81],
 "dc/d8e/classXIncludeUtils.html#a56eae3b97bc0cdabb7e7843c4afd00d6":[3,0,803,83],
 "dc/d8e/classXIncludeUtils.html#a6e77dbab5a86477c78b847f98d458dfb":[3,0,803,40],
@@ -248,6 +249,5 @@ var NAVTREEINDEX258 =
 "dc/d93/vistoolarc_8cpp.html":[4,0,0,1,13,3,1,8],
 "dc/d93/vistoolarc_8cpp_source.html":[4,0,0,1,13,3,1,8],
 "dc/d94/msvc_2include_2xercesc_2util_2Janitor_8c.html":[4,0,0,1,15,2,0,0,6,28],
-"dc/d94/msvc_2include_2xercesc_2util_2Janitor_8c_source.html":[4,0,0,1,15,2,0,0,6,28],
-"dc/d94/namespaceanonymous__namespace_02vabstracttool_8cpp_03.html":[2,0,11]
+"dc/d94/msvc_2include_2xercesc_2util_2Janitor_8c_source.html":[4,0,0,1,15,2,0,0,6,28]
 };

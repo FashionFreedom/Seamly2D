@@ -635,52 +635,53 @@ var sectionId = 'dynsection-1';
 <g id="node15" class="node">
 <title>Node15</title>
 <g id="a_node15"><a xlink:href="../../d7/df5/classVMainGraphicsScene.html" target="_top" xlink:title="The VMainGraphicsScene class main scene.">
-<polygon fill="white" stroke="#666666" points="759.62,-1298.25 759.62,-1768.5 921.88,-1768.5 921.88,-1298.25 759.62,-1298.25"/>
-<text xml:space="preserve" text-anchor="middle" x="840.75" y="-1755" font-family="Helvetica,sans-Serif" font-size="10.00">VMainGraphicsScene</text>
-<polyline fill="none" stroke="#666666" points="759.62,-1747.75 921.88,-1747.75"/>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1734.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; horScrollBar</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1721.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; verScrollBar</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1708.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_previousTransform</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1696" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentTransform</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1683.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; scenePos</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1670.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; origins</text>
-<polyline fill="none" stroke="#666666" points="759.62,-1663.25 921.88,-1663.25"/>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1649.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsScene()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1637" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsScene()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1624.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHorScrollBar()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1611.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHorScrollBar()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1598.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVerScrollBar()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1586" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVerScrollBar()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1573.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ transform()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1560.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurrentTransform()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1547.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ swapTransforms()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1535" font-family="Helvetica,sans-Serif" font-size="10.00">+ setToolsDisabled()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1522.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getScenePos()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1509.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ visibleItemsBoundingRect()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1496.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ initializeOrigins()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1484" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginsVisible()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1471.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ chosenItem()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1458.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectedItem()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1445.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableItemMove()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1433" font-family="Helvetica,sans-Serif" font-size="10.00">+ enablePiecesMode()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1420.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ ItemsSelection()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1407.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ HighlightItem()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1394.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleLabelSelection()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1382" font-family="Helvetica,sans-Serif" font-size="10.00">+ TogglePointSelection()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1369.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleLineSelection()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1356.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleArcSelection()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1343.75" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1331" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseMoveEvent()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1318.25" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
-<text xml:space="preserve" text-anchor="start" x="767.62" y="-1305.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
+<polygon fill="white" stroke="#666666" points="759.62,-1291.88 759.62,-1774.88 921.88,-1774.88 921.88,-1291.88 759.62,-1291.88"/>
+<text xml:space="preserve" text-anchor="middle" x="840.75" y="-1761.38" font-family="Helvetica,sans-Serif" font-size="10.00">VMainGraphicsScene</text>
+<polyline fill="none" stroke="#666666" points="759.62,-1754.12 921.88,-1754.12"/>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1740.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; horScrollBar</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1727.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; verScrollBar</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1715.12" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_previousTransform</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1702.38" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentTransform</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1689.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; scenePos</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1676.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; origins</text>
+<polyline fill="none" stroke="#666666" points="759.62,-1669.62 921.88,-1669.62"/>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1656.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsScene()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1643.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsScene()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1630.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ getHorScrollBar()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1617.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHorScrollBar()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1605.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVerScrollBar()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1592.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ setVerScrollBar()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1579.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ transform()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1566.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCurrentTransform()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1554.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ swapTransforms()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1541.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ setToolsDisabled()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1528.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ getScenePos()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1515.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ visibleItemsBoundingRect()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1503.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ clear()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1490.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ initializeOrigins()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1477.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ setOriginsVisible()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1464.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ chosenItem()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1452.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ SelectedItem()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1439.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ EnableItemMove()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1426.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ enablePiecesMode()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1413.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ ItemsSelection()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1401.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ HighlightItem()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1388.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleLabelSelection()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1375.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ TogglePointSelection()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1362.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleLineSelection()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1350.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ ToggleArcSelection()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1337.38" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1324.62" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseMoveEvent()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1311.88" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
+<text xml:space="preserve" text-anchor="start" x="767.62" y="-1299.12" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node15&#45;&gt;Node1 -->
 <g id="edge15" class="edge">
 <title>Node15&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M818.88,-1298C816.27,-1270.03 813.52,-1240.56 810.69,-1210.19"/>
-<polygon fill="none" stroke="#404040" points="810.71,-1210.43 806.17,-1204.83 809.59,-1198.48 814.13,-1204.09 810.71,-1210.43"/>
+<path fill="none" stroke="#404040" d="M818.29,-1291.66C815.87,-1265.69 813.33,-1238.49 810.72,-1210.53"/>
+<polygon fill="none" stroke="#404040" points="810.71,-1210.47 806.17,-1204.87 809.6,-1198.52 814.14,-1204.12 810.71,-1210.47"/>
 <text xml:space="preserve" text-anchor="middle" x="851.23" y="-1225.62" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_pieceScene</text>
 </g>
 <!-- Node16 -->
@@ -699,7 +700,7 @@ var sectionId = 'dynsection-1';
 <!-- Node16&#45;&gt;Node15 -->
 <g id="edge16" class="edge">
 <title>Node16&#45;&gt;Node15</title>
-<path fill="none" stroke="#63b8ff" d="M840.75,-2093.31C840.75,-2026.21 840.75,-1889.93 840.75,-1768.74"/>
+<path fill="none" stroke="#63b8ff" d="M840.75,-2093.5C840.75,-2027.64 840.75,-1894.77 840.75,-1775.08"/>
 <polygon fill="none" stroke="#63b8ff" points="837.25,-2093.11 840.75,-2103.11 844.25,-2093.11 837.25,-2093.11"/>
 </g>
 <!-- Node17&#45;&gt;Node1 -->

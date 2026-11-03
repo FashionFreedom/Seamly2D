@@ -1,5 +1,6 @@
 var NAVTREEINDEX299 =
 {
+"de/dbf/classSchemaElementDecl.html#a515e437c8675674c9e8ea21c6f929940a4a562952b7405e50b4521bb30849f57b":[3,0,472,3,14],
 "de/dbf/classSchemaElementDecl.html#a515e437c8675674c9e8ea21c6f929940a685c9178cb5fe228feeb9e0d54e05fee":[3,0,472,2,20],
 "de/dbf/classSchemaElementDecl.html#a515e437c8675674c9e8ea21c6f929940a685c9178cb5fe228feeb9e0d54e05fee":[3,0,472,2,12],
 "de/dbf/classSchemaElementDecl.html#a515e437c8675674c9e8ea21c6f929940a685c9178cb5fe228feeb9e0d54e05fee":[3,0,472,3,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX299 =
 "de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,358,4],
 "de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,358,0],
 "de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,358,8],
-"de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,358,12],
-"de/dc5/classXercesNodeTest.html":[3,0,797]
+"de/dc5/classMonthDayDatatypeValidator.html#adfaa83017dba655f47f4604a8df40cd3":[3,0,358,12]
 };

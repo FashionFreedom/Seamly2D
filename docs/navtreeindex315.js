@@ -1,5 +1,6 @@
 var NAVTREEINDEX315 =
 {
+"df/d89/classSAX2XMLReader.html#ad6be26566ce8e2f65b95849247d10853ad072387d6d0e7173c95bf2744d9cb42b":[3,0,462,3,4],
 "df/d89/classSAX2XMLReader.html#ae3be1a347fa03c6f6c08d6298702905c":[3,0,462,120],
 "df/d89/classSAX2XMLReader.html#ae3be1a347fa03c6f6c08d6298702905c":[3,0,462,121],
 "df/d89/classSAX2XMLReader.html#ae3be1a347fa03c6f6c08d6298702905c":[3,0,462,122],
@@ -248,6 +249,5 @@ var NAVTREEINDEX315 =
 "df/da7/classPSVIHandler.html#ab00bdb43a6716922069b4716b52179d1":[3,0,414,1],
 "df/da7/classPSVIHandler.html#acd004d71c09d8cdcdfe3f86a2c89c91a":[3,0,414,20],
 "df/da7/groups__widget_8h.html":[4,0,0,0,0,1,27],
-"df/da7/groups__widget_8h_source.html":[4,0,0,0,0,1,27],
-"df/da8/classVPE_1_1VWidgetPropertyPrivate.html":[3,0,2,43]
+"df/da7/groups__widget_8h_source.html":[4,0,0,0,0,1,27]
 };

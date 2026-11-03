@@ -4,6 +4,7 @@ var classVMainGraphicsScene =
     [ "VMainGraphicsScene", "d7/df5/classVMainGraphicsScene.html#a707364e3a62e223af94683c8e9431e30", null ],
     [ "chosenItem", "d7/df5/classVMainGraphicsScene.html#a0a56837cf2173ce8becd995fec5e8404", null ],
     [ "ChosenObject", "d7/df5/classVMainGraphicsScene.html#a9fe0701fd0becf1e01025c32adb29742", null ],
+    [ "clear", "d7/df5/classVMainGraphicsScene.html#a1be17d5fe36401feaec43fa47d376395", null ],
     [ "curvePiecesMode", "d7/df5/classVMainGraphicsScene.html#a2ec92d814799bce05628b4b6e723af90", null ],
     [ "DimensionsChanged", "d7/df5/classVMainGraphicsScene.html#ab9a1ab70ceb009941a5f243eae552a1f", null ],
     [ "DisableItem", "d7/df5/classVMainGraphicsScene.html#a84fab767edd221394da5be91e6ccbf49", null ],

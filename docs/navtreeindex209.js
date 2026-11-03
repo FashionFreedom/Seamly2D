@@ -1,5 +1,6 @@
 var NAVTREEINDEX209 =
 {
+"db/d27/classDTDGrammar.html#a099d10a435f1d7065158d1f8798f698b":[3,0,245,74],
 "db/d27/classDTDGrammar.html#a099d10a435f1d7065158d1f8798f698b":[3,0,245,75],
 "db/d27/classDTDGrammar.html#a1545aec6ee851730fd59c6f511522564":[3,0,245,55],
 "db/d27/classDTDGrammar.html#a1545aec6ee851730fd59c6f511522564":[3,0,245,54],
@@ -248,6 +249,5 @@ var NAVTREEINDEX209 =
 "db/d32/classLayoutSettingsDialog.html#ae8e54246f6b5e3d72ad51f96984a2989":[3,0,331,44],
 "db/d32/classLayoutSettingsDialog.html#aeca355ed44fa88a6ed23826b8d45ed19":[3,0,331,1],
 "db/d32/classLayoutSettingsDialog.html#aefcca8b24a2b257c350eca99283f43cc":[3,0,331,51],
-"db/d32/classLayoutSettingsDialog.html#af43d09a419054e3eab42a54a7c2494b4":[3,0,331,26],
-"db/d32/classLayoutSettingsDialog.html#af4ddb3c2a1682eb8bcf22706ab560e1c":[3,0,331,64]
+"db/d32/classLayoutSettingsDialog.html#af43d09a419054e3eab42a54a7c2494b4":[3,0,331,26]
 };
