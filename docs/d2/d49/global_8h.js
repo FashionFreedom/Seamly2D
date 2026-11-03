@@ -1,7 +1,7 @@
 var global_8h =
 [
     [ "adaptColor", "d2/d49/global_8h.html#af27ecef3347996e1378f66d539431a2b", null ],
-    [ "correctColor", "d2/d49/global_8h.html#a9b9f769370ea4d46dd631409eeb7bf5b", null ],
+    [ "adjustColorForState", "d2/d49/global_8h.html#aa45e60e472ba9ee70c56fde895731add", null ],
     [ "isDarkBackground", "d2/d49/global_8h.html#a57cc0833188d8ea0acde8e81e21cbf86", null ],
     [ "itemShapeFromPath", "d2/d49/global_8h.html#aba310f803d156f4ddf980fd6f7f24f5c", null ],
     [ "pointRect", "d2/d49/global_8h.html#a727e022a994af96878f27777ab331af5", null ],

@@ -11,7 +11,7 @@ var classColorComboBox =
     [ "init", "d5/d10/classColorComboBox.html#a0057db2160209e97f661aea8ae939122", null ],
     [ "setColor", "d5/d10/classColorComboBox.html#a33b1fe996cde97d08d5f9b16e6b9f91c", null ],
     [ "setItems", "d5/d10/classColorComboBox.html#ab1a21c7b8bfe3ff4e9858b64d410654d", null ],
-    [ "m_currentColor", "d5/d10/classColorComboBox.html#ad7d8f60f2f2c8ef8916e6c63562151c8", null ],
-    [ "m_iconHeight", "d5/d10/classColorComboBox.html#a0a4ef93a05b0989d81ef8f1405b3b41e", null ],
-    [ "m_iconWidth", "d5/d10/classColorComboBox.html#a623592fb517726418889c974bf64ca30", null ]
+    [ "m_current_color", "d5/d10/classColorComboBox.html#aa818e04ef12d580fa9489f4bb66abb46", null ],
+    [ "m_icon_height", "d5/d10/classColorComboBox.html#ab25872f795a8e7f51dcf4cd9be1854db", null ],
+    [ "m_icon_width", "d5/d10/classColorComboBox.html#acd7c7fcf972980a848a872a4bee78ce5", null ]
 ];
