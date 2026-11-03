@@ -8943,14 +8943,6 @@ Menti a módosításokat?</translation>
         <source>Theme:</source>
         <translation>Téma:</translation>
     </message>
-    <message>
-        <source>Customize colors...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Workspace background and drawing colors (Graphics page)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9097,6 +9089,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Background:</source>
         <translation>Háttér:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sötét háttér esetén a sötét vonalak, pontok és címkék világosabban jelenjenek meg, hogy láthatóak maradjanak (a fekete világosszürkén jelenik meg). A minta megőrzi a valódi színeit a mentéshez, nyomtatáshoz és exporthoz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9253,11 +9249,7 @@ Menti a módosításokat?</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.</source>
-        <translation type="unfinished"></translation>
+        <translation>Színek igazítása a sötét háttérhez</translation>
     </message>
 </context>
 <context>
@@ -12092,6 +12084,10 @@ Menti a módosításokat?</translation>
         <translation>Kukoricavirág kék</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Fekete | Fehér</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Fekete</translation>
     </message>
@@ -12241,11 +12237,11 @@ Menti a módosításokat?</translation>
     </message>
     <message>
         <source>Charcoal</source>
-        <translation type="unfinished"></translation>
+        <translation>Antracit</translation>
     </message>
     <message>
         <source>Graphite</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafit</translation>
     </message>
 </context>
 <context>

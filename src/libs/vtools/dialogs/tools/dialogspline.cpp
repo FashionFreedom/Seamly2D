@@ -615,7 +615,8 @@ void DialogSpline::SetLengthMode(int value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogSpline::GetTargetLength() const
 {
-    return ui->plainTextEditCurveLength->toPlainText().trimmed();
+    return qApp->translateVariables()->TryFormulaFromUser(ui->plainTextEditCurveLength->toPlainText().trimmed(),
+                                                          qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
