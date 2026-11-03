@@ -847,9 +847,9 @@ void VMainGraphicsView::allowRubberBand(bool value)
 
     // Pad by half the view size so panning can move any point to the center of the view.
     // The padding only goes on the view's scene rect, so the scene's own rect (used by exports) stays tight.
-    const qreal marginX = viewRect.width() / 2.0;
-    const qreal marginY = viewRect.height() / 2.0;
-    const bool isViewScene = view->scene() == sc;
+    const qreal margin_x = viewRect.width() / 2.0;
+    const qreal margin_y = viewRect.height() / 2.0;
+    const bool is_view_scene = view->scene() == sc;
 
     if (item == nullptr)
     {
@@ -861,33 +861,33 @@ void VMainGraphicsView::allowRubberBand(bool value)
         //Unite two rects
         sc->setSceneRect(itemsRect.united(viewRect));
 
-        if (isViewScene)
+        if (is_view_scene)
         {
-            view->setSceneRect(itemsRect.adjusted(-marginX, -marginY, marginX, marginY).united(viewRect));
+            view->setSceneRect(itemsRect.adjusted(-margin_x, -margin_y, margin_x, margin_y).united(viewRect));
         }
     }
     else
     {
-        const QRectF itemRect = item->sceneBoundingRect();
-        if (not sc->sceneRect().contains(itemRect))
+        const QRectF item_rect = item->sceneBoundingRect();
+        if (not sc->sceneRect().contains(item_rect))
         {
-            sc->setSceneRect(sc->sceneRect().united(itemRect));
+            sc->setSceneRect(sc->sceneRect().united(item_rect));
         }
 
-        const QRectF paddedItemRect = itemRect.adjusted(-marginX, -marginY, marginX, marginY);
-        if (isViewScene && not view->sceneRect().contains(paddedItemRect))
+        const QRectF padded_item_rect = item_rect.adjusted(-margin_x, -margin_y, margin_x, margin_y);
+        if (is_view_scene && not view->sceneRect().contains(padded_item_rect))
         {
-            view->setSceneRect(view->sceneRect().united(paddedItemRect));
+            view->setSceneRect(view->sceneRect().united(padded_item_rect));
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief setScene sets the scene and drops the previous scene's panning rect, so the view follows the new scene's
- * rect until NewSceneRect() pads it again.
- * @param scene scene.
- */
+/// @brief setScene sets the scene and drops the previous scene's panning rect, so the view follows the new
+/// scene's rect until NewSceneRect() pads it again.
+///
+/// @param scene scene.
+//---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsView::setScene(QGraphicsScene *scene)
 {
     QGraphicsView::setScene(scene);
