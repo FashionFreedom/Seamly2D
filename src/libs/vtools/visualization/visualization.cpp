@@ -57,6 +57,7 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vwidgets/scalesceneitems.h"
+#include "../vwidgets/global.h"
 #include "../vwidgets/vcurvepathitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 
@@ -86,7 +87,7 @@ Visualization::Visualization(const VContainer *data)
     , data(data)
     , scenePos(QPointF())
     , mainColor(Qt::red)
-    , supportColor(QColor(qApp->Settings()->getPrimarySupportColor()))
+    , supportColor(adaptColor(QColor(qApp->Settings()->getPrimarySupportColor())))
     , lineStyle(Qt::SolidLine)
     , lineWeight(0.35)
     , object1Id(NULL_ID)

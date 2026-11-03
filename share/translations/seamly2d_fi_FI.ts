@@ -9040,6 +9040,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>Värit</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tumman taustan päällä tummat viivat, pisteet ja etiketit näytetään vaaleampina, jotta ne pysyvät näkyvissä (musta näkyy vaaleanharmaana). Kuvio säilyttää todelliset värinsä tallennusta, tulostusta ja vientiä varten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Tarkennus-kuminauha</translation>
     </message>
@@ -9243,6 +9247,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Käytä järjestelmän omia valintaikkunoita</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Mukauta värit tummalle taustalle</translation>
     </message>
 </context>
 <context>
@@ -12078,6 +12086,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Sininen maissinkukka</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Musta | Valkoinen</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Musta</translation>
     </message>
@@ -12224,6 +12236,14 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Hiili</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafiitti</translation>
     </message>
 </context>
 <context>

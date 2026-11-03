@@ -39,6 +39,7 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../../tools/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h"
+#include "../vwidgets/global.h"
 
 #include <QGraphicsEllipseItem>
 #include <QGraphicsLineItem>
@@ -57,7 +58,7 @@ IntersectCircleTangentVisual::IntersectCircleTangentVisual(const VContainer *dat
     , cCenter(nullptr)
     , cPath(nullptr)
     , tangent2(nullptr)
-    , m_secondarySupportColor(QColor(qApp->Settings()->getSecondarySupportColor()))
+    , m_secondarySupportColor(adaptColor(QColor(qApp->Settings()->getSecondarySupportColor())))
 
 {
     cPath    = InitItem<QGraphicsEllipseItem>(m_secondarySupportColor, this);

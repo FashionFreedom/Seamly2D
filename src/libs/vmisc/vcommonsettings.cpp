@@ -1,4 +1,4 @@
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vcommonsettings.cpp
 //  @author Douglas S Caskey
 //  @date   17 Sep, 2023
@@ -22,9 +22,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 //  @file   vcommonsettings.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   15 7, 2015
@@ -48,7 +48,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vcommonsettings.h"
 
@@ -177,6 +177,7 @@ const QString settingGraphicsViewWireframe               = QStringLiteral("graph
 const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
 const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
 const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
+const QString settingGraphicsAdaptiveColor               = QStringLiteral("graphicsview/adaptColors");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingSelectionSound                      = QStringLiteral("pattern/selectionSound");
@@ -2442,6 +2443,22 @@ bool VCommonSettings::getUseToolColor() const
 void VCommonSettings::setUseToolColor(bool value)
 {
     setValue(settingGraphicsUseToolColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief getAdaptColors whether drawing colors adapt to a dark workspace background.
+/// @return true if colors adapt, default true.
+bool VCommonSettings::isAdaptiveColorEnabled() const
+{
+    return value(settingGraphicsAdaptiveColor, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setAdaptiveColorEnabled set whether drawing colors adapt to a dark workspace background.
+/// @param value true to adapt colors.
+void VCommonSettings::setAdaptiveColorEnabled(bool value)
+{
+    setValue(settingGraphicsAdaptiveColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

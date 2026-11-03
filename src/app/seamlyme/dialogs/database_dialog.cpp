@@ -104,7 +104,7 @@ MeasurementDatabaseDialog::MeasurementDatabaseDialog(const QStringList &list, QW
 {
     ui->setupUi(this);
     //Limit dialog height to 80% of screen size
-    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .95));
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 #if defined(Q_OS_MAC)
@@ -115,6 +115,8 @@ MeasurementDatabaseDialog::MeasurementDatabaseDialog(const QStringList &list, QW
 
     ui->treeWidget->installEventFilter(this);
     ui->diagram_Frame->installEventFilter(this);
+    ui->caption_Label->setText(QStringLiteral(""));
+    ui->description_Label->setText(QStringLiteral(""));
 
     connect(ui->lineEditFind, &QLineEdit::textChanged,                this, &MeasurementDatabaseDialog::filterGroups);
     connect(ui->treeWidget, &QTreeWidget::itemChanged,                this, &MeasurementDatabaseDialog::updateChecks);

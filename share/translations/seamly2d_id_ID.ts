@@ -9040,6 +9040,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Warna</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Pada latar belakang gelap, tampilkan garis gelap, titik, dan label dengan warna lebih terang agar tetap terlihat (hitam beralih menjadi abu-abu muda). Pola mempertahankan warna aslinya saat disimpan, dicetak, dan diekspor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Karet gelang Zoom</translation>
     </message>
@@ -9243,6 +9247,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Gunakan kotak dialog bawaan</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Sesuaikan warna dengan latar belakang gelap</translation>
     </message>
 </context>
 <context>
@@ -12078,6 +12086,10 @@ unggah ke SeamlyME seperti biasa.
         <translation>Bunga Jagung Biru</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Hitam | Putih</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Hitam</translation>
     </message>
@@ -12224,6 +12236,14 @@ unggah ke SeamlyME seperti biasa.
     <message>
         <source>Beige</source>
         <translation>Krem</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Arang</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafit</translation>
     </message>
 </context>
 <context>

@@ -9026,6 +9026,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
         <translation>Cores</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Num fundo escuro, mostrar linhas, pontos e etiquetas escuras mais claros para que permaneçam visíveis (o preto aparece como cinzento claro). O padrão mantém as suas cores reais para guardar, imprimir e exportar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Zoom por seleção</translation>
     </message>
@@ -9229,6 +9233,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Usar caixas de diálogo nativas</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Adaptar cores a um fundo escuro</translation>
     </message>
 </context>
 <context>
@@ -12065,6 +12073,10 @@ carregar no SeamlyME como de costume.
         <translation>Azul flor-de-milho</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Preto | Branco</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Preto</translation>
     </message>
@@ -12211,6 +12223,14 @@ carregar no SeamlyME como de costume.
     <message>
         <source>Beige</source>
         <translation>Bege</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Antracite</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafite</translation>
     </message>
 </context>
 <context>

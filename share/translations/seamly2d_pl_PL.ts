@@ -9092,6 +9092,10 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Tło:</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Na ciemnym tle pokazuj ciemne linie, punkty i etykiety jako jaśniejsze, aby pozostały widoczne (czarny wyświetla się jako jasnoszary). Wzór zachowuje swoje rzeczywiste kolory podczas zapisywania, drukowania i eksportu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Gumka Zoom</translation>
     </message>
@@ -9243,6 +9247,10 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Korzystaj z natywnych okien dialogowych</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Dostosuj kolory do ciemnego tła</translation>
     </message>
 </context>
 <context>
@@ -12077,6 +12085,10 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Kwiat kukurydzy niebieski</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Czarny | Biały</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Czarny</translation>
     </message>
@@ -12223,6 +12235,14 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Tan</source>
         <translation>Opalenizna</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Antracyt</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafit</translation>
     </message>
 </context>
 <context>

@@ -68,7 +68,10 @@ class QPainterPath;
 class QPen;
 
 qreal        sceneScale(QGraphicsScene *scene);
-QColor       correctColor(const QGraphicsItem *item, const QColor &color);
+QColor       adjustColorForState(const QGraphicsItem *item, const QColor &color);
+QColor       adaptColor(const QColor &color);
+void         setDarkBackground(bool dark);
+bool         isDarkBackground();
 QRectF       pointRect(qreal radius);
 qreal        scaledRadius(qreal scale);
 void         scaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
