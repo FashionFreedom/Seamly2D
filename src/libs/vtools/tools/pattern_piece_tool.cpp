@@ -82,6 +82,7 @@
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vwidgets/nonscalingfill_pathitem.h"
+#include "../vwidgets/global.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -866,7 +867,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     qreal   lineWeight;
 
     //set cutline pen
-    color      = QColor(qApp->Settings()->getDefaultCutColor());
+    color      = adaptColor(QColor(qApp->Settings()->getDefaultCutColor()));
     lineType   = qApp->Settings()->getDefaultCutLinetype();
     lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
@@ -881,13 +882,13 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     {
         if (piece.hasSeamAllowance() && !piece.hasSeamAllowanceBuiltIn())
         {
-            color      = QColor(qApp->Settings()->getDefaultSeamColor());
+            color      = adaptColor(QColor(qApp->Settings()->getDefaultSeamColor()));
             lineType   = qApp->Settings()->getDefaultSeamLinetype();
             lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
         }
         else
         {
-            color      = QColor(qApp->Settings()->getDefaultCutColor());
+            color      = adaptColor(QColor(qApp->Settings()->getDefaultCutColor()));
             lineType   = qApp->Settings()->getDefaultCutLinetype();
             lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
         }
@@ -895,7 +896,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
         this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
                                 lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 
-        QBrush brush = QBrush(QColor(piece.getColor()));
+        QBrush brush = QBrush(adaptColor(QColor(piece.getColor())));
 
         //set pattern piece color & brush style
         int index = fills().indexOf(piece.getFill());
@@ -909,7 +910,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     m_allowanceFill->setPen(Qt::NoPen);
 
     //set notches pen
-    color      = QColor(qApp->Settings()->getDefaultNotchColor());
+    color      = adaptColor(QColor(qApp->Settings()->getDefaultNotchColor()));
     lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     m_notches->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
@@ -1531,7 +1532,7 @@ void PatternPieceTool::RefreshGeometry()
 
     //set pattern piece color & brush style
     int index = fills().indexOf(piece.getFill());
-    QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
+    QBrush newBrush = QBrush(adaptColor(QColor(pieceColor)), static_cast<Qt::BrushStyle>(index));
     this->setBrush(newBrush);
 
     QPainterPath path = piece.mainPath(this->getData());
@@ -1539,7 +1540,8 @@ void PatternPieceTool::RefreshGeometry()
     if (!piece.isHideSeamLine() || !piece.hasSeamAllowance() || piece.hasSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
-        m_allowanceFill->setBrush(QBrush(QColor(qApp->Settings()->getDefaultCutColor()), Qt::Dense7Pattern));
+        m_allowanceFill->setBrush(QBrush(adaptColor(QColor(qApp->Settings()->getDefaultCutColor())),
+                                         Qt::Dense7Pattern));
     }
     else
     {

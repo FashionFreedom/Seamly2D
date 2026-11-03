@@ -9027,6 +9027,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Colori</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Su uno sfondo scuro, mostra le linee scure, i punti e le etichette più chiari in modo che rimangano visibili (il nero viene mostrato come grigio chiaro). Il motivo mantiene i suoi colori reali per il salvataggio, la stampa e l'esportazione.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Zoom elastico</translation>
     </message>
@@ -9230,6 +9234,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Utilizza le finestre di dialogo native</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Adatta i colori a uno sfondo scuro</translation>
     </message>
 </context>
 <context>
@@ -12065,6 +12073,10 @@ caricare in SeamlyME come di consueto.
         <translation>Fiordaliso blu</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Nero | Bianco</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Nero</translation>
     </message>
@@ -12211,6 +12223,14 @@ caricare in SeamlyME come di consueto.
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Antracite</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafite</translation>
     </message>
 </context>
 <context>

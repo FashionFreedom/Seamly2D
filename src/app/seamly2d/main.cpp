@@ -59,6 +59,11 @@
 #include "core/application_2d.h"
 #include "dialogs/welcome_dialog.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../vmisc/vsysexits.h"
+
+#if defined(Q_OS_MAC)
+#include "core/macos_dock.h"
+#endif
 
 #include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
@@ -87,6 +92,13 @@ void restoreOriginalGnomeBehavior()
 //---------------------------------------------------------------------------------------------------------------------
 int main(int argc, char *argv[])
 {
+    // Keep unattended jobs independent of the interactive user's settings.
+    const int dataDirectoryStatus = VCommonSettings::configureDataDirectory();
+    if (dataDirectoryStatus != V_EX_OK)
+    {
+        return dataDirectoryStatus;
+    }
+
     // Initialize resources for the application
     Q_INIT_RESOURCE(cursor);
     Q_INIT_RESOURCE(icon);
@@ -104,8 +116,24 @@ int main(int argc, char *argv[])
     qRegisterMetaType<VPieceNode>();
     qRegisterMetaType<CustomSARecord>();
 
+#if defined(Q_OS_MAC)
+    // Qt brings every app it starts to the front, which takes focus from the user in console mode (export / test).
+    // Qt reads this again when the event loop starts, so GUI mode unsets it below to come to the front as usual.
+    qputenv("QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM", "1");
+#endif
+
     // Create the application instance
     Application2D app(argc, argv);
+
+#if defined(Q_OS_MAC)
+    // Info.plist starts the app without a Dock icon, only GUI mode gets one
+    if (Application2D::isGUIMode())
+    {
+        qunsetenv("QT_MAC_DISABLE_FOREGROUND_APPLICATION_TRANSFORM");
+        showDockIcon();
+    }
+#endif
+
     // Initialize application options
     app.initOptions();
 

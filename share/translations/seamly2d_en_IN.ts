@@ -9008,6 +9008,10 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9210,6 +9214,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Use native dialogs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12040,6 +12048,10 @@ load in SeamlyME as usual.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12185,6 +12197,14 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>Beige</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Graphite</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

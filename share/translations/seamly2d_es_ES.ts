@@ -9077,6 +9077,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Colores</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;En un fondo oscuro, se muestran las líneas oscuras, los puntos y las etiquetas más claros para que sigan siendo visibles (el negro se muestra como gris claro). El patrón conserva sus colores reales para guardar, imprimir y exportar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Banda elástica de zoom</translation>
     </message>
@@ -9281,6 +9285,10 @@ actualización:</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Utilizar cuadros de diálogo nativos</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Adaptar colores a un fondo oscuro</translation>
     </message>
 </context>
 <context>
@@ -12118,6 +12126,10 @@ load in SeamlyME as usual.
         <translation>Azul aciano</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Negro | Blanco</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Negro</translation>
     </message>
@@ -12264,6 +12276,14 @@ load in SeamlyME as usual.
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Antracita</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafito</translation>
     </message>
 </context>
 <context>

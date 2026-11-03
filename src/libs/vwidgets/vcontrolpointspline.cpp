@@ -121,7 +121,7 @@ VControlPointSpline::VControlPointSpline(const qint32 &splineIndex, SplinePointP
 void VControlPointSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPen lPen = m_controlLine->pen();
-    lPen.setColor(correctColor(m_controlLine, Qt::black));
+    lPen.setColor(adjustColorForState(m_controlLine, Qt::black));
 
     QPointF p1, p2;
     VGObject::LineIntersectCircle(QPointF(), scaledRadius(sceneScale(scene())),

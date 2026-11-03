@@ -9038,6 +9038,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Barvy</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Na tmavém pozadí zobrazte tmavé čáry, body a štítky světlejší, aby zůstaly viditelné (černá se zobrazuje jako světle šedá).Vzor si zachovává své skutečné barvy pro ukládání, tisk a export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Gumička Zoom</translation>
     </message>
@@ -9241,6 +9245,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Používejte nativní dialogová okna</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation type="unfinished">Přizpůsobit barvy tmavému pozadí</translation>
     </message>
 </context>
 <context>
@@ -12076,6 +12084,10 @@ SeamlyME jako obvykle.
         <translation>Modrá kukuřičná květina</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Černá | Bílá</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Černá</translation>
     </message>
@@ -12222,6 +12234,14 @@ SeamlyME jako obvykle.
     <message>
         <source>Beige</source>
         <translation>Béžový</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Dřevěné uhlí</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafit</translation>
     </message>
 </context>
 <context>

@@ -285,6 +285,12 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     , m_lockLog()
     , m_out(nullptr)
 {
+    
+#if defined(Q_OS_MACOS) || defined(Q_OS_MAC)
+    // Overriding the default Qt 6.7.3+ behavior where macOS hides menu icons
+    QCoreApplication::setAttribute(Qt::AA_DontShowIconsInMenus, false);
+#endif
+
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
@@ -530,6 +536,12 @@ QString Application2D::seamlyMeFilePath() const
 //---------------------------------------------------------------------------------------------------------------------
 QString Application2D::logDirPath() const
 {
+    const QString data_dir = VCommonSettings::dataDirectory();
+    if (!data_dir.isEmpty())
+    {
+        return QDir(data_dir).filePath("logs/seamly2d");
+    }
+
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
     const QString logDirPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString(),
                                                       QStandardPaths::LocateDirectory) + "Seamly2D";
@@ -734,7 +746,8 @@ bool Application2D::event(QEvent *event)
 #if defined(Q_OS_MAC)
         case QEvent::ApplicationActivate:
         {
-            if (mainWindow && not mainWindow->isMinimized())
+            // Console mode (export / test) keeps the window hidden even if the app gets activated
+            if (mainWindow && not mainWindow->isMinimized() && isGUIMode())
             {
                 mainWindow->show();
             }

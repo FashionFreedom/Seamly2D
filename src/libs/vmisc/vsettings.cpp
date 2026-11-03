@@ -141,7 +141,7 @@ void VSettings::setPointNameLanguage(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VSettings::getDefaultPatternPath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("patterns");
+    return defaultDataPath() + tr("patterns");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -162,7 +162,7 @@ void VSettings::SetPathPattern(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VSettings::getDefaultLayoutPath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("layouts");
+    return defaultDataPath() + tr("layouts");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

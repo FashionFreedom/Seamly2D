@@ -9023,6 +9023,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Kleuren</translation>
     </message>
     <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon op een donkere achtergrond donkere lijnen, punten en labels lichter zodat ze zichtbaar blijven (zwart wordt lichtgrijs). Het patroon behoudt zijn echte kleuren voor opslaan, afdrukken en exporteren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <source>Zoom Rubberband</source>
         <translation>Zoom Rubberband</translation>
     </message>
@@ -9226,6 +9230,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Use native dialogs</source>
         <translation>Gebruik standaarddialoogvensters</translation>
+    </message>
+    <message>
+        <source>Adapt colors to a dark background</source>
+        <translation>Kleuren aanpassen aan een donkere achtergrond</translation>
     </message>
 </context>
 <context>
@@ -12060,6 +12068,10 @@ load in SeamlyME as usual.
         <translation>Korenbloemblauw</translation>
     </message>
     <message>
+        <source>Black | White</source>
+        <translation>Zwart | Wit</translation>
+    </message>
+    <message>
         <source>Black</source>
         <translation>Zwart</translation>
     </message>
@@ -12206,6 +12218,14 @@ load in SeamlyME as usual.
     <message>
         <source>Beige</source>
         <translation>Beige</translation>
+    </message>
+    <message>
+        <source>Charcoal</source>
+        <translation>Antraciet</translation>
+    </message>
+    <message>
+        <source>Graphite</source>
+        <translation>Grafiet</translation>
     </message>
 </context>
 <context>
