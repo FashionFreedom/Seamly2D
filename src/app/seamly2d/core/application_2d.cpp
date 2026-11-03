@@ -163,6 +163,13 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     {
         type = QtDebugMsg;
     }
+  
+    // Qt's font database warns when a requested font family is not installed and it has to search the aliases for a
+    // substitute. The text still renders with the fallback, so log it without a dialog.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("Populating font family aliases")))
+    {
+        type = QtDebugMsg;
+    }
 
     // Only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
