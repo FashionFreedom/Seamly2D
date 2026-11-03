@@ -138,6 +138,14 @@ void VMainGraphicsScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief clear removes all items and forgets the axis origin items, which clearing the scene deletes.
+void VMainGraphicsScene::clear()
+{
+    origins.clear();
+    QGraphicsScene::clear();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::initializeOrigins()
 {
     origins.clear();
