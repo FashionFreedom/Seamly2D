@@ -1,5 +1,6 @@
 var NAVTREEINDEX316 =
 {
+"df/da7/groups__widget_8h_source.html":[4,0,0,0,0,1,27],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html":[3,0,2,43],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html":[2,0,27,43],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html#a9f2bf688b343732bfd0da09a2aa8cfee":[3,0,2,43,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX316 =
 "df/db4/classXTemplateSerializer.html#ac3fbe894314e2ea658f72c0e48ed31d8":[3,0,926,52],
 "df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,179],
 "df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,178],
-"df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,177],
-"df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,176]
+"df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,177]
 };

@@ -171,56 +171,57 @@
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../da/d5d/classVMainGraphicsView.html" target="_top" xlink:title="The VMainGraphicsView class main scene view.">
-<polygon fill="white" stroke="#666666" points="381.62,-1046.88 381.62,-1568.12 535.62,-1568.12 535.62,-1046.88 381.62,-1046.88"/>
-<text xml:space="preserve" text-anchor="middle" x="458.62" y="-1554.62" font-family="Helvetica,sans-Serif" font-size="10.00">VMainGraphicsView</text>
-<polyline fill="none" stroke="#666666" points="381.62,-1547.38 535.62,-1547.38"/>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1533.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showToolProperties</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1521.12" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showScrollBars</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1508.38" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isallowRubberBand</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1495.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isZoomToAreaActive</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1482.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isRubberBandActive</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1470.12" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isRubberBandColorSet</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1457.38" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isZoomPanActive</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1444.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isPanDragActive</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1431.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rubberBand</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1419.12" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rubberBandRect</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1406.38" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; startPoint</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1393.62" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; endPoint</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1380.88" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_startPos</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1368.12" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; cursorPos</text>
-<polyline fill="none" stroke="#666666" points="381.62,-1360.88 535.62,-1360.88"/>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1347.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsView()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1334.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ setShowToolOptions()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1321.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowRubberBand()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1309.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomPanEnabled()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1296.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToAreaEnabled()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1283.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRubberBandColor()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1270.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ initScrollBars()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1258.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ NewSceneRect()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1245.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ SceneVisibleArea()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1232.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ MinScale()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1219.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ MaxScale()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1207.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomByScale()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1194.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomIn()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1181.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomOut()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1168.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoom100Percent()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1156.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToFit()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1143.38" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToRect()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1130.62" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateView()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1117.88" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetScrollBars()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1105.12" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetScrollAnimations()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1092.38" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1079.62" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseMoveEvent()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1066.88" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
-<text xml:space="preserve" text-anchor="start" x="389.62" y="-1054.12" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseDoubleClickEvent()</text>
+<polygon fill="white" stroke="#666666" points="381.62,-1040.5 381.62,-1574.5 535.62,-1574.5 535.62,-1040.5 381.62,-1040.5"/>
+<text xml:space="preserve" text-anchor="middle" x="458.62" y="-1561" font-family="Helvetica,sans-Serif" font-size="10.00">VMainGraphicsView</text>
+<polyline fill="none" stroke="#666666" points="381.62,-1553.75 535.62,-1553.75"/>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1540.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showToolProperties</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1527.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showScrollBars</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1514.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isallowRubberBand</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1502" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isZoomToAreaActive</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1489.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isRubberBandActive</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1476.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isRubberBandColorSet</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1463.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isZoomPanActive</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1451" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isPanDragActive</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1438.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rubberBand</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1425.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rubberBandRect</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1412.75" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; startPoint</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1400" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; endPoint</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1387.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_startPos</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1374.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; cursorPos</text>
+<polyline fill="none" stroke="#666666" points="381.62,-1367.25 535.62,-1367.25"/>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1353.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMainGraphicsView()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1341" font-family="Helvetica,sans-Serif" font-size="10.00">+ setShowToolOptions()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1328.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ allowRubberBand()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomPanEnabled()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1302.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToAreaEnabled()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00">+ setScene()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1277.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ setRubberBandColor()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1264.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ initScrollBars()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1251.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ NewSceneRect()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1239" font-family="Helvetica,sans-Serif" font-size="10.00">+ SceneVisibleArea()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1226.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ MinScale()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1213.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MaxScale()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1200.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomByScale()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1188" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomIn()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1175.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomOut()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1162.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoom100Percent()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1149.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToFit()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1137" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToRect()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1124.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateView()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1111.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetScrollBars()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1098.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ resetScrollAnimations()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1086" font-family="Helvetica,sans-Serif" font-size="10.00"># mousePressEvent()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1073.25" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseMoveEvent()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1060.5" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseReleaseEvent()</text>
+<text xml:space="preserve" text-anchor="start" x="389.62" y="-1047.75" font-family="Helvetica,sans-Serif" font-size="10.00"># mouseDoubleClickEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="#404040" d="M478.43,-1046.43C484.97,-960.49 492.12,-866.56 498.18,-786.92"/>
-<polygon fill="none" stroke="#404040" points="498.17,-787.12 494.64,-780.84 499.08,-775.16 502.61,-781.44 498.17,-787.12"/>
+<path fill="none" stroke="#404040" d="M478.91,-1040.13C485.31,-956 492.25,-864.8 498.17,-787.14"/>
+<polygon fill="none" stroke="#404040" points="498.17,-787.17 494.63,-780.88 499.08,-775.2 502.61,-781.49 498.17,-787.17"/>
 <text xml:space="preserve" text-anchor="middle" x="527.04" y="-795.75" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;sceneView</text>
 </g>
 <!-- Node7 -->
@@ -239,7 +240,7 @@
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="#63b8ff" d="M123.51,-2091C121.51,-2033.69 126.51,-1930.13 180.62,-1866 239.63,-1796.07 314.46,-1862.37 372.62,-1791.75 423.82,-1729.59 448.94,-1647.47 460.25,-1568.6"/>
+<path fill="none" stroke="#63b8ff" d="M123.51,-2091C121.51,-2033.69 126.51,-1930.13 180.62,-1866 239.63,-1796.07 314.46,-1862.37 372.62,-1791.75 422.47,-1731.23 447.59,-1651.8 459.33,-1574.86"/>
 <polygon fill="none" stroke="#63b8ff" points="120,-2090.82 123.94,-2100.65 126.99,-2090.5 120,-2090.82"/>
 </g>
 <!-- Node8 -->
@@ -258,8 +259,8 @@
 <!-- Node8&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
 <title>Node8&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M276.63,-2102.06C300.1,-2030.43 357.78,-1852.7 372.62,-1791.75 389.11,-1724.04 403.84,-1650.26 416.26,-1581.22"/>
-<polygon fill="none" stroke="#404040" points="416.28,-1581.09 413.4,-1574.48 418.39,-1569.27 421.27,-1575.88 416.28,-1581.09"/>
+<path fill="none" stroke="#404040" d="M276.63,-2102.06C300.1,-2030.43 357.78,-1852.7 372.62,-1791.75 388.62,-1726.08 402.95,-1654.72 415.13,-1587.49"/>
+<polygon fill="none" stroke="#404040" points="415.09,-1587.69 412.22,-1581.07 417.21,-1575.88 420.09,-1582.49 415.09,-1587.69"/>
 <text xml:space="preserve" text-anchor="middle" x="402.89" y="-1825.75" font-family="Helvetica,sans-Serif" font-size="10.00"> #curMagnifier</text>
 </g>
 <!-- Node9 -->
@@ -302,8 +303,8 @@
 <!-- Node9&#45;&gt;Node6 -->
 <g id="edge8" class="edge">
 <title>Node9&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M458.62,-1949.12C458.62,-1840.91 458.62,-1701.92 458.62,-1581.07"/>
-<polygon fill="none" stroke="#404040" points="458.63,-1581.21 454.63,-1575.21 458.63,-1569.21 462.63,-1575.21 458.63,-1581.21"/>
+<path fill="none" stroke="#404040" d="M458.62,-1949.12C458.62,-1842.85 458.62,-1706.89 458.62,-1587.58"/>
+<polygon fill="none" stroke="#404040" points="458.63,-1587.51 454.63,-1581.51 458.63,-1575.51 462.63,-1581.51 458.63,-1587.51"/>
 <text xml:space="preserve" text-anchor="middle" x="475.5" y="-1825.75" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;zoom</text>
 </g>
 <!-- Node10 -->

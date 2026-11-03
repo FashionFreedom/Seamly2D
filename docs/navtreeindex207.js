@@ -1,5 +1,6 @@
 var NAVTREEINDEX207 =
 {
+"da/dfb/classPatternPieceTool.html#a5808a14168ce153aa4941ed5e9b59c8e":[3,0,389,71],
 "da/dfb/classPatternPieceTool.html#a59348115680b75960ceb26906646bfca":[3,0,389,75],
 "da/dfb/classPatternPieceTool.html#a5bf9e794f0406f06437df2484e6d838e":[3,0,389,9],
 "da/dfb/classPatternPieceTool.html#a61707723913b26c66090739f06962013":[3,0,389,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX207 =
 "db/d0d/classDGXMLScanner.html#a31ad2e92dc125be9f0e32f4e7bd88e64":[3,0,98,72],
 "db/d0d/classDGXMLScanner.html#a32320cf4ed802bfa036299689857c79c":[3,0,98,31],
 "db/d0d/classDGXMLScanner.html#a32320cf4ed802bfa036299689857c79c":[3,0,98,29],
-"db/d0d/classDGXMLScanner.html#a32320cf4ed802bfa036299689857c79c":[3,0,98,28],
-"db/d0d/classDGXMLScanner.html#a32320cf4ed802bfa036299689857c79c":[3,0,98,30]
+"db/d0d/classDGXMLScanner.html#a32320cf4ed802bfa036299689857c79c":[3,0,98,28]
 };

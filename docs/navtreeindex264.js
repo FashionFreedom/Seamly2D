@@ -1,5 +1,6 @@
 var NAVTREEINDEX264 =
 {
+"dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a88fa39e72db426405978cb9577d3506b":[3,0,175,2,64],
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a88fa39e72db426405978cb9577d3506b":[3,0,175,1,64],
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a9a134897f3b47fa1f75f59c971898f91":[3,0,175,2,58],
 "dd/d0a/classDOMException.html#af80f80a377221615d84e59dd2cf71af5a9a134897f3b47fa1f75f59c971898f91":[3,0,175,3,58],
@@ -248,6 +249,5 @@ var NAVTREEINDEX264 =
 "dd/d14/classValueStoreCache.html#afce953c508943420c73f1d2a6a5276bb":[3,0,585,68],
 "dd/d14/msvc-arm64_2include_2xercesc_2framework_2psvi_2PSVIElement_8hpp.html":[4,0,0,1,15,3,0,0,1,0,2],
 "dd/d14/msvc-arm64_2include_2xercesc_2framework_2psvi_2PSVIElement_8hpp_source.html":[4,0,0,1,15,3,0,0,1,0,2],
-"dd/d15/nonscalingfill__pathitem_8h.html":[4,0,0,1,14,22],
-"dd/d15/nonscalingfill__pathitem_8h_source.html":[4,0,0,1,14,22]
+"dd/d15/nonscalingfill__pathitem_8h.html":[4,0,0,1,14,22]
 };

@@ -16,6 +16,7 @@ var classVMainGraphicsView =
     [ "resetScrollBars", "da/d5d/classVMainGraphicsView.html#a7c88f342a83b8f842753b46e3c019d5e", null ],
     [ "SceneVisibleArea", "da/d5d/classVMainGraphicsView.html#a6fb9e4eb3bcb234b0228854d28f45e80", null ],
     [ "setRubberBandColor", "da/d5d/classVMainGraphicsView.html#afd05cf5af47d9135244b83da87f94803", null ],
+    [ "setScene", "da/d5d/classVMainGraphicsView.html#aac178183e1320cda7ae61e7690f37882", null ],
     [ "setShowToolOptions", "da/d5d/classVMainGraphicsView.html#aaea1dcf83ca139effb2733f0cf68cc97", null ],
     [ "signalZoomScaleChanged", "da/d5d/classVMainGraphicsView.html#a1acab2c8d6d72e090b11b07bbb4d8fa2", null ],
     [ "updateView", "da/d5d/classVMainGraphicsView.html#aa81a176208dc9e704f03a7f9d1d56a5a", null ],
