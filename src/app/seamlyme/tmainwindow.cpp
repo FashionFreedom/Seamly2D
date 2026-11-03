@@ -149,6 +149,9 @@ TMainWindow::TMainWindow(QWidget *parent)
 
 	qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
+    ui->caption_Label->setText(QStringLiteral(""));
+    ui->description_Label->setText(QStringLiteral(""));
+
 	ui->find_LineEdit->setClearButtonEnabled(true);
 	ui->lineEditName->setClearButtonEnabled(true);
 	ui->lineEditFullName->setClearButtonEnabled(true);
