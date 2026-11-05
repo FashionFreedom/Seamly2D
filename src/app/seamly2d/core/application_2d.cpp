@@ -163,13 +163,24 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     {
         type = QtDebugMsg;
     }
-  
+
     // Qt's font database warns when a requested font family is not installed and it has to search the aliases for a
     // substitute. The text still renders with the fallback, so log it without a dialog.
     if ((type == QtWarningMsg) && msg.contains(QStringLiteral("Populating font family aliases")))
     {
         type = QtDebugMsg;
     }
+
+#if defined(Q_OS_LINUX)
+    // This QtWayland warning occurs during screen or focus transitions on Linux Wayland.
+    // It is an internal library bookkeeping mismatch, so downgrade it to avoid an infinite popup loop.
+    if ((type == QtWarningMsg) &&
+        (QLatin1String(context.category) == QLatin1String("qt.qpa.wayland.textinput") ||
+         msg.contains(QStringLiteral("QWaylandTextInputv3::disableSurface"))))
+    {
+        type = QtDebugMsg;
+    }
+#endif
 
     // Only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
@@ -301,7 +312,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     , m_lockLog()
     , m_out(nullptr)
 {
-    
+
 #if defined(Q_OS_MACOS) || defined(Q_OS_MAC)
     // Overriding the default Qt 6.7.3+ behavior where macOS hides menu icons
     QCoreApplication::setAttribute(Qt::AA_DontShowIconsInMenus, false);

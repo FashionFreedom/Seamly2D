@@ -164,6 +164,17 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         type = QtDebugMsg;
     }
 
+#if defined(Q_OS_LINUX)
+    // This QtWayland warning occurs during screen or focus transitions on Linux Wayland.
+    // It is an internal library bookkeeping mismatch, so downgrade it to avoid an infinite popup loop.
+    if ((type == QtWarningMsg) &&
+        (QLatin1String(context.category) == QLatin1String("qt.qpa.wayland.textinput") ||
+         msg.contains(QStringLiteral("QWaylandTextInputv3::disableSurface"))))
+    {
+        type = QtDebugMsg;
+    }
+#endif
+
     // only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
     // a non-GUI thread, you'll have to queue the message to the GUI
