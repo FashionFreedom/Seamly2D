@@ -1,7 +1,5 @@
 var NAVTREEINDEX271 =
 {
-"dd/db0/namespaceQT__WARNING__POP.html#a132d173768e8cb04b71877667c70bbc2":[2,0,24,43],
-"dd/db0/namespaceQT__WARNING__POP.html#a1373d60451b8fc974c23ae35e6550d73":[2,0,24,23],
 "dd/db0/namespaceQT__WARNING__POP.html#a13ccdfd11688fa5da79b007dbdcce64e":[2,0,24,26],
 "dd/db0/namespaceQT__WARNING__POP.html#a1635547618f66bc91d4d5518ea956010":[2,0,24,40],
 "dd/db0/namespaceQT__WARNING__POP.html#a17d67d1cf67d5a2e78a87a315fffef85":[2,0,24,28],
@@ -249,5 +247,7 @@ var NAVTREEINDEX271 =
 "dd/dc6/classDOMLocatorImpl.html#af7da9e4a02ac436ec07249287af66cab":[3,0,184,48],
 "dd/dc6/classDOMLocatorImpl.html#af7da9e4a02ac436ec07249287af66cab":[3,0,184,50],
 "dd/dc6/classXProtoType.html":[3,0,894],
-"dd/dc6/classXProtoType.html#a3ae70c897bface22365415b62fbd4b48":[3,0,894,3]
+"dd/dc6/classXProtoType.html#a3ae70c897bface22365415b62fbd4b48":[3,0,894,3],
+"dd/dc6/classXProtoType.html#a3ae70c897bface22365415b62fbd4b48":[3,0,894,2],
+"dd/dc6/classXProtoType.html#a3ae70c897bface22365415b62fbd4b48":[3,0,894,1]
 };

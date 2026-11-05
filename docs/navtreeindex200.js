@@ -1,7 +1,5 @@
 var NAVTREEINDEX200 =
 {
-"da/d96/classXercesXPath.html#ab6ad222dbc4674146d2a3ff95f8af1a4":[3,0,799,2],
-"da/d96/classXercesXPath.html#acaed4268917abccf3e3e4a8d5b6534ca":[3,0,799,16],
 "da/d96/classXercesXPath.html#acaed4268917abccf3e3e4a8d5b6534ca":[3,0,799,17],
 "da/d96/classXercesXPath.html#acaed4268917abccf3e3e4a8d5b6534ca":[3,0,799,18],
 "da/d96/classXercesXPath.html#acaed4268917abccf3e3e4a8d5b6534ca":[3,0,799,19],
@@ -249,5 +247,7 @@ var NAVTREEINDEX200 =
 "da/da7/classSAXParser.html#a55d378f42ea683727671a7c53a769eea":[3,0,468,159],
 "da/da7/classSAXParser.html#a55d378f42ea683727671a7c53a769eea":[3,0,468,156],
 "da/da7/classSAXParser.html#a55d378f42ea683727671a7c53a769eea":[3,0,468,157],
-"da/da7/classSAXParser.html#a5628d4a8a0e78db902171122d38bebf7":[3,0,468,28]
+"da/da7/classSAXParser.html#a5628d4a8a0e78db902171122d38bebf7":[3,0,468,28],
+"da/da7/classSAXParser.html#a5628d4a8a0e78db902171122d38bebf7":[3,0,468,29],
+"da/da7/classSAXParser.html#a5628d4a8a0e78db902171122d38bebf7":[3,0,468,30]
 };

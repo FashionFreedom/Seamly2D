@@ -1,7 +1,5 @@
 var NAVTREEINDEX210 =
 {
-"db/d32/classLayoutSettingsDialog.html#af43d09a419054e3eab42a54a7c2494b4":[3,0,331,26],
-"db/d32/classLayoutSettingsDialog.html#af4ddb3c2a1682eb8bcf22706ab560e1c":[3,0,331,64],
 "db/d32/classLayoutSettingsDialog.html#afb41d28bc0532cfe6108132b75dcd21b":[3,0,331,18],
 "db/d32/dialogbisector_8h.html":[4,0,0,1,13,0,1,14],
 "db/d32/dialogbisector_8h_source.html":[4,0,0,1,13,0,1,14],
@@ -249,5 +247,7 @@ var NAVTREEINDEX210 =
 "db/d3d/classVToolShoulderPoint.html#ade01d6176dd6ed5109470a845f29c41a":[3,0,771,14],
 "db/d3d/classVToolShoulderPoint.html#af5712763deeec50c4cb6eae37513b3af":[3,0,771,4],
 "db/d3d/qmuparsercallback_8cpp.html":[4,0,0,1,2,10],
-"db/d3d/qmuparsercallback_8cpp_source.html":[4,0,0,1,2,10]
+"db/d3d/qmuparsercallback_8cpp_source.html":[4,0,0,1,2,10],
+"db/d3e/classOpFactory.html":[3,0,381],
+"db/d3e/classOpFactory.html#a0d621831c8eb4a174e08cd8c29a5b5a2":[3,0,381,25]
 };

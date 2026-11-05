@@ -1,7 +1,5 @@
 var NAVTREEINDEX260 =
 {
-"dc/db9/classMatch.html#a38a837779db0624b82db2d69073784e1":[3,0,345,7],
-"dc/db9/classMatch.html#a38a837779db0624b82db2d69073784e1":[3,0,345,10],
 "dc/db9/classMatch.html#a38a837779db0624b82db2d69073784e1":[3,0,345,4],
 "dc/db9/classMatch.html#a38a837779db0624b82db2d69073784e1":[3,0,345,1],
 "dc/db9/classMatch.html#a3ee84ca49f6d7b161b70cb093db2f855":[3,0,345,48],
@@ -249,5 +247,7 @@ var NAVTREEINDEX260 =
 "dc/dd1/mingw_2include_2xercesc_2dom_2impl_2DOMNodeIDMap_8hpp.html":[4,0,0,1,15,1,0,0,0,0,28],
 "dc/dd1/mingw_2include_2xercesc_2dom_2impl_2DOMNodeIDMap_8hpp_source.html":[4,0,0,1,15,1,0,0,0,0,28],
 "dc/dd2/msvc-arm64_2include_2xercesc_2util_2KeyRefPair_8hpp.html":[4,0,0,1,15,3,0,0,6,31],
-"dc/dd2/msvc-arm64_2include_2xercesc_2util_2KeyRefPair_8hpp_source.html":[4,0,0,1,15,3,0,0,6,31]
+"dc/dd2/msvc-arm64_2include_2xercesc_2util_2KeyRefPair_8hpp_source.html":[4,0,0,1,15,3,0,0,6,31],
+"dc/dd3/classVPatternConverter.html":[3,0,708],
+"dc/dd3/classVPatternConverter.html#a007507fc592c953033b5abb868f6a6d0":[3,0,708,99]
 };

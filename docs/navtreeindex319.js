@@ -1,7 +1,5 @@
 var NAVTREEINDEX319 =
 {
-"df/de8/classqmu_1_1QmuFormulaBase.html":[3,0,0,1],
-"df/de8/classqmu_1_1QmuFormulaBase.html#a482aa0b03645176cd664229825b5fdc8":[2,0,23,1,1],
 "df/de8/classqmu_1_1QmuFormulaBase.html#a482aa0b03645176cd664229825b5fdc8":[3,0,0,1,1],
 "df/de8/classqmu_1_1QmuFormulaBase.html#a9d75326a8d680ba2c6cd64760ddd427a":[2,0,23,1,3],
 "df/de8/classqmu_1_1QmuFormulaBase.html#a9d75326a8d680ba2c6cd64760ddd427a":[3,0,0,1,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX319 =
 "df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a9e5eda6fa5f320ae734f49483e7d39cd":[3,0,191,2,13],
 "df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a9e5eda6fa5f320ae734f49483e7d39cd":[3,0,191,2,9],
 "df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675a9e5eda6fa5f320ae734f49483e7d39cd":[3,0,191,0,5],
-"df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675afeb7cbcbcc7bb474278cca7d6895f0ef":[3,0,191,2,8]
+"df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675afeb7cbcbcc7bb474278cca7d6895f0ef":[3,0,191,2,8],
+"df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675afeb7cbcbcc7bb474278cca7d6895f0ef":[3,0,191,0,4],
+"df/df9/classDOMLSParserFilter.html#adae984d01a925a7d5fe15cef9458a675afeb7cbcbcc7bb474278cca7d6895f0ef":[3,0,191,3,4]
 };

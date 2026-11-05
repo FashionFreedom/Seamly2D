@@ -1,7 +1,5 @@
 var NAVTREEINDEX197 =
 {
-"da/d69/classFieldValueMap.html#a7020a507e2523e2887b7ad8e721bb5f3":[3,0,273,7],
-"da/d69/classFieldValueMap.html#a7020a507e2523e2887b7ad8e721bb5f3":[3,0,273,1],
 "da/d69/classFieldValueMap.html#a70ca73b32b744a4f1409ced62b6fb3c0":[3,0,273,57],
 "da/d69/classFieldValueMap.html#a725b9e10555c6ddf348ba683f12b5ae9":[3,0,273,47],
 "da/d69/classFieldValueMap.html#a725b9e10555c6ddf348ba683f12b5ae9":[3,0,273,46],
@@ -249,5 +247,7 @@ var NAVTREEINDEX197 =
 "da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,60],
 "da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,61],
 "da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,62],
-"da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,63]
+"da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,63],
+"da/d79/classDOMEntityReferenceImpl.html#aa3e50ccf3b43b738606c6f349ccee812":[3,0,171,80],
+"da/d79/classDOMEntityReferenceImpl.html#aa3e50ccf3b43b738606c6f349ccee812":[3,0,171,81]
 };
