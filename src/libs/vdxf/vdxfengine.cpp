@@ -50,6 +50,9 @@
 
 #include "vdxfengine.h"
 
+#include <QCoreApplication>
+#include <QSet>
+
 #include <QByteArray>
 #include <QColor>
 #include <QDateTime>
@@ -93,6 +96,44 @@ QT_WARNING_POP
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+namespace
+{
+QString aamaPolygonError(const QVector<QPointF>& points)
+{
+    QVector<QPointF> distinct_points;
+    for (const QPointF& point : points)
+    {
+        if (!qIsFinite(point.x()) || !qIsFinite(point.y()))
+        {
+            return QCoreApplication::translate("VDxfEngine", "contains a non-finite coordinate");
+        }
+        if (distinct_points.size() < 3 && !distinct_points.contains(point))
+        {
+            distinct_points.append(point);
+        }
+    }
+    if (distinct_points.size() < 3)
+    {
+        return QCoreApplication::translate("VDxfEngine", "requires at least three distinct points");
+    }
+
+    qreal twice_area = 0;
+    const QPointF origin = points.first();
+    for (int i = 0; i < points.size(); ++i)
+    {
+        const QPointF first = points.at(i) - origin;
+        const QPointF second = points.at((i + 1) % points.size()) - origin;
+        twice_area += first.x() * second.y() - second.x() * first.y();
+    }
+    if (!qIsFinite(twice_area) || qFuzzyIsNull(twice_area))
+    {
+        return QCoreApplication::translate("VDxfEngine", "has no finite, non-zero enclosed area");
+    }
+    return QString();
+}
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 VDxfEngine::VDxfEngine()
     : QPaintEngine(svgEngineFeatures())
     , size()
@@ -105,6 +146,7 @@ VDxfEngine::VDxfEngine()
     , varMeasurement(VarMeasurement::Metric)
     , varInsunits(VarInsunits::Millimeters)
     , textBuffer(new DRW_Text())
+    , export_error()
 {
 }
 
@@ -628,10 +670,59 @@ QT_WARNING_POP
 //---------------------------------------------------------------------------------------------------------------------
 bool VDxfEngine::ExportToAAMA(const QVector<VLayoutPiece> &details)
 {
-    if (size.isValid() == false)
+    export_error.clear();
+    if (!size.isValid() || size.isEmpty())
     {
-        qWarning() << "VDxfEngine::begin(), size is not valid";
+        export_error = QCoreApplication::translate("VDxfEngine", "The export size must be positive.");
         return false;
+    }
+    if (details.isEmpty())
+    {
+        export_error = QCoreApplication::translate("VDxfEngine", "There are no pieces to export.");
+        return false;
+    }
+
+    QSet<QString> block_names;
+    for (const VLayoutPiece& piece : details)
+    {
+        QString block_name = piece.GetName();
+        if (block_name.trimmed().isEmpty())
+        {
+            export_error = QCoreApplication::translate("VDxfEngine", "An exported piece has no name.");
+            return false;
+        }
+        if (m_version <= DRW::AC1009)
+        {
+            block_name.replace(QLatin1Char(' '), QLatin1Char('_'));
+        }
+        const QString block_key = block_name.toCaseFolded();
+        if (block_names.contains(block_key))
+        {
+            export_error = QCoreApplication::translate("VDxfEngine", "Duplicate DXF block name '%1'.")
+                .arg(block_name);
+            return false;
+        }
+        block_names.insert(block_key);
+
+        const QVector<QPointF> cut_line = piece.hasSeamAllowance() && !piece.hasSeamAllowanceBuiltIn()
+            ? piece.getSeamAllowancePoints() : piece.getContourPoints();
+        QString reason = aamaPolygonError(cut_line);
+        if (!reason.isEmpty())
+        {
+            export_error = QCoreApplication::translate("VDxfEngine", "Piece '%1': cutting outline %2.")
+                .arg(piece.GetName(), reason);
+            return false;
+        }
+        if (!piece.isHideSeamLine())
+        {
+            reason = aamaPolygonError(piece.getContourPoints());
+            if (!reason.isEmpty())
+            {
+                export_error = QCoreApplication::translate("VDxfEngine", "Piece '%1': stitch outline %2.")
+                    .arg(piece.GetName(), reason);
+                return false;
+            }
+        }
     }
 
     input = QSharedPointer<dx_iface>(new dx_iface(fileName.toStdString(), m_version, varMeasurement, varInsunits));
@@ -675,7 +766,12 @@ bool VDxfEngine::ExportToAAMA(const QVector<VLayoutPiece> &details)
         input->AddEntity(insert);
     }
 
-    return input->fileExport(m_binary);
+    const bool success = input->fileExport(m_binary);
+    if (!success)
+    {
+        export_error = QCoreApplication::translate("VDxfEngine", "Cannot write DXF file '%1'.").arg(fileName);
+    }
+    return success;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
