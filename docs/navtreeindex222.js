@@ -1,5 +1,6 @@
 var NAVTREEINDEX222 =
 {
+"db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#abeda08ed7a84bd924f68223ffba2e656":[2,0,20,32],
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#acd3ff4737d6c206d778ea73d28eb2cc7":[2,0,20,4],
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#ad09214ea81d66f68b5137cc6c98545aa":[2,0,20,26],
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#ad655dd425fbbf6ff0c0bbbe874279b99":[2,0,20,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX222 =
 "dc/d03/classDOMXPathException.html#a501171c303382718cbfc39007d8ccdc6":[3,0,230,6],
 "dc/d03/classDOMXPathException.html#a501171c303382718cbfc39007d8ccdc6":[3,0,230,14],
 "dc/d03/classDOMXPathException.html#a501171c303382718cbfc39007d8ccdc6":[3,0,230,10],
-"dc/d03/classDOMXPathException.html#a501171c303382718cbfc39007d8ccdc6":[3,0,230,18],
-"dc/d03/classDOMXPathException.html#a501cfc0a5287d3c4abb059ce049c8149":[3,0,230,2]
+"dc/d03/classDOMXPathException.html#a501171c303382718cbfc39007d8ccdc6":[3,0,230,18]
 };

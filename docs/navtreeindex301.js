@@ -1,5 +1,6 @@
 var NAVTREEINDEX301 =
 {
+"de/dcf/classPreferencesPatternPage.html#a9ec9772e117af9a5284a01c7d27fd392":[3,0,406,3],
 "de/dcf/classPreferencesPatternPage.html#aa988bdfd07ac2dc80c0ec9fb74e37bc4":[3,0,406,16],
 "de/dcf/classPreferencesPatternPage.html#ab1e933f798541eabf6b18ddf2353af76":[3,0,406,8],
 "de/dcf/classPreferencesPatternPage.html#ac4af645a7dfee93aabfdd3b3c66db6a3":[3,0,406,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX301 =
 "de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,5,4],
 "de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,3,4],
 "de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,3,10],
-"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,3,1],
-"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,2,7]
+"de/dcf/classXSValue.html#a880f133a9c88fd26ef61556e01cfa62ea0570520ab8ab3407306fc1b3dfedb8b8":[3,0,924,3,1]
 };

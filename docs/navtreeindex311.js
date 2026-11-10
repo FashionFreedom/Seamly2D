@@ -1,5 +1,6 @@
 var NAVTREEINDEX311 =
 {
+"df/d50/classDOMXPathNSResolverImpl.html#a355f160a43ab4ca1b6ba296fae9356a3":[3,0,235,13],
 "df/d50/classDOMXPathNSResolverImpl.html#a355f160a43ab4ca1b6ba296fae9356a3":[3,0,235,12],
 "df/d50/classDOMXPathNSResolverImpl.html#a5b6eb48e989cd3f74a9c4ffa21c147c0":[3,0,235,19],
 "df/d50/classDOMXPathNSResolverImpl.html#a5b6eb48e989cd3f74a9c4ffa21c147c0":[3,0,235,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX311 =
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a419c3f4b0fb5b7f4d0e2dcaea4a4cfda":[3,0,866,0,5],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a419c3f4b0fb5b7f4d0e2dcaea4a4cfda":[3,0,866,0,41],
 "df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a419c3f4b0fb5b7f4d0e2dcaea4a4cfda":[3,0,866,3,29],
-"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a419c3f4b0fb5b7f4d0e2dcaea4a4cfda":[3,0,866,2,17],
-"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a59bc02216c730047c1406f97321b0fba":[3,0,866,0,1]
+"df/d55/classXMLRecognizer.html#aa5c9fb08c506a197cef1653ca61d97b8a419c3f4b0fb5b7f4d0e2dcaea4a4cfda":[3,0,866,2,17]
 };

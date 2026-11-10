@@ -1,5 +1,6 @@
 var NAVTREEINDEX219 =
 {
+"db/db4/mingw_2include_2xercesc_2dom_2impl_2DOMDocumentImpl_8hpp.html#a03014a80b69d5b47ff63d9dec769f7e8":[4,0,0,1,15,1,0,0,0,0,13,4],
 "db/db4/mingw_2include_2xercesc_2dom_2impl_2DOMDocumentImpl_8hpp.html#a0cbd1402cca8c6ae63caddce9069716a":[4,0,0,1,15,1,0,0,0,0,13,11],
 "db/db4/mingw_2include_2xercesc_2dom_2impl_2DOMDocumentImpl_8hpp.html#a208caca587a3e9a6279e6cba7c22f525":[4,0,0,1,15,1,0,0,0,0,13,1],
 "db/db4/mingw_2include_2xercesc_2dom_2impl_2DOMDocumentImpl_8hpp.html#a24ef21aad8bc2a19cefe7d720b452305":[4,0,0,1,15,1,0,0,0,0,13,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX219 =
 "db/dcf/classDialogEllipticalArc.html#ad489d48a2805e474413a34085bd33b28":[3,0,111,25],
 "db/dcf/classDialogEllipticalArc.html#adbda2d5f6c09ea9fe0652b60ad072bd3":[3,0,111,38],
 "db/dcf/classDialogEllipticalArc.html#ade43562c755e4e527ae7b8cec00449a9":[3,0,111,57],
-"db/dcf/classDialogEllipticalArc.html#ae18eb32625bed95ac34b09a2d32006fa":[3,0,111,37],
-"db/dcf/classDialogEllipticalArc.html#ae535da65354b3cbfa5bd3a26c5498900":[3,0,111,22]
+"db/dcf/classDialogEllipticalArc.html#ae18eb32625bed95ac34b09a2d32006fa":[3,0,111,37]
 };

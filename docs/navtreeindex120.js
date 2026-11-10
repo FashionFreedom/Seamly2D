@@ -1,5 +1,6 @@
 var NAVTREEINDEX120 =
 {
+"d6/dd7/classXMLEBCDICTranscoder.html#a443f1c102190bc77bdbcc259a29635d9":[3,0,830,8],
 "d6/dd7/classXMLEBCDICTranscoder.html#a443f1c102190bc77bdbcc259a29635d9":[3,0,830,4],
 "d6/dd7/classXMLEBCDICTranscoder.html#a443f1c102190bc77bdbcc259a29635d9":[3,0,830,12],
 "d6/dd7/classXMLEBCDICTranscoder.html#a443f1c102190bc77bdbcc259a29635d9":[3,0,830,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX120 =
 "d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#abb0c88e7cb63a03ff035e6e75fcc8f53":[4,0,0,1,15,3,0,0,1,0,10,7],
 "d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#abca59a4b38dfd3040f46895313698048":[4,0,0,1,15,3,0,0,1,0,10,8],
 "d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#ad1b2b08f8735f909f69d8dc7dfb301b5":[4,0,0,1,15,3,0,0,1,0,10,2],
-"d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#aef973c7ee42adc6b41aa1bf50b8e19aa":[4,0,0,1,15,3,0,0,1,0,10,1],
-"d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#af9679171055324a036b9a810c20249df":[4,0,0,1,15,3,0,0,1,0,10,3]
+"d6/dfb/msvc-arm64_2include_2xercesc_2framework_2psvi_2XSConstants_8hpp.html#aef973c7ee42adc6b41aa1bf50b8e19aa":[4,0,0,1,15,3,0,0,1,0,10,1]
 };

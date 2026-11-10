@@ -1,5 +1,6 @@
 var NAVTREEINDEX112 =
 {
+"d6/d6b/classVToolBisector.html#a1aa546d7ca3bb611e78c456bb8a3fb33":[3,0,745,11],
 "d6/d6b/classVToolBisector.html#a1c6b3f6d7c7de121a98b849981828905":[3,0,745,5],
 "d6/d6b/classVToolBisector.html#a31c2f4dbd71c548eeaf8eedd7fd4581d":[3,0,745,0],
 "d6/d6b/classVToolBisector.html#a51226dfd8ba6c70074c4bd5e75c93abe":[3,0,745,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX112 =
 "d6/d7c/classMoveAbstractLabel.html#a33426340f2b4222143c2968c8be15cae":[3,0,360,6],
 "d6/d7c/classMoveAbstractLabel.html#a94d603092466ddf18a7598b46d096600":[3,0,360,1],
 "d6/d7c/classMoveAbstractLabel.html#a9bf0b1e3cf0d0773fc6acd71d889c605":[3,0,360,0],
-"d6/d7c/classMoveAbstractLabel.html#aa57b546b1ac96182f898726bec555801":[3,0,360,2],
-"d6/d7c/classMoveAbstractLabel.html#aba89ce4ae66aa457b239f09875a29fd5":[3,0,360,5]
+"d6/d7c/classMoveAbstractLabel.html#aa57b546b1ac96182f898726bec555801":[3,0,360,2]
 };

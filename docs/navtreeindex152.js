@@ -1,5 +1,6 @@
 var NAVTREEINDEX152 =
 {
+"d7/deb/classCalculatorUtil.html#a536d2d346fa312b824880eebb4b93a06":[3,0,52,23],
 "d7/deb/classCalculatorUtil.html#a547c0cac33556cb6786baf87ed29e114":[3,0,52,4],
 "d7/deb/classCalculatorUtil.html#a5635e52a789f5c00bdd2e110e089ad98":[3,0,52,8],
 "d7/deb/classCalculatorUtil.html#a693df4184f0f96afeb67ab9eb91b2c1e":[3,0,52,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX152 =
 "d7/df5/classVMainGraphicsScene.html#ab9a1ab70ceb009941a5f243eae552a1f":[3,0,696,6],
 "d7/df5/classVMainGraphicsScene.html#abfd2dcce7c043b92a4062187287bde9a":[3,0,696,57],
 "d7/df5/classVMainGraphicsScene.html#ac14f68ec3057c1d5cf8969edb82f439c":[3,0,696,60],
-"d7/df5/classVMainGraphicsScene.html#ac86bfda94b9602581e791ad6c8e8eff2":[3,0,696,34],
-"d7/df5/classVMainGraphicsScene.html#ac961a9d80fe3981d475bf01dc1b838c7":[3,0,696,80]
+"d7/df5/classVMainGraphicsScene.html#ac86bfda94b9602581e791ad6c8e8eff2":[3,0,696,34]
 };

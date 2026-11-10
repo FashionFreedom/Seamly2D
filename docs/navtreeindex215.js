@@ -1,5 +1,6 @@
 var NAVTREEINDEX215 =
 {
+"db/d6f/classElemStack.html#a75fcc3b93bebf4d9e25a9210d197c6f5":[3,0,258,16],
 "db/d6f/classElemStack.html#a77714455eddd367d3d55ba6e76acc135":[3,0,258,49],
 "db/d6f/classElemStack.html#a77714455eddd367d3d55ba6e76acc135":[3,0,258,50],
 "db/d6f/classElemStack.html#a77714455eddd367d3d55ba6e76acc135":[3,0,258,51],
@@ -248,6 +249,5 @@ var NAVTREEINDEX215 =
 "db/d83/vabstractcubicbezierpath_8h_source.html":[4,0,0,1,6,10],
 "db/d84/classDOMLSParser.html":[3,0,190],
 "db/d84/classDOMLSParser.html#a017d56321fb6270ddb2a8e7ddf191dbb":[3,0,190,76],
-"db/d84/classDOMLSParser.html#a017d56321fb6270ddb2a8e7ddf191dbb":[3,0,190,77],
-"db/d84/classDOMLSParser.html#a017d56321fb6270ddb2a8e7ddf191dbb":[3,0,190,78]
+"db/d84/classDOMLSParser.html#a017d56321fb6270ddb2a8e7ddf191dbb":[3,0,190,77]
 };

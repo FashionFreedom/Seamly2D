@@ -1,5 +1,6 @@
 var NAVTREEINDEX123 =
 {
+"d7/d27/classDOMDocument.html#aae7ba3152bcfd901ce668cb5891f77ad":[3,0,157,122],
 "d7/d27/classDOMDocument.html#aae9690a57a92f9f0289aa1f52898a0c5":[3,0,157,49],
 "d7/d27/classDOMDocument.html#aae9690a57a92f9f0289aa1f52898a0c5":[3,0,157,51],
 "d7/d27/classDOMDocument.html#aae9690a57a92f9f0289aa1f52898a0c5":[3,0,157,48],
@@ -248,6 +249,5 @@ var NAVTREEINDEX123 =
 "d7/d46/msvc-arm64_2include_2xercesc_2validators_2datatype_2DatatypeValidator_8hpp.html":[4,0,0,1,15,3,0,0,7,1,7],
 "d7/d46/msvc-arm64_2include_2xercesc_2validators_2datatype_2DatatypeValidator_8hpp_source.html":[4,0,0,1,15,3,0,0,7,1,7],
 "d7/d47/msvc_2include_2xercesc_2dom_2impl_2DOMNormalizer_8hpp.html":[4,0,0,1,15,2,0,0,0,0,33],
-"d7/d47/msvc_2include_2xercesc_2dom_2impl_2DOMNormalizer_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,33],
-"d7/d48/classRegxParser.html":[3,0,451]
+"d7/d47/msvc_2include_2xercesc_2dom_2impl_2DOMNormalizer_8hpp_source.html":[4,0,0,1,15,2,0,0,0,0,33]
 };

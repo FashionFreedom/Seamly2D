@@ -62,6 +62,7 @@ var classPatternPieceDialog =
     [ "initializePropertiesTab", "d5/d41/classPatternPieceDialog.html#a0bcd4e5cc0402c6c1d234c6f431f76dc", null ],
     [ "initializeSAIncludeType", "d5/d41/classPatternPieceDialog.html#a8c1c127cbb453c907bf9a16dca74e097", null ],
     [ "initializeSeamAllowanceTab", "d5/d41/classPatternPieceDialog.html#a722dfd9939f8db0a7d6abe43cf43b37d", null ],
+    [ "isAnchorIdInUse", "d5/d41/classPatternPieceDialog.html#a731150a48a426feddf5674aa590c2302", null ],
     [ "isInLayout", "d5/d41/classPatternPieceDialog.html#a8f4a68b4e9897dfcff9245aa7b0773b1", null ],
     [ "isMainPathClockwise", "d5/d41/classPatternPieceDialog.html#a394dd2077af6f6de3a73d1d62c6ca234", null ],
     [ "isMainPathValid", "d5/d41/classPatternPieceDialog.html#af499e8bcca209e42f6af5a7baf3c669d", null ],

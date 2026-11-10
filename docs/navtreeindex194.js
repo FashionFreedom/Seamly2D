@@ -1,5 +1,6 @@
 var NAVTREEINDEX194 =
 {
+"da/d51/classBinMemOutputStream.html#a796631ef5de4844c5add9717b886176e":[3,0,42,9],
 "da/d51/classBinMemOutputStream.html#a796631ef5de4844c5add9717b886176e":[3,0,42,3],
 "da/d51/classBinMemOutputStream.html#a8133e9311cbdca20d805e4cd5c0c0084":[3,0,42,16],
 "da/d51/classBinMemOutputStream.html#a8133e9311cbdca20d805e4cd5c0c0084":[3,0,42,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX194 =
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,3,17],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,0,43],
 "da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,2,43],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,0,4],
-"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,0,30]
+"da/d5a/classDOMXPathResult.html#ab718aec450c5438e0cc3a6920044a0c1a08d8b017680981826896e0494ade633d":[3,0,236,0,4]
 };

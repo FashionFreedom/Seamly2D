@@ -1,5 +1,6 @@
 var NAVTREEINDEX279 =
 {
+"de/d18/classNOTATIONDatatypeValidator.html#addedf437031533192e64b3bc3af049d5":[3,0,378,17],
 "de/d18/classNOTATIONDatatypeValidator.html#addedf437031533192e64b3bc3af049d5":[3,0,378,16],
 "de/d18/vistoolline_8h.html":[4,0,0,1,13,3,0,24],
 "de/d18/vistoolline_8h_source.html":[4,0,0,1,13,3,0,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX279 =
 "de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,7,0],
 "de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,7,6],
 "de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,4,12],
-"de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,4,18],
-"de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,4,6]
+"de/d1b/classXMLElementDecl.html#a1307bfa5455f69a27898614ed168f7aaad7c18bed7602aaf16376b72388325fde":[3,0,831,4,18]
 };
