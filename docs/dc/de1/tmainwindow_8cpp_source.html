@@ -926,7 +926,7 @@ $(document).ready(function(){initNavTree('dc/de1/tmainwindow_8cpp_source.html','
 <div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>        {</div>
 <div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d8/d61/classTMainWindow.html#a33152f7de184585f840578cb99450bfa">ui</a>-&gt;tableWidget-&gt;isColumnHidden(column))</div>
 <div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>            {</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                QTableWidgetItem *header = <a class="code hl_variable" href="../../d8/d61/classTMainWindow.html#a33152f7de184585f840578cb99450bfa">ui</a>-&gt;tableWidget-&gt;horizontalHeaderItem(colCount);</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>                QTableWidgetItem *header = <a class="code hl_variable" href="../../d8/d61/classTMainWindow.html#a33152f7de184585f840578cb99450bfa">ui</a>-&gt;tableWidget-&gt;horizontalHeaderItem(column);</div>
 <div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>                csv.<a class="code hl_function" href="../../de/db3/classQxtCsvModel.html#a41b453871fb3b5e5aacc530c67a4f242">setHeaderText</a>(colCount, header-&gt;text());</div>
 <div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>                ++colCount;</div>
 <div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>            }</div>
