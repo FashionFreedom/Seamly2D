@@ -1208,9 +1208,13 @@ void PatternPieceDialog::showAnchorsContextMenu(const QPoint &pos)
         return;
     }
 
-    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QListWidgetItem *row_item = ui->anchorPoints_ListWidget->item(row);
+    SCASSERT(row_item != nullptr);
+    quint32 tool_id = qvariant_cast<quint32>(row_item->data(Qt::UserRole));
+
     QScopedPointer<QMenu> menu(new QMenu(ui->anchorPoints_ListWidget));
     QAction *actionDelete = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
+    actionDelete->setEnabled(!isAnchorIdInUse(tool_id));
 
     QAction *selectedAction = menu->exec(ui->anchorPoints_ListWidget->viewport()->mapToGlobal(pos));
     if (selectedAction == actionDelete)
@@ -3518,6 +3522,39 @@ void PatternPieceDialog::initAnchorPointComboboxes()
     initAnchorPoint(ui->patternLabelCenterAnchor_ComboBox);
     initAnchorPoint(ui->patternLabelTopLeftAnchor_ComboBox);
     initAnchorPoint(ui->patternLabelBottomRightAnchor_ComboBox);
+}
+bool PatternPieceDialog::isAnchorIdInUse(quint32 id) const
+{
+    // Group all the relevant comboboxes into a list
+    const QList<QComboBox*> comboboxes =
+    {
+        ui->grainlineCenterAnchor_ComboBox,
+        ui->grainlineTopAnchor_ComboBox,
+        ui->grainlineBottomAnchor_ComboBox,
+        ui->pieceLabelCenterAnchor_ComboBox,
+        ui->pieceLabelTopLeftAnchor_ComboBox,
+        ui->pieceLabelBottomRightAnchor_ComboBox,
+        ui->patternLabelCenterAnchor_ComboBox,
+        ui->patternLabelTopLeftAnchor_ComboBox,
+        ui->patternLabelBottomRightAnchor_ComboBox
+    };
+
+    // Scan each combobox's currently selected item
+    for (const QComboBox* comboBox : comboboxes)
+    {
+        if (comboBox && comboBox->currentIndex() != -1)
+        {
+            QVariant data = comboBox->currentData();
+
+            // If the current data matches the ID, it is in use
+            if (data.isValid() && data.toUInt() == id)
+            {
+                return true;
+            }
+        }
+    }
+
+    return false; // The ID is clean and not selected anywhere
 }
 
 //---------------------------------------------------------------------------------------------------------------------

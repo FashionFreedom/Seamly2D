@@ -334,7 +334,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -4937,8 +4937,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>264</width>
-              <height>486</height>
+              <width>362</width>
+              <height>558</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -5872,8 +5872,8 @@ QListWidget::item:selected {
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -5910,7 +5910,7 @@ QListWidget::item:selected {
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchSubType_ButtonGroup"/>
   <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>
