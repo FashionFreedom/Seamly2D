@@ -12226,7 +12226,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation>Antracite</translation>
+        <translation>Carvão</translation>
     </message>
     <message>
         <source>Graphite</source>
