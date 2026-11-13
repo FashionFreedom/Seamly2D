@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <version>0.7.6</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <measurements/>
+    <variables/>
+    <draftBlock name="Test">
+        <calculation>
+            <point id="1" mx="0.1" my="0.2" name="A" type="single" x="1" y="1"/>
+            <point angle="0" basePoint="1" id="2" length="10" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="0.1" my="0.2" name="A1" type="endLine"/>
+            <point angle="270" basePoint="1" id="3" length="7" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="0.1" my="0.2" name="A2" type="endLine"/>
+            <point angle="180" basePoint="1" id="4" length="6" lineColor="black" lineType="solidLine" lineWeight="0.35" mx="0.1" my="0.2" name="A3" type="endLine"/>
+            <line firstPoint="1" id="5" lineColor="black" lineType="solidLine" lineWeight="0.35" secondPoint="2"/>
+            <spline color="black" id="6" lineWeight="0.35" penStyle="solidLine" point1="1" point2="3" point3="4" point4="2" type="cubicBezier"/>
+            <arc angle1="0" angle2="90" center="1" color="black" id="7" lineWeight="0.35" penStyle="solidLine" radius="3" type="simple"/>
+        </calculation>
+        <modeling/>
+        <pieces/>
+        <groups/>
+        <images/>
+    </draftBlock>
+</pattern>
