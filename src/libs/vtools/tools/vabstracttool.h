@@ -174,9 +174,9 @@ protected:
     static void                  AddNode(VAbstractPattern *doc, QDomElement &domElement, const VPieceNode &node);
 
     static QVector<VPieceNode>   PrepareNodes(const VPiecePath &path, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                             VContainer *data);
+                                             VContainer *data, const QString &blockName = QString());
     static quint32               PrepareNode(const VPieceNode &node, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                             VContainer *data);
+                                             VContainer *data, const QString &blockName = QString());
 private:
     Q_DISABLE_COPY(VAbstractTool)
 };

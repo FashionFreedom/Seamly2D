@@ -76,6 +76,13 @@ public:
                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
                                       const Source &typeCreation, const QString &blockName = QString());
 
+    static PatternPieceTool *duplicate(quint32 pieceId, const QPointF &offset, VMainGraphicsScene *scene,
+                                       VAbstractPattern *doc, VContainer *data);
+    static PatternPieceTool *pasteCopied(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data);
+    static quint32           copiedPieceId() { return s_copiedPieceId; }
+    static void              setCopiedPieceId(quint32 id);
+    static bool              copiedPieceExists(const VContainer *data);
+
     static const quint8  pieceVersion;
     static const QString TagCSA;
     static const QString TagRecord;
@@ -177,6 +184,9 @@ protected:
 
 private:
     Q_DISABLE_COPY(PatternPieceTool)
+
+    static quint32          s_copiedPieceId;    // piece copied with Copy, for Paste
+    static int              s_pasteCount;       // pastes since the last Copy, to place each one further along
 
     QPainterPath            m_mainPath;    // Must be first to prevent crash
     QRectF                  m_pieceRect;
