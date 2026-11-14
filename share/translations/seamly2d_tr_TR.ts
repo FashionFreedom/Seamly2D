@@ -1704,6 +1704,22 @@ p, li { boşluk: ön sarma; }
         <translation>Seçim</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Uzunluk:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Değer</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Açı:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Özellikler</translation>
     </message>

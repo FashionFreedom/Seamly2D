@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Selecție</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lungime:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Unghi:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atribute</translation>
     </message>

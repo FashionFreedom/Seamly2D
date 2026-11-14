@@ -1696,6 +1696,22 @@ p, li { white-space: pre-wrap; }
         <translation>Drugi punkt:</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Długość:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wartość</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Kąt:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atrybuty</translation>
     </message>

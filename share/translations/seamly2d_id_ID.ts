@@ -1704,6 +1704,22 @@ p, li { spasi: pra-bungkus; }
         <translation>Pilihan</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Panjang:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Sudut:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atribut</translation>
     </message>
