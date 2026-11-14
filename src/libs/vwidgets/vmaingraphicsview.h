@@ -169,6 +169,7 @@ public:
 
     static void           NewSceneRect(QGraphicsScene *sc, QGraphicsView *view, QGraphicsItem *item = nullptr);
     static QRectF         SceneVisibleArea(QGraphicsView *view);
+    static QPointF        snapToOrigin(const QGraphicsItem *item, const QPointF &pos);
 
     static qreal          MinScale();
     static qreal          MaxScale();
