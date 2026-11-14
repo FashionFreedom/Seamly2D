@@ -174,6 +174,7 @@ protected:
 private slots:
     void zoomScaleChanged(qreal scale);
     void MouseMove(const QPointF &scenePos);
+    void emptyLeftClick(const QPointF &scenePos);
     void Clear();
     void patternChangesWereSaved(bool saved);
     void disableFutureTools(quint32 cursor_id);

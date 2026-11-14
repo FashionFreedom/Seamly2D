@@ -91,6 +91,10 @@ public:
     QString        getLineColor() const;
     void           setLineColor(const QString &value);
 
+    // Free points: a click in empty space makes a point there (see DialogTool).
+    virtual bool   freePointReference(quint32 &reference) const override;
+    virtual QList<QComboBox *> pointComboBoxes() const override;
+
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) override;
     virtual void   PointNameChanged() override;

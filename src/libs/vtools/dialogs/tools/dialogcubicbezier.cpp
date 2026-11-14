@@ -405,6 +405,29 @@ void DialogCubicBezier::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief freePointReference the first point is measured from the base point, each later one from the one before.
+bool DialogCubicBezier::freePointReference(quint32 &reference) const
+{
+    reference = NULL_ID;
+    if (prepare || number > 3)
+    {
+        return false;
+    }
+    const QList<QComboBox *> boxes = pointComboBoxes();
+    if (number > 0)
+    {
+        reference = getCurrentObjectId(boxes.at(number - 1));
+    }
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QComboBox *> DialogCubicBezier::pointComboBoxes() const
+{
+    return {ui->comboBoxP1, ui->comboBoxP2, ui->comboBoxP3, ui->comboBoxP4};
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogCubicBezier::PointNameChanged()
 {
     QColor color = okColor;

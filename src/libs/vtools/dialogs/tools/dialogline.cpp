@@ -63,6 +63,7 @@
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../ifc/ifcdef.h"
+#include "../vpatterndb/vcontainer.h"
 #include "dialogs/tools/dialogtool.h"
 #include "ui_dialogline.h"
 
@@ -321,6 +322,28 @@ void DialogLine::ChosenObject(quint32 id, const SceneObject &type)
             }
         }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief freePointReference the first end is measured from the base point, the second from the first end.
+bool DialogLine::freePointReference(quint32 &reference) const
+{
+    reference = NULL_ID;
+    if (prepare || number > 1)
+    {
+        return false;
+    }
+    if (number == 1)
+    {
+        reference = getFirstPoint();
+    }
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QComboBox *> DialogLine::pointComboBoxes() const
+{
+    return {ui->comboBoxFirstPoint, ui->comboBoxSecondPoint};
 }
 
 //---------------------------------------------------------------------------------------------------------------------

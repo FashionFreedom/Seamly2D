@@ -133,6 +133,8 @@ signals:
 
     void          MouseLeftPressed();
     void          MouseLeftReleased();
+    /// A left click (press and release in place) that chose no object, at the release position.
+    void          emptyLeftClick(const QPointF &scenePos);
     void          ItemClicked(QGraphicsItem* pItem);
 
     /**
@@ -185,6 +187,7 @@ private:
     QTransform    m_currentTransform;
     QPointF       scenePos;
     QVector<QGraphicsItem *> origins;
+    bool          m_choseInClick{false};   // an object was chosen since the last left press
 };
 
 //---------------------------------------------------------------------------------------------------------------------

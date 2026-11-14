@@ -158,6 +158,12 @@ void VisToolSpline::RefreshGeometry()
             }
             else
             {
+                if (not p2Selected && not controlPoints[0]->isVisible())
+                {
+                    // The handle was never dragged (e.g. the point was made by a click in empty space, after the
+                    // mouse button was released): keep it on its point, as for a click without a drag.
+                    p2 = static_cast<QPointF>(*first);
+                }
                 p2Selected = true;
             }
         }
@@ -196,6 +202,11 @@ void VisToolSpline::RefreshGeometry()
                 }
                 else
                 {
+                    if (not p3Selected && not controlPoints[1]->isVisible())
+                    {
+                        // The handle was never dragged: keep it on its point (see p2 above).
+                        p3 = static_cast<QPointF>(*second);
+                    }
                     p3Selected = true;
                 }
             }

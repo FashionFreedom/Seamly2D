@@ -303,6 +303,12 @@ void VisToolSplinePath::Creating(const QPointF &pSpl, int size)
     }
     else
     {
+        if (not pointIsSelected && not ctrlPoints[lastPoint]->isVisible())
+        {
+            // The handle was never dragged (e.g. the point was made by a click in empty space, after the mouse
+            // button was released): keep it on its point, as for a click without a drag.
+            ctrlPoint = pSpl;
+        }
         pointIsSelected = true;
 
         VSpline spline(VPointF(pSpl), ctrlPoint, Visualization::scenePos, VPointF(Visualization::scenePos));

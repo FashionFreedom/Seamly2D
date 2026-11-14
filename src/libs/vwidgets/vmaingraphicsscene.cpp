@@ -117,6 +117,7 @@ void VMainGraphicsScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
     {
+        m_choseInClick = false;
         emit MouseLeftPressed();
     }
 
@@ -135,6 +136,16 @@ void VMainGraphicsScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
         emit MouseLeftReleased();
     }
     QGraphicsScene::mouseReleaseEvent(event);
+
+    // A click in place that chose nothing, for tools that can make a point there.
+    if (event->button() == Qt::LeftButton && !m_choseInClick)
+    {
+        const QPoint moved = event->screenPos() - event->buttonDownScreenPos(Qt::LeftButton);
+        if (moved.manhattanLength() <= 4)
+        {
+            emit emptyLeftClick(event->scenePos());
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -315,6 +326,7 @@ void VMainGraphicsScene::setToolsDisabled(bool disable, const QString &draftBloc
  */
 void VMainGraphicsScene::chosenItem(quint32 id, const SceneObject &type)
 {
+    m_choseInClick = true;
     emit ChosenObject(id, type);
 }
 

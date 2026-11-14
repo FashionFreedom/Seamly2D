@@ -237,6 +237,28 @@ void DialogSpline::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief freePointReference the first point is measured from the base point, the last from the first.
+bool DialogSpline::freePointReference(quint32 &reference) const
+{
+    reference = NULL_ID;
+    if (prepare || number > 1)
+    {
+        return false;
+    }
+    if (number == 1)
+    {
+        reference = getCurrentObjectId(ui->comboBoxP1);
+    }
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QComboBox *> DialogSpline::pointComboBoxes() const
+{
+    return {ui->comboBoxP1, ui->comboBoxP4};
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::SaveData()
 {
     const quint32 d = spl.GetDuplicate();//Save previous value

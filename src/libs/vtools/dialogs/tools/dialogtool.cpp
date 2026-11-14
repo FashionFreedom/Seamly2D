@@ -1649,3 +1649,30 @@ QString DialogTool::makeAngleTooltip() const
                                     .arg(":/icon/64x64/rotation.png");
     return toolTip;
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+bool DialogTool::freePointReference(quint32 &reference) const
+{
+    reference = NULL_ID;
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QComboBox *> DialogTool::pointComboBoxes() const
+{
+    return QList<QComboBox *>();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::chooseNewPoint(quint32 id)
+{
+    const QString name = data->GeometricObject<VPointF>(id)->name();
+    for (QComboBox *box : pointComboBoxes())
+    {
+        if (box != nullptr && box->findData(id) == -1)
+        {
+            box->addItem(name, id);
+        }
+    }
+    ChosenObject(id, SceneObject::Point);
+}

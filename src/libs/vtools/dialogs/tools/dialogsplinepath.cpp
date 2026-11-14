@@ -292,6 +292,28 @@ void DialogSplinePath::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief freePointReference the first point is measured from the base point, each later one from the last point.
+bool DialogSplinePath::freePointReference(quint32 &reference) const
+{
+    reference = NULL_ID;
+    if (isVisible())
+    {
+        return false;   // the dialog is open for editing: clicks no longer add points
+    }
+    if (path.CountPoints() > 0)
+    {
+        reference = path.at(path.CountPoints() - 1).P().id();
+    }
+    return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QList<QComboBox *> DialogSplinePath::pointComboBoxes() const
+{
+    return {ui->comboBoxPoint};
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief SaveData Put dialog data in local variables
  */

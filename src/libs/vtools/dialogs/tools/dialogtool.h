@@ -128,6 +128,15 @@ public:
                                         QToolButton *down, QToolButton *bottom);
     static QList<QListWidgetItem *> selectedRowItems(QListWidget *list, QListWidgetItem *anchor = nullptr);
 
+    /// Free points, for tools that pick points: a click in empty space can make a new point there.
+    /// freePointReference returns true when the tool is waiting for a point it can take as a new one, and gives the
+    /// point the new one is measured from (NULL_ID for the draft block's base point).
+    virtual bool     freePointReference(quint32 &reference) const;
+    /// The combo boxes that list points, so a point made after the dialog opened can be added to them.
+    virtual QList<QComboBox *> pointComboBoxes() const;
+    /// chooseNewPoint adds a point made after the dialog opened to the point lists and picks it.
+    void             chooseNewPoint(quint32 id);
+
 signals:
     /**
      * @brief DialogClosed signal dialog closed

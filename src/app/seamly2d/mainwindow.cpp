@@ -544,6 +544,7 @@ void MainWindow::initializeScenes()
 
     // Draft scene Mouse move events
     connect(draftScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
+    connect(draftScene, &VMainGraphicsScene::emptyLeftClick, this, &MainWindow::emptyLeftClick);
 
     pieceScene = new VMainGraphicsScene(this);
 
@@ -3598,6 +3599,100 @@ void MainWindow::handleImagesMenu()
 }
 
 
+/// @brief emptyLeftClick lets the Line and curve tools (Curve and Spline, interactive and fixed) use points anywhere,
+/// as in a CAD program: a click that chose no point makes one there. The first point is placed by length and angle
+/// from the draft block's base point, each later one by length and angle from the tool's previous point, so they can
+/// be edited later. A click within a few pixels of the origin lands exactly on 0, 0 (hold Alt to place it freely).
+void MainWindow::emptyLeftClick(const QPointF &scenePos)
+{
+    if (dialogTool.isNull())
+    {
+        return;
+    }
+    switch (currentTool)
+    {
+        case Tool::Line:
+        case Tool::Spline:
+        case Tool::CubicBezier:
+        case Tool::SplinePath:
+        case Tool::CubicBezierPath:
+            break;
+        default:
+            return;
+    }
+    quint32 reference = NULL_ID;
+    if (!dialogTool->freePointReference(reference))
+    {
+        return;
+    }
+    if (reference == NULL_ID)
+    {
+        const QVector<VToolRecord> history = doc->getBlockHistory();
+        for (const VToolRecord &record : history)
+        {
+            if (record.getTypeTool() == Tool::BasePoint)
+            {
+                reference = record.getId();
+                break;
+            }
+        }
+    }
+    if (reference == NULL_ID)
+    {
+        return;
+    }
+
+    QPointF target = scenePos;
+    const QPoint offset = ui->view->mapFromScene(target) - ui->view->mapFromScene(QPointF(0, 0));
+    if (!(QGuiApplication::keyboardModifiers() & Qt::AltModifier)
+        && offset.x() * offset.x() + offset.y() * offset.y() <= 12 * 12)
+    {
+        target = QPointF(0, 0);
+    }
+
+    try
+    {
+        const QSharedPointer<VPointF> referencePoint = pattern->GeometricObject<VPointF>(reference);
+        const QLineF line(static_cast<QPointF>(*referencePoint), target);
+        if (line.length() < 0.5)
+        {
+            return;   // on the reference point itself
+        }
+        auto number = [](qreal value)
+        {
+            QString text = QString::number(value, 'f', 3);
+            while (text.contains(QLatin1Char('.')) && (text.endsWith(QLatin1Char('0')) || text.endsWith(QLatin1Char('.'))))
+            {
+                text.chop(1);
+            }
+            return text;
+        };
+        QString length = number(qApp->fromPixel(line.length()));
+        QString angle = number(line.angle());
+
+        VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
+        SCASSERT(scene != nullptr)
+        VToolEndLine *point = VToolEndLine::Create(0, doc->GenerateLabel(LabelType::NewLabel), LineTypeNone,
+                                                   QString::number(doc->getDefaultLineWeight()), doc->getDefaultLineColor(),
+                                                   length, angle, reference, 5, 10, true, scene, doc, pattern,
+                                                   Document::FullParse, Source::FromGui);
+        if (point == nullptr)
+        {
+            return;
+        }
+        if (doc->getCursorId() > NULL_ID)
+        {
+            doc->setCursorId(point->getId());   // so the line goes in after its new point
+        }
+        dialogTool->chooseNewPoint(point->getId());
+    }
+    catch (const VException &error)
+    {
+        qCWarning(vMainWindow, "%s", qUtf8Printable(error.ErrorMessage()));
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief mouseMove Handle mouse novement.
 ///
 /// This method takes the mouse postion in the scene and displays the coordinates & units in the status bar.
