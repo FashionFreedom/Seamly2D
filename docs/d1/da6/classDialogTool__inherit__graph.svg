@@ -773,35 +773,37 @@ var sectionId = 'dynsection-0';
 <g id="node19" class="node">
 <title>Node19</title>
 <g id="a_node19"><a xlink:href="../../d5/dd7/classDialogLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="2524.75,-204.5 2524.75,-470.75 2656.25,-470.75 2656.25,-204.5 2524.75,-204.5"/>
-<text xml:space="preserve" text-anchor="middle" x="2590.5" y="-457.25" font-family="Helvetica,sans-Serif" font-size="10.00">DialogLine</text>
-<polyline fill="none" stroke="#666666" points="2524.75,-450 2656.25,-450"/>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-436.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="#666666" points="2524.75,-429.25 2656.25,-429.25"/>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-415.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogLine()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogLine()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-390.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPoint()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPoint()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-364.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPoint()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-352" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPoint()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-339.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineName()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-313.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-301" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-288.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-262.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-237.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text xml:space="preserve" text-anchor="start" x="2532.75" y="-211.75" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<polygon fill="white" stroke="#666666" points="2524.75,-191.75 2524.75,-483.5 2656.25,-483.5 2656.25,-191.75 2524.75,-191.75"/>
+<text xml:space="preserve" text-anchor="middle" x="2590.5" y="-470" font-family="Helvetica,sans-Serif" font-size="10.00">DialogLine</text>
+<polyline fill="none" stroke="#666666" points="2524.75,-462.75 2656.25,-462.75"/>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-449.25" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="#666666" points="2524.75,-442 2656.25,-442"/>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-428.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogLine()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-415.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogLine()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-403" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPoint()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-390.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPoint()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-377.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPoint()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-364.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPoint()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-352" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineName()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-339.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ setlength()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setAngle()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-313.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-301" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-288.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-275.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-262.75" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-250" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-237.25" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointNameChanged()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-211.75" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text xml:space="preserve" text-anchor="start" x="2532.75" y="-199" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node19 -->
 <g id="edge18" class="edge">
 <title>Node1&#45;&gt;Node19</title>
-<path fill="none" stroke="#63b8ff" d="M3366.28,-1103.99C3196.56,-1051.59 2845.06,-918.74 2665.5,-675.25 2622.24,-616.58 2603.16,-537.58 2595.05,-470.85"/>
+<path fill="none" stroke="#63b8ff" d="M3366.28,-1103.99C3196.56,-1051.59 2845.06,-918.74 2665.5,-675.25 2624.99,-620.31 2605.69,-547.55 2596.74,-483.73"/>
 <polygon fill="none" stroke="#63b8ff" points="3365.16,-1107.31 3375.74,-1106.88 3367.2,-1100.61 3365.16,-1107.31"/>
 </g>
 <!-- Node20 -->
