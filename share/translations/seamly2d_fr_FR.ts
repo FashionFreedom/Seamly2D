@@ -782,7 +782,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -837,7 +837,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1153,7 +1153,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1224,7 +1224,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1295,7 +1295,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1496,7 +1496,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1709,6 +1709,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Selection</source>
         <translation>Sélection</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Géométrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longueur :</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valeur</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Angle :</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1984,7 +2000,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Suffix:</source>
@@ -2078,7 +2094,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2539,7 +2555,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2646,7 +2662,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2797,7 +2813,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -4788,7 +4804,7 @@ Voulez-vous la télécharger ?</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
@@ -7952,7 +7968,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -9067,7 +9083,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sur un fond sombre, afficher les lignes sombres, les points et les étiquettes plus clairs pour qu'ils restent visibles (le noir s'affiche en gris clair). Le motif conserve ses couleurs réelles pour l'enregistrement, l'impression et l'exportation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sur un fond sombre, afficher les lignes sombres, les points et les étiquettes plus clairs pour qu&apos;ils restent visibles (le noir s&apos;affiche en gris clair). Le motif conserve ses couleurs réelles pour l&apos;enregistrement, l&apos;impression et l&apos;exportation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9398,7 +9414,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -13522,7 +13538,7 @@ charger dans SeamlyME comme d&apos;habitude.
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Angle:</source>

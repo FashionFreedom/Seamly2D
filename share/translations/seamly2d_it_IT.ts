@@ -1689,6 +1689,22 @@ p, li { white-space: pre-wrap; }
         <translation>Selezione</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lunghezza:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valore</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Angolo:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Attributi</translation>
     </message>
@@ -9028,7 +9044,7 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Su uno sfondo scuro, mostra le linee scure, i punti e le etichette più chiari in modo che rimangano visibili (il nero viene mostrato come grigio chiaro). Il motivo mantiene i suoi colori reali per il salvataggio, la stampa e l'esportazione.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Su uno sfondo scuro, mostra le linee scure, i punti e le etichette più chiari in modo che rimangano visibili (il nero viene mostrato come grigio chiaro). Il motivo mantiene i suoi colori reali per il salvataggio, la stampa e l&apos;esportazione.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>

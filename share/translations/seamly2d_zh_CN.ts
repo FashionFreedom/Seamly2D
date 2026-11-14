@@ -1704,6 +1704,22 @@ p, li { 空白:预换行； }
         <translation>选择</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>几何学</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>长度:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>角度:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>属性</translation>
     </message>
