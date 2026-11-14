@@ -79,6 +79,9 @@ public:
 
     void           setLineName();
 
+    void           setlength(const QString &value);
+    void           setAngle(const QString &value);
+
     QString        getLineType() const;
     void           setLineType(const QString &value);
 
