@@ -1696,6 +1696,22 @@ p, li { white-space: pre-wrap; }
         <translation>Második pont:</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Hossz:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Szög:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Attribútumok</translation>
     </message>

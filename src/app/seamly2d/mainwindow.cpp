@@ -2855,7 +2855,9 @@ void MainWindow::initPropertyEditor()
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
-    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
+    // Refresh properties after the tools have read their updated attributes and geometry.
+    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions,
+            Qt::QueuedConnection);
 }
 
 /**

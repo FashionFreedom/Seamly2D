@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Выбрать</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Геометрия</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Длина:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значение</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Угол:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Свойства</translation>
     </message>

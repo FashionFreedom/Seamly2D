@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Výběr</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Délka:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Úhel:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atributy</translation>
     </message>
@@ -9248,7 +9264,7 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished">Přizpůsobit barvy tmavému pozadí</translation>
+        <translation>Přizpůsobit barvy tmavému pozadí</translation>
     </message>
 </context>
 <context>

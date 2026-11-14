@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Επιλογή</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Γεωμετρία</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Μήκος:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Τιμή</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Γωνία:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Χαρακτηριστικά</translation>
     </message>

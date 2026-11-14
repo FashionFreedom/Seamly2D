@@ -1689,6 +1689,22 @@ p, li { white-space: pre-wrap; }
         <translation>Auswahl</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Länge:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Winkel:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Eigenschaften</translation>
     </message>

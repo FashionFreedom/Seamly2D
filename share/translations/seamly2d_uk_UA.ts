@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Вибір</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Геометрія</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Довжина:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Значення</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Кут:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Атрибути</translation>
     </message>

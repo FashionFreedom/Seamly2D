@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Valinta</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Pituus:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Kulma:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Ominaisuudet</translation>
     </message>
