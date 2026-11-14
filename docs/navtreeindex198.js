@@ -1,5 +1,13 @@
 var NAVTREEINDEX198 =
 {
+"da/d79/classDOMEntityReferenceImpl.html#a9b2e4e1bcec2dac5ad2baddc4c90b5e1":[3,0,171,0],
+"da/d79/classDOMEntityReferenceImpl.html#a9d77fb8ffcb37eb1941717806c1a3503":[3,0,171,99],
+"da/d79/classDOMEntityReferenceImpl.html#a9d77fb8ffcb37eb1941717806c1a3503":[3,0,171,98],
+"da/d79/classDOMEntityReferenceImpl.html#a9d77fb8ffcb37eb1941717806c1a3503":[3,0,171,97],
+"da/d79/classDOMEntityReferenceImpl.html#a9d77fb8ffcb37eb1941717806c1a3503":[3,0,171,96],
+"da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,60],
+"da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,61],
+"da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,62],
 "da/d79/classDOMEntityReferenceImpl.html#aa376b3915047fd9959602dd582b5b17b":[3,0,171,63],
 "da/d79/classDOMEntityReferenceImpl.html#aa3e50ccf3b43b738606c6f349ccee812":[3,0,171,80],
 "da/d79/classDOMEntityReferenceImpl.html#aa3e50ccf3b43b738606c6f349ccee812":[3,0,171,81],
@@ -241,13 +249,5 @@ var NAVTREEINDEX198 =
 "da/d83/classXSMultiValueFacet.html#a0c183653ddd8f8b622691ded87055cdc":[3,0,915,35],
 "da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,13],
 "da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,12],
-"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,14],
-"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,15],
-"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,9],
-"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,6],
-"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,0],
-"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,3],
-"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,17],
-"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,16],
-"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,18]
+"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,14]
 };

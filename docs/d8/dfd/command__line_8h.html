@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Seamly2D: src/app/seamly2d/core/vcmdexport.h File Reference</title>
+<title>Seamly2D: src/app/seamly2d/core/command_line.h File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">var page_layout=1;</script>
 <script type="text/javascript" src="../../jquery.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "../../search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dd/d57/vcmdexport_8h.html','../../'); initResizable(); });
+$(document).ready(function(){initNavTree('d8/dfd/command__line_8h.html','../../'); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('dd/d57/vcmdexport_8h.html','../../'); 
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
-  <div class="headertitle"><div class="title">vcmdexport.h File Reference</div></div>
+  <div class="headertitle"><div class="title">command_line.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
@@ -109,23 +109,24 @@ $(document).ready(function(){initNavTree('dd/d57/vcmdexport_8h.html','../../'); 
 <code>#include &lt;QTextStream&gt;</code><br />
 <code>#include &lt;QCoreApplication&gt;</code><br />
 <code>#include &lt;QCommandLineParser&gt;</code><br />
+<code>#include &lt;QString&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/dd8/layoutsettings__dialog_8h_source.html">../dialogs/layoutsettings_dialog.h</a>&quot;</code><br />
 <code>#include &quot;../vmisc/def.h&quot;</code><br />
 <code>#include &quot;../vmisc/vsysexits.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vcmdexport.h:</div>
+Include dependency graph for command_line.h:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d3/d46/vcmdexport_8h__incl.svg" width="100%" height="525"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d0/dbb/command__line_8h__incl.svg" width="100%" height="525"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d9/d74/vcmdexport_8h__dep__incl.svg" width="100%" height="481"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="../../d6/dd5/command__line_8h__dep__incl.svg" width="100%" height="481"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 </div>
-<p><a href="../../dd/d57/vcmdexport_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="../../d8/dfd/command__line_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -134,14 +135,21 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a2c27b3e93739102ce70a1aaa534849e5"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a></td></tr>
+<tr class="memitem:a2c27b3e93739102ce70a1aaa534849e5"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a></td></tr>
 <tr class="separator:a2c27b3e93739102ce70a1aaa534849e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae120138e297c1ee2e21134edd10e53f0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt; QCommandLineOption * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a></td></tr>
+<tr class="memitem:ae120138e297c1ee2e21134edd10e53f0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt; QCommandLineOption * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a></td></tr>
 <tr class="separator:ae120138e297c1ee2e21134edd10e53f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a5de723f4f2e702d26026cb3471b1ea"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="../../d8/d8a/classVLayoutGenerator.html">VLayoutGenerator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a></td></tr>
+<tr class="memitem:a2a5de723f4f2e702d26026cb3471b1ea"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="../../d8/d8a/classVLayoutGenerator.html">VLayoutGenerator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dfd/command__line_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a></td></tr>
 <tr class="separator:a2a5de723f4f2e702d26026cb3471b1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Douglas S Caskey </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>14 Nov, 2026</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>This source code is part of the Seamly2D project, a pattern making program to create and model patterns of clothing. Copyright (C) 2017-2026 Seamly2D project <a href="https://github.com/fashionfreedom/seamly2d">https://github.com/fashionfreedom/seamly2d</a> All Rights Reserved.</dd></dl>
+<p>Seamly2D is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. </p>
+
+<p class="definition">Definition in file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="ae120138e297c1ee2e21134edd10e53f0" name="ae120138e297c1ee2e21134edd10e53f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae120138e297c1ee2e21134edd10e53f0">&#9670;&#160;</a></span>VCommandLineOptions</h2>
 
@@ -149,12 +157,12 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt;QCommandLineOption *&gt; <a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a></td>
+          <td class="memname">typedef <a class="el" href="../../d1/d4a/classQList.html">QList</a>&lt;QCommandLineOption *&gt; <a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00044">44</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00069">69</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
 </div>
 </div>
@@ -165,12 +173,12 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>&gt; <a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a></td>
+          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>&gt; <a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00043">43</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00068">68</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
 </div>
 </div>
@@ -181,12 +189,12 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="../../d8/d8a/classVLayoutGenerator.html">VLayoutGenerator</a>&gt; <a class="el" href="../../dd/d57/vcmdexport_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a></td>
+          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="../../d8/d8a/classVLayoutGenerator.html">VLayoutGenerator</a>&gt; <a class="el" href="../../d8/dfd/command__line_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00045">45</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00070">70</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
 </div>
 </div>
@@ -195,7 +203,7 @@ Typedefs</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5194e5fea318fda12687127c23f8aba1.html">app</a></li><li class="navelem"><a class="el" href="../../dir_ae5dd9defefe3c74d512678fc1a876cc.html">seamly2d</a></li><li class="navelem"><a class="el" href="../../dir_e83d8c2e3e50889a02889b58f7b170a9.html">core</a></li><li class="navelem"><a class="el" href="../../dd/d57/vcmdexport_8h.html">vcmdexport.h</a></li>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dir_5194e5fea318fda12687127c23f8aba1.html">app</a></li><li class="navelem"><a class="el" href="../../dir_ae5dd9defefe3c74d512678fc1a876cc.html">seamly2d</a></li><li class="navelem"><a class="el" href="../../dir_e83d8c2e3e50889a02889b58f7b170a9.html">core</a></li><li class="navelem"><a class="el" href="../../d8/dfd/command__line_8h.html">command_line.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

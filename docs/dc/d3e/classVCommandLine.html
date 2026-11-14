@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('dc/d3e/classVCommandLine.html','../../
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -111,7 +112,7 @@ $(document).ready(function(){initNavTree('dc/d3e/classVCommandLine.html','../../
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for VCommandLine:</div>
 <div class="dyncontent">
@@ -122,84 +123,117 @@ Collaboration diagram for VCommandLine:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad503fbc8dd0ee22648cb1e979313b33a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ad503fbc8dd0ee22648cb1e979313b33a">~VCommandLine</a> ()</td></tr>
+<tr class="memdesc:ad503fbc8dd0ee22648cb1e979313b33a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>.  <br /></td></tr>
 <tr class="separator:ad503fbc8dd0ee22648cb1e979313b33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c1e829f0ae5cd638c17766d9b2667e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a1c1e829f0ae5cd638c17766d9b2667e6">IsTestModeEnabled</a> () const</td></tr>
-<tr class="separator:a1c1e829f0ae5cd638c17766d9b2667e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d3cce9fe8102719fc2a597e174d9111"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a8d3cce9fe8102719fc2a597e174d9111">IsNoScalingEnabled</a> () const</td></tr>
-<tr class="separator:a8d3cce9fe8102719fc2a597e174d9111"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a706457e068420b4d4fab477113bd0f5b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a706457e068420b4d4fab477113bd0f5b">IsExportEnabled</a> () const</td></tr>
-<tr class="separator:a706457e068420b4d4fab477113bd0f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87abfdb29ffb704172bff3b27647ed93"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a87abfdb29ffb704172bff3b27647ed93">OptMeasurePath</a> () const</td></tr>
-<tr class="separator:a87abfdb29ffb704172bff3b27647ed93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c973fe004418eb62f7015a6ca9081dc"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a6c973fe004418eb62f7015a6ca9081dc">OptBaseName</a> () const</td></tr>
-<tr class="separator:a6c973fe004418eb62f7015a6ca9081dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a074b6f87e6ef085c0d649bfe02190826"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a074b6f87e6ef085c0d649bfe02190826">OptDestinationPath</a> () const</td></tr>
-<tr class="separator:a074b6f87e6ef085c0d649bfe02190826"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff33c109c48cbbff27aa5a16b59c0ccd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aff33c109c48cbbff27aa5a16b59c0ccd">OptExportType</a> () const</td></tr>
-<tr class="separator:aff33c109c48cbbff27aa5a16b59c0ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a726e083c6a52d77fb79bf4aa8a7c5f4e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a726e083c6a52d77fb79bf4aa8a7c5f4e">IsBinaryDXF</a> () const</td></tr>
-<tr class="separator:a726e083c6a52d77fb79bf4aa8a7c5f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782d2a4e9b74cf2714a59eea1ea02ebf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a782d2a4e9b74cf2714a59eea1ea02ebf">isTestModeEnabled</a> () const</td></tr>
+<tr class="memdesc:a782d2a4e9b74cf2714a59eea1ea02ebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the application is running in test mode.  <br /></td></tr>
+<tr class="separator:a782d2a4e9b74cf2714a59eea1ea02ebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11a6fc145c3e96f9b61ac1fba4385c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aa11a6fc145c3e96f9b61ac1fba4385c4">isNoScalingEnabled</a> () const</td></tr>
+<tr class="memdesc:aa11a6fc145c3e96f9b61ac1fba4385c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether high DPI scaling is disabled.  <br /></td></tr>
+<tr class="separator:aa11a6fc145c3e96f9b61ac1fba4385c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923fa82ef52ef4467478174fa4825485"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a923fa82ef52ef4467478174fa4825485">isExportEnabled</a> () const</td></tr>
+<tr class="memdesc:a923fa82ef52ef4467478174fa4825485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the export mode is enabled.  <br /></td></tr>
+<tr class="separator:a923fa82ef52ef4467478174fa4825485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61af02d33e5d7b90059ac0d69a83ffc1"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a61af02d33e5d7b90059ac0d69a83ffc1">measurementPathOption</a> () const</td></tr>
+<tr class="memdesc:a61af02d33e5d7b90059ac0d69a83ffc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the path to the measurement file if applicable.  <br /></td></tr>
+<tr class="separator:a61af02d33e5d7b90059ac0d69a83ffc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee96f52d6a400043117e8467abb5d6db"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aee96f52d6a400043117e8467abb5d6db">baseNameOption</a> () const</td></tr>
+<tr class="memdesc:aee96f52d6a400043117e8467abb5d6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the base name for exported files.  <br /></td></tr>
+<tr class="separator:aee96f52d6a400043117e8467abb5d6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d132388e2b3510efe5d242476c055e6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a6d132388e2b3510efe5d242476c055e6">destinationPathOption</a> () const</td></tr>
+<tr class="memdesc:a6d132388e2b3510efe5d242476c055e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the destination path for export output.  <br /></td></tr>
+<tr class="separator:a6d132388e2b3510efe5d242476c055e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb17e0aedb44dc24e98ad41d94e928c7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aeb17e0aedb44dc24e98ad41d94e928c7">exportTypeOption</a> () const</td></tr>
+<tr class="memdesc:aeb17e0aedb44dc24e98ad41d94e928c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the selected export format type.  <br /></td></tr>
+<tr class="separator:aeb17e0aedb44dc24e98ad41d94e928c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab551a8466a05228043fb0dcf10d98212"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ab551a8466a05228043fb0dcf10d98212">isBinaryDXF</a> () const</td></tr>
+<tr class="memdesc:ab551a8466a05228043fb0dcf10d98212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether DXF export should be in binary format.  <br /></td></tr>
+<tr class="separator:ab551a8466a05228043fb0dcf10d98212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c5a70e0f4aa77675b5a1a63192f490"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a80c5a70e0f4aa77675b5a1a63192f490">isTextAsPaths</a> () const</td></tr>
+<tr class="memdesc:a80c5a70e0f4aa77675b5a1a63192f490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether text should be exported as paths.  <br /></td></tr>
 <tr class="separator:a80c5a70e0f4aa77675b5a1a63192f490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6612a9d7665df267486ba7782974fcff"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a6612a9d7665df267486ba7782974fcff">exportOnlyPieces</a> () const</td></tr>
+<tr class="memdesc:a6612a9d7665df267486ba7782974fcff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether only pieces/details should be exported.  <br /></td></tr>
 <tr class="separator:a6612a9d7665df267486ba7782974fcff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6633ae9e7716e7b69d9f2c2063a98fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ab6633ae9e7716e7b69d9f2c2063a98fd">DefaultGenerator</a> () const</td></tr>
-<tr class="separator:ab6633ae9e7716e7b69d9f2c2063a98fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a382ce878ff87c04f1cb78a50702e79e1"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a382ce878ff87c04f1cb78a50702e79e1">OptInputFileNames</a> () const</td></tr>
-<tr class="separator:a382ce878ff87c04f1cb78a50702e79e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae56e17de2eb6926e72c8617b2c79b298"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ae56e17de2eb6926e72c8617b2c79b298">IsGuiEnabled</a> () const</td></tr>
-<tr class="separator:ae56e17de2eb6926e72c8617b2c79b298"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6fad6ad5512d4987d84f919abda02b7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af6fad6ad5512d4987d84f919abda02b7">IsSetGradationSize</a> () const</td></tr>
-<tr class="separator:af6fad6ad5512d4987d84f919abda02b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add2cbe8d5202f1fd283363bca5e22190"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#add2cbe8d5202f1fd283363bca5e22190">IsSetGradationHeight</a> () const</td></tr>
-<tr class="separator:add2cbe8d5202f1fd283363bca5e22190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9ad6d8619fb7d02f335df04eb305107"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ae9ad6d8619fb7d02f335df04eb305107">OptGradationSize</a> () const</td></tr>
-<tr class="separator:ae9ad6d8619fb7d02f335df04eb305107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3720867519ba7a1a9cf9a4b04d847d2b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a3720867519ba7a1a9cf9a4b04d847d2b">OptGradationHeight</a> () const</td></tr>
-<tr class="separator:a3720867519ba7a1a9cf9a4b04d847d2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f2f430f6978705586abfa3d3fb054a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/dfd/command__line_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a9f2f430f6978705586abfa3d3fb054a4">defaultlayoutGenerator</a> () const</td></tr>
+<tr class="memdesc:a9f2f430f6978705586abfa3d3fb054a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a default layout generator based on command-line options.  <br /></td></tr>
+<tr class="separator:a9f2f430f6978705586abfa3d3fb054a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2f50f05e7f7b155cab27f7b566048e"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aac2f50f05e7f7b155cab27f7b566048e">inputFileNamesOption</a> () const</td></tr>
+<tr class="memdesc:aac2f50f05e7f7b155cab27f7b566048e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of input filenames passed as positional arguments.  <br /></td></tr>
+<tr class="separator:aac2f50f05e7f7b155cab27f7b566048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af29a936f894e51be88ec6468962388d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af29a936f894e51be88ec6468962388d7">isGuiEnabled</a> () const</td></tr>
+<tr class="memdesc:af29a936f894e51be88ec6468962388d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the GUI should be enabled based on current CLI mode.  <br /></td></tr>
+<tr class="separator:af29a936f894e51be88ec6468962388d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdb2a4c90d07131296fbb537200bcc99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#abdb2a4c90d07131296fbb537200bcc99">isGradationSizeSet</a> () const</td></tr>
+<tr class="memdesc:abdb2a4c90d07131296fbb537200bcc99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific gradation size is set via the CLI.  <br /></td></tr>
+<tr class="separator:abdb2a4c90d07131296fbb537200bcc99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91226ce2e73690cdff6587217e95acc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a91226ce2e73690cdff6587217e95acc0">isGradationHeightSet</a> () const</td></tr>
+<tr class="memdesc:a91226ce2e73690cdff6587217e95acc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific gradation height is set via the CLI.  <br /></td></tr>
+<tr class="separator:a91226ce2e73690cdff6587217e95acc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164471d92748cd2a427d91e0003b2232"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a164471d92748cd2a427d91e0003b2232">gradationSizeOption</a> () const</td></tr>
+<tr class="memdesc:a164471d92748cd2a427d91e0003b2232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the gradation size value from the command-line.  <br /></td></tr>
+<tr class="separator:a164471d92748cd2a427d91e0003b2232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a623562c74a6e132af127ab65f61b747f"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a623562c74a6e132af127ab65f61b747f">gradationHeightOption</a> () const</td></tr>
+<tr class="memdesc:a623562c74a6e132af127ab65f61b747f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the gradation height value from the command-line.  <br /></td></tr>
+<tr class="separator:a623562c74a6e132af127ab65f61b747f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a6632dbd14b714bd9e40e950edb98390a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a6632dbd14b714bd9e40e950edb98390a">VCommandLine</a> ()</td></tr>
+<tr class="memdesc:a6632dbd14b714bd9e40e950edb98390a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> class.  <br /></td></tr>
 <tr class="separator:a6632dbd14b714bd9e40e950edb98390a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a447ad555be03f4242970ab49b0e7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078">PaperSizeFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a58a447ad555be03f4242970ab49b0e7a">OptPaperSize</a> () const</td></tr>
-<tr class="separator:a58a447ad555be03f4242970ab49b0e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a145f6e89c7ee1b51946d50f58d08b16b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a145f6e89c7ee1b51946d50f58d08b16b">OptRotation</a> () const</td></tr>
-<tr class="separator:a145f6e89c7ee1b51946d50f58d08b16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37707851589ee4a26a5dcacec1c52f44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dec/vbank_8h.html#a70dfa19a81760e9220d7385ab0c7ae8e">Cases</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a37707851589ee4a26a5dcacec1c52f44">OptGroup</a> () const</td></tr>
-<tr class="separator:a37707851589ee4a26a5dcacec1c52f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18592c8b98a2819ff59b0cb1e15fc956"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078">PaperSizeFormat</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a18592c8b98a2819ff59b0cb1e15fc956">paperSizeOption</a> () const</td></tr>
+<tr class="memdesc:a18592c8b98a2819ff59b0cb1e15fc956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the selected paper size template.  <br /></td></tr>
+<tr class="separator:a18592c8b98a2819ff59b0cb1e15fc956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad125d321823ad98d7e2a80c701ab60e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aad125d321823ad98d7e2a80c701ab60e">rotationOption</a> () const</td></tr>
+<tr class="memdesc:aad125d321823ad98d7e2a80c701ab60e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the layout rotation value from command-line options.  <br /></td></tr>
+<tr class="separator:aad125d321823ad98d7e2a80c701ab60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4b28428101e28695690542ebfd5b042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dec/vbank_8h.html#a70dfa19a81760e9220d7385ab0c7ae8e">Cases</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af4b28428101e28695690542ebfd5b042">groupOption</a> () const</td></tr>
+<tr class="memdesc:af4b28428101e28695690542ebfd5b042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the selected layout grouping type.  <br /></td></tr>
+<tr class="separator:af4b28428101e28695690542ebfd5b042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
-<tr class="memitem:a3a2b8e0d6286a6d9f806f3b0756d23a4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a3a2b8e0d6286a6d9f806f3b0756d23a4">Reset</a> ()</td></tr>
-<tr class="separator:a3a2b8e0d6286a6d9f806f3b0756d23a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9758b8b982c50c953cf2f95b6d53d4e9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a9758b8b982c50c953cf2f95b6d53d4e9">Get</a> (const QCoreApplication &amp;app)</td></tr>
-<tr class="separator:a9758b8b982c50c953cf2f95b6d53d4e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03de0af217add3f134dda54684d74c10"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a03de0af217add3f134dda54684d74c10">reset</a> ()</td></tr>
+<tr class="memdesc:a03de0af217add3f134dda54684d74c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the singleton instance of <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>.  <br /></td></tr>
+<tr class="separator:a03de0af217add3f134dda54684d74c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5c490306b66b9d42c53a0745fc37458"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ad5c490306b66b9d42c53a0745fc37458">getCommandLine</a> (const QCoreApplication &amp;app)</td></tr>
+<tr class="memdesc:ad5c490306b66b9d42c53a0745fc37458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the singleton instance of <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> and processes CLI arguments.  <br /></td></tr>
+<tr class="separator:ad5c490306b66b9d42c53a0745fc37458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a180efa011e479aacb2225168c58aae4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a180efa011e479aacb2225168c58aae4c">showHelp</a> (int exitCode) const</td></tr>
+<tr class="memdesc:a180efa011e479aacb2225168c58aae4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays command-line help text and terminates the application.  <br /></td></tr>
+<tr class="separator:a180efa011e479aacb2225168c58aae4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
-<tr class="memitem:af746401c6b89282e67236613905a445e"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af746401c6b89282e67236613905a445e">Lo2Px</a> (const QString &amp;src, const <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> &amp;converter)</td></tr>
-<tr class="separator:af746401c6b89282e67236613905a445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09bd7574fc048bbeae85bb1ab040d086"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a09bd7574fc048bbeae85bb1ab040d086">Pg2Px</a> (const QString &amp;src, const <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> &amp;converter)</td></tr>
-<tr class="separator:a09bd7574fc048bbeae85bb1ab040d086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f1acec99a380eae94189d45132e54fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a8f1acec99a380eae94189d45132e54fb">initOptions</a> (<a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;options, <a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt; &amp;<a class="el" href="../../dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2">optionsIndex</a>)</td></tr>
-<tr class="separator:a8f1acec99a380eae94189d45132e54fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae56070ab64bd89a5187e8a908ac2cf40"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ae56070ab64bd89a5187e8a908ac2cf40">layoutToPx</a> (const QString &amp;src, const <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> &amp;converter)</td></tr>
+<tr class="memdesc:ae56070ab64bd89a5187e8a908ac2cf40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a layout unit value from string to pixels.  <br /></td></tr>
+<tr class="separator:ae56070ab64bd89a5187e8a908ac2cf40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f00f5629e9714da1afbd9d570935e8"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a08f00f5629e9714da1afbd9d570935e8">pageToPx</a> (const QString &amp;src, const <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> &amp;converter)</td></tr>
+<tr class="memdesc:a08f00f5629e9714da1afbd9d570935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a page unit value from string to pixels.  <br /></td></tr>
+<tr class="separator:a08f00f5629e9714da1afbd9d570935e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a325de0063d81bef9ed2db1ff9c31b6de"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a325de0063d81bef9ed2db1ff9c31b6de">initOptions</a> (<a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;options, <a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt; &amp;<a class="el" href="../../dc/d3e/classVCommandLine.html#af1b50b4a9422da49d2f706cff9c1ebe0">m_options_index</a>)</td></tr>
+<tr class="memdesc:a325de0063d81bef9ed2db1ff9c31b6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the list of command-line options and their index.  <br /></td></tr>
+<tr class="separator:a325de0063d81bef9ed2db1ff9c31b6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a58d314b95b46c89a3284654289366ced"><td class="memItemLeft" align="right" valign="top">QCommandLineParser&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a58d314b95b46c89a3284654289366ced">parser</a></td></tr>
 <tr class="separator:a58d314b95b46c89a3284654289366ced"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a029b6fb4ed6697d7b7e414e55ffe63c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a029b6fb4ed6697d7b7e414e55ffe63c4">optionsUsed</a></td></tr>
-<tr class="separator:a029b6fb4ed6697d7b7e414e55ffe63c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af81799ac36c307795352e9591799e1a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2">optionsIndex</a></td></tr>
-<tr class="separator:af81799ac36c307795352e9591799e1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a384ad7063d35874f4ef39f898c429064"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a384ad7063d35874f4ef39f898c429064">isGuiEnabled</a></td></tr>
-<tr class="separator:a384ad7063d35874f4ef39f898c429064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b9abbf8c049f48e8beb21b36084388a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a7b9abbf8c049f48e8beb21b36084388a">m_options_used</a></td></tr>
+<tr class="separator:a7b9abbf8c049f48e8beb21b36084388a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b50b4a9422da49d2f706cff9c1ebe0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#af1b50b4a9422da49d2f706cff9c1ebe0">m_options_index</a></td></tr>
+<tr class="separator:af1b50b4a9422da49d2f706cff9c1ebe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89f2ad2f3ea26f8c92932c8b99a8c908"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a89f2ad2f3ea26f8c92932c8b99a8c908">m_is_gui_enabled</a></td></tr>
+<tr class="separator:a89f2ad2f3ea26f8c92932c8b99a8c908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
-<tr class="memitem:ab2763add51a29e09ebe17e964ec6ff0c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#ab2763add51a29e09ebe17e964ec6ff0c">commandLine</a> = nullptr</td></tr>
-<tr class="separator:ab2763add51a29e09ebe17e964ec6ff0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8da8b8cbbbc51dc7992b95a315055a39"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a8da8b8cbbbc51dc7992b95a315055a39">command_line</a> = nullptr</td></tr>
+<tr class="separator:a8da8b8cbbbc51dc7992b95a315055a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -208,7 +242,7 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00047">47</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00072">72</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad503fbc8dd0ee22648cb1e979313b33a" name="ad503fbc8dd0ee22648cb1e979313b33a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad503fbc8dd0ee22648cb1e979313b33a">&#9670;&#160;</a></span>~VCommandLine()</h2>
@@ -233,9 +267,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00579">579</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Destructor for <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>. </p>
+<p>Cleans up dynamically allocated list of VCommandLineOptions stored in m_options_used, ensuring no memory leaks. Clears the list after deleting. </p>
 
-<p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00672">672</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>.</p>
 
 </div>
 </div>
@@ -262,23 +299,26 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">54</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Constructor for the <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> class. </p>
+<p>Initializes the command-line parser with application description, standard help/version options, a positional argument for the pattern file, and all custom options defined in the application. </p>
 
-<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00125">initOptions()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">89</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00558">Get()</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00205">initOptions()</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00636">getCommandLine()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab6633ae9e7716e7b69d9f2c2063a98fd" name="ab6633ae9e7716e7b69d9f2c2063a98fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6633ae9e7716e7b69d9f2c2063a98fd">&#9670;&#160;</a></span>DefaultGenerator()</h2>
+<a id="aee96f52d6a400043117e8467abb5d6db" name="aee96f52d6a400043117e8467abb5d6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee96f52d6a400043117e8467abb5d6db">&#9670;&#160;</a></span>baseNameOption()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a> VCommandLine::DefaultGenerator </td>
+          <td class="memname">QString VCommandLine::baseNameOption </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -286,9 +326,63 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">358</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Retrieves the base name for exported files. </p>
+<p>Only returns the value if the application is in export mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>QString containing the base file name, or empty if export mode is not active. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00578">LayoutSettingsDialog::DialogAccepted()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00512">VSettings::GetDefLayoutRotationIncrease()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00187">LayoutSettingsDialog::GetFields()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00092">Lo2Px()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00131">LONG_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00080">LONG_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00104">LONG_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00119">LONG_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00122">LONG_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00089">LONG_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00092">LONG_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00086">LONG_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00125">LONG_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00095">LONG_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00098">LONG_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00101">LONG_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00128">LONG_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00083">LONG_OPTION_UNITE</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00708">OptGroup()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00663">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00682">OptRotation()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00109">Pg2Px()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00459">LayoutSettingsDialog::SelectLayoutUnit()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00448">LayoutSettingsDialog::SelectPaperUnit()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00548">LayoutSettingsDialog::SelectTemplate()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00283">LayoutSettingsDialog::SetAutoCrop()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00198">LayoutSettingsDialog::SetFields()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00225">LayoutSettingsDialog::SetGroup()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00343">LayoutSettingsDialog::SetIgnoreAllFields()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00262">LayoutSettingsDialog::SetIncrease()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00181">LayoutSettingsDialog::setLayoutGap()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00143">LayoutSettingsDialog::SetPaperHeight()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00156">LayoutSettingsDialog::SetPaperWidth()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00249">LayoutSettingsDialog::SetRotate()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00295">LayoutSettingsDialog::SetSaveLength()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00169">LayoutSettingsDialog::SetShift()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00307">LayoutSettingsDialog::SetUnitePages()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00832">832</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+</div>
+</div>
+<a id="a9f2f430f6978705586abfa3d3fb054a4" name="a9f2f430f6978705586abfa3d3fb054a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f2f430f6978705586abfa3d3fb054a4">&#9670;&#160;</a></span>defaultlayoutGenerator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/dfd/command__line_8h.html#a2a5de723f4f2e702d26026cb3471b1ea">VLayoutGeneratorPtr</a> VCommandLine::defaultlayoutGenerator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a default layout generator based on command-line options. </p>
+<p>This function reads CLI options and populates a <a class="el" href="../../d8/d8a/classVLayoutGenerator.html">VLayoutGenerator</a> via a <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a>, performing validation and error-checking on mutually dependent options. If invalid or incomplete option combinations are detected, it prints an error message and exits via parser.showHelp().</p>
+<dl class="section return"><dt>Returns</dt><dd>VLayoutGeneratorPtr A smart pointer to the fully initialized layout generator. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">437</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00578">LayoutSettingsDialog::DialogAccepted()</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00512">VSettings::GetDefLayoutRotationIncrease()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00187">LayoutSettingsDialog::GetFields()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00794">groupOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00174">layoutToPx()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00131">LONG_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00080">LONG_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00104">LONG_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00119">LONG_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00122">LONG_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00089">LONG_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00092">LONG_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00086">LONG_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00125">LONG_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00095">LONG_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00098">LONG_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00101">LONG_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00128">LONG_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00083">LONG_OPTION_UNITE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00190">pageToPx()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00751">paperSizeOption()</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00769">rotationOption()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00459">LayoutSettingsDialog::SelectLayoutUnit()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00448">LayoutSettingsDialog::SelectPaperUnit()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00548">LayoutSettingsDialog::SelectTemplate()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00283">LayoutSettingsDialog::SetAutoCrop()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00198">LayoutSettingsDialog::SetFields()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00225">LayoutSettingsDialog::SetGroup()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00343">LayoutSettingsDialog::SetIgnoreAllFields()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00262">LayoutSettingsDialog::SetIncrease()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00181">LayoutSettingsDialog::setLayoutGap()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00143">LayoutSettingsDialog::SetPaperHeight()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00156">LayoutSettingsDialog::SetPaperWidth()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00249">LayoutSettingsDialog::SetRotate()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00295">LayoutSettingsDialog::SetSaveLength()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00169">LayoutSettingsDialog::SetShift()</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00307">LayoutSettingsDialog::SetUnitePages()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+
+</div>
+</div>
+<a id="a6d132388e2b3510efe5d242476c055e6" name="a6d132388e2b3510efe5d242476c055e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d132388e2b3510efe5d242476c055e6">&#9670;&#160;</a></span>destinationPathOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString VCommandLine::destinationPathOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the destination path for export output. </p>
+<p>Only returns the path if export mode is enabled.</p>
+<dl class="section return"><dt>Returns</dt><dd>QString containing the destination folder path, or empty if not applicable. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00850">850</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00061">LONG_OPTION_DESTINATION</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
@@ -307,14 +401,42 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether only pieces/details should be exported. </p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if only details export is enabled, otherwise 0. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00075">LONG_OPTION_EXPORTONLYDETAILS</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00902">902</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00075">LONG_OPTION_EXPORTONLYDETAILS</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="a9758b8b982c50c953cf2f95b6d53d4e9" name="a9758b8b982c50c953cf2f95b6d53d4e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9758b8b982c50c953cf2f95b6d53d4e9">&#9670;&#160;</a></span>Get()</h2>
+<a id="aeb17e0aedb44dc24e98ad41d94e928c7" name="aeb17e0aedb44dc24e98ad41d94e928c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb17e0aedb44dc24e98ad41d94e928c7">&#9670;&#160;</a></span>exportTypeOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int VCommandLine::exportTypeOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the selected export format type. </p>
+<p>Parses the &ndash;exp2format option if set, returning its integer value.</p>
+<dl class="section return"><dt>Returns</dt><dd>Integer indicating the export file format. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00867">867</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00070">LONG_OPTION_EXP2FORMAT</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+</div>
+</div>
+<a id="ad5c490306b66b9d42c53a0745fc37458" name="ad5c490306b66b9d42c53a0745fc37458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c490306b66b9d42c53a0745fc37458">&#9670;&#160;</a></span>getCommandLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,7 +445,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a> VCommandLine::Get </td>
+          <td class="memname"><a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a> VCommandLine::getCommandLine </td>
           <td>(</td>
           <td class="paramtype">const QCoreApplication &amp;&#160;</td>
           <td class="paramname"><em>app</em></td><td>)</td>
@@ -337,16 +459,111 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00558">558</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Retrieves the singleton instance of <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> and processes CLI arguments. </p>
+<p>If no <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> exists, a new one is created. It then processes the arguments provided to the application and determines whether the GUI should be enabled based on the CLI mode.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">app</td><td>The current application instance containing CLI arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>VCommandLinePtr A shared pointer to the global <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a> instance. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00081">commandLine</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">VCommandLine()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00636">636</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00106">command_line</a>, <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">VCommandLine()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00308">Application2D::Application2D()</a>.</p>
 
 </div>
 </div>
-<a id="a8f1acec99a380eae94189d45132e54fb" name="a8f1acec99a380eae94189d45132e54fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f1acec99a380eae94189d45132e54fb">&#9670;&#160;</a></span>initOptions()</h2>
+<a id="a623562c74a6e132af127ab65f61b747f" name="a623562c74a6e132af127ab65f61b747f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a623562c74a6e132af127ab65f61b747f">&#9670;&#160;</a></span>gradationHeightOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString VCommandLine::gradationHeightOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the gradation height value from the command-line. </p>
+<p>This function fetches the value of the &ndash;gradationheight option and validates it using <a class="el" href="../../d5/d38/classMeasurementVariable.html#a4163b7538c792d44efebc09a7097629a">MeasurementVariable::IsGradationHeightValid()</a>. If invalid, it prints an error and exits the application via <a class="el" href="../../dc/d3e/classVCommandLine.html#a180efa011e479aacb2225168c58aae4c" title="Displays command-line help text and terminates the application.">showHelp()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>QString containing a valid gradation height. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00979">979</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00221">MeasurementVariable::IsGradationHeightValid()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+
+</div>
+</div>
+<a id="a164471d92748cd2a427d91e0003b2232" name="a164471d92748cd2a427d91e0003b2232"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164471d92748cd2a427d91e0003b2232">&#9670;&#160;</a></span>gradationSizeOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString VCommandLine::gradationSizeOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the gradation size value from the command-line. </p>
+<p>This function fetches the value of the &ndash;gradationsize option and validates it using <a class="el" href="../../d5/d38/classMeasurementVariable.html#acd205e4d951d680c9686ff8fdadc18a5">MeasurementVariable::IsGradationSizeValid()</a>. If invalid, it prints an error and exits the application via <a class="el" href="../../dc/d3e/classVCommandLine.html#a180efa011e479aacb2225168c58aae4c" title="Displays command-line help text and terminates the application.">showHelp()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>QString containing a valid gradation size. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00956">956</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00207">MeasurementVariable::IsGradationSizeValid()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+
+</div>
+</div>
+<a id="af4b28428101e28695690542ebfd5b042" name="af4b28428101e28695690542ebfd5b042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4b28428101e28695690542ebfd5b042">&#9670;&#160;</a></span>groupOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dec/vbank_8h.html#a70dfa19a81760e9220d7385ab0c7ae8e">Cases</a> VCommandLine::groupOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the selected layout grouping type. </p>
+<p>Parses the &ndash;groupping option value as an integer and maps it to a Cases enum value. Returns 0 (default case) if the value is invalid or out of range.</p>
+<dl class="section return"><dt>Returns</dt><dd>Cases enum representing the selected grouping mode. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00794">794</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00107">LONG_OPTION_GROUPPING</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>.</p>
+
+</div>
+</div>
+<a id="a325de0063d81bef9ed2db1ff9c31b6de" name="a325de0063d81bef9ed2db1ff9c31b6de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a325de0063d81bef9ed2db1ff9c31b6de">&#9670;&#160;</a></span>initOptions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,14 +574,14 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void VCommandLine::initOptions </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>options</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt; &amp;&#160;</td>
-          <td class="paramname"><em>optionsIndex</em>&#160;</td>
+          <td class="paramname"><em>m_options_index</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -379,22 +596,32 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00125">125</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Initializes the list of command-line options and their index. </p>
+<p>This method defines all supported CLI options for Seamly2D's export and automation features. Options are added in a grouped, user-friendly order for consistency in help output.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">options</td><td>A reference to the list where all VCommandLineOptions will be stored. </td></tr>
+    <tr><td class="paramname">m_options_index</td><td>A map that associates each long-form option string with its index in the options list. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00073">LONG_OPTION_BINARYDXF</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00131">LONG_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00080">LONG_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00061">LONG_OPTION_DESTINATION</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00070">LONG_OPTION_EXP2FORMAT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00075">LONG_OPTION_EXPORTONLYDETAILS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00104">LONG_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00107">LONG_OPTION_GROUPPING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00119">LONG_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00122">LONG_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00064">LONG_OPTION_MEASUREFILE</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00706">LONG_OPTION_NO_HDPI_SCALING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00089">LONG_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00092">LONG_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00086">LONG_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00125">LONG_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00077">LONG_OPTION_ROTATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00095">LONG_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00098">LONG_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00101">LONG_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00110">LONG_OPTION_TEST</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00074">LONG_OPTION_TEXT2PATHS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00128">LONG_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00083">LONG_OPTION_UNITE</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00482">LayoutSettingsDialog::MakeGroupsHelp()</a>, <a class="el" href="../../df/d40/export__format__combobox_8cpp_source.html#l00291">ExportFormatCombobox::makeHelpFormatList()</a>, <a class="el" href="../../d2/d28/page__format__combobox_8cpp_source.html#l00183">PageFormatCombobox::MakeHelpTemplateList()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00059">SINGLE_OPTION_BASENAME</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00132">SINGLE_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00081">SINGLE_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00062">SINGLE_OPTION_DESTINATION</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00071">SINGLE_OPTION_EXP2FORMAT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00105">SINGLE_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00117">SINGLE_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00114">SINGLE_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00108">SINGLE_OPTION_GROUPPING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00120">SINGLE_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00123">SINGLE_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00065">SINGLE_OPTION_MEASUREFILE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00090">SINGLE_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00068">SINGLE_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00093">SINGLE_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00087">SINGLE_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00126">SINGLE_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00078">SINGLE_OPTION_ROTATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00096">SINGLE_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00099">SINGLE_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00102">SINGLE_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00111">SINGLE_OPTION_TEST</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00129">SINGLE_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00084">SINGLE_OPTION_UNITE</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00706">VDomDocument::UnitsHelpString()</a>, <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00181">MeasurementVariable::WholeListHeights()</a>, and <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00194">MeasurementVariable::WholeListSizes()</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00205">205</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">VCommandLine()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00073">LONG_OPTION_BINARYDXF</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00131">LONG_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00080">LONG_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00061">LONG_OPTION_DESTINATION</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00070">LONG_OPTION_EXP2FORMAT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00075">LONG_OPTION_EXPORTONLYDETAILS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00104">LONG_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00107">LONG_OPTION_GROUPPING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00119">LONG_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00122">LONG_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00064">LONG_OPTION_MEASUREFILE</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00706">LONG_OPTION_NO_HDPI_SCALING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00089">LONG_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00092">LONG_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00086">LONG_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00125">LONG_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00077">LONG_OPTION_ROTATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00095">LONG_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00098">LONG_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00101">LONG_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00110">LONG_OPTION_TEST</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00074">LONG_OPTION_TEXT2PATHS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00128">LONG_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00083">LONG_OPTION_UNITE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00482">LayoutSettingsDialog::MakeGroupsHelp()</a>, <a class="el" href="../../df/d40/export__format__combobox_8cpp_source.html#l00291">ExportFormatCombobox::makeHelpFormatList()</a>, <a class="el" href="../../d2/d28/page__format__combobox_8cpp_source.html#l00183">PageFormatCombobox::MakeHelpTemplateList()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00059">SINGLE_OPTION_BASENAME</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00132">SINGLE_OPTION_BOTTOM_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00081">SINGLE_OPTION_CROP</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00062">SINGLE_OPTION_DESTINATION</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00071">SINGLE_OPTION_EXP2FORMAT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00105">SINGLE_OPTION_GAPWIDTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00117">SINGLE_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00114">SINGLE_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00108">SINGLE_OPTION_GROUPPING</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00120">SINGLE_OPTION_IGNORE_MARGINS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00123">SINGLE_OPTION_LEFT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00065">SINGLE_OPTION_MEASUREFILE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00090">SINGLE_OPTION_PAGEH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00068">SINGLE_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00093">SINGLE_OPTION_PAGEUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00087">SINGLE_OPTION_PAGEW</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00126">SINGLE_OPTION_RIGHT_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00078">SINGLE_OPTION_ROTATE</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00096">SINGLE_OPTION_SAVELENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00099">SINGLE_OPTION_SHIFTLENGTH</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00102">SINGLE_OPTION_SHIFTUNITS</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00111">SINGLE_OPTION_TEST</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00129">SINGLE_OPTION_TOP_MARGIN</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00084">SINGLE_OPTION_UNITE</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00706">VDomDocument::UnitsHelpString()</a>, <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00181">MeasurementVariable::WholeListHeights()</a>, and <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00194">MeasurementVariable::WholeListSizes()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">VCommandLine()</a>.</p>
 
 </div>
 </div>
-<a id="a726e083c6a52d77fb79bf4aa8a7c5f4e" name="a726e083c6a52d77fb79bf4aa8a7c5f4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a726e083c6a52d77fb79bf4aa8a7c5f4e">&#9670;&#160;</a></span>IsBinaryDXF()</h2>
+<a id="aac2f50f05e7f7b155cab27f7b566048e" name="aac2f50f05e7f7b155cab27f7b566048e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2f50f05e7f7b155cab27f7b566048e">&#9670;&#160;</a></span>inputFileNamesOption()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int VCommandLine::IsBinaryDXF </td>
+          <td class="memname">QStringList VCommandLine::inputFileNamesOption </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -402,20 +629,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00801">801</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Retrieves the list of input filenames passed as positional arguments. </p>
+<dl class="section return"><dt>Returns</dt><dd>QStringList of input file names. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00073">LONG_OPTION_BINARYDXF</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00912">912</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="a706457e068420b4d4fab477113bd0f5b" name="a706457e068420b4d4fab477113bd0f5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a706457e068420b4d4fab477113bd0f5b">&#9670;&#160;</a></span>IsExportEnabled()</h2>
+<a id="ab551a8466a05228043fb0dcf10d98212" name="ab551a8466a05228043fb0dcf10d98212"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab551a8466a05228043fb0dcf10d98212">&#9670;&#160;</a></span>isBinaryDXF()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsExportEnabled </td>
+          <td class="memname">int VCommandLine::isBinaryDXF </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -423,22 +653,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">643</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether DXF export should be in binary format. </p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if binary DXF mode is enabled, otherwise 0. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00882">882</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00748">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00767">OptDestinationPath()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">OptMeasurePath()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00073">LONG_OPTION_BINARYDXF</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="ae56e17de2eb6926e72c8617b2c79b298" name="ae56e17de2eb6926e72c8617b2c79b298"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae56e17de2eb6926e72c8617b2c79b298">&#9670;&#160;</a></span>IsGuiEnabled()</h2>
+<a id="a923fa82ef52ef4467478174fa4825485" name="a923fa82ef52ef4467478174fa4825485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923fa82ef52ef4467478174fa4825485">&#9670;&#160;</a></span>isExportEnabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsGuiEnabled </td>
+          <td class="memname">bool VCommandLine::isExportEnabled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -446,20 +677,26 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00845">845</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether the export mode is enabled. </p>
+<p>This function determines if the &ndash;basename option is set, indicating export mode. It also validates that exactly one input file is provided; otherwise, it shows an error and exits.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if export mode is enabled; otherwise false. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00085">isGuiEnabled</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">732</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00832">baseNameOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00850">destinationPathOption()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">measurementPathOption()</a>.</p>
 
 </div>
 </div>
-<a id="a8d3cce9fe8102719fc2a597e174d9111" name="a8d3cce9fe8102719fc2a597e174d9111"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d3cce9fe8102719fc2a597e174d9111">&#9670;&#160;</a></span>IsNoScalingEnabled()</h2>
+<a id="a91226ce2e73690cdff6587217e95acc0" name="a91226ce2e73690cdff6587217e95acc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91226ce2e73690cdff6587217e95acc0">&#9670;&#160;</a></span>isGradationHeightSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsNoScalingEnabled </td>
+          <td class="memname">bool VCommandLine::isGradationHeightSet </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -467,20 +704,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00629">629</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks if a specific gradation height is set via the CLI. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if &ndash;gradationheight option is set; otherwise false. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00706">LONG_OPTION_NO_HDPI_SCALING</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00942">942</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="add2cbe8d5202f1fd283363bca5e22190" name="add2cbe8d5202f1fd283363bca5e22190"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add2cbe8d5202f1fd283363bca5e22190">&#9670;&#160;</a></span>IsSetGradationHeight()</h2>
+<a id="abdb2a4c90d07131296fbb537200bcc99" name="abdb2a4c90d07131296fbb537200bcc99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb2a4c90d07131296fbb537200bcc99">&#9670;&#160;</a></span>isGradationSizeSet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsSetGradationHeight </td>
+          <td class="memname">bool VCommandLine::isGradationSizeSet </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -488,20 +728,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00867">867</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks if a specific gradation size is set via the CLI. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if &ndash;gradationsize option is set; otherwise false. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00932">932</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="af6fad6ad5512d4987d84f919abda02b7" name="af6fad6ad5512d4987d84f919abda02b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6fad6ad5512d4987d84f919abda02b7">&#9670;&#160;</a></span>IsSetGradationSize()</h2>
+<a id="af29a936f894e51be88ec6468962388d7" name="af29a936f894e51be88ec6468962388d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af29a936f894e51be88ec6468962388d7">&#9670;&#160;</a></span>isGuiEnabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsSetGradationSize </td>
+          <td class="memname">bool VCommandLine::isGuiEnabled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -509,20 +752,23 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00856">856</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether the GUI should be enabled based on current CLI mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if GUI mode is enabled; otherwise false. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00922">922</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00110">m_is_gui_enabled</a>.</p>
 
 </div>
 </div>
-<a id="a1c1e829f0ae5cd638c17766d9b2667e6" name="a1c1e829f0ae5cd638c17766d9b2667e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c1e829f0ae5cd638c17766d9b2667e6">&#9670;&#160;</a></span>IsTestModeEnabled()</h2>
+<a id="aa11a6fc145c3e96f9b61ac1fba4385c4" name="aa11a6fc145c3e96f9b61ac1fba4385c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11a6fc145c3e96f9b61ac1fba4385c4">&#9670;&#160;</a></span>isNoScalingEnabled()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::IsTestModeEnabled </td>
+          <td class="memname">bool VCommandLine::isNoScalingEnabled </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -530,11 +776,40 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00607">607</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether high DPI scaling is disabled. </p>
+<p>Determines if the &ndash;no-hdpi-scaling option is set via the command-line.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if scaling is disabled; otherwise false. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00110">LONG_OPTION_TEST</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00719">719</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">OptMeasurePath()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00706">LONG_OPTION_NO_HDPI_SCALING</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+</div>
+</div>
+<a id="a782d2a4e9b74cf2714a59eea1ea02ebf" name="a782d2a4e9b74cf2714a59eea1ea02ebf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782d2a4e9b74cf2714a59eea1ea02ebf">&#9670;&#160;</a></span>isTestModeEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool VCommandLine::isTestModeEnabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the application is running in test mode. </p>
+<p>Determines if the <code>--test</code> command-line option is set. If it is, the function verifies that exactly one positional argument (input file) is provided. If not, it prints an error and terminates execution.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if test mode is enabled; otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">698</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00110">LONG_OPTION_TEST</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00080">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">measurementPathOption()</a>.</p>
 
 </div>
 </div>
@@ -553,14 +828,17 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00812">812</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Checks whether text should be exported as paths. </p>
+<dl class="section return"><dt>Returns</dt><dd>Non-zero if text-as-paths mode is enabled, otherwise 0. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00074">LONG_OPTION_TEXT2PATHS</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00892">892</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00074">LONG_OPTION_TEXT2PATHS</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="af746401c6b89282e67236613905a445e" name="af746401c6b89282e67236613905a445e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af746401c6b89282e67236613905a445e">&#9670;&#160;</a></span>Lo2Px()</h2>
+<a id="ae56070ab64bd89a5187e8a908ac2cf40" name="ae56070ab64bd89a5187e8a908ac2cf40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56070ab64bd89a5187e8a908ac2cf40">&#9670;&#160;</a></span>layoutToPx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -569,7 +847,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">qreal VCommandLine::Lo2Px </td>
+          <td class="memname">qreal VCommandLine::layoutToPx </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -593,22 +871,33 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00092">92</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Converts a layout unit value from string to pixels. </p>
+<p>This function takes a layout value provided as a string (e.g., "25.4") and converts it to pixels using the provided layout settings.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The source layout value as a QString (expected to be numeric). </td></tr>
+    <tr><td class="paramname">converter</td><td>A reference to the <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> that provides the conversion method from layout units to pixels. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The equivalent value in pixels as a qreal. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00174">174</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00470">LayoutSettingsDialog::LayoutToPixels()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>.</p>
 
 </div>
 </div>
-<a id="a6c973fe004418eb62f7015a6ca9081dc" name="a6c973fe004418eb62f7015a6ca9081dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c973fe004418eb62f7015a6ca9081dc">&#9670;&#160;</a></span>OptBaseName()</h2>
+<a id="a61af02d33e5d7b90059ac0d69a83ffc1" name="a61af02d33e5d7b90059ac0d69a83ffc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61af02d33e5d7b90059ac0d69a83ffc1">&#9670;&#160;</a></span>measurementPathOption()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">QString VCommandLine::OptBaseName </td>
+          <td class="memname">QString VCommandLine::measurementPathOption </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -616,98 +905,18 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00748">748</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Retrieves the path to the measurement file if applicable. </p>
+<p>Only returns the measurement file path if the &ndash;measurefile option is set and the app is running in export or test mode.</p>
+<dl class="section return"><dt>Returns</dt><dd>QString containing the measurement file path, or empty if not applicable. </dd></dl>
 
-<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00058">LONG_OPTION_BASENAME</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">812</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
-</div>
-</div>
-<a id="a074b6f87e6ef085c0d649bfe02190826" name="a074b6f87e6ef085c0d649bfe02190826"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a074b6f87e6ef085c0d649bfe02190826">&#9670;&#160;</a></span>OptDestinationPath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString VCommandLine::OptDestinationPath </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00767">767</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00061">LONG_OPTION_DESTINATION</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
+<p class="reference">References <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">isTestModeEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00064">LONG_OPTION_MEASUREFILE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
 
 </div>
 </div>
-<a id="aff33c109c48cbbff27aa5a16b59c0ccd" name="aff33c109c48cbbff27aa5a16b59c0ccd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff33c109c48cbbff27aa5a16b59c0ccd">&#9670;&#160;</a></span>OptExportType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int VCommandLine::OptExportType </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00785">785</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00070">LONG_OPTION_EXP2FORMAT</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-</div>
-</div>
-<a id="a3720867519ba7a1a9cf9a4b04d847d2b" name="a3720867519ba7a1a9cf9a4b04d847d2b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3720867519ba7a1a9cf9a4b04d847d2b">&#9670;&#160;</a></span>OptGradationHeight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString VCommandLine::OptGradationHeight </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00906">906</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00221">MeasurementVariable::IsGradationHeightValid()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00116">LONG_OPTION_GRADATIONHEIGHT</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
-
-</div>
-</div>
-<a id="ae9ad6d8619fb7d02f335df04eb305107" name="ae9ad6d8619fb7d02f335df04eb305107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9ad6d8619fb7d02f335df04eb305107">&#9670;&#160;</a></span>OptGradationSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString VCommandLine::OptGradationSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00882">882</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../d4/da4/measurement__variable_8cpp_source.html#l00207">MeasurementVariable::IsGradationSizeValid()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00113">LONG_OPTION_GRADATIONSIZE</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>, and <a class="el" href="../../dd/d3c/vsysexits_8h_source.html#l00065">V_EX_USAGE</a>.</p>
-
-</div>
-</div>
-<a id="a37707851589ee4a26a5dcacec1c52f44" name="a37707851589ee4a26a5dcacec1c52f44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37707851589ee4a26a5dcacec1c52f44">&#9670;&#160;</a></span>OptGroup()</h2>
+<a id="a08f00f5629e9714da1afbd9d570935e8" name="a08f00f5629e9714da1afbd9d570935e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f00f5629e9714da1afbd9d570935e8">&#9670;&#160;</a></span>pageToPx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -716,142 +925,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/dec/vbank_8h.html#a70dfa19a81760e9220d7385ab0c7ae8e">Cases</a> VCommandLine::OptGroup </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00708">708</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00107">LONG_OPTION_GROUPPING</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>.</p>
-
-</div>
-</div>
-<a id="a382ce878ff87c04f1cb78a50702e79e1" name="a382ce878ff87c04f1cb78a50702e79e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a382ce878ff87c04f1cb78a50702e79e1">&#9670;&#160;</a></span>OptInputFileNames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QStringList VCommandLine::OptInputFileNames </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00834">834</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-</div>
-</div>
-<a id="a87abfdb29ffb704172bff3b27647ed93" name="a87abfdb29ffb704172bff3b27647ed93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87abfdb29ffb704172bff3b27647ed93">&#9670;&#160;</a></span>OptMeasurePath()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QString VCommandLine::OptMeasurePath </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">727</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00607">IsTestModeEnabled()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00064">LONG_OPTION_MEASUREFILE</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-</div>
-</div>
-<a id="a58a447ad555be03f4242970ab49b0e7a" name="a58a447ad555be03f4242970ab49b0e7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58a447ad555be03f4242970ab49b0e7a">&#9670;&#160;</a></span>OptPaperSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078">PaperSizeFormat</a> VCommandLine::OptPaperSize </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00663">663</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>.</p>
-
-</div>
-</div>
-<a id="a145f6e89c7ee1b51946d50f58d08b16b" name="a145f6e89c7ee1b51946d50f58d08b16b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a145f6e89c7ee1b51946d50f58d08b16b">&#9670;&#160;</a></span>OptRotation()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int VCommandLine::OptRotation </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00682">682</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
-
-<p class="reference">References <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00512">VSettings::GetDefLayoutRotationIncrease()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00077">LONG_OPTION_ROTATE</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">optionsUsed</a>, and <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">parser</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>.</p>
-
-</div>
-</div>
-<a id="a09bd7574fc048bbeae85bb1ab040d086" name="a09bd7574fc048bbeae85bb1ab040d086"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09bd7574fc048bbeae85bb1ab040d086">&#9670;&#160;</a></span>Pg2Px()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">qreal VCommandLine::Pg2Px </td>
+          <td class="memname">qreal VCommandLine::pageToPx </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
           <td class="paramname"><em>src</em>, </td>
@@ -875,16 +949,27 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00109">109</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Converts a page unit value from string to pixels. </p>
+<p>This function accepts a page size value as string (e.g., "210" for mm) and converts it to pixels using provided layout settings.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The source page value as a QString (expected to be numeric). </td></tr>
+    <tr><td class="paramname">converter</td><td>A reference to the <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> that provides the conversion method from page units to pixels. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The equivalent value in pixels as a qreal. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00190">190</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00476">LayoutSettingsDialog::PageToPixels()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>.</p>
 
 </div>
 </div>
-<a id="a3a2b8e0d6286a6d9f806f3b0756d23a4" name="a3a2b8e0d6286a6d9f806f3b0756d23a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a2b8e0d6286a6d9f806f3b0756d23a4">&#9670;&#160;</a></span>Reset()</h2>
+<a id="a18592c8b98a2819ff59b0cb1e15fc956" name="a18592c8b98a2819ff59b0cb1e15fc956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18592c8b98a2819ff59b0cb1e15fc956">&#9670;&#160;</a></span>paperSizeOption()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -893,7 +978,42 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void VCommandLine::Reset </td>
+          <td class="memname"><a class="el" href="../../d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078">PaperSizeFormat</a> VCommandLine::paperSizeOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the selected paper size template. </p>
+<p>If the &ndash;pagetemplate option is provided, its integer value is parsed and cast to a PaperSizeFormat enum. Defaults to 0 if not set.</p>
+<dl class="section return"><dt>Returns</dt><dd>PaperSizeFormat value corresponding to the selected page template. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00751">751</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00067">LONG_OPTION_PAGETEMPLATE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>.</p>
+
+</div>
+</div>
+<a id="a03de0af217add3f134dda54684d74c10" name="a03de0af217add3f134dda54684d74c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03de0af217add3f134dda54684d74c10">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VCommandLine::reset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -906,11 +1026,90 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00592">592</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
+<p>Resets the singleton instance of <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>. </p>
+<p>This destroys the current <a class="el" href="../../dc/d3e/classVCommandLine.html">VCommandLine</a>, allowing a fresh one to be created next time <a class="el" href="../../dc/d3e/classVCommandLine.html#ad5c490306b66b9d42c53a0745fc37458" title="Retrieves the singleton instance of VCommandLine and processes CLI arguments.">getCommandLine()</a> is called. Useful for tests or reinitializing command-line parsing. </p>
 
-<p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00081">commandLine</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00684">684</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00106">command_line</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00308">Application2D::Application2D()</a>, and <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00339">Application2D::~Application2D()</a>.</p>
+
+</div>
+</div>
+<a id="aad125d321823ad98d7e2a80c701ab60e" name="aad125d321823ad98d7e2a80c701ab60e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad125d321823ad98d7e2a80c701ab60e">&#9670;&#160;</a></span>rotationOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int VCommandLine::rotationOption </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the layout rotation value from command-line options. </p>
+<p>Checks if the &ndash;rotate option is set. If so, parses the value and verifies it's a valid integer. Falls back to the default rotation if parsing fails or the option is not set.</p>
+<dl class="section return"><dt>Returns</dt><dd>Integer value representing the rotation angle. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00769">769</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00512">VSettings::GetDefLayoutRotationIncrease()</a>, <a class="el" href="../../dc/df1/commandoptions_8cpp_source.html#l00077">LONG_OPTION_ROTATE</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">m_options_index</a>, <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">m_options_used</a>, and <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>.</p>
+
+</div>
+</div>
+<a id="a180efa011e479aacb2225168c58aae4c" name="a180efa011e479aacb2225168c58aae4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180efa011e479aacb2225168c58aae4c">&#9670;&#160;</a></span>showHelp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VCommandLine::showHelp </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>exit_code</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays command-line help text and terminates the application. </p>
+<p>Prints help text to the attached console on Windows (or stdout on Unix-like systems). Falls back to a scrollable dialog if no console is attached on Windows, then exits with <code>exit_code</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exit_code</td><td>Process exit code passed to std::exit(). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">parser</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00979">gradationHeightOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00956">gradationSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">isTestModeEnabled()</a>.</p>
 
 </div>
 </div>
@@ -935,13 +1134,13 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00086">86</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00111">111</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab2763add51a29e09ebe17e964ec6ff0c" name="ab2763add51a29e09ebe17e964ec6ff0c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2763add51a29e09ebe17e964ec6ff0c">&#9670;&#160;</a></span>commandLine</h2>
+<a id="a8da8b8cbbbc51dc7992b95a315055a39" name="a8da8b8cbbbc51dc7992b95a315055a39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8da8b8cbbbc51dc7992b95a315055a39">&#9670;&#160;</a></span>command_line</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -950,7 +1149,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a> VCommandLine::commandLine = nullptr</td>
+          <td class="memname"><a class="el" href="../../d8/dfd/command__line_8h.html#a2c27b3e93739102ce70a1aaa534849e5">VCommandLinePtr</a> VCommandLine::command_line = nullptr</td>
         </tr>
       </table>
   </td>
@@ -960,14 +1159,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00081">81</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00106">106</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00855">Application2D::commandLine()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00558">Get()</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00843">Application2D::isGUIMode()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00592">Reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00855">Application2D::commandLine()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00636">getCommandLine()</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00843">Application2D::isGUIMode()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00684">reset()</a>.</p>
 
 </div>
 </div>
-<a id="a384ad7063d35874f4ef39f898c429064" name="a384ad7063d35874f4ef39f898c429064"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a384ad7063d35874f4ef39f898c429064">&#9670;&#160;</a></span>isGuiEnabled</h2>
+<a id="a89f2ad2f3ea26f8c92932c8b99a8c908" name="a89f2ad2f3ea26f8c92932c8b99a8c908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89f2ad2f3ea26f8c92932c8b99a8c908">&#9670;&#160;</a></span>m_is_gui_enabled</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -976,7 +1175,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool VCommandLine::isGuiEnabled</td>
+          <td class="memname">bool VCommandLine::m_is_gui_enabled</td>
         </tr>
       </table>
   </td>
@@ -986,14 +1185,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00085">85</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00110">110</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00845">IsGuiEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00922">isGuiEnabled()</a>.</p>
 
 </div>
 </div>
-<a id="af81799ac36c307795352e9591799e1a2" name="af81799ac36c307795352e9591799e1a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af81799ac36c307795352e9591799e1a2">&#9670;&#160;</a></span>optionsIndex</h2>
+<a id="af1b50b4a9422da49d2f706cff9c1ebe0" name="af1b50b4a9422da49d2f706cff9c1ebe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1b50b4a9422da49d2f706cff9c1ebe0">&#9670;&#160;</a></span>m_options_index</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1002,7 +1201,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt;QString, int&gt; VCommandLine::optionsIndex</td>
+          <td class="memname"><a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt;QString, int&gt; VCommandLine::m_options_index</td>
         </tr>
       </table>
   </td>
@@ -1012,14 +1211,14 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00084">84</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00109">109</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00823">exportOnlyPieces()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00125">initOptions()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00801">IsBinaryDXF()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00629">IsNoScalingEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00867">IsSetGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00856">IsSetGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00607">IsTestModeEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00812">isTextAsPaths()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00748">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00767">OptDestinationPath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00785">OptExportType()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00906">OptGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00882">OptGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00708">OptGroup()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">OptMeasurePath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00663">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00682">OptRotation()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">VCommandLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00832">baseNameOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00850">destinationPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00902">exportOnlyPieces()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00867">exportTypeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00979">gradationHeightOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00956">gradationSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00794">groupOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00205">initOptions()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00882">isBinaryDXF()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00942">isGradationHeightSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00932">isGradationSizeSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00719">isNoScalingEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">isTestModeEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00892">isTextAsPaths()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">measurementPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00751">paperSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00769">rotationOption()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">VCommandLine()</a>.</p>
 
 </div>
 </div>
-<a id="a029b6fb4ed6697d7b7e414e55ffe63c4" name="a029b6fb4ed6697d7b7e414e55ffe63c4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a029b6fb4ed6697d7b7e414e55ffe63c4">&#9670;&#160;</a></span>optionsUsed</h2>
+<a id="a7b9abbf8c049f48e8beb21b36084388a" name="a7b9abbf8c049f48e8beb21b36084388a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b9abbf8c049f48e8beb21b36084388a">&#9670;&#160;</a></span>m_options_used</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1028,7 +1227,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> VCommandLine::optionsUsed</td>
+          <td class="memname"><a class="el" href="../../d8/dfd/command__line_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> VCommandLine::m_options_used</td>
         </tr>
       </table>
   </td>
@@ -1038,9 +1237,9 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00083">83</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00108">108</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00823">exportOnlyPieces()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00801">IsBinaryDXF()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00629">IsNoScalingEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00867">IsSetGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00856">IsSetGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00607">IsTestModeEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00812">isTextAsPaths()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00748">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00767">OptDestinationPath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00785">OptExportType()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00906">OptGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00882">OptGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00708">OptGroup()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">OptMeasurePath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00663">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00682">OptRotation()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">VCommandLine()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00579">~VCommandLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00832">baseNameOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00850">destinationPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00902">exportOnlyPieces()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00867">exportTypeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00979">gradationHeightOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00956">gradationSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00794">groupOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00882">isBinaryDXF()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00942">isGradationHeightSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00932">isGradationSizeSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00719">isNoScalingEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">isTestModeEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00892">isTextAsPaths()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">measurementPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00751">paperSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00769">rotationOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">VCommandLine()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00672">~VCommandLine()</a>.</p>
 
 </div>
 </div>
@@ -1064,15 +1263,15 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00082">82</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dfd/command__line_8h_source.html#l00107">107</a> of file <a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00358">DefaultGenerator()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00823">exportOnlyPieces()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00801">IsBinaryDXF()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00643">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00629">IsNoScalingEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00867">IsSetGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00856">IsSetGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00607">IsTestModeEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00812">isTextAsPaths()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00748">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00767">OptDestinationPath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00785">OptExportType()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00906">OptGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00882">OptGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00708">OptGroup()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00834">OptInputFileNames()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00727">OptMeasurePath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00663">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00682">OptRotation()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00054">VCommandLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00832">baseNameOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00437">defaultlayoutGenerator()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00850">destinationPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00902">exportOnlyPieces()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00867">exportTypeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00979">gradationHeightOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00956">gradationSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00794">groupOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00912">inputFileNamesOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00882">isBinaryDXF()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00732">isExportEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00942">isGradationHeightSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00932">isGradationSizeSet()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00719">isNoScalingEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00698">isTestModeEnabled()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00892">isTextAsPaths()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00812">measurementPathOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00751">paperSizeOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00769">rotationOption()</a>, <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00126">showHelp()</a>, and <a class="el" href="../../d1/dca/command__line_8cpp_source.html#l00089">VCommandLine()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/app/seamly2d/core/<a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a></li>
-<li>src/app/seamly2d/core/<a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a></li>
+<li>src/app/seamly2d/core/<a class="el" href="../../d8/dfd/command__line_8h_source.html">command_line.h</a></li>
+<li>src/app/seamly2d/core/<a class="el" href="../../d1/dca/command__line_8cpp_source.html">command_line.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,8 @@
 var NAVTREEINDEX67 =
 {
+"d4/d0f/classVToolPointOfIntersectionArcs.html#a020862778f486f8cb06eea167e05a0b5":[3,0,767,2],
+"d4/d0f/classVToolPointOfIntersectionArcs.html#a11ab54d9e754f1fb79cc9dd2a3bb266c":[3,0,767,17],
+"d4/d0f/classVToolPointOfIntersectionArcs.html#a15ee01ef7aa530690dac1d21d2ed8f77":[3,0,767,15],
 "d4/d0f/classVToolPointOfIntersectionArcs.html#a1c68a5586f1b3a937a95d6b02385d544":[3,0,767,1],
 "d4/d0f/classVToolPointOfIntersectionArcs.html#a1c9714a8e3c270a0736c69b4e156b36b":[3,0,767,20],
 "d4/d0f/classVToolPointOfIntersectionArcs.html#a51b653d8d253b79ab5a1395038fb7b8b":[3,0,767,11],
@@ -246,8 +249,5 @@ var NAVTREEINDEX67 =
 "d4/d15/classDialogPatternProperties.html#ab948b161e318b385f9376e75dafcfdd9":[3,0,124,34],
 "d4/d15/classDialogPatternProperties.html#abb82c96f9a9a9980c3a6bf7bf8b42218":[3,0,124,33],
 "d4/d15/classDialogPatternProperties.html#abf33884a25b801100ff948700472146a":[3,0,124,3],
-"d4/d15/classDialogPatternProperties.html#ac2d958dc61e354b7b9ec451d489f94a0":[3,0,124,44],
-"d4/d15/classDialogPatternProperties.html#ac45d1037f7e302e5a70766f83ef4b21a":[3,0,124,42],
-"d4/d15/classDialogPatternProperties.html#ad16c978e0075147389f849427f52bcf5":[3,0,124,30],
-"d4/d15/classDialogPatternProperties.html#ad53f01ba26f2142b1bf3619ae5adfb43":[3,0,124,2]
+"d4/d15/classDialogPatternProperties.html#ac2d958dc61e354b7b9ec451d489f94a0":[3,0,124,44]
 };

@@ -25,14 +25,12 @@ var searchData=
   ['openingpattern_22',['openingPattern',['../db/dda/classVAbstractApplication.html#a0d83297b63dae585ae44f452a4752ef4',1,'VAbstractApplication']]],
   ['operatedobjects_23',['operatedObjects',['../d7/d15/classVAbstractOperation.html#a158c102f9fd61a3209edcfecd7af04db',1,'VAbstractOperation']]],
   ['oprt_24',['Oprt',['../dc/d14/structqmu_1_1SToken.html#aa9b66add8f9b5ea7423d0e7c762c2502',1,'qmu::SToken']]],
-  ['optionsindex_25',['optionsIndex',['../dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2',1,'VCommandLine']]],
-  ['optionsused_26',['optionsUsed',['../dc/d3e/classVCommandLine.html#a029b6fb4ed6697d7b7e414e55ffe63c4',1,'VCommandLine']]],
-  ['order_27',['order',['../d3/df8/structDraftImage.html#a9bd9fc0975913b1fb8ceecdaaeb5f8c6',1,'DraftImage']]],
-  ['originalgnomesettingwasattached_28',['originalGnomeSettingWasAttached',['../dc/d14/app_2seamly2d_2main_8cpp.html#add9ce9339d68ce0f5e9aa070e6f075b5',1,'main.cpp']]],
-  ['originpointid_29',['originPointId',['../d7/d5d/namespaceanonymous__namespace_02tst__vtoolmove_8cpp_03.html#aa949404902611af605071ffc44a760f4',1,'anonymous_namespace{tst_vtoolmove.cpp}']]],
-  ['originpointitem_30',['originPointItem',['../dd/d50/classVisToolMove.html#a5c4b9911bc13eae4563c46945ebd38b6',1,'VisToolMove']]],
-  ['origins_31',['origins',['../d7/df5/classVMainGraphicsScene.html#a659293dd786e55a8b236cbb8cf18c025',1,'VMainGraphicsScene']]],
-  ['outputdevice_32',['outputDevice',['../d3/d1d/classVObjEngine.html#aaf061c06cda3145d37aa440b33cb338e',1,'VObjEngine']]],
-  ['owned_33',['OWNED',['../de/d86/classDOMNodeImpl.html#a881c6a25529c2cceb1c7fd7757980b8c',1,'DOMNodeImpl']]],
-  ['owns_5fiodevice_34',['owns_iodevice',['../dd/d3b/classVObjPaintDevice.html#a8d8cc3c7801db38d06894637e223a9e2',1,'VObjPaintDevice']]]
+  ['order_25',['order',['../d3/df8/structDraftImage.html#a9bd9fc0975913b1fb8ceecdaaeb5f8c6',1,'DraftImage']]],
+  ['originalgnomesettingwasattached_26',['originalGnomeSettingWasAttached',['../dc/d14/app_2seamly2d_2main_8cpp.html#add9ce9339d68ce0f5e9aa070e6f075b5',1,'main.cpp']]],
+  ['originpointid_27',['originPointId',['../d7/d5d/namespaceanonymous__namespace_02tst__vtoolmove_8cpp_03.html#aa949404902611af605071ffc44a760f4',1,'anonymous_namespace{tst_vtoolmove.cpp}']]],
+  ['originpointitem_28',['originPointItem',['../dd/d50/classVisToolMove.html#a5c4b9911bc13eae4563c46945ebd38b6',1,'VisToolMove']]],
+  ['origins_29',['origins',['../d7/df5/classVMainGraphicsScene.html#a659293dd786e55a8b236cbb8cf18c025',1,'VMainGraphicsScene']]],
+  ['outputdevice_30',['outputDevice',['../d3/d1d/classVObjEngine.html#aaf061c06cda3145d37aa440b33cb338e',1,'VObjEngine']]],
+  ['owned_31',['OWNED',['../de/d86/classDOMNodeImpl.html#a881c6a25529c2cceb1c7fd7757980b8c',1,'DOMNodeImpl']]],
+  ['owns_5fiodevice_32',['owns_iodevice',['../dd/d3b/classVObjPaintDevice.html#a8d8cc3c7801db38d06894637e223a9e2',1,'VObjPaintDevice']]]
 ];

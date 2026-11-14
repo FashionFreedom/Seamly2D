@@ -1,5 +1,13 @@
 var NAVTREEINDEX199 =
 {
+"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,15],
+"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,9],
+"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,6],
+"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,0],
+"da/d83/classXSMultiValueFacet.html#a24774a81a875610595daab298cae77a7":[3,0,915,3],
+"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,17],
+"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,16],
+"da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,18],
 "da/d83/classXSMultiValueFacet.html#a8919d5ffa6d7d1b1b9248b6a2b965241":[3,0,915,19],
 "da/d83/classXSMultiValueFacet.html#aa0a79ef5ee39a5d1fc25238d2d37e9cd":[3,0,915,4],
 "da/d83/classXSMultiValueFacet.html#aa0a79ef5ee39a5d1fc25238d2d37e9cd":[3,0,915,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX199 =
 "da/d96/classXercesXPath.html#a64686c6fa40638db35c61dffffb26c28":[3,0,799,46],
 "da/d96/classXercesXPath.html#a8a35052b40fbf5a15d1711a8217aabac":[3,0,799,40],
 "da/d96/classXercesXPath.html#a8a35052b40fbf5a15d1711a8217aabac":[3,0,799,41],
-"da/d96/classXercesXPath.html#a8a35052b40fbf5a15d1711a8217aabac":[3,0,799,42],
-"da/d96/classXercesXPath.html#a8a35052b40fbf5a15d1711a8217aabac":[3,0,799,43],
-"da/d96/classXercesXPath.html#a9c338e0bc340edba540371ec82c6c5de":[3,0,799,50],
-"da/d96/classXercesXPath.html#ab15cf1d1c03a65084879ed01224fd4d2":[3,0,799,32],
-"da/d96/classXercesXPath.html#ab15cf1d1c03a65084879ed01224fd4d2":[3,0,799,35],
-"da/d96/classXercesXPath.html#ab15cf1d1c03a65084879ed01224fd4d2":[3,0,799,34],
-"da/d96/classXercesXPath.html#ab15cf1d1c03a65084879ed01224fd4d2":[3,0,799,33],
-"da/d96/classXercesXPath.html#ab6ad222dbc4674146d2a3ff95f8af1a4":[3,0,799,10],
-"da/d96/classXercesXPath.html#ab6ad222dbc4674146d2a3ff95f8af1a4":[3,0,799,14]
+"da/d96/classXercesXPath.html#a8a35052b40fbf5a15d1711a8217aabac":[3,0,799,42]
 };

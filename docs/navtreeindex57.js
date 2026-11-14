@@ -1,5 +1,8 @@
 var NAVTREEINDEX57 =
 {
+"d3/d5a/classVCurveVariable.html#ac2aeeddb87619ed320f8a5d8ac161deb":[3,0,610,7],
+"d3/d5a/classVCurveVariable.html#accff656d7edcc2a9811edfce3a69f27a":[3,0,610,4],
+"d3/d5a/classVCurveVariable.html#ae6dacd87ba3c6f85b35ca0e434dec2e5":[3,0,610,10],
 "d3/d5a/macx_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp.html":[4,0,0,1,15,0,0,0,7,3,11],
 "d3/d5a/macx_2include_2xercesc_2validators_2schema_2SchemaValidator_8hpp_source.html":[4,0,0,1,15,0,0,0,7,3,11],
 "d3/d5a/mingw_2include_2xercesc_2validators_2datatype_2YearMonthDatatypeValidator_8hpp.html":[4,0,0,1,15,1,0,0,7,1,35],
@@ -172,10 +175,10 @@ var NAVTREEINDEX57 =
 "d3/d5c/classSchemaSymbols.html#ae09bc15149a510cb8f3bab8c2995595d":[3,0,475,156],
 "d3/d5c/classSchemaSymbols.html#ae110b06a30aa63bbac827efda281b071":[3,0,475,34],
 "d3/d5c/classSchemaSymbols.html#ae164c4dfda1a6fa2c532dd300a7fc96c":[3,0,475,167],
-"d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,1],
-"d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,0],
 "d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,3],
 "d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,2],
+"d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,1],
+"d3/d5c/classSchemaSymbols.html#ae61f1feac1fdce08bbd35df54beff6ee":[3,0,475,0],
 "d3/d5c/classSchemaSymbols.html#ae8c28818f55b475a3e61a763f9186eb9":[3,0,475,149],
 "d3/d5c/classSchemaSymbols.html#aecb7513cf63f43d850ca71d3f1e9358b":[3,0,475,72],
 "d3/d5c/classSchemaSymbols.html#aecc9557d6617f9339e00eee335293208":[3,0,475,84],
@@ -246,8 +249,5 @@ var NAVTREEINDEX57 =
 "d3/d63/classMeasurementDatabaseDialog.html#a02bb27304bcd067e15980d444e6a2bd0":[3,0,346,30],
 "d3/d63/classMeasurementDatabaseDialog.html#a03654ef831f2bd6ca47f4622f2a09f7b":[3,0,346,35],
 "d3/d63/classMeasurementDatabaseDialog.html#a037dd31c08b9e261ddc88061ca10fc00":[3,0,346,52],
-"d3/d63/classMeasurementDatabaseDialog.html#a05bdd6229cdcaeb174ac3bd5b64b969b":[3,0,346,8],
-"d3/d63/classMeasurementDatabaseDialog.html#a05ded8b58963207fa8cfdb318499c7a6":[3,0,346,36],
-"d3/d63/classMeasurementDatabaseDialog.html#a0914e43b58219d54218e75fbe3719f0a":[3,0,346,54],
-"d3/d63/classMeasurementDatabaseDialog.html#a0e358510b4f36be1cd390a256e8b448c":[3,0,346,58]
+"d3/d63/classMeasurementDatabaseDialog.html#a05bdd6229cdcaeb174ac3bd5b64b969b":[3,0,346,8]
 };
