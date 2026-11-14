@@ -3,17 +3,17 @@
 
 HEADERS += \
     $$PWD/application_2d.h \
+    $$PWD/command_line.h \
     $$PWD/vformulaproperty.h \
     $$PWD/vformulapropertyeditor.h \
-    $$PWD/vtooloptionspropertybrowser.h \
-    $$PWD/vcmdexport.h
+    $$PWD/vtooloptionspropertybrowser.h
 
 SOURCES += \
     $$PWD/application_2d.cpp \
+    $$PWD/command_line.cpp \
     $$PWD/vformulaproperty.cpp \
     $$PWD/vformulapropertyeditor.cpp \
-    $$PWD/vtooloptionspropertybrowser.cpp \
-    $$PWD/vcmdexport.cpp
+    $$PWD/vtooloptionspropertybrowser.cpp
 
 macx{
     HEADERS += $$PWD/macos_dock.h
