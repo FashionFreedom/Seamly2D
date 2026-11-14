@@ -708,6 +708,15 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         default:
             break;
     }
+    if (m_addToSelection && event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    {
+        QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
+                             event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
+                             event->pointingDevice());
+        QGraphicsView::mousePressEvent(&additive);
+        event->setAccepted(additive.isAccepted());
+        return;
+    }
     QGraphicsView::mousePressEvent(event);
 }
 
@@ -754,7 +763,17 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
  */
 void VMainGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
-    QGraphicsView::mouseReleaseEvent ( event ); // First because need to hide a rubber band
+    if (m_addToSelection && event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    {
+        QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
+                             event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
+                             event->pointingDevice());
+        QGraphicsView::mouseReleaseEvent(&additive);   // First because need to hide a rubber band
+    }
+    else
+    {
+        QGraphicsView::mouseReleaseEvent ( event ); // First because need to hide a rubber band
+    }
     QGraphicsView::setDragMode( QGraphicsView::NoDrag );
     if ( isPanDragActive )
     {
@@ -822,6 +841,12 @@ qreal VMainGraphicsView::MaxScale()
 void VMainGraphicsView::setShowToolOptions(bool value)
 {
     showToolProperties = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VMainGraphicsView::setAddToSelection(bool value)
+{
+    m_addToSelection = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

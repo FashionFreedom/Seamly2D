@@ -162,6 +162,9 @@ public:
     explicit              VMainGraphicsView(QWidget *parent = nullptr);
     void                  setShowToolOptions(bool value);
     void                  allowRubberBand(bool value);
+    /// While on, clicks and drags add to the selection as if Ctrl were held (a click on a selected object
+    /// removes it), so objects can be gathered with the mouse alone.
+    void                  setAddToSelection(bool value);
     void                  zoomPanEnabled(bool value);
     void                  zoomToAreaEnabled(bool value);
     void                  setScene(QGraphicsScene *scene);
@@ -213,6 +216,7 @@ private:
     bool                  showToolProperties;
     bool                  showScrollBars;
     bool                  isallowRubberBand;
+    bool                  m_addToSelection{false};
     bool                  isZoomToAreaActive;
     bool                  isRubberBandActive;
     bool                  isRubberBandColorSet;

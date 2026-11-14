@@ -211,6 +211,7 @@ void DialogMirrorByAxis::ShowDialog(bool click)
         scene->ToggleSplinePathHover(false);
 
         qApp->getSceneView()->allowRubberBand(false);
+        qApp->getSceneView()->setAddToSelection(false);   // picking the mirror points is a plain click again
 
         emit ToolTip(tr("Select axis rotation point"));
     }
