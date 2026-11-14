@@ -51,6 +51,7 @@
 //-----------------------------------------------------------------------------
 
 #include <QtTest>
+#include <QUndoStack>
 
 #include "tst_vposter.h"
 #include "tst_vabstractpiece.h"
@@ -75,6 +76,7 @@
 #include "tst_readval.h"
 #include "tst_vtranslatevars.h"
 #include "tst_vtoolmove.h"
+#include "tst_nodepointreferences.h"
 
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
@@ -101,6 +103,7 @@ TestApplication2D::TestApplication2D(int &argc, char **argv)
     setApplicationName(VER_INTERNALNAME_2D_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     openSettings();
+    undoStack = new QUndoStack(this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -183,6 +186,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_ReadVal());
     ASSERT_TEST(new TST_VTranslateVars());
     ASSERT_TEST(new TST_VToolMove());
+    ASSERT_TEST(new TST_NodePointReferences());
 
     return status;
 }
