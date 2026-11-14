@@ -186,7 +186,15 @@ QVariant VControlPointSpline::itemChange(QGraphicsItem::GraphicsItemChange chang
                 return newLine.p2();
             }
 
-            break;
+            // Snap onto the origin (0, 0) when dragged close to it, unless the curve point this handle belongs to is
+            // itself at the origin: snapping would put the handle on its own point, a zero-length handle with no
+            // direction, and the curve would be calculated from that.
+            const QPointF splPoint = m_controlLine->line().p1() + pos();
+            if (VMainGraphicsView::snapToOrigin(this, splPoint) != splPoint)
+            {
+                break;
+            }
+            return VMainGraphicsView::snapToOrigin(this, value.toPointF());
         }
         case ItemPositionHasChanged:
         {

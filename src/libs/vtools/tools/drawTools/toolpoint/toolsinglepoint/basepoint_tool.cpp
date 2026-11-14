@@ -202,6 +202,13 @@ QVariant BasePointTool::itemChange(QGraphicsItem::GraphicsItemChange change, con
 {
     if (change == ItemPositionChange && scene())
     {
+        // Snap onto the origin (0, 0) when dragged close to it.
+        const QVariant snapped = VMainGraphicsView::snapToOrigin(this, value.toPointF());
+        if (snapped.toPointF() != value.toPointF())
+        {
+            return itemChange(change, snapped);
+        }
+
         // Each time we move something we call recalculation scene rect. In some cases this can cause moving
         // objects positions. And this cause infinite redrawing. That's why we wait the finish of saving the last move.
         static bool change_finished = true;

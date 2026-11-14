@@ -902,6 +902,36 @@ QRectF VMainGraphicsView::SceneVisibleArea(QGraphicsView *view)
     return QRectF(view->mapToScene(0, 0), view->mapToScene(view->width(), view->height()));
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief snapToOrigin returns the position an item being dragged should take: the origin (0, 0) when the new
+/// position is within a few screen pixels of it, otherwise the position unchanged. Holding Alt turns snapping off.
+/// Only a drag by the mouse snaps: positions set by code (redrawing after a change) are returned unchanged, so a
+/// redraw never moves anything.
+/// @param item the item being moved.
+/// @param pos the new position, in the item's parent coordinates.
+QPointF VMainGraphicsView::snapToOrigin(const QGraphicsItem *item, const QPointF &pos)
+{
+    if (item == nullptr || item->scene() == nullptr || item->scene()->mouseGrabberItem() != item
+        || (QGuiApplication::keyboardModifiers() & Qt::AltModifier))
+    {
+        return pos;
+    }
+    const QList<QGraphicsView *> views = item->scene()->views();
+    if (views.isEmpty() || views.at(0) == nullptr)
+    {
+        return pos;
+    }
+    const QGraphicsView *view = views.at(0);
+    const QPointF scenePos = item->parentItem() ? item->parentItem()->mapToScene(pos) : pos;
+    const QPoint offset = view->mapFromScene(scenePos) - view->mapFromScene(QPointF(0, 0));
+    const int snapPixels = 12;
+    if (offset.x() * offset.x() + offset.y() * offset.y() > snapPixels * snapPixels)
+    {
+        return pos;
+    }
+    return item->parentItem() ? item->parentItem()->mapFromScene(QPointF(0, 0)) : QPointF(0, 0);
+}
+
 void VMainGraphicsView::initScrollBars()
 {
     showScrollBars = qApp->Settings()->getShowScrollBars();
