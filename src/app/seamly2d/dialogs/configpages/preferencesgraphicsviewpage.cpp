@@ -141,7 +141,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->constrainValue_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getConstrainValue());
     ui->constrainModKey_CheckBox->setChecked(qApp->Seamly2DSettings()->getConstrainModKey());
 
-    // Zoom double mouse click to selected IsTestModeEnabled
+    // Zoom double mouse click to selected isTestModeEnabled
     ui->zoomDoubleClick_CheckBox->setChecked(qApp->Seamly2DSettings()->isZoomDoubleClick());
 
     // Pan Zoom while Space Key pressed
@@ -287,7 +287,7 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setConstrainValue(ui->constrainValue_DoubleSpinBox->value());
     settings->setConstrainModKey(ui->constrainModKey_CheckBox->isChecked());
 
-    // Zoom double mouse click to selected IsTestModeEnabled
+    // Zoom double mouse click to selected isTestModeEnabled
     settings->setZoomDoubleClick(ui->zoomDoubleClick_CheckBox->isChecked());
 
     // Pan Zoom while Space key pressed

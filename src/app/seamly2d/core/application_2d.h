@@ -56,7 +56,7 @@
 #include "../options.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vpatterndb/vtranslatevars.h"
-#include "vcmdexport.h"
+#include "command_line.h"
 
 class Application2D;// use in define
 

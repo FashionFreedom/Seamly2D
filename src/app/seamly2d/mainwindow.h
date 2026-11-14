@@ -58,7 +58,7 @@
 
 #include <functional>
 #include "mainwindowsnogui.h"
-#include "core/vcmdexport.h"
+#include "core/command_line.h"
 #include "../vmisc/vlockguard.h"
 
 #include <QMap>

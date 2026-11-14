@@ -8036,10 +8036,10 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     {
         try
         {
-            ExportLayoutDialog dialog(1, Draw::Modeling, expParams->OptBaseName(), this);
-            dialog.setDestinationPath(expParams->OptDestinationPath());
-            dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-            dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
+            ExportLayoutDialog dialog(1, Draw::Modeling, expParams->baseNameOption(), this);
+            dialog.setDestinationPath(expParams->destinationPathOption());
+            dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->exportTypeOption()));
+            dialog.setBinaryDXFFormat(expParams->isBinaryDXF());
             dialog.setTextAsPaths(expParams->isTextAsPaths());
 
             ExportData(pieceList, dialog);
@@ -8054,17 +8054,17 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     }
     else
     {
-        auto settings = expParams->DefaultGenerator();
+        auto settings = expParams->defaultlayoutGenerator();
         settings->setTextAsPaths(expParams->isTextAsPaths());
 
         if (LayoutSettings(*settings.get()))
         {
             try
             {
-                ExportLayoutDialog dialog(scenes.size(), Draw::Layout, expParams->OptBaseName(), this);
-                dialog.setDestinationPath(expParams->OptDestinationPath());
-                dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-                dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
+                ExportLayoutDialog dialog(scenes.size(), Draw::Layout, expParams->baseNameOption(), this);
+                dialog.setDestinationPath(expParams->destinationPathOption());
+                dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->exportTypeOption()));
+                dialog.setBinaryDXFFormat(expParams->isBinaryDXF());
 
                 ExportData(pieceList, dialog);
             }
@@ -8175,9 +8175,9 @@ bool MainWindow::setHeight(const QString &text)
 void MainWindow::processCommandLine()
 {
     const VCommandLinePtr cmd = qApp->commandLine();
-    auto args = cmd->OptInputFileNames();
+    auto args = cmd->inputFileNamesOption();
 
-    isNoScaling = cmd->IsNoScalingEnabled();
+    isNoScaling = cmd->isNoScalingEnabled();
 
     if (Application2D::isGUIMode())
     {
@@ -8195,7 +8195,7 @@ void MainWindow::processCommandLine()
 
     for (int i=0, sz = args.size(); i < sz; ++i)
     {
-        const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->OptMeasurePath());
+        const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->measurementPathOption());
 
         if (!loaded && not Application2D::isGUIMode())
         {
@@ -8204,22 +8204,22 @@ void MainWindow::processCommandLine()
 
         bool hSetted = true;
         bool sSetted = true;
-        if (loaded && (cmd->IsTestModeEnabled() || cmd->IsExportEnabled()))
+        if (loaded && (cmd->isTestModeEnabled() || cmd->isExportEnabled()))
         {
-            if (cmd->IsSetGradationSize())
+            if (cmd->isGradationSizeSet())
             {
-                sSetted = setSize(cmd->OptGradationSize());
+                sSetted = setSize(cmd->gradationSizeOption());
             }
 
-            if (cmd->IsSetGradationHeight())
+            if (cmd->isGradationHeightSet())
             {
-                hSetted = setHeight(cmd->OptGradationHeight());
+                hSetted = setHeight(cmd->gradationHeightOption());
             }
         }
 
-        if (!cmd->IsTestModeEnabled())
+        if (!cmd->isTestModeEnabled())
         {
-            if (cmd->IsExportEnabled())
+            if (cmd->isExportEnabled())
             {
                 if (loaded && hSetted && sSetted)
                 {
