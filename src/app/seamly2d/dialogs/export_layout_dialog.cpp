@@ -22,8 +22,9 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
+
+///---------------------------------------------------------------------------------------------------------------------
 //  @file   export_layout_dialog.cpp
 //  @author Roman Telezhynskyi <dismine(at)gmail.com>
 //  @date   22 1, 2015
@@ -47,7 +48,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-//-----------------------------------------------------------------------------
+///---------------------------------------------------------------------------------------------------------------------
 
 #include "export_layout_dialog.h"
 #include "ui_export_layout_dialog.h"
@@ -538,10 +539,16 @@ LayoutExportFormat ExportLayoutDialog::format() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString ExportLayoutDialog::formatText() const
+{
+    return ui->format_ComboBox->getCurrentSource();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void ExportLayoutDialog::save()
 {
         QString text = tr("%1 already exists.").arg(fileName() + exportFormatSuffix(format()));
-        QString infoText = QStringLiteral("Do you want to replace it?");
+        QString infoText = tr("Do you want to replace it?");
 
         if (ui->exportFiles_ListWidget->count() > 1)
         {
@@ -889,7 +896,7 @@ void ExportLayoutDialog::writeSettings() const
     //Export Format
     if (qApp->Settings()->useLastExportFormat())
     {
-        qApp->Settings()->setExportFormat(QString::number(static_cast<int>(format())));
+        qApp->Settings()->setExportFormat(formatText());
     }
 }
 
