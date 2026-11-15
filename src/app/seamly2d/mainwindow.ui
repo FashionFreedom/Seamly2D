@@ -241,6 +241,7 @@
      <addaction name="union_Action"/>
      <addaction name="exportPieces_Action"/>
      <addaction name="duplicate_piece_action"/>
+     <addaction name="pieceInfo_Action"/>
     </widget>
     <widget class="QMenu" name="lines_Menu">
      <property name="title">
@@ -753,6 +754,7 @@
    </attribute>
    <addaction name="union_Action"/>
    <addaction name="exportPieces_Action"/>
+   <addaction name="pieceInfo_Action"/>
   </widget>
   <widget class="QToolBar" name="layout_ToolBar">
    <property name="windowTitle">
@@ -2348,7 +2350,7 @@
              <x>0</x>
              <y>0</y>
              <width>120</width>
-             <height>111</height>
+             <height>140</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -2388,8 +2390,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>108</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2467,6 +2469,35 @@
              </property>
              <property name="checkable">
               <bool>true</bool>
+             </property>
+            </widget>
+            <widget class="QToolButton" name="pieceInfo_ToolButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>60</y>
+               <width>39</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="toolTip">
+              <string>Pattern Piece Info (P, I)</string>
+             </property>
+             <property name="text">
+              <string notr="true">...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="share/resources/toolicon.qrc">
+               <normaloff>:/toolicon/32x32/piece_info.png</normaloff>:/toolicon/32x32/piece_info.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
              </property>
             </widget>
            </widget>
@@ -4496,6 +4527,24 @@
    </property>
    <property name="shortcut">
     <string notr="true">E, P</string>
+   </property>
+  </action>
+  <action name="pieceInfo_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/piece_info.png</normaloff>:/toolicon/32x32/piece_info.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pattern Piece Info...</string>
+   </property>
+   <property name="toolTip">
+    <string>Pattern Piece Info (P, I)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">P, I</string>
    </property>
   </action>
   <action name="details_Action">

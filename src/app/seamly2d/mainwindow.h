@@ -191,6 +191,7 @@ private slots:
 #endif
     void exportLayoutAs();
     void exportPiecesAs();
+    void showPieceInfo();
     void exportDraftBlocksAs();
 
     void handleArrowTool(bool checked);
