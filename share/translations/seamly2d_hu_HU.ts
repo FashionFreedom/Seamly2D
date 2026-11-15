@@ -6480,6 +6480,14 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Következő vázlatblokk</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Szabásminta-darab duplikálása</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Kijelölt szabásminta-darab duplikálása</translation>
+    </message>
+    <message>
         <source>New pattern</source>
         <translation>Új minta</translation>
     </message>
@@ -7006,6 +7014,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Draft Block %1</source>
         <translation>Vázlatblokk %1</translation>
+    </message>
+    <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Válasszon ki egy szabásminta-darabot a duplikáláshoz.</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -8289,6 +8301,18 @@ Menti a módosításokat?</translation>
         <translation>Jelenlegi varrásráhagyás</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Szabásminta-darab duplikálása</translation>
+    </message>
+    <message>
+        <source>%1 copy</source>
+        <translation>%1 másolat</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 másolat %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mintadarab címkéjének áthelyezése</translation>
     </message>
@@ -8367,6 +8391,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Darabcímke megjelenítése</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Másodpéldány</translation>
     </message>
     <message>
         <source>Rename...</source>

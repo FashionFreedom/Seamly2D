@@ -5606,6 +5606,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße konnten nicht aktualisiert werden.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Wählen Sie ein Schnittteil aus, um es zu duplizieren.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Die Maßdatei &apos;%1&apos; konnte nicht gefunden werden.</translation>
     </message>
@@ -6356,6 +6360,14 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Dokument Info anzeigen</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Schnittteil duplizieren</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Ausgewähltes Schnittteil duplizieren</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8273,6 +8285,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Aktuelle Nahtzugabe</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 Kopie</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 Kopie %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>Schnittteil Etikett bewegen</translation>
     </message>
@@ -8351,6 +8371,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Show Piece Label</source>
         <translation>Schnittteil Etikett anzeigen</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplizieren</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8435,6 +8459,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Update Node Angle</source>
         <translation>Aktualisieren des Knotenwinkels</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Schnittteil duplizieren</translation>
     </message>
     <message>
         <source>Update Notch</source>

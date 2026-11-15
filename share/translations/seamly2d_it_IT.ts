@@ -5610,6 +5610,10 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Impossibile aggiornare le misure.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Seleziona un pezzo del cartamodello per duplicarlo.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Il file delle misure &apos;%1&apos; non si trova.</translation>
     </message>
@@ -6360,6 +6364,14 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Visualizza informazioni sul documento</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplica pezzo del cartamodello</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplica il pezzo del cartamodello selezionato</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8277,6 +8289,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Margine di cucitura attuale</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copia di %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copia di %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>sposta l&apos;etichetta del pezzo del modello</translation>
     </message>
@@ -8355,6 +8375,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Mostra etichetta pezzo</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicato</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8439,6 +8463,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Aggiorna angolo nodo</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplica pezzo del cartamodello</translation>
     </message>
     <message>
         <source>Update Notch</source>

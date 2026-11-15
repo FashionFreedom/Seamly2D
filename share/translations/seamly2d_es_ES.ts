@@ -5643,6 +5643,10 @@ Do you want to save your changes?</source>
         <translation>No se pudieron actualizar las medidas.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Seleccione una pieza de patrón para duplicarla.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>No se ha podido encontrar el archivo de medidas &apos;%1&apos;.</translation>
     </message>
@@ -6389,6 +6393,14 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>Mostrar información del documento</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar pieza de patrón</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplicar la pieza de patrón seleccionada</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8326,6 +8338,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Acual margen de costura</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copia de %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copia de %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mover etiqueta de pieza de patrón</translation>
     </message>
@@ -8404,6 +8424,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Mostrar etiqueta de la pieza</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicado</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8488,6 +8512,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Actualizar ángulo de nodo</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar pieza de patrón</translation>
     </message>
     <message>
         <source>Update Notch</source>

@@ -5607,6 +5607,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6356,6 +6360,14 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Display document Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8273,6 +8285,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Current seam allowance</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>move pattern piece label</translation>
     </message>
@@ -8350,6 +8370,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show Piece Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8434,6 +8458,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Update Node Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

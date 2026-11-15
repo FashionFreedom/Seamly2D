@@ -5628,6 +5628,10 @@ Do you want to save your changes?</source>
         <translation>Не вдалося оновити мірки.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Виберіть деталь викрійки, щоб дублювати її.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Файл мірок &apos;%1&apos; не вдалося знайти.</translation>
     </message>
@@ -6414,6 +6418,14 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>Відобразити інформацію про документ</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублювати деталь викрійки</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Дублювати вибрану деталь викрійки</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8287,6 +8299,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Поточна прибавка на шви</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 — копія</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 — копія %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>пере Публикуй мітку деталі</translation>
     </message>
@@ -8365,6 +8385,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Показати етикетку елемента</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Дублікат</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8449,6 +8473,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Оновити кут вузла</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублювати деталь викрійки</translation>
     </message>
     <message>
         <source>Update Notch</source>

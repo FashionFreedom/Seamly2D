@@ -5623,6 +5623,10 @@ Do you want to save your changes?</source>
         <translation>Невозможно обновить мерки.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Выберите деталь выкройки, чтобы дублировать её.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Файл мерок «%1» не может быть найден.</translation>
     </message>
@@ -6373,6 +6377,14 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>Отображение информации о документе</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублировать деталь выкройки</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Дублировать выбранную деталь выкройки</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8296,6 +8308,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Текущая прибавка на швы</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 — копия</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 — копия %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>переместить метку детали выкройки</translation>
     </message>
@@ -8374,6 +8394,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Показать Метку Детали Выкройки</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Дубликат</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8458,6 +8482,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Обновить угол узла</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублировать деталь выкройки</translation>
     </message>
     <message>
         <source>Update Notch</source>

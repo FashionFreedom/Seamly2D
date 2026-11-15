@@ -5624,6 +5624,10 @@ Doriți să salvați modificările?</translation>
         <translation>Nu s-au putut actualiza măsurătorile.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Selectați o piesă de tipar pentru a o duplica.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Fișierul de măsurători &apos;%1&apos; nu a putut fi găsit.</translation>
     </message>
@@ -6374,6 +6378,14 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Afișează informații despre document</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicare piesă tipar</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplicare piesă tipar selectată</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8291,6 +8303,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Marjă de cusătură curentă</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copie %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copie %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mutați eticheta piesei de model</translation>
     </message>
@@ -8369,6 +8389,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Afișează eticheta piesei</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicat</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8453,6 +8477,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Actualizează unghiul nodului</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicare piesă tipar</translation>
     </message>
     <message>
         <source>Update Notch</source>

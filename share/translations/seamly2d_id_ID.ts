@@ -5623,6 +5623,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Tidak dapat memperbarui pengukuran.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Pilih bagian pola untuk menduplikatnya.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>File pengukuran &apos;%1&apos; tidak dapat ditemukan.</translation>
     </message>
@@ -6373,6 +6377,14 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Tampilkan Info dokumen</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikat Bagian Pola</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplikat bagian pola yang dipilih</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8290,6 +8302,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Kelonggaran jahitan saat ini</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Salinan %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Salinan %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>pindahkan label potongan pola</translation>
     </message>
@@ -8368,6 +8388,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Tampilkan label bagian</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8452,6 +8476,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Perbarui Sudut Node</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikat Bagian Pola</translation>
     </message>
     <message>
         <source>Update Notch</source>
