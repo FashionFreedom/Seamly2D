@@ -87,6 +87,10 @@
 #include <QtDebug>
 #include <QtMath>
 #include <algorithm>
+
+#include "../ifc/exception/vexceptionbadid.h"
+#include "../../tools/drawTools/vtoolline.h"
+#include "../../tools/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.h"
 #include <new>
 #include <QBuffer>
 #include <QFont>
@@ -1648,4 +1652,49 @@ QString DialogTool::makeAngleTooltip() const
                                             "value means the clockwise direction. Zero degrees is at the 3 o'clock position."))
                                     .arg(":/icon/64x64/rotation.png");
     return toolTip;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool DialogTool::selectLineEndpoints(quint32 id, const SceneObject& type, const QVector<int>& steps)
+{
+    if (type != SceneObject::Line)
+    {
+        return false;
+    }
+    if (prepare || not steps.contains(number))
+    {
+        return true;
+    }
+    // The line is a Line tool's line, or the line a point tool draws from its base point to the point.
+    quint32 first_point = NULL_ID;
+    quint32 second_point = NULL_ID;
+    try
+    {
+        VDataTool* tool = VAbstractPattern::getTool(id);
+        if (const VToolLine* line = dynamic_cast<const VToolLine*>(tool))
+        {
+            first_point = line->GetFirstPoint();
+            second_point = line->GetSecondPoint();
+        }
+        else if (const VToolLinePoint* line_point = dynamic_cast<const VToolLinePoint*>(tool))
+        {
+            first_point = line_point->GetBasePointId();
+            second_point = line_point->getId();
+        }
+    }
+    catch (const VExceptionBadId &)
+    {
+        return true;
+    }
+    if (first_point == NULL_ID || second_point == NULL_ID)
+    {
+        return true;
+    }
+    const qint32 before = number;
+    ChosenObject(first_point, SceneObject::Point);
+    if (number != before && not prepare)
+    {
+        ChosenObject(second_point, SceneObject::Point);
+    }
+    return true;
 }

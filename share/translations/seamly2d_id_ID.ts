@@ -1594,8 +1594,8 @@ p, li { spasi: pra-bungkus; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Pilih titik pertama garis</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Pilih titik pertama garis atau klik garis</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { spasi: pra-bungkus; }
         <translation>Pilih titik kedua dari baris pertama</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Pilih titik pertama dari baris kedua</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Pilih titik pertama dari baris kedua atau klik garis</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { spasi: pra-bungkus; }
         <translation>Akhiran:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Pilih titik garis cermin pertama</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Pilih titik garis cermin pertama atau klik garis</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6387,6 +6387,22 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>File pengukuran tidak menyertakan semua pengukuran yang diperlukan.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Pilih titik pertama atau klik garis</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - Pada Tegak Lurus:&lt;/b&gt; Pilih titik pertama dari garis atau klik garis</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - Perpotongan Garis dan Sumbu:&lt;/b&gt; Pilih titik pertama garis atau klik garis</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - Perpotongan Garis:&lt;/b&gt; Pilih titik pertama dari garis pertama atau klik garis</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Tool::Operations - Buat Grup:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk menyelesaikan pembuatan grup </translation>
     </message>
@@ -6955,14 +6971,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>&lt;b&gt;Tool::Point - Panjang dan Sudut&lt;/b&gt;: Pilih titik</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Pilih titik pertama</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Tool::Point - Pada Tegak Lurus:&lt;/b&gt; Pilih titik pertama dari garis</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Tool::Point - Pada Bisektor:&lt;/b&gt; Pilih titik sudut pertama</translation>
     </message>
@@ -6987,16 +6995,8 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>&lt;b&gt;Tool::Point - Perpotongan Garis dan Tegak Lurus:&lt;/b&gt; Pilih titik dasar</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Tool::Point - Perpotongan Garis dan Sumbu:&lt;/b&gt; Pilih titik pertama garis</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Tool::Line:&lt;/b&gt;:Pilih titik pertama</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Tool::Point - Perpotongan Garis:&lt;/b&gt; Pilih titik pertama dari garis pertama</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

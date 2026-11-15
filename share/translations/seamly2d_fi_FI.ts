@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Valitse viivan ensimmäinen piste</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Valitse viivan ensimmäinen piste tai napsauta viivaa</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Valitse ensimmäisen suoran toinen piste</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Valitse toisen suoran ensimmäinen piste</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Valitse toisen suoran ensimmäinen piste tai napsauta suoraa</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Loppuliite:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Valitse ensimmäinen peilattavan suoran piste</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Valitse ensimmäinen peilattavan suoran piste tai napsauta suoraa</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6387,6 +6387,22 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittaustiedosto ei sisällä kaikkia vaadittuja mittauksia.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Työkalu::Piste - Suoralla:&lt;/b&gt; Valitse ensimmäinen piste tai napsauta suoraa</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Työkalu::Piste - Kohtisuoralla:&lt;/b&gt; Valitse viivan ensimmäinen piste tai napsauta viivaa</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Työkalu::Piste - Suoran ja akselin leikkauspiste:&lt;/b&gt; Valitse suoran ensimmäinen piste tai napsauta suoraa</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Työkalu::Piste - Suorien leikkauspiste:&lt;/b&gt; Valitse ensimmäisen suoran ensimmäinen piste tai napsauta suoraa</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Tool::Operations - Luo ryhmä:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt;-näppäintä painettuna useiden objektien valitsemiseksi, paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä ryhmän luomisen loppuun saattamiseksi </translation>
     </message>
@@ -6955,14 +6971,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&lt;b&gt;Työkalu::Piste - Pituus ja kulma&lt;/b&gt;: Valitse piste</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Suoralla:&lt;/b&gt; Valitse ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Kohtisuoralla:&lt;/b&gt; Valitse viivan ensimmäinen piste</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Työkalu::Piste - Kulman puolittajalla:&lt;/b&gt; Valitse kulman ensimmäinen piste</translation>
     </message>
@@ -6987,16 +6995,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&lt;b&gt;Työkalu::Piste - Suoran ja kohtisuoran leikkauspiste:&lt;/b&gt; Valitse peruspiste</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Suoran ja akselin leikkauspiste:&lt;/b&gt; Valitse suoran ensimmäinen piste</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Työkalu::Suora:&lt;/b&gt;:Valitse ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Työkalu::Piste - Suorien leikkauspiste:&lt;/b&gt; Valitse ensimmäisen suoran ensimmäinen piste</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

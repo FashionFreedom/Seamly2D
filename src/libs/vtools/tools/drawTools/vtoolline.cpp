@@ -52,6 +52,7 @@
 
 #include "vtoolline.h"
 
+#include <QGraphicsSceneMouseEvent>
 #include <QKeyEvent>
 #include <QLineF>
 #include <QMessageLogger>
@@ -438,6 +439,28 @@ void VToolLine::keyReleaseEvent(QKeyEvent *event)
             break;
     }
     QGraphicsItem::keyReleaseEvent ( event );
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// EnableToolMove: tools can be moved only with the arrow tool, so moving off means another tool is active.
+void VToolLine::EnableToolMove(bool move)
+{
+    m_tool_active = not move;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// mousePressEvent lets a tool that takes a line (its two points) pick this one. Tools that do turn line
+// hovering on; with the arrow tool, or when lines can be selected, the click works as before.
+void VToolLine::mousePressEvent(QGraphicsSceneMouseEvent* event)
+{
+    if (event->button() == Qt::LeftButton && m_tool_active && acceptHoverEvents()
+        && !(flags() & QGraphicsItem::ItemIsSelectable))
+    {
+        emit chosenTool(m_id, SceneObject::Line);
+        event->accept();
+        return;
+    }
+    QGraphicsLineItem::mousePressEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

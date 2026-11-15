@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Выберите первую точку линии</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Выберите первую точку линии или щёлкните по линии</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Выберите вторую точку первой линии</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Выберите первую точку второй линии</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Выберите первую точку второй линии или щёлкните по линии</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Суффикс:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Выберите первую точку линии отражения</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Выберите первую точку линии отражения или щёлкните по линии</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6387,6 +6387,22 @@ Do you want to save your changes?</source>
         <translation>Файл мерок не содержит всех необходимых измерений.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Инструмент::Точка – На линии:&lt;/b&gt; Выберите первую точку или щёлкните по линии</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Инструмент::Точка – На перпендикуляре:&lt;/b&gt; Выберите первую точку линии или щёлкните по линии</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Инструмент::Точка – Пересечения линии и оси:&lt;/b&gt; Выберите первую точку линии или щёлкните по линии</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Инструмент::Точка – Пересечения линий:&lt;/b&gt; Выберите первую точку первой линии или щёлкните по линии</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Инструмент::Операции – Создать группу:&lt;/b&gt; выберите один или несколько объектов – удержите клавишу &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов. Нажмите &lt;b&gt;ENTER&lt;/b&gt;, чтобы завершить создание группы </translation>
     </message>
@@ -6955,14 +6971,6 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Точка – на расстоянии и под углом&lt;/b&gt;: Выберите точку</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Инструмент::Точка – На линии:&lt;/b&gt; Выберите первую точку</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Инструмент::Точка – На перпендикуляре:&lt;/b&gt; Выберите первую точку линии</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Инструмент::Точка  - на биссектрисе:&lt;/b&gt; Выберите первую точку линии угла</translation>
     </message>
@@ -6987,16 +6995,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Точка – Пересечения линии и перпендикуляра:&lt;/b&gt; Выберите точку основы</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Инструмент::Точка – Пересечения линии и оси:&lt;/b&gt; Выберите первую точку линии</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Инструмент::Линия:&lt;/b&gt;:Выберите первую точку</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Инструмент::Точка – Пересечения линий:&lt;/b&gt; Выберите первую точку первой линии</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

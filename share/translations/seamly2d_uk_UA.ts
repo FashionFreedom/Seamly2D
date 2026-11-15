@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Виберість першу точку лінії</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Виберість першу точку лінії або клацніть лінію</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Виберіть другу точка першої лінії</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Виберіть першу точку другої лінії</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Виберіть першу точку другої лінії або клацніть лінію</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Суфікс:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Вибрати першу точку лінії дзеркала</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Вибрати першу точку лінії дзеркала або клацнути лінію</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -5608,6 +5608,22 @@ Do you want to save your changes?</source>
         <translation>Типи файлів мірок не співпадають.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Інструмент::Точка - На лінії:&lt;/b&gt; Вибрати першу точку або клацнути лінію</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Інструмент::Точка - Перпендикулярно:&lt;/b&gt; Вибрати першу точку лінії або клацнути лінію</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин лінії та осі:&lt;/b&gt; Вибрати першу точку лінії або клацнути лінію</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Інструмент::Точка - Перетин ліній:&lt;/b&gt; Вибрати першу точку першої лінії або клацнути лінію</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
         <translation>&lt;b&gt;Інструмент::Точка - На кривій:&lt;/b&gt; Вибрати криву</translation>
     </message>
@@ -6437,7 +6453,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Інструмент::Операції - Обертання:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Обертання:&lt;/b&gt; Виберіть один або кілька об&apos;єктів — клацніть вибраний об&apos;єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6445,7 +6461,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення по лінії:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення по лінії:&lt;/b&gt; Виберіть один або кілька об&apos;єктів — клацніть вибраний об&apos;єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6453,7 +6469,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення за віссю:&lt;/b&gt;  Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення за віссю:&lt;/b&gt;  Виберіть один або кілька об&apos;єктів — клацніть вибраний об&apos;єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6461,7 +6477,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Інструмент::Операції - Переміщення:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+        <translation>&lt;b&gt;Інструмент::Операції - Переміщення:&lt;/b&gt; Виберіть один або кілька об&apos;єктів — клацніть вибраний об&apos;єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -6980,14 +6996,6 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Інструмент::Точка - Довжина та кут&lt;/b&gt;: Вибрати точку</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Інструмент::Точка - На лінії:&lt;/b&gt; Вибрати першу точку</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Інструмент::Точка - Перпендикулярно:&lt;/b&gt; Вибрати першу точку лінії</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Інструмент::Точка - На бісектрисі:&lt;/b&gt; Вибрати першу точку кута</translation>
     </message>
@@ -7012,16 +7020,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Інструмент::Точка - Перетин лінії та перпендикуляра:&lt;/b&gt; Вибір базової точки</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Інструмент::Точка - Перетин лінії та осі:&lt;/b&gt; Вибрати першу точку лінії</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Інструмент::Лінія:&lt;/b&gt;:Вибрати першу точку</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Інструмент::Точка - Перетин ліній:&lt;/b&gt; Вибрати першу точку першої лінії</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
@@ -9207,7 +9207,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Use CTRL for multiple object selection</source>
-        <translation>Використовуйте CTRL для вибору кількох об'єктів</translation>
+        <translation>Використовуйте CTRL для вибору кількох об&apos;єктів</translation>
     </message>
     <message>
         <source>Zoom</source>

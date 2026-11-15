@@ -1594,8 +1594,8 @@ p, li { boşluk: ön sarma; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Çizginin ilk noktasını seç</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Çizginin ilk noktasını seç veya bir çizgiye tıkla</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { boşluk: ön sarma; }
         <translation>İlk satırın ikinci noktasını seçin</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>İkinci satırın ilk noktasını seç</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>İkinci satırın ilk noktasını seç veya bir çizgiye tıkla</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { boşluk: ön sarma; }
         <translation>Sonek:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>İlk ayna çizgisi noktasını seçin</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>İlk ayna çizgisi noktasını seçin veya bir çizgiye tıklayın</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6387,6 +6387,22 @@ Do you want to save your changes?</translation>
         <translation>Ölçüm dosyası gerekli tüm ölçümleri içermiyor.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Araç::Nokta - Çevrimiçi:&lt;/b&gt; İlk noktayı seç veya bir çizgiye tıkla</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Araç::Nokta - Diklikte:&lt;/b&gt; Çizginin ilk noktasını seç veya bir çizgiye tıkla</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Araç::Nokta - Çizgi ve Eksenleri Kes:&lt;/b&gt; Çizginin ilk noktasını seç veya bir çizgiye tıkla</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Araç::Nokta - Çizgileri Kes:&lt;/b&gt; İlk çizginin ilk noktasını seç veya bir çizgiye tıkla</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Araç::İşlemler - Grup Oluştur:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, grup oluşturmayı tamamlamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın </translation>
     </message>
@@ -6955,14 +6971,6 @@ Do you want to save your changes?</translation>
         <translation>&lt;b&gt;Araç::Nokta - Uzunluk ve Açı&lt;/b&gt;: Noktayı seç</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Araç::Nokta - Çevrimiçi:&lt;/b&gt; İlk noktayı seç</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Araç::Nokta - Diklikte:&lt;/b&gt; Çizginin ilk noktasını seç</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Araç::Nokta - Orta Çizgi Üzerinde:&lt;/b&gt; Açının ilk noktasını seç</translation>
     </message>
@@ -6987,16 +6995,8 @@ Do you want to save your changes?</translation>
         <translation>&lt;b&gt;Araç::Nokta - Çizgi ve Dikmeyi Kesiştir:&lt;/b&gt; Temel noktayı seç</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Araç::Nokta - Çizgi ve Eksenleri Kes:&lt;/b&gt; Çizginin ilk noktasını seç</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Araç::Çizgi:&lt;/b&gt;:İlk noktayı seç</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Araç::Nokta - Çizgileri Kes:&lt;/b&gt; İlk çizginin ilk noktasını seç</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

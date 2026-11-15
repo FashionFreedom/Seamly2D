@@ -1642,8 +1642,8 @@ p, li { white-space: pre-wrap; }
         <translation>Kolor:</translation>
     </message>
     <message>
-        <source>Select first point of line</source>
-        <translation>Wybierz pierwszy punkt linii</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Wybierz pierwszy punkt linii lub kliknij linię</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1779,8 +1779,8 @@ p, li { white-space: pre-wrap; }
         <translation>Wybierz drugi punkt pierwszej linii</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Wybierz pierwszy punkt drugiej linii</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Wybierz pierwszy punkt drugiej linii lub kliknij linię</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Sufiks:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Wybierz pierwszy punkt linii odbicia lustrzanego</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Wybierz pierwszy punkt linii odbicia lustrzanego lub kliknij linię</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6549,14 +6549,6 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>&lt;b&gt;Narzędzie::Punkt - Długość i kąt&lt;/b&gt;: Wybierz punkt</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na linii:&lt;/b&gt; Wybierz pierwszy punkt</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Na prostopadłej:&lt;/b&gt; Wybierz pierwszy punkt linii</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Narzędzie::Punkt - Na dwusiecznej:&lt;/b&gt; Wybierz pierwszy punkt kąta</translation>
     </message>
@@ -6581,16 +6573,24 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii i prostopadłe:&lt;/b&gt; Wybierz punkt bazowy</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii i osi:&lt;/b&gt; Wybierz pierwszy punkt linii</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Narzędzie::Linia:&lt;/b&gt;:Wybierz pierwszy punkt</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii:&lt;/b&gt; Wybierz pierwszy punkt pierwszej linii</translation>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Narzędzie::Punkt - Na linii:&lt;/b&gt; Wybierz pierwszy punkt lub kliknij linię</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Narzędzie::Punkt - Na prostopadłej:&lt;/b&gt; Wybierz pierwszy punkt linii lub kliknij linię</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii i osi:&lt;/b&gt; Wybierz pierwszy punkt linii lub kliknij linię</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Narzędzie::Punkt - Przecięcie linii:&lt;/b&gt; Wybierz pierwszy punkt pierwszej linii lub kliknij linię</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Alege primul punct al liniei</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Alege primul punct al liniei sau fă clic pe o linie</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Alege al doilea punct al primei linii</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Alege primul punct al liniei a doua</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Alege primul punct al liniei a doua sau fă clic pe o linie</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Sufix:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Selectați primul punct al liniei de oglindă</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Selectați primul punct al liniei de oglindă sau faceți clic pe o linie</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6388,6 +6388,22 @@ Doriți să salvați modificările?</translation>
         <translation>Fișierul de măsurători nu include toate măsurătorile necesare.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Selectează primul punct sau fă clic pe o linie</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Instrument::Punct - Perpendicular:&lt;/b&gt; Selectează primul punct al liniei sau fă clic pe o linie</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - Intersectează linia și axa:&lt;/b&gt; Selectează primul punct al liniei sau fă clic pe o linie</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Tool::Point - Intersectează linii:&lt;/b&gt; Selectează primul punct al primei linii sau fă clic pe o linie</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a finaliza crearea grupului </translation>
     </message>
@@ -6956,14 +6972,6 @@ Doriți să salvați modificările?</translation>
         <translation>&lt;b&gt;Tool::Point - Lungime și Unghi&lt;/b&gt;: Selectați punctul</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Selectează primul punct</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Instrument::Punct - Perpendicular:&lt;/b&gt; Selectează primul punct al liniei</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Tool::Point - On Bisectoare:&lt;/b&gt; Selectează primul punct al unghiului</translation>
     </message>
@@ -6988,16 +6996,8 @@ Doriți să salvați modificările?</translation>
         <translation>&lt;b&gt;Tool::Point - Intersectează linia și perpendiculara:&lt;/b&gt; Selectează punctul de bază</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Tool::Point - Intersectează linia și axa:&lt;/b&gt; Selectează primul punct al liniei</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Tool::Line:&lt;/b&gt;:Selectează primul punct</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Tool::Point - Intersectează linii:&lt;/b&gt; Selectează primul punct al primei linii</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

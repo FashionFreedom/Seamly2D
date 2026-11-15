@@ -1579,8 +1579,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Selecteer eerste punt van lijn</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Selecteer eerste punt van lijn of klik op een lijn</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1736,8 +1736,8 @@ p, li { white-space: pre-wrap; }
         <translation>Selecteer tweede punt van eerste lijn</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Selecteer eerste punt van tweede lijn</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Selecteer eerste punt van tweede lijn of klik op een lijn</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1944,8 +1944,8 @@ p, li { white-space: pre-wrap; }
         <translation>Achtervoegsel:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Selecteer eerste punt van de spiegellijn</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Selecteer eerste punt van de spiegellijn of klik op een lijn</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6370,6 +6370,22 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Matenbestand bevat niet alle benodigde maten.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Gereedschap::Punt - Op Lijn&lt;/b&gt; Kies eerste punt of klik op een lijn</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Gereedschap::Punt - Op Loodrechte:&lt;/b&gt;Kies eerste punt van lijn of klik op een lijn</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Gereedschap::Punt - Snijpunt Lijn en As:&lt;/b&gt; Kies eerste punt van lijn of klik op een lijn</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Gereedschap::Punt - Snijpunt Lijnen&lt;/b&gt; Kies eerste punt van eerste lijn of klik op een lijn</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Maak Groep:&lt;/b&gt; Kies een of meer objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectie, Druk &lt;b&gt;ENTER&lt;/b&gt; om de aanmaak van de groep af te sluiten </translation>
     </message>
@@ -6938,14 +6954,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Punt - Lengte en Hoek&lt;/b&gt;: Kies punt</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Gereedschap::Punt - Op Lijn&lt;/b&gt; Kies eerste punt</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Gereedschap::Punt - Op Loodrechte:&lt;/b&gt;Kies eerste punt van lijn</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Gereedschap::Punt - Op Bisectrice&lt;/b&gt; Kies eerste punt van hoek</translation>
     </message>
@@ -6970,16 +6978,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Punt - Snijpunt Lijn en Loodrechte:&lt;/b&gt; Kies basispunt</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Gereedschap::Punt - Snijpunt Lijn en As:&lt;/b&gt; Kies eerste punt van lijn</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Gereedschap::Lijn:&lt;/b&gt; Kies eerste punt</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Gereedschap::Punt - Snijpunt Lijnen&lt;/b&gt; Kies eerste punt van eerste lijn</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

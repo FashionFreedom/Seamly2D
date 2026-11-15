@@ -98,8 +98,11 @@ public:
     QString           getLineColor() const;
     void              setLineColor(const QString &value);
 
+    void              initLinePicking(VMainGraphicsScene* scene);
+
 public slots:
     virtual void      Disable(bool disable, const QString &draftBlockName) override;
+    virtual void      EnableToolMove(bool move) override;
     virtual void      FullUpdateFromFile() override;
 
 protected:
@@ -115,9 +118,21 @@ protected:
     virtual void      hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
     virtual void      hoverLeaveEvent(QGraphicsSceneHoverEvent *event) override;
     virtual QString   makeToolTip() const override;
+    virtual bool      sceneEventFilter(QGraphicsItem* watched, QEvent* event) override;
 
 private:
     Q_DISABLE_COPY(VToolLinePoint)
+
+    // Picking the line from the base point to this point, for tools that take a line as two points: on while the
+    // scene has line hovering on and line selection off (see initLinePicking).
+    bool                    m_tool_active{false};
+    bool                    m_line_hover{false};
+    bool                    m_line_selectable{true};
+    bool                    m_line_hovered{false};
+    bool                    m_line_filter_installed{false};
+
+    bool              lineCanBePicked() const;
+    void              updateLinePicking();
 };
 
 #endif // VTOOLLINEPOINT_H

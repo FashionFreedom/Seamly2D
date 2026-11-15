@@ -52,7 +52,9 @@
 #include "vtoollinepoint.h"
 
 #include <QColor>
+#include <QEvent>
 #include <QGraphicsLineItem>
+#include <QGraphicsSceneMouseEvent>
 #include <QLineF>
 #include <QPen>
 #include <QPoint>
@@ -72,6 +74,7 @@
 #include "../../../vdrawtool.h"
 #include "../vtoolsinglepoint.h"
 #include "../vwidgets/scalesceneitems.h"
+#include "../vwidgets/vmaingraphicsscene.h"
 
 template <class T> class QSharedPointer;
 
@@ -178,6 +181,100 @@ void VToolLinePoint::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     VToolSinglePoint::hoverLeaveEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// initLinePicking follows the scene's line hover and line selection state, so the line from the base point can be
+// picked by tools that take a line as two points. Called once the point is in the scene.
+void VToolLinePoint::initLinePicking(VMainGraphicsScene* scene)
+{
+    SCASSERT(scene != nullptr)
+    connect(scene, &VMainGraphicsScene::EnableLineItemHover, this, [this](bool enabled)
+    {
+        m_line_hover = enabled;
+        updateLinePicking();
+    });
+    connect(scene, &VMainGraphicsScene::EnableLineItemSelection, this, [this](bool enabled)
+    {
+        m_line_selectable = enabled;
+        updateLinePicking();
+    });
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// EnableToolMove: tools can be moved only with the arrow tool, so moving off means another tool is active.
+void VToolLinePoint::EnableToolMove(bool move)
+{
+    VToolSinglePoint::EnableToolMove(move);
+    m_tool_active = not move;
+    updateLinePicking();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// lineCanBePicked: true while a tool asks for a line and this point's line is drawn.
+bool VToolLinePoint::lineCanBePicked() const
+{
+    return m_tool_active && m_line_hover && not m_line_selectable && isEnabled() && mainLine != nullptr
+           && mainLine->pen().style() != Qt::NoPen;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolLinePoint::updateLinePicking()
+{
+    if (mainLine == nullptr)
+    {
+        return;
+    }
+    if (not m_line_filter_installed && mainLine->scene() != nullptr)
+    {
+        mainLine->installSceneEventFilter(this);
+        m_line_filter_installed = true;
+    }
+    const bool pickable = lineCanBePicked();
+    mainLine->setAcceptHoverEvents(pickable);
+    if (not pickable && m_line_hovered)
+    {
+        m_line_hovered = false;
+        mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+        mainLine->update();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// sceneEventFilter lets a tool that takes a line (its two points) pick the line from the base point to this
+// point: the line thickens under the mouse and a left click chooses it.
+bool VToolLinePoint::sceneEventFilter(QGraphicsItem* watched, QEvent* event)
+{
+    if (watched == mainLine && lineCanBePicked())
+    {
+        switch (event->type())
+        {
+            case QEvent::GraphicsSceneHoverEnter:
+                m_line_hovered = true;
+                mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
+                mainLine->update();
+                break;
+            case QEvent::GraphicsSceneHoverLeave:
+                m_line_hovered = false;
+                mainLine->setDefaultWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+                mainLine->update();
+                break;
+            case QEvent::GraphicsSceneMousePress:
+            {
+                QGraphicsSceneMouseEvent* mouse_event = static_cast<QGraphicsSceneMouseEvent*>(event);
+                if (mouse_event->button() == Qt::LeftButton)
+                {
+                    emit chosenTool(m_id, SceneObject::Line);
+                    mouse_event->accept();
+                    return true;
+                }
+                break;
+            }
+            default:
+                break;
+        }
+    }
+    return VToolSinglePoint::sceneEventFilter(watched, event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
