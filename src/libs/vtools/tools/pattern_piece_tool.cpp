@@ -189,48 +189,46 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 PatternPieceTool::s_copiedPieceId = NULL_ID;
-int     PatternPieceTool::s_pasteCount = 0;
+quint32 PatternPieceTool::s_copied_piece_id = NULL_ID;
+int     PatternPieceTool::s_copy_count = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceTool::setCopiedPieceId(quint32 id)
 {
-    s_copiedPieceId = id;
-    s_pasteCount = 0;
+    s_copied_piece_id = id;
+    s_copy_count = 0;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 bool PatternPieceTool::copiedPieceExists(const VContainer *data)
 {
-    return s_copiedPieceId != NULL_ID && data != nullptr && data->DataPieces()->contains(s_copiedPieceId);
+    return s_copied_piece_id != NULL_ID && data != nullptr && data->DataPieces()->contains(s_copied_piece_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief pasteCopied pastes the copied piece. Each paste lands one piece-width further right, so copies do not pile
- * up on top of each other.
- */
-PatternPieceTool *PatternPieceTool::pasteCopied(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data)
+/// @brief pasteCopy pastes the copied piece. Each paste lands one piece-width further right, so copies do not pile
+/// up on top of each other.
+//---------------------------------------------------------------------------------------------------------------------
+PatternPieceTool *PatternPieceTool::pasteCopy(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data)
 {
     if (!copiedPieceExists(data))
     {
         return nullptr;
     }
     qreal step = ToPixel(5, Unit::Cm);
-    if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(s_copiedPieceId)))
+    if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(s_copied_piece_id)))
     {
         step = tool->sceneBoundingRect().width() + ToPixel(1, Unit::Cm);
     }
-    ++s_pasteCount;
-    return duplicate(s_copiedPieceId, QPointF(step * s_pasteCount, 0), scene, doc, data);
+    ++s_copy_count;
+    return duplicate(s_copied_piece_id, QPointF(step * s_copy_count, 0), scene, doc, data);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief duplicate makes a new piece from the same draft geometry as an existing one, with copies of its internal
- * paths, custom seam allowances and anchor points. The copy follows the draft just like the original, and is placed
- * beside it (moved by offset) in the same draft block.
- */
+/// @brief duplicate makes a new piece from the same draft geometry as an existing one, with copies of its internal
+/// paths, custom seam allowances and anchor points. The copy follows the draft just like the original, and is placed
+/// beside it (moved by offset) in the same draft block.
+//---------------------------------------------------------------------------------------------------------------------
 PatternPieceTool *PatternPieceTool::duplicate(quint32 pieceId, const QPointF &offset, VMainGraphicsScene *scene,
                                               VAbstractPattern *doc, VContainer *data)
 {
@@ -289,7 +287,7 @@ PatternPieceTool *PatternPieceTool::duplicate(quint32 pieceId, const QPointF &of
         }
     }
 
-    qApp->getUndoStack()->beginMacro(tr("paste pattern piece"));
+    qApp->getUndoStack()->beginMacro(tr("Duplicate Pattern Piece"));
 
     VPiece copy = piece;
     const QVector<VPieceNode> oldNodes = piece.GetPath().getNodes();
@@ -1435,9 +1433,6 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     separator->setSeparator(true);
     menu.addAction(separator);
 
-    QAction *copyPiece = menu.addAction(QIcon::fromTheme("edit-copy"), tr("Copy") + "\tCtrl + C");
-    QAction *pastePiece = menu.addAction(QIcon::fromTheme("edit-paste"), tr("Paste") + "\tCtrl + V");
-    pastePiece->setEnabled(copiedPieceExists(&(VAbstractTool::data)));
     QAction *duplicatePiece = menu.addAction(tr("Duplicate") + "\tCtrl + D");
 
     separator = new QAction(this);
@@ -1500,20 +1495,14 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         renamePiece(piece);
     }
-    else if (selectedAction == copyPiece)
+    else if (selectedAction == duplicatePiece)
     {
         setCopiedPieceId(m_id);
-    }
-    else if (selectedAction == pastePiece || selectedAction == duplicatePiece)
-    {
-        if (selectedAction == duplicatePiece)
-        {
-            setCopiedPieceId(m_id);
-        }
+
         auto *pieceScene = qobject_cast<VMainGraphicsScene *>(scene());
         if (pieceScene != nullptr)
         {
-            pasteCopied(pieceScene, doc, &(VAbstractTool::data));
+            pasteCopy(pieceScene, doc, &(VAbstractTool::data));
         }
         return; // the pattern may be parsed again; leave at once
     }

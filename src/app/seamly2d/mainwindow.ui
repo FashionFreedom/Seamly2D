@@ -187,6 +187,8 @@
     <addaction name="separator"/>
     <addaction name="previousDraftBlock_Action"/>
     <addaction name="nextDraftBlock_Action"/>
+    <addaction name="separator"/>
+    <addaction name="duplicate_piece_action"/>
    </widget>
    <widget class="QMenu" name="tools_Menu">
     <property name="title">
@@ -238,6 +240,7 @@
      </property>
      <addaction name="union_Action"/>
      <addaction name="exportPieces_Action"/>
+     <addaction name="duplicate_piece_action"/>
     </widget>
     <widget class="QMenu" name="lines_Menu">
      <property name="title">
@@ -297,6 +300,7 @@
      <addaction name="anchorPoint_Action"/>
      <addaction name="internalPath_Action"/>
      <addaction name="insertNodes_Action"/>
+     <addaction name="separator"/>
     </widget>
     <widget class="QMenu" name="layouts_Menu">
      <property name="enabled">
@@ -2384,8 +2388,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2518,8 +2522,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4879,6 +4883,17 @@
    </property>
    <property name="shortcut">
     <string>Del</string>
+   </property>
+  </action>
+  <action name="duplicate_piece_action">
+   <property name="text">
+    <string>Duplicate Pattern Piece</string>
+   </property>
+   <property name="toolTip">
+    <string>Duplicate selected pattern piece</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+D</string>
    </property>
   </action>
  </widget>
