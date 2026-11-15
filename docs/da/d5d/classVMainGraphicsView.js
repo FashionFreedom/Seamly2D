@@ -19,6 +19,7 @@ var classVMainGraphicsView =
     [ "setScene", "da/d5d/classVMainGraphicsView.html#aac178183e1320cda7ae61e7690f37882", null ],
     [ "setShowToolOptions", "da/d5d/classVMainGraphicsView.html#aaea1dcf83ca139effb2733f0cf68cc97", null ],
     [ "signalZoomScaleChanged", "da/d5d/classVMainGraphicsView.html#a1acab2c8d6d72e090b11b07bbb4d8fa2", null ],
+    [ "snapToOrigin", "da/d5d/classVMainGraphicsView.html#ab4877bb0aae5498e21b283cf2586b10f", null ],
     [ "updateView", "da/d5d/classVMainGraphicsView.html#aa81a176208dc9e704f03a7f9d1d56a5a", null ],
     [ "zoom100Percent", "da/d5d/classVMainGraphicsView.html#a5084a24b563181434129476dfa17e417", null ],
     [ "zoomByScale", "da/d5d/classVMainGraphicsView.html#abd4518824c724e82adc2cb8c549f4cf2", null ],

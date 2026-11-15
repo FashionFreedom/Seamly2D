@@ -1,5 +1,6 @@
 var NAVTREEINDEX292 =
 {
+"de/d7a/classTraverseSchema.html#a892d0a30c8c7b83a3b91eb4e5c6cc69e":[3,0,513,371],
 "de/d7a/classTraverseSchema.html#a89d5de0e7aa1d44a542a51fdafbfe538":[3,0,513,91],
 "de/d7a/classTraverseSchema.html#a89d5de0e7aa1d44a542a51fdafbfe538":[3,0,513,90],
 "de/d7a/classTraverseSchema.html#a89d5de0e7aa1d44a542a51fdafbfe538":[3,0,513,89],
@@ -248,6 +249,5 @@ var NAVTREEINDEX292 =
 "de/d7d/classDOMXPathExpression.html#ac30fcda8e88f4684b88bdcba627e173b":[3,0,231,12],
 "de/d7d/classDOMXPathExpression.html#ac30fcda8e88f4684b88bdcba627e173b":[3,0,231,15],
 "de/d7d/classDOMXPathExpression.html#ac30fcda8e88f4684b88bdcba627e173b":[3,0,231,14],
-"de/d7d/classDOMXPathExpression.html#ac30fcda8e88f4684b88bdcba627e173b":[3,0,231,13],
-"de/d7d/vabstractpattern_8cpp.html":[4,0,0,1,1,1,8]
+"de/d7d/classDOMXPathExpression.html#ac30fcda8e88f4684b88bdcba627e173b":[3,0,231,13]
 };

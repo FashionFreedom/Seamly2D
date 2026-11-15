@@ -1,5 +1,6 @@
 var NAVTREEINDEX317 =
 {
+"df/db4/classXTemplateSerializer.html#ac3fbe894314e2ea658f72c0e48ed31d8":[3,0,926,55],
 "df/db4/classXTemplateSerializer.html#ac3fbe894314e2ea658f72c0e48ed31d8":[3,0,926,54],
 "df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,177],
 "df/db4/classXTemplateSerializer.html#acaff2e2d570eefcdd930f60ba89eef65":[3,0,926,176],
@@ -248,6 +249,5 @@ var NAVTREEINDEX317 =
 "df/ddb/structRefHashTableBucketElem.html":[3,0,444],
 "df/ddb/structRefHashTableBucketElem.html#a173852adfd07393ccefe4f20c4009718":[3,0,444,4],
 "df/ddb/structRefHashTableBucketElem.html#a173852adfd07393ccefe4f20c4009718":[3,0,444,0],
-"df/ddb/structRefHashTableBucketElem.html#a173852adfd07393ccefe4f20c4009718":[3,0,444,12],
-"df/ddb/structRefHashTableBucketElem.html#a173852adfd07393ccefe4f20c4009718":[3,0,444,8]
+"df/ddb/structRefHashTableBucketElem.html#a173852adfd07393ccefe4f20c4009718":[3,0,444,12]
 };

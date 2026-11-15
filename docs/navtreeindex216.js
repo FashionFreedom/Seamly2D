@@ -1,5 +1,6 @@
 var NAVTREEINDEX216 =
 {
+"db/d7f/classXMLBigInteger.html#af3ea14705c1834a70cb645b149f69cfd":[3,0,813,30],
 "db/d7f/classXMLBigInteger.html#afd0a60d7637ee9656d71cff5f8d4e07e":[3,0,813,67],
 "db/d82/vtoollineintersectaxis_8cpp.html":[4,0,0,1,13,1,0,2,1,1,12],
 "db/d82/vtoollineintersectaxis_8cpp_source.html":[4,0,0,1,13,1,0,2,1,1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX216 =
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,2,0],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a2d73972ebc540a41fc91a89a7056a846":[3,0,247,3,9],
 "db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,0,2],
-"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,0,11],
-"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,1,2]
+"db/d85/classDTDScanner.html#a326cd2edb2f03309f384c542fed045b6a49233840b3b75d7898ffc997877d1b64":[3,0,247,0,11]
 };

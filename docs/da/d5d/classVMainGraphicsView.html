@@ -187,6 +187,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:abfce57264fef6309f299a799b77fc61e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fb9e4eb3bcb234b0228854d28f45e80"><td class="memItemLeft" align="right" valign="top">static QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/classVMainGraphicsView.html#a6fb9e4eb3bcb234b0228854d28f45e80">SceneVisibleArea</a> (QGraphicsView *view)</td></tr>
 <tr class="separator:a6fb9e4eb3bcb234b0228854d28f45e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4877bb0aae5498e21b283cf2586b10f"><td class="memItemLeft" align="right" valign="top">static QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/classVMainGraphicsView.html#ab4877bb0aae5498e21b283cf2586b10f">snapToOrigin</a> (const QGraphicsItem *item, const QPointF &amp;pos)</td></tr>
+<tr class="memdesc:ab4877bb0aae5498e21b283cf2586b10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">snapToOrigin returns the position an item being dragged should take: the origin (0, 0) when the new position is within a few screen pixels of it, otherwise the position unchanged. Holding Alt turns snapping off. Only a drag by the mouse snaps: positions set by code (redrawing after a change) are returned unchanged, so a redraw never moves anything.  <br /></td></tr>
+<tr class="separator:ab4877bb0aae5498e21b283cf2586b10f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23740285ac6c147e0a9328f84c681455"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/classVMainGraphicsView.html#a23740285ac6c147e0a9328f84c681455">MinScale</a> ()</td></tr>
 <tr class="separator:a23740285ac6c147e0a9328f84c681455"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad943c932b3319178308162185fcb2232"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/classVMainGraphicsView.html#ad943c932b3319178308162185fcb2232">MaxScale</a> ()</td></tr>
@@ -246,7 +249,7 @@ Private Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="../../da/d5d/classVMainGraphicsView.html" title="The VMainGraphicsView class main scene view.">VMainGraphicsView</a> class main scene view. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00158">158</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00157">157</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8c93d1540a5b595c0c8ca2a042f0c675" name="a8c93d1540a5b595c0c8ca2a042f0c675"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c93d1540a5b595c0c8ca2a042f0c675">&#9670;&#160;</a></span>VMainGraphicsView()</h2>
@@ -280,7 +283,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00470">470</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00469">469</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../da/d19/classGraphicsViewZoom.html#a797129d490eb20ddc0538bf8450600a4">GraphicsViewZoom::zoomed()</a>.</p>
 
@@ -303,7 +306,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00829">829</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00828">828</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00215">isallowRubberBand</a>.</p>
 
@@ -324,11 +327,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00905">905</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00937">937</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00214">showScrollBars</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00935">resetScrollBars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00967">resetScrollBars()</a>.</p>
 
 </div>
 </div>
@@ -356,7 +359,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02847">MainWindow::initPropertyEditor()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02847">MainWindow::initPropertyEditor()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>.</p>
 
 </div>
 </div>
@@ -383,11 +386,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00814">814</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00813">813</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00092">maxSceneSize</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00091">maxSceneSize</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00133">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00500">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00512">zoomIn()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00558">zoomToRect()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00132">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00499">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00511">zoomIn()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00557">zoomToRect()</a>.</p>
 
 </div>
 </div>
@@ -414,9 +417,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00802">802</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00801">801</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00133">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00500">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00524">zoomOut()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00558">zoomToRect()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00132">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00499">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00523">zoomOut()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00557">zoomToRect()</a>.</p>
 
 </div>
 </div>
@@ -444,7 +447,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00789">789</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00788">788</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>.</p>
 
@@ -474,9 +477,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">716</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">715</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../db/d7d/global_8cpp_source.html#l00112">adaptColor()</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00224">endPoint</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">isPanDragActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">isRubberBandActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">isRubberBandColorSet</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00225">m_startPos</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">rubberBand</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00621">setRubberBandColor()</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00223">startPoint</a>.</p>
+<p class="reference">References <a class="el" href="../../db/d7d/global_8cpp_source.html#l00112">adaptColor()</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00224">endPoint</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">isPanDragActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">isRubberBandActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">isRubberBandColorSet</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00225">m_startPos</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">rubberBand</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00620">setRubberBandColor()</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00223">startPoint</a>.</p>
 
 </div>
 </div>
@@ -512,7 +515,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">634</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">633</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00215">isallowRubberBand</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">isPanDragActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">isRubberBandActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00219">isZoomPanActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00216">isZoomToAreaActive</a>, <a class="el" href="../../da/d5d/classVMainGraphicsView.html#a144c8eaf58e89bb89fcb51f9d1204580">itemClicked()</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00225">m_startPos</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">rubberBand</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00213">showToolProperties</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00223">startPoint</a>, and <a class="el" href="../../d2/d3e/vsimplecurve_8h_source.html#l00080">VSimpleCurve::Type</a>.</p>
 
@@ -544,7 +547,7 @@ Private Attributes</h2></td></tr>
 <p>mouseRelease help catch mouse release event. </p>
 <p>Usefull when you need show dialog after working with tool visualization. </p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00517">MainWindow::initializeScenes()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00517">MainWindow::initializeScenes()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -580,9 +583,9 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">756</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">755</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00224">endPoint</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">isPanDragActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">isRubberBandActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">isRubberBandColorSet</a>, <a class="el" href="../../da/d5d/classVMainGraphicsView.html#a92ac082f654c125138cd37850234167b">mouseRelease()</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">rubberBand</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00222">rubberBandRect</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00224">endPoint</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">isPanDragActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">isRubberBandActive</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">isRubberBandColorSet</a>, <a class="el" href="../../da/d5d/classVMainGraphicsView.html#a92ac082f654c125138cd37850234167b">mouseRelease()</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">rubberBand</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00222">rubberBandRect</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
 </div>
 </div>
@@ -635,11 +638,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00840">840</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00839">839</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00898">SceneVisibleArea()</a>, and <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00258">VMainGraphicsScene::visibleItemsBoundingRect()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00897">SceneVisibleArea()</a>, and <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00258">VMainGraphicsScene::visibleItemsBoundingRect()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00375">MainWindow::addDraftBlock()</a>, <a class="el" href="../../d7/d79/showoperationpointname_8cpp_source.html#l00075">ShowOperationPointName::Do()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07559">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l04661">MainWindow::fullParseFile()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00133">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00536">VPattern::LiteParseTree()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06778">MainWindow::LoadPattern()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05012">MainWindow::New()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00110">VGraphicsSimpleTextItem::paint()</a>, <a class="el" href="../../d3/d8f/add__groupitem_8cpp_source.html#l00101">AddGroupItem::redo()</a>, <a class="el" href="../../d9/dc8/addgroup_8cpp_source.html#l00121">AddGroup::redo()</a>, <a class="el" href="../../d4/d97/addtocalc_8cpp_source.html#l00111">AddToCalc::redo()</a>, <a class="el" href="../../dd/dc9/delgroup_8cpp_source.html#l00103">DelGroup::redo()</a>, <a class="el" href="../../d4/d2a/move__groupitem_8cpp_source.html#l00106">MoveGroupItem::redo()</a>, <a class="el" href="../../df/df0/movepiece_8cpp_source.html#l00116">MovePiece::redo()</a>, <a class="el" href="../../dc/dbd/movespline_8cpp_source.html#l00094">MoveSpline::redo()</a>, <a class="el" href="../../dc/d3d/movesplinepath_8cpp_source.html#l00093">MoveSplinePath::redo()</a>, <a class="el" href="../../d6/dbc/remove__groupitem_8cpp_source.html#l00095">RemoveGroupItem::redo()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l03955">MainWindow::RestoreCurrentScene()</a>, <a class="el" href="../../d8/de3/vabstractoperation_8cpp_source.html#l00179">VAbstractOperation::setPointNamePosition()</a>, <a class="el" href="../../de/d21/vtooldoublepoint_8cpp_source.html#l00247">VToolDoublePoint::setPointNamePosition()</a>, <a class="el" href="../../dd/d37/vtoolsinglepoint_8cpp_source.html#l00177">VToolSinglePoint::setPointNamePosition()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00261">VNodePoint::setPointNamePosition()</a>, <a class="el" href="../../da/d1b/showdoublepointname_8cpp_source.html#l00091">ShowDoublePointName::setVisibility()</a>, <a class="el" href="../../d9/dcd/vabstractspline_8h_source.html#l00166">VAbstractSpline::ShowToolVisualization()</a>, <a class="el" href="../../d3/d8f/add__groupitem_8cpp_source.html#l00053">AddGroupItem::undo()</a>, <a class="el" href="../../d9/dc8/addgroup_8cpp_source.html#l00077">AddGroup::undo()</a>, <a class="el" href="../../d4/d97/addtocalc_8cpp_source.html#l00075">AddToCalc::undo()</a>, <a class="el" href="../../dd/dc9/delgroup_8cpp_source.html#l00080">DelGroup::undo()</a>, <a class="el" href="../../d4/d2a/move__groupitem_8cpp_source.html#l00057">MoveGroupItem::undo()</a>, <a class="el" href="../../dc/dbd/movespline_8cpp_source.html#l00085">MoveSpline::undo()</a>, <a class="el" href="../../dc/d3d/movesplinepath_8cpp_source.html#l00084">MoveSplinePath::undo()</a>, <a class="el" href="../../d6/dbc/remove__groupitem_8cpp_source.html#l00054">RemoveGroupItem::undo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01513">PatternPieceTool::updatePiece()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07989">MainWindow::zoomFirstShow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00375">MainWindow::addDraftBlock()</a>, <a class="el" href="../../d7/d79/showoperationpointname_8cpp_source.html#l00075">ShowOperationPointName::Do()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07559">MainWindow::exportDraftBlocksAs()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l04661">MainWindow::fullParseFile()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00132">GraphicsViewZoom::gentleZoom()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00536">VPattern::LiteParseTree()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06778">MainWindow::LoadPattern()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05012">MainWindow::New()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00110">VGraphicsSimpleTextItem::paint()</a>, <a class="el" href="../../d3/d8f/add__groupitem_8cpp_source.html#l00101">AddGroupItem::redo()</a>, <a class="el" href="../../d9/dc8/addgroup_8cpp_source.html#l00121">AddGroup::redo()</a>, <a class="el" href="../../d4/d97/addtocalc_8cpp_source.html#l00111">AddToCalc::redo()</a>, <a class="el" href="../../dd/dc9/delgroup_8cpp_source.html#l00103">DelGroup::redo()</a>, <a class="el" href="../../d4/d2a/move__groupitem_8cpp_source.html#l00106">MoveGroupItem::redo()</a>, <a class="el" href="../../df/df0/movepiece_8cpp_source.html#l00116">MovePiece::redo()</a>, <a class="el" href="../../dc/dbd/movespline_8cpp_source.html#l00094">MoveSpline::redo()</a>, <a class="el" href="../../dc/d3d/movesplinepath_8cpp_source.html#l00093">MoveSplinePath::redo()</a>, <a class="el" href="../../d6/dbc/remove__groupitem_8cpp_source.html#l00095">RemoveGroupItem::redo()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l03955">MainWindow::RestoreCurrentScene()</a>, <a class="el" href="../../d8/de3/vabstractoperation_8cpp_source.html#l00179">VAbstractOperation::setPointNamePosition()</a>, <a class="el" href="../../de/d21/vtooldoublepoint_8cpp_source.html#l00247">VToolDoublePoint::setPointNamePosition()</a>, <a class="el" href="../../dd/d37/vtoolsinglepoint_8cpp_source.html#l00177">VToolSinglePoint::setPointNamePosition()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00261">VNodePoint::setPointNamePosition()</a>, <a class="el" href="../../da/d1b/showdoublepointname_8cpp_source.html#l00091">ShowDoublePointName::setVisibility()</a>, <a class="el" href="../../d9/dcd/vabstractspline_8h_source.html#l00166">VAbstractSpline::ShowToolVisualization()</a>, <a class="el" href="../../d3/d8f/add__groupitem_8cpp_source.html#l00053">AddGroupItem::undo()</a>, <a class="el" href="../../d9/dc8/addgroup_8cpp_source.html#l00077">AddGroup::undo()</a>, <a class="el" href="../../d4/d97/addtocalc_8cpp_source.html#l00075">AddToCalc::undo()</a>, <a class="el" href="../../dd/dc9/delgroup_8cpp_source.html#l00080">DelGroup::undo()</a>, <a class="el" href="../../d4/d2a/move__groupitem_8cpp_source.html#l00057">MoveGroupItem::undo()</a>, <a class="el" href="../../dc/dbd/movespline_8cpp_source.html#l00085">MoveSpline::undo()</a>, <a class="el" href="../../dc/d3d/movesplinepath_8cpp_source.html#l00084">MoveSplinePath::undo()</a>, <a class="el" href="../../d6/dbc/remove__groupitem_8cpp_source.html#l00054">RemoveGroupItem::undo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01513">PatternPieceTool::updatePiece()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l07989">MainWindow::zoomFirstShow()</a>.</p>
 
 </div>
 </div>
@@ -666,9 +669,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00941">941</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00973">973</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00178">GraphicsViewZoom::initScrollAnimations()</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00212">zoom</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00177">GraphicsViewZoom::initScrollAnimations()</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00212">zoom</a>.</p>
 
 </div>
 </div>
@@ -695,9 +698,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00935">935</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00967">967</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00905">initScrollBars()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00937">initScrollBars()</a>.</p>
 
 </div>
 </div>
@@ -725,11 +728,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00898">898</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00897">897</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d7/da1/basepoint__tool_8cpp_source.html#l00201">BasePointTool::itemChange()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01016">PatternPieceTool::itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">VControlPointSpline::itemChange()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00183">VGraphicsSimpleTextItem::itemChange()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00840">NewSceneRect()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d7/da1/basepoint__tool_8cpp_source.html#l00201">BasePointTool::itemChange()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01016">PatternPieceTool::itemChange()</a>, <a class="el" href="../../de/d45/vcontrolpointspline_8cpp_source.html#l00163">VControlPointSpline::itemChange()</a>, <a class="el" href="../../de/dec/vgraphicssimpletextitem_8cpp_source.html#l00183">VGraphicsSimpleTextItem::itemChange()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00839">NewSceneRect()</a>.</p>
 
 </div>
 </div>
@@ -759,11 +762,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00621">621</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00620">620</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">isRubberBandColorSet</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>.</p>
 
 </div>
 </div>
@@ -791,7 +794,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00891">891</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00890">890</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 </div>
 </div>
@@ -811,7 +814,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00823">823</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00822">822</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00213">showToolProperties</a>.</p>
 
@@ -841,7 +844,56 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00517">MainWindow::initializeScenes()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00517">MainWindow::initializeScenes()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
+
+</div>
+</div>
+<a id="ab4877bb0aae5498e21b283cf2586b10f" name="ab4877bb0aae5498e21b283cf2586b10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4877bb0aae5498e21b283cf2586b10f">&#9670;&#160;</a></span>snapToOrigin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF VMainGraphicsView::snapToOrigin </td>
+          <td>(</td>
+          <td class="paramtype">const QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>snapToOrigin returns the position an item being dragged should take: the origin (0, 0) when the new position is within a few screen pixels of it, otherwise the position unchanged. Holding Alt turns snapping off. Only a drag by the mouse snaps: positions set by code (redrawing after a change) are returned unchanged, so a redraw never moves anything. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>the item being moved. </td></tr>
+    <tr><td class="paramname">pos</td><td>the new position, in the item's parent coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00912">912</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d7/da1/basepoint__tool_8cpp_source.html#l00201">BasePointTool::itemChange()</a>.</p>
 
 </div>
 </div>
@@ -869,11 +921,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">579</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">578</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00840">NewSceneRect()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00287">VMainGraphicsScene::setCurrentTransform()</a>, and <a class="el" href="../../da/d5d/classVMainGraphicsView.html#a1acab2c8d6d72e090b11b07bbb4d8fa2">signalZoomScaleChanged()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00839">NewSceneRect()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00287">VMainGraphicsScene::setCurrentTransform()</a>, and <a class="el" href="../../da/d5d/classVMainGraphicsView.html#a1acab2c8d6d72e090b11b07bbb4d8fa2">signalZoomScaleChanged()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00536">zoom100Percent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00500">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00512">zoomIn()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00524">zoomOut()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00558">zoomToRect()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00535">zoom100Percent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00499">zoomByScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00511">zoomIn()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00523">zoomOut()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00557">zoomToRect()</a>.</p>
 
 </div>
 </div>
@@ -900,9 +952,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00536">536</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00535">535</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>.</p>
 
@@ -932,9 +984,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00500">500</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00499">499</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00814">MaxScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00802">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00813">MaxScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00801">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d5c/groups__widget_8cpp_source.html#l01360">GroupsWidget::zoomToObject()</a>.</p>
 
@@ -963,9 +1015,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00512">512</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00511">511</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00814">MaxScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00813">MaxScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>.</p>
 
@@ -994,9 +1046,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00524">524</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00523">523</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00802">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00801">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>.</p>
 
@@ -1018,7 +1070,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00605">605</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00604">604</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00219">isZoomPanActive</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00216">isZoomToAreaActive</a>.</p>
 
@@ -1040,7 +1092,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00588">588</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00587">587</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00208">curMagnifier</a>, <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00219">isZoomPanActive</a>, and <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00216">isZoomToAreaActive</a>.</p>
 
@@ -1069,9 +1121,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00547">547</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00546">546</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00243">VMainGraphicsScene::setOriginsVisible()</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00258">VMainGraphicsScene::visibleItemsBoundingRect()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00558">zoomToRect()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00243">VMainGraphicsScene::setOriginsVisible()</a>, <a class="el" href="../../d1/d88/vmaingraphicsscene_8cpp_source.html#l00258">VMainGraphicsScene::visibleItemsBoundingRect()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00557">zoomToRect()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l02672">MainWindow::initializeToolsToolBar()</a>.</p>
 
@@ -1101,11 +1153,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00558">558</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00557">557</a> of file <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html">vmaingraphicsview.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00814">MaxScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00802">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00579">updateView()</a>.</p>
+<p class="reference">References <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00813">MaxScale()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00801">MinScale()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00578">updateView()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00547">zoomToFit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00546">zoomToFit()</a>.</p>
 
 </div>
 </div>
@@ -1132,7 +1184,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00208">208</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00588">zoomToAreaEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00587">zoomToAreaEnabled()</a>.</p>
 
 </div>
 </div>
@@ -1182,7 +1234,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00224">224</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1208,7 +1260,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00215">215</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00829">allowRubberBand()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00828">allowRubberBand()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>.</p>
 
 </div>
 </div>
@@ -1234,7 +1286,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00220">220</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1260,7 +1312,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00217">217</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1286,7 +1338,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00218">218</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00621">setRubberBandColor()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00620">setRubberBandColor()</a>.</p>
 
 </div>
 </div>
@@ -1312,7 +1364,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00219">219</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00605">zoomPanEnabled()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00588">zoomToAreaEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00604">zoomPanEnabled()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00587">zoomToAreaEnabled()</a>.</p>
 
 </div>
 </div>
@@ -1338,7 +1390,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00216">216</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00605">zoomPanEnabled()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00588">zoomToAreaEnabled()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00604">zoomPanEnabled()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00587">zoomToAreaEnabled()</a>.</p>
 
 </div>
 </div>
@@ -1364,7 +1416,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00225">225</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1442,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00221">221</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1416,7 +1468,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00222">222</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00756">mouseReleaseEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00755">mouseReleaseEvent()</a>.</p>
 
 </div>
 </div>
@@ -1442,7 +1494,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00214">214</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00905">initScrollBars()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00937">initScrollBars()</a>.</p>
 
 </div>
 </div>
@@ -1468,7 +1520,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00213">213</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00823">setShowToolOptions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00822">setShowToolOptions()</a>.</p>
 
 </div>
 </div>
@@ -1494,7 +1546,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00223">223</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00716">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00634">mousePressEvent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00715">mouseMoveEvent()</a>, and <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00633">mousePressEvent()</a>.</p>
 
 </div>
 </div>
@@ -1520,7 +1572,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html#l00212">212</a> of file <a class="el" href="../../df/d4b/vmaingraphicsview_8h_source.html">vmaingraphicsview.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00941">resetScrollAnimations()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d2/d31/vmaingraphicsview_8cpp_source.html#l00973">resetScrollAnimations()</a>.</p>
 
 </div>
 </div>

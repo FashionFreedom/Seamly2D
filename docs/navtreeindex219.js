@@ -1,5 +1,6 @@
 var NAVTREEINDEX219 =
 {
+"db/db2/msvc_2include_2xercesc_2util_2XMLFloat_8hpp_source.html":[4,0,0,1,15,2,0,0,6,103],
 "db/db3/vmath_8h.html":[4,0,0,1,8,20],
 "db/db3/vmath_8h.html#a4aa2c43b09c1300c334821f5507d6f71":[4,0,0,1,8,20,1],
 "db/db3/vmath_8h.html#a620539bb392918432be69023bb266dfb":[4,0,0,1,8,20,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX219 =
 "db/dcf/classDialogEllipticalArc.html#a8d6fec1633d696ce023b8f8e6fdb1b09":[3,0,111,24],
 "db/dcf/classDialogEllipticalArc.html#a8e8604e723bb82e857b8f4b0e359bcd9":[3,0,111,42],
 "db/dcf/classDialogEllipticalArc.html#a9a06360a31cad752c9afa3bb9e4da666":[3,0,111,23],
-"db/dcf/classDialogEllipticalArc.html#a9c8b00c65bb84ced937e6f0dd2944acd":[3,0,111,8],
-"db/dcf/classDialogEllipticalArc.html#a9fae72fa9604e6d4a75f58582011d028":[3,0,111,3]
+"db/dcf/classDialogEllipticalArc.html#a9c8b00c65bb84ced937e6f0dd2944acd":[3,0,111,8]
 };
