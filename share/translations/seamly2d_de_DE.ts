@@ -3617,6 +3617,10 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>%1 besteht bereits.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Möchten Sie es ersetzen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 Datei mit Basisnamen %2 besteht bereits.</translation>
     </message>

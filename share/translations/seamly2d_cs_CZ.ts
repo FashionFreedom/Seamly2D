@@ -3632,6 +3632,10 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
         <translation>%1 již existuje.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Chcete jej nahradit?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 souborů se základním názvem %2 již existuje.</translation>
     </message>

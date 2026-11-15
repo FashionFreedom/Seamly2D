@@ -3617,6 +3617,10 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
         <translation>%1 já existe.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Deseja substituí-lo?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 arquivos com nome base %2 já existem.</translation>
     </message>

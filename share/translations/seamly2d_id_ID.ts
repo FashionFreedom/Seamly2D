@@ -3632,6 +3632,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
         <translation>%1 sudah ada.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Apakah Anda ingin menggantinya?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 file dengan nama dasar %2 sudah ada.</translation>
     </message>

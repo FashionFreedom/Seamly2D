@@ -3617,6 +3617,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
         <translation>%1 bestaat al.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Wilt u het vervangen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 bestanden met basisnaam %2 bestaan al.</translation>
     </message>

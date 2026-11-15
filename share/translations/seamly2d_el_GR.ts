@@ -3634,6 +3634,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>Το %1 υπάρχει ήδη.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Θέλετε να το αντικαταστήσετε?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>Υπάρχουν ήδη %1 αρχεία με όνομα βάσης %2.</translation>
     </message>

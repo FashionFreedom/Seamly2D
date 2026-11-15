@@ -3618,6 +3618,10 @@ punti di controllo</translation>
         <translation>%1 esiste già.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Vuoi sostituirlo?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>Esistono già %1 file con nome base %2.</translation>
     </message>
