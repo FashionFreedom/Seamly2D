@@ -5606,6 +5606,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kan maten niet bijwerken.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Selecteer een patroondeel om het te dupliceren.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Het maten bestand &apos;%1&apos; kon niet gevonden worden.</translation>
     </message>
@@ -6356,6 +6360,14 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Toon Document Info</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Patroondeel dupliceren</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Geselecteerd patroondeel dupliceren</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8273,6 +8285,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Huidige naadtoeslag</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Kopie van %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Kopie van %1 %2></translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>Verplaats patroondeellabel</translation>
     </message>
@@ -8351,6 +8371,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Toon label Patroondeel</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dubbel</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8435,6 +8459,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Knooppunthoek bijwerken</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Patroondeel dupliceren</translation>
     </message>
     <message>
         <source>Update Notch</source>

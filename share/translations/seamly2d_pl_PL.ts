@@ -6481,6 +6481,14 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>Następny blok roboczy</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikuj element wykroju</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplikuj wybrany element wykroju</translation>
+    </message>
+    <message>
         <source>New pattern</source>
         <translation>Nowy wzór</translation>
     </message>
@@ -7007,6 +7015,10 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Draft Block %1</source>
         <translation>Projekt bloku %1</translation>
+    </message>
+    <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Wybierz element wykroju, aby go zduplikować.</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -8290,6 +8302,18 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>Aktualny dodatek na szew</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikuj element wykroju</translation>
+    </message>
+    <message>
+        <source>%1 copy</source>
+        <translation>%1 – kopia</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 – kopia %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>przesuń etykietę elementu wzoru</translation>
     </message>
@@ -8368,6 +8392,10 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Pokaż etykietę elementu</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
     </message>
     <message>
         <source>Rename...</source>

@@ -5623,6 +5623,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittausten päivittäminen epäonnistui.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Valitse kaavan osa monistaaksesi sen.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Mittaustiedostoa &apos;%1&apos; ei löytynyt.</translation>
     </message>
@@ -6373,6 +6377,14 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Näytä asiakirjan tiedot</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Monista kaavan osa</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Monista valittu kaavan osa</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8290,6 +8302,14 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>Nykyinen saumanvara</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopio</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 kopio %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>siirrä kaavapalan tunniste</translation>
     </message>
@@ -8368,6 +8388,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Näytä palan tunniste</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kopio</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8452,6 +8476,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Päivitä solmun kulma</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Monista kaavan osa</translation>
     </message>
     <message>
         <source>Update Notch</source>

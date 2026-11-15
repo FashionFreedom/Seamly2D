@@ -5625,6 +5625,10 @@ Do you want to save your changes?</source>
         <translation>Δεν ήταν δυνατή η ενημέρωση των μετρήσεων.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Επιλέξτε ένα κομμάτι πατρόν για να το αντιγράψετε.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Το αρχείο μετρήσεων &apos;%1&apos; δε βρέθηκε.</translation>
     </message>
@@ -6375,6 +6379,14 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>Εμφάνιση πληροφοριών εγγράφου</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Αντιγραφή κομματιού πατρόν</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Αντιγραφή επιλεγμένου κομματιού πατρόν</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8292,6 +8304,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Τρέχων περιθώριο ραφής</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 αντίγραφο</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 αντίγραφο %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>μετακίνηση ετικέτας κομματιού πατρόν</translation>
     </message>
@@ -8370,6 +8390,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Εμφάνιση ετικέτας κομματιού</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Διπλότυπο</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8454,6 +8478,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Ενημέρωση γωνίας κόμβου</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Αντιγραφή κομματιού πατρόν</translation>
     </message>
     <message>
         <source>Update Notch</source>

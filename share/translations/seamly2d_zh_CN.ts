@@ -5623,6 +5623,10 @@ Do you want to save your changes?</source>
         <translation>无法更新测量值.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation type="unfinished">请选择一个纸样裁片以进行复制.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>找不到测量文件“%1”.</translation>
     </message>
@@ -6373,6 +6377,14 @@ Do you want to save your changes?</source>
     <message>
         <source>Display document Info</source>
         <translation>显示文档信息</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>复制纸样裁片</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>复制选定的纸样裁片</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8290,6 +8302,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>当前缝份</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 副本</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 副本 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>移动样板标签</translation>
     </message>
@@ -8368,6 +8388,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>显示裁片标签</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8452,6 +8476,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>更新节点角度</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>复制纸样裁片</translation>
     </message>
     <message>
         <source>Update Notch</source>

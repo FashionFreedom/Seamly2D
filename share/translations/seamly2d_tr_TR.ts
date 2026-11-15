@@ -5623,6 +5623,10 @@ Do you want to save your changes?</translation>
         <translation>Ölçümler güncellenemedi.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Çoğaltmak için bir kalıp parçası seçin.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>&apos;%1&apos; ölçüm dosyası bulunamadı.</translation>
     </message>
@@ -6373,6 +6377,14 @@ Do you want to save your changes?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Belge Bilgilerini Görüntüle</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Kalıp Parçasını Çoğalt</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Seçili kalıp parçasını çoğalt</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8290,6 +8302,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Mevcut dikiş payı</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopya</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 kopya %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>desen parçası etiketini taşı</translation>
     </message>
@@ -8368,6 +8388,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Parça etiketini göster</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Çoğalt</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8452,6 +8476,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Düğüm Açısını Güncelle</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Kalıp Parçasını Çoğalt</translation>
     </message>
     <message>
         <source>Update Notch</source>

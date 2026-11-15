@@ -5621,6 +5621,10 @@ Chcete uložit své změny?</translation>
         <translation>Nelze aktualizovat měření.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Vyberte díl střihu, který chcete duplikovat.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Soubor s měřeními &apos;%1&apos; nebyl nalezen.</translation>
     </message>
@@ -6371,6 +6375,14 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Zobrazit informace o dokumentu</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikovat díl střihu</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplikovat vybraný díl střihu</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8288,6 +8300,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Aktuální švový přídavek</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopie</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation> %1 kopie %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>přesunout popisek dílu vzoru</translation>
     </message>
@@ -8366,6 +8386,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Zobrazit popisek kusu</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikát</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8450,6 +8474,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Aktualizovat úhel uzlu</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikovat díl střihu</translation>
     </message>
     <message>
         <source>Update Notch</source>

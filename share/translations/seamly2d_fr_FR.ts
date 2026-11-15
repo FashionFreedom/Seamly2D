@@ -5647,6 +5647,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Impossible de mettre à jour les mensurations.</translation>
     </message>
     <message>
+        <source>Select a pattern piece to duplicate it.</source>
+        <translation>Sélectionnez une pièce de patron pour la dupliquer.</translation>
+    </message>
+    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Le tableau de mesure &apos;%1&apos; est introuvable.</translation>
     </message>
@@ -6397,6 +6401,14 @@ Voulez-vous sauvegarder les changements ?</translation>
     <message>
         <source>Display document Info</source>
         <translation>Afficher les informations du document</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Dupliquer la pièce de patron</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Dupliquer la pièce de patron sélectionnée</translation>
     </message>
     <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
@@ -8314,6 +8326,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Marge de couture actuelle</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copie de %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copie de %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>déplace l&apos;étiquette de la pièce de patron</translation>
     </message>
@@ -8392,6 +8412,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Show Piece Label</source>
         <translation>Afficher l&apos;étiquette de la pièce</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dupliquer</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8476,6 +8500,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Update Node Angle</source>
         <translation>Mise à jour de l&apos;angle du nœud</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Dupliquer la pièce de patron</translation>
     </message>
     <message>
         <source>Update Notch</source>
