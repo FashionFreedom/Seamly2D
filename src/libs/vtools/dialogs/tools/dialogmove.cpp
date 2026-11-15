@@ -276,6 +276,7 @@ void DialogMove::ShowDialog(bool click)
         scene->ToggleSplinePathHover(false);
 
         qApp->getSceneView()->allowRubberBand(false);
+        qApp->getSceneView()->setAddToSelection(false);   // picking the mirror points is a plain click again
     }
     else if (!stage2 && !stage1 && prepare && click)
     {

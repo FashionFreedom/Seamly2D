@@ -1599,11 +1599,19 @@ void MainWindow::ClosedEditGroupDialog(int result)
 void MainWindow::handleRotationTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
+                         " Hold <b>%1</b> for multiple selection, "
+                         "Press <b>ENTER</b> to confirm selection")
+                         .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                         strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
+                     " click selected object to deselect it, "
+                     "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogRotation>
     (
         checked,
@@ -1613,6 +1621,14 @@ void MainWindow::handleRotationTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolRotation>,
         &MainWindow::ApplyDrawDialog<VToolRotation>
     );
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1627,8 +1643,8 @@ void MainWindow::handleMirrorByLineTool(bool checked)
 
     if (!qApp->Settings()->useControlSelect())
     {
-        QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
-                               " click objects or drag a box round them (click a selected object to drop it), "
+        tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
+                               " click selected object to deselect it, "
                                "Press <b>ENTER</b> to confirm selection");
     }
     SetToolButtonWithApply<DialogMirrorByLine>
@@ -1660,8 +1676,8 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
 
     if (!qApp->Settings()->useControlSelect())
     {
-        QString tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
-                                   " click objects or drag a box round them (click a selected object to drop it), "
+        tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
+                                   " click selected object to deselect it, "
                                    "Press <b>ENTER</b> to confirm selection");
     }
 
@@ -1688,11 +1704,19 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
 void MainWindow::handleMoveTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
+                         " Hold <b>%1</b> for multiple selection, "
+                         "Press <b>ENTER</b> to confirm selection")
+                         .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                         strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
+                     " click selected object to deselect it, "
+                     "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogMove>
     (
         checked,
@@ -1702,6 +1726,14 @@ void MainWindow::handleMoveTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolMove>,
         &MainWindow::ApplyDrawDialog<VToolMove>
     );
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5441,7 +5473,6 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->union_Action->setEnabled(pieceTools);
     ui->exportPieces_Action->setEnabled(pieceTools);
-    ui->duplicate_piece_action->setEnabled(pieceTools);
 
     //Layout
     ui->newPrintLayout_Action->setEnabled(layoutTools);
@@ -6531,36 +6562,6 @@ void MainWindow::createActions()
         ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->insertNodes_ToolButton->setChecked(true);
         handleInsertNodesTool(true);
-    });
-
-    // Duplicate pattern pieces in Piece mode. A duplicated piece is built from the same draft
-    // geometry as the original, so it follows changes to the draft.
-    auto selectedPiece = [this]() -> quint32
-    {
-        if (doc->getDraftStage() != Draw::Modeling)
-        {
-            return NULL_ID;
-        }
-        for (QGraphicsItem *item : pieceScene->selectedItems())
-        {
-            if (auto *piece = dynamic_cast<PatternPieceTool *>(item))
-            {
-                return piece->getId();
-            }
-        }
-        return NULL_ID;
-    };
-
-    connect(ui->duplicate_piece_action, &QAction::triggered, this, [this, selectedPiece]()
-    {
-        const quint32 id = selectedPiece();
-        if (id == NULL_ID)
-        {
-            statusBar()->showMessage(tr("Select a pattern piece to duplicate it."), 5000);
-            return;
-        }
-        PatternPieceTool::setCopiedPieceId(id);
-        PatternPieceTool::pasteCopy(pieceScene, doc, pattern);
     });
 
     //Tools-> Images submenu actions
