@@ -58,6 +58,7 @@
 #include "nodeDetails/internal_path_tool.h"
 #include "nodeDetails/anchorpoint_tool.h"
 #include "../dialogs/tools/piece/pattern_piece_dialog.h"
+#include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vpatternconverter.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vellipticalarc.h"
@@ -1348,7 +1349,49 @@ void PatternPieceTool::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
+    setToolTip(makeToolTip());
     QGraphicsPathItem::hoverEnterEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief makeToolTip the piece's name with its seamline and cutting line lengths, in pattern units.
+ */
+QString PatternPieceTool::makeToolTip() const
+{
+    const VContainer *pieceData = &(VAbstractTool::data);
+    const VPiece piece = pieceData->GetPiece(m_id);
+    const QString unit = UnitsToStr(qApp->patternUnit(), true);
+    auto length = [unit](qreal pixels)
+    {
+        return QStringLiteral("%1 %2").arg(qApp->fromPixel(pixels), 0, 'f', 2).arg(unit);
+    };
+
+    QString toolTip = QStringLiteral("<table style=font-size:11pt; font-weight:600>"
+                                     "<tr><td colspan=2><b>%1</b></td></tr>").arg(piece.GetName().toHtmlEscaped());
+    try
+    {
+        if (piece.hasSeamAllowanceBuiltIn())
+        {
+            toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                           .arg(tr("Cutting line (seam allowance built in)"), length(piece.cutPathLength(pieceData)));
+        }
+        else
+        {
+            toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                           .arg(tr("Seamline"), length(piece.seamlineLength(pieceData)));
+            if (piece.hasSeamAllowance())
+            {
+                toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                               .arg(tr("Cutting line"), length(piece.cutPathLength(pieceData)));
+            }
+        }
+    }
+    catch (const VException &)
+    {
+        // The piece's geometry isn't loaded; show its name only.
+    }
+    return toolTip + QStringLiteral("</table>");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
