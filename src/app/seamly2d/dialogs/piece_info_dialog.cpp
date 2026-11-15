@@ -61,21 +61,19 @@ enum Column
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief The NumericItem class sorts by the number stored in Qt::UserRole instead of the text, so "100.5" sorts after
- * "20.3". Cells without a number (-1) sort first.
- */
+// The NumericItem class sorts by the number stored in Qt::UserRole instead of the text, so "100.5" sorts after
+// "20.3". Cells without a number (-1) sort first.
 class NumericItem : public QTableWidgetItem
 {
 public:
-    NumericItem(const QString &text, qreal value)
+    NumericItem(const QString& text, qreal value)
         : QTableWidgetItem(text)
     {
         setData(Qt::UserRole, value);
         setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
     }
 
-    virtual bool operator<(const QTableWidgetItem &other) const override
+    virtual bool operator<(const QTableWidgetItem& other) const override
     {
         return data(Qt::UserRole).toDouble() < other.data(Qt::UserRole).toDouble();
     }
@@ -91,7 +89,7 @@ QLocale numberLocale()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTableWidgetItem *lengthItem(qreal pixels)
+QTableWidgetItem* lengthItem(qreal pixels)
 {
     if (pixels < 0)
     {
@@ -103,7 +101,7 @@ QTableWidgetItem *lengthItem(qreal pixels)
 } // anonymous namespace
 
 //---------------------------------------------------------------------------------------------------------------------
-PieceInfoDialog::PieceInfoDialog(const VContainer *data, QWidget *parent)
+PieceInfoDialog::PieceInfoDialog(const VContainer* data, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::PieceInfoDialog)
     , m_data(data)
@@ -127,9 +125,9 @@ PieceInfoDialog::~PieceInfoDialog()
 void PieceInfoDialog::fillTable()
 {
     const QString unit = UnitsToStr(qApp->patternUnit(), true);
-    const QHash<quint32, VPiece> *pieces = m_data->DataPieces();
+    const QHash<quint32, VPiece>* pieces = m_data->DataPieces();
 
-    QTableWidget *table = ui->pieces_TableWidget;
+    QTableWidget* table = ui->pieces_TableWidget;
     table->setSortingEnabled(false);
     table->setColumnCount(ColumnCount);
     table->setRowCount(pieces->size());
@@ -142,55 +140,55 @@ void PieceInfoDialog::fillTable()
     int row = 0;
     for (auto i = pieces->constBegin(); i != pieces->constEnd(); ++i, ++row)
     {
-        const VPiece &piece = i.value();
-        const VPieceLabelData &label = piece.GetPatternPieceData();
+        const VPiece& piece = i.value();
+        const VPieceLabelData& label = piece.GetPatternPieceData();
 
         table->setItem(row, ColumnName, new QTableWidgetItem(piece.GetName()));
         table->setItem(row, ColumnLetter, new QTableWidgetItem(label.GetLetter()));
-        QTableWidgetItem *quantity = new NumericItem(QString::number(label.GetQuantity()), label.GetQuantity());
+        QTableWidgetItem* quantity = new NumericItem(QString::number(label.GetQuantity()), label.GetQuantity());
         if (label.IsOnFold())
         {
             quantity->setToolTip(tr("Cut on fold"));
         }
         table->setItem(row, ColumnQuantity, quantity);
 
-        QTableWidgetItem *seamAllowance = nullptr;
+        QTableWidgetItem* seam_allowance = nullptr;
         if (piece.hasSeamAllowanceBuiltIn())
         {
-            seamAllowance = new NumericItem(tr("Built in"), -1);
+            seam_allowance = new NumericItem(tr("Built in"), -1);
         }
         else if (piece.hasSeamAllowance())
         {
-            seamAllowance = new NumericItem(numberLocale().toString(piece.GetSAWidth(), 'f', 2), piece.GetSAWidth());
+            seam_allowance = new NumericItem(numberLocale().toString(piece.GetSAWidth(), 'f', 2), piece.GetSAWidth());
         }
         else
         {
-            seamAllowance = new NumericItem(tr("None"), 0);
+            seam_allowance = new NumericItem(tr("None"), 0);
         }
-        table->setItem(row, ColumnSeamAllowance, seamAllowance);
+        table->setItem(row, ColumnSeamAllowance, seam_allowance);
 
         qreal seamline = -1;
-        qreal cuttingLine = -1;
+        qreal cutting_line = -1;
         try
         {
-            cuttingLine = piece.cutPathLength(m_data);
+            cutting_line = piece.cutPathLength(m_data);
             // With the seam allowance built in, the piece's outline is the cutting line and its seamline isn't drawn.
             if (not piece.hasSeamAllowanceBuiltIn())
             {
                 seamline = piece.seamlineLength(m_data);
             }
         }
-        catch (const VException &)
+        catch (const VException&)
         {
             // The piece's geometry isn't loaded (another draft block is active); leave the lengths blank.
         }
-        QTableWidgetItem *seamlineItem = lengthItem(seamline);
+        QTableWidgetItem* seamline_item = lengthItem(seamline);
         if (piece.hasSeamAllowanceBuiltIn())
         {
-            seamlineItem->setToolTip(tr("Seam allowance built in: the outline is the cutting line"));
+            seamline_item->setToolTip(tr("Seam allowance built in: the outline is the cutting line"));
         }
-        table->setItem(row, ColumnSeamline, seamlineItem);
-        table->setItem(row, ColumnCuttingLine, lengthItem(cuttingLine));
+        table->setItem(row, ColumnSeamline, seamline_item);
+        table->setItem(row, ColumnCuttingLine, lengthItem(cutting_line));
     }
 
     table->setSortingEnabled(true);
@@ -211,20 +209,20 @@ QStringList PieceInfoDialog::headerTexts() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief rowTexts the texts of one row as shown (in the current sort order).
+// rowTexts the texts of one row as shown (in the current sort order).
 QStringList PieceInfoDialog::rowTexts(int row) const
 {
     QStringList texts;
     for (int column = 0; column < ui->pieces_TableWidget->columnCount(); ++column)
     {
-        const QTableWidgetItem *item = ui->pieces_TableWidget->item(row, column);
+        const QTableWidgetItem* item = ui->pieces_TableWidget->item(row, column);
         texts.append(item != nullptr ? item->text() : QString());
     }
     return texts;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief copyToClipboard copies the table as tab separated text, which spreadsheets paste as rows and columns.
+// copyToClipboard copies the table as tab separated text, which spreadsheets paste as rows and columns.
 void PieceInfoDialog::copyToClipboard()
 {
     QStringList lines;
@@ -232,7 +230,7 @@ void PieceInfoDialog::copyToClipboard()
     for (int row = 0; row < ui->pieces_TableWidget->rowCount(); ++row)
     {
         QStringList texts = rowTexts(row);
-        for (QString &text : texts)
+        for (QString& text : texts)
         {
             text.replace(QLatin1Char('\t'), QLatin1Char(' '));
             text.replace(QLatin1Char('\n'), QLatin1Char(' '));
@@ -243,8 +241,8 @@ void PieceInfoDialog::copyToClipboard()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/// @brief exportToCsv saves the table as a CSV file, with the separator, encoding and header chosen as for exporting
-/// measurements.
+// exportToCsv saves the table as a CSV file, with the separator, encoding and header chosen as for exporting
+// measurements.
 void PieceInfoDialog::exportToCsv()
 {
     const QString suffix = QStringLiteral("csv");
@@ -255,16 +253,16 @@ void PieceInfoDialog::exportToCsv()
     }
     const QString path = QDir::homePath() + QLatin1Char('/') + name + QLatin1Char('.') + suffix;
 
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Export to CSV"), path,
-                                                    tr("Comma-Separated Values") + QLatin1String(" (*.csv)"),
-                                                    nullptr, qApp->Settings()->getUseNativeFileDialogs());
-    if (fileName.isEmpty())
+    QString file_name = QFileDialog::getSaveFileName(this, tr("Export to CSV"), path,
+                                                     tr("Comma-Separated Values") + QLatin1String(" (*.csv)"),
+                                                     nullptr, qApp->Settings()->getUseNativeFileDialogs());
+    if (file_name.isEmpty())
     {
         return;
     }
-    if (QFileInfo(fileName).suffix().isEmpty())
+    if (QFileInfo(file_name).suffix().isEmpty())
     {
-        fileName += QLatin1Char('.') + suffix;
+        file_name += QLatin1Char('.') + suffix;
     }
 
     DialogExportToCSV dialog(this);
@@ -292,7 +290,7 @@ void PieceInfoDialog::exportToCsv()
             csv.setText(row, column, texts.at(column));
         }
     }
-    csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), dialog.SelectedEncoding());
+    csv.toCSV(file_name, dialog.WithHeader(), dialog.Separator(), dialog.SelectedEncoding());
 
     qApp->Settings()->SetCSVSeparator(dialog.Separator());
     qApp->Settings()->SetCSVCodec(dialog.SelectedEncoding());

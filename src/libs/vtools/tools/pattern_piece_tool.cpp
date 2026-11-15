@@ -1354,44 +1354,42 @@ void PatternPieceTool::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief makeToolTip the piece's name with its seamline and cutting line lengths, in pattern units.
- */
+// makeToolTip: the piece's name with its seamline and cutting line lengths, in pattern units.
 QString PatternPieceTool::makeToolTip() const
 {
-    const VContainer *pieceData = &(VAbstractTool::data);
-    const VPiece piece = pieceData->GetPiece(m_id);
+    const VContainer* piece_data = &(VAbstractTool::data);
+    const VPiece piece = piece_data->GetPiece(m_id);
     const QString unit = UnitsToStr(qApp->patternUnit(), true);
     auto length = [unit](qreal pixels)
     {
         return QStringLiteral("%1 %2").arg(qApp->fromPixel(pixels), 0, 'f', 2).arg(unit);
     };
 
-    QString toolTip = QStringLiteral("<table style=font-size:11pt; font-weight:600>"
-                                     "<tr><td colspan=2><b>%1</b></td></tr>").arg(piece.GetName().toHtmlEscaped());
+    QString tool_tip = QStringLiteral("<table style=font-size:11pt; font-weight:600>"
+                                      "<tr><td colspan=2><b>%1</b></td></tr>").arg(piece.GetName().toHtmlEscaped());
     try
     {
         if (piece.hasSeamAllowanceBuiltIn())
         {
-            toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
-                           .arg(tr("Cutting line (seam allowance built in)"), length(piece.cutPathLength(pieceData)));
+            tool_tip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                            .arg(tr("Cutting line (seam allowance built in)"), length(piece.cutPathLength(piece_data)));
         }
         else
         {
-            toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
-                           .arg(tr("Seamline"), length(piece.seamlineLength(pieceData)));
+            tool_tip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                            .arg(tr("Seamline"), length(piece.seamlineLength(piece_data)));
             if (piece.hasSeamAllowance())
             {
-                toolTip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
-                               .arg(tr("Cutting line"), length(piece.cutPathLength(pieceData)));
+                tool_tip += QStringLiteral("<tr><td>%1:</td><td>%2</td></tr>")
+                                .arg(tr("Cutting line"), length(piece.cutPathLength(piece_data)));
             }
         }
     }
-    catch (const VException &)
+    catch (const VException&)
     {
         // The piece's geometry isn't loaded; show its name only.
     }
-    return toolTip + QStringLiteral("</table>");
+    return tool_tip + QStringLiteral("</table>");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

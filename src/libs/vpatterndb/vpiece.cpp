@@ -285,7 +285,7 @@ QVector<QPointF> VPiece::cutPathPoints(const VContainer *data) const
 //---------------------------------------------------------------------------------------------------------------------
 namespace
 {
-/// Length of a path taken as a closed loop (the last point joined back to the first).
+// Length of a path taken as a closed loop (the last point joined back to the first).
 qreal closedPathLength(QVector<QPointF> points)
 {
     if (points.size() < 2)
@@ -301,20 +301,16 @@ qreal closedPathLength(QVector<QPointF> points)
 } // anonymous namespace
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief seamlineLength length round the piece's main path, in pixels. With the seam allowance built in, the main path
- * is the cutting line.
- */
-qreal VPiece::seamlineLength(const VContainer *data) const
+// seamlineLength: length round the piece's main path, in pixels. With the seam allowance built in, the main path
+// is the cutting line.
+qreal VPiece::seamlineLength(const VContainer* data) const
 {
     return closedPathLength(mainPathPoints(data));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief cutPathLength length round the cutting line (see cutPathPoints), in pixels.
- */
-qreal VPiece::cutPathLength(const VContainer *data) const
+// cutPathLength: length round the cutting line (see cutPathPoints), in pixels.
+qreal VPiece::cutPathLength(const VContainer* data) const
 {
     return closedPathLength(cutPathPoints(data));
 }
