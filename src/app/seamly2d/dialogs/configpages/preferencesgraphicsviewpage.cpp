@@ -140,6 +140,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Constrain Angle Value & Modifier Key
     ui->constrainValue_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getConstrainValue());
     ui->constrainModKey_CheckBox->setChecked(qApp->Seamly2DSettings()->getConstrainModKey());
+    ui->cvontrol_select_checkbox->setChecked(qApp->Seamly2DSettings()->useControlSelect());
 
     // Zoom double mouse click to selected isTestModeEnabled
     ui->zoomDoubleClick_CheckBox->setChecked(qApp->Seamly2DSettings()->isZoomDoubleClick());
@@ -286,7 +287,8 @@ void PreferencesGraphicsViewPage::Apply()
     // Constrain Angle Value & Modifier Key
     settings->setConstrainValue(ui->constrainValue_DoubleSpinBox->value());
     settings->setConstrainModKey(ui->constrainModKey_CheckBox->isChecked());
-
+    settings->setControlSelect(ui->cvontrol_select_checkbox->isChecked());
+    
     // Zoom double mouse click to selected isTestModeEnabled
     settings->setZoomDoubleClick(ui->zoomDoubleClick_CheckBox->isChecked());
 

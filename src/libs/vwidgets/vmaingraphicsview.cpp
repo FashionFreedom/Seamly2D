@@ -708,7 +708,8 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         default:
             break;
     }
-    if (m_addToSelection && event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    if (m_addToSelection && !qApp->Settings()->useControlSelect() &&
+        event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
     {
         QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
                              event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
@@ -763,7 +764,8 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
  */
 void VMainGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
-    if (m_addToSelection && event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    if (m_addToSelection && !qApp->Settings()->useControlSelect() &&
+        event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
     {
         QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
                              event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
