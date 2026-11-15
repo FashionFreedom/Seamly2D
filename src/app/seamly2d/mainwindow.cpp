@@ -3590,7 +3590,7 @@ void MainWindow::handlePatternPiecesMenu()
 
     QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool") + "\tU");
     QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces") + "\tE, P");
-    QAction *action_PieceInfo    = menu.addAction(QIcon(":/toolicon/32x32/piece_info.png"),
+    QAction* action_piece_info   = menu.addAction(QIcon(":/toolicon/32x32/piece_info.png"),
                                                   tr("Pattern Piece Info") + "\tP, I");
     QAction *selectedAction      = menu.exec(QCursor::pos());
 
@@ -3609,7 +3609,7 @@ void MainWindow::handlePatternPiecesMenu()
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
     }
-    else if (selectedAction == action_PieceInfo)
+    else if (selectedAction == action_piece_info)
     {
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         showPieceInfo();
@@ -3617,13 +3617,11 @@ void MainWindow::handlePatternPiecesMenu()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief showPieceInfo shows the Pattern Piece Info dialog: a table of the pattern pieces with their seamline and
- * cutting line lengths.
- */
+// showPieceInfo shows the Pattern Piece Info dialog: a table of the pattern pieces with their seamline and
+// cutting line lengths.
 void MainWindow::showPieceInfo()
 {
-    PieceInfoDialog *dialog = new PieceInfoDialog(pattern, this);
+    PieceInfoDialog* dialog = new PieceInfoDialog(pattern, this);
     dialog->setAttribute(Qt::WA_DeleteOnClose, true);
     dialog->show();
 }

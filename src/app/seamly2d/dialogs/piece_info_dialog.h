@@ -43,13 +43,13 @@ class PieceInfoDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit             PieceInfoDialog(const VContainer *data, QWidget *parent = nullptr);
+    explicit             PieceInfoDialog(const VContainer* data, QWidget* parent = nullptr);
     virtual             ~PieceInfoDialog();
 
 private:
     Q_DISABLE_COPY(PieceInfoDialog)
-    Ui::PieceInfoDialog *ui;
-    const VContainer    *m_data;
+    Ui::PieceInfoDialog* ui;
+    const VContainer*    m_data;
 
     void                 fillTable();
     QStringList          headerTexts() const;
