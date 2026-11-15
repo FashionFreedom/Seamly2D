@@ -3656,6 +3656,10 @@ Spróbuj cofnąć ostatnią operację lub naprawić uszkodzoną formułę.</tran
         <translation>%1 już istnieje.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Czy chcesz to zastąpić?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>Istnieje już %1 plików o nazwie bazowej %2.</translation>
     </message>

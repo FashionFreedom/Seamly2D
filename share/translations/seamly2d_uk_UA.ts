@@ -3652,6 +3652,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>%1 вже існує.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Хочете замінити його?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 файлів з базовою назвою %2 вже існує.</translation>
     </message>

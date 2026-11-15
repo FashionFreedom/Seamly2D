@@ -3652,6 +3652,10 @@ Intente deshacer la última operación o corregir la fórmula defectuosa.</trans
         <translation>%1 ya existe.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>¿Quieres reemplazarlo?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 archivos con nombre básico %2 ya existen.</translation>
     </message>

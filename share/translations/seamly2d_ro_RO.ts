@@ -3633,6 +3633,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
         <translation>%1 există deja.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Doriți să îl înlocuiți?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>Există deja %1 fișiere cu numele de bază %2.</translation>
     </message>

@@ -3632,6 +3632,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>%1 on jo olemassa.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Haluatko korvata sen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 tiedostoa, joiden perusnimi on %2, on jo olemassa.</translation>
     </message>

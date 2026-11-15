@@ -3632,6 +3632,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>%1 已存在.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>您要替换它吗?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>基本名称为 %2 的 %1 个文件已存在.</translation>
     </message>

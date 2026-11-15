@@ -3632,6 +3632,10 @@ Lütfen son işlemi geri almayı veya bozuk formülü düzeltmeyi deneyin.</tran
         <translation>%1 zaten var.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Değiştirmek istiyor musunuz?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%2 taban adına sahip %1 dosya zaten mevcut.</translation>
     </message>
