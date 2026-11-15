@@ -5623,10 +5623,6 @@ Do you want to save your changes?</translation>
         <translation>Ölçümler güncellenemedi.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Çoğaltmak için bir kalıp parçası seçin.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>&apos;%1&apos; ölçüm dosyası bulunamadı.</translation>
     </message>
@@ -6399,16 +6395,32 @@ Do you want to save your changes?</translation>
         <translation>&lt;b&gt;Araç::İşlemler - Döndürme:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Döndürme:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Satır Satır Yansıtma:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Satır Satır Yansıtma:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Eksenle Aynalama:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Eksenle Aynalama:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Taşı:&lt;/b&gt; Bir veya daha fazla nesneyi seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Taşı:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9223,6 +9235,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Her zaman geçerli kalemi kullan</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>İşlem Araçları</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Birden fazla nesne seçimi için CTRL tuşunu kullanın</translation>
     </message>
     <message>
         <source>Dialogs</source>

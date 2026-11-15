@@ -5624,10 +5624,6 @@ Doriți să salvați modificările?</translation>
         <translation>Nu s-au putut actualiza măsurătorile.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Selectați o piesă de tipar pentru a o duplica.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Fișierul de măsurători &apos;%1&apos; nu a putut fi găsit.</translation>
     </message>
@@ -6397,19 +6393,35 @@ Doriți să salvați modificările?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Rotație:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Rotație:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Mutare:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Mutare:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9224,6 +9236,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Folosește întotdeauna stiloul curent</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Instrumente operaționale</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Utilizați CTRL pentru a selecta mai multe obiecte</translation>
     </message>
     <message>
         <source>Dialogs</source>

@@ -5606,10 +5606,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kan maten niet bijwerken.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Selecteer een patroondeel om het te dupliceren.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Het maten bestand &apos;%1&apos; kon niet gevonden worden.</translation>
     </message>
@@ -6382,16 +6378,32 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Draaiing:&lt;/b&gt; Kies een of meer objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Draaiing:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over Lijn:&lt;/b&gt; Kies een of meer objecten. Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over Lijn:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over As:&lt;/b&gt; Kies een of meerdere objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Verplaats:&lt;/b&gt; Kies een of meerdere objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Verplaats:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8290,7 +8302,7 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     </message>
     <message>
         <source>%1 copy %2</source>
-        <translation>Kopie van %1 %2></translation>
+        <translation>Kopie van %1 %2&gt;</translation>
     </message>
     <message>
         <source>move pattern piece label</source>
@@ -9206,6 +9218,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Gebruik altijd een actuele pen</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Bewerkingen Gereedschappen</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Gebruik CTRL voor meervoudige objectselectie</translation>
     </message>
     <message>
         <source>Dialogs</source>

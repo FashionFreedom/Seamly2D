@@ -5625,10 +5625,6 @@ Do you want to save your changes?</source>
         <translation>Δεν ήταν δυνατή η ενημέρωση των μετρήσεων.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Επιλέξτε ένα κομμάτι πατρόν για να το αντιγράψετε.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Το αρχείο μετρήσεων &apos;%1&apos; δε βρέθηκε.</translation>
     </message>
@@ -6401,16 +6397,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Tool::Operations - Περιστροφή:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Περιστροφή:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Μετακίνηση:&lt;/b&gt; Επιλογή ενός ή περισσότερων αντικειμένων - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, Πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Μετακίνηση:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9225,6 +9237,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>Να χρησιμοποιείτε πάντα τρέχουσα πένα</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Εργαλεία Λειτουργιών</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Χρησιμοποιήστε το πλήκτρο CTRL για επιλογή πολλαπλών αντικειμένων</translation>
     </message>
     <message>
         <source>Dialogs</source>

@@ -5610,10 +5610,6 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Impossibile aggiornare le misure.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Seleziona un pezzo del cartamodello per duplicarlo.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Il file delle misure &apos;%1&apos; non si trova.</translation>
     </message>
@@ -6386,16 +6382,32 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>&lt;b&gt;Strumento::Operazioni - Rotazione:&lt;/b&gt; Seleziona uno o più oggetti - Tieni premuto &lt;b&gt;%1&lt;/b&gt; per la selezione multipla, premi &lt;b&gt;INVIO&lt;/b&gt; per confermare la selezione</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Strumento::Operazioni - Rotazione:&lt;/b&gt; Seleziona uno o più oggetti - Clicca su un oggetto selezionato per deselezionarlo. Conferma la selezione premendo &lt;b&gt;INVIO&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Strumento::Operazioni - Specchia per linea:&lt;/b&gt; Seleziona uno o più oggetti - Tieni premuto &lt;b&gt;%1&lt;/b&gt; per la selezione multipla, premi &lt;b&gt;INVIO&lt;/b&gt; per confermare la selezione</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Strumento::Operazioni - Specchia per linea:&lt;/b&gt; Seleziona uno o più oggetti - Clicca su un oggetto selezionato per deselezionarlo. Conferma la selezione premendo &lt;b&gt;INVIO&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Strumento::Operazioni - Specchio per asse:&lt;/b&gt; Seleziona uno o più oggetti - Tieni premuto &lt;b&gt;%1&lt;/b&gt; per la selezione multipla, premi &lt;b&gt;INVIO&lt;/b&gt; per confermare la selezione</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Strumento::Operazioni - Specchio per asse:&lt;/b&gt; Seleziona uno o più oggetti - Clicca su un oggetto selezionato per deselezionarlo. Conferma la selezione premendo &lt;b&gt;INVIO&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Strumento::Operazioni - Sposta:&lt;/b&gt; Seleziona uno o più oggetti - Tieni premuto &lt;b&gt;%1&lt;/b&gt; per la selezione multipla, premi &lt;b&gt;INVIO&lt;/b&gt; per confermare la selezione</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Strumento::Operazioni - Sposta:&lt;/b&gt; Seleziona uno o più oggetti - Clicca su un oggetto selezionato per deselezionarlo. Conferma la selezione premendo &lt;b&gt;INVIO&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9210,6 +9222,14 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Utilizzare sempre la penna corrente</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Strumenti operativi</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Usa CTRL per la selezione multipla di oggetti</translation>
     </message>
     <message>
         <source>Dialogs</source>

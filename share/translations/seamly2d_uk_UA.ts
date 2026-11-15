@@ -5628,10 +5628,6 @@ Do you want to save your changes?</source>
         <translation>Не вдалося оновити мірки.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Виберіть деталь викрійки, щоб дублювати її.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Файл мірок &apos;%1&apos; не вдалося знайти.</translation>
     </message>
@@ -6440,16 +6436,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Інструмент::Операції - Обертання:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Інструмент::Операції - Обертання:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення по лінії:&lt;/b&gt; Виберіть один або кілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення по лінії:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення за віссю:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Інструмент::Операції - Дзеркальне відображення за віссю:&lt;/b&gt;  Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Інструмент::Операції - Переміщення:&lt;/b&gt; Виберіть один або декілька об&apos;єктів - Утримуйте &lt;b&gt;%1&lt;/b&gt; для множинного вибору, натисніть &lt;b&gt;ENTER&lt;/b&gt; для підтвердження вибору</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Інструмент::Операції - Переміщення:&lt;/b&gt; Виберіть один або кілька об'єктів — клацніть вибраний об'єкт, щоб скасувати його вибір. Натисніть &lt;b&gt;ENTER&lt;/b&gt;, щоб підтвердити вибір</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9188,6 +9200,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Auto clear formula</source>
         <translation>Формула автоматичного очищення</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Інструменти операцій</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Використовуйте CTRL для вибору кількох об'єктів</translation>
     </message>
     <message>
         <source>Zoom</source>

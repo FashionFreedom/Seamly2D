@@ -5643,10 +5643,6 @@ Do you want to save your changes?</source>
         <translation>No se pudieron actualizar las medidas.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Seleccione una pieza de patrón para duplicarla.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>No se ha podido encontrar el archivo de medidas &apos;%1&apos;.</translation>
     </message>
@@ -6415,16 +6411,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Rotación:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Rotación:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Línea:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Línea:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Eje:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Eje:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Mover:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Mover:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9248,6 +9260,14 @@ actualización:</translation>
     <message>
         <source>Quality:</source>
         <translation>Calidad:</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Herramientas de Operaciones</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Use CTRL para seleccionar varios objetos</translation>
     </message>
     <message>
         <source> ms</source>

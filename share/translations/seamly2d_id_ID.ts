@@ -5623,10 +5623,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Tidak dapat memperbarui pengukuran.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Pilih bagian pola untuk menduplikatnya.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>File pengukuran &apos;%1&apos; tidak dapat ditemukan.</translation>
     </message>
@@ -6399,16 +6395,32 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>&lt;b&gt;Alat::Operasi - Rotasi:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Alat::Operasi - Rotasi:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Cermin menurut Sumbu:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Cermin menurut Sumbu:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Pindah:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Pindah:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9223,6 +9235,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Selalu gunakan pena saat ini</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Alat Operasional</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Gunakan CTRL untuk pemilihan beberapa objek</translation>
     </message>
     <message>
         <source>Dialogs</source>

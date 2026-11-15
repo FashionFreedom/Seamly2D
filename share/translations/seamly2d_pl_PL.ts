@@ -6677,16 +6677,32 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>&lt;b&gt;Narzędzie::Operacje - Obrót:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby dokonać wielokrotnego wyboru, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Narzędzie::Operacje - Obrót:&lt;/b&gt; Wybierz jeden lub więcej obiektów – kliknij wybrany obiekt, aby cofnąć jego zaznaczenie. Zatwierdź wybór, naciskając klawisz &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według linii:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według linii:&lt;/b&gt; Wybierz jeden lub więcej obiektów – kliknij wybrany obiekt, aby cofnąć jego zaznaczenie. Zatwierdź wybór, naciskając klawisz &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według osi:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Narzędzie::Operacje - Lustro według osi:&lt;/b&gt; Wybierz jeden lub więcej obiektów – kliknij wybrany obiekt, aby cofnąć jego zaznaczenie. Zatwierdź wybór, naciskając klawisz &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Narzędzie::Operacje - Przesuń:&lt;/b&gt; Wybierz jeden lub więcej obiektów - przytrzymaj &lt;b&gt;%1&lt;/b&gt;, aby wybrać wiele obiektów, naciśnij &lt;b&gt;ENTER&lt;/b&gt;, aby potwierdzić wybór</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Narzędzie::Operacje - Przesuń:&lt;/b&gt; Wybierz jeden lub więcej obiektów – kliknij wybrany obiekt, aby cofnąć jego zaznaczenie. Zatwierdź wybór, naciskając klawisz &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -7015,10 +7031,6 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Draft Block %1</source>
         <translation>Projekt bloku %1</translation>
-    </message>
-    <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Wybierz element wykroju, aby go zduplikować.</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -9287,6 +9299,14 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Automatyczne czyszczenie formuły</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Narzędzia operacyjne</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Użyj klawisza CTRL, aby wybrać wiele obiektów</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
