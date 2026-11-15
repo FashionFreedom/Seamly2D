@@ -75,7 +75,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
@@ -3309,6 +3309,37 @@ border-radius: 4px;
            <widget class="QCheckBox" name="autoClearFx_CheckBox">
             <property name="text">
              <string>Auto clear formula</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="snap_to_origin_groupbox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Operations Tools</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_28">
+          <item>
+           <widget class="QCheckBox" name="cvontrol_select_checkbox">
+            <property name="text">
+             <string>Use CTRL for muliple object selection</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
             </property>
            </widget>
           </item>

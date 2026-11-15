@@ -1619,9 +1619,18 @@ void MainWindow::handleRotationTool(bool checked)
 void MainWindow::handleMirrorByLineTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
+    QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
+                                   " Hold <b>%1</b> for multiple selection, "
+                                   "Press <b>ENTER</b> to confirm selection")
+                                   .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                                                                    strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
                                " click objects or drag a box round them (click a selected object to drop it), "
                                "Press <b>ENTER</b> to confirm selection");
+    }
     SetToolButtonWithApply<DialogMirrorByLine>
     (
         checked,
@@ -1630,9 +1639,12 @@ void MainWindow::handleMirrorByLineTool(bool checked)
         tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByLine>,
         &MainWindow::ApplyDrawDialog<VToolMirrorByLine>
     );
-    if (checked)
+    if (!qApp->Settings()->useControlSelect())
     {
-        ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
     }
 }
 
@@ -1640,9 +1652,19 @@ void MainWindow::handleMirrorByLineTool(bool checked)
 void MainWindow::handleMirrorByAxisTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
-                               " click objects or drag a box round them (click a selected object to drop it), "
-                               "Press <b>ENTER</b> to confirm selection");
+    QString  tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
+                                   " Hold <b>%1</b> for multiple selection, "
+                                   "Press <b>ENTER</b> to confirm selection")
+                                   .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                                                                    strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        QString tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
+                                   " click objects or drag a box round them (click a selected object to drop it), "
+                                   "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogMirrorByAxis>
     (
         checked,
@@ -1652,9 +1674,13 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByAxis>,
         &MainWindow::ApplyDrawDialog<VToolMirrorByAxis>
     );
-    if (checked)
+
+    if (!qApp->Settings()->useControlSelect())
     {
-        ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
     }
 }
 
