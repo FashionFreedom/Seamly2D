@@ -5410,6 +5410,7 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->union_Action->setEnabled(pieceTools);
     ui->exportPieces_Action->setEnabled(pieceTools);
+    ui->duplicate_piece_action->setEnabled(pieceTools);
 
     //Layout
     ui->newPrintLayout_Action->setEnabled(layoutTools);
@@ -6126,85 +6127,6 @@ void MainWindow::createActions()
     connect(ui->pieceMode_Action, &QAction::triggered, this, &MainWindow::showPieceMode);
     connect(ui->layoutMode_Action, &QAction::triggered, this, &MainWindow::showLayoutMode);
 
-    // Copy, paste and duplicate pattern pieces in Piece mode. A pasted piece is built from the same draft
-    // geometry as the original, so it follows changes to the draft too.
-    auto selectedPiece = [this]() -> quint32
-    {
-        if (doc->getDraftStage() != Draw::Modeling)
-        {
-            return NULL_ID;
-        }
-        for (QGraphicsItem *item : pieceScene->selectedItems())
-        {
-            if (auto *piece = dynamic_cast<PatternPieceTool *>(item))
-            {
-                return piece->getId();
-            }
-        }
-        return NULL_ID;
-    };
-    auto pasteCopied = [this]()
-    {
-        if (doc->getDraftStage() != Draw::Modeling)
-        {
-            statusBar()->showMessage(tr("Pieces can be pasted in Piece mode."), 5000);
-            return;
-        }
-        if (!PatternPieceTool::copiedPieceExists(pattern))
-        {
-            statusBar()->showMessage(tr("Copy a pattern piece first (select it and press Ctrl+C)."), 5000);
-            return;
-        }
-        if (PatternPieceTool::pasteCopied(pieceScene, doc, pattern) == nullptr)
-        {
-            statusBar()->showMessage(tr("The piece could not be pasted."), 5000);
-        }
-    };
-
-    QAction *copyPiece_Action = new QAction(QIcon::fromTheme("edit-copy"), tr("Copy Piece"), this);
-    copyPiece_Action->setShortcut(QKeySequence::Copy);
-    copyPiece_Action->setToolTip(tr("Copy the selected pattern piece"));
-    QAction *pastePiece_Action = new QAction(QIcon::fromTheme("edit-paste"), tr("Paste Piece"), this);
-    pastePiece_Action->setShortcut(QKeySequence::Paste);
-    pastePiece_Action->setToolTip(tr("Paste the copied pattern piece beside the original"));
-    QAction *duplicatePiece_Action = new QAction(tr("Duplicate Piece"), this);
-    duplicatePiece_Action->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_D));
-    duplicatePiece_Action->setToolTip(tr("Copy and paste the selected pattern piece in one step"));
-
-    QAction *firstEditAction = ui->edit_Menu->actions().isEmpty() ? nullptr : ui->edit_Menu->actions().first();
-    ui->edit_Menu->insertAction(firstEditAction, copyPiece_Action);
-    ui->edit_Menu->insertAction(firstEditAction, pastePiece_Action);
-    ui->edit_Menu->insertAction(firstEditAction, duplicatePiece_Action);
-    ui->piece_Menu->addSeparator();
-    ui->piece_Menu->addAction(copyPiece_Action);
-    ui->piece_Menu->addAction(pastePiece_Action);
-    ui->piece_Menu->addAction(duplicatePiece_Action);
-
-    connect(copyPiece_Action, &QAction::triggered, this, [this, selectedPiece]()
-    {
-        const quint32 id = selectedPiece();
-        if (id == NULL_ID)
-        {
-            statusBar()->showMessage(tr("Select a pattern piece in Piece mode to copy it."), 5000);
-            return;
-        }
-        PatternPieceTool::setCopiedPieceId(id);
-        statusBar()->showMessage(tr("Copied \"%1\". Press Ctrl+V to paste.").arg(pattern->GetPiece(id).GetName()),
-                                 5000);
-    });
-    connect(pastePiece_Action, &QAction::triggered, this, pasteCopied);
-    connect(duplicatePiece_Action, &QAction::triggered, this, [this, selectedPiece, pasteCopied]()
-    {
-        const quint32 id = selectedPiece();
-        if (id == NULL_ID)
-        {
-            statusBar()->showMessage(tr("Select a pattern piece in Piece mode to duplicate it."), 5000);
-            return;
-        }
-        PatternPieceTool::setCopiedPieceId(id);
-        pasteCopied();
-    });
-
     connect(ui->toggleWireframe_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setWireframe(checked);
@@ -6578,6 +6500,36 @@ void MainWindow::createActions()
         ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->insertNodes_ToolButton->setChecked(true);
         handleInsertNodesTool(true);
+    });
+
+    // Duplicate pattern pieces in Piece mode. A duplicated piece is built from the same draft
+    // geometry as the original, so it follows changes to the draft.
+    auto selectedPiece = [this]() -> quint32
+    {
+        if (doc->getDraftStage() != Draw::Modeling)
+        {
+            return NULL_ID;
+        }
+        for (QGraphicsItem *item : pieceScene->selectedItems())
+        {
+            if (auto *piece = dynamic_cast<PatternPieceTool *>(item))
+            {
+                return piece->getId();
+            }
+        }
+        return NULL_ID;
+    };
+
+    connect(ui->duplicate_piece_action, &QAction::triggered, this, [this, selectedPiece]()
+    {
+        const quint32 id = selectedPiece();
+        if (id == NULL_ID)
+        {
+            statusBar()->showMessage(tr("Select a pattern piece to duplicate it."), 5000);
+            return;
+        }
+        PatternPieceTool::setCopiedPieceId(id);
+        PatternPieceTool::pasteCopy(pieceScene, doc, pattern);
     });
 
     //Tools-> Images submenu actions

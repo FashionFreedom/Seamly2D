@@ -78,8 +78,8 @@ public:
 
     static PatternPieceTool *duplicate(quint32 pieceId, const QPointF &offset, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data);
-    static PatternPieceTool *pasteCopied(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data);
-    static quint32           copiedPieceId() { return s_copiedPieceId; }
+    static PatternPieceTool *pasteCopy(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data);
+    static quint32           copiedPieceId() { return s_copied_piece_id; }
     static void              setCopiedPieceId(quint32 id);
     static bool              copiedPieceExists(const VContainer *data);
 
@@ -185,13 +185,13 @@ protected:
 private:
     Q_DISABLE_COPY(PatternPieceTool)
 
-    static quint32          s_copiedPieceId;    // piece copied with Copy, for Paste
-    static int              s_pasteCount;       // pastes since the last Copy, to place each one further along
+    static quint32          s_copied_piece_id; // piece copied with Duplicate
+    static int              s_copy_count;      // pastes since the last Copy, to place each one further along
 
-    QPainterPath            m_mainPath;    // Must be first to prevent crash
+    QPainterPath            m_mainPath;        // Must be first to prevent crash
     QRectF                  m_pieceRect;
     QPainterPath            m_cutPath;
-    VMainGraphicsScene     *m_pieceScene;  /// @brief pieceScene pointer to the scene. */
+    VMainGraphicsScene     *m_pieceScene;      /// @brief pieceScene pointer to the scene.
     QString                 m_blockName;
     NonScalingFillPathItem *m_cutLine;
     NonScalingFillPathItem *m_allowanceFill;
