@@ -558,11 +558,16 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
     if (isTiled)
     {
         // when isTiled, the landscape tiles have to be rotated, because the pages
-        // stay portrait in the pdf
+        // stay portrait in the pdf.
+        // The painter works in device pixels. Many printer drivers ignore the requested 96 dpi and keep their own
+        // resolution, so the shift is taken in device pixels, or the tile lands partly off the paper.
         if(settings->getTiledPDFOrientation() == PageOrientation::Landscape)
         {
             painter.rotate(-90);
-            painter.translate(-ToPixel(printer->pageRect(QPrinter::Millimeter).height(),Unit::Mm), 0);
+            const qreal paperHeight = printer->fullPage()
+                    ? printer->paperRect(QPrinter::DevicePixel).height()
+                    : printer->pageRect(QPrinter::DevicePixel).height();
+            painter.translate(-paperHeight, 0);
         }
 
         poster = QSharedPointer<QVector<PosterData>>(new QVector<PosterData>());
@@ -654,9 +659,19 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
                 qreal x,y;
                 if(printer->fullPage())
                 {
-                    QMarginsF printerMargins = printer->pageLayout().margins();
-                    x = qFloor(ToPixel(printerMargins.left(),Unit::Mm));
-                    y = qFloor(ToPixel(printerMargins.top(),Unit::Mm));
+                    const QMarginsF printerMargins = printer->pageLayout().margins(QPageLayout::Millimeter);
+                    if (isTiled && settings->getTiledPDFOrientation() == PageOrientation::Landscape)
+                    {
+                        // With the -90 degree rotation the tile's left edge lies on the paper's bottom edge
+                        // and the tile's top edge on the paper's left edge.
+                        x = qFloor(ToPixel(printerMargins.bottom(),Unit::Mm));
+                        y = qFloor(ToPixel(printerMargins.left(),Unit::Mm));
+                    }
+                    else
+                    {
+                        x = qFloor(ToPixel(printerMargins.left(),Unit::Mm));
+                        y = qFloor(ToPixel(printerMargins.top(),Unit::Mm));
+                    }
                 }
                 else
                 {
@@ -1450,11 +1465,31 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     }
     else
     {
-        VSettings *settings = qApp->Seamly2DSettings();
-        QSizeF size = QSizeF(settings->getTiledPDFPaperWidth(Unit::Mm), settings->getTiledPDFPaperHeight(Unit::Mm));
-        const QPageSize pSZ = FindQPrinterPageSize(size);
-        printer->setPageSize(pSZ);
-        // no need to take custom into account, because custom isn't a format option for tiled pdf.
+        // When printing tiles on a real printer, use the paper loaded in that printer (e.g. Letter) rather than the
+        // tiled PDF paper setting, so the tiles match the physical sheets. The print dialog can still change it.
+        QPageSize printerPaper;
+        if (printType != PrintType::PrintPDF)
+        {
+            const QPrinterInfo info(*printer);
+            if (!info.isNull())
+            {
+                printerPaper = info.defaultPageSize();
+            }
+        }
+
+        if (printerPaper.isValid())
+        {
+            printer->setPageSize(printerPaper);
+        }
+        else
+        {
+            VSettings *settings = qApp->Seamly2DSettings();
+            QSizeF size = QSizeF(settings->getTiledPDFPaperWidth(Unit::Mm),
+                                 settings->getTiledPDFPaperHeight(Unit::Mm));
+            const QPageSize pSZ = FindQPrinterPageSize(size);
+            printer->setPageSize(pSZ);
+            // no need to take custom into account, because custom isn't a format option for tiled pdf.
+        }
     }
 
 
@@ -1475,6 +1510,21 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     {
         VSettings *settings = qApp->Seamly2DSettings();
         QMarginsF  pageMargin = QMarginsF(settings->GetTiledPDFMargins(Unit::Mm));
+
+        // Tiles must stay inside the area the printer can actually print, or the edges of the pattern are lost.
+        // Tiles may be turned, so use the largest of the printer's minimum margins on every side, plus 1 mm.
+        if (printType != PrintType::PrintPDF)
+        {
+            QPageLayout layout = printer->pageLayout();
+            layout.setUnits(QPageLayout::Millimeter);
+            const QMarginsF minimum = layout.minimumMargins();
+            const qreal minimumMm = qMax(qMax(minimum.left(), minimum.right()),
+                                         qMax(minimum.top(), minimum.bottom())) + 1.0;
+            pageMargin.setLeft(qMax(pageMargin.left(), minimumMm));
+            pageMargin.setTop(qMax(pageMargin.top(), minimumMm));
+            pageMargin.setRight(qMax(pageMargin.right(), minimumMm));
+            pageMargin.setBottom(qMax(pageMargin.bottom(), minimumMm));
+        }
         if(settings->getTiledPDFOrientation() == PageOrientation::Landscape)
         {
             // because when painting we have a -90rotation in landscape modus,
