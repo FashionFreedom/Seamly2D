@@ -135,6 +135,7 @@ var namespaces_dup =
       [ "settingGraphicsViewBackgroundColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0604d94a9381c21e923e9c43d2d18fca", null ],
       [ "settingGraphicsViewConstrainModKey", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a1552a1154c4ed66855dbd6a315303c1c", null ],
       [ "settingGraphicsViewConstrainValue", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a4048016dc63639c6b0af9811199d387a", null ],
+      [ "settingGraphicsViewConytrolSelect", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a811757bd32c645b462b0adfd94f9ec29", null ],
       [ "settingGraphicsViewDefaultLineColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aca9554d8c9c2dcd70bca8de5b32aa7b6", null ],
       [ "settingGraphicsViewDefaultLineType", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#afe17da3bd7e3382419fcb24b1529943f", null ],
       [ "settingGraphicsViewDefaultLineWeight", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#af83af5c6ba4c30223b2585c526d8c79c", null ],

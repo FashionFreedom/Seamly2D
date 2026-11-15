@@ -1,5 +1,9 @@
 var NAVTREEINDEX198 =
 {
+"da/d79/classDOMEntityReferenceImpl.html#a97482341389252764f741154cffccbd8":[3,0,171,18],
+"da/d79/classDOMEntityReferenceImpl.html#a97482341389252764f741154cffccbd8":[3,0,171,16],
+"da/d79/classDOMEntityReferenceImpl.html#a9b2e4e1bcec2dac5ad2baddc4c90b5e1":[3,0,171,0],
+"da/d79/classDOMEntityReferenceImpl.html#a9b2e4e1bcec2dac5ad2baddc4c90b5e1":[3,0,171,4],
 "da/d79/classDOMEntityReferenceImpl.html#a9b2e4e1bcec2dac5ad2baddc4c90b5e1":[3,0,171,12],
 "da/d79/classDOMEntityReferenceImpl.html#a9b2e4e1bcec2dac5ad2baddc4c90b5e1":[3,0,171,8],
 "da/d79/classDOMEntityReferenceImpl.html#a9d77fb8ffcb37eb1941717806c1a3503":[3,0,171,99],
@@ -81,8 +85,8 @@ var NAVTREEINDEX198 =
 "da/d79/classDOMEntityReferenceImpl.html#aea0af464a1d1e4c09bea4e0056912899":[3,0,171,177],
 "da/d79/classDOMEntityReferenceImpl.html#aea0af464a1d1e4c09bea4e0056912899":[3,0,171,178],
 "da/d79/classDOMEntityReferenceImpl.html#aea0af464a1d1e4c09bea4e0056912899":[3,0,171,179],
-"da/d79/classDOMEntityReferenceImpl.html#aeb63f1ef05eb64ecf0f0e32721af51b0":[3,0,171,112],
 "da/d79/classDOMEntityReferenceImpl.html#aeb63f1ef05eb64ecf0f0e32721af51b0":[3,0,171,113],
+"da/d79/classDOMEntityReferenceImpl.html#aeb63f1ef05eb64ecf0f0e32721af51b0":[3,0,171,112],
 "da/d79/classDOMEntityReferenceImpl.html#aeb63f1ef05eb64ecf0f0e32721af51b0":[3,0,171,114],
 "da/d79/classDOMEntityReferenceImpl.html#aeb63f1ef05eb64ecf0f0e32721af51b0":[3,0,171,115],
 "da/d79/classDOMEntityReferenceImpl.html#af345de15a9d8ca7ac86a2032e330ce12":[3,0,171,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX198 =
 "da/d80/classDOMDeepNodeListPool.html#af367e2c900feadc88af8a3be80498611":[3,0,155,68],
 "da/d81/vinternalvariable__p_8h.html":[4,0,0,1,10,1,20],
 "da/d81/vinternalvariable__p_8h_source.html":[4,0,0,1,10,1,20],
-"da/d83/classXSMultiValueFacet.html":[3,0,915],
-"da/d83/classXSMultiValueFacet.html#a09a87c3809bbfb6fd000052a9a95c5ae":[3,0,915,32],
-"da/d83/classXSMultiValueFacet.html#a0c183653ddd8f8b622691ded87055cdc":[3,0,915,35],
-"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,12],
-"da/d83/classXSMultiValueFacet.html#a1490e6d1a88abbac0425cf9b9ac9b49d":[3,0,915,13]
+"da/d83/classXSMultiValueFacet.html":[3,0,915]
 };

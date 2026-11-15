@@ -85,6 +85,7 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsViewBackgroundColor", "d4/d11/vcommonsettings_8cpp.html#a0604d94a9381c21e923e9c43d2d18fca", null ],
     [ "settingGraphicsViewConstrainModKey", "d4/d11/vcommonsettings_8cpp.html#a1552a1154c4ed66855dbd6a315303c1c", null ],
     [ "settingGraphicsViewConstrainValue", "d4/d11/vcommonsettings_8cpp.html#a4048016dc63639c6b0af9811199d387a", null ],
+    [ "settingGraphicsViewConytrolSelect", "d4/d11/vcommonsettings_8cpp.html#a811757bd32c645b462b0adfd94f9ec29", null ],
     [ "settingGraphicsViewDefaultLineColor", "d4/d11/vcommonsettings_8cpp.html#aca9554d8c9c2dcd70bca8de5b32aa7b6", null ],
     [ "settingGraphicsViewDefaultLineType", "d4/d11/vcommonsettings_8cpp.html#afe17da3bd7e3382419fcb24b1529943f", null ],
     [ "settingGraphicsViewDefaultLineWeight", "d4/d11/vcommonsettings_8cpp.html#af83af5c6ba4c30223b2585c526d8c79c", null ],
