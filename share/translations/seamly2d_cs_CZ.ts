@@ -5621,10 +5621,6 @@ Chcete uložit své změny?</translation>
         <translation>Nelze aktualizovat měření.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Vyberte díl střihu, který chcete duplikovat.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Soubor s měřeními &apos;%1&apos; nebyl nalezen.</translation>
     </message>
@@ -6397,16 +6393,32 @@ Chcete uložit své změny?</translation>
         <translation>&lt;b&gt;Nástroj::Operace - Rotace:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Rotace:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení po řádku:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení po řádku:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení podle osy:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení podle osy:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Přesun:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Přesun:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9221,6 +9233,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Vždy používat aktuální pero</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Provozní nástroje</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Pro výběr více objektů použijte klávesu CTRL</translation>
     </message>
     <message>
         <source>Dialogs</source>

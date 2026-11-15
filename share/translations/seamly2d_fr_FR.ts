@@ -5647,10 +5647,6 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Impossible de mettre à jour les mensurations.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Sélectionnez une pièce de patron pour la dupliquer.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Le tableau de mesure &apos;%1&apos; est introuvable.</translation>
     </message>
@@ -7073,6 +7069,22 @@ Voulez-vous sauvegarder les changements ?</translation>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
         <translation>&lt;b&gt;Outil::Arc - Ellipse :&lt;/b&gt; Sélectionner le point central de l&apos;ellipse</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Rotation :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Symétrie par ligne :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Symétrie par axe :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Déplacer :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
@@ -9241,6 +9253,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Quality:</source>
         <translation>Qualité :</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Outils d&apos;opérations</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Utilisez la touche CTRL pour sélectionner plusieurs objets</translation>
     </message>
     <message>
         <source>Dialogs</source>

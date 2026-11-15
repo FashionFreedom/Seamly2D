@@ -6673,19 +6673,35 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Tengely szerinti tükrözés:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Tengely szerinti tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -6705,7 +6721,7 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Darab - Csomópontok beszúrása:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Csomópontok beszúrása:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
@@ -7014,10 +7030,6 @@ Menti a módosításokat?</translation>
     <message>
         <source>Draft Block %1</source>
         <translation>Vázlatblokk %1</translation>
-    </message>
-    <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Válasszon ki egy szabásminta-darabot a duplikáláshoz.</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -9286,6 +9298,14 @@ Menti a módosításokat?</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Automatikusan törlődő képlet</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Műveleti eszközök</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Több objektum kiválasztásához használja a CTRL billentyűt</translation>
     </message>
     <message>
         <source>Use native dialogs</source>

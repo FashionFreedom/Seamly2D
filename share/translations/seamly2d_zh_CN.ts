@@ -5623,10 +5623,6 @@ Do you want to save your changes?</source>
         <translation>无法更新测量值.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation type="unfinished">请选择一个纸样裁片以进行复制.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>找不到测量文件“%1”.</translation>
     </message>
@@ -6399,16 +6395,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;工具::操作 - 旋转:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 旋转:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 按线镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 按线镜像:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 按轴镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 按轴镜像:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 移动:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 移动:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9223,6 +9235,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>始终使用当前笔</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>操作工具</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>使用 CTRL 键进行多选</translation>
     </message>
     <message>
         <source>Dialogs</source>

@@ -5623,10 +5623,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittausten päivittäminen epäonnistui.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Valitse kaavan osa monistaaksesi sen.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Mittaustiedostoa &apos;%1&apos; ei löytynyt.</translation>
     </message>
@@ -6399,16 +6395,32 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna valitaksesi useita, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt;-näppäintä painettuna valitaksesi useita objekteja, paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä vahvistaaksesi valinnan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna useita valintoja varten, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna useita valintoja varten, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9223,6 +9235,14 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Käytä aina nykyistä kynää</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Toimintotyökalut</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Käytä CTRL-näppäintä usean kohteen valitsemiseen</translation>
     </message>
     <message>
         <source>Dialogs</source>

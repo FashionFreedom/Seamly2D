@@ -5623,10 +5623,6 @@ Do you want to save your changes?</source>
         <translation>Невозможно обновить мерки.</translation>
     </message>
     <message>
-        <source>Select a pattern piece to duplicate it.</source>
-        <translation>Выберите деталь выкройки, чтобы дублировать её.</translation>
-    </message>
-    <message>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Файл мерок «%1» не может быть найден.</translation>
     </message>
@@ -6399,16 +6395,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Операции – Вращение:&lt;/b&gt; выберите один или несколько объектов – удержите клавишу&lt;b&gt;%1&lt;/b&gt; при выборе  нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Инструмент::Операции – Вращение:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по линии:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу &lt;b&gt;%1&lt;/b&gt;  при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по линии:&lt;/b&gt; Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по осям:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу  &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Переместить:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу  &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -9230,6 +9242,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>Всегда использовать текущую ручку</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Инструменты Операций</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Используйте CTRL для выбора нескольких объектов</translation>
     </message>
     <message>
         <source>Dialogs</source>
