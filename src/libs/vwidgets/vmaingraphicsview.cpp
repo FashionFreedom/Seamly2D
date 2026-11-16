@@ -843,6 +843,13 @@ qreal VMainGraphicsView::MaxScale()
 void VMainGraphicsView::setShowToolOptions(bool value)
 {
     showToolProperties = value;
+    emit inspectionContextChanged();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VMainGraphicsView::canInspectItems() const
+{
+    return showToolProperties && !isZoomToAreaActive && !isZoomPanActive && !isPanDragActive;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -918,6 +925,7 @@ void VMainGraphicsView::setScene(QGraphicsScene *scene)
 {
     QGraphicsView::setScene(scene);
     setSceneRect(QRectF());
+    emit inspectionContextChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

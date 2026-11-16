@@ -2915,6 +2915,7 @@ void MainWindow::initPropertyEditor()
         delete toolProperties;
     }
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
+    toolProperties->enableSelectionMeasurements(ui->view, draftScene);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
     // Refresh properties after the tools have read their updated attributes and geometry.
@@ -7621,6 +7622,8 @@ void MainWindow::exportPiecesAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportDraftBlocksAs()
 {
+    // Temporary measurement highlights and tool visualizations are not part of an export.
+    toolProperties->itemClicked(nullptr);
     setStatusMessage(QString(""));
 
     //select export tool button

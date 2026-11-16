@@ -72,12 +72,103 @@
 #include "../vwidgets/vsimplepoint.h"
 #include "../vwidgets/vsimplecurve.h"
 #include "../vwidgets/vcurvepathitem.h"
+#include "../vwidgets/global.h"
+#include "../vwidgets/scalesceneitems.h"
+#include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoollinepoint.h"
 
 #include <QDockWidget>
-//#include <QEvent>
-#include <QHBoxLayout>
+#include <QChildEvent>
 #include <QDebug>
+#include <QGraphicsScene>
+#include <QHBoxLayout>
+#include <QHelpEvent>
+#include <QHeaderView>
+#include <QKeyEvent>
+#include <QMouseEvent>
+#include <QPainter>
 #include <QRegularExpression>
+#include <QScopedValueRollback>
+#include <QStyle>
+#include <QStyledItemDelegate>
+#include <QTableWidget>
+#include <QTimer>
+#include <QToolTip>
+#include <QVBoxLayout>
+
+namespace
+{
+constexpr int measurementCellMargin = 4;
+constexpr int maximumVisibleMeasurementRows = 8;
+
+// A non-interactive child overlay: highlighting must not select or move pattern objects.
+// QObject ownership tracking also makes deletion safe when the parent tool is removed.
+class MeasurementHighlight : public QObject, public QGraphicsPathItem
+{
+public:
+    explicit MeasurementHighlight(QGraphicsItem *parent)
+        : QObject(), QGraphicsPathItem(parent)
+    {
+        setObjectName("selectionMeasurementHighlight");
+        setAcceptedMouseButtons(Qt::NoButton);
+        setAcceptHoverEvents(false);
+        setZValue(1);
+        QPen pen(highlightColor(), 4, Qt::SolidLine, Qt::RoundCap);
+        pen.setCosmetic(true);
+        setPen(pen);
+        setOpacity(0.65);
+    }
+
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override
+    {
+        auto highlightPen = pen();
+        highlightPen.setColor(highlightColor());
+        setPen(highlightPen);
+        QGraphicsPathItem::paint(painter, option, widget);
+    }
+
+private:
+    QColor highlightColor() const
+    {
+        // Reuse Seamly's configurable primary support color and the same canvas adaptation as other scene items.
+        return adjustColorForState(this, QColor(qApp->Settings()->getPrimarySupportColor()));
+    }
+};
+
+// Pattern names contain underscores, so ordinary word wrapping treats them as one unbreakable word.
+class MeasurementNameDelegate : public QStyledItemDelegate
+{
+public:
+    explicit MeasurementNameDelegate(QObject *parent) : QStyledItemDelegate(parent) {}
+
+    QSize sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
+        QStyleOptionViewItem styleOption(option);
+        initStyleOption(&styleOption, index);
+        const int width = qMax(1, option.rect.width() - 2 * measurementCellMargin);
+        const QRect bounds = styleOption.fontMetrics.boundingRect(QRect(0, 0, width, 0),
+                                                                  Qt::TextWrapAnywhere, styleOption.text);
+        return QSize(width + 2 * measurementCellMargin, bounds.height() + 2 * measurementCellMargin);
+    }
+
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
+        QStyleOptionViewItem styleOption(option);
+        initStyleOption(&styleOption, index);
+        const QString text = styleOption.text;
+        styleOption.text.clear();
+        const QStyle *style = option.widget ? option.widget->style() : QApplication::style();
+        style->drawControl(QStyle::CE_ItemViewItem, &styleOption, painter, option.widget);
+        painter->save();
+        painter->setFont(styleOption.font);
+        painter->setPen(styleOption.palette.color(styleOption.state & QStyle::State_Selected
+                                                 ? QPalette::HighlightedText : QPalette::Text));
+        painter->drawText(option.rect.adjusted(measurementCellMargin, measurementCellMargin,
+                                              -measurementCellMargin, -measurementCellMargin),
+                          Qt::TextWrapAnywhere | Qt::AlignLeft | Qt::AlignVCenter, text);
+        painter->restore();
+    }
+};
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent)
@@ -92,11 +183,42 @@ VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data,
 {
     propertyModel = new VPE::VPropertyModel(this);
     formView = new VPE::VPropertyFormView(propertyModel, parent);
-    formView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    formView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Maximum);
+    formView->installEventFilter(this);
 
     QScrollArea *scroll = new QScrollArea(parent);
     scroll->setWidgetResizable(true);
-    scroll->setWidget(formView);
+    auto content = new QWidget(scroll);
+    auto layout = new QVBoxLayout(content);
+    layout->setContentsMargins(0, 0, 0, 0);
+    layout->addWidget(formView);
+
+    // Keep the breakdown outside the two-column property form so names can use the full panel width.
+    m_measurementTable = new QTableWidget(0, 2, content);
+    m_measurementTable->setObjectName("selectionMeasurementTable");
+    m_measurementTable->installEventFilter(this);
+    m_measurementTable->setHorizontalHeaderLabels({tr("Name:"), tr("Length:")});
+    m_measurementTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    m_measurementTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    m_measurementTable->setSelectionMode(QAbstractItemView::SingleSelection);
+    m_measurementTable->setWordWrap(true);
+    m_measurementTable->setTextElideMode(Qt::ElideNone);
+    m_measurementTable->setItemDelegateForColumn(0, new MeasurementNameDelegate(m_measurementTable));
+    m_measurementTable->verticalHeader()->hide();
+    m_measurementTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    m_measurementTable->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    m_measurementTable->hide();
+    // Coalesce column changes into one resize after the table has its final viewport width.
+    m_measurementResizeTimer = new QTimer(this);
+    m_measurementResizeTimer->setSingleShot(true);
+    m_measurementResizeTimer->setInterval(0);
+    connect(m_measurementResizeTimer, &QTimer::timeout, this,
+            &VToolOptionsPropertyBrowser::resizeMeasurementTable);
+    connect(m_measurementTable->horizontalHeader(), &QHeaderView::sectionResized, this,
+            [this]() { m_measurementResizeTimer->start(); });
+    layout->addWidget(m_measurementTable);
+    layout->addStretch();
+    scroll->setWidget(content);
 
     parent->setWidget(scroll);
 
@@ -105,12 +227,453 @@ VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data,
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VToolOptionsPropertyBrowser::~VToolOptionsPropertyBrowser()
+{
+    clearSelectionMeasurements();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::clearPropertyBrowser()
 {
+    clearSelectionMeasurements();
+    m_measurementAnchor = MeasurementItem();
     propertyModel->clear();
     propertyToId.clear();
     idToProperty.clear();
     currentItem = nullptr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::enableSelectionMeasurements(VMainGraphicsView *view, QGraphicsScene *draftScene)
+{
+    m_measurementView = view;
+    m_measurementScene = draftScene;
+    view->installEventFilter(this);
+    view->viewport()->installEventFilter(this);
+    connect(view, &VMainGraphicsView::inspectionContextChanged, this, [this]()
+    {
+        if (m_measurementView->scene() != m_measurementScene || !m_measurementView->canInspectItems())
+        {
+            itemClicked(nullptr);
+        }
+    });
+    connect(draftScene, &QGraphicsScene::changed, this, [this]()
+    {
+        // Visibility changes do not necessarily reparse the document.
+        for (const auto &item : m_measurementItems)
+        {
+            const auto graphicsItem = dynamic_cast<QGraphicsItem *>(item.object.data());
+            if (!graphicsItem || !graphicsItem->isVisible() || !graphicsItem->isEnabled())
+            {
+                updateSelectionMeasurements();
+                break;
+            }
+        }
+    });
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+VToolOptionsPropertyBrowser::MeasurementItem
+VToolOptionsPropertyBrowser::measurementItem(QGraphicsItem *item) const
+{
+    MeasurementItem result;
+    if (!item || !item->isVisible() || !item->isEnabled() || dynamic_cast<MeasurementHighlight *>(item))
+    {
+        return result;
+    }
+    if (dynamic_cast<VToolLine *>(item) || dynamic_cast<VAbstractSpline *>(item)
+        || dynamic_cast<VSimpleCurve *>(item))
+    {
+        result.object = dynamic_cast<QObject *>(item);
+    }
+    else if (item->type() == VScaledLine::Type)
+    {
+        auto point = dynamic_cast<VToolLinePoint *>(item->parentItem());
+        if (point && point->mainLineItem() == item)
+        {
+            result.object = point;
+            result.constructionLine = true;
+        }
+    }
+    return result;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+VToolOptionsPropertyBrowser::MeasurementItem
+VToolOptionsPropertyBrowser::measurementAt(const QPoint &position) const
+{
+    MeasurementItem constructionLine;
+    for (auto item : m_measurementView->items(position))
+    {
+        // Shift retains its normal meaning on curve handles and point labels.
+        if (item->type() == VControlPointSpline::Type || item->type() == VGraphicsSimpleTextItem::Type
+            || dynamic_cast<VToolSinglePoint *>(item) || dynamic_cast<VSimplePoint *>(item))
+        {
+            if (!constructionLine.object)
+            {
+                return MeasurementItem();
+            }
+            continue;
+        }
+        auto candidate = measurementItem(item);
+        if (candidate.object)
+        {
+            if (!candidate.constructionLine)
+            {
+                return candidate;
+            }
+            constructionLine = candidate;
+        }
+    }
+    // Prefer an explicit line over a coincident construction line, as the normal inspector does.
+    return constructionLine;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VToolOptionsPropertyBrowser::measureItem(const MeasurementItem &item, qreal &length, QPainterPath &path,
+                                              QGraphicsItem *&graphicsItem) const
+{
+    graphicsItem = dynamic_cast<QGraphicsItem *>(item.object.data());
+    if (!graphicsItem || graphicsItem->scene() != m_measurementScene
+        || !graphicsItem->isVisible() || !graphicsItem->isEnabled())
+    {
+        return false;
+    }
+
+    if (auto line = dynamic_cast<VToolLine *>(graphicsItem))
+    {
+        const auto first = line->getData()->GeometricObject<VPointF>(line->GetFirstPoint());
+        const auto second = line->getData()->GeometricObject<VPointF>(line->GetSecondPoint());
+        const QLineF geometry(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
+        length = geometry.length();
+        path.moveTo(geometry.p1());
+        path.lineTo(geometry.p2());
+    }
+    else if (item.constructionLine)
+    {
+        auto point = static_cast<VToolLinePoint *>(item.object.data());
+        auto line = point->mainLineItem();
+        if (!line->isVisible() || line->pen().style() == Qt::NoPen)
+        {
+            return false;
+        }
+        graphicsItem = line;
+        length = line->line().length();
+        path.moveTo(line->line().p1());
+        path.lineTo(line->line().p2());
+    }
+    else
+    {
+        QSharedPointer<VAbstractCurve> curve;
+        if (auto tool = dynamic_cast<VAbstractSpline *>(graphicsItem))
+        {
+            curve = tool->getData()->GeometricObject<VAbstractCurve>(tool->getId());
+        }
+        else if (auto simpleCurve = dynamic_cast<VSimpleCurve *>(graphicsItem))
+        {
+            curve = simpleCurve->curve();
+        }
+        if (curve.isNull())
+        {
+            return false;
+        }
+        length = curve->GetLength();
+        path = curve->GetPath();
+    }
+    return qIsFinite(length) && length >= 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::clearSelectionMeasurements()
+{
+    const bool wasActive = m_measurementActive;
+    m_measurementActive = false;
+    for (const auto &item : m_measurementItems)
+    {
+        delete item.highlight.data();
+    }
+    m_measurementItems.clear();
+    m_totalMeasurementLength = 0;
+    m_measurementResizeTimer->stop();
+    if (m_measurementTable)
+    {
+        m_measurementTable->setRowCount(0);
+        m_measurementTable->hide();
+    }
+    if (wasActive)
+    {
+        QToolTip::hideText();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::resizeMeasurementTable()
+{
+    if (!m_measurementTable || m_measurementTable->rowCount() == 0)
+    {
+        return;
+    }
+    m_measurementTable->resizeRowsToContents();
+    const int maximumRowsHeight = maximumVisibleMeasurementRows
+                                  * m_measurementTable->verticalHeader()->defaultSectionSize();
+    const int rowsHeight = qMin(m_measurementTable->verticalHeader()->length(),
+                               maximumRowsHeight);
+    m_measurementTable->setFixedHeight(m_measurementTable->horizontalHeader()->height() + rowsHeight
+                                      + 2 * m_measurementTable->frameWidth());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateMeasurementTable(const QStringList &names, const QStringList &lengths)
+{
+    m_measurementTable->setRowCount(names.size());
+    for (int row = 0; row < names.size(); ++row)
+    {
+        for (int column = 0; column < 2; ++column)
+        {
+            auto entry = m_measurementTable->item(row, column);
+            if (!entry)
+            {
+                entry = new QTableWidgetItem();
+                entry->setFlags(entry->flags() & ~Qt::ItemIsEditable);
+                entry->setTextAlignment((column == 0 ? Qt::AlignLeft : Qt::AlignRight) | Qt::AlignVCenter);
+                m_measurementTable->setItem(row, column, entry);
+            }
+            const QString &text = column == 0 ? names.at(row) : lengths.at(row);
+            entry->setText(text);
+            entry->setToolTip(text);
+        }
+    }
+    m_measurementTable->show();
+    m_measurementResizeTimer->start();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolOptionsPropertyBrowser::measurementLengthText(qreal length) const
+{
+    return QStringLiteral("%1 %2").arg(qApp->fromPixel(length))
+                                 .arg(UnitsToStr(qApp->patternUnit(), true));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolOptionsPropertyBrowser::measurementName(const MeasurementItem &item) const
+{
+    if (auto line = qobject_cast<VToolLine *>(item.object.data()))
+    {
+        return tr("Line_") + line->FirstPointName() + "_" + line->SecondPointName();
+    }
+    if (item.constructionLine)
+    {
+        auto point = qobject_cast<VToolLinePoint *>(item.object.data());
+        return tr("Line_") + point->BasePointName() + "_" + point->name();
+    }
+    if (auto tool = qobject_cast<VAbstractSpline *>(item.object.data()))
+    {
+        return qApp->translateVariables()->VarToUser(tool->name());
+    }
+    auto curve = qobject_cast<VSimpleCurve *>(item.object.data());
+    return qApp->translateVariables()->VarToUser(curve->curve()->name());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::showMeasurementToolTip(const QPoint &globalPosition)
+{
+    if (!m_measurementItems.isEmpty())
+    {
+        const QString text = tr("Selected objects: %1\nTotal length: %2")
+                             .arg(m_measurementItems.size()).arg(measurementLengthText(m_totalMeasurementLength));
+        QToolTip::showText(globalPosition, text, m_measurementView->viewport(), QRect(), 5000);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::toggleMeasurement(const MeasurementItem &item, const QPoint &globalPosition)
+{
+    if (!m_measurementActive)
+    {
+        m_measurementActive = true;
+        if (m_measurementAnchor.object)
+        {
+            m_measurementItems.append(m_measurementAnchor);
+        }
+    }
+    bool removed = false;
+    for (int i = 0; i < m_measurementItems.size(); ++i)
+    {
+        if (m_measurementItems.at(i).object == item.object
+            && m_measurementItems.at(i).constructionLine == item.constructionLine)
+        {
+            delete m_measurementItems.at(i).highlight.data();
+            m_measurementItems.removeAt(i);
+            removed = true;
+            break;
+        }
+    }
+    if (!removed)
+    {
+        m_measurementItems.append(item);
+    }
+    updateSelectionMeasurements();
+    showMeasurementToolTip(globalPosition);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateSelectionMeasurements()
+{
+    if (!m_measurementActive || m_updatingMeasurements)
+    {
+        return;
+    }
+    QScopedValueRollback<bool> updating(m_updatingMeasurements, true);
+    const QString toolTipPrefix = tr("Selected objects: %1\nTotal length: %2").section("%1", 0, 0);
+    const bool refreshToolTip = QToolTip::isVisible() && QToolTip::text().startsWith(toolTipPrefix);
+    if (m_measurementItems.size() == 1 && !m_measurementItems.first().object)
+    {
+        // The selected tool can be deleted before its queued document refresh.
+        currentItem = nullptr;
+    }
+    m_totalMeasurementLength = 0;
+    QStringList names;
+    QStringList lengths;
+    for (int i = 0; i < m_measurementItems.size();)
+    {
+        auto &item = m_measurementItems[i];
+        qreal length = 0;
+        QPainterPath path;
+        QGraphicsItem *graphicsItem = nullptr;
+        if (!measureItem(item, length, path, graphicsItem))
+        {
+            delete item.highlight.data();
+            m_measurementItems.removeAt(i);
+            continue;
+        }
+        m_totalMeasurementLength += length;
+        names.append(measurementName(item));
+        lengths.append(measurementLengthText(length));
+        if (!item.highlight)
+        {
+            item.highlight = new MeasurementHighlight(graphicsItem);
+            connect(item.object.data(), &QObject::destroyed, this,
+                    &VToolOptionsPropertyBrowser::updateSelectionMeasurements,
+                    static_cast<Qt::ConnectionType>(Qt::UniqueConnection | Qt::QueuedConnection));
+        }
+        static_cast<MeasurementHighlight *>(item.highlight.data())->setPath(path);
+        ++i;
+    }
+
+    if (m_measurementItems.size() < 2)
+    {
+        m_measurementTable->hide();
+        m_measurementTable->setRowCount(0);
+        auto single = m_measurementItems.isEmpty() ? nullptr
+                      : dynamic_cast<QGraphicsItem *>(m_measurementItems.first().object.data());
+        if (!single)
+        {
+            m_measurementActive = false;
+            m_measurementAnchor = MeasurementItem();
+            QToolTip::hideText();
+        }
+        itemClicked(single);
+        if (single && refreshToolTip)
+        {
+            showMeasurementToolTip(QCursor::pos());
+        }
+        return;
+    }
+
+    if (!idToProperty.contains("SelectedMeasurementCount"))
+    {
+        itemClicked(nullptr);
+        formView->setTitle(tr("Selection measurements"));
+        auto count = new VPE::VStringProperty(tr("Selected objects:"));
+        count->setReadOnly(true);
+        addProperty(count, "SelectedMeasurementCount");
+        auto total = new VPE::VStringProperty(tr("Total length:"));
+        total->setReadOnly(true);
+        addProperty(total, "SelectedMeasurementLength");
+        // The property form rebuilds its editors when rows are added. Install filters only after both exist.
+        for (auto editor : formView->findChildren<QWidget *>())
+        {
+            editor->installEventFilter(this);
+        }
+    }
+    idToProperty["SelectedMeasurementCount"]->setValue(m_measurementItems.size());
+    idToProperty["SelectedMeasurementLength"]->setValue(measurementLengthText(m_totalMeasurementLength));
+    updateMeasurementTable(names, lengths);
+    if (refreshToolTip)
+    {
+        showMeasurementToolTip(QCursor::pos());
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VToolOptionsPropertyBrowser::eventFilter(QObject *watched, QEvent *event)
+{
+    if (!m_measurementView)
+    {
+        return QObject::eventFilter(watched, event);
+    }
+    if (watched == formView && event->type() == QEvent::ChildPolished && m_measurementActive)
+    {
+        // Editors can also be built lazily when a previously hidden property panel is shown.
+        static_cast<QChildEvent *>(event)->child()->installEventFilter(this);
+    }
+    if (event->type() == QEvent::KeyPress && static_cast<QKeyEvent *>(event)->key() == Qt::Key_Escape)
+    {
+        const bool wasActive = m_measurementActive;
+        itemClicked(nullptr);
+        if (wasActive)
+        {
+            event->accept();
+            return true; // Clearing the summary may have deleted the editor that received this event.
+        }
+    }
+    if (watched != m_measurementView->viewport())
+    {
+        return QObject::eventFilter(watched, event);
+    }
+    if (event->type() == QEvent::MouseButtonRelease && m_measurementPress)
+    {
+        m_measurementPress = false;
+        return true;
+    }
+    if (m_measurementView->scene() != m_measurementScene || !m_measurementView->canInspectItems())
+    {
+        return QObject::eventFilter(watched, event);
+    }
+    if (event->type() == QEvent::ToolTip && m_measurementItems.size() > 1)
+    {
+        auto help = static_cast<QHelpEvent *>(event);
+        const auto candidate = measurementAt(help->pos());
+        for (const auto &item : m_measurementItems)
+        {
+            if (item.object == candidate.object && item.constructionLine == candidate.constructionLine)
+            {
+                showMeasurementToolTip(help->globalPos());
+                return true;
+            }
+        }
+    }
+    if (event->type() == QEvent::MouseButtonPress || event->type() == QEvent::MouseButtonDblClick)
+    {
+        auto mouse = static_cast<QMouseEvent *>(event);
+        if (mouse->button() == Qt::LeftButton)
+        {
+            const auto candidate = measurementAt(mouse->position().toPoint());
+            if (mouse->modifiers() == Qt::ShiftModifier)
+            {
+                if (candidate.object)
+                {
+                    toggleMeasurement(candidate, mouse->globalPosition().toPoint());
+                    m_measurementPress = true;
+                    return true;
+                }
+                return false;
+            }
+            clearSelectionMeasurements();
+            m_measurementAnchor = candidate;
+        }
+    }
+    return QObject::eventFilter(watched, event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -238,9 +801,21 @@ void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::updateOptions()
 {
+    if (m_measurementActive && !m_updatingMeasurements)
+    {
+        updateSelectionMeasurements();
+        return;
+    }
     if (currentItem == nullptr)
     {
         return;
+    }
+
+    if (idToProperty.contains("ComputedCurveLength"))
+    {
+        auto tool = dynamic_cast<VAbstractSpline *>(currentItem);
+        const auto curve = tool->getData()->GeometricObject<VAbstractCurve>(tool->getId());
+        idToProperty["ComputedCurveLength"]->setValue(measurementLengthText(curve->GetLength()));
     }
 
     // This check helps to find missing tools in the switch
@@ -362,6 +937,11 @@ void VToolOptionsPropertyBrowser::updateOptions()
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::refreshOptions()
 {
+    if (m_measurementActive)
+    {
+        updateSelectionMeasurements();
+        return;
+    }
     QGraphicsItem *item = currentItem;
     itemClicked(nullptr); //close options
     itemClicked(item);    //reopen options
@@ -504,6 +1084,15 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
 {
+    if (!m_updatingMeasurements)
+    {
+        clearSelectionMeasurements();
+        const auto candidate = measurementItem(item);
+        if (candidate.object || !item || m_measurementAnchor.object.data() != dynamic_cast<QObject *>(item))
+        {
+            m_measurementAnchor = candidate;
+        }
+    }
     if (item != nullptr)
     {
         if (item->isEnabled()==false)
@@ -553,6 +1142,16 @@ void VToolOptionsPropertyBrowser::addPropertyFormula(const QString &propertyName
     VFormulaProperty *itemLength = new VFormulaProperty(propertyName);
     itemLength->SetFormula(formula);
     addProperty(itemLength, attrName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyCurveLength(qreal length)
+{
+    // This is the actual geometric length, not the optional target-length formula.
+    auto property = new VPE::VStringProperty(tr("Length:"));
+    property->setReadOnly(true);
+    property->setValue(measurementLengthText(length));
+    addProperty(property, "ComputedCurveLength");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2912,6 +3511,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
     addObjectProperty(tool, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyCurveLength(spl.GetLength());
 
     VFormula length1(spl.GetC1LengthFormula(), tool->getData());
     length1.setCheckZero(false);
@@ -2970,6 +3570,9 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item
     addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
     addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
 
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyCurveLength(spl.GetLength());
+
     addPropertyLabel(tr("Options"), AttrName);
     addPropertyEnum(tr("Smooth curve:"), {tr("No"), tr("Yes")},
                     tool->GetAutoSmooth() ? 1 : 0, AttrAutoSmooth);
@@ -2999,6 +3602,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolSplinePath(QGraphicsItem *item)
     formView->setTitle(tr("Spline - Interactive"));
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyCurveName(tool, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyCurveLength(spl.GetLength());
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
@@ -3015,6 +3620,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierPath(QGraphicsItem *
     formView->setTitle(tr("Spline - Fixed"));
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyCurveName(tool, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyCurveLength(spl.GetLength());
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrColor);
     addPropertyCurveLineType(tool, tr("Linetype:"));
