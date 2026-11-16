@@ -6408,7 +6408,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6416,7 +6416,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6424,7 +6424,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6432,7 +6432,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi sen valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+        <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
