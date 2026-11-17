@@ -283,6 +283,39 @@ QVector<QPointF> VPiece::cutPathPoints(const VContainer *data) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+namespace
+{
+// Length of a path taken as a closed loop (the last point joined back to the first).
+qreal closedPathLength(QVector<QPointF> points)
+{
+    if (points.size() < 2)
+    {
+        return 0;
+    }
+    if (points.first() != points.last())
+    {
+        points.append(points.first());
+    }
+    return VAbstractCurve::PathLength(points);
+}
+} // anonymous namespace
+
+//---------------------------------------------------------------------------------------------------------------------
+// seamlineLength: length round the piece's main path, in pixels. With the seam allowance built in, the main path
+// is the cutting line.
+qreal VPiece::seamlineLength(const VContainer* data) const
+{
+    return closedPathLength(mainPathPoints(data));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// cutPathLength: length round the cutting line (see cutPathPoints), in pixels.
+qreal VPiece::cutPathLength(const VContainer* data) const
+{
+    return closedPathLength(cutPathPoints(data));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QVector<QLineF> VPiece::createNotchLines(const VContainer *data, const QVector<QPointF> &seamAllowance) const
 {
     const QVector<VPieceNode> unitedPath = GetUnitedPath(data);

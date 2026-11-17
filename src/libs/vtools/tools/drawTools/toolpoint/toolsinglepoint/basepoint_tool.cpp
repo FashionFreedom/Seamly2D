@@ -4,7 +4,7 @@
 //  @date   17 Sep, 2023
 //
 //  @copyright
-//  Copyright (C) 2017 - 2023 Seamly, LLC
+//  Copyright (C) 2017 - 2026 Seamly, LLC
 //  https://github.com/fashionfreedom/seamly2d
 //
 //  @brief
@@ -20,7 +20,7 @@
 //
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- //---------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------
 //  @file   vtoolbasepoint.cpp
@@ -202,6 +202,13 @@ QVariant BasePointTool::itemChange(QGraphicsItem::GraphicsItemChange change, con
 {
     if (change == ItemPositionChange && scene())
     {
+        // Snap onto the origin (0, 0) when dragged close to it.
+        const QVariant snapped = VMainGraphicsView::snapToOrigin(this, value.toPointF());
+        if (snapped.toPointF() != value.toPointF())
+        {
+            return itemChange(change, snapped);
+        }
+
         // Each time we move something we call recalculation scene rect. In some cases this can cause moving
         // objects positions. And this cause infinite redrawing. That's why we wait the finish of saving the last move.
         static bool change_finished = true;

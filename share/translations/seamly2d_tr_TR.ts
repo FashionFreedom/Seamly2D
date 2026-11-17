@@ -5623,6 +5623,10 @@ Do you want to save your changes?</translation>
         <translation>Ölçümler senkronize edilemedi.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kalıp Parçası Bilgisi</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Ölçümler güncellenemedi.</translation>
     </message>
@@ -6095,6 +6099,10 @@ Do you want to save your changes?</translation>
         <translation>Resimleri ekleme veya değiştirme araçları.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Kalıp Parçası Bilgisi (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Son ölçümler</translation>
     </message>
@@ -6283,6 +6291,10 @@ Do you want to save your changes?</translation>
         <translation>Parçaları Dışa Aktar</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Kalıp Parçası Bilgisi...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Ayrıntı araçları</translation>
     </message>
@@ -6379,6 +6391,14 @@ Do you want to save your changes?</translation>
         <translation>Belge Bilgilerini Görüntüle</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Kalıp Parçasını Çoğalt</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Seçili kalıp parçasını çoğalt</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Ölçüm dosyası gerekli tüm ölçümleri içermiyor.</translation>
     </message>
@@ -6391,16 +6411,32 @@ Do you want to save your changes?</translation>
         <translation>&lt;b&gt;Araç::İşlemler - Döndürme:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Döndürme:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Satır Satır Yansıtma:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Satır Satır Yansıtma:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Eksenle Aynalama:&lt;/b&gt; Bir veya daha fazla nesne seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Eksenle Aynalama:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Araç::İşlemler - Taşı:&lt;/b&gt; Bir veya daha fazla nesneyi seçin - Çoklu seçim için &lt;b&gt;%1&lt;/b&gt;&apos;i basılı tutun, seçimi onaylamak için &lt;b&gt;ENTER&lt;/b&gt;&apos;a basın</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Araç::İşlemler - Taşı:&lt;/b&gt;Selectați unul sau mai multe obiecte – faceți clic pe un obiect selectat pentru a-l deselecta; apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8294,6 +8330,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Mevcut dikiş payı</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopya</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 kopya %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>desen parçası etiketini taşı</translation>
     </message>
@@ -8328,6 +8372,18 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>tahıl çizgisini döndür</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Dikiş Hattı</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kesim Hattı</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Parça:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8372,6 +8428,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Parça etiketini göster</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Çoğalt</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8456,6 +8516,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Düğüm Açısını Güncelle</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Kalıp Parçasını Çoğalt</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(dikiş payı dahil)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8554,6 +8622,73 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Çapraz Haç</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kalıp Parçası Bilgisi</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Elektronik tabloya yapıştırmak için tabloyu panoya kopyala</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Tabloyu CSV dosyası olarak dışa aktar</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Dikiş Hattı</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kesim Hattı</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Parçanın çevre uzunluğu </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Mektup</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Miktar</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Dikiş Payı (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Kumaş katından kes</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Yerleşik</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hiçbiri</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>parça</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>CSV&apos;ye Aktar</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Virgülle Ayrılmış Değerler</translation>
     </message>
 </context>
 <context>
@@ -9199,6 +9334,14 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Her zaman geçerli kalemi kullan</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>İşlem Araçları</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Birden fazla nesne seçimi için CTRL tuşunu kullanın</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10901,6 +11044,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Parçaları Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation> Kalıp Parçası Bilgisi</translation>
     </message>
     <message>
         <source>Layout</source>

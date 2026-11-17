@@ -5625,6 +5625,10 @@ Do you want to save your changes?</source>
         <translation>Δεν ήταν δυνατός ο συγχρονισμός των μετρήσεων.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Δεν ήταν δυνατή η ενημέρωση των μετρήσεων.</translation>
     </message>
@@ -6097,6 +6101,10 @@ Do you want to save your changes?</source>
         <translation>Εργαλεία για την εισαγωγή ή την τροποποίηση εικόνων.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Πληροφορίες κομματιού πατρόν (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Τελικές μετρήσεις</translation>
     </message>
@@ -6285,6 +6293,10 @@ Do you want to save your changes?</source>
         <translation>Εξαγωγή τεμαχίων</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Πληροφορίες κομματιού πατρόν...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Εργαλεία λεπτομερειών</translation>
     </message>
@@ -6381,6 +6393,14 @@ Do you want to save your changes?</source>
         <translation>Εμφάνιση πληροφοριών εγγράφου</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Αντιγραφή κομματιού πατρόν</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Αντιγραφή επιλεγμένου κομματιού πατρόν</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Το αρχείο μετρήσεων δεν περιλαμβάνει όλες τις απαιτούμενες μετρήσεις.</translation>
     </message>
@@ -6393,16 +6413,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Tool::Operations - Περιστροφή:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Περιστροφή:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Μετακίνηση:&lt;/b&gt; Επιλογή ενός ή περισσότερων αντικειμένων - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, Πατήστε &lt;b&gt;ENTER&lt;/b&gt; για επιβεβαίωση της επιλογής</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Μετακίνηση:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8296,6 +8332,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Τρέχων περιθώριο ραφής</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 αντίγραφο</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 αντίγραφο %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>μετακίνηση ετικέτας κομματιού πατρόν</translation>
     </message>
@@ -8330,6 +8374,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>rotate grainline</source>
         <translation>περιστροφή γραμμής ίσιου</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Γραμμή ραφής</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Γραμμή κοπής</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Κομμάτι:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8374,6 +8430,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Εμφάνιση ετικέτας κομματιού</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Διπλότυπο</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8458,6 +8518,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Ενημέρωση γωνίας κόμβου</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Αντιγραφή κομματιού πατρόν</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(με ενσωματωμένο περιθώριο ραφής)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8556,6 +8624,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Διαγώνιος Σταυρός</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Αντιγραφή του πίνακα στο πρόχειρο, για επικόλληση σε υπολογιστικό φύλλο</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Εξαγωγή του πίνακα ως αρχείο CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Γραμμή ραφής</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Γραμμή κοπής</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Μήκος περιμέτρου του κομματιού </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Επιστολή</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Ποσότητα</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Περιθώριο ραφής (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Κοπή στη δίπλωση</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Ενσωματωμένο</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Κανένα</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>κομμάτια</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Εξαγωγή σε CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Τιμές διαχωρισμένες με κόμμα</translation>
     </message>
 </context>
 <context>
@@ -9201,6 +9336,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>Να χρησιμοποιείτε πάντα τρέχουσα πένα</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Εργαλεία Λειτουργιών</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Χρησιμοποιήστε το πλήκτρο CTRL για επιλογή πολλαπλών αντικειμένων</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10903,6 +11046,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>Εξαγωγή τεμαχίων</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
     </message>
     <message>
         <source>Layout</source>

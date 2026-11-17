@@ -5643,6 +5643,10 @@ Do you want to save your changes?</source>
         <translation>No se pudo sincronizar las medidas.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>No se pudieron actualizar las medidas.</translation>
     </message>
@@ -6115,6 +6119,10 @@ Do you want to save your changes?</source>
         <translation>Herramientas para insertar o modificar imágenes.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Información de la pieza del patrón (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Mediciones finales</translation>
     </message>
@@ -6299,6 +6307,10 @@ Do you want to save your changes?</source>
         <translation>Exportar Piezas</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Información de la pieza del patrón...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Herramientas de detalle</translation>
     </message>
@@ -6395,6 +6407,14 @@ Do you want to save your changes?</source>
         <translation>Mostrar información del documento</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar pieza de patrón</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplicar la pieza de patrón seleccionada</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>El archivo de medidas no incluye todas las medidas requeridas.</translation>
     </message>
@@ -6407,16 +6427,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Rotación:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Rotación:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Línea:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Línea:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Eje:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Eje:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Herramienta::Operaciones - Mover:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Mover:&lt;/b&gt; Selecciona uno o más objetos. Haz clic en un objeto seleccionado para deseleccionarlo. Confirma la selección pulsando &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8330,6 +8366,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Acual margen de costura</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copia de %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copia de %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mover etiqueta de pieza de patrón</translation>
     </message>
@@ -8364,6 +8408,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>rotate grainline</source>
         <translation>rotar dirección del hilo</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Línea de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Línea de corte</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pieza:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8408,6 +8464,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Mostrar etiqueta de la pieza</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicado</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8492,6 +8552,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Actualizar ángulo de nodo</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar pieza de patrón</translation>
+    </message>
+    <message> 
+        <source>(SA built in)</source>
+        <translation>(margen de costura incluido)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8591,6 +8659,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruz Diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiar la tabla al portapapeles para pegarla en una hoja de cálculo</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportar la tabla como un archivo CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Línea de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Línea de corte</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Longitud alrededor de la pieza </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Letras</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Cantidad</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Margen de costura (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Cortar al doblez</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Construido en</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ninguno</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>piezas</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportar a CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valores separados por comas</translation>
     </message>
 </context>
 <context>
@@ -9224,6 +9359,14 @@ actualización:</translation>
     <message>
         <source>Quality:</source>
         <translation>Calidad:</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Herramientas de Operaciones</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Use CTRL para seleccionar varios objetos</translation>
     </message>
     <message>
         <source> ms</source>
@@ -10940,6 +11083,10 @@ actualización:</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportar Piezas</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
     </message>
     <message>
         <source>Layout</source>

@@ -4526,7 +4526,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Никакая</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -5293,7 +5293,7 @@ Seamly2D — это бесплатное программное обеспече
         <source>None</source>
         <comment>Printer</comment>
         <translatorcomment>Принтер:</translatorcomment>
-        <translation>Никакой</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5621,6 +5621,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Невозможно синхронизировать мерки.</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6095,6 +6099,10 @@ Do you want to save your changes?</source>
         <translation>Инструменты для вставки или изменения изображений.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Информация о детали выкройки (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Финальные измерения</translation>
     </message>
@@ -6283,6 +6291,10 @@ Do you want to save your changes?</source>
         <translation>Экспортировать детали</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Информация о детали выкройки...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Инструменты Подробности</translation>
     </message>
@@ -6379,6 +6391,14 @@ Do you want to save your changes?</source>
         <translation>Отображение информации о документе</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублировать деталь выкройки</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Дублировать выбранную деталь выкройки</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Файл мерок не содержит всех необходимых измерений.</translation>
     </message>
@@ -6391,16 +6411,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Операции – Вращение:&lt;/b&gt; выберите один или несколько объектов – удержите клавишу&lt;b&gt;%1&lt;/b&gt; при выборе  нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Инструмент::Операции – Вращение:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по линии:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу &lt;b&gt;%1&lt;/b&gt;  при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по линии:&lt;/b&gt; Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Зеркальное отображение по осям:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу  &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Переместить:&lt;/b&gt; Выберите один или несколько объектов – удержите клавишу  &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов . Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt;Выберите объекты (повторное нажатие снимает выбор) и нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -7746,7 +7782,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Ничего</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>1-Way</source>
@@ -8300,6 +8336,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Текущая прибавка на швы</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 — копия</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 — копия %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>переместить метку детали выкройки</translation>
     </message>
@@ -8334,6 +8378,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>rotate grainline</source>
         <translation>повернуть линию долевой нити</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Линию Шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Линия Разреза</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Деталь:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8378,6 +8434,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>Показать Метку Детали Выкройки</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Дубликат</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8462,6 +8522,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>Обновить угол узла</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Дублировать деталь выкройки</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(припуск на шов включён)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8560,6 +8628,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Квадратики по диагонали</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Скопировать таблицу в буфер обмена для вставки в электронную таблицу</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Экспортировать таблицу как файл CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Линию Шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Линия Разреза</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Длина контура детали </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Буква/символ</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Количество</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Припуск на шов (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Кроить со сгибом</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Включенные</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Никто</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>детали</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Экспорт в CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Значения, разделенные запятыми</translation>
     </message>
 </context>
 <context>
@@ -8828,7 +8963,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Никакой</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -9206,6 +9341,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>Всегда использовать текущую ручку</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Инструменты Операций</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Используйте CTRL для выбора нескольких объектов</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10908,6 +11051,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>Экспортировать детали</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -14849,7 +14996,7 @@ load in SeamlyME as usual.
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>Внутреняя</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Seamly2D team</source>

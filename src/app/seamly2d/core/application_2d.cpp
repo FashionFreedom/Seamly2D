@@ -329,9 +329,9 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     setTheme();
 
     // making sure will create new instance...just in case we will ever do 2 objects of Application2D
-    VCommandLine::Reset();
+    VCommandLine::reset();
     loadTranslations(QLocale().name());// By default the console version uses system locale
-    VCommandLine::Get(*this);
+    VCommandLine::getCommandLine(*this);
     undoStack = new QUndoStack(this);
 }
 
@@ -341,7 +341,7 @@ Application2D::~Application2D()
     qCDebug(vApp, "Application closing.");
     qInstallMessageHandler(nullptr); // Restore the message handler
     delete m_trVars;
-    VCommandLine::Reset();
+    VCommandLine::reset();
 }
 
 void Application2D::setTheme()
@@ -842,7 +842,7 @@ VSettings *Application2D::Seamly2DSettings()
 //---------------------------------------------------------------------------------------------------------------------
 bool Application2D::isGUIMode()
 {
-    return (VCommandLine::commandLine != nullptr) && VCommandLine::commandLine->IsGuiEnabled();
+    return (VCommandLine::command_line != nullptr) && VCommandLine::command_line->isGuiEnabled();
 }
 
 /// @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
@@ -854,6 +854,6 @@ bool Application2D::isAppInGUIMode() const
 //---------------------------------------------------------------------------------------------------------------------
 const VCommandLinePtr Application2D::commandLine() const
 {
-    return VCommandLine::commandLine;
+    return VCommandLine::command_line;
 }
 //---------------------------------------------------------------------------------------------------------------------
