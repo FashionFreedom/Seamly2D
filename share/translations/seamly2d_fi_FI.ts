@@ -5619,6 +5619,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittausten synkronointi epäonnistui.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Mittausten päivittäminen epäonnistui.</translation>
     </message>
@@ -6091,6 +6095,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Työkalut kuvien lisäämiseen tai muokkaamiseen.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Kaavan osan tiedot (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Lopulliset mittaukset</translation>
     </message>
@@ -6277,6 +6285,10 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Vie palat</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Kaavan osan tiedot...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8358,6 +8370,18 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>kierrä langansuuntaviivaa</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Saumalinja</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Leikkauslinja</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pala:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Ominaisuudet</translation>
     </message>
@@ -8494,6 +8518,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>Monista kaavan osa</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(saumanvara sisältyy)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Päivitä hakki</translation>
     </message>
@@ -8590,6 +8618,73 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Vinottain ristiin</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Kopioi taulukko leikepöydälle taulukkolaskentaohjelmaan liittämistä varten</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Vie taulukko CSV-tiedostona</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Saumalinja</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Leikkauslinja</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Kappaleen ympärysmitta </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Kirje</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Määrä</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Saumanvara (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Leikkaa taitteelta</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Sisäänrakennettu</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ei mitään</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>kappaletta</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Vie CSV-tiedostoon</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Pilkuilla erotetut arvot</translation>
     </message>
 </context>
 <context>
@@ -10981,6 +11076,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Vie palat</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
     </message>
     <message>
         <source>Layout</source>

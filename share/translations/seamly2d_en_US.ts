@@ -5603,6 +5603,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6075,6 +6079,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6260,6 +6268,10 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Export Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8341,6 +8353,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>rotate grainline</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation type="unfinished">Piece:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8474,6 +8498,9 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Duplicate Pattern Piece</source>
+    </message>
+    <message>
+        <source>(SA built in)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8572,6 +8599,73 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Diagonal Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation type="unfinished">Letter</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation type="unfinished">Built in</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">None</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation type="unfinished">Export to CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10927,6 +11021,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

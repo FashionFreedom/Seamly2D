@@ -4584,7 +4584,7 @@ Möchten Sie sie herunterladen?</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Teil:</translation>
+        <translation>Schnittteil:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
@@ -5602,6 +5602,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße konnten nicht synchronisiert werden.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Maße konnten nicht aktualisiert werden.</translation>
     </message>
@@ -6074,6 +6078,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Werkzeuge zum Einfügen oder Ändern von Bildern.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Schnittteil-Info (P, I</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Endmessungen</translation>
     </message>
@@ -6260,6 +6268,10 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Schnittteile exportieren</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Schnittteil-Info...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8341,6 +8353,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Fadenlauf drehen</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Nahtlinie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Schnittlinie</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Schnittteil:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Eigenschaften</translation>
     </message>
@@ -8477,6 +8501,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Schnittteil duplizieren</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(Nahtzugabe enthalten)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Aktualisieren Kerbe</translation>
     </message>
@@ -8573,6 +8601,73 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonales Kreuz</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Tabelle in die Zwischenablage kopieren, um sie in eine Tabellenkalkulation einzufügen</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Tabelle als CSV-Datei exportieren</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Nahtlinie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Schnittlinie</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Umfang des Schnittteils </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Brief</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Menge</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Nahtzugabe (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Im Stoffbruch zuschneiden</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Integriert</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keiner</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>Teile</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Als CSV exportieren</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Komma-getrennte Werte</translation>
     </message>
 </context>
 <context>
@@ -10925,6 +11020,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Export Pieces</source>
         <translation>Schnitteile Exportieren</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
     </message>
     <message>
         <source>Layout</source>

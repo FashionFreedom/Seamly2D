@@ -5639,6 +5639,10 @@ Do you want to save your changes?</source>
         <translation>No se pudo sincronizar las medidas.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>No se pudieron actualizar las medidas.</translation>
     </message>
@@ -6111,6 +6115,10 @@ Do you want to save your changes?</source>
         <translation>Herramientas para insertar o modificar imágenes.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Información de la pieza del patrón (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Mediciones finales</translation>
     </message>
@@ -6293,6 +6301,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Pieces</source>
         <translation>Exportar Piezas</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Información de la pieza del patrón...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8394,6 +8406,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>rotar dirección del hilo</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Línea de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Línea de corte</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pieza:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Propiedades</translation>
     </message>
@@ -8529,6 +8553,10 @@ Press enter to temporarily add it to the list.</source>
         <source>Duplicate Pattern Piece</source>
         <translation>Duplicar pieza de patrón</translation>
     </message>
+    <message> 
+        <source>(SA built in)</source>
+        <translation>(margen de costura incluido)</translation>
+    </message>
     <message>
         <source>Update Notch</source>
         <translation>Actualizar Piquete</translation>
@@ -8627,6 +8655,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruz Diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiar la tabla al portapapeles para pegarla en una hoja de cálculo</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportar la tabla como un archivo CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Línea de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Línea de corte</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Longitud alrededor de la pieza </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Letras</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Cantidad</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Margen de costura (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Cortar al doblez</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Construido en</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ninguno</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>piezas</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportar a CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valores separados por comas</translation>
     </message>
 </context>
 <context>
@@ -10984,6 +11079,10 @@ actualización:</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportar Piezas</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Información de la pieza del patrón</translation>
     </message>
     <message>
         <source>Layout</source>

@@ -5621,6 +5621,10 @@ Do you want to save your changes?</source>
         <translation>Δεν ήταν δυνατός ο συγχρονισμός των μετρήσεων.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Δεν ήταν δυνατή η ενημέρωση των μετρήσεων.</translation>
     </message>
@@ -6093,6 +6097,10 @@ Do you want to save your changes?</source>
         <translation>Εργαλεία για την εισαγωγή ή την τροποποίηση εικόνων.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Πληροφορίες κομματιού πατρόν (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Τελικές μετρήσεις</translation>
     </message>
@@ -6279,6 +6287,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Pieces</source>
         <translation>Εξαγωγή τεμαχίων</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Πληροφορίες κομματιού πατρόν...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8360,6 +8372,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>περιστροφή γραμμής ίσιου</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Γραμμή ραφής</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Γραμμή κοπής</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Κομμάτι:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Ιδιότητες</translation>
     </message>
@@ -8496,6 +8520,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Αντιγραφή κομματιού πατρόν</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(με ενσωματωμένο περιθώριο ραφής)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Ενημέρωση εγκοπής</translation>
     </message>
@@ -8592,6 +8620,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Διαγώνιος Σταυρός</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Αντιγραφή του πίνακα στο πρόχειρο, για επικόλληση σε υπολογιστικό φύλλο</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Εξαγωγή του πίνακα ως αρχείο CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Γραμμή ραφής</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Γραμμή κοπής</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Μήκος περιμέτρου του κομματιού </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Όνομα</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Επιστολή</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Ποσότητα</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Περιθώριο ραφής (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Κοπή στη δίπλωση</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Ενσωματωμένο</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Κανένα</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>κομμάτια</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Εξαγωγή σε CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Τιμές διαχωρισμένες με κόμμα</translation>
     </message>
 </context>
 <context>
@@ -10947,6 +11042,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>Εξαγωγή τεμαχίων</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Πληροφορίες κομματιού πατρόν</translation>
     </message>
     <message>
         <source>Layout</source>

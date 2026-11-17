@@ -4522,7 +4522,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Никакая</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -5289,7 +5289,7 @@ Seamly2D — это бесплатное программное обеспече
         <source>None</source>
         <comment>Printer</comment>
         <translatorcomment>Принтер:</translatorcomment>
-        <translation>Никакой</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5617,6 +5617,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Невозможно синхронизировать мерки.</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6091,6 +6095,10 @@ Do you want to save your changes?</source>
         <translation>Инструменты для вставки или изменения изображений.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Информация о детали выкройки (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Финальные измерения</translation>
     </message>
@@ -6277,6 +6285,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Pieces</source>
         <translation>Экспортировать детали</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Информация о детали выкройки...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -7766,7 +7778,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Ничего</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>1-Way</source>
@@ -8364,6 +8376,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>повернуть линию долевой нити</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Линию Шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Линия Разреза</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Деталь:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Свойства</translation>
     </message>
@@ -8500,6 +8524,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дублировать деталь выкройки</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(припуск на шов включён)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Обновить Notch</translation>
     </message>
@@ -8596,6 +8624,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Квадратики по диагонали</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Скопировать таблицу в буфер обмена для вставки в электронную таблицу</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Экспортировать таблицу как файл CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Линию Шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Линия Разреза</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Длина контура детали </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Название</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Буква/символ</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Количество</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Припуск на шов (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Кроить со сгибом</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Включенные</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Никто</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>детали</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Экспорт в CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Значения, разделенные запятыми</translation>
     </message>
 </context>
 <context>
@@ -8864,7 +8959,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Никакой</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -10952,6 +11047,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>Экспортировать детали</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Информация о детали выкройки</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -14893,7 +14992,7 @@ load in SeamlyME as usual.
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>Внутреняя</translation>
+        <translation>Никто</translation>
     </message>
     <message>
         <source>Seamly2D team</source>

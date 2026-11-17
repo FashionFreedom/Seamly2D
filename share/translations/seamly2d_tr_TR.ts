@@ -5619,6 +5619,10 @@ Do you want to save your changes?</translation>
         <translation>Ölçümler senkronize edilemedi.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kalıp Parçası Bilgisi</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Ölçümler güncellenemedi.</translation>
     </message>
@@ -6091,6 +6095,10 @@ Do you want to save your changes?</translation>
         <translation>Resimleri ekleme veya değiştirme araçları.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Kalıp Parçası Bilgisi (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Son ölçümler</translation>
     </message>
@@ -6277,6 +6285,10 @@ Do you want to save your changes?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Parçaları Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Kalıp Parçası Bilgisi...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8358,6 +8370,18 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>tahıl çizgisini döndür</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Dikiş Hattı</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kesim Hattı</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Parça:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Özellikler</translation>
     </message>
@@ -8494,6 +8518,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
         <translation>Kalıp Parçasını Çoğalt</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(dikiş payı dahil)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Çentiği Güncelle</translation>
     </message>
@@ -8590,6 +8618,73 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Çapraz Haç</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kalıp Parçası Bilgisi</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Elektronik tabloya yapıştırmak için tabloyu panoya kopyala</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Tabloyu CSV dosyası olarak dışa aktar</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Dikiş Hattı</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kesim Hattı</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Parçanın çevre uzunluğu </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>İsim</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Mektup</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Miktar</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Dikiş Payı (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Kumaş katından kes</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Yerleşik</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Hiçbiri</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>parça</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>CSV&apos;ye Aktar</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Virgülle Ayrılmış Değerler</translation>
     </message>
 </context>
 <context>
@@ -10945,6 +11040,10 @@ Geçici olarak listeye eklemek için enter&apos;a basın.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Parçaları Dışa Aktar</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation> Kalıp Parçası Bilgisi</translation>
     </message>
     <message>
         <source>Layout</source>

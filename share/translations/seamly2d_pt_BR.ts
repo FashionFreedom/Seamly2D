@@ -5269,7 +5269,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Nenhuma</translation>
+        <translation>Nenhum</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5602,6 +5602,10 @@ Deseja salvar suas alterações?</translation>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Não foi possível sincronizar as medições.</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6076,6 +6080,10 @@ Deseja salvar suas alterações?</translation>
         <translation>Ferramentas para inserir ou modificar imagens.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informações da peça do molde (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Medições finais</translation>
     </message>
@@ -6262,6 +6270,10 @@ Deseja salvar suas alterações?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportar peças</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informações da peça do molde...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8344,6 +8356,18 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
         <translation>Girar linha de grão</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Linha de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linha de corte</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Peça:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Propriedades</translation>
     </message>
@@ -8480,6 +8504,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
         <translation>Duplicar parte do molde</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(margem de costura incluída)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Atualizar entalhe</translation>
     </message>
@@ -8576,6 +8604,73 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruz diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiar a tabela para a área de transferência para colar em uma planilha</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportar a tabela como um arquivo CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linha de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linha de corte</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Comprimento ao redor da peça </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Carta</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Quantidade</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Margem de costura (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Cortar na dobra</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Integrado</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nenhum</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>peças</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportar para CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valores separados por vírgula</translation>
     </message>
 </context>
 <context>
@@ -10931,6 +11026,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportar peças</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
     </message>
     <message>
         <source>Layout</source>
