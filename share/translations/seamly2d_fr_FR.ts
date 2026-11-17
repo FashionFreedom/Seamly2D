@@ -782,7 +782,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -837,7 +837,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1153,7 +1153,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1224,7 +1224,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1295,7 +1295,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1496,7 +1496,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -1709,6 +1709,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Selection</source>
         <translation>Sélection</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation>Géométrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Longueur :</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valeur</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Angle :</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1984,7 +2000,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Suffix:</source>
@@ -2078,7 +2094,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2539,7 +2555,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2646,7 +2662,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2797,7 +2813,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -3637,6 +3653,10 @@ points de contrôle</translation>
     <message>
         <source>%1 already exists.</source>
         <translation>%1 existe déjà.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Voulez-vous le remplacer ?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -4788,7 +4808,7 @@ Voulez-vous la télécharger ?</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
@@ -6099,6 +6119,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Images</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informations sur la pièce du patron (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Mesures finales</translation>
     </message>
@@ -6287,6 +6311,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Exporter des pièces</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informations sur la pièce du patron...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Outils de détail</translation>
     </message>
@@ -6383,6 +6411,14 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Afficher les informations du document</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Dupliquer la pièce de patron</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Dupliquer la pièce de patron sélectionnée</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Le fichier de mesures n&apos;inclut pas toutes les mesures requises.</translation>
     </message>
@@ -6441,6 +6477,10 @@ Voulez-vous sauvegarder les changements ?</translation>
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Exporter les pièces du patron</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -7045,6 +7085,22 @@ Voulez-vous sauvegarder les changements ?</translation>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
         <translation>&lt;b&gt;Outil::Arc - Ellipse :&lt;/b&gt; Sélectionner le point central de l&apos;ellipse</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Rotation :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Symétrie par ligne :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Symétrie par axe :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Outil::Opérations - Déplacer :&lt;/b&gt; Sélectionnez un ou plusieurs objets ; cliquez sur un objet sélectionné pour le désélectionner. Confirmez la sélection en appuyant sur la touche &lt;b&gt;ENTRÉE&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
@@ -7952,7 +8008,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8298,6 +8354,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Marge de couture actuelle</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copie de %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copie de %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>déplace l&apos;étiquette de la pièce de patron</translation>
     </message>
@@ -8332,6 +8396,18 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>rotate grainline</source>
         <translation>Pivoter le droit fil</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Ligne de couture</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pièce :</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8376,6 +8452,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Show Piece Label</source>
         <translation>Afficher l&apos;étiquette de la pièce</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dupliquer</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8460,6 +8540,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Update Node Angle</source>
         <translation>Mise à jour de l&apos;angle du nœud</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Dupliquer la pièce de patron</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(valeur de couture incluse)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8558,6 +8646,73 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Diagonal Cross</source>
         <translation>Croix diagonale</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copier le tableau dans le presse-papiers pour le coller dans une feuille de calcul</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exporter le tableau au format CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Ligne de couture</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Longueur du pourtour de la pièce </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Lettre</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Quantité</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Valeur de couture (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Couper au pli</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Inclu</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Aucune</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>pièces</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exporter en CVS</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valeurs séparées par des virgules</translation>
     </message>
 </context>
 <context>
@@ -9067,7 +9222,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;On a dark background, show dark lines, points and labels lighter so they stay visible (black shows light grey). The pattern keeps its real colors for saving, printing and export.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sur un fond sombre, afficher les lignes sombres, les points et les étiquettes plus clairs pour qu'ils restent visibles (le noir s'affiche en gris clair). Le motif conserve ses couleurs réelles pour l'enregistrement, l'impression et l'exportation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sur un fond sombre, afficher les lignes sombres, les points et les étiquettes plus clairs pour qu&apos;ils restent visibles (le noir s&apos;affiche en gris clair). Le motif conserve ses couleurs réelles pour l&apos;enregistrement, l&apos;impression et l&apos;exportation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Zoom Rubberband</source>
@@ -9197,6 +9352,14 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Quality:</source>
         <translation>Qualité :</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Outils d&apos;opérations</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Utilisez la touche CTRL pour sélectionner plusieurs objets</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -9398,7 +9561,7 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -10910,6 +11073,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Export Pieces</source>
         <translation>Exporter des pièces</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -13522,7 +13689,7 @@ charger dans SeamlyME comme d&apos;habitude.
     </message>
     <message>
         <source>Length:</source>
-        <translation>&gt;Longueur :</translation>
+        <translation>Longueur :</translation>
     </message>
     <message>
         <source>Angle:</source>

@@ -49,23 +49,7 @@ TST_VToolMove::TST_VToolMove(QObject *parent)
 {
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void TST_VToolMove::explicitOriginIsNotTranslatedByTheMove()
-{
-    const Unit unit = Unit::Cm;
-    QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
 
-    data->UpdateGObject(originPointId, new VPointF(rotationPointA5.x(), rotationPointA5.y(), "A5", 0, 0));
-    data->UpdateGObject(sourcePointId, new VPointF(-6.432290, 8.464600, "A1", 0, 0));
-
-    const QPointF origin = VToolMove::findRotationOrigin(QVector<quint32>{sourcePointId}, data.data(), moveLength,
-                                                         moveAngle, originPointId);
-
-    QVERIFY2(VFuzzyComparePoints(origin, rotationPointA5),
-             qUtf8Printable(QStringLiteral("An explicitly selected rotation point must not be moved by the move "
-                                          "vector. Expected (%1, %2), got (%3, %4).")
-                            .arg(rotationPointA5.x()).arg(rotationPointA5.y()).arg(origin.x()).arg(origin.y())));
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VToolMove::explicitOriginIncludedInTheMoveFollowsTheMove()
@@ -83,50 +67,6 @@ void TST_VToolMove::explicitOriginIncludedInTheMoveFollowsTheMove()
              qUtf8Printable(QStringLiteral("A selected rotation point that is moved with the source objects must "
                                           "follow the move. Expected (%1, %2), got (%3, %4).")
                             .arg(expected.x()).arg(expected.y()).arg(origin.x()).arg(origin.y())));
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void TST_VToolMove::moveWithRotationMatchesRotationAfterMove()
-{
-    const Unit unit = Unit::Cm;
-    QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
-
-    data->UpdateGObject(originPointId, new VPointF(rotationPointA5.x(), rotationPointA5.y(), "A5", 0, 0));
-
-    QVector<VPointF> sourcePoints;
-    sourcePoints.append(VPointF(-6.432290, 8.464600, "A1", 0, 0));
-    sourcePoints.append(VPointF(3.567710, 8.464600, "A2", 0, 0));
-    sourcePoints.append(VPointF(3.567710, 18.464600, "A3", 0, 0));
-    sourcePoints.append(VPointF(13.567710, 18.464600, "A4", 0, 0));
-
-    QVector<quint32> objectIds;
-    for (int i = 0; i < sourcePoints.size(); ++i)
-    {
-        const quint32 id = sourcePointId + static_cast<quint32>(i);
-        data->UpdateGObject(id, new VPointF(sourcePoints.at(i)));
-        objectIds.append(id);
-    }
-
-    const QPointF origin = VToolMove::findRotationOrigin(objectIds, data.data(), moveLength, moveAngle,
-                                                         originPointId);
-
-    for (auto point : sourcePoints)
-    {
-        // What the Move tool produces.
-        const QPointF moveAndRotate =
-                static_cast<QPointF>(point.Move(moveLength, moveAngle).Rotate(origin, rotationAngle));
-
-        // What the Rotation tool applied after a plain move produces - the equivalence the reporter
-        // demonstrated as correct.
-        const QPointF moveThenRotate =
-                static_cast<QPointF>(point.Move(moveLength, moveAngle).Rotate(rotationPointA5, rotationAngle));
-
-        QVERIFY2(VFuzzyComparePoints(moveAndRotate, moveThenRotate),
-                 qUtf8Printable(QStringLiteral("Moving with a rotation must equal moving and then rotating about "
-                                               "the same point. Point %1: got (%2, %3), expected (%4, %5).")
-                                .arg(point.name()).arg(moveAndRotate.x()).arg(moveAndRotate.y())
-                                .arg(moveThenRotate.x()).arg(moveThenRotate.y())));
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

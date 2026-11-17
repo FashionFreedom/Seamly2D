@@ -155,6 +155,33 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         type = QtDebugMsg;
     }
 
+    // Qt's accessibility code warns when an assistive client (VoiceOver, Narrator, automation tools) asks an item
+    // view for an item that a model reset just removed. Qt handles it by returning no item, so don't pop up a dialog.
+    if ((type == QtWarningMsg) && (QLatin1String(context.category).startsWith(QLatin1String("qt.accessibility"))
+            || msg.startsWith(QLatin1String("QAccessible")) || msg.startsWith(QLatin1String("QCocoaAccessibility"))
+            || msg.startsWith(QLatin1String("Requested invalid tree cell"))))
+    {
+        type = QtDebugMsg;
+    }
+
+    // Qt's font database warns when a requested font family is not installed and it has to search the aliases for a
+    // substitute. The text still renders with the fallback, so log it without a dialog.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("Populating font family aliases")))
+    {
+        type = QtDebugMsg;
+    }
+
+#if defined(Q_OS_LINUX)
+    // This QtWayland warning occurs during screen or focus transitions on Linux Wayland.
+    // It is an internal library bookkeeping mismatch, so downgrade it to avoid an infinite popup loop.
+    if ((type == QtWarningMsg) &&
+        (QLatin1String(context.category) == QLatin1String("qt.qpa.wayland.textinput") ||
+         msg.contains(QStringLiteral("QWaylandTextInputv3::disableSurface"))))
+    {
+        type = QtDebugMsg;
+    }
+#endif
+
     // Only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
     // a non-GUI thread, you'll have to queue the message to the GUI
@@ -285,7 +312,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     , m_lockLog()
     , m_out(nullptr)
 {
-    
+
 #if defined(Q_OS_MACOS) || defined(Q_OS_MAC)
     // Overriding the default Qt 6.7.3+ behavior where macOS hides menu icons
     QCoreApplication::setAttribute(Qt::AA_DontShowIconsInMenus, false);
@@ -302,9 +329,9 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     setTheme();
 
     // making sure will create new instance...just in case we will ever do 2 objects of Application2D
-    VCommandLine::Reset();
+    VCommandLine::reset();
     loadTranslations(QLocale().name());// By default the console version uses system locale
-    VCommandLine::Get(*this);
+    VCommandLine::getCommandLine(*this);
     undoStack = new QUndoStack(this);
 }
 
@@ -314,13 +341,30 @@ Application2D::~Application2D()
     qCDebug(vApp, "Application closing.");
     qInstallMessageHandler(nullptr); // Restore the message handler
     delete m_trVars;
-    VCommandLine::Reset();
+    VCommandLine::reset();
 }
 
 void Application2D::setTheme()
 {
     QPalette palette;
     int  theme =Seamly2DSettings()->getAppTheme();
+
+#if defined(Q_OS_MAC) && QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    // Native window backgrounds must use the same appearance as the custom palette.
+    Qt::ColorScheme color_scheme = Qt::ColorScheme::Unknown;
+    const auto selected_theme = static_cast<AppTheme>(theme);
+    if (selected_theme == AppTheme::LightFusion || selected_theme == AppTheme::classic)
+    {
+        color_scheme = Qt::ColorScheme::Light;
+    }
+    else if (selected_theme == AppTheme::DarkFusion || selected_theme == AppTheme::TwilightFusion
+             || selected_theme == AppTheme::Windows11)
+    {
+        color_scheme = Qt::ColorScheme::Dark;
+    }
+    // Unknown removes a previous override when the system theme is selected.
+    styleHints()->setColorScheme(color_scheme);
+#endif
 
     if (theme == 3)
     {
@@ -798,7 +842,7 @@ VSettings *Application2D::Seamly2DSettings()
 //---------------------------------------------------------------------------------------------------------------------
 bool Application2D::isGUIMode()
 {
-    return (VCommandLine::commandLine != nullptr) && VCommandLine::commandLine->IsGuiEnabled();
+    return (VCommandLine::command_line != nullptr) && VCommandLine::command_line->isGuiEnabled();
 }
 
 /// @brief isAppInGUIMode little hack that allows to have access to application state from VAbstractApplication class.
@@ -810,6 +854,6 @@ bool Application2D::isAppInGUIMode() const
 //---------------------------------------------------------------------------------------------------------------------
 const VCommandLinePtr Application2D::commandLine() const
 {
-    return VCommandLine::commandLine;
+    return VCommandLine::command_line;
 }
 //---------------------------------------------------------------------------------------------------------------------

@@ -304,6 +304,9 @@ public:
     bool                 getConstrainModKey() const;
     void                 setConstrainModKey(const bool &value);
 
+    bool                 useControlSelect() const;
+    void                 setControlSelect(const bool &value);
+
     QString              getCompanyName() const;
     void                 setCompanyName(const QString &value);
 

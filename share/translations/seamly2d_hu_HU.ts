@@ -1696,6 +1696,22 @@ p, li { white-space: pre-wrap; }
         <translation>Második pont:</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Hossz:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Érték</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Szög:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Attribútumok</translation>
     </message>
@@ -3638,6 +3654,10 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
     <message>
         <source>%1 already exists.</source>
         <translation>%1 már létezik.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Szeretné lecserélni?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5712,6 +5732,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Darabok exportálása (E, P)</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Szabásminta-alkatrész adatai (P, I)</translation>
+    </message>
+    <message>
         <source>New Print Layout (N, L)</source>
         <translation>Új nyomtatási elrendezés (N, L)</translation>
     </message>
@@ -6328,6 +6352,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Darabok exportálása</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Szabásminta-alkatrész adatai...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Részletmegmunkáló eszközök</translation>
     </message>
@@ -6462,6 +6490,14 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     <message>
         <source>Next Draft Block</source>
         <translation>Következő vázlatblokk</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Szabásminta-darab duplikálása</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Kijelölt szabásminta-darab duplikálása</translation>
     </message>
     <message>
         <source>New pattern</source>
@@ -6649,19 +6685,35 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Forgatás:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Vonalról vonalra tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Tengely szerinti tükrözés:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Tengely szerinti tükrözés:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Eszköz::Műveletek - Mozgatás:&lt;/b&gt; Jelöljön ki objektumokat (újabb kattintással megszüntethető), majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -6681,7 +6733,7 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Eszköz::Darab - Csomópontok beszúrása:&lt;/b&gt; Válasszon ki egy vagy több objektumot - Tartsa lenyomva a &lt;b&gt;%1&lt;/b&gt; billentyűt többszörös kijelöléshez, nyomja meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűt a kijelölés megerősítéséhez</translation>
+        <translation>&lt;b&gt;Eszköz::Darab - Csomópontok beszúrása:&lt;/b&gt; Jelöljön ki objektumokat (többszörös kijelöléshez tartsa lenyomva: &lt;b&gt;%1&lt;/b&gt;, majd erősítse meg az &lt;b&gt;ENTER&lt;/b&gt; billentyűvel</translation>
     </message>
     <message>
         <source>Could not load the image.</source>
@@ -6856,6 +6908,10 @@ Nyomja meg az Enter billentyűt, hogy ideiglenesen hozzáadja a listához.</tran
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Mintadarabok exportálása</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -8273,6 +8329,18 @@ Menti a módosításokat?</translation>
         <translation>Jelenlegi varrásráhagyás</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Szabásminta-darab duplikálása</translation>
+    </message>
+    <message>
+        <source>%1 copy</source>
+        <translation>%1 másolat</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 másolat %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mintadarab címkéjének áthelyezése</translation>
     </message>
@@ -8307,6 +8375,22 @@ Menti a módosításokat?</translation>
     <message>
         <source>rotate grainline</source>
         <translation>szálkereszt elforgatása</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Varratvonal</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Vágásvonal</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(varrásszélességgel együtt)</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Darab:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8351,6 +8435,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Darabcímke megjelenítése</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Másodpéldány</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8533,6 +8621,73 @@ Menti a módosításokat?</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Átlós kereszt</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Táblázat másolása a vágólapra táblázatkezelőbe való beillesztéshez</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Táblázat exportálása CSV-fájlként</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Varratvonal</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Vágásvonal</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Alkatrész kerülete </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Levél</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Mennyiség</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Varrásszélesség (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Szabás hajtásvonalon</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Beépített</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nincs</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>darab</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportálás CSV-be</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Vesszővel elválasztott értékek</translation>
     </message>
 </context>
 <context>
@@ -9242,6 +9397,14 @@ Menti a módosításokat?</translation>
     <message>
         <source>Auto clear formula</source>
         <translation>Automatikusan törlődő képlet</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Műveleti eszközök</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Több objektum kiválasztásához használja a CTRL billentyűt</translation>
     </message>
     <message>
         <source>Use native dialogs</source>
@@ -10916,6 +11079,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Darabok exportálása</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
     </message>
     <message>
         <source>Layout</source>

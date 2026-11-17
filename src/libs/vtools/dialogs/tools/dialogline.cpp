@@ -55,10 +55,13 @@
 #include <QLabel>
 #include <QMap>
 #include <QPointer>
+#include <QSharedPointer>
 #include <QVariant>
 
 #include "../../visualization/visualization.h"
 #include "../../visualization/line/vistoolline.h"
+#include "../vgeometry/vgobject.h"
+#include "../vgeometry/vpointf.h"
 #include "../ifc/ifcdef.h"
 #include "dialogs/tools/dialogtool.h"
 #include "ui_dialogline.h"
@@ -146,6 +149,24 @@ void DialogLine::setLineName()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/// @brief setlength set the calculated length of the line
+/// @param value length value
+//---------------------------------------------------------------------------------------------------------------------
+void DialogLine::setlength(const QString &value)
+{
+    ui->length_calculation_label->setText(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setAngle set the calculated angle of the line
+/// @param value angle value
+//---------------------------------------------------------------------------------------------------------------------
+void DialogLine::setAngle(const QString &value)
+{
+    ui->angle_calculation_label->setText(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /// @brief getLineType return type of line
 /// @return type
 //---------------------------------------------------------------------------------------------------------------------
@@ -229,6 +250,17 @@ void DialogLine::PointNameChanged()
     ChangeColor(ui->labelFirstPoint, color);
     ChangeColor(ui->labelSecondPoint, color);
     CheckState();
+
+    const QSharedPointer<VPointF> first  = data->GeometricObject<VPointF>(getFirstPoint());
+    const QSharedPointer<VPointF> second = data->GeometricObject<VPointF>(getSecondPoint());
+    const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
+
+    const QString length = QString("%1 %2").arg(qApp->fromPixel(line.length()))
+                                           .arg(UnitsToStr(qApp->patternUnit(), true));
+    const QString angle = QString("%1 °").arg(line.angle());
+
+    ui->length_calculation_label->setText(length);
+    ui->angle_calculation_label->setText(angle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

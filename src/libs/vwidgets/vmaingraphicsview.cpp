@@ -1,53 +1,52 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//---------------------------------------------------------------------------------------------------------------------
+/// @file   vmaingraphicsview.cpp
+/// @author Douglas S Caskey
+/// @date   15 Nov, 2026
+///
+/// @copyright
+/// Copyright (C) 2017 - 2026 Seamly, LLC
+/// https://github.com/fashionfreedom/seamly2d
+///
+/// @brief
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
- ************************************************************************
- **
- **  @file   vmaingraphicsview.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+//---------------------------------------------------------------------------------------------------------------------
+/// @file   vmaingraphicsview.cpp
+/// @author Roman Telezhynskyi <dismine(at)gmail.com>
+/// @date  15 Nov, 2013
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Valentina project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2013-2015 Valentina project
+/// <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+///
+/// Valentina is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Valentina is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include "vmaingraphicsview.h"
 #include "global.h"
@@ -145,7 +144,7 @@ void GraphicsViewZoom::gentleZoom(qreal factor)
             // Because QGraphicsView centers the picture when it's smaller than the view. And QGraphicsView's scrolls
             // boundaries don't allow to put any picture point at any viewport position we will provide fictive scene
             // size. Temporary and bigger than view, scene size will help position an image under cursor.
-            fictiveSceneRect(m_view->scene(), m_view);
+            fictiveSceneRect(m_view);
         }
         m_view->centerOn(targetScenePos);
         QPointF deltaViewPos = targetViewPos - QPointF(m_view->viewport()->width() / 2.0,
@@ -358,9 +357,8 @@ void GraphicsViewZoom::pinchTriggered(QPinchGesture *gesture)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void GraphicsViewZoom::fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view)
+void GraphicsViewZoom::fictiveSceneRect(QGraphicsView *view)
 {
-    SCASSERT(sc != nullptr)
     SCASSERT(view != nullptr)
 
     //Calculate view rect
@@ -378,13 +376,13 @@ void GraphicsViewZoom::fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view)
 
     viewRect = QRectF(topLeftRay.p2(), bottomRightRay.p2());
 
-    //Calculate scene rect
-    const QRectF sceneRect = sc->sceneRect();
+    //Calculate scene rect. Grow only the view's rect, the scene's rect stays as is.
+    const QRectF sceneRect = view->sceneRect();
 
     //Unite two rects
     const QRectF newRect = sceneRect.united(viewRect);
 
-    sc->setSceneRect(newRect);
+    view->setSceneRect(newRect);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -710,6 +708,16 @@ void VMainGraphicsView::mousePressEvent(QMouseEvent *event)
         default:
             break;
     }
+    if (m_addToSelection && !qApp->Settings()->useControlSelect() &&
+        event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    {
+        QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
+                             event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
+                             event->pointingDevice());
+        QGraphicsView::mousePressEvent(&additive);
+        event->setAccepted(additive.isAccepted());
+        return;
+    }
     QGraphicsView::mousePressEvent(event);
 }
 
@@ -756,7 +764,18 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
  */
 void VMainGraphicsView::mouseReleaseEvent(QMouseEvent *event)
 {
-    QGraphicsView::mouseReleaseEvent ( event ); // First because need to hide a rubber band
+    if (m_addToSelection && !qApp->Settings()->useControlSelect() &&
+        event->button() == Qt::LeftButton && !isZoomToAreaActive && !isZoomPanActive)
+    {
+        QMouseEvent additive(event->type(), event->position(), event->scenePosition(), event->globalPosition(),
+                             event->button(), event->buttons(), event->modifiers() | Qt::ControlModifier,
+                             event->pointingDevice());
+        QGraphicsView::mouseReleaseEvent(&additive);   // First because need to hide a rubber band
+    }
+    else
+    {
+        QGraphicsView::mouseReleaseEvent ( event ); // First because need to hide a rubber band
+    }
     QGraphicsView::setDragMode( QGraphicsView::NoDrag );
     if ( isPanDragActive )
     {
@@ -827,6 +846,12 @@ void VMainGraphicsView::setShowToolOptions(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VMainGraphicsView::setAddToSelection(bool value)
+{
+    m_addToSelection = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsView::allowRubberBand(bool value)
 {
     isallowRubberBand = value;
@@ -843,11 +868,17 @@ void VMainGraphicsView::allowRubberBand(bool value)
     SCASSERT(sc != nullptr)
     SCASSERT(view != nullptr)
 
+    //Calculate view rect
+    const QRectF viewRect = SceneVisibleArea(view);
+
+    // Pad by half the view size so panning can move any point to the center of the view.
+    // The padding only goes on the view's scene rect, so the scene's own rect (used by exports) stays tight.
+    const qreal margin_x = viewRect.width() / 2.0;
+    const qreal margin_y = viewRect.height() / 2.0;
+    const bool is_view_scene = view->scene() == sc;
+
     if (item == nullptr)
     {
-        //Calculate view rect
-        const QRectF viewRect = SceneVisibleArea(view);
-
         //Calculate scene rect
         VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(sc);
         SCASSERT(currentScene)
@@ -855,11 +886,38 @@ void VMainGraphicsView::allowRubberBand(bool value)
 
         //Unite two rects
         sc->setSceneRect(itemsRect.united(viewRect));
+
+        if (is_view_scene)
+        {
+            view->setSceneRect(itemsRect.adjusted(-margin_x, -margin_y, margin_x, margin_y).united(viewRect));
+        }
     }
-    else if (not sc->sceneRect().contains(item->sceneBoundingRect()))
+    else
     {
-        sc->setSceneRect(sc->sceneRect().united(item->sceneBoundingRect()));
+        const QRectF item_rect = item->sceneBoundingRect();
+        if (not sc->sceneRect().contains(item_rect))
+        {
+            sc->setSceneRect(sc->sceneRect().united(item_rect));
+        }
+
+        const QRectF padded_item_rect = item_rect.adjusted(-margin_x, -margin_y, margin_x, margin_y);
+        if (is_view_scene && not view->sceneRect().contains(padded_item_rect))
+        {
+            view->setSceneRect(view->sceneRect().united(padded_item_rect));
+        }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief setScene sets the scene and drops the previous scene's panning rect, so the view follows the new
+/// scene's rect until NewSceneRect() pads it again.
+///
+/// @param scene scene.
+//---------------------------------------------------------------------------------------------------------------------
+void VMainGraphicsView::setScene(QGraphicsScene *scene)
+{
+    QGraphicsView::setScene(scene);
+    setSceneRect(QRectF());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -868,6 +926,39 @@ QRectF VMainGraphicsView::SceneVisibleArea(QGraphicsView *view)
     SCASSERT(view != nullptr)
     //to receive the currently visible area, map the widgets bounds to the scene
     return QRectF(view->mapToScene(0, 0), view->mapToScene(view->width(), view->height()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief snapToOrigin returns the position an item being dragged should take: the origin (0, 0) when the new
+/// position is within a few screen pixels of it, otherwise the position unchanged. Holding Alt turns snapping off.
+/// Only a drag by the mouse snaps: positions set by code (redrawing after a change) are returned unchanged, so a
+/// redraw never moves anything.
+/// @param item the item being moved.
+/// @param pos the new position, in the item's parent coordinates.
+//---------------------------------------------------------------------------------------------------------------------
+QPointF VMainGraphicsView::snapToOrigin(const QGraphicsItem *item, const QPointF &pos)
+{
+    if (item == nullptr ||
+        item->scene() == nullptr ||
+        item->scene()->mouseGrabberItem() != item ||
+        (QGuiApplication::keyboardModifiers() & Qt::AltModifier))
+    {
+        return pos;
+    }
+    const QList<QGraphicsView *> views = item->scene()->views();
+    if (views.isEmpty() || views.at(0) == nullptr)
+    {
+        return pos;
+    }
+    const QGraphicsView *view = views.at(0);
+    const QPointF scene_pos = item->parentItem() ? item->parentItem()->mapToScene(pos) : pos;
+    const QPoint offset = view->mapFromScene(scene_pos) - view->mapFromScene(QPointF(0, 0));
+    const int snap_pixels = 12;
+    if (offset.x() * offset.x() + offset.y() * offset.y() > snap_pixels * snap_pixels)
+    {
+        return pos;
+    }
+    return item->parentItem() ? item->parentItem()->mapFromScene(QPointF(0, 0)) : QPointF(0, 0);
 }
 
 void VMainGraphicsView::initScrollBars()

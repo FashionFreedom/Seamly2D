@@ -268,6 +268,8 @@ void TST_Seamly2DCommandLine::TestOpenCollection_data() const
     const QString tmp = QCoreApplication::applicationDirPath() + QDir::separator() + tmpTestCollectionFolder;
     const QString testGOST = QString("--test;;-m;;%1").arg(tmp + QDir::separator() + QLatin1String("gost_man_ru.smms"));
     const QString keyTest = QStringLiteral("--test");
+    const QString testTrousers068 = QString("--test;;-m;;%1")
+        .arg(tmp + QDir::separator() + QLatin1String("trousers_v0_6_8.smis"));
 
     QTest::newRow("bra")               << "bra.sm2d"               << keyTest  << V_EX_OK;
     QTest::newRow("jacket1_52-176")   << "jacket1_52-176.sm2d"   << testGOST << V_EX_OK;
@@ -283,6 +285,8 @@ void TST_Seamly2DCommandLine::TestOpenCollection_data() const
     QTest::newRow("TestDart")          << "test_dart.sm2d"          << keyTest  << V_EX_OK;
     QTest::newRow("MaleShirt")         << "male_shirt.sm2d"         << keyTest  << V_EX_OK;
     QTest::newRow("Trousers")          << "trousers.sm2d"          << keyTest  << V_EX_OK;
+    // Format 0.6.8: draft blocks without the images tag, which the schemas declare only from 0.7.1
+    QTest::newRow("Trousers v0.6.8")   << "trousers_v0_6_8.sm2d"   << testTrousers068 << V_EX_OK;
     QTest::newRow("Basic block women")      << "basic_block_women-2016.sm2d" << keyTest << V_EX_OK;
     QTest::newRow("Gent Jacket with tummy") << "gent_jacket_with_tummy.sm2d" << keyTest << V_EX_OK;
     QTest::newRow("Steampunk_trousers")     << "steampunk_trousers.sm2d"     << keyTest << V_EX_OK;

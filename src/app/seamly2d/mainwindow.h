@@ -58,7 +58,7 @@
 
 #include <functional>
 #include "mainwindowsnogui.h"
-#include "core/vcmdexport.h"
+#include "core/command_line.h"
 #include "../vmisc/vlockguard.h"
 
 #include <QMap>
@@ -191,6 +191,7 @@ private slots:
 #endif
     void exportLayoutAs();
     void exportPiecesAs();
+    void showPieceInfo();
     void exportDraftBlocksAs();
 
     void handleArrowTool(bool checked);

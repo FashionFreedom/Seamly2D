@@ -85,6 +85,7 @@ public:
     QPointF       getScenePos() const;
 
     QRectF        visibleItemsBoundingRect() const;
+    void          clear();
     void          initializeOrigins();
     void          setOriginsVisible(bool visible);
 

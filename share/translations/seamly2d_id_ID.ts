@@ -1704,6 +1704,22 @@ p, li { spasi: pra-bungkus; }
         <translation>Pilihan</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometri</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Panjang:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Nilai</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Sudut:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atribut</translation>
     </message>
@@ -3614,6 +3630,10 @@ Silakan coba batalkan operasi terakhir atau perbaiki rumus yang rusak.</translat
     <message>
         <source>%1 already exists.</source>
         <translation>%1 sudah ada.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Apakah Anda ingin menggantinya?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5603,6 +5623,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Tidak dapat menyinkronkan pengukuran.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Tidak dapat memperbarui pengukuran.</translation>
     </message>
@@ -6075,6 +6099,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Alat untuk memasukkan atau memodifikasi gambar.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Info Bagian Pola (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Pengukuran akhir</translation>
     </message>
@@ -6263,6 +6291,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Potongan Ekspor</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Info Bagian Pola...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Alat detail</translation>
     </message>
@@ -6359,6 +6391,14 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Tampilkan Info dokumen</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikat Bagian Pola</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplikat bagian pola yang dipilih</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>File pengukuran tidak menyertakan semua pengukuran yang diperlukan.</translation>
     </message>
@@ -6371,16 +6411,32 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>&lt;b&gt;Alat::Operasi - Rotasi:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Alat::Operasi - Rotasi:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Cermin menurut Sumbu:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Cermin menurut Sumbu:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Pindah:&lt;/b&gt; Pilih satu atau lebih objek - Tahan &lt;b&gt;%1&lt;/b&gt; untuk pilihan ganda, Tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi pilihan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Pindah:&lt;/b&gt; Pilih objek (klik lagi untuk membatalkan), lalu tekan &lt;b&gt;ENTER&lt;/b&gt; untuk mengonfirmasi</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8274,6 +8330,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Kelonggaran jahitan saat ini</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Salinan %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Salinan %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>pindahkan label potongan pola</translation>
     </message>
@@ -8308,6 +8372,18 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>putar garis butiran</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Garis Jahitan</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Garis Potong</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Potongan:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8352,6 +8428,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Tampilkan label bagian</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikat</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8436,6 +8516,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Perbarui Sudut Node</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikat Bagian Pola</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(kampuh sudah termasuk)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8534,6 +8622,73 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Salib Diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Salin tabel ke papan klip, untuk ditempel ke lembar kerja</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Ekspor tabel sebagai file CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Garis Jahitan</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Garis Potong</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Panjang keliling bagian pola </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Surat</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Jumlah</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Kampuh (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Potong pada lipatan</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Terpasang di</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Tidak ada</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>bagian</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Ekspor ke CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Nilai yang Dipisahkan Koma</translation>
     </message>
 </context>
 <context>
@@ -9179,6 +9334,14 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Selalu gunakan pena saat ini</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Alat Operasional</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Gunakan CTRL untuk pemilihan beberapa objek</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10881,6 +11044,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Potongan Ekspor</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
     </message>
     <message>
         <source>Layout</source>

@@ -1689,6 +1689,22 @@ p, li { white-space: pre-wrap; }
         <translation>Seleção</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Comprimento:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valor</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Ângulo:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atributos</translation>
     </message>
@@ -3601,6 +3617,10 @@ Tente desfazer a última operação ou corrigir a fórmula quebrada.</translatio
         <translation>%1 já existe.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Deseja substituí-lo?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 arquivos com nome base %2 já existem.</translation>
     </message>
@@ -5253,7 +5273,7 @@ O programa é fornecido NO ESTADO EM QUE SE ENCONTRA, SEM QUALQUER GARANTIA DE Q
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Nenhuma</translation>
+        <translation>Nenhum</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5586,6 +5606,10 @@ Deseja salvar suas alterações?</translation>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Não foi possível sincronizar as medições.</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6060,6 +6084,10 @@ Deseja salvar suas alterações?</translation>
         <translation>Ferramentas para inserir ou modificar imagens.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informações da peça do molde (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Medições finais</translation>
     </message>
@@ -6248,6 +6276,10 @@ Deseja salvar suas alterações?</translation>
         <translation>Exportar peças</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informações da peça do molde...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Ferramentas de detalhe</translation>
     </message>
@@ -6344,6 +6376,14 @@ Deseja salvar suas alterações?</translation>
         <translation>Exibir informações do documento</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar parte do molde</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplicar a parte do molde selecionada</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>O arquivo de medições não inclui todas as medidas necessárias.</translation>
     </message>
@@ -6356,16 +6396,32 @@ Deseja salvar suas alterações?</translation>
         <translation>&lt;b&gt;Ferramenta::Operações - Rotação:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Ferramenta::Operações - Rotação:&lt;/b&gt; Selecione um ou mais objetos – clique em um objeto selecionado para desmarcá-lo; pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por linha:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por linha:&lt;/b&gt; Selecione um ou mais objetos – clique em um objeto selecionado para desmarcá-lo; pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por eixo:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Ferramenta::Operações - Espelhar por eixo:&lt;/b&gt; Selecione um ou mais objetos – clique em um objeto selecionado para desmarcá-lo; pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Ferramenta::Operações - Mover:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Ferramenta::Operações - Mover:&lt;/b&gt; Selecione um ou mais objetos – clique em um objeto selecionado para desmarcá-lo; pressione &lt;b&gt;ENTER&lt;/b&gt; para confirmar a seleção</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8260,6 +8316,14 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
         <translation>Margem de costura atual</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Cópia de %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Cópia de %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mover etiqueta da peça do molde</translation>
     </message>
@@ -8294,6 +8358,18 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>Girar linha de grão</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linha de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linha de corte</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Peça:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8338,6 +8414,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Mostrar rótulo da peça</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicar</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8422,6 +8502,14 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Atualizar ângulo do nó</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicar parte do molde</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(margem de costura incluída)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8520,6 +8608,73 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruz diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiar a tabela para a área de transferência para colar em uma planilha</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportar a tabela como um arquivo CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linha de costura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linha de corte</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Comprimento ao redor da peça </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Carta</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Quantidade</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Margem de costura (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Cortar na dobra</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Integrado</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nenhum</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>peças</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportar para CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valores separados por vírgula</translation>
     </message>
 </context>
 <context>
@@ -9165,6 +9320,14 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Usar sempre a caneta atual</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Ferramentas de operações</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Use CTRL para seleção de múltiplos objetos</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10869,6 +11032,10 @@ Pressione Enter para adicioná-lo temporariamente à lista.</translation>
         <translation>Exportar peças</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informações da peça do molde</translation>
+    </message>
+    <message>
         <source>Layout</source>
         <translation>Layout</translation>
     </message>
@@ -12226,7 +12393,7 @@ carregar no SeamlyME como de costume.
     </message>
     <message>
         <source>Charcoal</source>
-        <translation>Antracite</translation>
+        <translation>Carvão</translation>
     </message>
     <message>
         <source>Graphite</source>

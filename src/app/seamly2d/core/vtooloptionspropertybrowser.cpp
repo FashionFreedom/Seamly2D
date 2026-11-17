@@ -2697,10 +2697,20 @@ void VToolOptionsPropertyBrowser::showOptionsToolLine(QGraphicsItem *item)
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
+    addPropertyLabel(tr("Geometry"), AttrName);
+    auto length = new VPE::VStringProperty(tr("Length:"));
+    length->setReadOnly(true);
+    addProperty(length, AttrLength);
+    auto angle = new VPE::VStringProperty(tr("Angle:"));
+    angle->setReadOnly(true);
+    addProperty(angle, AttrAngle);
+
     addPropertyLabel(tr("Attributes"), AttrName);
     addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
     addPropertyLineType(tool, tr("Linetype:"));
     addPropertyLineWeight(tool, tr("Lineweight:"));
+
+    updateOptionsToolLine();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3528,6 +3538,14 @@ void VToolOptionsPropertyBrowser::updateOptionsToolLine()
     VToolLine *tool = qgraphicsitem_cast<VToolLine *>(currentItem);
 
     idToProperty[AttrObjName]->setValue(tr("Line_") + tool->FirstPointName() + "_" + tool->SecondPointName());
+
+    const auto first = tool->getData()->GeometricObject<VPointF>(tool->GetFirstPoint());
+    const auto second = tool->getData()->GeometricObject<VPointF>(tool->GetSecondPoint());
+    const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
+    idToProperty[AttrLength]->setValue(QStringLiteral("%1 %2")
+                                     .arg(qApp->fromPixel(line.length()))
+                                     .arg(UnitsToStr(qApp->patternUnit(), true)));
+    idToProperty[AttrAngle]->setValue(QStringLiteral("%1%2").arg(line.angle()).arg(degreeSymbol));
 
     {
         const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());

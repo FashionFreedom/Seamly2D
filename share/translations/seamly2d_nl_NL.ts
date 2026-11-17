@@ -1689,6 +1689,22 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lengte:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Waarde</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Hoek:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Kenmerken</translation>
     </message>
@@ -3599,6 +3615,10 @@ Probeer de laatste bewerking ongedaan te maken of de defecte formule te herstell
     <message>
         <source>%1 already exists.</source>
         <translation>%1 bestaat al.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Wilt u het vervangen?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5586,6 +5606,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kan maten niet synchroniseren.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Kan maten niet bijwerken.</translation>
     </message>
@@ -6058,6 +6082,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Hulpmiddelen voor het invoegen of wijzigen van afbeeldingen.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Patroondeel-info (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Eindmetingen</translation>
     </message>
@@ -6246,6 +6274,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Exporteer Patroondelen</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Patroondeel-info...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Patroondeel Gereedschappen</translation>
     </message>
@@ -6342,6 +6374,14 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Toon Document Info</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Patroondeel dupliceren</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Geselecteerd patroondeel dupliceren</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Matenbestand bevat niet alle benodigde maten.</translation>
     </message>
@@ -6354,16 +6394,32 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Draaiing:&lt;/b&gt; Kies een of meer objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Draaiing:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over Lijn:&lt;/b&gt; Kies een of meer objecten. Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over Lijn:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Spiegel over As:&lt;/b&gt; Kies een of meerdere objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Verplaats:&lt;/b&gt; Kies een of meerdere objecten - Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectxie, Druk &lt;b&gt;ENTER&lt;/b&gt; om selectie te bevestigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Gereedschap::Bewerkingen - Verplaats:&lt;/b&gt; Kies een of meer objecten. Klik op een geselecteerd object om de selectie ervan ongedaan te maken. Bevestig de selectie door op &lt;b&gt;ENTER&lt;/b&gt; te drukken</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8257,6 +8313,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Huidige naadtoeslag</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Kopie van %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Kopie van %1 %2&gt;</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>Verplaats patroondeellabel</translation>
     </message>
@@ -8291,6 +8355,18 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>draai de recht-van-draad</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Stiklijn</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kniplijn</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Patroondeel:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8335,6 +8411,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Toon label Patroondeel</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Dubbel</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8419,6 +8499,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Knooppunthoek bijwerken</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Patroondeel dupliceren</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(naadtoeslag inbegrepen)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8517,6 +8605,73 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonaal Kruis</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Kopieer de tabel naar het klembord om in een spreadsheet te plakken</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exporteer de tabel als een CSV-bestand</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Stiklijn</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kniplijn</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Omtrek van het patroondeel </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Letter</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Aantal</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Naadtoeslag (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Op de stofvouw knippen</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Ingebouwd</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>delen</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exporteer naar CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Door komma&apos;s gescheiden waarden</translation>
     </message>
 </context>
 <context>
@@ -9162,6 +9317,14 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Gebruik altijd een actuele pen</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Bewerkingen Gereedschappen</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Gebruik CTRL voor meervoudige objectselectie</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10864,6 +11027,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exporteer Patroondelen</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
     </message>
     <message>
         <source>Layout</source>
