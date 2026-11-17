@@ -5271,7 +5271,7 @@ Il programma viene fornito così com&apos;è, senza alcuna garanzia di alcun tip
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Nessun</translation>
+        <translation>Nessuno</translation>
     </message>
     <message>
         <source>Text</source>
@@ -5604,6 +5604,10 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Impossibile sincronizzare le misure.</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informazioni sul pezzo del cartamodello</translation>
     </message>
     <message>
         <source>Couldn&apos;t update measurements.</source>
@@ -6078,6 +6082,10 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Strumenti per inserire o modificare immagini.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informazioni sul pezzo del cartamodello (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Misure finali</translation>
     </message>
@@ -6264,6 +6272,10 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Esportazione di pezzi</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informazioni sul pezzo del cartamodello...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8345,6 +8357,18 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>ruotare la grana</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Linea di cucitura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linea di taglio</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pezzo:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Proprietà</translation>
     </message>
@@ -8481,6 +8505,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
         <translation>Duplica pezzo del cartamodello</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(margine di cucitura incluso)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Aggiorna Notch</translation>
     </message>
@@ -8577,6 +8605,73 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Croce diagonale</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informazioni sul pezzo del cartamodello</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copia la tabella negli appunti per incollarla in un foglio di calcolo</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Esporta la tabella come file CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linea di cucitura</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linea di taglio</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Lunghezza del perimetro del pezzo </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nome</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Lettera</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Quantità</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Margine di cucitura (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Tagliare sulla piega</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Costruito in</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nessuno</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>pezzi</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Esporta in CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valori separati da virgole</translation>
     </message>
 </context>
 <context>
@@ -10932,6 +11027,10 @@ Premere Invio per aggiungerlo temporaneamente all&apos;elenco.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Esportazione di pezzi</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informazioni sul pezzo del cartamodello</translation>
     </message>
     <message>
         <source>Layout</source>

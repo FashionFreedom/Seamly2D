@@ -5728,6 +5728,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Darabok exportálása (E, P)</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Szabásminta-alkatrész adatai (P, I)</translation>
+    </message>
+    <message>
         <source>New Print Layout (N, L)</source>
         <translation>Új nyomtatási elrendezés (N, L)</translation>
     </message>
@@ -6344,6 +6348,10 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>Darabok exportálása</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Szabásminta-alkatrész adatai...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Részletmegmunkáló eszközök</translation>
     </message>
@@ -6896,6 +6904,10 @@ Nyomja meg az Enter billentyűt, hogy ideiglenesen hozzáadja a listához.</tran
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Mintadarabok exportálása</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -8361,6 +8373,22 @@ Menti a módosításokat?</translation>
         <translation>szálkereszt elforgatása</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Varratvonal</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Vágásvonal</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(varrásszélességgel együtt)</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Darab:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Tulajdonságok</translation>
     </message>
@@ -8589,6 +8617,73 @@ Menti a módosításokat?</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Átlós kereszt</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Táblázat másolása a vágólapra táblázatkezelőbe való beillesztéshez</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Táblázat exportálása CSV-fájlként</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Varratvonal</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Vágásvonal</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Alkatrész kerülete </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Név</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Levél</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Mennyiség</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Varrásszélesség (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Szabás hajtásvonalon</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Beépített</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Nincs</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>darab</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportálás CSV-be</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Vesszővel elválasztott értékek</translation>
     </message>
 </context>
 <context>
@@ -10980,6 +11075,10 @@ Menti a módosításokat?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Darabok exportálása</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Szabásminta-alkatrész adatai</translation>
     </message>
     <message>
         <source>Layout</source>

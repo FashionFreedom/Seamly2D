@@ -5619,6 +5619,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Tidak dapat menyinkronkan pengukuran.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Tidak dapat memperbarui pengukuran.</translation>
     </message>
@@ -6091,6 +6095,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation>Alat untuk memasukkan atau memodifikasi gambar.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Info Bagian Pola (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Pengukuran akhir</translation>
     </message>
@@ -6277,6 +6285,10 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Potongan Ekspor</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Info Bagian Pola...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8358,6 +8370,18 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>putar garis butiran</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Garis Jahitan</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Garis Potong</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Potongan:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Properti</translation>
     </message>
@@ -8494,6 +8518,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
         <translation>Duplikat Bagian Pola</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(kampuh sudah termasuk)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Perbarui Notch</translation>
     </message>
@@ -8590,6 +8618,73 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Salib Diagonal</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Salin tabel ke papan klip, untuk ditempel ke lembar kerja</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Ekspor tabel sebagai file CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Garis Jahitan</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Garis Potong</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Panjang keliling bagian pola </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nama</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Surat</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Jumlah</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Kampuh (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Potong pada lipatan</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Terpasang di</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Tidak ada</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>bagian</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Ekspor ke CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Nilai yang Dipisahkan Koma</translation>
     </message>
 </context>
 <context>
@@ -10945,6 +11040,10 @@ Tekan enter untuk menambahkannya sementara ke daftar.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Potongan Ekspor</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Info Bagian Pola</translation>
     </message>
     <message>
         <source>Layout</source>

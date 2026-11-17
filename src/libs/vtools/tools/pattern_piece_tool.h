@@ -206,6 +206,7 @@ private:
 
     void                  updateExcludeState();
     void                  updateInternalPaths();
+    QString               makeToolTip() const;
 
     VPieceItem::MoveTypes findLabelGeometry(const VPatternLabelData &labelData, qreal &rotationAngle, qreal &labelWidth,
                                             qreal &labelHeight, QPointF &pos);

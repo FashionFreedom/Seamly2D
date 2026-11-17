@@ -5620,6 +5620,10 @@ Doriți să salvați modificările?</translation>
         <translation>Nu s-au putut sincroniza măsurătorile.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Nu s-au putut actualiza măsurătorile.</translation>
     </message>
@@ -6092,6 +6096,10 @@ Doriți să salvați modificările?</translation>
         <translation>Instrumente pentru inserarea sau modificarea imaginilor.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informații piesă tipar (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Măsurători finale</translation>
     </message>
@@ -6278,6 +6286,10 @@ Doriți să salvați modificările?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportă piese</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informații piesă tipar...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8359,6 +8371,18 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>rotire linie fibrată</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Linie de cusătură</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linie de tăiere</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Piesă:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Proprietăți</translation>
     </message>
@@ -8495,6 +8519,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Duplicare piesă tipar</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(rezervă de cusătură inclusă)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Actualizare crestătură</translation>
     </message>
@@ -8591,6 +8619,73 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruce diagonală</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiați tabelul în clipboard pentru a-l lipi într-o foaie de calcul</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportați tabelul ca fișier CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linie de cusătură</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linie de tăiere</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Lungimea conturului piesei </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Număr</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Scrisoare</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Cantitate</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Rezervă de cusătură (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Croire pe îndoitură</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Încorporat</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Niciunul</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>piese</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportați în CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valori separate prin virgulă</translation>
     </message>
 </context>
 <context>
@@ -10946,6 +11041,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportă piese</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
     </message>
     <message>
         <source>Layout</source>

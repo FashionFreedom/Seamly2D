@@ -3196,6 +3196,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->midpoint_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleMidpointTool);
     connect(ui->exportLayout_ToolButton,   &QToolButton::clicked, this, &MainWindow::exportLayoutAs);
     connect(ui->exportPiecesAs_ToolButton, &QToolButton::clicked, this, &MainWindow::exportPiecesAs);
+    connect(ui->pieceInfo_ToolButton,      &QToolButton::clicked, this, &MainWindow::showPieceInfo);
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
     connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImageTool);
@@ -3589,6 +3590,8 @@ void MainWindow::handlePatternPiecesMenu()
 
     QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool") + "\tU");
     QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces") + "\tE, P");
+    QAction* action_piece_info   = menu.addAction(QIcon(":/toolicon/32x32/piece_info.png"),
+                                                  tr("Pattern Piece Info") + "\tP, I");
     QAction *selectedAction      = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -3606,6 +3609,21 @@ void MainWindow::handlePatternPiecesMenu()
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
     }
+    else if (selectedAction == action_piece_info)
+    {
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
+        showPieceInfo();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// showPieceInfo shows the Pattern Piece Info dialog: a table of the pattern pieces with their seamline and
+// cutting line lengths.
+void MainWindow::showPieceInfo()
+{
+    PieceInfoDialog* dialog = new PieceInfoDialog(pattern, this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose, true);
+    dialog->show();
 }
 
 void MainWindow::handleLayoutMenu()
@@ -5395,6 +5413,7 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
     ui->exportPiecesAs_ToolButton->setEnabled(pieceTools);
+    ui->pieceInfo_ToolButton->setEnabled(pieceTools);
 
     //Layout
     ui->layoutSettings_ToolButton->setEnabled(layoutTools);
@@ -5473,6 +5492,7 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->union_Action->setEnabled(pieceTools);
     ui->exportPieces_Action->setEnabled(pieceTools);
+    ui->pieceInfo_Action->setEnabled(pieceTools);
 
     //Layout
     ui->newPrintLayout_Action->setEnabled(layoutTools);
@@ -6536,6 +6556,12 @@ void MainWindow::createActions()
     {
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
+    });
+
+    connect(ui->pieceInfo_Action, &QAction::triggered, this, [this]
+    {
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
+        showPieceInfo();
     });
 
     //Tools->Piece submenu actions
