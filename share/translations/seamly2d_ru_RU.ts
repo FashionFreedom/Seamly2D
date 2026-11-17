@@ -3636,6 +3636,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation>%1 уже существует.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Хотите заменить его?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>Файлы %1 с базовым именем %2 уже существуют.</translation>
     </message>

@@ -3656,6 +3656,10 @@ Kérjük, próbálja meg visszavonni a legutóbbi műveletet, vagy javítsa ki a
         <translation>%1 már létezik.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Szeretné lecserélni?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 fájl már létezik %2 alapnévvel.</translation>
     </message>

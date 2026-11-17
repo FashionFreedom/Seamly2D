@@ -3632,6 +3632,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>%1 on jo olemassa.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Haluatko korvata sen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 tiedostoa, joiden perusnimi on %2, on jo olemassa.</translation>
     </message>
@@ -4886,7 +4890,7 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D on sovellus tietokone avusteiseen vaatenkaavojen suunnitteluun.
+        <translation>Seamly2D on sovellus tietokoneavusteiseen vaatekaavojen suunnitteluun.
 
 Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 

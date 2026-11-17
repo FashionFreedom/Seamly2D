@@ -3631,6 +3631,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation type="unfinished"></translation>
     </message>

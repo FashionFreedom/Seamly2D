@@ -3655,6 +3655,10 @@ points de contrôle</translation>
         <translation>%1 existe déjà.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Voulez-vous le remplacer ?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 fichier(s) avec le nom de base %2 existe(nt) déjà.</translation>
     </message>
