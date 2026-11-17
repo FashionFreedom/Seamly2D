@@ -5617,6 +5617,10 @@ Chcete uložit své změny?</translation>
         <translation>Nelze synchronizovat měření.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Nelze aktualizovat měření.</translation>
     </message>
@@ -6089,6 +6093,10 @@ Chcete uložit své změny?</translation>
         <translation>Nástroje pro vkládání nebo úpravu obrázků.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informace o dílu střihu (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Finální měření</translation>
     </message>
@@ -6275,6 +6283,10 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportovat kusy</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informace o dílu střihu...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8356,6 +8368,18 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>otočit čáru vláken</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Švová linie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Řezací čára</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Kus:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Vlastnosti</translation>
     </message>
@@ -8492,6 +8516,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Duplikovat díl střihu</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(včetně švového přídavku)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Aktualizovat zářez</translation>
     </message>
@@ -8588,6 +8616,73 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonální kříž</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Zkopírovat tabulku do schránky pro vložení do tabulkového procesoru</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportovat tabulku jako soubor CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Švová linie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Řezací čára</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Délka obvodu dílu </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Dopis</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Množství</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Švový přídavek (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Stříhat na přehybu</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Vestavěné</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>díly</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportovat do CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Hodnoty oddělené čárkou</translation>
     </message>
 </context>
 <context>
@@ -10943,6 +11038,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportovat kusy</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
     </message>
     <message>
         <source>Layout</source>

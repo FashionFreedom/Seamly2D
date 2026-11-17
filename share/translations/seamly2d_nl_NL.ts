@@ -5602,6 +5602,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kan maten niet synchroniseren.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Kan maten niet bijwerken.</translation>
     </message>
@@ -6074,6 +6078,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Hulpmiddelen voor het invoegen of wijzigen van afbeeldingen.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Patroondeel-info (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Eindmetingen</translation>
     </message>
@@ -6260,6 +6268,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exporteer Patroondelen</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Patroondeel-info...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8341,6 +8353,18 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>draai de recht-van-draad</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Stiklijn</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kniplijn</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Patroondeel:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Eigenschappen</translation>
     </message>
@@ -8477,6 +8501,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
         <translation>Patroondeel dupliceren</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(naadtoeslag inbegrepen)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Notch bijwerken</translation>
     </message>
@@ -8573,6 +8601,73 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonaal Kruis</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Kopieer de tabel naar het klembord om in een spreadsheet te plakken</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exporteer de tabel als een CSV-bestand</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Stiklijn</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Kniplijn</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Omtrek van het patroondeel </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Letter</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Aantal</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Naadtoeslag (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Op de stofvouw knippen</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Ingebouwd</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>delen</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exporteer naar CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Door komma&apos;s gescheiden waarden</translation>
     </message>
 </context>
 <context>
@@ -10928,6 +11023,10 @@ Druk op enter om deze tijdelijk toe te voegen aan de lijst.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exporteer Patroondelen</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Patroondeel-info</translation>
     </message>
     <message>
         <source>Layout</source>

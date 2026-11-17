@@ -5729,6 +5729,10 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>Eksportuj elementy (E, P)</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informacje o elemencie wykroju (P, I)</translation>
+    </message>
+    <message>
         <source>New Print Layout (N, L)</source>
         <translation>Nowy układ wydruku (N, L)</translation>
     </message>
@@ -6345,6 +6349,10 @@ Program jest dostarczany w stanie&quot;TAK JAK JEST&quot;bez ŻADNEJ GWARANCJI, 
         <translation>Eksportuj elementy</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informacje o elemencie wykroju...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Narzędzia szczegółowe</translation>
     </message>
@@ -6897,6 +6905,10 @@ Naciśnij Enter, aby tymczasowo dodać ją do listy.</translation>
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Eksportuj elementy wzoru</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informacje o elemencie wykroju</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -8362,6 +8374,22 @@ Czy chcesz zapisać zmiany?</translation>
         <translation>obróć linię słoja</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Linia szwu</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linia cięcia</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(zapas na szew wliczony)</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Element:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Właściwości</translation>
     </message>
@@ -8590,6 +8618,73 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Krzyż diagonalny</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informacje o elemencie wykroju</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Skopiuj tabelę do schowka, aby wkleić ją do arkusza kalkulacyjnego</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Eksportuj tabelę jako plik CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linia szwu</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linia cięcia</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Długość obwodu elementu </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Imię</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>List</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Ilość</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Zapas na szew (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Krój ze złożenia</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Wbudowany</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Brak</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>elementy</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Eksportuj do pliku CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Wartości rozdzielone przecinkami</translation>
     </message>
 </context>
 <context>
@@ -10981,6 +11076,10 @@ Czy chcesz zapisać zmiany?</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Eksportuj elementy</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informacje o elemencie wykroju</translation>
     </message>
     <message>
         <source>Layout</source>

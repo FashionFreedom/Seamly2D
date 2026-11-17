@@ -6115,6 +6115,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Images</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informations sur la pièce du patron (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Mesures finales</translation>
     </message>
@@ -6303,6 +6307,10 @@ Voulez-vous sauvegarder les changements ?</translation>
         <translation>Exporter des pièces</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informations sur la pièce du patron...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Outils de détail</translation>
     </message>
@@ -6465,6 +6473,10 @@ Voulez-vous sauvegarder les changements ?</translation>
     <message>
         <source>Export Pattern Pieces</source>
         <translation>Exporter les pièces du patron</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -8382,6 +8394,18 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Pivoter le droit fil</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Ligne de couture</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pièce :</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Propriétés</translation>
     </message>
@@ -8518,6 +8542,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
         <translation>Dupliquer la pièce de patron</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(valeur de couture incluse)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Encoche mise à jour</translation>
     </message>
@@ -8614,6 +8642,73 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Diagonal Cross</source>
         <translation>Croix diagonale</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copier le tableau dans le presse-papiers pour le coller dans une feuille de calcul</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exporter le tableau au format CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Ligne de couture</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Ligne de coupe</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Longueur du pourtour de la pièce </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nom</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Lettre</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Quantité</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Valeur de couture (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Couper au pli</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Inclu</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Aucune</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>pièces</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exporter en CVS</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valeurs séparées par des virgules</translation>
     </message>
 </context>
 <context>
@@ -10974,6 +11069,10 @@ Appuyez sur Entrée pour l&apos;ajouter temporairement à la liste.</translation
     <message>
         <source>Export Pieces</source>
         <translation>Exporter des pièces</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informations sur la pièce du patron</translation>
     </message>
     <message>
         <source>Layout</source>

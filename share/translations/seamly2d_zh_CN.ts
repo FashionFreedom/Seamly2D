@@ -5619,6 +5619,10 @@ Do you want to save your changes?</source>
         <translation>无法同步测量值.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>无法更新测量值.</translation>
     </message>
@@ -6091,6 +6095,10 @@ Do you want to save your changes?</source>
         <translation>用于插入或修改图像的工具.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>纸样裁片信息 (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>最终测量</translation>
     </message>
@@ -6277,6 +6285,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Pieces</source>
         <translation>拆分裁片</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>纸样裁片信息...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -8358,6 +8370,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>旋转纹理线</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>接缝线</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>切割线</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>裁片:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>特性</translation>
     </message>
@@ -8494,6 +8518,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>复制纸样裁片</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(含缝份)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>更新缺口</translation>
     </message>
@@ -8590,6 +8618,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>对角十字</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>将表格复制到剪贴板，以便粘贴到电子表格中</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>将表格导出为 CSV 文件</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>接缝线</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>切割线</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>裁片周长 </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>信</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>数量</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>缝份 (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>对折裁剪</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>内置</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>没有任何</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>片</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>导出为 CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>逗号分隔值</translation>
     </message>
 </context>
 <context>
@@ -10945,6 +11040,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>导出裁片</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
     </message>
     <message>
         <source>Layout</source>

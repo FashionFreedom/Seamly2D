@@ -4516,7 +4516,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Жоден</translation>
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>Slit</source>
@@ -5624,6 +5624,10 @@ Do you want to save your changes?</source>
         <translation>Об&apos;єкт:</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Інформація про деталь викрійки</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Не вдалося оновити мірки.</translation>
     </message>
@@ -6128,6 +6132,10 @@ Do you want to save your changes?</source>
         <translation>Інструменти для вставки або редагування зображень.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Інформація про деталь викрійки (P, I)</translation>
+    </message>
+    <message>
         <source>Arc - Elliptical</source>
         <translation>Дуга - еліптична</translation>
     </message>
@@ -6318,6 +6326,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Export Pieces</source>
         <translation>Експорт частин</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Інформація про деталь викрійки...</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -7757,7 +7769,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Жоден</translation>
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>1-Way</source>
@@ -8355,6 +8367,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>обернути нитку основи</translation>
     </message>
     <message>
+        <source>Seam Line</source>
+        <translation>Лінія шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Лінія розрізу</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Деталі:</translation>
+    </message>
+    <message>
         <source>Properties</source>
         <translation>Властивості</translation>
     </message>
@@ -8491,6 +8515,10 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дублювати деталь викрійки</translation>
     </message>
     <message>
+        <source>(SA built in)</source>
+        <translation>(припуск на шов включено)</translation>
+    </message>
+    <message>
         <source>Update Notch</source>
         <translation>Оновлення виїмки</translation>
     </message>
@@ -8587,6 +8615,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>Діагональний хрест</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Інформація про деталь викрійки</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Скопіювати таблицю до буфера обміну для вставлення в електронну таблицю</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Експортувати таблицю як файл CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Лінія шва</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Лінія розрізу</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Довжина контуру деталі </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Ім&apos;я</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Лист</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Кількість</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Припуск на шов (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Кроїти зі згином</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Вбудована</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Жодного</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>деталі</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Експортувати до CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Значення, розділені комами</translation>
     </message>
 </context>
 <context>
@@ -8907,7 +9002,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>None</source>
-        <translation>Жоден</translation>
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -10942,6 +11037,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>Експорт частин</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Інформація про деталь викрійки</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -14876,7 +14975,7 @@ load in SeamlyME as usual.
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>Внутрішня</translation>
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>Seamly2D team</source>
