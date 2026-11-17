@@ -40,6 +40,7 @@ var classPatternPieceTool =
     [ "itemChange", "da/dfb/classPatternPieceTool.html#a87132896e96b2661fbd7c438a2515aa4", null ],
     [ "keyReleaseEvent", "da/dfb/classPatternPieceTool.html#aacabde1e6d1e5d47f1ddd8b66a5c5689", null ],
     [ "lowerItemToBottom", "da/dfb/classPatternPieceTool.html#a18f0e1a364d965f1d3acb2b4e9ff712b", null ],
+    [ "makeToolTip", "da/dfb/classPatternPieceTool.html#ae9f48ad1c18e67f292b98ffe3d190648", null ],
     [ "mousePressEvent", "da/dfb/classPatternPieceTool.html#a8e5ef1597a57a3398b44e11c978e10a5", null ],
     [ "mouseReleaseEvent", "da/dfb/classPatternPieceTool.html#a86f7560b9fa38397a40fab2baae471de", null ],
     [ "nodeAngleChanged", "da/dfb/classPatternPieceTool.html#a7011d381c3d6641781a1e14db348d847", null ],

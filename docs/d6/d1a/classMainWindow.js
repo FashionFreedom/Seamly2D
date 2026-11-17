@@ -207,6 +207,7 @@ var classMainWindow =
     [ "showEvent", "d6/d1a/classMainWindow.html#a3febb9ef08a8e0f7fc00848ea540a899", null ],
     [ "showLayoutMode", "d6/d1a/classMainWindow.html#a76dce35c814835925f2e886d479aeaf2", null ],
     [ "showLayoutPages", "d6/d1a/classMainWindow.html#ab13069dc6f456d24fdf37ae387ddac9a", null ],
+    [ "showPieceInfo", "d6/d1a/classMainWindow.html#a5b16efc1c41e2513163162f6fe8eed7b", null ],
     [ "showPieceMode", "d6/d1a/classMainWindow.html#abe1e97ac67d772a0af138bd7eb1eb089", null ],
     [ "showZoomToObjectDialog", "d6/d1a/classMainWindow.html#a207009824b97af20bb72937405534f2d", null ],
     [ "signalZoomPanActive", "d6/d1a/classMainWindow.html#ab860aceb5e3481f2dd7b9f0442c88ba7", null ],

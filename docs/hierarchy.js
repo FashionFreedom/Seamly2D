@@ -382,6 +382,7 @@ var hierarchy =
       [ "MeShortcutsDialog", "dd/d67/classMeShortcutsDialog.html", null ],
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],
       [ "NewMeasurementsDialog", "dc/da3/classNewMeasurementsDialog.html", null ],
+      [ "PieceInfoDialog", "d0/d9c/classPieceInfoDialog.html", null ],
       [ "SeamlyMeWelcomeDialog", "d5/d64/classSeamlyMeWelcomeDialog.html", null ],
       [ "SeamlyWelcomeDialog", "d4/d8f/classSeamlyWelcomeDialog.html", null ],
       [ "ShortcutsDialog", "de/d8e/classShortcutsDialog.html", null ],
@@ -855,7 +856,8 @@ var hierarchy =
     ] ],
     [ "QTableWidgetItem", null, [
       [ "GroupTableWidgetItem", "d9/d04/classGroupTableWidgetItem.html", null ],
-      [ "PieceTableWidgetItem", "d7/df0/classPieceTableWidgetItem.html", null ]
+      [ "PieceTableWidgetItem", "d7/df0/classPieceTableWidgetItem.html", null ],
+      [ "anonymous_namespace{piece_info_dialog.cpp}::NumericItem", "d6/dbf/classanonymous__namespace_02piece__info__dialog_8cpp_03_1_1NumericItem.html", null ]
     ] ],
     [ "QToolBar", null, [
       [ "PenToolBar", "d5/dd9/classPenToolBar.html", null ]

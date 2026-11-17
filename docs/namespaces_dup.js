@@ -28,6 +28,7 @@ var namespaces_dup =
       [ "enableDefaultButton", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#af04aa336f20ec8424e3ff06065363df1", null ],
       [ "getFormulaFromUser", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#a6e4259470f736c8f847d8d04b3fef36d", null ]
     ] ],
+    [ "anonymous_namespace{piece_info_dialog.cpp}", "dc/dd2/namespaceanonymous__namespace_02piece__info__dialog_8cpp_03.html", "dc/dd2/namespaceanonymous__namespace_02piece__info__dialog_8cpp_03" ],
     [ "anonymous_namespace{preferencespatternpage.cpp}", "d1/dbe/namespaceanonymous__namespace_02preferencespatternpage_8cpp_03.html", [
       [ "initAllStringsComboBox", "d1/dbe/namespaceanonymous__namespace_02preferencespatternpage_8cpp_03.html#a97383a8b46e2afedbc957a5c56b7522f", null ]
     ] ],
@@ -235,6 +236,7 @@ var namespaces_dup =
       [ "FileComment", "da/d4f/namespaceanonymous__namespace_02vpattern_8cpp_03.html#a88e46586c7b4f973617a0afb53d5b536", null ]
     ] ],
     [ "anonymous_namespace{vpiece.cpp}", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html", [
+      [ "closedPathLength", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#add1449284f343afe972fc0da097d66b2", null ],
       [ "notchesPossible", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#ae8655eab9eb2b655a9d590a4f9773c79", null ],
       [ "PieceMissingNodes", "d1/db2/namespaceanonymous__namespace_02vpiece_8cpp_03.html#a0b92f230191728dbaf33b543114ee48b", null ]
     ] ],

@@ -148,6 +148,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac0ebd208b06745dc56b127e6822b68a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae00089496a4fae1c4e23cd4735b96efa"><td class="memItemLeft" align="right" valign="top">QVector&lt; QPointF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dab/classVPiece.html#ae00089496a4fae1c4e23cd4735b96efa">cutPathPoints</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *data) const</td></tr>
 <tr class="separator:ae00089496a4fae1c4e23cd4735b96efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6754d3899022926f110551fa27cfaaf2"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dab/classVPiece.html#a6754d3899022926f110551fa27cfaaf2">seamlineLength</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *data) const</td></tr>
+<tr class="separator:a6754d3899022926f110551fa27cfaaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a1abebbe8062b99e5b37dfab53822b"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dab/classVPiece.html#ae7a1abebbe8062b99e5b37dfab53822b">cutPathLength</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *data) const</td></tr>
+<tr class="separator:ae7a1abebbe8062b99e5b37dfab53822b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b4c8790f6f0062086e7095f9f7b52e3"><td class="memItemLeft" align="right" valign="top">QVector&lt; QLineF &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dab/classVPiece.html#a3b4c8790f6f0062086e7095f9f7b52e3">createNotchLines</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *data, const QVector&lt; QPointF &gt; &amp;seamAllowance=QVector&lt; QPointF &gt;()) const</td></tr>
 <tr class="separator:a3b4c8790f6f0062086e7095f9f7b52e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1d778e839c15c84baf27d530d545f4a"><td class="memItemLeft" align="right" valign="top">QPainterPath&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dab/classVPiece.html#ae1d778e839c15c84baf27d530d545f4a">mainPath</a> (const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *data) const</td></tr>
@@ -503,11 +507,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01086">1086</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01119">1119</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00393">VPieceNode::getNotchAngle()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00405">VPieceNode::getNotchCount()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00369">VPieceNode::getNotchLength()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00326">VPieceNode::getNotchSubType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00314">VPieceNode::getNotchType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00381">VPieceNode::getNotchWidth()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00393">VPieceNode::getNotchAngle()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00405">VPieceNode::getNotchCount()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00369">VPieceNode::getNotchLength()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00326">VPieceNode::getNotchSubType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00314">VPieceNode::getNotchType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00381">VPieceNode::getNotchWidth()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -545,11 +549,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">1282</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01315">1315</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -587,11 +591,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01304">1304</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01337">1337</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01249">createVExternalNotch()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">createVExternalNotch()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -653,11 +657,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">933</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">966</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01086">createBuiltInSaNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00996">createSeamAllowanceNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">getNextNotchSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00779">getNotchPreviousSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00762">getNotchSAPoint()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00183">VAbstractPiece::isHideSeamLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00893">isNotchVisible()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01119">createBuiltInSaNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01029">createSeamAllowanceNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00845">getNextNotchSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">getNotchPreviousSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00795">getNotchSAPoint()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00183">VAbstractPiece::isHideSeamLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00926">isNotchVisible()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>, <a class="el" href="../../d7/d61/application__2d_8h_source.html#l00066">qApp</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00286">createNotchLines()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00319">createNotchLines()</a>.</p>
 
 </div>
 </div>
@@ -695,11 +699,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">1320</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">1353</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">createCastleNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01304">createDiamondNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01129">createSlitNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01144">createTNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01181">createUNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01249">createVExternalNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01212">createVInternalNotch()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01315">createCastleNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01337">createDiamondNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01162">createSlitNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01177">createTNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01214">createUNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">createVExternalNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01245">createVInternalNotch()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01086">createBuiltInSaNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00996">createSeamAllowanceNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01119">createBuiltInSaNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01029">createSeamAllowanceNotch()</a>.</p>
 
 </div>
 </div>
@@ -729,11 +733,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00286">286</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00319">319</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00980">VPiecePath::FindInLoopNotExcludedDown()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00944">VPiecePath::FindInLoopNotExcludedUp()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetUnitedPath()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, and <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00287">VPieceNode::isNotch()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00980">VPiecePath::FindInLoopNotExcludedDown()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00944">VPiecePath::FindInLoopNotExcludedUp()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">GetUnitedPath()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, and <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00287">VPieceNode::isNotch()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00363">getNotchesPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00396">getNotchesPath()</a>.</p>
 
 </div>
 </div>
@@ -801,11 +805,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00996">996</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01029">1029</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00355">VAbstractCurve::CurveIntersectLine()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00393">VPieceNode::getNotchAngle()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00405">VPieceNode::getNotchCount()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00369">VPieceNode::getNotchLength()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00326">VPieceNode::getNotchSubType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00314">VPieceNode::getNotchType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00381">VPieceNode::getNotchWidth()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00846">getSeamNotchSAPoint()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00070">NotchData::count</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00355">VAbstractCurve::CurveIntersectLine()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00393">VPieceNode::getNotchAngle()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00405">VPieceNode::getNotchCount()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00369">VPieceNode::getNotchLength()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00326">VPieceNode::getNotchSubType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00314">VPieceNode::getNotchType()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00381">VPieceNode::getNotchWidth()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00879">getSeamNotchSAPoint()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00065">NotchData::subType</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00064">NotchData::type</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -843,11 +847,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01129">1129</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01162">1162</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -885,11 +889,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01144">1144</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01177">1177</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -927,11 +931,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01181">1181</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01214">1214</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d5/ded/varc_8cpp_source.html#l00331">VArc::getSegments()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d5/ded/varc_8cpp_source.html#l00331">VArc::getSegments()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -969,11 +973,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01249">1249</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">1282</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01304">createDiamondNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01337">createDiamondNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
 
 </div>
 </div>
@@ -1011,11 +1015,35 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01212">1212</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01245">1245</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00068">NotchData::angle</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00848">VAbstractPiece::createParallelLine()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">findIntersection()</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00066">NotchData::length</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00063">NotchData::line</a>, <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00069">NotchData::offset</a>, and <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00067">NotchData::width</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01320">createNotches()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01353">createNotches()</a>.</p>
+
+</div>
+</div>
+<a id="ae7a1abebbe8062b99e5b37dfab53822b" name="ae7a1abebbe8062b99e5b37dfab53822b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a1abebbe8062b99e5b37dfab53822b">&#9670;&#160;</a></span>cutPathLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal VPiece::cutPathLength </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00313">313</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00273">cutPathPoints()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/de1/piece__info__dialog_8cpp_source.html#l00138">PieceInfoDialog::fillTable()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01358">PatternPieceTool::makeToolTip()</a>.</p>
 
 </div>
 </div>
@@ -1039,7 +1067,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00087">anonymous_namespace{vlayoutpiece.cpp}::convertInternalPaths()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00065">anonymous_namespace{internal_path_dialog.cpp}::cutLinePath()</a>, and <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00324">InternalPathTool::refreshGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00087">anonymous_namespace{vlayoutpiece.cpp}::convertInternalPaths()</a>, <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l00065">anonymous_namespace{internal_path_dialog.cpp}::cutLinePath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00313">cutPathLength()</a>, and <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00324">InternalPathTool::refreshGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1067,11 +1095,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">684</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">717</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00660">CustomSARecord::endPoint</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00660">CustomSARecord::endPoint</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00893">isNotchVisible()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00926">isNotchVisible()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
 </div>
 </div>
@@ -1109,11 +1137,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01514">1514</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01547">1547</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d3/d4f/vabstractcurve_8cpp_source.html#l00355">VAbstractCurve::CurveIntersectLine()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">createCastleNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01129">createSlitNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01144">createTNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01181">createUNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01249">createVExternalNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01212">createVInternalNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01315">createCastleNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01162">createSlitNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01177">createTNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01214">createUNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01282">createVExternalNotch()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01245">createVInternalNotch()</a>.</p>
 
 </div>
 </div>
@@ -1132,9 +1160,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00479">479</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00512">512</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1153,11 +1181,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00473">473</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00506">506</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d9/d3a/anchorpoint__tool_8cpp_source.html#l00149">AnchorPointTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01185">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01141">QT_WARNING_POP::createUnionAnchors()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01156">QT_WARNING_POP::createUnitedAnchors()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02322">PatternPieceTool::initializeAnchorPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00526">missingAnchors()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01209">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d9/d3a/anchorpoint__tool_8cpp_source.html#l00149">AnchorPointTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01186">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01141">QT_WARNING_POP::createUnionAnchors()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01156">QT_WARNING_POP::createUnitedAnchors()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02365">PatternPieceTool::initializeAnchorPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00559">missingAnchors()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01210">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
 </div>
 </div>
@@ -1176,9 +1204,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00461">461</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1197,11 +1225,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00455">455</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00236">InternalPathTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01185">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01060">QT_WARNING_POP::createCSAUnion()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01086">QT_WARNING_POP::CreateUnitedCSA()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02298">PatternPieceTool::InitCSAPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00502">MissingCSAPath()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01209">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00236">InternalPathTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01186">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01060">QT_WARNING_POP::createCSAUnion()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01086">QT_WARNING_POP::CreateUnitedCSA()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02341">PatternPieceTool::InitCSAPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00535">MissingCSAPath()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01210">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
 </div>
 </div>
@@ -1223,11 +1251,11 @@ Additional Inherited Members</h2></td></tr>
 <p>VDetail::GetGrainlineGeometry full access to the grainline geometry object. </p>
 <dl class="section return"><dt>Returns</dt><dd>reference to grainline geometry object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00583">583</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00616">616</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00668">PatternPieceTool::addGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01366">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01525">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01075">VPattern::ParsePieceGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00796">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01045">PatternPieceTool::SaveMoveGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01058">PatternPieceTool::SaveResizeGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01072">PatternPieceTool::SaveRotateGrainline()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02539">PatternPieceTool::toggleGrainline()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00906">PatternPieceTool::updateGrainline()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00669">PatternPieceTool::addGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01409">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01568">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01075">VPattern::ParsePieceGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00797">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01046">PatternPieceTool::SaveMoveGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01059">PatternPieceTool::SaveResizeGrainline()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01073">PatternPieceTool::SaveRotateGrainline()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02582">PatternPieceTool::toggleGrainline()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00907">PatternPieceTool::updateGrainline()</a>.</p>
 
 </div>
 </div>
@@ -1249,9 +1277,9 @@ Additional Inherited Members</h2></td></tr>
 <p>VDetail::GetGrainlineGeometry returns the read-only reference to the grainline geometry object. </p>
 <dl class="section return"><dt>Returns</dt><dd>reference to grainline geometry object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00592">592</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00625">625</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1270,9 +1298,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00443">443</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00476">476</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1291,11 +1319,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00437">437</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00470">470</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00236">InternalPathTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01185">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00087">anonymous_namespace{vlayoutpiece.cpp}::convertInternalPaths()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01100">QT_WARNING_POP::createUnionInternalPaths()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01125">QT_WARNING_POP::CreateUnitedInternalPaths()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02307">PatternPieceTool::InitInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00520">MissingInternalPaths()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01209">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01734">PatternPieceTool::updateInternalPaths()</a>, and <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l01395">InternalPathDialog::validateName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01576">UnionTool::addPiece()</a>, <a class="el" href="../../d4/dea/internal__path__tool_8cpp_source.html#l00236">InternalPathTool::AddToFile()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01186">PatternPieceTool::AddToFile()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00087">anonymous_namespace{vlayoutpiece.cpp}::convertInternalPaths()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01100">QT_WARNING_POP::createUnionInternalPaths()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01125">QT_WARNING_POP::CreateUnitedInternalPaths()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02350">PatternPieceTool::InitInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00553">MissingInternalPaths()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01210">PatternPieceTool::RefreshDataInFile()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01777">PatternPieceTool::updateInternalPaths()</a>, and <a class="el" href="../../de/d8d/internal__path__dialog_8cpp_source.html#l01395">InternalPathDialog::validateName()</a>.</p>
 
 </div>
 </div>
@@ -1351,11 +1379,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">812</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00845">845</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00735">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00768">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -1399,11 +1427,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00735">735</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00768">768</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01031">VPiecePath::CurveSeamAllowanceSegment()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00404">VContainer::GeometricObject()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00149">VPieceNode::GetId()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00173">VPieceNode::GetReverse()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00161">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01016">VPiecePath::PreparePointEkv()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">getNextNotchSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00779">getNotchPreviousSAPoints()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00762">getNotchSAPoint()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00845">getNextNotchSAPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">getNotchPreviousSAPoints()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00795">getNotchSAPoint()</a>.</p>
 
 </div>
 </div>
@@ -1433,11 +1461,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00396">396</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00286">createNotchLines()</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00319">createNotchLines()</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01765">PatternPieceTool::RefreshGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01808">PatternPieceTool::RefreshGeometry()</a>.</p>
 
 </div>
 </div>
@@ -1493,11 +1521,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00779">779</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00812">812</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00735">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00768">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -1547,11 +1575,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00762">762</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00795">795</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00735">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00768">getNodeSAPoints()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -1572,7 +1600,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1593,9 +1621,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00624">VAbstractTool::addNodes()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00125">UnionDialog::CheckObject()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00373">PatternPieceDialog::ChosenObject()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00161">UnionDialog::chosenPiece()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00067">TST_VPiece::ClearLoop()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00319">VNodePoint::contextMenuEvent()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01018">QT_WARNING_POP::CreateUnitedNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00738">PatternPieceTool::EnableToolMove()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02210">PatternPieceTool::initializeNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00430">PatternPieceTool::insertNodes()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00136">UnionDialog::isPieceValid()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00173">TST_VPiece::Issue620()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00181">mainPathNodePoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00496">MissingNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01863">PatternPieceTool::nodeAngleChanged()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l01271">PatternPieceDialog::nodeChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01981">PatternPieceTool::nodeDeleted()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01946">PatternPieceTool::nodeExcluded()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l01332">PatternPieceDialog::notchChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01901">PatternPieceTool::notchChanged()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01018">VPattern::parsePieceNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00760">PatternPieceTool::pieceLockedChanged()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d62/pattern__piece__visual_8cpp_source.html#l00071">PatternPieceVisual::RefreshGeometry()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02271">PatternPieceTool::removeDuplicateNodePoints()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01383">QT_WARNING_POP::unitePieces()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01716">PatternPieceTool::updateExcludeState()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/d4e/vabstracttool_8cpp_source.html#l00624">VAbstractTool::addNodes()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00125">UnionDialog::CheckObject()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00373">PatternPieceDialog::ChosenObject()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00161">UnionDialog::chosenPiece()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00067">TST_VPiece::ClearLoop()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00319">VNodePoint::contextMenuEvent()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01018">QT_WARNING_POP::CreateUnitedNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00739">PatternPieceTool::EnableToolMove()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02253">PatternPieceTool::initializeNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00431">PatternPieceTool::insertNodes()</a>, <a class="el" href="../../d8/dda/union__dialog_8cpp_source.html#l00136">UnionDialog::isPieceValid()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00173">TST_VPiece::Issue620()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00181">mainPathNodePoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00529">MissingNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01906">PatternPieceTool::nodeAngleChanged()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l01271">PatternPieceDialog::nodeChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02024">PatternPieceTool::nodeDeleted()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01989">PatternPieceTool::nodeExcluded()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l01332">PatternPieceDialog::notchChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01944">PatternPieceTool::notchChanged()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01018">VPattern::parsePieceNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00761">PatternPieceTool::pieceLockedChanged()</a>, <a class="el" href="../../da/d5c/deletepiece_8cpp_source.html#l00114">DeletePiece::redo()</a>, <a class="el" href="../../d1/d62/pattern__piece__visual_8cpp_source.html#l00071">PatternPieceVisual::RefreshGeometry()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02314">PatternPieceTool::removeDuplicateNodePoints()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../dd/d33/addpiece_8cpp_source.html#l00073">AddPiece::undo()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01383">QT_WARNING_POP::unitePieces()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01759">PatternPieceTool::updateExcludeState()</a>.</p>
 
 </div>
 </div>
@@ -1617,11 +1645,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns full access to the pattern info geometry object. </p>
 <dl class="section return"><dt>Returns</dt><dd>pattern info geometry object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00565">565</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">598</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00625">PatternPieceTool::addPatternLabel()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01366">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01525">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01060">VPattern::ParsePiecePatternInfo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00796">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00994">PatternPieceTool::SaveMovePattern()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01008">PatternPieceTool::SaveResizePattern()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01025">PatternPieceTool::SaveRotationPattern()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02556">PatternPieceTool::togglePatternLabel()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00880">PatternPieceTool::updatePatternLabel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00626">PatternPieceTool::addPatternLabel()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01409">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01568">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01060">VPattern::ParsePiecePatternInfo()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00797">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00995">PatternPieceTool::SaveMovePattern()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01009">PatternPieceTool::SaveResizePattern()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01026">PatternPieceTool::SaveRotationPattern()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02599">PatternPieceTool::togglePatternLabel()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00881">PatternPieceTool::updatePatternLabel()</a>.</p>
 
 </div>
 </div>
@@ -1643,9 +1671,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the read only reference to the pattern info geometry object. </p>
 <dl class="section return"><dt>Returns</dt><dd>pattern info geometry object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00574">574</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00607">607</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1667,11 +1695,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns full access to the pattern piece data object. </p>
 <dl class="section return"><dt>Returns</dt><dd>pattern piece data object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00541">541</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00574">574</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00572">PatternPieceTool::addPieceLabel()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01366">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00507">PiecesWidget::formatLetterString()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01525">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01036">VPattern::ParsePieceDataTag()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00796">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00941">PatternPieceTool::saveMovePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00974">PatternPieceTool::savePieceRotation()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00955">PatternPieceTool::saveResizePiece()</a>, <a class="el" href="../../df/d81/editlabeltemplate__dialog_8cpp_source.html#l00627">EditLabelTemplateDialog::SetPiece()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02573">PatternPieceTool::togglePieceLabel()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00853">PatternPieceTool::updatePieceLabel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00573">PatternPieceTool::addPieceLabel()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01409">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, <a class="el" href="../../de/de1/piece__info__dialog_8cpp_source.html#l00138">PieceInfoDialog::fillTable()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00507">PiecesWidget::formatLetterString()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01568">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l01036">VPattern::ParsePieceDataTag()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00797">PatternPieceTool::resetChildren()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00942">PatternPieceTool::saveMovePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00975">PatternPieceTool::savePieceRotation()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00956">PatternPieceTool::saveResizePiece()</a>, <a class="el" href="../../df/d81/editlabeltemplate__dialog_8cpp_source.html#l00627">EditLabelTemplateDialog::SetPiece()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02616">PatternPieceTool::togglePieceLabel()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00854">PatternPieceTool::updatePieceLabel()</a>.</p>
 
 </div>
 </div>
@@ -1693,9 +1721,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the read only reference to the pattern piece data object. </p>
 <dl class="section return"><dt>Returns</dt><dd>pattern piece data object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00550">550</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00583">583</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -1714,11 +1742,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00423">423</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00456">456</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00479">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00480">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>.</p>
 
 </div>
 </div>
@@ -1774,11 +1802,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00846">846</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00879">879</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d2/d07/vgobject_8h_source.html#l00126">VGObject::accuracyPointOnLine</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00481">VAbstractPiece::EkvPoint()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00138">VSAPoint::GetSAAfter()</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00126">VSAPoint::GetSABefore()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l01061">VAbstractPiece::IsEkvPointOnLine()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00457">VAbstractPiece::MaxLocalSA()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00996">createSeamAllowanceNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01029">createSeamAllowanceNotch()</a>.</p>
 
 </div>
 </div>
@@ -1806,11 +1834,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">598</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">631</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00268">VPiecePath::getNodes()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00302">VContainer::getPiecePath()</a>, <a class="el" href="../../d2/d07/vgobject_8h_source.html#l00145">VGObject::GetReversePoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00659">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00647">VPiecePath::indexOfNode()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00268">VPiecePath::getNodes()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00302">VContainer::getPiecePath()</a>, <a class="el" href="../../d2/d07/vgobject_8h_source.html#l00145">VGObject::GetReversePoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00692">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00647">VPiecePath::indexOfNode()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00286">createNotchLines()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00319">createNotchLines()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
 </div>
 </div>
@@ -1837,11 +1865,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00659">659</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00692">692</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00660">CustomSARecord::endPoint</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00659">CustomSARecord::path</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00658">CustomSARecord::startPoint</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00660">CustomSARecord::endPoint</a>, <a class="el" href="../../d3/da5/ifcdef_8h_source.html#l00076">NULL_ID</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00659">CustomSARecord::path</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00658">CustomSARecord::startPoint</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00893">isNotchVisible()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00926">isNotchVisible()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
 </div>
 </div>
@@ -1879,7 +1907,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01115">1115</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01148">1148</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
@@ -1900,11 +1928,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00387">387</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00420">420</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00479">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01366">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00353">PiecesWidget::fillTable()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01525">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../da/db4/piece__tablewidgetitem_8cpp_source.html#l00036">PieceTableWidgetItem::operator&lt;()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00186">PiecesWidget::togglePiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00480">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01409">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00353">PiecesWidget::fillTable()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01568">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../da/db4/piece__tablewidgetitem_8cpp_source.html#l00036">PieceTableWidgetItem::operator&lt;()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00186">PiecesWidget::togglePiece()</a>.</p>
 
 </div>
 </div>
@@ -1923,11 +1951,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00399">399</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00432">432</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00479">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00319">VNodePoint::contextMenuEvent()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01366">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00353">PiecesWidget::fillTable()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01525">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01863">PatternPieceTool::nodeAngleChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01981">PatternPieceTool::nodeDeleted()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01946">PatternPieceTool::nodeExcluded()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01901">PatternPieceTool::notchChanged()</a>, <a class="el" href="../../da/db4/piece__tablewidgetitem_8cpp_source.html#l00036">PieceTableWidgetItem::operator&lt;()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01660">PatternPieceTool::PatternPieceTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00405">setIsLocked()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00186">PiecesWidget::togglePiece()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00480">PatternPieceTool::addAttributes()</a>, <a class="el" href="../../d4/d7b/vnodepoint_8cpp_source.html#l00319">VNodePoint::contextMenuEvent()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01409">PatternPieceTool::contextMenuEvent()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00353">PiecesWidget::fillTable()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01568">PatternPieceTool::keyReleaseEvent()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01906">PatternPieceTool::nodeAngleChanged()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02024">PatternPieceTool::nodeDeleted()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01989">PatternPieceTool::nodeExcluded()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01944">PatternPieceTool::notchChanged()</a>, <a class="el" href="../../da/db4/piece__tablewidgetitem_8cpp_source.html#l00036">PieceTableWidgetItem::operator&lt;()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01703">PatternPieceTool::PatternPieceTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00438">setIsLocked()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00261">PatternPieceDialog::SetPiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00186">PiecesWidget::togglePiece()</a>.</p>
 
 </div>
 </div>
@@ -1965,11 +1993,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00893">893</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00926">926</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00161">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00659">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00647">VPiecePath::indexOfNode()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, and <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00287">VPieceNode::isNotch()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00161">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00692">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00647">VPiecePath::indexOfNode()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, and <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00287">VPieceNode::isNotch()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>.</p>
 
 </div>
 </div>
@@ -1988,11 +2016,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00411">411</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00444">444</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00479">PatternPieceTool::addAttributes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00480">PatternPieceTool::addAttributes()</a>.</p>
 
 </div>
 </div>
@@ -2012,11 +2040,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00314">314</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00347">347</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01765">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../d1/d62/pattern__piece__visual_8cpp_source.html#l00071">PatternPieceVisual::RefreshGeometry()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01808">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../d1/d62/pattern__piece__visual_8cpp_source.html#l00071">PatternPieceVisual::RefreshGeometry()</a>.</p>
 
 </div>
 </div>
@@ -2074,7 +2102,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00315">VAbstractPiece::CheckLoops()</a>, <a class="el" href="../../dd/d37/vabstractpiece_8h_source.html#l00270">VAbstractPiece::CorrectEquidistantPoints()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">GetPath()</a>, and <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00390">VPiecePath::PathPoints()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00373">PatternPieceDialog::ChosenObject()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00933">createNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00273">cutPathPoints()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02876">PatternPieceDialog::isMainPathClockwise()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00173">TST_VPiece::Issue620()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00314">mainPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l00373">PatternPieceDialog::ChosenObject()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00966">createNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00273">cutPathPoints()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02876">PatternPieceDialog::isMainPathClockwise()</a>, <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00173">TST_VPiece::Issue620()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00347">mainPath()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00306">seamlineLength()</a>.</p>
 
 </div>
 </div>
@@ -2094,9 +2122,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00526">526</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00559">559</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00473">getAnchors()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00506">getAnchors()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
@@ -2118,9 +2146,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00502">502</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00535">535</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00455">getCustomSARecords()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00488">getCustomSARecords()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
@@ -2142,9 +2170,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00520">520</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00553">553</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00437">getInternalPaths()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00470">getInternalPaths()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
@@ -2175,9 +2203,9 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>list with missing nodes. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00496">496</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00529">529</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">GetPath()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">GetPath()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00127">SavePieceOptions::redo()</a>, and <a class="el" href="../../d1/d05/savepieceoptions_8cpp_source.html#l00085">SavePieceOptions::undo()</a>.</p>
 
@@ -2201,7 +2229,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00139">139</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00083">VAbstractPiece::operator=()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00083">VAbstractPiece::operator=()</a>.</p>
 
 </div>
 </div>
@@ -2221,7 +2249,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00340">340</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00373">373</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>.</p>
 
@@ -2243,11 +2271,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00334">334</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00367">367</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00334">seamAllowancePath()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00367">seamAllowancePath()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">seamAllowancePoints()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01765">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00334">seamAllowancePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01808">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00367">seamAllowancePath()</a>.</p>
 
 </div>
 </div>
@@ -2269,9 +2297,33 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00187">187</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01031">VPiecePath::CurveSeamAllowanceSegment()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00207">VAbstractPiece::Equidistant()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00404">VContainer::GeometricObject()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00149">VPieceNode::GetId()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00302">VContainer::getPiecePath()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00173">VPieceNode::GetReverse()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00161">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00659">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01115">IsCSAStart()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01016">VPiecePath::PreparePointEkv()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00497">VPiecePath::seamAllowancePoints()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>.</p>
+<p class="reference">References <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01031">VPiecePath::CurveSeamAllowanceSegment()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00207">VAbstractPiece::Equidistant()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>, <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00404">VContainer::GeometricObject()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00149">VPieceNode::GetId()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l01079">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00302">VContainer::getPiecePath()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00173">VPieceNode::GetReverse()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00161">VPieceNode::GetTypeTool()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00692">GetValidRecords()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00159">VAbstractPiece::hasSeamAllowance()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00171">VAbstractPiece::hasSeamAllowanceBuiltIn()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01148">IsCSAStart()</a>, <a class="el" href="../../d8/dba/vpiecenode_8cpp_source.html#l00411">VPieceNode::isExcluded()</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l01016">VPiecePath::PreparePointEkv()</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00435">SCASSERT</a>, <a class="el" href="../../da/de1/vpiecepath_8cpp_source.html#l00497">VPiecePath::seamAllowancePoints()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00223">ToPixel()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00067">TST_VPiece::ClearLoop()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00996">createSeamAllowanceNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00273">cutPathPoints()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01765">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00334">seamAllowancePath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d6/d2d/tst__vpiece_8cpp_source.html#l00067">TST_VPiece::ClearLoop()</a>, <a class="el" href="../../dd/d70/vlayoutpiece_8cpp_source.html#l00426">VLayoutPiece::Create()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l01029">createSeamAllowanceNotch()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00273">cutPathPoints()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01808">PatternPieceTool::RefreshGeometry()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00367">seamAllowancePath()</a>.</p>
+
+</div>
+</div>
+<a id="a6754d3899022926f110551fa27cfaaf2" name="a6754d3899022926f110551fa27cfaaf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6754d3899022926f110551fa27cfaaf2">&#9670;&#160;</a></span>seamlineLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qreal VPiece::seamlineLength </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00306">306</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00173">mainPathPoints()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../de/de1/piece__info__dialog_8cpp_source.html#l00138">PieceInfoDialog::fillTable()</a>, and <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01358">PatternPieceTool::makeToolTip()</a>.</p>
 
 </div>
 </div>
@@ -2291,9 +2343,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00485">485</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00518">518</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
@@ -2315,11 +2367,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00467">467</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00500">500</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
 </div>
 </div>
@@ -2339,9 +2391,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00393">393</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00426">426</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d6/d49/togglepieceinlayout_8cpp_source.html#l00128">TogglePieceInLayout::doCmd()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
@@ -2363,11 +2415,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00449">449</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00482">482</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
 </div>
 </div>
@@ -2387,11 +2439,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00438">438</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00399">isLocked()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00432">isLocked()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../df/dcf/toggle__piecelock_8cpp_source.html#l00095">TogglePieceLock::doCmd()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00232">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, <a class="el" href="../../df/dcf/toggle__piecelock_8cpp_source.html#l00095">TogglePieceLock::doCmd()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00233">PatternPieceTool::duplicate()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
 </div>
 </div>
@@ -2413,9 +2465,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00167">167</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01018">QT_WARNING_POP::CreateUnitedNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01981">PatternPieceTool::nodeDeleted()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01018">QT_WARNING_POP::CreateUnitedNodes()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l02024">PatternPieceTool::nodeDeleted()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
 </div>
 </div>
@@ -2435,9 +2487,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00556">556</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00589">589</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -2457,9 +2509,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00532">532</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00565">565</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 </div>
 </div>
@@ -2489,11 +2541,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00429">429</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00462">462</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00201">VAbstractPiece::SetSAWidth()</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00195">VAbstractPiece::GetSAWidth()</a>, and <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00201">VAbstractPiece::SetSAWidth()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00146">PatternPieceTool::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, and <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l00147">PatternPieceTool::Create()</a>, <a class="el" href="../../de/d46/pattern__piece__dialog_8cpp_source.html#l02629">PatternPieceDialog::CreatePiece()</a>, and <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>.</p>
 
 </div>
 </div>
@@ -2513,9 +2565,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00417">417</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00450">450</a> of file <a class="el" href="../../df/d7a/vpiece_8cpp_source.html">vpiece.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">d</a>.</p>
+<p class="reference">References <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">d</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d4/d9f/union__tool_8cpp_source.html#l01308">QT_WARNING_POP::createUnion()</a>, and <a class="el" href="../../d3/d49/vpattern_8cpp_source.html#l00866">VPattern::parsePieceElement()</a>.</p>
 
@@ -2572,9 +2624,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00162">162</a> of file <a class="el" href="../../d0/d59/vpiece_8h_source.html">vpiece.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d59/vpiece_8h_source.html#l00164">164</a> of file <a class="el" href="../../d0/d59/vpiece_8h_source.html">vpiece.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00684">FilterRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00473">getAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00455">getCustomSARecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00583">GetGrainlineGeometry()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00437">getInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">GetPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00565">GetPatternInfo()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00541">GetPatternPieceData()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00423">getSeamAllowanceWidthFormula()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00659">GetValidRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00387">isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00399">isLocked()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00411">IsUnited()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00526">missingAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00502">MissingCSAPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00520">MissingInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00496">MissingNodes()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00139">operator=()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00485">setAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00467">SetCustomSARecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00393">setInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00449">SetInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00405">setIsLocked()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00167">SetPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00556">SetPatternInfo()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00532">SetPatternPieceData()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00429">setSeamAllowanceWidthFormula()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00417">SetUnited()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00717">FilterRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00506">getAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00488">getCustomSARecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00616">GetGrainlineGeometry()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00470">getInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00155">GetPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00598">GetPatternInfo()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00574">GetPatternPieceData()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00456">getSeamAllowanceWidthFormula()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00631">GetUnitedPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00692">GetValidRecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00420">isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00432">isLocked()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00444">IsUnited()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00559">missingAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00535">MissingCSAPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00553">MissingInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00529">MissingNodes()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00139">operator=()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00518">setAnchors()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00500">SetCustomSARecords()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00426">setInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00482">SetInternalPaths()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00438">setIsLocked()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00167">SetPath()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00589">SetPatternInfo()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00565">SetPatternPieceData()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00462">setSeamAllowanceWidthFormula()</a>, and <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00450">SetUnited()</a>.</p>
 
 </div>
 </div>

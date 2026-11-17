@@ -32,6 +32,8 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "history_dialog.h", "d7/d44/history__dialog_8h.html", "d7/d44/history__dialog_8h" ],
     [ "layoutsettings_dialog.cpp", "d0/dfa/layoutsettings__dialog_8cpp.html", null ],
     [ "layoutsettings_dialog.h", "d3/dd8/layoutsettings__dialog_8h.html", "d3/dd8/layoutsettings__dialog_8h" ],
+    [ "piece_info_dialog.cpp", "de/de1/piece__info__dialog_8cpp.html", "de/de1/piece__info__dialog_8cpp" ],
+    [ "piece_info_dialog.h", "d6/deb/piece__info__dialog_8h.html", "d6/deb/piece__info__dialog_8h" ],
     [ "pieces_widget.cpp", "d5/d7b/pieces__widget_8cpp.html", "d5/d7b/pieces__widget_8cpp" ],
     [ "pieces_widget.h", "d7/d18/pieces__widget_8h.html", "d7/d18/pieces__widget_8h" ],
     [ "shortcuts_dialog.cpp", "dd/d84/shortcuts__dialog_8cpp.html", null ],
