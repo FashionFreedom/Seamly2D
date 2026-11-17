@@ -4890,7 +4890,7 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D on sovellus tietokone avusteiseen vaatenkaavojen suunnitteluun.
+        <translation>Seamly2D on sovellus tietokoneavusteiseen vaatekaavojen suunnitteluun.
 
 Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 
