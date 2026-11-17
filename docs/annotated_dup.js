@@ -334,6 +334,7 @@ var annotated_dup =
     [ "EntityResolver", "dc/db4/classEntityResolver.html", "dc/db4/classEntityResolver" ],
     [ "ErrorHandler", "d8/d53/classErrorHandler.html", "d8/d53/classErrorHandler" ],
     [ "ExpandingTextEdit", "db/dac/classExpandingTextEdit.html", "db/dac/classExpandingTextEdit" ],
+    [ "ExportFormat", "d4/d95/structExportFormat.html", "d4/d95/structExportFormat" ],
     [ "ExportFormatCombobox", "d4/d06/classExportFormatCombobox.html", "d4/d06/classExportFormatCombobox" ],
     [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html", "de/dbd/classExportLayoutDialog" ],
     [ "ExportProgressDialog", "d7/deb/classExportProgressDialog.html", "d7/deb/classExportProgressDialog" ],

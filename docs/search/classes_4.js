@@ -13,7 +13,8 @@ var searchData=
   ['entityresolver_10',['EntityResolver',['../dc/db4/classEntityResolver.html',1,'']]],
   ['errorhandler_11',['ErrorHandler',['../d8/d53/classErrorHandler.html',1,'']]],
   ['expandingtextedit_12',['ExpandingTextEdit',['../db/dac/classExpandingTextEdit.html',1,'']]],
-  ['exportformatcombobox_13',['ExportFormatCombobox',['../d4/d06/classExportFormatCombobox.html',1,'']]],
-  ['exportlayoutdialog_14',['ExportLayoutDialog',['../de/dbd/classExportLayoutDialog.html',1,'']]],
-  ['exportprogressdialog_15',['ExportProgressDialog',['../d7/deb/classExportProgressDialog.html',1,'']]]
+  ['exportformat_13',['ExportFormat',['../d4/d95/structExportFormat.html',1,'']]],
+  ['exportformatcombobox_14',['ExportFormatCombobox',['../d4/d06/classExportFormatCombobox.html',1,'']]],
+  ['exportlayoutdialog_15',['ExportLayoutDialog',['../de/dbd/classExportLayoutDialog.html',1,'']]],
+  ['exportprogressdialog_16',['ExportProgressDialog',['../d7/deb/classExportProgressDialog.html',1,'']]]
 ];

@@ -1,5 +1,13 @@
 var NAVTREEINDEX195 =
 {
+"da/d5a/classDOMXPathResult.html#a42d33fccfa62eb579c2c86a42c0be310":[3,0,237,67],
+"da/d5a/classDOMXPathResult.html#a6203550451cb9d2535e08e5f6c17a50a":[3,0,237,27],
+"da/d5a/classDOMXPathResult.html#a6203550451cb9d2535e08e5f6c17a50a":[3,0,237,26],
+"da/d5a/classDOMXPathResult.html#a6203550451cb9d2535e08e5f6c17a50a":[3,0,237,24],
+"da/d5a/classDOMXPathResult.html#a6203550451cb9d2535e08e5f6c17a50a":[3,0,237,25],
+"da/d5a/classDOMXPathResult.html#a71c0b7142d9f16668391ccbd6d9b0922":[3,0,237,8],
+"da/d5a/classDOMXPathResult.html#a71c0b7142d9f16668391ccbd6d9b0922":[3,0,237,5],
+"da/d5a/classDOMXPathResult.html#a71c0b7142d9f16668391ccbd6d9b0922":[3,0,237,11],
 "da/d5a/classDOMXPathResult.html#a71c0b7142d9f16668391ccbd6d9b0922":[3,0,237,14],
 "da/d5a/classDOMXPathResult.html#a963997f9fbe6eca5db1be278b72695b7":[3,0,237,56],
 "da/d5a/classDOMXPathResult.html#a963997f9fbe6eca5db1be278b72695b7":[3,0,237,57],
@@ -241,13 +249,5 @@ var NAVTREEINDEX195 =
 "da/d5a/classDOMXPathResult.html#add8c43fb5932fac622ad535c83080582":[3,0,237,63],
 "da/d5a/classDOMXPathResult.html#add8c43fb5932fac622ad535c83080582":[3,0,237,61],
 "da/d5a/classDOMXPathResult.html#add8c43fb5932fac622ad535c83080582":[3,0,237,60],
-"da/d5a/classDOMXPathResult.html#ae6d02311052ec70a50347e101f7f2d56":[3,0,237,12],
-"da/d5a/classDOMXPathResult.html#ae6d02311052ec70a50347e101f7f2d56":[3,0,237,15],
-"da/d5a/classDOMXPathResult.html#ae6d02311052ec70a50347e101f7f2d56":[3,0,237,9],
-"da/d5a/classDOMXPathResult.html#ae6d02311052ec70a50347e101f7f2d56":[3,0,237,6],
-"da/d5a/classDOMXPathResult.html#aec8aab57f5eaddc7006f2944f39462f3":[3,0,237,69],
-"da/d5a/classDOMXPathResult.html#aec8aab57f5eaddc7006f2944f39462f3":[3,0,237,70],
-"da/d5a/classDOMXPathResult.html#aec8aab57f5eaddc7006f2944f39462f3":[3,0,237,68],
-"da/d5a/classDOMXPathResult.html#aec8aab57f5eaddc7006f2944f39462f3":[3,0,237,71],
-"da/d5a/classDOMXPathResult.html#af15463acf8fa32b0b7d5030472176cab":[3,0,237,21]
+"da/d5a/classDOMXPathResult.html#ae6d02311052ec70a50347e101f7f2d56":[3,0,237,12]
 };

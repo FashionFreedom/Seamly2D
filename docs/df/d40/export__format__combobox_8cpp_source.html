@@ -101,356 +101,406 @@ $(document).ready(function(){initNavTree('df/d40/export__format__combobox_8cpp_s
   <div class="headertitle"><div class="title">export_format_combobox.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="../../df/d40/export__format__combobox_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment"> /******************************************************************************</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">  *   @file   export_format_combobox.cpp</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">  **  @author DS Caskey</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">  **  @date   @date   17 Sep, 2023</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">  **</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">  **  @brief</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">  **  @copyright</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">  **</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">  **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">  **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">  **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">  **  (at your option) any later version.</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">  **</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">  **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">  **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">  **  GNU General Public License for more details.</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">  **</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">  **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">  **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">  **</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">  *****************************************************************************/</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;QAbstractItemView&gt;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;QPen&gt;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;Qt&gt;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;QProcess&gt;</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;QDebug&gt;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;QVariant&gt;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/da5/export__format__combobox_8h.html">export_format_combobox.h</a>&quot;</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;../vmisc/vabstractapplication.h&quot;</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;../vmisc/vcommonsettings.h&quot;</span></div>
+<a href="../../df/d40/export__format__combobox_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">///---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/// @file   export_format_combobox.cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/// @author DS Caskey</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/// @date   @date 11 Nov, 2026</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">///</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/// @brief</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/// @copyright</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/// This source code is part of the Seamly2D project, a pattern making</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/// program, whose allow create and modeling patterns of clothing.</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/// Copyright (C) 2013-2026 Seamly2D project</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/// &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">///</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/// Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">/// it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">/// the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">/// (at your option) any later version.</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span><span class="comment">//</span><span class="comment"></span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// GNU General Public License for more details.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">///</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/// You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/// along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;QAbstractItemView&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;Qt&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;QProcess&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;QVariant&gt;</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#   define PDFTOPS &quot;pdftops.exe&quot;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="../../df/d40/export__format__combobox_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">   40</a></span><span class="preprocessor">#   define PDFTOPS &quot;pdftops&quot;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a3fd1b62c73ffae598b44206e67e19afe">ExportFormatCombobox::havePdf</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">ExportFormatCombobox::tested</a>  = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> * Constructor with name.</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">   49</a></span><a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">ExportFormatCombobox::ExportFormatCombobox</a>(QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        : QComboBox(parent)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        , m_currentFormat()</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>         setObjectName(name);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>         setEditable ( <span class="keyword">false</span> );</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>         <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">init</a>();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"></span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"> * Destructor</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">   61</a></span><a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">ExportFormatCombobox::~ExportFormatCombobox</a>() {}</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"></span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> * Initialisation called from constructor or manually but only once.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">ExportFormatCombobox::init</a>()</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>{</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    this-&gt;blockSignals(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">int</span> count = 0;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">foreach</span> (<span class="keyword">auto</span>&amp; v, <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a058047141234bff265f262296c42a33d">initFormats</a>())</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        addItem(v.first, QVariant(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(v.second)));</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        count++;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    setMaxVisibleItems(count);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    this-&gt;view()-&gt;setTextElideMode(Qt::ElideNone);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    this-&gt;blockSignals(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        connect(<span class="keyword">this</span>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="../../d0/da5/export__format__combobox_8h.html">export_format_combobox.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;../vmisc/vabstractapplication.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;../vmisc/vcommonsettings.h&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#   define PDFTOPS &quot;pdftops.exe&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../df/d40/export__format__combobox_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">   44</a></span><span class="preprocessor">#   define PDFTOPS &quot;pdftops&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa520875bfad5f324ce37266ec66a82fc">ExportFormatCombobox::have_pdf</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">bool</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">ExportFormatCombobox::tested</a>   = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/// Constructor with name.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">   53</a></span><a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">ExportFormatCombobox::ExportFormatCombobox</a>(QWidget *parent, <span class="keyword">const</span> <span class="keywordtype">char</span> *name)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    : QComboBox(parent)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    , m_current_format_type()</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    , m_formats()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    setObjectName(name);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    setEditable ( <span class="keyword">false</span> );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">init</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">/// Destructor</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">   66</a></span><a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">ExportFormatCombobox::~ExportFormatCombobox</a>() {}</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">/// Initialisation called from constructor or manually but only once.</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">ExportFormatCombobox::init</a>()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    this-&gt;blockSignals(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ab7202d30d63794f113202c474541d5f9">initFormats</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d4/d95/structExportFormat.html">ExportFormat</a> &amp;format : <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a75dc8659a380a1679622d1421b96af06">m_formats</a>)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        addItem(format.translation, QVariant(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(format.type)));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    setMaxVisibleItems(15);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    this-&gt;view()-&gt;setTextElideMode(Qt::ElideNone);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">setCurrentToDefault</a>();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">updateExportFormat</a>(currentIndex());</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>}</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">   87</a></span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">ExportFormatCombobox::getExportFormat</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#acded3ddd1006416f459c996a47c4d1ae">m_currentFormat</a>;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment"></span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment"> * Sets the currently selected format item to the given format.</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">ExportFormatCombobox::setExportFormat</a>(<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> &amp;format)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>{</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#acded3ddd1006416f459c996a47c4d1ae">m_currentFormat</a> = format;</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    setCurrentIndex(findData(QVariant(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(format))));</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">if</span> (currentIndex()!= count() -1 )</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">updateExportFormat</a>(currentIndex());</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a058047141234bff265f262296c42a33d">  108</a></span>QVector&lt;std::pair&lt;QString, LayoutExportFormat&gt;&gt; <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a058047141234bff265f262296c42a33d">ExportFormatCombobox::initFormats</a>()</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    QVector&lt;std::pair&lt;QString, LayoutExportFormat&gt;&gt; list;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keyword">auto</span> InitFormat = [&amp;list](<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> format)</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        list.append(std::make_pair(<a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a32bf4387be4d33640e4e25b9b7261cd1">exportFormatDescription</a>(format), format));</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    };</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    InitFormat(LayoutExportFormat::SVG);</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    InitFormat(LayoutExportFormat::PDF);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    InitFormat(LayoutExportFormat::PDFTiled);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    InitFormat(LayoutExportFormat::PNG);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    InitFormat(LayoutExportFormat::JPG);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    InitFormat(LayoutExportFormat::BMP);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    InitFormat(LayoutExportFormat::TIF);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    InitFormat(LayoutExportFormat::PPM);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    InitFormat(LayoutExportFormat::OBJ);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">supportPSTest</a>())</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        InitFormat(LayoutExportFormat::PS);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        InitFormat(LayoutExportFormat::EPS);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    InitFormat(LayoutExportFormat::DXF_AC1006_Flat);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    InitFormat(LayoutExportFormat::DXF_AC1009_Flat);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    InitFormat(LayoutExportFormat::DXF_AC1012_Flat);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    InitFormat(LayoutExportFormat::DXF_AC1014_Flat);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    InitFormat(LayoutExportFormat::DXF_AC1015_Flat);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    InitFormat(LayoutExportFormat::DXF_AC1018_Flat);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    InitFormat(LayoutExportFormat::DXF_AC1021_Flat);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    InitFormat(LayoutExportFormat::DXF_AC1024_Flat);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    InitFormat(LayoutExportFormat::DXF_AC1027_Flat);</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    InitFormat(LayoutExportFormat::DXF_AC1006_AAMA);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    InitFormat(LayoutExportFormat::DXF_AC1009_AAMA);</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    InitFormat(LayoutExportFormat::DXF_AC1012_AAMA);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    InitFormat(LayoutExportFormat::DXF_AC1014_AAMA);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    InitFormat(LayoutExportFormat::DXF_AC1015_AAMA);</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    InitFormat(LayoutExportFormat::DXF_AC1018_AAMA);</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    InitFormat(LayoutExportFormat::DXF_AC1021_AAMA);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    InitFormat(LayoutExportFormat::DXF_AC1024_AAMA);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    InitFormat(LayoutExportFormat::DXF_AC1027_AAMA);</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="comment">// We will support them anyway</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1006_ASTM);</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1009_ASTM);</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1012_ASTM);</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1014_ASTM);</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1015_ASTM);</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1018_ASTM);</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1021_ASTM);</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1024_ASTM);</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">//    InitFormat(LayoutExportFormat::DXF_AC1027_ASTM);</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">return</span> list;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">  164</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">ExportFormatCombobox::supportPSTest</a>()</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">tested</a>)</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a3fd1b62c73ffae598b44206e67e19afe">havePdf</a> = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">testPdf</a>();</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">tested</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a3fd1b62c73ffae598b44206e67e19afe">havePdf</a>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>}</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">  175</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">ExportFormatCombobox::testPdf</a>()</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>{</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordtype">bool</span> res = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    QProcess proc;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    QStringList args;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#if defined(Q_OS_WIN) || defined(Q_OS_OSX)</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="comment">// Seek pdftops in app bundle or near seamaly2d.exe</span></div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    proc.start(<a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;applicationDirPath() + QLatin1String(<span class="stringliteral">&quot;/&quot;</span>)+ <a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList());</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    proc.start(<a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList()); <span class="comment">// Seek pdftops in standard path</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">if</span> (proc.waitForStarted(15000) &amp;&amp; (proc.waitForFinished(15000) || proc.state() == QProcess::NotRunning))</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    {</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        res = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    {</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        qWarning() &lt;&lt; <a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a> &lt;&lt; <span class="stringliteral">&quot;error&quot;</span> &lt;&lt; proc.error() &lt;&lt; proc.errorString();</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a32bf4387be4d33640e4e25b9b7261cd1">  201</a></span>QString <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a32bf4387be4d33640e4e25b9b7261cd1">ExportFormatCombobox::exportFormatDescription</a>(<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> format)</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>{</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keyword">const</span> QString dxfSuffix = QStringLiteral(<span class="stringliteral">&quot;(*.dxf)&quot;</span>);</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keyword">const</span> QString dxfFlatFilesStr = tr(<span class="stringliteral">&quot;(flat) files&quot;</span>);</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">const</span> QString filesStr = tr(<span class="stringliteral">&quot;files&quot;</span>);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">switch</span>(format)</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    {</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        <span class="keywordflow">case</span> LayoutExportFormat::SVG:</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;SVG %1 (*.svg)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="keywordflow">case</span> LayoutExportFormat::PDF:</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PDF %1 (*.pdf)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">case</span> LayoutExportFormat::PNG:</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PNG %1 (*.png)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">case</span> LayoutExportFormat::JPG:</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;JPG %1 (*.jpg)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">case</span> LayoutExportFormat::BMP:</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;BMP %1 (*.bmp)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">case</span> LayoutExportFormat::TIF:</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;TIF %1 (*.tif)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keywordflow">case</span> LayoutExportFormat::PPM:</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PPM %1 (*.ppm)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">case</span> LayoutExportFormat::OBJ:</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Wavefront OBJ (*.obj)&quot;</span>;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="keywordflow">case</span> LayoutExportFormat::PS:</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PS %1 (*.ps)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">case</span> LayoutExportFormat::EPS:</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;EPS %1 (*.eps)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_Flat:</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_Flat:</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_Flat:</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_Flat:</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_Flat:</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_Flat:</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_Flat:</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_Flat:</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_Flat:</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 %1 %2&quot;</span>).arg(dxfFlatFilesStr, dxfSuffix);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_AAMA:</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_AAMA:</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_AAMA:</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_AAMA:</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_AAMA:</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_AAMA:</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_AAMA:</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_AAMA:</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_AAMA:</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 AAMA %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_ASTM:</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_ASTM:</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_ASTM:</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_ASTM:</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_ASTM:</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_ASTM:</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_ASTM:</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_ASTM:</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_ASTM:</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 ASTM %1 %2&quot;</span>).arg(filesStr, dxfSuffix);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">case</span> LayoutExportFormat::PDFTiled:</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PDF tiled %1 (*.pdf)&quot;</span>).arg(filesStr);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordflow">return</span> QString();</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    }</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>}</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">  291</a></span>QString <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">ExportFormatCombobox::makeHelpFormatList</a>()</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>{</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>   QString out(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>   <span class="keywordflow">foreach</span>(<span class="keyword">auto</span>&amp; v, <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a058047141234bff265f262296c42a33d">initFormats</a>())</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>   {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>       out += QLatin1String(<span class="stringliteral">&quot;\t&quot;</span>) + v.first + QLatin1String(<span class="stringliteral">&quot; = &quot;</span>) + QString::number(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(v.second))</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>               + QLatin1String(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>   }</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>   <span class="keywordflow">return</span> out;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>}</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="comment"></span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="comment">/**</span></div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment"> * Called when the width has changed. This method sets the current width to the value chosen or even</span></div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment"> * offers a dialog to the user that allows him/ her to choose an individual width.</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">  306</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a>(<span class="keywordtype">int</span> index)</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>{</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    QVariant format = itemData(index);</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">if</span>(format != QVariant::Invalid )</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>       <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#acded3ddd1006416f459c996a47c4d1ae">m_currentFormat</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a><span class="keyword">&gt;</span>(this-&gt;currentData().toInt());</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    emit <a class="code hl_signal" href="../../d4/d06/classExportFormatCombobox.html#aa25f1d6d093ef49dff6c838ead14d776">exportFormatChanged</a>(<a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#acded3ddd1006416f459c996a47c4d1ae">m_currentFormat</a>);</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>}</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">  317</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">ExportFormatCombobox::setCurrentToDefault</a>()</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>{</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    QString format = <a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getExportFormat();</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keywordtype">int</span> index = findText(format);</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordflow">if</span> (index != -1)</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    {</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        setCurrentIndex(index);</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    {</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        setCurrentIndex(0);</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    }</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    this-&gt;blockSignals(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    connect(<span class="keyword">this</span>, QOverload&lt;int&gt;::of(&amp;QComboBox::currentIndexChanged), <span class="keyword">this</span>, &amp;<a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">setCurrentToDefault</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">updateExportFormat</a>(currentIndex());</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">   90</a></span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">ExportFormatCombobox::getExportFormat</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa0ded8d5a4b5db2ca5fc7bc549f76ff6">m_current_format_type</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">/// Sets the currently selected format item to the given format.</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">   98</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">ExportFormatCombobox::setExportFormat</a>(<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> &amp;type)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa0ded8d5a4b5db2ca5fc7bc549f76ff6">m_current_format_type</a> = type;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    setCurrentIndex(findData(QVariant(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(type))));</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (currentIndex()!= count() -1 )</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">updateExportFormat</a>(currentIndex());</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ac85c72dab249ebfe85ba03f72905470a">  111</a></span><a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;LayoutExportFormat&gt;</a> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ac85c72dab249ebfe85ba03f72905470a">ExportFormatCombobox::initFormatTypes</a>()</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;LayoutExportFormat&gt;</a> types =</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        LayoutExportFormat::SVG,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        LayoutExportFormat::PDF,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        LayoutExportFormat::PDFTiled,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        LayoutExportFormat::PNG,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        LayoutExportFormat::JPG,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        LayoutExportFormat::BMP,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        LayoutExportFormat::TIF,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        LayoutExportFormat::PPM,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        LayoutExportFormat::OBJ</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    };</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">supportPSTest</a>())</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        types +=</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            LayoutExportFormat::PS,</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            LayoutExportFormat::EPS</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        };</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    types +=</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        LayoutExportFormat::DXF_AC1006_Flat,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        LayoutExportFormat::DXF_AC1009_Flat,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        LayoutExportFormat::DXF_AC1012_Flat,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        LayoutExportFormat::DXF_AC1014_Flat,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        LayoutExportFormat::DXF_AC1015_Flat,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        LayoutExportFormat::DXF_AC1018_Flat,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        LayoutExportFormat::DXF_AC1021_Flat,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        LayoutExportFormat::DXF_AC1024_Flat,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        LayoutExportFormat::DXF_AC1027_Flat,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        LayoutExportFormat::DXF_AC1006_AAMA,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        LayoutExportFormat::DXF_AC1009_AAMA,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        LayoutExportFormat::DXF_AC1012_AAMA,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        LayoutExportFormat::DXF_AC1014_AAMA,</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        LayoutExportFormat::DXF_AC1015_AAMA,</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        LayoutExportFormat::DXF_AC1018_AAMA,</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        LayoutExportFormat::DXF_AC1021_AAMA,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        LayoutExportFormat::DXF_AC1024_AAMA,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        LayoutExportFormat::DXF_AC1027_AAMA</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    };</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> types;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#ab7202d30d63794f113202c474541d5f9">  162</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ab7202d30d63794f113202c474541d5f9">ExportFormatCombobox::initFormats</a>()</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;LayoutExportFormat&gt;</a> types = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ac85c72dab249ebfe85ba03f72905470a">initFormatTypes</a>();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">for</span> (<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> type : types)</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_struct" href="../../d4/d95/structExportFormat.html">ExportFormat</a> format;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#a95d598e7083a716365e0a7d53809b2d7">source</a>      = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">exportFormatDescription</a>(type, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#a4911673dcfa6a41360e0c52a4f1aa66b">translation</a> = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">exportFormatDescription</a>(type, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#ac42412765fa7386555e0a880141c4f42">type</a>        = type;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a75dc8659a380a1679622d1421b96af06">m_formats</a>.append(format);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>}</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">  176</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">ExportFormatCombobox::supportPSTest</a>()</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">tested</a>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa520875bfad5f324ce37266ec66a82fc">have_pdf</a> = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">testPdf</a>();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">tested</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa520875bfad5f324ce37266ec66a82fc">have_pdf</a>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">  187</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">ExportFormatCombobox::testPdf</a>()</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordtype">bool</span> res = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    QProcess proc;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    QStringList args;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">#if defined(Q_OS_WIN) || defined(Q_OS_OSX)</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// Seek pdftops in app bundle or near seamaly2d.exe</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    proc.start(<a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;applicationDirPath() + QLatin1String(<span class="stringliteral">&quot;/&quot;</span>)+ <a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList());</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    proc.start(<a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList()); <span class="comment">// Seek pdftops in standard path</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span> (proc.waitForStarted(15000) &amp;&amp; (proc.waitForFinished(15000) || proc.state() == QProcess::NotRunning))</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        res = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        qWarning() &lt;&lt; <a class="code hl_define" href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a> &lt;&lt; <span class="stringliteral">&quot;error&quot;</span> &lt;&lt; proc.error() &lt;&lt; proc.errorString();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">  213</a></span>QString <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">ExportFormatCombobox::exportFormatDescription</a>(<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> type, <span class="keywordtype">bool</span> is_source)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>{</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">const</span> QString dxf_suffix = QStringLiteral(<span class="stringliteral">&quot;(*.dxf)&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    QString dxf_flat_files_str = tr(<span class="stringliteral">&quot;(flat) files&quot;</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    QString files_str = tr(<span class="stringliteral">&quot;files&quot;</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">if</span> (is_source)</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        dxf_flat_files_str = QString(<span class="stringliteral">&quot;(flat) files&quot;</span>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        files_str = QString(<span class="stringliteral">&quot;files&quot;</span>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">switch</span>(type)</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        <span class="keywordflow">case</span> LayoutExportFormat::SVG:</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;SVG %1 (*.svg)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">case</span> LayoutExportFormat::PDF:</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PDF %1 (*.pdf)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">case</span> LayoutExportFormat::PNG:</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PNG %1 (*.png)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">case</span> LayoutExportFormat::JPG:</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;JPG %1 (*.jpg)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">case</span> LayoutExportFormat::BMP:</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;BMP %1 (*.bmp)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keywordflow">case</span> LayoutExportFormat::TIF:</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;TIF %1 (*.tif)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">case</span> LayoutExportFormat::PPM:</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PPM %1 (*.ppm)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">case</span> LayoutExportFormat::OBJ:</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordflow">return</span> <span class="stringliteral">&quot;Wavefront OBJ (*.obj)&quot;</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keywordflow">case</span> LayoutExportFormat::PS:</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PS %1 (*.ps)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">case</span> LayoutExportFormat::EPS:</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;EPS %1 (*.eps)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_Flat:</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_Flat:</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_Flat:</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_Flat:</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_Flat:</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_Flat:</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_Flat:</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_Flat:</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_Flat:</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 %1 %2&quot;</span>).arg(dxf_flat_files_str, dxf_suffix);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_AAMA:</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_AAMA:</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_AAMA:</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_AAMA:</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_AAMA:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_AAMA:</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_AAMA:</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_AAMA:</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_AAMA:</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 AAMA %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1006_ASTM:</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R10 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1009_ASTM:</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R11/12 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1012_ASTM:</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R13 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1014_ASTM:</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF R14 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1015_ASTM:</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2000 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1018_ASTM:</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2004 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1021_ASTM:</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2007 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1024_ASTM:</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2010 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keywordflow">case</span> LayoutExportFormat::DXF_AC1027_ASTM:</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;AutoCAD DXF 2013 ASTM %1 %2&quot;</span>).arg(files_str, dxf_suffix);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">case</span> LayoutExportFormat::PDFTiled:</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;PDF tiled %1 (*.pdf)&quot;</span>).arg(files_str);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>            <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>}</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">  309</a></span>QString <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">ExportFormatCombobox::makeHelpFormatList</a>()</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>{</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    QString help(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <a class="code hl_class" href="../../d1/d4a/classQList.html">QList&lt;LayoutExportFormat&gt;</a> types = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#ac85c72dab249ebfe85ba03f72905470a">initFormatTypes</a>();</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">for</span> (<a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a> type : types)</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <a class="code hl_struct" href="../../d4/d95/structExportFormat.html">ExportFormat</a> format;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#a95d598e7083a716365e0a7d53809b2d7">source</a>      = <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">exportFormatDescription</a>(type, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#ac42412765fa7386555e0a880141c4f42">type</a>        = type;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        help += QLatin1String(<span class="stringliteral">&quot;\t&quot;</span>) + format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#a95d598e7083a716365e0a7d53809b2d7">source</a> + QLatin1String(<span class="stringliteral">&quot; = &quot;</span>) +</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                QString::number(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(format.<a class="code hl_variable" href="../../d4/d95/structExportFormat.html#ac42412765fa7386555e0a880141c4f42">type</a>)) +</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                QLatin1String(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordflow">return</span> help;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span><span class="comment"></span></div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span><span class="comment">/// Called when the width has changed. This method sets the current width to the value chosen or even</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span><span class="comment">/// offers a dialog to the user that allows him/ her to choose an individual width.</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span><span class="comment"></span><span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">  329</a></span><span class="keywordtype">void</span> <a class="code hl_slot" href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a>(<span class="keywordtype">int</span> index)</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>{</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    QVariant format = itemData(index);</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordflow">if</span> (format.isValid())</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    {</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>       <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa0ded8d5a4b5db2ca5fc7bc549f76ff6">m_current_format_type</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a><span class="keyword">&gt;</span>(this-&gt;currentData().toInt());</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    }</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    emit <a class="code hl_signal" href="../../d4/d06/classExportFormatCombobox.html#aa25f1d6d093ef49dff6c838ead14d776">exportFormatChanged</a>(<a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#aa0ded8d5a4b5db2ca5fc7bc549f76ff6">m_current_format_type</a>);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>}</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#abac4525a176019972389f2fca1c79cec">  340</a></span>QString <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#abac4525a176019972389f2fca1c79cec">ExportFormatCombobox::getCurrentSource</a>()</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>{</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d4/d95/structExportFormat.html">ExportFormat</a> &amp;format : <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a75dc8659a380a1679622d1421b96af06">m_formats</a>)</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <span class="keywordflow">if</span> (format.translation == currentText())</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        {</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="keywordflow">return</span> format.source;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        }</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keywordflow">return</span> QString(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>}</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">  352</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">ExportFormatCombobox::setCurrentToDefault</a>()</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>{</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    QString default_format = <a class="code hl_define" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getExportFormat();</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keywordflow">for</span> (<a class="code hl_struct" href="../../d4/d95/structExportFormat.html">ExportFormat</a> &amp;format : <a class="code hl_variable" href="../../d4/d06/classExportFormatCombobox.html#a75dc8659a380a1679622d1421b96af06">m_formats</a>)</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="keywordflow">if</span> (format.source == default_format)</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        {</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>            <span class="keywordtype">int</span> index = findText(format.translation);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            <span class="keywordflow">if</span> (index != -1)</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            {</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                setCurrentIndex(index);</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            }</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>                setCurrentIndex(0);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>            }</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        }</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    }</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>}</div>
 <div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00066">application_2d.h:66</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a058047141234bff265f262296c42a33d"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a058047141234bff265f262296c42a33d">ExportFormatCombobox::initFormats</a></div><div class="ttdeci">static QVector&lt; std::pair&lt; QString, LayoutExportFormat &gt; &gt; initFormats()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00108">export_format_combobox.cpp:108</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a09615e8cc599a10d1582cac86a00bfa3"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">ExportFormatCombobox::supportPSTest</a></div><div class="ttdeci">static bool supportPSTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00164">export_format_combobox.cpp:164</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a11e4bbfdf00a0d6c80162df4903a915f"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">ExportFormatCombobox::ExportFormatCombobox</a></div><div class="ttdeci">ExportFormatCombobox(QWidget *parent=nullptr, const char *name=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00049">export_format_combobox.cpp:49</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a17fe24583449a3cfd1b039c56862a81d"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">ExportFormatCombobox::setCurrentToDefault</a></div><div class="ttdeci">void setCurrentToDefault()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00317">export_format_combobox.cpp:317</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a32bf4387be4d33640e4e25b9b7261cd1"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a32bf4387be4d33640e4e25b9b7261cd1">ExportFormatCombobox::exportFormatDescription</a></div><div class="ttdeci">static QString exportFormatDescription(LayoutExportFormat format)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00201">export_format_combobox.cpp:201</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a3fd1b62c73ffae598b44206e67e19afe"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a3fd1b62c73ffae598b44206e67e19afe">ExportFormatCombobox::havePdf</a></div><div class="ttdeci">static bool havePdf</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00063">export_format_combobox.h:63</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a592dd8099aa3ed6f037fc076f8963aa9"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">ExportFormatCombobox::testPdf</a></div><div class="ttdeci">static bool testPdf()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00175">export_format_combobox.cpp:175</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_a951f50b6f978ae1500c0065550f19024"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">ExportFormatCombobox::tested</a></div><div class="ttdeci">static bool tested</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00064">export_format_combobox.h:64</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_aa2587b7acfd6f2348a5d5292115a27e3"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a></div><div class="ttdeci">void updateExportFormat(int index)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00306">export_format_combobox.cpp:306</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a09615e8cc599a10d1582cac86a00bfa3"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a09615e8cc599a10d1582cac86a00bfa3">ExportFormatCombobox::supportPSTest</a></div><div class="ttdeci">static bool supportPSTest()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00176">export_format_combobox.cpp:176</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a11e4bbfdf00a0d6c80162df4903a915f"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a11e4bbfdf00a0d6c80162df4903a915f">ExportFormatCombobox::ExportFormatCombobox</a></div><div class="ttdeci">ExportFormatCombobox(QWidget *parent=nullptr, const char *name=nullptr)</div><div class="ttdoc">Constructor with name.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00053">export_format_combobox.cpp:53</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a17fe24583449a3cfd1b039c56862a81d"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a17fe24583449a3cfd1b039c56862a81d">ExportFormatCombobox::setCurrentToDefault</a></div><div class="ttdeci">void setCurrentToDefault()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00352">export_format_combobox.cpp:352</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a45fb82605db2527c261ba6af570afec1"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a45fb82605db2527c261ba6af570afec1">ExportFormatCombobox::exportFormatDescription</a></div><div class="ttdeci">static QString exportFormatDescription(LayoutExportFormat format, bool is_source=false)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00213">export_format_combobox.cpp:213</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a592dd8099aa3ed6f037fc076f8963aa9"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a592dd8099aa3ed6f037fc076f8963aa9">ExportFormatCombobox::testPdf</a></div><div class="ttdeci">static bool testPdf()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00187">export_format_combobox.cpp:187</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a75dc8659a380a1679622d1421b96af06"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a75dc8659a380a1679622d1421b96af06">ExportFormatCombobox::m_formats</a></div><div class="ttdeci">QVector&lt; ExportFormat &gt; m_formats</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00067">export_format_combobox.h:67</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_a951f50b6f978ae1500c0065550f19024"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#a951f50b6f978ae1500c0065550f19024">ExportFormatCombobox::tested</a></div><div class="ttdeci">static bool tested</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00065">export_format_combobox.h:65</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_aa0ded8d5a4b5db2ca5fc7bc549f76ff6"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aa0ded8d5a4b5db2ca5fc7bc549f76ff6">ExportFormatCombobox::m_current_format_type</a></div><div class="ttdeci">LayoutExportFormat m_current_format_type</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00066">export_format_combobox.h:66</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_aa2587b7acfd6f2348a5d5292115a27e3"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aa2587b7acfd6f2348a5d5292115a27e3">ExportFormatCombobox::updateExportFormat</a></div><div class="ttdeci">void updateExportFormat(int index)</div><div class="ttdoc">Called when the width has changed. This method sets the current width to the value chosen or even off...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00329">export_format_combobox.cpp:329</a></div></div>
 <div class="ttc" id="aclassExportFormatCombobox_html_aa25f1d6d093ef49dff6c838ead14d776"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aa25f1d6d093ef49dff6c838ead14d776">ExportFormatCombobox::exportFormatChanged</a></div><div class="ttdeci">void exportFormatChanged(const LayoutExportFormat &amp;format)</div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_ab146ac216398245e6f200c975c7f7221"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">ExportFormatCombobox::getExportFormat</a></div><div class="ttdeci">LayoutExportFormat getExportFormat() const</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00087">export_format_combobox.cpp:87</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_ac6cd2a509b05d723a0d7250f4c76bd43"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">ExportFormatCombobox::~ExportFormatCombobox</a></div><div class="ttdeci">virtual ~ExportFormatCombobox()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00061">export_format_combobox.cpp:61</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_acded3ddd1006416f459c996a47c4d1ae"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#acded3ddd1006416f459c996a47c4d1ae">ExportFormatCombobox::m_currentFormat</a></div><div class="ttdeci">LayoutExportFormat m_currentFormat</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00065">export_format_combobox.h:65</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_ad40d97d8b6bf9b6bb674aeadbc36a6b7"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">ExportFormatCombobox::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00066">export_format_combobox.cpp:66</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_aeed65ed375d2c27ff284c969d55723b4"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">ExportFormatCombobox::setExportFormat</a></div><div class="ttdeci">void setExportFormat(LayoutExportFormat &amp;format)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00095">export_format_combobox.cpp:95</a></div></div>
-<div class="ttc" id="aclassExportFormatCombobox_html_af4a95b487116dcc7032112a026b80de7"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">ExportFormatCombobox::makeHelpFormatList</a></div><div class="ttdeci">static QString makeHelpFormatList()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00291">export_format_combobox.cpp:291</a></div></div>
-<div class="ttc" id="adef_8h_html_a1f9b518e0e2d2c25a541f09e2e49a9d8"><div class="ttname"><a href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a></div><div class="ttdeci">LayoutExportFormat</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00119">def.h:120</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_aa520875bfad5f324ce37266ec66a82fc"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aa520875bfad5f324ce37266ec66a82fc">ExportFormatCombobox::have_pdf</a></div><div class="ttdeci">static bool have_pdf</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/da5/export__format__combobox_8h_source.html#l00064">export_format_combobox.h:64</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_ab146ac216398245e6f200c975c7f7221"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ab146ac216398245e6f200c975c7f7221">ExportFormatCombobox::getExportFormat</a></div><div class="ttdeci">LayoutExportFormat getExportFormat() const</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00090">export_format_combobox.cpp:90</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_ab7202d30d63794f113202c474541d5f9"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ab7202d30d63794f113202c474541d5f9">ExportFormatCombobox::initFormats</a></div><div class="ttdeci">void initFormats()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00162">export_format_combobox.cpp:162</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_abac4525a176019972389f2fca1c79cec"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#abac4525a176019972389f2fca1c79cec">ExportFormatCombobox::getCurrentSource</a></div><div class="ttdeci">QString getCurrentSource()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00340">export_format_combobox.cpp:340</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_ac6cd2a509b05d723a0d7250f4c76bd43"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ac6cd2a509b05d723a0d7250f4c76bd43">ExportFormatCombobox::~ExportFormatCombobox</a></div><div class="ttdeci">virtual ~ExportFormatCombobox()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00066">export_format_combobox.cpp:66</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_ac85c72dab249ebfe85ba03f72905470a"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ac85c72dab249ebfe85ba03f72905470a">ExportFormatCombobox::initFormatTypes</a></div><div class="ttdeci">static QList&lt; LayoutExportFormat &gt; initFormatTypes()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00111">export_format_combobox.cpp:111</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_ad40d97d8b6bf9b6bb674aeadbc36a6b7"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#ad40d97d8b6bf9b6bb674aeadbc36a6b7">ExportFormatCombobox::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initialisation called from constructor or manually but only once.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00071">export_format_combobox.cpp:71</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_aeed65ed375d2c27ff284c969d55723b4"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#aeed65ed375d2c27ff284c969d55723b4">ExportFormatCombobox::setExportFormat</a></div><div class="ttdeci">void setExportFormat(LayoutExportFormat &amp;format)</div><div class="ttdoc">Sets the currently selected format item to the given format.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00098">export_format_combobox.cpp:98</a></div></div>
+<div class="ttc" id="aclassExportFormatCombobox_html_af4a95b487116dcc7032112a026b80de7"><div class="ttname"><a href="../../d4/d06/classExportFormatCombobox.html#af4a95b487116dcc7032112a026b80de7">ExportFormatCombobox::makeHelpFormatList</a></div><div class="ttdeci">static QString makeHelpFormatList()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d40/export__format__combobox_8cpp_source.html#l00309">export_format_combobox.cpp:309</a></div></div>
+<div class="ttc" id="aclassQList_html"><div class="ttname"><a href="../../d1/d4a/classQList.html">QList</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d07/vlayoutpaper_8h_source.html#l00069">vlayoutpaper.h:69</a></div></div>
+<div class="ttc" id="adef_8h_html_a1f9b518e0e2d2c25a541f09e2e49a9d8"><div class="ttname"><a href="../../d4/da4/def_8h.html#a1f9b518e0e2d2c25a541f09e2e49a9d8">LayoutExportFormat</a></div><div class="ttdeci">LayoutExportFormat</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00118">def.h:119</a></div></div>
 <div class="ttc" id="aexport__format__combobox_8h_html"><div class="ttname"><a href="../../d0/da5/export__format__combobox_8h.html">export_format_combobox.h</a></div></div>
 <div class="ttc" id="amainwindowsnogui_8cpp_html_a912a77a5eeb3952fe9c0efc114027c64"><div class="ttname"><a href="../../d8/de8/mainwindowsnogui_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a></div><div class="ttdeci">#define PDFTOPS</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l00090">mainwindowsnogui.cpp:90</a></div></div>
+<div class="ttc" id="astructExportFormat_html"><div class="ttname"><a href="../../d4/d95/structExportFormat.html">ExportFormat</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00161">def.h:162</a></div></div>
+<div class="ttc" id="astructExportFormat_html_a4911673dcfa6a41360e0c52a4f1aa66b"><div class="ttname"><a href="../../d4/d95/structExportFormat.html#a4911673dcfa6a41360e0c52a4f1aa66b">ExportFormat::translation</a></div><div class="ttdeci">QString translation</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00170">def.h:170</a></div></div>
+<div class="ttc" id="astructExportFormat_html_a95d598e7083a716365e0a7d53809b2d7"><div class="ttname"><a href="../../d4/d95/structExportFormat.html#a95d598e7083a716365e0a7d53809b2d7">ExportFormat::source</a></div><div class="ttdeci">QString source</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00169">def.h:169</a></div></div>
+<div class="ttc" id="astructExportFormat_html_ac42412765fa7386555e0a880141c4f42"><div class="ttname"><a href="../../d4/d95/structExportFormat.html#ac42412765fa7386555e0a880141c4f42">ExportFormat::type</a></div><div class="ttdeci">LayoutExportFormat type</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00171">def.h:171</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

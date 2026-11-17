@@ -219,6 +219,7 @@ var hierarchy =
     [ "xercesc::ErrorHandler", null, [
       [ "CErrorHandler", "db/d94/classCErrorHandler.html", null ]
     ] ],
+    [ "ExportFormat", "d4/d95/structExportFormat.html", null ],
     [ "face_s", "d3/d07/structface__s.html", null ],
     [ "FlagJanitor< T >", "de/dac/classFlagJanitor.html", null ],
     [ "GroupAttributes", "d8/d6b/structGroupAttributes.html", null ],

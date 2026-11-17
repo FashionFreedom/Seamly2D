@@ -1,5 +1,6 @@
 var def_8h =
 [
+    [ "ExportFormat", "d4/d95/structExportFormat.html", "d4/d95/structExportFormat" ],
     [ "DraftImage", "d3/df8/structDraftImage.html", "d3/df8/structDraftImage" ],
     [ "CustomSARecord", "dc/d74/structCustomSARecord.html", "dc/d74/structCustomSARecord" ],
     [ "QxtPrivate< PUB >", "db/d14/classQxtPrivate.html", "db/d14/classQxtPrivate" ],

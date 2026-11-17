@@ -1,5 +1,13 @@
 var NAVTREEINDEX228 =
 {
+"dc/d5e/msvc-arm64_2include_2xercesc_2util_2SynchronizedStringPool_8hpp.html":[4,0,0,1,15,3,0,0,6,66],
+"dc/d5e/msvc-arm64_2include_2xercesc_2util_2SynchronizedStringPool_8hpp_source.html":[4,0,0,1,15,3,0,0,6,66],
+"dc/d5e/vtoolmirrorbyline_8h.html":[4,0,0,1,13,1,0,0,0,5],
+"dc/d5e/vtoolmirrorbyline_8h_source.html":[4,0,0,1,13,1,0,0,0,5],
+"dc/d60/dialogpointfromarcandtangent_8h.html":[4,0,0,1,13,0,1,50],
+"dc/d60/dialogpointfromarcandtangent_8h_source.html":[4,0,0,1,13,0,1,50],
+"dc/d60/msvc-arm64_2include_2xercesc_2util_2XMLDOMMsg_8hpp.html":[4,0,0,1,15,3,0,0,6,95],
+"dc/d60/msvc-arm64_2include_2xercesc_2util_2XMLDOMMsg_8hpp_source.html":[4,0,0,1,15,3,0,0,6,95],
 "dc/d63/preferencespatternpage_8cpp.html":[4,0,0,0,0,1,0,6],
 "dc/d63/preferencespatternpage_8cpp.html#a97383a8b46e2afedbc957a5c56b7522f":[4,0,0,0,0,1,0,6,0],
 "dc/d63/preferencespatternpage_8cpp_source.html":[4,0,0,0,0,1,0,6],
@@ -241,13 +249,5 @@ var NAVTREEINDEX228 =
 "dc/d64/classComplexTypeInfo.html#ad1ddaf0926fa05e03ada14d6b41a8d94":[3,0,70,235],
 "dc/d64/classComplexTypeInfo.html#ad1ddaf0926fa05e03ada14d6b41a8d94":[3,0,70,234],
 "dc/d64/classComplexTypeInfo.html#ad1ddaf0926fa05e03ada14d6b41a8d94":[3,0,70,232],
-"dc/d64/classComplexTypeInfo.html#ad1ddaf0926fa05e03ada14d6b41a8d94":[3,0,70,233],
-"dc/d64/classComplexTypeInfo.html#ad248b4f531f10a7d7940cdb473929774":[3,0,70,273],
-"dc/d64/classComplexTypeInfo.html#ad3a47dffb3180f5053460846ace502e5":[3,0,70,83],
-"dc/d64/classComplexTypeInfo.html#ad3a47dffb3180f5053460846ace502e5":[3,0,70,82],
-"dc/d64/classComplexTypeInfo.html#ad3a47dffb3180f5053460846ace502e5":[3,0,70,81],
-"dc/d64/classComplexTypeInfo.html#ad3a47dffb3180f5053460846ace502e5":[3,0,70,80],
-"dc/d64/classComplexTypeInfo.html#ad57b39fa3366b2d6e0f5543d4eccf2e3":[3,0,70,120],
-"dc/d64/classComplexTypeInfo.html#ad57b39fa3366b2d6e0f5543d4eccf2e3":[3,0,70,123],
-"dc/d64/classComplexTypeInfo.html#ad57b39fa3366b2d6e0f5543d4eccf2e3":[3,0,70,122]
+"dc/d64/classComplexTypeInfo.html#ad1ddaf0926fa05e03ada14d6b41a8d94":[3,0,70,233]
 };
