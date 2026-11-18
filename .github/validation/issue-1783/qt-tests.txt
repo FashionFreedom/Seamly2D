@@ -1,0 +1,30 @@
+********* Start testing of TST_Seamly2DCommandLine *********
+Config: Using QtTest library 6.11.1, Qt 6.11.1 (x86_64-little_endian-llp64 shared (dynamic) release build; by GCC 13.1.0), windows 11
+PASS   : TST_Seamly2DCommandLine::initTestCase()
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-valid)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-valid-empty)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-relative)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-file-root)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-file-settings)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-file-logs)
+SKIP   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-readonly-settings) This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).
+src\test\CollectionTest\tst_seamly2dcommandline.cpp(394) : failure location
+SKIP   : TST_Seamly2DCommandLine::automationDataDirectory(seamly2d-readonly-logs) This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).
+src\test\CollectionTest\tst_seamly2dcommandline.cpp(394) : failure location
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-valid)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-valid-empty)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-relative)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-file-root)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-file-settings)
+PASS   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-file-logs)
+SKIP   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-readonly-settings) This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).
+src\test\CollectionTest\tst_seamly2dcommandline.cpp(394) : failure location
+SKIP   : TST_Seamly2DCommandLine::automationDataDirectory(seamlyme-readonly-logs) This account/filesystem can still write despite read-only bits (e.g. Windows ACLs/root).
+src\test\CollectionTest\tst_seamly2dcommandline.cpp(394) : failure location
+PASS   : TST_Seamly2DCommandLine::aamaCuttingText(hidden-r12)
+PASS   : TST_Seamly2DCommandLine::aamaCuttingText(visible-r12)
+PASS   : TST_Seamly2DCommandLine::aamaCuttingText(hidden-ac1027)
+PASS   : TST_Seamly2DCommandLine::aamaCuttingText(visible-ac1027)
+PASS   : TST_Seamly2DCommandLine::cleanupTestCase()
+Totals: 18 passed, 0 failed, 4 skipped, 0 blacklisted, 2526ms
+********* Finished testing of TST_Seamly2DCommandLine *********
