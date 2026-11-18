@@ -142,6 +142,7 @@ void AnchorPointDialog::SetPointId(quint32 id)
 void AnchorPointDialog::SetPiecesList(const QVector<quint32> &list)
 {
     fillComboBoxPiecesList(ui->comboBoxPiece, list);
+    ui->comboBoxPiece->model()->sort(0, Qt::AscendingOrder);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

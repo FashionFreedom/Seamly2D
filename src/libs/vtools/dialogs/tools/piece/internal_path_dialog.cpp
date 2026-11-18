@@ -1280,6 +1280,7 @@ QString InternalPathDialog::getSeamAllowanceWidthFormula() const
 void InternalPathDialog::SetPiecesList(const QVector<quint32> &list)
 {
     fillComboBoxPiecesList(ui->piece_ComboBox, list);
+    ui->piece_ComboBox->model()->sort(0, Qt::AscendingOrder);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
