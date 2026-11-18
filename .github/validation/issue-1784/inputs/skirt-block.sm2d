@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pattern>
+    <version>0.7.5</version>
+    <unit>cm</unit>
+    <description>Original synthetic skirt-block interoperability pattern. Apache-2.0.</description>
+    <notes>Authored by us from simple geometric constraints; not copied from any sample.</notes>
+    <gradation custom="true" defHeight="176" defSize="50">
+        <heights all="false" h176="true" />
+        <sizes all="false" s48="true" s50="true" s52="true" />
+    </gradation>
+    <patternName>skirt-block</patternName>
+    <patternNumber>ORIGINAL-20261019</patternNumber>
+    <company>Original interoperability test data</company>
+    <measurements>original-multisize.smms</measurements>
+    <draftBlock name="Skirt-front">
+        <calculation>
+            <point id="1" name="P1" type="single" x="0" y="0" mx="0.2" my="0.2" />
+            <point id="2" name="P2" type="endLine" basePoint="1" angle="0" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="3" name="P3" type="endLine" basePoint="2" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="4" name="P4" type="endLine" basePoint="1" angle="0" length="@waist/4+1" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="5" name="P5" type="endLine" basePoint="4" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="6" name="P6" type="endLine" basePoint="1" angle="0" length="@hip/4+1" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="7" name="P7" type="endLine" basePoint="6" angle="270" length="20" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="8" name="P8" type="endLine" basePoint="1" angle="0" length="@hip/4+2" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="9" name="P9" type="endLine" basePoint="8" angle="270" length="@skirt_length" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="10" name="P10" type="endLine" basePoint="1" angle="0" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="11" name="P11" type="endLine" basePoint="10" angle="270" length="@skirt_length" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <spline id="12" type="simple" point1="5" point4="7" angle1="270" angle2="95" length1="7" length2="7" color="black" penStyle="solidLine" />
+            <point id="19" name="P19" type="endLine" basePoint="1" angle="0" length="8" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="20" name="P20" type="endLine" basePoint="19" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="21" name="P21" type="endLine" basePoint="1" angle="0" length="9" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="22" name="P22" type="endLine" basePoint="21" angle="270" length="11" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="23" name="P23" type="endLine" basePoint="1" angle="0" length="10" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="24" name="P24" type="endLine" basePoint="23" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+        </calculation>
+        <modeling>
+            <point id="13" idObject="3" type="modeling" inUse="true" />
+            <point id="14" idObject="5" type="modeling" inUse="true" />
+            <spline id="15" idObject="12" type="modelingSpline" inUse="true" />
+            <point id="16" idObject="7" type="modeling" inUse="true" />
+            <point id="17" idObject="9" type="modeling" inUse="true" />
+            <point id="18" idObject="11" type="modeling" inUse="true" />
+            <point id="25" idObject="20" type="modeling" inUse="true" />
+            <point id="26" idObject="22" type="modeling" inUse="true" />
+            <point id="27" idObject="24" type="modeling" inUse="true" />
+            <path id="28" type="2" name="Waist dart" cut="false" lineColor="black" lineType="solidLine" inUse="true">
+                <nodes>
+                    <node idObject="25" type="NodePoint" />
+                    <node idObject="26" type="NodePoint" />
+                    <node idObject="27" type="NodePoint" />
+                </nodes>
+            </path>
+        </modeling>
+        <pieces>
+            <piece id="29" name="Skirt-front" version="2" mx="0" my="0" inLayout="true" forbidFlipping="false" width="1" seamAllowance="true" seamAllowanceBuiltIn="false" hideMainPath="false">
+                <data visible="true" quantity="2" letter="S" annotation="One mirrored pair" onFold="false" fontSize="10" mx="200" my="450" width="14" height="10" rotation="0">
+                    <line text="Piece Name: %pName%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Size: %size%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Quantity: %pQuantity%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Material: cotton" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="%pAnnotation%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                </data>
+                <grainline visible="true" mx="350" my="850" length="25" rotation="90" arrows="0" arrowLength="1" />
+                <nodes>
+                    <node idObject="13" type="NodePoint" />
+                    <node idObject="14" type="NodePoint" />
+                    <node idObject="15" type="NodeSpline" />
+                    <node idObject="16" type="NodePoint" notch="true" notchType="slit" notchSubtype="straightforward" showNotch="true" notchLength="0.5" notchWidth="0.2" notchCount="1" />
+                    <node idObject="17" type="NodePoint" />
+                    <node idObject="18" type="NodePoint" />
+                </nodes>
+                <iPaths>
+                    <record path="28" />
+                </iPaths>
+            </piece>
+        </pieces>
+    </draftBlock>
+    <draftBlock name="Skirt-back">
+        <calculation>
+            <point id="30" name="P30" type="single" x="0" y="0" mx="0.2" my="0.2" />
+            <point id="31" name="P31" type="endLine" basePoint="30" angle="0" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="32" name="P32" type="endLine" basePoint="31" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="33" name="P33" type="endLine" basePoint="30" angle="0" length="@waist/4+1" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="34" name="P34" type="endLine" basePoint="33" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="35" name="P35" type="endLine" basePoint="30" angle="0" length="@hip/4+1" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="36" name="P36" type="endLine" basePoint="35" angle="270" length="20" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="37" name="P37" type="endLine" basePoint="30" angle="0" length="@hip/4+2" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="38" name="P38" type="endLine" basePoint="37" angle="270" length="@skirt_length" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="39" name="P39" type="endLine" basePoint="30" angle="0" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="40" name="P40" type="endLine" basePoint="39" angle="270" length="@skirt_length" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <spline id="41" type="simple" point1="34" point4="36" angle1="270" angle2="95" length1="7" length2="7" color="black" penStyle="solidLine" />
+            <point id="48" name="P48" type="endLine" basePoint="30" angle="0" length="10" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="49" name="P49" type="endLine" basePoint="48" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="50" name="P50" type="endLine" basePoint="30" angle="0" length="11" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="51" name="P51" type="endLine" basePoint="50" angle="270" length="11" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="52" name="P52" type="endLine" basePoint="30" angle="0" length="12" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+            <point id="53" name="P53" type="endLine" basePoint="52" angle="270" length="0" lineType="none" lineColor="black" mx="0.2" my="0.2" />
+        </calculation>
+        <modeling>
+            <point id="42" idObject="32" type="modeling" inUse="true" />
+            <point id="43" idObject="34" type="modeling" inUse="true" />
+            <spline id="44" idObject="41" type="modelingSpline" inUse="true" />
+            <point id="45" idObject="36" type="modeling" inUse="true" />
+            <point id="46" idObject="38" type="modeling" inUse="true" />
+            <point id="47" idObject="40" type="modeling" inUse="true" />
+            <point id="54" idObject="49" type="modeling" inUse="true" />
+            <point id="55" idObject="51" type="modeling" inUse="true" />
+            <point id="56" idObject="53" type="modeling" inUse="true" />
+            <path id="57" type="2" name="Waist dart" cut="false" lineColor="black" lineType="solidLine" inUse="true">
+                <nodes>
+                    <node idObject="54" type="NodePoint" />
+                    <node idObject="55" type="NodePoint" />
+                    <node idObject="56" type="NodePoint" />
+                </nodes>
+            </path>
+        </modeling>
+        <pieces>
+            <piece id="58" name="Skirt-back" version="2" mx="1300" my="0" inLayout="true" forbidFlipping="false" width="1" seamAllowance="true" seamAllowanceBuiltIn="false" hideMainPath="false">
+                <data visible="true" quantity="2" letter="S" annotation="One mirrored pair" onFold="false" fontSize="10" mx="200" my="450" width="14" height="10" rotation="0">
+                    <line text="Piece Name: %pName%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Size: %size%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Quantity: %pQuantity%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="Material: cotton" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                    <line text="%pAnnotation%" alignment="0" bold="false" italic="false" sfIncrement="0" />
+                </data>
+                <grainline visible="true" mx="350" my="850" length="25" rotation="90" arrows="0" arrowLength="1" />
+                <nodes>
+                    <node idObject="42" type="NodePoint" />
+                    <node idObject="43" type="NodePoint" />
+                    <node idObject="44" type="NodeSpline" />
+                    <node idObject="45" type="NodePoint" notch="true" notchType="slit" notchSubtype="straightforward" showNotch="true" notchLength="0.5" notchWidth="0.2" notchCount="1" />
+                    <node idObject="46" type="NodePoint" />
+                    <node idObject="47" type="NodePoint" />
+                </nodes>
+                <iPaths>
+                    <record path="57" />
+                </iPaths>
+            </piece>
+        </pieces>
+    </draftBlock>
+</pattern>
