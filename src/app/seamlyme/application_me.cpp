@@ -104,6 +104,32 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         return;
     }
 
+    if (type == QtWarningMsg)
+    {
+        /// Downgrade harmless Qt Wayland platform warnings so they stay in
+        /// debug logs instead of triggering modal warning popups.
+        static const QStringList ignoredWaylandWarnings =
+        {
+            QStringLiteral("This plugin supports grabbing the mouse only for popup windows"),
+            QStringLiteral("This plugin does not support setting window opacity"),
+            QStringLiteral("This plugin does not support raise()"),
+            QStringLiteral("This plugin does not support lower()"),
+            QStringLiteral("This plugin does not support propagateSizeHints()"),
+            QStringLiteral("Wayland does not support QWindow::requestActivate()"),
+            QStringLiteral("Sub window is not supported"),
+            QStringLiteral("which does not match the current topmost grabbing popup")
+        };
+
+        for (const QString &ignored : ignoredWaylandWarnings)
+        {
+            if (msg.contains(ignored))
+            {
+                type = QtDebugMsg;
+                break;
+            }
+        }
+    }
+
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("::connect")))
     {
