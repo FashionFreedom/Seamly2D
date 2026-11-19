@@ -234,6 +234,10 @@ protected:
     /** @brief number number of handled objects */
     qint32           number;
 
+    // For tools that take a line as two points: a clicked line (type Line) picks both its points, when the
+    // tool is at one of steps (the step that asks for a line's first point). Returns true for any line click.
+    bool             selectLineEndpoints(quint32 id, const SceneObject& type, const QVector<int>& steps);
+
     QPointer<Visualization> vis;
 
     QScreen         *m_screen;

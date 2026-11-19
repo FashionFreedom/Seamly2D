@@ -243,6 +243,10 @@ void DialogHeight::SetP2LineId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogHeight::ChosenObject(quint32 id, const SceneObject &type)
 {
+    if (selectLineEndpoints(id, type, {1}))   // a clicked line gives both its points
+    {
+        return;
+    }
     if (prepare == false)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)
@@ -253,7 +257,7 @@ void DialogHeight::ChosenObject(quint32 id, const SceneObject &type)
             switch (number)
             {
                 case (0):
-                    if (SetObject(id, ui->comboBoxBasePoint, tr("Select first point of line")))
+                    if (SetObject(id, ui->comboBoxBasePoint, tr("Select first point of line or click a line")))
                     {
                         number++;
                         line->VisualMode(id);

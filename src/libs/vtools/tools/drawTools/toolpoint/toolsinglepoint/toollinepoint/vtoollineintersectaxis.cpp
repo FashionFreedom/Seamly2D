@@ -204,6 +204,7 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(const quint32 _id, const 
                                                                    typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
+        point->initLinePicking(scene);
         VAbstractPattern::AddTool(id, point);
         doc->IncrementReferens(basePoint->getIdTool());
         doc->IncrementReferens(firstPoint->getIdTool());

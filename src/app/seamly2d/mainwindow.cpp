@@ -1068,12 +1068,13 @@ void MainWindow::handlePointAtDistanceAngleTool(bool checked)
 void MainWindow::handleAlongLineTool(bool checked)
 {
     ToolSelectPointByRelease();
+    emit EnableLineHover(true);   // a clicked line gives both its points
     SetToolButtonWithApply<DialogAlongLine>
     (
         checked,
         Tool::AlongLine,
         ":/cursor/alongline_cursor.png",
-        tr("<b>Tool::Point - On Line:</b> Select first point"),
+        tr("<b>Tool::Point - On Line:</b> Select first point or click a line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolAlongLine>,
         &MainWindow::ApplyDrawDialog<VToolAlongLine>
     );
@@ -1087,12 +1088,13 @@ void MainWindow::handleAlongLineTool(bool checked)
 void MainWindow::handleNormalTool(bool checked)
 {
     ToolSelectPointByRelease();
+    emit EnableLineHover(true);   // a clicked line gives both its points
     SetToolButtonWithApply<DialogNormal>
     (
         checked,
         Tool::Normal,
         ":/cursor/normal_cursor.png",
-        tr("<b>Tool::Point - On Perpendicular:</b> Select first point of line"),
+        tr("<b>Tool::Point - On Perpendicular:</b> Select first point of line or click a line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolNormal>,
         &MainWindow::ApplyDrawDialog<VToolNormal>
     );
@@ -1200,6 +1202,7 @@ void MainWindow::handlePointIntersectXYTool(bool checked)
 void MainWindow::handleHeightTool(bool checked)
 {
     ToolSelectPointByRelease();
+    emit EnableLineHover(true);   // a clicked line gives both its points
     SetToolButtonWithApply<DialogHeight>
     (
         checked,
@@ -1215,12 +1218,13 @@ void MainWindow::handleHeightTool(bool checked)
 void MainWindow::handleLineIntersectAxisTool(bool checked)
 {
     ToolSelectPointByRelease();
+    emit EnableLineHover(true);   // a clicked line gives both its points
     SetToolButtonWithApply<DialogLineIntersectAxis>
     (
         checked,
         Tool::LineIntersectAxis,
         ":/cursor/line_intersect_axis_cursor.png",
-        tr("<b>Tool::Point - Intersect Line and Axis:</b> Select first point of line"),
+        tr("<b>Tool::Point - Intersect Line and Axis:</b> Select first point of line or click a line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersectAxis>
     );
@@ -1254,12 +1258,13 @@ void MainWindow::handleLineTool(bool checked)
 void MainWindow::handleLineIntersectTool(bool checked)
 {
     ToolSelectPointByRelease();
+    emit EnableLineHover(true);   // a clicked line gives both its points
     SetToolButtonWithApply<DialogLineIntersect>
     (
         checked,
         Tool::LineIntersect,
         ":/cursor/intersect_cursor.png",
-        tr("<b>Tool::Point - Intersect Lines:</b> Select first point of first line"),
+        tr("<b>Tool::Point - Intersect Lines:</b> Select first point of first line or click a line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersect>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersect>
     );
@@ -1635,6 +1640,7 @@ void MainWindow::handleRotationTool(bool checked)
 void MainWindow::handleMirrorByLineTool(bool checked)
 {
     ToolSelectOperationObjects();
+    emit EnableLineHover(true);   // a clicked line gives both mirror line points
     QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
                                    " Hold <b>%1</b> for multiple selection, "
                                    "Press <b>ENTER</b> to confirm selection")

@@ -306,6 +306,10 @@ void DialogLineIntersectAxis::ShowDialog(bool click)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::ChosenObject(quint32 id, const SceneObject &type)
 {
+    if (selectLineEndpoints(id, type, {0}))   // a clicked line gives both its points
+    {
+        return;
+    }
     if (prepare == false)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)

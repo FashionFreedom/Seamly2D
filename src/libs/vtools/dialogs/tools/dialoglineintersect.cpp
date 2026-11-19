@@ -124,6 +124,10 @@ DialogLineIntersect::~DialogLineIntersect()
  */
 void DialogLineIntersect::ChosenObject(quint32 id, const SceneObject &type)
 {
+    if (selectLineEndpoints(id, type, {0, 2}))   // a clicked line gives both its points
+    {
+        return;
+    }
     if (prepare == false)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)
@@ -143,7 +147,7 @@ void DialogLineIntersect::ChosenObject(quint32 id, const SceneObject &type)
                 case 1:
                     if (getCurrentObjectId(ui->comboBoxP1Line1) != id)
                     {
-                        if (SetObject(id, ui->comboBoxP2Line1, tr("Select first point of second line")))
+                        if (SetObject(id, ui->comboBoxP2Line1, tr("Select first point of second line or click a line")))
                         {
                             number++;
                             line->setLine1P2Id(id);

@@ -1594,8 +1594,8 @@ p, li { 空白:预换行； }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>选择线的第一个点</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>选择线的第一个点或点击一条线</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { 空白:预换行； }
         <translation>选择第一条线的第二个点</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>选择第二条线的第一个点</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>选择第二条线的第一个点或点击一条线</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { 空白:预换行； }
         <translation>后缀:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>选择第一个镜像线点</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>选择第一个镜像线点或点击一条线</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6403,6 +6403,22 @@ Do you want to save your changes?</source>
         <translation>测量文件不包括所有必需的测量值.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;工具::点 - 在线:&lt;/b&gt; 选择第一个点或点击一条线</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;工具::点 - 垂直:&lt;/b&gt; 选择直线的第一个点或点击一条线</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;工具::点 - 线与轴相交:&lt;/b&gt; 选择线的第一个点或点击一条线</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;工具::点 - 相交线:&lt;/b&gt; 选择第一条线的第一个点或点击一条线</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;工具::操作 - 创建组:&lt;/b&gt;选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;完成组创建 </translation>
     </message>
@@ -6971,14 +6987,6 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;工具::点 - 长度和角度&lt;/b&gt;: 选择点</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;工具::点 - 在线:&lt;/b&gt; 选择第一个点</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 垂直:&lt;/b&gt; 选择直线的第一个点</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;工具::点 - 在平分线上:&lt;/b&gt; 选择角度的第一个点</translation>
     </message>
@@ -7003,16 +7011,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;工具::点 - 相交线和垂线:&lt;/b&gt; 选择基点</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;工具::点 - 线与轴相交:&lt;/b&gt; 选择线的第一个点</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;工具::线:&lt;​​/b&gt;: 选择第一个点</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;工具::点 - 相交线:&lt;/b&gt; 选择第一条线的第一个点</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

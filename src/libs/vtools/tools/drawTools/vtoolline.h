@@ -122,6 +122,7 @@ public slots:
     virtual void      ShowTool(quint32 id, bool enable) override;
     virtual void      Disable(bool disable, const QString &draftBlockName) override;
     virtual void      AllowHover(bool enabled) override;
+    virtual void      EnableToolMove(bool move) override;
     virtual void      AllowSelecting(bool enabled) override;
 
 protected slots:
@@ -135,6 +136,7 @@ protected:
     virtual void      RemoveReferens() override;
     virtual QVariant  itemChange(GraphicsItemChange change, const QVariant &value ) override;
     virtual void      keyReleaseEvent(QKeyEvent * event) override;
+    virtual void      mousePressEvent(QGraphicsSceneMouseEvent* event) override;
     virtual void      SaveDialog(QDomElement &domElement) override;
     virtual void      SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) override;
     virtual void      ReadToolAttributes(const QDomElement &domElement) override;
@@ -154,6 +156,9 @@ private:
     QString           lineColor;
 
     bool              m_isHovered;
+
+    // true while a tool is active (not the arrow tool), so a click on the line can pick it
+    bool              m_tool_active{false};
 
                       VToolLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 firstPoint,
                                 quint32 secondPoint, const QString &typeLine, const QString &lineWeight,

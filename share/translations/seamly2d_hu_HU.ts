@@ -1642,8 +1642,8 @@ p, li { white-space: pre-wrap; }
         <translation>Szín:</translation>
     </message>
     <message>
-        <source>Select first point of line</source>
-        <translation>Vonal első pontjának kiválasztása</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Vonal első pontjának kiválasztása vagy kattintás egy vonalra</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1779,8 +1779,8 @@ p, li { white-space: pre-wrap; }
         <translation>Válassza ki az első vonal második pontját</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Válassza ki a második vonal első pontját</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Válassza ki a második vonal első pontját vagy kattintson egy vonalra</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Utótag:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Első tükrözési vonalpont kiválasztása</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Első tükrözési vonalpont kiválasztása vagy kattintás egy vonalra</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6560,14 +6560,6 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>&lt;b&gt;Eszköz::Pont - Hossz és szög&lt;/b&gt;: Pont kiválasztása</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Eszköz::Pont - Vonalon:&lt;/b&gt; Első pont kiválasztása</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Eszköz::Pont - Merőlegesen:&lt;/b&gt; Válassza ki a vonal első pontját</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Eszköz::Pont - Szögfelezőn:&lt;/b&gt; Válassza ki a szög első pontját</translation>
     </message>
@@ -6592,16 +6584,24 @@ A programot A JELENLEGI ÁLLAPOTUKBAN biztosítjuk, SEMMILYEN GARANCIA NÉLKÜL,
         <translation>&lt;b&gt;Eszköz::Pont - Egyenes és merőleges metszéspontja:&lt;/b&gt; Válasszon ki bázispontot</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Eszköz::Pont - Egyenes és tengely metszéspontja:&lt;/b&gt; Válassza ki a vonal első pontját</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Eszköz::Vonal:&lt;/b&gt;:Első pont kiválasztása</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Eszköz::Pont - Metszővonalak:&lt;/b&gt; Az első vonal első pontjának kiválasztása</translation>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Eszköz::Pont - Vonalon:&lt;/b&gt; Első pont kiválasztása vagy kattintás egy vonalra</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Eszköz::Pont - Merőlegesen:&lt;/b&gt; Válassza ki a vonal első pontját vagy kattintson egy vonalra</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Eszköz::Pont - Egyenes és tengely metszéspontja:&lt;/b&gt; Válassza ki a vonal első pontját vagy kattintson egy vonalra</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Eszköz::Pont - Metszővonalak:&lt;/b&gt; Az első vonal első pontjának kiválasztása vagy kattintás egy vonalra</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

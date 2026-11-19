@@ -1579,7 +1579,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
+        <source>Select first point of line or click a line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1736,7 +1736,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
+        <source>Select first point of second line or click a line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1944,7 +1944,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Suffix:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
+        <source>Select first mirror line point or click a line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6372,6 +6372,22 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select curve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6944,14 +6960,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6976,15 +6984,7 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

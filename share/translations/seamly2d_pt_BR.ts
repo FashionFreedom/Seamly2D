@@ -1579,8 +1579,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Selecione o primeiro ponto da linha</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Selecione o primeiro ponto da linha ou clique em uma linha</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1736,8 +1736,8 @@ p, li { white-space: pre-wrap; }
         <translation>Selecione o segundo ponto da primeira linha</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Selecione o primeiro ponto da segunda linha</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Selecione o primeiro ponto da segunda linha ou clique em uma linha</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1944,8 +1944,8 @@ p, li { white-space: pre-wrap; }
         <translation>Sufixo:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Selecione o primeiro ponto da linha do espelho</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Selecione o primeiro ponto da linha do espelho ou clique em uma linha</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6388,6 +6388,22 @@ Deseja salvar suas alterações?</translation>
         <translation>O arquivo de medições não inclui todas as medidas necessárias.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na linha:&lt;/b&gt; Selecione o primeiro ponto ou clique em uma linha</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Na perpendicular:&lt;/b&gt; Selecione o primeiro ponto da linha ou clique em uma linha</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linha e eixo:&lt;/b&gt; Selecione o primeiro ponto da linha ou clique em uma linha</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linhas:&lt;/b&gt; Selecione o primeiro ponto da primeira linha ou clique em uma linha</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Ferramenta::Operações - Criar grupo:&lt;/b&gt; Selecione um ou mais objetos - segure &lt;b&gt;%1&lt;/b&gt; para seleção múltipla, pressione &lt;b&gt;ENTER&lt;/b&gt; para concluir a criação do grupo </translation>
     </message>
@@ -6956,14 +6972,6 @@ Deseja salvar suas alterações?</translation>
         <translation>&lt;b&gt;Ferramenta::Ponto - Comprimento e ângulo&lt;/b&gt;: Selecione o ponto</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Na linha:&lt;/b&gt; Selecione o primeiro ponto</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Na perpendicular:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Ferramenta::Ponto - Na bissetriz:&lt;/b&gt; Selecione o primeiro ponto do ângulo</translation>
     </message>
@@ -6988,16 +6996,8 @@ Deseja salvar suas alterações?</translation>
         <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linha e perpendicular:&lt;/b&gt; Selecione o ponto base</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linha e eixo:&lt;/b&gt; Selecione o primeiro ponto da linha</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Ferramenta::Linha:&lt;/b&gt;: Selecione o primeiro ponto</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Ferramenta::Ponto - Interseção entre linhas:&lt;/b&gt; Selecione o primeiro ponto da primeira linha</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

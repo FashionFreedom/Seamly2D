@@ -209,7 +209,7 @@ void DialogMirrorByLine::ShowDialog(bool click)
         qApp->getSceneView()->allowRubberBand(false);
         qApp->getSceneView()->setAddToSelection(false);   // picking the mirror points is a plain click again
 
-        emit ToolTip(tr("Select first mirror line point"));
+        emit ToolTip(tr("Select first mirror line point or click a line"));
     }
     else if (not stage1 && prepare && click)
     {
@@ -222,6 +222,10 @@ void DialogMirrorByLine::ShowDialog(bool click)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByLine::ChosenObject(quint32 id, const SceneObject &type)
 {
+    if (not stage1 && selectLineEndpoints(id, type, {0}))   // a clicked line gives both mirror line points
+    {
+        return;
+    }
     if (not stage1 && not prepare)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)

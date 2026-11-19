@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Vybrat první bod čáry</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Vybrat první bod čáry nebo kliknout na čáru</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Vybrat druhý bod první čáry</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Vybrat první bod druhé čáry</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Vybrat první bod druhé čáry nebo kliknout na čáru</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Přípona:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Vybrat první bod zrcadlové čáry</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Vybrat první bod zrcadlové čáry nebo kliknout na čáru</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6401,6 +6401,22 @@ Chcete uložit své změny?</translation>
         <translation>Soubor s měřením neobsahuje všechna požadovaná měření.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Nástroj::Bod - Na linii:&lt;/b&gt; Vyberte první bod nebo klikněte na čáru</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Nástroj::Bod - Na kolmici:&lt;/b&gt; Vyberte první bod přímky nebo klikněte na přímku</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Nástroj::Bod - Průsečík přímky a osy:&lt;/b&gt; Vyberte první bod přímky nebo klikněte na přímku</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Nástroj::Bod - Průsečíky:&lt;/b&gt; Vyberte první bod první přímky nebo klikněte na přímku</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Nástroj::Operace - Vytvořit skupinu:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro dokončení vytváření skupiny </translation>
     </message>
@@ -6969,14 +6985,6 @@ Chcete uložit své změny?</translation>
         <translation>&lt;b&gt;Nástroj::Bod - Délka a úhel&lt;/b&gt;: Vyberte bod</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Nástroj::Bod - Na linii:&lt;/b&gt; Vyberte první bod</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Nástroj::Bod - Na kolmici:&lt;/b&gt; Vyberte první bod přímky</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Nástroj::Bod - Na ose:&lt;/b&gt; Vyberte první bod úhlu</translation>
     </message>
@@ -7001,16 +7009,8 @@ Chcete uložit své změny?</translation>
         <translation>&lt;b&gt;Nástroj::Bod - Průsečík přímky a kolmice:&lt;/b&gt; Vyberte základní bod</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Nástroj::Bod - Průsečík přímky a osy:&lt;/b&gt; Vyberte první bod přímky</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Nástroj::Přímka:&lt;/b&gt;:Vybrat první bod</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Nástroj::Bod - Průsečíky:&lt;/b&gt; Vyberte první bod první přímky</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>

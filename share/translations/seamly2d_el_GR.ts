@@ -1594,8 +1594,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Select first point of line</source>
-        <translation>Επιλέξτε το πρώτο σημείο της γραμμής</translation>
+        <source>Select first point of line or click a line</source>
+        <translation>Επιλέξτε το πρώτο σημείο της γραμμής ή κάντε κλικ σε μια γραμμή</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -1751,8 +1751,8 @@ p, li { white-space: pre-wrap; }
         <translation>Επιλέξτε το δεύτερο σημείο της πρώτης γραμμής</translation>
     </message>
     <message>
-        <source>Select first point of second line</source>
-        <translation>Επιλέξτε το πρώτο σημείο της δεύτερης γραμμής</translation>
+        <source>Select first point of second line or click a line</source>
+        <translation>Επιλέξτε το πρώτο σημείο της δεύτερης γραμμής ή κάντε κλικ σε μια γραμμή</translation>
     </message>
     <message>
         <source>Select second point of second line</source>
@@ -1959,8 +1959,8 @@ p, li { white-space: pre-wrap; }
         <translation>Κατάληξη:</translation>
     </message>
     <message>
-        <source>Select first mirror line point</source>
-        <translation>Επιλογή σημείου γραμμής πρώτου κατοπτρισμού</translation>
+        <source>Select first mirror line point or click a line</source>
+        <translation>Επιλογή σημείου γραμμής πρώτου κατοπτρισμού ή κλικ σε γραμμή</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
@@ -6405,6 +6405,22 @@ Do you want to save your changes?</source>
         <translation>Το αρχείο μετρήσεων δεν περιλαμβάνει όλες τις απαιτούμενες μετρήσεις.</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point or click a line</source>
+        <translation>&lt;b&gt;Εργαλείο::Σημείο - Στη γραμμή:&lt;/b&gt; Επιλογή πρώτου σημείου ή κλικ σε γραμμή</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε κάθετο:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής ή κλικ σε γραμμή</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line or click a line</source>
+        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμής και Άξονα:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής ή κλικ σε γραμμή</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line or click a line</source>
+        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμών:&lt;/b&gt; Επιλογή πρώτου σημείου της πρώτης γραμμής ή κλικ σε γραμμή</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation>&lt;b&gt;Tool::Operations - Δημιουργία ομάδας:&lt;/b&gt; Επιλέξτε ένα ή περισσότερα αντικείμενα - Κρατήστε πατημένο το &lt;b&gt;%1&lt;/b&gt; για πολλαπλή επιλογή, πατήστε &lt;b&gt;ENTER&lt;/b&gt; για να ολοκληρώσετε τη δημιουργία ομάδας </translation>
     </message>
@@ -6973,14 +6989,6 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Εργαλείο::Σημείο - Μήκος και Γωνία&lt;/b&gt;: Επιλογή σημείου</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Στη γραμμή:&lt;/b&gt; Επιλογή πρώτου σημείου</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Σε κάθετο:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
         <translation>&lt;b&gt;Εργαλείο::Σημείο - Στη διχοτόμο:&lt;/b&gt; Επιλογή πρώτου σημείου γωνίας</translation>
     </message>
@@ -7005,16 +7013,8 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή ευθείας και κάθετης:&lt;/b&gt; Επιλογή σημείου βάσης</translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμής και Άξονα:&lt;/b&gt; Επιλογή πρώτου σημείου γραμμής</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
         <translation>&lt;b&gt;Εργαλείο::Γραμμή:&lt;/b&gt;:Επιλογή πρώτου σημείου</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Εργαλείο::Σημείο - Τομή Γραμμών:&lt;/b&gt; Επιλογή πρώτου σημείου της πρώτης γραμμής</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
