@@ -91,6 +91,7 @@ public:
 
     quint32           GetBasePointId() const;
     void              SetBasePointId(const quint32 &value);
+    VScaledLine      *mainLineItem() const { return mainLine; }
 
     qreal             GetAngle() const;
     void              SetAngle(const qreal &value);

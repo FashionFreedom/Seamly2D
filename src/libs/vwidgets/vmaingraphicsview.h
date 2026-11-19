@@ -161,6 +161,7 @@ public:
 
     explicit              VMainGraphicsView(QWidget *parent = nullptr);
     void                  setShowToolOptions(bool value);
+    bool                  canInspectItems() const;
     void                  allowRubberBand(bool value);
     /// While on, clicks and drags add to the selection as if Ctrl were held (a click on a selected object
     /// removes it), so objects can be gathered with the mouse alone.
@@ -188,6 +189,7 @@ signals:
      */
     void                  mouseRelease();
     void                  itemClicked(QGraphicsItem *item);
+    void                  inspectionContextChanged();
     void                  signalZoomScaleChanged(qreal scale);
 
 

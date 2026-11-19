@@ -13884,6 +13884,24 @@ load in SeamlyME as usual.
         <translation>Selección</translation>
     </message>
     <message>
+        <source>Selected objects: %1
+Total length: %2</source>
+        <translation>Objetos seleccionados: %1
+Longitud total: %2</translation>
+    </message>
+    <message>
+        <source>Selected objects:</source>
+        <translation>Seleccionados:</translation>
+    </message>
+    <message>
+        <source>Selection measurements</source>
+        <translation>Medidas de la selección</translation>
+    </message>
+    <message>
+        <source>Total length:</source>
+        <translation>Longitud total:</translation>
+    </message>
+    <message>
         <source>First point</source>
         <translation>Primer punto</translation>
     </message>

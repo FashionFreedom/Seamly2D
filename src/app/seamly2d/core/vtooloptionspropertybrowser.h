@@ -59,6 +59,7 @@
 #include <QEvent>
 #include <QObject>
 #include <QMap>
+#include <QPointer>
 
 #include "../vgeometry/vgeometrydef.h"
 #include "../vpropertyexplorer/vproperty.h"
@@ -67,7 +68,13 @@
 
 class QDockWidget;
 class QGraphicsItem;
+class QGraphicsScene;
+class QPainterPath;
+class QPoint;
 class QScrollArea;
+class QTableWidget;
+class QTimer;
+class VMainGraphicsView;
 class VFormula;
 class VContainer;
 
@@ -76,7 +83,9 @@ class VToolOptionsPropertyBrowser : public QObject
     Q_OBJECT
 public:
     explicit VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent);
+    ~VToolOptionsPropertyBrowser() override;
     void clearPropertyBrowser();
+    void enableSelectionMeasurements(VMainGraphicsView *view, QGraphicsScene *draftScene);
 
 public slots:
     void itemClicked(QGraphicsItem *item);
@@ -85,8 +94,10 @@ public slots:
 
 private slots:
     void userChangedData(VPE::VProperty *property);
+    void updateSelectionMeasurements();
 
 protected:
+    bool eventFilter(QObject *watched, QEvent *event) override;
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
     const VContainer                *m_data;
     VPE::VPropertyModel             *propertyModel;
@@ -98,6 +109,37 @@ protected:
     QString                          m_centerPointStr;
 
 private:
+    struct MeasurementItem
+    {
+        QPointer<QObject> object;
+        QPointer<QObject> highlight;
+        bool constructionLine = false;
+    };
+
+    QPointer<VMainGraphicsView> m_measurementView;
+    QPointer<QGraphicsScene> m_measurementScene;
+    QPointer<QTableWidget> m_measurementTable;
+    QTimer *m_measurementResizeTimer = nullptr;
+    QList<MeasurementItem> m_measurementItems;
+    MeasurementItem m_measurementAnchor;
+    bool m_measurementActive = false;
+    bool m_updatingMeasurements = false;
+    bool m_measurementPress = false;
+    qreal m_totalMeasurementLength = 0;
+
+    MeasurementItem measurementItem(QGraphicsItem *item) const;
+    MeasurementItem measurementAt(const QPoint &position) const;
+    bool measureItem(const MeasurementItem &item, qreal &length, QPainterPath &path,
+                     QGraphicsItem *&graphicsItem) const;
+    void clearSelectionMeasurements();
+    void toggleMeasurement(const MeasurementItem &item, const QPoint &globalPosition);
+    void showMeasurementToolTip(const QPoint &globalPosition);
+    QString measurementLengthText(qreal length) const;
+    QString measurementName(const MeasurementItem &item) const;
+    void addPropertyCurveLength(qreal length);
+    void resizeMeasurementTable();
+    void updateMeasurementTable(const QStringList &names, const QStringList &lengths);
+
     void addProperty(VPE::VProperty *property, const QString &id);
     void showItemOptions(QGraphicsItem *item);
 

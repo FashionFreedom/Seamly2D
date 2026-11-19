@@ -80,6 +80,7 @@ public:
     enum { Type = UserType + static_cast<int>(Vis::SimpleCurve)};
 
     void RefreshGeometry(const QSharedPointer<VAbstractCurve> &curve);
+    QSharedPointer<VAbstractCurve> curve() const { return m_curve; }
 signals:
     /**
      * @brief Chosen send id when clicked.

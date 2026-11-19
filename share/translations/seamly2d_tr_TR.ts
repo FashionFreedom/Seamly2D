@@ -13844,6 +13844,23 @@ load in SeamlyME as usual.
         <translation>Seçim</translation>
     </message>
     <message>
+        <source>Selected objects: %1
+Total length: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selected objects:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection measurements</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>First point</source>
         <translation>İlk nokta</translation>
     </message>
