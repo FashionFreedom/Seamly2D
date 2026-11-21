@@ -1,5 +1,7 @@
 ## Change and reason
 
+Linked Issue: # <!-- Required for external contributors. Must be an open issue labeled 'accepted', 'help wanted', or 'good first issue'. -->
+
 Describe the problem, resulting behavior, and related issue.
 
 ## Automated validation

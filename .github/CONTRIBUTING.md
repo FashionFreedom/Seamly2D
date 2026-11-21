@@ -17,6 +17,10 @@ For details how to contribute translations, please see [https://github.com/Fashi
 
 Our workflow is based on **Git Flow**, outlined in the steps below.
 As always, please fix only one issue at a time.
+
+* **Wait for Issue Approval:** Before writing code or opening a pull request, make sure your issue has been reviewed by a maintainer and labeled **`accepted`**, **`help wanted`**, or **`good first issue`**. Unapproved pull requests (or PRs without a linked, approved issue) will be closed automatically until the issue is triaged and labeled.
+* **Active PR Limit:** External contributors are limited to **2 open pull requests** at a time. Please complete or close existing PRs before submitting new ones.
+
 Build your branch with Qt and test, then make a pull request.
 
 Read more about **Git Flow**:  [http://nvie.com/posts/a-successful-git-branching-model/](http://nvie.com/posts/a-successful-git-branching-model/)
@@ -62,7 +66,10 @@ git commit push issue-#155
 
 ## Create a Pull Request -- git CLI
 
+* Include the linked issue number in the PR description body (e.g., `Fixes #155`) and select **Linked Issues** in the right-hand column.
+
 * Build & test your issue branch with Qt 6.11.3 and Qt Creator
+
 * Push your issue branch up to the github repo
 
 ```Shell
