@@ -1,0 +1,100 @@
+name: External PR Gatekeeper
+
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  issues: read
+
+jobs:
+  gatekeeper:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR Limit and Issue Approval
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const maxPRs = 1;
+            const approvedLabels = ['accepted', 'help wanted', 'good first issue'];
+            const exemptUsers = ['weblate', 'weblate[bot]'];
+            const exemptRoles = ['OWNER', 'MEMBER', 'COLLABORATOR'];
+
+            const pr = context.payload.pull_request;
+            const author = pr.user.login;
+
+            // 1. Skip checks for Weblate bots and internal team members
+            if (
+              exemptUsers.includes(author.toLowerCase()) ||
+              exemptRoles.includes(pr.author_association)
+            ) {
+              console.log(`Exempt contributor or bot: ${author}`);
+              return;
+            }
+
+            async function rejectPR(reason) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: `Hi @${author}, thanks for wanting to contribute!\n\n${reason}\n\nThis PR is being closed automatically.`
+              });
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: pr.number,
+                state: 'closed'
+              });
+            }
+
+            // 2. Enforce max open PR limit per user
+            const pulls = await github.paginate(github.rest.pulls.list, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const userOpenPRs = pulls.filter(p => p.user.login === author);
+
+            if (userOpenPRs.length > maxPRs) {
+              return await rejectPR(
+                `To keep reviews manageable, external contributors are limited to **${maxPRs} open PRs** at a time. Please finish or close your existing PRs first.`
+              );
+            }
+
+            // 3. Extract linked issue number from PR description (e.g., "Fixes #123")
+            const body = pr.body || '';
+            const issueMatch = body.match(/(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)?\s*#(\d+)/i);
+
+            if (!issueMatch) {
+              return await rejectPR(
+                `Every external PR must reference an existing issue in the description (for example, \`Fixes #123\`). Please open an issue first so maintainers can discuss the change.`
+              );
+            }
+
+            // 4. Verify the linked issue is open and has an approved label
+            const issueNumber = parseInt(issueMatch[1], 10);
+            try {
+              const { data: issue } = await github.rest.issues.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber
+              });
+
+              const normalizedApproved = approvedLabels.map(l => l.toLowerCase());
+              const hasLabel = issue.labels.some(
+                l => normalizedApproved.includes(l.name.toLowerCase())
+              );
+
+              if (Boolean(issue.pull_request) || issue.state !== 'open' || !hasLabel) {
+                const labelList = approvedLabels.map(l => `\`${l}\``).join(', ');
+                return await rejectPR(
+                  `Issue **#${issueNumber}** has not been approved yet. Please wait for a maintainer to add one of the following labels before submitting a pull request: ${labelList}.`
+                );
+              }
+            } catch (error) {
+              return await rejectPR(
+                `Could not find issue **#${issueNumber}**. Please link a valid, approved issue in this repository.`
+              );
+            }

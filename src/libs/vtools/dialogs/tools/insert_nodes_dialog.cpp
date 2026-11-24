@@ -101,6 +101,7 @@ InsertNodesDialog::~InsertNodesDialog()
 void InsertNodesDialog::SetPiecesList(const QVector<quint32> &list)
 {
     fillComboBoxPiecesList(ui->piece_ComboBox, list);
+    ui->piece_ComboBox->model()->sort(0, Qt::AscendingOrder);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
