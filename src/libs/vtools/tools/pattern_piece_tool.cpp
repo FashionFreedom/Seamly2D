@@ -56,7 +56,9 @@
 #include "nodeDetails/vnodespline.h"
 #include "nodeDetails/vnodesplinepath.h"
 #include "nodeDetails/internal_path_tool.h"
+#include "nodeDetails/anchorpoint_tool.h"
 #include "../dialogs/tools/piece/pattern_piece_dialog.h"
+#include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vpatternconverter.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vellipticalarc.h"
@@ -185,6 +187,230 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
     //Very important to delete it. Only this tool need this special variable.
     data->RemoveVariable(currentSeamAllowance);
     return patternPiece;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 PatternPieceTool::s_copied_piece_id = NULL_ID;
+int     PatternPieceTool::s_copy_count = 0;
+
+//---------------------------------------------------------------------------------------------------------------------
+void PatternPieceTool::setCopiedPieceId(quint32 id)
+{
+    s_copied_piece_id = id;
+    s_copy_count = 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool PatternPieceTool::copiedPieceExists(const VContainer *data)
+{
+    return s_copied_piece_id != NULL_ID && data != nullptr && data->DataPieces()->contains(s_copied_piece_id);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief pasteCopy pastes the copied piece. Each paste lands one piece-width further right, so copies do not pile
+/// up on top of each other.
+//---------------------------------------------------------------------------------------------------------------------
+PatternPieceTool *PatternPieceTool::pasteCopy(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data)
+{
+    if (!copiedPieceExists(data))
+    {
+        return nullptr;
+    }
+    qreal step = ToPixel(5, Unit::Cm);
+    if (auto *tool = qobject_cast<PatternPieceTool *>(VAbstractPattern::getTool(s_copied_piece_id)))
+    {
+        step = tool->sceneBoundingRect().width() + ToPixel(1, Unit::Cm);
+    }
+    ++s_copy_count;
+    return duplicate(s_copied_piece_id, QPointF(step * s_copy_count, 0), scene, doc, data);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/// @brief duplicate makes a new piece from the same draft geometry as an existing one, with copies of its internal
+/// paths, custom seam allowances and anchor points. The copy follows the draft just like the original, and is placed
+/// beside it (moved by offset) in the same draft block.
+//---------------------------------------------------------------------------------------------------------------------
+PatternPieceTool *PatternPieceTool::duplicate(quint32 pieceId, const QPointF &offset, VMainGraphicsScene *scene,
+                                              VAbstractPattern *doc, VContainer *data)
+{
+    SCASSERT(scene != nullptr)
+    SCASSERT(doc != nullptr)
+    SCASSERT(data != nullptr)
+
+    VPiece piece;
+    try
+    {
+        piece = data->GetPiece(pieceId);
+    }
+    catch (const VExceptionBadId &)
+    {
+        return nullptr;
+    }
+
+    // Each node of a piece is its own copy of a draft object; the file keeps which object it copies.
+    auto originalOf = [doc](quint32 nodeId) -> quint32
+    {
+        const QDomElement element = doc->elementById(nodeId);
+        return element.isElement() ? doc->GetParametrUInt(element, AttrIdObject, QStringLiteral("0")) : NULL_ID;
+    };
+    auto originalPath = [originalOf](const VPiecePath &path, bool &ok)
+    {
+        VPiecePath copy = path;
+        QVector<VPieceNode> nodes = path.getNodes();
+        for (VPieceNode &node : nodes)
+        {
+            const quint32 original = originalOf(node.GetId());
+            if (original == NULL_ID)
+            {
+                ok = false;
+            }
+            node.SetId(original);
+        }
+        copy.setNodes(nodes);
+        return copy;
+    };
+
+    bool ok = true;
+    const VPiecePath mainPath = originalPath(piece.GetPath(), ok);
+    if (!ok || mainPath.nodeCount() == 0)
+    {
+        return nullptr;
+    }
+
+    // The draft block the original belongs to.
+    QString blockName;
+    {
+        const QDomElement element = doc->elementById(pieceId);
+        const QDomElement block = element.parentNode().parentNode().toElement();
+        if (block.isElement())
+        {
+            blockName = block.attribute(AttrName);
+        }
+    }
+
+    qApp->getUndoStack()->beginMacro(tr("Duplicate Pattern Piece"));
+
+    VPiece copy = piece;
+    const QVector<VPieceNode> oldNodes = piece.GetPath().getNodes();
+    const QVector<VPieceNode> newNodes = PrepareNodes(mainPath, scene, doc, data, blockName);
+    copy.GetPath().setNodes(newNodes);
+    QHash<quint32, quint32> nodeMap;    // old node id -> new node id
+    if (newNodes.size() == oldNodes.size())
+    {
+        for (int i = 0; i < oldNodes.size(); ++i)
+        {
+            nodeMap.insert(oldNodes.at(i).GetId(), newNodes.at(i).GetId());
+        }
+    }
+
+    auto copyPath = [&](quint32 pathId) -> quint32
+    {
+        VPiecePath path;
+        try
+        {
+            path = data->getPiecePath(pathId);
+        }
+        catch (const VExceptionBadId &)
+        {
+            return NULL_ID;
+        }
+        bool pathOk = true;
+        path = originalPath(path, pathOk);
+        if (!pathOk)
+        {
+            return NULL_ID;
+        }
+        path.setNodes(PrepareNodes(path, scene, doc, data, blockName));
+        // Made the way the Union tool copies paths (Source::FromTool): the path is added to the file without
+        // touching the undo macro or looking for its piece, which doesn't exist yet. The new piece picks the
+        // path up (parent item, references) when it is created below.
+        const quint32 newPathId = data->AddPiecePath(path);
+        InternalPathTool *tool = InternalPathTool::Create(newPathId, path, NULL_ID, scene, doc, data,
+                                                          Document::FullParse, Source::FromTool, blockName);
+        return tool != nullptr ? tool->getId() : NULL_ID;
+    };
+
+    QVector<quint32> internalPaths;
+    for (quint32 pathId : piece.getInternalPaths())
+    {
+        const quint32 id = copyPath(pathId);
+        if (id != NULL_ID)
+        {
+            internalPaths.append(id);
+        }
+    }
+    copy.SetInternalPaths(internalPaths);
+
+    QVector<CustomSARecord> records;
+    for (CustomSARecord record : piece.getCustomSARecords())
+    {
+        if (!nodeMap.contains(record.startPoint) || !nodeMap.contains(record.endPoint))
+        {
+            continue;
+        }
+        const quint32 id = copyPath(record.path);
+        if (id == NULL_ID)
+        {
+            continue;
+        }
+        record.path = id;
+        record.startPoint = nodeMap.value(record.startPoint);
+        record.endPoint = nodeMap.value(record.endPoint);
+        records.append(record);
+    }
+    copy.SetCustomSARecords(records);
+
+    QHash<quint32, quint32> anchorMap;  // old anchor id -> new anchor id
+    QVector<quint32> anchors;
+    for (quint32 anchorId : piece.getAnchors())
+    {
+        const quint32 original = originalOf(anchorId);
+        if (original == NULL_ID)
+        {
+            continue;
+        }
+        AnchorPointTool *tool = AnchorPointTool::Create(0, original, NULL_ID, doc, data, Document::FullParse,
+                                                        Source::FromGui, blockName);
+        if (tool != nullptr)
+        {
+            anchors.append(tool->getId());
+            anchorMap.insert(anchorId, tool->getId());
+        }
+    }
+    copy.getAnchors() = anchors;
+
+    // Labels and grainline can be pinned to anchor points: point them at the copies.
+    auto mapAnchor = [&anchorMap](quint32 id) { return anchorMap.value(id, NULL_ID); };
+    copy.GetPatternPieceData().setCenterAnchorPoint(mapAnchor(piece.GetPatternPieceData().centerAnchorPoint()));
+    copy.GetPatternPieceData().setTopLeftAnchorPoint(mapAnchor(piece.GetPatternPieceData().topLeftAnchorPoint()));
+    copy.GetPatternPieceData().setBottomRightAnchorPoint(
+                mapAnchor(piece.GetPatternPieceData().bottomRightAnchorPoint()));
+    copy.GetPatternInfo().setCenterAnchorPoint(mapAnchor(piece.GetPatternInfo().centerAnchorPoint()));
+    copy.GetPatternInfo().setTopLeftAnchorPoint(mapAnchor(piece.GetPatternInfo().topLeftAnchorPoint()));
+    copy.GetPatternInfo().setBottomRightAnchorPoint(mapAnchor(piece.GetPatternInfo().bottomRightAnchorPoint()));
+    copy.GetGrainlineGeometry().setCenterAnchorPoint(mapAnchor(piece.GetGrainlineGeometry().centerAnchorPoint()));
+    copy.GetGrainlineGeometry().setTopAnchorPoint(mapAnchor(piece.GetGrainlineGeometry().topAnchorPoint()));
+    copy.GetGrainlineGeometry().setBottomAnchorPoint(mapAnchor(piece.GetGrainlineGeometry().bottomAnchorPoint()));
+
+    // A name not used by any other piece: "Front copy", "Front copy 2", ...
+    QStringList names;
+    const QHash<quint32, VPiece> *pieces = data->DataPieces();
+    for (auto it = pieces->constBegin(); it != pieces->constEnd(); ++it)
+    {
+        names.append(it.value().GetName());
+    }
+    QString name = tr("%1 copy").arg(piece.GetName());
+    for (int n = 2; names.contains(name); ++n)
+    {
+        name = tr("%1 copy %2").arg(piece.GetName()).arg(n);
+    }
+    copy.SetName(name);
+    copy.SetMx(piece.GetMx() + offset.x());
+    copy.SetMy(piece.GetMy() + offset.y());
+    copy.setIsLocked(false);
+
+    QString width = piece.getSeamAllowanceWidthFormula();
+    return Create(0, copy, width, scene, doc, data, Document::FullParse, Source::FromGui, blockName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1123,7 +1349,49 @@ void PatternPieceTool::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
+    setToolTip(makeToolTip());
     QGraphicsPathItem::hoverEnterEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// makeToolTip: the piece's name with its seamline and cutting line lengths, in pattern units.
+QString PatternPieceTool::makeToolTip() const
+{
+    const VContainer* piece_data = &(VAbstractTool::data);
+    const VPiece piece    = piece_data->GetPiece(m_id);
+    const QString unit    = UnitsToStr(qApp->patternUnit(), true);
+    QString seam_line_str = tr("Seam Line");
+    QString cut_line_str  = tr("Cut Line");
+    QString built_in_str  = tr("(SA built in)");
+
+    auto length = [unit](qreal pixels)
+    {
+        return QStringLiteral("%1 %2").arg(qApp->fromPixel(pixels), 0, 'f', 2).arg(unit);
+    };
+
+    QString tool_tip = QStringLiteral("<table style=font-size:11pt; font-weight:600>"
+                                      "<tr><td style='white-space: nowrap;'><b>%1 </b></td>"
+                                      "<td style='white-space: nowrap;'>%2</td></tr>")
+                                      .arg(tr("Piece:"), piece.GetName().toHtmlEscaped());
+
+    if (piece.hasSeamAllowanceBuiltIn())
+    {
+        tool_tip += QStringLiteral("<tr><td style='white-space: nowrap;'><b>%1: </b></td>"
+                                       "<td style='white-space: nowrap;'>%2</td></tr>")
+                                       .arg(cut_line_str + " " + built_in_str, length(piece.cutPathLength(piece_data)));
+    }
+    else
+    {
+        tool_tip += QStringLiteral("<tr><td><b>%1: </b></td><td>%2</td></tr>")
+                        .arg(seam_line_str, length(piece.seamlineLength(piece_data)));
+        if (piece.hasSeamAllowance())
+        {
+            tool_tip += QStringLiteral("<tr><td><b>%1: </b></td><td>%2</td></tr>")
+                                .arg(cut_line_str, length(piece.cutPathLength(piece_data)));
+        }
+    }
+
+    return tool_tip + QStringLiteral("</table>");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1208,6 +1476,12 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     separator->setSeparator(true);
     menu.addAction(separator);
 
+    QAction *duplicatePiece = menu.addAction(tr("Duplicate") + "\tCtrl + D");
+
+    separator = new QAction(this);
+    separator->setSeparator(true);
+    menu.addAction(separator);
+
     QAction *rename = menu.addAction(tr("Rename...") + "\tF2");
     rename->setEnabled(lock);
 
@@ -1263,6 +1537,17 @@ void PatternPieceTool::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     else if (selectedAction == rename)
     {
         renamePiece(piece);
+    }
+    else if (selectedAction == duplicatePiece)
+    {
+        setCopiedPieceId(m_id);
+
+        auto *pieceScene = qobject_cast<VMainGraphicsScene *>(scene());
+        if (pieceScene != nullptr)
+        {
+            pasteCopy(pieceScene, doc, &(VAbstractTool::data));
+        }
+        return; // the pattern may be parsed again; leave at once
     }
     else if (selectedAction == deletePiece)
     {

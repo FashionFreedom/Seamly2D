@@ -187,6 +187,8 @@
     <addaction name="separator"/>
     <addaction name="previousDraftBlock_Action"/>
     <addaction name="nextDraftBlock_Action"/>
+    <addaction name="separator"/>
+    <addaction name="duplicate_piece_action"/>
    </widget>
    <widget class="QMenu" name="tools_Menu">
     <property name="title">
@@ -238,6 +240,8 @@
      </property>
      <addaction name="union_Action"/>
      <addaction name="exportPieces_Action"/>
+     <addaction name="duplicate_piece_action"/>
+     <addaction name="pieceInfo_Action"/>
     </widget>
     <widget class="QMenu" name="lines_Menu">
      <property name="title">
@@ -297,6 +301,7 @@
      <addaction name="anchorPoint_Action"/>
      <addaction name="internalPath_Action"/>
      <addaction name="insertNodes_Action"/>
+     <addaction name="separator"/>
     </widget>
     <widget class="QMenu" name="layouts_Menu">
      <property name="enabled">
@@ -749,6 +754,7 @@
    </attribute>
    <addaction name="union_Action"/>
    <addaction name="exportPieces_Action"/>
+   <addaction name="pieceInfo_Action"/>
   </widget>
   <widget class="QToolBar" name="layout_ToolBar">
    <property name="windowTitle">
@@ -2344,7 +2350,7 @@
              <x>0</x>
              <y>0</y>
              <width>120</width>
-             <height>111</height>
+             <height>140</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -2385,7 +2391,7 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>82</height>
+              <height>108</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2465,6 +2471,35 @@
               <bool>true</bool>
              </property>
             </widget>
+            <widget class="QToolButton" name="pieceInfo_ToolButton">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>60</y>
+               <width>39</width>
+               <height>38</height>
+              </rect>
+             </property>
+             <property name="toolTip">
+              <string>Pattern Piece Info (P, I)</string>
+             </property>
+             <property name="text">
+              <string notr="true">...</string>
+             </property>
+             <property name="icon">
+              <iconset resource="share/resources/toolicon.qrc">
+               <normaloff>:/toolicon/32x32/piece_info.png</normaloff>:/toolicon/32x32/piece_info.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+            </widget>
            </widget>
           </widget>
          </widget>
@@ -2518,8 +2553,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>82</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4494,6 +4529,24 @@
     <string notr="true">E, P</string>
    </property>
   </action>
+  <action name="pieceInfo_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/piece_info.png</normaloff>:/toolicon/32x32/piece_info.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pattern Piece Info...</string>
+   </property>
+   <property name="toolTip">
+    <string>Pattern Piece Info (P, I)</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">P, I</string>
+   </property>
+  </action>
   <action name="details_Action">
    <property name="enabled">
     <bool>false</bool>
@@ -4879,6 +4932,17 @@
    </property>
    <property name="shortcut">
     <string>Del</string>
+   </property>
+  </action>
+  <action name="duplicate_piece_action">
+   <property name="text">
+    <string>Duplicate Pattern Piece</string>
+   </property>
+   <property name="toolTip">
+    <string>Duplicate selected pattern piece</string>
+   </property>
+   <property name="shortcut">
+    <string notr="true">Ctrl+D</string>
    </property>
   </action>
  </widget>

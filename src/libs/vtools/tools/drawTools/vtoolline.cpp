@@ -122,6 +122,8 @@ void VToolLine::setDialog()
     dialogTool->setFirstPoint(firstPoint);
     dialogTool->setSecondPoint(secondPoint);
     dialogTool->setLineName();
+    dialogTool->setlength(getLinelength());
+    dialogTool->setAngle(getLineAngle());
     dialogTool->setLineType(m_lineType);
     dialogTool->setLineWeight(m_lineWeight);
     dialogTool->setLineColor(lineColor);
@@ -472,7 +474,7 @@ void VToolLine::ReadToolAttributes(const QDomElement &domElement)
     firstPoint   = doc->GetParametrUInt(domElement,   AttrFirstPoint,  NULL_ID_STR);
     secondPoint  = doc->GetParametrUInt(domElement,   AttrSecondPoint, NULL_ID_STR);
     m_lineType   = doc->GetParametrString(domElement, AttrLineType,    LineTypeSolidLine);
-    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight); 
+    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight,  DefaultLineWeight);
     lineColor    = doc->GetParametrString(domElement, AttrLineColor,   ColorBlack);
 }
 
@@ -511,6 +513,30 @@ QString VToolLine::makeToolTip() const
             .arg(line.angle());
     return toolTip;
 }
+
+QString VToolLine::getLinelength() const
+{
+    const QSharedPointer<VPointF> first = VAbstractTool::data.GeometricObject<VPointF>(firstPoint);
+    const QSharedPointer<VPointF> second = VAbstractTool::data.GeometricObject<VPointF>(secondPoint);
+    const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
+
+    const QString length = QString("%1 %2").arg(qApp->fromPixel(line.length()))
+                                           .arg(UnitsToStr(qApp->patternUnit(), true));
+
+    return length;
+}
+
+QString VToolLine::getLineAngle() const
+{
+    const QSharedPointer<VPointF> first = VAbstractTool::data.GeometricObject<VPointF>(firstPoint);
+    const QSharedPointer<VPointF> second = VAbstractTool::data.GeometricObject<VPointF>(secondPoint);
+    const QLineF line(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
+
+    const QString angle = QString("%1 °").arg(line.angle());
+
+    return angle;
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 quint32 VToolLine::GetSecondPoint() const

@@ -104,6 +104,32 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         return;
     }
 
+    if (type == QtWarningMsg)
+    {
+        /// Downgrade harmless Qt Wayland platform warnings so they stay in
+        /// debug logs instead of triggering modal warning popups.
+        static const QStringList ignoredWaylandWarnings =
+        {
+            QStringLiteral("This plugin supports grabbing the mouse only for popup windows"),
+            QStringLiteral("This plugin does not support setting window opacity"),
+            QStringLiteral("This plugin does not support raise()"),
+            QStringLiteral("This plugin does not support lower()"),
+            QStringLiteral("This plugin does not support propagateSizeHints()"),
+            QStringLiteral("Wayland does not support QWindow::requestActivate()"),
+            QStringLiteral("Sub window is not supported"),
+            QStringLiteral("which does not match the current topmost grabbing popup")
+        };
+
+        for (const QString &ignored : ignoredWaylandWarnings)
+        {
+            if (msg.contains(ignored))
+            {
+                type = QtDebugMsg;
+                break;
+            }
+        }
+    }
+
     // Why on earth didn't Qt want to make failed signal/slot connections qWarning?
     if ((type == QtDebugMsg) && msg.contains(QStringLiteral("::connect")))
     {
@@ -156,6 +182,24 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     {
         type = QtDebugMsg;
     }
+
+    // Qt's font database warns when a requested font family is not installed and it has to search the aliases for a
+    // substitute. The text still renders with the fallback, so log it without a dialog.
+    if ((type == QtWarningMsg) && msg.contains(QStringLiteral("Populating font family aliases")))
+    {
+        type = QtDebugMsg;
+    }
+
+#if defined(Q_OS_LINUX)
+    // This QtWayland warning occurs during screen or focus transitions on Linux Wayland.
+    // It is an internal library bookkeeping mismatch, so downgrade it to avoid an infinite popup loop.
+    if ((type == QtWarningMsg) &&
+        (QLatin1String(context.category) == QLatin1String("qt.qpa.wayland.textinput") ||
+         msg.contains(QStringLiteral("QWaylandTextInputv3::disableSurface"))))
+    {
+        type = QtDebugMsg;
+    }
+#endif
 
     // only the GUI thread should display message boxes.  If you are
     // writing a multithreaded application and the error happens on
@@ -309,6 +353,23 @@ void ApplicationME::setTheme()
 {
     QPalette palette;
     int theme = seamlyMeSettings()->getAppTheme();
+
+#if defined(Q_OS_MAC) && QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
+    // Native window backgrounds must use the same appearance as the custom palette.
+    Qt::ColorScheme color_scheme = Qt::ColorScheme::Unknown;
+    const auto selected_theme = static_cast<AppTheme>(theme);
+    if (selected_theme == AppTheme::LightFusion || selected_theme == AppTheme::classic)
+    {
+        color_scheme = Qt::ColorScheme::Light;
+    }
+    else if (selected_theme == AppTheme::DarkFusion || selected_theme == AppTheme::TwilightFusion
+             || selected_theme == AppTheme::Windows11)
+    {
+        color_scheme = Qt::ColorScheme::Dark;
+    }
+    // Unknown removes a previous override when the system theme is selected.
+    styleHints()->setColorScheme(color_scheme);
+#endif
 
     if (theme == 3)
     {

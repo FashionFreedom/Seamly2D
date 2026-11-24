@@ -185,8 +185,6 @@ QVariant VControlPointSpline::itemChange(QGraphicsItem::GraphicsItemChange chang
 
                 return newLine.p2();
             }
-
-            break;
         }
         case ItemPositionHasChanged:
         {

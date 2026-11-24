@@ -218,11 +218,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     // Export Format
     ui->useModeType_CheckBox->setChecked(qApp->Seamly2DSettings()->useModeType());
     ui->uselastExportFormat_CheckBox->setChecked(qApp->Seamly2DSettings()->useLastExportFormat());
-    index = ui->defaultExportFormat_ComboBox->findText(qApp->Seamly2DSettings()->getExportFormat());
-    if (index != -1)
-    {
-        ui->defaultExportFormat_ComboBox->setCurrentIndex(index);
-    }
     connect(ui->defaultExportFormat_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_defaultExportFormatChanged = true;
@@ -357,8 +352,7 @@ void PreferencesConfigurationPage::apply()
     settings->setUseLastExportFormat(ui->uselastExportFormat_CheckBox->isChecked());
     if (m_defaultExportFormatChanged)
     {
-        const QString format = qvariant_cast<QString>(ui->defaultExportFormat_ComboBox->currentText());
-        settings->setExportFormat(format);
+        settings->setExportFormat(ui->defaultExportFormat_ComboBox->currentData().toString());
         m_defaultExportFormatChanged = false;
     }
 

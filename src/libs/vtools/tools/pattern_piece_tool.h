@@ -76,6 +76,13 @@ public:
                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
                                       const Source &typeCreation, const QString &blockName = QString());
 
+    static PatternPieceTool *duplicate(quint32 pieceId, const QPointF &offset, VMainGraphicsScene *scene,
+                                       VAbstractPattern *doc, VContainer *data);
+    static PatternPieceTool *pasteCopy(VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data);
+    static quint32           copiedPieceId() { return s_copied_piece_id; }
+    static void              setCopiedPieceId(quint32 id);
+    static bool              copiedPieceExists(const VContainer *data);
+
     static const quint8  pieceVersion;
     static const QString TagCSA;
     static const QString TagRecord;
@@ -178,10 +185,13 @@ protected:
 private:
     Q_DISABLE_COPY(PatternPieceTool)
 
-    QPainterPath            m_mainPath;    // Must be first to prevent crash
+    static quint32          s_copied_piece_id; // piece copied with Duplicate
+    static int              s_copy_count;      // pastes since the last Copy, to place each one further along
+
+    QPainterPath            m_mainPath;        // Must be first to prevent crash
     QRectF                  m_pieceRect;
     QPainterPath            m_cutPath;
-    VMainGraphicsScene     *m_pieceScene;  /// @brief pieceScene pointer to the scene. */
+    VMainGraphicsScene     *m_pieceScene;      /// @brief pieceScene pointer to the scene.
     QString                 m_blockName;
     NonScalingFillPathItem *m_cutLine;
     NonScalingFillPathItem *m_allowanceFill;
@@ -196,6 +206,7 @@ private:
 
     void                  updateExcludeState();
     void                  updateInternalPaths();
+    QString               makeToolTip() const;
 
     VPieceItem::MoveTypes findLabelGeometry(const VPatternLabelData &labelData, qreal &rotationAngle, qreal &labelWidth,
                                             qreal &labelHeight, QPointF &pos);

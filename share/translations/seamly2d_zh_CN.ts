@@ -1704,6 +1704,22 @@ p, li { 空白:预换行； }
         <translation>选择</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>几何学</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>长度:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>价值</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>角度:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>属性</translation>
     </message>
@@ -3614,6 +3630,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     <message>
         <source>%1 already exists.</source>
         <translation>%1 已存在.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>您要替换它吗?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5603,6 +5623,10 @@ Do you want to save your changes?</source>
         <translation>无法同步测量值.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>无法更新测量值.</translation>
     </message>
@@ -6075,6 +6099,10 @@ Do you want to save your changes?</source>
         <translation>用于插入或修改图像的工具.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>纸样裁片信息 (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>最终测量</translation>
     </message>
@@ -6263,6 +6291,10 @@ Do you want to save your changes?</source>
         <translation>拆分裁片</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>纸样裁片信息...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>细节工具</translation>
     </message>
@@ -6359,6 +6391,14 @@ Do you want to save your changes?</source>
         <translation>显示文档信息</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>复制纸样裁片</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>复制选定的纸样裁片</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>测量文件不包括所有必需的测量值.</translation>
     </message>
@@ -6371,16 +6411,32 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;工具::操作 - 旋转:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 旋转:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 按线镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 按线镜像:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 按轴镜像:&lt;/b&gt; 选择一个或多个对象 - 按住 &lt;b&gt;%1&lt;/b&gt; 进行多项选择，按 &lt;b&gt;ENTER&lt;/b&gt; 确认选择</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 按轴镜像:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;工具::操作 - 移动:&lt;/b&gt; 选择一个或多个对象 - 按住&lt;b&gt;%1&lt;/b&gt;进行多项选择，按&lt;b&gt;ENTER&lt;/b&gt;确认选择</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;工具::操作 - 移动:&lt;/b&gt; 选择一个或多个对象——点击已选对象即可取消选择。按下 &lt;b&gt;ENTER&lt;/b&gt; 键确认所选内容</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8274,6 +8330,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>当前缝份</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 副本</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 副本 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>移动样板标签</translation>
     </message>
@@ -8308,6 +8372,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>rotate grainline</source>
         <translation>旋转纹理线</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>接缝线</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>切割线</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>裁片:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8352,6 +8428,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Show Piece Label</source>
         <translation>显示裁片标签</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>复制</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8436,6 +8516,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Update Node Angle</source>
         <translation>更新节点角度</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>复制纸样裁片</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(含缝份)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8534,6 +8622,73 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Diagonal Cross</source>
         <translation>对角十字</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>将表格复制到剪贴板，以便粘贴到电子表格中</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>将表格导出为 CSV 文件</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>接缝线</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>切割线</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>裁片周长 </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>姓名</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>信</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>数量</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>缝份 (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>对折裁剪</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>内置</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>没有任何</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>片</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>导出为 CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>逗号分隔值</translation>
     </message>
 </context>
 <context>
@@ -9179,6 +9334,14 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Always use current pen</source>
         <translation>始终使用当前笔</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>操作工具</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>使用 CTRL 键进行多选</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10881,6 +11044,10 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Export Pieces</source>
         <translation>导出裁片</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>纸样裁片信息</translation>
     </message>
     <message>
         <source>Layout</source>

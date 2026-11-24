@@ -1689,6 +1689,22 @@ p, li { white-space: pre-wrap; }
         <translation>Auswahl</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Länge:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Wert</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Winkel:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Eigenschaften</translation>
     </message>
@@ -3601,6 +3617,10 @@ Bitte versuchen Sie, den letzten Vorgang rückgängig zu machen oder die fehlerh
         <translation>%1 besteht bereits.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Möchten Sie es ersetzen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 Datei mit Basisnamen %2 besteht bereits.</translation>
     </message>
@@ -4568,7 +4588,7 @@ Möchten Sie sie herunterladen?</translation>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>Teil:</translation>
+        <translation>Schnittteil:</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
@@ -5586,6 +5606,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße konnten nicht synchronisiert werden.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Maße konnten nicht aktualisiert werden.</translation>
     </message>
@@ -6058,6 +6082,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Werkzeuge zum Einfügen oder Ändern von Bildern.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Schnittteil-Info (P, I</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Endmessungen</translation>
     </message>
@@ -6246,6 +6274,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schnittteile exportieren</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Schnittteil-Info...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Detail Werkzeuge</translation>
     </message>
@@ -6342,6 +6374,14 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Dokument Info anzeigen</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Schnittteil duplizieren</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Ausgewähltes Schnittteil duplizieren</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Maßdatei beinhaltet nicht alle erforderlichen Maße.</translation>
     </message>
@@ -6350,16 +6390,32 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug::Operationen - Gruppe erstellen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halte &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Gruppenerstellung abschließen </translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Klicken Sie auf das ausgewählte Objekt, um die Auswahl aufzuheben. mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Linie:&lt;/b&gt; wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Linie:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Klicken Sie auf das ausgewählte Objekt, um die Auswahl aufzuheben. mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Achse:&lt;/b&gt; wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Achse:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Klicken Sie auf das ausgewählte Objekt, um die Auswahl aufzuheben. mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Bewegen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Bewegen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Klicken Sie auf das ausgewählte Objekt, um die Auswahl aufzuheben. mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8257,6 +8313,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>Aktuelle Nahtzugabe</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 Kopie</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 Kopie %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>Schnittteil Etikett bewegen</translation>
     </message>
@@ -8291,6 +8355,18 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>rotate grainline</source>
         <translation>Fadenlauf drehen</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Nahtlinie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Schnittlinie</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Schnittteil:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8335,6 +8411,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Show Piece Label</source>
         <translation>Schnittteil Etikett anzeigen</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplizieren</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8419,6 +8499,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Update Node Angle</source>
         <translation>Aktualisieren des Knotenwinkels</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Schnittteil duplizieren</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(Nahtzugabe enthalten)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8517,6 +8605,73 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonales Kreuz</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Tabelle in die Zwischenablage kopieren, um sie in eine Tabellenkalkulation einzufügen</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Tabelle als CSV-Datei exportieren</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Nahtlinie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Schnittlinie</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Umfang des Schnittteils </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Brief</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Menge</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Nahtzugabe (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Im Stoffbruch zuschneiden</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Integriert</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Keiner</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>Teile</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Als CSV exportieren</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Komma-getrennte Werte</translation>
     </message>
 </context>
 <context>
@@ -9163,6 +9318,14 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Always use current pen</source>
         <translation>Verwenden Sie immer den aktuellen Stift</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Operations Werkzeuge</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Verwenden Sie STRG für die Mehrfachauswahl von Objekten</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10861,6 +11024,10 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     <message>
         <source>Export Pieces</source>
         <translation>Schnitteile Exportieren</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Schnittteil-Info</translation>
     </message>
     <message>
         <source>Layout</source>

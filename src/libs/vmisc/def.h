@@ -1,32 +1,31 @@
-/************************************************************************
- **  @file   def.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   11 4, 2015
- **
- **  @author Douglas S Caskey
- **  @date   7.31.2022
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 - 2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+///---------------------------------------------------------------------------------------------------------------------
+/// @file   def.h
+/// @author Roman Telezhynskyi <dismine(at)gmail.com>
+/// @date   11 4, 2015
+///
+/// @author Douglas S Caskey
+/// @date   7.31.2022
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Seamly2D project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2013 - 2022 Seamly2D project
+/// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+///
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+///---------------------------------------------------------------------------------------------------------------------
 
 #ifndef DEF_H
 #define DEF_H
@@ -157,6 +156,19 @@ enum class LayoutExportFormat : char
     DXF_AC1027_ASTM = 36, /* ACAD 2013. */
     TIF = 37,             /* TIFF */
     COUNT                 /*Use only for validation*/
+};
+
+struct ExportFormat
+{
+    ExportFormat()
+    : source("")
+    , translation("")
+    , type()
+      {}
+
+    QString            source;
+    QString            translation;
+    LayoutExportFormat type;
 };
 
 enum class NodeDetail : char { Contour, Modeling };

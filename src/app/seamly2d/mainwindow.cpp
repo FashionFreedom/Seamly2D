@@ -1599,11 +1599,19 @@ void MainWindow::ClosedEditGroupDialog(int result)
 void MainWindow::handleRotationTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
+                         " Hold <b>%1</b> for multiple selection, "
+                         "Press <b>ENTER</b> to confirm selection")
+                         .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                         strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Rotation:</b> Select one or more objects -"
+                     " click selected object to deselect it, "
+                     "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogRotation>
     (
         checked,
@@ -1613,17 +1621,32 @@ void MainWindow::handleRotationTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolRotation>,
         &MainWindow::ApplyDrawDialog<VToolRotation>
     );
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleMirrorByLineTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
+                                   " Hold <b>%1</b> for multiple selection, "
+                                   "Press <b>ENTER</b> to confirm selection")
+                                   .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                                                                    strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Mirror by Line:</b> Select one or more objects -"
+                               " click selected object to deselect it, "
+                               "Press <b>ENTER</b> to confirm selection");
+    }
     SetToolButtonWithApply<DialogMirrorByLine>
     (
         checked,
@@ -1632,17 +1655,32 @@ void MainWindow::handleMirrorByLineTool(bool checked)
         tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByLine>,
         &MainWindow::ApplyDrawDialog<VToolMirrorByLine>
     );
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleMirrorByAxisTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString  tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
+                                   " Hold <b>%1</b> for multiple selection, "
+                                   "Press <b>ENTER</b> to confirm selection")
+                                   .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                                                                    strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Mirror by Axis:</b> Select one or more objects -"
+                                   " click selected object to deselect it, "
+                                   "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogMirrorByAxis>
     (
         checked,
@@ -1652,17 +1690,33 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByAxis>,
         &MainWindow::ApplyDrawDialog<VToolMirrorByAxis>
     );
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleMoveTool(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
-                               " Hold <b>%1</b> for multiple selection, "
-                               "Press <b>ENTER</b> to confirm selection")
-                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
-                                                                strCtrl.toUtf8().constData()));
+    QString tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
+                         " Hold <b>%1</b> for multiple selection, "
+                         "Press <b>ENTER</b> to confirm selection")
+                         .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                         strCtrl.toUtf8().constData()));
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        tooltip = tr("<b>Tool::Operations - Move:</b> Select one or more objects -"
+                     " click selected object to deselect it, "
+                     "Press <b>ENTER</b> to confirm selection");
+    }
+
     SetToolButtonWithApply<DialogMove>
     (
         checked,
@@ -1672,6 +1726,14 @@ void MainWindow::handleMoveTool(bool checked)
         &MainWindow::ClosedDrawDialogWithApply<VToolMove>,
         &MainWindow::ApplyDrawDialog<VToolMove>
     );
+
+    if (!qApp->Settings()->useControlSelect())
+    {
+        if (checked)
+        {
+            ui->view->setAddToSelection(true);   // gather objects without holding Ctrl
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2855,7 +2917,9 @@ void MainWindow::initPropertyEditor()
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
-    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
+    // Refresh properties after the tools have read their updated attributes and geometry.
+    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions,
+            Qt::QueuedConnection);
 }
 
 /**
@@ -3132,6 +3196,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->midpoint_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleMidpointTool);
     connect(ui->exportLayout_ToolButton,   &QToolButton::clicked, this, &MainWindow::exportLayoutAs);
     connect(ui->exportPiecesAs_ToolButton, &QToolButton::clicked, this, &MainWindow::exportPiecesAs);
+    connect(ui->pieceInfo_ToolButton,      &QToolButton::clicked, this, &MainWindow::showPieceInfo);
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
     connect(ui->importImage_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleImageTool);
@@ -3525,6 +3590,8 @@ void MainWindow::handlePatternPiecesMenu()
 
     QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool") + "\tU");
     QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces") + "\tE, P");
+    QAction* action_piece_info   = menu.addAction(QIcon(":/toolicon/32x32/piece_info.png"),
+                                                  tr("Pattern Piece Info") + "\tP, I");
     QAction *selectedAction      = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -3542,6 +3609,21 @@ void MainWindow::handlePatternPiecesMenu()
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
     }
+    else if (selectedAction == action_piece_info)
+    {
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
+        showPieceInfo();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+// showPieceInfo shows the Pattern Piece Info dialog: a table of the pattern pieces with their seamline and
+// cutting line lengths.
+void MainWindow::showPieceInfo()
+{
+    PieceInfoDialog* dialog = new PieceInfoDialog(pattern, this);
+    dialog->setAttribute(Qt::WA_DeleteOnClose, true);
+    dialog->show();
 }
 
 void MainWindow::handleLayoutMenu()
@@ -3630,6 +3712,7 @@ void MainWindow::CancelTool()
 
     currentScene->setFocus(Qt::OtherFocusReason);
     currentScene->clearSelection();
+    ui->view->setAddToSelection(false);
     emit ui->view->itemClicked(nullptr);      // Clear Property Editor with non valid tool selection
 
     ui->zoom_to_pan_action->setChecked(false);    // Disable Pan Zoom
@@ -3958,6 +4041,8 @@ void MainWindow::RestoreCurrentScene()
     /*Set transform for current scene*/
     ui->view->setTransform(scene->transform());
     zoomScaleChanged(ui->view->transform().m11());
+    // Pad the view's panning rect before restoring scroll bars, so they aren't clamped.
+    VMainGraphicsView::NewSceneRect(currentScene, ui->view);
     /*Set value for current scene scroll bar.*/
     QScrollBar *horScrollBar = ui->view->horizontalScrollBar();
     horScrollBar->setValue(scene->getHorScrollBar());
@@ -5328,6 +5413,7 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
     ui->exportPiecesAs_ToolButton->setEnabled(pieceTools);
+    ui->pieceInfo_ToolButton->setEnabled(pieceTools);
 
     //Layout
     ui->layoutSettings_ToolButton->setEnabled(layoutTools);
@@ -5406,6 +5492,7 @@ void MainWindow::setToolsEnabled(bool enable)
     //Details
     ui->union_Action->setEnabled(pieceTools);
     ui->exportPieces_Action->setEnabled(pieceTools);
+    ui->pieceInfo_Action->setEnabled(pieceTools);
 
     //Layout
     ui->newPrintLayout_Action->setEnabled(layoutTools);
@@ -6469,6 +6556,12 @@ void MainWindow::createActions()
     {
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
+    });
+
+    connect(ui->pieceInfo_Action, &QAction::triggered, this, [this]
+    {
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
+        showPieceInfo();
     });
 
     //Tools->Piece submenu actions
@@ -8032,10 +8125,10 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     {
         try
         {
-            ExportLayoutDialog dialog(1, Draw::Modeling, expParams->OptBaseName(), this);
-            dialog.setDestinationPath(expParams->OptDestinationPath());
-            dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-            dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
+            ExportLayoutDialog dialog(1, Draw::Modeling, expParams->baseNameOption(), this);
+            dialog.setDestinationPath(expParams->destinationPathOption());
+            dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->exportTypeOption()));
+            dialog.setBinaryDXFFormat(expParams->isBinaryDXF());
             dialog.setTextAsPaths(expParams->isTextAsPaths());
 
             ExportData(pieceList, dialog);
@@ -8050,17 +8143,17 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     }
     else
     {
-        auto settings = expParams->DefaultGenerator();
+        auto settings = expParams->defaultlayoutGenerator();
         settings->setTextAsPaths(expParams->isTextAsPaths());
 
         if (LayoutSettings(*settings.get()))
         {
             try
             {
-                ExportLayoutDialog dialog(scenes.size(), Draw::Layout, expParams->OptBaseName(), this);
-                dialog.setDestinationPath(expParams->OptDestinationPath());
-                dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-                dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
+                ExportLayoutDialog dialog(scenes.size(), Draw::Layout, expParams->baseNameOption(), this);
+                dialog.setDestinationPath(expParams->destinationPathOption());
+                dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->exportTypeOption()));
+                dialog.setBinaryDXFFormat(expParams->isBinaryDXF());
 
                 ExportData(pieceList, dialog);
             }
@@ -8171,9 +8264,9 @@ bool MainWindow::setHeight(const QString &text)
 void MainWindow::processCommandLine()
 {
     const VCommandLinePtr cmd = qApp->commandLine();
-    auto args = cmd->OptInputFileNames();
+    auto args = cmd->inputFileNamesOption();
 
-    isNoScaling = cmd->IsNoScalingEnabled();
+    isNoScaling = cmd->isNoScalingEnabled();
 
     if (Application2D::isGUIMode())
     {
@@ -8191,7 +8284,7 @@ void MainWindow::processCommandLine()
 
     for (int i=0, sz = args.size(); i < sz; ++i)
     {
-        const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->OptMeasurePath());
+        const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->measurementPathOption());
 
         if (!loaded && not Application2D::isGUIMode())
         {
@@ -8200,22 +8293,22 @@ void MainWindow::processCommandLine()
 
         bool hSetted = true;
         bool sSetted = true;
-        if (loaded && (cmd->IsTestModeEnabled() || cmd->IsExportEnabled()))
+        if (loaded && (cmd->isTestModeEnabled() || cmd->isExportEnabled()))
         {
-            if (cmd->IsSetGradationSize())
+            if (cmd->isGradationSizeSet())
             {
-                sSetted = setSize(cmd->OptGradationSize());
+                sSetted = setSize(cmd->gradationSizeOption());
             }
 
-            if (cmd->IsSetGradationHeight())
+            if (cmd->isGradationHeightSet())
             {
-                hSetted = setHeight(cmd->OptGradationHeight());
+                hSetted = setHeight(cmd->gradationHeightOption());
             }
         }
 
-        if (!cmd->IsTestModeEnabled())
+        if (!cmd->isTestModeEnabled())
         {
-            if (cmd->IsExportEnabled())
+            if (cmd->isExportEnabled())
             {
                 if (loaded && hSetted && sSetted)
                 {

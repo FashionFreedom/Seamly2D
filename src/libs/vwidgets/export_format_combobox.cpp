@@ -1,27 +1,31 @@
- /******************************************************************************
-  *   @file   export_format_combobox.cpp
-  **  @author DS Caskey
-  **  @date   @date   17 Sep, 2023
-  **
-  **  @brief
-  **  @copyright
-  **
-  **  Seamly2D is free software: you can redistribute it and/or modify
-  **  it under the terms of the GNU General Public License as published by
-  **  the Free Software Foundation, either version 3 of the License, or
-  **  (at your option) any later version.
-  **
-  **  Seamly2D is distributed in the hope that it will be useful,
-  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  **  GNU General Public License for more details.
-  **
-  **  You should have received a copy of the GNU General Public License
-  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-  **
-  *****************************************************************************/
+///---------------------------------------------------------------------------------------------------------------------
+/// @file   export_format_combobox.cpp
+/// @author DS Caskey
+/// @date   @date 11 Nov, 2026
+///
+/// @brief
+/// @copyright
+/// This source code is part of the Seamly2D project, a pattern making
+/// program, whose allow create and modeling patterns of clothing.
+/// Copyright (C) 2013-2026 Seamly2D project
+/// <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+///
+/// Seamly2D is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+//
+/// Seamly2D is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+///
+/// You should have received a copy of the GNU General Public License
+/// along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+//---------------------------------------------------------------------------------------------------------------------
 
 #include <QAbstractItemView>
+#include <QList>
 #include <QPen>
 #include <Qt>
 #include <QPainter>
@@ -40,45 +44,44 @@
 #   define PDFTOPS "pdftops"
 #endif
 
-bool ExportFormatCombobox::havePdf = false;
-bool ExportFormatCombobox::tested  = false;
+bool ExportFormatCombobox::have_pdf = false;
+bool ExportFormatCombobox::tested   = false;
 
-/**
- * Constructor with name.
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// Constructor with name.
+//---------------------------------------------------------------------------------------------------------------------
 ExportFormatCombobox::ExportFormatCombobox(QWidget *parent, const char *name)
-		: QComboBox(parent)
-      	, m_currentFormat()
+	: QComboBox(parent)
+	, m_current_format_type()
+    , m_formats()
 {
-		 setObjectName(name);
-		 setEditable ( false );
-		 init();
+	setObjectName(name);
+	setEditable ( false );
+	init();
 }
 
-/**
- * Destructor
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// Destructor
+//---------------------------------------------------------------------------------------------------------------------
 ExportFormatCombobox::~ExportFormatCombobox() {}
 
-/**
- * Initialisation called from constructor or manually but only once.
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// Initialisation called from constructor or manually but only once.
+//---------------------------------------------------------------------------------------------------------------------
 void ExportFormatCombobox::init()
 {
     this->blockSignals(true);
 
-    int count = 0;
-    foreach (auto& v, initFormats())
+    initFormats();
+    for (ExportFormat &format : m_formats)
     {
-        addItem(v.first, QVariant(static_cast<int>(v.second)));
-        count++;
+        addItem(format.translation, QVariant(static_cast<int>(format.type)));
     }
-    setMaxVisibleItems(count);
-
+    setMaxVisibleItems(15);
     this->view()->setTextElideMode(Qt::ElideNone);
 
     this->blockSignals(false);
-		connect(this, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ExportFormatCombobox::updateExportFormat);
+	connect(this, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ExportFormatCombobox::updateExportFormat);
 
     setCurrentToDefault();
     updateExportFormat(currentIndex());
@@ -86,17 +89,17 @@ void ExportFormatCombobox::init()
 
 LayoutExportFormat ExportFormatCombobox::getExportFormat() const
 {
-    return m_currentFormat;
+    return m_current_format_type;
 }
 
-/**
- * Sets the currently selected format item to the given format.
- */
-void ExportFormatCombobox::setExportFormat(LayoutExportFormat &format)
+//---------------------------------------------------------------------------------------------------------------------
+/// Sets the currently selected format item to the given format.
+//---------------------------------------------------------------------------------------------------------------------
+void ExportFormatCombobox::setExportFormat(LayoutExportFormat &type)
 {
-    m_currentFormat = format;
+    m_current_format_type = type;
 
-    setCurrentIndex(findData(QVariant(static_cast<int>(format))));
+    setCurrentIndex(findData(QVariant(static_cast<int>(type))));
 
     if (currentIndex()!= count() -1 )
     {
@@ -105,59 +108,68 @@ void ExportFormatCombobox::setExportFormat(LayoutExportFormat &format)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<std::pair<QString, LayoutExportFormat>> ExportFormatCombobox::initFormats()
+QList<LayoutExportFormat> ExportFormatCombobox::initFormatTypes()
 {
-    QVector<std::pair<QString, LayoutExportFormat>> list;
-
-    auto InitFormat = [&list](LayoutExportFormat format)
+    QList<LayoutExportFormat> types =
     {
-        list.append(std::make_pair(exportFormatDescription(format), format));
+
+        LayoutExportFormat::SVG,
+        LayoutExportFormat::PDF,
+        LayoutExportFormat::PDFTiled,
+        LayoutExportFormat::PNG,
+        LayoutExportFormat::JPG,
+        LayoutExportFormat::BMP,
+        LayoutExportFormat::TIF,
+        LayoutExportFormat::PPM,
+        LayoutExportFormat::OBJ
     };
 
-    InitFormat(LayoutExportFormat::SVG);
-    InitFormat(LayoutExportFormat::PDF);
-    InitFormat(LayoutExportFormat::PDFTiled);
-    InitFormat(LayoutExportFormat::PNG);
-    InitFormat(LayoutExportFormat::JPG);
-    InitFormat(LayoutExportFormat::BMP);
-    InitFormat(LayoutExportFormat::TIF);
-    InitFormat(LayoutExportFormat::PPM);
-    InitFormat(LayoutExportFormat::OBJ);
     if (supportPSTest())
     {
-        InitFormat(LayoutExportFormat::PS);
-        InitFormat(LayoutExportFormat::EPS);
+        types +=
+        {
+            LayoutExportFormat::PS,
+            LayoutExportFormat::EPS
+        };
     }
-    InitFormat(LayoutExportFormat::DXF_AC1006_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1009_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1012_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1014_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1015_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1018_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1021_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1024_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1027_Flat);
-    InitFormat(LayoutExportFormat::DXF_AC1006_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1009_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1012_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1014_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1015_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1018_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1021_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1024_AAMA);
-    InitFormat(LayoutExportFormat::DXF_AC1027_AAMA);
-    // We will support them anyway
-//    InitFormat(LayoutExportFormat::DXF_AC1006_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1009_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1012_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1014_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1015_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1018_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1021_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1024_ASTM);
-//    InitFormat(LayoutExportFormat::DXF_AC1027_ASTM);
 
-    return list;
+    types +=
+    {
+        LayoutExportFormat::DXF_AC1006_Flat,
+        LayoutExportFormat::DXF_AC1009_Flat,
+        LayoutExportFormat::DXF_AC1012_Flat,
+        LayoutExportFormat::DXF_AC1014_Flat,
+        LayoutExportFormat::DXF_AC1015_Flat,
+        LayoutExportFormat::DXF_AC1018_Flat,
+        LayoutExportFormat::DXF_AC1021_Flat,
+        LayoutExportFormat::DXF_AC1024_Flat,
+        LayoutExportFormat::DXF_AC1027_Flat,
+        LayoutExportFormat::DXF_AC1006_AAMA,
+        LayoutExportFormat::DXF_AC1009_AAMA,
+        LayoutExportFormat::DXF_AC1012_AAMA,
+        LayoutExportFormat::DXF_AC1014_AAMA,
+        LayoutExportFormat::DXF_AC1015_AAMA,
+        LayoutExportFormat::DXF_AC1018_AAMA,
+        LayoutExportFormat::DXF_AC1021_AAMA,
+        LayoutExportFormat::DXF_AC1024_AAMA,
+        LayoutExportFormat::DXF_AC1027_AAMA
+    };
+
+    return types;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ExportFormatCombobox::initFormats()
+{
+    QList<LayoutExportFormat> types = initFormatTypes();
+    for (LayoutExportFormat type : types)
+    {
+        ExportFormat format;
+        format.source      = exportFormatDescription(type, true);
+        format.translation = exportFormatDescription(type, false);
+        format.type        = type;
+        m_formats.append(format);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -165,10 +177,10 @@ bool ExportFormatCombobox::supportPSTest()
 {
     if (!tested)
     {
-        havePdf = testPdf();
+        have_pdf = testPdf();
         tested = true;
     }
-    return havePdf;
+    return have_pdf;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -198,133 +210,163 @@ bool ExportFormatCombobox::testPdf()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString ExportFormatCombobox::exportFormatDescription(LayoutExportFormat format)
+QString ExportFormatCombobox::exportFormatDescription(LayoutExportFormat type, bool is_source)
 {
-    const QString dxfSuffix = QStringLiteral("(*.dxf)");
-    const QString dxfFlatFilesStr = tr("(flat) files");
-    const QString filesStr = tr("files");
+    const QString dxf_suffix = QStringLiteral("(*.dxf)");
+    QString dxf_flat_files_str = tr("(flat) files");
+    QString files_str = tr("files");
 
-    switch(format)
+    if (is_source)
+    {
+        dxf_flat_files_str = QString("(flat) files");
+        files_str = QString("files");
+    }
+
+    switch(type)
     {
         case LayoutExportFormat::SVG:
-            return QString("SVG %1 (*.svg)").arg(filesStr);
+            return QString("SVG %1 (*.svg)").arg(files_str);
         case LayoutExportFormat::PDF:
-            return QString("PDF %1 (*.pdf)").arg(filesStr);
+            return QString("PDF %1 (*.pdf)").arg(files_str);
         case LayoutExportFormat::PNG:
-            return QString("PNG %1 (*.png)").arg(filesStr);
+            return QString("PNG %1 (*.png)").arg(files_str);
         case LayoutExportFormat::JPG:
-            return QString("JPG %1 (*.jpg)").arg(filesStr);
+            return QString("JPG %1 (*.jpg)").arg(files_str);
         case LayoutExportFormat::BMP:
-            return QString("BMP %1 (*.bmp)").arg(filesStr);
+            return QString("BMP %1 (*.bmp)").arg(files_str);
         case LayoutExportFormat::TIF:
-            return QString("TIF %1 (*.tif)").arg(filesStr);
+            return QString("TIF %1 (*.tif)").arg(files_str);
         case LayoutExportFormat::PPM:
-            return QString("PPM %1 (*.ppm)").arg(filesStr);
+            return QString("PPM %1 (*.ppm)").arg(files_str);
         case LayoutExportFormat::OBJ:
             return "Wavefront OBJ (*.obj)";
         case LayoutExportFormat::PS:
-            return QString("PS %1 (*.ps)").arg(filesStr);
+            return QString("PS %1 (*.ps)").arg(files_str);
         case LayoutExportFormat::EPS:
-            return QString("EPS %1 (*.eps)").arg(filesStr);
+            return QString("EPS %1 (*.eps)").arg(files_str);
         case LayoutExportFormat::DXF_AC1006_Flat:
-            return QString("AutoCAD DXF R10 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF R10 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1009_Flat:
-            return QString("AutoCAD DXF R11/12 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF R11/12 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1012_Flat:
-            return QString("AutoCAD DXF R13 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF R13 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1014_Flat:
-            return QString("AutoCAD DXF R14 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF R14 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1015_Flat:
-            return QString("AutoCAD DXF 2000 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2000 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1018_Flat:
-            return QString("AutoCAD DXF 2004 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2004 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1021_Flat:
-            return QString("AutoCAD DXF 2007 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2007 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1024_Flat:
-            return QString("AutoCAD DXF 2010 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2010 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1027_Flat:
-            return QString("AutoCAD DXF 2013 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2013 %1 %2").arg(dxf_flat_files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1006_AAMA:
-            return QString("AutoCAD DXF R10 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R10 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1009_AAMA:
-            return QString("AutoCAD DXF R11/12 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R11/12 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1012_AAMA:
-            return QString("AutoCAD DXF R13 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R13 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1014_AAMA:
-            return QString("AutoCAD DXF R14 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R14 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1015_AAMA:
-            return QString("AutoCAD DXF 2000 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2000 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1018_AAMA:
-            return QString("AutoCAD DXF 2004 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2004 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1021_AAMA:
-            return QString("AutoCAD DXF 2007 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2007 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1024_AAMA:
-            return QString("AutoCAD DXF 2010 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2010 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1027_AAMA:
-            return QString("AutoCAD DXF 2013 AAMA %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2013 AAMA %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1006_ASTM:
-            return QString("AutoCAD DXF R10 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R10 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1009_ASTM:
-            return QString("AutoCAD DXF R11/12 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R11/12 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1012_ASTM:
-            return QString("AutoCAD DXF R13 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R13 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1014_ASTM:
-            return QString("AutoCAD DXF R14 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF R14 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1015_ASTM:
-            return QString("AutoCAD DXF 2000 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2000 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1018_ASTM:
-            return QString("AutoCAD DXF 2004 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2004 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1021_ASTM:
-            return QString("AutoCAD DXF 2007 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2007 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1024_ASTM:
-            return QString("AutoCAD DXF 2010 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2010 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::DXF_AC1027_ASTM:
-            return QString("AutoCAD DXF 2013 ASTM %1 %2").arg(filesStr, dxfSuffix);
+            return QString("AutoCAD DXF 2013 ASTM %1 %2").arg(files_str, dxf_suffix);
         case LayoutExportFormat::PDFTiled:
-            return QString("PDF tiled %1 (*.pdf)").arg(filesStr);
+            return QString("PDF tiled %1 (*.pdf)").arg(files_str);
         default:
-            return QString();
+            return QString("");
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString ExportFormatCombobox::makeHelpFormatList()
 {
-   QString out("\n");
-   foreach(auto& v, initFormats())
-   {
-       out += QLatin1String("\t") + v.first + QLatin1String(" = ") + QString::number(static_cast<int>(v.second))
-               + QLatin1String("\n");
-   }
-   return out;
+    QString help("\n");
+    QList<LayoutExportFormat> types = initFormatTypes();
+    for (LayoutExportFormat type : types)
+    {
+        ExportFormat format;
+        format.source      = exportFormatDescription(type, true);
+        format.type        = type;
+        help += QLatin1String("\t") + format.source + QLatin1String(" = ") +
+                QString::number(static_cast<int>(format.type)) +
+                QLatin1String("\n");
+    }
+    return help;
 }
 
-/**
- * Called when the width has changed. This method sets the current width to the value chosen or even
- * offers a dialog to the user that allows him/ her to choose an individual width.
- */
+//---------------------------------------------------------------------------------------------------------------------
+/// Called when the width has changed. This method sets the current width to the value chosen or even
+/// offers a dialog to the user that allows him/ her to choose an individual width.
+//---------------------------------------------------------------------------------------------------------------------
 void ExportFormatCombobox::updateExportFormat(int index)
 {
     QVariant format = itemData(index);
-    if(format != QVariant::Invalid )
+    if (format.isValid())
     {
-       m_currentFormat = static_cast<LayoutExportFormat>(this->currentData().toInt());
+       m_current_format_type = static_cast<LayoutExportFormat>(this->currentData().toInt());
     }
 
-    emit exportFormatChanged(m_currentFormat);
+    emit exportFormatChanged(m_current_format_type);
+}
+
+QString ExportFormatCombobox::getCurrentSource()
+{
+    for (ExportFormat &format : m_formats)
+    {
+        if (format.translation == currentText())
+        {
+            return format.source;
+        }
+    }
+    return QString("");
 }
 
 void ExportFormatCombobox::setCurrentToDefault()
 {
-    QString format = qApp->Settings()->getExportFormat();
+    QString default_format = qApp->Settings()->getExportFormat();
 
-    int index = findText(format);
-    if (index != -1)
+    for (ExportFormat &format : m_formats)
     {
-        setCurrentIndex(index);
-    }
-    else
-    {
-        setCurrentIndex(0);
+        if (format.source == default_format)
+        {
+            int index = findText(format.translation);
+            if (index != -1)
+            {
+                setCurrentIndex(index);
+            }
+            else
+            {
+                setCurrentIndex(0);
+            }
+        }
+
     }
 }

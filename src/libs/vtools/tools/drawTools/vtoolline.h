@@ -98,6 +98,9 @@ public:
     bool              isUsedInFormula() const;
     virtual bool      isUsed() const override;
 
+    QString           getLinelength() const;
+    QString           getLineAngle() const;
+
     quint32           GetFirstPoint() const;
     void              SetFirstPoint(const quint32 &value);
 
@@ -111,7 +114,7 @@ public:
 
     virtual void      setLineType(const QString &value) override;
     void              setLineWeight(const QString &value) override;
-    
+
     virtual void      GroupVisibility(quint32 object, bool visible) override;
 
 public slots:

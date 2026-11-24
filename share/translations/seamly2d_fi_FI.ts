@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Valinta</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometria</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Pituus:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Arvo</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Kulma:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Ominaisuudet</translation>
     </message>
@@ -3616,6 +3632,10 @@ Yritä kumota viimeisin operaatio tai korjata rikkinäinen kaava.</translation>
         <translation>%1 on jo olemassa.</translation>
     </message>
     <message>
+        <source>Do you want to replace it?</source>
+        <translation>Haluatko korvata sen?</translation>
+    </message>
+    <message>
         <source>%1 files with basename %2 already exist.</source>
         <translation>%1 tiedostoa, joiden perusnimi on %2, on jo olemassa.</translation>
     </message>
@@ -4870,7 +4890,7 @@ All brand or product names are trademarks or registered trademarks of their resp
 Portions of this software © 2008-2026 The Qt Company Ltd.
 
 The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Seamly2D on sovellus tietokone avusteiseen vaatenkaavojen suunnitteluun.
+        <translation>Seamly2D on sovellus tietokoneavusteiseen vaatekaavojen suunnitteluun.
 
 Seamly2D on ilmainen (avoimen lähdekoodin) ohjelmisto.
 
@@ -5603,6 +5623,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Mittausten synkronointi epäonnistui.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Mittausten päivittäminen epäonnistui.</translation>
     </message>
@@ -6075,6 +6099,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Työkalut kuvien lisäämiseen tai muokkaamiseen.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Kaavan osan tiedot (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Lopulliset mittaukset</translation>
     </message>
@@ -6263,6 +6291,10 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Vie palat</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Kaavan osan tiedot...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Määrittelytyökalut</translation>
     </message>
@@ -6359,6 +6391,14 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Näytä asiakirjan tiedot</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Monista kaavan osa</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Monista valittu kaavan osa</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Mittaustiedosto ei sisällä kaikkia vaadittuja mittauksia.</translation>
     </message>
@@ -6371,16 +6411,32 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna valitaksesi useita, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt;-näppäintä painettuna valitaksesi useita objekteja, paina &lt;b&gt;ENTER&lt;/b&gt;-näppäintä vahvistaaksesi valinnan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva viivalla:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna useita valintoja varten, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Peilikuva akselin mukaan:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti - Pidä &lt;b&gt;%1&lt;/b&gt; painettuna useita valintoja varten, paina &lt;b&gt;ENTER&lt;/b&gt; vahvistaaksesi valinnan</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Tool::Operations - Siirrä:&lt;/b&gt; Valitse yksi tai useampi objekti – Napsauta valittua objektia poistaaksesi se valinnasta. Vahvista valinta painamalla &lt;b&gt;ENTER&lt;/b&gt;-näppäintä</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8274,6 +8330,14 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
         <translation>Nykyinen saumanvara</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopio</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>%1 kopio %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>siirrä kaavapalan tunniste</translation>
     </message>
@@ -8308,6 +8372,18 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>kierrä langansuuntaviivaa</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Saumalinja</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Leikkauslinja</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Pala:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8352,6 +8428,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Näytä palan tunniste</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Kopio</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8436,6 +8516,14 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Päivitä solmun kulma</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Monista kaavan osa</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(saumanvara sisältyy)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8534,6 +8622,73 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Vinottain ristiin</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Kopioi taulukko leikepöydälle taulukkolaskentaohjelmaan liittämistä varten</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Vie taulukko CSV-tiedostona</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Saumalinja</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Leikkauslinja</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Kappaleen ympärysmitta </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Nimi</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Kirje</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Määrä</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Saumanvara (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Leikkaa taitteelta</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Sisäänrakennettu</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ei mitään</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>kappaletta</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Vie CSV-tiedostoon</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Pilkuilla erotetut arvot</translation>
     </message>
 </context>
 <context>
@@ -9179,6 +9334,14 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Käytä aina nykyistä kynää</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Toimintotyökalut</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Käytä CTRL-näppäintä usean kohteen valitsemiseen</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10917,6 +11080,10 @@ Lisää se väliaikaisesti listaan painamalla Enter-näppäintä.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Vie palat</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Kaavan osan tiedot</translation>
     </message>
     <message>
         <source>Layout</source>

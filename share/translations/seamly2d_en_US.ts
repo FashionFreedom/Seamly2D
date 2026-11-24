@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Selection</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation type="unfinished">Geometry</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished">Length:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Value</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation type="unfinished">Angle:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Attributes</translation>
     </message>
@@ -3612,6 +3628,10 @@ Please try to undo the latest operation or fix the broken formula.</source>
     </message>
     <message>
         <source>%1 already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5587,6 +5607,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6059,6 +6083,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6247,6 +6275,10 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6343,6 +6375,14 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6359,7 +6399,15 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6367,7 +6415,15 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8257,6 +8313,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Current seam allowance</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>move pattern piece label</translation>
     </message>
@@ -8291,6 +8355,18 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>rotate grainline</source>
         <translation>rotate grainline</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation type="unfinished">Piece:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8334,6 +8410,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Show Piece Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8418,6 +8498,13 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Update Node Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+    </message>
+    <message>
+        <source>(SA built in)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8516,6 +8603,73 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Diagonal Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Name</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation type="unfinished">Letter</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation type="unfinished">Built in</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished">None</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation type="unfinished">Export to CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9161,6 +9315,14 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Always use current pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10863,6 +11025,10 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Export Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

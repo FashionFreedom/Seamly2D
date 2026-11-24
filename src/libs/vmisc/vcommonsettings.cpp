@@ -168,6 +168,7 @@ const QString settingGraphicsViewTertiaryColor           = QStringLiteral("graph
 
 const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
 const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
+const QString settingGraphicsViewConytrolSelect          = QStringLiteral("graphicsview/controlSelect");
 
 const QString settingGraphicsViewPointNameSize           = QStringLiteral("graphicsview/pointNameSize");
 const QString settingGraphicsViewGuiFontSize             = QStringLiteral("graphicsview/guiFontSize");
@@ -1431,6 +1432,18 @@ bool VCommonSettings::getConstrainModKey() const
 void VCommonSettings::setConstrainModKey(const bool &value)
 {
     setValue(settingGraphicsViewConstrainModKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useControlSelect() const
+{
+    return value(settingGraphicsViewConytrolSelect, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setControlSelect(const bool &value)
+{
+    setValue(settingGraphicsViewConytrolSelect, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Výběr</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Délka:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Hodnota</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Úhel:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atributy</translation>
     </message>
@@ -3614,6 +3630,10 @@ Zkuste prosím vrátit zpět poslední operaci nebo opravit poškozený vzorec.<
     <message>
         <source>%1 already exists.</source>
         <translation>%1 již existuje.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Chcete jej nahradit?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5601,6 +5621,10 @@ Chcete uložit své změny?</translation>
         <translation>Nelze synchronizovat měření.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Nelze aktualizovat měření.</translation>
     </message>
@@ -6073,6 +6097,10 @@ Chcete uložit své změny?</translation>
         <translation>Nástroje pro vkládání nebo úpravu obrázků.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informace o dílu střihu (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Finální měření</translation>
     </message>
@@ -6261,6 +6289,10 @@ Chcete uložit své změny?</translation>
         <translation>Exportovat kusy</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informace o dílu střihu...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Nástroje pro detail</translation>
     </message>
@@ -6357,6 +6389,14 @@ Chcete uložit své změny?</translation>
         <translation>Zobrazit informace o dokumentu</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikovat díl střihu</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplikovat vybraný díl střihu</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Soubor s měřením neobsahuje všechna požadovaná měření.</translation>
     </message>
@@ -6369,16 +6409,32 @@ Chcete uložit své změny?</translation>
         <translation>&lt;b&gt;Nástroj::Operace - Rotace:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Rotace:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení po řádku:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení po řádku:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení podle osy:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
     </message>
     <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Zrcadlení podle osy:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
+    </message>
+    <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Nástroj::Operace - Přesun:&lt;/b&gt; Vyberte jeden nebo více objektů - Podržte &lt;b&gt;%1&lt;/b&gt; pro vícenásobný výběr, stiskněte &lt;b&gt;ENTER&lt;/b&gt; pro potvrzení výběru</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Nástroj::Operace - Přesun:&lt;/b&gt; Vyberte jeden nebo více objektů – Kliknutím na vybraný objekt jej z výběru odeberete. Výběr potvrďte stisknutím klávesy &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8272,6 +8328,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Aktuální švový přídavek</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>%1 kopie</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation> %1 kopie %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>přesunout popisek dílu vzoru</translation>
     </message>
@@ -8306,6 +8370,18 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>otočit čáru vláken</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Švová linie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Řezací čára</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Kus:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8350,6 +8426,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Zobrazit popisek kusu</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplikát</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8434,6 +8514,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Aktualizovat úhel uzlu</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplikovat díl střihu</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(včetně švového přídavku)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8532,6 +8620,73 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Diagonální kříž</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Zkopírovat tabulku do schránky pro vložení do tabulkového procesoru</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportovat tabulku jako soubor CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Švová linie</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Řezací čára</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Délka obvodu dílu </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Název</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Dopis</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Množství</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Švový přídavek (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Stříhat na přehybu</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Vestavěné</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Žádný</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>díly</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportovat do CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Hodnoty oddělené čárkou</translation>
     </message>
 </context>
 <context>
@@ -9179,6 +9334,14 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
         <translation>Vždy používat aktuální pero</translation>
     </message>
     <message>
+        <source>Operations Tools</source>
+        <translation>Provozní nástroje</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Pro výběr více objektů použijte klávesu CTRL</translation>
+    </message>
+    <message>
         <source>Dialogs</source>
         <translation>Dialogy</translation>
     </message>
@@ -9248,7 +9411,7 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     </message>
     <message>
         <source>Adapt colors to a dark background</source>
-        <translation type="unfinished">Přizpůsobit barvy tmavému pozadí</translation>
+        <translation>Přizpůsobit barvy tmavému pozadí</translation>
     </message>
 </context>
 <context>
@@ -10879,6 +11042,10 @@ Stisknutím klávesy Enter jej dočasně přidáte do seznamu.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportovat kusy</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informace o dílu střihu</translation>
     </message>
     <message>
         <source>Layout</source>

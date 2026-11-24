@@ -1704,6 +1704,22 @@ p, li { white-space: pre-wrap; }
         <translation>Selecție</translation>
     </message>
     <message>
+        <source>Geometry</source>
+        <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation>Lungime:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation>Valoare</translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation>Unghi:</translation>
+    </message>
+    <message>
         <source>Attributes</source>
         <translation>Atribute</translation>
     </message>
@@ -3615,6 +3631,10 @@ Vă rugăm să încercați să anulați ultima operațiune sau să remediați fo
     <message>
         <source>%1 already exists.</source>
         <translation>%1 există deja.</translation>
+    </message>
+    <message>
+        <source>Do you want to replace it?</source>
+        <translation>Doriți să îl înlocuiți?</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
@@ -5604,6 +5624,10 @@ Doriți să salvați modificările?</translation>
         <translation>Nu s-au putut sincroniza măsurătorile.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
+    </message>
+    <message>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Nu s-au putut actualiza măsurătorile.</translation>
     </message>
@@ -6076,6 +6100,10 @@ Doriți să salvați modificările?</translation>
         <translation>Instrumente pentru inserarea sau modificarea imaginilor.</translation>
     </message>
     <message>
+        <source>Pattern Piece Info (P, I)</source>
+        <translation>Informații piesă tipar (P, I)</translation>
+    </message>
+    <message>
         <source>Final measurements</source>
         <translation>Măsurători finale</translation>
     </message>
@@ -6264,6 +6292,10 @@ Doriți să salvați modificările?</translation>
         <translation>Exportă piese</translation>
     </message>
     <message>
+        <source>Pattern Piece Info...</source>
+        <translation>Informații piesă tipar...</translation>
+    </message>
+    <message>
         <source>Detail tools</source>
         <translation>Instrumente de detaliu</translation>
     </message>
@@ -6360,6 +6392,14 @@ Doriți să salvați modificările?</translation>
         <translation>Afișează informații despre document</translation>
     </message>
     <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicare piesă tipar</translation>
+    </message>
+    <message>
+        <source>Duplicate selected pattern piece</source>
+        <translation>Duplicare piesă tipar selectată</translation>
+    </message>
+    <message>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Fișierul de măsurători nu include toate măsurătorile necesare.</translation>
     </message>
@@ -6369,19 +6409,35 @@ Doriți să salvați modificările?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Rotație:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Rotație:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după linie:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Oglindire după axă:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Mutare:&lt;/b&gt; Selectați unul sau mai multe obiecte - Țineți apăsat &lt;b&gt;%1&lt;/b&gt; pentru selecție multiplă, apăsați &lt;b&gt;ENTER&lt;/b&gt; pentru a confirma selecția</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - click selected object to deselect it, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Instrument::Operațiuni - Mutare:&lt;/b&gt; Selectați unul sau mai multe obiecte – Faceți clic pe un obiect selectat pentru a-l deselecta. Confirmați selecția apăsând tasta &lt;b&gt;ENTER&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
@@ -8275,6 +8331,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
         <translation>Marjă de cusătură curentă</translation>
     </message>
     <message>
+        <source>%1 copy</source>
+        <translation>Copie %1</translation>
+    </message>
+    <message>
+        <source>%1 copy %2</source>
+        <translation>Copie %1 %2</translation>
+    </message>
+    <message>
         <source>move pattern piece label</source>
         <translation>mutați eticheta piesei de model</translation>
     </message>
@@ -8309,6 +8373,18 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>rotate grainline</source>
         <translation>rotire linie fibrată</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linie de cusătură</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linie de tăiere</translation>
+    </message>
+    <message>
+        <source>Piece:</source>
+        <translation>Piesă:</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -8353,6 +8429,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Show Piece Label</source>
         <translation>Afișează eticheta piesei</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
+        <translation>Duplicat</translation>
     </message>
     <message>
         <source>Rename...</source>
@@ -8437,6 +8517,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Update Node Angle</source>
         <translation>Actualizează unghiul nodului</translation>
+    </message>
+    <message>
+        <source>Duplicate Pattern Piece</source>
+        <translation>Duplicare piesă tipar</translation>
+    </message>
+    <message>
+        <source>(SA built in)</source>
+        <translation>(rezervă de cusătură inclusă)</translation>
     </message>
     <message>
         <source>Update Notch</source>
@@ -8535,6 +8623,73 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Diagonal Cross</source>
         <translation>Cruce diagonală</translation>
+    </message>
+</context>
+<context>
+    <name>PieceInfoDialog</name>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
+    </message>
+    <message>
+        <source>Copy the table to the clipboard, to paste into a spreadsheet</source>
+        <translation>Copiați tabelul în clipboard pentru a-l lipi într-o foaie de calcul</translation>
+    </message>
+    <message>
+        <source>Export the table as a CSV file</source>
+        <translation>Exportați tabelul ca fișier CSV</translation>
+    </message>
+    <message>
+        <source>Seam Line</source>
+        <translation>Linie de cusătură</translation>
+    </message>
+    <message>
+        <source>Cut Line</source>
+        <translation>Linie de tăiere</translation>
+    </message>
+    <message>
+        <source>Length around the piece </source>
+        <translation>Lungimea conturului piesei </translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>Număr</translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation>Scrisoare</translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation>Cantitate</translation>
+    </message>
+    <message>
+        <source>Seam Allowance (%1)</source>
+        <translation>Rezervă de cusătură (%1)</translation>
+    </message>
+    <message>
+        <source>Cut on fold</source>
+        <translation>Croire pe îndoitură</translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation>Încorporat</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Niciunul</translation>
+    </message>
+    <message>
+        <source>pieces</source>
+        <translation>piese</translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exportați în CSV</translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation>Valori separate prin virgulă</translation>
     </message>
 </context>
 <context>
@@ -9180,6 +9335,14 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Always use current pen</source>
         <translation>Folosește întotdeauna stiloul curent</translation>
+    </message>
+    <message>
+        <source>Operations Tools</source>
+        <translation>Instrumente operaționale</translation>
+    </message>
+    <message>
+        <source>Use CTRL for multiple object selection</source>
+        <translation>Utilizați CTRL pentru a selecta mai multe obiecte</translation>
     </message>
     <message>
         <source>Dialogs</source>
@@ -10882,6 +11045,10 @@ Apăsați Enter pentru a-l adăuga temporar la listă.</translation>
     <message>
         <source>Export Pieces</source>
         <translation>Exportă piese</translation>
+    </message>
+    <message>
+        <source>Pattern Piece Info</source>
+        <translation>Informații piesă tipar</translation>
     </message>
     <message>
         <source>Layout</source>

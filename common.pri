@@ -37,11 +37,11 @@ macx{
 # Our solution was to distribute the OpenSSL DLLs along with our application (~7 MB). The alternative is to compile
 # Qt from scratch without OpenSSL support.
 #
-# Source of the openssl binaries: http://wiki.overbyte.eu/wiki/index.php/ICS_Download
+# Source of the opensslv3 binaries: Distributed with Qt... C:\Qt\Tools\OpenSSLv3\Win_x64\bin
 win32-msvc {
     INSTALL_OPENSSL += \
-                       ../../../dist/win/libcrypto-1_1-x64.dll \
-                       ../../../dist/win/libssl-1_1-x64.dll
+                       ../../../dist/win/libcrypto-3-x64.dll \
+                       ../../../dist/win/libssl-3-x64.dll
 }
 
 # Ensure xerces-c_3_3.dll is deployed into the target folder
