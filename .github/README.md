@@ -1,4 +1,4 @@
-![Seamly2D banner](../share/img/Seamly2D_banner_1202x271.png)
+![Seamly2D banner](../share/img/Seamly2D_banner_700x200.png)
 
 -----
 
