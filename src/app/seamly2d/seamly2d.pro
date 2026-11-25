@@ -356,21 +356,21 @@ macx{
 
     !macSign {
         # run macdeployqt to include all qt libraries in packet
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -executable=$${OUT_PWD}/$${DESTDIR}/$${TARGET}.app/Contents/MacOS/seamlyme
     } else {
         # we need to manually sign with codesign --deep as pdftops otherwise will not get signed by macdeployqt
         # we need --force as seamlyme is already signed, but we need to resign it
-        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app -executable=$${OUT_PWD}/$${DESTDIR}/$${TARGET}.app/Contents/MacOS/seamlyme &&
         QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
         QMAKE_POST_LINK += codesign -vvv --deep --strict $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
     }
 }
 
 # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
-win32-msvc{
+win32-msvc:!deferDeploy{
     QMAKE_POST_LINK += windeployqt --force-openssl $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
-win32-arm64-msvc{
+win32-arm64-msvc:!deferDeploy{
     qtPrepareTool(WINDEPLOYQT, windeployqt)
     QMAKE_POST_LINK += $$WINDEPLOYQT --force-openssl --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
 }

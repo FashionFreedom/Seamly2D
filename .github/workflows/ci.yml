@@ -190,6 +190,34 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
+      - name: Smoke test shared macOS runtime
+        run: |
+          bundle="$PWD/src/app/seamly2d/bin/Seamly2D.app"
+          test -f "$bundle/Contents/Frameworks/QtCore.framework/Versions/A/QtCore"
+          test -f "$bundle/Contents/PlugIns/platforms/libqcocoa.dylib"
+          for exe in Seamly2D seamlyme; do
+            binary="$bundle/Contents/MacOS/$exe"
+            otool -L "$binary" | grep -E '@[^ ]*QtCore\.framework/'
+            if otool -L "$binary" | grep -E '^[[:space:]]*/.*Qt[^/]*\.framework/'; then
+              echo "$exe depends on a Qt framework outside the bundle" >&2
+              exit 1
+            fi
+          done
+          python3 - "$bundle" <<'PY'
+          import os
+          import subprocess
+          import sys
+
+          env = os.environ.copy()
+          for name in ("QT_PLUGIN_PATH", "QT_QPA_PLATFORM_PLUGIN_PATH", "QT_QPA_PLATFORM",
+                       "DYLD_LIBRARY_PATH", "DYLD_FRAMEWORK_PATH"):
+              env.pop(name, None)
+          env["SEAMLY_DATA_DIR"] = os.path.join(env["RUNNER_TEMP"], "seamly-runtime-smoke")
+          for exe in ("Seamly2D", "seamlyme"):
+              binary = os.path.join(sys.argv[1], "Contents", "MacOS", exe)
+              subprocess.run([binary, "--test", "--help"], env=env, check=True, timeout=30)
+          PY
+
       - uses: actions/upload-artifact@v7
         with:
           name: Seamly2D-macos.zip
@@ -251,22 +279,53 @@ jobs:
 
       - name: qmake/make seamly2d.exe and seamlyme.exe
         run: |
-          ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests
+          ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests CONFIG+=deferDeploy
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           nmake
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: install NSIS
         run: choco install nsis -y
 
-      - name: create seamly2d-installer.exe
-        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-        # uses parameters in seamly2d-installer.nsi to create the installer exe
+      - name: Stage shared Qt runtime
         run: |
           mkdir windows-build
           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination windows-build -Recurse
           Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination windows-build -Recurse -Force
+          $deployArgs = @('--release')
+          if ('${{ matrix.msvc-arch }}' -eq 'amd64_arm64') {
+            $deployArgs += @('--qtpaths', "$env:QT_ROOT_DIR\bin\host-qtpaths.bat")
+          }
+          & windeployqt @deployArgs --force-openssl windows-build\seamly2d.exe windows-build\seamlyme.exe
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          foreach ($file in @('seamly2d.exe', 'seamlyme.exe', 'Qt6Core.dll', 'Qt6Multimedia.dll',
+                              'platforms\qwindows.dll', 'multimedia\ffmpegmediaplugin.dll')) {
+            if (-not (Test-Path -LiteralPath "windows-build\$file")) {
+              throw "Missing shared runtime file: $file"
+            }
+          }
+
+      - name: Smoke test shared Windows runtime
+        if: matrix.msvc-arch == 'x64'
+        run: |
+          $env:PATH = "$env:SystemRoot\system32;$env:SystemRoot"
+          Remove-Item Env:\QT_PLUGIN_PATH, Env:\QT_QPA_PLATFORM_PLUGIN_PATH, Env:\QT_QPA_PLATFORM -ErrorAction SilentlyContinue
+          $env:SEAMLY_DATA_DIR = Join-Path $env:RUNNER_TEMP 'seamly-runtime-smoke'
+          foreach ($exe in @('seamly2d.exe', 'seamlyme.exe')) {
+            $process = Start-Process -FilePath (Join-Path $PWD "windows-build\$exe") -ArgumentList '--test', '--help' -PassThru
+            if (-not $process.WaitForExit(30000)) {
+              Stop-Process -Id $process.Id -Force
+              throw "$exe did not exit after --help"
+            }
+            if ($process.ExitCode -ne 0) { throw "$exe exited with $($process.ExitCode)" }
+          }
+
+      - name: create seamly2d-installer.exe
+        run: |
           Copy-Item -Path dist\seamly2d-installer.nsi -Destination windows-build
           cd windows-build
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v3
