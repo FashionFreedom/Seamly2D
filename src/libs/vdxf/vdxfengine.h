@@ -126,6 +126,7 @@ private:
     VarMeasurement            varMeasurement;
     VarInsunits               varInsunits;
     DRW_Text                 *textBuffer;
+    QString                   export_error;
 
     Q_REQUIRED_RESULT double FromPixel(double pix, const VarInsunits &unit) const;
     Q_REQUIRED_RESULT double ToPixel(double val, const VarInsunits &unit) const;

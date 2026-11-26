@@ -33,6 +33,7 @@ SOURCES += \
     tst_vspline.cpp \
     tst_nameregexp.cpp \
     tst_vlayoutdetail.cpp \
+    tst_vdxf.cpp \
     tst_varc.cpp \
     tst_qmutokenparser.cpp \
     tst_vmeasurements.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     tst_vspline.h \
     tst_nameregexp.h \
     tst_vlayoutdetail.h \
+    tst_vdxf.h \
     tst_varc.h \
     stable.h \
     tst_qmutokenparser.h \
@@ -82,6 +84,11 @@ HEADERS += \
     tst_vtoolmove.h
 
 include(warnings.pri)
+
+# AAMA export regression tests.
+unix|win32: LIBS += -L$$OUT_PWD/../../libs/vdxf/$${DESTDIR}/ -lvdxf
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vdxf/$${DESTDIR}/vdxf.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vdxf/$${DESTDIR}/libvdxf.a
 
 #VTools static library (depend on VWidgets, VMisc, VPatternDB)
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vtools/$${DESTDIR}/ -lvtools

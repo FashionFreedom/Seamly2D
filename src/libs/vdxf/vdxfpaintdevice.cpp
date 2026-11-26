@@ -172,6 +172,12 @@ bool VDxfPaintDevice::ExportToAAMA(const QVector<VLayoutPiece> &details) const
 }
 
  //---------------------------------------------------------------------------------------------------------------------
+QString VDxfPaintDevice::exportError() const
+{
+    return engine->export_error;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 int VDxfPaintDevice::metric(QPaintDevice::PaintDeviceMetric metric) const
 {
     switch (metric)
