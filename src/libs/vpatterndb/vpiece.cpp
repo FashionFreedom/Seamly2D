@@ -65,28 +65,23 @@ namespace
 {
 QVector<quint32> PieceMissingNodes(const QVector<quint32> &piece1Nodes, const QVector<quint32> &piece2Nodes)
 {
-    if (piece1Nodes.size() == piece2Nodes.size()) //-V807
-    {
-        return QVector<quint32>();
-    }
-
-    QSet<quint32> set1;
-    for (qint32 i = 0; i < piece1Nodes.size(); ++i)
-    {
-        set1.insert(piece1Nodes.at(i));
-    }
-
     QSet<quint32> set2;
     for (qint32 j = 0; j < piece2Nodes.size(); ++j)
     {
         set2.insert(piece2Nodes.at(j));
     }
 
-	const QList<quint32> set3 = set1.subtract(set2).values();
+    // Walk the old node list in its own order and report each missing id once
+    QSet<quint32> reported_ids;
     QVector<quint32> setDiff;
-    for (qint32 i = 0; i < set3.size(); ++i)
+    for (qint32 i = 0; i < piece1Nodes.size(); ++i)
     {
-        setDiff.append(set3.at(i));
+        const quint32 id = piece1Nodes.at(i);
+        if (!set2.contains(id) && !reported_ids.contains(id))
+        {
+            reported_ids.insert(id);
+            setDiff.append(id);
+        }
     }
 
     return setDiff;
