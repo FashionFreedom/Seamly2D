@@ -165,6 +165,9 @@ qmake ..\Seamly2D.pro
 nmake      # (or use jom and assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.)
 ```
 
+* On Windows, the build deploys `seamly2d.exe` and `seamlyme.exe` with one shared Qt runtime in `src\app\seamly2d\bin`.
+  Run both apps from there to test the installer layout.
+
 ### Additional build option for MacOSX
 
 * Enable signing and notarizing at qmake step
