@@ -247,11 +247,12 @@ macx{
     }
 }
 
-# run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
-win32-msvc:!deferDeploy{
-    QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
-}
-win32-arm64-msvc:!deferDeploy{
+# Run windeployqt so seamlyme.exe runs standalone from $${DESTDIR}.
+# The Windows installer uses the shared Qt runtime from seamly2d.pro instead.
+win32-msvc|win32-arm64-msvc{
     qtPrepareTool(WINDEPLOYQT, windeployqt)
-    QMAKE_POST_LINK += $$WINDEPLOYQT --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
+    WINDEPLOYQT_ARGS =
+    win32-arm64-msvc: WINDEPLOYQT_ARGS += --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat)
+
+    QMAKE_POST_LINK += $$WINDEPLOYQT $$WINDEPLOYQT_ARGS $$shell_path($$DESTDIR/$${TARGET}.exe)
 }

@@ -366,11 +366,20 @@ macx{
     }
 }
 
-# run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
-win32-msvc:!deferDeploy{
-    QMAKE_POST_LINK += windeployqt --force-openssl $$shell_path($$DESTDIR/$${TARGET}.exe)
-}
-win32-arm64-msvc:!deferDeploy{
+# Copy seamlyme.exe into $${DESTDIR} and run windeployqt on both executables.
+# This gives one shared Qt runtime and vc_redist. The Windows installer packages this directory.
+win32-msvc|win32-arm64-msvc{
+    SEAMLYME_EXE = $$OUT_PWD/../seamlyme/$${DESTDIR}/seamlyme.exe
+
+    # Relink seamly2d.exe when seamlyme.exe changes, so the copy in $${DESTDIR} stays current.
+    PRE_TARGETDEPS += $$SEAMLYME_EXE
+
     qtPrepareTool(WINDEPLOYQT, windeployqt)
-    QMAKE_POST_LINK += $$WINDEPLOYQT --force-openssl --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat) $$shell_path($$DESTDIR/$${TARGET}.exe)
+    WINDEPLOYQT_ARGS = --force-openssl
+    win32-arm64-msvc: WINDEPLOYQT_ARGS += --qtpaths $$shell_path($$[QT_INSTALL_BINS]/host-qtpaths.bat)
+
+    QMAKE_POST_LINK += $$VCOPY $$shell_path($$SEAMLYME_EXE) $$shell_path($${OUT_PWD}/$$DESTDIR) $$escape_expand(\\n\\t)
+    QMAKE_POST_LINK += $$WINDEPLOYQT $$WINDEPLOYQT_ARGS \
+        $$shell_path($$DESTDIR/$${TARGET}.exe) $$shell_path($$DESTDIR/seamlyme.exe)
+    QMAKE_CLEAN += $$shell_path($${OUT_PWD}/$$DESTDIR/seamlyme.exe)
 }

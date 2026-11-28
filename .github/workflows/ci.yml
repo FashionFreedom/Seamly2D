@@ -279,7 +279,7 @@ jobs:
 
       - name: qmake/make seamly2d.exe and seamlyme.exe
         run: |
-          ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests CONFIG+=deferDeploy
+          ${{ matrix.qmake }} Seamly2D.pro -config release CONFIG+=noTests
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           nmake
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
@@ -288,16 +288,10 @@ jobs:
         run: choco install nsis -y
 
       - name: Stage shared Qt runtime
+        # seamly2d.pro deploys both executables and one shared Qt runtime into src\app\seamly2d\bin
         run: |
           mkdir windows-build
           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination windows-build -Recurse
-          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination windows-build -Recurse -Force
-          $deployArgs = @('--release')
-          if ('${{ matrix.msvc-arch }}' -eq 'amd64_arm64') {
-            $deployArgs += @('--qtpaths', "$env:QT_ROOT_DIR\bin\host-qtpaths.bat")
-          }
-          & windeployqt @deployArgs --force-openssl windows-build\seamly2d.exe windows-build\seamlyme.exe
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           foreach ($file in @('seamly2d.exe', 'seamlyme.exe', 'Qt6Core.dll', 'Qt6Multimedia.dll',
                               'platforms\qwindows.dll', 'multimedia\ffmpegmediaplugin.dll')) {
             if (-not (Test-Path -LiteralPath "windows-build\$file")) {
@@ -311,6 +305,8 @@ jobs:
           $env:PATH = "$env:SystemRoot\system32;$env:SystemRoot"
           Remove-Item Env:\QT_PLUGIN_PATH, Env:\QT_QPA_PLATFORM_PLUGIN_PATH, Env:\QT_QPA_PLATFORM -ErrorAction SilentlyContinue
           $env:SEAMLY_DATA_DIR = Join-Path $env:RUNNER_TEMP 'seamly-runtime-smoke'
+          # Without this, seamlyme.exe shows --help in a message box and does not exit
+          $env:QT_COMMAND_LINE_PARSER_NO_GUI_MESSAGE_BOXES = '1'
           foreach ($exe in @('seamly2d.exe', 'seamlyme.exe')) {
             $process = Start-Process -FilePath (Join-Path $PWD "windows-build\$exe") -ArgumentList '--test', '--help' -PassThru
             if (-not $process.WaitForExit(30000)) {
